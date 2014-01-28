@@ -1,0 +1,42 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+
+<html>
+<head>
+<title>:hover in nested RTL tables</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="author" href="mailto:eiram@opera.com">
+<style media="handheld, screen, tv, projection" type="text/css">
+a:hover{color:orange}
+</style>
+</head>
+
+<body>
+<p>
+The link should turn orange on hover:
+</p>
+
+</p>
+  <table border="1" dir="rtl">
+    <tr>
+      <td>
+      <table border="1">
+        <tr>
+          <td>
+<a href="dummy">Table1</a>
+	  </td>
+        </tr>
+      </table>
+    </td>
+    <td>
+      <table border="1">
+        <tr>
+	  <td>
+	Table2
+	  </td>
+	</tr>
+      </table>
+    </td>
+   </tr>
+  </table>
+</body>
+</html>

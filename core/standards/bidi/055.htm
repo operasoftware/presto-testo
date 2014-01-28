@@ -1,0 +1,27 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+
+<html>
+<head>
+<title>CSS, HTML and char force intertwined</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="author" href="mailto:eiram@opera.com">
+<style media="handheld, screen, tv, projection" type="text/css">
+.ltor {
+unicode-bidi: bidi-override;
+direction: ltr;
+}
+</style>
+</head>
+
+<body>
+<p>The following lines should be identical, including spacing:</p>
+<p>
+&#x202E; 5txet <span class="ltor"> text2 <BDO dir="rtl"> 3txet &#x202C; text4 </span> 1txet </BDO>
+</p>
+<p>
+&#x202E; 5txet &#x202D; text2 &#x202E; 3txet &#x202C; text4 &#x202C; 1txet &#x202C; 
+</p>
+
+
+</body>
+</html>

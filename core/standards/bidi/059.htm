@@ -1,0 +1,24 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+
+<html>
+<head>
+<title>Alt text with CSS</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="author" href="mailto:eiram@opera.com">
+<style media="handheld, screen, tv, projection" type="text/css">
+.rtol {
+direction: rtl;
+unicode-bidi: bidi-override;
+}
+</style>
+</head>
+
+<body>
+
+<p>The three lines below should have the same text (the exact rendering may differ, but the order of the letters should be identical)</p>
+
+<p>Three lines of readable text</p>
+<p>Three lines of <span class="rtol"><img src="" alt="elbadaer"></span> text</p>
+<p>Three lines of <img src="" alt="elbadaer" class="rtol"> text</p>
+</body>
+</html>

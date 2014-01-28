@@ -1,0 +1,40 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+
+<html>
+<head> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="author" href="mailto:eiram@opera.com"> 
+<title>Border-collapse and td border 4</title> 
+<style media="handheld, screen, tv, projection" type="text/css">
+table { 
+border-collapse:collapse;
+} 
+td.first {
+background-color: lightblue;
+border-bottom: 5px solid blue;
+}
+td.second {
+background-color: lightgreen;
+border-bottom: 5px solid green;
+}
+</style> 
+</head>
+ 
+<body>
+
+<p>The two tables should be identical:</p>
+ <table dir="rtl"> 
+  <tr> 
+   <td class="first">XX XX XX</td> 
+   <td class="second">XX</td> 
+  </tr> 
+ </table>
+ <br>
+  <table dir="ltr"> 
+  <tr> 
+   <td class="second">XX</td> 
+   <td class="first">XX XX XX</td> 
+  </tr> 
+ </table> 
+</body> 
+</html>

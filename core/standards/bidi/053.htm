@@ -1,0 +1,25 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+
+<html>
+<head>
+<title>CSS and char force intertwined 1</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="author" href="mailto:eiram@opera.com">
+<style media="handheld, screen, tv, projection" type="text/css">
+.rtol {
+unicode-bidi: bidi-override;
+direction: rtl;
+}
+</style>
+</head>
+
+<body>
+<p>The following lines should be identical, including spacing:</p>
+<p>
+<span class="rtol"> 3txet &#x202D; text2 </span> 1txet &#x202C; text4
+</p>
+<p>
+&#x202E; 3txet &#x202D; text2 &#x202C; 1txet &#x202C; text4
+</p>
+</body>
+</html>

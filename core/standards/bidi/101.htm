@@ -1,0 +1,25 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+
+<html>
+<head>
+<title>bidi-override on list</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="author" href="mailto:eiram@opera.com">
+<style media="handheld, screen, tv, projection" type="text/css">
+.override {
+direction: rtl;
+unicode-bidi: bidi-override;
+}
+</style>
+</head>
+
+<body>
+<p>The list item should be "abc":</p>
+ <ul class="override">
+ <li>
+ abc
+</li>
+</ul>
+
+</body>
+</html>

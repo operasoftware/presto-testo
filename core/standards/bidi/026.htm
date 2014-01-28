@@ -1,0 +1,29 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+
+<html>
+<head>
+<title>Glyph mirroring, CSS</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="author" href="mailto:eiram@opera.com">
+<style media="handheld, screen, tv, projection" type="text/css">
+.control {
+text-align: right;
+}
+div {
+direction: rtl;
+unicode-bidi: bidi-override;
+}
+</style>
+
+</head>
+<body>
+
+<p>The lines below should be identical:</p>
+<p class="control">a b (c d).</p>
+
+<div>
+.(d c) b a
+</div>
+
+</body>
+</html>

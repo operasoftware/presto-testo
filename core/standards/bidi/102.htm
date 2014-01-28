@@ -1,0 +1,27 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+
+<html>
+<head>
+<title>bidi-override on list item</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="author" href="mailto:eiram@opera.com">
+<style media="handheld, screen, tv, projection" type="text/css">
+.override {
+direction: rtl;
+unicode-bidi: bidi-override;
+}
+</style>
+</head>
+
+<body>
+<p>
+The list item should be "abc" (and you should be able to scroll to see the list marker if it is rendered outside the viewport):
+</p>
+ <ul>
+ <li class="override">
+ cba
+</li>
+</ul>
+
+</body>
+</html>
