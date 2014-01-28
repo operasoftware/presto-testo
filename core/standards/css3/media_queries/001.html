@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>CSS3 Media queries: Basic test</title>
+
+<style type="text/css">
+#supported {display:none;}
+@media all and (max-width:1234567890px){
+    p#unsupported { display: none !important; }
+    p#supported { display: block; }
+}
+</style>
+</head>
+<body>
+
+<div>
+<p id="unsupported">FAIL</p>
+<p id="supported">PASS</p>
+</div>
+
+</body>
+</html>
