@@ -1,0 +1,32 @@
+<!doctype html>
+<meta charset=utf-8>
+<title>Open restricted resource after doing HTTP auth with XHR</title>
+<script src=/resources/testharness.js></script>
+<script src=/resources/testharnessreport.js></script>
+
+<p>Tests require uncluttered HTTP auth.</p>
+<div id=log></div>
+
+<script>
+var t = async_test()
+var xhr = new XMLHttpRequest()
+var time = new Date().getTime()
+var iframe = document.createElement('iframe')
+
+/* First do login via XHR */
+xhr.open('GET', 'resources/login.php?' + time, true, 'yo_man', 'boomblaster+' + time)
+xhr.onload = t.step_func(function() {
+    assert_equals(xhr.response, 'yo_man:boomblaster+' + time, 'first response')
+
+    iframe.onload = t.step_func(function() {
+        assert_equals(iframe.contentDocument.documentElement.innerText,
+            'yo_man:boomblaster+' + time,
+            'the new iframe')
+        document.body.removeChild(iframe)
+        t.done()
+    })
+    iframe.src = 'resources/userinfo.php?' + time
+    document.body.appendChild(iframe)
+})
+xhr.send()
+</script>

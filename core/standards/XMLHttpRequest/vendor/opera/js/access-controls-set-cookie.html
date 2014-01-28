@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>XMLHttpRequest: CORS - Set-Cookie behaviour on failure</title>
+    <script src="/resources/testharness.js"></script>
+    <script src="/resources/testharnessreport.js"></script>
+  </head>
+  <body>
+    <div id="log"></div>
+    <script>
+
+    function dirname(path) {
+        return path.replace(/\/[^\/]*$/, '/')
+    }
+
+    var crossdomain = "http://crosssite." + location.host + dirname(location.pathname) + "../access-control/"
+
+    function test_setcookie(parameters, desc) {
+        test(function () {
+            var id = new Date().getTime(),
+                client = new XMLHttpRequest()
+            client.open("GET", crossdomain + 'resources/cors-cookie.php?ident=' + id + '&' + parameters, false)
+          	client.withCredentials = true
+          	assert_throws_lax('NETWORK_ERR', function() { client.send(null) }, 'send')
+
+            client.open("GET", crossdomain + 'resources/cors-cookie.php?ident=' + id, false)
+            client.withCredentials = true
+            client.send(null)
+            /*
+             * Originally we wanted to have CORS-error clear Set-Cookie,
+             * but we're instead following Gecko and Webkit behaviour
+             *
+             * Old expected behaviour: assert_equals(client.response, "NO_COOKIE")
+             */
+            assert_equals(client.response, "COOKIE")
+        }, '(don\'t disobey) Set-Cookie if ' + ((desc === undefined) ? parameters : desc));
+    }
+
+    test_setcookie('origin=*')
+    test_setcookie('origin=http://example.com')
+    test_setcookie('origin=')
+    test_setcookie('origin=none', 'Allow-Origin is missing')
+    test_setcookie('credentials=none', 'Allow-Credentials is missing')
+    test_setcookie('origin=none&credentials=none', 'Allow-Origin and Allow-Credentials is missing')
+
+    </script>
+ </body>
+</html>

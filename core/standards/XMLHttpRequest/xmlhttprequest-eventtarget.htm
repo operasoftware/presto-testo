@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+  <head>
+    <title>XMLHttpRequest: implements EventTarget</title>
+    <script src="/resources/testharness.js"></script>
+    <script src="/resources/testharnessreport.js"></script>
+  </head>
+  <body>
+    <div id="log"></div>
+    <script>
+      var test = async_test(),
+          x = null,
+          expected = ["a1", "b1", "c1", "a1", "b1", "c1", "a2", "b2", "c2", "a3", "c3", "a4", "c4"],
+          result = []
+      function callback(e) {
+        result.push("b" + x.readyState)
+        test.step(function() {
+          if(x.readyState == 3)
+            assert_unreached()
+        })
+      }
+      test.step(function() {
+        x = new XMLHttpRequest()
+        // XXX replace these with something better at some point?
+        assert_true("addEventListener" in x, "addEventListener exist")
+        assert_true("removeEventListener" in x, "removeEventListener exist")
+        assert_true("dispatchEvent" in x, "dispatchEvent exist")
+        x.onreadystatechange = function(e) {
+          test.step(function() {
+            assert_equals(e.target, x, "e.target is xhr obj")
+            assert_equals(e.currentTarget, x, "currentTarget is xhr obj")
+            assert_equals(this, x, "this is xhr obj")
+            result.push("a" + x.readyState)
+          }, this)
+        }
+        x.addEventListener("readystatechange", callback, false)
+        x.addEventListener("readystatechange", function() {
+          test.step(function() {
+            result.push("c" + x.readyState)
+            if(x.readyState == 2)
+              x.removeEventListener("readystatechange", callback, false)
+            if(x.readyState == 4) {
+              assert_array_equals(result, expected)
+              test.done()
+            }
+          })
+        }, false)
+        x.open("GET", "folder.txt")
+        x.send(null)
+      })
+    </script>
+  </body>
+</html>

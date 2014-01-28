@@ -1,0 +1,89 @@
+<!doctype html>
+    <meta charset=utf-8>
+    <title>Clear CORS preflight cache</title>
+    <script src="/resources/testharness.js"></script>
+    <!-- Nah, not automatic... <script src="/resources/testharnessreport.js"></script> -->
+
+<script>
+setup({ timeout: 120000 })
+
+var id          = "1_" + new Date().getTime(),
+    client      = new XMLHttpRequest(),
+    crossdomain = location.href.replace("://", "://crosssite.").replace(/\/[^\/]*$/, '/')
+
+/* Tests */
+var load_t  = async_test('Preflight cache loaded', { timeout: 10000 }),
+    clear_t = async_test("Cleared the preflight cache", { timeout: 10000 })
+
+function do_preflight(expect, test, finish_cb) {
+    client.open('GET', crossdomain +
+        'resources/preflight.php?age=3600&ident=' + id )
+
+    client.setRequestHeader('x-print', id)
+    client.onreadystatechange = function() {
+        if (client.readyState != 4)
+            return
+        /* Send a checkup on the preflight */
+        client.open('GET',
+            'resources/checkandremovefromlog.php?age=3600&ident=' + id )
+
+        client.onreadystatechange = test.step_func(function() {
+            if (client.readyState != 4)
+                return
+            console.log(test.name + ": for " + expect + ", got back " + client.response)
+            if (expect == true)
+                assert_true(client.response == "1", "did a preflight")
+            else if (expect == false)
+                assert_false(!(client.response == "0"), "did a preflight")
+            else
+                assert_unreached("Didn't seem to do anything, response: " + client_response)
+
+            /* Do the callback */
+            finish_cb()
+        })
+        client.send()
+    }
+
+    client.send()
+}
+
+/*
+ * Part one, check that cache is working
+ */
+
+load_t.step(function() {
+    do_preflight(true, load_t, function() {
+        do_preflight(false, load_t, function() {
+            load_t.done()
+        })
+    })
+})
+
+
+/*
+ * Part two (after the cache clearing
+ */
+
+
+function cache_cleared() {
+    console.log("cache_cleared")
+    clear_t.step(function() {
+        do_preflight(true, clear_t, function() {
+            do_preflight(false, clear_t, function() {
+                clear_t.done()
+                done()
+            })
+        })
+    })
+}
+
+</script>
+
+<ol>
+    <li>Clear your cache/delete private data (within a minute)<br>
+        <code>Opera menu | Settings | Delete private data | Detailed options</code>. Uncheck Close all tabs
+    <li>Click the button: <button onclick=cache_cleared()>Test!</button>
+    <li><strong>BOTH</strong> tests shall pass
+</ol>
+
+<div id=log></div>

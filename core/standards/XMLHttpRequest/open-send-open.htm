@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<!-- This one has changed much, recently send() also lost its extra
+     readystatechange event. So this was previously 4 events, now only 2.
+
+         http://dvcs.w3.org/hg/xhr/rev/d2709f15a1c3
+
+     There is more tests that need to be updated. -odinho -->
+<html>
+  <head>
+    <title>XMLHttpRequest: open() - send() - open()</title>
+    <script src="/resources/testharness.js"></script>
+    <script src="/resources/testharnessreport.js"></script>
+  </head>
+  <body>
+    <div id="log"></div>
+    <script>
+      var test = async_test()
+      test.step(function() {
+        var client = new XMLHttpRequest(),
+            result = [],
+            expected = [1, 1] // open: 1, open: 1
+        client.onreadystatechange = function() {
+          test.step(function() {
+            result.push(client.readyState)
+            if (client.DONE == client.readyState)
+              console.log(client.response)
+          })
+        }
+        client.open("GET", "folder.txt")
+        client.send()
+        client.open("GET", "folder.txt")
+        assert_array_equals(result, expected)
+        test.done()
+      })
+    </script>
+  </body>
+</html>

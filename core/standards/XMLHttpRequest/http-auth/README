@@ -1,0 +1,5 @@
+These tests test HTTP auth.
+
+If you are using HTTP auth to look at these pages, it will probably echo your
+password and won't really work. Or you'll get logged out, depending on the
+browser implementation.

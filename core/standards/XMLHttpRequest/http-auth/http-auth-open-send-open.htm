@@ -1,0 +1,29 @@
+<!doctype html>
+<meta charset=utf-8>
+<title>Do two HTTP auth requests, one with password, second without.</title>
+<script src="/resources/testharness.js"></script>
+<script src="/resources/testharnessreport.js"></script>
+
+<p>Tests require uncluttered HTTP auth.</p>
+<div id=log></div>
+
+<script>
+var t = async_test()
+var xhr = new XMLHttpRequest()
+var time = new Date().getTime()
+
+xhr.open('GET', 'resources/login.php?' + time, true, 'yo_man', 'boomblaster+'+time)
+xhr.onload = t.step_func(function() {
+    assert_equals(xhr.response, "yo_man:boomblaster+"+time, "first response")
+
+    /* Second request without specifying username and password */
+    xhr.open('GET', 'resources/login.php?' + time, true)
+    xhr.onload = t.step_func(function() {
+        assert_equals(xhr.response, "yo_man:boomblaster+"+time, "second response")
+        t.done()
+    })
+    xhr.send()
+
+})
+xhr.send()
+</script>

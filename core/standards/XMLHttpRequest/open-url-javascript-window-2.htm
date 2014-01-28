@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>XMLHttpRequest: open() - resolving URLs (javascript: &lt;iframe>; 2)</title>
+    <script src="/resources/testharness.js"></script>
+    <script src="/resources/testharnessreport.js"></script>
+  </head>
+  <body>
+    <div id="log"></div>
+    <script>
+      var test = async_test(),
+          expected = "top\n"
+      test.step(function() {
+        var iframe = document.body.appendChild(document.createElement("iframe"))
+        iframe.src = "javascript:parent.test.step(function() { var x = new XMLHttpRequest(); x.open('GET', 'folder.txt', false); x.send(null); parent.assert_equals(x.responseText, parent.expected); parent.test.done() })"
+      })
+    </script>
+  </body>
+</html>
