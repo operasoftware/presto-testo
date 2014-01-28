@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<svg zoomAndPan="disable" width="400px" height="300px"
+     viewBox="0 0 800 600"
+     xmlns="http://www.w3.org/2000/svg">
+
+  <!-- Enable this to have another animation running -->
+<!--  <rect x="120" y="40" width="80" height="20">
+    <animate attributeType="XML" attributeName="opacity"
+	     from=".2" to=".9" begin="0s" dur="1s"
+	     repeatCount="indefinite"/>
+  </rect>-->
+
+  <rect id="bluerect" x="300" y="80" width="200" height="100" fill="blue"/>
+
+  <rect onclick="document.getElementById('aniTextNegative').beginElement();"
+	x="500" y="80" width="200" height="100" fill="yellow"/>
+
+  <rect x="300" y="190" width="400" height="839" transform="translate(0,0)">
+    <animateTransform id="aniTextNegative" attributeName="transform"
+		      attributeType="XML" type="translate"
+		      from="0,0" to="0,200"
+		      begin="bluerect.click" dur="1s"
+		      restart="whenNotActive"
+		      fill="freeze"/>
+  </rect>
+</svg>

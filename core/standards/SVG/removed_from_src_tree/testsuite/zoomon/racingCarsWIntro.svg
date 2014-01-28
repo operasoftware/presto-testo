@@ -1,0 +1,895 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg>
+<!--======================================================================-->
+<!--=  Copyright 2001-2002 ZOOMON Mobile Solutions AB,                   =-->
+<!--=  (ZOOMON Stockholm Sweden)                                         =-->
+<!--=  All Rights Reserved. ZOOMON reserves all right, title, and        =-->
+<!--=  interest in the material herein.                                  =-->
+<!--=  User shall not remove or obscure any copyright notices or         =-->
+<!--=  proprietary legends contained within this source file.            =-->
+<!--======================================================================-->
+<!--=  Production & Design: Jakob Cederquist                             =-->
+<!--======================================================================-->
+<svg version="1.1" baseProfile="tiny" width="100%" height="100%" viewBox="0 0 250 250" xmlns="http://www.w3.org/2000/svg">
+   <g visibility="visible">
+      <g transform="scale(0.625 0.625)" stroke="rgb(0,0,0)">
+         <rect x="0" y="0" height="400" width="400" fill="rgb(250,250,250)"
+            stroke="none">
+            <animateColor attributeName="fill" begin="2s" dur="1.5s" fill="freeze"
+               from="rgb(250,250,250)" to="rgb(50,50,50)"/>
+            <animateColor attributeName="fill" begin="5s" dur="0.8s" fill="freeze"
+               from="rgb(50,50,50)" to="rgb(255,255,255)"/>
+         </rect>
+         <path d="M200 200 L0 -40 L-40 0 L200 200" fill="rgb(250,250,250)" stroke="none"
+            visibility="hidden">
+            <animateTransform attributeName="transform" keyTimes="0; 0.7; 0.9; 1"
+               type="rotate" begin="3s" dur="3s"
+               values="230 200 200;260 200 200;340 200 200;320 200 200"/>
+            <set attributeName="visibility" begin="3.2s" end=" 6s" to="visible"/>
+         </path>
+         <path d="M200 200 L0 -40 L-40 0 L200 200" fill="rgb(250,250,250)" stroke="none"
+            visibility="hidden">
+            <animateTransform attributeName="transform" keyTimes="0; 0.7; 0.9; 1"
+               type="rotate" begin="3s" dur="3s"
+               values="30 200 200;60 200 200;140 200 200;120 200 200"/>
+            <set attributeName="visibility" begin="3.2s" end=" 6s" to="visible"/>
+         </path>
+         <path d="M200 200 L0 -40 L-40 0 L200 200" fill="rgb(250,250,250)" stroke="none"
+            visibility="hidden">
+            <animateTransform attributeName="transform" keyTimes="0; 0.7; 0.9; 1"
+               type="rotate" begin="3s" dur="3s"
+               values="200 200 200;230 200 200;310 200 200;290 200 200"/>
+            <set attributeName="visibility" begin="3.3s" end=" 6s" to="visible"/>
+         </path>
+         <path d="M200 200 L0 -40 L-40 0 L200 200" fill="rgb(250,250,250)" stroke="none"
+            visibility="hidden">
+            <animateTransform attributeName="transform" keyTimes="0; 0.7; 0.9; 1"
+               type="rotate" begin="3s" dur="3s"
+               values="120 200 200;150 200 200;230 200 200;210 200 200"/>
+            <set attributeName="visibility" begin="3.4s" end=" 6s" to="visible"/>
+         </path>
+         <path d="M200 200 L0 -40 L-40 0 L200 200" fill="rgb(250,250,250)" stroke="none"
+            visibility="hidden">
+            <animateTransform attributeName="transform" keyTimes="0; 0.7; 0.9; 1"
+               type="rotate" begin="3s" dur="3s"
+               values="310 200 200;340 200 200;420 200 200;400 200 200"/>
+            <set attributeName="visibility" begin="3.5s" end=" 6s" to="visible"/>
+         </path>
+         <path d="M200 200 L0 -40 L-40 0 L200 200" fill="rgb(250,250,250)" stroke="none"
+            visibility="hidden">
+            <animateTransform attributeName="transform" keyTimes="0; 0.7; 0.9; 1"
+               type="rotate" begin="3s" dur="3s"
+               values="165 200 200;195 200 200;275 200 200;255 200 200"/>
+            <set attributeName="visibility" begin="3.6s" end=" 6s" to="visible"/>
+         </path>
+         <path d="M200 200 L0 -40 L-40 0 L200 200" fill="rgb(250,250,250)" stroke="none"
+            visibility="hidden">
+            <animateTransform attributeName="transform" keyTimes="0; 0.7; 0.9; 1"
+               type="rotate" begin="3s" dur="3s"
+               values="280 200 200;310 200 200;390 200 200;370 200 200"/>
+            <set attributeName="visibility" begin="3.7s" end=" 6s" to="visible"/>
+         </path>
+         <path d="M200 200 L0 -40 L-40 0 L200 200" fill="rgb(250,250,250)" stroke="none"
+            visibility="hidden">
+            <animateTransform attributeName="transform" keyTimes="0; 0.7; 0.9; 1"
+               type="rotate" begin="3s" dur="3s"
+               values="150 200 200;180 200 200;260 200 200;240 200 200"/>
+            <set attributeName="visibility" begin="3.8s" end=" 6s" to="visible"/>
+         </path>
+         <path d="M200 200 L0 -40 L-40 0 L200 200" fill="rgb(250,250,250)" stroke="none"
+            visibility="hidden">
+            <animateTransform attributeName="transform" keyTimes="0; 0.7; 0.9; 1"
+               type="rotate" begin="3s" dur="3s"
+               values="70 200 200;100 200 200;180 200 200;160 200 200"/>
+            <set attributeName="visibility" begin="3.9s" end=" 6s" to="visible"/>
+         </path>
+         <path d="M200 200 L0 -40 L-40 0 L200 200" fill="rgb(250,250,250)" stroke="none"
+            visibility="hidden">
+            <animateTransform attributeName="transform" keyTimes="0; 0.7; 0.9; 1"
+               type="rotate" begin="3s" dur="3s"
+               values="340 200 200;370 200 200;450 200 200;430 200 200"/>
+            <set attributeName="visibility" begin="4s" end=" 6s" to="visible"/>
+         </path>
+         <circle cx="200" cy="200" r="50" fill="rgb(200,200,200)" stroke="none">
+            <animateTransform attributeName="transform" begin="0s" dur="2s" fill="freeze"
+               repeatCount="indefinite" type="translate" additive="sum" from="200 200"
+               by="0 0"/>
+            <animateTransform attributeName="transform" keyTimes="0; 0.5; 0.9; 1"
+               begin="0s" dur="3s" fill="freeze" repeatCount="1" calcMode="linear"
+               type="scale" additive="sum" values="6 6;6 6;1 1;1 1"/>
+            <animateTransform attributeName="transform" begin="0s" dur="0.5s" fill="freeze"
+               repeatCount="indefinite" type="translate" additive="sum" from="-200 -200"
+               by="0 0"/>
+            <animateColor attributeName="fill" begin="5s" dur="1s" fill="freeze"
+               from="rgb(100,100,100)" to="rgb(255,255,255)"/>
+         </circle>
+         <circle cx="200" cy="200" r="50" fill="rgb(150,150,150)" stroke="none">
+            <animateTransform attributeName="transform" begin="0s" dur="2s" fill="freeze"
+               repeatCount="indefinite" type="translate" additive="sum" from="200 200"
+               by="0 0"/>
+            <animateTransform attributeName="transform" keyTimes="0; 0.4; 0.8; 1"
+               begin="0s" dur="3s" fill="freeze" repeatCount="1" calcMode="linear"
+               type="scale" additive="sum" values="6 6;6 6;0.1 0.1;0.1 0.1"/>
+            <animateTransform attributeName="transform" begin="0s" dur="0.5s" fill="freeze"
+               repeatCount="indefinite" type="translate" additive="sum" from="-200 -200"
+               by="0 0"/>
+            <set attributeName="visibility" begin="2.4s" to="hidden"/>
+         </circle>
+         <circle cx="200" cy="200" r="50" fill="rgb(100,100,100)" stroke="none">
+            <animateTransform attributeName="transform" begin="0s" dur="2s" fill="freeze"
+               repeatCount="indefinite" type="translate" additive="sum" from="200 200"
+               by="0 0"/>
+            <animateTransform attributeName="transform" keyTimes="0; 0.3; 0.7; 1"
+               begin="0s" dur="3s" fill="freeze" repeatCount="1" calcMode="linear"
+               type="scale" additive="sum" values="6 6;6 6;0.1 0.1;0.1 0.1"/>
+            <animateTransform attributeName="transform" begin="0s" dur="0.5s" fill="freeze"
+               repeatCount="indefinite" type="translate" additive="sum" from="-200 -200"
+               by="0 0"/>
+            <set attributeName="visibility" begin="2.1s" to="hidden"/>
+         </circle>
+         <circle cx="200" cy="200" r="50" fill="rgb(50,50,50)" stroke="none">
+            <animateTransform attributeName="transform" begin="0s" dur="2s" fill="freeze"
+               repeatCount="indefinite" type="translate" additive="sum" from="200 200"
+               by="0 0"/>
+            <animateTransform attributeName="transform" keyTimes="0; 0.2; 0.6; 1"
+               begin="0s" dur="3s" fill="freeze" repeatCount="1" calcMode="linear"
+               type="scale" additive="sum" values="6 6;6 6;0.1 0.1;0.1 0.1"/>
+            <animateTransform attributeName="transform" begin="0s" dur="0.5s" fill="freeze"
+               repeatCount="indefinite" type="translate" additive="sum" from="-200 -200"
+               by="0 0"/>
+            <set attributeName="visibility" begin="1.8s" to="hidden"/>
+         </circle>
+         <circle cx="200" cy="200" r="50" fill="rgb(0,0,0)" stroke="none">
+            <animateTransform attributeName="transform" begin="0s" dur="2s" fill="freeze"
+               repeatCount="indefinite" type="translate" additive="sum" from="200 200"
+               by="0 0"/>
+            <animateTransform attributeName="transform" keyTimes="0; 0.1; 0.5; 1"
+               begin="0s" dur="3s" fill="freeze" repeatCount="1" calcMode="linear"
+               type="scale" additive="sum" values="6 6;6 6;0.1 0.1;0.1 0.1"/>
+            <animateTransform attributeName="transform" begin="0s" dur="0.5s" fill="freeze"
+               repeatCount="indefinite" type="translate" additive="sum" from="-200 -200"
+               by="0 0"/>
+            <set attributeName="visibility" begin="1.5s" to="hidden"/>
+         </circle>
+         <g id="logga" transform="scale(0.8 0.8) translate(77 187)" stroke="rgb(0,0,0)"
+            visibility="hidden">
+            <path id="box" d="M353.926 88.452 L353.926 37.264 L0 37.264 L0 88.452 z"
+               fill="rgb(212,212,212)" stroke="none">
+               <animateColor attributeName="fill" begin="6s" dur="0.5s" fill="freeze"
+                  from="rgb(255,255,255)" to="rgb(212,212,212)"/>
+               <set attributeName="visibility" begin="6s" dur="4s" to="visible"/>
+            </path>
+            <path
+               d="M173.315 121.254 C205.969 121.254 232.442 94.781 232.442 62.127 C232.442 29.473 205.97
+                  3 173.315 3 C140.66 3 114.188 29.473 114.188 62.127 C114.188 94.781
+                  140.661 121.254 173.315 121.254 z" fill="rgb(255,255,255)"
+               stroke="rgb(191,191,191)" stroke-width="6">
+               <set attributeName="visibility" begin="3s" dur="7s" to="visible"/>
+            </path>
+            <path
+               d="M173.412 91.445 C190.503 91.445 204.358 78.318 204.358 62.127 C204.358 45.935 190.503
+                  32.809 173.412 32.809 C156.321 32.809 142.465 45.935 142.465 62.127 C142.465
+                  78.318 156.321 91.445 173.412 91.445 z" fill="rgb(242,242,242)"
+               stroke="rgb(212,212,212)" stroke-width="6">
+               <set attributeName="visibility" begin="3s" dur="7s" to="visible"/>
+            </path>
+            <g id="zoomon">
+            <!-- Z -->
+               <path
+                  d="M17.96 69.183 L36.175 56.057 L36.175 55.987 L18.452 55.987 L18.452 49.88 L47.686
+                     49.88 L47.686 55.986 L29.506 69.112 L29.506 69.182 L48.106 69.182 L48.106
+                     75.288 L17.96 75.288 L17.96 69.182 z" stroke="none"/>
+            <!-- o -->
+               <path
+                  d="M69.135 58.794 C69.135 51.355 73.311 49.6 80.33 49.6 L92.824 49.6 C99.843 49.6 104.019
+                     51.355 104.019 58.794 L104.019 66.375 C104.019 73.815 99.842 75.569
+                     92.824 75.569 L80.33 75.569 C73.31 75.569 69.135 73.815 69.135 66.375 L69.135
+                     58.794 L69.135 58.794 L77.137 63.953 C77.137 67.639 77.908 69.042 81.593
+                     69.042 L91.561 69.042 C95.246 69.042 96.018 67.639 96.018 63.953 L96.018
+                     61.216 C96.018 58.058 95.246 56.127 91.14 56.127 L82.015 56.127 C77.909
+                     56.127 77.137 58.058 77.137 61.216 L77.137 63.953 L77.137 63.953"
+                  stroke="none"/>
+            <!-- o -->
+               <path
+                  d="M125.709 58.794 C125.709 51.355 129.886 49.6 136.904 49.6 L149.398 49.6 C156.418
+                     49.6 160.593 51.355 160.593 58.794 L160.593 66.375 C160.593 73.815 156.417
+                     75.569 149.398 75.569 L136.904 75.569 C129.885 75.569 125.709 73.815 125.709
+                     66.375 L125.709 58.794 L125.709 58.794 L133.711 63.953 C133.711 67.639
+                     134.483 69.042 138.168 69.042 L148.135 69.042 C151.821 69.042 152.592
+                     67.639 152.592 63.953 L152.592 61.216 C152.592 58.058 151.821 56.127 147.714
+                     56.127 L138.589 56.127 C134.484 56.127 133.711 58.058 133.711 61.216
+                     L133.711 63.953 L133.711 63.953" stroke="none"/>
+            <!-- m -->
+               <path
+                  d="M182.846 49.88 L194.814 49.88 L203.623 66.234 L212.432 49.88 L224.4 49.88 L224.4
+                     75.289 L216.819 75.289 L216.819 57.039 L216.75 57.039 L206.537 75.289 L200.711
+                     75.289 L190.498 57.039 L190.428 57.039 L190.428 75.289 L182.848 75.289
+                     L182.848 49.88 z" stroke="none"/>
+            <!-- O -->
+               <path
+                  d="M246.657 58.794 C246.657 51.355 250.833 49.6 257.852 49.6 L270.346 49.6 C277.365
+                     49.6 281.541 51.355 281.541 58.794 L281.541 66.375 C281.541 73.815 277.364
+                     75.569 270.346 75.569 L257.852 75.569 C250.832 75.569 246.657 73.815 246.657
+                     66.375 L246.657 58.794 L246.657 58.794 L254.658 63.953 C254.658 67.639
+                     255.43 69.042 259.116 69.042 L269.083 69.042 C272.768 69.042 273.54 67.639
+                     273.54 63.953 L273.54 61.216 C273.54 58.058 272.768 56.127 268.662
+                     56.127 L259.537 56.127 C255.431 56.127 254.658 58.058 254.658 61.216 L254.658
+                     63.953 L254.658 63.953" fill="rgb(196,0,0)" stroke="none"/>
+            <!-- N -->
+               <path
+                  d="M303.793 49.88 L315.866 49.88 L330.501 68.34 L330.571 68.34 L330.571 49.88 L338.362
+                     49.88 L338.362 75.289 L326.289 75.289 L311.654 56.829 L311.584 56.829
+                     L311.584 75.289 L303.793 75.289 z" fill="rgb(196,0,0)" stroke="none"/>
+               <set attributeName="visibility" begin="7s" dur="3s" to="visible"/>
+            </g>
+         </g>
+         <g transform="scale(0.35 0.35) translate(325 250)" visibility="hidden">
+            <path
+               d="M223.1 51.4 L243.1 0 L253.8 0 L274.5 51.4 L263.6 51.2 L248.2 12.3 L234.1 51.4 L223
+                  51.4 z"/>
+            <path d="M237.1 39.9 L259.8 39.9 L256.9 31.1 L240.3 31.1 L237.2 39.9 z"/>
+            <animateColor attributeName="fill" begin="7.3s" dur="1s" fill="freeze"
+               from="rgb(255,255,255)" to="rgb(0,0,0)"/>
+            <set attributeName="visibility" begin="7.3s" dur="2.7s" to="visible"/>
+         </g>
+         <g id="presentation" transform="scale(0.35 0.35) translate(310 670)"
+            visibility="hidden">
+            <path d="M10.8 225.2 L0.2 225.2 L0 174 L10.4 173.6 z"/>
+            <path
+               d="M9.4 206 L25.8 205.6 L34.6 202.3 L39.1 194.3 L39.3 184.5 L33.6 176.3 L26 174 L13.7
+                  173.8 L10.4 173.6 L10.2 182.8 L21.5 182.8 L27.4 185.5 L28.8 190.8 L25.9
+                  195.9 L17.9 197.1 L10.7 197.3 z"/>
+            <path d="M58.6 225.4 L48.3 225.4 L48.3 173.8 L58.5 173.8 L58.7 225.4 z"/>
+            <path
+               d="M58.2 182.6 L74.2 182.8 L77.9 184.2 L79.9 188.5 L78.3 193.2 L73.8 195.2 L66 195.6
+                  L58.6 195.6 L58.4 204 L67.8 204 L77.2 203.2 L84.6 200.1 L89.7 193.5 L90.1
+                  184.7 L87 178.4 L80 174.5 L72.4 173.9 L57.4 173.9 L58.4 182.7 z"/>
+            <path
+               d="M62.9 202.7 L68.6 206 L74.5 214 L82.1 225.3 L94.4 225.1 L86.2 211.8 L82.1 205.9 L77.2
+                  203 L62.9 202.6 z"/>
+            <path
+               d="M100.1 173.8 L100.3 225.4 L139.4 225.6 L139.4 216.8 L110.7 216.6 L110.7 202.7 L136.5
+                  202.7 L136.5 193.7 L110.7 193.9 L110.5 182.8 L138.3 182.4 L138.5 174 L100.2
+                  173.8 z"/>
+            <path
+               d="M175.5 189 L185.7 188.6 L184.9 182.5 L179.6 176.2 L171.4 173.1 L161.2 173.3 L152.8
+                  176.4 L148.5 181.9 L147.5 190.3 L151.2 196.6 L158 201.1 L166.4 203.4 L174.2
+                  205.9 L176.9 210 L175.7 214.1 L170.6 217 L164 217 L158.3 214.1 L155.4
+                  207.6 L145.4 208.6 L148.7 218.4 L155.9 224.5 L165.3 226.1 L175.3 225.3 L183.1
+                  221 L187.2 212.2 L185.8 203 L179.5 196.9 L170.1 193.4 L160.5 190.5 L157.2
+                  187.8 L158.2 183.7 L163.1 181.5 L168.4 181.9 L173.1 183.7 L175.2 189 z"/>
+            <path
+               d="M196.4 174 L196.4 225.4 L235.3 225.4 L235.3 217 L206.8 216.6 L206.8 202.5 L232.6
+                  202.9 L232.6 193.9 L207 194.1 L206.8 182.4 L234.6 182.2 L234.4 174 L196.5
+                  174 z"/>
+            <path
+               d="M244.3 174.1 L244.5 225.3 L254.3 225.1 L254.1 191.7 L275.2 225.3 L285.4 225.3 L285.4
+                  174 L275.8 174 L275.6 208.2 L254.5 173.8 L244.3 174.2 z"/>
+            <path
+               d="M292.6 173.8 L292.6 182.6 L307.8 182.6 L307.8 225.4 L318.6 225.4 L318.4 182.6 L333.6
+                  182.4 L333.6 174 z"/>
+            <path
+               d="M340.9 225.5 L329.8 225.1 L349.9 173.7 L361 173.7 L381.5 225.3 L370.6 225.5 L355.2
+                  186.2 z"/>
+            <path d="M346.9 205 L364.3 205 L367.8 213.4 L343.6 213.6 z"/>
+            <path
+               d="M378 174 L377.8 182.6 L393 182.8 L393.4 225.4 L403.8 225.6 L403.8 182.8 L418.8 182.6
+                  L418.8 174 z"/>
+            <path d="M425.3 174 L425.3 225.6 L435.7 225.4 L435.5 174 z"/>
+            <path
+               d="M470.4 173 L470.2 182 L460.6 184.1 L455.1 191.7 L454.3 201.3 L456.1 209.5 L460 214.2
+                  L465.1 216.7 L471.7 217.1 L472.9 225.9 L464.1 225.9 L453.2 221.6 L446.2
+                  213.6 L443.7 202.3 L445.3 187.8 L450.6 179.8 L458.4 174.1 L465.4 172.9 L470.5
+                  172.9 z"/>
+            <path
+               d="M466.5 173.2 L475.1 173.4 L482.5 176.7 L489.3 183.3 L493.2 192.5 L493.6 201.5 L491.5
+                  211.3 L486.2 219.5 L479.4 223.8 L471.8 226.1 L463.6 225.9 L465.2 216.7
+                  L473 216.5 L478.7 212.8 L482.4 206 L482.6 197.6 L481 189.8 L476.3 183.9 L469.8
+                  181.6 L465.3 181.8 z"/>
+            <path
+               d="M501.5 173.8 L501.7 225.4 L511.3 225.4 L511.5 192 L532.2 225.4 L542.6 225.4 L542.4
+                  174 L533 173.8 L533 208.2 L512.1 174 z"/>
+            <animateColor attributeName="fill" begin="7.3s" dur="1s" fill="freeze"
+               from="rgb(255,255,255)" to="rgb(0,0,0)"/>
+            <set attributeName="visibility" begin="7.3s" dur="2.7s" to="visible"/>
+         </g>
+      </g>
+   </g>
+   <g visibility="hidden">
+      <g transform="matrix(1 0 0 1 -30 -1175)">
+         <g id="background">
+            <polygon points="0,2000 0,0 3200,0 3200,2000" fill="rgb(255,207,49)"/>
+         </g>
+         <g id="streets">
+            <polyline
+               points="337,1291 338,1285 435,1305 441,1306 380,1448 374,1460 373,1462"
+               fill="none" stroke="rgb(70,70,70)" stroke-width="2px"/>
+            <polyline
+               points="120,1467 120,1458 126,1430 127,1429 127,1427 127,1426 135,1398 151,1335"
+               fill="none" stroke="rgb(70,70,70)" stroke-width="2px"/>
+            <polyline points="845,1032 842,1032 832,1029" fill="none"
+               stroke="rgb(70,70,70)" stroke-width="2px"/>
+            <polyline points="966,1059 875,1042 845,1032" fill="none"
+               stroke="rgb(70,70,70)" stroke-width="2px"/>
+            <polyline points="970,1059 966,1059" fill="none" stroke="rgb(70,70,70)"
+               stroke-width="2px"/>
+            <polyline
+               points="834,1019 845,1022 878,1032 972,1049 974,1050 975,1051 976,1052 976,1054 976,1056
+                  975,1058 974,1059 972,1059 970,1059" fill="none" stroke="rgb(70,70,70)"
+               stroke-width="2px"/>
+            <polyline points="825,1064 832,1029" fill="none" stroke="rgb(70,70,70)"
+               stroke-width="2px"/>
+            <polyline points="980,1087 1090,1119 1092,1120 1093,1121 1094,1124" fill="none"
+               stroke="rgb(70,70,70)" stroke-width="2px"/>
+            <polyline
+               points="363,1130 248,1103 249,1091 249,1090 249,1088 244,1078 244,1076 186,984 208,969 292,996
+                  294,996 296,997 306,1000 394,1023 363,1130" fill="none"
+               stroke="rgb(70,70,70)" stroke-width="2px"/>
+            <polyline points="211,1112 234,1118 236,1119 239,1119 289,1131" fill="none"
+               stroke="rgb(70,70,70)" stroke-width="2px"/>
+            <polyline points="968,1143 979,1097" fill="none" stroke="rgb(70,70,70)"
+               stroke-width="2px"/>
+            <polyline
+               points="-483,769 -445,732 -440,726 -439,726 -438,725 -437,724 -430,720 -422,714 -413,707
+                  -408,704 -402,701 -395,699 -378,698 -374,703 -372,704 -367,708 -360,714 -357,715
+                  -346,717 -280,731 -264,735 -257,739 -231,751 -213,760 -211,761 -192,765
+                  -164,768 -162,768 -108,757 -106,759 -105,760 -104,761 -103,761 -101,762
+                  -99,762 -87,761 -44,762 -30,761 -21,764 56,821 166,985 167,987 168,989
+                  228,1085 231,1093 231,1099 205,1093 203,1093 202,1093 200,1094 199,1094 198,1095
+                  196,1096 196,1098 195,1099 184,1147" fill="none" stroke="rgb(70,70,70)"
+               stroke-width="2px"/>
+            <polyline points="201,1152 205,1135" fill="none" stroke="rgb(70,70,70)"
+               stroke-width="2px"/>
+            <polyline points="826,1158 806,1154" fill="none" stroke="rgb(70,70,70)"
+               stroke-width="2px"/>
+            <polyline points="505,1160 381,1133 412,1028 532,1059 505,1160" fill="none"
+               stroke="rgb(70,70,70)" stroke-width="2px"/>
+            <polyline points="1059,1162 1062,1159 1064,1159 1077,1155 1082,1127 979,1097"
+               fill="none" stroke="rgb(70,70,70)" stroke-width="2px"/>
+            <polyline points="1115,1162 1134,1165" fill="none" stroke="rgb(70,70,70)"
+               stroke-width="2px"/>
+            <polyline
+               points="968,1143 1041,1161 1043,1162 1045,1163 1045,1165 1045,1167 1045,1168 1045,1169 1043,1170
+                  1042,1170 1040,1170 965,1153" fill="none" stroke="rgb(70,70,70)"
+               stroke-width="2px"/>
+            <polyline
+               points="980,1087 979,1085 978,1084 977,1083 976,1082 974,1081 973,1081 971,1081 970,1081
+                  968,1081 967,1082 965,1083 964,1084 963,1085 963,1087 949,1144 941,1178 826,1158"
+                fill="none" stroke="rgb(70,70,70)" stroke-width="2px"/>
+            <polyline points="597,1181 634,1084" fill="none" stroke="rgb(70,70,70)"
+               stroke-width="2px"/>
+            <polyline points="597,1181 523,1164 549,1063 634,1084" fill="none"
+               stroke="rgb(70,70,70)" stroke-width="2px"/>
+            <polyline points="705,961 701,972 659,1082 620,1183 629,1185 631,1186"
+               fill="none" stroke="rgb(70,70,70)" stroke-width="2px"/>
+            <polyline points="81,1118 78,1133 75,1148 65,1192 33,1179 29,1177" fill="none"
+               stroke="rgb(70,70,70)" stroke-width="2px"/>
+            <polyline points="725,946 726,947 770,956 707,1200" fill="none"
+               stroke="rgb(70,70,70)" stroke-width="2px"/>
+            <polyline points="631,1186 707,1200" fill="none" stroke="rgb(70,70,70)"
+               stroke-width="2px"/>
+            <polyline
+               points="1094,1124 1088,1152 1115,1151 1136,1155 1145,1157 1146,1157 1166,1166 1167,1167 1168,1168
+                  1178,1183 1186,1196 1215,1202" fill="none" stroke="rgb(70,70,70)"
+               stroke-width="2px"/>
+            <polyline
+               points="725,1204 787,960 825,967 815,1020 788,1153 787,1157 787,1158 787,1160 786,1161 772,1217"
+                fill="none" stroke="rgb(70,70,70)" stroke-width="2px"/>
+            <polyline points="725,1204 772,1217" fill="none" stroke="rgb(70,70,70)"
+               stroke-width="2px"/>
+            <polyline points="184,1147 171,1194 164,1219" fill="none"
+               stroke="rgb(70,70,70)" stroke-width="2px"/>
+            <polyline
+               points="164,1219 161,1219 160,1218 158,1218 141,1215 82,1198 93,1152 96,1136"
+               fill="none" stroke="rgb(70,70,70)" stroke-width="2px"/>
+            <polyline points="622,1207 624,1207 702,1222" fill="none"
+               stroke="rgb(70,70,70)" stroke-width="2px"/>
+            <polyline points="789,1221 802,1172 938,1196 931,1227" fill="none"
+               stroke="rgb(70,70,70)" stroke-width="2px"/>
+            <polyline points="949,1231 956,1193 957,1191 957,1189 965,1153" fill="none"
+               stroke="rgb(70,70,70)" stroke-width="2px"/>
+            <polyline points="931,1227 929,1236" fill="none" stroke="rgb(70,70,70)"
+               stroke-width="2px"/>
+            <polyline points="289,1131 358,1147 333,1238" fill="none"
+               stroke="rgb(70,70,70)" stroke-width="2px"/>
+            <polyline points="719,1226 767,1239" fill="none" stroke="rgb(70,70,70)"
+               stroke-width="2px"/>
+            <polyline points="929,1236 928,1245" fill="none" stroke="rgb(70,70,70)"
+               stroke-width="2px"/>
+            <polyline points="928,1245 927,1249" fill="none" stroke="rgb(70,70,70)"
+               stroke-width="2px"/>
+            <polyline points="789,1221 927,1249" fill="none" stroke="rgb(70,70,70)"
+               stroke-width="2px"/>
+            <polyline points="944,1253 945,1248" fill="none" stroke="rgb(70,70,70)"
+               stroke-width="2px"/>
+            <polyline points="944,1253 950,1254" fill="none" stroke="rgb(70,70,70)"
+               stroke-width="2px"/>
+            <polyline
+               points="1068,1254 1057,1239 1050,1228 1048,1202 1054,1183 1063,1173 1064,1172 1065,1171 1068,1169
+                  1082,1164 1084,1164 1089,1163 1115,1162" fill="none"
+               stroke="rgb(70,70,70)" stroke-width="2px"/>
+            <polyline
+               points="949,1231 983,1238 1002,1228 1003,1228 1004,1228 1006,1227 1007,1227 1028,1229 1031,1231
+                  1033,1235 1034,1238 1033,1242 1032,1245 1029,1247 1028,1247 1008,1246
+                  988,1256 987,1256 985,1256 984,1257" fill="none" stroke="rgb(70,70,70)"
+               stroke-width="2px"/>
+            <polyline points="984,1257 982,1256 945,1248" fill="none"
+               stroke="rgb(70,70,70)" stroke-width="2px"/>
+            <polyline points="1100,1262 1095,1261 1075,1258 1068,1254" fill="none"
+               stroke="rgb(70,70,70)" stroke-width="2px"/>
+            <polyline points="333,1238 332,1241 326,1263" fill="none"
+               stroke="rgb(70,70,70)" stroke-width="2px"/>
+            <polyline points="326,1263 322,1262 181,1223 188,1199 201,1152" fill="none"
+               stroke="rgb(70,70,70)" stroke-width="2px"/>
+            <polyline
+               points="58,1222 52,1247 50,1247 49,1247 48,1248 46,1249 45,1250 44,1251 44,1253 43,1254 43,1256
+                  43,1257 44,1259 44,1260 45,1262 46,1263 48,1264 49,1264 50,1265"
+               fill="none" stroke="rgb(70,70,70)" stroke-width="2px"/>
+            <polyline points="950,1254 990,1265" fill="none" stroke="rgb(70,70,70)"
+               stroke-width="2px"/>
+            <polyline
+               points="1134,1165 1142,1167 1160,1175 1169,1189 1177,1202 1176,1214 1171,1230 1165,1243 1159,1250
+                  1158,1251 1156,1252 1154,1254 1138,1263 1122,1265" fill="none"
+               stroke="rgb(70,70,70)" stroke-width="2px"/>
+            <polyline points="1122,1265 1100,1262" fill="none" stroke="rgb(70,70,70)"
+               stroke-width="2px"/>
+            <polyline
+               points="1071,1268 1062,1262 1060,1261 1047,1244 1040,1231 1040,1230 1037,1202 1038,1200 1045,1179
+                  1045,1177 1059,1162" fill="none" stroke="rgb(70,70,70)"
+               stroke-width="2px"/>
+            <polyline
+               points="1233,1268 1199,1261 1172,1252 1173,1250 1174,1249 1182,1234 1186,1216 1187,1207 1213,1212
+                  1244,1220 1233,1268" fill="none" stroke="rgb(70,70,70)"
+               stroke-width="2px"/>
+            <polyline points="785,1243 922,1271" fill="none" stroke="rgb(70,70,70)"
+               stroke-width="2px"/>
+            <polyline points="990,1265 1006,1269 1015,1271" fill="none"
+               stroke="rgb(70,70,70)" stroke-width="2px"/>
+            <polyline points="410,1282 343,1268 349,1248" fill="none"
+               stroke="rgb(70,70,70)" stroke-width="2px"/>
+            <polyline points="349,1248 349,1246 376,1151 499,1177 449,1288" fill="none"
+               stroke="rgb(70,70,70)" stroke-width="2px"/>
+            <polyline points="449,1288 438,1287 410,1282" fill="none"
+               stroke="rgb(70,70,70)" stroke-width="2px"/>
+            <polyline points="939,1275 992,1288" fill="none" stroke="rgb(70,70,70)"
+               stroke-width="2px"/>
+            <polyline points="1015,1271 1098,1290 1116,1293" fill="none"
+               stroke="rgb(70,70,70)" stroke-width="2px"/>
+            <polyline
+               points="50,1265 56,1265 58,1265 79,1270 74,1297 60,1289 58,1289 41,1285 40,1284 28,1284 26,1284
+                  25,1284 23,1285 22,1286 21,1287 20,1288" fill="none"
+               stroke="rgb(70,70,70)" stroke-width="2px"/>
+            <polyline
+               points="20,1288 19,1290 19,1291 19,1293 19,1294 19,1296 20,1297 22,1299"
+               fill="none" stroke="rgb(70,70,70)" stroke-width="2px"/>
+            <polyline points="767,1239 757,1300 705,1288 719,1226" fill="none"
+               stroke="rgb(70,70,70)" stroke-width="2px"/>
+            <polyline points="22,1299 23,1301 25,1301 26,1302 38,1302" fill="none"
+               stroke="rgb(70,70,70)" stroke-width="2px"/>
+            <polyline points="38,1302 51,1305" fill="none" stroke="rgb(70,70,70)"
+               stroke-width="2px"/>
+            <polyline points="1009,1293 1085,1310" fill="none" stroke="rgb(70,70,70)"
+               stroke-width="2px"/>
+            <polyline points="559,1313 591,1198" fill="none" stroke="rgb(70,70,70)"
+               stroke-width="2px"/>
+            <polyline points="559,1313 467,1291 517,1181 591,1198" fill="none"
+               stroke="rgb(70,70,70)" stroke-width="2px"/>
+            <polyline
+               points="1223,1314 1231,1279 1196,1271 1163,1260 1161,1262 1160,1263 1142,1272 1140,1273 1123,1276
+                  1121,1276 1097,1272 1093,1271 1073,1268" fill="none"
+               stroke="rgb(70,70,70)" stroke-width="2px"/>
+            <polyline points="1116,1293 1188,1305 1223,1314" fill="none"
+               stroke="rgb(70,70,70)" stroke-width="2px"/>
+            <polyline
+               points="1215,1202 1252,1211 1253,1212 1254,1213 1255,1214 1256,1216 1243,1274 1243,1276 1242,1277
+                  1233,1317" fill="none" stroke="rgb(70,70,70)" stroke-width="2px"/>
+            <polyline points="581,1318 612,1205 622,1207" fill="none"
+               stroke="rgb(70,70,70)" stroke-width="2px"/>
+            <polyline points="583,1319 581,1318" fill="none" stroke="rgb(70,70,70)"
+               stroke-width="2px"/>
+            <polyline points="1233,1317 1244,1319" fill="none" stroke="rgb(70,70,70)"
+               stroke-width="2px"/>
+            <polyline
+               points="102,1328 90,1310 90,1308 91,1306 99,1264 99,1263 99,1261 98,1260 98,1258 97,1257
+                  96,1256 94,1255 93,1254 92,1254 70,1249 78,1215 136,1232 146,1234 129,1286"
+                fill="none" stroke="rgb(70,70,70)" stroke-width="2px"/>
+            <polyline points="922,1271 909,1330 880,1324 775,1304 785,1243" fill="none"
+               stroke="rgb(70,70,70)" stroke-width="2px"/>
+            <polyline points="458,1311 460,1308 554,1330" fill="none"
+               stroke="rgb(70,70,70)" stroke-width="2px"/>
+            <polyline points="51,1305 52,1306 68,1314 72,1317 75,1320 84,1334" fill="none"
+               stroke="rgb(70,70,70)" stroke-width="2px"/>
+            <polyline points="1102,1314 1184,1327 1216,1336" fill="none"
+               stroke="rgb(70,70,70)" stroke-width="2px"/>
+            <polyline points="110,1339 105,1332 102,1328" fill="none"
+               stroke="rgb(70,70,70)" stroke-width="2px"/>
+            <polyline points="1244,1319 1329,1340 1364,1187" fill="none"
+               stroke="rgb(70,70,70)" stroke-width="2px"/>
+            <polyline
+               points="702,1222 686,1290 685,1292 685,1293 684,1295 670,1341 583,1319"
+               fill="none" stroke="rgb(70,70,70)" stroke-width="2px"/>
+            <polyline points="56,1342 -22,1323" fill="none" stroke="rgb(70,70,70)"
+               stroke-width="2px"/>
+            <polyline points="114,1340 114,1342" fill="none" stroke="rgb(70,70,70)"
+               stroke-width="2px"/>
+            <polyline points="114,1342 112,1339" fill="none" stroke="rgb(70,70,70)"
+               stroke-width="2px"/>
+            <polyline points="84,1334 90,1343 91,1344" fill="none" stroke="rgb(70,70,70)"
+               stroke-width="2px"/>
+            <polyline points="91,1344 88,1344 86,1344 81,1344 72,1344 58,1342" fill="none"
+               stroke="rgb(70,70,70)" stroke-width="2px"/>
+            <polyline points="128,1353 160,1237" fill="none" stroke="rgb(70,70,70)"
+               stroke-width="2px"/>
+            <polyline
+               points="-39,1356 -39,1351 -36,1338 52,1359 69,1362 71,1362 83,1362 85,1361"
+               fill="none" stroke="rgb(70,70,70)" stroke-width="2px"/>
+            <polyline points="545,1364 550,1348 554,1330" fill="none"
+               stroke="rgb(70,70,70)" stroke-width="2px"/>
+            <polyline points="85,1361 103,1365" fill="none" stroke="rgb(70,70,70)"
+               stroke-width="2px"/>
+            <polyline points="114,1366 117,1364 118,1363 122,1360 124,1359 128,1353"
+               fill="none" stroke="rgb(70,70,70)" stroke-width="2px"/>
+            <polyline points="103,1365 108,1366 110,1366 111,1366 113,1366 114,1366"
+               fill="none" stroke="rgb(70,70,70)" stroke-width="2px"/>
+            <polyline points="543,1372 545,1366 545,1364" fill="none"
+               stroke="rgb(70,70,70)" stroke-width="2px"/>
+            <polyline points="4,1374 -3,1373 -25,1371" fill="none" stroke="rgb(70,70,70)"
+               stroke-width="2px"/>
+            <polyline
+               points="151,1335 176,1241 317,1279 321,1280 298,1360 298,1363 298,1364 298,1366 299,1367
+                  300,1369 301,1370 302,1371 304,1371 312,1373 314,1374 316,1374 317,1373 319,1373
+                  320,1372 321,1371 322,1369 323,1368 323,1366 323,1365 323,1363 323,1362
+                  322,1360 321,1359 320,1358 318,1357 333,1302" fill="none"
+               stroke="rgb(70,70,70)" stroke-width="2px"/>
+            <polyline points="565,1376 566,1372 571,1354 576,1336" fill="none"
+               stroke="rgb(70,70,70)" stroke-width="2px"/>
+            <polyline points="128,1353 120,1381" fill="none" stroke="rgb(70,70,70)"
+               stroke-width="2px"/>
+            <polyline points="42,1382 41,1381 10,1374 4,1374" fill="none"
+               stroke="rgb(70,70,70)" stroke-width="2px"/>
+            <polyline points="876,1342 905,1347 895,1390" fill="none"
+               stroke="rgb(70,70,70)" stroke-width="2px"/>
+            <polyline
+               points="1216,1336 1214,1338 1213,1339 1213,1341 1212,1342 1207,1373 1202,1394 1093,1368 1102,1314"
+                fill="none" stroke="rgb(70,70,70)" stroke-width="2px"/>
+            <polyline
+               points="-39,1356 -28,1353 -26,1353 -1,1355 12,1356 47,1363 48,1364 49,1364 50,1365 62,1374
+                  75,1386 89,1400" fill="none" stroke="rgb(70,70,70)" stroke-width="2px"/>
+            <polyline points="89,1400 91,1401 93,1402" fill="none" stroke="rgb(70,70,70)"
+               stroke-width="2px"/>
+            <polyline points="94,1402 93,1402" fill="none" stroke="rgb(70,70,70)"
+               stroke-width="2px"/>
+            <polyline points="102,1407 94,1402" fill="none" stroke="rgb(70,70,70)"
+               stroke-width="2px"/>
+            <polyline points="71,1408 63,1399 51,1388 42,1382" fill="none"
+               stroke="rgb(70,70,70)" stroke-width="2px"/>
+            <polyline
+               points="992,1288 963,1409 911,1399 912,1394 924,1345 924,1342 925,1340 939,1275"
+               fill="none" stroke="rgb(70,70,70)" stroke-width="2px"/>
+            <polyline points="120,1381 117,1393 112,1412 102,1407" fill="none"
+               stroke="rgb(70,70,70)" stroke-width="2px"/>
+            <polyline points="83,1417 81,1416 78,1414 76,1413 71,1408" fill="none"
+               stroke="rgb(70,70,70)" stroke-width="2px"/>
+            <polyline points="86,1419 83,1417" fill="none" stroke="rgb(70,70,70)"
+               stroke-width="2px"/>
+            <polyline points="576,1336 665,1358 648,1427 644,1427" fill="none"
+               stroke="rgb(70,70,70)" stroke-width="2px"/>
+            <polyline points="86,1419 103,1428" fill="none" stroke="rgb(70,70,70)"
+               stroke-width="2px"/>
+            <polyline
+               points="1085,1310 1075,1372 1074,1373 1074,1375 1063,1432 980,1413 1009,1293"
+               fill="none" stroke="rgb(70,70,70)" stroke-width="2px"/>
+            <polyline
+               points="663,1440 664,1438 664,1436 665,1435 684,1356 685,1355 685,1353 686,1352 700,1305
+                  760,1319 761,1319 765,1320 876,1342" fill="none" stroke="rgb(70,70,70)"
+               stroke-width="2px"/>
+            <polyline points="644,1427 547,1441" fill="none" stroke="rgb(70,70,70)"
+               stroke-width="2px"/>
+            <polyline points="547,1441 565,1376" fill="none" stroke="rgb(70,70,70)"
+               stroke-width="2px"/>
+            <polyline points="426,1455 488,1446 523,1441 543,1372" fill="none"
+               stroke="rgb(70,70,70)" stroke-width="2px"/>
+            <polyline points="394,1459 396,1455 458,1311" fill="none"
+               stroke="rgb(70,70,70)" stroke-width="2px"/>
+         </g>
+         <g id="buildings">
+            <polygon
+               points="844,1033 877,1039 967,1057 964,1067 941,1171 920,1166 942,1079 838,1058"
+               fill="rgb(255,50,50)" stroke="rgb(0,0,0)" stroke-width="2px"/>
+            <polygon
+               points="806,1156 826,1064 846,1070 843,1087 835,1086 824,1142 829,1143 826,1161"
+               fill="rgb(255,50,50)" stroke="rgb(0,0,0)" stroke-width="2px"/>
+            <polygon
+               points="869,1075 889,1077 878,1131 896,1135 901,1157 901,1165 857,1158 852,1147 864,1098"
+                fill="rgb(255,50,50)" stroke="rgb(0,0,0)" stroke-width="2px"/>
+            <polygon points="895,1098 925,1106 918,1125 888,1115" fill="rgb(255,50,50)"
+               stroke="rgb(0,0,0)" stroke-width="2px"/>
+            <polygon
+               points="210,1159 207,1157 203,1154 206,1135 211,1112 290,1128 286,1143 226,1132 218,1165"
+                fill="rgb(255,50,50)" stroke="rgb(0,0,0)" stroke-width="2px"/>
+            <polygon points="1045,1120 1081,1127 1075,1146 1043,1138" fill="rgb(255,50,50)"
+               stroke="rgb(0,0,0)" stroke-width="2px"/>
+            <polygon points="977,1125 1028,1136 1023,1154 975,1143" fill="rgb(255,50,50)"
+               stroke="rgb(0,0,0)" stroke-width="2px"/>
+            <polygon
+               points="210,1159 218,1165 212,1189 203,1186 200,1196 271,1216 271,1224 268,1237 185,1216
+                  203,1154 207,1157" fill="rgb(255,50,50)" stroke="rgb(0,0,0)"
+               stroke-width="2px"/>
+            <polygon
+               points="971,1162 1010,1173 1004,1200 1024,1206 1020,1225 999,1223 994,1246 954,1236"
+                fill="rgb(255,50,50)" stroke="rgb(0,0,0)" stroke-width="2px"/>
+            <polygon
+               points="135,1194 133,1193 130,1202 123,1200 125,1192 105,1187 102,1196 89,1193 95,1170 139,1180
+                  141,1184 141,1188 139,1192" fill="rgb(255,50,50)" stroke="rgb(0,0,0)"
+               stroke-width="2px"/>
+            <polygon
+               points="52,1256 48,1279 31,1275 34,1252 16,1249 11,1267 0,1264 0,1258 5,1244 0,1243 0,1217
+                  7,1219 11,1206 26,1210 22,1225 40,1231 45,1217 58,1222"
+               fill="rgb(255,50,50)" stroke="rgb(0,0,0)" stroke-width="2px"/>
+            <polygon
+               points="1108,1222 1094,1202 1094,1191 1095,1187 1105,1187 1111,1191 1125,1214"
+               fill="rgb(255,50,50)" stroke="rgb(0,0,0)" stroke-width="2px"/>
+            <polygon points="114,1282 129,1286 115,1340 100,1336" fill="rgb(255,50,50)"
+               stroke="rgb(0,0,0)" stroke-width="2px"/>
+            <polygon
+               points="166,1307 183,1245 263,1266 256,1289 242,1286 245,1277 224,1272 211,1319"
+               fill="rgb(255,50,50)" stroke="rgb(0,0,0)" stroke-width="2px"/>
+            <polygon points="325,1344 336,1291 362,1296 352,1349" fill="rgb(255,50,50)"
+               stroke="rgb(0,0,0)" stroke-width="2px"/>
+            <polygon points="1019,1256 1120,1278 1115,1298 1014,1276" fill="rgb(255,50,50)"
+               stroke="rgb(0,0,0)" stroke-width="2px"/>
+            <polygon
+               points="0,1284 7,1282 13,1282 16,1285 19,1286 23,1292 20,1310 35,1314 39,1297 52,1300 48,1320
+                  73,1325 73,1331 94,1336 95,1341 104,1344 101,1354 71,1347 70,1351 57,1349
+                  58,1342 11,1333 0,1331" fill="rgb(255,50,50)" stroke="rgb(0,0,0)"
+               stroke-width="2px"/>
+            <polygon points="149,1352 152,1336 177,1341 174,1357" fill="rgb(255,50,50)"
+               stroke="rgb(0,0,0)" stroke-width="2px"/>
+            <polygon
+               points="87,1409 96,1370 84,1367 87,1355 105,1359 102,1368 111,1370 101,1412"
+               fill="rgb(255,50,50)" stroke="rgb(0,0,0)" stroke-width="2px"/>
+            <polygon
+               points="175,1409 179,1389 192,1392 190,1400 202,1402 211,1358 228,1363 219,1406 231,1409
+                  232,1403 243,1405 240,1422" fill="rgb(255,50,50)" stroke="rgb(0,0,0)"
+               stroke-width="2px"/>
+            <polygon points="2,1383 5,1369 43,1378 33,1420 21,1417 28,1389"
+               fill="rgb(255,50,50)" stroke="rgb(0,0,0)" stroke-width="2px"/>
+         </g>
+         <ellipse cx="120.5" cy="1432" rx="3" ry="3" fill="rgb(1,37,255)">
+            <animateMotion begin="11.05s" dur="6.5s"
+               path="M-0.109095 -0.170542 C-1.00909 -5.77054 4.19091 -15.5705 6.39091 -21.1705 C9.29091
+                  -28.7705 10.8909 -36.7705 12.4909 -44.6705 C15.7909 -61.2705 20.2909 -78.0705
+                  24.3909 -94.6705 C33.1909 -129.971 42.3909 -165.371 51.4909 -200.571
+                  C55.8909 -217.571 60.4909 -234.371 65.9909 -251.071"/>
+            <animateMotion begin="17.55s" dur="4.2s"
+               path="M66.0094 -251.133 C70.0094 -263.333 73.9094 -275.633 75.4094 -288.433 C76.7094 -299.433
+                  73.2094 -313.033 80.0094 -322.633 C90.2094 -337.033 109.109 -329.733
+                  122.409 -324.733 C154.609 -312.733 188.309 -302.833 221.909 -295.733 C257.309
+                  -288.233 292.109 -278.533 327.409 -270.633 C361.909 -262.833 401.609
+                  -247.833 436.909 -247.033"/>
+            <animateMotion begin="21.75s" dur="11.3s"
+               path="M436.916 -247.033 C446.316 -246.833 462.816 -252.433 471.516 -248.433 C490.316 -239.833
+                  479.916 -207.233 473.216 -194.133 C464.116 -176.333 453.616 -159.533
+                  447.616 -140.733 C438.916 -113.533 446.116 -106.933 470.116 -97.5335 C489.716
+                  -89.8335 512.016 -82.9335 533.716 -85.0335 C555.616 -87.1335 562.916
+                  -104.133 569.716 -123.833 C581.816 -158.733 567.416 -211.433 618.216 -213.733
+                  C642.016 -214.833 661.316 -208.033 682.716 -198.733 C709.916 -186.833
+                  736.516 -179.633 765.816 -175.233 C778.016 -173.333 789.816 -170.833 801.816
+                  -175.233 C809.116 -177.933 813.316 -184.433 821.416 -186.133 C840.016
+                  -190.033 858.016 -179.233 876.416 -185.133 C887.616 -188.733 898.116 -191.233
+                  909.816 -192.233 C919.116 -193.033 924.616 -194.733 932.416 -188.233 C938.016
+                  -183.533 940.116 -177.333 946.316 -173.333 C951.916 -169.733 958.716
+                  -166.933 965.316 -165.733 C990.716 -161.133 1019.22 -158.033 1040.42 -176.133
+                  C1050.82 -185.033 1055.62 -200.333 1058.92 -213.133 C1061.62 -223.733
+                  1055.48 -235.267 1062.98 -243.567"/>
+            <animateTransform attributeName="transform" begin="30.25s" dur="0.3s"
+               fill="freeze" calcMode="linear" type="translate" additive="sum"
+               from="120.5 1430.5" to="120.5 1430.5"/>
+            <animateTransform attributeName="transform" begin="30.25s" dur="0.3s"
+               fill="freeze" calcMode="linear" type="scale" additive="sum" from="1 1"
+               to="2 2"/>
+            <animateTransform attributeName="transform" begin="30.25s" dur="0.3s"
+               fill="freeze" calcMode="linear" type="translate" additive="sum"
+               from="-120.5 -1430.5" to="-120.5 -1430.5"/>
+            <animateTransform attributeName="transform" begin="30.55s" dur="0.3s"
+               fill="freeze" calcMode="linear" type="translate" additive="sum"
+               from="120.5 1430.5" to="120.5 1430.5"/>
+            <animateTransform attributeName="transform" begin="30.55s" dur="0.3s"
+               fill="freeze" calcMode="linear" type="scale" additive="sum" from="1 1"
+               to="0.5 0.5"/>
+            <animateTransform attributeName="transform" begin="30.55s" dur="0.3s"
+               fill="freeze" calcMode="linear" type="translate" additive="sum"
+               from="-120.5 -1430.5" to="-120.5 -1430.5"/>
+         </ellipse>
+         <ellipse cx="120.5" cy="1432" rx="3" ry="3" fill="rgb(0,0,255)">
+            <animateMotion begin="11s" dur="6.5s"
+               path="M-0.109095 -0.170542 C-1.00909 -5.77054 4.19091 -15.5705 6.39091 -21.1705 C9.29091
+                  -28.7705 10.8909 -36.7705 12.4909 -44.6705 C15.7909 -61.2705 20.2909 -78.0705
+                  24.3909 -94.6705 C33.1909 -129.971 42.3909 -165.371 51.4909 -200.571
+                  C55.8909 -217.571 60.4909 -234.371 65.9909 -251.071"/>
+            <animateMotion begin="17.5s" dur="4.2s"
+               path="M66.0094 -251.133 C70.0094 -263.333 73.9094 -275.633 75.4094 -288.433 C76.7094 -299.433
+                  73.2094 -313.033 80.0094 -322.633 C90.2094 -337.033 109.109 -329.733
+                  122.409 -324.733 C154.609 -312.733 188.309 -302.833 221.909 -295.733 C257.309
+                  -288.233 292.109 -278.533 327.409 -270.633 C361.909 -262.833 401.609
+                  -247.833 436.909 -247.033"/>
+            <animateMotion begin="21.7s" dur="11.3s"
+               path="M436.916 -247.033 C446.316 -246.833 462.816 -252.433 471.516 -248.433 C490.316 -239.833
+                  479.916 -207.233 473.216 -194.133 C464.116 -176.333 453.616 -159.533
+                  447.616 -140.733 C438.916 -113.533 446.116 -106.933 470.116 -97.5335 C489.716
+                  -89.8335 512.016 -82.9335 533.716 -85.0335 C555.616 -87.1335 562.916
+                  -104.133 569.716 -123.833 C581.816 -158.733 567.416 -211.433 618.216 -213.733
+                  C642.016 -214.833 661.316 -208.033 682.716 -198.733 C709.916 -186.833
+                  736.516 -179.633 765.816 -175.233 C778.016 -173.333 789.816 -170.833 801.816
+                  -175.233 C809.116 -177.933 813.316 -184.433 821.416 -186.133 C840.016
+                  -190.033 858.016 -179.233 876.416 -185.133 C887.616 -188.733 898.116 -191.233
+                  909.816 -192.233 C919.116 -193.033 924.616 -194.733 932.416 -188.233 C938.016
+                  -183.533 940.116 -177.333 946.316 -173.333 C951.916 -169.733 958.716
+                  -166.933 965.316 -165.733 C990.716 -161.133 1019.22 -158.033 1040.42 -176.133
+                  C1050.82 -185.033 1055.62 -200.333 1058.92 -213.133 C1061.62 -223.733
+                  1055.48 -235.267 1062.98 -243.567"/>
+            <animateTransform attributeName="transform" begin="30.2s" dur="0.3s"
+               fill="freeze" calcMode="linear" type="translate" additive="sum"
+               from="120.5 1430.5" to="120.5 1430.5"/>
+            <animateTransform attributeName="transform" begin="30.2s" dur="0.3s"
+               fill="freeze" calcMode="linear" type="scale" additive="sum" from="1 1"
+               to="2 2"/>
+            <animateTransform attributeName="transform" begin="30.2s" dur="0.3s"
+               fill="freeze" calcMode="linear" type="translate" additive="sum"
+               from="-120.5 -1430.5" to="-120.5 -1430.5"/>
+            <animateTransform attributeName="transform" begin="30.5s" dur="0.3s"
+               fill="freeze" calcMode="linear" type="translate" additive="sum"
+               from="120.5 1430.5" to="120.5 1430.5"/>
+            <animateTransform attributeName="transform" begin="30.5s" dur="0.3s"
+               fill="freeze" calcMode="linear" type="scale" additive="sum" from="1 1"
+               to="0.5 0.5"/>
+            <animateTransform attributeName="transform" begin="30.5s" dur="0.3s"
+               fill="freeze" calcMode="linear" type="translate" additive="sum"
+               from="-120.5 -1430.5" to="-120.5 -1430.5"/>
+         </ellipse>
+         <ellipse cx="120.5" cy="1430.5" rx="3" ry="3" fill="rgb(255,49,1)">
+            <animateMotion begin="14.05s" dur="19s"
+               path="M-0.19 -0.183333 C-0.29 -5.18333 3.31 -11.1833 4.51 -16.1833 C11.11 -42.4833 8.61
+                  -70.3833 15.61 -96.7833 C25.21 -132.983 37.91 -168.783 45.11 -205.483 C49.71
+                  -228.883 58.81 -250.483 64.41 -274.083 C67.81 -288.383 68.91 -306.883
+                  76.01 -320.383 C79.71 -327.283 85.91 -325.483 92.31 -324.083 C127.21 -316.183
+                  161.91 -307.583 196.71 -299.283 C236.21 -289.883 275.91 -281.483 315.51
+                  -272.383 C327.01 -269.783 338.41 -266.983 349.91 -264.183 C360.41 -261.483
+                  381.21 -267.783 387.21 -255.583 C388.81 -252.383 389.31 -248.383 388.71
+                  -244.683 C387.71 -238.583 383.61 -230.883 380.71 -225.183 C373.21 -210.583
+                  364.71 -196.183 355.91 -182.483 C348.91 -171.483 338.11 -161.983 337.71
+                  -148.183 C337.11 -126.783 361.01 -120.083 377.21 -116.083 C401.31 -110.083
+                  426.11 -106.183 450.31 -100.283 C471.91 -95.0833 493.51 -89.9833 515.21 -84.9833
+                  C525.91 -82.4833 538.61 -79.1833 549.31 -83.2833 C560.41 -87.4833
+                  564.61 -100.083 567.61 -110.583 C570.41 -120.383 573.41 -130.283 575.61 -140.183
+                  C579.91 -160.083 571.51 -207.483 600.21 -212.683 C608.71 -214.183 616.01
+                  -213.283 624.31 -211.183 C632.71 -209.083 643.51 -204.083 652.11 -207.683
+                  C660.21 -211.083 665.21 -218.683 667.91 -226.883 C671.11 -236.783 667.11
+                  -247.683 670.51 -257.583 C675.21 -271.183 692.01 -267.783 703.01 -266.983
+                  C720.11 -265.783 737.01 -262.783 753.91 -260.083 C764.61 -258.383 775.91
+                  -255.983 786.21 -252.083 C796.81 -248.083 808.81 -241.483 819.81 -246.883
+                  C853.81 -263.583 819.11 -318.483 849.91 -334.083 C863.51 -340.983 880.41
+                  -335.883 893.81 -331.283 C909.31 -325.983 924.61 -321.683 940.51 -317.383
+                  C947.71 -315.483 956.61 -314.383 962.51 -309.383 C970.61 -302.583 965.81
+                  -293.783 963.31 -285.483 C957.71 -266.583 989.91 -272.783 999.71 -272.783
+                  C1015.31 -272.783 1037.31 -267.383 1046.41 -254.783 C1052.91 -245.683 1059.41
+                  -234.183 1059.41 -232.683"/>
+         </ellipse>
+         <ellipse cx="120.5" cy="1430.5" rx="3" ry="3" fill="rgb(255,0,0)">
+            <animateMotion begin="14s" dur="19s"
+               path="M-0.19 -0.183333 C-0.29 -5.18333 3.31 -11.1833 4.51 -16.1833 C11.11 -42.4833 8.61
+                  -70.3833 15.61 -96.7833 C25.21 -132.983 37.91 -168.783 45.11 -205.483 C49.71
+                  -228.883 58.81 -250.483 64.41 -274.083 C67.81 -288.383 68.91 -306.883
+                  76.01 -320.383 C79.71 -327.283 85.91 -325.483 92.31 -324.083 C127.21 -316.183
+                  161.91 -307.583 196.71 -299.283 C236.21 -289.883 275.91 -281.483 315.51
+                  -272.383 C327.01 -269.783 338.41 -266.983 349.91 -264.183 C360.41 -261.483
+                  381.21 -267.783 387.21 -255.583 C388.81 -252.383 389.31 -248.383 388.71
+                  -244.683 C387.71 -238.583 383.61 -230.883 380.71 -225.183 C373.21 -210.583
+                  364.71 -196.183 355.91 -182.483 C348.91 -171.483 338.11 -161.983 337.71
+                  -148.183 C337.11 -126.783 361.01 -120.083 377.21 -116.083 C401.31 -110.083
+                  426.11 -106.183 450.31 -100.283 C471.91 -95.0833 493.51 -89.9833 515.21 -84.9833
+                  C525.91 -82.4833 538.61 -79.1833 549.31 -83.2833 C560.41 -87.4833
+                  564.61 -100.083 567.61 -110.583 C570.41 -120.383 573.41 -130.283 575.61 -140.183
+                  C579.91 -160.083 571.51 -207.483 600.21 -212.683 C608.71 -214.183 616.01
+                  -213.283 624.31 -211.183 C632.71 -209.083 643.51 -204.083 652.11 -207.683
+                  C660.21 -211.083 665.21 -218.683 667.91 -226.883 C671.11 -236.783 667.11
+                  -247.683 670.51 -257.583 C675.21 -271.183 692.01 -267.783 703.01 -266.983
+                  C720.11 -265.783 737.01 -262.783 753.91 -260.083 C764.61 -258.383 775.91
+                  -255.983 786.21 -252.083 C796.81 -248.083 808.81 -241.483 819.81 -246.883
+                  C853.81 -263.583 819.11 -318.483 849.91 -334.083 C863.51 -340.983 880.41
+                  -335.883 893.81 -331.283 C909.31 -325.983 924.61 -321.683 940.51 -317.383
+                  C947.71 -315.483 956.61 -314.383 962.51 -309.383 C970.61 -302.583 965.81
+                  -293.783 963.31 -285.483 C957.71 -266.583 989.91 -272.783 999.71 -272.783
+                  C1015.31 -272.783 1037.31 -267.383 1046.41 -254.783 C1052.91 -245.683 1059.41
+                  -234.183 1059.41 -232.683"/>
+         </ellipse>
+         <animateMotion begin="14s" dur="18s" fill="freeze"
+            path="M-0.353182 0.251599 C-16.7532 58.7516 9.54682 127.752 -17.9532 182.552 C-61.8532
+               270.052 -198.153 175.052 -253.053 145.452 C-294.853 122.852 -336.453 99.0516
+               -375.453 72.3516 C-425.553 38.1516 -480.753 11.0516 -539.953 39.1516 C-568.953
+               52.9516 -593.053 79.7516 -624.253 87.2516 C-667.053 97.5516 -716.253
+               105.252 -760.253 105.252 C-802.853 105.252 -844.953 103.852 -887.553 103.852
+               C-929.353 103.852 -974.253 107.652 -1014.65 98.3516"/>
+         <polygon
+            points="1165.28,1171.01 1178.39,1185.87 1181.45,1179.31 1183.19,1185.87 1193.24,1174.07 1190.19,1191.98
+               1198.93,1193.29 1193.68,1197.66 1199.36,1204.22 1190.19,1202.03
+               1201.11,1219.08 1182.32,1206.84 1184.07,1212.52 1178.39,1208.59 1168.77,1220.82
+               1169.21,1205.53 1151.73,1209.9 1167.46,1198.97 1159.16,1197.66 1165.72,1195.92
+               1149.11,1184.55 1167.46,1189.36 1165.28,1184.55 1169.65,1186.3"
+            visibility="hidden" fill="rgb(255,255,0)">
+            <set attributeName="visibility" begin="33s" end="22.1s" to="visible" dur="2s"/>
+         </polygon>
+         <polygon
+            points="1168.97,1176.07 1182.07,1190.93 1185.13,1184.38 1186.88,1190.93 1196.93,1179.13 1193.87,1197.05
+               1202.61,1198.36 1197.37,1202.73 1203.05,1209.28 1193.87,1207.1
+               1204.8,1224.14 1186.01,1211.9 1187.76,1217.59 1182.07,1213.65 1172.46,1225.89
+               1172.9,1210.59 1155.42,1214.96 1171.15,1204.04 1162.85,1202.73 1169.4,1200.98
+               1152.8,1189.62 1171.15,1194.43 1168.97,1189.62 1173.34,1191.37"
+            visibility="hidden" fill="rgb(255,49,1)">
+            <set attributeName="visibility" begin="33s" end="22.1s" to="visible" dur="2s"/>
+         </polygon>
+      </g>
+      <set attributeName="visibility" begin="11s" dur="24s" to="visible"/>
+   </g>
+   <g id="outro" transform="translate(3 90) scale(0.46 0.46)">
+      <g visibility="hidden" fill="rgb(0,0,0)" stroke="none"
+         font-family="boldFont" font-size="38">
+         <text x="110" y="30">COPYRIGHT 2002</text>
+         <text x="0" y="90">ZOOMON MOBILE SOLUTIONS</text>
+         <text x="65" y="150">ALL RIGHTS RESERVED</text>
+         <set attributeName="visibility" begin="35s" dur="3s" to="visible"/>
+      </g>
+      <g visibility="hidden" fill="rgb(0,0,0)" stroke="none"
+         font-family="boldFont" font-size="38">
+         <text x="0" y="60">FOR MORE SVGT ANIMATIONS</text>
+         <text x="25" y="120">VISIT WWW.ZOOMON.COM</text>
+         <set attributeName="visibility" begin="38s" to="visible"/>
+      </g>
+   </g>
+   <font horiz-adv-x="912" ><font-face
+             font-family="boldFont"
+             units-per-em="2000"
+             panose-1="2 11 8 3 3 4 3 2 2 4"
+             ascent="1776"
+             descent="-505"
+             alphabetic="0" />
+      	   <missing-glyph horiz-adv-x="2000" d="M250 0V1500H1750V0H250ZM375 125H1625V1375H375V125Z" />
+      	   <glyph unicode=" " glyph-name="space" horiz-adv-x="414" />
+      	   <glyph unicode="." glyph-name="period" horiz-adv-x="526" d="M466 164Q466 82 415 30T282 -22Q202 -22 151 30T100 164Q100 245 152 297T284 350Q365 350 415 298T466 164Z" />
+      	   <glyph unicode="0" glyph-name="zero" horiz-adv-x="1140" d="M1074 654Q1074 337 942 158T568 -22Q330 -22 198 158T66 646Q66 945 196 1133T574 1322Q813 1322 943 1142T1074 654ZM374 650Q374 434 424 320T568 206Q662 206 712 319T762 650Q762 1090 570 1090Q477
+      	   1090 426 977T374 650Z" />
+      	   <glyph unicode="2" glyph-name="two" horiz-adv-x="1140" d="M1036 0H90V184Q528 566 614 679T700 884Q700 973 644 1023T482 1074Q340 1074 194 962L104 1182Q292 1322 544 1322Q760 1322 885 1210T1010 910Q1010 778 929 640T534 256V252H1036V0Z" />
+      	   <glyph unicode="3" glyph-name="three" horiz-adv-x="1140" d="M80 74L144 304Q309 222 460 222Q574 222 638 268T702 392Q702 477 628 526T438 576H302V798H432Q529 798 596 837T664 946Q664 1007 613 1043T468 1080Q323 1080 184 998L118 1220Q290 1322 536
+              1322Q738 1322 858 1230T978 996Q978 779 736 694V690Q867 667 945 581T1024 376Q1024 200 876 89T482 -22Q238 -22 80 74Z" />
+   	   <glyph unicode="A" glyph-name="A" horiz-adv-x="1358" d="M864 352H460L360 0H38L464 1348H872L1310 0H974L864 352ZM506 580H816Q694 975 658 1122H654L590 866L506 580Z" />
+      	   <glyph unicode="B" glyph-name="B" horiz-adv-x="1236" d="M134 6V1330Q297 1360 538 1360Q848 1360 980 1265T1112 1018Q1112 923 1055 848T888 732V728Q1016 694 1088 606T1160 396Q1160 219 1012 103T472 -14Q276 -14 134 6ZM440 1126V816H544Q667 816 733
+   	   860T800 982Q800 1136 576 1136Q483 1136 440 1126ZM440 596V220Q465 214 564 214Q691 214 762 264T834 408Q834 500 760 548T550 596H440Z" />
+   	   <glyph unicode="C" glyph-name="C" horiz-adv-x="1238" d="M1116 280L1164 40Q1026 -22 802 -22Q461 -22 267 163T72 656Q72 980 284 1175T830 1370Q1055 1370 1180 1308L1116 1064Q991 1118 844 1118Q641 1118 520 1000T398 674Q398 471 517 353T846 234Q997
+      	   234 1116 280Z" />
+      	   <glyph unicode="D" glyph-name="D" horiz-adv-x="1440" d="M134 6V1330Q334 1360 562 1360Q993 1360 1180 1180T1368 708Q1368 364 1155 175T496 -14Q290 -14 134 6ZM444 1110V232Q470 226 556 226Q787 226 913 347T1040 696Q1040 904 925 1013T592 1122Q501 1122
+      	   444 1110Z" />
+      	   <glyph unicode="E" glyph-name="E" horiz-adv-x="1100" d="M962 818V568H444V252H1022V0H134V1348H994V1096H444V818H962Z" />
+      	   <glyph unicode="F" glyph-name="F" horiz-adv-x="1086" d="M134 0V1348H986V1096H444V790H950V540H444V0H134Z" />
+      	   <glyph unicode="G" glyph-name="G" horiz-adv-x="1412" d="M1304 774V64Q1059 -14 834 -14Q454 -14 263 173T72 658Q72 979 290 1170T866 1362Q1110 1362 1258 1294L1192 1050Q1055 1110 860 1110Q649 1110 524 995T398 676Q398 475 520 355T844 234Q958 234 1004
+      	   254V534H786V774H1304Z" />
+      	   <glyph unicode="H" glyph-name="H" horiz-adv-x="1418" d="M134 1348H444V830H974V1348H1284V0H974V562H444V0H134V1348Z" />
+      	   <glyph unicode="I" glyph-name="I" horiz-adv-x="578" d="M134 1348H444V0H134V1348Z" />
+      	   <glyph unicode="L" glyph-name="L" horiz-adv-x="1052" d="M134 0V1348H444V260H1002V0H134Z" />
+      	   <glyph unicode="M" glyph-name="M" horiz-adv-x="1742" d="M1330 0Q1298 802 1298 1088H1292Q1243 873 964 22H722Q555 609 522 742T446 1088H442Q429 684 420 506L394 0H106L192 1348H612Q767 832 798 710T862 418H870Q944 731 996 887L1150 1348H1562L1634 0H1330Z" />
+      	   <glyph unicode="N" glyph-name="N" horiz-adv-x="1422" d="M420 0H134V1348H502L827 797Q920 636 1022 388H1026Q1002 600 1002 944V1348H1288V0H960Q617 595 551 717T414 1004H406Q420 749 420 418V0Z" />
+      	   <glyph unicode="O" glyph-name="O" horiz-adv-x="1490" d="M1418 686Q1418 365 1230 172T734 -22Q436 -22 254 170T72 664Q72 972 262 1171T752 1370Q1054 1370 1236 1178T1418 686ZM398 672Q398 474 493 348T742 222Q900 222 994 347T1088 676Q1088 872 994 999T744
+      	   1126Q588 1126 493 999T398 672Z" />
+      	   <glyph unicode="P" glyph-name="P" horiz-adv-x="1190" d="M134 0V1332Q325 1360 562 1360Q858 1360 992 1240T1126 936Q1126 711 973 592T550 472Q497 472 440 480V0H134ZM440 1116V718Q473 710 548 710Q674 710 747 768T820 928Q820 1022 755 1074T572 1126Q478
+      	   1126 440 1116Z" />
+      	   <glyph unicode="R" glyph-name="R" horiz-adv-x="1216" d="M134 0V1330Q304 1360 552 1360Q858 1360 992 1259T1126 970Q1126 858 1059 768T884 640V632Q1010 585 1066 384Q1169 22 1178 0H862Q822 75 766 314Q738 434 690 482T536 530H440V0H134ZM440 1122V752H568Q684
+      	   752 751 804T818 946Q818 1035 758 1083T586 1132Q477 1132 440 1122Z" />
+      	   <glyph unicode="S" glyph-name="S" horiz-adv-x="1114" d="M84 64L148 318Q321 230 500 230Q603 230 660 269T718 376Q718 437 666 478T486 562Q100 690 100 964Q100 1141 242 1255T620 1370Q826 1370 980 1300L910 1054Q769 1120 616 1120Q522 1120 469 1084T416
+      	   990Q416 937 460 900T674 802Q861 736 947 639T1034 396Q1034 210 888 94T480 -22Q256 -22 84 64Z" />
+      	   <glyph unicode="T" glyph-name="T" horiz-adv-x="1132" d="M408 0V1090H30V1348H1102V1090H718V0H408Z" />
+      	   <glyph unicode="U" glyph-name="U" horiz-adv-x="1406" d="M134 1348H444V584Q444 408 510 315T700 222Q962 222 962 584V1348H1272V600Q1272 295 1123 137T690 -22Q134 -22 134 604V1348Z" />
+      	   <glyph unicode="V" glyph-name="V" horiz-adv-x="1316" d="M832 0H468L20 1348H360Q641 414 658 296H662Q710 512 795 783L974 1348H1302L832 0Z" />
+      	   <glyph unicode="W" glyph-name="W" horiz-adv-x="1824" d="M702 0H360L30 1348H362Q502 630 552 320H556Q582 514 762 1348H1100Q1259 530 1282 328H1286Q1302 481 1482 1348H1798L1438 0H1102Q968 663 952 755T918 1008H914Q878 782 836 596L702 0Z" />
+      	   <glyph unicode="Y" glyph-name="Y" horiz-adv-x="1252" d="M774 0H464V556L24 1348H380Q625 791 634 768Q680 892 884 1348H1236L774 568V0Z" />
+      	   <glyph unicode="Z" glyph-name="Z" horiz-adv-x="1198" d="M50 0V166L718 1086V1092H110V1348H1124V1174L470 262V256H1136V0H50Z" />
+   </font>
+</svg>

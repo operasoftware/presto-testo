@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink">
+
+  <title>Text selection of RTL text on a path</title>
+
+  <text text-anchor="end" direction="rtl" unicode-bidi="bidi-override">
+    <path d="m10 80 c50 50 170 50 220 0 s170 -50 220 0" id="curve"/>
+    <textPath xlink:href="#curve">&#8207;.txet siht fo lla dna yna tceles ot elba eb dluohs uoY</textPath>
+  </text>
+
+</svg>
+

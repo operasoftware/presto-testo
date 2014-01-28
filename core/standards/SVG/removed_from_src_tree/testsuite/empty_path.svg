@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg>
+<!--======================================================================-->
+<!--=  Copyright 2001-2002 ZOOMON Mobile Solutions AB,                   =-->
+<!--=  (ZOOMON Stockholm Sweden)                                         =-->
+<!--=  All Rights Reserved. ZOOMON reserves all right, title, and        =-->
+<!--=  interest in the material herein.                                  =-->
+<!--=  User shall not remove or obscure any copyright notices or         =-->
+<!--=  proprietary legends contained within this source file.            =-->
+<!--======================================================================-->
+<!--=  Production & Design: Jakob Cederquist                             =-->
+<!--======================================================================-->
+<svg version="1.1" baseProfile="tiny" width="100%" height="100%" viewBox="0 0 400 400">
+  <rect x="10" y="10" height="380" width="380" fill="rgb(50,50,40)" stroke="none">
+      <animateColor attributeName="fill" begin="0s" dur="3.5s" fill="freeze"
+           from="rgb(250,250,250)" to="rgb(50,50,50)"/>
+  </rect>
+  <path d="" fill="none" stroke="rgb(0,0,0)" stroke-width="1"/>
+</svg>

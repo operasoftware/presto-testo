@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1 Tiny//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11-tiny.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 -50 200 250">
+	<text x="100" y="-10" style="text-anchor:middle;font-size:10px;fill:#0000F0">Missing image support support in red</text>
+	<text x="50" y="75" style="text-anchor:middle;font-size:50px;fill:#FF000F">JPG</text>
+	<image x="0" y="0" width="100" height="100" xlink:href="sample.jpg" />
+	<text x="50" y="175" style="text-anchor:middle;font-size:50px;fill:#FF000F">GIF</text>
+	<image x="0" y="100" width="100" height="100" xlink:href="sample.gif" />
+	<text x="150" y="175" style="text-anchor:middle;font-size:50px;fill:#FF000F">PNG</text>
+	<image x="100" y="100" width="100" height="100" xlink:href="sample.png" />
+</svg>
+

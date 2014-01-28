@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC  "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+      <meta name="keywords" content="W3C SVG 1.1 2nd Edition Test Suite"/>
+      <meta name="description" content="W3C SVG 1.1 2nd Edition Object Test Suite"/>
+      <title>
+	<d:testDescription href='http://www.w3.org/TR/SVG11/painting.html#Markers' xmlns='http://www.w3.org/1999/xhtml'>
+        <p>
+          Tests the rendering of markers, specifically property inheritance. For the four tests, there should
+          be two identical paths with markers drawn. 
+        </p>
+        <p>
+          The top two tests examine the rendering of markers when the marker and the path
+          referencing it share the same parent and all painting properties are specfied on
+          that parent. The first test show inheritance of the 'fill' property and the
+          second the inheritance of the 'paint' property. In both tests, the marker
+          is painting using the same properties as the referencing object. Because of
+          scaling transformations on the marker, the stroke on the second test is thinner
+          than on the referencing object.
+        </p>
+        <p>
+          The third and fourth tests examine the rendering of markers in a situation where the
+          marker and referencing path do NOT share the same parent and painting
+          properties are specified both on the parent of the marked path and on the contents
+          of the marker itself. In both cases, the marker's parent specifies
+          fill="green" stroke="blue" stroke-width="8". For the third test, the marker contents
+          override with stroke="black". For the fourth test, the marker contents
+          override with fill="black". In neither case should you see
+          fill="red" or stroke="blue" or "stroke="purple" on the markers as these properties
+          are specified on the ancestor of the referencing object or the referencing object itself
+          and thus shouldn't affect the marker.
+        </p>
+    </d:testDescription>
+      </title>
+      <style type="text/css">
+        <!--
+         .bodytext      { font-family:verdana, helvetica, sans-serif; font-size: 12pt; line-height: 125%; text-align: Left; margin-top: 0; margin-bottom: 0 }
+         .pageTitle     { line-height: 150%; font-size: 20pt; font-weight : 900; margin-bottom: 20pt }
+         .pageSubTitle  { color : blue; line-height: 100%; font-size: 24pt; font-weight : 900 }
+         .openChapter   { color : blue; line-height: 125%; font-weight : 900 }
+         .openSection   { color : blue; line-height: 125%; font-weight : 900 }
+         .info          { color : black; line-height: 110%; font-size: 10pt; font-weight : 100 }
+         p              { margin-top:0; margin-bottom:0; padding-top:0; padding-bottom:0 }
+         blockquote     { margin-top:0; margin-bottom:0; padding-top:0; padding-bottom:0 }
+         .opscript      { margin-left: 3%; margin-right: 3%; }
+         .opscript p    { margin-top: 0.7em }
+         .navbar        { background: black; color: white; font-weight: bold }
+ 
+         a,a:visited    { color: blue }
+        -->
+      </style>
+      
+    </head>
+  <body class="bodytext">
+
+<table align="center" border="0" cellspacing="0" cellpadding="10">
+  <tr>
+    <td align="center" colspan="3">
+      <table border="0" cellpadding="8">
+        <tr>
+
+        </tr>
+        <tr  class="navbar">
+          <td align="center">
+            SVG Image - The test
+          </td>
+          <td align="center">
+            PNG Image - The reference
+          </td>
+        </tr>
+        <tr>
+          <td align="right" >
+            <object id="test" data="http://t/core/standards/SVG/Testsuites/W3C-1_1F2/harness/htmlObjectMini/modified/svg/test/painting-marker-02-f.svg" width="480" height="360" type="image/svg+xml"> </object>
+          </td>
+          <td align="left">
+            <img id="ref" alt="raster image of painting-marker-02-f.svg" src="http://t/core/standards/SVG/Testsuites/W3C-1_1F2/harness/htmlObjectMini/modified/svg/ref/painting-marker-02-f.png " width="480" height="360"/>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<h2 id="testdescription">
+			    Test Description
+			  </h2>
+
+			  <div>
+			<p>
+				<d:testDescription href='http://www.w3.org/TR/SVG11/painting.html#Markers' xmlns='http://www.w3.org/1999/xhtml'>
+        <p>
+          Tests the rendering of markers, specifically property inheritance. For the four tests, there should
+          be two identical paths with markers drawn. 
+        </p>
+        <p>
+          The top two tests examine the rendering of markers when the marker and the path
+          referencing it share the same parent and all painting properties are specfied on
+          that parent. The first test show inheritance of the 'fill' property and the
+          second the inheritance of the 'paint' property. In both tests, the marker
+          is painting using the same properties as the referencing object. Because of
+          scaling transformations on the marker, the stroke on the second test is thinner
+          than on the referencing object.
+        </p>
+        <p>
+          The third and fourth tests examine the rendering of markers in a situation where the
+          marker and referencing path do NOT share the same parent and painting
+          properties are specified both on the parent of the marked path and on the contents
+          of the marker itself. In both cases, the marker's parent specifies
+          fill="green" stroke="blue" stroke-width="8". For the third test, the marker contents
+          override with stroke="black". For the fourth test, the marker contents
+          override with fill="black". In neither case should you see
+          fill="red" or stroke="blue" or "stroke="purple" on the markers as these properties
+          are specified on the ancestor of the referencing object or the referencing object itself
+          and thus shouldn't affect the marker.
+        </p>
+    </d:testDescription>
+				</p>
+			  </div>
+<div class="opscript">
+			    <h2 id="operatorscript">
+			      Operator Script
+			    </h2>
+			    <div>
+				   <p><d:operatorScript xmlns='http://www.w3.org/1999/xhtml'>
+      <p>
+        Run the test. No interaction required.
+      </p>
+    </d:operatorScript></p>
+  </div>
+			  <h2 id="passcriteria">
+			    Pass Criteria
+			  </h2>
+			  <div>
+			<p>
+			<d:passCriteria xmlns='http://www.w3.org/1999/xhtml'>
+      <p>
+        The path on the left is rendered using the marker elements. 
+        The path on the right is rendered using the equivalent SVG, 
+        showing what the marked path should look like.  These should be 
+        identical and match the image to the right.
+      </p>
+    </d:passCriteria>
+			      </p>
+			  </div> 
+
+ 
+
+</div>
+
+</div>
+</body>
+</html>
+</body> </html>

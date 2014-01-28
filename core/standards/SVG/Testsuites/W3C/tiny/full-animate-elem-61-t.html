@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <!DOCTYPE html PUBLIC  "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>This tests validates multiple begin conditions in the begin attribute</title>
+</head>
+<body>
+<table>
+<tr>
+<td align="center">SVG Image</td>
+<td align="center">Reference Image</td>
+</tr>
+<tr>
+<td align="right">
+<object data="../svggen/animate-elem-61-t.svg" width="480" height="360" type="image/svg+xml"/>
+</td>
+<td align="left">
+<img alt="raster image of animate-elem-61-t" src="../png/full-animate-elem-61-t.png" width="480" height="360"/>
+</td>
+</tr>
+</table>
+<p>
+The test validates the various possibilities for the begin attribute value: multiple offset values, multiple event
+base values, multiple sync base values, multiple repeat values, and multiple accessKey values. Finally, the test 
+validates that begin values of different kinds can be mixed.
+</p>
+<p>Quick description to run test in gogi:</p>
+<p>all red rectangles should be in the right columns at the given times. All animations start at load, except:</p>
+
+<ul>
+<li>"2 event base": click on corresponding red rectangle to start</li>
+<li>"2 accessKeys": choose "Enable access key mode" in menu and press "a" to start.</li>
+</ul>
+
+</body>
+</html>

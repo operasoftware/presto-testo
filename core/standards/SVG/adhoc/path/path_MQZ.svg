@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1 Tiny//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11-tiny.dtd">
+<!--======================================================================-->
+<!--=  Copyright 2002 World Wide Web Consortium, (Massachusetts          =-->
+<!--=  Institute of Technology, Institut National de Recherche en        =-->
+<!--=  Informatique et en Automatique, Keio University). All Rights      =-->
+<!--=  Reserved. See http://www.w3.org/Consortium/Legal/.                =-->
+<!--======================================================================-->
+<!-- ===================================================================== -->
+<!--                                                                       -->
+<!-- paths-data-02-t.svg                                                   	-->
+<!-- 1.1 revision by Christophe Jolif                                      -->
+<!--                                                                       -->
+<!-- Test that the viewer has the basic capability to handle the 'path'    -->
+<!-- element and its data (d) attribute in combination with the quadratic  -->
+<!-- Bezier curveto commands, Q, q, T, t (plus Mm and Zz).                 -->
+<!--                                                                       -->
+<!-- Author : Lofton Henderson, 29-Feb-2000 (based on work                 -->
+<!--                                           of Mark Sgarlato, Adobe).   -->
+<!--                                                                       -->
+<!-- History:                                                              -->
+<!--  29-Feb-2000, LRH, Ser#1 created.                                     -->
+<!--  12-Mar-2000, LH, fix test-framing rect; ser#2                        -->
+<!--  03-Aug-2000, LH=" update DOCTYPE for CR DTD, 20000802" ser# .         -->
+<!--  17-Aug-2000, JF=" fix duplicate ID bug" ser#3.                        -->
+<!--  15-Nov-2000, LH: add missing test-body-content group.                -->
+<!--                                                                       -->
+<!-- ===================================================================== -->
+<!--======================================================================-->
+<!--= Note. After October 2000, revision history is kept as CVS 'commit' =-->
+<!--= log messages, and therefore is no longer in the preceding preamble.=-->
+<!--======================================================================-->
+<svg version="1.1" baseProfile="tiny" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="svg-root" width="960" height="720" viewBox="0 0 480 360">
+  <SVGTestCase xmlns="http://www.w3.org/2000/02/svg/testsuite/description/">
+<!--nav data here-->
+		<OperatorScript version="$Revision: 1479 $" testname="paths-data-02-t.svg">
+      <Paragraph>
+Test that the viewer has the basic capability to handle the 'path'
+element and its data (d) attribute in combination with the quadratic
+Bezier curveto commands, Q, q, T, t (plus Mm and Zz).  
+    </Paragraph>
+      <Paragraph>
+There are 7 subtests, each composed from the quadric Bezier path commands per
+the label by the subtest.  On-curve control points (i.e., the curve position)
+are marked by small colored squares.  Subtests are filled, or stroked, or 
+both, using simple style properties and colors.
+    </Paragraph>
+      <Paragraph>
+The rendered picture should match the reference image exactly, except for possible
+variations in the labelling text (per CSS2 rules).  
+    </Paragraph>
+      <Paragraph>
+The test uses the 'rect' element, as well as basic fill (solid primary colors), 
+stroke (primary color wide and 1-pixel lines), font-family (Arial) and font-size properties.
+    </Paragraph>
+    </OperatorScript>
+  </SVGTestCase>
+  <title id="test-title">paths-data-02-t</title>
+  <desc id="test-desc">Test that the viewer has the basic capability to handle the 'path' element and data (d) attribute in combination with the quadratic Bezier curveto commands, both regular and shorthand/smooth forms - Q, q, T, t (along with Mm and Zz).</desc>
+  <!--======================================================================-->
+  <!--Content of Test Case follows...                  =====================-->
+  <!--======================================================================-->
+  <g id="test-body-content">
+    <!-- ====================================================================== -->
+    <!-- Simple Bezier using M, Q, & Z ======================================== -->
+    <!-- ====================================================================== -->
+    <path id="Bez_stroke_MQz" fill="none" stroke="#00FFFF" d="M224 103Q234 -12 304 33Z"/>
+    <text font-family="Arial" font-size="12" x="192" y="36">M, Q, Z</text>
+    <rect x="222" y="101" width="4" height="4" fill="#0000FF" stroke="none"/>
+    <rect x="302" y="31" width="4" height="4" fill="#0000FF" stroke="none"/>
+  </g>
+	<rect id="test-frame" x="1" y="1" width="478" height="358" fill="none" stroke="#000000"/>
+</svg>
+

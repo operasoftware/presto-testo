@@ -1,0 +1,11 @@
+<?xml version="1.0" ?>
+<svg xmlns="http://www.w3.org/2000/svg">
+  <defs>
+	<linearGradient id="grad" x1="0" x2="0" y1="50%" y2="0" spreadMethod="reflect" gradientUnits="objectBoundingBox">
+		<stop stop-color="white" offset="0%"/>
+		<stop stop-color="lightblue" offset="100%"/>
+	</linearGradient>
+  </defs>
+  <rect fill="url(#grad)" stroke="none" x="0" y="0"
+    width="100%" height="100%" rx="5"/>
+</svg>

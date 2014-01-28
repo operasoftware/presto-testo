@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1 Tiny//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11-tiny.dtd">
+<!--======================================================================-->
+<!--=  Copyright 2000 World Wide Web Consortium, (Massachusetts          =-->
+<!--=  Institute of Technology, Institut National de Recherche en        =-->
+<!--=  Informatique et en Automatique, Keio University). All Rights      =-->
+<!--=  Reserved. See http://www.w3.org/Consortium/Legal/.                =-->
+<!--======================================================================-->
+<!-- =====================================================================-->
+<!--                                                                      -->
+<!-- animation-add-BE-12.svg                                              -->
+<!-- renamed for 1.1 suite to animate-elem-08-t.svg	                  -->
+<!--                                                                      -->
+<!-- Test rotate='auto' and rotate='auto-reverse'.                        -->
+<!--                                                                      -->
+<!-- Author : Jon Ferraiolo 11-Aug-2000                                   -->
+<!-- Revised for 1.1 : Mathias Larsson Carlander Feb/12/2002              -->
+<!-- Revised for SVGT/B : Mathias Larsson Carlander Jul/1/2002               -->
+<!--                                                                      -->
+<!-- History:                                                             -->
+<!--  11-Aug-2000, JF: Serial#1 created.                                  -->
+<!--                                                                      -->
+<!-- =====================================================================-->
+<!--======================================================================-->
+<!--= Note. After October 2000, revision history is kept as CVS 'commit' =-->
+<!--= log messages, and therefore is no longer in the preceding preamble.=-->
+<!--======================================================================-->
+<svg version="1.1" baseProfile="tiny" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="svg-root" width="100%" height="100%" viewBox="0 0 480 360">
+	<title id="test-title">animate-elem-08-t</title>
+	<desc id="test-desc">Test rotate='auto' and rotate='auto-reverse'</desc>
+	<!--======================================================================-->
+	<!--Content of Test Case follows...                  =====================-->
+	<!--======================================================================-->
+	<g id="test-body-content">
+		<g font-family="Arial" font-size="12" text-anchor="middle">
+			<path d="M25,225 C25,175 125,150 175,200" fill="none" stroke="black" stroke-width="2"/>
+			<rect x="10" y="195" width="30" height="30" fill="#A3A3A3" stroke="black" stroke-width="4"/>
+
+			<rect x="160" y="170" width="30" height="30" fill="#A3A3A3" stroke="black" stroke-width="4"/>
+
+			<path d="M-15,0 L0,-30 L15,0 z" fill="blue" stroke="#5C00B8" stroke-width="2">
+ 
+				
+				<animateMotion path="M25,225 C25,175 125,150 175,200" keyPoints="0;0;1.0" keyTimes="0;0.5;1.0" rotate="auto" begin="0s" dur="10s" calcMode="linear" fill="freeze"/>
+			</path>
+			
+
+			<path d="M275,225 C275,175 375,150 425,200" fill="none" stroke="black" stroke-width="2"/>
+			<rect x="260" y="195" width="30" height="30" fill="#A3A3A3" stroke="black" stroke-width="4"/>
+
+			<rect x="410" y="170" width="30" height="30"   fill="#A3A3A3" stroke="black" stroke-width="4"/>
+
+			<path d="M-20,0 L0,-35 L20,0 z" fill="blue" stroke-width="2">
+				<animateMotion path="M275,225 C275,175 375,150 425,200" rotate="auto-reverse" keyPoints="0;0;1.0" keyTimes="0;0.5;1.0" begin="0s" dur="10s" calcMode="linear" fill="freeze"/>
+			</path>
+			
+		</g>
+	</g>
+</svg>

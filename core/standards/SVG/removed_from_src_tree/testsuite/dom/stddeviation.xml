@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:svg="http://www.w3.org/2000/svg">
+  <head>
+    <title>stdDeviation Test</title>
+    <script>
+      <![CDATA[
+	function ShowStdDev()
+	{
+		var gausselm = document.getElementById("gauss");
+
+		var numone = document.getElementById("num0");
+		var numtwo = document.getElementById("num1");
+
+		numone.value = gausselm.stdDeviationX.baseVal;
+		numtwo.value = gausselm.stdDeviationY.baseVal;
+	}
+
+	function SetStdDev()
+	{
+		var gausselm = document.getElementById("gauss");
+
+		var numone = document.getElementById("num0");
+		var numtwo = document.getElementById("num1");
+
+		gausselm.setStdDeviation(parseFloat(numone.value), parseFloat(numtwo.value));
+
+		ShowStdDev();
+        }
+
+	function SetStdDev2()
+	{
+		var gausselm = document.getElementById("gauss");
+                gausselm.setAttribute("stdDeviation", document.getElementById("num0").value);
+	}
+
+      ]]>
+    </script>
+  </head>
+  <body onload="ShowStdDev();">
+    <table>
+      <tr>
+	<td>
+	  <button onclick="ShowStdDev();">Show stdDev</button><br/>
+	  <button onclick="SetStdDev();">Set stdDev</button><br/>
+	  <button onclick="SetStdDev2();">Set stdDev (attr)</button><br/>
+
+	  <h3>Standard Deviation</h3>
+	  <input type="text" size="3" value="0" id="num0"/>
+	  <input type="text" size="3" value="0" id="num1"/>
+	</td>
+	<td>
+	  <svg:svg xmlns:xlink="http://www.w3.org/1999/xlink" width="480px" height="360px" id="svgroot">
+	    <svg:defs>
+	      <svg:filter id="filt" x="0" y="0" width="1" height="1">
+		<svg:feImage xlink:href="../image1.jpg" result="img"/>
+		<svg:feGaussianBlur id="gauss"/>
+	      </svg:filter>
+	    </svg:defs>
+
+	    <svg:rect x="40" y="30" width="400" height="300" filter="url(#filt)"/>
+	  </svg:svg>
+	</td>
+      </tr>
+    </table>
+  </body>
+</html>

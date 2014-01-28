@@ -1,0 +1,17 @@
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <title>Test case for the "fill-opacity" attribute used in conjunction with a pattern fill</title>
+  <rect width="100" height="100" fill="white" />
+  <defs>
+    <pattern id="pattern" x="0" y="0" height="1" width="1"
+	     patternContentUnits="objectBoundingBox">
+      <rect x="0" y="0" width="0.5" height="0.5" fill="red"/>
+      <rect x="0.5" y="0" width="0.5" height="0.5" fill="orange"/>
+      <rect x="0" y="0.5" width="0.5" height="0.5" fill="orange"/>
+      <rect x="0.5" y="0.5" width="0.5" height="0.5" fill="red"/>
+    </pattern>
+  </defs>
+  <rect width="50" height="50" fill="url(#pattern)" />
+  <rect x="50" width="50" height="50" fill="url(#pattern)" fill-opacity="0.75" />
+  <rect y="50" width="50" height="50" fill="url(#pattern)" fill-opacity="0.5" />
+  <rect x="50" y="50" width="50" height="50" fill="url(#pattern)" fill-opacity="0.25" />
+</svg>

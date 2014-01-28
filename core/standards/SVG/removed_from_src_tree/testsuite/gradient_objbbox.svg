@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 360">
+  <defs>
+    <linearGradient id="lingrad" gradientUnits="objectBoundingBox"
+		    x1="0" y1="0" x2="0.5" y2="0.5">
+      <stop stop-color="red" offset="0"/>
+      <stop stop-color="green" offset="0.5"/>
+      <stop stop-color="blue" offset="1"/>
+    </linearGradient>
+  </defs>
+
+  <rect x="40" y="30" width="200" height="100" fill="url(#lingrad)" stroke="black" stroke-width="1">
+    <animate attributeName="width" values="200;100;200" dur="8s" repeatCount="indefinite"/>
+    <animate attributeName="height" values="100;200;100" dur="8s" repeatCount="indefinite"/>
+  </rect>
+</svg>

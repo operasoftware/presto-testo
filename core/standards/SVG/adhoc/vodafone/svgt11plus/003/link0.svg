@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" id="SVGroot" xmlns:xlink="http://www.w3.org/1999/xlink">
+
+<image xlink:href="bg.jpg" x="-12" y="-30" width="176" height="208"/>
+
+<g transform="translate(10 10)">
+
+
+<g id="contacts">
+	<g>
+		
+		<path fill="#DDAA0A" stroke="#000000" d="M13.346,5.833l13.167-0.167l1.167,1.167l-0.167,18l-1,1L13.179,26L1.346,19.167v-17.5
+			l1-1.167h2.167L13.346,5.833z"/>
+		<path fill="#666666" stroke="#000000" d="M4.513,2.833l-2-1.167L0.679,1.5L0.513,5l3.333,2.333"/>
+		<path fill="#FFFFFF" stroke="#848484" d="M2.013,25"/>
+		<path fill="#666666" stroke="#000000" d="M25.013,11.667l3.5-0.167l-0.167,5.333l-3,0.334"/>
+		<path fill="#666666" stroke="#000000" d="M25.18,21.167l2.666-0.5l0.667-1.167l-0.167-3.667L24.18,16"/>
+		<path fill="#FFFFFF" stroke="#848484" d="M3.679,2.167l9.667,5.5l11.167,0.167l1.333,1l-0.333,13.833L24.846,23.5l-11.5,0.167
+			l-9.833-5.5L3.679,2.167z"/>
+		<path fill="#FFFFFF" d="M16.763,5.188L17.7,4.125h3.813l1,0.938L22.45,9.688l-1.25,1l0.063,2v1.25l-3.688-0.25l-0.313-3.438
+			L16.45,9.563l0.125-4.375"/>
+		<path fill="none" stroke="#777777" d="M20.971,12.5"/>
+		<path fill="none" stroke="#777777" d="M17.888,12.5"/>
+		<path fill="none" stroke="#848484" d="M5.179,6.667l5.333,3"/>
+		<path fill="none" stroke="#848484" d="M5.346,9.667l5.167,3.167"/>
+		<path fill="none" stroke="#848484" d="M5.179,12.833l5.333,3"/>
+		<path fill="#666666" d="M16.638,6.125l2.25-0.875l3.5,1l-0.125-2.125l-3.875-0.5l-1.375,0.5l-0.5,1.625"/>
+		<path fill="#9E9D9D" d="M18.513,6.375L16.638,6.5l0.125,1.125"/>
+		<path fill="#9E9D9D" d="M19.513,6.875l-0.875,1.25l0.625,0.5L19.388,10l0.875,0.5v3l2-4.25l-0.625-1.125"/>
+		<path fill="#9E9D9D" d="M19.513,6.375l2.75-0.125l0.125,1.5L19.513,6.375z"/>
+		<path fill="none" stroke="#000000" d="M17.45,13.938l0.125-3.875l-1.063-0.375l-0.125-4.875l1.063-1.125h4.25l0.813,0.875V9.75
+			l-1.188,0.188l0.125,3.875"/>
+		<path fill="#666666"  d="M14.138,16.5c0.083,0.083,0-3.833,0-3.833l1.833-1.083l1.916-0.167l0.417,1.75
+			l2.917,0.083l0.916-1.583l1.667-0.167l2.083,1.75l0.084,3.25l-1.667,2.917l-9.5-0.167L14.138,16.5z"/>
+		<path fill="none" stroke="#848484" d="M13.346,7.667v16"/>
+		<path fill="#FEFEFD" stroke="#848181" d="M25.68,23.833h-12.25V17h12.25V23.833z"/>
+		<path fill="#9E9D9D" d="M20.388,9.75l-1.75,0.125l-0.75-0.125l1.625,1.125l1,0.625"/>
+		
+		<animateTransform id="animone" attributeName="transform" attributeType="XML" type="scale" values="1;1.6;1.45;1.5" begin="2;SVGroot.focusin" dur="0.5s" fill="freeze"/>
+		<animateTransform attributeName="transform" attributeType="XML" type="scale" values="1.5;1" begin="3;SVGroot.focusout" dur="0.2s" fill="freeze"/>
+
+	</g>
+		<animateTransform attributeName="transform" attributeType="XML" type="translate" values="0 0;-7 -3;-4 -1;-5 -2" begin="2;SVGroot.focusin" dur="0.5s" fill="freeze" />
+		<animateTransform attributeName="transform" attributeType="XML" type="translate" values="-5 -2;0 0" begin="3;SVGroot.focusout" dur="0.2s" fill="freeze" />
+	</g>
+</g>
+
+</svg>

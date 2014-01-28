@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <!DOCTYPE html PUBLIC  "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>Tests handling by Dynamic viewers for the "zoomAndPan" attribute on the 'svg' element</title>
+</head>
+<body>
+<table>
+<tr>
+<td align="center">SVG Image</td>
+<td align="center">Reference Image</td>
+</tr>
+<tr>
+<td align="right">
+<object data="../svggen/interact-zoom-01-t.svg" width="480" height="360" type="image/svg+xml"/>
+</td>
+<td align="left">
+<img alt="raster image of interact-zoom-01-t" src="../png/full-interact-zoom-01-t.png" width="480" height="360"/>
+</td>
+</tr>
+</table>
+<p>
+After the initial picture is displayed, the user should attempt to use the magnify controls (right click in the SVG to zoom in and out) 
+that are required on conforming Dynamic SVG viewers. The correct behaviour is that magnification and panning works correctly, as required 
+by a conformant viewer..
+</p>
+</body>
+</html>

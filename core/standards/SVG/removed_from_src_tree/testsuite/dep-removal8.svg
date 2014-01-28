@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink">
+  <script>
+    function replaceL2()
+    {
+    var l2 = document.getElementById("l2");
+    var parent = l2.parentNode;
+
+    var new_l2 = document.createElementNS("http://www.w3.org/2000/svg", "rect");
+    new_l2.setAttributeNS(null, "width", "400");
+    new_l2.setAttributeNS(null, "height", "100");
+    new_l2.setAttributeNS(null, "id", "l2");
+    new_l2.setAttributeNS(null, "fill", "green");
+
+    parent.replaceChild(new_l2, l2);
+    }
+  </script>
+  <defs><rect id="l2" width="400" height="100" fill="red"/><use id="l1" xlink:href="#l2"/></defs><use xlink:href="#l1" onclick="replaceL2()"/><text x="10" y="30">Click the rect once and it should turn green</text>
+</svg>

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg">
+<title>
+ There should be a green circle and no red.
+</title>
+<switch>
+ <circle cx="50" cy="50" r="30" fill="red" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Mask"/>
+ <circle cx="100" cy="100" r="30" fill="green" requiredFeatures="http://www.w3.org/TR/SVGMobile/Tiny/feature#all"/>
+</switch>
+</svg>

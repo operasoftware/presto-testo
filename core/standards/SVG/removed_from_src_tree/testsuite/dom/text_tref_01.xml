@@ -1,0 +1,49 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>My title</title>
+    <script type="text/ecmascript">
+      <![CDATA[
+var svgtext;
+var string;
+
+function init()
+{
+  svgtext = document.getElementById('svgtext');
+  string = document.getElementById('string');
+}
+
+function SetString(str)
+{
+  svgtext.firstChild.data = str;
+}
+      ]]>
+    </script>
+
+  </head>
+
+  <body onload="init();">
+    <table>
+      <tr>
+	<td>
+	  <input type="text" id="string" size="20" value="String in tref"/>
+	  <button onclick="SetString(string.value);">Set string</button>
+       </td>
+     </tr>
+     <tr>
+       <td>
+	 <svg xmlns="http://www.w3.org/2000/svg"
+	      xmlns:xlink="http://www.w3.org/1999/xlink"
+	      width="400" height="400">
+	   <defs>
+	     <text x="20" y="50" id="svgtext" font-size="36">String in tref</text>
+	   </defs>
+	   <text x="20" y="50" font-size="36">
+	     <tref onclick="alert('Bah!')" xlink:href="#svgtext"/>
+	   </text>
+	 </svg>
+       </td>
+     </tr>
+    </table>
+  </body>
+</html>
+

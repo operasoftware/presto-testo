@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <!DOCTYPE html PUBLIC  "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>Tests </title>
+<script>
+// === Constants ===
+
+// In gogi, the body starts a bit down (40 pixels normally, 
+// 0 pixels run in SPARTAN mode (-fullscreen and -screenshot). 
+// This value has to be added to all Y coordinates if the 
+// TC is going to work both in and out of SPARTAN. 
+
+GogiBodyTop = window.screenTop; 
+
+// === 
+
+function firemouseevent() {
+  if (typeof(opera.generateMouseMove) == 'undefined') {
+    var body = document.getElementsByTagName('body')[0];
+    body.innerHTML = "Not tested: This test case requires the generateMouseMove function." + body.innerHTML;
+  }
+  else 
+  {
+    testimage = document.getElementById("testimage");
+    x = 100;
+    y = GogiBodyTop + 260;
+    opera.generateMouseMove(x, y);
+    opera.generateMouseDown(x, y, 1);
+    opera.generateMouseUp(x, y, 1);
+  }
+}
+
+window.addEventListener("load", function() { setTimeout(firemouseevent, 100) }, false);
+
+</script>
+</head>
+<body>
+<table>
+<tr>
+<td align="center">SVG Image</td>
+<td align="center">Reference Image</td>
+</tr>
+<tr>
+<td align="right">
+<object data="../../svggen/interact-order-02-b.svg" width="480" height="360" type="image/svg+xml"/></object>
+</td>
+<td align="left">
+<img alt="raster image of interact-order-02-b" src="../../images/interact-order-02-b-targ.svg" width="480" height="360"/>
+</td>
+</tr>
+</table>
+<p>
+Pass if image looks like a small version of the reference image. 
+</p>
+</body>
+</html>

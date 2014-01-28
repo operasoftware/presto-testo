@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!--
+    YAST 
+    Copyright (c) 2005, Jeff Schiller
+    http://www.codedread.com/
+-->
+<svg id="svgsvg" version="1.1" 
+    width="100%" height="100%" 
+    viewBox="0 0 800 600"
+    xmlns="http://www.w3.org/2000/svg" 
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    cursor="wait"
+    onload="setTimeout('init()', 100);">
+<script xlink:href="yast.js"/>
+<defs>
+
+    <!-- Learned this from Jan Kollhoff's SVG Aqua Button tutorial:
+         http://jan.kollhof.net/projects/svg/examples/aqua.svg -->
+
+    <!-- Background Paint -->
+    <linearGradient id="bkgnd" x1="0.0" y1="0.0" x2="1.0" y2="1.0">
+        <stop offset="0.0" stop-color="#0000aa" stop-opacity="0.8" />
+        <stop offset="1.0" stop-color="#000000" stop-opacity="0.8" />
+    </linearGradient>
+
+    <!-- Block Definitions -->
+    <g id="matteblock">
+        <rect x="0" y="0" width="20" height="20"
+            fill="inherit" stroke="black" />
+    </g>
+    <g id="block">
+        <rect x="0" y="0" width="20" height="20" rx="3" ry="3"
+            fill="inherit" stroke="black" />
+        <!-- glare -->
+        <path d="M3,12 L3,3 L12,3 L5,5 Z" fill="white" opacity="0.4"/>
+        <path d="M17,8 L17,17 L8,17 L15,15 Z" fill="white" opacity="0.4"/>
+    </g>
+
+    <!-- Begin Button Definitions -->
+    <!-- Button background paints -->
+    <linearGradient id="activebuttonbkgnd" x1="0.0" y1="0.0" x2="0.0" y2="1.0">
+        <stop offset="0.0" stop-color="#5a0000" stop-opacity="0.8" />
+        <stop offset="1.0" stop-color="#ff0000" stop-opacity="0.8" />
+    </linearGradient>        
+    
+    <linearGradient id="pressedbuttonbkgnd" x1="0.0" y1="0.0" x2="0.0" y2="1.0">
+        <stop offset="0.0" stop-color="#7a2000" stop-opacity="1.0" />
+        <stop offset="1.0" stop-color="#ff7000" stop-opacity="1.0" />
+    </linearGradient>
+    <linearGradient id="inactivebuttonbkgnd" x1="0.0" y1="0.0" x2="0.0" y2="1.0">
+        <stop offset="0.0" stop-color="#000" stop-opacity="0.5" />
+        <stop offset="1.0" stop-color="#557" stop-opacity="0.5" />
+    </linearGradient>
+    <!-- Top Highlight -->
+    <linearGradient id="tophigh" x1="0.0" y1="0.0" x2="0.0" y2="1.0">
+        <stop offset="0.0" stop-color="#ffffff" stop-opacity="0.7" /> <!-- 0.7 -->
+        <stop offset="0.9" stop-color="#ffffff" stop-opacity="0.0" /> <!-- 0.0 -->
+    </linearGradient>
+    <!-- Bottom Gradient -->
+    <linearGradient id="bottomhigh" x1="0.0" y1="0.0" x2="0.0" y2="1.0">
+        <stop offset="0.2" stop-color="#ffffff" stop-opacity="0.0"/> <!-- 0.0 -->
+        <stop offset="1.0" stop-color="#ffffff" stop-opacity="0.6" /> <!-- 0.6 -->
+    </linearGradient>
+
+    <!-- Blurs the bottom highlight -->
+    <filter id="gblur">
+        <feGaussianBlur stdDeviation="2" />
+    </filter>
+    <!-- To give that text a slightly "baked-in" feel -->
+    <filter id="gblurshadow">
+        <feGaussianBlur stdDeviation="0.8" />
+    </filter>
+    
+    <rect id="butt" x="0" y="0" width="87" height="40" rx="25" ry="25" 
+            fill="inherit" stroke="none" />
+
+    <g id="button">
+        <use xlink:href="#butt" fill="inherit" />
+        <use transform="scale(0.8,0.45) translate(12,4)" xlink:href="#butt" 
+            fill="url(#tophigh)" />
+        <use transform="scale(0.8,0.45) translate(12,45)" xlink:href="#butt"
+            fill="url(#bottomhigh)" filter="url(#gblur)"/> 
+    </g>
+
+    <g id="vanilla_button">
+        <use xlink:href="#butt" fill="inherit" />
+    </g>
+    
+    <polyline id="check" fill="none" stroke="green" stroke-width="5"
+        points="0,12 6,20 20,0"/>
+    <!-- NOTE:  If I fill this with none, onclick only works on the stroke.  Thus
+                I have to set pointer-events -->
+    <rect id="checkbox" pointer-events="fill" fill="none" stroke="yellow" stroke-width="3"
+        x="0" y="0" width="15" height="15"/>
+
+    <!-- End Button Definitions -->
+</defs>
+
+<rect id="canvas" x="0" y="0" width="800" height="600" fill="url(#bkgnd)" />
+
+<g id="title">
+    <a xlink:href="http://www.codedread.com/" target="_none">
+    <text id="titletext" x="77" y="50" font-size="48" fill="yellow">YAST!</text>
+    </a>
+    <text id="leveltext" x="600" y="50" font-size="32" fill="yellow">Level: 1</text>
+    <rect x="72" y="65" width="650" height="5" rx="50" ry="50" fill="yellow" stroke="black"/>
+</g>    
+
+<text id="message" x="150" y="300" font-size="48" fill="yellow"
+    >Loading...Please Wait...</text>
+
+<!-- Buttons Panel -->
+<g id="buttonspanel" display="none">
+<g id="startbut" transform="translate(100,105)">
+    <use id="startbut_use" xlink:href="#button" x="0" y="0" width="100" height="50" />
+    <text id="startlabel" x="24" y="28" font-size="18" fill="yellow">Start</text>
+</g>
+
+<g id="pausebut" transform="translate(100,165)">
+    <use id="pausebut_use" xlink:href="#button" x="0" y="0" width="100" height="50" />
+    <text id="pauselabel" x="19" y="28" font-size="18" fill="yellow">Pause</text>
+</g>
+
+<g id="helpbut" transform="translate(100,225)">
+    <use id="helpbut_use" xlink:href="#button" x="0" y="0" width="100" height="50" />
+    <text id="helplabel" x="25" y="28" font-size="18" fill="yellow">Help</text>
+</g>
+
+<text id="effectslabel" x="38" y="330" font-size="32" fill="yellow">Effects:</text>
+<g id="effectspanel" transform="translate(38,340)">
+    <rect x="0" y="0" width="192" height="240" rx="10" ry="10" fill="none" 
+        stroke="yellow" stroke-width="1"/>
+
+    <g id="effect_gradback">
+        <use id="effect_gradback_box" xlink:href="#checkbox" x="10" y="30"/>
+        <use id="effect_gradback_check" xlink:href="#check" x="11" y="20" display="inline" />
+        <text x="34" y="43" font-size="16" fill="yellow">Gradient Background</text>
+    </g>
+
+    <g id="effect_aquabutt">
+        <use id="effect_aquabutt_box" xlink:href="#checkbox" x="10" y="55"/>
+        <use id="effect_aquabutt_check" xlink:href="#check" x="11" y="45" display="inline" />
+        <text x="34" y="68" font-size="16" fill="yellow">Aqua Buttons</text>
+    </g>
+</g>
+
+</g> <!-- End Buttons Panel -->
+
+<g id="gamescreen" display="none">
+    <switch>
+        <rect requiredFeatures="http://www.w3.org/TR/SVG11/feature#Filter" 
+            id="shadow" x="10" y="10" width="322" height="502" opacity="0.6"
+            fill="black" stroke="none" filter="url(#gblurshadow)" />
+        <rect id="shadow" x="10" y="10" width="322" height="502" opacity="0.6"
+            fill="black" stroke="none" />
+    </switch>         
+        
+    <g id="starfield">
+        <rect id="space" x="0" y="0" width="322" height="502" fill="#444" stroke="yellow" />
+        <!-- Should put some stars here as a nice effect one day -->
+    </g>
+
+    <g id="gameborder">
+    </g>
+    
+    <g id="gamegrid">
+    </g>
+
+</g>
+
+<g id="gameinfo" display="none">
+    <g id="thescore">
+        <text id="scorelabel" x="600" y="150" font-size="32" fill="yellow">Score:</text>
+        <text id="score" x="600" y="190" font-size="32" fill="yellow">0</text>
+    </g>
+    
+    <g id="next">
+        <text id="rowsleftlabel" x="600" y="250" font-size="32" fill="yellow">Rows Left:</text>
+        <text id="rowsleft" x="600" y="290" font-size="32" fill="yellow">10</text>
+    </g>
+
+    <g id="next">
+        <text id="nextlabel" x="600" y="350" font-size="32" fill="yellow">Next:</text>
+        <g id="nextblok" transform="translate(600,390)">
+        </g>
+    </g>
+</g>
+
+<g id="helpscreen" display="none" transform="translate(250,150)">
+    <rect x="0" y="0" width="300" height="300" rx="20" ry="20" 
+        fill="white" stroke="black" />
+        
+    <text x="67" y="30" font-size="32" fill="black">Instructions</text>
+    <text x="20" y="70" font-size="20" fill="black">Left Arrow:</text>
+    <text x="140" y="70" font-size="20" fill="black">Move block left</text>
+    <text x="20" y="100" font-size="20" fill="black">Right Arrow:</text>
+    <text x="140" y="100" font-size="20" fill="black">Move block right</text>
+    <text x="20" y="130" font-size="20" fill="black">Up Arrow:</text>
+    <text x="140" y="130" font-size="20" fill="black">Rotate block</text>
+    <text x="20" y="160" font-size="20" fill="black">Down Arrow:</text>
+    <text x="140" y="160" font-size="20" fill="black">Hurry descent</text>
+    <text x="20" y="190" font-size="20" fill="black">Space:</text>
+    <text x="140" y="190" font-size="20" fill="black">Drop block</text>
+    <text x="20" y="220" font-size="20" fill="black">S:</text>
+    <text x="140" y="220" font-size="20" fill="black">Start game</text>
+    <text x="20" y="250" font-size="20" fill="black">P or Q:</text>
+    <text x="140" y="250" font-size="20" fill="black">Pause game</text>
+    <text x="30" y="280" font-size="20" fill="black">(Click this window to close)</text>
+</g>
+
+</svg>

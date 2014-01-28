@@ -1,0 +1,74 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN"
+"http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+
+<!--
+
+   Copyright 2001  The Apache Software Foundation 
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+
+   Modified by ed@opera.com.
+
+-->
+<!-- ========================================================================= -->
+<!--  text effects                                                             -->
+<!--                                                                           -->
+<!-- @author tkormann@apache.org                                               -->
+<!-- @version $Id$ -->
+<!-- ========================================================================= -->
+
+<?xml-stylesheet type="text/css" href="batik/spec/resources/style/test.css" ?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink"
+     width="450" height="500" viewBox="0 0 450 500">
+  <defs>
+    <linearGradient id="linearGradient">
+      <stop style="stop-color:gold" offset="0"/>
+      <stop style="stop-color:orange" offset=".5"/>
+      <stop style="stop-color:crimson" offset="1"/>
+    </linearGradient>
+
+    <filter id="dropShadow"  filterUnits="objectBoundingBox">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="2 2" />
+      <feMerge>
+	<feMergeNode in="SourceGraphic"/>
+	<feMergeNode/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Indicate "center" position of text -->
+  <g stroke-width="2" stroke="black">
+    <line x1="120" y1="145" x2="120" y2="205"/>
+    <line x1="120" y1="245" x2="120" y2="305"/>
+  </g>
+
+  <text x="120" y="160" style="fill:url(#linearGradient); font-size:40pt; font-family:Arial; text-anchor:middle">
+    O<tspan dy="-20" style="font-size:20pt">p</tspan>e<tspan style="font-size:30pt">r</tspan><tspan rotate="20">a</tspan>
+  </text>
+
+  <text x="120" y="260" style="filter:url(#dropShadow); fill:red; font-size:40pt; font-family:Arial; text-anchor:middle">
+    O<tspan dy="-20" style="font-size:20pt">p</tspan>e<tspan style="font-size:30pt">r</tspan><tspan rotate="20">a</tspan>
+  </text>
+
+  <text x="120" y="360" style="fill:url(#linearGradient); filter:url(#dropShadow); font-size:40pt; font-family:Arial; text-anchor:middle">
+    O<tspan dy="-20" style="font-size:20pt">p</tspan>e<tspan style="font-size:30pt">r</tspan><tspan rotate="20">a</tspan>
+  </text>
+
+  <g font-family="Arial" font-size="10pt">
+    <text x="225" y="140">Gradient</text>
+    <text x="225" y="240">Filter</text>
+    <text x="225" y="340">Gradient &amp; Filter</text>
+  </g>
+</svg>

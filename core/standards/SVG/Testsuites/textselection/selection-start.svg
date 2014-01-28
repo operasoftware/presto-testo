@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg">
+  <title>Text selection start below visible graphics element</title>
+
+  <text x="10" y="20">Click on the fuchsia rectangle and drag to the blue rectangle. You should not see the word 'FAIL' appear below it.</text>
+
+  <text x="10" y="130" font-size="100" font-family="Ahem" fill="blue">É</text>
+  <rect x="10" y="50" width="50" height="80" fill="fuchsia"/>
+  <text x="20" y="148" font-size="20" fill="white">FAIL</text>
+</svg>
+

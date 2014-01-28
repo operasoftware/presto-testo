@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink">
+  <title>Text selection on animated element</title>
+
+  <text x="10" y="20">
+    You should be able to select any and all of this text.
+    <animateMotion path="m 200 0 c 50 0 50 100 0 100 s -50 -100 0 -100" repeatCount="indefinite" dur="8s"/>
+  </text>
+</svg>
+

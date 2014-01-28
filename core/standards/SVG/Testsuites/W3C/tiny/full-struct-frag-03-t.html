@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <!DOCTYPE html PUBLIC  "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>Tests the use of preserveAspectRatio attribute on the root svg element in an SVG Tiny document</title>
+</head>
+<body>
+<table>
+<tr>
+<td align="center">SVG Image</td>
+<td align="center">Reference Image</td>
+</tr>
+<tr>
+<td align="right">
+<object data="../svggen/struct-frag-03-t.svg" width="480" height="360" type="image/svg+xml"/>
+</td>
+<td align="left">
+<img alt="raster image of struct-frag-03-t" src="../png/full-struct-frag-03-t.png" width="480" height="360"/>
+</td>
+</tr>
+</table>
+<p>
+Because preserveAspectRatio is set to 'xMidYMid meet', the content should appear centered within the viewport: 
+squares show as squares (and not rectangles) and circles show as circles (and not ellipses).
+The rendered picture should match the reference image exactly except for variations in the labeling text (per CSS2 rules).
+</p>
+</body>
+</html>

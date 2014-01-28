@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN"
+"http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<!-- Created with Sodipodi ("http://www.sodipodi.com/") --><svg height="157pt" id="svg2556" sodipodi:docbase="/home/ian/art/" sodipodi:docname="/home/ian/art/mvc.svg" sodipodi:version="0.34" version="1.1" viewBox="133 139 307 157" width="307pt" xmlns="http://www.w3.org/2000/svg" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:xl="http://www.w3.org/1999/xlink" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <metadata>
+    <rdf:RDF xmlns:cc="http://web.resource.org/cc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+      <cc:Work rdf:about="">
+        <dc:title>Model-View-Controller</dc:title>
+        <dc:description></dc:description>
+        <dc:subject>
+          <rdf:Bag>
+            <rdf:li>controller</rdf:li>
+            <rdf:li>design</rdf:li>
+            <rdf:li>pattern</rdf:li>
+            <rdf:li>view</rdf:li>
+            <rdf:li>model</rdf:li>
+            <rdf:li>computer</rdf:li>
+          </rdf:Bag>
+        </dc:subject>
+        <dc:publisher>
+          <cc:Agent rdf:about="http://www.openclipart.org/">
+            <dc:title>Open Clip Art Library</dc:title>
+          </cc:Agent>
+        </dc:publisher>
+        <dc:creator>
+          <cc:Agent>
+            <dc:title>Ian Darwin</dc:title>
+          </cc:Agent>
+        </dc:creator>
+        <dc:rights>
+          <cc:Agent>
+            <dc:title>Ian Darwin</dc:title>
+          </cc:Agent>
+        </dc:rights>
+        <dc:date>2005-09-24 12:42Z</dc:date>
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+        <cc:license rdf:resource="http://web.resource.org/cc/PublicDomain"/>
+        <dc:language>en</dc:language>
+      </cc:Work>
+      <cc:License rdf:about="http://web.resource.org/cc/PublicDomain">
+        <cc:permits rdf:resource="http://web.resource.org/cc/Reproduction"/>
+        <cc:permits rdf:resource="http://web.resource.org/cc/Distribution"/>
+        <cc:permits rdf:resource="http://web.resource.org/cc/DerivativeWorks"/>
+      </cc:License>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview id="base"/>
+  <defs id="defs2558">
+    <filter filterUnits="userSpaceOnUse" id="Shadow">
+      <feGaussianBlur in="SourceAlpha" result="blur" stdDeviation="3.488"/>
+      <feOffset dx="0" dy="4" in="blur" result="offset"/>
+      <feFlood flood-color="Black" flood-opacity=".75" result="flood"/>
+      <feComposite in="flood" in2="offset" operator="in"/>
+    </filter>
+    <font-face ascent="770.0195" cap-height="750" descent="-229.9805" font-size="12pt" font-weight="500" id="font-face2560" slope="0" underline-position="-75.68359" underline-thickness="49.31641" units-per-em="1000" x-height="583.3334">
+      <font-face-src>
+        <font-face-name name="Helvetica"/>
+      </font-face-src>
+    </font-face>
+    <marker color="Black" id="FilledArrow_Marker" markerHeight="8" markerUnits="strokeWidth" markerWidth="10" orient="auto" overflow="visible" viewBox="-9 -4 10 8">
+      <g id="g2562">
+        <path d="M -8 0 L 0 3 L 0 -3 Z" fill="currentColor" id="path2563" stroke="currentColor" stroke-width="1"/>
+      </g>
+    </marker>
+    <title id="title2565">Canvas 1</title>
+    <title id="title2568">Layer 1</title>
+  </defs>
+  <line id="line2609" marker-start="url(#FilledArrow_Marker)" stroke="Black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1" style="font-size:12;fill:none;stroke:#000000;stroke-width:1.0429;stroke-linecap:round;stroke-linejoin:round;" transform="matrix(1.0429,0,0,1,-13.89438,0)" x1="234.657378" x2="352.231301" y1="258.362549" y2="258.362549"/>
+  <g id="g2569" style="font-size:12;fill:none;">
+    <use filter="url(#Shadow)" id="use2570" xl:href="#id1_Graphic"/>
+    <use filter="url(#Shadow)" id="use2571" xl:href="#id2_Graphic"/>
+    <use filter="url(#Shadow)" id="use2572" xl:href="#id3_Graphic"/>
+  </g>
+  <g id="id1_Graphic" style="font-size:12;fill:none;">
+    <path d="M 254.25 146 L 320.75 146 C 328.616 146 335 154.064 335 164 C 335 173.936 328.616 182 320.75 182 L 254.25 182 C 246.384 182 240 173.936 240 164 C 240 154.064 246.384 146 254.25 146" fill="#eaff1a" id="path2574"/>
+    <path d="M 254.25 146 L 320.75 146 C 328.616 146 335 154.064 335 164 C 335 173.936 328.616 182 320.75 182 L 254.25 182 C 246.384 182 240 173.936 240 164 C 240 154.064 246.384 146 254.25 146" id="path2575" stroke="Black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+    <text fill="Black" id="text2576" transform="translate(254.5 157.5)">
+      <tspan font-size="12pt" id="tspan2577" textLength="32.683" x="16.658203" y="11">Model</tspan>
+    </text>
+  </g>
+  <g id="id3_Graphic" style="font-size:12;fill:none;">
+    <path d="M 358.45 245 L 416.55 245 C 423.4224 245 429 253.064 429 263 C 429 272.936 423.4224 281 416.55 281 L 358.45 281 C 351.5776 281 346 272.936 346 263 C 346 253.064 351.5776 245 358.45 245" fill="#eaff1a" id="path2586"/>
+    <path d="M 358.45 245 L 416.55 245 C 423.4224 245 429 253.064 429 263 C 429 272.936 423.4224 281 416.55 281 L 358.45 281 C 351.5776 281 346 272.936 346 263 C 346 253.064 351.5776 245 358.45 245" id="path2587" stroke="Black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+    <text fill="Black" id="text2588" transform="translate(359.3 256.5)">
+      <tspan font-size="12pt" id="tspan2589" textLength="8.003" x="15.300587" y="11">V</tspan>
+      <tspan font-size="12pt" id="tspan2591" textLength="18.005" x="23.09356" y="11">iew</tspan>
+    </text>
+  </g>
+  <line id="line2593" marker-start="url(#FilledArrow_Marker)" stroke="Black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1" style="font-size:12;fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;" transform="translate(1.85498,-2.782471)" x1="263.34668" x2="206.259277" y1="186.460831" y2="241.869324"/>
+  <rect fill="White" height="28" id="rect2594" style="font-size:12;fill:#ffffff;" width="59.00002" x="206.004" y="200.4667"/>
+  <text fill="Black" id="text2595" style="font-size:12;" transform="translate(211.004,200.9667)">
+    <tspan font-size="12pt" id="tspan2596" textLength="48.703" x="0" y="11">changes </tspan>
+    <tspan font-size="12pt" id="tspan2598" textLength="46.025" x="0" y="25">to model</tspan>
+  </text>
+  <line id="line2600" marker-start="url(#FilledArrow_Marker)" stroke="Black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1" style="font-size:12;fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;" transform="translate(5.564957,1.85498)" x1="367.492355" x2="311.602066" y1="239.538086" y2="184.206787"/>
+  <rect fill="White" height="42" id="rect2601" style="font-size:12;fill:#ffffff;" width="49" x="312.5081" y="192.013"/>
+  <text fill="Black" id="text2602" style="font-size:12;" transform="translate(317.5081,192.513)">
+    <tspan font-size="12pt" id="tspan2603" textLength="36.017" x="3.158203" y="11">model </tspan>
+    <tspan font-size="12pt" id="tspan2605" textLength="25.347" x=".4892578" y="25">notifies</tspan>
+    <tspan font-size="12pt" id="tspan2607" textLength="24.005" x="7.49707" y="39">view</tspan>
+  </text>
+  <text fill="Black" id="text2611" style="font-size:12;" x="245.841553" y="244.862549">
+    <tspan font-size="12pt" id="tspan2612" textLength="64.699" x="251.991943" y="255.862549">user actions</tspan>
+    <tspan font-size="12pt" id="tspan2614" textLength="76.716" x="245.983154" y="269.862549">based on view</tspan>
+  </text>
+  <g id="g2798" transform="translate(0.92749,-0.92749)">
+    <path d="M 163.8699 242.2175 L 221.9699 242.2175 C 228.8423 242.2175 234.4199 250.2815 234.4199 260.2175 C 234.4199 270.1535 228.8423 278.2175 221.9699 278.2175 L 163.8699 278.2175 C 156.9975 278.2175 151.4199 270.1535 151.4199 260.2175 C 151.4199 250.2815 156.9975 242.2175 163.8699 242.2175 " fill="#eaff1a" id="path2580" style="font-size:12;fill:#eaff1a;"/>
+    <path d="M 163.8699 241.29 L 221.9699 241.29 C 228.8423 241.29 234.4199 249.354 234.4199 259.29 C 234.4199 269.226 228.8423 277.29 221.9699 277.29 L 163.8699 277.29 C 156.9975 277.29 151.4199 269.226 151.4199 259.29 C 151.4199 249.354 156.9975 241.29 163.8699 241.29 " id="path2581" stroke="Black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1" style="font-size:12;fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;"/>
+    <text fill="Black" id="text2582" style="font-size:12;" transform="translate(-0.92749,-0.92749)" x="159.154938" y="253.717499">
+      <tspan font-size="12pt" id="tspan2583" textLength="52.019" x="161.345169" y="264.717499">Controller</tspan>
+    </text>
+  </g>
+</svg>

@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs>
+    <g id="animcurve">
+      <path d="M 50,150 c 100,-140 100,140 200,0 z" stroke="red" stroke-width="3" fill="none" />
+      <circle cx="0" cy="0" r="5" fill="blue">
+	<animateMotion path="M 50,150 c 100,-140 100,140 200,0 z" begin="0s" dur="10s" fill="freeze"/>
+      </circle>
+    </g>
+  </defs>
+  
+  <use xlink:href="#animcurve" transform="translate(0, 0)"/>
+  <use xlink:href="#animcurve" transform="translate(250, 100)"/>
+  <use xlink:href="#animcurve" transform="translate(0, 200) rotate(-20, 150, 150)"/>
+  
+  <g font-size="14">
+    <text x="50" y="450">Note that, in SVG 1.1, animations on a referenced element will cause </text>
+    <text x="50" y="466">the instances to be animated.</text>
+  </g>
+</svg>

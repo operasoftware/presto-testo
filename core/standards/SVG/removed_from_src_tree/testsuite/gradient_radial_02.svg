@@ -1,0 +1,33 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" 
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg viewBox="0 0 1400 800" version="1.1"
+     xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <desc>Example radgrad01 - fill a rectangle by referencing a 
+           radial gradient paint server</desc>
+  <g>
+    <defs>
+      <radialGradient id="MyGradient" gradientUnits="objectBoundingBox"
+                      cx="0.5" cy="0.5" r="0.3" fx="0.5" fy="0.5">
+        <stop offset="20%" stop-color="#F60" />
+        <stop offset="80%" stop-color="#FF6" />
+      </radialGradient>
+      <radialGradient id="PadGradient" spreadMethod="pad" xlink:href="#MyGradient" />
+      <radialGradient id="ReflectGradient" spreadMethod="reflect" xlink:href="#MyGradient" />
+      <radialGradient id="RepeatGradient" spreadMethod="repeat" xlink:href="#MyGradient" />
+    </defs>
+
+    <!-- Outline the drawing area in blue -->
+    <rect fill="none" stroke="blue" 
+          x="1" y="1" width="1398" height="798"/>
+
+    <!-- The rectangle is filled using a radial gradient paint server -->
+    <rect fill="url(#RepeatGradient)" stroke="black" stroke-width="5"  
+          x="100" y="100" width="1200" height="200"/>
+    <rect fill="url(#ReflectGradient)" stroke="black" stroke-width="5"  
+          x="100" y="320" width="1200" height="200"/>
+    <rect fill="url(#PadGradient)" stroke="black" stroke-width="5"  
+          x="100" y="540" width="1200" height="200"/>
+  </g>
+</svg>
+

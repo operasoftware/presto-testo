@@ -1,0 +1,99 @@
+<?xml version="1.0"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink"
+     viewBox="0 0 480 360">
+
+  <style>
+    text.menutext
+    {
+    	text-anchor: middle;
+	font-family: sans-serif;
+	font-size: 10px;
+    }
+    text.targettext
+    {
+    	text-anchor: middle;
+	font-family: sans-serif;
+	font-size: 20px;
+	text-rendering: geometricPrecision;
+    }
+  </style>
+
+  <defs>
+  </defs>
+
+  <circle cx="240" cy="180" r="90" fill="none" stroke="black"/>
+
+  <g transform="translate(240 180)">
+    <a xlink:href="#gv" transform="rotate(40) translate(90 0)">
+      <circle r="30" fill="green">
+	<animateTransform attributeName="transform" type="rotate"
+			  from="0" to="360" dur="10s"
+			  additive="sum" repeatCount="indefinite"/>
+	<animateColor begin="mouseover" end="mouseout"
+		      values="green;lightgreen;green" dur="1s"
+		      attributeName="fill"/>
+      </circle>
+      <text class="menutext" y="5">Here</text>
+    </a>
+    <a xlink:href="#yv" transform="translate(90 0)">
+      <circle r="30" fill="yellow">
+	<animateTransform attributeName="transform" type="rotate"
+			  from="0" to="360" dur="10s"
+			  additive="sum" repeatCount="indefinite"/>
+	<animateColor begin="mouseover" end="mouseout"
+		      values="yellow;lightyellow;yellow" dur="1s"
+		      attributeName="fill"/>
+      </circle>
+      <text class="menutext" y="5">There</text>
+    </a>
+    <a xlink:href="#rv" transform="rotate(-40) translate(90 0)">
+      <circle r="30" fill="red">
+	<animateTransform attributeName="transform" type="rotate"
+			  from="0" to="360" dur="10s"
+			  additive="sum" repeatCount="indefinite"/>
+	<animateColor begin="mouseover" end="mouseout"
+		      values="red;lightred;red" dur="1s"
+		      attributeName="fill"/>
+      </circle>
+      <text class="menutext" y="5">Everywhere</text>
+    </a>
+
+    <animateTransform attributeName="transform" type="rotate"
+		      from="0" to="360" dur="15s"
+		      additive="sum" repeatCount="indefinite"/>
+  </g>
+
+  <g transform="translate(240 180)">
+    <g fill="green" visibility="hidden">
+      <text class="targettext" y="10">Here</text>
+      <set id="gv" attributeName="visibility" to="visible"
+	   begin="indefinite" dur="3s"/>
+      <animateTransform attributeName="transform" type="scale"
+			begin="gv.begin" dur="3s"
+			values="0;1.5"/>
+      <animate attributeName="fill-opacity" from="1" to="0"
+	       begin="gv.begin+2.5s" dur="0.5s"/>
+    </g>
+    <g fill="yellow" visibility="hidden">
+      <text class="targettext" y="10">There</text>
+      <set id="yv" attributeName="visibility" to="visible"
+	   begin="indefinite" dur="3s"/>
+      <animateTransform attributeName="transform" type="scale"
+			begin="yv.begin" dur="3s"
+			values="0;1.5"/>
+      <animate attributeName="fill-opacity" from="1" to="0"
+	       begin="yv.begin+2.5s" dur="0.5s"/>
+    </g>
+    <g fill="red" visibility="hidden">
+      <text class="targettext" y="10">Everywhere</text>
+      <set id="rv" attributeName="visibility" to="visible"
+	   begin="indefinite" dur="3s"/>
+      <animateTransform attributeName="transform" type="scale"
+			begin="rv.begin" dur="3s"
+			values="0;1.5"/>
+      <animate attributeName="fill-opacity" from="1" to="0"
+	       begin="rv.begin+2.5s" dur="0.5s"/>
+    </g>
+  </g>
+</svg>

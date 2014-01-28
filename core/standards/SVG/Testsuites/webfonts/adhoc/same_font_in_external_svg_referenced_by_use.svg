@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 300 300">
+ 	<style type="text/css">
+		@font-face {
+		font-family: FontTest;
+		src:  url(../fonts/Ahem.ttf);
+		}  
+	</style>
+	<title>Testing a svg included by use having the same font as the this svg</title>
+	<text y="40"  font-size="12px">You should see a green rect below</text>
+    <use y="80" xlink:href="support/font_test_use.svg#svg-root"/>
+	</svg>

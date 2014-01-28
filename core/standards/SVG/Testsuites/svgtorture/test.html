@@ -1,0 +1,504 @@
+<!doctype html>
+<html>
+<head>
+	<title>SVG DOM 1.1 conformance tests</title>
+  <link rel="stylesheet" href="qunit/qunit.css" type="text/css"/>
+  <script type="text/javascript" src="qunit/qunit.js"></script>
+  <!-- Submit results to SPARTAN -->
+  <!-- Start -->
+  <script type="text/javascript" src="/resources/spartanHandler.js"></script>
+  <script type="text/javascript" src="/external/jQuery/1.4/dist/jquery.min.js"></script>
+  <script type="text/javascript" src="/external/jQuery/opera-submit-results-14.js"></script>
+  <!-- End -->
+  <script type="text/javascript">
+  window.onload = function() {
+  	// log function
+  	QUnit.log = function(result, message) {
+		if (window.console && window.console.log) {
+			window.console.log(result +' :: '+ message);
+		}
+	};
+	var svgroot;
+	var svgns = 'http://www.w3.org/2000/svg';
+	(function() {
+		var od = document.getElementById("svg").ownerDocument;
+		svgroot = od.createElementNS(svgns, "svg");
+		svgroot.setAttribute("width", 100);
+		svgroot.setAttribute("height", 100);
+		svgroot.setAttribute("xmlns", svgns);
+		document.getElementById("svg").appendChild(svgroot);
+	}());
+
+	function makeEl(name) {
+		var el = document.createElementNS(svgns, name);
+		svgroot.appendChild(el);
+		return el;
+	}
+
+	function empty() {
+		while(svgroot.childNodes.length) {
+			svgroot.removeChild(svgroot.childNodes[0]);
+		}
+	}
+
+
+	module("DOM manipulation");
+
+	test("Supports SVGElement", 4, function() {
+		ok(SVGElement != undefined, "SVGElement is available");
+		ok(typeof SVGElement == typeof Element, "SVGElement is the same type as Element");
+		ok(SVGElement.prototype != undefined, "SVGElement.prototype is available");
+		ok(typeof SVGElement.prototype == typeof Element.prototype, "SVGElement.prototype is the same type as Element.prototype");
+	});
+
+	test("Can do basic node editing", 2, function() {
+		empty();
+		var rect = makeEl("rect");
+		ok((rect.parentNode == svgroot), "Can add a <rect/>");
+
+		rect.parentNode.removeChild(rect);
+		ok((svgroot.childNodes.length == 0), "Can remove a <rect/>");
+
+		// TODO Add more basic DOM tests here
+	});
+
+	module("getBBox()");
+
+	test("getBBox (basic)", function() {
+		expect(3);
+
+		var el = makeEl('rect');
+
+		el.setAttribute("x", 5);
+		el.setAttribute("y", 6);
+		el.setAttribute("width", 7);
+		el.setAttribute("height", 8);
+		ok(el.getBBox, "Claims to support getBBox on a <rect/>");
+
+		var bb = el.getBBox();
+		var xy = bb?(bb.x == 5 && bb.y == 6):false;
+		var wh = bb?(bb.width == 7 && bb.height == 8):false;
+
+		ok(xy, "Gives correct getBBox x/y values on a <rect/>");
+		ok(wh, "Gives correct getBBox width/height values on a <rect/>");
+	});
+
+	module("SVGPointList");
+
+	(function() {
+		empty();
+
+		var polyline = makeEl('polyline');
+		var polygon = makeEl('polygon');
+
+		var pts;
+		var resetList = function() {
+			polyline.setAttribute("points", "5,6 10,11");
+			pts = polyline.points;
+		}
+
+		var makePt = function(x, y) {
+			var pt = svgroot.createSVGPoint();
+			pt.x = x;
+			pt.y = y;
+			return pt;
+		}
+
+		test("Claims support for SVGPointList", 2, function() {
+			ok(polyline.points, "polyline has 'points' property");
+			ok(polygon.points, "polygon has 'points' property");
+		});
+
+		test("Can create SVGPoint", 1, function() {
+			ok(!!makePt(0, 0), "Created point with createSVGPoint()");
+		});
+
+		test("Returns correct value for numberOfItems", 2, function() {
+			resetList();
+			ok("numberOfItems" in pts, "SVGPointList has 'numberOfItems' property");
+			ok(pts.numberOfItems === 2, "numberOfItems value is correct");
+		});
+
+		test("Supports getItem()", 2, function() {
+			ok("getItem" in pts, "SVGPointList has 'getItem' property");
+
+			var item = pts.getItem(0);
+			ok((item.x == 5 && item.y == 6), "getItem() values are correct");
+		});
+
+		test("Supports appendItem()", 2, function() {
+			resetList();
+
+			ok("appendItem" in pts, "SVGPointList has 'appendItem' property");
+
+			pts.appendItem(makePt(1, 2));
+
+			if(pts.numberOfItems === 3) {
+				var item = pts.getItem(2);
+			} else {
+				var item = false;
+			}
+
+			ok(item && item.x == 1 && item.y == 2, "Supports appendItem()");
+		});
+
+		test("Supports insertItemBefore()", 2, function() {
+			resetList();
+
+			ok("insertItemBefore" in pts, "SVGPointList has 'insertItemBefore' property");
+
+			pts.insertItemBefore(makePt(1, 2), 0);
+
+			var item = pts.getItem(0);
+			ok(item.x == 1 && item.y == 2 && pts.numberOfItems === 3, "Supports insertItemBefore()");
+		});
+
+		test("Supports removeItem()", 2, function() {
+			resetList();
+
+			ok("removeItem" in pts, "SVGPointList has 'removeItem' property");
+
+			pts.removeItem(1);
+
+			ok(pts.numberOfItems === 1, "Supports removeItem()");
+		});
+
+		test("Supports replaceItem()", 2, function() {
+			resetList();
+
+			ok("replaceItem" in pts, "SVGPointList has 'replaceItem' property");
+
+			pts.replaceItem(makePt(1, 2), 1);
+			var item = pts.getItem(1);
+			ok((item.x == 1 && item.y == 2) && pts.numberOfItems == 2, "Supports replaceItem()");
+		});
+
+		test("Supports clear()", 2, function() {
+			resetList();
+
+			ok("clear" in pts, "SVGPointList has 'clear' property");
+
+			pts.clear();
+			ok(pts.numberOfItems == 0, "Supports clear()");
+		});
+
+		test("Supports initialize()", 2, function() {
+			resetList();
+
+			ok("initialize" in pts, "SVGPointList has 'initialize' property");
+
+			pts.initialize(makePt(2,3));
+			var item = pts.numberOfItems == 1 ? pts.getItem(0) : false;
+			ok(item && item.x == 2 && item.y == 3, "Supports initialize()");
+		});
+	}());
+
+
+	module("SVGPathSegList");
+
+// interface SVGPathSegList {
+//   readonly attribute unsigned long numberOfItems;
+//   void   clear (  )
+//                   raises( DOMException );
+//   SVGPathSeg initialize ( in SVGPathSeg newItem )
+//                   raises( DOMException, SVGException );
+//   SVGPathSeg getItem ( in unsigned long index )
+//                   raises( DOMException );
+//   SVGPathSeg insertItemBefore ( in SVGPathSeg newItem, in unsigned long index )
+//                   raises( DOMException, SVGException );
+//   SVGPathSeg replaceItem ( in SVGPathSeg newItem, in unsigned long index )
+//                   raises( DOMException, SVGException );
+//   SVGPathSeg removeItem ( in unsigned long index )
+//                   raises( DOMException );
+//   SVGPathSeg appendItem ( in SVGPathSeg newItem )
+//                   raises( DOMException, SVGException );
+// };
+
+// interface SVGPathElement :
+//                 SVGElement,
+//                 SVGTests,
+//                 SVGLangSpace,
+//                 SVGExternalResourcesRequired,
+//                 SVGStylable,
+//                 SVGTransformable,
+//                 events::EventTarget,
+//                 SVGAnimatedPathData {
+//   readonly attribute SVGAnimatedNumber pathLength;
+//   float         getTotalLength (  );
+//   SVGPoint      getPointAtLength ( in float distance );
+//   unsigned long getPathSegAtLength ( in float distance );
+
+// };
+
+
+
+	(function() {
+		empty();
+
+		var x = 1, y = 2, x1 = 3, y1 = 4, x2 = 5, y2 = 6;
+		var r1 = 7, r2 = 8, a = 9, laf = true, sf = false;
+
+		var creates = {
+			'createSVGPathSegClosePath': {},
+			'createSVGPathSegMovetoAbs': {x:x, y:y},
+			'createSVGPathSegMovetoRel': {x:x, y:y},
+			'createSVGPathSegLinetoAbs': {x:x, y:y},
+			'createSVGPathSegLinetoRel': {x:x, y:y},
+			'createSVGPathSegCurvetoCubicAbs': {x:x, y:y, x1:x1, y1:y1, x2:x2, y2:y2},
+			'createSVGPathSegCurvetoCubicRel': {x:x, y:y, x1:x1, y1:y1, x2:x2, y2:y2},
+			'createSVGPathSegCurvetoQuadraticAbs': {x:x, y:y, x1:x1, y1:y1},
+			'createSVGPathSegCurvetoQuadraticRel': {x:x, y:y, x1:x1, y1:y1},
+			'createSVGPathSegArcAbs': {x:x, y:y, r1:r1, r2:r2, angle:a, largeArcFlag:laf, sweepFlag:sf},
+			'createSVGPathSegArcRel': {x:x, y:y, r1:r1, r2:r2, angle:a, largeArcFlag:laf, sweepFlag:sf},
+			'createSVGPathSegLinetoHorizontalAbs': {x:x},
+			'createSVGPathSegLinetoHorizontalRel': {x:x},
+			'createSVGPathSegLinetoVerticalAbs': {y:y},
+			'createSVGPathSegLinetoVerticalRel': {y:y},
+			'createSVGPathSegCurvetoCubicSmoothAbs': {x:x, y:y, x2:x2, y2:y2},
+			'createSVGPathSegCurvetoCubicSmoothRel': {x:x, y:y, x2:x2, y2:y2},
+			'createSVGPathSegCurvetoQuadraticSmoothAbs': {x:x, y:y},
+			'createSVGPathSegCurvetoQuadraticSmoothRel': {x:x, y:y}
+		};
+// 		var segData = {
+// 			2: ['x','y'],
+// 			4: ['x','y'],
+// 			6: ['x','y','x1','y1','x2','y2'],
+// 			8: ['x','y','x1','y1'],
+// 			10: ['x','y','r1','r2','angle','largeArcFlag','sweepFlag'],
+// 			12: ['x'],
+// 			14: ['y']
+// 		};
+
+		var path = makeEl('path');
+		var list;
+
+		var resetList = function() {
+			path.setAttribute("d", "M1,2 L3,4");
+			list = path.pathSegList;
+		}
+
+		var makeSeg = function(x, y) {
+			var seg = path.createSVGPathSegLinetoAbs(x, y);
+			return seg;
+		}
+
+		test("Claims support for SVGPathSegList", 1, function() {
+			ok("pathSegList" in path, "path has 'pathSegList' property");
+		});
+
+		test("Returns correct value for numberOfItems", 2, function() {
+			resetList();
+			ok("numberOfItems" in list, "SVGPathSegList has 'numberOfItems' property");
+			ok(list.numberOfItems === 2, "numberOfItems value is correct");
+		});
+
+		test("Supports getItem()", 2, function() {
+			ok("getItem" in list, "SVGPathSegList has 'getItem' property");
+
+			var item = list.getItem(0);
+			ok((item.x == 1 && item.y == 2), "getItem() values are correct");
+		});
+
+		var segments = [];
+
+		test("Can create all segment types", function() {
+			var count = 0;
+			for(var fname in creates) {
+				var vals = creates[fname];
+				var arr = [];
+				for(var v in vals) {
+					arr.push(vals[v]);
+				}
+
+				// Create the segment
+				var seg = path[fname].apply(path, arr);
+				segments.push(seg);
+
+				if(fname == 'createSVGPathSegClosePath') {
+					count++;
+					ok(seg[v] == vals[v], "Created segment using " + fname);
+					continue;
+				}
+
+				// Test if all values are there
+				for(var v in vals) {
+					count++;
+					equals(seg[v], vals[v], "Created segment using " + fname + ", got correct value for: " + v);
+				}
+			}
+			expect(count);
+		});
+
+		test("Supports appendItem()", 5, function() {
+			resetList();
+
+			ok("appendItem" in list, "SVGPathSegList has 'appendItem' property");
+
+			list.appendItem(makeSeg(-1, -2));
+			if(list.numberOfItems === 3) {
+				var item = list.getItem(2);
+			} else {
+				var item = false;
+			}
+
+			ok(item && item.x == -1 && item.y == -2, "Supports appendItem()");
+
+			var seg_count = list.numberOfItems;
+
+			for(var i=0; i<segments.length; i++) {
+				list.appendItem(segments[i]);
+				seg_count++;
+			}
+
+			equals(seg_count, list.numberOfItems, "Gives correct number of items after adding all createable segments");
+
+// Values given by Firefox/Opera
+// M1,2 L3,4 L-1,-2 z L1,2 l1,2 C3,4 5,6 1,2 c3,4 5,6 1,2 Q3,4 1,2 q3,4 1,2 A7,8 9 1,0 1,2 a7,8 9 1,0 1,2 H1 h1 V2 v2 S5,6 1,2 s5,6 1,2 T1,2 t1,2
+// M 1 2 L 3 4L -1 -2ZM 1 2 m 1 2 L 1 2l 1 2C 3 4 5 6 1 2c 3 4 5 6 1 2Q 3 4 1 2q 3 4 1 2A 7 8 9 0 1 1 2a 7 8 9 0 1 1 2S 5 6 1 2s 5 6 1 2T 1 2t 1 2
+
+			//alert(path.getAttribute('d'));
+			var d_attr = path.getAttribute('d');
+
+			var correct_start = /^\s*M\s*1\s*,?\s*2\s*L\s*3\s*,?\s*4/.exec(d_attr);
+
+			ok(correct_start, "'d' attribute starts correctly with initial values");
+
+			// TODO: Make this regexp more complete
+			var correct_generated = /c\s*3\s*,?\s*4\s*5\s*,?\s*6\s*1\s*,?\s*2\s*Q/.exec(d_attr);
+
+			ok(correct_generated, "'d' attribute correctly includes generated segment data");
+		});
+
+		test("Supports insertItemBefore()", 3, function() {
+			resetList();
+
+			ok("insertItemBefore" in list, "SVGPathSegList has 'insertItemBefore' property");
+
+			list.insertItemBefore(makeSeg(100, 200), 0);
+
+			var item = list.getItem(0);
+			ok(item.x == 100 && item.y == 200, "Supports insertItemBefore()");
+
+			var d_attr = path.getAttribute('d');
+
+			var correct_start = /^\s*L\s*100\s*,?\s*200\s*M/.exec(d_attr);
+			ok(correct_start, "'d' attribute starts correctly with generated values");
+		});
+
+		test("Supports removeItem()", 3, function() {
+			resetList();
+
+			ok("removeItem" in list, "SVGPathSegList has 'removeItem' property");
+
+			list.removeItem(1);
+
+			var item = list.getItem(0);
+
+			ok(list.numberOfItems === 1 && item.x == 1 && item.y == 2, "Supports removeItem()");
+
+			var d_attr = path.getAttribute('d');
+
+			var no_removed_num = (d_attr.indexOf('3') === -1);
+
+			ok(d_attr.indexOf('3') === -1, "'d' attribute does not include value that was removed");
+		});
+
+		test("Supports clear()", 3, function() {
+			resetList();
+
+			ok("clear" in list, "SVGPathSegList has 'clear' property");
+
+			list.clear();
+
+			ok(list.numberOfItems === 0, "Supports clear()");
+
+			var d_attr = path.getAttribute('d');
+
+			var correct_attr = /^\s*$/.exec(d_attr);
+			ok(correct_attr, "'d' attribute is empty or just whitespace");
+		});
+
+		test("Supports initialize()", 3, function() {
+			resetList();
+
+			ok("initialize" in list, "SVGPathSegList has 'initialize' property");
+
+			list.initialize(makeSeg(1, 2));
+
+			var item = list.getItem(0);
+
+			ok(list.numberOfItems === 1 && item.x == 1 && item.y == 2, "Supports initialize()");
+
+			var d_attr = path.getAttribute('d');
+			var correct_attr = /^\s*L\s*1\s*,?\s*2\s*$/.exec(d_attr);
+			ok(correct_attr, "'d' attribute is correct");
+		});
+
+		module("SVGPathElement");
+
+		test("Supports getTotalLength()", 2, function() {
+			resetList();
+
+			ok("getTotalLength" in path, "Path has 'getTotalLength' property");
+
+			var len = path.getTotalLength();
+
+			equals(len, 2.8284270763397217, "Gave correct length of simple path");
+
+			// TODO: Find out what the actual correct value should be for this, then test it.
+			path.setAttribute('d', 'M1,2 L3,4 L-1,-2 z L1,2 l1,2 C3,4 5,6 1,2 c3,4 5,6 1,2 Q3,4 1,2 q3,4 1,2 A7,8 9 1,0 1,2 a7,8 9 1,0 1,2 H1 h1 V2 v2 S5,6 1,2 s5,6 1,2 T1,2 t1,2 z');
+			var len = path.getTotalLength();
+		});
+
+		test("Supports getPointAtLength()", 3, function() {
+			resetList();
+
+			path.setAttribute('d', 'M0,0 L0,5');
+
+			ok("getPointAtLength" in path, "Path has 'getPointAtLength' property");
+
+			var pt = path.getPointAtLength(3);
+
+			// Should this be rounded? Webkit gives: 8.742277657347586e-8
+			equals(pt.x, 0, "Gave X value of point on simple path");
+			equals(pt.y, 3, "Gave Y value of point on simple path");
+		});
+
+
+		test("Supports getPathSegAtLength()", 3, function() {
+			resetList();
+
+			path.setAttribute('d', 'M0,0 L0,5 L0,10');
+
+			ok("getPathSegAtLength" in path, "Path has 'getPathSegAtLength' property");
+
+			var seg1 = path.getPathSegAtLength(3);
+			var seg2 = path.getPathSegAtLength(7);
+			equals(seg1, 1, "Gave index of segment on simple path");
+			equals(seg2, 2, "Gave index of segment on simple path");
+		});
+
+	}());
+
+
+	module("SVGTransform");
+
+	test("Transform interface", 2,function() {
+		var el = makeEl('rect');
+		ok(el.transform, "Claims to support 'transform' interface for <rect/>");
+		ok(el.transform.baseVal, "Claims to support 'transform.baseVal' interface for <rect/>");
+	});
+
+
+  };
+  </script>
+</head>
+<body>
+  <h1 id="qunit-header">SVG DOM 1.1 conformance tests</h1>
+  <h2 id="qunit-banner"></h2>
+  <h2 id="qunit-userAgent"></h2>
+  <ol id="qunit-tests">
+  </ol>
+  <div id="svg" style="visibility:hidden;position:absolute;overflow:hidden;"></div>
+</body>
+</html>

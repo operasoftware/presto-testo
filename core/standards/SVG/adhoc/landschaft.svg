@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd"> 
+<svg xmlns="http://www.w3.org/2000/svg" width="500" height="400">
+	<polygon id="sky" style="stroke:none; stroke-width:1; stroke-opacity:1; fill:#d5fbfd; fill-opacity:1" points="500,0,500,174,0,168,0,0" />
+	<polygon id="mountain1" style="stroke:none; stroke-width:1; stroke-opacity:1; fill:#83781b; fill-opacity:0.92" points="39,139,30,142,26,146,16,150,12,155,5,158,0,163,80,167,70,158,64,151,55,149,55,147,52,145,50,144,47,141" />
+	<polygon id="earth" style="stroke:none; stroke-width:1; stroke-opacity:1; fill:#bdaa0d; fill-opacity:1" points="0,163,14,163,24,161,29,160,35,159,51,157,64,156,75,156,98,163,121,159,133,160,149,164,164,157,333,149,361,162,387,157,419,162,458,156,472,162,484,167,500,163,500,400,0,400" />
+	<polygon id="river" style="stroke:none; stroke-width:1; stroke-opacity:1; fill:#107ed2; fill-opacity:1" points="26,161,27,161,30,167,30,168,27,172,27,172,26,173,27,175,35,178,37,179,48,194,38,213,37,216,34,217,22,219,19,220,21,222,60,246,75,256,79,267,80,281,80,289,83,300,88,307,95,315,107,333,111,356,155,399,-2,399,0,346,18,316,34,298,40,289,46,279,48,269,47,259,31,247,13,238,11,237,9,235,8,232,7,222,7,220,7,218,9,217,11,215,34,209,42,199,41,189,35,181,33,180,25,175,24,174,24,174,29,168" />
+	<polygon id="left_wall" style="stroke:none; stroke-width:1; stroke-opacity:1; fill:#9c7708; fill-opacity:1" points="202,193,200,349,151,320,152,194" />
+	<polygon id="front_wall" style="stroke:none; stroke-width:1; stroke-opacity:1; fill:#a07810; fill-opacity:1" points="202,197,351,198,351,344,200,348" />
+	<polygon id="atic_wall" style="stroke:none; stroke-width:1; stroke-opacity:1; fill:#a07810; fill-opacity:1" points="276,120,202,197,351,198" />
+	<polygon id="left_roof" style="stroke:none; stroke-width:1; stroke-opacity:1; fill:#e0a70c; fill-opacity:1" points="202,129,276,119,202,202,144,197" />
+	<polygon id="right_roof" style="stroke:none; stroke-width:1; stroke-opacity:1; fill:#e8a810; fill-opacity:1" points="279,118,356,198,354,201,276,120" />
+	<polygon id="door" style="stroke:none; stroke-width:1; stroke-opacity:1; fill:#f7db69; fill-opacity:1" points="302,207,302,345,240,347,240,207" />
+	<polygon id="door_window" style="stroke:none; stroke-width:1; stroke-opacity:1; fill:#c0f8ff; fill-opacity:1" points="287,222,287,256,253,256,253,222" />
+	<polygon id="bridge" style="stroke:none; stroke-width:1; stroke-opacity:1; fill:#826800; fill-opacity:1" points="34,182,36,183,39,183,41,182,44,184,47,186,52,187,51,191,47,189,44,186,41,185,38,185,35,186,32,185" />
+	<polygon id="right_path" style="stroke:none; stroke-width:1; stroke-opacity:1; fill:#f8ebbe; fill-opacity:1" points="302,346,321,365,365,371,406,363,402,294,389,261,380,247,370,232,365,227,360,219,351,214,351,209,363,215,369,224,386,238,434,295,458,373,458,379,456,386,449,390,438,395,423,395,297,397,283,390,276,383,240,347" />
+	<polygon id="middle_path" style="stroke:none; stroke-width:1; stroke-opacity:1; fill:#f8ebbe; fill-opacity:1" points="52,188,75,186,98,188,130,180,140,179,158,180,156,183,138,181,131,182,101,190,73,188,51,190" />
+	<polygon id="left_path" style="stroke:none; stroke-width:1; stroke-opacity:1; fill:#f8ebbe; fill-opacity:1" points="34,182,32,185,19,179,14,177,11,175,8,171,6,168,0,164,0,163,6,166,8,167,9,168,9,169,11,172,13,174,16,176,21,179" />
+	<polygon id="conture" style="stroke:none; stroke-width:1; stroke-opacity:0.24; fill:#887c20; fill-opacity:0.11" points="416,176,434,176,458,165,474,171,492,176,462,184,380,181" />
+	<polygon id="conture" style="stroke:none; stroke-width:1; stroke-opacity:0.24; fill:#887c20; fill-opacity:0.11" points="459,198,441,198,417,187,401,193,383,198,413,206,495,203" />
+	<polygon id="conture" style="stroke:none; stroke-width:1; stroke-opacity:0.24; fill:#887c20; fill-opacity:0.11" points="98,170,109,168,126,162,138,165,147,171,129,176,74,174" />
+	<polygon id="conture" style="stroke:none; stroke-width:1; stroke-opacity:0.24; fill:#887c20; fill-opacity:0.11" points="427,174,409,174,385,163,369,169,351,174,381,182,463,179" />
+	<polygon id="conture" style="stroke:none; stroke-width:1; stroke-opacity:0.24; fill:#887c20; fill-opacity:0.11" points="84,171,72,171,57,162,43,161,35,163,38,167,41,170,55,177,106,175" />
+	<polygon id="conture" style="stroke:none; stroke-width:1; stroke-opacity:0.24; fill:#887c20; fill-opacity:0.11" points="58,216,76,216,100,205,116,211,134,216,104,224,22,221" />
+	<polygon id="conture" style="stroke:none; stroke-width:1; stroke-opacity:0.24; fill:#887c20; fill-opacity:0.11" points="110,200,95,200,75,189,62,195,47,200,72,208,140,205" />
+	<polygon id="hut_shadow" style="stroke:none; stroke-width:1; stroke-opacity:1; fill:#808080; fill-opacity:0.44" points="151,320,199,349,161,345,128,321,126,319,127,319,128,319" />
+	<polygon id="left_wall_window" style="stroke:none; stroke-width:1; stroke-opacity:1; fill:#c8fcff; fill-opacity:1" points="190,227,189,265,160,256,160,225" />
+</svg>
+
+
+<!-- Generated by Jasc Trajectory Pro on 07/10/00 19:02:00 -->

@@ -1,0 +1,102 @@
+<?xml version="1.0"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink"
+     viewBox="0 0 1920 1080">
+<title>Text area scroller - buffered rendering static</title>
+
+<script xlink:href="/resources/fps.js"/>
+<script><![CDATA[
+
+window.onload = function() {
+	document.documentElement.targetFps = 100;
+	checkfps(2000);
+}
+
+]]>
+</script>
+
+<g id="epg" x="100" y="100" buffered-rendering="static">
+  <textArea width="400" text-align="end">
+    <tspan font-family="sans-serif" font-size="1.1em">
+      Why did you bring us here? We're rescuing ya. Ooh, name it after me! Yeah, I do that with my stupidness. You wouldn't. Ask anyway!</tspan>
+    <tbreak/><tbreak/>
+    <tspan font-style="italic">
+      Isn't it true that you have been paid for your testimony? Goodbye, friends. I never thought I'd die like this. But I always really hoped. Interesting. No, wait, the other thing: tedious. You know, I was God once. That's right, baby. I ain't your loverboy Flexo, the guy you love so much. You even love anyone pretending to be him! And then the battle's not so bad?
+    </tspan>
+    <tbreak/><tbreak/>
+    <tspan>
+      You can see how I lived before I met you. Well, let's just dump it in the sewer and say we delivered it. I usually try to keep my sadness pent up inside where it can fester quietly as a mental illness. I feel like I was mauled by Jesus. You lived before you met me?!
+    </tspan>
+    <tbreak/><tbreak/>
+    <tspan font-weight="bolder">
+    Fry, we have a crate to deliver. I didn't ask for a <tspan font-style="italic">completely reasonable</tspan> excuse! I asked you to get busy! I was having the most wonderful dream. Except you were there, and you were there, and you were there! No! The cat shelter's on to me.<tbreak/><tbreak/>
+    No! I want to live! There are still too many things I don't own! Say it in Russian! Yeah, lots of people did. [soto voce] Pansy. Fetal stemcells, aren't those controversial?
+    </tspan>
+  </textArea>
+  <textArea x="450" width="200" text-align="middle">
+    <tspan font-family="sans-serif" font-size="1.1em">
+      Why would a robot need to drink? So, how 'bout them Knicks? Can I use the gun? Oh yeah, good luck with that. It doesn't look so shiny to me. You guys realize you live in a sewer, right?</tspan>
+    <tbreak/><tbreak/>
+    <tspan font-style="italic">
+      No, I'm Santa Claus! [having quickly written a book to trap the Big Brain in] There, now he's trapped in a book I wrote: a crummy world of plot holes and spelling errors! And then the battle's not so bad? Shut up and get to the point!
+    </tspan>
+    <tbreak/><tbreak/>
+    <tspan>
+      No! The cat shelter's on to me. Well, let's just dump it in the sewer and say we delivered it. Negative, bossy meat creature!
+    </tspan>
+    <tbreak/><tbreak/>
+    <tspan font-weight="bolder">
+I love you, buddy! I'll get my kit! Calculon is gonna kill us and it's all everybody else's fault! I wish! It's a nickel. Ah, computer dating. It's like pimping, but you rarely have to use the phrase "upside your head." Oh, how I wish I could believe or understand that! There's only one reasonable course of action now: kill Flexo!</tspan>
+  </textArea>
+  <textArea x="700" width="200" text-align="middle">
+    <tspan font-family="sans-serif" font-size="1.1em">
+      Why would a robot need to drink? So, how 'bout them Knicks? Can I use the gun? Oh yeah, good luck with that. It doesn't look so shiny to me. You guys realize you live in a sewer, right?</tspan>
+    <tbreak/><tbreak/>
+    <tspan font-style="italic">
+      No, I'm Santa Claus! [having quickly written a book to trap the Big Brain in] There, now he's trapped in a book I wrote: a crummy world of plot holes and spelling errors! And then the battle's not so bad? Shut up and get to the point!
+    </tspan>
+    <tbreak/><tbreak/>
+    <tspan>
+      No! The cat shelter's on to me. Well, let's just dump it in the sewer and say we delivered it. Negative, bossy meat creature!
+    </tspan>
+    <tbreak/><tbreak/>
+    <tspan font-weight="bolder">
+I love you, buddy! I'll get my kit! Calculon is gonna kill us and it's all everybody else's fault! I wish! It's a nickel. Ah, computer dating. It's like pimping, but you rarely have to use the phrase "upside your head." Oh, how I wish I could believe or understand that! There's only one reasonable course of action now: kill Flexo!</tspan>
+  </textArea>
+  <textArea x="950" width="200" text-align="middle">
+    <tspan font-family="sans-serif" font-size="1.1em">
+      Why would a robot need to drink? So, how 'bout them Knicks? Can I use the gun? Oh yeah, good luck with that. It doesn't look so shiny to me. You guys realize you live in a sewer, right?</tspan>
+    <tbreak/><tbreak/>
+    <tspan font-style="italic" word-spacing="5">
+      No, I'm Santa Claus! [having quickly written a book to trap the Big Brain in] There, now he's trapped in a book I wrote: a crummy world of plot holes and spelling errors! And then the battle's not so bad? Shut up and get to the point!
+    </tspan>
+    <tbreak/><tbreak/>
+    <tspan>
+      No! The cat shelter's on to me. Well, let's just dump it in the sewer and say we delivered it. Negative, bossy meat creature!
+    </tspan>
+    <tbreak/><tbreak/>
+    <tspan font-weight="bolder">
+I love you, buddy! I'll get my kit! Calculon is gonna kill us and it's all everybody else's fault! I wish! It's a nickel. Ah, computer dating. It's like pimping, but you rarely have to use the phrase "upside your head." Oh, how I wish I could believe or understand that! There's only one reasonable course of action now: kill Flexo!</tspan>
+  </textArea>
+  <textArea x="1200" width="200" text-align="end">
+    <tspan font-family="sans-serif" font-size="1.1em" letter-spacing="5">
+      Why would a robot need to drink? So, how 'bout them Knicks? Can I use the gun? Oh yeah, good luck with that. It doesn't look so shiny to me. You guys realize you live in a sewer, right?</tspan>
+    <tbreak/><tbreak/>
+    <tspan font-style="italic">
+      No, I'm Santa Claus! [having quickly written a book to trap the Big Brain in] There, now he's trapped in a book I wrote: a crummy world of plot holes and spelling errors! And then the battle's not so bad? Shut up and get to the point!
+    </tspan>
+    <tbreak/><tbreak/>
+    <tspan>
+      No! The cat shelter's on to me. Well, let's just <tspan font-weight="bolder">dump it in the sewer</tspan> and say we delivered it. Negative, bossy meat creature!
+    </tspan>
+    <tbreak/><tbreak/>
+    <tspan font-weight="bolder">
+I love you, buddy! I'll get my kit! Calculon is gonna kill us and it's all everybody else's fault! I wish! It's a nickel. Ah, computer dating. It's like pimping, but you rarely have to use the phrase "upside your head." Oh, how I wish I could believe or understand that! There's only one reasonable course of action now: kill Flexo!</tspan>
+  </textArea>
+
+ <animateTransform id="viewboxTransform" attributeName="transform" type="translate" dur="4s" values="0,0; 200,0; 0,0" repeatCount="indefinite" calcMode="linear"/>
+</g>
+<text id="f" x="10" y="1000"></text>
+<text id="result" x="10" y="1020"></text>
+
+</svg>

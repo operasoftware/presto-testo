@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC  "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+      <script src="../../../../../tools/svgweb/src/svg.js" data-path="../../../../../tools/svgweb/src"></script>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+      <meta name="keywords" content="W3C SVG 1.1 2nd Edition Test Suite"/>
+      <meta name="description" content="W3C SVG 1.1 2nd Edition SVGWeb Test Suite"/>
+      <title>
+SVG 1.1 2nd Edition Test (svgweb): animate-elem-81-t.svg
+      </title>
+      <style type="text/css">
+        <!--
+         .bodytext      { font-family:verdana, helvetica, sans-serif; font-size: 12pt; line-height: 125%; text-align: Left; margin-top: 0; margin-bottom: 0 }
+         .pageTitle     { line-height: 150%; font-size: 20pt; font-weight : 900; margin-bottom: 20pt }
+         .pageSubTitle  { color : blue; line-height: 100%; font-size: 24pt; font-weight : 900 }
+         .openChapter   { color : blue; line-height: 125%; font-weight : 900 }
+         .openSection   { color : blue; line-height: 125%; font-weight : 900 }
+         .info          { color : black; line-height: 110%; font-size: 10pt; font-weight : 100 }
+         p              { margin-top:0; margin-bottom:0; padding-top:0; padding-bottom:0 }
+         blockquote     { margin-top:0; margin-bottom:0; padding-top:0; padding-bottom:0 }
+         .opscript      { margin-left: 3%; margin-right: 3%; }
+         .opscript p    { margin-top: 0.7em }
+         .navbar        { background: black; color: white; font-weight: bold }
+         .warning       { color: red; text-align: Center;}
+         a,a:visited    { color: blue }
+        -->
+      </style>
+      <link rel="prev" href="animate-elem-80-t.html" />
+      <link rel="index" href="index.html" />
+      <link rel="next" href="animate-elem-82-t.html" />
+      <script src="../resources/testharnessreport.js"></script>
+    </head>
+  <body class="bodytext">
+<div class="linkbar"> 
+  <p>Specification link: <a target="spec" href="http://www.w3.org/TR/SVG11/animate.html#Animation">19.2 Animation elements</a></p>
+  <p>
+    <a href="animate-elem-80-t.html" rel="prev">animate-elem-80-t ←</a> 
+    <a href="index.html" rel="index">index</a>
+    <a href="animate-elem-82-t.html" rel="next">→ animate-elem-82-t</a>
+  </p>
+</div>
+<div>
+  <br />
+  <p class="warning">
+    Tests that contain the draft-watermark are under development and may be incorrectly testing a feature.
+  </p>
+</div>
+<table align="center" border="0" cellspacing="0" cellpadding="10">
+  <tr>
+    <td align="center" colspan="3">
+      <table border="0" cellpadding="8">
+        <tr>
+          <td align="center" colspan="2" class="pageTitle">
+            <h1>animate-elem-81-t.svg</h1>
+          </td>
+        </tr>
+        <tr  class="navbar">
+          <td align="center">
+            SVG Image
+          </td>
+          <td align="center">
+            PNG Image
+          </td>
+        </tr>
+        <tr>
+          <td align="right">
+            <!--[if IE]>
+              <object src="../../svg/animate-elem-81-t.svg" width="480" height="360" classid="image/svg+xml"><p style="font-size:300%;color:red">FAIL</p>
+            <![endif]-->
+            <!--[if !IE]>-->
+              <object data="../../svg/animate-elem-81-t.svg" width="480" height="360" type="image/svg+xml"><p style="font-size:300%;color:red">FAIL</p>
+            <!--<![endif]-->
+              </object>
+          </td>
+          <td align="left">
+            <img alt="raster image of animate-elem-81-t.svg" src="../../png/animate-elem-81-t.png" width="480" height="360"/>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+
+<div class="opscript">
+    <h2 id="operatorscript">
+      Operator Script
+    </h2>
+    <div>
+<p>
+        Run the test. No interaction required.
+      </p>
+  </div>
+  <h2 id="passcriteria">
+    Pass Criteria
+  </h2>
+  <div>
+<p>The test is passed if:</p><ul>
+      	<li>the scale of the upper leftmost grey rectangle is smoothly animated over the course of 5 seconds to completely fill the upper leftmost yellow rectangle</li>
+      	<li>the scale and rotation of the second upper grey rectangle from the left is smoothly animated over the course of 5 seconds to fill the second upper yellow rectangle from the left</li>
+      	<li>the scale of the upper third grey rectangle from the left is smoothly animated over the course of 2.5 seconds to completely fill the upper third yellow rectangle from the left, and then repeated once so that at time t=5 seconds it completely fills the same yellow rectangle</li>
+      	<li>the scale of the upper rightmost grey rectangle is smoothly animated over the course of 5 seconds to completely fill the upper rightmost yellow rectangle</li>
+      	<li>the scale of the lower leftmost grey rectangle is smoothly animated over the course of 2.5 seconds to completely fill the lower leftmost yellow rectangle, and then repeated once so that at time t=5 seconds it completely fills the same yellow rectangle</li>
+      	<li>the scale of the lower rightmost grey rectangle is smoothly animated over the course of 5 seconds to completely fill the lower rightmost yellow rectangle</li>
+      </ul>
+  </div>
+  <h2 id="testdescription">
+    Test Description
+  </h2>
+  <div>
+<p>
+        This test tests the operation of the animateTransform's
+        additive behavior.
+      </p><p>
+        The first two rectangles, on the top row, show the effect of the
+        additive attribute on animateTransform. The left-most
+        animateTransforms have their additive attribute set to replace,
+        so the effect of the two transform animation is as if only the
+        highest priority one applied because it replaces the underlying
+        value. The second animateTransforms (from left to right) have
+        their additive attribute set to sum, which means the transforms
+        they produce are concatenated.
+      </p><p>
+        The last two rectangles, on the top row, show the effect of the
+        accumulate attribute on animateTransform. For the left one
+        (third on the row, from left to right), the accumulate attribute
+        is set to none. There are two repeats for the
+        animateTransform. Therefore, the transform goes twice from a
+        scale(1,1) to a scale(2,2). For the right-most animateTransform,
+        the accumulate attribute is set to sum. There are two repeats
+        and the animation goes from scale(0,0) to scale(2,2) for the
+        first iteration and then from scale(2,2) to scale(4,4) (because
+        the result of the second iteration is added to the
+        scale(2,2) result of the previous, first iteration).
+      </p><p>
+        The rectangles on the bottom row show the combination of
+        additive and cumulative behavior. The left rectangle's
+        animateTransform accumulate behavior is set to none but its
+        additive behavior is set to sum. Therefore, the transform's
+        underlying value (skewX(30)) is always pre-concatenated to the
+        animateTransform's result, which goes from "skewX(30)
+        scale(1,1)" to "skewX(30) scale(2,2)" in each of its two
+        iterations.  The right rectangle's animateTransform accumulate
+        behavior is set to sum and the additive behavior is also set to
+        sum. Therefore, the transform's underlying value is always
+        pre-concatenated, and repetitions of the scale animation
+        get added together. Consequently, the transform goes from "skewX(30)
+        scale(0,0)" to "skewX(30) scale(2,2)" for the first iteration
+        and then from "skewX(30) scale(2,2)" to "skewX(30)
+        scale(4,4)" for the second iteration.
+      </p>
+  </div>
+</div>
+<br/>
+<div class="linkbar">
+  <p>
+    <a href="animate-elem-80-t.html" rel="prev">animate-elem-80-t ←</a>
+    <a href="index.html" rel="index">index</a>
+    <a href="animate-elem-82-t.html" rel="next">→ animate-elem-82-t</a>
+  </p>
+</div>
+</body>
+</html>

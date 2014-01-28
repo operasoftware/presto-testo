@@ -1,0 +1,96 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:svg="http://www.w3.org/2000/svg" 
+      xmlns:xlink="http://www.w3.org/1999/xlink">
+<head>
+<title>Anim editor</title>
+
+<style>
+*
+{
+font-family: sans-serif;
+font-size:10px;
+}
+
+h1
+{
+font-size:16px;
+}
+</style>
+
+<script src="anim_editor.js" type="text/javascript">
+</script>
+
+</head>
+
+<body onload="init();">
+  <table>
+    <tr>
+      <td>
+	<h1>Global animation</h1>
+	<table>
+	  <tr>
+	    <td></td><td><input type="button" onclick="restart_animation();" value="Restart"/></td>
+	  </tr>
+	  <tr>
+	    <td>Time</td><td><input type="text" readonly="1" id="glob_current_time" size="10"/></td>
+	  </tr>
+	  <tr>
+	    <td>Set</td><td><input type="text" id="glob_set_current_time" size="10"/></td>
+	  </tr>
+	  <tr>
+	    <td></td><td><input type="button" onclick="set_global_anim_values();" value="Set"/></td>
+	  </tr>
+	</table>
+
+	<h1>animateMotion element</h1>
+	<table>
+	  <tr>
+	    <td>Begin</td><td><input type="text" id="anim_begin" size="10"/></td>
+	  </tr>
+	  <tr>
+	    <td>Dur</td><td><input type="text" id="anim_dur" size="10"/></td>
+	  </tr>
+	  <tr>
+	    <td>Fill</td>
+	    <td>
+	      <select id="anim_fill">
+		<option value="freeze">freeze</option>
+		<option value="remove">remove</option>
+	      </select>
+	    </td>
+	  </tr>
+	  <tr>
+	    <td>Path</td>
+	    <td>
+	      <input type="text" id="anim_path" size="10"/>
+	    </td>
+	  </tr>
+	  <tr>
+	    <td>Time</td>
+	    <td>
+	      <input type="text" readonly="1" id="anim_current_time" size="10"/><br/>
+	    </td>
+	  </tr>
+	  <tr>
+	    <td></td>
+	    <td>
+	      <input type="button" onclick="set_anim_values();" value="Set"/>
+	    </td>
+	  </tr>
+	</table>
+
+	</td><td>
+	<svg:svg width="600" height="400" id="svgElement" viewBox="0 0 400 300">
+	  <svg:g id="animcurve">
+	    <svg:path d="M 50,150 c 100,-140 100,140 200,0 z" stroke="red" stroke-width="3" fill="none" />
+	    <svg:circle cx="0" cy="0" r="5" fill="blue">
+	      <svg:animateMotion id="motion" path="M 50,150 c 100,-140 100,140 200,0 z" begin="0s" dur="10s" fill="freeze"/>
+	      <svg:animate id="radius" attributeName="r" values="5,30,5" begin="0s"/>
+	    </svg:circle>
+	  </svg:g>
+	</svg:svg>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>

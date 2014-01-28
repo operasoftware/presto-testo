@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg version="1.2" baseProfile="tiny" id="svg-root" width="100%" height="100%" 
+  viewBox="0 0 480 360" xmlns="http://www.w3.org/2000/svg" 
+  xmlns:xlink="http://www.w3.org/1999/xlink">
+  <!--======================================================================-->
+  <!--=  Copyright 2006 World Wide Web Consortium, (Massachusetts          =-->
+  <!--=  Institute of Technology, European Research Consortium for         =-->
+  <!--=  Informatics and Mathematics (ERCIM), Keio University).            =-->
+  <!--=  All Rights Reserved.                                              =-->
+  <!--=  See http://www.w3.org/Consortium/Legal/.                          =-->
+  <!--======================================================================-->
+  <!-- NOTE:  CVS will automatically update the                             -->
+  <!--        "$RCSfile$" and "$Revision$"         -->
+  <!--        fields in the file.                                           -->
+  <!--        There is no need to update this information.                  -->
+  <!-- =====================================================================-->
+  <SVGTestCase xmlns="http://www.w3.org/2000/02/svg/testsuite/description/" reviewer="[reviewer]" owner="ED" desc="" status="created" version="$Revision$" testname="$RCSfile$">
+    <OperatorScript>
+      <p>
+		Tests switch inside a switch, and comments inside text content.
+	  </p>
+    </OperatorScript>
+  </SVGTestCase>
+  <title id="test-title">$RCSfile$</title>
+  <!--======================================================================-->
+  <!--Content of Test Case follows...                  =====================-->
+  <!--======================================================================-->
+  <defs>
+    <font-face
+      font-family="SVGFreeSansASCII"
+      unicode-range="U+0-7F">
+      <font-face-src>
+        <font-face-uri xlink:href="../images/SVGFreeSans.svg#ascii"/>
+      </font-face-src>
+    </font-face>
+  </defs>
+  <g id="test-body-content" font-family="SVGFreeSansASCII" font-size="18">
+		<g fill="#555" font-size="10" text-anchor="middle">
+			<text fill="#000" x="240" font-size="14" y="30" id="display-title">Required Features Attribute</text>
+			<text x="240" y="45" id="comment-1">
+				A series of switches are used to determine which 'requiredFeatures' are supported. 
+			</text>
+		</g>
+		<g font-size="10" transform="translate(-30,80)">
+			<text text-anchor="end" x="240" y="-15" fill="#555" font-size="14">Test</text>
+			<text x="250" y="-15" fill="#555" font-size="14">Result</text>
+			
+			<text text-anchor="end" x="240" y="0" fill="black">Nested switch</text>
+			<switch>
+				<text x="250" y="0" fill="green" requiredFeatures="http://www.w3.org/Graphics/SVG/feature/1.2/#SVG-all">
+					Pre switch...
+					<switch>
+						<tspan requiredFeatures="http://www.w3.org/Graphics/SVG/feature/1.2/#ConditionalProcessing">nested switch A</tspan>
+						<tspan>nested switch B</tspan>
+					</switch>
+					<!-- here is a comment to test that it's ignored and that the text that follows is rendered -->
+					...post switch, more text follows
+				</text>
+				<text x="250" y="0" fill="red">No</text>
+			</switch>
+		</g>
+  </g>
+  <g font-family="SVGFreeSansASCII" font-size="32">
+  <text id="revision" x="10" y="340" stroke="none" 
+    fill="black">$Revision$</text>
+  </g>
+  <rect id="test-frame" x="1" y="1" width="478" height="358" fill="none" stroke="#000"/>
+  <g id="draft-watermark">
+    <rect x="1" y="1" width="478" height="20" fill="red" stroke="black" stroke-width="1"/>
+    <text font-family="'Arial Black', Arial, sans-serif" font-weight="bold" font-size="20" x="240" 
+      text-anchor="middle" y="18" stroke-width="0.5" stroke="black" fill="white">DRAFT</text>
+  </g>
+</svg>

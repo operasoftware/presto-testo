@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  id="svg-root" width="100%" height="100%" viewBox="0 0 480 360">
+	<title id="test-title">kernelUnitLength</title>
+	<desc id="test-desc">Test the use of 'kernelUnitLength'.</desc>
+	<g id="test-body-content">
+		<g font-family="Verdana" text-anchor="middle" font-size="10">
+			<text x="240" y="30" font-size="20">Test for 'kernelUnitLength'</text>
+			<defs>
+				<filter id="conv" filterUnits="objectBoundingBox">
+					<feTurbulence type="fractalNoise" baseFrequency="0.05" numOctaves="4"/>
+					<feConvolveMatrix kernelMatrix="-2 0 0, 0 1 0, 0 0 2"/>
+				</filter>
+				<filter id="convkern" filterUnits="objectBoundingBox">
+					<feTurbulence type="fractalNoise" baseFrequency="0.05" numOctaves="4"/>
+					<feConvolveMatrix kernelUnitLength="2 2" kernelMatrix="-2 0 0, 0 1 0, 0 0 2"/>
+				</filter>
+
+				<filter id="spec">
+					<feTurbulence type="fractalNoise" baseFrequency="0.05" numOctaves="4"/>
+					<feSpecularLighting specularConstant="0.9" specularExponent="2.2">
+						<feDistantLight azimuth="45" elevation="45"/>
+					</feSpecularLighting>
+				</filter>
+				<filter id="speckern">
+					<feTurbulence type="fractalNoise" baseFrequency="0.05" numOctaves="4"/>
+					<feSpecularLighting specularConstant="0.9" specularExponent="2.2" kernelUnitLength="2 2">
+						<feDistantLight azimuth="45" elevation="45"/>
+					</feSpecularLighting>
+				</filter>
+
+				<filter id="diff">
+					<feTurbulence type="fractalNoise" baseFrequency="0.05" numOctaves="4"/>
+					<feDiffuseLighting diffuseConstant="0.9">
+						<feDistantLight azimuth="45" elevation="45"/>
+					</feDiffuseLighting>
+				</filter>
+				<filter id="diffkern">
+					<feTurbulence type="fractalNoise" baseFrequency="0.05" numOctaves="4"/>
+					<feDiffuseLighting diffuseConstant="0.9" kernelUnitLength="2 2">
+						<feDistantLight azimuth="45" elevation="45"/>
+					</feDiffuseLighting>
+				</filter>
+			</defs>
+			<!-- Convolution -->
+			<rect x="10" y="60" width="100" height="100" fill="black" filter="url(#conv)"/>
+			<rect x="10" y="180" width="100" height="100" fill="black" filter="url(#convkern)"/>
+
+			<text x="10" y="320" text-anchor="start">feConvolveMatrix</text>
+
+			<!-- Specular lighting -->
+			<rect x="130" y="60" width="100" height="100" fill="lightblue" filter="url(#spec)"/>
+			<rect x="130" y="180" width="100" height="100" fill="lightblue" filter="url(#speckern)"/>
+
+			<text x="130" y="320" text-anchor="start">feSpecularLighting</text>
+
+			<!-- Diffuse lighting -->
+			<rect x="250" y="60" width="100" height="100" fill="lightblue" filter="url(#diff)"/>
+			<rect x="250" y="180" width="100" height="100" fill="lightblue" filter="url(#diffkern)"/>
+
+			<text x="250" y="320" text-anchor="start">feDiffuseLighting</text>
+		</g>
+	</g>
+	<rect id="test-frame" x="1" y="1" width="478" height="358" fill="none" stroke="#000000"/>
+</svg>

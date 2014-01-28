@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN"
+	"http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<svg height="100" version="1.0" width="100" xmlns="http://www.w3.org/2000/svg">
+  <metadata>
+    <rdf:RDF xmlns:cc="http://web.resource.org/cc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+      <cc:Work rdf:about="">
+        <dc:title>square and octagons 4 pattern</dc:title>
+        <dc:description></dc:description>
+        <dc:subject>
+          <rdf:Bag>
+            <rdf:li>pattern</rdf:li>
+          </rdf:Bag>
+        </dc:subject>
+        <dc:publisher>
+          <cc:Agent rdf:about="http://www.openclipart.org">
+            <dc:title>Open Clip Art Library</dc:title>
+          </cc:Agent>
+        </dc:publisher>
+        <dc:creator>
+          <cc:Agent>
+            <dc:title>Alan Horkan</dc:title>
+          </cc:Agent>
+        </dc:creator>
+        <dc:rights>
+          <cc:Agent>
+            <dc:title>Alan Horkan</dc:title>
+          </cc:Agent>
+        </dc:rights>
+        <dc:date></dc:date>
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+        <cc:license rdf:resource="http://web.resource.org/cc/PublicDomain"/>
+        <dc:language>en</dc:language>
+      </cc:Work>
+      <cc:License rdf:about="http://web.resource.org/cc/PublicDomain">
+        <cc:permits rdf:resource="http://web.resource.org/cc/Reproduction"/>
+        <cc:permits rdf:resource="http://web.resource.org/cc/Distribution"/>
+        <cc:permits rdf:resource="http://web.resource.org/cc/DerivativeWorks"/>
+      </cc:License>
+    </rdf:RDF>
+  </metadata>
+  <defs>
+    <pattern height="100" id="square-and-octagons-4" patternContentUnits="userSpaceOnUse" patternUnits="userSpaceOnUse" width="100">
+      <polygon fill="#00ff80" id="backfill-horizontal-1" points="50,50 0,100 0,0" stroke="black" stroke-width="0"/>
+      <polygon fill="#00ff80" id="backfill-horizontal-2" points="50,50 100,100 100,0" stroke="black" stroke-width="0"/>
+      <polygon fill="#ffc000" id="backfill-vertical-1" points="50,50 100,0 0,0" stroke="black" stroke-width="0"/>
+      <polygon fill="#ffc000" id="backfill-vertical-2" points="50,50 100,100 0,100" stroke="black" stroke-width="0"/>
+      <g>
+        <line stroke="#ff00c0" stroke-width="2" x1="5" x2="95" y1="5" y2="95"/>
+        <line stroke="#ff00c0" stroke-width="2" x1="95" x2="5" y1="5" y2="95"/>
+      </g>
+      <rect fill="red" height="15" id="top-left" width="15" x="0" y="0"/>
+      <rect fill="red" height="15" id="top-right" width="15" x="85" y="0"/>
+      <rect fill="red" height="15" id="bottom-left" width="15" x="0" y="85"/>
+      <rect fill="red" height="15" id="bottom-right" width="15" x="85" y="85"/>
+      <rect fill="#c000c0" height="15" width="15" x="35" y="35"/>
+      <rect fill="#c000c0" height="15" width="15" x="50" y="50"/>
+      <rect fill="#c000c0" height="15" width="15" x="50" y="35"/>
+      <rect fill="#c000c0" height="15" width="15" x="35" y="50"/>
+    </pattern>
+  </defs>
+  <rect fill="url(#square-and-octagons-4)" height="100" width="100" x="0" y="0"/>
+</svg>

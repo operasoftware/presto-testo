@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN"
+  "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd" [
+  <!ATTLIST svg xmlns:xlink CDATA #FIXED "http://www.w3.org/1999/xlink">
+  <!ENTITY title "Landtagswahl 2003">
+  <!ENTITY subtitle "Nordrhein-Westfalen">
+  <!ENTITY cdu "40">
+  <!ENTITY spd "30">
+  <!ENTITY gruene "20">
+  <!ENTITY fdp "5">
+  <!ENTITY sonstige "5">
+  <!ENTITY dur "2s">
+  <!ENTITY begin "2s">
+]>
+<svg xmlns="http://www.w3.org/2000/svg" width="170" height="144" viewBox="0 0 170 144" xmlns:xlink="http://www.w3.org/1999/xlink">
+<rect x="2" y="2" width="166" height="42" rx="8.3" ry="7" style="fill:#F00;stroke-width:2"/>
+<rect x="2" y="2" width="166" height="42" rx="8.3" ry="7" style="fill:#F00;stroke-width:2"/>
+<rect x="-2" y="34" width="172" height="110" style="fill:rgb(255,255,255);stroke-width:2"/>
+<rect x="2" y="2" width="166" height="140" rx="8.3" ry="7" style="fill:none;stroke:#999999;stroke-width:2"/>
+<text x="10" y="16" style="fill: #FFF; font-size: 14px;">&title;
+</text>
+ 
+<text x="10" y="30" style="fill: #FFF; font-size: 12px;">&subtitle;
+</text>
+  
+<rect x="60" y="40" width="0" height="10" style="fill:#000;stroke:#999999;stroke-width:1">
+<animate attributeName="width" attributeType="XML" begin="0s" dur="2s" fill="freeze" from="0" to="&cdu;"/>
+</rect>
+<text x="10" y="50" style="font-size: 12px; fill: #000;">CDU</text>
+<text x="140" y="50" style="font-size: 13px; text-anchor: middle; visibility: hidden">&cdu;%
+<animate attributeName="visibility" attributeType="CSS" begin="2s" dur="2s" fill="freeze" from="hidden" to="visible" calcMode="discrete"/>
+</text>
+<rect x="60" y="55" width="0" height="10" style="fill:#F00;stroke:#999999;stroke-width:1">
+<animate attributeName="width" attributeType="XML" begin="0s" dur="2s" fill="freeze" from="0" to="&spd;"/>
+</rect>
+<text x="10" y="65" style="font-size: 12px; fill: #000;">SPD</text>
+<text x="140" y="65" style="font-size: 13px; text-anchor: middle; visibility: hidden">&spd;%
+<animate attributeName="visibility" attributeType="CSS" begin="2s" dur="2s" fill="freeze" from="hidden" to="visible" calcMode="discrete"/>
+</text>
+ 
+<rect x="60" y="70" width="0" height="10" style="fill:#0F0;stroke:#999999;stroke-width:1">
+<animate attributeName="width" attributeType="XML" begin="0s" dur="2s" fill="freeze" from="0" to="&gruene;"/>
+</rect>
+<text x="10" y="80" style="font-size: 12px; fill: #000;">Gruene</text>
+<text x="140" y="80" style="font-size: 13px; text-anchor: middle; visibility: hidden">&gruene;%
+<animate attributeName="visibility" attributeType="CSS" begin="2s" dur="2s" fill="freeze" from="hidden" to="visible" calcMode="discrete"/>
+</text> 
+ 
+<rect x="60" y="85" width="0" height="10" style="fill:#FF0;stroke:#999999;stroke-width:1">
+<animate attributeName="width" attributeType="XML" begin="0s" dur="2s" fill="freeze" from="0" to="&fdp;"/>
+</rect>
+<text x="10" y="95" style="font-size: 12px; fill: #000;">FDP</text>
+<text x="140" y="95" style="font-size: 13px; text-anchor: middle; visibility: hidden">&fdp;%
+<animate attributeName="visibility" attributeType="CSS" begin="2s" dur="2s" fill="freeze" from="hidden" to="visible" calcMode="discrete"/>
+</text>  
+<rect x="60" y="100" width="0" height="10" style="fill:#CCC;stroke:#999999;stroke-width:1">
+<animate attributeName="width" attributeType="XML" begin="0s" dur="2s" fill="freeze" from="0" to="&sonstige;"/>
+</rect>
+<text x="10" y="110" style="font-size: 12px; fill: #000;">Sonstige</text>
+<text x="140" y="110" style="font-size: 13px; text-anchor: middle; visibility: hidden">&sonstige;%
+<animate attributeName="visibility" attributeType="CSS" begin="2s" dur="2s" fill="freeze" from="hidden" to="visible" calcMode="discrete"/>
+</text>  
+<text x="85" y="130" style="font-size: 11px; fill:#999999; text-anchor:middle; visibility: hidden">Brought to you by Vodafone
+<animate attributeName="visibility" attributeType="CSS" begin="3s" dur="2s" fill="freeze" from="hidden" to="visible" calcMode="discrete"/>
+</text>
+<text x="85" y="80" style="font-size: 13px; text-anchor: middle; visibility: hidden">Neustart
+<animate attributeName="visibility" attributeType="CSS" begin="20s" dur="2s" fill="freeze" from="hidden" to="visible" calcMode="discrete"/>
+</text>
+   
+</svg>

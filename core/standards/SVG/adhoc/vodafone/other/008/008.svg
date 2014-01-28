@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 250 100">
+<circle fill="#ED1C2E" cx="125" cy="50" r="0">
+	<animate attributeName="r" values="0;400" begin="ra.begin" dur="0.3s" fill="freeze" />
+	<animate id="ra" attributeName="fill-opacity" values="1;0" begin="clock.begin+0.45s" dur="1s" fill="freeze"/>
+	<set attributeName="r" to="0" begin="ra.end" dur="0.3s" fill="freeze"/>
+	<set attributeName="fill-opacity" to="1" begin="ra.end" dur="0.3s" fill="freeze"/>
+</circle>
+<circle fill="none" stroke="#FFF" stroke-width="2" cx="125" cy="50" r="0">
+	<animate attributeName="r" values="0;400" begin="ra.begin" dur="0.6s" fill="freeze" />
+	<set attributeName="r" to="0" begin="ra.end" dur="0.3s" fill="freeze"/>
+</circle>
+<circle fill="none" stroke="#FFF" stroke-width="2" cx="125" cy="50" r="0">
+	<animate attributeName="r" values="0;400" begin="ra.begin" dur="2s" fill="freeze" />
+	<set attributeName="r" to="0" begin="ra.end" dur="0.3s" fill="freeze"/>
+</circle>
+<g fill-opacity="0" stroke-opacity="0">
+	<animate id="clock" attributeName="fill-opacity" values="0;1;1;0" keyTimes="0;0.01;0.86;1" begin="a.end;b.end;c.end" dur="2.54s" fill="freeze"/>
+	<animate attributeName="stroke-opacity" values="0;1;1;0" keyTimes="0;0.01;0.86;1" begin="a.end;b.end;c.end" dur="2.54s" fill="freeze"/>
+	<animateTransform attributeName="transform" type="translate" additive="replace" values="0,0;-969.91,-383.19;-293.08,-115.73;-383.5,-151.46;-331.83,-131.05;-342.16,-135.13;-342.16,-135.13;-326.66,-129.01;-1469.66,-580.6" keyTimes="0;0.07;0.17;0.25;0.31;0.35;0.76;0.86;1" begin="clock.begin" dur="2.54s" fill="freeze"/>
+	<animateTransform attributeName="transform" type="scale" additive="sum" values="1,1;8.82292,8.82292;3.36458,3.36458;4.09375,4.09375;3.67708,3.67708;3.76042,3.76042;3.76042,3.76042;3.63542,3.63542;12.8542,12.8542" keyTimes="0;0.07;0.17;0.25;0.31;0.35;0.76;0.86;1" begin="clock.begin" dur="2.54s" fill="freeze"/>
+	<circle fill="#A8A8A8" stroke="#000" cx="124.5" cy="49.5" r="12"/>
+	<circle fill="#FFF" cx="125" cy="49" r="11"/>
+	<circle fill="#A8C9E8" stroke="#000" stroke-width="0.5" cx="124.8" cy="49.3" r="9.2"/>
+	<circle fill="#E6F0F2" cx="125.5" cy="48.8" r="8"/>
+	<g>
+		<line stroke="#ED1C2E" stroke-width="2" stroke-linecap="round" x1="125" y1="50" y2="44" x2="125"/>
+		<animateTransform id="minute" attributeName="transform" type="rotate" additive="sum" begin="0s" values="0,125,50;360,125,50"  dur="2s" repeatCount="indefinite"/>
+	</g>
+	<g>
+		<line stroke="#ED1C2E" stroke-width="2" stroke-linecap="round" x1="125" y1="50" y2="46" x2="125"/>
+		<animateTransform attributeName="transform" type="rotate" begin="0s" values="0,125,50;360,125,50" dur="24s" repeatCount="indefinite"/>
+	</g>
+</g>
+<text x="500" y="60" font-size="30" font-weight="bold" fill="#666">
+	$Title-20-1
+	<animate id="a" attributeName="fill-opacity" values="0;1;1;0" keyTimes="0;0.25;0.75;1" begin="0s;c.end+2.2s" dur="4s"/>
+	<animate attributeName="x" values="250;80;-60;-300" keyTimes="0;0.15;0.85;1" begin="a.begin" dur="4s"/>
+</text>
+<text x="500" y="60" font-size="30" font-weight="bold" fill="#666">
+	$Title-20-2
+	<animate id="b" attributeName="fill-opacity" values="0;1;1;0" keyTimes="0;0.25;0.75;1" begin="a.end+2.2s" dur="4s"/>
+	<animate attributeName="x" values="250;80;-60;-300" keyTimes="0;0.15;0.85;1" begin="b.begin" dur="4s"/>
+</text>
+<text x="500" y="60" font-size="30" font-weight="bold" fill="#666">
+	$Title-20-3
+	<animate id="c" attributeName="fill-opacity" values="0;1;1;0" keyTimes="0;0.25;0.75;1" begin="b.end+2.2s" dur="4s"/>
+	<animate attributeName="x" values="250;80;-60;-300" keyTimes="0;0.15;0.85;1" begin="c.begin" dur="4s"/>
+</text>
+</svg>

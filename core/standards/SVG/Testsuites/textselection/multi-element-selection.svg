@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg">
+  <title>Text selection across multiple &lt;text&gt; elements</title>
+
+  <text x="10" y="20">You should not be able to select text from</text>
+  <text x="10" y="40">both of these two lines at the same time.</text>
+</svg>
+

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 250 100">
+<rect x="-125" y="-1.25" width="500" height="100" fill="#adadad" fill-opacity="0.8"/>
+ 
+<!-- Scene 1 -->
+<g id="Scene_1">
+ 
+	<!-- Animation -->
+	<g id="Animation_1">
+		<g>
+			<animateTransform attributeName="transform" type="translate" additive="replace" values="0,13;0,-0.99;0,12;-1.8,29.65;0,13" keyTimes="0;0.33;0.75;0.83;1" dur="0.6s" fill="freeze" repeatCount="indefinite"/>
+			<animateTransform attributeName="transform" type="scale" additive="sum" values="1,1;1,1;1,1;1.1,0.775;1,1" keyTimes="0;0.33;0.75;0.83;1" dur="0.6s" fill="freeze" repeatCount="indefinite"/>
+			<path fill="none" stroke="#e41407" stroke-width="4" stroke-linejoin="bevel" stroke-miterlimit="4" d="M33 22 c0 0 -28 -5 -17 -17 c11 -11 20 14 14 14"/>
+			<path fill="none" stroke="#e41407" stroke-width="4" stroke-linejoin="bevel" stroke-miterlimit="4" d="M37 22 c0 0.28 28 -5 17 -17 c-11 -11 -19 14 -14 14"/>
+			<path fill="none" stroke="#151111" stroke-linejoin="bevel" stroke-miterlimit="4" d="M30 14 v10"/>
+			<path fill="none" stroke="#e41407" stroke-width="9" stroke-linejoin="bevel" stroke-miterlimit="4" d="M36 14 v10"/>
+			<path fill="#f5c880" stroke="#f5c880" stroke-width="11" stroke-linejoin="bevel" stroke-miterlimit="4" d="M5 35 h57"/>
+			<path fill="#f5c880" stroke="#f5c880" stroke-width="23" stroke-linejoin="bevel" stroke-miterlimit="4" d="M9 59 h51"/>
+			<path fill="#f6d184" stroke="#f6d184" stroke-width="2" stroke-linejoin="bevel" stroke-miterlimit="4" d="M3 26 h63"/>
+			<path fill="#f5c880" stroke="#f9e79e" stroke-linejoin="bevel" stroke-miterlimit="4" d="M5 28 h57"/>
+			<path fill="#f5c880" stroke="#fbac5c" stroke-width="2" stroke-linejoin="bevel" stroke-miterlimit="4" d="M4 26 v16"/>
+			<path fill="#f5c880" stroke="#fbac5c" stroke-width="2" stroke-linejoin="bevel" stroke-miterlimit="4" d="M64 27 v16"/>
+			<path fill="#f5c880" stroke="#f59c55" stroke-width="2" stroke-linejoin="bevel" stroke-miterlimit="4" d="M5 41 h58"/>
+			<path fill="none" stroke="#f88537" stroke-width="2" stroke-linejoin="bevel" stroke-miterlimit="4" d="M2 24 v20"/>
+			<path fill="none" stroke="#f88537" stroke-linejoin="bevel" stroke-miterlimit="4" d="M2 44 h62"/>
+			<path fill="none" stroke="#c95727" stroke-linejoin="bevel" stroke-miterlimit="4" d="M1 24 h64"/>
+			<path fill="none" stroke="#d79d79" stroke-linejoin="bevel" stroke-miterlimit="4" d="M0 22 v22"/>
+			<path fill="none" stroke="#d79d79" stroke-linejoin="bevel" stroke-miterlimit="4" d="M66 23 v21"/>
+			<path fill="none" stroke="#89250b" stroke-linejoin="bevel" stroke-miterlimit="4" d="M4 45 v27"/>
+			<path fill="none" stroke="#f69649" stroke-linejoin="bevel" stroke-miterlimit="4" d="M6 44 v28"/>
+			<path fill="none" stroke="#f5bd74" stroke-linejoin="bevel" stroke-miterlimit="4" d="M8 45 v26"/>
+			<path fill="none" stroke="#f28439" stroke-width="2" stroke-linejoin="bevel" stroke-miterlimit="4" d="M8 72 h55"/>
+			<path fill="none" stroke="#fbac5c" stroke-linejoin="bevel" stroke-miterlimit="4" d="M62 44 v26"/>
+			<path fill="none" stroke="#f0c796" stroke-width="2" stroke-linejoin="bevel" stroke-miterlimit="4" d="M64 45 v28"/>
+			<path fill="none" stroke="#f5bd74" stroke-width="2" stroke-linejoin="bevel" stroke-miterlimit="4" d="M9 46 h52"/>
+			<path fill="none" stroke="#7f5633" stroke-linejoin="bevel" stroke-miterlimit="4" d="M26 45 v28"/>
+			<path fill="none" stroke="#750a08" stroke-linejoin="bevel" stroke-miterlimit="4" d="M28 45 v28"/>
+			<path fill="none" stroke="#fa110c" stroke-width="11" stroke-linejoin="bevel" stroke-miterlimit="4" d="M35 31 v41"/>
+			<path fill="none" stroke="#f44f36" stroke-linejoin="bevel" stroke-miterlimit="4" d="M42 31 v42"/>
+			<path fill="none" stroke="#f44f36" stroke-linejoin="bevel" stroke-miterlimit="4" d="M28 25 v19"/>
+			<path fill="none" stroke="#f3777e" stroke-width="4" stroke-linejoin="bevel" stroke-miterlimit="4" d="M29 27 h14"/>
+			<path fill="none" stroke="#f3323b" stroke-linejoin="bevel" stroke-miterlimit="4" d="M29 30 h13"/>
+		</g>
+	</g>
+</g>
+ 
+</svg>

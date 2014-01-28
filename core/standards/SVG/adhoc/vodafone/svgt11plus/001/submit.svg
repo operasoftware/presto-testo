@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" id="SVGRoot" width="100%" height="100%" viewBox="0 0 174 29">
+	
+<defs>
+
+<linearGradient id="bg" x1="0" y1="0" x2="0.3" y2="1">
+        <stop offset="0" stop-color="#EEEEEE"/>
+       	<stop offset="0.4" stop-color="#FAFAFA"/>
+        <stop offset="1" stop-color="#CCCCCC" />
+</linearGradient>
+
+
+</defs>
+	
+<rect x="-1000" y="-1000" width="3000" height="3000" fill="#FFFFFF">
+	<animateColor id="startani" attributeName="fill" values="#FFFFFF;#ED6666" begin="SVGRoot.focusin" dur="0.8s" fill="freeze" />
+	<animateColor attributeName="fill" values="#ED6666;#FFCCCC;#ED6666" begin="startani.end" dur="1s" repeatCount="indefinite" />
+	<animateColor id="stopani" attributeName="fill" values="#FFFFFF;#FFFFFF" begin="SVGRoot.focusout" dur="0.8s" fill="freeze" />
+</rect>
+
+<rect fill="#EAEAEA" rx="4" x="2" y="2" width="170" height="25"/>
+	<rect fill="#999999" rx="4" x="5" y="5" width="167" height="22"/>
+	
+	<rect fill="url(#bg)" rx="4" x="4" y="4" width="166" height="21"/>
+	
+	
+	
+		
+
+<text style="font-size:14px;fill:#333333" x="58" y="20">
+	Submit
+</text>
+	
+<rect x="-1000" y="-1000" width="3000" height="1000" fill="#FFFFFF"/>
+<rect x="-1000" y="100" width="3000" height="1000" fill="#FFFFFF"/>
+<rect x="-1000" y="-1000" width="1000" height="3000" fill="#FFFFFF"/>
+<rect x="400" y="-1000" width="1000" height="3000" fill="#FFFFFF"/>
+
+</svg>

@@ -1,0 +1,15 @@
+<!doctype html>
+<html>
+  <head>
+    <title>TC #9</title>
+  </head>
+  <body>
+    <h1>SVG with explicit height and viewBox in a html:object</h1>
+    <!--The SVG has height 50px and width 100%. The object should adapt
+    to the height 50px and the width should be resolved to the width of the containing block-->
+<p>There should be a svg image below, it should be 50 px high and use 100 % of the width of the screen.</p>
+
+    <object data="support/height-with-viewbox.svg" type="image/svg+xml" style="border: 2px solid black;">[SVG NOT SUPPORTED]</object>
+  </body>
+</html>
+

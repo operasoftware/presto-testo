@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 62 176" xmlns="http://www.w3.org/2000/svg">
+  <g transform="rotate(90, 38, 38), translate(0,14)">
+    <rect id="myr" x="0" y="0" width="176" height="62" fill="#CCC"/>
+    <rect x="2" y="2" width="174" height="60" fill="#333"/>
+    <rect x="2" y="2" width="172" height="58" fill="#FFF"/>
+    <rect x="86" y="2" width="88" height="58" fill="#FC3"/>
+    <text x="86" y="46" font-size="40" fill="#333333" text-anchor="middle">SVG</text>
+  </g>
+
+  <script>
+    /*
+    len = document.rootElement.createSVGLength();
+    len.newValueSpecifiedUnits(SVGLength.SVG_LENGTHTYPE_CM, 10);
+    len.convertToSpecifiedUnits(SVGLength.SVG_LENGTHTYPE_MM);
+    alert(len.value); */
+
+    len = document.getElementById('myr').x.baseVal;
+    len.newValueSpecifiedUnits(SVGLength.SVG_LENGTHTYPE_CM, 10);
+    len.convertToSpecifiedUnits(SVGLength.SVG_LENGTHTYPE_MM);
+    alert(len.value);
+
+  </script>
+
+</svg>

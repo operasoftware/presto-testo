@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg">
+  <title>Text selection of right-to-left text (default text-rendering)</title>
+ 
+  <text id="test" x="10" y="20" text-anchor="end" direction="rtl" unicode-bidi="bidi-override">&#8207;.txet siht fo lla dna yna tceles ot elba eb dluohs uoY</text>
+</svg>
+

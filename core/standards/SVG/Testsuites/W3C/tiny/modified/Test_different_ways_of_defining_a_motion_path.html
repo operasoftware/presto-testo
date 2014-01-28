@@ -1,0 +1,66 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd" >
+<html lang="en">
+<head>
+    <title>Test different ways of defining a motion path</title>
+    
+    <style type="text/css">
+    thead {
+     background-color: #A8A8A8;   
+        
+    }
+    .even{
+        
+        background-color: #E6E6E6 ;
+        
+    }
+    
+    
+    
+    </style>   
+    
+</head>
+<body>
+    <h2>Test different ways of defining a motion path</h2>
+    <table>    
+        <thead>
+            <tr>
+                <th>Test image</th>
+                <th>Ref image</th>
+                <th>Test description and test criteria</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><object id="testimage" data="test/test_different_ways_of_defining_a_motion_path.svg" type="image/svg+xml" width="480" height="360" /> </td>
+                <td><object id="refimage"  data="ref/different_ways_of_defining_a_motion_path.svg" type="image/svg+xml" width="480" height="360" /> </td>
+                <td> <h4>Tests the 'from and 'to' attribute </h4> <p> After the animation is finished, the image on the left should be identical to the image on the right</p></td>
+            </tr>
+            
+            <tr class="even">
+                <td> <object id="testimage_2" data="test/test_a_motion_path_values_attribute.svg" type="image/svg+xml" width="480" height="360" />     </td>
+                <td> <object id="refimage_2"  data="ref/test_a_motion_path_values_attribute.svg" type="image/svg+xml" width="480" height="360" /> </td>
+                <td> <h4>Tests the 'values' attribute</h4> <p> After the animation is finished, the image on the left should be identical to the image on the right</p> </td>
+            </tr>
+            
+            <tr>
+                <td> <object id="testimage_3" data="test/test_a_motion_path_the_path_attribute.svg" type="image/svg+xml" width="480" height="360" />  </td>
+                <td> <object id="refimage_3" data="ref/test_a_motion_path_the_path_attribute.svg" type="image/svg+xml" width="480" height="360" />  </td>
+                <td>  <h4>Tests the 'path' attribute</h4> <p> After the animation is finished, the image on the left should be identical to the image on the right</p> </td>                
+            </tr>
+            
+            <tr class="even">
+                <td> <object id="testimage_4" data="test/test_a_motion_path_the_mpath_attribute.svg" type="image/svg+xml" width="480" height="360" />  </td>
+                <td> <object id="refimage_4" data="ref/test_a_motion_path_the_mpath_attribute.svg" type="image/svg+xml" width="480" height="360" />  </td>
+                <td>  <h4>Tests the 'mpath' attribute</h4> <p> After the animation is finished, the image on the left should be identical to the image on the right</p> </td>                          
+            </tr>
+            
+            
+        </tbody>
+        
+        
+    </table>
+
+    
+    
+</body>
+</html>

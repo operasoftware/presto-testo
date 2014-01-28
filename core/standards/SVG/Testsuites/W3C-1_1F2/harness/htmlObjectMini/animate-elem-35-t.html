@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC  "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+      <meta name="keywords" content="W3C SVG 1.1 2nd Edition Test Suite"/>
+      <meta name="description" content="W3C SVG 1.1 2nd Edition Object Mini Test Suite"/>
+      <title>
+SVG 1.1 2nd Edition Test (&lt;object&gt;): animate-elem-35-t.svg
+      </title>
+      <link href="harness_mini.css" rel="stylesheet" type="text/css" />
+      <link rel="prev" href="animate-elem-34-t.html" />
+      <link rel="index" href="index.html" />
+      <link rel="next" href="animate-elem-36-t.html" />
+      <script src="../resources/testharnessreport.js"></script>
+    </head>
+  <body class="bodytext">
+    <div class="linkbar">
+      <p>
+        <a href="animate-elem-34-t.html" rel="prev">animate-elem-34-t ←</a>
+        <a href="index.html" rel="index">index</a>
+        <a href="animate-elem-36-t.html" rel="next">→ animate-elem-36-t</a>
+      </p>
+    </div>
+<table border="0" align="center" cellspacing="0" cellpadding="10">
+  <tr>
+    <td align="center" colspan="3">
+      <table border="0" cellpadding="8">
+        <tr  class="navbar">
+          <td align="center">
+            SVG Image
+          </td>
+          <td align="center">
+            PNG Image
+          </td>
+        </tr>
+        <tr>
+          <td align="right">
+            <object data="../../svg/animate-elem-35-t.svg" width="480" height="360" type="image/svg+xml"><p style="font-size:300%;color:red">FAIL</p></object>
+          </td>
+          <td align="left">
+            <img alt="raster image of animate-elem-35-t.svg" src="../../png/animate-elem-35-t.png" width="480" height="360"/>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+
+<div>
+    <h4 id="operatorscript" onclick="var t = document.getElementById('operatortext'); t.style.display=(t.style.display=='none' ? 'inline' : 'none');">
+      <em>Operator script (click here to toggle)</em>
+    </h4>
+    <div id="operatortext" style="display:none">
+<p>
+        This file contains four tests, testing animation of five attributes.
+        The first test animates the stroke-dashoffset. There are seven reference polylines, all with
+        the same stroke-dasharray but with different values on their stroke-dashoffset. A red polyline
+        with the same stroke-dash array has an animation on its stroke-dasharray. The red polyline is
+        animated so that it stops by the reference polyline that has the right stroke-dashoffset at
+        that perticular time.
+        The second test animates stroke-linecap and stroke-linejoin. There are three reference
+        polylines. Comparsion is done in the same manner as in the previous test.
+        The third test animates the stroke-miterlimit. There are two sets offilled reference paths
+        (black) and two outlined paths (red) with animated stroke-miterlimit. The paths are shaped like
+        a capital A. In the upper test the animated path is drawn on top of the reference polygons and
+        in the lower test the reference path is drawn on top of the animated path. As the
+        stroke-miterlimit is animated to different values, different reference paths are used. To pass
+        the test, there should never be any part of the underlying geometry visible (black in the upper
+        or red in the lower).
+        The fourth test animates the stroke-dasharray. The initial stroke-dasharray gives a
+        short-dashed line. This pattern is animated into a pattern that on this short path gives a
+        solid line at 2 seconds.
+      </p>
+  </div>
+  </div>
+    <h4 id="passcriteria">
+      Pass Criteria
+    </h4>
+    <div>
+<p>
+        [[Describe the pass criteria of the test here. The pass criteria is what
+        should be displayed when the test is run.]]
+      </p>
+    </div>
+    <br />
+    <div class="linkbar">
+      <p>
+        <a href="animate-elem-34-t.html" rel="prev">animate-elem-34-t ←</a>
+        <a href="index.html" rel="index">index</a>
+        <a href="animate-elem-36-t.html" rel="next">→ animate-elem-36-t</a>
+      </p>
+    </div>
+  </body>
+</html>

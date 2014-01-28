@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink"
+     viewBox="0 0 480 360">
+  <script type="text/ecmascript"><![CDATA[
+  function insertText(xpos, ypos, textstr)
+  {
+    var t_node = document.createTextNode(textstr);
+    var t_elem = document.createElementNS("http://www.w3.org/2000/svg", "text");
+    t_elem.appendChild(t_node);
+    t_elem.setAttributeNS(null, "x", xpos);
+    t_elem.setAttributeNS(null, "y", ypos);
+    t_elem.setAttributeNS(null, "font-size", "10");
+    t_elem.setAttributeNS(null, "fill", "blue");
+
+    document.documentElement.appendChild(t_elem);
+  }
+
+  function getRotationsFor(elem_id)
+  {
+    var elem = document.getElementById(elem_id);
+    var resstr = "";
+    var textlen = elem.getNumberOfChars();
+    var i;
+    for (i = 0; i < textlen; ++i)
+    {
+      resstr += Math.round(elem.getRotationOfChar(i)) + " ";
+    }
+    return resstr;
+  }
+
+  function showRotation()
+  {
+    insertText(10, 90, getRotationsFor("t1"));
+    insertText(10, 270, getRotationsFor("tp1"));
+    insertText(240, 200, getRotationsFor("tp2"));
+  }
+    ]]>
+  </script>
+
+  <g font-size="35">
+    <text id="t1" x="10" y="60" rotate="0 10 20 30 40 50 60">ROTATE</text>
+
+    <defs>
+      <path id="tpath" d="M 0,0 Q 100,100 190,0" stroke="red" fill="none"/>
+    </defs>
+
+    <g transform="translate(10 200)">
+      <use xlink:href="#tpath"/>
+      <text><textPath id="tp1" xlink:href="#tpath">On a path</textPath></text>
+    </g>
+
+    <g transform="translate(240 120)" font-size="20">
+      <use xlink:href="#tpath"/>
+      <text id="tp2" rotate="0 10 20 30 40 50 60 70 80 90"><textPath xlink:href="#tpath">Rotate on path</textPath></text>
+    </g>
+  </g>
+
+  <g fill="blue">
+    <rect y="310" width="50" height="50" onclick="showRotation()"/>
+    <text x="60" y="340">Click the blue rect to show rotations</text>
+  </g>
+</svg>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<svg width="95%" height="100%" viewBox="-100 -200 300 250" 
+   version="1.2" baseProfile="tiny"
+   xmlns="http://www.w3.org/2000/svg"  
+   xmlns:xlink="http://www.w3.org/1999/xlink">
+ 
+<title>to-animation of text</title> 
+<desc>to-animation of the x attribute of the text element.
+The text attribute x changes for a blue '?!$' with two to animations
+
+to-animations are in general a mixture of additive and non-additive
+behaviour. While in SMIL2 there is still some text, not obvious, whether
+this is informative or normative that seems to implicate, that additive
+behaviour is required, anyway this is clarified in the current SMIL3
+draft in such a way, that this paragraph is indicated to be only 
+informative. The normative behaviour is simply defined by a
+formula, applicable for any list of numbers or entities, that can
+be treated somehow on a numeral basis.
+
+This behaviour here is a smooth motions (a quadratic time dependence) as 
+simulated using keySplines for the red '?!$'.
+
+
+
+
+Behaviour of different viewers:
+Adobe plugin (3.01 Beta Release 1, Build 88): shows additive behaviour
+Squiggle 1.7: no to animation of blue test case at all 
+Opera 8.x, 9tp1: no to animation of blue test case at all 
+Opera9tp2/ beta1/2: red comparison not animated, 
+                   surprising partly discrete, partly continuous behaviour for the blue test case 
+Opera9.00/9.10: no to animation of blue test case at all 
+Opera9.50 alpha/beta: surprising partly discrete, partly continuous behaviour for the blue test case 
+
+</desc>
+
+<animate xlink:href="#text1"
+	attributeName="x" 
+	attributeType="XML"
+	calcMode="spline"
+	values="0,0,0;50,-50,25;0,0,0"
+	keyTimes="0; 0.5; 1"
+	keySplines =".3333 .6667 .6667 1; .3333 0 .6667 .3333" 
+	dur="4s"
+	fill="freeze" />
+
+
+<animate xlink:href="#test"
+	attributeName="x" 
+	attributeType="XML"
+        to="200,-200, 100"
+	dur="4s"
+	fill="freeze" />
+<animate xlink:href="#test"
+	attributeName="x" 
+	attributeType="XML"
+        to="0,0,0"
+	dur="4s"
+	fill="freeze" />
+
+<rect x="-100" y="-200" width="300" height="250" fill="#ffd" />
+<g font-size="200" stroke-width="2" fill="none" stroke-linecap="round">
+<text xml:id="text1" id="text1" stroke="#f00" x="0,0,0">?!$</text> 
+<text xml:id="test" id="test" stroke="#00f" x="0,0,0">?!$</text>
+ </g>
+ 
+
+
+</svg>
+

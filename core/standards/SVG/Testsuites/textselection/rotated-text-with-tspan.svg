@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg">
+  <title>Text selection of first character in rotated text with &lt;tspan&gt;</title>
+
+  <text x="10" y="20">You should be able to select the upside-down 'A' below:</text>
+
+  <text transform="rotate(180 60 30)" font-size="50">A<tspan>B</tspan></text>
+</svg>
+

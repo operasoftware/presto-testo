@@ -1,0 +1,149 @@
+<?xml version="1.0"?>
+
+<svg xmlns="http://www.w3.org/2000/svg" width="500" height="700">
+  <rect x="0" y="0" width="780" height="440" fill="#3030ff"/>
+  <rect x="0" y="440" width="780" height="720" fill="#000070"/>
+
+  <text x="40" y="40" font-size="22">Bla bla</text>
+
+  <!-- row 1 -->
+  <circle cx="130" cy="100" r="12" fill="none" stroke="#000" stroke-width="4px"/>
+  <circle cx="100" cy="100" r="10" fill="#ffff00">
+    <animateMotion id="ref01" path="M 0 0 L 30 0" dur="1s" begin="0s" fill="freeze"/>
+  </circle>
+
+  <!-- row 2 -->
+  <circle cx="130" cy="120" r="12" fill="none" stroke="#000" stroke-width="4px"/>
+  <circle  cx="100" cy="120" r="10" fill="#ffff00">
+    <animateMotion id="ref02" path="M 0 0 L 30 0" dur="1s" repeatCount="2" begin="0s" fill="freeze"/>
+  </circle>
+
+  <!-- row 3 -->
+  <circle cx="115" cy="140" r="12" fill="none" stroke="#000" stroke-width="4px"/>
+  <circle  cx="100" cy="140" r="10" fill="#ffff00">
+    <animateMotion id="ref02" path="M 0 0 L 30 0" dur="1s" repeatDur="0.5s" begin="0s" fill="freeze"/>
+  </circle>
+
+  <!-- row 4 -->
+  <circle cx="115" cy="160" r="12" fill="none" stroke="#000" stroke-width="4px"/>
+  <circle  cx="100" cy="160" r="10" fill="#ffff00">
+    <animateMotion id="ref03" path="M 0 0 L 30 0" dur="1s" begin="0s" end="0.5s" fill="freeze"/>
+  </circle>
+  <circle cx="180" cy="160" r="12" fill="none" stroke="#000" stroke-width="4px"/>
+  <circle cx="150" cy="160" r="10" fill="#ffff00">
+    <animateMotion id="ref04" path="M 0 0 L 30 0" dur="1s" begin="0s" end="1.5s" fill="freeze"/>
+  </circle>
+
+  <!-- row 5 -->
+  <circle cx="115" cy="180" r="12" fill="none" stroke="#000" stroke-width="4px"/>
+  <circle  cx="100" cy="180" r="10" fill="#ffff00" >
+    <animateMotion id="ref05" path="M 0 0 L 30 0" dur="1s" repeatCount="2" repeatDur="1.5s" begin="0s" fill="freeze"/>
+  </circle>
+  <circle cx="180" cy="180" r="12" fill="none" stroke="#000" stroke-width="4px"/>
+  <circle  cx="150" cy="180" r="10" fill="#ffff00" >
+    <animateMotion id="ref05" path="M 0 0 L 30 0" dur="1s" repeatCount="2" repeatDur="2.5s" begin="0s" fill="freeze"/>
+  </circle>
+
+  <!-- row 6 -->
+  <circle cx="115" cy="200" r="12" fill="none" stroke="#000" stroke-width="4px"/>
+  <circle  cx="100" cy="200" r="10" fill="#ffff00" >
+    <animateMotion id="ref05" path="M 0 0 L 30 0" dur="1s" repeatCount="2" end="1.5s" begin="0s" fill="freeze"/>
+  </circle>
+  <circle cx="180" cy="200" r="12" fill="none" stroke="#000" stroke-width="4px"/>
+  <circle  cx="150" cy="200" r="10" fill="#ffff00" >
+    <animateMotion id="ref05" path="M 0 0 L 30 0" dur="1s" repeatCount="2" end="2.5s" begin="0s" fill="freeze"/>
+  </circle>
+
+  <!-- row 7 -->
+  <circle cx="115" cy="220" r="12" fill="none" stroke="#000" stroke-width="4px"/>
+  <circle  cx="100" cy="220" r="10" fill="#ffff00" >
+    <animateMotion id="ref05" path="M 0 0 L 30 0" dur="1s" repeatDur="2s" end="1.5s" begin="0s" fill="freeze"/>
+  </circle>
+  <circle cx="180" cy="220" r="12" fill="none" stroke="#000" stroke-width="4px"/>
+  <circle  cx="150" cy="220" r="10" fill="#ffff00" >
+    <animateMotion id="ref05" path="M 0 0 L 30 0" dur="1s" repeatDur="2s" end="2.5s" begin="0s" fill="freeze"/>
+  </circle>
+
+  <!-- row 8 -->
+  <g transform="translate(100,240)">
+  <circle cx="15" cy="0" r="12" fill="none" stroke="#000" stroke-width="4px"/>
+  <circle  cx="0" cy="0" r="10" fill="#ffff00" >
+    <animateMotion id="ref05" path="M 0 0 L 30 0" dur="1s" repeatDur="2s" end="1.5s" repeatCount="3.2" begin="0s" fill="freeze"/>
+  </circle>
+  <circle cx="65" cy="0" r="12" fill="none" stroke="#000" stroke-width="4px"/>
+  <circle  cx="50" cy="0" r="10" fill="#ffff00" >
+    <animateMotion id="ref05" path="M 0 0 L 30 0" dur="1s" repeatDur="2s" end="2.5s" repeatCount="1.5" begin="0s" fill="freeze"/>
+  </circle>
+  </g>
+
+  <!-- row 9 -->
+  <g transform="translate(100,260)">
+  <circle cx="0" cy="0" r="12" fill="none" stroke="#000" stroke-width="4px"/>
+  <circle  cx="0" cy="0" r="10" fill="#ffff00">
+    <animateMotion id="ref05" path="M 0 0 L 30 0" begin="0s" fill="freeze"/>
+  </circle>
+  </g>
+
+  <!-- row 10 -->
+  <g transform="translate(100,280)">
+  <circle cx="0" cy="0" r="12" fill="none" stroke="#000" stroke-width="4px"/>
+  <circle  cx="0" cy="0" r="10" fill="#ffff00" >
+    <animateMotion id="ref05" path="M 0 0 L 30 0" repeatDur="2s" begin="0s" fill="freeze"/>
+  </circle>
+  </g>
+
+  <!-- row 11 -->
+  <g transform="translate(100,300)">
+  <circle cx="0" cy="0" r="12" fill="none" stroke="#000" stroke-width="4px"/>
+  <circle  cx="0" cy="0" r="10" fill="#ffff00" >
+    <animateMotion id="ref05" path="M 0 0 L 30 0" begin="0s" end="0.5s" fill="freeze"/>
+  </circle>
+
+  <circle cx="50" cy="0" r="12" fill="none" stroke="#000" stroke-width="4px"/>
+  <circle  cx="50" cy="0" r="10" fill="#ffff00">
+    <animateMotion id="ref05" path="M 0 0 L 30 0" begin="0s" end="2.5s" fill="freeze"/>
+  </circle>
+  </g>
+
+  <!-- row 12 -->
+  <g transform="translate(100,320)">
+  <circle cx="0" cy="0" r="12" fill="none" stroke="#000" stroke-width="4px"/>
+  <circle  cx="0" cy="0" r="10" fill="#ffff00" >
+    <animateMotion id="ref05" path="M 0 0 L 30 0" repeatDur="1s" begin="0s" end="1.5s" fill="freeze"/>
+  </circle>
+
+  <circle cx="50" cy="0" r="12" fill="none" stroke="#000" stroke-width="4px"/>
+  <circle  cx="50" cy="0" r="10" fill="#ffff00">
+    <animateMotion id="ref05" path="M 0 0 L 30 0" repeatDur="3s" begin="0s" end="2.5s" fill="freeze"/>
+  </circle>
+  </g>
+
+  <!-- row 13 -->
+  <g transform="translate(100,340)">
+  <circle cx="0" cy="0" r="12" fill="none" stroke="#000" stroke-width="4px"/>
+  <circle  cx="0" cy="0" r="10" fill="#ffff00">
+    <animateMotion id="ref05" path="M 0 0 L 30 0" repeatCount="indefinite" begin="0s" fill="freeze"/>
+  </circle>
+
+  <circle cx="50" cy="0" r="12" fill="none" stroke="#000" stroke-width="4px"/>
+  <circle cx="80" cy="0" r="12" fill="none" stroke="#000" stroke-width="4px"/>
+  <circle  cx="50" cy="0" r="10" fill="#ffff00">
+    <animateMotion id="ref05" path="M 0 0 L 30 0" dur="1s" repeatCount="indefinite" begin="0s" fill="freeze"/>
+  </circle>
+  </g>
+
+  <!-- row 14 -->
+  <g transform="translate(100,360)">
+  <circle cx="0" cy="0" r="12" fill="none" stroke="#000" stroke-width="4px"/>
+  <circle  cx="0" cy="0" r="10" fill="#ffff00">
+    <animateMotion id="ref05" path="M 0 0 L 30 0" repeatDur="indefinite" begin="0s" fill="freeze"/>
+  </circle>
+
+  <circle cx="50" cy="0" r="12" fill="none" stroke="#000" stroke-width="4px"/>
+  <circle cx="80" cy="0" r="12" fill="none" stroke="#000" stroke-width="4px"/>
+  <circle  cx="50" cy="0" r="10" fill="#ffff00">
+    <animateMotion id="ref05" path="M 0 0 L 30 0" dur="1s" repeatDur="indefinite" begin="0s" fill="freeze"/>
+  </circle>
+  </g>
+
+</svg>

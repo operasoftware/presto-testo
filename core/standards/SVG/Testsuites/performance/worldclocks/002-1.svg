@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg  version="1.2" baseProfile="tiny" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="-25 -10 288 250">
+<defs>
+	<rect id="originalViewbox" x="0" y="0" width="238" height="238"/>
+	<linearGradient id="backgroundGrad" x1="0.6" y1="1" x2="0" y2="0">
+		<stop offset="0" stop-color="#1683F7"/>
+		<stop offset="0.8" stop-color="#FFF"/>
+	</linearGradient>
+	<linearGradient id="outershapeGrad" x1="0.7" y1="1" x2="0" y2="0">
+		<stop offset="0" stop-color="#000666"/>
+		<stop offset="0.5" stop-color="#1683F7"/>
+	</linearGradient>
+	<linearGradient id="innerborderGrad" x1="1" y1="1" x2="0" y2="0">
+		<stop offset="0" stop-color="#CCC"/>
+		<stop offset="0.8" stop-color="#000666"/>
+	</linearGradient>
+	<linearGradient id="outerborderGrad" x1="1" y1="1" x2="0" y2="0">
+		<stop offset="0" stop-color="#000"/>
+		<stop offset="0.7" stop-color="#1683F7"/>
+		<stop offset="0.9" stop-color="#FFF"/>
+	</linearGradient>
+
+<symbol id="clocksymbol">
+<g id="clock">
+	<path id="background" fill="url(#backgroundGrad)" d="M237.5,193.746c0,24.165-19.589,43.754-43.754,43.754H44.254
+		C20.089,237.5,0.5,217.911,0.5,193.746V44.254C0.5,20.089,20.089,0.5,44.254,0.5h149.492c24.165,0,43.754,19.589,43.754,43.754
+		V193.746z"/>
+	<path id="outershape" fill="url(#outershapeGrad)" d="M193.746,0.5H44.254C20.089,0.5,0.5,20.089,0.5,44.254v149.492
+		c0,24.165,19.589,43.754,43.754,43.754h149.492c24.165,0,43.754-19.589,43.754-43.754V44.254C237.5,20.089,217.911,0.5,193.746,0.5
+		z M119,207.5c-48.877,0-88.5-39.623-88.5-88.5S70.123,30.5,119,30.5s88.5,39.623,88.5,88.5S167.877,207.5,119,207.5z"/>
+	<path id="outerborder" fill="url(#outerborderGrad)" stroke="#000" stroke-width="1.4" d="M193.746,0.5H44.254C20.089,0.5,0.5,20.089,0.5,44.254v149.492
+		c0,24.165,19.589,43.754,43.754,43.754h149.492c24.165,0,43.754-19.589,43.754-43.754V44.254C237.5,20.089,217.911,0.5,193.746,0.5
+		z M233.945,191.504c0,23.439-19.001,42.441-42.441,42.441H46.496c-23.439,0-42.441-19.001-42.441-42.441V46.496
+		c0-23.439,19.001-42.441,42.441-42.441h145.008c23.439,0,42.441,19.001,42.441,42.441V191.504z"/>
+	<path id="innerborder" fill="url(#innerborderGrad)" d="M119,25.19c-51.81,0-93.81,42-93.81,93.81s42,93.81,93.81,93.81
+		s93.81-42,93.81-93.81S170.81,25.19,119,25.19z M119,207.5c-48.877,0-88.5-39.623-88.5-88.5S70.123,30.5,119,30.5
+		s88.5,39.623,88.5,88.5S167.877,207.5,119,207.5z"/>
+	<g id="digits" fill="#000666">
+		<path id="nine" d="M37.891,124.625c0,0.824,0.224,1.517,0.673,2.079c0.448,0.562,1.093,0.843,1.934,0.843
+			c0.822,0,1.466-0.261,1.934-0.784c0.467-0.522,0.817-1.129,1.051-1.819s0.378-1.358,0.435-2.002
+			c0.056-0.644,0.084-1.097,0.084-1.358v-1.568l-0.057-0.006c-0.093,0.187-0.243,0.406-0.448,0.658
+			c-0.205,0.251-0.462,0.494-0.77,0.727c-0.308,0.233-0.677,0.429-1.106,0.588c-0.429,0.158-0.915,0.237-1.456,0.237
+			c-0.859,0-1.61-0.154-2.254-0.462c-0.645-0.308-1.186-0.737-1.624-1.288c-0.438-0.55-0.765-1.208-0.979-1.974
+			c-0.215-0.765-0.322-1.614-0.322-2.548c0-0.952,0.117-1.843,0.35-2.674c0.233-0.83,0.588-1.549,1.064-2.156
+			c0.476-0.606,1.06-1.083,1.75-1.428c0.691-0.345,1.503-0.518,2.437-0.518c0.915,0,1.695,0.14,2.339,0.42
+			c0.644,0.28,1.186,0.653,1.625,1.12c0.439,0.467,0.784,1.013,1.037,1.639c0.252,0.625,0.443,1.283,0.574,1.974
+			c0.13,0.691,0.214,1.405,0.252,2.143s0.056,1.442,0.056,2.114c0,0.747-0.014,1.536-0.042,2.366
+			c-0.028,0.831-0.107,1.648-0.238,2.451s-0.322,1.568-0.575,2.296c-0.252,0.728-0.603,1.363-1.051,1.904
+			c-0.449,0.541-1.009,0.976-1.682,1.302c-0.673,0.327-1.486,0.49-2.439,0.49c-1.159,0-2.07-0.206-2.733-0.617
+			s-1.164-0.883-1.5-1.416c-0.337-0.533-0.552-1.065-0.645-1.598c-0.093-0.533-0.14-0.911-0.14-1.136H37.891z M43.719,115.609
+			c0-0.522-0.047-1.055-0.14-1.597c-0.094-0.541-0.262-1.036-0.504-1.484s-0.564-0.813-0.965-1.093
+			c-0.401-0.28-0.909-0.42-1.524-0.42s-1.124,0.14-1.524,0.42c-0.401,0.28-0.723,0.645-0.965,1.093
+			c-0.243,0.448-0.41,0.943-0.504,1.484c-0.093,0.542-0.14,1.074-0.14,1.597c0,0.523,0.042,1.055,0.126,1.597
+			s0.237,1.036,0.461,1.484c0.224,0.448,0.541,0.813,0.951,1.093s0.942,0.42,1.595,0.42c0.652,0,1.184-0.14,1.594-0.42
+			s0.727-0.645,0.951-1.093c0.224-0.448,0.377-0.943,0.461-1.484S43.719,116.132,43.719,115.609z"/>
+		<path id="six" d="M121.327,188.438c0-0.843-0.224-1.54-0.671-2.093s-1.09-0.829-1.929-0.829c-0.82,0-1.463,0.262-1.929,0.785
+			s-0.815,1.125-1.048,1.807c-0.233,0.682-0.377,1.35-0.433,2.004c-0.056,0.653-0.084,1.111-0.084,1.373v1.569h0.056
+			c0.094-0.187,0.243-0.406,0.448-0.657s0.462-0.494,0.77-0.727c0.308-0.233,0.676-0.429,1.106-0.587
+			c0.429-0.159,0.915-0.238,1.456-0.238c0.858,0,1.609,0.154,2.254,0.462c0.644,0.308,1.185,0.737,1.624,1.288
+			c0.438,0.551,0.765,1.208,0.979,1.974c0.215,0.766,0.322,1.615,0.322,2.548c0,0.952-0.117,1.843-0.35,2.674
+			s-0.588,1.549-1.064,2.156c-0.476,0.607-1.064,1.083-1.765,1.428c-0.7,0.345-1.508,0.518-2.423,0.518s-1.695-0.136-2.339-0.406
+			c-0.644-0.271-1.186-0.644-1.624-1.12c-0.439-0.476-0.785-1.021-1.037-1.638c-0.252-0.616-0.444-1.274-0.574-1.975
+			c-0.131-0.7-0.215-1.414-0.252-2.142c-0.037-0.728-0.056-1.438-0.056-2.128c0-0.747,0.014-1.536,0.042-2.366
+			c0.028-0.831,0.107-1.647,0.238-2.45c0.13-0.803,0.322-1.568,0.574-2.297c0.252-0.728,0.602-1.362,1.05-1.904
+			c0.448-0.541,1.008-0.975,1.68-1.302s1.483-0.49,2.436-0.49c1.157,0,2.067,0.206,2.729,0.617c0.663,0.411,1.162,0.883,1.498,1.416
+			c0.336,0.533,0.551,1.065,0.644,1.598s0.14,0.911,0.14,1.135H121.327z M115.515,197.453c0,0.523,0.047,1.055,0.14,1.597
+			c0.094,0.542,0.261,1.036,0.504,1.484c0.242,0.448,0.564,0.813,0.965,1.093s0.909,0.42,1.524,0.42s1.124-0.14,1.524-0.42
+			s0.723-0.645,0.965-1.093s0.41-0.943,0.504-1.484c0.093-0.542,0.14-1.074,0.14-1.597c0-0.522-0.042-1.055-0.126-1.597
+			c-0.084-0.541-0.238-1.036-0.461-1.484c-0.224-0.448-0.541-0.813-0.951-1.093c-0.41-0.28-0.942-0.42-1.594-0.42
+			c-0.653,0-1.185,0.14-1.595,0.42c-0.41,0.28-0.727,0.645-0.951,1.093c-0.224,0.448-0.377,0.943-0.461,1.484
+			C115.557,196.398,115.515,196.931,115.515,197.453z"/>
+		<path id="three" d="M195.041,117.828h1.232c1.045,0,1.811-0.336,2.296-1.009s0.728-1.504,0.728-2.495
+			c0-0.449-0.047-0.874-0.14-1.276c-0.093-0.401-0.238-0.752-0.435-1.051s-0.462-0.537-0.799-0.715s-0.738-0.267-1.205-0.267
+			c-0.654,0-1.168,0.136-1.542,0.406c-0.374,0.271-0.659,0.602-0.855,0.994c-0.196,0.392-0.322,0.812-0.378,1.26
+			s-0.084,0.85-0.084,1.204h-2.469c0-0.84,0.103-1.61,0.309-2.31c0.205-0.7,0.523-1.301,0.953-1.805
+			c0.43-0.503,0.977-0.895,1.641-1.174c0.663-0.279,1.453-0.419,2.369-0.419c1.028,0,1.874,0.164,2.538,0.49
+			c0.663,0.327,1.187,0.742,1.57,1.246c0.383,0.504,0.645,1.06,0.785,1.667s0.21,1.19,0.21,1.75c0,1.008-0.252,1.904-0.756,2.688
+			s-1.279,1.308-2.324,1.568v0.056c1.12,0.224,2.013,0.705,2.677,1.442c0.665,0.737,0.997,1.797,0.997,3.178
+			c0,0.896-0.117,1.722-0.351,2.478c-0.233,0.756-0.579,1.405-1.037,1.946c-0.458,0.542-1.042,0.961-1.751,1.26
+			c-0.71,0.299-1.542,0.448-2.494,0.448c-0.897,0-1.653-0.117-2.27-0.35c-0.617-0.233-1.135-0.527-1.555-0.882
+			c-0.421-0.354-0.752-0.751-0.995-1.189c-0.243-0.438-0.425-0.863-0.546-1.273s-0.196-0.779-0.224-1.105
+			c-0.028-0.327-0.042-0.564-0.042-0.714v-0.252h2.469c0,0.448,0.061,0.906,0.182,1.373c0.122,0.467,0.309,0.892,0.561,1.274
+			s0.578,0.691,0.979,0.924s0.882,0.35,1.442,0.35c0.354,0,0.723-0.056,1.106-0.168c0.382-0.112,0.723-0.318,1.022-0.617
+			c0.299-0.299,0.546-0.715,0.742-1.248c0.196-0.533,0.294-1.22,0.294-2.061c0-1.176-0.29-2.101-0.871-2.773
+			c-0.58-0.672-1.486-1.008-2.719-1.008h-1.26V117.828z"/>
+		<path id="twelve" d="M111.35,36.353c-0.28,0.411-0.644,0.728-1.092,0.953c-0.448,0.224-0.961,0.373-1.54,0.448
+			c-0.579,0.074-1.176,0.131-1.792,0.168v1.688h4.228V54.5h2.359V34.672h-1.688C111.788,35.382,111.63,35.942,111.35,36.353z
+			M122.25,52.313c0.149-0.653,0.411-1.265,0.785-1.834c0.373-0.569,0.831-1.087,1.373-1.554l2.804-2.436
+			c0.561-0.467,1.056-0.929,1.485-1.386c0.43-0.458,0.79-0.943,1.079-1.456c0.29-0.514,0.514-1.064,0.673-1.652
+			c0.159-0.588,0.238-1.265,0.238-2.03c0-0.429-0.061-0.947-0.182-1.554s-0.374-1.186-0.756-1.736s-0.925-1.021-1.625-1.414
+			c-0.7-0.392-1.62-0.588-2.759-0.588c-1.009,0-1.873,0.154-2.592,0.462c-0.719,0.308-1.302,0.737-1.75,1.288
+			s-0.775,1.213-0.98,1.988s-0.308,1.628-0.308,2.562h2.469c0-0.28,0.019-0.663,0.056-1.148s0.159-0.957,0.364-1.414
+			c0.205-0.458,0.518-0.859,0.937-1.204s1.012-0.518,1.777-0.518c0.522,0,0.97,0.107,1.343,0.322s0.672,0.49,0.896,0.826
+			s0.387,0.714,0.489,1.134s0.154,0.845,0.154,1.274c0,0.542-0.061,1.032-0.182,1.471c-0.122,0.439-0.299,0.845-0.533,1.218
+			s-0.514,0.728-0.841,1.064c-0.327,0.336-0.687,0.673-1.078,1.009l-1.626,1.372c-0.561,0.485-1.098,1.004-1.611,1.555
+			s-0.967,1.162-1.359,1.834c-0.392,0.673-0.71,1.4-0.953,2.185c-0.243,0.784-0.364,1.634-0.364,2.549h11.094v-2.188H122.25z"/>
+		<path id="dots" fill-opacity="0.3" d="M72.599,43.631l7.285,12.617c1.412-0.882,2.851-1.722,4.325-2.509l-7.284-12.615
+			C75.457,41.919,74.016,42.757,72.599,43.631z M196.876,76.925c-0.795-1.468-1.633-2.909-2.507-4.326l-12.617,7.285
+			c0.882,1.412,1.722,2.851,2.509,4.325L196.876,76.925z M56.248,79.884l-12.617-7.285c-0.875,1.417-1.712,2.858-2.507,4.326
+			l12.615,7.284C54.526,82.735,55.366,81.295,56.248,79.884z M153.792,53.739c1.474,0.787,2.913,1.627,4.325,2.509l7.285-12.617
+			c-1.417-0.875-2.858-1.712-4.326-2.507L153.792,53.739z M41.124,161.075c0.795,1.468,1.633,2.909,2.507,4.326l12.618-7.285
+			c-0.882-1.412-1.722-2.852-2.509-4.325L41.124,161.075z M153.792,184.26l7.284,12.616c1.468-0.795,2.909-1.633,4.326-2.507
+			l-7.285-12.618C156.705,182.633,155.265,183.473,153.792,184.26z M181.751,158.116l12.618,7.285
+			c0.875-1.417,1.712-2.858,2.507-4.326l-12.616-7.284C183.473,155.265,182.633,156.705,181.751,158.116z M72.599,194.369
+			c1.417,0.874,2.857,1.712,4.326,2.507l7.284-12.616c-1.473-0.787-2.913-1.627-4.325-2.509L72.599,194.369z"/>	
+	</g>
+	<path id="minutes" fill="#000666" d="M131.915,112.431l-12.81-68.423v-1.674h-0.117l-0.098,0.525l-0.098-0.525h-0.117v1.674l-12.949,69.169
+		c-0.783,1.783-1.226,3.75-1.226,5.823c0,8.008,6.492,14.5,14.5,14.5s14.5-6.492,14.5-14.5
+		C133.5,116.633,132.921,114.405,131.915,112.431z"/>
+	<path id="hours" fill="#000666" d="M130.441,110.114l-11.335-36.985v-1.022h-0.117l-0.098,0.321l-0.098-0.321h-0.117v1.022l-11.488,37.483
+		c-1.686,2.369-2.687,5.259-2.687,8.388c0,8.008,6.492,14.5,14.5,14.5s14.5-6.492,14.5-14.5
+		C133.5,115.647,132.352,112.57,130.441,110.114z"/>
+	<circle id="centercircle" fill="#FFFFFF" cx="119" cy="119" r="12.325"/>
+	<path id="reflection" fill-opacity="0.25" fill="#FFFFFF" d="M193.746,0.5H44.254C20.089,0.5,0.5,20.089,0.5,44.254v58.848
+		c32.092,12.16,72.321,19.398,116,19.398c45.976,0,88.136-8.015,121-21.353V44.254C237.5,20.089,217.911,0.5,193.746,0.5z"/>
+</g>
+</symbol>
+
+</defs>
+
+<!-- 1 -->
+<use transform="scale(0.16) translate(0,0)" xlink:href="#clocksymbol" />
+<use transform="scale(0.16) translate(240,0)" xlink:href="#clocksymbol" />
+<use transform="scale(0.16) translate(480,0)" xlink:href="#clocksymbol" />
+<use transform="scale(0.16) translate(720,0)" xlink:href="#clocksymbol" />
+<use transform="scale(0.16) translate(960,0)" xlink:href="#clocksymbol" />
+<use transform="scale(0.16) translate(1200,0)" xlink:href="#clocksymbol" />
+
+<!-- 2 -->
+<use transform="scale(0.16) translate(0,240)" xlink:href="#clocksymbol" />
+<use transform="scale(0.16) translate(240,240)" xlink:href="#clocksymbol" />
+<use transform="scale(0.16) translate(480,240)" xlink:href="#clocksymbol" />
+<use transform="scale(0.16) translate(720,240)" xlink:href="#clocksymbol" />
+<use transform="scale(0.16) translate(960,240)" xlink:href="#clocksymbol" />
+<use transform="scale(0.16) translate(1200,240)" xlink:href="#clocksymbol" />
+
+<!-- 3 -->
+<use transform="scale(0.16) translate(0,480)" xlink:href="#clocksymbol" />
+<use transform="scale(0.16) translate(240,480)" xlink:href="#clocksymbol" />
+<use transform="scale(0.16) translate(480,480)" xlink:href="#clocksymbol" />
+<use transform="scale(0.16) translate(720,480)" xlink:href="#clocksymbol" />
+<use transform="scale(0.16) translate(960,480)" xlink:href="#clocksymbol" />
+<use transform="scale(0.16) translate(1200,480)" xlink:href="#clocksymbol" />
+
+<!-- 4 -->
+<use transform="scale(0.16) translate(0,720)" xlink:href="#clocksymbol" />
+<use transform="scale(0.16) translate(240,720)" xlink:href="#clocksymbol" />
+<use transform="scale(0.16) translate(480,720)" xlink:href="#clocksymbol" />
+<use transform="scale(0.16) translate(720,720)" xlink:href="#clocksymbol" />
+<use transform="scale(0.16) translate(960,720)" xlink:href="#clocksymbol" />
+<use transform="scale(0.16) translate(1200,720)" xlink:href="#clocksymbol" />
+
+<!-- 5 -->
+<use transform="scale(0.16) translate(0,960)" xlink:href="#clocksymbol" />
+<use transform="scale(0.16) translate(240,960)" xlink:href="#clocksymbol" />
+<use transform="scale(0.16) translate(480,960)" xlink:href="#clocksymbol" />
+<use transform="scale(0.16) translate(720,960)" xlink:href="#clocksymbol" />
+<use transform="scale(0.16) translate(960,960)" xlink:href="#clocksymbol" />
+<use transform="scale(0.16) translate(1200,960)" xlink:href="#clocksymbol" />
+
+<!-- 6 -->
+<use transform="scale(0.16) translate(0,1200)" xlink:href="#clocksymbol" />
+<use transform="scale(0.16) translate(240,1200)" xlink:href="#clocksymbol" />
+<use transform="scale(0.16) translate(480,1200)" xlink:href="#clocksymbol" />
+<use transform="scale(0.16) translate(720,1200)" xlink:href="#clocksymbol" />
+<use transform="scale(0.16) translate(960,1200)" xlink:href="#clocksymbol" />
+<use transform="scale(0.16) translate(1200,1200)" xlink:href="#clocksymbol" />
+
+<text id="text" x="119" y="279" font-size="42" fill="rgb(60,60,60)" text-anchor="middle" font-family="Helvetica,Verdana,Arial,sans-serif"> </text>
+
+<script type="application/ecmascript">
+<![CDATA[
+
+	var minutes = document.getElementById("minutes");
+	var hours = document.getElementById("hours");
+	var action;
+	var clock = document.getElementById("clock");
+	var text = document.getElementById("text");
+	var currentMinute = 0;
+	var currentHour = 0;
+	var greyScale = 60;
+	var grey = [60,250];
+	var toggle = 0;
+	var offset = 0;
+	
+	var url = "#";
+	if(document.defaultView.frameElement){
+		var params = document.defaultView.frameElement.getElementsByTagName('param');
+		for(i=0;i<params.length;i++){
+			if(params[i].name == "label"){
+				text.textContent = params[i].value;
+			}
+			else if(params[i].name == "url"){
+				url = params[i].value;		
+			}
+			else if(params[i].name == "offset"){
+				offset = params[i].value;		
+			}
+		}
+	}
+
+	function goToLocation(){
+	  parent.location.href = url;
+	}
+
+	function start(){
+		window.clearInterval(action);
+		action = window.setInterval("animate()", 30);
+	}
+	
+	function stop(){
+		window.clearInterval(action);
+		getClockTime();
+		action = window.setInterval("fadeOut()", 15);
+	}
+	
+	function setHands(){
+		minutes.setAttribute("transform","rotate(" + currentMinute + ",119,119)");
+		hours.setAttribute("transform","rotate(" + currentHour + ",119,119)");
+	}
+	
+	function fadeOut(){
+		if(greyScale > grey[0]){
+			currentMinute += (clockMinute - currentMinute) / 6;
+			currentHour += (clockHour - currentHour) / 6;
+			setHands();
+			greyScale -= 4;
+			text.setAttribute("fill","rgb("+greyScale+","+greyScale+","+greyScale+")");
+		}
+		else{
+			window.clearInterval(action);
+			setClock();
+			action = window.setInterval("setClock()", 10000);
+		}
+	}
+
+	var minuteRotation = 360 / 60;
+	var hourRotation = 360 / 12;
+	var date,hour,minute,clockMinute,clockHour;
+
+	function getClockTime(){
+		date = new Date();
+		hour = date.getHours();
+		if(hour > 12){
+			hour -= 12;
+		}
+		minute = date.getMinutes();
+		clockMinute = ((offset % 60) + minute) * minuteRotation;
+		clockHour = ((offset / 60) + (hour + (minute / 60))) * hourRotation;
+	}
+
+	function setClock(){
+		getClockTime();
+		currentMinute = clockMinute;
+		currentHour = clockHour;
+		setHands();
+	}
+
+	function animate () {
+		currentMinute = currentMinute + 12;
+		if(currentMinute>360){
+			currentMinute = 0;
+		}
+		currentHour = currentHour + 1;
+		if(currentHour>360){
+			currentHour = 0;
+		}
+		setHands();
+		if(greyScale < grey[1]){
+			greyScale += 5;
+			text.setAttribute("fill","rgb("+greyScale+","+greyScale+","+greyScale+")");
+		}
+	}
+	
+	setClock();
+	action = window.setInterval("setClock()", 10000);
+	
+	clock.addEventListener("mouseover",start,false);
+	clock.addEventListener("mouseout",stop,false);
+	clock.addEventListener("click",goToLocation,false);
+        clock.onload = start();
+]]>
+</script>
+</svg>

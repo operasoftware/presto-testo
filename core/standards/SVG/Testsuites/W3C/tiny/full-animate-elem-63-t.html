@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <!DOCTYPE html PUBLIC  "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>This tests validates multiple end conditions in the end attribute</title>
+</head>
+<body>
+<table>
+<tr>
+<td align="center">SVG Image</td>
+<td align="center">Reference Image</td>
+</tr>
+<tr>
+<td align="right">
+<object data="../svggen/animate-elem-63-t.svg" width="480" height="360" type="image/svg+xml"/>
+</td>
+<td align="left">
+<img alt="raster image of animate-elem-63-t" src="../png/full-animate-elem-63-t.png" width="480" height="360"/>
+</td>
+</tr>
+</table>
+<p>
+Row 1, 2, 3 and 6 should animate following the times given at the top of the two columns. 
+</p>
+<p>
+
+<p>Quick description to run test in gogi:</p>
+<p>all red rectangles should be in the right columns at the given times. All animations start at load, except:</p>
+
+<ul>
+<li>"2 event base": click on corresponding red rectangle to start</li>
+<li>"2 accessKeys": choose "Enable access key mode" in menu and press "a" to start.</li>
+</ul>
+
+<br /> Expected resultfor row 4 and 5: <ul><li>If the user starts the animation before 5 seconds has passed, the red rectangle will move to the left 
+position 5 seconds after the start of the animation. </li>
+<li>If the user starts the animation after 5 seconds, the red rectangle moves to the left position immediately. </li></ul>
+</p>
+
+
+
+</body>
+</html>
+

@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-190 -220 700 700">
+ <title>Performance test run twice, with buffered-rendering=static and dynamic. Should be at least 100% faster with static to pass.</title>
+ <defs>
+   <filter id="Turb2" filterUnits="objectBoundingBox">
+     <feTurbulence type="turbulence" baseFrequency="0.02" numOctaves="1" result="turb1">
+     </feTurbulence>
+     <feDiffuseLighting id="turb1" in="turb1" resultScale="1" surfaceScale="10" diffuseConstant="1" result="diffuse">
+     <feDistantLight id="light" azimuth="135" elevation="60"/>
+     </feDiffuseLighting>
+     <feSpecularLighting in="turb1" surfaceScale="10" specularConstant="1" specularExponent="20" lighting-color="blue" result="specularOut">
+     <feDistantLight id="light" azimuth="135" elevation="60"/>
+     </feSpecularLighting>
+   </filter>
+ </defs>
+ <script type="text/javascript">
+  var start = new Date();
+  var max = 15;
+  var statictime = 0;
+ </script>
+ <text x="-150" y="-200" font-size="20">SVG Performance test.</text>
+ <text x="200" y="-200" font-size="20">Test not started.</text>
+ <g id="graphic-static" buffered-rendering="static">
+   <rect fill="none" stroke="black" x="-183" y="-144" width="493" height="509" style="filter:url(#Turb2)"/>
+ </g>
+ <circle id="ball" cx="0" cy="0" r="50" fill="yellow" fill-opacity="0.5"/>
+ <script type="text/javascript"><![CDATA[
+  var svg = document.getElementsByTagNameNS('http://www.w3.org/2000/svg', 'svg')[0];
+  var c = document.getElementsByTagNameNS('http://www.w3.org/2000/svg', 'circle')[0];
+  var t = document.getElementsByTagNameNS('http://www.w3.org/2000/svg', 'text')[1];
+  var g = document.getElementById('graphic-static');  
+  var cx = parseInt(c.getAttribute('cx'));
+  var cy = parseInt(c.getAttribute('cy'));
+  var r = parseInt(c.getAttribute('r'));
+  var dx = 5;
+  var dy = -5;
+  var count = 0;
+  function bounce() {
+   if ((cx + r + dx > 390) || (cx - r + dx < -190))
+     dx =- dx;
+   cx += dx;
+   if ((cy + r + dy > 390) || (cy - r + dy < -190))
+     dy =- dy;
+   cy += dy;
+   c.setAttribute('cx', cx);
+   c.setAttribute('cy', cy);
+   ++count;
+   if (count < max) {
+     window.setTimeout(bounce, 50);
+     t.firstChild.data = 'Test in progress... ' + count + ' of ' + max;
+   } else {
+     var end = new Date();
+     var elapsed = (end - start) / 1000;
+     if (statictime == 0) {
+       cx = 0;
+       cy = 0;
+       statictime = elapsed;
+       g.setAttribute("buffered-rendering", "dynamic");
+       count = 0;
+       start = end;
+       window.setTimeout(bounce, 200);
+     } else {
+       dynamictime = elapsed;
+       if (statictime / dynamictime >= 0.5) {
+         passresult = "FAIL";
+         passed = 0;
+       }
+       else {
+         passresult = "PASS";
+         passed = 1;
+       }
+       t.firstChild.data = Math.round((( dynamictime / statictime ) * 100) - 100 )+ '% faster with static: ' + passresult ;
+       try{top.opener.rr(passed);}catch(e){}
+     }
+   }
+}
+   window.setTimeout(bounce, 100);
+ ]]></script>
+</svg>
+
+<!-- This document saved from http://wwwi.palace.opera.no/~ed/svg/perf/buffered-rendering/bufferedrendering.xml -->

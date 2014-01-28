@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<svg width="95%" height="100%" viewBox="-200 -300 800 600"
+   version="1.2" baseProfile="tiny"
+   xmlns="http://www.w3.org/2000/svg"  
+   xmlns:xlink="http://www.w3.org/1999/xlink">
+
+<title>Additive animation of text rotate </title> 
+<desc>
+values animations are added with additive sum for
+rotate of text. The visible result for an additive behaviour 
+is that the blue '?!$' covers exactly the red '?!$' without 
+any visible animation effect.
+If the blue  '?!$' rotates somehow and the red gets visible,
+the animation is not additive as indicated in grey.
+
+
+Behaviour of different viewers:
+
+Adobe plugin (3.01 Beta Release 1, Build 88): shows additive behaviour
+Squiggle 1.7:  shows additive behaviour
+Opera 8.x: no animation at all
+Opera9tp1/2/beta1: first one or two glyphs not additive, last one or two glyphs additive
+Opera9beta2/9.00/9.10/: wrong rotation direction, maybe not additive
+Opera9.50 alpha/beta: not additive
+
+</desc> 
+
+
+<animate xlink:href="#text"
+	attributeName="rotate" 
+	attributeType="XML"
+	values="-100, -200, -300; 100, 200, 300"
+	dur="6s"
+	repeatCount="indefinite" />
+
+
+<animate xlink:href="#text"
+	attributeName="rotate" 
+	attributeType="XML"
+	values="100, 200, 300;-100, -200, -300"
+	dur="6s"
+	repeatCount="indefinite"
+	additive="sum" />
+
+<animate xlink:href="#nonadditive"
+	attributeName="rotate" 
+	attributeType="XML"
+	from="100, 200, 300"
+        to="-100, -200, -300"
+	dur="6s"
+	repeatCount="indefinite" />
+
+
+<rect x="-200" y="-300" width="800" height="600" fill="#ffd" />
+
+<g font-size="200" stroke-width="2" stroke="none">
+<text  xml:id="nonadditive" id="nonadditive" rotate="-20"  fill="#ccc">?!$</text> 
+<text fill="#f00">?!$</text> 
+<text  xml:id="text" id="text" fill="#00f" rotate="-20">?!$</text> 
+</g>
+
+
+</svg>
+

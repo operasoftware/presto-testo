@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+ id="svg-root" width="100%" height="100%" viewBox="0 0 500 500">
+	<title>remote font used on another page</title>
+	<text y="20" font-size="12px"> Go to <a xlink:href="../smoke/basic-remote-font-test-ttf.svg"><tspan text-decoration="underline">this page</tspan></a>, and then back here, and reload page.</text>
+	<text y="40"  font-size="12px">You should see the word PASS below</text>
+	<text  y="80" style="font-family:FontTest;" font-size="20px">PASS</text>
+</svg>

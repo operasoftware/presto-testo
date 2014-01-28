@@ -1,0 +1,23 @@
+<html>
+<head>
+<title>Testing img tag embedding of svg</title>
+<style>
+.hover:hover { border: 10px dotted yellow; }
+</style>
+</head>
+<body>
+This is HTML.
+<img src="fill_rgb_01.svg" width="100" height="100" style="border: 2px solid green;">
+<br>
+This is more HTML. After this sentence is a PNG showing how the SVG above should look like.<br>
+<img src="rgb.png" style="border: 2px solid green;">
+Now some more HTML. And then an SVG that will be stretched
+<img src="fill_rgb_01.svg" width="400" height="100" style="border: 2px solid green;">
+<img src="car_01.svg" width="400" height="400" style="border: 2px solid green;">
+<img src="dom/games/yast/game.svg" width="400" height="400" style="border: 2px solid green;">
+<img src="events.svg" width="400" height="400" style="border: 2px solid green;">
+<img src="http://wwwi/~ed/w3c-full-testsuite/svg/interact-order-01-b.svg" width="400" height="400" style="border: 2px solid green;">
+<p>
+	<img class="hover" src="http://wwwi/~ed/w3c-full-testsuite/svg/styling-css-06-b.svg" width="400" height="400">
+</p>
+</body></html>

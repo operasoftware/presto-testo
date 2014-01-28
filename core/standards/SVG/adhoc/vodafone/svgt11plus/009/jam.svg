@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 250 100">
+<defs>
+	<linearGradient id="white" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#DDD" />
+        <stop offset="0.7" stop-color="#FFF" />
+        <stop offset="1" stop-color="#DDD" />
+	</linearGradient>
+</defs>
+<rect x="-1000" y="0" width="3000" height="100" fill="#FFF">
+<animate attributeName="fill" values="#FFF;#FC9;#FFF" begin="0s" dur="6s" repeatCount="indefinite" fill="freeze"/>
+</rect>
+<g>
+	<g transform="scale(0.8)">
+		<g transform="translate(5 3)">
+			<path fill="#CCC" d="M108.409,91.354c3.212,5.346,0.735,9.701-5.5,9.679l-84.069-0.306c-6.236-0.022-8.779-4.455-5.65-9.851 l40.945-70.604c3.128-5.395,8.315-5.435,11.527-0.089l42.748,71.168L108.409,91.354z"/>
+		</g>
+		<path fill="#F00" d="M108.409,91.354c3.212,5.346,0.735,9.701-5.5,9.679l-84.069-0.306c-6.236-0.022-8.779-4.455-5.65-9.851 l40.945-70.604c3.128-5.395,8.315-5.435,11.527-0.089l42.748,71.168L108.409,91.354z"/>
+		<path fill="#FFF" d="M97.585,89.898L23.961,89.63l36.086-62.226L97.585,89.898z"/>
+		<path d="M63.309,62.04L59.21,56.5H47.004l-4.117,5.357l-0.129,4.951h20.432L63.309,62.04z M47.461,70.417h-3.184v-2.834h3.184V70.417z"/>
+		<path fill="#FFF" d="M59.003,57.66H47.064l-1.592,3.865h15.124L59.003,57.66z"/>
+		<path d="M72.896,69.275l-4.408-5.971H55.365l-4.427,5.772l-0.139,5.338h21.969L72.896,69.275z M55.856,78.305h-3.424v-3.057h3.424V78.305z"/>
+		<path fill="#FFF" d="M68.268,64.555H55.428l-1.712,4.166h16.263L68.268,64.555z"/>
+		<path d="M85.575,77.374l-4.777-6.647H66.572l-4.799,6.43l-0.15,5.941h23.813L85.575,77.374z M84.732,87.426h-3.711v-3.4h3.711V87.426z M67.104,87.426h-3.711v-3.4h3.711V87.426z"/>
+		<path fill="#FFF" d="M80.559,72.118H66.641l-1.854,4.639h17.628L80.559,72.118z"/>
+	</g>
+	<animateTransform attributeName="transform" type="translate" additive="replace" values="4,10;-4,2;4,10" keyTimes="0;0.5;1" dur="1.5s" repeatCount="indefinite" fill="freeze"/>
+	<animateTransform attributeName="transform" type="scale" additive="sum" values="0.8;1;0.8" keyTimes="0;0.5;1" dur="1.5s" repeatCount="indefinite" fill="freeze"/>
+</g>
+<text x="100" y="32" font-weight="bold" font-size="18" fill="#000">A52 > Essen</text>
+<text x="100" y="54" font-weight="bold" font-size="18" fill="#000">12km</text>
+<rect x="100" y="66" rx="6" width="134" height="22" stroke="#CCC" stroke-width="2" fill="url(#white)" />
+<text x="140" y="82" font-weight="bold" font-size="18" fill="#666">more..</text>
+</svg>

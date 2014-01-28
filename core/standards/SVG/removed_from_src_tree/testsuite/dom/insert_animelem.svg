@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<svg width="400" height="300" onload="do_on_load(evt)" xmlns="http://www.w3.org/2000/svg">
+  <script type="text/ecmascript">
+    <![CDATA[
+
+  var splash;
+
+  function make_node(SVGDoc, type, attributes, text)
+  {
+     var node   = SVGDoc.createElementNS("http://www.w3.org/2000/svg", type);
+
+     for (var a in attributes)
+        node.setAttributeNS(null, a, attributes[a]);
+
+     if (text)
+     {
+     	var tnode = SVGDoc.createTextNode(text);
+
+	node.appendChild(tnode);
+     }
+
+     return node;
+  }
+
+  function make_letter(letter, x1, y1, x2, y2)
+  {
+     var SVGDoc = splash.ownerDocument;
+
+     var g1node = make_node(SVGDoc, "g", {}, null);
+     var g2node = make_node(SVGDoc, "g", {}, null);
+
+     g1node.appendChild(g2node);
+
+     g2node.appendChild(make_node(SVGDoc, "text", {}, letter));
+
+     g1node.appendChild(make_node(SVGDoc, "animateTransform", {
+     	attributeName: "transform",
+	type: "translate",
+	from: x1 + "," + y1,
+	to: x2 + "," + y2,
+	begin: "0s",
+	dur: "6s",
+	fill: "freeze"
+	}, null));
+
+     splash.appendChild(g1node);
+  }
+
+  function do_on_load(e)
+  {
+    svgDocument = e.target.ownerDocument;
+
+    splash = svgDocument.getElementById("splash");
+
+    make_letter("R", 450, 10, 163, 120);
+  }
+
+    ]]>
+  </script>
+
+  <g id="splash" font-size="40px"/>
+
+</svg>

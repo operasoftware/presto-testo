@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC  "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+      <meta name="keywords" content="W3C SVG 1.1 2nd Edition Test Suite"/>
+      <meta name="description" content="W3C SVG 1.1 2nd Edition Object Test Suite"/>
+      <title>
+	<d:testDescription href='http://www.w3.org/TR/SVG11/painting.html#Markers' xmlns='http://www.w3.org/1999/xhtml'>
+        <p>
+          Test all the 'overflow' property values except 'inherit' on the 'marker' element.
+        </p>
+        <p>
+          Each column tests a value of the 'overflow' property.
+          The first row uses the 'marker' property to set the same marker on start-, mid- and end-points on the path.
+          The second row uses 'marker-start', 'marker-mid' and 'marker-end' to give each point its own marker.
+          The third row uses the 'marker' property like the first row, but here the marker has orient="auto" set.
+        </p>
+    </d:testDescription>
+      </title>
+      <style type="text/css">
+        <!--
+         .bodytext      { font-family:verdana, helvetica, sans-serif; font-size: 12pt; line-height: 125%; text-align: Left; margin-top: 0; margin-bottom: 0 }
+         .pageTitle     { line-height: 150%; font-size: 20pt; font-weight : 900; margin-bottom: 20pt }
+         .pageSubTitle  { color : blue; line-height: 100%; font-size: 24pt; font-weight : 900 }
+         .openChapter   { color : blue; line-height: 125%; font-weight : 900 }
+         .openSection   { color : blue; line-height: 125%; font-weight : 900 }
+         .info          { color : black; line-height: 110%; font-size: 10pt; font-weight : 100 }
+         p              { margin-top:0; margin-bottom:0; padding-top:0; padding-bottom:0 }
+         blockquote     { margin-top:0; margin-bottom:0; padding-top:0; padding-bottom:0 }
+         .opscript      { margin-left: 3%; margin-right: 3%; }
+         .opscript p    { margin-top: 0.7em }
+         .navbar        { background: black; color: white; font-weight: bold }
+ 
+         a,a:visited    { color: blue }
+        -->
+      </style>
+      
+    </head>
+  <body class="bodytext">
+
+<table align="center" border="0" cellspacing="0" cellpadding="10">
+  <tr>
+    <td align="center" colspan="3">
+      <table border="0" cellpadding="8">
+        <tr>
+
+        </tr>
+        <tr  class="navbar">
+          <td align="center">
+            SVG Image - The test
+          </td>
+          <td align="center">
+            PNG Image - The reference
+          </td>
+        </tr>
+        <tr>
+          <td align="right" >
+            <object id="test" data="http://t/core/standards/SVG/Testsuites/W3C-1_1F2/harness/htmlObjectMini/modified/svg/test/painting-marker-05-f.svg" width="480" height="360" type="image/svg+xml"> </object>
+          </td>
+          <td align="left">
+            <img id="ref" alt="raster image of painting-marker-05-f.svg" src="http://t/core/standards/SVG/Testsuites/W3C-1_1F2/harness/htmlObjectMini/modified/svg/ref/painting-marker-05-f.png " width="480" height="360"/>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<h2 id="testdescription">
+			    Test Description
+			  </h2>
+
+			  <div>
+			<p>
+				<d:testDescription href='http://www.w3.org/TR/SVG11/painting.html#Markers' xmlns='http://www.w3.org/1999/xhtml'>
+        <p>
+          Test all the 'overflow' property values except 'inherit' on the 'marker' element.
+        </p>
+        <p>
+          Each column tests a value of the 'overflow' property.
+          The first row uses the 'marker' property to set the same marker on start-, mid- and end-points on the path.
+          The second row uses 'marker-start', 'marker-mid' and 'marker-end' to give each point its own marker.
+          The third row uses the 'marker' property like the first row, but here the marker has orient="auto" set.
+        </p>
+    </d:testDescription>
+				</p>
+			  </div>
+<div class="opscript">
+			    <h2 id="operatorscript">
+			      Operator Script
+			    </h2>
+			    <div>
+				   <p><d:operatorScript xmlns='http://www.w3.org/1999/xhtml'>
+      <p>
+        Run the test. No interaction required.
+      </p>
+    </d:operatorScript></p>
+  </div>
+			  <h2 id="passcriteria">
+			    Pass Criteria
+			  </h2>
+			  <div>
+			<p>
+			<d:passCriteria xmlns='http://www.w3.org/1999/xhtml'>
+      <p>
+        The test has passed if:
+
+        The columns labeled 'visible' and 'auto' show markers without clipping them.
+        All other columns show clipped markers.
+        The rendered picture matches the reference image, except for possible
+        variations in the labelling text (per CSS2 rules).
+      </p>
+    </d:passCriteria>
+			      </p>
+			  </div> 
+
+ 
+
+</div>
+
+</div>
+</body>
+</html>
+</body> </html>

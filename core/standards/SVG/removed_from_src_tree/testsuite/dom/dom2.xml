@@ -1,0 +1,264 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:svg="http://www.w3.org/2000/svg" 
+xmlns:xul="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+>
+<head>
+<title>My title</title>
+<script>
+<![CDATA[
+var transform_list;
+var suspend_id;
+var suspend_id_longer;
+
+var rotate_some_continue = 0;
+
+function init()
+{
+  var tri = document.getElementById('triangle');
+  transform_list = tri.transform.baseVal;
+}
+
+function RotateSome()
+{
+  var xform = document.getElementById('svgElement').createSVGTransform();
+  xform.setRotate(1,50,300);
+  transform_list.appendItem(xform);
+  transform_list.consolidate();
+
+  if (rotate_some_continue)
+    setTimeout("RotateSome()", 100);
+}
+
+function StartRotate()
+{
+  if (rotate_some_continue == 0)
+  {
+    rotate_some_continue = 1;
+    setTimeout("RotateSome()", 100);
+  }
+}
+
+function EndRotate()
+{
+  rotate_some_continue = 0;
+}
+
+function Rotate()
+{
+  var xform = document.getElementById('svgElement').createSVGTransform();
+  xform.setRotate(30,50,300);
+  transform_list.appendItem(xform);
+}
+
+function RotateAll()
+{
+  var xform = document.getElementById('svgElement').createSVGTransform();
+  xform.setRotate(10,0,0);
+  transform_list.insertItemBefore(xform, 0);
+}
+
+function Translate()
+{
+  var xform = document.getElementById('svgElement').createSVGTransform();
+  xform.setTranslate(10,-10);
+  transform_list.appendItem(xform);
+}
+
+function ScaleDown()
+{
+  var xform = document.getElementById('svgElement').createSVGTransform();
+  xform.setScale(0.5,0.5);
+  transform_list.appendItem(xform);  
+}
+
+function ScaleUp()
+{
+  var xform = document.getElementById('svgElement').createSVGTransform();
+  xform.setScale(1.5,1.5);
+  transform_list.appendItem(xform);  
+}
+
+function RemoveFirst()
+{
+  if (transform_list.numberOfItems > 0)
+  {
+    transform_list.removeItem(0);
+  }
+}
+
+function RemoveLast()
+{
+  if (transform_list.numberOfItems > 0)
+  {
+    transform_list.removeItem(transform_list.numberOfItems - 1);
+  }
+}
+
+function RemoveAll()
+{
+  transform_list.clear();
+}
+
+function CycleForward()
+{
+  if (transform_list.numberOfItems > 1)
+  {
+    var first = transform_list.removeItem(0);
+    transform_list.appendItem(first);
+  }
+}
+
+function CycleBackward()
+{
+  if (transform_list.numberOfItems > 1)
+  {
+    var last = transform_list.removeItem(transform_list.numberOfItems - 1);
+    transform_list.insertItemBefore(last, 0);
+  }
+}
+
+function SwapOrder()
+{
+  var last_idx = transform_list.numberOfItems - 1;
+  for (var i=0;i<last_idx / 2; i++)
+  {
+    var left = transform_list.getItem(i);
+    var right = transform_list.getItem(last_idx - i);
+    transform_list.replaceItem(left, last_idx - i);
+    transform_list.replaceItem(right, i);
+  }
+}
+
+function Consolidate()
+{
+  transform_list.consolidate();
+}
+
+function DumpXForms()
+{
+  var str = "";
+  var count = transform_list.numberOfItems;
+  for (var i=0; i<count; ++i) {
+    var xform = transform_list.getItem(i);
+    str += GetString(xform);
+  }
+  alert(str);
+}
+
+function GetString(xform)
+{
+  var str = "";
+  switch (xform.type) {
+    case SVGTransform.SVG_TRANSFORM_TRANSLATE: 
+      str = "Translate: ( " + xform.matrix.e + ", "
+	                    + xform.matrix.f + " )\n";
+      break;
+    case SVGTransform.SVG_TRANSFORM_ROTATE:
+      str = "Rotate: " + xform.angle + " degrees (" + xform.matrix.e + ", " + xform.matrix.f + ")\n";
+      break;
+    case SVGTransform.SVG_TRANSFORM_SCALE: 
+      str = "Scale: (" + xform.matrix.a + ", " + xform.matrix.d + ")\n";
+      break;
+    case SVGTransform.SVG_TRANSFORM_SKEWX: 
+      str = "SkewX: " + xform.angle + " degrees\n";
+      break;
+    case SVGTransform.SVG_TRANSFORM_SKEWY: 
+      str = "SkewY: " + xform.angle + " degrees\n";
+      break;
+      case SVGTransform.SVG_TRANSFORM_MATRIX:
+    default:
+      str = "Matrix: [ " + xform.matrix.a + " "
+                          + xform.matrix.b + " "
+	                  + xform.matrix.c + " "
+	                  + xform.matrix.d + " "
+	                  + xform.matrix.e + " "
+	                  + xform.matrix.f + " ]\n";
+        break;
+  }
+  return str;
+}
+
+function SetAttribute()
+{
+  var tri = document.getElementById('triangle');
+
+  var count = transform_list.numberOfItems;
+  if (count > 0)
+  {
+    tri.setAttribute("transform", "translate(10,10)");
+  }
+  else
+  {
+    alert("Test must have at least one object in the transform list");
+  }
+}
+
+function Suspend()
+{
+  var svg = document.getElementById('svgElement');
+  suspend_id_longer = svg.suspendRedraw(10000);
+}
+
+function Unsuspend()
+{
+  var svg = document.getElementById('svgElement');
+  svg.unsuspendRedraw(suspend_id_longer);
+}
+
+function SuspendSome()
+{
+  var svg = document.getElementById('svgElement');
+  suspend_id = svg.suspendRedraw(3000);
+}
+
+function UnsuspendSome()
+{
+  var svg = document.getElementById('svgElement');
+  svg.unsuspendRedraw(suspend_id);
+}
+
+function UnsuspendAll()
+{
+  var svg = document.getElementById('svgElement');
+  svg.unsuspendRedrawAll();
+}
+
+]]>
+</script>
+
+</head>
+
+<body onload="init();">
+  <table><tr><td>
+  <button onclick="Rotate();">Rotate</button><br/>
+  <button onclick="RotateAll();">RotateAll</button><br/>
+  <button onclick="StartRotate();">Start rotate</button><br/>
+  <button onclick="EndRotate();">End Rotate</button><br/>
+  <button onclick="Translate();">Translate</button><br/>
+  <button onclick="ScaleDown();">Scale down</button><br/> 
+  <button onclick="ScaleUp();">Scale up</button><br/> 
+  <button onclick="DumpXForms();">Dump XForms</button><br/>
+  <button onclick="Consolidate();">Consolidate</button><br/>
+  <button onclick="RemoveFirst();">Remove first</button><br/>
+  <button onclick="RemoveLast();">Remove last</button><br/>
+  <button onclick="RemoveAll();">Remove all</button><br/>
+  <button onclick="CycleBackward();">CycleBackward</button><br/>
+  <button onclick="CycleForward();">CycleForward</button><br/>
+  <button onclick="SwapOrder();">Swap order</button><br/>
+  <button onclick="SetAttribute();">Set attribute</button><br/>
+  <button onclick="Suspend();">Suspend 10s</button><br/>
+  <button onclick="Unsuspend();">Unsuspend 10s</button><br/>
+  <button onclick="SuspendSome();">Suspend 3s</button><br/>
+  <button onclick="UnsuspendSome();">Unsuspend 3s</button><br/>
+  <button onclick="UnsuspendAll();">Unsuspend all</button><br/>
+  </td><td>
+  <svg:svg width="600px" height="400px" id="svgElement">
+    <svg:polyline points="0,0 600,0 600,400 0,400 0,0"
+                  style="stroke:black; fill:none;"/>
+    <svg:polygon id="triangle"
+                 points="50,50 50,300 300,300"
+                 style=" fill:blue; stroke:black;"/>
+  </svg:svg>
+  </td></tr></table>
+</body>
+</html>

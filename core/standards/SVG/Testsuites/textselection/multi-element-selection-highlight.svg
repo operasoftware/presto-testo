@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     onload="document.getElementById('nojs').textContent = ''">
+  <title>Text selection highlight across multiple &lt;text&gt; elements</title>
+
+  <text x="10" y="20" id="nojs">NOT TESTED (JavaScript did not run)</text>
+
+  <text x="10" y="50" id="match">1. Initiate a text selection on this line</text>
+  <text x="10" y="70" id="testing">2. and end it on this line.</text>
+
+  <text x="10" y="100">After you ended your selection, only text on the first line should be highlighted.</text>
+
+  <script>
+  <![CDATA[
+    document.addEventListener('mouseup', function(){
+      document.getElementById('testing').className.baseVal = 'redraw';
+    }, false);
+  ]]>
+  </script>
+</svg>
+

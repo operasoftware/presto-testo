@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:svg="http://www.w3.org/2000/svg">
+  <head>
+    <title>Viewport Tests</title>
+    <script>
+      <![CDATA[
+	       function GetViewports(elem)
+	       {
+	       var str = "Viewport: " + elem.viewportElement;
+	       if (elem.viewportElement != null)
+	       str += " (id=" + elem.viewportElement.id + ")";
+	       str += "\n";
+
+	       str += "Nearest: " + elem.nearestViewportElement; 
+	       if (elem.nearestViewportElement != null)
+	       str += " (id=" + elem.nearestViewportElement.id + ")";
+	       str += "\n";
+
+	       str += "Farthest: " + elem.farthestViewportElement;
+	       if (elem.farthestViewportElement != null)
+	       str += " (id=" + elem.farthestViewportElement.id + ")";
+	       str += "\n";
+
+	       str += "OwnerSVG: " + elem.ownerSVGElement;
+	       if (elem.ownerSVGElement != null)
+	       str += " (id=" + elem.ownerSVGElement.id + ")";
+	       str += "\n";
+
+	       alert(str);
+	       }
+      ]]>
+    </script>
+  </head>
+  <body>
+    <table>
+      <tr>
+	<td>
+	  <button onclick="GetViewports(document.getElementById('outer-svg'));">Get outer vp</button><br/>
+	  <button onclick="GetViewports(document.getElementById('inner-svg'));">Get inner vp</button><br/>
+	  <button onclick="GetViewports(document.getElementById('inner-svg-2'));">Get inner2 vp</button><br/>
+	</td>
+	<td>
+	  <svg:svg width="640" height="480" svg:id="outer-svg" viewBox="0 0 480 360" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+
+	    <svg:rect id="elem" x="40" y="30" width="100" height="75" fill="blue" stroke="red" stroke-width="3"/>
+
+	    <svg:symbol svg:id="innersym" viewBox="0 0 480 360" preserveAspectRatio="none">
+	      <svg:svg width="100%" height="100%" svg:id="inner-svg" viewBox="0 0 480 360" xmlns="http://www.w3.org/2000/svg">
+		<svg:rect id="elem" x="40" y="30" width="100" height="75" fill="blue" stroke="red" stroke-width="3"/>
+		
+		<svg:svg x="180" y="165" width="200" height="150" svg:id="inner-svg-2" viewBox="0 0 480 360" xmlns="http://www.w3.org/2000/svg">
+		  <svg:rect id="elem2" x="40" y="30" width="400" height="300" fill="green" stroke="blue" stroke-width="3"/>
+		</svg:svg>
+	      </svg:svg>
+	    </svg:symbol>
+
+	    <svg:rect x="179" y="164" width="202" height="152" fill="none" stroke="black" stroke-width="1"/>
+	    <svg:use xlink:href="#innersym" x="180" y="165" width="200" height="150"/>
+
+	  </svg:svg>
+	</td>
+      </tr>
+    </table>
+  </body>
+</html>

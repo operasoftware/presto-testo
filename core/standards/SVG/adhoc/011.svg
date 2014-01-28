@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1.0" x="0.00000000" y="0.00000000" width="500.00000" height="250.00000">
+	<defs>
+		<filter id="fltrPlaneFish" filterUnits="userSpaceOnUse" x="0" y="0" width="100%" height="100%">
+			<feGaussianBlur in="SourceGraphic" stdDeviation="30,0" result="blur"/>
+		</filter>
+	</defs>
+	<rect id="ck" width="100%" height="100%" fill="#ffffff"/>
+	<text x="300" y="220" style="font-size:18;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#000000;fill-opacity:1.0000000;stroke:none;stroke-width:1.0000000px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1.0000000;font-family:MS UI Gothic;text-anchor:start;writing-mode:lr-tb" id="text5" xml:space="preserve">
+	Repeat Click
+	</text>
+	<g>
+		<text x="00" y="105" style="font-size:32.000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#ffffff;fill-opacity:1.0000000;stroke:none;stroke-width:1.0000000px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1.0000000;font-family:MS UI Gothic;text-anchor:start;writing-mode:lr-tb" id="text2" xml:space="preserve">
+			<animate attributeName="x" values="500;0;40;0;30;5;0;4;0;3;2;0;0;0;20;0;10;0;20;-500" begin="ck.click" dur="4s" fill="freeze"/>
+			<animate attributeName="fill" values="#ffffff;#000000" begin="ck.click" dur="4s"/>
+			⊂(ﾟДﾟ,,⊂⌒｀つ≡≡≡ｽﾞｻﾞｰ
+		</text>
+	</g>
+	<g>
+		<text filter="url(#fltrPlaneFish)" x="40" y="105" style="font-size:32.000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#ffffff;fill-opacity:1.0000000;stroke:none;stroke-width:1.0000000px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1.0000000;font-family:MS UI Gothic;text-anchor:start;writing-mode:lr-tb" id="text2" xml:space="preserve">
+			<animate attributeName="x" values="240;-40;" begin="ck.click" dur="400ms"/>
+			<animateColor attributeName="fill" values="#000000;#ffffff;#ffffff;#ffffff;#ffffff;#000000;#ffffff" begin="ck.click;2ms" dur="4500ms" fill="freeze"/>
+			⊂(ﾟДﾟ,,⊂⌒｀つ≡≡≡ｽﾞｻﾞｰ
+		</text>
+	</g>
+<!-- 初めのフィルターアニメを消したい -->
+	</svg>

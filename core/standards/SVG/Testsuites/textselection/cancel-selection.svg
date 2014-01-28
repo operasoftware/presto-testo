@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg">
+  <title>Canceling text selection with a pointer event</title>
+
+  <text x="10" y="20">Select any of this text. When you click on the page, the selection should be completely cleared.</text>
+</svg>
+

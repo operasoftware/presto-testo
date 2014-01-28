@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>Inline SVG font used in the inline SVG and in xhtml</title>
+	</head>
+	<body>
+	<p>There should be two green rects below and no red should be visible</p>
+			<svg xmlns="http://www.w3.org/2000/svg" width="300" height="100" viewBox="0 0 480 600">
+			<font horiz-adv-x="1000" id="Font">
+      <font-face font-family="SVGAhem" units-per-em="1000" panose-1="0 0 4 9 0 0 0 0 0 0" ascent="800" descent="-200" alphabetic="0"/>
+      <missing-glyph d="M125 0V800H875V0H125ZM250 125H750V675H250V125Z" />
+<glyph unicode="F" glyph-name="F" horiz-adv-x="1000" d="M0 800H1000V-200H0V800Z" />		
+<glyph unicode="A" glyph-name="A" horiz-adv-x="1000" d="M0 800H1000V-200H0V800Z" />
+<glyph unicode="I" glyph-name="I" horiz-adv-x="1000" d="M0 800H1000V-200H0V800Z" />
+  <glyph unicode="L" glyph-name="L" horiz-adv-x="1000" d="M0 800H1000V-200H0V800Z" />
+			</font>
+			<text x="-600" y="400" fill="green" font-family="SVGAhem" font-size="300">FAIL</text>
+		</svg>
+		<p style="color:green; font-family: SVGAhem; font-size:50px">FAIL</p>
+		</body>
+</html>
+
+
+

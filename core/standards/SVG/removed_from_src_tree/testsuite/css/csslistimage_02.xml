@@ -1,0 +1,25 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <title>SVG as list-image</title>
+  <style type="text/css">
+   ul {
+    list-style-image:url("#circle");
+   }
+  </style>
+ </head>
+ <body>
+ <div style="display:none">
+ <svg id="circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1">
+	<circle cx=".5" cy=".5" r=".25" fill="red"/>
+ </svg>
+ </div>
+  <p>This test if it's possible to reference svg fragments in a compound document for use as CSS list-image.</p>
+  <p>You should a list with svg images as bullets:
+  <ul>
+	<li>First</li>
+	<li>Second</li>
+	<li>Third</li>
+  </ul>
+  </p>
+ </body>
+</html>

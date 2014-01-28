@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="240" height="40">
+<rect x="0" y="0" width="240" height="40" fill="#00CC00" stroke="none" />
+<line x1="201" y1="0" x2="201" y2="40" style="fill:none;stroke:#99ff99;stroke-width:2"/>
+<circle cx="200" cy="45" r="30" style="fill:none;stroke:#99ff99;stroke-width:2"/>
+<rect x="-5" y="5" width="40" height="100" style="stroke:#99ff99;stroke-width:2;fill:none"/>
+<circle cx="260" cy="30" r="5" style="stroke:none;fill:#FFFFFF">
+<animate attributeName="cx" attributeType="XML" begin="0.5s" dur="1s" fill="freeze" values="260; 90; 120; -50" keyTimes="0.5; 0.5; 0.2; 0.5"  /><animate attributeName="cy" attributeType="XML" begin="0.5s" dur="1s" fill="freeze" values="40; 10; 30; 25" keyTimes="0.5; 0.8; 0.2; 0.5" /></circle>
+<text x="242" y="30" font-size="25" fill="#000000">Tor in M&#252;nchen!<animate attributeName="x" attributeType="XML" begin="1.2s" dur="0.5s" fill="freeze" from="242" to="22" /></text>
+<a xlink:href="http://vlive.vizzavi.de/vsky/">
+<text x="240" y="28" font-size="25" fill="#FFFFFF">Tor in M&#252;nchen!<animate attributeName="x" attributeType="XML" begin="1.2s" dur="0.5s" fill="freeze" from="240" to="20" /></text>
+</a>
+</svg>

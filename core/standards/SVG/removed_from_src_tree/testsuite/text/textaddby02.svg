@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<svg width="95%" height="100%" viewBox="-150 -100 300 120" 
+   version="1.2" baseProfile="tiny"
+   xmlns="http://www.w3.org/2000/svg"  
+   xmlns:xlink="http://www.w3.org/1999/xlink">
+ 
+<title>by-animation of text</title> 
+<desc>by-animation of the x attribute of the text element.
+The text attribute x changes for a blue '?!$' with to by animations.
+by animations are additive by default.
+
+If the behaviour is assumed to be additive, this results in as 
+simulated with a values animations for the red '?!$'.
+
+For non additive behaviour:
+In SVG1.1 error processing could be used 
+(stop/do not start such a 'stupid' animation and indicate this).
+In SVG1.2 it is noted 'If any values are not legal, they are considered 
+to be unsupported and is (are?) processed as if they had not been 
+specified.' But as far as I can see, SVG1.2 has no specific rule, what
+to do, if there is no sufficient values, to, by (or path) information 
+at all in an animation element, therefore SMIL2 error processing
+might be used. This means, such stupid animation elements have no
+effect on presentation, but the timing can still be used to derive some
+timing information for example for dependent animations.
+This behaviour is indicated in grey (currently without a test, that timing
+information can be derived from such an animation).
+
+
+Behaviour of different viewers:
+Adobe plugin (3.01 Beta Release 1, Build 88): shows additive behaviour
+Squiggle 1.7: additive behaviour
+Opera 8.x: no animation of blue test case at all
+Opera9tp1: wrong positioning, but additive behaviour
+Opera9tp2/beta1: additive behaviour
+Opera9beta2: no animation of blue test case at all
+Opera9.00/9.10: wrong positioning, no animation of blue test case at all
+Opera9.50 alpha/beta: it animates something, whatever it is...
+</desc>
+
+
+
+<animate xlink:href="#text1"
+	attributeName="x" 
+	attributeType="XML"
+        values="-30,-30,-30;15,30,45;15,30,45;-30,-30,-30"
+	dur="6s"
+	fill="freeze" />
+
+
+<animate xlink:href="#test"
+	attributeName="x" 
+	attributeType="XML"
+        by="90,120,150"
+	dur="4s"
+	fill="freeze" />
+<animate xlink:href="#test"
+	attributeName="x" 
+	attributeType="XML"
+        by="-90,-120,-150"
+	dur="4s"
+	begin="2s"
+	fill="freeze" />
+
+ <rect x="-150" y="-100" width="300" height="120" fill="#ffd" />
+<g font-size="100" stroke-width="1" fill="none" stroke-linecap="square">
+<text x="-30,-30,-30" stroke="#ccc" fill="white">?!$</text>
+<text xml:id="text1" id="text1" x="-30,-30,-30" stroke="#f00">?!$</text> 
+<text xml:id="test" id="test" x="-30,-30,-30" stroke="#00f">?!$</text>
+ </g>
+ 
+
+
+</svg>
+

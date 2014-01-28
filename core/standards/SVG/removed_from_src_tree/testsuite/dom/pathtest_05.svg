@@ -1,0 +1,213 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+      xmlns:svg="http://www.w3.org/2000/svg">
+  <head>
+    <title>My title</title>
+    <script src="pathtest_05.js" type="text/ecmascript">
+    </script>
+    <style type="text/css">
+      *
+      {
+      font-family: sans-serif;
+      font-size:10px;
+      }
+
+      h1
+      {
+      font-size:16px;
+      }
+    </style>
+
+  </head>
+
+  <body onload="init();">
+    <table height="100%">
+      <tr>
+	<td>
+	  <table border="1">
+	    <tr>
+	      <td>Use normalized list</td>
+	      <td>
+		<input type="checkbox" value="Use normalized" id="use_normalized_list_toggle"/>
+	      </td>
+	    </tr>
+	    <tr>
+	      <td></td>
+	      <td>
+		<input type="button" onclick="read_lists();" value="Read lists" />
+	      </td>
+	    </tr>
+	    <tr>
+	      <td></td>
+	      <td>
+		<table>
+		  <tr>
+		    <td><input type="button" onclick="append_seg();" value="Append"/></td>
+		  </tr>
+		  <tr>
+		    <td><input type="button" onclick="randomize_seg();" value="Randomize"/></td>
+		  </tr>
+		  <tr>
+		    <td><input type="text" id="x" size="10"/></td>
+		  </tr>
+		  <tr>
+		    <td><input type="text" id="y" size="10"/></td>
+		  </tr>
+		  <tr>
+		    <td><input type="text" id="x1" size="10"/></td>
+		  </tr>
+		  <tr>
+		    <td><input type="text" id="y1" size="10"/></td>
+		  </tr>
+		  <tr>
+		    <td><input type="text" id="x2" size="10"/></td>
+		  </tr>
+		  <tr>
+		    <td><input type="text" id="y2" size="10"/></td>
+		  </tr>
+		  <tr>
+		    <td>
+		      <select id="numunit">
+			<option value="PATHSEG_CLOSEPATH">z</option>
+			<option value="PATHSEG_MOVETO_ABS">M</option>
+			<option value="PATHSEG_MOVETO_REL">m</option>
+			<option value="PATHSEG_LINETO_ABS">L</option>
+			<option value="PATHSEG_LINETO_REL">l</option>
+			<option value="PATHSEG_CURVETO_CUBIC_ABS">C</option>
+			<option value="PATHSEG_CURVETO_CUBIC_REL">c</option>
+			<option value="PATHSEG_CURVETO_QUADRATIC_ABS">Q</option>
+			<option value="PATHSEG_CURVETO_QUADRATIC_REL">q</option>
+			<option value="PATHSEG_ARC_ABS">A</option>
+			<option value="PATHSEG_ARC_REL">a</option>
+			<option value="PATHSEG_LINETO_HORIZONTAL_ABS">H</option>
+			<option value="PATHSEG_LINETO_HORIZONTAL_REL">h</option>
+			<option value="PATHSEG_LINETO_VERTICAL_ABS">V</option>
+			<option value="PATHSEG_LINETO_VERTICAL_REL">v</option>
+			<option value="PATHSEG_CURVETO_CUBIC_SMOOTH_ABS">S</option>
+			<option value="PATHSEG_CURVETO_CUBIC_SMOOTH_REL">s</option>
+			<option value="PATHSEG_CURVETO_QUADRATIC_SMOOTH_ABS">T</option>
+			<option value="PATHSEG_CURVETO_QUADRATIC_SMOOTH_REL">t</option>
+		      </select>
+		    </td>
+		  </tr>
+		</table>
+	      </td>
+	    </tr>
+	    <tr>
+	      <td colspan="2" align="center">
+		<h1>Line to</h1>
+		<table>
+		  <tr>
+		    <td>
+		      <input type="button" onclick="append_line_to_rel(-1,-1);" value="Q" />
+		    </td>
+		    <td>
+		      <input type="button" onclick="append_line_to_rel(0,-1);" value="W" />
+		    </td>
+		    <td>
+		      <input type="button" onclick="append_line_to_rel(1,-1);" value="E" />
+		    </td>
+		  </tr>
+		  <tr>
+		    <td>
+		      <input type="button" onclick="append_line_to_rel(-1,0);" value="A" />
+		    </td>
+		    <td>
+		      <input type="button" onclick="append_move_to_random();" value="S" />
+		    </td>
+		    <td>
+		      <input type="button" onclick="append_line_to_rel(1,0);" value="D" />
+		    </td>
+		  </tr>
+		  <tr>
+		    <td>
+		      <input type="button" onclick="append_line_to_rel(-1,1);" value="Z" />
+		    </td>
+		    <td>
+		      <input type="button" onclick="append_line_to_rel(0,1);" value="X" />
+		    </td>
+		    <td>
+		      <input type="button" onclick="append_line_to_rel(1,1);" value="C" />
+		    </td>
+		  </tr>
+		</table>
+	      </td>
+	    </tr>
+	    <tr>
+	      <td colspan="2" align="center">
+		<h1>Arc to</h1>
+		<table>
+		  <tr>
+		    <td>
+		      <input type="button" onclick="append_arc_to_rel(-1,-1);" value="Q" />
+		    </td>
+		    <td>
+		      <input type="button" onclick="append_arc_to_rel(0,-1);" value="W" />
+		    </td>
+		    <td>
+		      <input type="button" onclick="append_arc_to_rel(1,-1);" value="E" />
+		    </td>
+		  </tr>
+		  <tr>
+		    <td>
+		      <input type="button" onclick="append_arc_to_rel(-1,0);" value="A" />
+		    </td>
+		    <td>
+		      <input type="button" onclick="append_move_to_random();" value="S" />
+		    </td>
+		    <td>
+		      <input type="button" onclick="append_arc_to_rel(1,0);" value="D" />
+		    </td>
+		  </tr>
+		  <tr>
+		    <td>
+		      <input type="button" onclick="append_arc_to_rel(-1,1);" value="Z" />
+		    </td>
+		    <td>
+		      <input type="button" onclick="append_arc_to_rel(0,1);" value="X" />
+		    </td>
+		    <td>
+		      <input type="button" onclick="append_arc_to_rel(1,1);" value="C" />
+		    </td>
+		  </tr>
+		</table>
+	      </td>
+	    </tr>
+	    <tr>
+	      <td>
+		String rep
+	      </td>
+	      <td><input type="text" id="string_rep" size="10"/></td>
+	    </tr>
+	  </table>
+	</td>
+	<td valign="top" width="300">
+	  <h1>Normalized list</h1>
+	  <table>
+	    <form id="norm_path_form">
+	    </form>
+	  </table>
+	</td>
+	<td valign="top" width="200">
+	  <h1>Unnormalized list</h1>
+	  <table>
+	    <form id="path_form">
+	    </form>
+	  </table>
+	</td>
+	<td valign="top">
+	  <svg:svg xmlns="http://fwww.w3.org/2000/svg" width="600px" height="400px" id="svgElement">
+	    <svg:g transform="scale(400, 400)">
+	      <svg:path d=""
+			id="workpath"
+			stroke-width="0.002px"
+			stroke="#203040"
+			fill="#403020"
+			fill-opacity="0.4"/>
+	    </svg:g>
+	  </svg:svg>
+	</td>
+      </tr>
+    </table>
+  </body>
+</html>

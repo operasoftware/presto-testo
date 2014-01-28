@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC  "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+      <meta name="keywords" content="W3C SVG 1.1 2nd Edition Test Suite"/>
+      <meta name="description" content="W3C SVG 1.1 2nd Edition Object Test Suite"/>
+      <title>
+	<d:testDescription href='http://www.w3.org/TR/SVG11/types.html#BasicDOMInterfaces' xmlns='http://www.w3.org/1999/xhtml'>
+      <p>
+        This test checks all the methods and properties of the SVGLocatable interface.
+        Note the use of nested svg elements and testing against different elements in the hierarchy.
+        Note that the values of .getScreenCTM() and .getCTM() can only be tested correctly if they are
+        in the html-based test or the width and height of the root element is explicitly set to 480x360.
+        The methods .getScreenCTM() and .getCTM() are tested from the rotated text element, the method .getBBox(),
+        .getTransformToElement() is tested between the rotated text and its parent group, the method .getBBox() and
+        the properties .farthestViewportElement and .nearestViewportElement are tested on the blue circle.
+      </p>
+    </d:testDescription>
+      </title>
+      <style type="text/css">
+        <!--
+         .bodytext      { font-family:verdana, helvetica, sans-serif; font-size: 12pt; line-height: 125%; text-align: Left; margin-top: 0; margin-bottom: 0 }
+         .pageTitle     { line-height: 150%; font-size: 20pt; font-weight : 900; margin-bottom: 20pt }
+         .pageSubTitle  { color : blue; line-height: 100%; font-size: 24pt; font-weight : 900 }
+         .openChapter   { color : blue; line-height: 125%; font-weight : 900 }
+         .openSection   { color : blue; line-height: 125%; font-weight : 900 }
+         .info          { color : black; line-height: 110%; font-size: 10pt; font-weight : 100 }
+         p              { margin-top:0; margin-bottom:0; padding-top:0; padding-bottom:0 }
+         blockquote     { margin-top:0; margin-bottom:0; padding-top:0; padding-bottom:0 }
+         .opscript      { margin-left: 3%; margin-right: 3%; }
+         .opscript p    { margin-top: 0.7em }
+         .navbar        { background: black; color: white; font-weight: bold }
+ 
+         a,a:visited    { color: blue }
+        -->
+      </style>
+      
+    </head>
+  <body class="bodytext">
+
+<table align="center" border="0" cellspacing="0" cellpadding="10">
+  <tr>
+    <td align="center" colspan="3">
+      <table border="0" cellpadding="8">
+        <tr>
+
+        </tr>
+        <tr  class="navbar">
+          <td align="center">
+            SVG Image - The test
+          </td>
+          <td align="center">
+            PNG Image - The reference
+          </td>
+        </tr>
+        <tr>
+          <td align="right" >
+            <object id="test" data="http://t/core/standards/SVG/Testsuites/W3C-1_1F2/harness/htmlObjectMini/modified/svg/test/types-dom-01-b.svg" width="480" height="360" type="image/svg+xml"> </object>
+          </td>
+          <td align="left">
+            <img id="ref" alt="raster image of types-dom-01-b.svg" src="http://t/core/standards/SVG/Testsuites/W3C-1_1F2/harness/htmlObjectMini/modified/svg/ref/types-dom-01-b.png " width="480" height="360"/>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<h2 id="testdescription">
+			    Test Description
+			  </h2>
+
+			  <div>
+			<p>
+				<d:testDescription href='http://www.w3.org/TR/SVG11/types.html#BasicDOMInterfaces' xmlns='http://www.w3.org/1999/xhtml'>
+      <p>
+        This test checks all the methods and properties of the SVGLocatable interface.
+        Note the use of nested svg elements and testing against different elements in the hierarchy.
+        Note that the values of .getScreenCTM() and .getCTM() can only be tested correctly if they are
+        in the html-based test or the width and height of the root element is explicitly set to 480x360.
+        The methods .getScreenCTM() and .getCTM() are tested from the rotated text element, the method .getBBox(),
+        .getTransformToElement() is tested between the rotated text and its parent group, the method .getBBox() and
+        the properties .farthestViewportElement and .nearestViewportElement are tested on the blue circle.
+      </p>
+    </d:testDescription>
+				</p>
+			  </div>
+<div class="opscript">
+			    <h2 id="operatorscript">
+			      Operator Script
+			    </h2>
+			    <div>
+				   <p><d:operatorScript xmlns='http://www.w3.org/1999/xhtml'>
+      <p>
+        Run the test. No interaction required. Make sure scripting is enabled.
+      </p>
+    </d:operatorScript></p>
+  </div>
+			  <h2 id="passcriteria">
+			    Pass Criteria
+			  </h2>
+			  <div>
+			<p>
+			<d:passCriteria xmlns='http://www.w3.org/1999/xhtml'>
+      <p>
+        For the test to pass, the values generated by script must match the values provided in the png image. The correct values are:
+      </p>
+      <p>
+        .getScreenCTM() for id "rotText": 0.42,0.42,-0.42,0.42,70.00,-60.00
+      </p>
+      <p>
+        .getCTM() for id "rotText": 0.42,0.42,-0.42,0.42,70.00,-60.00
+      </p>
+      <p>
+        .getTransformToElement() between id "rotText" and id "parentGroup": 0.42,0.42,-0.42,0.42,0.00,0.00
+      </p>
+      <p>
+        .getBBox() for 'blueCircle': .x=-50,.y=-50,.width=100,.height=100
+      </p>
+      <p>
+        .farthestViewportElement of blueCircle=svg-root
+      </p>
+      <p>
+        .nearestViewportElement of blueCircle=nestedSVG
+      </p>
+    </d:passCriteria>
+			      </p>
+			  </div> 
+
+ 
+
+</div>
+
+</div>
+</body>
+</html>
+</body> </html>

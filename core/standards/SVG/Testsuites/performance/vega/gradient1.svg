@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<svg id="svgRoot" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title>Performance test for gradients (small area)</title>
+<script xlink:href="/resources/fps.js"/>
+<script type="text/ecmascript"><![CDATA[
+
+window.onload = function() {
+	checkfps(1000);
+}
+
+]]></script>
+<defs>
+   <radialGradient id="MyRadial" cx="100" cy="100" r="100" gradientUnits="userSpaceOnUse">
+        <animate attributeName="fx" values="0;200;0" dur="3s" repeatCount="indefinite" />
+        <stop offset="0%" stop-color="navy">
+        </stop>
+        <stop offset="50%" stop-color="blue">
+        </stop>
+        <stop offset="100%" stop-color="navy">
+        </stop>
+   </radialGradient>
+</defs>
+<text id="result" x="0" y="30">NOT TESTED (please enable Javascript)</text>
+<text id="f" x="0" y="50"></text>
+<ellipse fill="url(#MyRadial)" cx="100" cy="100" rx="100" ry="30" />
+</svg>

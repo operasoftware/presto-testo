@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <metadata>
+    <rdf:RDF xmlns:cc="http://web.resource.org/cc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+      <cc:Work rdf:about="">
+        <dc:title>UPC-A Bar Code</dc:title>
+        <dc:description>A Bar Code: UPC-A.</dc:description>
+        <dc:subject>
+          <rdf:Bag>
+            <rdf:li>universal</rdf:li>
+            <rdf:li></rdf:li>
+            <rdf:li>upc</rdf:li>
+            <rdf:li>upc-a</rdf:li>
+            <rdf:li>barcode</rdf:li>
+            <rdf:li>bar</rdf:li>
+            <rdf:li>product</rdf:li>
+            <rdf:li>code</rdf:li>
+          </rdf:Bag>
+        </dc:subject>
+        <dc:publisher>
+          <cc:Agent rdf:about="http://www.openclipart.org">
+            <dc:title>Public Domain</dc:title>
+          </cc:Agent>
+        </dc:publisher>
+        <dc:creator>
+          <cc:Agent>
+            <dc:title>Richard D. Worth</dc:title>
+          </cc:Agent>
+        </dc:creator>
+        <dc:rights>
+          <cc:Agent>
+            <dc:title>Public Domain</dc:title>
+          </cc:Agent>
+        </dc:rights>
+        <dc:date></dc:date>
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+        <cc:license rdf:resource="http://web.resource.org/cc/PublicDomain"/>
+        <dc:language>en</dc:language>
+      </cc:Work>
+      <cc:License rdf:about="http://web.resource.org/cc/PublicDomain">
+        <cc:permits rdf:resource="http://web.resource.org/cc/Reproduction"/>
+        <cc:permits rdf:resource="http://web.resource.org/cc/Distribution"/>
+        <cc:permits rdf:resource="http://web.resource.org/cc/DerivativeWorks"/>
+      </cc:License>
+    </rdf:RDF>
+  </metadata>
+  <title>UPC-A Bar Code</title>
+  <desc>A Bar Code: UPC-A.</desc>
+  <defs>
+    <rect fill="black" height="140" id="bar_black" stroke="none" width="2" x="-1" y="-75"/>
+    <rect fill="white" height="140" id="bar_white" stroke="none" width="2" x="-1" y="-75"/>
+    <g id="start_code">
+      <use x="-2" xlink:href="#bar_black" y="0"/>
+      <use x="0" xlink:href="#bar_white" y="0"/>
+      <use x="2" xlink:href="#bar_black" y="0"/>
+    </g>
+    <g id="center_code">
+      <use x="-4" xlink:href="#bar_white" y="0"/>
+      <use x="-2" xlink:href="#bar_black" y="0"/>
+      <use x="0" xlink:href="#bar_white" y="0"/>
+      <use x="2" xlink:href="#bar_black" y="0"/>
+      <use x="4" xlink:href="#bar_white" y="0"/>
+    </g>
+    <g id="left_0">
+      <use x="-6" xlink:href="#bar_white" y="0"/>
+      <use x="-4" xlink:href="#bar_white" y="0"/>
+      <use x="-2" xlink:href="#bar_white" y="0"/>
+      <use x="0" xlink:href="#bar_black" y="0"/>
+      <use x="2" xlink:href="#bar_black" y="0"/>
+      <use x="4" xlink:href="#bar_white" y="0"/>
+      <use x="6" xlink:href="#bar_black" y="0"/>
+    </g>
+    <g id="left_1">
+      <use x="-6" xlink:href="#bar_white" y="0"/>
+      <use x="-4" xlink:href="#bar_white" y="0"/>
+      <use x="-2" xlink:href="#bar_black" y="0"/>
+      <use x="0" xlink:href="#bar_black" y="0"/>
+      <use x="2" xlink:href="#bar_white" y="0"/>
+      <use x="4" xlink:href="#bar_white" y="0"/>
+      <use x="6" xlink:href="#bar_black" y="0"/>
+    </g>
+    <g id="left_2">
+      <use x="-6" xlink:href="#bar_white" y="0"/>
+      <use x="-4" xlink:href="#bar_white" y="0"/>
+      <use x="-2" xlink:href="#bar_black" y="0"/>
+      <use x="0" xlink:href="#bar_white" y="0"/>
+      <use x="2" xlink:href="#bar_white" y="0"/>
+      <use x="4" xlink:href="#bar_black" y="0"/>
+      <use x="6" xlink:href="#bar_black" y="0"/>
+    </g>
+    <g id="left_3">
+      <use x="-6" xlink:href="#bar_white" y="0"/>
+      <use x="-4" xlink:href="#bar_black" y="0"/>
+      <use x="-2" xlink:href="#bar_black" y="0"/>
+      <use x="0" xlink:href="#bar_black" y="0"/>
+      <use x="2" xlink:href="#bar_black" y="0"/>
+      <use x="4" xlink:href="#bar_white" y="0"/>
+      <use x="6" xlink:href="#bar_black" y="0"/>
+    </g>
+    <g id="left_4">
+      <use x="-6" xlink:href="#bar_white" y="0"/>
+      <use x="-4" xlink:href="#bar_black" y="0"/>
+      <use x="-2" xlink:href="#bar_white" y="0"/>
+      <use x="0" xlink:href="#bar_white" y="0"/>
+      <use x="2" xlink:href="#bar_white" y="0"/>
+      <use x="4" xlink:href="#bar_black" y="0"/>
+      <use x="6" xlink:href="#bar_black" y="0"/>
+    </g>
+    <g id="left_5">
+      <use x="-6" xlink:href="#bar_white" y="0"/>
+      <use x="-4" xlink:href="#bar_black" y="0"/>
+      <use x="-2" xlink:href="#bar_black" y="0"/>
+      <use x="0" xlink:href="#bar_white" y="0"/>
+      <use x="2" xlink:href="#bar_white" y="0"/>
+      <use x="4" xlink:href="#bar_white" y="0"/>
+      <use x="6" xlink:href="#bar_black" y="0"/>
+    </g>
+    <g id="left_6">
+      <use x="-6" xlink:href="#bar_white" y="0"/>
+      <use x="-4" xlink:href="#bar_black" y="0"/>
+      <use x="-2" xlink:href="#bar_white" y="0"/>
+      <use x="0" xlink:href="#bar_black" y="0"/>
+      <use x="2" xlink:href="#bar_black" y="0"/>
+      <use x="4" xlink:href="#bar_black" y="0"/>
+      <use x="6" xlink:href="#bar_black" y="0"/>
+    </g>
+    <g id="left_7">
+      <use x="-6" xlink:href="#bar_white" y="0"/>
+      <use x="-4" xlink:href="#bar_black" y="0"/>
+      <use x="-2" xlink:href="#bar_black" y="0"/>
+      <use x="0" xlink:href="#bar_black" y="0"/>
+      <use x="2" xlink:href="#bar_white" y="0"/>
+      <use x="4" xlink:href="#bar_black" y="0"/>
+      <use x="6" xlink:href="#bar_black" y="0"/>
+    </g>
+    <g id="left_8">
+      <use x="-6" xlink:href="#bar_white" y="0"/>
+      <use x="-4" xlink:href="#bar_black" y="0"/>
+      <use x="-2" xlink:href="#bar_black" y="0"/>
+      <use x="0" xlink:href="#bar_white" y="0"/>
+      <use x="2" xlink:href="#bar_black" y="0"/>
+      <use x="4" xlink:href="#bar_black" y="0"/>
+      <use x="6" xlink:href="#bar_black" y="0"/>
+    </g>
+    <g id="left_9">
+      <use x="-6" xlink:href="#bar_white" y="0"/>
+      <use x="-4" xlink:href="#bar_white" y="0"/>
+      <use x="-2" xlink:href="#bar_white" y="0"/>
+      <use x="0" xlink:href="#bar_black" y="0"/>
+      <use x="2" xlink:href="#bar_white" y="0"/>
+      <use x="4" xlink:href="#bar_black" y="0"/>
+      <use x="6" xlink:href="#bar_black" y="0"/>
+    </g>
+    <g id="right_0">
+      <use x="-6" xlink:href="#bar_black" y="0"/>
+      <use x="-4" xlink:href="#bar_black" y="0"/>
+      <use x="-2" xlink:href="#bar_black" y="0"/>
+      <use x="0" xlink:href="#bar_white" y="0"/>
+      <use x="2" xlink:href="#bar_white" y="0"/>
+      <use x="4" xlink:href="#bar_black" y="0"/>
+      <use x="6" xlink:href="#bar_white" y="0"/>
+    </g>
+    <g id="right_1">
+      <use x="-6" xlink:href="#bar_black" y="0"/>
+      <use x="-4" xlink:href="#bar_black" y="0"/>
+      <use x="-2" xlink:href="#bar_white" y="0"/>
+      <use x="0" xlink:href="#bar_white" y="0"/>
+      <use x="2" xlink:href="#bar_black" y="0"/>
+      <use x="4" xlink:href="#bar_black" y="0"/>
+      <use x="6" xlink:href="#bar_white" y="0"/>
+    </g>
+    <g id="right_2">
+      <use x="-6" xlink:href="#bar_black" y="0"/>
+      <use x="-4" xlink:href="#bar_black" y="0"/>
+      <use x="-2" xlink:href="#bar_white" y="0"/>
+      <use x="0" xlink:href="#bar_black" y="0"/>
+      <use x="2" xlink:href="#bar_black" y="0"/>
+      <use x="4" xlink:href="#bar_white" y="0"/>
+      <use x="6" xlink:href="#bar_white" y="0"/>
+    </g>
+    <g id="right_3">
+      <use x="-6" xlink:href="#bar_black" y="0"/>
+      <use x="-4" xlink:href="#bar_white" y="0"/>
+      <use x="-2" xlink:href="#bar_white" y="0"/>
+      <use x="0" xlink:href="#bar_white" y="0"/>
+      <use x="2" xlink:href="#bar_white" y="0"/>
+      <use x="4" xlink:href="#bar_black" y="0"/>
+      <use x="6" xlink:href="#bar_white" y="0"/>
+    </g>
+    <g id="right_4">
+      <use x="-6" xlink:href="#bar_black" y="0"/>
+      <use x="-4" xlink:href="#bar_white" y="0"/>
+      <use x="-2" xlink:href="#bar_black" y="0"/>
+      <use x="0" xlink:href="#bar_black" y="0"/>
+      <use x="2" xlink:href="#bar_black" y="0"/>
+      <use x="4" xlink:href="#bar_white" y="0"/>
+      <use x="6" xlink:href="#bar_white" y="0"/>
+    </g>
+    <g id="right_5">
+      <use x="-6" xlink:href="#bar_black" y="0"/>
+      <use x="-4" xlink:href="#bar_white" y="0"/>
+      <use x="-2" xlink:href="#bar_white" y="0"/>
+      <use x="0" xlink:href="#bar_black" y="0"/>
+      <use x="2" xlink:href="#bar_black" y="0"/>
+      <use x="4" xlink:href="#bar_black" y="0"/>
+      <use x="6" xlink:href="#bar_white" y="0"/>
+    </g>
+    <g id="right_6">
+      <use x="-6" xlink:href="#bar_black" y="0"/>
+      <use x="-4" xlink:href="#bar_white" y="0"/>
+      <use x="-2" xlink:href="#bar_black" y="0"/>
+      <use x="0" xlink:href="#bar_white" y="0"/>
+      <use x="2" xlink:href="#bar_white" y="0"/>
+      <use x="4" xlink:href="#bar_white" y="0"/>
+      <use x="6" xlink:href="#bar_white" y="0"/>
+    </g>
+    <g id="right_7">
+      <use x="-6" xlink:href="#bar_black" y="0"/>
+      <use x="-4" xlink:href="#bar_white" y="0"/>
+      <use x="-2" xlink:href="#bar_white" y="0"/>
+      <use x="0" xlink:href="#bar_white" y="0"/>
+      <use x="2" xlink:href="#bar_black" y="0"/>
+      <use x="4" xlink:href="#bar_white" y="0"/>
+      <use x="6" xlink:href="#bar_white" y="0"/>
+    </g>
+    <g id="right_8">
+      <use x="-6" xlink:href="#bar_black" y="0"/>
+      <use x="-4" xlink:href="#bar_white" y="0"/>
+      <use x="-2" xlink:href="#bar_white" y="0"/>
+      <use x="0" xlink:href="#bar_black" y="0"/>
+      <use x="2" xlink:href="#bar_white" y="0"/>
+      <use x="4" xlink:href="#bar_white" y="0"/>
+      <use x="6" xlink:href="#bar_white" y="0"/>
+    </g>
+    <g id="right_9">
+      <use x="-6" xlink:href="#bar_black" y="0"/>
+      <use x="-4" xlink:href="#bar_black" y="0"/>
+      <use x="-2" xlink:href="#bar_black" y="0"/>
+      <use x="0" xlink:href="#bar_white" y="0"/>
+      <use x="2" xlink:href="#bar_black" y="0"/>
+      <use x="4" xlink:href="#bar_white" y="0"/>
+      <use x="6" xlink:href="#bar_white" y="0"/>
+    </g>
+    <clipPath id="clip_bars">
+      <path d="m-95,-75 h 190 v 140 h -20 v -10 h -72 v 10 h -6 v -10 h -72 v 10 h -20 v -140z"/>
+    </clipPath>
+  </defs>
+  <g transform="translate(20, 20)">
+    <g transform="translate(110, 75)">
+      <g id="barcode">
+        <g clip-path="url(#clip_bars)" id="bars">
+          <use transform="translate(-92,0)" xlink:href="#start_code"/>
+          <use transform="translate(-82,0)" xlink:href="#left_0"/>
+          <use transform="translate(-68,0)" xlink:href="#left_1"/>
+          <use transform="translate(-54,0)" xlink:href="#left_2"/>
+          <use transform="translate(-40,0)" xlink:href="#left_3"/>
+          <use transform="translate(-26,0)" xlink:href="#left_4"/>
+          <use transform="translate(-12,0)" xlink:href="#left_5"/>
+          <use transform="translate(0, 0)" xlink:href="#center_code"/>
+          <use transform="translate(12,0)" xlink:href="#right_6"/>
+          <use transform="translate(26,0)" xlink:href="#right_7"/>
+          <use transform="translate(40,0)" xlink:href="#right_8"/>
+          <use transform="translate(54,0)" xlink:href="#right_9"/>
+          <use transform="translate(68,0)" xlink:href="#right_0"/>
+          <use transform="translate(82,0)" xlink:href="#right_5"/>
+          <use transform="translate(92,0)" xlink:href="#start_code"/>
+        </g>
+        <g id="mfg_code">
+          <text font-size="14" text-anchor="middle" x="-104" y="74">0</text>
+          <text font-size="22" text-anchor="middle" x="-38" y="73">12345</text>
+        </g>
+        <g id="product_code">
+          <text font-size="22" text-anchor="middle" x="38" y="73">67890</text>
+        </g>
+        <g id="check_digit">
+          <text font-size="14" text-anchor="middle" x="104" y="74">5</text>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

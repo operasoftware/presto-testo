@@ -1,0 +1,74 @@
+<html>
+  <head>
+    <title>FPS test with no buffered-rendering directives</title>
+    <script>
+    Array.prototype.average = function ()
+      {
+         for( var i = 0, s = 0; i < this.length; i++ )
+         {
+            s += this[i];
+         }
+         return this.length ? ( s / this.length ) : 0;
+      };
+    var fpsValues = [];
+      function checkfps()
+      {
+        setInterval(update, 50);
+        document.getElementById("g").textContent = "Running...";
+        setTimeout(function () { returnFps(fpsValues); }, 2000);
+      }
+   
+      function update()
+      {
+        cfps = document.getElementById("o").contentDocument.documentElement.currentFps;
+        tfps = document.getElementById("o").contentDocument.documentElement.targetFps;
+        document.getElementById("f").textContent = "currentFps: " + cfps + " targetFps: " + tfps;
+        fpsValues.push(cfps)
+      }
+      
+      function incFps()
+      {
+        svg = document.getElementById("o").contentDocument.documentElement.targetFps++;
+      }
+
+      function decFps()
+      {
+        svg = document.getElementById("o").contentDocument.documentElement.targetFps--;
+      }
+      
+      function incSize(d)
+      {
+        o = document.getElementById("o");
+        o.width = d + parseFloat(o.width);
+        o.height = d + parseFloat(o.height);
+      }
+      function returnFps(fpsValues)
+      {
+      var afps = fpsValues.average();
+      document.getElementById("g").textContent = "Test complete. Average fps: " + afps;
+      try{top.opener.rr(10000/afps);}catch(e){}
+      }
+      
+      function decSize(d)
+      {
+        o = document.getElementById("o");
+        o.width = parseFloat(o.width) - d;
+        o.height = parseFloat(o.height) - d;
+      }      
+    </script>
+  </head>
+  <body onload="checkfps()">
+    <p>Buffered rendering is not specified. The tiger may animate slower than <a href="001.html">when buffered rendering is static</a>.</p>
+    <div id="f"></div>
+    <div id="g">Test not started.</div>
+    <div>
+    <button onclick="incFps()">TargetFps++</button>
+    <button onclick="decFps()">TargetFps--</button>
+    <button onclick="incSize(50)">Size++</button>
+    <button onclick="decSize(50)">Size--</button>
+    </div>
+    <object id="o" data="tiger-default.svg" type="image/svg+xml" width="1200" height="1000"></object>
+  </body>
+</html>
+
+

@@ -1,0 +1,993 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <link rel="stylesheet" type="text/css" href="group.css"/>
+        <style type="text/css">.atat {background: yellow; font-style:italic}
+            .chap, .sec {font-weight: bold; color: #333;
+                    background: #ccddff; padding: 3px}
+            .mod    {color: #777}
+            .mod > .chap, .mod > .sec {background: transparent; padding:0}
+        </style>
+        <title>Making a new SVG 1.1 or 1.2 test case</title>
+    </head>
+    <body>
+        <h1>How to make a new SVG 1.1 or 1.2 test</h1>
+        <h2 id="intro">Introduction</h2>
+        <p> A <a href="http://www.w3.org/Graphics/SVG/Test">public SVG 1.1 
+            testsuite</a> has been published some years ago; in the meantime, the  <a href="http://www.w3.org/Graphics/SVG/Group/repository/testsuite/1.1">SVG 1.1 testsuite</a>
+            has continued to be developed - more tests added, tests corrected. </p>
+        <p>SVG 1.2 is an upgrade to SVG 1.1, adding new features. It was originally intended 
+            that the
+            SVG 1.2 testsuite would test just those
+            new features, or combinations of new features with old ones. However, it now 
+            seems better to
+            take a one-time copy of the 1.1 testsuite (modifying tests appropriately, eg 
+            removal of DTD,  changing version and baseProfile, renaming) to make a 
+            1.2 Tiny testsuite; then add new tests. Therefore, the first step in creating 
+            a 1.2 Tiny testsuite is to get the existing SVG 1.1 Testsuite published.</p>
+        <p>To make a new test:</p>
+        <ol><li>Copy the appropriate <a href="#templates">template</a></li>
+        <li><a href="#naming">Rename it</a></li>
+            <li>CVS add and commit the blank test into the <strong>modules/svg/testsuite/opera-w3c</strong> directory, to reserve that test number</li>
+            <li>Add your test material in the <a href="#addit">appropriate place</a> in the file</li>
+            <li><a href="#doc">Document what the test does and how to pass it</a></li>
+            <li>Set the <a href="#review"><em>owner</em>, <em>desc</em> and <em>status</em> </a>attributes to your initials, a one line description, and 'created' respectively.</li>
+            <li>Commit the test</li>
+        </ol>
+
+        <h2 id="templates">Templates</h2>
+        <p>A blank svg template is the starting point for a new test. For SVG Tiny 1.2, use <a
+            href="templates/template12-t.svg">template12-t.svg</a>. For SVG 1.1, use 
+            <a href="templates/template11-t.svg">template11-t.svg</a> for Tiny,
+            <a href="templates/template11-b.svg">template11-b.svg</a> for Basic and 
+            <a href="templates/template11-f.svg">template11-f.svg</a> for Full.
+            The test suite scripts rely on
+            these templates having been used. Copy this file and edit that copy to make 
+            your test. Note that 
+            this file contains both the actual test, and also the documentation for the 
+            test (in a different namespace).</p>
+        <h2 id="naming">Naming conventions</h2>
+        <p>The first thing you need to decide is what filename to use for the new test. Filenames
+            have the following structure:<br class="xhtml"/>
+            <tt>chapter-section-number-profile.svg</tt>. For example,
+            <tt>struct-snapshot-101-t.svg</tt>. The <tt>chapter</tt> part is an abbreviation of the
+            chapter in the <a href="http://www.w3.org/TR/SVG11"> SVG 1.1</a> or <a href="http://www.w3.org/TR/SVGMobile12">SVG Mobile 1.2 </a>specification, as appropriate. The <tt>section</tt> is an abbreviation of
+            the section in that chapter where the feature is described. Here is <a href="#names11">a
+                list of 1.1 chapter and section names</a> and <a href="#namesT12">a list of Tiny 1.2 chapter and section names</a>
+            - your test chapter and section names must be picked from that list. If you pick a section that has no tests (and thus no short name) make a new one and document it in the list below so others use the same name.</p>
+        <p>
+            <tt>number</tt> is a number - SVG 1.2 tests start with <b>201</b> to allow the SVG 1.1
+            and 1.2 tests to be combined. To reserve a number, first do a CVS update to see what
+            tests already exist, then pick the next number in your section and check in a blank test
+            (just the template) into CVS. <tt>profile</tt> is a letter designating the profile. For
+            SVG 1.1 this was t or b or f for Tiny, Basic, or Full; for SVG 1.2 Tiny its always t  and
+            your template already has the appropriate letter.</p>
+        <h2 id="addit">Adding your test material</h2>
+        <p>The SVG for your test all goes inside a particular <tt>g</tt> element, replacing the comment:</p>
+        <pre>  &lt;g id="test-body-content"&gt;
+    &lt;!-- put all of the actual test here --&gt;
+  &lt;/g&gt;</pre>
+        <p>Any SVG that you put outside this group <i>may be discarded</i> by the test generating
+            process. This includes <tt>defs</tt> elements, fonts, etc. They all go inside this group. If you really, really need something to be outside this group (eg, a UTF-16 test) then mail the working group; the scripts for test generation may need to be specially modified for individual special tests.</p>
+            <p>Tests should be designed toclearly show the essential feature being tested, 
+            and to make lack of conformance visually obvious.</p>
+        <h2 id="doc">Test instructions</h2>
+        <p>Your template has a Paragraph element. Put the instructions for running the test here, adding more Paragraph elements as required. First, briefly explain the purpose of the test. Then, briefly explain what someone should look for when running the test, to tell if an implementation passed or failed the test. Preferably, the user should be able to do this quickly, without reloading the test, without looking at the source code. Lastly, give any further details of the test (incluuding reference to individual elements, ids etc) that will help others understand how the test works (if it is at all unclear or complicated), eg an implementor trying to see why their implementation exactly fails.</p>
+        
+        <h2 id="names11">Appendix - SVG 1.1 chapter and section names</h2>
+        <p>This is the naming structure for 1.1 tests.  </p>
+<pre>
+ 1 Introduction <span class="chap">intro</span>
+   1.1 About SVG <span class="sec"></span>
+      1.1.1 Modularization
+      1.1.2 Element and Attribute Collections
+      1.1.3 Profiling the SVG specification
+   1.2 SVG MIME type, file name extension and Macintosh file type  <span class="sec"></span>
+   1.3 SVG Namespace, Public Identifier and System Identifier  <span class="sec">intro-ns</span>
+   1.4 Compatibility with Other Standards Efforts  <span class="sec"></span>
+   1.5 Terminology  <span class="sec"></span>
+   1.6 Definitions  <span class="sec"></span>
+ 2 Concepts <span class="chap">concept</span>
+   2.1 Explaining the name: SVG  <span class="sec"></span>
+   2.2 Important SVG concepts  <span class="sec"></span>
+   2.3 Options for using SVG in Web pages  <span class="sec"></span>
+ 3 Rendering Model <span class="chap">render</span>
+   3.1 Introduction  <span class="sec">render-intro</span>
+   3.2 The painters model  <span class="sec"></span>
+   3.3 Rendering Order  <span class="sec"></span>
+   3.4 How groups are rendered  <span class="sec">render-groups</span>
+   3.5 How elements are rendered  <span class="sec">render-elems</span>
+   3.6 Types of graphics elements  <span class="sec"></span>
+      3.6.1 Painting shapes and text
+      3.6.2 Painting raster images
+   3.7 Filtering painted regions  <span class="sec"></span>
+   3.8 Clipping, masking and object opacity <span class="sec"></span>
+   3.9 Parent Compositing <span class="sec"></span>
+ 4 Basic Data Types and Interfaces <span class="chap"></span>
+   4.1 Basic data types <span class="sec"></span>
+   4.2 Recognized color keyword names <span class="sec"></span>
+   4.3 Basic DOM interfaces <span class="sec"></span>
+ 5 Document Structure <span class="chap">struct</span>
+   5.1 Defining an SVG document fragment: the 'svg' element  <span class="sec">struct-frag</span>
+      5.1.1 Overview
+      5.1.2 The 'svg' element
+   5.2 Grouping: the 'g' element <span class="sec">struct-group</span>
+      5.2.1 Overview
+      5.2.2 The 'g' element
+   5.3 References and the 'defs' element <span class="sec">struct-defs</span>
+      5.3.1 Overview
+      5.3.2 URI reference attributes
+      5.3.3 The 'defs' element
+   5.4 The 'desc' and 'title' elements <span class="sec"></span>
+   5.5 The 'symbol' element <span class="sec">struct-symbol</span>
+   5.6 The 'use' element <span class="sec">struct-use</span>
+   5.7 The 'image' element <span class="sec">struct-image</span>
+   5.8 Conditional processing <span class="sec">struct-cond</span>
+      5.8.1 Conditional processing overview
+      5.8.2 The 'switch' element
+      5.8.3 The requiredFeatures attribute
+      5.8.4 The requiredExtensions attribute
+      5.8.5 The systemLanguage attribute
+      5.8.6 Applicability of test attributes
+   5.9 Specifying whether external resources are required for proper rendering <span class="sec"></span>
+   5.10 Common attributes <span class="sec"></span>
+      5.10.1 Attributes common to all elements: id and xml:base
+      5.10.2 The xml:lang and xml:space attributes
+   <span class="mod">5.11 Core Attribute Module <span class="sec"></span></span>
+   <span class="mod">5.12 Structure Module <span class="sec"></span></span>
+   <span class="mod">5.13 Basic Structure Module <span class="sec"></span></span>
+   <span class="mod">5.14 Container Attribute Module <span class="sec"></span></span>
+   <span class="mod">5.15 Conditional Processing Module <span class="sec"></span></span>
+   <span class="mod">5.16 Image Module <span class="sec"></span></span>
+   5.17 DOM interfaces <span class="sec">struct-dom</span>
+ 6 Styling <span class="chap">styling</span>
+   6.1 SVG's styling properties <span class="sec"></span>
+   6.2 Usage scenarios for styling <span class="sec"></span>
+   6.3 Alternative ways to specify styling properties <span class="sec"></span>
+   6.4 Specifying properties using the presentation attributes <span class="sec">styling-pres</span>
+   6.5 Entity definitions for the presentation attributes <span class="sec"></span>
+   6.6 Styling with XSL <span class="sec"></span>
+   6.7 Styling with CSS <span class="sec">styling-css</span>
+   6.8 Case sensitivity of property names and values <span class="sec"></span>
+   6.9 Facilities from CSS and XSL used by SVG <span class="sec"></span>
+   6.10 Referencing external style sheets <span class="sec"></span>
+   6.11 The 'style' element <span class="sec"></span>
+   6.12 The class attribute <span class="sec"></span>
+   6.13 The style attribute <span class="sec"></span>
+   6.14 Specifying the default style sheet language <span class="sec"></span>
+   6.15 Property inheritance <span class="sec">styling-inherit</span>
+   6.16 The scope/range of styles <span class="sec"></span>
+   6.17 User agent style sheet <span class="sec"></span>
+   6.18 Aural style sheets <span class="sec"></span>
+   <span class="mod">6.19 Style Module <span class="sec"></span></span>
+   6.20 DOM interfaces <span class="sec"></span>
+ 7 Coordinate Systems, Transformations and Units <span class="chap">coords</span>
+   7.1 Introduction <span class="sec">coords-intro</span>
+   7.2 The initial viewport <span class="sec"></span>
+   7.3 The initial coordinate system <span class="sec">coords-coord</span>
+   7.4 Coordinate system transformations <span class="sec">coords-trans</span>
+   7.5 Nested transformations <span class="sec"></span>
+   7.6 The transform attribute <span class="sec"></span>
+   7.7 The viewBox attribute <span class="sec">coords-viewattr</span>
+   7.8 The preserveAspectRatio attribute <span class="sec">coords-pAR</span>
+   7.9 Establishing a new viewport <span class="sec"></span>
+   7.10 Units <span class="sec">coords-units</span>
+   7.11 Object bounding box units <span class="sec"></span>
+   7.12 Geographic Coordinate Systems <span class="sec"></span>
+   <span class="mod">7.13 Viewport Attribute Module <span class="sec"></span></span>
+   7.14 DOM interfaces <span class="sec">paths</span>
+ 8 Paths <span class="chap"></span>
+   8.1 Introduction <span class="sec">paths-intro</span>
+   8.2 The 'path' element <span class="sec"></span>
+   8.3 Path Data <span class="sec">paths-data</span>
+      8.3.1 General information about path data
+      8.3.2 The "moveto" commands
+      8.3.3 The "closepath" command
+      8.3.4 The "lineto" commands
+      8.3.5 The curve commands
+      8.3.6 The cubic Bézier curve commands
+      8.3.7 The quadratic Bézier curve commands
+      8.3.8 The elliptical arc curve commands
+      8.3.9 The grammar for path data
+   8.4 Distance along a path <span class="sec">paths-dist</span>
+   8.5 DOM interfaces <span class="sec"></span>
+ 9 Basic Shapes <span class="chap">shapes</span>
+   9.1 Introduction <span class="sec">shapes-intro</span>
+   9.2 The 'rect' element <span class="sec">shapes-rect</span>
+   9.3 The 'circle' element <span class="sec">shapes-circle</span>
+   9.4 The 'ellipse' element <span class="sec">shapes-ellipse</span>
+   9.5 The 'line' element <span class="sec">shapes-line</span>
+   9.6 The 'polyline' element <span class="sec">shapes-polyline</span>
+   9.7 The 'polygon' element <span class="sec">shapes-polygon</span>
+   9.8 The grammar for points specifications in 'polyline' and 'polygon' elements <span class="sec">shapes-grammar</span>
+   <span class="mod">9.9 Shape Module <span class="sec"></span></span>
+   9.10 DOM interfaces <span class="sec"></span>
+ 10 Text <span class="chap">text</span>
+   10.1 Introduction <span class="sec">text-intro</span>
+   10.2 Characters and their corresponding glyphs <span class="sec"></span>
+   10.3 Fonts, font tables and baselines <span class="sec"></span>
+   10.4 The 'text' element <span class="sec">text-text</span>
+   10.5 The 'tspan' element <span class="sec">text-tspan</span>
+   10.6 The 'tref' element <span class="sec">text-tref</span>
+   10.7 Text layout <span class="sec"></span>
+      10.7.1 Text layout introduction
+      10.7.2 Setting the inline-progression-direction
+      10.7.3 Glyph orientation within a text run
+      10.7.4 Relationship with bidirectionality
+   10.8 Text rendering order <span class="sec"></span>
+   10.9 Alignment properties <span class="sec">text-align</span>
+      10.9.1 Text alignment properties
+      10.9.2 Baseline alignment properties
+   10.10 Font selection properties <span class="sec">text-fonts</span>
+   10.11 Spacing properties <span class="sec">text-spacing</span>
+   10.12 Text decoration <span class="sec">text-deco</span>
+   10.14 Text on a path <span class="sec">text-path</span>
+      10.14.1 Introduction to text on a path
+      10.14.2 The 'textPath' element
+      10.14.3 Text on a path layout rules
+   10.14 Alternate glyphs <span class="sec">text-altglyph</span>
+   10.15 White space handling <span class="sec">text-ws</span>
+   10.16 Text selection and clipboard operations <span class="sec">text-tselect</span>
+   <span class="mod">10.17 Text Module <span class="sec"></span></span>
+   <span class="mod">10.18 Basic Text Module <span class="sec"></span></span>
+   10.19 DOM interfaces <span class="sec"></span>
+ 11 Painting: Filling, Stroking and Marker Symbols <span class="chap">paint</span>
+   11.1 Introduction <span class="sec"></span>
+   11.2 Specifying paint <span class="sec"></span>
+   11.3 Fill Properties <span class="sec">paint-fill</span>
+   11.4 Stroke Properties <span class="sec">paint-stroke</span>
+   11.5 Controlling visibility <span class="sec"></span>
+   11.6 Markers <span class="sec">paint-marker</span>
+      11.6.1 Introduction
+      11.6.2 The 'marker' element
+      11.6.3 Marker properties
+      11.6.4 Details on how markers are rendered
+   11.7 Rendering properties <span class="sec">paint-render</span>
+      11.7.1 Color interpolation properties: 'color-interpolation' and 'color-interpolation-filters'
+      11.7.2 The 'color-rendering' property <span class="sec"></span>
+      11.7.3 The 'shape-rendering' property <span class="sec"></span>
+      11.7.4 The 'text-rendering' property <span class="sec"></span>
+      11.7.5 The 'image-rendering' property <span class="sec"></span>
+   11.8 Inheritance of painting properties <span class="sec"></span>
+   <span class="mod">11.9 Paint Attribute Module <span class="sec"></span></span>
+   <span class="mod">11.10 Basic Paint Attribute Module <span class="sec"></span></span>
+   <span class="mod">11.11 Opacity Attribute Module <span class="sec"></span></span>
+   <span class="mod">11.12 Graphics Attribute Module <span class="sec"></span></span>
+   <span class="mod">11.13 Basic Graphics Attribute Module <span class="sec"></span></span>
+   <span class="mod">11.14 Marker Module <span class="sec"></span></span>
+   11.15 DOM interfaces <span class="sec"></span>
+ 12 Color <span class="chap">color</span>
+   12.1 Introduction <span class="sec">color-intro</span>
+   12.2 The 'color' property <span class="sec">color-prop</span>
+   12.3 Color profile descriptions <span class="sec">color-prof</span>
+      12.3.1 Overview of color profile descriptions
+      12.3.2 Alternative ways for defining a color profile description
+      12.3.3 The 'color-profile' element
+      12.3.4 @color-profile when using CSS styling
+      12.3.5 'color-profile' property
+   <span class="mod">12.4 Color Profile Module <span class="sec"></span></span>
+   12.7 DOM interfaces <span class="sec"></span>
+ 13 Gradients and Patterns <span class="chap">pservers</span>
+   13.1 Introduction <span class="sec"></span>
+   13.2 Gradients <span class="sec">pservers-grad</span>
+      13.2.1 Introduction
+      13.2.2 Linear gradients
+      13.2.3 Radial gradients
+      13.2.4 Gradient stops
+   13.3 Patterns <span class="sec">pservers-pattern</span>
+   <span class="mod">13.4 Gradient Module <span class="sec"></span></span>
+   <span class="mod">13.5 Pattern Module <span class="sec"></span></span>
+   13.6 DOM interfaces <span class="sec"></span>
+ 14 Clipping, Masking and Compositing <span class="chap">masking</span>
+   14.1 Introduction <span class="sec">masking-intro</span>
+   14.2 Simple alpha compositing <span class="sec"></span>
+   14.3 Clipping paths <span class="sec">masking-path</span>
+      14.3.1 Introduction
+      14.3.2 The initial clipping path
+      14.3.3 The 'overflow' and 'clip' properties
+      14.3.4 Clip to viewport vs. clip to viewBox
+      14.3.5 Establishing a new clipping path
+   14.4 Masking <span class="sec">masking-mask</span>
+   14.5 Object and group opacity: the 'opacity' property <span class="sec">masking-opacity</span>
+   <span class="mod">14.6 Clip Module <span class="sec"></span></span>
+   <span class="mod">14.7 Basic Clip Module <span class="sec"></span></span>
+   <span class="mod">14.8 Mask Module <span class="sec"></span></span>
+   14.9 DOM interfaces <span class="sec"></span>
+ 15 Filter Effects <span class="chap">filters</span>
+   15.1 Introduction <span class="sec">filters-intro</span>
+   15.2 An example <span class="sec">filters-example</span>
+   15.3 The 'filter' element <span class="sec">filters-felem</span>
+   15.4 The 'filter' property <span class="sec"></span>
+   15.5 Filter effects region <span class="sec"></span>
+   15.6 Accessing the background image <span class="sec"></span>
+   15.7 Filter primitives overview <span class="sec"></span>
+      15.7.1 Overview
+      15.7.2 Common attributes
+      15.7.3 Filter primitive subregion
+   15.8 Light source elements and properties <span class="sec">filters-light</span>
+      15.8.1 Introduction
+      15.8.2 Light source 'feDistantLight'
+      15.8.3 Light source 'fePointLight'
+      15.8.4 Light source 'feSpotLight'
+      15.8.5 The 'lighting-color' property
+   15.9 Filter primitive 'feBlend' <span class="sec">filters-blend</span>
+   15.10 Filter primitive 'feColorMatrix' <span class="sec">filters-color</span>
+   15.11 Filter primitive 'feComponentTransfer' <span class="sec">filters-comptran</span>
+   15.12 Filter primitive 'feComposite' <span class="sec">filters-composite</span>
+   15.13 Filter primitive 'feConvolveMatrix' <span class="sec">filters-conv</span>
+   15.14 Filter primitive 'feDiffuseLighting' <span class="sec">filters-diffuse</span>
+   15.15 Filter primitive 'feDisplacementMap' <span class="sec">filters-displace</span>
+   15.16 Filter primitive 'feFlood' <span class="sec"></span>
+   15.17 Filter primitive 'feGaussianBlur' <span class="sec">filters-gauss</span>
+   15.18 Filter primitive 'feImage' <span class="sec">filters-image</span>
+   15.19 Filter primitive 'feMerge' <span class="sec"></span>
+   15.20 Filter primitive 'feMorphology' <span class="sec">filters-morph</span>
+   15.21 Filter primitive 'feOffset' <span class="sec">filters-offset</span>
+   15.22 Filter primitive 'feSpecularLighting' <span class="sec">filters-specular</span>
+   15.23 Filter primitive 'feTile' <span class="sec">filters-tile</span>
+   15.24 Filter primitive 'feTurbulence' <span class="sec">filters-turb</span>
+   <span class="mod">15.25 Filter Module <span class="sec"></span></span>
+   <span class="mod">15.26 Basic Filter Module <span class="sec"></span></span>
+   15.27 DOM interfaces <span class="sec"></span>
+ 16 Interactivity <span class="chap">interact</span>
+   16.1 Introduction <span class="sec"></span>
+   16.2 Complete list of supported events <span class="sec">interact-events</span>
+   16.3 User interface events <span class="sec"></span>
+   16.4 Pointer events <span class="sec"></span>
+   16.5 Processing order for user interface events <span class="sec">interact-order</span>
+   16.6 The 'pointer-events' property <span class="sec"></span>
+   16.7 Magnification and panning <span class="sec">interact-zoom</span>
+   16.8 Cursors <span class="sec">interact-cursor</span>
+      16.8.1 Introduction to cursors
+      16.8.2 The 'cursor' property
+      16.8.3 The 'cursor' element
+   <span class="mod">16.9 Document Events Attribute Module <span class="sec"></span></span>
+   <span class="mod">16.10 Graphical Events Attribute Module <span class="sec"></span></span>
+   <span class="mod">16.11 Animation Events Attribute Module <span class="sec"></span></span>
+   <span class="mod">16.12 Cursor Module <span class="sec"></span></span>
+   16.13 DOM interfaces <span class="sec">interact-dom</span>
+ 17 Linking <span class="chap">linking</span>
+   17.1 Links out of SVG content: the 'a' element <span class="sec">linking-a</span>
+   17.2 Linking into SVG content: URI fragments and SVG views <span class="sec">linking-uri</span>
+      17.2.1 Introduction: URI fragments and SVG views
+      17.2.2 SVG fragment identifiers
+      17.2.3 Predefined views: the 'view' element
+   <span class="mod">17.3 Hyperlinking Module <span class="sec"></span></span>
+   <span class="mod">17.4 Xlink Attribute Module <span class="sec"></span></span>
+   <span class="mod">17.5 ExternalResourcesRequired Attribute Module <span class="sec"></span></span>
+   <span class="mod">17.6 View Module <span class="sec"></span></span>
+   17.7 DOM interfaces <span class="sec"></span>
+ 18 Scripting <span class="chap">script</span>
+   18.1 Specifying the scripting language <span class="sec"></span>
+      18.1.1 Specifying the default scripting language
+      18.1.2 Local declaration of a scripting language
+   18.2 The 'script' element <span class="sec"></span>
+   18.3 Event handling <span class="sec">script-handle</span>
+   18.4 Event attributes <span class="sec"></span>
+   <span class="mod">18.5 Scripting Module <span class="sec"></span></span>
+   18.6 DOM interfaces <span class="sec"></span>
+ 19 Animation <span class="chap">animate</span>
+   19.1 Introduction <span class="sec">animate-intro</span>
+   19.2 Animation elements <span class="sec">animate-elem</span>
+      19.2.1 Overview
+      19.2.2 Relationship to SMIL Animation
+      19.2.3 Animation elements example
+      19.2.4 Attributes to identify the target element for an animation
+      19.2.5 Attributes to identify the target attribute or property for an animation
+      19.2.6 Attributes to control the timing of the animation
+      19.2.7 Attributes that define animation values over time
+      19.2.8 Attributes that control whether animations are additive
+      19.2.9 Inheritance
+      19.2.10 The 'animate' element
+      19.2.11 The 'set' element
+      19.2.12 The 'animateMotion' element
+      19.2.13 The 'animateColor' element
+      19.2.14 The 'animateTransform' element
+      19.2.15 Elements, attributes and properties that can be animated
+   19.3 Animation using the SVG DOM <span class="sec"></span>
+   <span class="mod">19.4 Animation Module <span class="sec"></span></span>
+   19.5 DOM interfaces <span class="sec"></span>
+ 20 Fonts <span class="chap"></span>
+   20.1 Introduction <span class="sec">fonts-intro</span>
+   20.2 Overview of SVG fonts <span class="sec"></span>
+   20.3 The 'font' element <span class="sec">fonts-elem</span>
+   20.4 The 'glyph' element <span class="sec">fonts-glyph</span>
+   20.5 The 'missing-glyph' element <span class="sec"></span>
+   20.6 Glyph selection rules <span class="sec"></span>
+   20.7 The 'hkern' and 'vkern' elements <span class="sec">fonts-kern</span>
+   20.8 Describing a font <span class="sec">fonts-desc</span>
+      20.8.1 Overview of font descriptions
+      20.8.2 Alternative ways for providing a font description
+      20.8.3 The 'font-face' element
+   <span class="mod">20.9 Full Font Module <span class="sec"></span></span>
+   <span class="mod">20.10 Basic Font Module <span class="sec"></span></span>
+   20.11 DOM interfaces <span class="sec"></span>
+ 21 Metadata <span class="chap">metadata</span>
+   21.1 Introduction <span class="sec">metadata-intro</span>
+   21.2 The 'metadata' element <span class="sec">metadata-elem</span>
+   21.3 An example <span class="sec">metadata-example</span>
+   21.4 DOM interfaces <span class="sec"></span>
+ 22 Backwards Compatibility <span class="chap"></span>
+ 23 Extensibility <span class="chap">extend</span>
+   23.1 Foreign namespaces and private data <span class="sec">extend-namespace</span>
+   23.2 Embedding foreign object types <span class="sec"></span>
+   23.3 The 'foreignObject' element <span class="sec"></span>
+   23.4 An example <span class="sec"></span>
+   23.5 Adding private elements and attributes to the DTD <span class="sec"></span>
+   <span class="mod">23.6 Extensibility Module <span class="sec"></span></span>
+   23.7 DOM interfaces <span class="sec"></span>
+             
+
+ <span class="mod">Appendix A: DTD <span class="chap"></span>
+   A.1 SVG 1.1 DTD Module Implementations
+      A.1.1 Modular Framework Module
+      A.1.2 Datatypes Module
+      A.1.3 Qualified Name Module
+      A.1.4 Core Attribute Module
+      A.1.5 Container Attribute Module
+      A.1.6 Viewport Attribute Module
+      A.1.7 Paint Attribute Module
+      A.1.8 Basic Paint Attribute Module
+      A.1.9 Paint Opacity Attribute Module
+      A.1.10 Graphics Attribute Module
+      A.1.11 Basic Graphics Attribute Module
+      A.1.12 Document Events Attribute Module
+      A.1.13 Graphical Element Events Attribute Module
+      A.1.14 Animation Events Attribute Module
+      A.1.15 XLink Attribute Module
+      A.1.16 External Resources Attribute Module
+      A.1.17 Structure Module
+      A.1.18 Basic Structure Module
+      A.1.19 Conditional Processing Module
+      A.1.20 Image Module
+      A.1.21 Style Module
+      A.1.22 Shape Module
+      A.1.23 Text Module
+      A.1.24 Basic Text Module
+      A.1.25 Marker Module
+      A.1.26 Color Profile Module
+      A.1.27 Gradient Module
+      A.1.28 Pattern Module
+      A.1.29 Clip Module
+      A.1.30 Basic Clip Module
+      A.1.31 Mask Module
+      A.1.32 Filter Module
+      A.1.33 Basic Filter Module
+      A.1.34 Cursor Module
+      A.1.35 Hyperlinking Module
+      A.1.36 View Module
+      A.1.37 Scripting Module
+      A.1.38 Animation Module
+      A.1.39 Font Module
+      A.1.40 Basic Font Module
+      A.1.41 Extensibility Module
+   A.2 SVG 1.1 Document Type Definition
+      A.2.1 SVG 1.1 DTD Driver
+      A.2.2 SVG 1.1 Document Model
+      A.2.3 SVG 1.1 Attribute Collection</span>
+        
+ Appendix B: SVG Document Object Model (DOM) <span class="chap"></span>
+   B.1 SVG DOM Overview <span class="sec"></span>
+   B.2 Naming Conventions <span class="sec"></span>
+   B.3 Interface SVGException <span class="sec"></span>
+   B.4 Feature strings for the hasFeature method call <span class="sec"></span>
+   B.5 Relationship with DOM2 events <span class="sec"></span>
+   B.6 Relationship with DOM2 CSS object model (CSS OM) <span class="sec"></span>
+      B.6.1 Introduction
+      B.6.2 User agents that do not support styling with CSS
+      B.6.3 User agents that support styling with CSS
+      B.6.4 Extended interfaces
+   B.7 Invalid values <span class="sec"></span>
+ Appendix C: IDL Definitions <span class="chap"></span>
+ Appendix D: Java Language Binding <span class="chap"></span>
+   D.1 Using SVG with Java
+ Appendix E: ECMAScript Language Binding <span class="chap"></span>
+ Appendix F: Implementation Requirements <span class="chap"></span>
+   F.1 Introduction <span class="sec"></span>
+   F.2 Error processing <span class="sec"></span>
+   F.3 Version control <span class="sec"></span>
+   F.4 Clamping values which are restricted to a particular range <span class="sec"></span>
+   F.5 'path' element implementation notes <span class="sec"></span>
+   F.6 Elliptical arc implementation notes <span class="sec"></span>
+      F.6.1 Elliptical arc syntax
+      F.6.2 Out-of-range parameters
+      F.6.3 Parameterization alternatives
+      F.6.4 Conversion from center to endpoint parameterization
+      F.6.5 Conversion from endpoint to center parameterization
+      F.6.6 Correction of out-of-range radii
+   F.7 Text selection implementation notes <span class="sec"></span>
+   F.8 Printing implementation notes <span class="sec"></span>
+ Appendix G: Conformance Criteria <span class="chap"></span>
+   G.1 Introduction <span class="sec"></span>
+   G.2 Conforming SVG Document Fragments <span class="sec"></span>
+   G.3 Conforming SVG Stand-Alone Files <span class="sec"></span>
+   G.4 Conforming SVG Included Document Fragments <span class="sec"></span>
+   G.5 Conforming SVG Generators <span class="sec"></span>
+   G.6 Conforming SVG Interpreters <span class="sec"></span>
+   G.7 Conforming SVG Viewers <span class="sec"></span>
+ Appendix H: Accessibility Support <span class="chap"></span>
+   H.1 WAI Accessibility Guidelines <span class="sec"></span>
+   H.2 SVG Content Accessibility Guidelines <span class="sec"></span>
+ Appendix I: Internationalization Support <span class="chap"></span>
+   I.1 Introduction <span class="sec"></span>
+   I.2 Internationalization and SVG <span class="sec"></span>
+   I.3 SVG Internationalization Guidelines <span class="sec"></span>
+ Appendix J: Minimizing SVG File Sizes <span class="chap"></span>
+ Appendix K: References
+   K.1 Normative references
+   K.2 Informative references
+ Appendix L: Element Index
+ Appendix M: Attribute Index
+ Appendix N: Property Index
+ Appendix O: Feature Strings <span class="chap"></span>
+ Appendix P: Index
+</pre>
+ 
+        <h2 id="namesT12">Appendix - SVG 1.2 Tiny chapter and section names</h2>
+        <p>This is the naming structure for 1.2T tests.  </p>
+        <p>This uses the same names as 1.1 as far as possible, to simplify renaming 1.1 to 1.2T tests. 
+        Differences - some 1.1 Basic or Full tests are 1.2 Tiny tests. Color and gradient tests are 
+        now part of the paint chapter.</p>
+<pre>
+ 1 Introduction <span class="chap">intro</span>
+   1.1 About SVG <span class="sec"></span>
+   1.2 SVG Tiny 1.2 <span class="sec"></span>
+     1.2.1 Modularization
+     1.2.2 Element and Attribute collections
+     1.2.3 Profiling the SVG specification
+   1.3 Defining an SVG Tiny 1.2 document <span class="sec"></span>
+   1.4 SVG MIME type, file name extension and Macintosh file type <span class="sec"></span>
+   1.5 Compatibility with Other Standards Efforts <span class="sec"></span>
+   1.6 Definitions <span class="sec"></span>
+   1.7 How to reference this specification <span class="sec"></span>
+ 2 Concepts <span class="chap">concept</span>
+   2.1 Explaining the name: SVG <span class="sec"></span>
+     2.1.1 Scalable
+     2.1.2 Vector
+     2.1.3 Graphics
+     2.1.4 XML
+     2.1.5 Namespace
+     2.1.6 Scriptable
+   2.2 Important SVG concepts <span class="sec"></span>
+     2.2.1 Graphical Objects
+     2.2.2 Reuse
+     2.2.3 Fonts
+     2.2.4 Animation
+   2.3 Options for using SVG in Web pages <span class="sec"></span>
+ 3 Rendering Model <span class="chap">render</span>
+   3.1 Introduction <span class="sec">render-intro</span>
+   3.2 The painters model <span class="sec"></span>
+   3.3 Rendering Order <span class="sec"></span>
+   3.4 Types of graphics elements <span class="sec"></span>
+     3.4.1 Rendering shapes and text
+     3.4.2 Rendering raster images
+     3.4.3 Rendering video
+   3.5 Object Opacity <span class="sec">render-opacity</span>
+   3.6 Parent Compositing <span class="sec">render-composite</span>
+ 4 Basic Data Types and Color Keywords <span class="chap"></span>
+   4.1 Basic Data Types <span class="sec"></span>
+ 5 Document Structure <span class="chap">struct</span>
+   5.1 Defining an SVG document fragment: the 'svg' element <span class="sec">struct-frag</span>
+     5.1.1 Overview
+     5.1.2 The 'svg' element
+   5.2 Grouping: the 'g' element <span class="sec">struct-group</span>
+     5.2.1 Overview
+     5.2.2 The 'g' element
+   5.3 The 'defs' element <span class="sec">struct-defs</span>
+   5.4 The 'discard' element <span class="sec">struct-discard</span>
+   5.5 The 'desc' and 'title' elements <span class="sec"></span>
+   5.6 The 'use' element <span class="sec">struct-use</span>
+   5.7 The 'image' element <span class="sec">struct-image</span>
+   5.8 Conditional processing <span class="sec">struct-cond</span>
+     5.8.1 Conditional processing overview
+     5.8.2 The 'switch' element
+     5.8.3 The 'requiredFeatures' attribute
+     5.8.4 The 'requiredExtensions' attribute
+     5.8.5 The 'systemLanguage' attribute
+     5.8.6 The 'requiredFormats' attribute
+     5.8.7 The 'requiredFonts' attribute
+   5.9 External Resources <span class="sec">struct-ext</span>
+     5.9.1 The 'externalResourcesRequired' attribute
+     5.9.2 Progressive Rendering
+     5.9.3 The 'prefetch' element
+   5.10 Common attributes <span class="sec"></span>
+     5.10.1 Attributes common to all elements: 'class', 'id', 'xml:id' and 'xml:base'
+     5.10.2 The 'xml:lang' and 'xml:space' attributes
+ 6 Styling <span class="chap">styling</span>
+   6.1 SVG's styling properties <span class="sec"></span>
+   6.2 Usage scenarios for styling <span class="sec"></span>
+   6.3 Specifying properties using the presentation attributes <span class="sec">styling-pres</span>
+   6.4 Styling with XSL <span class="sec"></span>
+   6.5 Case sensitivity of property names and values <span class="sec">styling-case</span>
+   6.6 Facilities from CSS and XSL used by SVG <span class="sec"></span>
+   6.7 Property inheritance and computation <span class="sec">styling-inherit</span>
+ 7 Coordinate Systems, Transformations and Units <span class="chap">coords</span>
+   7.1 Introduction <span class="sec">coords-intro</span>
+   7.2 The initial viewport <span class="sec">coords-viewport</span>
+   7.3 The initial coordinate system <span class="sec">coords-coord</span>
+   7.4 Coordinate system transformations <span class="sec">coords-trans</span>
+   7.5 Nested transformations <span class="sec">coords-nest</span>
+   7.6 The transform attribute <span class="sec"></span>
+     7.6.1 The TransformList value
+   7.7 Constrained Transformations <span class="sec">coords-constr</span>
+     7.7.1 The User Transform
+     7.7.2 ViewBox to Viewport transformation
+     7.7.3 Element Transform Stack
+     7.7.4 The Current Transform Matrix
+     7.7.5 The TransformRef value
+   7.8 The 'viewBox' attribute <span class="sec">coords-viewattr</span>
+   7.9 The 'preserveAspectRatio' attribute <span class="sec">coords-pAR</span>
+   7.10 Establishing a new viewport <span class="sec"></span>
+   7.11 Units <span class="sec">coords-units</span>
+   7.12 Object bounding box units <span class="sec">coords-bbunits</span>
+   7.13 Intrinsic Sizing Properties of the Viewport of SVG content<span class="sec">coords-intrinsic</span>
+   7.14 Geographic Coordinate Systems <span class="sec">coords-geo</span>
+   7.15 The svg:transform attribute <span class="sec">coords-svgtrans</span>
+ 8 Paths <span class="chap">paths</span>
+   8.1 Introduction <span class="sec">paths-intro</span>
+   8.2 The 'path' element <span class="sec"></span>
+     8.2.1 Animating path data
+   8.3 Path data <span class="sec">paths-data</span>
+     8.3.1 General information about path data
+     8.3.2 The "moveto" commands
+     8.3.3 The "closepath" command
+     8.3.4 The "lineto" commands
+     8.3.5 The Curve commands
+     8.3.6 The Cubic Bézier curve commands
+     8.3.7 The Quadratic Bézier curve commands
+     8.3.8 The grammar for path data
+   8.4 Distance along a path <span class="sec">paths-dist</span>
+ 9 Basic Shapes <span class="chap">shapes</span>
+   9.1 Introduction <span class="sec">shapes-intro</span>
+   9.2 The 'rect' element <span class="sec">shapes-rect</span>
+   9.3 The 'circle' element <span class="sec">shapes-circle</span>
+   9.4 The 'ellipse' element <span class="sec">shapes-ellipse</span>
+   9.5 The 'line' element <span class="sec">shapes-line</span>
+   9.6 The 'polyline' element <span class="sec">shapes-polyline</span>
+   9.7 The 'polygon' element <span class="sec">shapes-polygon</span>
+     9.7.1 The grammar for points specifications in 'polyline' and 'polygon' elements
+ 10 Text <span class="chap">text</span>
+   10.1 Introduction <span class="sec">text-intro</span>
+   10.2 Characters and their corresponding glyphs <span class="sec">text-charglyph</span>
+   10.3 Fonts, font tables and baselines <span class="sec">text-font</span>
+   10.4 The 'text' element <span class="sec">text-text</span>
+   10.5 The 'tspan' element <span class="sec">text-tspan</span>
+   10.6 Text layout <span class="sec">text-layout</span>
+     10.6.1 Text layout introduction
+     10.6.2 Relationship with bidirectionality
+   10.7 Text rendering order <span class="sec">text-render</span>
+   10.8 Alignment properties <span class="sec">text-align</span>
+     10.8.1 Text alignment properties
+   10.9 Font selection properties <span class="sec">text-fonts</span>
+   10.10 White space handling <span class="sec">text-ws</span>
+   10.11 Text in an area <span class="sec">text-area</span>
+     10.11.1 Introduction to text in an area
+     10.11.2 The 'textArea' element
+     10.11.3 The 'tbreak' element
+     10.11.4 The 'line-increment' property
+     10.11.5 The 'text-align' property
+     10.11.6 The 'display-align' property
+     10.11.7 Text in an area layout rules
+   10.12 Editable Text Fields <span class="sec">text-edit</span>
+     10.12.1 The editable attribute
+   10.13 Text selection and clipboard operations <span class="sec">text-tselect</span>
+ 11 Painting: Filling, Stroking, Colors and Paint Servers <span class="chap">paint</span>
+   11.1 Introduction <span class="sec">paint-intro</span>
+   11.2 Specifying paint <span class="sec"></span>
+   11.3 Fill Properties <span class="sec">paint-fill</span>
+   11.4 Stroke Properties <span class="sec">paint-stroke</span>
+   11.5 Non-Scaling Stroke <span class="sec">paint-nsstroke</span>
+   11.6 Simple alpha compositing <span class="sec">paint-alpha</span>
+     11.6.1 Compositing the currentColor value
+   11.7 The 'viewport-fill' Property <span class="sec">paint-vfill</span>
+   11.8 The 'viewport-fill-opacity' Property <span class="sec">paint-vfillo</span>
+   11.9 Controlling visibility and rendering <span class="sec">paint-visi</span>
+   11.10 Rendering hints <span class="sec">paint-render</span>
+     11.10.1 The 'color-rendering' property
+     11.10.2 The 'shape-rendering' property
+     11.10.3 The 'text-rendering' property
+     11.10.4 The 'image-rendering' property
+   11.11 Inheritance of painting properties <span class="sec">paint-inherit</span>
+   11.12 Object and group opacity: the 'opacity' property <span class="sec">paint-opacity</span>
+   11.13 Color <span class="sec">paint-color</span>
+     11.13.1 Syntax for color values
+     11.13.2 HTML Color keywords
+   11.14 Other types of Paint <span class="sec">paint-other</span>
+     11.14.1 System Paint Servers
+     11.14.2 The solidColor Element
+     11.14.3 The SVG 'color' property
+   11.15 Paint Servers <span class="sec">paint-server</span>
+   11.16 Gradients <span class="sec">paint-grad</span>
+     11.16.1 Linear gradients
+     11.16.2 Radial gradients
+     11.16.3 The 'stop' element, defining gradient stops
+ 12 Multimedia <span class="chap">media</span>
+   12.1 Media elements <span class="sec">media-elem</span>
+     12.1.1 Media timeline and document timeline
+     12.1.2 Media availability
+     12.1.3 Platform limits
+     12.1.4 Audio mixing for 'audio' and 'video' elements
+   12.2 The 'audio' element <span class="sec">media-audio</span>
+   12.3 The 'video' element <span class="sec">media-video</span>
+     12.3.1 Restricting the transformation of the 'video' element
+     12.3.2 Restricting compositing of the 'video' element
+     12.3.3 Examples
+   12.4 The 'animation' element <span class="sec">media-anim</span>
+   12.5 The audio-level property <span class="sec">media-alevel</span>
+   12.6 Attributes for run-time synchronization <span class="sec">media-synch</span>
+   12.7 The 'initialVisibility' attribute <span class="sec">media-ivis</span>
+ 13 Interactivity  <span class="chap">interact</span>
+   13.1 Introduction <span class="sec">interact-intro</span>
+   13.2 Complete list of supported events <span class="sec">interact-events</span>
+   13.3 User interface events <span class="sec">interact-ui</span>
+   13.4 Pointer events <span class="sec">interact-pointer</span>
+   13.5 Text events <span class="sec">interact-text</span>
+   13.6 Key events <span class="sec">interact-key</span>
+   13.7 Event Dispatching  <span class="sec">interact-disp</span>
+   13.8 Processing order for user interface events <span class="sec">interact-order</span>
+   13.9 The 'pointer-events' property  <span class="sec">interact-pevt</span>
+   13.10 Magnification and panning <span class="sec">interact-zoom</span>
+   13.11 Element focus  <span class="sec">interact-focus</span>
+     13.11.1 The focusable attribute
+   13.12 Navigation <span class="sec">interact-nav</span>
+     13.12.1 Navigation behavior
+     13.12.2 Specifying navigation
+     13.12.3 Specifying Focus Highlighting
+     13.12.4 Obtaining and listening to focus programmatically
+ 14 Linking <span class="chap">linking</span>
+   14.1 References  <span class="sec">linking-refs</span>
+     14.1.1 Overview
+     14.1.2 IRIs and URIs
+     14.1.3 Syntactic forms: XMLRI and funcXMLRI
+     14.1.4 Reference Restrictions
+     14.1.5 IRI reference attributes
+     14.1.6 Externally referenced documents
+   14.2 Links out of SVG content: the 'a' element  <span class="sec">linking-a</span>
+   14.3 Linking into SVG content: IRI fragments and SVG views  <span class="sec">linking-frag</span>
+     14.3.1 Introduction: IRI fragments and SVG views
+     14.3.2 SVG fragment identifiers
+ 15 Scripting  <span class="chap">script</span>
+   15.1 Specifying the scripting language <span class="sec">script-lang</span>
+     15.1.1 Specifying the default scripting language
+     15.1.2 Local declaration of a scripting language
+   15.2 The 'script' element<span class="sec">script-element</span>
+   15.3 XML Events <span class="sec">script-xmlev</span>
+   15.4 The listener element <span class="sec">script-listener</span>
+   15.5 The handler element <span class="sec">script-handler</span>
+     15.5.1 Parameters to handler elements
+   15.6 Event handling <span class="sec">script-handle</span>
+   15.7 Processing inline executable content <span class="sec">script-inline</span>
+ 16 Animation <span class="chap">animate</span>
+   16.1 Introduction <span class="sec">animate-intro</span>
+   16.2 Animation elements <span class="sec">animate-elem</span>
+     16.2.1 Overview
+     16.2.2 Relationship to SMIL 2.1 Animation
+     16.2.3 Animation elements example
+     16.2.4 Attributes to identify the target element for an animation
+     16.2.5 Attributes to identify the target attribute or property for an animation
+     16.2.6 Paced animation and complex types
+     16.2.7 Attributes to control the timing of the animation
+     16.2.8 Attributes that define animation values over time
+     16.2.9 Attributes that control whether animations are additive
+     16.2.10 Inheritance
+     16.2.11 The 'animate' element
+     16.2.12 The 'set' element
+     16.2.13 The 'animateMotion' element
+     16.2.14 The 'mpath' element
+     16.2.15 The 'animateColor' element
+     16.2.16 The 'animateTransform' element
+     16.2.17 Attributes and properties that can be animated
+   16.3 Animation using the SVG DOM <span class="sec">animate-dom</span>
+   16.4 Animation and the Bounding Box <span class="sec">animate-bbox</span>
+ 17 Fonts <span class="chap">fonts</span>
+   17.1 Introduction <span class="sec">fonts-intro</span>
+     17.1.1 Describing fonts available to SVG
+     17.1.2 Defining fonts in SVG
+   17.2 Overview of SVG fonts <span class="sec"></span>
+   17.3 The 'font' element <span class="sec">fonts-elem</span>
+   17.4 The 'glyph' element <span class="sec">fonts-glyph</span>
+   17.5 The 'missing-glyph' element <span class="sec">fonts-mglyph</span>
+   17.6 Glyph selection rules <span class="sec">fonts-gsel</span>
+   17.7 The 'hkern' element <span class="sec">fonts-kern</span>
+   17.8 Describing a font <span class="sec">fonts-desc</span>
+     17.8.1 Overview of font descriptions
+     17.8.2 The 'font-face' element
+     17.8.3 The 'font-face-src' element
+     17.8.4 The 'font-face-uri' element
+ 18 Metadata  <span class="chap">metadata</span>
+   18.1 Introduction <span class="sec">metadata-intro</span>
+   18.2 The 'metadata' element <span class="sec">metadata-elem</span>
+   18.3 An example <span class="sec">metadata-example</span>
+ 19 Extensibility  <span class="chap">extend</span>
+   19.1 Foreign namespaces and private data <span class="sec">extend-namespace</span>
+   19.2 Embedding foreign object types <span class="sec">extend-foreign</span>
+     19.2.1 The 'foreignObject' element
+   19.3 An example <span class="sec">extend-example</span>
+ Appendix A The SVG Micro DOM (uDOM) <span class="chap">udom</span>
+   A.1 Introduction <span class="sec">udom-</span>
+   A.2 Overview of the SVG uDOM <span class="sec">udom-over</span>
+     A.2.1 Document Access
+     A.2.2 Tree Navigation
+     A.2.3 Element Creation
+     A.2.4 Element Insertion
+     A.2.5 Element Removal
+     A.2.6 Attribute and Property Access
+     A.2.7 Event Listener Registration and Removal
+     A.2.8 Animation
+     A.2.9 Java package naming
+   A.3 Conforming to the SVG uDOM <span class="sec">udom-conform</span>
+     A.3.1 Attribute/Property Normalization
+     A.3.2 Text Content Access
+   A.4 Module: dom <span class="sec">udom-dom</span>
+     A.4.1 DOMException
+     A.4.2 Node
+     A.4.3 Element
+     A.4.4 Document
+     A.4.5 DOMImplementation
+   A.5 Module: events <span class="sec">udom-event</span>
+     A.5.1 EventTarget
+     A.5.2 EventListener
+     A.5.3 Event
+     A.5.4 MouseEvent
+     A.5.5 WheelEvent
+     A.5.6 TextEvent
+     A.5.7 KeyboardEvent
+     A.5.8 TimeEvent
+     A.5.9 UIEvent
+     A.5.10 ProgressEvent
+     A.5.11 ConnectionEvent
+   A.6 Module: smil <span class="sec">udom-smil</span>
+     A.6.1 ElementTimeControl
+     A.6.2 TimeEvent
+   A.7 Module: global <span class="sec">udom-glob</span>
+     A.7.1 Global
+     A.7.2 GlobalException
+     A.7.3 Connection
+     A.7.4 Timer
+   A.8 Module: svg <span class="sec">udom-svg</span>
+     A.8.1 SVGException
+     A.8.2 SVGDocument
+     A.8.3 SVGElementInstance
+     A.8.4 SVGSVGElement
+     A.8.5 SVGRGBColor
+     A.8.6 SVGRect
+     A.8.7 SVGPoint
+     A.8.8 SVGPath
+     A.8.9 SVGMatrix
+     A.8.10 SVGLocatable
+     A.8.11 SVGLocatableElement
+     A.8.12 TraitAccess
+     A.8.13 Additional accessing rules
+     A.8.14 ElementTraversal
+     A.8.15 SVGElement
+     A.8.16 SVGTimedElement
+     A.8.17 SVGVisualMediaElement
+     A.8.18 EventListenerInitializer2
+     A.8.19 SVGGlobal
+     A.8.20 AsyncStatusCallback
+     A.8.21 AsyncURLStatus
+ Appendix B IDL Definitions <span class="chap"></span>
+ Appendix C Implementation Requirements <span class="chap">imp</span>
+   C.1 Introduction <span class="sec">imp-intro</span>
+   C.2 Unsupported elements, attributes, properties, attribute values and property values <span class="sec">imp-unsup</span>
+   C.3 Error processing <span class="sec">imp-error</span>
+   C.4 Namespace, version, baseProfile, requiredFeatures and requiredExtensions <span class="sec">imp-nsetc</span>
+   C.5 Clamping of Color and Opacity Values <span class="sec">imp-clamp</span>
+   C.6 'path' element implementation notes <span class="sec">imp-path</span>
+   C.7 Text selection implementation notes <span class="sec">imp-text</span>
+   C.8 Printing implementation notes <span class="sec">imp-print</span>
+ Appendix D Conformance Criteria <span class="chap">conf</span>
+   D.1 Introduction <span class="sec">conf-intro</span>
+   D.2 Terminology <span class="sec">conf-term</span>
+   D.3 SVG Content Conformance <span class="sec">conf-content</span>
+     D.3.1 Conforming SVG Document Fragments
+     D.3.2 Conforming SVG Stand-Alone Documents
+     D.3.3 Conforming SVG Included Document Fragments
+     D.3.4 Conditionally Conforming SVG Tiny 1.2 Document Fragments
+   D.4 SVG Writer Conformance <span class="sec">conf-writer</span>
+     D.4.1 Conforming SVG Generators
+     D.4.2 Conforming SVG Authoring Tools
+     D.4.3 Conforming SVG Servers
+   D.5 Conforming SVG Readers <span class="sec">conf-reader</span>
+     D.5.1 Conforming SVG Interpreters
+     D.5.2 Conforming SVG Viewers
+   D.6 Extension Conformance Requirements <span class="sec">conf-extend</span>
+   D.7 Non-XML Encoding Conformance Requirements <span class="sec">conf-nonxml</span>
+ Appendix E Conformance to QA Framework Specification Guidelines<span class="chap"></span>
+   E.1 Introduction
+   E.2 Checklist table
+   E.3 List of deprecated features
+ Appendix F Accessibility Support<span class="chap">access</span>
+   F.1 WAI Accessibility Guidelines <span class="sec"></span>
+   F.2 SVG Content Accessibility Guidelines <span class="sec">access-content</span>
+   F.3 SVG User Agent Accessibility Guidelines <span class="sec">access-ua</span>
+ Appendix G Internationalization Support<span class="chap">i18n</span>
+   G.1 Introduction <span class="sec">i18n-intro</span>
+   G.2 Internationalization and SVG <span class="sec">i18n-svg</span>
+   G.3 SVG Internationalization Guidelines <span class="sec">i18n-guide</span>
+ Appendix H JPEG Support<span class="chap">jpeg</span>
+   H.1 Introduction <span class="sec">jpeg-intro</span>
+   H.2 Required Support <span class="sec">jpeg-required</span>
+ Appendix I Minimizing SVG File Sizes<span class="chap"></span>
+ Appendix J Feature strings<span class="chap"></span>
+   J.1 General feature strings
+   J.2 Specific feature strings
+ <span class="mod">Appendix K Element Table<span class="chap"></span>
+ Appendix L Attribute and Property Tables<span class="chap"></span>
+   L.1 Property Table
+   L.2 Attribute Table
+ Appendix M Media Type registration for image/svg+xml<span class="chap"></span>
+   M.1 Introduction
+   M.2 Registration of Media Type image/svg+xml</span>
+ Appendix N RelaxNG Schema for SVG Tiny 1.2<span class="chap"></span></span>
+ Appendix O ECMAScript Language Binding for SVG<span class="chap"></span>
+   O.1 Module dom
+   O.2 Module events
+   O.3 Module smil
+   O.4 Module global
+   O.5 Module svg
+ Appendix P Java Language Binding for SVG<span class="chap"></span>
+   P.1 Package org.w3c.dom
+   P.2 Package org.w3c.dom.events
+   P.3 Package org.w3c.dom.smil
+   P.4 Package org.w3c.global
+   P.5 Package org.w3c.svg
+ Appendix Q Perl Language Binding for SVG<span class="chap"></span>
+   Q.1 Module dom
+   Q.2 Module events
+   Q.3 Module smil
+   Q.4 Module global
+   Q.5 Module svg
+ Appendix R Python Language Binding for SVG<span class="chap"></span>
+   R.1 Module dom
+   R.2 Module events
+   R.3 Module smil
+   R.4 Module global
+   R.5 Module svg
+ Appendix S References<span class="chap"></span>
+   <span class="mod">S.1 Normative references
+   S.2 Informative references</span>
+ Appendix T Change History<span class="chap"></span>
+   <span class="mod">T.1 Changes over the whole document
+   T.2 1 Introduction
+   T.3 2 Concepts
+   T.4 3 Rendering Model
+   T.5 4 Basic Data Types and Color Keywords
+   T.6 5 Document Structure
+   T.7 6 Styling
+   T.8 7 Coordinate Systems, Transformations and Units
+   T.9 8 Paths
+   T.10 9 Basic Shapes
+   T.11 10 Text
+   T.12 11 Painting: Filling, Stroking, Colors and Paint Servers
+   T.13 12 Multimedia
+   T.14 13 Interactivity
+   T.15 14 Linking
+   T.16 15 Scripting
+   T.17 16 Animation
+   T.18 17 Fonts
+   T.19 18 Metadata
+   T.20 19 Extensibility
+   T.21 Appendix A The SVG Micro DOM (uDOM)
+   T.22 Appendix B IDL Definitions
+   T.23 Appendix C Implementation Requirements
+   T.24 Appendix D Conformance Criteria
+   T.25 Appendix E Conformance to QA Framework Specification Guidelines
+   T.26 Appendix F Accessibility Support
+   T.27 Appendix G Internationalization Support
+   T.28 Appendix H JPEG Support
+   T.29 Appendix I Minimizing SVG File Sizes
+   T.30 Appendix J Feature strings
+   T.31 Appendix K Element Table
+   T.32 Appendix L Attribute and Property Tables
+   T.33 Appendix M Media Type registration for image/svg+xml
+   T.34 Appendix N RelaxNG Schema for SVG Tiny 1.2
+   T.35 Appendix O References</span>
+</pre>
+        <hr class="xhtml"/>
+        <address>Scott Hayman and Chris Lilley<br class="xhtml"/>
+            <tt>$Id$</tt>
+        </address>
+    </body>
+</html>

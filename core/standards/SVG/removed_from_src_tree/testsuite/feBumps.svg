@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<defs>
+		<filter id="Bumps1" filterUnits="objectBoundingBox" x="-10%" y="-10%" width="130%" height="140%">
+			<!--Copyright 1999 Adobe Systems. You may copy, modify, and distribute this file, if you include this notice & do not charge for the distribution. This file is provided "AS-IS" without warranties of any kind, including any implied warranties.-->
+			<feMorphology operator="dilate" radius="5" result="alpha"/>
+			<feGaussianBlur id="blur" stdDeviation="4" result="blur0"/>
+			<feOffset id="offset" dx="4" dy="4" result="offsetBlurredAlpha"/>
+			<feFlood id="color" style="flood-color:black; flood-opacity:0.5" result="color"/>
+			<feComposite id="shadowColor" in="color" in2="offsetBlurredAlpha" operator="in" result="offsetBlurredAlpha"/>
+			<feTurbulence type="turbulence" baseFrequency="0.17" numOctaves="1" result="turb1"/>
+			<feTurbulence type="turbulence" baseFrequency="0.18" numOctaves="1" result="turb2"/>
+			<feComposite in="turb1" in2="turb2" operator="arithmetic" k1="1" result="turb"/>
+			<feComposite in="blur0" in2="turb" operator="arithmetic" k1="0" k2="0.6" k3="0.4" k4="0" result="blur"/>
+			<feComposite in="blur" in2="blur0" operator="in" result="blur"/>
+			<feDiffuseLighting id="diffuse" in="blur" resultScale="1" surfaceScale="6" diffuseConstant="1" lightColor="purple" result="diffuse">
+				<feDistantLight azimuth="135" elevation="60"/>
+			</feDiffuseLighting>
+			<feSpecularLighting in="blur" surfaceScale="6" specularConstant="1" specularExponent="6" lightColor="white" result="specularOut">
+				<feDistantLight id="light" azimuth="135" elevation="60"/>
+			</feSpecularLighting>
+			<feComposite in="specularOut" in2="alpha" operator="in" result="specularOut"/>
+			<feComposite in="blur" in2="diffuse" operator="arithmetic" k1="1" k2="0" k3="0" k4="0" result="litPaint"/>
+			<feComposite in="litPaint" in2="specularOut" operator="arithmetic" k1="0" k2="1" k3="1" k4="0" result="litPaint"/>
+			<feMerge>
+				<feMergeNode in="offsetBlurredAlpha"/>
+				<feMergeNode in="litPaint"/>
+			</feMerge>
+		</filter>
+
+		<filter id="Bumps2" filterUnits="objectBoundingBox" x="-10%" y="-10%" width="140%" height="130%">
+			<!--Copyright 1999 Adobe Systems. You may copy, modify, and distribute this file, if you include this notice & do not charge for the distribution. This file is provided "AS-IS" without warranties of any kind, including any implied warranties.-->
+			<feMorphology operator="dilate" radius="5" result="alpha"/>
+			<feGaussianBlur id="blur" stdDeviation="4" result="blur0"/>
+			<feOffset id="offset" dx="4" dy="4" result="offsetBlurredAlpha"/>
+			<feFlood id="color" style="flood-color:black; flood-opacity:0.5" result="color"/>
+			<feComposite id="shadowColor" in="color" in2="offsetBlurredAlpha" operator="in" result="offsetBlurredAlpha"/>
+			<feTurbulence type="turbulence" baseFrequency="0.17" numOctaves="1" result="turb"/>
+			<feComposite in="blur0" in2="turb" operator="arithmetic" k1="0" k2="0.6" k3="0.4" k4="0" result="blur"/>
+			<feComposite in="blur" in2="blur0" operator="in" result="blur"/>
+			<feDiffuseLighting id="diffuse" in="blur" resultScale="1" surfaceScale="6" diffuseConstant="1" lightColor="green" result="diffuse">
+				<feDistantLight azimuth="135" elevation="60"/>
+			</feDiffuseLighting>
+			<feSpecularLighting in="blur" surfaceScale="6" specularConstant="1" specularExponent="6" lightColor="white" result="specularOut">
+				<feDistantLight id="light" azimuth="135" elevation="60"/>
+			</feSpecularLighting>
+			<feComposite in="specularOut" in2="alpha" operator="in" result="specularOut"/>
+			<feComposite in="blur" in2="diffuse" operator="arithmetic" k1="1" k2="0" k3="0" k4="0" result="litPaint"/>
+			<feComposite in="litPaint" in2="specularOut" operator="arithmetic" k1="0" k2="1" k3="1" k4="0" result="litPaint"/>
+			<feMerge>
+				<feMergeNode in="offsetBlurredAlpha"/>
+				<feMergeNode in="litPaint"/>
+			</feMerge>
+		</filter>
+
+		<filter id="Bumps3" filterUnits="objectBoundingBox" x="-10%" y="-10%" width="140%" height="130%">
+			<!--Copyright 1999 Adobe Systems. You may copy, modify, and distribute this file, if you include this notice & do not charge for the distribution. This file is provided "AS-IS" without warranties of any kind, including any implied warranties.-->
+			<feMorphology operator="dilate" radius="5" result="alpha"/>
+			<feGaussianBlur id="blur" stdDeviation="4" result="blur0"/>
+			<feOffset id="offset" dx="4" dy="4" result="offsetBlurredAlpha"/>
+			<feFlood id="color" style="flood-color:black; flood-opacity:0.5" result="color"/>
+			<feComposite id="shadowColor" in="color" in2="offsetBlurredAlpha" operator="in" result="offsetBlurredAlpha"/>
+			<feTurbulence type="turbulence" baseFrequency="0.057" numOctaves="2" result="turb"/>
+			<feComposite in="blur0" in2="turb" operator="arithmetic" k1="0" k2="0.6" k3="0.4" k4="0" result="blur"/>
+			<feComposite in="blur" in2="blur0" operator="in" result="blur"/>
+			<feDiffuseLighting id="diffuse" in="blur" resultScale="1" surfaceScale="6" diffuseConstant="1" lightColor="blue" result="diffuse">
+				<feDistantLight azimuth="135" elevation="60"/>
+			</feDiffuseLighting>
+			<feSpecularLighting in="blur" surfaceScale="6" specularConstant="1" specularExponent="6" lightColor="white" result="specularOut">
+				<feDistantLight id="light" azimuth="135" elevation="60"/>
+			</feSpecularLighting>
+			<feComposite in="specularOut" in2="alpha" operator="in" result="specularOut"/>
+			<feComposite in="blur" in2="diffuse" operator="arithmetic" k1="1" k2="0" k3="0" k4="0" result="litPaint"/>
+			<feComposite in="litPaint" in2="specularOut" operator="arithmetic" k1="0" k2="1" k3="1" k4="0" result="litPaint"/>
+			<feMerge>
+				<feMergeNode in="offsetBlurredAlpha"/>
+				<feMergeNode in="litPaint"/>
+			</feMerge>
+		</filter>
+	</defs>
+
+<!-- tspan bbox seems broken ?
+	<text style="font-size:125; fill:#FFFFFF">
+		<tspan x="25" y="125" style="filter:url(#Bumps1)">S</tspan>
+		<tspan x="105" y="125" style="filter:url(#Bumps2)">V</tspan>
+		<tspan x="187" y="125" style="filter:url(#Bumps3)">G</tspan>
+	</text>
+-->
+	<g>
+		<text font-size="125" x="25" y="125" filter="url(#Bumps1)">S</text>
+		<text font-size="125" x="105" y="125" filter="url(#Bumps2)">V</text>
+		<text font-size="125" x="187" y="125" filter="url(#Bumps3)">G</text>
+	</g>
+	<!-- to show where the letters are -->
+	<g>
+		<text font-size="125" x="25" y="125">S</text>
+		<text font-size="125" x="105" y="125">V</text>
+		<text font-size="125" x="187" y="125">G</text>
+	</g>
+</svg>

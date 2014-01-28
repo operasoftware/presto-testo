@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN"
+"http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<!-- Created with Inkscape (http://www.inkscape.org/) --><svg height="128.00000pt" id="svg2115" inkscape:version="0.39cvs" sodipodi:docbase="/home/andy/Desktop/etiquette-icons-0.3/scalable/mimetypes" sodipodi:docname="gnome-mime-application-x-rpm.svg" sodipodi:version="0.32" width="128.00000pt" xmlns="http://www.w3.org/2000/svg" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <metadata>
+    <rdf:RDF xmlns:cc="http://web.resource.org/cc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+      <cc:Work rdf:about="">
+        <dc:title>Etiquette Icons</dc:title>
+        <dc:description></dc:description>
+        <dc:subject>
+          <rdf:Bag>
+            <rdf:li>hash</rdf:li>
+            <rdf:li></rdf:li>
+            <rdf:li>mime-types</rdf:li>
+            <rdf:li>computer</rdf:li>
+            <rdf:li>icons</rdf:li>
+            <rdf:li>theme</rdf:li>
+          </rdf:Bag>
+        </dc:subject>
+        <dc:publisher>
+          <cc:Agent rdf:about="http://www.openclipart.org">
+            <dc:title>Andy Fitzsimon</dc:title>
+          </cc:Agent>
+        </dc:publisher>
+        <dc:creator>
+          <cc:Agent>
+            <dc:title>Andy Fitzsimon</dc:title>
+          </cc:Agent>
+        </dc:creator>
+        <dc:rights>
+          <cc:Agent>
+            <dc:title>Andy Fitzsimon</dc:title>
+          </cc:Agent>
+        </dc:rights>
+        <dc:date></dc:date>
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+        <cc:license rdf:resource="http://web.resource.org/cc/PublicDomain"/>
+        <dc:language>en</dc:language>
+      </cc:Work>
+      <cc:License rdf:about="http://web.resource.org/cc/PublicDomain">
+        <cc:permits rdf:resource="http://web.resource.org/cc/Reproduction"/>
+        <cc:permits rdf:resource="http://web.resource.org/cc/Distribution"/>
+        <cc:permits rdf:resource="http://web.resource.org/cc/DerivativeWorks"/>
+      </cc:License>
+    </rdf:RDF>
+  </metadata>
+  <defs id="defs2117">
+    <linearGradient id="linearGradient1540">
+      <stop id="stop1541" offset="0.0000000" style="stop-color:#ffffff;stop-opacity:0.0000000;"/>
+      <stop id="stop1543" offset="0.50793612" style="stop-color:#ffffff;stop-opacity:0.56179774;"/>
+      <stop id="stop1544" offset="0.79061538" style="stop-color:#ffffff;stop-opacity:0.13725491;"/>
+      <stop id="stop1542" offset="1.0000000" style="stop-color:#ffffff;stop-opacity:0.0000000;"/>
+    </linearGradient>
+    <linearGradient id="linearGradient1535">
+      <stop id="stop1536" offset="0.0000000" style="stop-color:#ae1b1b;stop-opacity:0.99215686;"/>
+      <stop id="stop1537" offset="1.0000000" style="stop-color:#ffffff;stop-opacity:1.0000000;"/>
+    </linearGradient>
+    <linearGradient id="linearGradient2248">
+      <stop id="stop2249" offset="0.0000000" style="stop-color:#ffffff;stop-opacity:1.0000000;"/>
+      <stop id="stop2251" offset="1.0000000" style="stop-color:#ffffff;stop-opacity:0.0000000;"/>
+    </linearGradient>
+    <linearGradient id="linearGradient1806">
+      <stop id="stop1807" offset="0.0000000" style="stop-color:#000000;stop-opacity:0.40784314;"/>
+      <stop id="stop3276" offset="0.64777780" style="stop-color:#000000;stop-opacity:0.073446326;"/>
+      <stop id="stop1808" offset="1.0000000" style="stop-color:#000000;stop-opacity:0.0000000;"/>
+    </linearGradient>
+    <radialGradient cx="0.50522649" cy="0.54545456" fx="0.51611376" fy="0.56148684" id="radialGradient1977" r="0.46065515" xlink:href="#linearGradient1806"/>
+    <pattern height="1020.0000" id="pattern2121" width="1012.0000">
+      <image height="1020.0000" id="image2122" sodipodi:absref="/home/andy/Desktop/package-large.png" width="1012.0000" xlink:href="/home/andy/Desktop/package-large.png"/>
+    </pattern>
+    <linearGradient id="linearGradient2246" x1="1.9047619" x2="-1.0952381" xlink:href="#linearGradient1806" y1="0.79545456" y2="0.075757578"/>
+    <linearGradient id="linearGradient2247" x1="-0.63529414" x2="0.25882354" xlink:href="#linearGradient2248" y1="-1.2424242" y2="1.0606060"/>
+    <pattern height="200.00000" id="pattern2261" width="200.00000">
+      <image height="200.00000" id="image2262" sodipodi:absref="/usr/share/pixmaps/redhat/rpmlogo-200.png" width="200.00000" xlink:href="/usr/share/pixmaps/redhat/rpmlogo-200.png"/>
+    </pattern>
+    <linearGradient id="linearGradient2730" x1="0.46242774" x2="0.41583115" xlink:href="#linearGradient1540" y1="0.32575756" y2="0.32575756"/>
+    <linearGradient id="linearGradient2731" x1="0.20784314" x2="0.54901963" xlink:href="#linearGradient2248" y1="-2.0476191" y2="0.60714287"/>
+    <radialGradient cx="0.50000000" cy="0.50000000" fx="0.50000000" fy="0.50000000" id="radialGradient1539" r="0.50000000" xlink:href="#linearGradient1540"/>
+  </defs>
+  <sodipodi:namedview bordercolor="#666666" borderopacity="1.0" id="base" inkscape:cx="61.782638" inkscape:cy="56.077218" inkscape:pageopacity="0.0" inkscape:pageshadow="2" inkscape:window-height="526" inkscape:window-width="614" inkscape:window-x="24" inkscape:window-y="107" inkscape:zoom="1.7535912" pagecolor="#ffffff"/>
+  <path d="M 54.438721 37.865574 A 12.562782 12.562782 0 1 0 29.313156,37.865574 A 12.562782 12.562782 0 1 0 54.438721 37.865574 z" id="path1562" sodipodi:cx="41.875938" sodipodi:cy="37.865574" sodipodi:rx="12.562782" sodipodi:ry="12.562782" sodipodi:type="arc" style="fill:url(#radialGradient1977);fill-opacity:1;fill-rule:evenodd;stroke-width:1.0000000pt;" transform="matrix(6.511515,0.409140,-0.132438,2.149003,-185.6188,33.03709)"/>
+  <path d="M 54.438721 37.865574 A 12.562782 12.562782 0 1 0 29.313156,37.865574 A 12.562782 12.562782 0 1 0 54.438721 37.865574 z" id="path1976" sodipodi:cx="41.875938" sodipodi:cy="37.865574" sodipodi:rx="12.562782" sodipodi:ry="12.562782" sodipodi:type="arc" style="fill:url(#radialGradient1977);fill-opacity:1;fill-rule:evenodd;stroke-width:1.0000000pt;" transform="matrix(6.806621,0.479127,-0.138440,2.516605,-196.3282,2.234333)"/>
+  <path d="M 124.23257,20.600270 L 120.41751,133.34856 L 92.592186,146.09342 L 19.047673,121.52387 L 17.496043,20.738256 L 40.699854,18.479152 L 124.23257,20.600270 z " id="path2127" sodipodi:nodetypes="ccccccc" style="fill:#af3c3c;fill-rule:evenodd;stroke-width:1.0000000pt;"/>
+  <path d="M 124.23257,20.600270 L 120.41751,133.34856 L 92.592186,146.09342 L 96.267344,23.671132 L 124.23257,20.600270 z " id="path2135" sodipodi:nodetypes="ccccc" style="fill:url(#linearGradient2246);fill-opacity:1;fill-rule:evenodd;stroke-width:1.0000000pt;"/>
+  <path d="M 95.215721,23.971335 L 91.609699,144.34338 L 20.103774,120.18842 L 18.059456,21.103462 L 95.215721,23.971335 z " id="path2136" sodipodi:nodetypes="ccccc" style="fill:url(#linearGradient2247);fill-opacity:1;fill-rule:evenodd;stroke-width:1.0000000pt;"/>
+  <g id="g934">
+    <path d="M 59.578454,134.02293 C 55.635213,114.02506 81.970449,107.87548 93.377685,107.82853 C 104.78493,107.78159 130.83850,113.55562 128.02190,133.74127 L 146.04816,137.12119 C 141.75359,111.89955 110.74673,105.01193 93.377685,105.01193 C 76.008639,105.01193 44.707680,114.40850 41.833863,137.12119 L 59.578454,134.02293 z " id="path2278" sodipodi:nodetypes="czcczcc" style="fill:#1e1e1e;fill-rule:evenodd;stroke-width:1.0000000pt;"/>
+    <path d="M 108.17054,106.37626 C 107.42569,107.48806 106.68731,108.60422 105.93861,109.71343 C 111.61583,110.83902 116.99861,113.42771 121.47026,117.08692 C 124.41424,119.60542 126.66581,122.95033 127.57833,126.73858 C 128.09860,129.09989 128.04328,131.50442 127.81795,133.89981 C 133.97524,135.06568 140.13774,136.20376 146.29575,137.36574 C 145.58805,133.02747 143.92118,128.88689 141.54804,125.19693 C 139.17694,121.61955 136.08214,118.57654 132.61777,116.05369 C 125.41373,110.92487 116.88234,107.95663 108.24565,106.26896 L 108.17054,106.37626 z " id="path1563" style="fill:#c22d2d;fill-rule:evenodd;stroke-width:0.85192400;"/>
+    <path d="M 90.544552,126.04543 L 90.302439,127.41164 L 150.98614,138.42774 L 151.24555,137.06154 L 90.544552,126.04543 z " id="path2286" style="fill:#ffffff;fill-rule:evenodd;stroke-width:2.5056589;"/>
+    <path d="M 99.986879 284.09567 A 3.0608227 3.0608227 0 1 0 93.865233,284.09567 A 3.0608227 3.0608227 0 1 0 99.986879 284.09567 z" id="path2281" sodipodi:cx="96.926056" sodipodi:cy="284.09567" sodipodi:rx="3.0608227" sodipodi:ry="3.0608227" sodipodi:type="arc" style="fill:#ffffff;fill-rule:evenodd;stroke-width:1.0000000pt;" transform="matrix(0.605692,0.000000,0.000000,0.605692,36.19080,-44.36927)"/>
+  </g>
+</svg>

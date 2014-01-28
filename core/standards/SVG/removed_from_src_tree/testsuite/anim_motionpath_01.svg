@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<svg xmlns="http://www.w3.org/2000/svg">
+ <path d="M 50,150 c 100,-140 100,140 200,0 z" stroke="red" stroke-width="3" fill="none" />
+ <circle cx="0" cy="0" r="5" fill="blue">
+  <animateMotion path="M 50,150 c 100,-140 100,140 200,0 z" begin="0s" dur="10s" fill="freeze"/>
+ </circle>
+</svg>

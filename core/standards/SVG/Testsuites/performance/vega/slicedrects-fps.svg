@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" onload="run_test()">
+<title>Drawing performance with sliced rounded rectangles</title>
+<script type="text/ecmascript">
+<![CDATA[
+    Array.prototype.average = function ()
+      {
+         for( var i = 0, s = 0; i < this.length; i++ )
+         {
+            s += this[i];
+         }
+         return this.length ? ( s / this.length ) : 0;
+      };
+    var fpsValues = [];
+    var afps_values = [];
+      function checkfps()
+      {
+        setInterval(update, 100);
+        document.getElementById("result").textContent = "Measuring fps...";
+        setTimeout(function () { recordFps(); }, 2000);
+        setTimeout(function () { fpsValues = [];
+                                 var testrects = document.getElementsByClassName("test");
+                                 for (var i = 0; i < testrects.length; i++){
+                                 testrects[i].setAttribute("rx", "0");
+                                 testrects[i].setAttribute("ry", "0");
+                                 }
+
+}, 2100);
+        setTimeout(function () { recordFps(); }, 4100);
+        setTimeout(function () { returnFps(); }, 4200);
+
+      }
+   
+      function update()
+      {
+         cfps = document.rootElement.currentFps;
+         fpsValues.push(cfps)
+      }
+      
+      function recordFps()
+      {
+         var afps = fpsValues.average();
+         afps_values.push(afps);
+      }
+
+      function returnFps()
+      {
+      var afps_rounded = afps_values[0];
+      var afps_angular = afps_values[1];
+      var afps_diff = afps_rounded - afps_angular; // Higher is better now.
+         // We invert it later, to yield a lower-is-better number.
+      //Avoid infinity
+      if (afps_rounded == 0) afps_rounded = 0.01;
+      if (afps_angular == 0) afps_angular = 0.01;
+      if (afps_diff == 0) afps_diff = 0.01;
+
+      document.getElementById("result").textContent = "Test complete. Average fps with rounded rect: " + afps_rounded + " Average fps with normal rect: " + afps_angular + " Rounded rect is surpassed by how much: " + (afps_angular - afps_rounded);
+      try{top.opener.rr(10000/afps_rounded,10000/afps_angular);}catch(e){}
+      }
+
+function run_test() {
+      cfps = document.rootElement.targetFps = 100;
+      checkfps();
+
+}
+]]>
+</script>
+<rect class="test" x="0" y="100" width="40" height="50" rx="10" ry="10" fill="#eee">
+   <animate attributeName="y" values="100;600;100" dur="0.12s" repeatCount="indefinite" />
+</rect>
+<rect class="test" x="40" y="100" width="40" height="50" rx="10" ry="10" fill="#eee">
+   <animate attributeName="y" values="100;600;100" dur="0.13s" repeatCount="indefinite" />
+</rect>
+<rect class="test" x="80" y="100" width="40" height="50" rx="10" ry="10" fill="#eee">
+   <animate attributeName="y" values="100;600;100" dur="0.15s" repeatCount="indefinite" />
+</rect>
+<rect class="test" x="120" y="100" width="40" height="50" rx="10" ry="10" fill="#eee">
+   <animate attributeName="y" values="100;600;100" dur="0.17s" repeatCount="indefinite" />
+</rect>
+<rect class="test" x="160" y="100" width="40" height="50" rx="10" ry="10" fill="#eee">
+   <animate attributeName="y" values="100;600;100" dur="0.19s" repeatCount="indefinite" />
+</rect>
+<rect class="test" x="200" y="100" width="40" height="50" rx="10" ry="10" fill="#eee">
+   <animate attributeName="y" values="100;600;100" dur="0.111s" repeatCount="indefinite" />
+</rect>
+<rect class="test" x="240" y="100" width="40" height="50" rx="10" ry="10" fill="#eee">
+   <animate attributeName="y" values="100;600;100" dur="0.113s" repeatCount="indefinite" />
+</rect>
+<rect class="test" x="280" y="100" width="40" height="50" rx="10" ry="10" fill="#eee">
+   <animate attributeName="y" values="100;600;100" dur="0.117s" repeatCount="indefinite" />
+</rect>
+<rect class="test" x="320" y="100" width="40" height="50" rx="10" ry="10" fill="#eee">
+   <animate attributeName="y" values="100;600;100" dur="0.119s" repeatCount="indefinite" />
+</rect>
+<rect class="test" x="360" y="100" width="40" height="50" rx="10" ry="10" fill="#eee">
+   <animate attributeName="y" values="100;600;100" dur="0.121s" repeatCount="indefinite" />
+</rect>
+<rect class="test" x="400" y="100" width="40" height="50" rx="10" ry="10" fill="#eee">
+   <animate attributeName="y" values="100;600;100" dur="0.123s" repeatCount="indefinite" />
+</rect>
+<rect class="test" x="440" y="100" width="40" height="50" rx="10" ry="10" fill="#eee">
+   <animate attributeName="y" values="100;600;100" dur="0.129s" repeatCount="indefinite" />
+</rect>
+<rect class="test" x="480" y="100" width="40" height="50" rx="10" ry="10" fill="#eee">
+   <animate attributeName="y" values="100;600;100" dur="0.131s" repeatCount="indefinite" />
+</rect>
+<rect class="test" x="520" y="100" width="40" height="50" rx="10" ry="10" fill="#eee">
+   <animate attributeName="y" values="100;600;100" dur="0.137s" repeatCount="indefinite" />
+</rect>
+<rect class="test" x="560" y="100" width="40" height="50" rx="10" ry="10" fill="#eee">
+   <animate attributeName="y" values="100;600;100" dur="0.143s" repeatCount="indefinite" />
+</rect>
+<rect class="test" x="600" y="100" width="40" height="50" rx="10" ry="10" fill="#eee">
+   <animate attributeName="y" values="100;600;100" dur="0.147s" repeatCount="indefinite" />
+</rect>
+<rect class="test" x="640" y="100" width="40" height="50" rx="10" ry="10" fill="#eee">
+   <animate attributeName="y" values="100;600;100" dur="0.153s" repeatCount="indefinite" />
+</rect>
+<rect class="test" x="680" y="100" width="40" height="50" rx="10" ry="10" fill="#eee">
+   <animate attributeName="y" values="100;600;100" dur="0.159s" repeatCount="indefinite" />
+</rect>
+<rect class="test" x="720" y="100" width="40" height="50" rx="10" ry="10" fill="#eee">
+   <animate attributeName="y" values="100;600;100" dur="0.161s" repeatCount="indefinite" />
+</rect>
+<rect class="test" x="760" y="100" width="40" height="50" rx="10" ry="10" fill="#eee">
+   <animate attributeName="y" values="100;600;100" dur="0.167s" repeatCount="indefinite" />
+</rect>
+<rect class="test" x="800" y="100" width="40" height="50" rx="10" ry="10" fill="#eee">
+   <animate attributeName="y" values="100;600;100" dur="0.171s" repeatCount="indefinite" />
+</rect>
+<rect class="test" x="840" y="100" width="40" height="50" rx="10" ry="10" fill="#eee">
+   <animate attributeName="y" values="100;600;100" dur="0.173s" repeatCount="indefinite" />
+</rect>
+<rect class="test" x="880" y="100" width="40" height="50" rx="10" ry="10" fill="#eee">
+   <animate attributeName="y" values="100;600;100" dur="0.179s" repeatCount="indefinite" />
+</rect>
+<rect class="test" x="920" y="100" width="40" height="50" rx="10" ry="10" fill="#eee">
+   <animate attributeName="y" values="100;600;100" dur="0.183s" repeatCount="indefinite" />
+</rect>
+<rect class="test" x="960" y="100" width="40" height="50" rx="10" ry="10" fill="#eee">
+   <animate attributeName="y" values="100;600;100" dur="0.189s" repeatCount="indefinite" />
+</rect>
+<rect class="test" x="1000" y="100" width="40" height="50" rx="10" ry="10" fill="#eee">
+   <animate attributeName="y" values="100;600;100" dur="0.197s" repeatCount="indefinite" />
+</rect>
+<rect class="test" x="1040" y="100" width="40" height="50" rx="10" ry="10" fill="#eee">
+   <animate attributeName="y" values="100;600;100" dur="0.201s" repeatCount="indefinite" />
+</rect>
+<rect class="test" x="1080" y="100" width="40" height="50" rx="10" ry="10" fill="#eee">
+   <animate attributeName="y" values="100;600;100" dur="0.203s" repeatCount="indefinite" />
+</rect>
+<rect class="test" x="1120" y="100" width="40" height="50" rx="10" ry="10" fill="#eee">
+   <animate attributeName="y" values="100;600;100" dur="0.207s" repeatCount="indefinite" />
+</rect>
+
+
+<rect x="10" y="0" width="20" height="650" fill="#ddd" />
+<rect x="50" y="0" width="20" height="650" fill="#ddd" />
+<rect x="90" y="0" width="20" height="650" fill="#ddd" />
+<rect x="130" y="0" width="20" height="650" fill="#ddd" />
+<rect x="170" y="0" width="20" height="650" fill="#ddd" />
+<rect x="210" y="0" width="20" height="650" fill="#ddd" />
+<rect x="250" y="0" width="20" height="650" fill="#ddd" />
+<rect x="290" y="0" width="20" height="650" fill="#ddd" />
+<rect x="330" y="0" width="20" height="650" fill="#ddd" />
+<rect x="370" y="0" width="20" height="650" fill="#ddd" />
+<rect x="410" y="0" width="20" height="650" fill="#ddd" />
+<rect x="450" y="0" width="20" height="650" fill="#ddd" />
+<rect x="490" y="0" width="20" height="650" fill="#ddd" />
+<rect x="530" y="0" width="20" height="650" fill="#ddd" />
+<rect x="570" y="0" width="20" height="650" fill="#ddd" />
+<rect x="610" y="0" width="20" height="650" fill="#ddd" />
+<rect x="650" y="0" width="20" height="650" fill="#ddd" />
+<rect x="690" y="0" width="20" height="650" fill="#ddd" />
+<rect x="730" y="0" width="20" height="650" fill="#ddd" />
+<rect x="770" y="0" width="20" height="650" fill="#ddd" />
+<rect x="810" y="0" width="20" height="650" fill="#ddd" />
+<rect x="850" y="0" width="20" height="650" fill="#ddd" />
+<rect x="890" y="0" width="20" height="650" fill="#ddd" />
+<rect x="930" y="0" width="20" height="650" fill="#ddd" />
+<rect x="970" y="0" width="20" height="650" fill="#ddd" />
+<rect x="1010" y="0" width="20" height="650" fill="#ddd" />
+<rect x="1050" y="0" width="20" height="650" fill="#ddd" />
+<rect x="1090" y="0" width="20" height="650" fill="#ddd" />
+<rect x="1130" y="0" width="20" height="650" fill="#ddd" />
+
+   <text id="result" x="10" y="690" font-size="15" text-anchor="begin">NOT TESTED (enable Javascript)</text>
+</svg>
+
+

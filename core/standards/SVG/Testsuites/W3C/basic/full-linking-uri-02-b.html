@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <!DOCTYPE html PUBLIC  "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>Tests the capability to handle links to 'view' elements</title>
+</head>
+<body>
+<table>
+<tr>
+<td align="center">SVG Image</td>
+<td align="center">Reference Image</td>
+</tr>
+<tr>
+<td align="right">
+<object data="../svggen/linking-uri-02-b.svg" width="480" height="360" type="image/svg+xml"/>
+</td>
+<td align="left">
+<img alt="raster image of linking-uri-02-b" src="../png/full-linking-uri-02-b.png" width="480" height="360"/>
+</td>
+</tr>
+</table>
+<p><ul>
+<li>
+Activating the Rectangle link should cause the whole of linking-uri-01-b.svg to be
+displayed, which is visually similar similar to linking-uri-02-b.svg.
+</li>
+<li>
+Assuming that a "back" action has been requested, activating the Ellipse link 
+should cause the initial picture to be replaced in the
+frame by the whole ellipse element, uniformly scaled, with its boxing rect
+just inside the frame.
+                </li>
+<li>
+Assuming that a "back" action has
+been requested, activating the Polygon link should cause the initial 
+picture to remain unchanged within the frame, except that the polygon is
+"highlighted" (the meaning of highlighted is not further specified).
+</li>
+<li>
+Assuming that a "back" action has been requested, 
+activating the Circle link should cause the initial picture to be replaced in the
+frame by the whole whole element, non-uniformly scaled so that it is stretched
+horizontally into an ellipse, with its boxing rect just inside the frame.
+</li>
+</ul>
+</p>
+</body>
+</html>

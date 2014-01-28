@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN"
+	"http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<svg height="300" width="300">
+  <metadata>
+    <rdf:RDF xmlns:cc="http://web.resource.org/cc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+      <cc:Work rdf:about="">
+        <dc:title>diamond squares 1 pattern</dc:title>
+        <dc:description></dc:description>
+        <dc:subject>
+          <rdf:Bag>
+            <rdf:li>pattern</rdf:li>
+          </rdf:Bag>
+        </dc:subject>
+        <dc:publisher>
+          <cc:Agent rdf:about="http://www.openclipart.org">
+            <dc:title>Alan Horkan</dc:title>
+          </cc:Agent>
+        </dc:publisher>
+        <dc:creator>
+          <cc:Agent>
+            <dc:title>Alan Horkan</dc:title>
+          </cc:Agent>
+        </dc:creator>
+        <dc:rights>
+          <cc:Agent>
+            <dc:title>Alan Horkan</dc:title>
+          </cc:Agent>
+        </dc:rights>
+        <dc:date></dc:date>
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+        <cc:license rdf:resource="http://web.resource.org/cc/PublicDomain"/>
+        <dc:language>en</dc:language>
+      </cc:Work>
+      <cc:License rdf:about="http://web.resource.org/cc/PublicDomain">
+        <cc:permits rdf:resource="http://web.resource.org/cc/Reproduction"/>
+        <cc:permits rdf:resource="http://web.resource.org/cc/Distribution"/>
+        <cc:permits rdf:resource="http://web.resource.org/cc/DerivativeWorks"/>
+      </cc:License>
+    </rdf:RDF>
+  </metadata>
+  <defs>
+    <pattern height="300" id="diamond-squares-1" patternContentUnits="userSpaceOnUse" patternUnits="userSpaceOnUse" width="300">
+      <polygon fill="black" points="25,0 0,50 25,100 50,50"/>
+      <polygon fill="black" points="50,50 100,25 150,50 100,75"/>
+      <polygon fill="black" points="100,75 75,125 100,175 125,125"/>
+      <polygon fill="black" points="-25,125 25,100 75,125 25,150"/>
+      <polygon fill="black" points="125,125 175,100 225,125 175,150"/>
+      <polygon fill="black" points="100,-75 75,-25 100,25 125,-25"/>
+      <polygon fill="black" points="175,151 150,201 175,250 200,200"/>
+      <polygon fill="black" points="50,200 100,175 150,200 100,225"/>
+      <polygon fill="black" points="200,50 250,25 300,50 250,75"/>
+      <polygon fill="black" points="200,200 250,175 300,200 250,225"/>
+      <polygon fill="black" points="175,0 150,50 175,100 200,50"/>
+      <polygon fill="black" points="250,75 225,125 250,175 275,125"/>
+      <polygon fill="black" points="25,150 0,200 25,250 50,200"/>
+      <polygon fill="black" points="100,225 75,275 100,325 125,275"/>
+      <polygon fill="black" points="250,225 225,275 250,325 275,275"/>
+      <polygon fill="black" points="-25,275 25,250 75,275 25,300"/>
+      <polygon fill="black" points="125,275 175,250 225,275 175,300"/>
+      <polygon fill="black" points="275,125 325,100 375,125 325,150"/>
+      <polygon fill="black" points="250,-75 225,-25 250,25 275,-25"/>
+      <polygon fill="black" points="275,275 325,250 375,275 325,300"/>
+    </pattern>
+  </defs>
+  <rect fill="url(#diamond-squares-1)" height="300" width="300" x="0" y="0"/>
+</svg>

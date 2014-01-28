@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- =====================================================================-->
+<!-- animate-elem-31-t.svg                                                -->
+<!--                                                                      -->
+<!-- Tests animation of the display attribute.                            -->
+<!--                                                                      -->
+<!-- Author : Ola Andersson,  30-Sep-2003                                 -->
+
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1 Tiny//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11-tiny.dtd">
+
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" baseProfile="tiny" id="svg-root" width="100%" height="100%" viewBox="0 0 480 200">
+    
+    <!-- GRAY TESTAREAS-->
+    <rect x="5" y="7.5" width="375" height="75" fill="silver" stroke="black" stroke-width="3"/>
+    <rect x="5" y="112.5" width="375" height="75" fill="silver" stroke="black" stroke-width="3"/>
+    <g transform="scale(1.5)" display="inline">
+      
+      <!-- PURPLE CIRCLES-->
+      <circle display="inline" cx="30" cy="30" r="20" fill="purple" stroke="black" stroke-width="5"/>
+      <circle display="inline" cx="30" cy="100" r="20" fill="purple" stroke="black" stroke-width="5">
+      <!--<animate attributeName="visibility" from="visible" to="hidden" begin="6" dur="2"/>   -->
+      </circle>
+    
+      <!-- orange CIRCLES-->
+      <g display="inline">   
+         <circle display="inline" cx="80" cy="30" r="20" fill="#FF6633" stroke="black" stroke-width="5"/>
+            <!--<animate attributeName="display" from="none" to="inline" begin="0" dur="3" fill="freeze"/>   -->
+      </g>
+      <circle visibility="visible" cx="80" cy="100" r="20" fill="#FF6633" stroke="black" stroke-width="5">
+         <!--<animate attributeName="visibility" from="hidden" to="visible" begin="0" dur="3" fill="freeze"/>   -->
+      </circle>
+    
+      <!--   CIRCLES-->
+      <circle display="inline" cx="130" cy="30" r="20" fill="#FF33CC" stroke="black" stroke-width="5">
+         <!--<set attributeName="display" to="inline" begin="2" dur="1" fill="freeze"/>-->
+      </circle>  
+      <circle visibility="visible" cx="130" cy="100" r="20" fill="#FF33CC" stroke="black" stroke-width="5">
+         <!--<animate attributeName="visibility" from="hidden" to="visible" begin="1" dur="2" fill="freeze"/>   -->
+      </circle>
+    
+      <!-- BLUE CIRCLES-->
+      <g display="none">
+         <g display="inherit">
+           <circle display="inline" cx="180" cy="30" r="20" fill="blue" stroke="black" stroke-width="5"/>
+         </g>
+         <!--<animate attributeName="display" from="inline" to="none" begin="3" dur="3" fill="freeze"/>-->
+      </g>
+      <circle visibility="hidden" cx="180" cy="100" r="20" fill="blue" stroke="black" stroke-width="5">
+          <!--<animate attributeName="visibility" from="visible" to="hidden" begin="3" dur="3" fill="freeze"/>   -->
+      </circle>
+    
+      <!-- YELLOW CIRCLES-->
+      <g display="none">
+         <g display="inherit">
+            <circle display="inline" cx="180" cy="30" r="20" fill="yellow" stroke="black" stroke-width="5"/>
+         </g>
+         <!--<animate attributeName="display" from="none" to="inherit" begin="4" dur="3" fill="freeze"/>-->
+      </g>
+      <circle visibility="hidden" cx="180" cy="100" r="20" fill="yellow" stroke="black" stroke-width="5">
+         <!--<animate attributeName="visibility" from="hidden" to="visible" begin="4" dur="3" fill="freeze"/>   -->
+      </circle>
+
+      <!-- CYAN CIRCLES-->
+      <g display="inherit">
+         <circle cx="230" cy="30" r="20" fill="#00ffff" stroke="black" stroke-width="5">
+                  <!--<animate attributeName="display" begin="0" dur="0.5" keyTimes="0; 0.5; 1" values="inherit; none; inherit" repeatCount="8"/>-->
+         </circle>
+         <!--<animate attributeName="display" begin="0" dur="2" keyTimes="0; 0.5; 1" values="inline; none; inline" repeatCount="2" fill="freeze"/>-->
+      </g>
+      <g visibility="inherit">
+         <circle cx="230" cy="100" r="20" fill="#00ffff" stroke="black" stroke-width="5">  
+            <!--<animate attributeName="visibility" begin="0" dur="0.5" keyTimes="0; 0.5; 1" values="inherit; hidden; inherit" repeatCount="8"/>-->
+         </circle>
+         <!--<animate attributeName="visibility" begin="0" dur="2" keyTimes="0; 0.5; 1" values="visible; hidden; visible" repeatCount="2" fill="freeze"/>-->
+      </g>
+      <!--<animate attributeName="display" from="inherit" to="none" begin="6" dur="2"/>-->
+    </g>
+    
+ 
+</svg>
+
+
+
+
+
+

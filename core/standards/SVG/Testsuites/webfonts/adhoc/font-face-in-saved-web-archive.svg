@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+ id="svg-root" width="100%" height="100%" viewBox="0 0 500 500">
+ 		<style type="text/css">
+			@font-face { 
+			font-family: "FontTest"; 
+			src: url(../fonts/Ahem.ttf) ;
+			}
+		</style>
+	<title>font-face test with a locally saved web archive</title>
+	<text y="20" font-size="12px"> Save the page as a web archive, go to opera:blank, restart Opera and open the saved page (mhtml-archive.mht in the profile directory). </text>
+	<text y="40"  font-size="12px">You should see a green rect below</text>
+	<text  y="80" style="fill:green; font-family:FontTest;" font-size="20px">FAIL</text>
+</svg>

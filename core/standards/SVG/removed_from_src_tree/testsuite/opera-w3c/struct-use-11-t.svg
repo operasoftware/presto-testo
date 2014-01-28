@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg version="1.2" baseProfile="tiny" id="svg-root" width="100%" height="100%" viewBox="0 0 480 360" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<!--======================================================================-->
+	<!--=  Copyright 2005 World Wide Web Consortium, (Massachusetts          =-->
+	<!--=  Institute of Technology, Institut National de Recherche en        =-->
+	<!--=  Informatique et en Automatique, Keio University). All Rights      =-->
+	<!--=  Reserved. See http://www.w3.org/Consortium/Legal/.                =-->
+	<!--======================================================================-->
+	<!--   -->
+	<!--  Author: opera.com  -->
+	<!--   -->
+	<!-- =====================================================================-->
+	<SVGTestCase xmlns="http://www.w3.org/2000/02/svg/testsuite/description/" reviewer="[reviewer]" owner="BitFlash" desc="External Animated Use Elements" status="created" version="$Revision$" testname="$RCSfile$">
+		<OperatorScript>
+			<Paragraph>External Animated Use Elements</Paragraph>
+			<Paragraph>A 'use' elements place various animated fragments. 
+				A local animate element is then applied to further animate the fragment.- </Paragraph>
+			<Paragraph> - </Paragraph>
+		</OperatorScript>
+	</SVGTestCase>
+	<title id="test-title">$RCSfile$</title>
+	<!--======================================================================-->
+	<!--Content of Test Case follows...                  =====================-->
+	<!--======================================================================-->
+	<g id="test-body-content">
+		<use id="local" x="100" y="100" xlink:href="images/external.svg#rect6">
+			<animate attributeName="fill" from="red" to="blue" begin="0" dur="1s" repeatCount="indefinite"/>
+		</use>
+	</g>
+	<text id="revision" x="10" y="340" font-size="40" stroke="none" fill="black">$Revision$</text>
+	<rect id="test-frame" x="1" y="1" width="478" height="358" fill="none" stroke="#000"/>
+</svg>

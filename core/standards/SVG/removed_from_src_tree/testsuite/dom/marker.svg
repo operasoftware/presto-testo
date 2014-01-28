@@ -1,0 +1,118 @@
+<?xml version="1.0"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink"
+     viewBox="0 0 480 360">
+  <script>
+    function OrientAuto()
+    {
+    var markerElm = document.getElementById("mark");
+    markerElm.setOrientToAuto();
+    }
+
+    function OrientAngle()
+    {
+    var markerElm = document.getElementById("mark");
+    var root = markerElm.ownerSVGElement;
+    var new_angle = root.createSVGAngle();
+    markerElm.setOrientToAngle(new_angle);
+    }
+
+    function OrientAngleUp()
+    {
+    var markerElm = document.getElementById("mark");
+    var angle = markerElm.orientAngle.baseVal;
+    angle.value = angle.value + 5;
+    }
+
+    function OrientAngleDown()
+    {
+    var markerElm = document.getElementById("mark");
+    var angle = markerElm.orientAngle.baseVal;
+    angle.value = angle.value - 5;
+    }
+
+    function OrientRemoveAttribute()
+    {
+    var markerElm = document.getElementById("mark");
+    markerElm.removeAttribute("orient");    
+    }
+
+    function AngleString(angle)
+    {
+    var str = angle.value+" ";
+    switch (angle.unitType)
+    {
+    default:
+    case 0: str += "?"; break;
+    case 1: str += "unspec"; break;
+    case 2: str += "deg"; break;
+    case 3: str += "rad"; break;
+    case 4: str += "grad"; break;
+    }
+    return str;
+    }
+
+    function AnimAngleString(anim_angle)
+    {
+    return "base: "+AngleString(anim_angle.baseVal)+"; anim: "+AngleString(anim_angle.animVal);
+    }
+
+    function ShowMarkerInfo()
+    {
+    var markerElm = document.getElementById("mark");
+    var infostr = "marker: ";
+
+    infostr += "refX="+markerElm.refX.baseVal.value+" ";
+    infostr += "refY="+markerElm.refY.baseVal.value+" ";
+    infostr += "markerWidth="+markerElm.markerWidth.baseVal.value+" ";
+    infostr += "markerHeight="+markerElm.markerHeight.baseVal.value+" ";
+    infostr += "markerUnits="+markerElm.markerUnits.baseVal+" ";
+    infostr += "orientType="+markerElm.orientType.baseVal+" ";
+    infostr += "orientAngle=("+AnimAngleString(markerElm.orientAngle)+")";
+    alert(infostr);
+    }
+  </script>
+  <defs>
+    <marker id="mark" viewBox="0 0 10 10"
+	    markerUnits="strokeWidth" orient="auto"
+	    markerWidth="2" markerHeight="2" refX="5" refY="5">
+      <line x1="0" y1="5" x2="10" y2="5" stroke-width="1" stroke="blue"/>
+    </marker>
+  </defs>
+
+  <polyline fill="none" stroke="black" stroke-width="8"
+	    marker="url(#mark)"
+	    points="40,180 140,30 240,300 340,30 440,180"/>
+
+  <g  text-anchor="middle">
+    <rect x="10" y="330" width="50" height="25" rx="5"
+	  fill="grey" stroke="black" stroke-width="3"
+	  onclick="OrientAuto();"/>
+    <text x="35" y="345" pointer-events="none">auto</text>
+
+    <rect x="70" y="330" width="50" height="25" rx="5"
+	  fill="grey" stroke="black" stroke-width="3"
+	  onclick="OrientAngle();"/>
+    <text x="95" y="345" pointer-events="none">angle</text>
+
+    <rect x="130" y="330" width="50" height="25" rx="5"
+	  fill="grey" stroke="black" stroke-width="3"
+	  onclick="OrientAngleUp();"/>
+    <text x="155" y="345" pointer-events="none">angle+</text>
+
+    <rect x="190" y="330" width="50" height="25" rx="5"
+	  fill="grey" stroke="black" stroke-width="3"
+	  onclick="OrientAngleDown();"/>
+    <text x="215" y="345" pointer-events="none">angle-</text>
+
+    <rect x="250" y="330" width="50" height="25" rx="5"
+	  fill="grey" stroke="black" stroke-width="3"
+	  onclick="OrientRemoveAttribute();"/>
+    <text x="275" y="345" pointer-events="none">rm attr</text>
+
+    <rect x="310" y="330" width="50" height="25" rx="5"
+	  fill="grey" stroke="black" stroke-width="3"
+	  onclick="ShowMarkerInfo();"/>
+    <text x="335" y="345" pointer-events="none">info</text>
+  </g>
+</svg>

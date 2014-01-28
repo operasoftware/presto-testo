@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     onload="document.getElementById('nojs').textContent = ''">
+  <title>Text selection should cause events on other text elements to be ignored</title>
+
+  <text x="10" y="20" id="nojs">NOT TESTED (JavaScript did not run)</text>
+
+  <text x="10" y="40">This test requires the Ahem font.</text>
+
+  <text x="10" y="70">Click on the blue square and drag to the fuchsia square. You should not see the word FAIL appear.</text>
+
+  <text x="10" y="190" font-family="Ahem" font-size="100" fill="blue">
+    <tspan id="start">X</tspan><tspan id="end" fill="fuchsia">X</tspan>
+  </text>
+
+  <text x="10" y="240" id="fail"></text>
+
+  <script>
+  <![CDATA[
+    function fail()
+    {
+      document.getElementById('fail').textContent = 'FAIL';
+      document.getElementById('end').removeEventListener('mouseover', fail, false);
+    }
+
+    document.getElementById('start').addEventListener('mousedown', function(){
+      document.getElementById('end').addEventListener('mouseover', fail, false);
+    }, false);
+    document.addEventListener('mouseup', function(){
+      document.getElementById('end').removeEventListener('mouseover', fail, false);
+    }, false);
+  ]]>
+  </script>
+</svg>
+

@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="svg-root" width="100%" height="100%" viewBox="0 0 480 360">
+	<g id="test-body-content">
+    <foreignObject width="400" height="300">
+      <html xmlns="http://www.w3.org/1999/xhtml">
+        <body>
+          <style>
+            body { padding:0px }
+            .r { border: 1px solid green; width: 395px; margin:-6px; height: 295px; background: url(images/operalogo.gif); font: 24px Arial;}
+            .tr { position: absolute; left: 390px; top: 0px; width: 10px; height: 10px; background: lime; }
+            .tl { position: absolute; left: 0px; top: 0px; width: 10px; height: 10px; background: lime; }
+            .br { position: absolute; left: 390px; top: 290px; width: 10px; height: 10px; background: lime; }
+            .bl { position: absolute; left: 0px; top: 290px; width: 10px; height: 10px; background: lime; }
+          </style>
+          <div class="r"><p align="center">This should be centered.</p></div>
+          <div class="tl"/>
+          <div class="tr"/>
+          <div class="br"/>
+          <div class="bl"/>
+        </body>
+      </html>
+    </foreignObject>
+    <rect width="400" height="300" stroke="blue" fill="none"/>
+  </g>
+	<rect id="test-frame" x="1" y="1" width="478" height="358" fill="none" stroke="#000000"/>
+</svg>

@@ -1,0 +1,1511 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  xmlns:a="http://www.adobe.com/svg10-extensions" xmlns:qb="http://www.treebuilder.de/svg/qbert" viewBox="-100 0 1000 800" onkeypress="moveBall(evt)">
+	<title>treebuilder::SVG q-Bert</title>
+	<desc>A Game written in SVG ,about cubes and bombs</desc>
+	<!-- ++++++++++++++++++++++++++++ -->
+	<!-- **********************************DEFS*******************************************************-->
+	<!-- +++++++++++++++++++++++++++++++++++ -->
+	<defs>
+		<!-- *************************************************************************************** -->
+		<qb:level colors="1" enemies="0" number="1" points="500" time="120"/>
+		<qb:level colors="3" enemies="0" number="2" points="1000" time="120"/>
+		<qb:level colors="1" enemies="1" number="3" points="1000" time="120"/>
+		<qb:level colors="3" enemies="1" number="4" points="1000" time="120"/>
+		<qb:level colors="1" enemies="2" number="5" points="1000" time="120"/>
+		<qb:level colors="3" enemies="2" number="6" points="1000" time="120"/>
+		<qb:level colors="1" enemies="3" number="7" points="1000" time="120"/>
+		<qb:level colors="3" enemies="3" number="8" points="1000" time="120"/>
+		<qb:level colors="1" enemies="4" number="9" points="1000" time="120"/>
+		<qb:level colors="3" enemies="4" number="10" points="1000" time="120"/>
+		<qb:level colors="1" enemies="5" number="11" points="1000" time="120"/>
+		<qb:level colors="3" enemies="5" number="12" points="1000" time="120"/>
+		<!--*******************************************************-->
+		<path id="falldown1" d="M-350 -100V530" stroke-width="1" stroke="white"/>
+		<path id="falldown2" d="M350 -100V530" stroke-width="1" stroke="white"/>
+		<path id="falldown3" d="M0 -100V450" stroke-width="1" stroke="white"/>
+		<path id="falldown4" d="M-225 -100V330" stroke-width="1" stroke="white"/>
+		<path id="falldown5" d="M225 -100V350" stroke-width="1" stroke="white"/>
+		<path id="set2start" d="M0 -100V0" stroke-width="1" stroke="white"/>
+		
+		
+		<!--*******************************************************-->
+		<g id="wuerfel">
+			<path d="M-50 0L0 -25L50 0L0 25z" fill="darkblue"/>
+			<path d="M-50 0L-50 50L0 75L0 25z" fill="blue"/>
+			<path d="M50 0L50 50L0 75L0 25z" fill="#13007c"/>
+			<path fill="none" stroke-width="1" stroke="none" d="M0 -25C0 -100 50 -100 50 75"/>
+			<path fill="none" stroke-width="1" stroke="none" d="M0 -25C0 -100 -50 -100 -50 75"/>
+			<path fill="none" stroke-width="1" stroke="none" d="M0 -25C0 -100 50 -100 50 75"/>
+			<path fill="none" stroke-width="1" stroke="none" d="M0 -25C0 -100 -50 -100 -50 75"/>
+		</g>
+		<g id="wuerfel_1">
+			<path d="M-50 0L0 -25L50 0L0 25z" fill="gold" stroke="mediumblue" stroke-width="2"/>
+			<path d="M-50 0L-50 50L0 75L0 25z" fill="gold" stroke="mediumblue" stroke-width="2"/>
+			<path d="M50 0L50 50L0 75L0 25z" fill="gold" stroke="mediumblue" stroke-width="2"/>
+		</g>
+		<!--***********************************************************-->
+		<radialGradient id="grd_12" cx="40%" cy="40%" fx="30%" fy="30%">
+			<stop offset="0%" stop-color="red"/>
+			<stop offset="100%" stop-color="black"/>
+		</radialGradient>
+		<radialGradient id="grd_13" cx="40%" cy="40%" fx="30%" fy="30%">
+			<stop offset="0%" stop-color="#ffffdf"/>
+			<stop offset="100%" stop-color="#dfb101"/>
+		</radialGradient>
+		<linearGradient id="grd_14" x="70%" y="70%">
+			<stop offset="0%" stop-color="#dfb101"/>
+			<stop offset="100%" stop-color="#ffffdf"/>
+		</linearGradient>
+		<linearGradient id="grd_15" cx="40%" cy="40%" fx="30%" fy="30%">
+			<stop offset="0%" stop-color="cornflowerblue"/>
+			<stop offset="100%" stop-color="#13007c"/>
+		</linearGradient>
+		<linearGradient id="grd_16" cx="40%" cy="40%" fx="30%" fy="30%">
+			<stop offset="0%" stop-color="gold"/>
+			<stop offset="100%" stop-color="red"/>
+		</linearGradient>
+		<radialGradient id="grd_17" cx="40%" cy="40%" fx="30%" fy="30%">
+			<stop offset="0%" stop-color="limegreen"/>
+			<stop offset="100%" stop-color="darkgreen"/>
+		</radialGradient>
+		<linearGradient id="grd_18" cx="40%" cy="40%" fx="30%" fy="30%">
+			<stop offset="0%" stop-color="darkgreen"/>
+			<stop offset="100%" stop-color="limegreen"/>
+		</linearGradient>
+		<radialGradient id="grd_19" cx="40%" cy="40%" fx="30%" fy="30%">
+			<stop offset="0%" stop-color="blue"/>
+			<stop offset="100%" stop-color="darkblue"/>
+		</radialGradient>
+		<!--****************************************************************************************-->
+		<font id="Font1" horiz-adv-x="1000">
+			<font-face font-family="Seg7" font-weight="bold" font-style="normal" units-per-em="1000" cap-height="600" x-height="400" ascent="1000" descent="0" alphabetic="0" mathematical="350" ideographic="400" hanging="500">
+				<font-face-src>
+					<font-face-name name="Seg7"/>
+				</font-face-src>
+			</font-face>
+			<missing-glyph horiz-adv-x="550">
+				<rect x="75" y="900" rx="50" ry="50" width="350" height="100" fill-opacity="0.3"/>
+				<rect x="0" y="550" rx="50" ry="50" width="100" height="350" fill-opacity="0.3"/>
+				<rect x="400" y="550" rx="50" ry="50" width="100" height="350" fill-opacity="0.3"/>
+				<rect x="75" y="450" rx="50" ry="50" width="350" height="100" fill-opacity="0.3"/>
+				<rect x="0" y="100" rx="50" ry="50" width="100" height="350" fill-opacity="0.3"/>
+				<rect x="400" y="100" rx="50" ry="50" width="100" height="350" fill-opacity="0.3"/>
+				<rect x="75" y="0" rx="50" ry="50" width="350" height="100" fill-opacity="0.3"/>
+			</missing-glyph>
+			<glyph unicode="0" horiz-adv-x="550">
+				<rect x="75" y="900" rx="50" ry="50" width="350" height="100" fill-opacity="1"/>
+				<rect x="0" y="550" rx="50" ry="50" width="100" height="350" fill-opacity="1"/>
+				<rect x="400" y="550" rx="50" ry="50" width="100" height="350" fill-opacity="1"/>
+				<rect x="75" y="450" rx="50" ry="50" width="350" height="100" fill-opacity="0.3"/>
+				<rect x="0" y="100" rx="50" ry="50" width="100" height="350" fill-opacity="1"/>
+				<rect x="400" y="100" rx="50" ry="50" width="100" height="350" fill-opacity="1"/>
+				<rect x="75" y="0" rx="50" ry="50" width="350" height="100" fill-opacity="1"/>
+			</glyph>
+			<glyph unicode="1" horiz-adv-x="550">
+				<rect x="75" y="900" rx="50" ry="50" width="350" height="100" fill-opacity="0.3"/>
+				<rect x="0" y="550" rx="50" ry="50" width="100" height="350" fill-opacity="0.3"/>
+				<rect x="400" y="550" rx="50" ry="50" width="100" height="350" fill-opacity="1"/>
+				<rect x="75" y="450" rx="50" ry="50" width="350" height="100" fill-opacity="0.3"/>
+				<rect x="0" y="100" rx="50" ry="50" width="100" height="350" fill-opacity="0.3"/>
+				<rect x="400" y="100" rx="50" ry="50" width="100" height="350" fill-opacity="1"/>
+				<rect x="75" y="0" rx="50" ry="50" width="350" height="100" fill-opacity="0.3"/>
+			</glyph>
+			<glyph unicode="2" horiz-adv-x="550">
+				<rect x="75" y="900" rx="50" ry="50" width="350" height="100" fill-opacity="1"/>
+				<rect x="0" y="550" rx="50" ry="50" width="100" height="350" fill-opacity="0.3"/>
+				<rect x="400" y="550" rx="50" ry="50" width="100" height="350" fill-opacity="1"/>
+				<rect x="75" y="450" rx="50" ry="50" width="350" height="100" fill-opacity="1"/>
+				<rect x="0" y="100" rx="50" ry="50" width="100" height="350" fill-opacity="1"/>
+				<rect x="400" y="100" rx="50" ry="50" width="100" height="350" fill-opacity="0.3"/>
+				<rect x="75" y="0" rx="50" ry="50" width="350" height="100" fill-opacity="1"/>
+			</glyph>
+			<glyph unicode="3" horiz-adv-x="550">
+				<rect x="75" y="900" rx="50" ry="50" width="350" height="100" fill-opacity="1"/>
+				<rect x="0" y="550" rx="50" ry="50" width="100" height="350" fill-opacity="0.3"/>
+				<rect x="400" y="550" rx="50" ry="50" width="100" height="350" fill-opacity="1"/>
+				<rect x="75" y="450" rx="50" ry="50" width="350" height="100" fill-opacity="1"/>
+				<rect x="0" y="100" rx="50" ry="50" width="100" height="350" fill-opacity="0.3"/>
+				<rect x="400" y="100" rx="50" ry="50" width="100" height="350" fill-opacity="1"/>
+				<rect x="75" y="0" rx="50" ry="50" width="350" height="100" fill-opacity="1"/>
+			</glyph>
+			<glyph unicode="4" horiz-adv-x="550">
+				<rect x="75" y="900" rx="50" ry="50" width="350" height="100" fill-opacity="0.3"/>
+				<rect x="0" y="550" rx="50" ry="50" width="100" height="350" fill-opacity="1"/>
+				<rect x="400" y="550" rx="50" ry="50" width="100" height="350" fill-opacity="1"/>
+				<rect x="75" y="450" rx="50" ry="50" width="350" height="100" fill-opacity="1"/>
+				<rect x="0" y="100" rx="50" ry="50" width="100" height="350" fill-opacity="0.3"/>
+				<rect x="400" y="100" rx="50" ry="50" width="100" height="350" fill-opacity="1"/>
+				<rect x="75" y="0" rx="50" ry="50" width="350" height="100" fill-opacity="0.3"/>
+			</glyph>
+			<glyph unicode="5" horiz-adv-x="550">
+				<rect x="75" y="900" rx="50" ry="50" width="350" height="100" fill-opacity="1"/>
+				<rect x="0" y="550" rx="50" ry="50" width="100" height="350" fill-opacity="1"/>
+				<rect x="400" y="550" rx="50" ry="50" width="100" height="350" fill-opacity="0.3"/>
+				<rect x="75" y="450" rx="50" ry="50" width="350" height="100" fill-opacity="1"/>
+				<rect x="0" y="100" rx="50" ry="50" width="100" height="350" fill-opacity="0.3"/>
+				<rect x="400" y="100" rx="50" ry="50" width="100" height="350" fill-opacity="1"/>
+				<rect x="75" y="0" rx="50" ry="50" width="350" height="100" fill-opacity="1"/>
+			</glyph>
+			<glyph unicode="6" horiz-adv-x="550">
+				<rect x="75" y="900" rx="50" ry="50" width="350" height="100" fill-opacity="1"/>
+				<rect x="0" y="550" rx="50" ry="50" width="100" height="350" fill-opacity="1"/>
+				<rect x="400" y="550" rx="50" ry="50" width="100" height="350" fill-opacity="0.3"/>
+				<rect x="75" y="450" rx="50" ry="50" width="350" height="100" fill-opacity="1"/>
+				<rect x="0" y="100" rx="50" ry="50" width="100" height="350" fill-opacity="1"/>
+				<rect x="400" y="100" rx="50" ry="50" width="100" height="350" fill-opacity="1"/>
+				<rect x="75" y="0" rx="50" ry="50" width="350" height="100" fill-opacity="1"/>
+			</glyph>
+			<glyph unicode="7" horiz-adv-x="550">
+				<rect x="75" y="900" rx="50" ry="50" width="350" height="100" fill-opacity="1"/>
+				<rect x="0" y="550" rx="50" ry="50" width="100" height="350" fill-opacity="0.3"/>
+				<rect x="400" y="550" rx="50" ry="50" width="100" height="350" fill-opacity="1"/>
+				<rect x="75" y="450" rx="50" ry="50" width="350" height="100" fill-opacity="0.3"/>
+				<rect x="0" y="100" rx="50" ry="50" width="100" height="350" fill-opacity="0.3"/>
+				<rect x="400" y="100" rx="50" ry="50" width="100" height="350" fill-opacity="1"/>
+				<rect x="75" y="0" rx="50" ry="50" width="350" height="100" fill-opacity="0.3"/>
+			</glyph>
+			<glyph unicode="8" horiz-adv-x="550">
+				<rect x="75" y="900" rx="50" ry="50" width="350" height="100" fill-opacity="1"/>
+				<rect x="0" y="550" rx="50" ry="50" width="100" height="350" fill-opacity="1"/>
+				<rect x="400" y="550" rx="50" ry="50" width="100" height="350" fill-opacity="1"/>
+				<rect x="75" y="450" rx="50" ry="50" width="350" height="100" fill-opacity="1"/>
+				<rect x="0" y="100" rx="50" ry="50" width="100" height="350" fill-opacity="1"/>
+				<rect x="400" y="100" rx="50" ry="50" width="100" height="350" fill-opacity="1"/>
+				<rect x="75" y="0" rx="50" ry="50" width="350" height="100" fill-opacity="1"/>
+			</glyph>
+			<glyph unicode="9" horiz-adv-x="550">
+				<rect x="75" y="900" rx="50" ry="50" width="350" height="100" fill-opacity="1"/>
+				<rect x="0" y="550" rx="50" ry="50" width="100" height="350" fill-opacity="1"/>
+				<rect x="400" y="550" rx="50" ry="50" width="100" height="350" fill-opacity="1"/>
+				<rect x="75" y="450" rx="50" ry="50" width="350" height="100" fill-opacity="1"/>
+				<rect x="0" y="100" rx="50" ry="50" width="100" height="350" fill-opacity="0.3"/>
+				<rect x="400" y="100" rx="50" ry="50" width="100" height="350" fill-opacity="1"/>
+				<rect x="75" y="0" rx="50" ry="50" width="350" height="100" fill-opacity="1"/>
+			</glyph>
+			<glyph unicode=":" horiz-adv-x="250">
+				<circle cx="100" cy="300" r="50"/>
+				<circle cx="100" cy="700" r="50"/>
+			</glyph>
+			<glyph unicode=";" horiz-adv-x="250">
+				<circle cx="100" cy="300" r="50" fill-opacity="0.3"/>
+				<circle cx="100" cy="700" r="50" fill-opacity="0.3"/>
+			</glyph>
+		</font>
+		<!--**************************************************************************************-->
+		<g id="bert_V">
+			<circle id="fuss_L" cx="395" cy="-210" r="10" fill="url(#grd_13)" transform="rotate(60) translate(0 0) skewX(35)"/>
+			<circle id="fuss_R" cx="420" cy="-230" r="10" fill="url(#grd_13)" transform="rotate(60) translate(0 0) skewX(35)"/>
+			<circle id="ball" cx="320" cy="75" r="30" fill="url(#grd_13)"/>
+			<path desc="mund" transform="translate(305 85) scale(0.5)" fill="white" stroke="#cc9d00" d="M0,7.16C10.712,39.116,33.953,21.582,45.272,0C27.723,9.432,19.531,11.599,0.58,4.608L0,7.16z"/>
+			<path desc="haare1" transform="translate(297 9)" fill="#dfb101" d="M34.527,39.638c-7.91,1.453-13.676,4.415-17.864,9.825	c-8.932-14.087-4.438,6.113-10.4-5.87c-1.222-2.4,3.697-12.856,2.474-15.256C15.281,22.892,12.149,0.592,0,0.53c0.44-2.834,21.253,6.142,25.204,16.038c-0.422-3.132-0.236-6.344-0.691-9.472c3.373,8.048,10.71,23.572,12.437,30.577c1.067,4.337-3.448-0.21-2.04,5.103"/>
+			<path desc="haare2" transform="translate(297 9.5)" fill="url(#grd_14)" d="M12.72,44.379c-4.917-1.583-0.583,8.5-6.374-0.869c-1.222-2.4,3.696-12.856,2.474-15.256c6.483-4.458,3.414-27.745-8.736-27.807C0.886,1.38,19.136-1.037,12.886,44.546"/>
+			<path desc="haare3" transform="translate(297 9.5)" fill="#d9c100" d="M16.468,18.734c0.51,2.138,5.748,24.095,0.168,30.75c-1.418-1.832-2.418-3.166-4.001-5.166c-1.222-2.4,0.833-12.084,1-15c1.249-7.083-1.351-28.772-13.5-28.833c3.22-0.984,12.333,4.333,19.083,20.75L16.468,18.734z"/>
+			<ellipse id="auge" cx="325" cy="70" rx="8" ry="10" fill="white" stroke="#cc9d00" stroke-width="0.5"/>
+			<ellipse id="auge" cx="306" cy="70" rx="8" ry="10" fill="white" stroke="#cc9d00" stroke-width="0.5"/>
+			<circle id="pupille" cx="325" cy="72" r="2" fill="black"/>
+			<circle id="pupille" cx="307" cy="72" r="2" fill="black"/>
+			<path desc="arm_rechts" transform="translate(340 90) scale(0.5)" stroke="none" style="fill:url(#grd_13)" d="M35.896,16.575c5.1,7.465-1.486,7.687-4.722,4.163c0.781,10.104-7.934,20.268-14.183,6.525
+						C11.57,56.049-5.2,22.747,1.471,6.884c5.555-15.92,24.847-1.444,34.118,9.357L35.896,16.575z"/>
+			<path desc="arm_links" transform="translate(280 90) scale(0.5)" stroke="none" style="fill:url(#grd_13)" d="M24.008,36.028c-7.018,5.699-7.783-0.847-4.54-4.361c-10.004,1.614-20.854-6.23-7.675-13.594
+						C-17.342,15.05,14.459-4.417,30.819,0.919c16.326,4.22,3.494,24.643-6.504,34.776L24.008,36.028z"/>
+		</g>
+		<!--**************************************************************************************-->
+		<g id="bert_O">
+			<g>
+				<circle id="fuss_L" cx="335" cy="100" r="10" fill="url(#grd_13)" transform="translate(340 105) skewX(35) translate(-340 -105)"/>
+				<animateTransform id="fla" attributeName="transform" type="rotate" values="0 340 105;-45 340 105;0 340 105" keyTimes="0;0.5;1" dur="0.3s" begin="bmove.begin"/>
+			</g>
+			<g>
+				<circle id="fuss_R" cx="305" cy="112" r="10" fill="url(#grd_13)" transform="translate(310 115) skewX(35) translate(-310 -115)"/>
+				<animateTransform id="fla" attributeName="transform" type="rotate" values="0 325 105;-45 325 105;0 325 105" keyTimes="0;0.5;1" dur="0.3s" begin="bmove.begin+0.1"/>
+			</g>
+			<circle id="ball" cx="320" cy="75" r="30" fill="url(#grd_13)"/>
+			<g transform="translate(347 -2) scale(0.9)">
+				<g transform="scale(-1 1)">
+					<path id="haare" fill="#dfb101" d="M1.559,85.5c-4.75-14,2.5-27.5,6-34.25c3.915-7.549,3.25-14.75,4.5-23c2.5,6.5,3.25,12.5,3.5,19.25c13.5-9.75,16.75-27.25,17.75-42.5c2.25,6,3.25,13.25,3.75,19.5c0.25,4-0.5,8.75,1,12.5c15.5-5.25,27.25-20.75,29-37c-0.5,15.5-4.75,29.75-8.75,44.5c11.5-0.25,26-7.5,26.75-19.5c-0.75,6.75-5,13-8.25,19c-4,7.25-12.75,11.5-20,15c-8.5,4-18,6-26.5,9.75c-9.25,4.25-11,4.75-16,14c-2.186,4.043-4.5,12.25-4,16.5c0,2.5-0.5,5.5-1.5,7.5L1.559,85.5z">
+						<animate attributeName="d" dur="0.3s" begin="bmove.begin+0.1s" values="M1.559,85.5c-4.75-14,2.5-27.5,6-34.25c3.915-7.549,3.25-14.75,4.5-23
+								c2.5,6.5,3.25,12.5,3.5,19.25c13.5-9.75,16.75-27.25,17.75-42.5c2.25,6,3.25,13.25,3.75,19.5c0.25,4-0.5,8.75,1,12.5
+								c15.5-5.25,27.25-20.75,29-37c-0.5,15.5-4.75,29.75-8.75,44.5c11.5-0.25,26-7.5,26.75-19.5c-0.75,6.75-5,13-8.25,19
+								c-4,7.25-12.75,11.5-20,15c-8.5,4-18,6-26.5,9.75c-9.25,4.25-11,4.75-16,14c-2.186,4.043-4.5,12.25-4,16.5
+								c0,2.5-0.5,5.5-1.5,7.5L1.559,85.5z;
+										
+								M1.559,85.25c-4.75-14,2.5-27.5,6-34.25c3.915-7.549-8.25-7.25-7-15.5
+								c2.5,6.5,14.75,5,15,11.75c13.5-9.75-16.25-27.75-15.25-43c2.25,6,36.25,13.75,36.75,20c0.25,4-0.5,8.75,1,12.5
+								c15.5-5.25-1-20,0.75-36.25c-0.5,15.5,23.5,29,19.5,43.75C69.809,44,84.309,12,85.059,0c-0.75,6.75-5,37.75-8.25,43.75
+								c-4,7.25-12.75,11.5-20,15c-8.5,4-18,6-26.5,9.75c-9.25,4.25-11,4.75-16,14c-2.186,4.043-4.5,12.25-4,16.5
+								c0,2.5-0.5,5.5-1.5,7.5L1.559,85.25z;
+										
+								M1.559,85.5c-4.75-14,2.5-27.5,6-34.25c3.915-7.549,3.25-14.75,4.5-23
+								c2.5,6.5,3.25,12.5,3.5,19.25c13.5-9.75,16.75-27.25,17.75-42.5c2.25,6,3.25,13.25,3.75,19.5c0.25,4-0.5,8.75,1,12.5
+								c15.5-5.25,27.25-20.75,29-37c-0.5,15.5-4.75,29.75-8.75,44.5c11.5-0.25,26-7.5,26.75-19.5c-0.75,6.75-5,13-8.25,19
+								c-4,7.25-12.75,11.5-20,15c-8.5,4-18,6-26.5,9.75c-9.25,4.25-11,4.75-16,14c-2.186,4.043-4.5,12.25-4,16.5
+								c0,2.5-0.5,5.5-1.5,7.5L1.559,85.5z" keyTimes="0;0.5;1"/>
+					</path>
+				</g>
+			</g>
+			<path desc="arm_links" transform="translate(295 80) scale(0.5) rotate(30)" stroke="none" style="fill:url(#grd_13)" d="M24.008,36.028c-7.018,5.699-7.783-0.847-4.54-4.361c-10.004,1.614-20.854-6.23-7.675-13.594C-17.342,15.05,14.459-4.417,30.819,0.919c16.326,4.22,3.494,24.643-6.504,34.776L24.008,36.028z"/>
+		</g>
+		<!--***********************************************************************************************-->
+		<g id="bert_L">
+			<g>
+				<circle id="fuss_L" cx="340" cy="105" r="10" fill="url(#grd_13)" transform="translate(300 105) skewX(-35) translate(-340 -105)"/>
+				<animateTransform id="fla" attributeName="transform" type="rotate" values="0 320 105;-45 320 105;0 320 105" keyTimes="0;0.5;1" dur="0.3s" begin="bmove.begin"/>
+			</g>
+			<g>
+				<circle id="fuss_R" cx="310" cy="117" r="10" fill="url(#grd_13)" transform="translate(325 115) skewX(-35) translate(-310 -115)"/>
+				<animateTransform id="fla" attributeName="transform" type="rotate" values="0 345 115;-45 345 115;0 345 115" keyTimes="0;0.5;1" dur="0.3s" begin="bmove.begin+0.1"/>
+			</g>
+			<path desc="arm_links" transform="translate(285 90) scale(0.5) rotate(-45)" stroke="none" style="fill:url(#grd_13)" d="M24.008,36.028c-7.018,5.699-7.783-0.847-4.54-4.361c-10.004,1.614-20.854-6.23-7.675-13.594C-17.342,15.05,14.459-4.417,30.819,0.919c16.326,4.22,3.494,24.643-6.504,34.776L24.008,36.028z"/>
+			<circle id="ball" cx="320" cy="75" r="30" fill="url(#grd_13)"/>
+			<path desc="arm_rechts" transform="translate(325 100) scale(0.5) rotate(-45)" stroke="none" style="fill:url(#grd_13)" d="M24.008,36.028c-7.018,5.699-7.783-0.847-4.54-4.361c-10.004,1.614-20.854-6.23-7.675-13.594C-17.342,15.05,14.459-4.417,30.819,0.919c16.326,4.22,3.494,24.643-6.504,34.776L24.008,36.028z"/>
+			<ellipse desc="auge" cx="300" cy="70" rx="5" ry="8" fill="white" stroke="#cc9d00" stroke-width="0.5"/>
+			<ellipse desc="auge" cx="313" cy="70" rx="8" ry="10" fill="white" stroke="#cc9d00" stroke-width="0.5"/>
+			<circle desc="pupille" cx="299" cy="70" r="2" fill="black"/>
+			<circle desc="pupille" cx="311" cy="70" r="2" fill="black"/>
+			<g transform="translate(298 85) scale(0.5)">
+				<path id="mund" fill="white" stroke="#cc9d00" d="M0,3.683C16.037,5.802,32.925,8.423,47.027,0C36.427,19.328,2.889,37.238,0,3.683"/></g>
+			<g transform="translate(345 3)">
+				<g transform="scale(-1 1)">
+					<path id="haare" fill="#dfb101" d="M44.227,54.734c11.829-5.907,29.473-40.5,44.285-22.838
+									C76.943,19.545,64.409,3.608,49.209,21.561c1.441-7.458,5.465-13.81,11.102-18.81C49.02-1.934,34.959,9.911,31.119,19.678
+									C31.803,13.13,32.264,6.393,33.932,0C22.513,8.653,14.209,16.15,8.727,29.823c0.565-1.597,0.737-3.244,0.515-4.94
+									C0.614,31.235,0.344,45.52,0,55.121c8.412-1.383,20.778-9.613,29.102-4.887c6.307,3.582,9.55,8.605,15.509,0.798">
+						<animate attributeName="d" dur="0.3s" begin="bmove.begin+0.1s" values="M44.227,54.734c11.829-5.907,29.473-40.5,44.285-22.838
+										C76.943,19.545,64.409,3.608,49.209,21.561c1.441-7.458,5.465-13.81,11.102-18.81C49.02-1.934,34.959,9.911,31.119,19.678
+										C31.803,13.13,32.264,6.393,33.932,0C22.513,8.653,14.209,16.15,8.727,29.823c0.565-1.597,0.737-3.244,0.515-4.94
+										C0.614,31.235,0.344,45.52,0,55.121c8.412-1.383,20.778-9.613,29.102-4.887c6.307,3.582,9.55,8.605,15.509,0.798;
+										M44.227,54.471C56.056,48.563,56.06,9.894,57.06,2.561
+										c-4.667,11,1.119,5.073-7.851,18.737C51.485,9.516,43.227,7.894,33.893,0.894c7,5,1.066,8.754-2.774,18.521
+										c0.684-6.548-13.06-14.688-16.726-17.688c5.667,8,0.483,12.91-5,26.583c1-3.333-6.504-10.422-6.726-12.119
+										C9.06,25.561-0.107,29.061,0,54.857c8.412-1.385,20.778-9.613,29.102-4.887c6.307,3.582,9.55,8.605,15.509,0.797;
+										M44.227,54.734c11.829-5.907,29.473-40.5,44.285-22.838
+										C76.943,19.545,64.409,3.608,49.209,21.561c1.441-7.458,5.465-13.81,11.102-18.81C49.02-1.934,34.959,9.911,31.119,19.678
+										C31.803,13.13,32.264,6.393,33.932,0C22.513,8.653,14.209,16.15,8.727,29.823c0.565-1.597,0.737-3.244,0.515-4.94
+										C0.614,31.235,0.344,45.52,0,55.121c8.412-1.383,20.778-9.613,29.102-4.887c6.307,3.582,9.55,8.605,15.509,0.798" keyTimes="0;0.5;1"/>
+					</path>
+				</g>
+			</g>
+			<g transform="translate(307 30)">
+				<g transform="scale(-1 1)">
+					<path id="haare_schatten" fill="#af9101" d="M0,28c2.344,0.728,4.645,0.031,7.624-3.872L7.239,27.83
+								c11.829-5.907,29.473-40.5,44.285-22.838C39.957-7.359,21.462,5.323,10.462,15.99L0,28z">
+						<animate attributeName="d" dur="0.3s" begin="bmove.begin+0.1s" values="M0,28c2.344,0.728,4.645,0.031,7.624-3.872L7.239,27.83
+								c11.829-5.907,29.473-40.5,44.285-22.838C39.957-7.359,21.462,5.323,10.462,15.99L0,28z;
+								
+								M0,31.891c2.382,0.784,4.707,0.128,7.733-3.838l-0.385,3.703C19.178,25.848,13.498,7.333,14.498,0
+								c-4.666,11-4.53,17.92-13.5,31.584L0,31.891z;
+								
+								M0,28c2.344,0.728,4.645,0.031,7.624-3.872L7.239,27.83
+								c11.829-5.907,29.473-40.5,44.285-22.838C39.957-7.359,21.462,5.323,10.462,15.99L0,28z" keyTimes="0;0.5;1"/>
+					</path>
+				</g>
+			</g>
+		</g>
+		<!--**************************************************************************************************-->
+		<g id="bert_R">
+			<g>
+				<circle id="fuss_L" cx="340" cy="105" r="10" fill="url(#grd_13)" transform="translate(340 105) skewX(35) translate(-340 -105)"/>
+				<animateTransform id="fla" attributeName="transform" type="rotate" values="0 340 105;45 340 105;0 340 105" keyTimes="0;0.5;1" dur="0.3s" begin="bmove.begin"/>
+			</g>
+			<g>
+				<circle id="fuss_R" cx="310" cy="117" r="10" fill="url(#grd_13)" transform="translate(310 115) skewX(35) translate(-310 -115)"/>
+				<animateTransform id="fla" attributeName="transform" type="rotate" values="0 315 105;45 325 105;0 315 105" keyTimes="0;0.5;1" dur="0.3s" begin="bmove.begin+0.1"/>
+			</g>
+			<path id="arm_rechts" transform="translate(340 75) scale(0.5) rotate(45)" stroke="none" style="fill:url(#grd_13)" d="M14.563,36.028c7.018,5.699,7.783-0.847,4.54-4.361c10.004,1.614,20.854-6.23,7.675-13.594C55.913,15.05,24.112-4.417,7.752,0.919c-16.326,4.22-3.494,24.643,6.504,34.776L14.563,36.028z"/>
+			<circle id="ball" cx="320" cy="75" r="30" fill="url(#grd_13)"/>
+			<g transform="translate(318 85) scale(0.5)">
+				<path id="mund" fill="white" stroke="#cc9d00" d="M47.027,3.683C30.99,5.802,14.103,8.423,0,0C10.601,19.328,44.139,37.238,47.027,3.683"/>
+			</g>
+			<g transform="translate(295 3)">
+				<path id="haare" fill="#dfb101" d="M44.227,54.734c11.829-5.907,29.473-40.5,44.285-22.838
+							C76.943,19.545,64.409,3.608,49.209,21.561c1.441-7.458,5.465-13.81,11.102-18.81C49.02-1.934,34.959,9.911,31.119,19.678
+							C31.803,13.13,32.264,6.393,33.932,0C22.513,8.653,14.209,16.15,8.727,29.823c0.565-1.597,0.737-3.244,0.515-4.94
+							C0.614,31.235,0.344,45.52,0,55.121c8.412-1.383,20.778-9.613,29.102-4.887c6.307,3.582,9.55,8.605,15.509,0.798">
+					<animate attributeName="d" dur="0.3s" begin="bmove.begin+0.1s" values="M44.227,54.734c11.829-5.907,29.473-40.5,44.285-22.838
+							C76.943,19.545,64.409,3.608,49.209,21.561c1.441-7.458,5.465-13.81,11.102-18.81C49.02-1.934,34.959,9.911,31.119,19.678
+							C31.803,13.13,32.264,6.393,33.932,0C22.513,8.653,14.209,16.15,8.727,29.823c0.565-1.597,0.737-3.244,0.515-4.94
+							C0.614,31.235,0.344,45.52,0,55.121c8.412-1.383,20.778-9.613,29.102-4.887c6.307,3.582,9.55,8.605,15.509,0.798;
+							M44.227,54.471C56.056,48.563,56.06,9.894,57.06,2.561
+							c-4.667,11,1.119,5.073-7.851,18.737C51.485,9.516,43.227,7.894,33.893,0.894c7,5,1.066,8.754-2.774,18.521
+							c0.684-6.548-13.06-14.688-16.726-17.688c5.667,8,0.483,12.91-5,26.583c1-3.333-6.504-10.422-6.726-12.119
+							C9.06,25.561-0.107,29.061,0,54.857c8.412-1.385,20.778-9.613,29.102-4.887c6.307,3.582,9.55,8.605,15.509,0.797;
+							M44.227,54.734c11.829-5.907,29.473-40.5,44.285-22.838
+							C76.943,19.545,64.409,3.608,49.209,21.561c1.441-7.458,5.465-13.81,11.102-18.81C49.02-1.934,34.959,9.911,31.119,19.678
+							C31.803,13.13,32.264,6.393,33.932,0C22.513,8.653,14.209,16.15,8.727,29.823c0.565-1.597,0.737-3.244,0.515-4.94
+							C0.614,31.235,0.344,45.52,0,55.121c8.412-1.383,20.778-9.613,29.102-4.887c6.307,3.582,9.55,8.605,15.509,0.798" keyTimes="0;0.5;1"/>
+				</path>
+			</g>
+			<path id="arm_links" transform="translate(300 85) scale(0.5) rotate(45)" stroke="none" style="fill:url(#grd_13)" d="M14.563,36.028c7.018,5.699,7.783-0.847,4.54-4.361c10.004,1.614,20.854-6.23,7.675-13.594C55.913,15.05,24.112-4.417,7.752,0.919c-16.326,4.22-3.494,24.643,6.504,34.776L14.563,36.028z"/>
+			<g transform="translate(332 30)">
+				<path id="haare_schatten" fill="#af9101" d="M0,28c2.344,0.728,4.645,0.031,7.624-3.872L7.239,27.83
+						c11.829-5.907,29.473-40.5,44.285-22.838C39.957-7.359,21.462,5.323,10.462,15.99L0,28z">
+					<animate attributeName="d" dur="0.3s" begin="bmove.begin+0.1s" values="M0,28c2.344,0.728,4.645,0.031,7.624-3.872L7.239,27.83
+								c11.829-5.907,29.473-40.5,44.285-22.838C39.957-7.359,21.462,5.323,10.462,15.99L0,28z;
+						
+								M0,31.891c2.382,0.784,4.707,0.128,7.733-3.838l-0.385,3.703C19.178,25.848,13.498,7.333,14.498,0
+								c-4.666,11-4.53,17.92-13.5,31.584L0,31.891z;
+						
+								M0,28c2.344,0.728,4.645,0.031,7.624-3.872L7.239,27.83
+								c11.829-5.907,29.473-40.5,44.285-22.838C39.957-7.359,21.462,5.323,10.462,15.99L0,28z" keyTimes="0;0.5;1"/>
+				</path>
+			</g>
+			<ellipse id="auge" cx="343" cy="70" rx="5" ry="8" fill="white" stroke="#cc9d00" stroke-width="0.5"/>
+			<ellipse id="auge" cx="330" cy="70" rx="8" ry="10" fill="white" stroke="#cc9d00" stroke-width="0.5"/>
+			<circle id="pupille" cx="345" cy="72" r="2" fill="black"/>
+			<circle id="pupille" cx="333" cy="72" r="2" fill="black"/>
+		</g>
+		<!--******************************************************************************************************-->
+		<g id="bert_U">
+			<g>
+				<circle id="fuss_L" cx="310" cy="100" r="10" fill="url(#grd_13)" transform="translate(310 100) skewX(-35) translate(-310 -100)"/>
+				<animateTransform id="fla" attributeName="transform" type="rotate" values="0 320 105;45 320 105;0 320 105" keyTimes="0;0.5;1" dur="0.3s" begin="bmove.begin"/>
+			</g>
+			<g>
+				<circle id="fuss_R" cx="335" cy="110" r="10" fill="url(#grd_13)" transform="translate(335 110) skewX(-35) translate(-335 -110)"/>
+				<animateTransform id="fla" attributeName="transform" type="rotate" values="0 345 115;45 305 115;0 345 115" keyTimes="0;0.5;1" dur="0.3s" begin="bmove.begin"/>
+			</g>
+			<circle id="ball" cx="320" cy="75" r="30" fill="url(#grd_13)"/>
+			<g transform="translate(291 -2) scale(0.9)">
+				<path id="haare" fill="#dfb101" d="M1.559,85.5c-4.75-14,2.5-27.5,6-34.25c3.915-7.549,3.25-14.75,4.5-23
+							c2.5,6.5,3.25,12.5,3.5,19.25c13.5-9.75,16.75-27.25,17.75-42.5c2.25,6,3.25,13.25,3.75,19.5c0.25,4-0.5,8.75,1,12.5
+							c15.5-5.25,27.25-20.75,29-37c-0.5,15.5-4.75,29.75-8.75,44.5c11.5-0.25,26-7.5,26.75-19.5c-0.75,6.75-5,13-8.25,19
+							c-4,7.25-12.75,11.5-20,15c-8.5,4-18,6-26.5,9.75c-9.25,4.25-11,4.75-16,14c-2.186,4.043-4.5,12.25-4,16.5
+							c0,2.5-0.5,5.5-1.5,7.5L1.559,85.5z">
+					<animate attributeName="d" dur="0.3s" begin="bmove.begin+0.1s" values="M1.559,85.5c-4.75-14,2.5-27.5,6-34.25c3.915-7.549,3.25-14.75,4.5-23
+							c2.5,6.5,3.25,12.5,3.5,19.25c13.5-9.75,16.75-27.25,17.75-42.5c2.25,6,3.25,13.25,3.75,19.5c0.25,4-0.5,8.75,1,12.5
+							c15.5-5.25,27.25-20.75,29-37c-0.5,15.5-4.75,29.75-8.75,44.5c11.5-0.25,26-7.5,26.75-19.5c-0.75,6.75-5,13-8.25,19
+							c-4,7.25-12.75,11.5-20,15c-8.5,4-18,6-26.5,9.75c-9.25,4.25-11,4.75-16,14c-2.186,4.043-4.5,12.25-4,16.5
+							c0,2.5-0.5,5.5-1.5,7.5L1.559,85.5z;
+							
+							M1.559,85.25c-4.75-14,2.5-27.5,6-34.25c3.915-7.549-8.25-7.25-7-15.5
+							c2.5,6.5,14.75,5,15,11.75c13.5-9.75-16.25-27.75-15.25-43c2.25,6,36.25,13.75,36.75,20c0.25,4-0.5,8.75,1,12.5
+							c15.5-5.25-1-20,0.75-36.25c-0.5,15.5,23.5,29,19.5,43.75C69.809,44,84.309,12,85.059,0c-0.75,6.75-5,37.75-8.25,43.75
+							c-4,7.25-12.75,11.5-20,15c-8.5,4-18,6-26.5,9.75c-9.25,4.25-11,4.75-16,14c-2.186,4.043-4.5,12.25-4,16.5
+							c0,2.5-0.5,5.5-1.5,7.5L1.559,85.25z;
+							
+							M1.559,85.5c-4.75-14,2.5-27.5,6-34.25c3.915-7.549,3.25-14.75,4.5-23
+							c2.5,6.5,3.25,12.5,3.5,19.25c13.5-9.75,16.75-27.25,17.75-42.5c2.25,6,3.25,13.25,3.75,19.5c0.25,4-0.5,8.75,1,12.5
+							c15.5-5.25,27.25-20.75,29-37c-0.5,15.5-4.75,29.75-8.75,44.5c11.5-0.25,26-7.5,26.75-19.5c-0.75,6.75-5,13-8.25,19
+							c-4,7.25-12.75,11.5-20,15c-8.5,4-18,6-26.5,9.75c-9.25,4.25-11,4.75-16,14c-2.186,4.043-4.5,12.25-4,16.5
+							c0,2.5-0.5,5.5-1.5,7.5L1.559,85.5z" keyTimes="0;0.5;1"/>
+				</path>
+			</g>
+			<path desc="arm_links" transform="translate(330 85) scale(0.5) rotate(-30)" stroke="none" style="fill:url(#grd_13)" d="M14.563,36.028c7.018,5.699,7.783-0.847,4.54-4.361c10.004,1.614,20.854-6.23,7.675-13.594C55.913,15.05,24.112-4.417,7.752,0.919c-16.326,4.22-3.494,24.643,6.504,34.776L14.563,36.028z"/>
+		</g>
+		<!--****************************************TEUFEL***************************************************************-->
+		<g id="teufel_R">
+			<g>
+				<circle id="tfr_L" cx="340" cy="105" r="10" fill="url(#grd_12)" transform="translate(340 105) skewX(35) translate(-340 -105)"/>
+			</g>
+			<g>
+				<circle id="tfr_R" cx="310" cy="117" r="10" fill="url(#grd_12)" transform="translate(310 115) skewX(35) translate(-310 -115)"/>
+			</g>
+			<path id="arm_rechts" transform="translate(340 75) scale(0.5) rotate(45)" stroke="none" style="fill:url(#grd_12)" d="M14.563,36.028c7.018,5.699,7.783-0.847,4.54-4.361c10.004,1.614,20.854-6.23,7.675-13.594C55.913,15.05,24.112-4.417,7.752,0.919c-16.326,4.22-3.494,24.643,6.504,34.776L14.563,36.028z"/>
+			<circle id="enemy" cx="320" cy="75" r="30" fill="url(#grd_12)"/>
+			<ellipse id="auge" cx="343" cy="70" rx="5" ry="3" style="fill:white;stroke:black;stroke-width:0.5" transform="rotate(-20 348 70)"/>
+			<ellipse id="auge" cx="330" cy="75" rx="8" ry="4" style="fill:white;stroke:black;stroke-width:0.5" transform="rotate(20 340 75)"/>
+			<circle id="pupille" cx="344" cy="70" r="1.8" fill="black"/>
+			<circle id="pupille" cx="333" cy="70" r="2" fill="black"/>
+			<path id="arm_links" transform="translate(300 85) scale(0.5) rotate(45)" stroke="none" style="fill:url(#grd_12)" d="M14.563,36.028c7.018,5.699,7.783-0.847,4.54-4.361c10.004,1.614,20.854-6.23,7.675-13.594C55.913,15.05,24.112-4.417,7.752,0.919c-16.326,4.22-3.494,24.643,6.504,34.776L14.563,36.028z"/>
+			<path desc="horn1" transform="translate(300 40) scale(0.5)" style="fill:url(#grd_12);stroke:url(#grd_12);stroke-width:0.5" d="M4.375,37c-6-8-5-27-2-37c10,14,34,37,2,35"/>
+			<path desc="horn2" transform="translate(325 35) scale(0.4)" style="fill:url(#grd_12);stroke:url(#grd_12);stroke-width:0.5" d="M16.066,37c6-8,5-27,2-37c-10,14-34,37-2,35"/>
+		</g>
+		<!--******************************************************************************************************-->
+		<g id="teufel_L">
+			<g>
+				<circle id="tfl_L" cx="340" cy="105" r="10" fill="url(#grd_12)" transform="translate(300 105) skewX(-35) translate(-340 -105)"/>
+			</g>
+			<g>
+				<circle id="tfl_R" cx="310" cy="117" r="10" fill="url(#grd_12)" transform="translate(325 115) skewX(-35) translate(-310 -115)"/>
+			</g>
+			<path desc="arm_links" transform="translate(285 90) scale(0.5) rotate(-45)" stroke="none" style="fill:url(#grd_12)" d="M24.008,36.028c-7.018,5.699-7.783-0.847-4.54-4.361c-10.004,1.614-20.854-6.23-7.675-13.594C-17.342,15.05,14.459-4.417,30.819,0.919c16.326,4.22,3.494,24.643-6.504,34.776L24.008,36.028z"/>
+			<circle id="enemy" cx="320" cy="75" r="30" fill="url(#grd_12)"/>
+			<path desc="arm_rechts" transform="translate(325 100) scale(0.5) rotate(-45)" stroke="none" style="fill:url(#grd_12)" d="M24.008,36.028c-7.018,5.699-7.783-0.847-4.54-4.361c-10.004,1.614-20.854-6.23-7.675-13.594C-17.342,15.05,14.459-4.417,30.819,0.919c16.326,4.22,3.494,24.643-6.504,34.776L24.008,36.028z"/>
+			<ellipse desc="auge" cx="303" cy="84.5" rx="5" ry="3" style="fill:white;stroke:black;stroke-width:0.5" transform="rotate(20 348 70)"/>
+			<ellipse desc="auge" cx="317" cy="59.5" rx="8" ry="4" style="fill:white;stroke:black;stroke-width:0.5" transform="rotate(-20 340 75)"/>
+			<circle desc="pupille" cx="301" cy="67" r="1.8" fill="black"/>
+			<circle desc="pupille" cx="311" cy="67" r="2" fill="black"/>
+			<path desc="horn1" transform="translate(325 40) scale(0.5)" style="fill:url(#grd_12);stroke:url(#grd_12);stroke-width:0.5" d="M16.066,37c6-8,5-27,2-37c-10,14-34,37-2,35"/>
+			<path desc="horn2" transform="translate(300 38) scale(0.4)" style="fill:url(#grd_12);stroke:url(#grd_12);stroke-width:0.5" d="M4.375,37c-6-8-5-27-2-37c10,14,34,37,2,35"/>
+		</g>
+		<!--******************************************************************************************************-->
+		<g id="teufel_OL">
+			<g>
+				<circle id="tfol_L" cx="335" cy="100" r="10" fill="url(#grd_12)" transform="translate(340 105) skewX(35) translate(-340 -105)"/>
+			</g>
+			<g>
+				<circle id="tfol_R" cx="305" cy="112" r="10" fill="url(#grd_12)" transform="translate(310 115) skewX(35) translate(-310 -115)"/>
+			</g>
+			<circle id="enemy" cx="320" cy="75" r="30" fill="url(#grd_12)"/>
+			<path desc="arm_links" transform="translate(295 80) scale(0.5) rotate(30)" stroke="none" style="fill:url(#grd_12)" d="M24.008,36.028c-7.018,5.699-7.783-0.847-4.54-4.361c-10.004,1.614-20.854-6.23-7.675-13.594C-17.342,15.05,14.459-4.417,30.819,0.919c16.326,4.22,3.494,24.643-6.504,34.776L24.008,36.028z"/>
+			<path desc="horn1" transform="translate(300 40) scale(0.5)" style="fill:url(#grd_12);stroke:url(#grd_12);stroke-width:0.5" d="M4.375,37c-6-8-5-27-2-37c10,14,34,37,2,35"/>
+			<path desc="horn2" transform="translate(325 35) scale(0.4)" style="fill:url(#grd_12);stroke:url(#grd_12);stroke-width:0.5" d="M16.066,37c6-8,5-27,2-37c-10,14-34,37-2,35"/>
+		</g>
+		<!--******************************************************************************************************-->
+		<g id="teufel_OR">
+			<g>
+				<circle id="tfor_L" cx="310" cy="100" r="10" fill="url(#grd_12)" transform="translate(310 100) skewX(-35) translate(-310 -100)"/>
+			</g>
+			<g>
+				<circle id="tfor_R" cx="335" cy="110" r="10" fill="url(#grd_12)" transform="translate(335 110) skewX(-35) translate(-335 -110)"/>
+			</g>
+			<circle id="enemy" cx="320" cy="75" r="30" fill="url(#grd_12)"/>
+			<path desc="arm_links" transform="translate(330 85) scale(0.5) rotate(-30)" stroke="none" style="fill:url(#grd_12)" d="M14.563,36.028c7.018,5.699,7.783-0.847,4.54-4.361c10.004,1.614,20.854-6.23,7.675-13.594C55.913,15.05,24.112-4.417,7.752,0.919c-16.326,4.22-3.494,24.643,6.504,34.776L14.563,36.028z"/>
+			<path desc="horn1" transform="translate(325 40) scale(0.5)" style="fill:url(#grd_12);stroke:url(#grd_12);stroke-width:0.5" d="M16.066,37c6-8,5-27,2-37c-10,14-34,37-2,35"/>
+			<path desc="horn2" transform="translate(300 38) scale(0.4)" style="fill:url(#grd_12);stroke:url(#grd_12);stroke-width:0.5" d="M4.375,37c-6-8-5-27-2-37c10,14,34,37,2,35"/>
+		</g>
+		<!--******************************************************************************************************-->
+	</defs>
+	<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+	<!-- **********************************END DEFS****************************************************-->
+	<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+	<!--*********************Background*****************************************************-->
+	<rect x="-100" y="0" fill="darkred" width="1000" height="1000">
+		<desc>rect describing the black Background</desc>
+	</rect>
+	<!--<a:audio id="theme" xlink:href="theme.mp3" volume="1" begin="0s" repeatCount="indefinite">
+	</a:audio>-->
+	<a:audio id="snd1" xlink:href="beep.wav" volume="0" begin="indefinite">
+	</a:audio>
+	<a:audio id="snd2" xlink:href="beep.wav" volume="0" begin="indefinite">
+	</a:audio>
+	<a:audio id="snd3" xlink:href="beep.wav" volume="0" begin="indefinite">
+	</a:audio>
+	<a:audio id="snd4" xlink:href="beep.wav" volume="0" begin="indefinite">
+	</a:audio>
+	<a:audio id="snd5" xlink:href="beep.wav" volume="0" begin="indefinite">
+	</a:audio>
+	<a:audio id="jump" xlink:href="boing1.wav" volume="0.3" begin="indefinite">
+	</a:audio>
+	<a:audio id="hit" xlink:href="beep.wav" volume="0.3" begin="indefinite">
+	</a:audio>
+	<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+	<!-- **********************************GameBoard****************************************************-->
+	<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+	<g id="gb" transform="translate(320 110)">
+	</g>
+	<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+	<!-- **********************************GameBoard****************************************************-->
+	<!-- ++++++++++++++++++++++++++++++++++++Bert+++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+	<g pointer-events="none" fill-opacity="1">
+		<g id="bert">
+			<use xlink:href="#bert_V"/>
+		</g>
+		<animateMotion id="bmove" begin="indefinite" dur="0.4s" fill="freeze">
+			<mpath id="bm2" xlink:href="#tp"/>
+		</animateMotion>
+		<animate id="blink" attributeName="fill-opacity" values="1;0.5;1;0.5;1;0.5;1;0.5;1;0.5;1" keyTimes="0;0.1;0.2;0.3;0.4;0.5;0.6;0.7;0.8;0.9;1.0" onend="endnoHit()" dur="0.5s" begin="indefinite" repeatCount="10"/>
+	</g>
+	<!--*************************************** Enemys *************************************************-->
+	<g id="em001" pointer-events="none" visibility="hidden">
+		<use id="em01" xlink:href="#teufel_R"/>
+		<animateMotion id="emove1" begin="indefinite" dur="0.4s" fill="freeze">
+			<mpath id="em1" xlink:href="#falldown1"/>
+		</animateMotion>
+	</g>
+	<g id="em002" pointer-events="none" visibility="hidden">
+		<use  id="em02" xlink:href="#teufel_R"/>
+		<animateMotion id="emove2" begin="indefinite" dur="0.4s" fill="freeze">
+			<mpath id="em2" xlink:href="#falldown2"/>
+		</animateMotion>
+	</g>
+	<g id="em003" pointer-events="none" visibility="hidden">
+		<use id="em03" xlink:href="#teufel_R"/>
+		<animateMotion id="emove3" begin="indefinite" dur="0.4s" fill="freeze">
+			<mpath id="em3" xlink:href="#falldown3"/>
+		</animateMotion>
+	</g>
+	<g  id="em004" pointer-events="none" visibility="hidden">
+		<use id="em04" xlink:href="#teufel_R"/>
+		<animateMotion id="emove4" begin="indefinite" dur="0.4s" fill="freeze">
+			<mpath id="em4" xlink:href="#falldown4"/>
+		</animateMotion>
+	</g>
+	<g id="em005" pointer-events="none" visibility="hidden">
+		<use id="em05" xlink:href="#teufel_R"/>
+		<animateMotion id="emove5" begin="indefinite" dur="0.4s" fill="freeze">
+			<mpath id="em5" xlink:href="#falldown5"/>
+		</animateMotion>
+	</g>
+	<!-- *************************************************************************************************-->
+	<rect x="750" y="0" width="150" height="750" fill="url(#grd_12)"/>
+	<rect x="750" y="452.5" width="130" height="50"/>
+	<text id="ClickCounter" font-size="45" fill="red" font-family="Seg7" x="870" y="500" text-anchor="end">0000</text>
+	<rect x="750" y="152.5" width="130" height="50"/>
+	<text id="Clock" font-size="45" fill="red" font-family="Seg7" x="870" y="200" text-anchor="end">00:00:00</text>
+	<!-- **********************************************************************************************-->
+	<rect x="-100" y="730" width="1000" height="105" fill="black"/>
+	<use id="live1" xlink:href="#bert_V" x="-450" y="1450" transform="scale(0.5)"/>
+	<use id="live2" xlink:href="#bert_V" x="-370" y="1450" transform="scale(0.5)"/>
+	<use id="live3" xlink:href="#bert_V" x="-290" y="1450" transform="scale(0.5)"/>
+	<use id="live4" xlink:href="#bert_V" x="-210" y="1450" transform="scale(0.5)"/>
+	<use id="live5" xlink:href="#bert_V" x="-130" y="1450" transform="scale(0.5)"/>
+	<use id="live6" xlink:href="#bert_V" x="-50" y="1450" transform="scale(0.5)"/>
+	<use id="live7" xlink:href="#bert_V" x="30" y="1450" transform="scale(0.5)"/>
+	<use id="live8" xlink:href="#bert_V" x="110" y="1450" transform="scale(0.5)"/>
+	<use id="live9" xlink:href="#bert_V" x="190" y="1450" transform="scale(0.5)"/>
+	<use id="live10" xlink:href="#bert_V" x="190" y="1450" transform="scale(0.5)"/>
+	<use id="live11" xlink:href="#bert_V" x="190" y="1450" transform="scale(0.5)"/>
+	<use id="live12" xlink:href="#bert_V" x="190" y="1450" transform="scale(0.5)"/>
+	<use id="live13" xlink:href="#bert_V" x="190" y="1450" transform="scale(0.5)"/>
+	<use id="live14" xlink:href="#bert_V" x="190" y="1450" transform="scale(0.5)"/>
+	<use id="live15" xlink:href="#bert_V" x="190" y="1450" transform="scale(0.5)"/>
+	<!-- *************************************************************************************************-->
+	<!-- *******************************************WINDOWS***********************************************-->
+	<!-- *************************************************************************************************-->
+	<g id="introwin" visibility="visible">
+		<rect x="-100" y="0" fill="url(#grd_15)" width="1000" height="800" fill-opacity="1"/>
+		<g transform="translate(0 -150)">
+			<use xlink:href="#wuerfel" x="50" y="150" transform="scale(4)"/>
+			<use xlink:href="#wuerfel" x="150" y="150" transform="scale(4)"/>
+			<use xlink:href="#wuerfel" x="100" y="75" transform="scale(4)"/>
+		</g>
+		<use id="logobernd" xlink:href="#bert_L" x="-265" y="0" transform="scale(4)"/>
+		<use id="logodevil" xlink:href="#teufel_R" x="-175" y="0" transform="scale(4)"/>
+		<rect rx="10" ry="10" x="-95" y="5" fill="none" stroke="white" width="990" height="790"/>
+		<text x="345" y="200" pointer-events="none" font-size="157" fill="url(#grd_16)" font-weight="900">Q</text>
+		<text x="25" y="610" pointer-events="none" font-size="175" fill="#13007c" font-weight="900" transform="skewY(25)">B</text>
+		<text x="240" y="800" pointer-events="none" font-size="175" fill="blue" font-weight="900" transform="skewY(-25)">E</text>
+		<text x="430" y="435" pointer-events="none" font-size="175" fill="#13007c" font-weight="900" transform="skewY(25)">R</text>
+		<text x="650" y="990" pointer-events="none" font-size="175" fill="blue" font-weight="900" transform="skewY(-25)">T</text>
+		<a xlink:href="">
+			<rect id="but1" rx="10" ry="10" x="305" y="250" width="195" height="40" fill="lightsteelblue" stroke="url(#grd_15)" stroke-width="2" onclick="NewGame()" fill-opacity="0.7">
+				<animateColor attributeName="fill" from="lightsteelblue" to="white" dur="0.5s" begin="but1.mouseover" fill="freeze"/>
+				<animateColor attributeName="fill" from="white" to="lightsteelblue" dur="0.5s" begin="but1.mouseout" fill="freeze"/>
+			</rect>
+			<text x="400" y="277" pointer-events="none" style="font-size:22;fill:mediumslateblue;font-weight:800" text-anchor="middle">NEW GAME
+				<animateColor attributeName="fill" from="mediumslateblue" to="darkblue" dur="0.5s" begin="but1.mouseover" fill="freeze"/>
+				<animateColor attributeName="fill" from="darkblue" to="mediumslateblue" dur="0.5s" begin="but1.mouseout" fill="freeze"/>
+			</text>
+		</a>
+		<a xlink:href="">
+			<rect id="but2" rx="10" ry="10" x="305" y="300" width="195" height="40" fill="lightsteelblue" stroke="url(#grd_15)" stroke-width="2" onclick="showOption()" fill-opacity="0.7">
+				<animateColor attributeName="fill" from="lightsteelblue" to="white" dur="0.5s" begin="but2.mouseover" fill="freeze"/>
+				<animateColor attributeName="fill" from="white" to="lightsteelblue" dur="0.5s" begin="but2.mouseout" fill="freeze"/>
+			</rect>
+			<text x="400" y="327" pointer-events="none" style="font-size:22;fill:mediumslateblue;font-weight:800" text-anchor="middle">OPTIONS
+				<animateColor attributeName="fill" from="mediumslateblue" to="darkblue" dur="0.5s" begin="but2.mouseover" fill="freeze"/>
+				<animateColor attributeName="fill" from="darkblue" to="mediumslateblue" dur="0.5s" begin="but2.mouseout" fill="freeze"/>
+			</text>
+		</a>
+		<a xlink:href="">
+			<rect id="but3" rx="10" ry="10" x="305" y="350" width="195" height="40" fill="lightsteelblue" stroke="url(#grd_15)" stroke-width="2" onclick="showHighscore()" fill-opacity="0.7">
+				<animateColor attributeName="fill" from="lightsteelblue" to="white" dur="0.5s" begin="but3.mouseover" fill="freeze"/>
+				<animateColor attributeName="fill" from="white" to="lightsteelblue" dur="0.5s" begin="but3.mouseout" fill="freeze"/>
+			</rect>
+			<text x="400" y="377" pointer-events="none" style="font-size:22;fill:mediumslateblue;font-weight:800" text-anchor="middle">HIGHSCORE
+				<animateColor attributeName="fill" from="mediumslateblue" to="darkblue" dur="0.5s" begin="but3.mouseover" fill="freeze"/>
+				<animateColor attributeName="fill" from="darkblue" to="mediumslateblue" dur="0.5s" begin="but3.mouseout" fill="freeze"/>
+			</text>
+		</a>
+		<a xlink:href="">
+			<rect id="but4" rx="10" ry="10" x="305" y="400" width="195" height="40" fill="lightsteelblue" stroke="url(#grd_15)" stroke-width="2" onclick="showHelp()" fill-opacity="0.7">
+				<animateColor attributeName="fill" from="lightsteelblue" to="white" dur="0.5s" begin="but4.mouseover" fill="freeze"/>
+				<animateColor attributeName="fill" from="white" to="lightsteelblue" dur="0.5s" begin="but4.mouseout" fill="freeze"/>
+			</rect>
+			<text x="400" y="427" pointer-events="none" style="font-size:22;fill:mediumslateblue;font-weight:800" text-anchor="middle">HELP
+				<animateColor attributeName="fill" from="mediumslateblue" to="darkblue" dur="0.5s" begin="but4.mouseover" fill="freeze"/>
+				<animateColor attributeName="fill" from="darkblue" to="mediumslateblue" dur="0.5s" begin="but4.mouseout" fill="freeze"/>
+			</text>
+		</a>
+	</g>
+	<!--*************************NEXTLEVEL***********************************-->
+	<g id="nextLevelWindow" visibility="hidden">
+		<rect x="-100" y="0" fill="midnightblue" width="1000" height="1000" fill-opacity="0.5"/>
+		<text x="250" y="400" font-size="50" fill="url(#grd_13)" pointer-events="none" font-weight="800">LEVEL DONE</text>
+		<a xlink:href="">
+			<rect x="300" y="450" rx="10" ry="10" width="195" height="40" fill="url(#grd_13)" stroke="url(#grd_14)"/>
+			<text x="395" y="477" font-size="22" fill="mediumblue" font-weight="800" text-anchor="middle">NEXT LEVEL</text>
+			<rect x="300" y="450" rx="10" ry="10" width="195" height="40" onclick="NextLevel()" opacity="0"/>
+		</a>
+	</g>
+	<!--************************GAMEOVER*******************************-->
+	<g id="GameOverWindow" visibility="hidden">
+	
+
+		<rect x="-100" y="0" fill="midnightblue" width="1000" height="1000" fill-opacity="0.5"/>
+		<text x="100" y="120" font-size="100" fill="url(#grd_13)" pointer-events="none" font-weight="800">GAME OVER</text>
+		<text x="350" y="300" font-size="50" fill="url(#grd_13)" pointer-events="none" font-weight="800">LEVEL: </text><text id="geolevel" x="650" y="300" font-size="50" fill="url(#grd_13)" pointer-events="none" font-weight="800">1</text>
+		<text x="350" y="350" font-size="50" fill="url(#grd_13)" pointer-events="none" font-weight="800">POINTS: </text><text id="geoclicks" x="650" y="350" font-size="50" fill="url(#grd_13)" pointer-events="none" font-weight="800">1200</text>
+		
+		<a xlink:href="" transform="translate(250 280)">
+			<rect x="300" y="450" rx="10" ry="10" width="195" height="40" fill="url(#grd_13)" stroke="url(#grd_14)"/>
+			<text x="400" y="477" font-size="22" fill="mediumblue" font-weight="800" text-anchor="middle">SAVE</text>
+			<rect x="300" y="450" rx="10" ry="10" width="195" height="40" onclick="post()" opacity="0"/>
+		</a>
+		<rect x="-50" y="645" width="750" height="50" fill="black"/>
+			<g id="keyboard" transform="translate(-50 250)"/>
+
+<g transform="translate(-50 550)" onclick="deleteLetter()">
+<rect x="0" y="0" rx="5" ry="5" width="40" fill-opacity="0" style="stroke:url(#grd_13)" stroke-width="5"  height="40"/>
+<text pointer-events="none"  x="20" y="30" font-size="14pt" style="fill:url(#grd_13);font-weight:800" text-anchor="middle">del</text>
+</g>
+	</g>
+	<!--**************************CONTROL WINDOW******************************-->
+	<g id="ControlWindow" visibility="hidden">
+		<rect x="-100" y="0" fill="midnightblue" width="1000" height="1000" fill-opacity="0.5"/>
+		<g transform="translate(10 45) scale(0.5)">
+			<use xlink:href="#wuerfel_1" x="-50" y="50" transform="scale(0.5)"/>
+			<use xlink:href="#wuerfel_1" x="-100" y="125" transform="scale(0.5)"/>
+			<use xlink:href="#wuerfel_1" x="0" y="125" transform="scale(0.5)"/>
+		</g>
+		<text x="30" y="90" pointer-events="none" font-size="50" fill="url(#grd_13)" font-weight="800">OPTIONS</text>
+		<rect x="-27" y="126" rx="23" ry="23" width="848" height="207" fill-opacity="0.9" fill="none" stroke="gold" stroke-width="1" shape-rendering="optimizeSpeed"/>
+		<rect x="-23" y="131" rx="20" ry="20" width="840" height="198" fill-opacity="0.9" fill="antiquewhite" shape-rendering="optimizeSpeed"/>
+		<text x="700" y="123" pointer-events="none" font-size="20" fill="url(#grd_13)">KEYBOARD</text>
+		<!--*************************************************-->
+		<g transform="translate(-80 50) scale(0.6)">
+			<!--*****CLICK TO CHANGE****-->
+			<g transform="translate(0 30)">
+				<text x="680" y="180" font-weight="800" pointer-events="none" fill="mediumblue" text-anchor="end" font-size="30">
+					CLICK TO CHANGE:
+				</text>
+				<a xlink:href="">
+					<text x="900" y="260" pointer-events="none" fill="mediumblue" text-anchor="end" font-size="30" font-weight="100">
+						move left down______________
+						<tspan font-weight="800"> (S)</tspan>
+						<set attributeName="fill" to="red" begin="w_colorS.mouseover;t_colorS.mouseover" fill="freeze"/>
+						<set attributeName="fill" to="mediumblue" begin="w_colorS.mouseout;t_colorS.mouseout" fill="freeze"/>
+					</text>
+					<rect id="t_colorS" x="395" y="235" width="505" height="30" opacity="0" onclick="prepareDownLeft()"/>
+				</a>
+				<a xlink:href="">
+					<text x="900" y="300" pointer-events="none" fill="mediumblue" text-anchor="end" font-size="30" font-weight="100">
+						move left up _____________
+						<tspan font-weight="800"> (W)</tspan>
+						<set attributeName="fill" to="red" begin="w_colorW.mouseover;t_colorW.mouseover" fill="freeze"/>
+						<set attributeName="fill" to="mediumblue" begin="w_colorW.mouseout;t_colorW.mouseout" fill="freeze"/>
+					</text>
+					<rect id="t_colorW" x="395" y="275" width="505" height="30" opacity="0" onclick="prepareUpLeft()"/>
+				</a>
+				<a xlink:href="">
+					<text x="900" y="340" pointer-events="none" fill="mediumblue" text-anchor="end" font-size="30" font-weight="100">
+						move right up______________
+						<tspan font-weight="800"> (E)</tspan>
+						<set attributeName="fill" to="red" begin="w_colorE.mouseover;t_colorE.mouseover" fill="freeze"/>
+						<set attributeName="fill" to="mediumblue" begin="w_colorE.mouseout;t_colorE.mouseout" fill="freeze"/>
+					</text>
+					<rect id="t_colorE" x="395" y="315" width="505" height="30" opacity="0" onclick="prepareUpRight()"/>
+				</a>
+				<a xlink:href="">
+					<text x="900" y="380" pointer-events="none" fill="mediumblue" text-anchor="end" font-size="30" font-weight="100">
+						move right down______________
+						<tspan font-weight="800"> (D)</tspan>
+						<set attributeName="fill" to="red" begin="w_colorD.mouseover;t_colorD.mouseover" fill="freeze"/>
+						<set attributeName="fill" to="mediumblue" begin="w_colorD.mouseout;t_colorD.mouseout" fill="freeze"/>
+					</text>
+					<rect id="t_colorD" x="395" y="355" width="505" height="30" opacity="0" onclick="prepareDownRight()"/>
+				</a>
+			</g>
+			<!--*****WUERFEL CHANGE****-->
+			<use xlink:href="#wuerfel" x="250" y="275"/>
+			<a xlink:href="">
+				<use id="w_colorS" xlink:href="#wuerfel" x="200" y="350" onclick="prepareDownLeft()">
+					<set attributeName="href" from="#wuerfel" to="#wuerfel_1" begin="w_colorS.mouseover;t_colorS.mouseover" fill="freeze"/>
+					<set attributeName="href" from="#wuerfel_1" to="#wuerfel" begin="w_colorS.mouseout;t_colorS.mouseout" fill="freeze"/>
+				</use>
+				<text id="key_downleft" pointer-events="none" fill="blue" font-weight="900" font-size="38" x="185" y="365">S</text>
+			</a>
+			<a xlink:href="">
+				<use id="w_colorE" xlink:href="#wuerfel" x="300" y="200" onclick="prepareUpRight()">
+					<set attributeName="href" from="#wuerfel" to="#wuerfel_1" begin="w_colorE.mouseover;t_colorE.mouseover" fill="freeze"/>
+					<set attributeName="href" from="#wuerfel_1" to="#wuerfel" begin="w_colorE.mouseout;t_colorE.mouseout" fill="freeze"/>
+				</use>
+				<text id="key_upright" pointer-events="none" fill="blue" font-weight="900" font-size="38" x="285" y="215">E</text>
+			</a>
+			<a xlink:href="">
+				<use id="w_colorD" xlink:href="#wuerfel" x="300" y="350" onclick="prepareDownRight()">
+					<set attributeName="href" from="#wuerfel" to="#wuerfel_1" begin="w_colorD.mouseover;t_colorD.mouseover" fill="freeze"/>
+					<set attributeName="href" from="#wuerfel_1" to="#wuerfel" begin="w_colorD.mouseout;t_colorD.mouseout" fill="freeze"/>
+				</use>
+				<text id="key_downright" pointer-events="none" fill="blue" font-weight="900" font-size="38" x="285" y="365">D</text>
+			</a>
+			<a xlink:href="">
+				<use id="w_colorW" xlink:href="#wuerfel" x="200" y="200" onclick="prepareUpLeft()">
+					<set attributeName="href" from="#wuerfel" to="#wuerfel_1" begin="w_colorW.mouseover;t_colorW.mouseover" fill="freeze"/>
+					<set attributeName="href" from="#wuerfel_1" to="#wuerfel" begin="w_colorW.mouseout;t_colorW.mouseout" fill="freeze"/>
+				</use>
+				<text id="key_upleft" pointer-events="none" fill="blue" font-weight="900" font-size="38" x="180" y="215">W</text>
+			</a>
+		</g>
+		<use id="logobert_O" xlink:href="#bert_L" x="-185" y="325" transform="scale(0.5)"/>
+		<!--*************************************************-->
+		<rect x="-27" y="376" rx="23" ry="23" width="848" height="107" fill-opacity="0.9" fill="none" stroke="gold" stroke-width="1" shape-rendering="optimizeSpeed"/>
+		<rect x="-23" y="380" rx="20" ry="20" width="840" height="98" fill-opacity="0.9" fill="antiquewhite" shape-rendering="optimizeSpeed"/>
+		<text x="735" y="373" pointer-events="none" font-size="20" fill="url(#grd_13)">SOUND</text>
+		<use id="logodevil_O" xlink:href="#teufel_L" x="520" y="395" transform="scale(0.9)"/>
+		<!--*************************************************-->
+		<rect x="-27" y="526" rx="23" ry="23" width="848" height="107" fill-opacity="0.9" fill="none" stroke="gold" stroke-width="1" shape-rendering="optimizeSpeed"/>
+		<rect x="-23" y="530" rx="20" ry="20" width="840" height="98" fill-opacity="0.9" fill="antiquewhite" shape-rendering="optimizeSpeed"/>
+		<text x="715" y="523" pointer-events="none" font-size="20" fill="url(#grd_13)">GRAPHIC</text>
+		<use id="logobert_OG" xlink:href="#bert_R" x="-290" y="675" transform="scale(0.78)"/>
+		<a xlink:href="">
+			<rect id="r_ok" x="615" y="660" rx="10" ry="10" width="200" height="40" fill="url(#grd_17)" stroke="url(#grd_18)" stroke-width="1" onclick="OptionOK()">
+				<set attributeName="fill" from="url(#grd_13)" to="url(#grd_17)" begin="r_ok.mouseout" fill="freeze"/>
+				<set attributeName="fill" from="url(#grd_17)" to="url(#grd_13)" begin="r_ok.mouseover" fill="freeze"/>
+				<set attributeName="stroke" from="url(#grd_14)" to="url(#grd_18)" begin="r_ok.mouseout" fill="freeze"/>
+				<set attributeName="stroke" from="url(#grd_18)" to="url(#grd_14)" begin="r_ok.mouseover" fill="freeze"/>
+			</rect>
+			<text x="695" y="685" pointer-events="none" font-size="20" font-weight="800" fill="gold">OK
+				<set attributeName="fill" from="green" to="gold" begin="r_ok.mouseout" fill="freeze"/>
+				<set attributeName="fill" from="gold" to="green" begin="r_ok.mouseover" fill="freeze"/>
+			</text>
+		</a>
+	</g>
+	<!--**********************************HELP WINDOW***********************-->
+	<g id="HelpWindow" visibility="hidden">
+		<rect x="-100" y="0" fill="midnightblue" width="1000" height="1000" fill-opacity="0.5"/>
+		<g transform="translate(10 45) scale(0.5)">
+			<use xlink:href="#wuerfel_1" x="-50" y="50" transform="scale(0.5)"/>
+			<use xlink:href="#wuerfel_1" x="-100" y="125" transform="scale(0.5)"/>
+			<use xlink:href="#wuerfel_1" x="0" y="125" transform="scale(0.5)"/>
+		</g>
+		<text x="30" y="90" pointer-events="none" font-size="50" fill="url(#grd_13)" font-weight="800">HELP</text>
+		<rect x="-27" y="126" rx="23" ry="23" width="848" height="547" fill-opacity="0.9" fill="none" stroke="gold" stroke-width="1" shape-rendering="optimizeSpeed"/>
+		<rect x="-23" y="131" rx="20" ry="20" width="840" height="538" fill-opacity="0.9" fill="antiquewhite" shape-rendering="optimizeSpeed"/>
+		<text x="670" y="123" pointer-events="none" font-size="20" fill="url(#grd_13)">HOW TO PLAY</text>
+		<a xlink:href="" transform="translate(0 50)">
+			<rect id="help_ok" x="615" y="660" rx="10" ry="10" width="200" height="40" fill="url(#grd_17)" stroke="url(#grd_18)" stroke-width="1" onclick="HelpOK()">
+				<set attributeName="fill" from="url(#grd_13)" to="url(#grd_17)" begin="help_ok.mouseout" fill="freeze"/>
+				<set attributeName="fill" from="url(#grd_17)" to="url(#grd_13)" begin="help_ok.mouseover" fill="freeze"/>
+				<set attributeName="stroke" from="url(#grd_14)" to="url(#grd_18)" begin="help_ok.mouseout" fill="freeze"/>
+				<set attributeName="stroke" from="url(#grd_18)" to="url(#grd_14)" begin="help_ok.mouseover" fill="freeze"/>
+			</rect>
+			<text x="695" y="685" pointer-events="none" font-size="20" font-weight="800" fill="gold">OK
+				<set attributeName="fill" from="green" to="gold" begin="help_ok.mouseout" fill="freeze"/>
+				<set attributeName="fill" from="gold" to="green" begin="help_ok.mouseover" fill="freeze"/>
+			</text>
+		</a>
+	</g>
+	<!--**********************************HIGHSCORE***********************-->
+	<g id="HighscoreWindow" visibility="hidden">
+		<rect x="-100" y="0" fill="midnightblue" width="1000" height="1000" fill-opacity="0.5"/>
+		<g transform="translate(10 45) scale(0.5)">
+			<use xlink:href="#wuerfel_1" x="-50" y="50" transform="scale(0.5)"/>
+			<use xlink:href="#wuerfel_1" x="-100" y="125" transform="scale(0.5)"/>
+			<use xlink:href="#wuerfel_1" x="0" y="125" transform="scale(0.5)"/>
+		</g>
+		<text x="30" y="90" pointer-events="none" font-size="50" fill="url(#grd_13)" font-weight="800">HIGHSCORE</text>
+		<rect x="-27" y="126" rx="23" ry="23" width="848" height="547" fill-opacity="0.9" fill="none" stroke="gold" stroke-width="1" shape-rendering="optimizeSpeed"/>
+		<rect x="-23" y="131" rx="20" ry="20" width="840" height="538" fill-opacity="0.9" fill="antiquewhite" shape-rendering="optimizeSpeed"/>
+		<text x="730" y="123" pointer-events="none" font-size="20" fill="url(#grd_13)">TOP 100</text>
+		<a xlink:href="" transform="translate(0 50)">
+			<rect id="high_ok" x="615" y="660" rx="10" ry="10" width="200" height="40" fill="url(#grd_17)" stroke="url(#grd_18)" stroke-width="1" onclick="HighscoreOK()">
+				<set attributeName="fill" from="url(#grd_13)" to="url(#grd_17)" begin="high_ok.mouseout" fill="freeze"/>
+				<set attributeName="fill" from="url(#grd_17)" to="url(#grd_13)" begin="high_ok.mouseover" fill="freeze"/>
+				<set attributeName="stroke" from="url(#grd_14)" to="url(#grd_18)" begin="high_ok.mouseout" fill="freeze"/>
+				<set attributeName="stroke" from="url(#grd_18)" to="url(#grd_14)" begin="high_ok.mouseover" fill="freeze"/>
+			</rect>
+			<text x="695" y="685" pointer-events="none" font-size="20" font-weight="800" fill="gold">OK
+				<set attributeName="fill" from="green" to="gold" begin="high_ok.mouseout" fill="freeze"/>
+				<set attributeName="fill" from="gold" to="green" begin="high_ok.mouseover" fill="freeze"/>
+			</text>
+		</a>
+<g id="liste" transform="translate(0 200)" ><g/>
+</g>
+<rect onclick="showpage(1)" width="50" height="20" x="10" y="580"/>
+<rect onclick="showpage(2)" width="50" height="20" x="70" y="580"/>
+<rect onclick="showpage(3)" width="50" height="20" x="130" y="580"/>
+<rect onclick="showpage(4)" width="50" height="20" x="190" y="580"/>
+<rect onclick="showpage(5)" width="50" height="20" x="250" y="580"/>
+	</g>
+	<script><![CDATA[
+	//***********************************************************************************************************************
+	//************  Q-BERT 1.0 (SVG-Version) ********************************************************************************
+	//************                                                                               ******************************************************
+	//************                                                                               ******************************************************
+	//************                                                                               ******************************************************
+	//************                                                                               ******************************************************
+	//************                                                                               ******************************************************
+	//************                                                                               ******************************************************
+	//************                                                                               ******************************************************
+	//************                                              copyright 2004   H.WILL ******************************************************
+	//***********************************************************************************************************************
+	var xlinkns="http://www.w3.org/1999/xlink"
+	var nfall=1 //were to put the bombs
+	var GameState="intro"
+	var board=new Array(36)//gameboard
+	var epos=new Array(5)//enemyPositions
+	var eAnim=new Array(5)//enemyAnimations
+	var em2=new Array(5)//enymyAnimationPath
+	var em1=new Array(5)//enymyAnimationPath
+	var snd=new Array(5)//enemySounds
+	var est=new Array(5)//enemyStartfield
+	var levellist=document.getElementsByTagName("level")
+	var qState="hit"
+	var introwin=document.getElementById("introwin")
+	var controlwin=document.getElementById("ControlWindow")	
+	var helpwin=document.getElementById("HelpWindow")	
+	var highscorewin=document.getElementById("HighscoreWindow")	
+
+	var nLw=document.getElementById("nextLevelWindow")
+	var mAnim=document.getElementById("bmove")
+	var fla=document.getElementById("fla")
+	var bm2=document.getElementById("bm2")
+	var blink=document.getElementById("blink")	
+	//var jump=document.getElementById("jump")//sound for jumping
+	//var hit=document.getElementById("hit")//sound for hits
+	var timer=0
+	var level=1
+	var lives=5//lives
+	var redf=0//counter for goal Condition
+        var ColorCount=1
+	var enemyCount=5
+	var lcount=0//letters in name
+	var totclick=0
+	var tottime=0
+	var totp=0
+	var eold=0 //the field from were i came
+	var SVGboard=new Array(36)
+	var position=0
+	var clicks=0
+	var isAnimating=0
+        var Colors1=new Array("darkred","darkblue","darkmagenta","green")
+        var Colors2=new Array("red"    ,"blue"      ,"magenta","lawngreen")
+	var Colors3=new Array("maroon","#13007c","#73096b","darkgreen")
+	var st=""
+	var btn_upleft=119
+	var btn_upright=101
+	var btn_downleft=115
+	var btn_downright=100
+	
+	est[1]=7
+	est[2]=56
+	est[3]=27
+        est[4]=12
+	est[5]=33	
+	epos[1]=-1
+	epos[2]=-1
+	epos[3]=-1
+	epos[4]=-1	
+	epos[5]=-1	
+	
+	
+	snd[1]=document.getElementById("snd1")
+	snd[2]=document.getElementById("snd2")
+	snd[3]=document.getElementById("snd3")
+	snd[4]=document.getElementById("snd4")
+	snd[5]=document.getElementById("snd5")	
+	eAnim[1]=document.getElementById("emove1")
+	eAnim[2]=document.getElementById("emove2")
+	eAnim[3]=document.getElementById("emove3")
+	eAnim[4]=document.getElementById("emove4")	
+	eAnim[5]=document.getElementById("emove5")	
+	em2[1]=document.getElementById("em1")
+	em2[2]=document.getElementById("em2")
+	em2[3]=document.getElementById("em3")
+	em2[4]=document.getElementById("em4")
+	em2[5]=document.getElementById("em5")	
+	em1[1]=document.getElementById("em01")
+	em1[2]=document.getElementById("em02")
+	em1[3]=document.getElementById("em03")
+	em1[4]=document.getElementById("em04")
+	em1[5]=document.getElementById("em05")	
+	var ttc=0
+var ttimer=0
+	//**************************************** Initialization**********************************************************************************************************
+	createGame()
+	createAlpha()
+	function prepareUpLeft(){GameState="setbtn_upleft"
+	
+	}	
+	function prepareUpRight(){GameState="setbtn_upright"
+	
+	}	
+	function prepareDownLeft(){GameState="setbtn_downleft"
+	
+	}	
+	function prepareDownRight(){GameState="setbtn_downright"
+	
+	}		
+	function endnoHit(){qState="hit"}
+	function createGame(){
+	var c=0
+	for(var i=0;i<=7;i++){
+		for(var j=0;j<=7;j++){board[c]=-1;c++}
+		for(var j=0;j<=(7-i);j++){
+				p=i*8+j
+				board[p]=1
+				
+				var n=document.getElementById("wuerfel").cloneNode(true)
+				
+				n.getElementsByTagName("path").item(4).setAttribute("id","ld_"+p)
+				n.getElementsByTagName("path").item(3).setAttribute("id","rd_"+p)
+				n.getElementsByTagName("path").item(5).setAttribute("id","ru_"+p)
+				n.getElementsByTagName("path").item(6).setAttribute("id","lu_"+p)
+				var x=i*50-(j*50)
+				var y=i*75+(j*75)
+				n.getElementsByTagName("path").item(4).setAttribute("d","M"+(x)+" "+(y-25)+"C"+(x)+" "+(y-100)+" "+(x-50)+" "+(y-75)+" "+(x-50)+" "+(y+75))
+				n.getElementsByTagName("path").item(3).setAttribute("d","M"+(x)+" "+(y-25)+"C"+(x)+" "+(y-100)+" "+(x+50)+" "+(y-75)+" "+(x+50)+" "+(y+75))
+				n.getElementsByTagName("path").item(5).setAttribute("d","M"+(x)+" "+(y-25)+"C"+(x)+" "+(y-125)+" "+(x-50)+" "+(y-175)+" "+(x-50)+" "+(y-75))
+				n.getElementsByTagName("path").item(6).setAttribute("d","M"+(x)+" "+(y-25)+"C"+(x)+" "+(y-125)+" "+(x+50)+" "+(y-175)+" "+(x+50)+" "+(y-75))
+				n.setAttribute("onclick","selectMove("+p+")")
+				n.setAttribute("transform","translate("+x+","+y+")")
+				SVGboard[p]=n
+				document.getElementById("gb").appendChild(n)
+		}
+	}
+	//*************************************************************************************************************************************************************
+	}
+	
+	function OptionOK(){
+	       controlwin.setAttribute("visibility","hidden")
+	}
+	function showOption(){
+	       controlwin.setAttribute("visibility","visible")
+	}
+	function showHelp(){
+	       helpwin.setAttribute("visibility","visible")
+	}
+	function HelpOK(){
+	       helpwin.setAttribute("visibility","hidden")
+	}
+	function showHighscore(){
+
+load2()
+	       highscorewin.setAttribute("visibility","visible")
+	}
+	function HighscoreOK(){
+
+n=parseXML("<g/>",document)
+var li=document.getElementById("liste")
+li.replaceChild(n,li.firstChild)
+	       highscorewin.setAttribute("visibility","hidden")
+	}
+	
+	function stopGame(){
+	if(GameState !="stoped"){
+	GameState="stoped"
+	totp+=Math.floor((redf/clicks)*1000+(1200-(ttc)))
+	ttc=0
+	clicks=0
+	//clearInterval(timer)
+	stopTimer()}
+	}
+	function startGame(){
+	ttc=0
+	GameState="play"
+	startEnemies()
+	ttimer=window.setTimeout("TimeTimer()",100)
+	}	
+	function NewGame(){
+	lives=2
+	level=0
+	clicks=0
+	totclicks=0
+	tottime=0
+	totp=0
+	for(var i=1;i<=lives;i++){
+	document.getElementById("live"+i).setAttribute("visibility","visible")
+	}
+	for(var i=lives+1;i<=15;i++){
+	document.getElementById("live"+i).setAttribute("visibility","hidden")
+	}
+	document.getElementById("introwin").setAttribute("visibility","hidden")
+	for(var i=1;i<=5;i++){
+	document.getElementById("em00"+i).setAttribute("visibility","hidden")
+	}
+        NextLevel()
+	}
+	function NextLevel(){
+lives++
+document.getElementById("live"+lives).setAttribute("visibility","visible")
+	document.getElementById("GameOverWindow").setAttribute("visibility","hidden")
+	
+	       nLw.setAttribute("visibility","hidden")
+		for(var i=0;i<=7;i++){
+			for(var j=0;j<=(7-i);j++){
+			p=i*8+j
+			board[p]=1
+			SVGboard[p].getElementsByTagName("path").item(0).setAttribute("fill",Colors1[1])
+			SVGboard[p].getElementsByTagName("path").item(1).setAttribute("fill",Colors2[1])
+			SVGboard[p].getElementsByTagName("path").item(2).setAttribute("fill",Colors3[1])
+			}
+        	}
+		position=0		
+		redf=0
+				var o=document.getElementById("bert")
+				var n=document.getElementById("bert_L").cloneNode(true)
+				n.setAttribute("id","bert")
+				o.parentNode.replaceChild(n,o)
+				bm2.setAttribute("xlink:href","#set2start")
+				mAnim.removeEventListener("end",changeColor,false)
+				mAnim.beginElement()
+				//jump.beginElement()
+
+
+level++
+		
+		
+		
+		
+		ColorCount=levellist.item(level-1).getAttribute("colors")
+		enemyCount=levellist.item(level-1).getAttribute("enemies")
+	       for(var j=1;j<=enemyCount;j++){
+	       em2[j].setAttribute("xlink:href","#falldown"+j)}
+	       startGame()
+	}
+
+function TimeTimer(){
+ttc++
+if ((ttc%10)==0)
+{MoveEnemy()}
+document.getElementById("Clock").firstChild.data = 1200-ttc;
+if (ttc<1200 ){ttimer=window.setTimeout("TimeTimer()",100)}
+if (ttc>=1200 ){
+
+document.getElementById("GameOverWindow").setAttribute("visibility","visible")
+
+document.getElementById("geolevel").firstChild.data=level
+document.getElementById("geoclicks").firstChild.data=totp
+
+stopGame()
+}
+}
+function stopTimer()
+{
+window.clearTimeout(ttimer)
+}
+	function startEnemies(){
+
+		for(var i=1;i<=enemyCount;i++){
+			eAnim[i].parentNode.setAttribute("visibility","visible")
+			epos[i]=est[i]
+			eAnim[i].beginElement()
+		}
+		//timer=setInterval("MoveEnemy()",500)//enemy Timer
+	}
+	//********************************************************************************************************************************************************
+	
+	function MoveEnemy(){
+		for(var i=1;i<=enemyCount;i++){
+			var r=Math.ceil(Math.random()*4)
+			if (r==1){if(board[epos[i]+1]>=0){if((epos[i])!=7){
+				em2[i].setAttribute("xlink:href","#ld_"+epos[i])
+				em1[i].setAttributeNS(xlinkns,"href","#teufel_L")
+				epos[i]++
+				eAnim[i].beginElement()
+				snd[i].beginElement()
+			}}}
+			if (r==2){if(board[epos[i]-1]>=0){if((epos[i])!=8){
+				em2[i].setAttribute("xlink:href","#lu_"+epos[i])
+				em1[i].setAttributeNS(xlinkns,"href","#teufel_OR")
+				epos[i]--
+				eAnim[i].beginElement()
+				snd[i].beginElement()
+			}}}
+			if (r==3){if(board[epos[i]+8]>=0){
+				em2[i].setAttribute("xlink:href","#rd_"+epos[i])
+				em1[i].setAttributeNS(xlinkns,"href","#teufel_R")
+				epos[i]+=8
+				eAnim[i].addEventListener("end",checkKill,false)
+				eAnim[i].beginElement()
+				snd[i].beginElement()
+			}}
+			if (r==4){if(board[epos[i]-8]>=0){
+				em2[i].setAttribute("xlink:href","#ru_"+epos[i])
+				em1[i].setAttributeNS(xlinkns,"href","#teufel_OL")
+				epos[i]-=8
+				eAnim[i].beginElement()
+				snd[i].beginElement()
+			}}
+		}
+	}
+
+	//*******************************************************************************************************************************
+	function checkKill(){
+		
+		
+		if (qState=="hit"){
+		
+		for(var i=1;i<=enemyCount;i++){
+			if(epos[i]==position){
+			nfall+=1
+			if(nfall>3) {nfall=1}
+				if(lives==0){stopGame()
+				document.getElementById("geolevel").firstChild.data=level
+				document.getElementById("geoclicks").firstChild.data=totp
+				document.getElementById("GameOverWindow").setAttribute("visibility","visible")
+				
+				;return}
+				em2[i].setAttribute("xlink:href","#falldown"+nfall)
+				eAnim[i].beginElement()
+				epos[i]=est[nfall]
+				//hit.beginElement()
+				blink.beginElement()
+				qState="nohit"
+				document.getElementById("live"+lives).setAttribute("visibility","hidden")
+				lives-=1
+				return
+			}
+			/*if(eold==epos[i]){if(eold==epos[i]){
+				if(lives==0){alert("game over");clearInterval(timer);return}
+				em2[i].setAttribute("xlink:href","#falldown"+nfall)
+				eAnim[i].beginElement()
+				epos[i]=est[nfall]
+				//hit.beginElement()
+				document.getElementById("live"+lives).setAttribute("visibility","hidden")
+				lives-=1
+				return
+			}
+			}*/
+		}}
+	}
+	//************************************************************************************************************************************
+	function moveBall(evt){
+		var z=evt.charCode
+		var s=String.fromCharCode(z)
+		if(GameState=="setbtn_upleft"){
+		btn_upleft=z
+	        document.getElementById("key_upleft").firstChild.data = s.toUpperCase();
+		}
+		if(GameState=="setbtn_upright"){
+		btn_upright=z
+	        document.getElementById("key_upright").firstChild.data = s.toUpperCase();
+		}
+		if(GameState=="setbtn_downleft"){
+		btn_downleft=z
+	        document.getElementById("key_downleft").firstChild.data = s.toUpperCase();
+		}
+		if(GameState=="setbtn_downright"){
+		btn_downright=z
+	       document.getElementById("key_downright").firstChild.data = s.toUpperCase();
+		}		
+		if(isAnimating==0){if(GameState=="play"){
+			eold=position
+			if(z==btn_downleft){if(board[position+1]>=0){if((position+1)!=8){
+				var o=document.getElementById("bert")
+				var n=document.getElementById("bert_L").cloneNode(true)
+				n.setAttribute("id","bert")
+				o.parentNode.replaceChild(n,o)
+				bm2.setAttribute("xlink:href","#ld_"+position)
+				position++
+				isAnimating=1
+				mAnim.addEventListener("end",changeColor,false)
+				mAnim.beginElement()
+				//jump.beginElement()
+			}}}
+			if(z==btn_downright){if(board[position+8]>=0){
+				var o=document.getElementById("bert")
+				var n=document.getElementById("bert_R").cloneNode(true)
+				n.setAttribute("id","bert")
+				o.parentNode.replaceChild(n,o)
+				bm2.setAttribute("xlink:href","#rd_"+position)
+				position+=8
+				isAnimating=1
+				mAnim.addEventListener("end",changeColor,false)
+				mAnim.beginElement()
+				//jump.beginElement()
+			}}
+			if(z==btn_upright){if(board[position-1]>=0){if((position-1)!=7){
+				var o=document.getElementById("bert")
+				var n=document.getElementById("bert_U").cloneNode(true)
+				n.setAttribute("id","bert")
+				o.parentNode.replaceChild(n,o)
+				bm2.setAttribute("xlink:href","#lu_"+position)
+				position-=1
+				isAnimating=1
+				mAnim.addEventListener("end",changeColor,false)
+				mAnim.beginElement()
+				//jump.beginElement()
+			}}}
+			if(z==btn_upleft){if(board[position-8]>=0){
+				var o=document.getElementById("bert")
+				var n=document.getElementById("bert_O").cloneNode(true)
+				n.setAttribute("id","bert")
+				o.parentNode.replaceChild(n,o)
+				bm2.setAttribute("xlink:href","#ru_"+position)
+				position-=8
+				isAnimating=1
+				mAnim.addEventListener("end",changeColor,false)
+				mAnim.beginElement()
+				//jump.beginElement()
+			}}
+		}}
+	}
+	//**************************************************************************************************************************************
+	function changeColor(){
+		clicks++
+		var st=clicks
+		if(clicks<1000){st="0"+st}
+		if(clicks<100){st="0"+st}
+		if(clicks<10){st="0"+st}
+		document.getElementById("ClickCounter").firstChild.data = st;
+		eold=position
+		checkKill()
+		if (board[position]==ColorCount){
+			board[position]=0
+			SVGboard[position].getElementsByTagName("path").item(0).setAttribute("fill",Colors1[board[position]])
+			SVGboard[position].getElementsByTagName("path").item(1).setAttribute("fill",Colors2[board[position]])
+			SVGboard[position].getElementsByTagName("path").item(2).setAttribute("fill",Colors3[board[position]])
+			redf++
+			document.getElementById("ClickCounter").firstChild.data = clicks;
+			if(redf==36){stopGame();nLw.setAttribute("visibility","visible")}
+			isAnimating=0			
+		}
+		else
+		{
+		if (board[position]==0){redf--}
+		
+		        board[position]+=1
+			SVGboard[position].getElementsByTagName("path").item(0).setAttribute("fill",Colors1[board[position]])
+			SVGboard[position].getElementsByTagName("path").item(1).setAttribute("fill",Colors2[board[position]])
+			SVGboard[position].getElementsByTagName("path").item(2).setAttribute("fill",Colors3[board[position]])
+			
+			
+			document.getElementById("ClickCounter").firstChild.data = clicks;
+			isAnimating=0
+			return
+		}
+	}
+	//**********************************************************************************************************************************
+	function selectMove(ind){
+		if(isAnimating==0){if(GameState=="play"){
+			if((position-8)==ind){
+				var o=document.getElementById("bert")
+				var n=document.getElementById("bert_O").cloneNode(true)
+				n.setAttribute("id","bert")
+				o.parentNode.replaceChild(n,o)
+				bm2.setAttribute("xlink:href","#ru_"+position)
+				position-=8
+				isAnimating=1
+				mAnim.addEventListener("end",changeColor,false)
+				mAnim.beginElement()
+				//jump.beginElement()
+			}
+			if((position+8)==ind){
+				var o=document.getElementById("bert")
+				var n=document.getElementById("bert_R").cloneNode(true)
+				n.setAttribute("id","bert")
+				o.parentNode.replaceChild(n,o)
+				bm2.setAttribute("xlink:href","#rd_"+position)
+				position+=8
+				isAnimating=1
+				mAnim.addEventListener("end",changeColor,false)
+				mAnim.beginElement()
+				//jump.beginElement()
+			}
+			if((position+1)==ind){if(ind!=8){
+				var o=document.getElementById("bert")
+				var n=document.getElementById("bert_L").cloneNode(true)
+				n.setAttribute("id","bert")
+				o.parentNode.replaceChild(n,o)
+				bm2.setAttribute("xlink:href","#ld_"+position)
+				position++
+				isAnimating=1
+				mAnim.addEventListener("end",changeColor,false)
+				mAnim.beginElement()
+				//jump.beginElement()
+			}}
+			if((position-1)==ind){if(ind!=7){
+				var o=document.getElementById("bert")
+				var n=document.getElementById("bert_U").cloneNode(true)
+				n.setAttribute("id","bert")
+				o.parentNode.replaceChild(n,o)
+				bm2.setAttribute("xlink:href","#lu_"+position)
+				position--
+				isAnimating=1
+				mAnim.addEventListener("end",changeColor,false)
+				mAnim.beginElement()
+				//jump.beginElement()
+			}}
+		}}
+	}
+	
+function createAlpha(){
+var d=document.getElementById("keyboard")
+var y=0;var x=-50
+for(var i=0;i<26;i++){
+var g2=document.createElement("g")
+var g=document.createElement("g")
+var rect=document.createElement("rect")
+var text=document.createElement("text")
+var data=document.createTextNode("a")
+x+=50;if(x==300){y+=50;x=0;}
+var b=String.fromCharCode(i+65)
+g.setAttribute("id","g"+b)
+g.setAttribute("onclick","addLetter('"+b+"')")
+g.setAttribute("transform","translate("+x+" "+y+")")
+rect.setAttribute("x",0)
+rect.setAttribute("y",0)
+rect.setAttribute("width",40)
+rect.setAttribute("height",40)
+rect.setAttribute("rx",5)
+rect.setAttribute("ry",5)
+rect.setAttribute("x",0)
+rect.setAttribute("y",0)
+rect.setAttribute("fill-opacity",0)
+rect.setAttribute("stroke","url(#grd_13)")
+rect.setAttribute("stroke-width",5)
+data.data = b;
+text.setAttribute("x",20)
+text.setAttribute("y",30)
+text.setAttribute("stroke","url(#grd_13)")
+text.setAttribute("fill","url(#grd_13)")
+text.setAttribute("font-size",25)
+text.setAttribute("text-anchor","middle")
+text.setAttribute("pointer-events","none")
+text.appendChild(data)
+g.appendChild(rect)
+g.appendChild(text)
+var anim=document.createElement("animateTransform")
+anim.setAttribute("attributeName","transform")
+anim.setAttribute("type","translate")
+anim.setAttribute("from",x+","+y)
+anim.setAttribute("to","0,0")
+anim.setAttribute("dur",2)
+anim.setAttribute("fill","freeze")
+anim.setAttribute("begin","indefinite")
+anim.setAttribute("adaptive","sum")
+anim.setAttribute("id","anim_"+b)
+var anim2=document.createElement("animateTransform")
+var x2=x+20
+var y2=y+20
+anim2.setAttribute("attributeName","transform")
+anim2.setAttribute("type","scale")
+anim2.setAttribute("values","1;2;1")
+anim2.setAttribute("dur",2)
+anim2.setAttribute("fill","freeze")
+anim2.setAttribute("begin","indefinite")
+anim2.setAttribute("adaptive","sum")
+anim2.setAttribute("id","anim2_"+b)
+g.appendChild(anim)
+g2.appendChild(g)
+g2.appendChild(anim2)
+d.appendChild(g2)
+}
+
+
+for(var i=0;i<=9;i++){
+var g2=document.createElement("g")
+var g=document.createElement("g")
+var rect=document.createElement("rect")
+var text=document.createElement("text")
+var data=document.createTextNode("a")
+x+=50;if(x==300){y+=50;x=0;}
+var b=i
+g.setAttribute("id","g"+b)
+g.setAttribute("onclick","addLetter('"+b+"')")
+g.setAttribute("transform","translate("+x+" "+y+")")
+rect.setAttribute("x",0)
+rect.setAttribute("y",0)
+rect.setAttribute("width",40)
+rect.setAttribute("height",40)
+rect.setAttribute("rx",5)
+rect.setAttribute("ry",5)
+rect.setAttribute("x",0)
+rect.setAttribute("y",0)
+rect.setAttribute("fill-opacity",0)
+rect.setAttribute("stroke","white")
+rect.setAttribute("stroke-width",5)
+data.data = b;
+text.setAttribute("x",20)
+text.setAttribute("y",30)
+text.setAttribute("stroke","white")
+text.setAttribute("fill","white")
+text.setAttribute("font-size",25)
+text.setAttribute("text-anchor","middle")
+text.setAttribute("pointer-events","none")
+text.appendChild(data)
+g.appendChild(rect)
+g.appendChild(text)
+
+var anim=document.createElement("animateTransform")
+anim.setAttribute("attributeName","transform")
+anim.setAttribute("type","translate")
+anim.setAttribute("from",x+","+y)
+anim.setAttribute("to","0,0")
+anim.setAttribute("dur",2)
+anim.setAttribute("fill","freeze")
+anim.setAttribute("begin","indefinite")
+anim.setAttribute("id","anim_"+b)
+
+var anim2=document.createElement("animateTransform")
+var x2=x+20
+var y2=y+20
+anim2.setAttribute("attributeName","transform")
+anim2.setAttribute("type","rotate")
+anim2.setAttribute("from","0"+","+x2+","+y2)
+anim2.setAttribute("to","360")
+anim2.setAttribute("dur",2)
+anim2.setAttribute("fill","freeze")
+anim2.setAttribute("begin","indefinite")
+anim2.setAttribute("adaptive","sum")
+anim2.setAttribute("id","anim2_"+b)
+g.appendChild(anim)
+g2.appendChild(g)
+g2.appendChild(anim2)
+
+d.appendChild(g2)
+}
+}
+function deleteLetter(){
+
+if(lcount>=1){
+var l=document.getElementById("letter_"+lcount)
+l.parentNode.removeChild(l)
+lcount-=1
+
+
+st=st.substring(st.length-1,0)
+
+}
+}
+function addLetter(letter){
+if (lcount<=14){
+lcount+=1
+var kb=document.getElementById("keyboard")
+var cop=document.getElementById("anim_"+letter).parentNode.parentNode.cloneNode(true)
+kb.appendChild(cop)
+cop.setAttribute("id","letter_"+lcount)
+var anim=cop.getElementsByTagName("animateTransform").item(0)
+var anim2=cop.getElementsByTagName("animateTransform").item(1)
+x=-45+(lcount*50)
+x2=x+20
+anim2.setAttribute("to",360+","+x2+",220")
+anim.setAttribute("to",x+",400")
+anim.beginElement()
+anim2.beginElement()
+
+st=st+letter
+
+
+}}
+function callback(){
+document.getElementById("GameOverWindow").setAttribute("visibility","hidden")
+introwin.setAttribute("visibility","visible")
+}
+function post(){
+
+
+var hallo=st
+var p=totp
+var l=level
+var t=1
+var d=4
+var m=10
+var j=2004
+
+getURL("http://www.treebuilder.de/svg/qbert/save2hsl.asp?name="+hallo+"&clicks="+p+"&level="+l+"&zeit="+t+"&tag="+d+"&monat="+m+"&jahr="+j,callback)
+
+}
+
+function resol2(n){
+
+n=parseXML(n.content,document)
+var li=document.getElementById("liste")
+li.replaceChild(n,li.firstChild)
+}
+
+function load2(){
+
+getURL("http://www.treebuilder.de/svg/qbert/svgHS.asp",resol2)
+
+}
+var vp=1
+function showpage(nr){
+document.getElementById("page"+vp).setAttribute("visibility","hidden")
+document.getElementById("page"+nr).setAttribute("visibility","visible")
+vp=nr
+}
+	]]></script>
+</svg>

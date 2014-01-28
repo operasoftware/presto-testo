@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN"
+    "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<svg onload="init(evt)" width="550" height="400" zoomAndPan="disable"
+     xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink">
+    <script type="text/ecmascript"><![CDATA[
+        var svgns = "http://www.w3.org/2000/svg";
+        
+        var plants    = 10;
+        var leafCount = 30;
+        
+        var centerX = 275;
+        var offsetX = 150;
+
+        var svgRoot;
+        var stems;
+        var leaves;
+        
+        function init(e) {
+            if ( window.svgDocument == null )
+                svgDocument = e.target.ownerDocument;
+
+            stems  = svgDocument.getElementById("stems");
+            leaves = svgDocument.getElementById("leaves");
+            
+            generate();
+        }
+
+        function generate() {
+            // remove stems
+            while ( stems.firstChild != null ) {
+                stems.removeChild(stems.firstChild);
+            }
+
+            // remove leaves
+            while ( leaves.firstChild != null ) {
+                leaves.removeChild(leaves.firstChild);
+            }
+
+            // make new plants
+            for ( var i = 0; i < plants; i++ ) {
+                makePlant();
+            }
+        }
+
+        function makePlant() {
+            var points = makePoints();
+            var length = points.length;
+            var stem   = svgDocument.createElementNS(svgns, "path");
+            var values = [];
+
+            for ( var i = 0; i < length; i++ ) {
+                var point = points[i];
+                values.push(point.x + "," + point.y);
+            }
+
+            stem.setAttributeNS("", "d", "M" + values.join(" "));
+            stems.appendChild(stem);
+
+            for ( var i = 0; i < leafCount; i++ ) {
+                makeLeaf( points[length-1-i], 1+0.1*i, 1+0.05*i );
+            }
+        }
+
+        function makeLeaf(point, scaleX, scaleY) {
+            var green  = 110 + random(50);
+            var color  = "rgb(0," + green + ",0)";
+            var angle  = random(180) - 180;
+            var trans  = "translate(" + point.x + "," + point.y + ")";
+            var scale  = "scale(" + scaleX + "," + scaleY + ")";
+            var rotate = "rotate(" + angle + ")";
+            var t      = trans + " " + rotate + " " + scale;
+            var leaf   = svgDocument.createElementNS(svgns, "path");
+
+            leaf.setAttributeNS("", "fill", color);
+            leaf.setAttributeNS("", "transform", t);
+            leaf.setAttributeNS("", "d", "M0,0 Q5,-5 10,0 5,5 0,0z");
+
+            leaves.appendChild(leaf);
+        }
+
+        function makePoints() {
+            var x      = centerX + random(2*offsetX) - offsetX;
+            var count  = 30 + random(35);
+            var dy     = 5;
+            var points = [];
+            var offset = 0.007;
+            
+            points.push(
+                { x: x, y: 370 }
+            );
+            for ( var i = 1; i <= count; i++ ) {
+                points.push(
+                    {
+                        x: points[i-1].x + i*offset*(random(21)-10),
+                        y: 370-dy*i
+                    }
+                );
+            }
+
+            return points;
+        }
+
+        function random(max) {
+            return Math.round(Math.random()*max);
+        }
+
+        function hilight(e, state) {
+            e.target.setAttributeNS("", "stroke", (state) ? "orange" : "gray");
+        }
+    ]]></script>
+    <rect x="10" y="10" width="530" height="360" fill="black"
+          rx="5" ry="5"/>
+    <g id="stems" fill="none" stroke="green"/>
+    <g id="leaves"/>
+
+    <rect x="11" y="370" width="528" height="29" rx="5" ry="5"
+          stroke="grey" stroke-width="2" fill="rgb(230,230,230)"/>
+    <circle cx="25" cy="385" r="10" stroke="gray" fill="gray" fill-opacity="0.5"
+            onclick="generate()" onmouseover="hilight(evt, true)" onmouseout="hilight(evt, false)"/>
+    <text x="535" y="395" font-size="10px" font-rendering="optimizeLegibility" fill="grey" text-anchor="end" pointer-events="none">Copyright 2004, Kevin Lindsey</text>
+</svg>

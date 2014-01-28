@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink">
+  <title>Text selection with &lt;use&gt;</title>
+
+  <text id="reuse" x="10" y="20">You should be able to select this line of text. Selecting it should only highlight this line, not the other two.</text>
+
+  <use xlink:href="#reuse" id="rereuse" y="40"/>
+  <use xlink:href="#rereuse" y="40"/>
+</svg>
+

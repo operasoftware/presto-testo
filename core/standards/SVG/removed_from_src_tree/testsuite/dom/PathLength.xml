@@ -1,0 +1,164 @@
+<?xml version='1.0' standalone='no'?>
+<html xmlns='http://www.w3.org/1999/xhtml'>
+<body onload='Init()'>
+<table><tr><td>
+<svg id="svgroot" width='600' height='400' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'>
+
+   <title>Chose Path By Length</title>
+
+   <desc>
+      Find the shortest, longest, or median path between 2 points. It there are 2 paths of equal length, they will both be chosen.
+      Written by Doug Schepers [doug@schepers.cc], November 2004.
+   </desc>
+
+   <script><![CDATA[
+      var SVGRoot = null;
+      var svgns = 'http://www.w3.org/2000/svg';
+      var xlinkns = 'http://www.w3.org/1999/xlink';
+
+      function Init()
+      {
+         SVGRoot = document.getElementById('svgroot');
+	   testGetPointAtLength();
+       };
+
+	function testGetPointAtLength()
+	{   
+	   var allPaths = SVGRoot.getElementsByTagNameNS(svgns, 'path');
+	   var path = allPaths.item(0);
+	   var dists = new Array(0, 50, 100, 200, 300, 600);
+	   var markercols = new Array("#f00", "#e00", "#d00", "#c00", "#b00", "#a00");
+         var body = document.getElementById("results");
+	   //alert(path + " " + body + "dists: " + dists.length);
+	   for(var i = 0; i < dists.length; i++)
+	   {
+		var point = path.getPointAtLength(dists[i]);
+		var str = "Pos at length " + dists[i] + ": " + point.x + "," + point.y + ".\n";
+		var textcontent = document.createTextNode(str);
+		body.appendChild(textcontent);
+		var marker = document.createElementNS(svgns, "circle");
+		marker.setAttribute("cx", point.x);
+		marker.setAttribute("cy", point.y);
+		marker.setAttribute("r", "5");
+		marker.setAttribute("fill", markercols[i]);
+		SVGRoot.appendChild(marker);
+	   }
+	}
+
+      function FindPath(criterion)
+      {
+         var chosenLength = null;
+         var chosenPaths = new Array();
+
+         var totalLengths = 0;
+
+         //return list of target node's children of this element type as objects
+         var allPaths = SVGRoot.getElementsByTagNameNS(svgns, 'path');
+         var pathCount = allPaths.length;
+
+         for ( var p = 0; pathCount > p; p++ )
+         {
+            var eachPath = allPaths.item(p);
+            eachPath.setAttributeNS("", 'stroke-dasharray', '5 3');
+            eachPath.setAttributeNS("", 'stroke', 'blue');
+
+            var eachLength = Math.round(eachPath.getTotalLength());
+
+            switch ( criterion )
+            {
+               case 'short':
+                  if ( !chosenLength || chosenLength == eachLength )
+                  {
+                     chosenLength = eachLength;
+                     chosenPaths.push( eachPath );
+                  }
+                  else if ( chosenLength > eachLength )
+                  {
+                     chosenLength = eachLength;
+                     chosenPaths.length = 0;
+                     chosenPaths.push( eachPath );
+                  }
+                  break;
+
+               case 'long':
+                  if ( !chosenLength || chosenLength == eachLength )
+                  {
+                     chosenLength = eachLength;
+                     chosenPaths.push( eachPath );
+                  }
+                  else if ( chosenLength < eachLength )
+                  {
+                     chosenLength = eachLength;
+                     chosenPaths.length = 0;
+                     chosenPaths.push( eachPath );
+                  }
+                  break;
+
+               case 'median':
+                  totalLengths += eachLength;
+                  break;
+
+            }
+         }
+
+         if ( 'median' == criterion )
+         {
+            var averageLength = totalLengths/pathCount;
+
+            for ( var a = 0, aLen = allPaths.length; aLen > a; a++ )
+            {
+               var eachPath = allPaths.item(a);
+               var eachLength = Math.round(eachPath.getTotalLength());
+
+               var difference = Math.abs(eachLength - averageLength);
+
+               if ( !chosenLength || chosenLength == difference )
+               {
+                  chosenLength = difference;
+                  chosenPaths.push( eachPath );
+               }
+               else if ( chosenLength > difference )
+               {
+                  chosenLength = difference;
+                  chosenPaths.length = 0;
+                  chosenPaths.push( eachPath );
+               }
+            }
+         }
+
+
+         for ( var c = 0, cLen = chosenPaths.length; cLen > c; c++ )
+         {
+            var eachPath = chosenPaths[c];
+            eachPath.removeAttributeNS("", 'stroke-dasharray');
+            eachPath.setAttributeNS("", 'stroke', 'crimson');
+         }
+      };
+
+   ]]></script>
+
+   <path id='path_1' stroke-width='1' stroke='blue' fill='none' stroke-dasharray='5 3' stroke-linecap='round'
+         d='M300,25 C500,100 575,300 330,350'/>
+   <path id='path_2' stroke-width='1' stroke='blue' fill='none' stroke-dasharray='5 3' stroke-linecap='round'
+         d='M300,25 C175,150 150,230 330,350'/>
+   <path id='path_3' stroke-width='1' stroke='blue' fill='none' stroke-dasharray='5 3' stroke-linecap='round'
+         d='M300,25 C320,250 375,150 400,150 S400,340 330,350'/>
+   <path id='path_4' stroke-width='1' stroke='blue' fill='none' stroke-dasharray='5 3' stroke-linecap='round'
+         d='M300,25 C230,100 210,190 330,350'/>
+   <path id='path_5' stroke-width='1' stroke='blue' fill='none' stroke-dasharray='5 3' stroke-linecap='round'
+         d='M300,25 C0,35 0,340 330,350'/>
+   <path id='path_6' stroke-width='1' stroke='blue' fill='none' stroke-dasharray='5 3' stroke-linecap='round'
+         d='M300,25 C630,35 630,340 330,350'/>
+
+   <circle id='startPoint' cx='300' cy='25' r='5' fill='gold'/>
+   <circle id='endPoint' cx='330' cy='350' r='5' fill='green' />
+</svg>
+</td></tr>
+<tr><td>
+<button onclick="FindPath('short');">Shortest Path</button><br/>
+<button onclick="FindPath('median');">Median Path</button><br/>
+<button onclick="FindPath('long');">Longest Path</button><br/>
+</td></tr></table>
+<pre id="results"></pre>
+</body>
+</html>

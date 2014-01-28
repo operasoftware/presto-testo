@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg version="1.2" baseProfile="tiny" xml:id="svg-root" width="100%" height="100%" 
+  viewBox="0 0 480 360" xmlns="http://www.w3.org/2000/svg" xmlns:ev="http://www.w3.org/2001/xml-events"
+  xmlns:xlink="http://www.w3.org/1999/xlink">
+  <!--======================================================================-->
+  <!--=  Copyright 2007 World Wide Web Consortium, (Massachusetts          =-->
+  <!--=  Institute of Technology, European Research Consortium for         =-->
+  <!--=  Informatics and Mathematics (ERCIM), Keio University).            =-->
+  <!--=  All Rights Reserved.                                              =-->
+  <!--=  See http://www.w3.org/Consortium/Legal/.                          =-->
+  <!--======================================================================-->
+  <SVGTestCase xmlns="http://www.w3.org/2000/02/svg/testsuite/description/" xmlns:xhtml="http://www.w3.org/1999/xhtml"
+    reviewer="[reviewer]" owner="[owner]" desc="[desc]" status="empty" 
+    approved="no"
+    version="$Revision$" testname="$RCSfile$">
+    <OperatorScript>
+      <xhtml:p>
+                Put your testing instructions here.
+                Add other Paragraph elements as required
+                You can mix in any XHTML elements that 
+                would be allowed inside an XHTML p element.
+      </xhtml:p>
+    </OperatorScript>
+  </SVGTestCase>
+  <title xml:id="test-title">$RCSfile$</title>
+  <defs>
+    <font-face
+      font-family="SVGFreeSansASCII"
+      unicode-range="U+0-7F">
+      <font-face-src>
+        <font-face-uri xlink:href="../images/SVGFreeSans.svg#ascii"/>
+      </font-face-src>
+    </font-face>
+  </defs>
+  <g xml:id="test-body-content" font-family="SVGFreeSansASCII,sans-serif" font-size="18">
+	<defs>
+		<g id="animatedSlider">
+			<g stroke="#999" fill="none">
+				<line x1="0" x2="480" y1="10" y2="10"/>
+				<line x1="00" x2="0" y1="2" y2="18"/>
+				
+				<line x1="20" x2="20" y1="6" y2="14"/>
+				<line x1="40" x2="40" y1="6" y2="14"/>
+				<line x1="60" x2="60" y1="6" y2="14"/>
+				<line x1="80" x2="80" y1="6" y2="14"/>
+				<line x1="100" x2="100" y1="6" y2="14"/>
+				<line x1="120" x2="120" y1="6" y2="14"/>
+				<line x1="140" x2="140" y1="6" y2="14"/>
+				<line x1="160" x2="160" y1="6" y2="14"/>
+				<line x1="180" x2="180" y1="6" y2="14"/>
+				<line x1="200" x2="200" y1="6" y2="14"/>
+				<line x1="220" x2="220" y1="6" y2="14"/>
+				<line x1="240" x2="240" y1="2" y2="18"/>
+				<line x1="260" x2="260" y1="6" y2="14"/>
+				<line x1="280" x2="280" y1="6" y2="14"/>
+				<line x1="300" x2="300" y1="6" y2="14"/>
+				<line x1="320" x2="320" y1="6" y2="14"/>
+				<line x1="340" x2="340" y1="6" y2="14"/>
+				<line x1="360" x2="360" y1="6" y2="14"/>
+				<line x1="380" x2="380" y1="6" y2="14"/>
+				<line x1="400" x2="400" y1="6" y2="14"/>
+				<line x1="420" x2="420" y1="6" y2="14"/>
+				<line x1="440" x2="440" y1="6" y2="14"/>
+				<line x1="460" x2="460" y1="6" y2="14"/>
+				<line x1="480" x2="480" y1="2" y2="18"/>
+				
+				<rect id="slider" x="0" y="0" width="4" height="20" fill="green" stroke="none">
+					<animate attributeName="x" attributeType="XML" dur="10s" from="0" to="476" fill="freeze"/>
+				</rect>
+			</g>
+		</g>
+	</defs>
+	
+	<g transform="translate(40,100)">
+		<rect width="2" height="180" y="-10" fill="gold">
+			<animateTransform type="translate" from="0 0" to="238 0" attributeName="transform" attributeType="XML" dur="10s" fill="freeze"/>
+		</rect>
+	
+		<use y="00" transform="scale(0.5)" xlink:href="#slider"/>
+		<use y="30" transform="scale(0.5)" xlink:href="#slider"/>
+		<use y="60" transform="scale(0.5)" xlink:href="#slider"/>
+		<use y="90" transform="scale(0.5)" xlink:href="#slider"/>
+		<use y="120" transform="scale(0.5)" xlink:href="#slider"/>
+		<use y="150" transform="scale(0.5)" xlink:href="#unresolved">
+			<animate id="animate" attributeName="xlink:href" to="#slider" begin="3s" dur="1s" fill="freeze"/>
+		</use>
+		<use y="180" transform="scale(0.5)">
+			<set id="set" attributeName="xlink:href" to="#slider" begin="5s" dur="indefinite"/>
+		</use>
+	</g>
+  </g>
+  <g font-family="SVGFreeSansASCII,sans-serif" font-size="32">
+  <text xml:id="revision" x="10" y="340" stroke="none" 
+    fill="black">$Revision$</text>
+  </g>
+  <rect xml:id="test-frame" x="1" y="1" width="478" height="358" fill="none" stroke="#000"/>
+  <!-- comment out this watermark once the test is approved -->
+  <g xml:id="draft-watermark">
+    <rect x="1" y="1" width="478" height="20" fill="red" stroke="black" stroke-width="1"/>
+    <text font-family="SVGFreeSansASCII,sans-serif" font-weight="bold" font-size="20" x="240" 
+      text-anchor="middle" y="18" stroke-width="0.5" stroke="black" fill="white">DRAFT</text>
+  </g>
+</svg>

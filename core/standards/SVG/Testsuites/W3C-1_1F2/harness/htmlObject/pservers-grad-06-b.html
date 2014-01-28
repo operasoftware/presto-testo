@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC  "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+      <meta name="keywords" content="W3C SVG 1.1 2nd Edition Test Suite"/>
+      <meta name="description" content="W3C SVG 1.1 2nd Edition Object Test Suite"/>
+      <title>
+SVG 1.1 2nd Edition Test (&lt;object&gt;): pservers-grad-06-b.svg
+      </title>
+      <style type="text/css">
+        <!--
+         .bodytext      { font-family:verdana, helvetica, sans-serif; font-size: 12pt; line-height: 125%; text-align: Left; margin-top: 0; margin-bottom: 0 }
+         .pageTitle     { line-height: 150%; font-size: 20pt; font-weight : 900; margin-bottom: 20pt }
+         .pageSubTitle  { color : blue; line-height: 100%; font-size: 24pt; font-weight : 900 }
+         .openChapter   { color : blue; line-height: 125%; font-weight : 900 }
+         .openSection   { color : blue; line-height: 125%; font-weight : 900 }
+         .info          { color : black; line-height: 110%; font-size: 10pt; font-weight : 100 }
+         p              { margin-top:0; margin-bottom:0; padding-top:0; padding-bottom:0 }
+         blockquote     { margin-top:0; margin-bottom:0; padding-top:0; padding-bottom:0 }
+         .opscript      { margin-left: 3%; margin-right: 3%; }
+         .opscript p    { margin-top: 0.7em }
+         .navbar        { background: black; color: white; font-weight: bold }
+         .warning       { color: red; text-align: Center;}
+         a,a:visited    { color: blue }
+        -->
+      </style>
+      <link rel="prev" href="pservers-grad-05-b.html" />
+      <link rel="index" href="index.html" />
+      <link rel="next" href="pservers-grad-07-b.html" />
+      <script src="../resources/testharnessreport.js"></script>
+    </head>
+  <body class="bodytext">
+<div class="linkbar"> 
+  <p>Specification link: <a target="spec" href="http://www.w3.org/TR/SVG11/pservers.html#Gradients">13.2 Gradients</a></p>
+  <p>
+    <a href="pservers-grad-05-b.html" rel="prev">pservers-grad-05-b ←</a> 
+    <a href="index.html" rel="index">index</a>
+    <a href="pservers-grad-07-b.html" rel="next">→ pservers-grad-07-b</a>
+  </p>
+</div>
+<div>
+  <br />
+  <p class="warning">
+    Tests that contain the draft-watermark are under development and may be incorrectly testing a feature.
+  </p>
+</div>
+<table align="center" border="0" cellspacing="0" cellpadding="10">
+  <tr>
+    <td align="center" colspan="3">
+      <table border="0" cellpadding="8">
+        <tr>
+          <td align="center" colspan="2" class="pageTitle">
+            <h1>pservers-grad-06-b.svg</h1>
+          </td>
+        </tr>
+        <tr  class="navbar">
+          <td align="center">
+            SVG Image
+          </td>
+          <td align="center">
+            PNG Image
+          </td>
+        </tr>
+        <tr>
+          <td align="right">
+            <object data="../../svg/pservers-grad-06-b.svg" width="480" height="360" type="image/svg+xml"><p style="font-size:300%;color:red">FAIL</p></object>
+          </td>
+          <td align="left">
+            <img alt="raster image of pservers-grad-06-b.svg" src="../../png/pservers-grad-06-b.png" width="480" height="360"/>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+
+<div class="opscript">
+    <h2 id="operatorscript">
+      Operator Script
+    </h2>
+    <div>
+<p>Run the test. No interaction required.</p>
+  </div>
+  <h2 id="passcriteria">
+    Pass Criteria
+  </h2>
+  <div>
+<p>The test passes if the rendering matches the reference image, apart
+      from any differences in font choice due to CSS2 rules.  Specifically:</p><ul>
+        <li>The top rectangle is filled with a linear gradient from blue on the left,
+        to lime in the middle.  The right half of the rectangle is filled with plain lime.</li>
+        <li>The middle rectangle is filled with an elliptical radial gradient with
+        black on the inside and orange on the outside.  The center point of the gradient
+        is near the center-bottom of the rectangle.  The gradient is skewed, so that it appears
+        as a rotated elliptical gradient.</li>
+        <li>The bottom rectangle is filled with a repeating pattern of tiled
+        red, green, yellow and blue parallelograms.</li>
+      </ul>
+  </div>
+  <h2 id="testdescription">
+    Test Description
+  </h2>
+  <div>
+<p>
+        Test that the viewer can handle the gradientTransform and the patternTransform
+        attribute on gradients and patterns respectively.
+      </p><p>
+        From top-down the appearance of objects is as follows.
+      </p><p>
+        The top rectangle has a linear gradient whose coordinate system has been scaled down by
+        a half. So the gradient travelling from left to right (from blue to green to lime) should
+        only occuply the left half the rectangle.
+      </p><p>
+        The next rectangle has radial gradient that has been translated to the center and skewed
+        in the positive X direction by 45 degrees. Therefore the gradient should appear
+        ellipltical and rotated around the center.
+      </p><p>
+        The last row contains a rectangle with pattern on the fill. The transformation on the
+        pattern moves the coordinate system to the top left of the rectangle and then scales it
+        by a factor of 2 and then skew's it in the X direction by 45 degrees. The pattern
+        consists of a 2 by 2 array of colored rectangles.
+      </p>
+  </div>
+</div>
+<br/>
+<div class="linkbar">
+  <p>
+    <a href="pservers-grad-05-b.html" rel="prev">pservers-grad-05-b ←</a>
+    <a href="index.html" rel="index">index</a>
+    <a href="pservers-grad-07-b.html" rel="next">→ pservers-grad-07-b</a>
+  </p>
+</div>
+</body>
+</html>

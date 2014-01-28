@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ev="http://www.w3.org/2001/xml-events">
+  <linearGradient id="grad"><stop stop-color="#f00" offset="0.0"/><stop stop-color="#0f0" offset="1"/></linearGradient>
+  <linearGradient id="parentgrad" xlink:href="#grad"/>
+  <rect fill="url(#parentgrad)" x="10" y="20" width="400" height="100" onclick="test()"/>
+  <text x="15" y="50" font-size="20">Click once and it should be fully green</text>
+  <script>
+    function test()
+    {
+      var g = document.getElementById('grad');
+      g.removeChild(g.firstChild);
+    }
+  </script>
+</svg>

@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Generator: Ikivo Animator -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1 Tiny//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11-tiny.dtd">
+<svg width="176" height="220" viewBox="0 0 176 220" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="svg" display="inline" version="1.1" baseProfile="tiny">
+<title>Demo Content</title>
+<desc>Copyright 2004 Ikivo AB, (Ikivo Stockholm Sweden).
+All Rights Reserved. Ikivo reserves all right, title, and interest in the material herein. User shall not remove or obscure any copyright notices or proprietary legends contained within this source file.</desc>
+	<g  id="arrow_and_map" display="inline">
+		<animateMotion  begin="6" dur="1" fill="freeze" path="M0 0 C7.33333 28 14.6667 56 22 84 "/>
+		<animateMotion  begin="7" dur="0.8" fill="freeze" path="M22 84 C3.33333 56 -15.3333 28 -34 0 "/>
+		<animateMotion  begin="7.8" dur="1.2" fill="freeze" path="M-34 0 C-41.3333 -56 -48.6667 -112 -56 -168 "/>
+		<animateTransform attributeName="transform" attributeType="XML" type="translate"  begin="0" dur="17" fill="freeze" restart="never" values="0 0;0 0;0 0;1.52588e-005 0;1.52588e-005 0;1.52588e-005 0;142.821 14.7074;142.821 14.7074" keyTimes="0;0.352941;0.352941;0.411765;0.458824;0.529412;0.558824;1" additive="sum"/>
+		<animateTransform attributeName="transform" attributeType="XML" type="rotate"  begin="0" dur="17" fill="freeze" restart="never" values="0 0 0 ;0 0 0 ;0 88 110 ;19.4159 88 110 ;-15.8449 88 110 ;-51.0204 88 110 ;-51.0204 1.1795 252.293 ;-358.379 1.1795 252.293 " keyTimes="0;0.352941;0.352941;0.411765;0.458824;0.529412;0.558824;1" additive="sum"/>
+		<g  id="downtown_map.svg" transform="matrix(1,0,0,1,-1.2865,-1.43)" xml:space="preserve" display="inline">
+			<animateTransform attributeName="transform" attributeType="XML" type="translate"  begin="0" dur="6" fill="freeze" restart="never" calcMode="linear" values="89.2865 111.43;89.2865 111.43;89.2865 111.43;89.2865 111.43" keyTimes="0;0.833333;0.833333;1" additive="sum"/>
+			<animateTransform attributeName="transform" attributeType="XML" type="scale"  begin="0" dur="6" fill="freeze" restart="never" calcMode="linear" values="1 1;1 1;1 1;3 3" keyTimes="0;0.833333;0.833333;1" additive="sum"/>
+			<animateTransform attributeName="transform" attributeType="XML" type="translate"  begin="0" dur="6" fill="freeze" restart="never" calcMode="linear" values="-89.2865 -111.43;-89.2865 -111.43;-89.2865 -111.43;-89.2865 -111.43" keyTimes="0;0.833333;0.833333;1" additive="sum"/>
+			<g  id="map" display="inline">
+				<rect x="1.855" y="1.431" width="175.767" height="219.998" id="background" fill="rgb(204, 255, 204)" display="inline">
+				</rect>
+				<g  id="areas_carpark" display="inline">
+					<rect x="71.316" y="147.734" width="38.394" height="60.419" id="Rectangle" fill="rgb(153, 153, 153)" transform="matrix(0.7024,0.7117,-0.7117,0.7024,153.581,-11.4737)" display="inline">
+					</rect>
+					<rect x="124.172" y="25.684" width="30.906" height="40.948" id="Rectangle_1" fill="rgb(153, 153, 153)" transform="matrix(-0.7025,0.7117,-0.7117,-0.7025,270.559,-20.7875)" display="inline">
+					</rect>
+					<polygon   points="155.494 166.997, 177.741 144.454, 177.622 188.424" id="Polygon" fill="rgb(153, 153, 153)" display="inline">
+					</polygon> 
+					<g  id="label_p" display="inline">
+						<path   d="M145.034 44.554 C145.034 45.122 144.932 45.679 144.739 46.223 C144.546 46.765 144.262 47.221 143.899 47.59 C143.401 48.091 142.842 48.468 142.228 48.726 C141.614 48.982 140.848 49.11 139.936 49.11 L137.925 49.11 L137.925 53.23 L134.694 53.23 L134.694 40.544 L140.01 40.544 C140.809 40.544 141.479 40.612 142.026 40.752 C142.572 40.892 143.057 41.102 143.479 41.379 C143.983 41.715 144.369 42.145 144.636 42.668 C144.902 43.192 145.034 43.821 145.034 44.554 ZM141.668 44.641 C141.668 44.287 141.572 43.983 141.386 43.725 C141.198 43.471 140.976 43.29 140.724 43.19 C140.393 43.055 140.065 42.98 139.749 42.966 C139.429 42.952 139.006 42.945 138.478 42.945 L137.927 42.945 L137.927 46.708 L138.847 46.708 C139.393 46.708 139.841 46.676 140.194 46.607 C140.548 46.541 140.845 46.404 141.087 46.201 C141.292 46.022 141.44 45.807 141.534 45.555 C141.624 45.306 141.668 45.001 141.668 44.641 Z" id="Path" fill="none" stroke="rgb(102, 102, 104)" stroke-width="0.5" display="inline">
+						</path> 
+						<path   d="M96.563 175.646 C96.563 176.213 96.463 176.771 96.269 177.312 C96.073 177.854 95.79 178.311 95.427 178.683 C94.929 179.182 94.37 179.561 93.758 179.817 C93.142 180.071 92.378 180.201 91.466 180.201 L89.454 180.201 L89.454 184.32 L86.224 184.32 L86.224 171.632 L91.54 171.632 C92.337 171.632 93.007 171.701 93.556 171.84 C94.101 171.98 94.586 172.19 95.006 172.467 C95.511 172.805 95.899 173.233 96.164 173.756 C96.431 174.281 96.563 174.91 96.563 175.646 ZM93.198 175.732 C93.198 175.379 93.102 175.072 92.913 174.816 C92.725 174.562 92.507 174.381 92.254 174.281 C91.921 174.144 91.594 174.07 91.278 174.056 C90.958 174.042 90.536 174.034 90.007 174.034 L89.457 174.034 L89.457 177.799 L90.376 177.799 C90.921 177.799 91.368 177.765 91.722 177.696 C92.076 177.632 92.376 177.495 92.616 177.293 C92.822 177.113 92.97 176.898 93.062 176.647 C93.152 176.397 93.198 176.092 93.198 175.732 Z" id="Path_1" fill="none" stroke="rgb(102, 102, 104)" stroke-width="0.5" display="inline">
+						</path> 
+					</g>
+				</g>
+				<g  id="park_sm" display="inline">
+					<polygon   points="124.032 91.099, 163.615 131.207, 177.622 116.778, 177.622 76.8, 170.542 84.211, 164.09 77.673, 178.263 63.311, 164.859 49.731" id="park_sm_bg" fill="rgb(153, 204, 51)" display="inline">
+					</polygon> 
+					<path   d="M163.896 117.397 C162.551 118.761 160.368 118.761 159.023 117.397 L137.7 95.792 C136.353 94.429 136.353 92.219 137.7 90.853 L139.222 89.31 C140.567 87.946 142.751 87.946 144.095 89.31 L165.418 110.917 C166.765 112.28 166.765 114.492 165.418 115.855 L163.896 117.397 Z" id="park_sm_water" fill="rgb(51, 153, 204)" display="inline">
+					</path> 
+					<rect x="142.627" y="92.023" width="32.523" height="6.071" id="park_sm_bldg" fill="rgb(204, 255, 204)" transform="matrix(-0.7024,-0.7117,0.7117,-0.7024,202.84,274.92)" display="inline">
+					</rect>
+					<path   d="M171.868 122.699 L165.877 116.627 L166.028 116.472 C166.841 115.649 167.289 114.554 167.289 113.388 C167.289 112.221 166.842 111.125 166.028 110.298 L144.704 88.693 C143.89 87.87 142.808 87.416 141.656 87.416 S139.425 87.87 138.612 88.693 L138.457 88.846 L132.564 82.875 L131.345 84.109 L137.238 90.08 L137.087 90.235 C136.273 91.058 135.826 92.157 135.826 93.323 C135.826 94.488 136.274 95.584 137.087 96.408 L158.412 118.013 C159.226 118.839 160.309 119.291 161.46 119.291 S163.691 118.836 164.504 118.013 L164.659 117.859 L170.649 123.931 L171.868 122.699 ZM161.462 117.548 C160.772 117.548 160.12 117.275 159.631 116.78 L138.31 95.175 C137.821 94.683 137.552 94.025 137.552 93.323 C137.552 92.623 137.821 91.966 138.31 91.471 L139.831 89.926 C140.32 89.434 140.97 89.16 141.658 89.16 C142.348 89.16 143 89.433 143.49 89.926 L164.81 111.533 C165.298 112.027 165.568 112.685 165.568 113.387 C165.568 114.084 165.298 114.741 164.81 115.238 L163.289 116.781 C162.798 117.274 162.151 117.548 161.462 117.548 Z" id="Path_2" fill="rgb(204, 204, 204)" stroke="rgb(115, 190, 30)" stroke-width="0.5" display="inline">
+					</path> 
+				</g>
+				<g  id="park_big" display="inline">
+					<polygon   points="54.874 67.854, 86.86 99.346, 28.684 158.293, 1.855 130.885, 1.855 121.971" id="park_big_bg" fill="rgb(153, 204, 51)" display="inline">
+					</polygon> 
+					<circle  cx="41.058" cy="114.049" r="13.24" id="park_big_special" fill="rgb(153, 153, 51)" display="inline">
+					</circle> 
+					<circle  cx="41.058" cy="114.048" r="5.42" id="park_big_water" fill="rgb(51, 153, 204)" display="inline">
+					</circle> 
+					<path   d="M54.986 114.049 C54.986 112.975 54.856 111.931 54.629 110.925 L87.837 100.587 L87.333 98.92 L54.14 109.253 C53.537 107.569 52.631 106.038 51.483 104.722 L70.609 85.34 L69.39 84.108 L50.264 103.49 C48.996 102.352 47.528 101.452 45.913 100.839 L55.667 68.251 L54.019 67.744 L44.264 100.329 C43.232 100.082 42.162 99.936 41.057 99.936 C37.527 99.936 34.307 101.284 31.852 103.486 L26.53 98.095 L25.312 99.329 L30.634 104.721 C28.461 107.212 27.129 110.472 27.129 114.049 C27.129 115.246 27.293 116.403 27.571 117.516 L0.309998 125.982 L0.814998 127.653 L28.095 119.176 C28.697 120.732 29.56 122.147 30.634 123.376 L13.404 140.836 L14.622 142.07 L31.852 124.612 C33.06 125.694 34.45 126.566 35.975 127.175 L27.521 157.571 L29.18 158.046 L37.617 127.708 C38.72 127.993 39.869 128.162 41.058 128.162 C44.588 128.162 47.808 126.813 50.263 124.612 L54.989 129.398 L56.207 128.164 L51.482 123.378 C53.656 120.887 54.986 117.626 54.986 114.049 ZM53.264 114.049 C53.264 117.144 52.126 119.971 50.264 122.143 L46.407 118.234 C47.324 117.035 47.844 115.589 47.844 114.051 C47.844 112.47 47.295 111.031 46.405 109.866 L50.264 105.956 C52.125 108.129 53.264 110.952 53.264 114.049 ZM35.997 114.049 C35.997 112.977 36.33 111.958 36.931 111.099 L39.842 114.049 L36.931 116.997 C36.347 116.163 35.997 115.148 35.997 114.049 ZM38.147 109.864 C38.995 109.258 40 108.92 41.057 108.92 C42.141 108.92 43.142 109.274 43.968 109.866 L41.057 112.814 L38.147 109.864 ZM41.058 115.283 L43.969 118.231 C43.121 118.839 42.118 119.175 41.058 119.175 C39.973 119.175 38.974 118.822 38.148 118.231 L41.058 115.283 ZM42.278 114.049 L45.189 111.101 C45.771 111.938 46.123 112.952 46.123 114.049 C46.123 115.121 45.79 116.14 45.189 116.997 L42.278 114.049 ZM41.058 101.682 C44.113 101.682 46.904 102.833 49.047 104.721 L45.187 108.63 C44.04 107.73 42.619 107.172 41.058 107.172 C39.538 107.172 38.112 107.702 36.93 108.628 L33.07 104.721 C35.213 102.834 38.003 101.682 41.058 101.682 ZM28.853 114.049 C28.853 110.952 29.99 108.125 31.852 105.955 L35.711 109.863 C34.795 111.063 34.274 112.509 34.274 114.047 C34.274 115.628 34.823 117.066 35.713 118.23 L31.854 122.142 C29.99 119.973 28.853 117.146 28.853 114.049 ZM41.058 126.416 C38.003 126.416 35.213 125.265 33.072 123.378 L36.931 119.466 C38.079 120.368 39.499 120.924 41.06 120.924 C42.58 120.924 44.006 120.396 45.189 119.468 L49.047 123.378 C46.903 125.265 44.113 126.416 41.058 126.416 Z" id="Path_3" fill="rgb(204, 204, 204)" stroke="rgb(115, 190, 30)" stroke-width="0.5" display="inline">
+					</path> 
+				</g>
+				<g  id="bldg_hotels" display="inline">
+					<polygon   points="43.202 173.001, 55.813 185.78, 114.365 126.455, 101.577 113.853" id="hotel_excellent" fill="rgb(255, 204, 102)" display="inline">
+					</polygon> 
+					<polygon   points="5.211 43.746, 43.412 37.5, 40.515 68.979, 10.278 74.343" id="hotel_plaza" fill="rgb(255, 204, 102)" display="inline">
+					</polygon> 
+					<rect x="88.87" y="67.284" width="35.828" height="24.005" id="hotel_mission" fill="rgb(255, 204, 102)" transform="matrix(0.7024,0.7117,-0.7117,0.7024,88.2053,-52.41)" display="inline">
+					</rect>
+				</g>
+				<g  id="bldg_theaters" display="inline">
+					<rect x="32.319" y="144.71" width="31.482" height="15.434" id="theater2" fill="rgb(255, 102, 102)" transform="matrix(0.7025,-0.7117,0.7117,0.7025,-94.186,79.5583)" display="inline">
+					</rect>
+					<polygon   points="101.577 113.853, 124.032 91.099, 163.615 131.207, 141.707 153.406" id="theater1" fill="rgb(255, 102, 102)" display="inline">
+					</polygon> 
+				</g>
+				<g  id="streets_reg" display="inline">
+					<polyline   points="114.39 43.499, 155.002 1.431, 177.622 24.296" id="Polyline" fill="none" stroke="rgb(102, 102, 102)" stroke-width="2" display="inline">
+					</polyline> 
+					<line  x1="148.986" y1="33.648" x2="177.622" y2="4.396" id="Line" fill="none" stroke="rgb(102, 102, 102)" stroke-width="2" display="inline">
+					</line> 
+					<path   d="M177.297 62.333 " id="Path_4" fill="none" stroke="rgb(102, 102, 102)" stroke-width="2" display="inline">
+					</path> 
+					<polyline   points="72.88 85.565, 102.634 55.419, 124.338 77.411" id="Polyline_1" fill="none" stroke="rgb(102, 102, 102)" stroke-width="2" display="inline">
+					</polyline> 
+					<line  x1="114.365" y1="126.455" x2="20.631" y2="221.429" id="Line_1" fill="none" stroke="rgb(102, 102, 102)" stroke-width="2" display="inline">
+					</line> 
+					<polyline   points="20.813 195.684, 46.222 221.429, 68.384 198.975" id="Polyline_2" fill="none" stroke="rgb(102, 102, 102)" stroke-width="2" display="inline">
+					</polyline> 
+					<line  x1="128.407" y1="221.429" x2="168.997" y2="180.306" id="Line_2" fill="none" stroke="rgb(102, 102, 102)" stroke-width="2" display="inline">
+					</line> 
+					<line  x1="142.429" y1="182.809" x2="104.313" y2="221.429" id="Line_3" fill="none" stroke="rgb(102, 102, 102)" stroke-width="2" display="inline">
+					</line> 
+					<line  x1="128.461" y1="166.825" x2="110.092" y2="148.21" id="Line_4" fill="none" stroke="rgb(102, 102, 102)" stroke-width="2" display="inline">
+					</line> 
+					<line  x1="130.669" y1="194.722" x2="142.718" y2="206.933" id="Line_5" fill="none" stroke="rgb(102, 102, 102)" stroke-width="2" display="inline">
+					</line> 
+					<polyline   points="25.025 191.418, 2.82 168.917, 20.995 150.502" id="Polyline_3" fill="none" stroke="rgb(102, 102, 102)" stroke-width="2" display="inline">
+					</polyline> 
+					<line  x1="28.684" y1="158.293" x2="86.86" y2="99.346" id="Line_6" fill="none" stroke="rgb(102, 102, 102)" stroke-width="2" display="inline">
+					</line> 
+					<line  x1="7.428" y1="177.079" x2="1.855" y2="182.491" id="Line_7" fill="none" stroke="rgb(102, 102, 102)" stroke-width="2" display="inline">
+					</line> 
+					<line  x1="1.855" y1="48.921" x2="11.851" y2="111.448" id="Line_8" fill="none" stroke="rgb(102, 102, 102)" stroke-width="2" display="inline">
+					</line> 
+					<line  x1="84.087" y1="1.431" x2="87.484" y2="30.293" id="Line_9" fill="none" stroke="rgb(102, 102, 102)" stroke-width="2" display="inline">
+					</line> 
+					<line  x1="72.78" y1="17.835" x2="74.858" y2="32.356" id="Line_10" fill="none" stroke="rgb(102, 102, 102)" stroke-width="2" display="inline">
+					</line> 
+					<line  x1="1.855" y1="75.539" x2="53.625" y2="66.591" id="Line_11" fill="none" stroke="rgb(102, 102, 102)" stroke-width="2" display="inline">
+					</line> 
+					<line  x1="14.664" y1="144.088" x2="1.855" y2="156.828" id="Line_12" fill="none" stroke="rgb(102, 102, 102)" stroke-width="2" display="inline">
+					</line> 
+				</g>
+				<g  id="streets_transit" display="inline">
+					<g  id="Group" display="inline">
+						<path   d="M177.622 34.443 L164.968 47.223 C153.242 35.407 137.583 19.624 137.435 19.474 C137.249 19.193 125.504 1.432 125.504 1.432 L121.45 1.432 L134.757 21.702 L162.428 49.79 L101.611 111.214 C74.871 84.978 51.256 61.814 50.891 61.454 C50.826 60.967 49.433 50.557 47.828 38.544 L93.083 31.144 L92.535 27.696 L47.366 35.081 C45.903 24.151 44.358 12.599 43.512 6.27299 L63.993 3.156 L63.476 1.428 L52.186 1.428 L43.048 2.83299 C42.927 1.93299 42.86 1.42799 42.86 1.42799 L39.414 1.42799 L39.67 3.351 L1.855 9.167 L1.855 12.622 L40.129 6.794 L43.972 35.639 L1.855 42.525 L1.855 46.061 L44.433 39.101 L47.634 63.121 L99.164 113.685 L42.631 170.788 L1.855 129.46 L1.855 134.398 L40.101 173.342 L1.855 211.971 L2.074 216.904 L42.549 175.836 L79.788 213.755 L72.238 221.432 L76.79 221.432 L82.069 216.081 L87.324 221.432 L92.591 221.432 L84.693 213.425 L141.817 155.543 L177.621 190.675 L177.621 185.78 C177.621 185.78 163.286 171.717 144.267 153.06 L177.621 119.267 L177.621 114.332 L141.848 150.687 C130.077 139.14 116.737 126.054 103.961 113.522 L164.599 51.991 L177.624 65.214 L177.624 59.974 C177.624 59.974 173.124 55.437 167.142 49.409 L177.624 38.775 L177.622 34.443 L177.622 34.443 ZM139.403 153.172 L82.403 211.102 L45.08 173.269 L101.522 115.997 L139.403 153.172 ZM159.109 221.429 L177.622 202.447 L177.622 197.51 L154.573 221.429 L159.109 221.429 Z" id="Path_5" fill="rgb(255, 255, 255)" display="inline">
+						</path> 
+					</g>
+					<g  id="Group_1" display="inline">
+						<path   d="M177.622 34.443 L164.968 47.223 C153.242 35.407 137.583 19.624 137.435 19.474 C137.249 19.193 125.504 1.432 125.504 1.432 L121.45 1.432 L134.757 21.702 L162.428 49.79 L101.611 111.214 C74.871 84.978 51.256 61.814 50.891 61.454 C50.826 60.967 49.433 50.557 47.828 38.544 L93.083 31.144 L92.535 27.696 L47.366 35.081 C45.903 24.151 44.358 12.599 43.512 6.27299 L63.993 3.156 L63.476 1.428 L52.186 1.428 L43.048 2.83299 C42.927 1.93299 42.86 1.42799 42.86 1.42799 L39.414 1.42799 L39.67 3.351 L1.855 9.167 L1.855 12.622 L40.129 6.794 L43.972 35.639 L1.855 42.525 L1.855 46.061 L44.433 39.101 L47.634 63.121 L99.164 113.685 L42.631 170.788 L1.855 129.46 L1.855 134.398 L40.101 173.342 L1.855 211.971 L2.074 216.904 L42.549 175.836 L79.788 213.755 L72.238 221.432 L76.79 221.432 L82.069 216.081 L87.324 221.432 L92.591 221.432 L84.693 213.425 L141.817 155.543 L177.621 190.675 L177.621 185.78 C177.621 185.78 163.286 171.717 144.267 153.06 L177.621 119.267 L177.621 114.332 L141.848 150.687 C130.077 139.14 116.737 126.054 103.961 113.522 L164.599 51.991 L177.624 65.214 L177.624 59.974 C177.624 59.974 173.124 55.437 167.142 49.409 L177.624 38.775 L177.622 34.443 L177.622 34.443 ZM139.403 153.172 L82.403 211.102 L45.08 173.269 L101.522 115.997 L139.403 153.172 ZM159.109 221.429 L177.622 202.447 L177.622 197.51 L154.573 221.429 L159.109 221.429 Z" id="Path_6" fill="none" stroke="rgb(0, 160, 198)" display="inline">
+						</path> 
+					</g>
+				</g>
+				<polygon   points="1.855 119.068, 1.855 123.815, 122.867 1.431, 117.994 1.431" id="street_main" fill="rgb(255, 255, 255)" stroke="rgb(255, 102, 51)" display="inline">
+				</polygon> 
+				<g  id="text_streetnames" display="inline">
+					<g  id="Group_2" transform="matrix(0.7024,0.7117,-0.7024,0.7117,105.034,52.1831)" display="inline">
+						<text  x="0 " y="0 " id="Text" fill="rgb(0, 102, 153)" font-family="Verdana" font-size="5" display="inline">T</text> 
+						<text  x="2.698 " y="0 " id="Text_1" fill="rgb(0, 102, 153)" font-family="Verdana" font-size="5" display="inline">r</text> 
+						<text  x="4.828 " y="0 " id="Text_2" fill="rgb(0, 102, 153)" font-family="Verdana" font-size="5" display="inline">ansit C</text> 
+						<text  x="22.9 " y="0 " id="Text_3" fill="rgb(0, 102, 153)" font-family="Verdana" font-size="5" display="inline">t</text> 
+					</g>
+					<g  id="Group_3" transform="matrix(0.7024,0.7117,-0.7024,0.7117,82.1475,89.8008)" display="inline">
+						<text  x="0 " y="0 " id="Text_4" fill="rgb(0, 102, 153)" font-family="Verdana" font-size="5" display="inline">4th St</text> 
+					</g>
+					<g  id="Group_4" transform="matrix(0.7024,0.7117,-0.7024,0.7117,104.841,138.85)" display="inline">
+						<text  x="0 " y="0 " id="Text_5" fill="rgb(0, 102, 153)" font-family="Verdana" font-size="5" display="inline">Holland Ct</text> 
+					</g>
+					<g  id="Group_5" transform="matrix(0.7024,0.7117,-0.7024,0.7117,7.9302,168.96)" display="inline">
+						<text  x="0 " y="0 " id="Text_6" fill="rgb(0, 102, 153)" font-family="Verdana" font-size="5" display="inline">Mint St</text> 
+					</g>
+					<g  id="Group_6" transform="matrix(0.7024,-0.7117,0.7024,0.7117,56.0605,61.3721)" display="inline">
+						<text  x="0 " y="0 " id="Text_7" fill="rgb(0, 102, 153)" font-family="Verdana" font-size="5" display="inline">Mar</text> 
+						<text  x="9.732 " y="0 " id="Text_8" fill="rgb(0, 102, 153)" font-family="Verdana" font-size="5" display="inline">k</text> 
+						<text  x="12.761 " y="0 " id="Text_9" fill="rgb(0, 102, 153)" font-family="Verdana" font-size="5" display="inline">et S</text> 
+						<text  x="23.299 " y="0 " id="Text_10" fill="rgb(0, 102, 153)" font-family="Verdana" font-size="5" display="inline">t</text> 
+					</g>
+					<g  id="Group_7" transform="matrix(0.7024,-0.7117,0.7024,0.7117,74.2979,80.5781)" display="inline">
+						<text  x="0 " y="0 " id="Text_11" fill="rgb(0, 102, 153)" font-family="Verdana" font-size="5" display="inline">Stockton St</text> 
+					</g>
+					<g  id="Group_8" transform="matrix(0.7024,-0.7117,0.7024,0.7117,66.1572,144.604)" display="inline">
+						<text  x="0 " y="0 " id="Text_12" fill="rgb(0, 102, 153)" font-family="Verdana" font-size="5" display="inline">Mission St</text> 
+					</g>
+					<g  id="Group_9" transform="matrix(0.7024,-0.7117,0.7024,0.7117,150.542,155.618)" display="inline">
+						<text  x="0 " y="0 " id="Text_13" fill="rgb(0, 102, 153)" font-family="Verdana" font-size="5" display="inline">Ho</text> 
+						<text  x="7.068 " y="0 " id="Text_14" fill="rgb(0, 102, 153)" font-family="Verdana" font-size="5" display="inline">w</text> 
+						<text  x="11.277 " y="0 " id="Text_15" fill="rgb(0, 102, 153)" font-family="Verdana" font-size="5" display="inline">ard S</text> 
+						<text  x="25.251 " y="0 " id="Text_16" fill="rgb(0, 102, 153)" font-family="Verdana" font-size="5" display="inline">t</text> 
+					</g>
+					<g  id="Group_10" transform="matrix(0.7024,-0.7117,0.7024,0.7117,154.106,218.707)" display="inline">
+						<text  x="0 " y="0 " id="Text_17" fill="rgb(0, 102, 153)" font-family="Verdana" font-size="5" display="inline">F</text> 
+						<text  x="2.864 " y="0 " id="Text_18" fill="rgb(0, 102, 153)" font-family="Verdana" font-size="5" display="inline">olsom S</text> 
+						<text  x="23.768 " y="0 " id="Text_19" fill="rgb(0, 102, 153)" font-family="Verdana" font-size="5" display="inline">t</text> 
+					</g>
+					<g  id="Group_11" transform="matrix(0.9753,-0.155,0.1529,0.9882,7.2939,39.8706)" display="inline">
+						<text  x="0 " y="0 " id="Text_20" fill="rgb(0, 102, 153)" font-family="Verdana" font-size="5" display="inline">Ofarrell St</text> 
+					</g>
+					<g  id="Group_12" transform="matrix(0.9753,-0.155,0.1529,0.9882,13.4023,80.624)" display="inline">
+						<text  x="0 " y="0 " id="Text_21" fill="rgb(0, 102, 153)" font-family="Verdana" font-size="5" display="inline">Ellis St</text> 
+					</g>
+				</g>
+			</g>
+		</g>
+		<g  id="marker_arrow.svg" transform="matrix(1,0,0,1,78.967,99.605)" xml:space="preserve" display="inline">
+			<animateMotion  begin="7" dur="0.8" fill="freeze" path="M-49 -77 C-20.3333 -49.1667 8.33333 -21.3333 37 6.5 " keyPoints="0;1" keyTimes="0;1"/>
+			<animateMotion  begin="7.8" dur="1.2" fill="freeze" path="M37 6.5 C-8.5 52.5 -54 98.5 -99.5 144.5 " keyPoints="0;1" keyTimes="0;1"/>
+			<animateMotion  begin="9" dur="0.5" fill="freeze" path="M-99.5 144.5 C-106.333 136.833 -113.167 129.167 -120 121.5 " keyPoints="0;1" keyTimes="0;1"/>
+			<animateTransform attributeName="transform" attributeType="XML" type="translate"  begin="0" dur="9" fill="freeze" restart="never" calcMode="linear" values="0 0;0 0;9.53674e-007 -2.86102e-006;9.53674e-007 -2.86102e-006;9.53674e-007 -2.86102e-006;9.53674e-007 -2.86102e-006;9.53674e-007 -2.86102e-006" keyTimes="0;0.777778;0.777778;0.866667;0.866667;1;1" additive="sum"/>
+			<animateTransform attributeName="transform" attributeType="XML" type="rotate"  begin="0" dur="9" fill="freeze" restart="never" calcMode="linear" values="0 9.033 10.395 ;0 9.033 10.395 ;-49.8823 9.033 10.395 ;-49.8823 9.033 10.395 ;46.4087 9.033 10.395 ;46.4087 9.033 10.395 ;133.534 9.033 10.395 " keyTimes="0;0.777778;0.777778;0.866667;0.866667;1;1" additive="sum"/>
+			<animate attributeName="display" begin="0" dur="7" fill="freeze" restart="never"  calcMode="discrete" values="none; inherit" keyTimes="0; 1"/>
+			<g  id="marker_arrow" display="inline">
+				<polygon   points="9.035 20.395, 0.459 0.395, 9.035 7.063, 17.607 0.395" id="arrow" fill="rgb(255, 204, 0)" stroke="rgb(153, 0, 102)" display="inline">
+					<animateColor attributeName="fill" begin="10" dur="1" fill="freeze" restart="never" calcMode="linear" values="rgb(255, 204, 0);rgb(255, 102, 102)" keyTimes="0;1"/>
+					<animateColor attributeName="stroke" begin="10" dur="1" fill="freeze" restart="never" calcMode="linear" values="rgb(153, 0, 102);rgb(255, 102, 102)" keyTimes="0;1"/>
+				</polygon> 
+			</g>
+		</g>
+	</g>
+	<g  id="balloons.svg" transform="matrix(1,0,0,1,54.7595,70.5655)" xml:space="preserve" display="inline">
+		<animateMotion  begin="7.5" dur="9.5" fill="freeze" path="M-258 108 C-255.667 108 -253.304 108.37 -251 108 C-200.922 99.9661 -229.012 33.2078 -149 24 C-25.8542 9.82845 26.1227 155.349 157 39.4286 C171.039 26.9941 187.825 -4.9185 184 -25 C170.939 -93.5703 86.3936 48.8648 76.2 61 C74.8 62.6667 74.1745 65.9043 72 66 C32.8106 67.7249 -47.9714 -46.9944 29 -32 C57.1194 -26.5222 66.3779 130.348 -19 84 C-72.1035 55.1724 -81.3783 -85.2317 -13 -95 C29.3946 -101.056 7.59627 -20.9307 22 -4 C44.3051 22.2183 135.424 -5.99129 96 -32 C46.3573 -64.7504 19.9494 77.2407 -19 108 C-123.363 190.418 -189.478 33.2117 -128 14 C-118.747 11.1086 -114.699 22.101 -111.529 27 C-73.7448 85.3943 -181.942 113.431 -139 171 C-123.457 191.838 -43.5956 213.117 -27 182 C-17.4463 164.087 -179.231 -63.9693 -194 -126 "/>
+		<animate attributeName="display" begin="0" dur="7.5" fill="freeze" restart="never"  calcMode="discrete" values="none; inherit" keyTimes="0; 1"/>
+		<g  id="balloons" display="inline">
+			<g  id="balloon_orange" display="inline">
+				<path   d="M37.739 20.474 L34.736 18.532 C34.736 18.532 31.029 22.77 31.029 27.716 S33.5 46.26 24.849 51.205 C16.197 56.149 13.547 56.149 6.305 66.04 " id="Path_26" fill="none" stroke="rgb(0, 0, 0)" stroke-width="0.25" display="inline">
+				</path> 
+				<path   d="M47.773 1.205 C43.597 -1.474 37.579 0.464 34.34 5.526 C31.335 10.215 31.807 15.913 35.211 18.854 L33.022 19.696 L36.564 23.537 L37.168 20.081 C41.244 21.811 46.51 19.844 49.475 15.215 C52.714 10.154 51.954 3.88 47.773 1.205 Z" id="Path_27" fill="rgb(255, 204, 0)" display="inline">
+				</path> 
+				<path   d="M46.466 5.044 L48.503 3.967 C48.503 3.967 49.805 5.812 49.926 6.891 C50.007 7.596 50.23 8.502 50.084 9.948 L48.387 9.808 C48.387 9.808 48.567 7.441 46.466 5.044 Z" id="Path_28" fill="rgb(255, 255, 204)" display="inline">
+				</path> 
+			</g>
+			<g  id="balloon_red" display="inline">
+				<path   d="M53.28 29.127 L50.806 27.186 C50.806 27.186 51.515 36.543 47.805 40.784 C44.096 45.023 40.387 49.437 31.736 53.146 S11.427 69.75 9.483 75.932 " id="Path_29" fill="none" stroke="rgb(0, 0, 0)" stroke-width="0.25" display="inline">
+				</path> 
+				<path   d="M59.383 8.115 C54.676 6.542 49.317 9.889 47.411 15.588 C45.643 20.87 47.494 26.28 51.515 28.301 L49.593 29.652 L53.962 32.508 L53.707 29.008 C58.084 29.688 62.709 26.495 64.45 21.283 C66.356 15.588 64.086 9.687 59.383 8.115 Z" id="Path_30" fill="rgb(255, 51, 102)" display="inline">
+				</path> 
+				<path   d="M60.43 13.748 L62.56 12.873 C62.56 12.873 63.676 14.833 63.698 15.918 C63.711 16.628 63.846 17.552 63.562 18.981 L61.89 18.673 C61.89 18.674 62.288 16.335 60.43 13.748 Z" id="Path_31" fill="rgb(255, 204, 204)" display="inline">
+				</path> 
+			</g>
+			<g  id="balloon_blue" display="inline">
+				<path   d="M39.857 38.162 L37.739 37.607 C37.739 37.607 33.149 35.839 31.736 44.493 C30.321 53.146 20.61 59.86 15.666 63.567 C10.72 67.274 0.125 79.813 0.125 80.343 " id="Path_32" fill="none" stroke="rgb(0, 0, 0)" stroke-width="0.25" display="inline">
+				</path> 
+				<path   d="M48.699 18.396 C44.293 16.112 38.48 18.588 35.715 23.926 C33.15 28.872 34.14 34.502 37.798 37.12 L35.69 38.16 L39.565 41.658 L39.855 38.162 C44.074 39.513 49.135 37.075 51.665 32.195 C54.433 26.858 53.104 20.678 48.699 18.396 Z" id="Path_33" fill="rgb(102, 255, 255)" display="inline">
+				</path> 
+				<path   d="M48.861 24.123 L51.1 23.589 C51.1 23.589 51.902 25.7 51.749 26.774 C51.652 27.476 51.645 28.412 51.142 29.776 L49.54 29.213 C49.541 29.214 50.301 26.967 48.861 24.123 Z" id="Path_34" fill="rgb(204, 255, 255)" display="inline">
+				</path> 
+			</g>
+		</g>
+	</g>
+	<g  id="title_screen.svg" xml:space="preserve" display="inline">
+		<animate attributeName="display" begin="3" dur="indefinite" fill="freeze" restart="never"  calcMode="discrete" values="none; none" keyTimes="0; 0.5"/>
+		<g  id="screen" display="inline">
+			<image  x="0" y="0" width="176" height="220" id="bg_gradient" display="inline" xlink:href="data:image/jpg;base64,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">
+			</image> 
+			<rect x="0" y="82" width="176" height="46" id="band_mid" fill="rgb(102, 102, 255)" display="inline">
+			</rect>
+			<g  id="mguide_logo" display="inline">
+				<path   d="M52.202 114.797 L45.215 114.797 L48.537 102.247 L47.047 102.247 L43.723 114.797 L36.673 114.797 L39.997 102.247 L38.475 102.247 L35.152 114.797 L28.194 114.797 L31.3 102.942 C31.362 102.713 31.393 102.451 31.393 102.158 C31.393 101.404 31.238 100.705 30.927 100.068 C30.617 99.427 30.192 99.12 29.654 99.141 L52.607 99.141 C53.476 99.141 54.175 99.381 54.703 99.864 C55.231 100.346 55.495 100.986 55.495 101.781 C55.495 102.119 55.453 102.464 55.37 102.821 L52.202 114.797 Z" id="Path_7" fill="rgb(255, 255, 255)" display="inline">
+				</path> 
+				<path   d="M62.709 113.242 C62.439 114.277 62.056 114.797 61.56 114.797 L56.031 114.797 C55.72 114.797 55.565 114.575 55.565 114.129 C55.565 113.94 55.616 113.645 55.72 113.242 C55.99 112.205 56.404 111.685 56.963 111.685 L62.305 111.685 C62.679 111.685 62.864 111.915 62.864 112.379 C62.864 112.573 62.811 112.859 62.709 113.242 Z" id="Path_8" fill="rgb(255, 255, 255)" display="inline">
+				</path> 
+				<path   d="M81.875 114.797 L79.266 114.797 L78.428 118.014 C78.199 118.868 77.569 119.604 76.533 120.231 C75.622 120.793 74.762 121.076 73.955 121.076 L62.121 121.076 L62.96 117.966 L71.438 117.966 L72.277 114.801 L67.432 114.801 C66.582 114.801 65.904 114.549 65.397 114.044 C64.89 113.543 64.636 112.896 64.636 112.099 C64.636 111.786 64.678 111.449 64.761 111.091 L66.966 102.82 C67.256 101.752 67.846 100.872 68.737 100.178 C69.627 99.487 70.611 99.141 71.687 99.141 L83.428 99.141 L80.322 110.766 C80.302 110.85 80.292 111.037 80.292 111.33 C80.292 113.577 80.737 114.702 81.627 114.702 C81.669 114.701 81.75 114.732 81.875 114.797 ZM73.086 111.688 L75.602 102.25 L74.112 102.25 L71.596 111.688 L73.086 111.688 Z" id="Path_9" fill="rgb(255, 255, 255)" display="inline">
+				</path> 
+				<path   d="M100.607 114.797 L86.166 114.797 C85.275 114.797 84.588 114.545 84.101 114.04 C83.616 113.539 83.372 112.889 83.372 112.093 C83.372 111.735 83.423 111.37 83.528 110.991 L86.665 99.137 L93.65 99.137 L90.328 111.685 L91.818 111.685 L95.142 99.137 L102.126 99.137 L99.056 110.739 C99.035 110.824 99.025 111.01 99.025 111.304 C99.025 113.545 99.47 114.667 100.359 114.667 C100.42 114.671 100.505 114.712 100.607 114.797 Z" id="Path_10" fill="rgb(255, 255, 255)" display="inline">
+				</path> 
+				<path   d="M109.18 114.797 L102.19 114.797 L105.329 102.942 C105.392 102.692 105.426 102.42 105.426 102.126 C105.426 101.414 105.247 100.749 104.898 100.127 C104.544 99.509 104.131 99.179 103.656 99.139 L113.316 99.139 L109.18 114.797 ZM114.148 96.027 L107.189 96.027 L108.029 92.861 L114.984 92.861 L114.148 96.027 Z" id="Path_11" fill="rgb(255, 255, 255)" display="inline">
+				</path> 
+				<path   d="M130.834 114.797 L116.391 114.797 C115.541 114.797 114.868 114.545 114.356 114.04 C113.85 113.539 113.596 112.889 113.596 112.093 C113.596 111.78 113.637 111.442 113.719 111.087 L115.926 102.816 C116.216 101.705 116.824 100.805 117.757 100.11 C118.627 99.461 119.589 99.136 120.647 99.136 L125.401 99.136 L127.047 92.861 L134.036 92.861 L129.284 110.748 C129.263 110.83 129.252 111.019 129.252 111.311 C129.252 113.55 129.695 114.67 130.589 114.67 C130.646 114.671 130.73 114.712 130.834 114.797 ZM122.042 111.688 L124.561 102.25 L123.069 102.25 L120.553 111.688 L122.042 111.688 Z" id="Path_12" fill="rgb(255, 255, 255)" display="inline">
+				</path> 
+				<path   d="M150.236 103.803 C149.409 106.912 147.783 108.468 145.359 108.468 L140.513 108.468 L139.674 111.688 L141.164 111.688 L141.563 110.106 L148.584 110.106 L148.307 111.111 C148.036 112.166 147.452 113.042 146.547 113.746 C145.649 114.445 144.692 114.8 143.678 114.8 L135.51 114.8 C134.641 114.8 133.957 114.548 133.458 114.043 C132.963 113.542 132.713 112.895 132.713 112.096 C132.713 111.783 132.753 111.448 132.836 111.09 L134.979 102.944 C135.042 102.715 135.078 102.453 135.078 102.16 C135.078 101.406 134.921 100.707 134.61 100.07 C134.297 99.429 133.873 99.122 133.337 99.143 L147.75 99.143 C149.638 99.143 150.578 99.988 150.578 101.678 C150.58 102.257 150.466 102.968 150.236 103.803 ZM142.846 105.357 L143.686 102.248 L142.194 102.248 L141.356 105.357 L142.846 105.357 Z" id="Path_13" fill="rgb(255, 255, 255)" display="inline">
+				</path> 
+			</g>
+			<g  id="t_welcome" display="inline">
+				<polygon   points="51 69, 41 69, 41 59, 43 59, 43 67, 45 67, 45 59, 47 59, 47 67, 49 67, 49 59, 51 59" id="Polygon_1" fill="rgb(255, 255, 255)" display="inline">
+				</polygon> 
+				<polygon   points="61 61, 55 61, 55 63, 59 63, 59 65, 55 65, 55 67, 61 67, 61 69, 53 69, 53 59, 61 59" id="Polygon_2" fill="rgb(255, 255, 255)" display="inline">
+				</polygon> 
+				<polygon   points="65 67, 69 67, 69 69, 63 69, 63 59, 65 59" id="Polygon_3" fill="rgb(255, 255, 255)" display="inline">
+				</polygon> 
+				<polygon   points="79 61, 73 61, 73 67, 79 67, 79 69, 71 69, 71 59, 79 59" id="Polygon_4" fill="rgb(255, 255, 255)" display="inline">
+				</polygon> 
+				<path   d="M89 59 L89 69 L81 69 L81 59 L89 59 ZM87 67 L87 61 L83 61 L83 67 L87 67 Z" id="Path_14" fill="rgb(255, 255, 255)" display="inline">
+				</path> 
+				<polygon   points="91 59, 101 59, 101 69, 99 69, 99 61, 97 61, 97 69, 95 69, 95 61, 93 61, 93 69, 91 69" id="Polygon_5" fill="rgb(255, 255, 255)" display="inline">
+				</polygon> 
+				<polygon   points="111 61, 105 61, 105 63, 109 63, 109 65, 105 65, 105 67, 111 67, 111 69, 103 69, 103 59, 111 59" id="Polygon_6" fill="rgb(255, 255, 255)" display="inline">
+				</polygon> 
+				<polygon   points="125 59, 125 61, 123 61, 123 69, 121 69, 121 61, 119 61, 119 59" id="Polygon_7" fill="rgb(255, 255, 255)" display="inline">
+				</polygon> 
+				<path   d="M135 59 L135 69 L127 69 L127 59 L135 59 ZM133 67 L133 61 L129 61 L129 67 L133 67 Z" id="Path_15" fill="rgb(255, 255, 255)" display="inline">
+				</path> 
+			</g>
+			<g  id="t_localareaguide" display="inline">
+				<polygon   points="20 169, 24 169, 24 171, 18 171, 18 161, 20 161" id="Polygon_8" fill="rgb(255, 255, 255)" display="inline">
+				</polygon> 
+				<path   d="M34 161 L34 171 L26 171 L26 161 L34 161 ZM32 169 L32 163 L28 163 L28 169 L32 169 Z" id="Path_16" fill="rgb(255, 255, 255)" display="inline">
+				</path> 
+				<polygon   points="44 163, 38 163, 38 169, 44 169, 44 171, 36 171, 36 161, 44 161" id="Polygon_9" fill="rgb(255, 255, 255)" display="inline">
+				</polygon> 
+				<path   d="M46 161 L54 161 L54 171 L52 171 L52 167 L48 167 L48 171 L46 171 L46 161 ZM52 165 L52 163 L48 163 L48 165 L52 165 Z" id="Path_17" fill="rgb(255, 255, 255)" display="inline">
+				</path> 
+				<polygon   points="58 169, 62 169, 62 171, 56 171, 56 161, 58 161" id="Polygon_10" fill="rgb(255, 255, 255)" display="inline">
+				</polygon> 
+				<path   d="M70 161 L78 161 L78 171 L76 171 L76 167 L72 167 L72 171 L70 171 L70 161 ZM76 165 L76 163 L72 163 L72 165 L76 165 Z" id="Path_18" fill="rgb(255, 255, 255)" display="inline">
+				</path> 
+				<path   d="M88 171 L86 171 L86 167 L82 167 L82 171 L80 171 L80 161 L88 161 L88 165 L86 165 L86 167 L88 167 L88 171 ZM85.92 165 L85.92 163 L82 163 L82 165 L85.92 165 Z" id="Path_19" fill="rgb(255, 255, 255)" display="inline">
+				</path> 
+				<polygon   points="98 163, 92 163, 92 165, 96 165, 96 167, 92 167, 92 169, 98 169, 98 171, 90 171, 90 161, 98 161" id="Polygon_11" fill="rgb(255, 255, 255)" display="inline">
+				</polygon> 
+				<path   d="M100 161 L108 161 L108 171 L106 171 L106 167 L102 167 L102 171 L100 171 L100 161 ZM106 165 L106 163 L102 163 L102 165 L106 165 Z" id="Path_20" fill="rgb(255, 255, 255)" display="inline">
+				</path> 
+				<polygon   points="118 169, 122 169, 122 167, 120 167, 120 165, 124 165, 124 171, 116 171, 116 161, 124 161, 124 163, 118 163" id="Polygon_12" fill="rgb(255, 255, 255)" display="inline">
+				</polygon> 
+				<polygon   points="132 161, 134 161, 134 171, 126 171, 126 161, 128 161, 128 169, 132 169" id="Polygon_13" fill="rgb(255, 255, 255)" display="inline">
+				</polygon> 
+				<rect x="136" y="161" width="2" height="10" id="Rectangle_2" fill="rgb(255, 255, 255)" display="inline">
+				</rect>
+				<path   d="M146 163 L148 163 L148 169 L146 169 L146 171 L140 171 L140 161 L146 161 L146 163 ZM145.92 163 L142 163 L142 169 L145.92 169 L145.92 163 Z" id="Path_21" fill="rgb(255, 255, 255)" display="inline">
+				</path> 
+				<polygon   points="158 163, 152 163, 152 165, 156 165, 156 167, 152 167, 152 169, 158 169, 158 171, 150 171, 150 161, 158 161" id="Polygon_14" fill="rgb(255, 255, 255)" display="inline">
+				</polygon> 
+			</g>
+			<g  id="t_yourmobile" display="inline">
+				<polygon   points="45 142, 47 142, 47 152, 39 152, 39 150, 45 150, 45 148, 39 148, 39 142, 41 142, 41 146, 45 146" id="Polygon_15" fill="rgb(255, 255, 255)" display="inline">
+				</polygon> 
+				<path   d="M57 142 L57 152 L49 152 L49 142 L57 142 ZM55 150 L55 144 L51 144 L51 150 L55 150 Z" id="Path_22" fill="rgb(255, 255, 255)" display="inline">
+				</path> 
+				<polygon   points="65 142, 67 142, 67 152, 59 152, 59 142, 61 142, 61 150, 65 150" id="Polygon_16" fill="rgb(255, 255, 255)" display="inline">
+				</polygon> 
+				<path   d="M77 152 L75 152 L75 148 L71 148 L71 152 L69 152 L69 142 L77 142 L77 146 L75 146 L75 148 L77 148 L77 152 ZM74.92 146 L74.92 144 L71 144 L71 146 L74.92 146 Z" id="Path_23" fill="rgb(255, 255, 255)" display="inline">
+				</path> 
+				<polygon   points="85 142, 95 142, 95 152, 93 152, 93 144, 91 144, 91 152, 89 152, 89 144, 87 144, 87 152, 85 152" id="Polygon_17" fill="rgb(255, 255, 255)" display="inline">
+				</polygon> 
+				<path   d="M105 142 L105 152 L97 152 L97 142 L105 142 ZM103 150 L103 144 L99 144 L99 150 L103 150 Z" id="Path_24" fill="rgb(255, 255, 255)" display="inline">
+				</path> 
+				<path   d="M107 142 L115 142 L115 146 L113 146 L113 148 L115 148 L115 152 L107 152 L107 142 ZM112.92 144 L109 144 L109 146 L112.92 146 L112.92 144 ZM112.92 148 L109 148 L109 150 L112.92 150 L112.92 148 Z" id="Path_25" fill="rgb(255, 255, 255)" display="inline">
+				</path> 
+				<rect x="117" y="142" width="2" height="10" id="Rectangle_3" fill="rgb(255, 255, 255)" display="inline">
+				</rect>
+				<polygon   points="123 150, 127 150, 127 152, 121 152, 121 142, 123 142" id="Polygon_18" fill="rgb(255, 255, 255)" display="inline">
+				</polygon> 
+				<polygon   points="137 144, 131 144, 131 146, 135 146, 135 148, 131 148, 131 150, 137 150, 137 152, 129 152, 129 142, 137 142" id="Polygon_19" fill="rgb(255, 255, 255)" display="inline">
+				</polygon> 
+			</g>
+		</g>
+	</g>
+</svg>

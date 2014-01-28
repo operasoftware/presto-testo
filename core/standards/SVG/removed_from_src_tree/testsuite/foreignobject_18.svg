@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg version="1.1" baseProfile="tiny" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  id="svg-root">
+	<g>
+		<g style="font-size:50px;color:green;">
+			<foreignObject id="internal" x="10" y="100" width="300" height="300">
+				<html xmlns="http://www.w3.org/1999/xhtml">
+					<body>
+						<p>This is XHTML</p>
+						<iframe src="http://www.opera.com" width="200" height="300"/>
+					</body>
+				</html>
+			</foreignObject>
+			<foreignObject id="external" x="320" y="100" width="300" height="300" xlink:href="http://www.opera.com/"/>
+			
+			<script>
+				function test()
+				{
+					alert("This should say null: " + document.getElementById("internal").contentDocument);
+					alert("This should say HTMLDocument: " + document.getElementById("external").contentDocument);
+				}
+			</script>
+			
+			<rect x="10" y="10" width="200" height="40" onclick="test();"/>
+			
+		</g>
+	</g>
+</svg>
+

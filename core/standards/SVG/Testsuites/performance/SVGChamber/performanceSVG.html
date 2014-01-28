@@ -1,0 +1,403 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+<script type="text/javascript" src="performanceSVG.js"></script>
+	<title>Automated SVG Performance Test based on SVG Chamber by David Dailey</title>
+<script type="text/javascript">
+var svgns = 'http://www.w3.org/2000/svg';
+var xlinkns = 'http://www.w3.org/1999/xlink';
+var SD;
+var Root;
+var workH=0
+var D0
+var gra=0
+Pix=new Array(2,4,5,9,11,17,18,24,28,29,31,33,34,35,38,41,44,45,47,52,55,56,59,61,62,71,72,73,74,75,76,77)
+Graphic_Elements=new Array('path', 'text', 'rect', 'circle', 'ellipse', 'line', 'image', 'use', 'polygon', 'polyline') 
+filter="none"
+function ready(){
+	
+	for (var i=0;i<Graphic_Elements.length;i++){
+		document.f.G.options[i+1] =  new Option(Graphic_Elements[i],Graphic_Elements[i]);
+	}
+	for (var i=0;i<filterPrimitives.length;i++){
+		document.f.FR.options[i+1] =  new Option(filterPrimitives[i][0],filterPrimitives[i][0]);
+	}
+	var offset=measure(document.getElementById("Table"))
+	var S=document.getElementById("E")
+	S.height= workH=height - offset
+	S.width=rightedge
+	S.top=0
+	SD=S.getSVGDocument()
+	Root=SD.documentElement
+	makeCP()
+	makeGr(0)
+}
+
+
+function measure(O){
+	try{
+		rightedge=document.body.clientWidth;
+		height=document.body.clientHeight;
+		Oheight=O.clientHeight
+	}
+	catch(e){
+		rightedge=window.innerWidth;
+		height=window.innerHeight;
+		Oheight=O.innerHeight
+	}
+	return Oheight
+}
+
+function change(evt){
+	var O=evt.target
+	nodeN=O.nodeName
+	var C = "rgb("+parseInt(Math.random()*255)+","+parseInt(Math.random()*255)+","+parseInt(Math.random()*255)+")";
+	if (nodeN=="text") {
+		O.firstChild.nodeValue=C
+		//O.setAttributeNS(null, "stroke", C)
+	}
+	else if (nodeN=="image"){
+		var r=Math.floor(Math.random()*Pix.length)
+		var f="img/p"+Pix[r]+".jpg"
+		O.setAttributeNS(xlinkns,"xlink:href",f)
+	}
+	else O.setAttributeNS(null, "fill", C)
+}
+
+opa=1
+clip=false
+tran=false
+var Colors=new Array("red","yellow", "orange", "green", "purple")
+var CPP=null
+function makeCP(){
+	var CP="M 170 140 A -35 30 0 1 1 170 141 M  208 128  A -75 7 0 1 1  208 129"
+	var CP="M 170 140 A -35 30 0 1 1 170 141 M  208 128  A -75 7 0 1 1  208 129 L300 300 400 400 100 400 100 395 395 300 z"
+	var CP="M 100 100 0 10 101 105 40 10 105 110 50 50 110 115 60 100 115 120 150 150 120 120 200 150 120 125 220 200 115 130 180 200 110 130 120 180 z"
+	var CP="M 100 100 0 10 101 105 40 10 105 110 50 50 110 115 60 100 115 120 150 150 120 120 200 150 120 125 220 200 115 130 180 200 110 130 120 180 400 200 300 100 405 200 330 110 410 205 380 110 420 210 440 120 420 215 500 215 420 220 500 230 420 230 500 300 420 235 440 500 415 235 380 450 410 225 z"
+	var CPO=SD.createElementNS(svgns,"clipPath")
+	CPO.setAttributeNS(null,"id","CP")
+	CPP=SD.createElementNS(svgns,"path")
+	CPP.setAttributeNS(null,"id","CPP")
+	CPP.setAttributeNS(null,"d",CP)
+	//CPP.setAttributeNS(null,"clip-rule","evenodd") //not sure this makes any difference
+	CPO.appendChild(CPP)
+	Root.appendChild(CPO)
+	//Root.appendChild(CPP) //in case we want to see the path of our clip-path
+
+}
+
+function makeGr(n){
+	var GR=SD.createElementNS(svgns,"linearGradient")
+	GR.setAttributeNS(null,"id","GR"+n)
+	angle=Math.random()*360
+	GR.setAttributeNS(null,"gradientTransform","rotate("+angle+" .5 .5)")
+	GR0=SD.createElementNS(svgns,"stop")
+	GR0.setAttributeNS(null,"offset",0)
+	if (Math.random()<.5) GR0.setAttributeNS(null,"stop-color","black")
+	else GR0.setAttributeNS(null,"stop-color","white")
+	GR1=SD.createElementNS(svgns,"stop")
+	GR1.setAttributeNS(null,"offset",1)
+	var C = "rgb("+parseInt(Math.random()*255)+","+parseInt(Math.random()*255)+","+parseInt(Math.random()*255)+")";
+	GR1.setAttributeNS(null,"stop-color",C)
+	GR.appendChild(GR0)
+	GR.appendChild(GR1)
+	Root.appendChild(GR)
+	return n
+}
+filterPrimitives=new Array()
+filterPrimitives[0]=new Array("feGaussianBlur","stdDeviation",40)
+filterPrimitives[1]=new Array("feColorMatrix","type","matrix","values","-1 0  0 0 0  0 -1  0 0 0 0  0 -1 0 0 1  1  1 0 0")
+filterPrimitives[2]=new Array("feGaussianBlur","stdDeviation",5)
+filterPrimitives[3]=new Array("feTurbulence","baseFrequency",.01,"numOctaves",2,"type", "turbulence" )
+filterPrimitives[4]=new Array("feDisplacementMap", "in","SourceGraphic", "in2", "BackgroundImage" ,"scale","16", "xChannelSelector","R", "yChannelSelector","B")
+filterPrimitives[5]=new Array("feImage")
+filterPrimitives[6]=new Array("none")
+
+	var FPRIM=null
+function makeFilter(n){
+	TY=filterPrimitives[n]
+	filter=TY[0]
+	//alert(filter)
+	var FIL=SD.createElementNS(svgns,"filter")
+	FIL.setAttributeNS(null, "id","tooi")
+	FIL.setAttributeNS(null, "x","0%")
+	FIL.setAttributeNS(null, "y","0%")
+	FIL.setAttributeNS(null, "width","180%")
+	FIL.setAttributeNS(null, "height","110%")
+	FPRIM=SD.createElementNS(svgns,filter)
+	for (i=1;i<TY.length;i+=2){
+		FPRIM.setAttributeNS(null, TY[i],TY[i+1])
+	}
+	FIL.appendChild(FPRIM)
+	if (filter=="feImage"){
+		var r=Math.floor(Math.random()*Pix.length)
+		var f="img/p"+Pix[r]+".jpg"
+		FPRIM.setAttributeNS(xlinkns,"xlink:href",f)
+		F2=SD.createElementNS(svgns,"feComposite")
+		F2.setAttributeNS(null, "operator","in")
+		F2.setAttributeNS(null, "in2","SourceGraphic")
+	/* --- if we wish clips to be from different parts of a large image
+	FPRIM.setAttributeNS(null,"width",rightedge) 
+	FPRIM.setAttributeNS(null,"height",workH)
+	FPRIM.setAttributeNS(null,"x",0)
+	FPRIM.setAttributeNS(null,"y",0)
+	*/	
+		FIL.appendChild(F2)
+	}
+
+	Root.appendChild(FIL)
+	var k=Root.getElementsByTagName("filter")
+}
+
+function erase(){
+	//alert(Root.getChildNodes.length)
+	try{suspendHandle = Root.suspendRedraw(1000000000000);}
+	catch(e){}
+	for (i=Root.childNodes.length;i>0;i--) {
+		Root.removeChild(Root.childNodes.item(i-1))
+	}
+	try{Root.unsuspendRedraw(suspendHandle);}
+	catch(e){}
+	makeCP()
+	makeGr(0)
+	if (filter!="none") makeFilter(document.f.FR.selectedIndex-1)
+}
+iterate=false
+countit=0
+D0=0
+loopLock = false
+function build(nodeN,n){
+        if (loopLock) {
+	   setTimeout("build('"+nodeN+"', "+n+")", 10);	     
+           return;
+        }
+	loopLock = true
+	drawing = false
+       	makeFilter(document.f.FR.selectedIndex-1)
+	try{suspendHandle = Root.suspendRedraw(1000000000000);}
+	catch(e){}
+	timing=document.f.loop.value
+	iters=parseInt(document.f.iters.value)
+	countit=1
+	if (iters>1) iterate=true
+	D0=(new Date()).valueOf()
+	dostuff(nodeN,n)
+	try{Root.unsuspendRedraw(suspendHandle);}
+	catch(e){}
+}
+stopping=false
+function dostuff(nodeN,n){
+stopping=false
+	for (i=0;i<n;i++)addNode(nodeN)
+	if ((iterate)&&(iters>countit++)) window.setTimeout("dostuff('"+nodeN+"',"+n+")",timing)
+	else stop(nodeN)
+}
+function stop(nodeN){
+	//addNode(nodeN)
+	if (!stopping) {
+		//one last iteration with no new drawing simply to make sure the rendering is complete
+		stopping=true
+		window.setTimeout("stop()",10)
+	}
+	else {
+		D1=new Date().valueOf()
+		//dif=((D1-D0)/1000).toString().substring(0,6)
+		dif = D1-D0
+		document.getElementById("time").value=dif
+		loopLock = false;	 
+	        results.push(dif)
+		if (results.length == presets.length) printResults()	 
+	}
+}
+function addNode(nodeN){
+	var I=SD.createElementNS(svgns,nodeN)
+	//I.setAttributeNS(null, "stroke-width", 2)
+	var r=Math.floor(Math.random()*Pix.length)
+	var f="img/p"+Pix[r]+".jpg"
+
+	x1=Math.ceil(Math.random()*(rightedge))
+	x2=Math.ceil(Math.random()*(rightedge))
+	y1=Math.ceil(Math.random()*(workH))
+	y2=Math.ceil(Math.random()*(workH))
+	I.setAttributeNS(null, "id","TU")
+	I.setAttributeNS(null, "x", x1)
+	I.setAttributeNS(null, "y", y1)
+	//I.setAttributeNS(null, "stroke-width", 2)
+	r=Math.floor(Math.random()*Colors.length)
+	var S = Colors[r]
+	//I.setAttributeNS(null, "stroke", S)
+	I.setAttributeNS(null, "opacity", opa)
+	var C = "rgb("+parseInt(Math.random()*255)+","+parseInt(Math.random()*255)+","+parseInt(Math.random()*255)+")";
+	rg=Math.random()
+	if (gra==0) I.setAttributeNS(null, "fill", C)
+	else if (gra==1) I.setAttributeNS(null, "fill", "url(#GR0)")
+	else I.setAttributeNS(null, "fill", "url(#GR"+makeGr(rg)+")")
+	I.setAttributeNS(null, "onclick", "top.change(evt)")
+
+	if (nodeN=="text") {
+		I.appendChild(SD.createTextNode(C))
+		I.setAttributeNS(null,"font-size",32)
+	}
+	else if (nodeN=="line") {
+		I.setAttributeNS(null, "x1", x1)
+		I.setAttributeNS(null, "x2", x2)
+		I.setAttributeNS(null, "y1", y1)
+		I.setAttributeNS(null, "y2", y2)
+	}
+	else if (nodeN=="path") {
+		I.setAttributeNS(null, "d", "M "+x1+" "+y1+" L "+x2+" "+y1+" "+x2+" "+y2+" z")
+	}
+	else if ((nodeN=="polygon")||(nodeN=="polyline")) {
+		var route="100 100 0 10 101 105 40 10 105 110 50 50 110 115 60 100 115 120 150 150 120 120 200 150 120 125 220 200 115 130 180 200 110 130 120 180 400 200 300 100 405 200 330 110 410 205 380 110 420 210 440 120 420 215 500 215 420 220 500 230 420 230 500 300 420 235 440 500 415 235 380 450 410 225"
+		I.setAttributeNS(null, "points", route)
+	}
+
+	else if ((nodeN=="circle")||(nodeN=="ellipse")) {
+		I.setAttributeNS(null, "cx", x2)
+		I.setAttributeNS(null, "cy", y1)
+		I.setAttributeNS(null, "r", 40)
+		I.setAttributeNS(null, "rx", 20)
+		I.setAttributeNS(null, "ry", 40)
+	}
+	else if (nodeN=="use") {
+		I.setAttributeNS(xlinkns,"xlink:href","#CPP")
+		I.setAttributeNS(null, "fill", C)
+		Root.appendChild(I)
+	}
+	else if ((nodeN=="rect")||(nodeN=="image")) {
+		I.setAttributeNS(null, "height", 100)
+		I.setAttributeNS(null, "width", 100)
+		y1=Math.ceil(Math.random()*(workH-100))
+		I.setAttributeNS(null, "y", y1)
+		x1=Math.ceil(Math.random()*(rightedge-100))
+		I.setAttributeNS(null, "x", x1)
+	}
+	if (nodeN=="image") I.setAttributeNS(xlinkns,"xlink:href",f)
+
+	if (tran){
+		x3=Math.ceil(Math.random()*(rightedge/2-300))
+		y3=Math.ceil(Math.random()*(workH/2-250))
+		I.setAttributeNS(null, "transform", "translate("+x3+","+y3+")")
+	}
+	if (clip) {
+		I.setAttributeNS(null, "clip-path","url(#CP)")
+	}
+	if (filter!="none") {
+		var k=Root.getElementsByTagName("filter")
+		I.setAttributeNS(null, "filter","url(#tooi)")
+	}
+	Root.appendChild(I)
+}
+time=100
+
+
+</script>
+<style type="text/css">
+body { 
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px
+}
+</style>
+</head>
+
+<body>
+<div id="status" style="position:absolute">
+<form name="f">
+<table id="Table" cellspacing="2" cellpadding="2" border="1">
+<tr>
+	<td>
+	time<input id="time" size="9" value="0"><br>
+	loop<input name="loop" size="5" value="10">
+	</td>
+    <td align="right">
+	opaque<input type="radio" onclick="opa=1.0" checked name="r"><br>
+	clear<input type="radio" onclick="opa=0.75" name="r"><br>
+	</td>
+	<td align="right">gradients:&nbsp;&nbsp;&nbsp;
+	fill<input type="radio" onclick="gra=0" checked name="gr"><br>
+	share<input type="radio" onclick="gra=1" name="gr">unique<input type="radio" onclick="gra=2" name="gr"><br>
+	</td>
+	<td align="right">
+	clip<input type="radio" onclick="clip=true" name="clp"><br>
+	noclip<input type="radio" onclick="clip=false" checked name="clp"><br>
+	</td>
+	<td  align="right">
+	translate<input type="radio" onclick="tran=true" name="trn"><br>
+	notran<input type="radio" onclick="tran=false" checked name="trn"><br>
+	</td>
+	<td  colspan="2" align="center">
+<select id="G" name="G" onchange="build(G.value,s.value)">
+	<option>--node type--</option>
+</select><br>
+<select id="FR" name="FR" onchange="makeFilter(this.selectedIndex-1)">
+	<option>--filter--</option>
+</select>
+	</td>
+	<td  align="center">
+	#objects<hr>
+	<select name="s" onchange="build(G.value,s.value)">
+		<option value="1" selected>1</option>
+		<option value="2">2</option>
+		<option value="3">3</option>
+		<option value="4">4</option>
+		<option value="5">5</option>
+		<option value="10">10</option>
+		<option value="20">20</option>
+		<option value="25">25</option>
+		<option value="40">40</option>
+		<option value="50">50</option>
+		<option value="75">75</option>
+		<option value="100">100</option>
+		<option value="110">110</option>	
+		<option value="200">200</option>
+		<option value="200">250</option>
+		<option value="210">210</option>	
+		<option value="310">310</option>
+		<option value="410">410</option>
+		<option value="500">500</option>
+		<option value="510">510</option>	
+		<option value="1000">1000</option>
+		<option value="10000">10000</option>
+	</select>
+	</td>
+    <td align="center">
+	iters<hr>
+	<select name="iters" onchange="build(G.value,s.value)">
+		<option value="1" selected>1</option>
+		<option value="2">2</option>
+		<option value="3">3</option>
+		<option value="4">4</option>
+		<option value="5">5</option>
+		<option value="10">10</option>
+		<option value="20">20</option>
+		<option value="25">25</option>
+		<option value="40">40</option>
+		<option value="50">50</option>
+		<option value="75">75</option>
+		<option value="100">100</option>
+		<option value="110">110</option>	
+		<option value="200">200</option>
+		<option value="200">250</option>
+		<option value="210">210</option>	
+		<option value="310">310</option>
+		<option value="410">410</option>
+		<option value="500">500</option>
+		<option value="510">510</option>	
+		<option value="1000">1000</option>
+		<option value="10000">10000</option>
+	</select>
+	</td>
+    <td align="center">
+<input type="button" onclick="erase();build(G.value,s.value)" value="redo">
+<br>
+<input type=button id="clear" value="clear" onclick="erase()">
+</td>
+</tr>
+</table>
+
+<embed id="E" src="empty.svg" width="800px" height="600px"></form></div>
+</body>
+</html>

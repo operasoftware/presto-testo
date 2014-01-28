@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+
+<svg xmlns="http://www.w3.org/2000/svg" width="500" height="500">
+  <rect x="0" y="0" width="780" height="140" fill="#3030ff"/>
+
+  <text x="40" y="40" font-size="22">Move the mouse over the circle below</text>
+
+  <circle  cx="100" cy="100" r="10" fill="#ffff00">
+    <animateMotion id="ref01" path="M 0 0 L 30 0" dur="1s" begin="mousedown; ref02.end" fill="freeze"/>
+    <animateMotion id="ref02" path="M 30 0 L 0 0" dur="1s" begin="ref04.end" fill="freeze"/>
+  </circle>
+
+  <circle  cx="150" cy="100" r="10" fill="#ffff00">
+    <animateMotion id="ref03" path="M 0 0 L 30 0" dur="1s" begin="ref01.end" fill="freeze"/>
+    <animateMotion id="ref04" path="M 30 0 L 0 0" dur="1s" begin="ref05.end" fill="freeze"/>
+  </circle>
+
+  <circle  cx="200" cy="100" r="10" fill="#ffff00">
+    <animateMotion id="ref05" path="M 0 0 L 30 0 0 0" dur="2s" begin="ref03.end"/>
+  </circle>
+
+  <rect x="0" y="140" width="780" height="720" fill="#000070"/>
+
+</svg>

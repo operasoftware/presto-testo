@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink">
+  <script>
+    function changeFill()
+    {
+    var l2 = document.getElementById("l2");
+    l2.setAttributeNS(null, "fill", "green");
+    }
+  </script>
+  <defs>
+    <rect id="l2" width="400" height="100" fill="red"/>
+
+    <use id="l1" xlink:href="#l2"/>
+  </defs>
+
+  <use xlink:href="#l1" onclick="changeFill()"/>
+
+  <text x="10" y="30">Click the rect once and it should turn green</text>
+</svg>

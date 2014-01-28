@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC  "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+      <script src="../../svgweb/svg.js" data-path="../../svgweb"></script>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+      <meta name="keywords" content="W3C SVG 1.1 2nd Edition Test Suite"/>
+      <meta name="description" content="W3C SVG 1.1 2nd Edition SVGWeb Test Suite"/>
+      <title>
+SVG 1.1 2nd Edition Test (svgweb): text-text-06-t.svg
+      </title>
+      <style type="text/css">
+        <!--
+         .bodytext      { font-family:verdana, helvetica, sans-serif; font-size: 12pt; line-height: 125%; text-align: Left; margin-top: 0; margin-bottom: 0 }
+         .pageTitle     { line-height: 150%; font-size: 20pt; font-weight : 900; margin-bottom: 20pt }
+         .pageSubTitle  { color : blue; line-height: 100%; font-size: 24pt; font-weight : 900 }
+         .openChapter   { color : blue; line-height: 125%; font-weight : 900 }
+         .openSection   { color : blue; line-height: 125%; font-weight : 900 }
+         .info          { color : black; line-height: 110%; font-size: 10pt; font-weight : 100 }
+         p              { margin-top:0; margin-bottom:0; padding-top:0; padding-bottom:0 }
+         blockquote     { margin-top:0; margin-bottom:0; padding-top:0; padding-bottom:0 }
+         .opscript      { margin-left: 3%; margin-right: 3%; }
+         .opscript p    { margin-top: 0.7em }
+         .navbar        { background: black; color: white; font-weight: bold }
+         .warning       { color: red; text-align: Center;}
+         a,a:visited    { color: blue }
+        -->
+      </style>
+      <link rel="prev" href="text-text-05-t.html" />
+      <link rel="index" href="index.html" />
+      <link rel="next" href="text-text-07-t.html" />
+      <script src="../resources/testharnessreport.js"></script>
+    </head>
+  <body class="bodytext">
+<div class="linkbar"> 
+  <p>Specification link: <a target="spec" href="http://www.w3.org/TR/SVG11/text.html#TextElement">10.4 The 'text' element</a></p>
+  <p>
+    <a href="text-text-05-t.html" rel="prev">text-text-05-t ←</a> 
+    <a href="index.html" rel="index">index</a>
+    <a href="text-text-07-t.html" rel="next">→ text-text-07-t</a>
+  </p>
+</div>
+<div>
+  <br />
+  <p class="warning">
+    Tests that contain the draft-watermark are under development and may be incorrectly testing a feature.
+  </p>
+</div>
+<table align="center" border="0" cellspacing="0" cellpadding="10">
+  <tr>
+    <td align="center" colspan="3">
+      <table border="0" cellpadding="8">
+        <tr>
+          <td align="center" colspan="2" class="pageTitle">
+            <h1>text-text-06-t.svg</h1>
+          </td>
+        </tr>
+        <tr  class="navbar">
+          <td align="center">
+            SVG Image
+          </td>
+          <td align="center">
+            PNG Image
+          </td>
+        </tr>
+        <tr>
+          <td align="right">
+            <!--[if IE]>
+              <object src="../../svg/text-text-06-t.svg" width="480" height="360" classid="image/svg+xml"><p style="font-size:300%;color:red">FAIL</p>
+            <![endif]-->
+            <!--[if !IE]>-->
+              <object data="../../svg/text-text-06-t.svg" width="480" height="360" type="image/svg+xml"><p style="font-size:300%;color:red">FAIL</p>
+            <!--<![endif]-->
+              </object>
+          </td>
+          <td align="left">
+            <img alt="raster image of text-text-06-t.svg" src="../../png/text-text-06-t.png" width="480" height="360"/>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+
+<div class="opscript">
+    <h2 id="operatorscript">
+      Operator Script
+    </h2>
+    <div>
+<p>
+        Run the test. No interaction required.
+      </p>
+  </div>
+  <h2 id="passcriteria">
+    Pass Criteria
+  </h2>
+  <div>
+<p>
+        The test is passed if:
+      </p><ul>
+        <li>
+          The bottom left hand corners of the first row of black squares are
+          equal distance apart along the x axis and are centered inside the blue
+          squares.
+        </li>
+        <li>
+          The bottom left hand corners of the first row of black squares are
+          equal distance apart along the x and y axis and are centered inside
+          the blue squares.
+        </li>
+        <li>
+          The bottom left hand corners of the first row of black squares are
+          same distance apart in the x axis as the first row of squares and are
+          same distance apart in the y axis as the second row of squares.
+        </li>
+      </ul>
+  </div>
+  <h2 id="testdescription">
+    Test Description
+  </h2>
+  <div>
+<p>
+          The purpose of this test is to validate the interaction of x/y
+          glyph positioning and ligatures.
+        </p><p>
+          The first line shows an example where there is a ligature (fi) which
+          should be accounted for before breaking into text chunks (see specification
+          section 10.5, additional x/y/dx/dy processing rules, bullet discussing
+          ligatures). In this first line, the ligatures cause the x position 180
+          (shown in orange), to be ignored. As a result, a glyph should be shown over
+          each pale blue square markers. The glyphs are black squares of increasing sizes
+          except for the initial ligature which has the form of two small black triangles
+          joined at their tops. The ligature should show on the first pale blue
+          marker position.
+        </p><p>
+          The second line shows the same test but using multiple y positions.
+        </p><p>
+          The third line shows the same test but using multiple x and y
+          positions.
+        </p>
+  </div>
+</div>
+<br/>
+<div class="linkbar">
+  <p>
+    <a href="text-text-05-t.html" rel="prev">text-text-05-t ←</a>
+    <a href="index.html" rel="index">index</a>
+    <a href="text-text-07-t.html" rel="next">→ text-text-07-t</a>
+  </p>
+</div>
+</body>
+</html>

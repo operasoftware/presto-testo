@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <!DOCTYPE html PUBLIC  "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>Tests handling of stroke properties combined with "rect" element and straight-line path commands</title>
+</head>
+<body>
+<table>
+<tr>
+<td align="center">SVG Image</td>
+<td align="center">Reference Image</td>
+</tr>
+<tr>
+<td align="right">
+<object data="../svggen/painting-stroke-03-t.svg" width="480" height="360" type="image/svg+xml"/>
+</td>
+<td align="left">
+<img alt="raster image of painting-stroke-03-t" src="../png/full-painting-stroke-03-t.png" width="480" height="360"/>
+</td>
+</tr>
+</table>
+<p>
+The pair should be rendered as as two red line segments. The upper segment should have round end caps. The lower segment 
+should be chopped off where the two line segments meet.
+The rendered picture should match the reference image exactly except for variations in the labeling text.
+</p>
+</body>
+</html>

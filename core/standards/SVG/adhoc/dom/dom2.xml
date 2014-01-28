@@ -1,0 +1,85 @@
+<?xml version="1.0"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:svg="http://www.w3.org/2000/svg" 
+xmlns:xul="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+>
+<head>
+
+<script>
+<![CDATA[
+var transform_list;
+
+function init()
+{
+  transform_list = document.getElementById('triangle').transform.baseVal;
+}
+
+function Rotate()
+{
+  var xform = document.getElementById('svgElement').createSVGTransform();
+  xform.setRotate(30,50,300);
+  transform_list.appendItem(xform);  
+}
+
+function Translate()
+{
+  var xform = document.getElementById('svgElement').createSVGTransform();
+  xform.setTranslate(10,-10);
+  transform_list.appendItem(xform);  
+}
+
+function Scale()
+{
+  var xform = document.getElementById('svgElement').createSVGTransform();
+  xform.setScale(0.5,0.5);
+  transform_list.appendItem(xform);  
+}
+
+function Consolidate()
+{
+  transform_list.consolidate();
+}
+
+function DumpXForms()
+{
+  var str = "";
+  var count = transform_list.numberOfItems;
+  for (var i=0; i<count; ++i) {
+    var xform = transform_list.getItem(i);
+    switch (xform.type) {
+      case 2: 
+        str+= "Translate: ( " + xform.matrix.e + ", "
+		                      + xform.matrix.f + " )\n";
+		break;
+	  case 4:
+        str+= "Rotate: " + xform.angle + " degrees\n";
+        break;
+      case 1:
+      default:
+        str += "Matrix: [ " + xform.matrix.a + " "
+                           + xform.matrix.b + " "
+		                   + xform.matrix.c + " "
+		                   + xform.matrix.d + " "
+		                   + xform.matrix.e + " "
+		                   + xform.matrix.f + " ]\n";
+        break;
+    }
+  }
+  alert(str);
+}
+]]>
+</script>
+</head>
+<body onload="init();">
+  <button onclick="Rotate();">Rotate</button>
+  <button onclick="Translate();">Translate</button>
+  <button onclick="Scale();">Scale</button> 
+  <button onclick="DumpXForms();">Dump XForms</button>
+  <button onclick="Consolidate();">Consolidate</button>
+	<svg:svg width="600px" height="400px" id="svgElement">
+	  <svg:polyline points="0,0 600,0 600,400 0,400 0,0" style="stroke:black; fill:none;"/>
+      <svg:polygon id="triangle" points="50,50 50,300 300,300"
+		style=" fill:blue; stroke:black;"/>
+	</svg:svg>
+</body>
+</html>

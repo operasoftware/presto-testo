@@ -1,0 +1,39 @@
+﻿<html xmlns="http://www.w3.org/1999/xhtml">
+
+<p><font size="200">abc &#1488;&#1489;&#1490; &#1491;&#1492;&#1493;</font></p>
+
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+	id="root" viewBox="0 0 800 300" width="100%" height="400" 
+	onload="init();">
+<script xlink:href="../dom/svgutils.js"/>
+<script>
+	var endCharIndex = 0;
+	var buttons = new Array(
+		"Start upper animation", "selectionTimer = setInterval('selectionIterator1()', 500);",
+		"Stop upper animation", "clearInterval(selectionTimer);",
+		"Start lower animation", "selectionTimer2 = setInterval('selectionIterator2()', 500);",
+		"Stop lower animation", "clearInterval(selectionTimer2);"
+	);
+	
+	function init()
+	{
+		createSVGButtons(document.getElementById('root'), buttons, 700, 100);
+		document.getElementById('text').selectSubString(0, 5);
+	}
+	
+	function selectionIterator1() { selectionIterator('text'); }
+	function selectionIterator2() { selectionIterator('text2'); }
+	
+	function selectionIterator(id)
+	{
+		var elm = document.getElementById(id);
+		elm.selectSubString(0, endCharIndex++ % 12);
+	}
+	
+</script>
+<text id="text" font-size="128" y="100" x="50">abc &#1488;&#1489;&#1490; &#1491;&#1492;&#1493;</text>
+<text id="text2" font-size="128" y="250" x="50" text-rendering="optimizeLegibility">abc &#1488;&#1489;&#1490; &#1491;&#1492;&#1493;</text>
+</svg>
+
+</html>
+

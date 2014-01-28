@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  id="svg-root" width="100%" height="100%" viewBox="0 0 480 360">
+	<title id="test-title">filterRes</title>
+	<desc id="test-desc">Test the use of 'filterRes' to decide the filter resolution.</desc>
+	<g id="test-body-content">
+		<g font-family="Verdana" text-anchor="middle" font-size="10">
+			<text x="240" y="30" font-size="20">Test for 'filterRes'</text>
+			<defs>
+				<filter id="filt1" filterUnits="objectBoundingBox">
+					<feGaussianBlur stdDeviation="1"/>
+				</filter>
+				<filter id="pixfilt1" filterRes="48 48" filterUnits="objectBoundingBox">
+					<feGaussianBlur stdDeviation="1"/>
+				</filter>
+
+				<filter id="filt2" filterUnits="objectBoundingBox">
+					<feTurbulence type="turbulence" baseFrequency="0.05" numOctaves="2"/>
+				</filter>
+				<filter id="pixfilt2" filterRes="48 48" filterUnits="objectBoundingBox">
+					<feTurbulence type="turbulence" baseFrequency="0.05" numOctaves="2"/>
+				</filter>
+
+				<filter id="filt3" filterUnits="objectBoundingBox">
+					<feImage xlink:href="image1.jpg"/>
+				</filter>
+				<filter id="pixfilt3" filterRes="48 48" filterUnits="objectBoundingBox">
+					<feImage xlink:href="image1.jpg"/>
+				</filter>
+
+				<filter id="filt4" filterUnits="objectBoundingBox">
+					<feConvolveMatrix kernelMatrix="0 1 0, 1 -2 1, 0 1 0"/>
+				</filter>
+				<filter id="pixfilt4" filterRes="48 48" filterUnits="objectBoundingBox">
+					<feConvolveMatrix kernelMatrix="0 1 0, 1 -2 1, 0 1 0"/>
+				</filter>
+			</defs>
+			<!-- Gaussian blur -->
+			<rect x="10" y="60" width="100" height="100" fill="lightblue" filter="url(#filt1)"/>
+			<rect x="10" y="180" width="100" height="100" fill="lightblue" filter="url(#pixfilt1)"/>
+
+			<text x="10" y="320" text-anchor="start">feGaussianBlur</text>
+
+			<!-- Turbulence -->
+			<rect x="130" y="60" width="100" height="100" fill="lightblue" filter="url(#filt2)"/>
+			<rect x="130" y="180" width="100" height="100" fill="lightblue" filter="url(#pixfilt2)"/>
+
+			<text x="130" y="320" text-anchor="start">feTurbulence</text>
+
+			<!-- Image -->
+			<rect x="250" y="60" width="100" height="100" fill="lightblue" filter="url(#filt3)"/>
+			<rect x="250" y="180" width="100" height="100" fill="lightblue" filter="url(#pixfilt3)"/>
+
+			<text x="250" y="320" text-anchor="start">feImage</text>
+
+			<!-- Convolution (Emboss) -->
+			<g filter="url(#filt4)">
+				<rect x="370" y="60" width="100" height="100" fill="black"/>
+				<text x="385" y="120" text-anchor="start" font-size="40" fill="white">SVG</text>
+			</g>
+			<g filter="url(#pixfilt4)">
+				<rect x="370" y="180" width="100" height="100" fill="black"/>
+				<text x="385" y="240" text-anchor="start" font-size="40" fill="white">SVG</text>
+			</g>
+
+			<text x="370" y="320" text-anchor="start">feConvolveMatrix</text>
+		</g>
+	</g>
+	<rect id="test-frame" x="1" y="1" width="478" height="358" fill="none" stroke="#000000"/>
+</svg>

@@ -1,0 +1,25 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+<head>
+  <title>Overconstrained Absolute Positioning Replaced Elements with Intrinsic Size</title>
+  <style class="text/css">
+    .container {
+      position: relative;
+      width: 240px;
+      height: 240px;
+      border: solid gray;
+    }
+    img {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+    }
+  </style>
+</head>
+<body>
+
+<p>The 120px&times;31px image below is absolutely positioned within the box,
+  with its top/left/right/bottom offsets all set to zero (not auto).</p>
+
+<div class="container">
+  <img src="intrinsic-size.png" alt="FAIL: Test of image support">
+</div>

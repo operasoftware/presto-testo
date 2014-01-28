@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG Tiny 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11-tiny.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title>Additive animation on coordinate values</title>
+<desc>
+Animation should not be visible, there should be no red.
+</desc>
+<text x="10" y="20">There should be no red below.</text>
+<text x="10" y="40">(This test requires Ahem font.)</text>
+<g font-family="Ahem">
+   <text x="100" y="100" fill="red" font-size="48">TEST</text>
+   <text id="animated" x="100" y="100" fill="white" font-size="50">TEST</text>
+</g>
+<animate xlink:href="#animated"
+	attributeName="x"
+	attributeType="XML"
+	from="100"
+        to="200"
+	dur="0.1s"
+	fill="freeze"
+	additive="sum"/>
+<animate xlink:href="#animated"
+	attributeName="y"
+	attributeType="XML"
+	from="100"
+        to="200"
+	dur="0.1s"
+	fill="freeze"
+	additive="sum"/>
+<animate xlink:href="#animated"
+	attributeName="x"
+	attributeType="XML"
+	from="100"
+        to="100"
+	dur="0.1s"
+	fill="freeze"
+	additive="sum" />
+<animate xlink:href="#animated"
+	attributeName="y"
+	attributeType="XML"
+	from="100"
+        to="100"
+	dur="0.1s"
+	fill="freeze"
+	additive="sum" />
+</svg>
+

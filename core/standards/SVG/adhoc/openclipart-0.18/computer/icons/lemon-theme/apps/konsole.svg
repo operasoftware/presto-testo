@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN"
+"http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<!-- Created with Sodipodi ("http://www.sodipodi.com/") --><svg height="437.5" id="svg1" version="1.0" width="437.5" x="0" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0">
+  <metadata>
+    <rdf:RDF xmlns:cc="http://web.resource.org/cc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+      <cc:Work rdf:about="">
+        <dc:title>Lemon SVG theme</dc:title>
+        <dc:description></dc:description>
+        <dc:subject>
+          <rdf:Bag>
+            <rdf:li>icon</rdf:li>
+            <rdf:li></rdf:li>
+            <rdf:li>application</rdf:li>
+            <rdf:li>lemon_theme_icon</rdf:li>
+            <rdf:li>icons</rdf:li>
+            <rdf:li>hash</rdf:li>
+            <rdf:li>computer</rdf:li>
+            <rdf:li>theme</rdf:li>
+          </rdf:Bag>
+        </dc:subject>
+        <dc:publisher>
+          <cc:Agent rdf:about="http://www.openclipart.org">
+            <dc:title>Jose Hevia</dc:title>
+          </cc:Agent>
+        </dc:publisher>
+        <dc:creator>
+          <cc:Agent>
+            <dc:title>Jose Hevia</dc:title>
+          </cc:Agent>
+        </dc:creator>
+        <dc:rights>
+          <cc:Agent>
+            <dc:title>Jose Hevia</dc:title>
+          </cc:Agent>
+        </dc:rights>
+        <dc:date></dc:date>
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+        <cc:license rdf:resource="http://web.resource.org/cc/PublicDomain"/>
+        <dc:language>en</dc:language>
+      </cc:Work>
+      <cc:License rdf:about="http://web.resource.org/cc/PublicDomain">
+        <cc:permits rdf:resource="http://web.resource.org/cc/Reproduction"/>
+        <cc:permits rdf:resource="http://web.resource.org/cc/Distribution"/>
+        <cc:permits rdf:resource="http://web.resource.org/cc/DerivativeWorks"/>
+      </cc:License>
+    </rdf:RDF>
+  </metadata>
+  <defs id="defs3">
+    <linearGradient id="linearGradient580">
+      <stop id="stop581" offset="0" style="stop-color:#ffff8a;stop-opacity:0.6667;"/>
+      <stop id="stop582" offset="1" style="stop-color:#000000;stop-opacity:0.3961;"/>
+    </linearGradient>
+    <linearGradient id="linearGradient53">
+      <stop id="stop54" offset="0" style="stop-color:#faff00;stop-opacity:1;"/>
+      <stop id="stop55" offset="1" style="stop-color:#026d00;stop-opacity:1;"/>
+    </linearGradient>
+    <linearGradient id="linearGradient48">
+      <stop id="stop49" offset="0" style="stop-color:#000f67;stop-opacity:1;"/>
+      <stop id="stop50" offset="1" style="stop-color:#ffffff;stop-opacity:1;"/>
+    </linearGradient>
+    <linearGradient id="linearGradient51" x1="0.95595402" x2="-1.41106796" xlink:href="#linearGradient53" y1="1.86100197" y2="1.95178294"/>
+    <linearGradient gradientTransform="scale(1.242029,0.805134)" id="linearGradient52" x1="1.54226696" x2="-0.230929" xlink:href="#linearGradient53" y1="-6.70868009e-2" y2="9.19227023e-4"/>
+    <linearGradient id="linearGradient32" x1="0.101911" x2="0.94267499" xlink:href="#linearGradient48" y1="0.46540901" y2="0.45282999"/>
+    <linearGradient id="linearGradient33" x1="-6.84581591e-9" x2="1" xlink:href="#linearGradient48" y1="-4.18149391e-8" y2="1"/>
+    <radialGradient cx="0.5" cy="0.5" fx="0.5" fy="0.5" id="radialGradient579" r="0.5" xlink:href="#linearGradient53"/>
+  </defs>
+  <path d="M 428.5647 356.7576 C 428.5027 375.2312 416.1464 393.752 394.1156 393.7609 C 374.0679 392.9478 59.16262 393.0051 49.46575 392.4849 C 22.61309 391.9467 12.47872 375.2168 12.41097 355.4817 C 12.1393 328.2299 12.02447 97.20391 12.41094 77.31881 C 12.27992 55.1315 22.52653 36.66493 49.46575 36.48733 C 71.06915 36.50441 377.8727 36.70374 395.7854 36.48744 C 414.9619 36.42644 429.3076 53.86404 428.5647 74.48361 C 428.1856 89.94161 428.4212 346.3924 428.5647 356.7576 z " id="path583" style="font-size:12;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#ffff00;stroke-width:17.36885;"/>
+  <path d="M 64.85997 353.5191 L 383.6331 353.5191 L 383.6331 79.42551 L 64.85997 79.42551 L 64.85997 353.5191 z " id="path629" style="font-size:12;fill-opacity:1;fill-rule:evenodd;"/>
+  <path d="M 214.3551 150.0268 C 213.8742 123.4841 191.9633 107.8775 161.6632 106.3911 L 167.9708 93.75631 L 154.7723 93.75631 L 148.4647 105.2228 C 117.4434 107.7708 102.5614 129.1134 104.1384 144.7174 C 104.1384 160.1088 116.0005 176.3535 148.4647 182.936 L 146.8879 242.1848 C 133.4213 240.0614 132.274 226.6821 131.5526 211.8182 L 106.3577 211.8182 C 107.9345 223.5016 107.2645 237.2973 120.7312 245.791 C 129.8693 251.5241 140.3437 254.2846 148.4647 255.5586 L 154.7723 281.3595 L 164.817 282.5279 L 161.6632 257.8954 C 174.8896 256.6213 188.1432 252.4802 196.079 248.0211 C 209.0647 240.5891 216.76 230.2919 216.76 214.3662 C 216.76 191.0088 200.5141 178.4804 163.2402 169.3499 L 167.9708 119.6593 C 180.2352 121.1457 196.6703 137.074 196.1894 150.0268 L 214.3551 150.0268 z M 146.8879 165.1031 C 133.4213 161.2809 130.5631 155.5476 130.5631 146.2048 C 130.5631 135.3752 133.6618 121.995 146.8879 119.6591 L 146.8879 165.1031 z M 164.817 186.5459 C 178.2838 190.1557 200.7859 199.7119 200.7859 215.746 C 200.7859 233.3731 179.8606 239.212 166.394 242.1847 L 164.817 186.5459 z " id="path689" style="font-size:12;font-weight:bold;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;font-family:Nimbus Sans L;"/>
+  <path d="M 64.08115 282.7545 L 63.40442 75.29331 L 382.4696 79.42541 C 386.9343 264.9123 65.28699 226.2245 64.08115 282.7545 z " id="path763" style="font-size:12;fill:#ffffff;fill-opacity:0.4031;fill-rule:evenodd;stroke-width:1;"/>
+</svg>

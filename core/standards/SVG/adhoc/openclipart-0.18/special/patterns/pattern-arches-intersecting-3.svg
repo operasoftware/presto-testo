@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN"
+	"http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<svg height="150" version="1.0" width="200" xmlns="http://www.w3.org/2000/svg">
+  <metadata>
+    <rdf:RDF xmlns:cc="http://web.resource.org/cc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+      <cc:Work rdf:about="">
+        <dc:title>arches interlocking 3 pattern</dc:title>
+        <dc:description></dc:description>
+        <dc:subject>
+          <rdf:Bag>
+            <rdf:li>pattern</rdf:li>
+          </rdf:Bag>
+        </dc:subject>
+        <dc:publisher>
+          <cc:Agent rdf:about="http://www.openclipart.org">
+            <dc:title>Open Clip Art Library</dc:title>
+          </cc:Agent>
+        </dc:publisher>
+        <dc:creator>
+          <cc:Agent>
+            <dc:title>Alan Horkan</dc:title>
+          </cc:Agent>
+        </dc:creator>
+        <dc:rights>
+          <cc:Agent>
+            <dc:title>Alan Horkan</dc:title>
+          </cc:Agent>
+        </dc:rights>
+        <dc:date></dc:date>
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+        <cc:license rdf:resource="http://web.resource.org/cc/PublicDomain"/>
+        <dc:language>en</dc:language>
+      </cc:Work>
+      <cc:License rdf:about="http://web.resource.org/cc/PublicDomain">
+        <cc:permits rdf:resource="http://web.resource.org/cc/Reproduction"/>
+        <cc:permits rdf:resource="http://web.resource.org/cc/Distribution"/>
+        <cc:permits rdf:resource="http://web.resource.org/cc/DerivativeWorks"/>
+      </cc:License>
+    </rdf:RDF>
+  </metadata>
+  <defs>
+    <pattern height="150" id="Arches-Interlocking-3" patternContentUnits="userSpaceOnUse" patternUnits="userSpaceOnUse" width="200">
+      <path d="M0 0 L200 0 L300 150 L-100 150 z" fill="blue" id="huge-blue-1" stroke="black" stroke-width="0"/>
+      <path d="M0 0 C0 0 2 85 100 85 C200 85 200 0 200 0 z" fill="red" id="big-red-1" stroke="black" stroke-width="0"/>
+      <path d="M0 0 C0 0 0 50 50 50 C100 50 100 0 100 0 z" fill="yellow" stroke="black" stroke-width="0"/>
+      <path d="M100 0 C100 0 100 50 150 50 C200 50 200 0 200 0 z" fill="yellow" stroke="black" stroke-width="0"/>
+      <path d="M0 0 L50 0 C50 0 50 25 25 25 C0 25 0 0 0 0 z" fill="lime" stroke="black" stroke-width="0"/>
+      <path d="M150 0 L200 0 C200 0 200.839 25 175 25 C149.161 25 150 0 150 0 z" fill="lime" stroke="black" stroke-width="0"/>
+      <path d="M100 0 L150 0 C150 0 150 25 125 25 C100 25 100 0 100 0 z" fill="lime" stroke="black" stroke-width="0"/>
+      <path d="M50 0 L100 0 C100 0 100 25 75 25 C50 25 50 0 50 0 z" fill="lime" stroke="black" stroke-width="0"/>
+      <path d="M-100 150 C-100 150 -100 65 -1 65 C100 65 100 150 100 150 z" fill="red" id="big-red-2" stroke="black" stroke-width="0"/>
+      <path d="M-100 150 L-50 100 L0 150 z" fill="yellow" stroke="black" stroke-width="0"/>
+      <path d="M0 150 C0 150 0 100 50 100 C100 100 100 150 100 150 z" fill="yellow" stroke="black" stroke-width="0"/>
+      <path d="M100 150 C100 150 100 65 200 65 C300 65 300 150 300 150 z" fill="red" id="big-red-3" stroke="black" stroke-width="0"/>
+      <path d="M100 150 C100 150 100 101 150 100 C200 100 200 150 200 150 z" fill="yellow" stroke="black" stroke-width="0"/>
+      <path d="M200 150 L250 100 L300 150 z" fill="yellow" stroke="black" stroke-width="0"/>
+      <path d="M0 150 L50 150 C50 150 50 125 25 125 C0 125 0 150 0 150 z" fill="lime" stroke="black" stroke-width="0"/>
+      <path d="M50 150 L100 150 C100 150 100 125 75 125 C50 125 50 150 50 150 z" fill="lime" stroke="black" stroke-width="0"/>
+      <path d="M100 150 L150 150 C150 150 150 125 125 125 C100 125 100 150 100 150 z" fill="lime" stroke="black" stroke-width="0"/>
+      <path d="M150 150 L200 150 C200 150 200 125 175 125 C150 125 150 150 150 150 z" fill="lime" stroke="black" stroke-width="0"/>
+    </pattern>
+  </defs>
+  <rect fill="url(#Arches-Interlocking-3)" height="150" width="200" x="0" y="0"/>
+</svg>

@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title>Filter repaint - feSpotLight</title>
+<script xlink:href="/resources/fps.js"/>
+<script type="text/ecmascript"><![CDATA[
+
+window.onload = function() {
+	document.rootElement.targetFps = 100;
+	checkfps(1000);
+}
+
+]]></script>
+  <defs>
+    <filter id="testfilter" x="0" y="0" width="1" height="1">
+      <feTurbulence type="fractalNoise" baseFrequency="0.05" numOctaves="4"/>
+      <feSpecularLighting surfaceScale="10">
+        <feSpotLight x="120" y="90" z="500"
+                     pointsAtX="100" pointsAtY="270" pointsAtZ="0"
+                     limitingConeAngle="5"/>
+      </feSpecularLighting>
+    </filter>
+  </defs>
+
+  <rect x="0" y="0" width="480" height="360" filter="url(#testfilter)"/>
+  <circle r="5" fill="blue">
+    <animateMotion path="M120,0 L360,360 L480,180 L360,0 L120,360 L0,180 L120,0" dur="2s" repeatCount="indefinite"/>
+  </circle>
+
+<text id="result" y="400">NOT TESTED (enable Javascript)</text>
+</svg>

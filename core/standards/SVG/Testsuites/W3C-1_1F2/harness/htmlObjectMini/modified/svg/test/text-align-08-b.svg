@@ -1,0 +1,84 @@
+<?xml version="1.0"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" baseProfile="tiny" id="svg-root" width="100%" height="100%" viewBox="0 0 480 360">
+  <!--======================================================================-->
+  <!--=  SVG 1.1 2nd Edition Test Case                                     =-->
+  <!--======================================================================-->
+  <!--=  Copyright 2009 World Wide Web Consortium, (Massachusetts          =-->
+  <!--=  Institute of Technology, European Research Consortium for         =-->
+  <!--=  Informatics and Mathematics (ERCIM), Keio University).            =-->
+  <!--=  All Rights Reserved.                                              =-->
+  <!--=  See http://www.w3.org/Consortium/Legal/.                          =-->
+  <!--======================================================================-->
+  <d:SVGTestCase xmlns:d="http://www.w3.org/2000/02/svg/testsuite/description/" template-version="1.4" reviewer="CL" author="CN" status="accepted" version="$Revision: 1.5 $" testname="$RCSfile: text-align-08-b.svg,v $">
+    <d:testDescription xmlns="http://www.w3.org/1999/xhtml" href="http://www.w3.org/TR/SVG11/text.html#AlignmentProperties">
+      <p>
+        Test horizontal baselines across script and font size changes. It uses an SVG Font, where
+        the Latin letter "a" is a rectangle, the Japanese letter "&#x729C;" is an upward-pointing triangle,
+        and the Devanagari letter "&#x923;" is a downward-pointing triangle.
+      </p>
+      <p>
+        Original test authored by Rodney Hardy at CISRA.
+      </p>
+    </d:testDescription>
+    <d:operatorScript xmlns="http://www.w3.org/1999/xhtml">
+      <p>
+        Run the test. No interaction required.
+      </p>
+    </d:operatorScript>
+    <d:passCriteria xmlns="http://www.w3.org/1999/xhtml">
+      <p>
+        The dominant baseline should be alphabetic, so the 'a' will be sitting on the alphabetic (blue) line,
+        the japanese glyph (upward pointing triangle) will be aligned on the ideographic (red) baseline
+        and '&#x923;' is a devangari character (downward pointing triangle)  and will use the hanging baseline (green).
+        The smaller versions of the characters should be aligned to the same baselines as the respective larger
+        characters, so all like shapes align to the same baseline..
+      </p>
+    </d:passCriteria>
+  </d:SVGTestCase>
+  <title id="test-title">$RCSfile: text-align-08-b.svg,v $</title>
+  <defs>
+    <font-face font-family="SVGFreeSansASCII" unicode-range="U+0-7F">
+      <font-face-src>
+        <font-face-uri xlink:href="../resources/SVGFreeSans.svg#ascii"/>
+      </font-face-src>
+    </font-face>
+  </defs>
+  <g id="test-body-content" font-family="SVGFreeSansASCII,sans-serif" font-size="18">
+    <g font-family="SVGFont">
+      <defs>
+        <font horiz-adv-x="500">
+          <font-face font-family="SVGFont" units-per-em="1000" ascent="800" descent="200" alphabetic="200" ideographic="0" hanging="900"/>
+          <missing-glyph horiz-adv-x="500" d="M0 0L500 0L500 1000L0 1000M50 50L50 950L450 950L450 50Z"/>
+          <glyph unicode=" " glyph-name="space"/>
+          <glyph unicode="a" glyph-name="rectangle" d="M0 200L500 200L500 900L0 900Z"/>
+          <glyph unicode="&#x729C;" glyph-name="upward-triangle" d="M0 0L500 0L250 900Z"/>
+          <glyph unicode="&#x923;" glyph-name="downward-triangle" d="M0 900L500 900L250 0Z"/>
+        </font>
+      </defs>
+      <!--
+            The dominant baseline should be alphabetic, so the 'ab' will be sitting on the
+            blue line, the japanese glyphs will be on the ideographic baseline and '&#2339;'
+            is a devangari character and will use the hanging baseline.  The smaller versions
+            of the characters should be aligned to the same baselines.  So 'a' on the blue
+            line, the ideographic chars slightly below the line and the devangari should be
+            hanging from the hanging baseline.
+        -->
+      <text x="50" y="200" font-size="150">
+        a&#x729C;&#x923;<tspan font-size="75">a&#x729C;&#x923;</tspan><tspan font-size="30">a&#x729C;&#x923;</tspan>
+      </text>
+      <line x1="50" y1="200" x2="433" y2="200" stroke-width="1" stroke="blue"/>
+      <line x1="50" y1="230" x2="433" y2="230" stroke-width="1" stroke="blue"/>
+      <line x1="50" y1="95" x2="433" y2="95" stroke-width="1" stroke="fuchsia"/>
+    </g>
+  </g>
+  <g font-family="SVGFreeSansASCII,sans-serif" font-size="32">
+    
+  </g>
+  
+  <!-- comment out this watermark once the test is approved -->
+  <!--<g id="draft-watermark">
+    <rect x="1" y="1" width="478" height="20" fill="red" stroke="black" stroke-width="1"/>
+    <text font-family="SVGFreeSansASCII,sans-serif" font-weight="bold" font-size="20" x="240"
+      text-anchor="middle" y="18" stroke-width="0.5" stroke="black" fill="white">DRAFT</text>
+  </g>-->
+</svg>

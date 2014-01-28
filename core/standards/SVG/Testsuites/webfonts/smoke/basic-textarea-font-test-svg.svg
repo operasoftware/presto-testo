@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+ id="svg-root" width="100%" height="100%" viewBox="0 0 500 500">
+ 	<style type="text/css">
+		@font-face {
+	  font-family: "FontTest";
+	    src: url(../fonts/Ahem.svg#Font) format("svg");
+	}
+	</style>
+	<title>A remote SVG font in a textarea</title>
+	<text y="40" font-size="12px">Type something in the textArea below. </text>
+	<text y="60" font-size="12px">The typed text should look like green squares.</text>
+	 <g>
+	 <rect x="0" y="105" width="160" height="40" fill="white" stroke-width="2" stroke="blue"/>
+      <textArea x="3" y="110" fill="green" width="150" height="30" font-size="20px" font-family="FontTest"
+         editable="simple" focusable="true" pointer-events="boundingBox"/>
+   </g>
+</svg>

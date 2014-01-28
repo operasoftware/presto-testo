@@ -1,0 +1,67 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+
+<head>
+	<title>Comic Menu</title>
+	<!-- lars.piepel@vodafone.com -->
+
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+</head>
+
+<body>
+
+	<table cellpadding="10">
+	<tr>
+		<td>
+			<object type="image/svg+xml" width="176" height="208" data="comic_menu.svg"></object>
+		</td>
+		<td valign="top">
+			Comic (SVGT1.1+)
+			<br/><br/>
+			Requires 2-way-navigation (mouse on desktop), opacity, gradients, declarative interactivity and SVG-fonts.
+			<br/><br/>
+			Click any menu item to restart the animation.
+			<br/><br/>
+	
+			<form action="javascript:foo()">
+				width: <input type="text" id="width" value="176" size="3" />px
+				<br/>
+				height: <input type="text" id="height" value="208" size="3"  />px 
+				<br/><input type="submit" value="Resize" />
+			</form>
+
+      <br/>
+			Direct SVGT1.1+ URL: <a href="comic_menu.svg">comic_menu.svg</a><br/>
+		</td>
+	</tr>
+	</table>
+
+	
+	
+
+	
+	
+	
+	
+	
+	<script type="text/javascript">
+	<!--
+	document.getElementsByTagName("input")[0].focus()
+	function foo(){
+		svgobj = document.getElementsByTagName("object")[0];
+		w=parseInt(document.getElementsByTagName("input")[0].value);
+		h=parseInt(document.getElementsByTagName("input")[1].value);
+		if(w)svgobj.width=w;
+		if(h)svgobj.height=h;
+		document.getElementsByTagName("input")[0].focus();
+		svgobj.reload();
+	}
+	-->
+	</script>
+</body>
+
+
+</html>
+
+<!-- This document saved from http://lab.vodafone.com/svg-samples/comic_menu.html -->

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <!DOCTYPE html PUBLIC  "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>Tests that xlink:href attribute can be animated on a, image and use elements</title>
+</head>
+<body>
+<table>
+<tr>
+<td align="center">SVG Image</td>
+<td align="center">Reference Image</td>
+</tr>
+<tr>
+<td align="right">
+<object data="../svggen/animate-elem-39-t.svg" width="480" height="360" type="image/svg+xml"/>
+</td>
+<td align="left">
+<img alt="raster image of animate-elem-39-t" src="../png/full-animate-elem-39-t.png" width="480" height="360"/>
+</td>
+</tr>
+</table>
+<p>
+For the first animation the xlink:href animated value is "animate-elem-38-t.svg",the text displays "38". When the user clicks on the 
+displayed number, the user agent should open the corresponding link.
+</p>
+<p>
+For the second animation the image xlink:href attribute cycles through two values showing a sun set and a picture of the sydney opera. The image should
+change every second and the images shown by the &lt;set&gt; and &lt;animate&gt; animations should always match.
+</p>
+<p>
+For the third animation, "Use A" and "Use B", the change should happen every second and the text shown for the two animations 
+(&lt;set&gt; and &lt;animation&gt;) should always match.
+</p>
+</body>
+</html>

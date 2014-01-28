@@ -1,0 +1,107 @@
+<!doctype html>
+<title>SVG DOM interface 'valueAsString' attribute</title>
+
+<script src="/resources/testharness.js"></script>
+<script src="/resources/testharnessreport.js"></script>
+
+<div id="log">NOT TESTED (JavaScript required)</div>
+
+<svg style="display: none">
+	<circle id="c" r="1em"/>
+	<marker id="m" orient="20rad"/>
+</svg>
+
+<script>
+var c = document.getElementById('c'), m = document.getElementById('m'),
+length_types = {
+	'': 'SVG_LENGTHTYPE_NUMBER',
+	'%': 'SVG_LENGTHTYPE_PERCENTAGE',
+	'em': 'SVG_LENGTHTYPE_EMS',
+	'ex': 'SVG_LENGTHTYPE_EXS',
+	'px': 'SVG_LENGTHTYPE_PX',
+	'cm': 'SVG_LENGTHTYPE_CM',
+	'mm': 'SVG_LENGTHTYPE_MM',
+	'in': 'SVG_LENGTHTYPE_IN',
+	'pt': 'SVG_LENGTHTYPE_PT',
+	'pc': 'SVG_LENGTHTYPE_PC'
+},
+angle_types = {
+	'': 'SVG_ANGLETYPE_UNSPECIFIED',
+	'deg': 'SVG_ANGLETYPE_DEG',
+	'rad': 'SVG_ANGLETYPE_RAD',
+	'grad': 'SVG_ANGLETYPE_GRAD',
+};
+
+test(function() {
+	assert_equals(c.r.baseVal.valueAsString, '1em');
+}, "Getting SVGLength value using valueAsString");
+
+test(function() {
+	c.r.baseVal.valueAsString = '2px';
+	assert_equals(c.r.baseVal.unitType, SVGLength.SVG_LENGTHTYPE_PX, "SVGLength unitType");
+	assert_equals(c.r.baseVal.valueInSpecifiedUnits, 2, "SVGLength valueInSpecifiedUnits");
+}, "Setting SVGLength to a valid value using valueAsString");
+
+test(function() {
+	assert_throws("SYNTAX_ERR", function() {
+		c.r.baseVal.valueAsString = 'rubbish';
+	});
+}, "Setting SVGLength to an invalid value using valueAsString");
+
+test(function() {
+	assert_equals(c.r.animVal.valueAsString, '2px');
+}, "Getting readonly SVGLength value using valueAsString");
+
+test(function() {
+	assert_throws("NO_MODIFICATION_ALLOWED_ERR", function() {
+		c.r.animVal.valueAsString = '10pt';
+	});
+}, "Setting readonly SVGLength using valueAsString");
+
+
+for (var type in length_types) {
+	if (length_types.hasOwnProperty(type)) {
+		test(function() {
+			c.r.baseVal.newValueSpecifiedUnits(SVGLength[length_types[type]], 10);			
+			assert_equals(c.r.baseVal.valueAsString, '10' + type);
+		}, "Getting SVGLength " + length_types[type] + " unit type value using valueAsString");
+	}
+}
+
+
+test(function() {
+	assert_equals(m.orientAngle.baseVal.valueAsString, '20rad');
+}, "Getting SVGAngle value using valueAsString");
+
+test(function() {
+	m.orientAngle.baseVal.valueAsString = '2grad';
+	assert_equals(m.orientAngle.baseVal.unitType, SVGAngle.SVG_ANGLETYPE_GRAD, "SVGAngle unitType");
+	assert_equals(m.orientAngle.baseVal.valueInSpecifiedUnits, 2, "SVGAngle valueInSpecifiedUnits");
+}, "Setting SVGAngle to a valid value using valueAsString");
+
+test(function() {
+	assert_throws("SYNTAX_ERR", function() {
+		m.orientAngle.baseVal.valueAsString = 'rubbish';
+	});
+}, "Setting SVGAngle to an invalid value using valueAsString");
+
+test(function() {
+	assert_equals(m.orientAngle.animVal.valueAsString, '2grad');
+}, "Getting readonly SVGAngle value using valueAsString");
+
+test(function() {
+	assert_throws("NO_MODIFICATION_ALLOWED_ERR", function() {
+		m.orientAngle.animVal.valueAsString = '45deg';
+	});
+}, "Setting readonly SVGAngle using valueAsString");
+
+
+for (var type in angle_types) {
+	if (angle_types.hasOwnProperty(type)) {
+		test(function() {
+			m.orientAngle.baseVal.newValueSpecifiedUnits(SVGAngle[angle_types[type]], 10);			
+			assert_equals(m.orientAngle.baseVal.valueAsString, '10' + type);
+		}, "Getting SVGAngle " + angle_types[type] + " unit type value using valueAsString");
+	}
+}
+</script>

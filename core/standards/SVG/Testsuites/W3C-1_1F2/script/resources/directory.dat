@@ -1,0 +1,238 @@
+# directory.dat
+#
+# Anthony Grasso, Canon
+# Sep., 2009
+#
+# This file describes the directory tree structure for the SVG 1.1 2nd Edition test suite
+# this is a tab delimited file
+# feilds are:
+# section name, chapter or .section number, title
+#
+# Field 1, section name
+# section names are 'chapter' and 'chapter-section'
+# at the time of creation, chapter names were the same as the html names in the 1.0 spec.
+# section names in the spec are too verbose to fit into the test file naming convention so they
+# do not mirror the links in the spec.
+# 
+# Field 2, chapter or .section number
+# chapters are numbered as integers, sections are preceded by a decimal to 
+# differentiate them.
+# The reason I did this was to avoid having a huge renumbering task in the event that
+# there was a chapter added or deleted.
+#
+# Field 3, Title
+# This is the title of the section as it appears in the spec.
+#
+intro	1	Introduction
+intro-about	.1	About SVG	#AboutSVG
+intro-mime	.2	SVG MIME type, file name extension and Macintosh file type	#MIMEType
+intro-id	.3	SVG Namespace, Public Identifier and System Identifier	#Namespace
+intro-compat	.4	Compatibility with Other Standards Efforts	#W3CCompatibility
+intro-terms	.5	Terminology	#Terminology
+intro-defs	.6	Definitions	#Definitions
+concepts	2	Concepts
+concepts-name	.1	Explaining the name: SVG	#Intro
+concepts-important	.2	Important SVG concepts	#Concepts
+concepts-options	.3	Options for using SVG in Web pages	#UsageOptions
+render	3	Rendering Model
+render-intro	.1	Introduction	#Introduction
+render-model	.2	The painters model	#PaintersModel
+render-order	.3	Rendering Order	#RenderingOrder
+render-groups	.4	How groups are rendered	#Grouping
+render-elems	.5	How elements are rendered	#Elements
+render-types	.6	Types of graphics elements	#TypesOfGraphicsElements
+render-regions	.7	Filtering painted regions	#FilteringPaintRegions
+render-clip	.8	Clipping, masking and object opacity	#ClippingMaskingObjectOpacity
+render-composit	.9	Parent Compositing	#ParentCompositing
+types	4	Basic Data Types and Interfaces
+types-basic	.1	Basic data types	#BasicDataTypes
+types-keyword	.2	Recognized color keyword names	#ColorKeywords
+types-dom	.3	Basic DOM interfaces	#BasicDOMInterfaces
+struct	5	Document Structure
+struct-frag	.1	Defining an SVG document fragment: the 'svg' element	#NewDocument
+struct-group	.2	Grouping: the 'g' element	#Groups
+struct-defs	.3	References and the 'defs' element	#Head
+struct-desc	.4	The 'desc' and 'title' elements	#DescriptionAndTitleElements
+struct-symbol	.5	The 'symbol' element	#SymbolElement
+struct-use	.6	The 'use' element	#UseElement
+struct-image	.7	The 'image' element	#ImageElement
+struct-cond	.8	Conditional processing	#ConditionalProcessing
+struct-res	.9	Specifying whether external resources are required for proper rendering	#ExternalResourcesRequired
+struct-attr	.10	Common attributes	#CommonAttributes
+struct-dom	.11	DOM interfaces	#DOMInterfaces
+styling	6	Styling
+styling-prop	.1	SVG's styling properties	#SVGStylingProperties
+styling-usage	.2	Usage scenarios for styling	#StylingScenarios
+styling-alts	.3	Alternative ways to specify styling properties	#AlternativesForStyling
+styling-pres	.4	Specifying properties using the presentation attributes	#UsingPresentationAttributes
+styling-xsl	.5	Styling with XSL	#StylingWithXSL
+styling-css	.6	Styling with CSS	#StylingWithCSS
+styling-case	.7	Case sensitivity of property names and values	#CaseSensitivity
+styling-facil	.8	Facilities from CSS and XSL used by SVG	#SVGUseOfCSS
+styling-extern	.9	Referencing external style sheets	#ReferencingExternalStyleSheets
+styling-elem	.10	The 'style' element	#StyleElement
+styling-class	.11	The class attribute	#ClassAttribute
+styling-style	.12	The style attribute	#StyleAttribute
+styling-default	.13	Specifying the default style sheet language	#DefaultStyleSheetLanguage
+styling-inherit	.14	Property inheritance	#Inheritance
+styling-scope	.15	The scope/range of styles	#Scope
+styling-agent	.16	User agent style sheet	#UAStyleSheet
+styling-aural	.17	Aural style sheets	#AuralStyleSheets
+styling-dom	.18	DOM interfaces	#DOMInterfaces
+coords	7	Coordinate Systems, Transformations and Units
+coords-intro	.1	Introduction	#Introduction
+coords-viewport	.2	The initial viewport	#ViewportSpace
+coords-coord	.3	The initial coordinate system	#InitialCoordinateSystem
+coords-trans	.4	Coordinate system transformations	#EstablishingANewUserSpace
+coords-nest	.5	Nested transformations	#NestedTransformations
+coords-transattr	.6	The transform attribute	#TransformAttribute
+coords-viewattr	.7	The viewBox attribute	#ViewBoxAttribute
+coords-aspectattr	.8	The preserveAspectRatio attribute	#PreserveAspectRatioAttribute
+coords-view	.9	Establishing a new viewport	#EstablishingANewViewport
+coords-units	.10	Units	#Units
+coords-bounds	.11	Object bounding box units	#ObjectBoundingBox
+coords-geo	.12	Geographic Coordinate Systems	#GeographicCoordinates
+coords-svgtransattr	.13	The 'svg:transform' attribute	#SVGGlobalTransformAttribute
+coords-dom	.14	DOM interfaces	#DOMInterfaces
+paths	8	Paths
+paths-intro	.1	Introduction	#Introduction
+paths-elem	.2	The 'path' element	#PathElement
+paths-data	.3	Path Data	#PathData
+paths-dist	.4	Distance along a path	#DistanceAlongAPath
+paths-dom	.5	DOM interfaces	#DOMInterfaces
+shapes	9	Basic Shapes
+shapes-intro	.1	Introduction	#Introduction
+shapes-rect	.2	The 'rect' element	#RectElement
+shapes-circle	.3	The 'circle' element	#CircleElement
+shapes-ellipse	.4	The 'ellipse' element	#EllipseElement
+shapes-line	.5	The 'line' element	#LineElement
+shapes-polyline	.6	The 'polyline' element	#PolylineElement
+shapes-polygon	.7	The 'polygon' element	#PolygonElement
+shapes-dom	.8	DOM interfaces	#DOMInterfaces
+text	10	Text
+text-intro	.1	Introduction	#Introduction
+text-chars	.2	Characters and their corresponding glyphs	#CharactersAndGlyphs
+text-fonts	.3	Fonts, font tables and baselines	#FontsTablesBaselines
+text-text	.4	The 'text' element	#TextElement
+text-tspan	.5	The 'tspan' element	#TSpanElement
+text-tref	.6	The 'tref' element	#TRefElement
+text-layout	.7	Text layout	#TextLayout
+text-order	.8	Text rendering order	#TextRenderingOrder
+text-align	.9	Alignment properties	#AlignmentProperties
+text-fselect	.10	Font selection properties	#FontPropertiesUsedBySVG
+text-spacing	.11	Spacing properties	#SpacingProperties
+text-deco	.12	Text decoration	#TextDecorationProperties
+text-path	.13	Text on a path	#TextOnAPath
+text-altglyph	.14	Alternate glyphs	#AlternateGlyphs
+text-ws	.15	White space handling	#WhiteSpace
+text-tselect	.16	Text selection and clipboard operations	#TextSelection
+text-dom	.17	DOM interfaces	#DOMInterfaces
+painting	11	Painting: Filling, Stroking and Marker Symbols
+painting-intro	.1	Introduction	#Introduction
+painting-which	.2	Specifying paint	#SpecifyingPaint
+painting-fill	.3	Fill Properties	#FillProperties
+painting-stroke	.4	Stroke Properties	#StrokeProperties
+painting-vis	.5	Controlling visibility	#VisibilityControl
+painting-marker	.6	Markers	#Markers
+painting-render	.7	Rendering properties	#RenderingProperties
+painting-inherit	.8	Inheritance of painting properties	#InheritanceOfPaintingProperties
+painting-dom	.9	DOM interfaces	#DOMInterfaces
+color	12	Color
+color-intro	.1	Introduction	#ColorIntroduction
+color-prop	.2	The 'color' property	#ColorProperty
+color-prof	.3	Color profile descriptions	#ColorProfileDescriptions
+color-dom	.4	DOM interfaces	#DOMInterfaces
+pservers	13	Gradients and Patterns
+pservers-intro	.1	Introduction	#Introduction
+pservers-grad	.2	Gradients	#Gradients
+pservers-pattern	.3	Patterns	#Patterns
+pservers-dom	.4	DOM interfaces	#DOMInterfaces
+masking	14	Clipping, Masking and Compositing
+masking-intro	.1	Introduction	#Introduction
+masking-alpha	.2	Simple alpha compositing	#SimpleAlphaBlending
+masking-path	.3	Clipping paths	#ClippingPaths
+masking-mask	.4	Masking	#Masking
+masking-opacity	.5	Object and group opacity: the 'opacity' property	#ObjectAndGroupOpacityProperties
+masking-dom	.6	DOM interfaces	#DOMInterfaces
+filters	15	Filter Effects
+filters-intro	.1	Introduction	#Introduction
+filters-example	.2	An example	#AnExample
+filters-felem	.3	The 'filter' element	#FilterElement
+filters-fprop	.4	The 'filter' property	#FilterProperty
+filters-region	.5	Filter effects region	#FilterEffectsRegion
+filters-bgnd	.6	Accessing the background image	#AccessingBackgroundImage
+filters-overview	.7	Filter primitives overview	#FilterPrimitivesOverview
+filters-light	.8	Light source elements and properties	#LightSourceDefinitions
+filters-blend	.9	Filter primitive 'feBlend'	#feBlendElement
+filters-color	.10	Filter primitive 'feColorMatrix'	#feColorMatrixElement
+filters-comptran	.11	Filter primitive 'feComponentTransfer'	#feComponentTransferElement
+filters-composite	.12	Filter primitive 'feComposite'	#feCompositeElement
+filters-conv	.13	Filter primitive 'feConvolveMatrix'	#feConvolveMatrixElement
+filters-diffuse	.14	Filter primitive 'feDiffuseLighting'	#feDiffuseLightingElement
+filters-displace	.15	Filter primitive 'feDisplacementMap'	#feDisplacementMapElement
+filters-flood	.16	Filter primitive 'feFlood'	#feFloodElement
+filters-gauss	.17	Filter primitive 'feGaussianBlur'	#feGaussianBlurElement
+filters-image	.18	Filter primitive 'feImage'	#feImageElement
+filters-merge	.19	Filter primitive 'feMerge'	#feMergeElement
+filters-morph	.20	Filter primitive 'feMorphology'	#feMorphologyElement
+filters-offset	.21	Filter primitive 'feOffset'	#feOffsetElement
+filters-specular	.22	Filter primitive 'feSpecularLighting'	#feSpecularLightingElement
+filters-tile	.23	Filter primitive 'feTile'	#feTileElement
+filters-turb	.24	Filter primitive 'feTurbulence'	#feTurbulenceElement
+filters-dom	.25	DOM interfaces	#DOMInterfaces
+interact	16	Interactivity
+interact-intro	.1	Introduction	#Introduction
+interact-events	.2	Complete list of supported events	#SVGEvents
+interact-ui	.3	User interface events	#UIEvents
+interact-pevents	.4	Pointer events	#PointerEvents
+interact-order	.5	Processing order for user interface events	#UIEventProcessing
+interact-prop	.6	The 'pointer-events' property	#PointerEventsProperty
+interact-zoom	.7	Magnification and panning	#EnableZoomAndPanControls
+interact-cursor	.8	Cursors	#Cursors
+interact-dom	.9	DOM interfaces	#DOMInterfaces
+linking	17	Linking
+linking-a	.1	Links out of SVG content: the 'a' element	#Links
+linking-uri	.2	Linking into SVG content: URI fragments and SVG views	#LinksIntoSVG
+linking-dom	.3	DOM interfaces	#DOMInterfaces
+script	18	Scripting
+script-lang	.1	Specifying the scripting language	#ScriptingLanguage
+script-elem	.2	The 'script' element	#ScriptElement
+script-handle	.3	Event handling	#EventHandling
+script-attr	.4	Event attributes	#EventAttributes
+script-dom	.5	DOM interfaces	#DOMInterfaces
+animate	19	Animation
+animate-intro	.1	Introduction	#Introduction
+animate-elem	.2	Animation elements	#AnimationElements
+animate-usingdom	.3	Animation using the SVG DOM	#DOMAnimationExample
+animate-dom	.4	DOM interfaces	#DOMInterfaces
+fonts	20	Fonts
+fonts-intro	.1	Introduction	#Introduction
+fonts-svg	.2	Overview of SVG fonts	#SVGFontsOverview
+fonts-elem	.3	The 'font' element	#FontElement
+fonts-glyph	.4	The 'glyph' element	#GlyphElement
+fonts-missing	.5	The 'missing-glyph' element	#MissingGlyphElement
+fonts-select	.6	Glyph selection rules	#GlyphSelectionRules
+fonts-kern	.7	The 'hkern' and 'vkern' elements	#KernElements
+fonts-desc	.8	Describing a font	#FontDescriptions
+fonts-dom	.9	DOM interfaces	#DOMInterfaces
+metadata	21	Metadata
+metadata-intro	.1	Introduction	#Introduction
+metadata-meta	.2	The 'metadata' element	#MetadataElement
+metadata-example	.3	An example	#Example
+metadata-dom	.4	DOM interfaces	#DOMInterfaces
+backward	22	Backwards Compatibility
+extend	23	Extensibility
+extend-namespace	.1	Foreign namespaces and private data	#ForeignNamespaces
+extend-fo	.2	Embedding foreign object types	#EmbeddingForeignObjects
+extend-foelem	.3	The 'foreignObject' element	#ForeignObjectElement
+extend-example	.4	An example	#AnExample
+extend-private	.5	Adding private elements and attributes to the DTD	#PrivateElementsAndAttribute
+extend-dom	.6	DOM interfaces	#DOMInterfaces
+conform	G	Conformance Criteria
+conform-intro	.1	Introduction	#Introduction
+conform-frag	.2	Conforming SVG Document Fragments	#ConformingSVGDocuments
+conform-standalone	.3	Conforming SVG Stand-Alone Files	#ConformingSVGStandAloneFiles
+conform-gen	.4	Conforming SVG Generators	#ConformingSVGGenerators
+conform-subtree	.5	Conforming SVG DOM Subtree	#ConformingSVGDOMSubtree
+conform-interp	.6	Conforming SVG Interpreters	#ConformingSVGInterpreters
+conform-viewers	.7	Conforming SVG Viewers	#ConformingSVGViewers

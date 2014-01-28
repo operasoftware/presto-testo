@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+  <head>
+    <title>TC #10</title>
+  </head>
+  <body>
+    <h1>SVG with explicit height and viewBox in a html:object</h1>
+    <!--The SVG has height 50px and width 100%. The object should adapt
+      to the height 50px and the width should be resolved to the width
+      of the containing block. The containing block is marked with a
+      blue rectangle, the size of the SVG with a green rectangle. The
+      green should cover 1/4 of the area of the blue rectangle.-->
+<p>There should be a svg image below, it should fit into the green rect. The green rect should cover 1/4 of the area of the blue rectangle.</p>
+   <div style="height:200px; outline: 2px solid blue">
+     <object data="support/default-size-with-viewbox.svg" width="50%" height="50%" type="image/svg+xml" style="outline: 2px solid green;">[SVG NOT SUPPORTED]</object>
+   </div>
+
+  </body>
+</html>
+

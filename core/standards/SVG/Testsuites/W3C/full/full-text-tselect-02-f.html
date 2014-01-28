@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <!DOCTYPE html PUBLIC  "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>Tests text selection of bidirectional text</title>
+</head>
+<body>
+<table>
+<tr>
+<td align="center">SVG Image</td>
+<td align="center">Reference Image</td>
+</tr>
+<tr>
+<td align="right">
+<object data="../svggen/text-tselect-02-f.svg" width="480" height="360" type="image/svg+xml"/>
+</td>
+<td align="left">
+<img alt="raster image of text-tselect-02-f" src="../png/full-text-tselect-02-f.png" width="480" height="360"/>
+</td>
+</tr>
+</table>
+<p>
+These substrings must be selected (listed in visual order):
+<ul>
+<li>
+"abc"
+</li>
+<li>
+the space between "c" and "&#1493;"
+</li>
+<li>
+"1"
+</li>
+<li>
+the space between "3" and "&#1490;"
+</li>
+<li>
+"&#1488;&#1489;&#1490;"
+</li>
+</ul>
+<p>
+If only the substrings listed above were selected then the test has passed.
+</p>
+<p>
+The testcase also shows what happens when the selection is modified via DOM (click the buttons below
+the bidi-text). Compliant viewers must throw an exception when the first parameter handed 
+to SVGTextContentElement.selectSubString is out-of-range.
+That means the variable 'startIndex' must always be in the range 0 &lt;= startIndex &lt;= 18.
+It can be noted that the parameter 'numChars' is not restricted in this way.
+</p>
+<p>
+Note that the color of the text selection is UA dependent and not defined in the SVG specification.
+</p>
+</body>
+</html> 

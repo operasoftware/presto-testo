@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+xmlns:xlink="http://www.w3.org/1999/xlink"
+id="svgroot">
+	<solidColor id="green" solid-color="red"/>
+	<rect style="fill:url(external.svg#green)" width="100%" height="50%" fill="red"/>
+	<rect fill="url(external.svg#green)" y="50%" width="100%" height="50%"/>
+</svg>

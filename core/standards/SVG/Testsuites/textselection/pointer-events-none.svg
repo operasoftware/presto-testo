@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg">
+  <title>Text selection of element with 'pointer-events' set to 'none'</title>
+
+  <text x="10" y="20" pointer-events="none" id="point">You should be NOT able to select this text.</text>
+</svg>
+

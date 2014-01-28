@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1 Tiny//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11-tiny.dtd">
+<!--======================================================================-->
+<!--=  Copyright 2000 World Wide Web Consortium, (Massachusetts          =-->
+<!--=  Institute of Technology, Institut National de Recherche en        =-->
+<!--=  Informatique et en Automatique, Keio University). All Rights      =-->
+<!--=  Reserved. See http://www.w3.org/Consortium/Legal/.                =-->
+<!--======================================================================-->
+<!--======================================================================-->
+<!-- animation-href-BE-02.svg                                             -->
+<!-- renamed for 1.1 suite to animate-elem-21-t                           -->
+<!-- Author : Chris lilley  22-Mar-2000                                   -->
+<!--======================================================================-->
+<svg version="1.1" baseProfile="tiny" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="svg-root" width="100%" height="100%" viewBox="0 0 480 360">
+	<title id="test-title">animate-elem-21-t</title>
+	<desc id="test-desc">See if animation, tiggered by links, works.</desc>
+	<!--======================================================================-->
+	<!--Content of Test Case follows...                  =====================-->
+	<!--======================================================================-->
+	<g id="test-body-content">
+		<circle stroke="#FF6633" stroke-width="30" fill="none" cx="100" cy="200" r="60">
+
+		</circle>
+		<rect id="pink" x="20" y="20" width="180" height="180" fill="#001A99">
+
+		</rect>
+		<circle stroke="#D83DFF" stroke-width="20" fill="none" cx="200" cy="110" r="80">
+
+		</circle>
+		<!-- ok so this is testing dynamic compositing as well -->
+		<g id="buttons">
+			<a xlink:href="#fadein">
+				<rect x="320" y="0" width="160" height="180" fill="#FFCC00"/>
+				<text fill="black" font-size="30" font-weight="bold" x="330" y="90">Fade in</text>
+			</a>
+			<a xlink:href="#fadeout">
+				<rect x="320" y="180" width="160" height="180" fill="#FFCC00"/>
+				<text fill="black" font-size="30" font-weight="bold" x="330" y="280">Fade out</text>
+			</a>
+		</g>
+	</g>
+
+</svg>

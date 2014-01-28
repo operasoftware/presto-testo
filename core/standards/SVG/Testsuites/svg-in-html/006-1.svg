@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<svg xmlns="http://www.w3.org/2000/svg">
+<title>Helper file for mask with external file</title>
+    <mask id="m1" maskUnits="objectBoundingBox" maskContentUnits="objectBoundingBox">
+      <rect x="0.0" y="0.5" width="1" height="0.5" fill="white"/>
+    </mask>
+</svg>

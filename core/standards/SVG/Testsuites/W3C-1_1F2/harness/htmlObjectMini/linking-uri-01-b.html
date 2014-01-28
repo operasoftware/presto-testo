@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC  "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+      <meta name="keywords" content="W3C SVG 1.1 2nd Edition Test Suite"/>
+      <meta name="description" content="W3C SVG 1.1 2nd Edition Object Mini Test Suite"/>
+      <title>
+SVG 1.1 2nd Edition Test (&lt;object&gt;): linking-uri-01-b.svg
+      </title>
+      <link href="harness_mini.css" rel="stylesheet" type="text/css" />
+      <link rel="prev" href="linking-frag-01-f.html" />
+      <link rel="index" href="index.html" />
+      <link rel="next" href="linking-uri-02-b.html" />
+      <script src="../resources/testharnessreport.js"></script>
+    </head>
+  <body class="bodytext">
+    <div class="linkbar">
+      <p>
+        <a href="linking-frag-01-f.html" rel="prev">linking-frag-01-f ←</a>
+        <a href="index.html" rel="index">index</a>
+        <a href="linking-uri-02-b.html" rel="next">→ linking-uri-02-b</a>
+      </p>
+    </div>
+<table border="0" align="center" cellspacing="0" cellpadding="10">
+  <tr>
+    <td align="center" colspan="3">
+      <table border="0" cellpadding="8">
+        <tr  class="navbar">
+          <td align="center">
+            SVG Image
+          </td>
+          <td align="center">
+            PNG Image
+          </td>
+        </tr>
+        <tr>
+          <td align="right">
+            <object data="../../svg/linking-uri-01-b.svg" width="480" height="360" type="image/svg+xml"><p style="font-size:300%;color:red">FAIL</p></object>
+          </td>
+          <td align="left">
+            <img alt="raster image of linking-uri-01-b.svg" src="../../png/linking-uri-01-b.png" width="480" height="360"/>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+
+<div>
+    <h4 id="operatorscript" onclick="var t = document.getElementById('operatortext'); t.style.display=(t.style.display=='none' ? 'inline' : 'none');">
+      <em>Operator script (click here to toggle)</em>
+    </h4>
+    <div id="operatortext" style="display:none">
+<p>
+        In turn, activate each of the "Rectangle", "Ellipse", "Polygon" and "Circle" links
+        in the gray box in the middle of the document, navigating back (for example with
+        the Back button if in a browser) after activating each one.
+      </p>
+  </div>
+  </div>
+    <h4 id="passcriteria">
+      Pass Criteria
+    </h4>
+    <div>
+<p>
+        The test is passed if all of the sub-tests have the correct behavior:
+      </p><ul>
+        <li>After activating the "Rectangle" link, the whole of the linking-uri-01-b.svg
+        document must be displayed; that is, there will be no visual change.  (The
+        'view' element has no attributes (other than id), so the correct view in
+        the frame is of the parent 'svg' element, which is the whole picture.)</li>
+        <li>After navigating back and activating the "Ellipse" link, the view must change so that it is
+        zoomed (uniformly scaled) and centered on the ellipse.  The black rectangle
+        surrounding the ellipse must be just within the frame.</li>
+        <li>After navigating back and activating the "Circle" link, the view must change so that it is
+        zoomed and centered on the yellow circle.  The view is scaled non-uniformly, however,
+        so that the circle is stretched horizontally ito an ellipse.  The black rectangle
+        surrounding it must be just within the frame.</li>
+        <li>After navigating back and activating the "Polygon" link, the view must not change.</li>
+      </ul>
+    </div>
+    <br />
+    <div class="linkbar">
+      <p>
+        <a href="linking-frag-01-f.html" rel="prev">linking-frag-01-f ←</a>
+        <a href="index.html" rel="index">index</a>
+        <a href="linking-uri-02-b.html" rel="next">→ linking-uri-02-b</a>
+      </p>
+    </div>
+  </body>
+</html>

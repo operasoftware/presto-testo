@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC  "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+      <meta name="keywords" content="W3C SVG 1.1 2nd Edition Test Suite"/>
+      <meta name="description" content="W3C SVG 1.1 2nd Edition Object Mini Test Suite"/>
+      <title>
+SVG 1.1 2nd Edition Test (&lt;object&gt;): filters-overview-03-b.svg
+      </title>
+      <link href="harness_mini.css" rel="stylesheet" type="text/css" />
+      <link rel="prev" href="filters-overview-02-b.html" />
+      <link rel="index" href="index.html" />
+      <link rel="next" href="filters-specular-01-f.html" />
+      <script src="../resources/testharnessreport.js"></script>
+    </head>
+  <body class="bodytext">
+    <div class="linkbar">
+      <p>
+        <a href="filters-overview-02-b.html" rel="prev">filters-overview-02-b ←</a>
+        <a href="index.html" rel="index">index</a>
+        <a href="filters-specular-01-f.html" rel="next">→ filters-specular-01-f</a>
+      </p>
+    </div>
+<table border="0" align="center" cellspacing="0" cellpadding="10">
+  <tr>
+    <td align="center" colspan="3">
+      <table border="0" cellpadding="8">
+        <tr  class="navbar">
+          <td align="center">
+            SVG Image
+          </td>
+          <td align="center">
+            PNG Image
+          </td>
+        </tr>
+        <tr>
+          <td align="right">
+            <object data="../../svg/filters-overview-03-b.svg" width="480" height="360" type="image/svg+xml"><p style="font-size:300%;color:red">FAIL</p></object>
+          </td>
+          <td align="left">
+            <img alt="raster image of filters-overview-03-b.svg" src="../../png/filters-overview-03-b.png" width="480" height="360"/>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+
+<div>
+    <h4 id="operatorscript" onclick="var t = document.getElementById('operatortext'); t.style.display=(t.style.display=='none' ? 'inline' : 'none');">
+      <em>Operator script (click here to toggle)</em>
+    </h4>
+    <div id="operatortext" style="display:none">
+<p>
+        Run the test. No interaction required.
+      </p>
+  </div>
+  </div>
+    <h4 id="passcriteria">
+      Pass Criteria
+    </h4>
+    <div>
+<p>
+        To pass this test, the UA must render all 6 cases (SourceGraphic, SourceAlpha, BackgroundImage, BackgroundAlpha, FillPaint, StrokePaint) correctly.
+      </p><ol>
+        <li>The result for in="SourceGraphic" is a non blurred vertical rectangle (green with dashed stroke) overlayed with three blurred circles (red/green/blue with dashed stroke).</li>
+        <li>The result for in="SourceAlpha" is a non blurred vertical rectangle (green with dashed stroke) overlayed with three blurred circles (dark gray with dashed stroke).</li>
+        <li>The result for in="BackgroundImage" is a blurred vertical rectangle (green with dashed stroke).</li>
+        <li>The result for in="BackgroundAlpha" is blurred vertical rectangle (dark gray with dashed stroke).</li>
+        <li>The results for in="FillPaint" and in="StrokePaint" are the same.  They consists of a non blurred vertical rectangle (green with dashed stroke) overlayed with a blurred gradiant (blue/white/red/yellow).</li>
+        <li>The size of the gradients are bigger than the blurred circles.</li>
+      </ol>
+    </div>
+    <br />
+    <div class="linkbar">
+      <p>
+        <a href="filters-overview-02-b.html" rel="prev">filters-overview-02-b ←</a>
+        <a href="index.html" rel="index">index</a>
+        <a href="filters-specular-01-f.html" rel="next">→ filters-specular-01-f</a>
+      </p>
+    </div>
+  </body>
+</html>

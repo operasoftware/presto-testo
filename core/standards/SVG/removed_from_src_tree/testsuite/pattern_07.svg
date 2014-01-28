@@ -1,0 +1,105 @@
+<?xml version="1.0"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50"
+     width="500px" height="500px">
+  <style>
+    text { stroke:none; fill:black; }
+  </style>
+  <defs>
+    <pattern patternUnits="objectBoundingBox"
+	     patternContentUnits="objectBoundingBox"
+	     x="0.5" y="0.5" width="1" height="1"
+	     id="pat_oon">
+      <circle cx="0.5" cy="0.5" r="0.5" fill="red"/>
+    </pattern>
+    <pattern patternUnits="objectBoundingBox"
+	     patternContentUnits="objectBoundingBox"
+	     x="0.5" y="0.5" width="1" height="1"
+	     viewBox="0 0 1 1"
+	     id="pat_oov">
+      <circle cx="0.5" cy="0.5" r="0.5" fill="red"/>
+    </pattern>
+    <pattern patternUnits="objectBoundingBox"
+	     patternContentUnits="userSpaceOnUse"
+	     x="0.5" y="0.5" width="1" height="1"
+	     id="pat_oun">
+      <circle cx="5" cy="5" r="5" fill="red"/>
+    </pattern>
+    <pattern patternUnits="objectBoundingBox"
+	     patternContentUnits="userSpaceOnUse"
+	     x="0.5" y="0.5" width="1" height="1"
+	     viewBox="0 0 1 1"
+	     id="pat_ouv">
+      <circle cx="0.5" cy="0.5" r="0.5" fill="red"/>
+    </pattern>
+
+    <pattern patternUnits="userSpaceOnUse"
+	     patternContentUnits="objectBoundingBox"
+	     x="5" y="5" width="10" height="10"
+	     id="pat_uon">
+      <circle cx="0.5" cy="0.5" r="0.5" fill="red"/>
+    </pattern>
+    <pattern patternUnits="userSpaceOnUse"
+	     patternContentUnits="objectBoundingBox"
+	     x="5" y="5" width="10" height="10"
+	     viewBox="0 0 1 1"
+	     id="pat_uov">
+      <circle cx="0.5" cy="0.5" r="0.5" fill="red"/>
+    </pattern>
+    <pattern patternUnits="userSpaceOnUse"
+	     patternContentUnits="userSpaceOnUse"
+	     x="5" y="5" width="10" height="10"
+	     id="pat_uun">
+      <circle cx="5" cy="5" r="5" fill="red"/>
+    </pattern>
+    <pattern patternUnits="userSpaceOnUse"
+	     patternContentUnits="userSpaceOnUse"
+	     x="5" y="5" width="10" height="10"
+	     viewBox="0 0 1 1"
+	     id="pat_uuv">
+      <circle cx="0.5" cy="0.5" r="0.5" fill="red"/>
+    </pattern>
+  </defs>
+
+  <g text-anchor="middle" font-size="1">
+    <text x="25" y="2">pattern units/viewBox test</text>
+    <text x="25" y="4">legend: patternUnits/patternContentUnits/viewBox</text>
+
+    <g stroke="black" stroke-width="0.1">
+      <g transform="translate(5 5)">
+	<rect width="10" height="10" fill="url(#pat_oon)"/>
+	<text x="5" y="11">o/o/-</text>
+      </g>
+      <g transform="translate(20 5)">
+	<rect width="10" height="10" fill="url(#pat_oov)"/>
+	<text x="5" y="11">o/o/v</text>
+      </g>
+      <g transform="translate(35 5)">
+	<rect width="10" height="10" fill="url(#pat_oun)"/>
+	<text x="5" y="11">o/u/-</text>
+      </g>
+
+      <g transform="translate(5 20)">
+	<rect width="10" height="10" fill="url(#pat_ouv)"/>
+	<text x="5" y="11">o/u/v</text>
+      </g>
+
+      <g transform="translate(20 20)">
+	<rect width="10" height="10" fill="url(#pat_uon)"/>
+	<text x="5" y="11">u/o/-</text>
+      </g>
+      <g transform="translate(35 20)">
+	<rect width="10" height="10" fill="url(#pat_uov)"/>
+	<text x="5" y="11">u/o/v</text>
+      </g>
+
+      <g transform="translate(5 35)">
+	<rect width="10" height="10" fill="url(#pat_uun)"/>
+	<text x="5" y="11">u/u/-</text>
+      </g>
+      <g transform="translate(20 35)">
+	<rect width="10" height="10" fill="url(#pat_uuv)"/>
+	<text x="5" y="11">u/u/v</text>
+      </g>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,23 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+
+
+<script xlink:href="insert_anim_01.js">
+</script>
+
+<svg x="40" y="40" width="100" height="100" class="background" >
+
+  <path d="M 0 0 L 70 70" stroke="black" stroke-width="1">
+  </path>
+
+  <g id="trails">
+    <path id="mypath" d="M 0 0 L 70 70" stroke="red" stroke-width="3" stroke-dasharray="100 100" stroke-dashoffset="50">
+    </path>
+  </g>
+
+</svg>
+
+<g onclick="do_test();">
+  <rect x="100" y="0" width="70" height="20" fill="red"/>
+</g>
+
+</svg>

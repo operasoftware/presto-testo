@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <metadata>
+    <rdf:RDF xmlns:cc="http://web.resource.org/cc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+      <cc:Work rdf:about="">
+        <dc:title>Yield Sign</dc:title>
+        <dc:description>An American street sign: yield. A red and white triangle with the word YIELD in the center.</dc:description>
+        <dc:subject>
+          <rdf:Bag>
+            <rdf:li>traffic</rdf:li>
+            <rdf:li></rdf:li>
+            <rdf:li>street</rdf:li>
+            <rdf:li>roadsign</rdf:li>
+            <rdf:li>yield</rdf:li>
+            <rdf:li>sign</rdf:li>
+            <rdf:li>transportation</rdf:li>
+          </rdf:Bag>
+        </dc:subject>
+        <dc:publisher>
+          <cc:Agent rdf:about="http://www.openclipart.org">
+            <dc:title>Public Domain</dc:title>
+          </cc:Agent>
+        </dc:publisher>
+        <dc:creator>
+          <cc:Agent>
+            <dc:title>Richard D. Worth</dc:title>
+          </cc:Agent>
+        </dc:creator>
+        <dc:rights>
+          <cc:Agent>
+            <dc:title>Public Domain</dc:title>
+          </cc:Agent>
+        </dc:rights>
+        <dc:date></dc:date>
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+        <cc:license rdf:resource="http://web.resource.org/cc/PublicDomain"/>
+        <dc:language>en</dc:language>
+      </cc:Work>
+      <cc:License rdf:about="http://web.resource.org/cc/PublicDomain">
+        <cc:permits rdf:resource="http://web.resource.org/cc/Reproduction"/>
+        <cc:permits rdf:resource="http://web.resource.org/cc/Distribution"/>
+        <cc:permits rdf:resource="http://web.resource.org/cc/DerivativeWorks"/>
+      </cc:License>
+    </rdf:RDF>
+  </metadata>
+  <title>Yield Sign</title>
+  <desc>An American street sign: yield. A red and white triangle with the word YIELD in the center.</desc>
+  <defs>
+    <path d="M-173,-100 m30,0 h 286 s 30,0 15,26 l-143,247.68 s-15,26 -30,0 l-143,-247.68 s-15,-26 15,-26z" id="yield_triangle"/>
+  </defs>
+  <g transform="translate(15, 26)">
+    <g transform="translate(173, 100)">
+      <g id="yield">
+        <use fill="white" stroke="#E81108" stroke-width="3" transform="scale(1)" xlink:href="#yield_triangle"/>
+        <use fill="#E81108" stroke="none" transform="scale(0.92)" xlink:href="#yield_triangle"/>
+        <use fill="white" stroke="none" transform="scale(0.5)" xlink:href="#yield_triangle"/>
+        <g transform="scale(0.8,1)">
+          <text fill="#E81108" font-size="40" stroke="none" text-anchor="middle" x="0" y="0">YIELD</text>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

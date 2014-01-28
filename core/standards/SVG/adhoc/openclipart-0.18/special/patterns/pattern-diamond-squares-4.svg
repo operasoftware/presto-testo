@@ -1,0 +1,105 @@
+<?xml version="1.0"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN"
+	"http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<svg height="300" width="300">
+  <metadata>
+    <rdf:RDF xmlns:cc="http://web.resource.org/cc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+      <cc:Work rdf:about="">
+        <dc:title>diamond squares 4 filled pattern</dc:title>
+        <dc:description></dc:description>
+        <dc:subject>
+          <rdf:Bag>
+            <rdf:li>pattern</rdf:li>
+          </rdf:Bag>
+        </dc:subject>
+        <dc:publisher>
+          <cc:Agent rdf:about="http://www.openclipart.org">
+            <dc:title>Alan Horkan</dc:title>
+          </cc:Agent>
+        </dc:publisher>
+        <dc:creator>
+          <cc:Agent>
+            <dc:title>Alan Horkan</dc:title>
+          </cc:Agent>
+        </dc:creator>
+        <dc:rights>
+          <cc:Agent>
+            <dc:title>Alan Horkan</dc:title>
+          </cc:Agent>
+        </dc:rights>
+        <dc:date></dc:date>
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+        <cc:license rdf:resource="http://web.resource.org/cc/PublicDomain"/>
+        <dc:language>en</dc:language>
+      </cc:Work>
+      <cc:License rdf:about="http://web.resource.org/cc/PublicDomain">
+        <cc:permits rdf:resource="http://web.resource.org/cc/Reproduction"/>
+        <cc:permits rdf:resource="http://web.resource.org/cc/Distribution"/>
+        <cc:permits rdf:resource="http://web.resource.org/cc/DerivativeWorks"/>
+      </cc:License>
+    </rdf:RDF>
+  </metadata>
+  <defs>
+    <pattern height="300" id="diamond-squares-4-filled" patternContentUnits="userSpaceOnUse" patternUnits="userSpaceOnUse" width="300">
+      <g id="g1-diamonds">
+        <polygon fill="red" points="25,0 0,50 25,100 50,50"/>
+        <polygon fill="red" points="50,50 100,25 150,50 100,75"/>
+        <polygon fill="red" points="100,75 75,125 100,175 125,125"/>
+        <polygon fill="red" points="-25,125 25,100 75,125 25,150"/>
+        <polygon fill="red" points="275,125 325,100 375,125 325,150"/>
+      </g>
+      <g id="g2-diamonds">
+        <polygon fill="lime" points="125,125 175,100 225,125 175,150"/>
+        <polygon fill="lime" points="200,50 250,25 300,50 250,75"/>
+        <polygon fill="lime" points="175,0 150,50 175,100 200,50"/>
+        <polygon fill="lime" points="250,75 225,125 250,175 275,125"/>
+      </g>
+      <g id="g3-diamonds">
+        <polygon fill="blue" points="100,-75 75,-25 100,25 125,-25"/>
+        <polygon fill="blue" points="50,200 100,175 150,200 100,225"/>
+        <polygon fill="blue" points="25,150 0,200 25,250 50,200"/>
+        <polygon fill="blue" points="100,225 75,275 100,325 125,275"/>
+        <polygon fill="blue" points="-25,275 25,250 75,275 25,300"/>
+        <polygon fill="blue" points="275,275 325,250 375,275 325,300"/>
+      </g>
+      <g id="g4-diamonds">
+        <polygon fill="yellow" points="175,151 150,201 175,250 200,200"/>
+        <polygon fill="yellow" points="200,200 250,175 300,200 250,225"/>
+        <polygon fill="yellow" points="250,225 225,275 250,325 275,275"/>
+        <polygon fill="yellow" points="125,275 175,250 225,275 175,300"/>
+        <polygon fill="yellow" points="250,-75 225,-25 250,25 275,-25"/>
+      </g>
+      <g id="g5-squares">
+        <polygon fill="yellow" points="25,100 50,50 100,75 75,125"/>
+        <polygon fill="yellow" points="25,250 50,200 100,225 75,275"/>
+        <polygon fill="yellow" points="175,100 200,50 250,75 225,125"/>
+        <polygon fill="#ffc000" points="175,250 200,200 250,225 225,275"/>
+        <polygon fill="aqua" points="100,175 125,125 175,150 150,200"/>
+        <polygon fill="aqua" points="100,25 125,-25 175,0 150,50"/>
+        <polygon fill="aqua" points="100,325 125,275 175,300 150,350"/>
+        <polygon fill="aqua" points="250,175 275,125 325,150 300,200"/>
+        <polygon fill="aqua" points="-50,175 -25,125 25,150 0,200"/>
+        <polygon fill="aqua" points="250,25 275,-25 325,0 300,50"/>
+        <polygon fill="aqua" points="-50,25 -25,-25 25,0 0,50"/>
+        <polygon fill="aqua" points="-50,325 -25,275 25,300 0,350"/>
+        <polygon fill="aqua" points="250,325 275,275 325,300 300,350"/>
+      </g>
+      <g id="g6-squares">
+        <polygon fill="pink" points="25,0 75,-25 100,25 50,50"/>
+        <polygon fill="pink" points="175,0 225,-25 250,25 200,50"/>
+        <polygon fill="pink" points="-50,75 0,50 25,100 -25,125"/>
+        <polygon fill="pink" points="100,75 150,50 175,100 125,125"/>
+        <polygon fill="pink" points="250,75 300,50 325,100 275,125"/>
+        <polygon fill="pink" points="25,150 75,125 100,175 50,200"/>
+        <polygon fill="pink" points="175,150 225,125 250,175 200,200"/>
+        <polygon fill="pink" points="-50,225 0,200 25,250 -25,275"/>
+        <polygon fill="pink" points="100,225 150,200 175,250 125,275"/>
+        <polygon fill="pink" points="250,225 300,200 325,250 275,275"/>
+        <polygon fill="pink" points="25,300 75,275 100,325 50,350"/>
+        <polygon fill="pink" points="175,300 225,275 250,325 200,350"/>
+      </g>
+    </pattern>
+  </defs>
+  <rect fill="url(#diamond-squares-4-filled)" height="300" width="300" x="0" y="0"/>
+</svg>

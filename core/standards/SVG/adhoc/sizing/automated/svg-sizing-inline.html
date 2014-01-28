@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>SVG sizing: Inline</title>
+    <link rel="author" title="Opera Software ASA" href="http://www.opera.com/">
+    <script src="/resources/testharness.js"></script>
+    <script src="/resources/testharnessreport.js"></script>
+    <script src="../resources/utils.js"></script>
+  </head>
+  <body>
+    <noscript><p>Enable JavaScript and reload</p></noscript>
+    <div id="log"></div>
+
+    <script>
+      var NSSVG = "http://www.w3.org/2000/svg";
+
+      var containerStyleWidthHeight = [
+          null,
+          "100px",
+          "100%",
+      ];
+
+      var widthHeightAttrValues = [
+          null,
+          "50",
+          "100px",
+          "100%",
+      ];
+
+      var widthHeightStyleValues = [
+          null,
+          "auto",
+          "100px",
+          "100%",
+      ];
+
+      var marginStyleValues = [
+          null,
+          "10px",
+          "100px",
+      ];
+
+      var boxSizingStyleValues = [
+          "border-box",
+          "content-box",
+      ];
+
+      var viewBoxAttrValues = [
+          null,
+          "0 0 100 200"
+      ];
+
+      function setupSVG(testData) {
+          var svgRoot = document.createElementNS(NSSVG, "svg");
+
+          svgRoot.setAttribute("preserveAspectRatio", "none");
+
+          if (testData.widthAttr)
+              svgRoot.setAttribute("width", testData.widthAttr);
+
+          if (testData.heightAttr)
+              svgRoot.setAttribute("height", testData.heightAttr);
+
+          if (testData.viewBoxAttr)
+              svgRoot.setAttribute("viewBox", testData.viewBoxAttr);
+
+          if (testData.widthStyle)
+              svgRoot.style.width = testData.widthStyle;
+
+          if (testData.heightStyle)
+              svgRoot.style.height = testData.heightStyle;
+
+          if (testData.marginLeftStyle)
+              svgRoot.style.marginLeft = testData.marginLeftStyle;
+
+          if (testData.marginRightStyle)
+              svgRoot.style.marginRight = testData.marginRightStyle;
+
+          if (testData.boxSizingStyle)
+              svgRoot.style.boxSizing = testData.boxSizing;
+
+          var svgRect = document.createElementNS(NSSVG, "rect");
+          svgRect.setAttribute("width", "100%");
+          svgRect.setAttribute("height", "100%");
+          svgRect.setAttribute("visibility", "hidden");
+          svgRoot.appendChild(svgRect);
+
+          return svgRoot;
+      }
+
+      function setupContainer(testData) {
+          var container = document.createElement("div");
+
+          if (testData.containerWidthStyle)
+              container.style.width = testData.containerWidthStyle;
+
+          if (testData.containerHeightStyle)
+              container.style.height = testData.containerHeightStyle;
+
+          return container;
+      }
+
+      OUTER_WIDTH = 1500;
+      OUTER_HEIGHT = 1500;
+
+      var testContainer = document.createElement("div");
+      testContainer.style.position = "absolute";
+      testContainer.style.left = "0px";
+      testContainer.style.top = "0px";
+      testContainer.style.width = OUTER_WIDTH + "px";
+      testContainer.style.height = OUTER_HEIGHT + "px";
+
+      document.body.appendChild(testContainer);
+
+      function checkSize(id, testData, svgRect) {
+
+          var availableWidth = testData.availableWidth();
+
+          var intrinsicWidth = testData.intrinsicWidth();
+          var intrinsicHeight = testData.intrinsicHeight();
+          var intrinsicRatio = testData.intrinsicRatio();
+
+          var styleWidth = testData.computedWidth();
+          var styleHeight = testData.computedHeight();
+
+          function report(id, msg) {
+              return "id: " + id +
+                  ", intrinsic width: " + intrinsicWidth +
+                  ", intrinsic height: " + intrinsicHeight +
+                  ", intrinsic ratio: " + intrinsicRatio +
+                  ", style width: " + styleWidth +
+                  ", style height: " + styleHeight +
+                  ", " + msg + "; ";
+          }
+
+          if (styleWidth == 'auto')
+          {
+              if (intrinsicRatio)
+              {
+                  if (styleHeight == 'auto')
+                  {
+                      if (intrinsicWidth)
+                      {
+                          assert_equals(svgRect.width, intrinsicWidth, report(id, "width"));
+                          assert_equals(svgRect.height, intrinsicWidth / intrinsicRatio, report(id, "height"));
+                      }
+                      else
+                      {
+                          if (intrinsicHeight)
+                          {
+                              assert_equals(svgRect.width, intrinsicHeight * intrinsicRatio, report(id, "width"));
+                              assert_equals(svgRect.height, intrinsicHeight, report(id, "height"));
+                          }
+                          else
+                          {
+                              assert_equals(svgRect.width, availableWidth, report(id, "width"));
+                              assert_equals(svgRect.height, availableWidth / intrinsicRatio, report(id, "height"));
+                          }
+                      }
+                  }
+                  else
+                  {
+                      assert_equals(svgRect.width, styleHeight * intrinsicRatio, report(id, "width"));
+                      assert_equals(svgRect.height, styleHeight, report(id, "height"));
+                  }
+              }
+              else
+              {
+                  if (intrinsicWidth)
+                      assert_equals(svgRect.width, intrinsicWidth, report(id, "width"));
+                  else
+                      assert_equals(svgRect.width, 300, report(id, "width"));
+              }
+          }
+          else
+          {
+              assert_equals(svgRect.width, styleWidth, report(id, "width"));
+          }
+
+          if (styleHeight == 'auto')
+          {
+              if (intrinsicRatio)
+              {
+                  // Already tested above
+              }
+              else
+              {
+                  if (intrinsicHeight)
+                      assert_equals(svgRect.height, intrinsicHeight, report(id, "height"));
+                  else
+                      assert_equals(svgRect.height, 150, report(id, "height"));
+              }
+          }
+          else
+          {
+              assert_equals(svgRect.height, styleHeight, report(id, "height"));
+          }
+      }
+
+      function smoketest()
+      {
+          var testData = new TestData({
+              "viewBoxAttr" : "0 0 100 100",
+              "widthStyle" : null,
+              "heightStyle" : "20px"
+          });
+
+          assert_equals(testData.intrinsicRatio(), 1);
+
+          /* Testing ground for the test itself */
+      }
+
+      test(smoketest, "Smoke test");
+
+      function doTest(i, leaveSetup, testData) {
+          var container = setupContainer(testData);
+
+          var svgRoot = setupSVG(testData);
+          container.appendChild(svgRoot);
+          testContainer.appendChild(container);
+
+          var svgRect = svgRoot.getBoundingClientRect();
+
+          test(function () {
+              checkSize(i, testData, svgRect);
+          }, testData.name);
+
+          if (!leaveSetup)
+              testContainer.removeChild(container);
+      }
+
+      var i = 0;
+      var testId = getQueryVariable("id");
+      var leaveSetup = testId && getQueryVariable("leaveSetup");
+
+      containerStyleWidthHeight.forEach(function(containerWidthStyle) {
+          containerStyleWidthHeight.forEach(function(containerHeightStyle) {
+              widthHeightStyleValues.forEach(function(widthStyle) {
+                  widthHeightStyleValues.forEach(function(heightStyle) {
+                      widthHeightAttrValues.forEach(function(widthAttr) {
+                          widthHeightAttrValues.forEach(function(heightAttr) {
+                              viewBoxAttrValues.forEach(function(viewBoxAttr) {
+
+                                  if (testId == undefined || testId == i)
+                                  {
+                                      var testData = new TestData({
+                                          "containerHeightStyle" : containerHeightStyle,
+                                          "containerWidthStyle" : containerWidthStyle,
+                                          "widthAttr" : widthAttr,
+                                          "heightAttr" : heightAttr,
+                                          "viewBoxAttr" : viewBoxAttr,
+                                          "widthStyle" : widthStyle,
+                                          "heightStyle" : heightStyle
+                                      });
+
+                                      doTest(i, leaveSetup, testData);
+                                  }
+
+                                  i++;
+                              });
+                          });
+                      });
+                  });
+              });
+          });
+      });
+
+      marginStyleValues.forEach(function(marginLeftStyle) {
+          marginStyleValues.forEach(function(marginRightStyle) {
+              boxSizingStyleValues.forEach(function(boxSizingStyle) {
+
+                  if (testId == undefined || testId == i)
+                  {
+                      var testData = new TestData({
+                          "viewBoxAttr" : "0 0 1 1",
+                          "marginLeftStyle" : marginLeftStyle,
+                          "marginRightStyle" : marginRightStyle,
+                          "boxSizingStyle" : boxSizingStyle
+                      });
+
+                      doTest(i, leaveSetup, testData);
+                  }
+
+                  i++;
+              });
+          });
+      });
+
+      if (!leaveSetup)
+          document.body.removeChild(testContainer);
+
+    </script>
+  </body>
+</html>

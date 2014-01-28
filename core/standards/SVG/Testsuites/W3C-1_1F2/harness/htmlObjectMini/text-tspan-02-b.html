@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC  "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+      <meta name="keywords" content="W3C SVG 1.1 2nd Edition Test Suite"/>
+      <meta name="description" content="W3C SVG 1.1 2nd Edition Object Mini Test Suite"/>
+      <title>
+SVG 1.1 2nd Edition Test (&lt;object&gt;): text-tspan-02-b.svg
+      </title>
+      <link href="harness_mini.css" rel="stylesheet" type="text/css" />
+      <link rel="prev" href="text-tspan-01-b.html" />
+      <link rel="index" href="index.html" />
+      <link rel="next" href="text-ws-01-t.html" />
+      <script src="../resources/testharnessreport.js"></script>
+    </head>
+  <body class="bodytext">
+    <div class="linkbar">
+      <p>
+        <a href="text-tspan-01-b.html" rel="prev">text-tspan-01-b ←</a>
+        <a href="index.html" rel="index">index</a>
+        <a href="text-ws-01-t.html" rel="next">→ text-ws-01-t</a>
+      </p>
+    </div>
+<table border="0" align="center" cellspacing="0" cellpadding="10">
+  <tr>
+    <td align="center" colspan="3">
+      <table border="0" cellpadding="8">
+        <tr  class="navbar">
+          <td align="center">
+            SVG Image
+          </td>
+          <td align="center">
+            PNG Image
+          </td>
+        </tr>
+        <tr>
+          <td align="right">
+            <object data="../../svg/text-tspan-02-b.svg" width="480" height="360" type="image/svg+xml"><p style="font-size:300%;color:red">FAIL</p></object>
+          </td>
+          <td align="left">
+            <img alt="raster image of text-tspan-02-b.svg" src="../../png/text-tspan-02-b.png" width="480" height="360"/>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+
+<div>
+    <h4 id="operatorscript" onclick="var t = document.getElementById('operatortext'); t.style.display=(t.style.display=='none' ? 'inline' : 'none');">
+      <em>Operator script (click here to toggle)</em>
+    </h4>
+    <div id="operatortext" style="display:none">
+<p>
+        Run the test. No interaction required.
+      </p>
+  </div>
+  </div>
+    <h4 id="passcriteria">
+      Pass Criteria
+    </h4>
+    <div>
+<p>
+        For this test to pass the text "Not all characters in the text have a
+        specified rotation" must be displayed in green without any red showing.
+        If any red shows the test is a fail.
+      </p><p>
+        Rotation values:
+      </p><ul>
+        <li>
+          The characters in the text "Not" must be rotated by 5,15 and 25
+          degrees respectively.
+        </li>
+        <li>
+          The first 3 characters in the text "all characters" must be -10,-20
+          and -30 degrees respectively. Subsequent characters in the text must
+          be each rotated by -40 degrees.
+        </li>
+        <li>
+          All the characters in the text "text have a" must be rotated by -40
+          degrees.
+        </li>
+        <li>
+          The characters in the text "in the" must be rotated by 70,60,50,40,30
+          and 20 degrees respectively. Note: the space in the text consumes a
+          rotate value.
+        </li>
+        <li>
+          All the characters in the text "specified" must be rotated by -10
+          degrees.
+        </li>
+        <li>
+          All the characters in the text "rotation" must be rotated by 55
+          degrees.
+        </li>
+      </ul>
+    </div>
+    <br />
+    <div class="linkbar">
+      <p>
+        <a href="text-tspan-01-b.html" rel="prev">text-tspan-01-b ←</a>
+        <a href="index.html" rel="index">index</a>
+        <a href="text-ws-01-t.html" rel="next">→ text-ws-01-t</a>
+      </p>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 360" onload="init(evt);">
+<script>
+<![CDATA[
+var doc;
+var rectelm;
+var textelm;
+function init(evt)
+{
+	doc = evt.target.ownerDocument;
+	rectelm = doc.getElementById('rect');
+	textelm = doc.getElementById('text');	
+	RunTest();
+}
+
+function RunTest()
+{
+    var listtext = document.createElementNS("http://www.w3.org/2000/svg", "text");
+    listtext.setAttribute("x", "10");
+    listtext.setAttribute("y", "140");
+    listtext.setAttribute("font-size", "18");
+    listtext.setAttribute("fill", "black");
+    var textcontent = document.createTextNode("Rotate: ");
+    listtext.appendChild(textcontent);
+    var expectedArray = new Array(10, 20, 30, 40, 50, 60);
+    var passed = (textelm.rotate.baseVal.numberOfItems == expectedArray.length);
+    
+    for(var i = 0; i < textelm.rotate.baseVal.numberOfItems; i++)
+    {
+		var item = textelm.rotate.baseVal.getItem(i);
+	    listtext.firstChild.data += item.value;
+	    if(i != textelm.rotate.baseVal.numberOfItems-1)
+			listtext.firstChild.data += ", ";
+			
+		if(item.value != expectedArray[i])
+			passed = false;
+    }
+    
+    doc.documentElement.appendChild(listtext);
+    
+    if(passed)
+	    testPassed();
+}
+
+function testPassed()
+{
+	rectelm.setAttribute('fill', 'green');
+	textelm.firstChild.data = "Passed";
+	textelm.setAttribute('x', '125');
+	textelm.setAttribute('rotate', 0);
+}
+]]>
+</script>
+<rect id="rect" x="10" y="10" width="230" height="170" fill="red"/>
+<text id="text" x="125" y="100" rotate="10,20,30,40,50,60" text-anchor="middle" font-size="36">Failed</text>
+</svg>

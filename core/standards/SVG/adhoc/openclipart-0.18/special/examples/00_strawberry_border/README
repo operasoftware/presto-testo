@@ -1,0 +1,38 @@
+I choose the strawberry.svg made by Nicu Buculei.
+
+SVG exported from Scribus:
+    strawberry_border.svg
+
+Scribus document template which can be loaded as a regular document or
+used with a New From Template plugin which is included in the cvs
+version of Scribus:
+    strawberry_border.tar.gz
+
+Phases I did to create this:
+
+Import an svg:
+    import.png
+
+Scale the svg with properties palette or ctrl + mouse drag
+
+Place it to the top left corner.
+
+Select Item -> Multiple Duplicate:
+    multiple_duplicate.png
+
+and the top has been done:
+    top.png
+
+select all the strawberries and choose Item -> group. Copy and paste
+Drag the new strawberry row to the bottom of the page:
+    top_and_bottom.png
+
+For a better look rotate the top left and right strawberries
+    rotate.png
+
+and select Item -> Multiple Duplicate once again for both top left and
+right strawberries:
+    multiple_duplicate2.png
+
+Now the border has been created:
+    done.png

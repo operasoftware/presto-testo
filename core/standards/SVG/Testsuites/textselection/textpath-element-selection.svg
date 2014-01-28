@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink">
+
+  <title>Text selection of text on a path</title>
+
+  <text>
+    <path d="m10 80 c50 50 170 50 220 0 s170 -50 220 0" id="curve"/>
+    <textPath xlink:href="#curve">You should be able to select any and all of this text.</textPath>
+  </text>
+
+</svg>
+

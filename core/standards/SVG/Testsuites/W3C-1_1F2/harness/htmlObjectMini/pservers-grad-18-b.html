@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC  "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+      <meta name="keywords" content="W3C SVG 1.1 2nd Edition Test Suite"/>
+      <meta name="description" content="W3C SVG 1.1 2nd Edition Object Mini Test Suite"/>
+      <title>
+SVG 1.1 2nd Edition Test (&lt;object&gt;): pservers-grad-18-b.svg
+      </title>
+      <link href="harness_mini.css" rel="stylesheet" type="text/css" />
+      <link rel="prev" href="pservers-grad-17-b.html" />
+      <link rel="index" href="index.html" />
+      <link rel="next" href="pservers-grad-20-b.html" />
+      <script src="../resources/testharnessreport.js"></script>
+    </head>
+  <body class="bodytext">
+    <div class="linkbar">
+      <p>
+        <a href="pservers-grad-17-b.html" rel="prev">pservers-grad-17-b ←</a>
+        <a href="index.html" rel="index">index</a>
+        <a href="pservers-grad-20-b.html" rel="next">→ pservers-grad-20-b</a>
+      </p>
+    </div>
+<table border="0" align="center" cellspacing="0" cellpadding="10">
+  <tr>
+    <td align="center" colspan="3">
+      <table border="0" cellpadding="8">
+        <tr  class="navbar">
+          <td align="center">
+            SVG Image
+          </td>
+          <td align="center">
+            PNG Image
+          </td>
+        </tr>
+        <tr>
+          <td align="right">
+            <object data="../../svg/pservers-grad-18-b.svg" width="480" height="360" type="image/svg+xml"><p style="font-size:300%;color:red">FAIL</p></object>
+          </td>
+          <td align="left">
+            <img alt="raster image of pservers-grad-18-b.svg" src="../../png/pservers-grad-18-b.png" width="480" height="360"/>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+
+<div>
+    <h4 id="operatorscript" onclick="var t = document.getElementById('operatortext'); t.style.display=(t.style.display=='none' ? 'inline' : 'none');">
+      <em>Operator script (click here to toggle)</em>
+    </h4>
+    <div id="operatortext" style="display:none">
+<p>
+        For the top-left rectangle's gradient:
+        The first stop defines a fully-opaque green color.
+        The second stop explicitly inherits (i.e. using the 'inherit' keyword) its stop-color.        
+      </p><p>
+        For the top-right rectangle's gradient:
+        The first stop defines a fully-opaque green color.
+        The second stop defines a green stop-color but explicitly inherits (i.e. using the 'inherit' keyword) the stop-opacity.        
+      </p><p>
+        For the bottom-left rectangle's gradient:
+        The first stop defines a fully-opaque green color.
+        The second stop does not specify the stop-color and the stop-opacity.
+        Since both properties are not inherited, the initial value should be used.        
+      </p><p>
+        For the bottom-right rectangle's gradient:
+        The first stop defines a fully-opaque green color.
+        The second stop specifies the stop-color using the 'currentColor' keyword.        
+      </p>
+  </div>
+  </div>
+    <h4 id="passcriteria">
+      Pass Criteria
+    </h4>
+    <div>
+<p>
+        The result should be:
+      </p><p>
+        The top-left rectangle is filled with a gradient from green to pink since
+        the stop-color is inherited from the location of the gradient definition.
+      </p><p>
+        The top-right rectangle filled in green with a gradient opacity.
+      </p><p>
+        The lower-left rectangle filled with a gradient going from fully-opaque green to fully-opaque black.
+      </p><p>
+        The lower-right rectangle filled with a gradient going from fully-opaque green to fully-opaque yellow.
+      </p>
+    </div>
+    <br />
+    <div class="linkbar">
+      <p>
+        <a href="pservers-grad-17-b.html" rel="prev">pservers-grad-17-b ←</a>
+        <a href="index.html" rel="index">index</a>
+        <a href="pservers-grad-20-b.html" rel="next">→ pservers-grad-20-b</a>
+      </p>
+    </div>
+  </body>
+</html>

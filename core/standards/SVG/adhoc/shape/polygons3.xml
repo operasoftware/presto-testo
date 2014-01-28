@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <style type="text/css">
+      polygon[selectable='1']:hover {stroke:red; stroke-width:10; fill-opacity:0.2;}
+    </style>
+  </head>
+  <body>
+    <svg xmlns="http://www.w3.org/2000/svg">
+      <g transform="rotate(20)">
+        <polygon transform="scale(1 0.6)" points="50,60 500,60 500,200 50,200"
+                 fill="yellow"/>
+        <g transform="scale(0.5) translate(-100)">
+          <polygon selectable='1' fill="blue" stroke-width="10"
+                   points="350, 75 379,161 469,161 397,215
+                           423,301 350,250 277,301 303,215
+                           231,161 321,161"/>
+          <polygon selectable='1' fill="lime" stroke-width="10"
+                   points="850,75  958,137.5 958,262.5
+                           850,325 742,262.6 742,137.5"/>
+        </g>
+      </g>
+    </svg> 
+  </body>
+</html>

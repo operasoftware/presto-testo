@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN"
+	"http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<svg height="200" width="200">
+  <metadata>
+    <rdf:RDF xmlns:cc="http://web.resource.org/cc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+      <cc:Work rdf:about="">
+        <dc:title>diamond harlequin 3 pattern</dc:title>
+        <dc:description></dc:description>
+        <dc:subject>
+          <rdf:Bag>
+            <rdf:li>pattern</rdf:li>
+          </rdf:Bag>
+        </dc:subject>
+        <dc:publisher>
+          <cc:Agent rdf:about="http://www.openclipart.org">
+            <dc:title>Alan Horkan</dc:title>
+          </cc:Agent>
+        </dc:publisher>
+        <dc:creator>
+          <cc:Agent>
+            <dc:title>Alan Horkan</dc:title>
+          </cc:Agent>
+        </dc:creator>
+        <dc:rights>
+          <cc:Agent>
+            <dc:title>Alan Horkan</dc:title>
+          </cc:Agent>
+        </dc:rights>
+        <dc:date></dc:date>
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+        <cc:license rdf:resource="http://web.resource.org/cc/PublicDomain"/>
+        <dc:language>en</dc:language>
+      </cc:Work>
+      <cc:License rdf:about="http://web.resource.org/cc/PublicDomain">
+        <cc:permits rdf:resource="http://web.resource.org/cc/Reproduction"/>
+        <cc:permits rdf:resource="http://web.resource.org/cc/Distribution"/>
+        <cc:permits rdf:resource="http://web.resource.org/cc/DerivativeWorks"/>
+      </cc:License>
+    </rdf:RDF>
+  </metadata>
+  <defs>
+    <pattern height="200" id="diamond-harlequin-3" patternContentUnits="userSpaceOnUse" patternUnits="userSpaceOnUse" width="200">
+      <polygon points="50,-50 25,0 50,50 75,0" style="fill:blue;stroke:black;stroke-width:4"/>
+      <polygon points="25,0 0,50 25,100 50,50" style="fill:red;stroke:black;stroke-width:4"/>
+      <polygon points="75,0 50,50 75,100 100,50" style="fill:yellow;stroke:black;stroke-width:4"/>
+      <polygon points="25,100 0,150 25,200 50,151" style="fill:yellow;stroke:black;stroke-width:4"/>
+      <polygon points="75,100 50,150 75,200 100,150" style="fill:red;stroke:black;stroke-width:4"/>
+      <polygon points="125,0 100,50 125,100 150,50" style="fill:red;stroke:black;stroke-width:4"/>
+      <polygon points="175,0 150,50 175,100 200,50" style="fill:yellow;stroke:black;stroke-width:4"/>
+      <polygon points="100,50 75,100 100,150 125,100" style="fill:blue;stroke:black;stroke-width:4"/>
+      <polygon points="175,100 150,150 175,200 200,150" style="fill:red;stroke:black;stroke-width:4"/>
+      <polygon points="125,100 100,150 125,200 150,150" style="fill:yellow;stroke:black;stroke-width:4"/>
+      <polygon points="50,50 25,100 50,150 75,100" style="fill:lime;stroke:black;stroke-width:4"/>
+      <polygon points="150,50 125,100 150,150 175,100" style="fill:lime;stroke:black;stroke-width:4"/>
+      <polygon points="0,50 -25,100 0,150 25,100" style="fill:blue;stroke:black;stroke-width:4"/>
+      <polygon points="200,50 175,100 200,150 225,100" style="fill:blue;stroke:black;stroke-width:4"/>
+      <polygon points="0,-50 -25,0 0,50 25,0" style="fill:lime;stroke:black;stroke-width:4"/>
+      <polygon points="100,-50 75,0 100,50 125,0" style="fill:lime;stroke:black;stroke-width:4"/>
+      <polygon points="150,-50 125,0 150,50 175,0" style="fill:blue;stroke:black;stroke-width:4"/>
+      <polygon points="200,-50 175,0 200,50 225,0" style="fill:lime;stroke:black;stroke-width:4"/>
+      <polygon points="50,150.475 25,200.475 50,250 75,200" style="fill:blue;stroke:black;stroke-width:4"/>
+      <polygon points="0,150 -25,200 0,250 25,200" style="fill:lime;stroke:black;stroke-width:4"/>
+      <polygon points="100,150 75,200 100,250 125,200" style="fill:lime;stroke:black;stroke-width:4"/>
+      <polygon points="150,150 125,200 150,250 175,200" style="fill:blue;stroke:black;stroke-width:4"/>
+      <polygon points="200,150 175,200 200,250 225,200" style="fill:lime;stroke:black;stroke-width:4"/>
+    </pattern>
+  </defs>
+  <rect fill="url(#diamond-harlequin-3)" height="200" width="200" x="0" y="0"/>
+</svg>

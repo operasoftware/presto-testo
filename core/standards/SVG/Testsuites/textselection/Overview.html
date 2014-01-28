@@ -1,0 +1,321 @@
+<!doctype html>
+<title>SVG Text Selection Testsuite Overview</title>
+<style>
+body { font: normal 12px/1.5 sans-serif }
+</style>
+
+<p>Automated tests are in <a href="text-selection.rb">text-selection.rb</a>.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>TC</tH>
+      <th>Description</th>
+      <th>Automated</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <th colspan="3">Selection highlighting</th>
+    </tr>
+    <tr>
+      <td><a href="highlight-background.svg">highlight-background.svg</a></td>
+      <td>Text selection highlighting of text background</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <td><a href="highlight-foreground.svg">highlight-foreground.svg</a></td>
+      <td>Text selection highlighting of text foreground</td>
+      <td>Yes</td>
+    </tr>
+
+    <tr>
+      <td><a href="highlight-overlap-following.svg">highlight-overlap-following.svg</a></td>
+      <td>Text selection highlight over following element</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <td><a href="highlight-overlap-following-geometricprecision.svg">highlight-overlap-following-geometricprecision.svg</a></td>
+      <td>Text selection highlight over following element (with 'geometricPrecision' text-rendering)</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <td><a href="highlight-overlap-preceding.svg">highlight-overlap-preceding.svg</a></td>
+      <td>Text selection highlight over preceding element</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <td><a href="highlight-overlap-preceding-geometricprecision.svg">highlight-overlap-preceding-geometricprecision.svg</a></td>
+      <td>Text selection highlight over preceding element (with 'geometricPrecision' text-rendering)</td>
+      <td>Yes</td>
+    </tr>
+
+    <tr>
+      <td><a href="selection-pseudo-element-background.svg">selection-pseudo-element-background.svg</a></td>
+      <td>Text selection background color using ::selection</td>
+      <td><a href="selection-pseudo-element-background-ref.svg">(Reference)</a></td>
+    </tr>
+    <tr>
+      <td><a href="selection-pseudo-element-color.svg">selection-pseudo-element-color.svg</a></td>
+      <td>Text selection text color using ::selection</td>
+      <td><a href="selection-pseudo-element-color-ref.svg">(Reference)</a></td>
+    </tr>
+
+    <tr>
+      <th colspan="3">Text content elements</th>
+    </tr>
+
+    <tr>
+      <td><a href="text-element-selection.svg">text-element-selection.svg</a></td>
+      <td>Text selection in &lt;text&gt;</td>
+    </tr>
+    <tr>
+      <td><a href="geometricprecision-selection.svg">geometricprecision-selection.svg</a></td>
+      <td>Text selection of text with 'geometricPrecision' text-rendering</td>
+    </tr>
+    <tr>
+      <td><a href="tspan-element-selection.svg">tspan-element-selection.svg</a></td>
+      <td>Text selection in &lt;tspan&gt;</td>
+    </tr>
+    <tr>
+      <td><a href="textarea-element-selection.svg">textarea-element-selection.svg</a></td>
+      <td>Text selection in &lt;textArea&gt;</td>
+    </tr>
+    <tr>
+      <td><a href="textpath-element-selection.svg">textpath-element-selection.svg</a></td>
+      <td>Text selection of text on a path</td>
+    </tr>
+    <tr>
+      <td><a href="tref-element-selection.svg">tref-element-selection.svg</a></td>
+      <td>Text selection in &lt;tref&gt;</td>
+    </tr>
+    <tr>
+      <td><a href="use-element-selection.svg">use-element-selection.svg</a></td>
+      <td>Text selection with &lt;use&gt;</td>
+      <td>Yes</td>
+    </tr>
+
+    <tr>
+      <th colspan="3">Character boundaries</th>
+    </tr>
+    <tr>
+      <td><a href="across-character-boundary.svg">across-character-boundary.svg</a></td>
+      <td>Text selection across character boundary between two characters</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <td><a href="across-character-boundary-rotated-180.svg">across-character-boundary-rotated-180.svg</a></td>
+      <td>Text selection across character boundary between two characters of 180 degree rotated text</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <td><a href="across-character-boundary-rotated-90.svg">across-character-boundary-rotated-90.svg</a></td>
+      <td>Text selection across character boundary between two characters of 90 degree rotated text</td>
+      <td>Yes</td>
+    </tr>
+
+    <tr>
+      <td><a href="along-character-boundary.svg">along-character-boundary.svg</a></td>
+      <td>Text selection along character boundary</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <td><a href="along-character-boundary-rotated-180.svg">along-character-boundary-rotated-180.svg</a></td>
+      <td>Text selection along character boundary of a 180 degree rotated character</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <td><a href="along-character-boundary-rotated-90.svg">along-character-boundary-rotated-90.svg</a></td>
+      <td>Text selection along character boundary of a 90 degree rotated character</td>
+      <td>Yes</td>
+    </tr>
+
+    <tr>
+      <td><a href="between-character-boundaries.svg">between-character-boundaries.svg</a></td>
+      <td>Text selection between character boundaries</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <td><a href="between-character-boundaries-rotated-180.svg">between-character-boundaries-rotated-180.svg</a></td>
+      <td>Text selection between character boundaries of a 180 degree rotated character</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <td><a href="between-character-boundaries-rotated-90.svg">between-character-boundaries-rotated-90.svg</a></td>
+      <td>Text selection between character boundaries of a 90 degree rotated character</td>
+      <td>Yes</td>
+    </tr>
+
+
+    <tr>
+      <th colspan="3">Editable text</th>
+    </tr>
+    <tr>
+      <td><a href="editable-text-element-selection.svg">editable-text-element-selection.svg</a></td>
+      <td>Text selection in editable &lt;text&gt;</td>
+    </tr>
+    <tr>
+      <td><a href="editable-textarea-element-selection.svg">editable-textarea-element-selection.svg</a></td>
+      <td>Text selection in editable &lt;textArea&gt;</td>
+    </tr>
+
+    <tr>
+      <th colspan="3">Pointer events</th>
+    </tr>
+    <tr>
+      <td><a href="selection-start.svg">selection-start.svg</a></td>
+      <td>Text selection start below visible graphics element</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <td><a href="selection-end-obscured.svg">selection-end-obscured.svg</a></td>
+      <td>Text selection end below visible graphics element</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <td><a href="selection-end-outside.svg">selection-end-outside.svg</a></td>
+      <td>Text selection end outside original text element</td>
+      <td>Yes</td>
+    </tr>
+
+    <tr>
+      <td><a href="text-element-focus.svg">text-element-focus.svg</a></td>
+      <td>An SVG text element gains focus when it is selected</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <td><a href="tspan-element-focus.svg">tspan-element-focus.svg</a></td>
+      <td>An SVG tspan element gains focus when it is selected</td>
+      <td>Yes</td>
+    </tr>
+
+    <tr>
+      <td><a href="context-menu.svg">context-menu.svg</a></td>
+      <td>Text selection context menu</td>
+    </tr>
+
+    <tr>
+      <td><a href="cancel-selection.svg">cancel-selection.svg</a></td>
+      <td>Canceling text selection with a pointer event</td>
+      <td>Yes</td>
+    </tr>
+
+    <tr>
+      <td><a href="pointer-events-cancel-onmousedown.svg">pointer-events-cancel-onmousedown.svg</a></td>
+      <td>Text selection start on element with canceled onmousedown event</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <td><a href="pointer-events-link.svg">pointer-events-link.svg</a></td>
+      <td>Text selection on element with link</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <td><a href="pointer-events-none.svg">pointer-events-none.svg</a></td>
+      <td>Text selection of element with 'pointer-events' set to 'none'</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <td><a href="pointer-events-rect-modal.svg">pointer-events-rect-modal.svg</a></td>
+      <td>Text selection should cause events on other graphics elements to be ignored</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <td><a href="pointer-events-text-change-onmousedown.svg">pointer-events-text-change-onmousedown.svg</a></td>
+      <td>Text selection when changing text content onmousedown</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <td><a href="pointer-events-title.svg">pointer-events-title.svg</a></td>
+      <td>Text selection on element with title</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <td><a href="pointer-events-tspan-modal.svg">pointer-events-tspan-modal.svg</a></td>
+      <td>Text selection should cause events on other text elements to be ignored</td>
+      <td>Yes</td>
+    </tr>
+
+    <tr>
+      <th colspan="3">Multi-element selection</th>
+    </tr>
+    <tr>
+      <td><a href="multi-element-selection.svg">multi-element-selection.svg</a></td>
+      <td>Text selection across multiple &lt;text&gt; elements</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <td><a href="multi-element-selection-highlight.svg">multi-element-selection-highlight.svg</a></td>
+      <td>Text selection highlight across multiple &lt;text&gt; elements</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <td><a href="multi-line-selection.svg">multi-line-selection.svg</a></td>
+      <td>Text selection across multiple lines within a single &lt;text&gt; element</td>
+      <td>Yes</td>
+    </tr>
+
+    <tr>
+      <th colspan="3">Right-to-left text</th>
+    </tr>
+    <tr>
+      <td><a href="rtl.svg">rtl.svg</a></td>
+      <td>Text selection of right-to-left text (default text-rendering)</td>
+    </tr>
+    <tr>
+      <td><a href="rtl-geometricprecision.svg">rtl-geometricprecision.svg</a></td>
+      <td>Text selection of right-to-left text (geometricPrecision text-rendering)</td>
+    </tr>
+    <tr>
+      <td><a href="rtl-textpath-element-selection.svg">rtl-textpath-element-selection.svg</a></td>
+      <td>Text selection of RTL text on a path</td>
+    </tr>
+    <tr>
+      <td><a href="rtl-across-character-boundary.svg">rtl-across-character-boundary.svg</a></td>
+      <td>Text selection across character boundary between two RTL characters</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <td><a href="rtl-across-character-boundary-rotated-90.svg">rtl-across-character-boundary-rotated-90.svg</a></td>
+      <td>Text selection across character boundary between two RTL characters of 90 degree rotated text</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <td><a href="rtl-across-character-boundary-rotated-180.svg">rtl-across-character-boundary-rotated-180.svg</a></td>
+      <td>Text selection across character boundary between two RTL characters of 180 degree rotated text</td>
+      <td>Yes</td>
+    </tr>
+
+    <tr>
+      <th colspan="3">Animations and effects</th>
+    </tr>
+
+    <tr>
+      <td><a href="animatedmotion.svg">animatedmotion.svg</a></td>
+      <td>Text selection on animated element</td>
+    </tr>
+
+    <tr>
+      <td><a href="rotated-text-with-tspan.svg">rotated-text-with-tspan.svg</a></td>
+      <td>Text selection of first character in rotated text with &lt;tspan&gt;</td>
+    </tr>
+
+    <tr>
+      <td><a href="scaled-viewbox-and-geometricprecision.svg">scaled-viewbox-and-geometricprecision.svg</a></td>
+      <td>viewBox transformation matrix and geometricPrecision-rendered text</td>
+    </tr>
+
+    <tr>
+      <td><a href="swapped-position.svg">swapped-position.svg</a></td>
+      <td>Text selection with altered canvas position</td>
+    </tr>
+
+    <tr>
+      <td><a href="textpath-overflow.svg">textpath-overflow.svg</a></td>
+      <td>Text selection of text preceding an overflowing &lt;textPath&gt;</td>
+      <td>Yes</td>
+    </tr>
+  </tbody>
+</table>
+

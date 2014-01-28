@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1 Basic//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11-basic.dtd"
+[
+	<!ENTITY % svgExt "| SVGTestCase">
+	<!ELEMENT SVGTestCase (OperatorScript)>
+	<!ATTLIST SVGTestCase
+	xmlns CDATA #REQUIRED
+>
+	<!ELEMENT OperatorScript (Paragraph)*>
+	<!ATTLIST OperatorScript
+	version CDATA #IMPLIED
+		testname CDATA #IMPLIED
+>
+	<!ELEMENT Paragraph (#PCDATA)>
+]>
+
+<!--======================================================================-->
+<!--=  Copyright 2000 World Wide Web Consortium, (Massachusetts          =-->
+<!--=  Institute of Technology, Institut National de Recherche en        =-->
+<!--=  Informatique et en Automatique, Keio University). All Rights      =-->
+<!--=  Reserved. See http://www.w3.org/Consortium/Legal/.                =-->
+<!--======================================================================-->
+<!-- ===================================================================== -->                                                                 
+<!-- Author : Jon Ferraiolo 06-Aug-2000                                    -->
+<!-- 1.1 revisions by Vincent Hardy, Chris Lilley                                         -->
+<!--======================================================================-->
+<svg version="1.1" baseProfile="basic" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+id="svg-root" width="100%" height="100%" viewBox="0 0 480 360">
+	<SVGTestCase  xmlns="http://www.w3.org/2000/02/svg/testsuite/description/">
+		<!--nav data here-->
+		<OperatorScript  version="$Revision$" testname="text-intro-01-c-b.svg">
+			<Paragraph>
+                Test top-to-bottom internationalized text and the
+                following properties: 'writing-mode',
+                'glyph-orientation-vertical', 'glyph-orientation-horizontal'.
+            </Paragraph>
+			<Paragraph>
+                Various text strings in various languages appear. The main
+                purpose of the test is to verify that the correct characters
+                appear and that they appear in the correct order and orientation.
+                Ensure that the two lines of
+                vertical Japanese text have the proper orientation
+                (test of 'glyph-orientation-vertical' property).
+            </Paragraph>
+		 <Paragraph>
+                This test requires installation of a system font that supports
+                the various international characters used in this test case. A 
+                suitable font should be used by the SVG renderer if none of the 
+                specified font families are available (or if they are available but do 
+                not have the required glyphs). To
+                minimize system dependencies, a future version of this test
+                might include all necessary glyphs as an SVG font.
+             </Paragraph>
+		</OperatorScript>
+	</SVGTestCase>
+	<title id="test-title">text-intro-03-b</title>
+	<desc id="test-desc">Test top-to-bottom internationalized text and the
+                following properties: 'writing-mode',
+                'glyph-orientation-vertical', 'glyph-orientation-horizontal'.</desc>
+	<!--======================================================================-->
+	<!--Content of Test Case follows...                  =====================-->
+	<!--======================================================================-->
+	<g id="test-body-content">
+		<g font-size="14" font-family="'Arial Unicode MS', 'LucidaSansUnicode','MS-Gothic'" writing-mode="tb">
+			<text x="70" y="10">Text "我能吞下玻璃而不伤身体。" in Chinese</text>
+			<line x1="70" y1="10" x2="70" y2="360" stroke="red"/>
+			<line x1="63" y1="10" x2="63" y2="360" stroke="green"/>
+			<line x1="77" y1="10" x2="77" y2="360" stroke="blue"/>
+			
+			<text x="230" y="10" font-size="13">Japanese: 私はガラスを食べられます。それは私を傷つけません。</text>
+			<line x1="230" y1="10" x2="230" y2="360" stroke="red"/>
+			<line x1="223.5" y1="10" x2="223.5" y2="360" stroke="green"/>
+			<line x1="236.5" y1="10" x2="236.5" y2="360" stroke="blue"/>
+			
+			<text x="370" y="13" glyph-orientation-vertical="0" font-size="10">VJapanese: 私はガラスを食べられます。それは私を傷つけません。</text>
+			<line x1="370" y1="10" x2="370" y2="360" stroke="red"/>
+			<line x1="363" y1="10" x2="363" y2="360" stroke="green"/>
+			<line x1="377" y1="10" x2="377" y2="360" stroke="blue"/>
+
+			<text x="120" y="80" font-size="32">xt "我能吞</text>
+			<line x1="120" y1="10" x2="120" y2="360" stroke="red"/>
+			<line x1="104" y1="10" x2="104" y2="360" stroke="green"/>
+			<line x1="136" y1="10" x2="136" y2="360" stroke="blue"/>
+
+			<text x="280" y="80" font-size="36">se: 私は</text>
+			<line x1="280" y1="10" x2="280" y2="360" stroke="red"/>
+			<line x1="263" y1="10" x2="263" y2="360" stroke="green"/>
+			<line x1="297" y1="10" x2="297" y2="360" stroke="blue"/>
+
+			<text x="420" y="80" style="glyph-orientation-vertical:0;" font-size="32">se: 私は</text>
+			<line x1="420" y1="10" x2="420" y2="360" stroke="red"/>
+			<line x1="404" y1="10" x2="404" y2="360" stroke="green"/>
+			<line x1="436" y1="10" x2="436" y2="360" stroke="blue"/>
+		</g>
+	</g>
+	<text id="revision" x="10" y="340" font-size="40" stroke="none" fill="black">$Revision$</text>
+	<rect id="test-frame" x="1" y="1" width="478" height="358" fill="none" stroke="#000000"/>
+</svg>

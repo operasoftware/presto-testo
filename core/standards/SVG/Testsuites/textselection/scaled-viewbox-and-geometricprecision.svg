@@ -1,0 +1,16 @@
+<svg width="800" height="700" viewBox="0 0 400 350" xmlns="http://www.w3.org/2000/svg">
+  <title>viewBox transformation matrix and geometricPrecision-rendered text</title>
+
+  <text x="5" y="10" font-size="8">
+    <tspan>Click and hold on the black square below, to the left of the blue line,</tspan>
+    <tspan x="5" y="20">and drag your mouse across it, to the right of the blue line.</tspan>
+    <tspan x="5" y="40">The word 'PASS' should appear below the black square.</tspan>
+  </text>
+
+  <text x="0" y="130" fill="black" font-family="Ahem" font-size="100" text-rendering="geometricPrecision">É</text>
+
+  <rect x="0" y="50" width="25" height="80" fill="yellow"/>
+  <line x1="50" y1="50" x2="50" y2="130" stroke="blue"/>
+  <text x="5" y="145" fill="white">PASS</text>
+</svg>
+

@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400">
+<text font-size="12" font-family="sans-serif" x="20" y="50">
+A SVG 1.1 viewer may show text below as:
+<tspan x="20" dy="14">1) rot15, rot90, rot15, no-rot</tspan>
+<tspan x="20" dy="14">2) rot15, rot90, no-rot, no-rot</tspan>
+<tspan x="20" dy="14">3) rot15, rot15, rot15, rot-15 etc...</tspan>
+</text>
+<text font-size="12" font-family="sans-serif" x="300" y="50">
+A SVG 1.2 viewer may show text below as:
+<tspan x="300" dy="14">1) rot15, rot90, rot15, rot15 etc...</tspan>
+<tspan x="300" dy="14">2) rot15, rot90, rot90, rot90 etc...</tspan>
+<tspan x="300" dy="14">3) rot15, rot15, rot15, rot-15 etc...</tspan>
+</text>
+<text font-size="30" font-family="sans-serif" text-anchor="middle" x="300" y="200" rotate="15 90 15">Text</text>
+<text font-size="30" font-family="sans-serif" text-anchor="middle" x="300" y="250" rotate="15 90">Text</text>
+<text font-size="30" font-family="sans-serif" text-anchor="middle" x="300" y="300" rotate="15">Text</text>
+</svg>

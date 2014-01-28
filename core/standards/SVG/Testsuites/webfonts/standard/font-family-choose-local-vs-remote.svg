@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+ id="svg-root" width="100%" height="100%" viewBox="0 0 500 500">
+ 	<style type="text/css">
+		@font-face { 
+		font-family: Ahem; 
+		src: url("../fonts/Vera.ttf") ;
+		}
+	</style>
+	<title>font-face test trying to replace existing font with a remote font</title>
+	<text y="20" font-size="12px">Ahem must be installed locally/present in font dir</text>
+	<text y="40" font-size="12px">You should see the word PASS below</text>
+	<text  y="80" style="fill:black; font-family:Ahem;" font-size="20px">PASS</text>
+</svg>

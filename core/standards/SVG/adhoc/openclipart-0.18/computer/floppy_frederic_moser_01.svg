@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN"    "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd" [
+	<!ENTITY ns_flows "http://ns.adobe.com/Flows/1.0/">
+	<!ENTITY ns_extend "http://ns.adobe.com/Extensibility/1.0/">
+	<!ENTITY ns_ai "http://ns.adobe.com/AdobeIllustrator/10.0/">
+	<!ENTITY ns_graphs "http://ns.adobe.com/Graphs/1.0/">
+	<!ENTITY ns_vars "http://ns.adobe.com/Variables/1.0/">
+	<!ENTITY ns_imrep "http://ns.adobe.com/ImageReplacement/1.0/">
+	<!ENTITY ns_sfw "http://ns.adobe.com/SaveForWeb/1.0/">
+	<!ENTITY ns_custom "http://ns.adobe.com/GenericCustomNamespace/1.0/">
+	<!ENTITY ns_adobe_xpath "http://ns.adobe.com/XPath/1.0/">
+	<!ENTITY ns_svg "http://www.w3.org/2000/svg">
+	<!ENTITY ns_xlink "http://www.w3.org/1999/xlink">
+]>
+<svg enable-background="new 0 0 81.109 86.537" height="86.537" i:pageBounds="246 456 366 336" i:rulerOrigin="-246 -336" i:viewOrigin="266.0225 439.6733" overflow="visible" space="preserve" viewBox="0 0 81.109 86.537" width="81.109" xmlns="http://www.w3.org/2000/svg" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/" xmlns:graph="http://ns.adobe.com/Graphs/1.0/" xmlns:i="http://ns.adobe.com/AdobeIllustrator/10.0/" xmlns:x="http://ns.adobe.com/Extensibility/1.0/" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <metadata>
+    <rdf:RDF xmlns:cc="http://web.resource.org/cc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+      <cc:Work rdf:about="">
+        <dc:title>Floppy</dc:title>
+        <dc:description></dc:description>
+        <dc:subject>
+          <rdf:Bag>
+            <rdf:li>office</rdf:li>
+            <rdf:li>openclipart</rdf:li>
+            <rdf:li>icon</rdf:li>
+            <rdf:li>computer</rdf:li>
+            <rdf:li>work</rdf:li>
+            <rdf:li>storage</rdf:li>
+            <rdf:li>appicon</rdf:li>
+          </rdf:Bag>
+        </dc:subject>
+        <dc:publisher>
+          <cc:Agent rdf:about="http://www.openclipart.org/">
+            <dc:title>Open Clip Art Library</dc:title>
+          </cc:Agent>
+        </dc:publisher>
+        <dc:creator>
+          <cc:Agent>
+            <dc:title>Frédéric Moser</dc:title>
+          </cc:Agent>
+        </dc:creator>
+        <dc:rights>
+          <cc:Agent>
+            <dc:title>Frédéric Moser</dc:title>
+          </cc:Agent>
+        </dc:rights>
+        <dc:date></dc:date>
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+        <cc:license rdf:resource="http://web.resource.org/cc/PublicDomain"/>
+        <dc:language>en</dc:language>
+      </cc:Work>
+      <cc:License rdf:about="http://web.resource.org/cc/PublicDomain">
+        <cc:permits rdf:resource="http://web.resource.org/cc/Reproduction"/>
+        <cc:permits rdf:resource="http://web.resource.org/cc/Distribution"/>
+        <cc:permits rdf:resource="http://web.resource.org/cc/DerivativeWorks"/>
+      </cc:License>
+    </rdf:RDF>
+  </metadata>
+  <g i:dimmedPercent="50" i:knockout="Off" i:layer="yes" i:rgbTrio="#4F008000FFFF" id="Layer_1">
+    <g i:knockout="Off" id="rect320">
+      <radialGradient cx="-526.7515" cy="1.9741" fx="-526.7515" fy="1.9741" gradientTransform="matrix(80.948 0 0 86.0992 42666.2734 -125.6626)" gradientUnits="userSpaceOnUse" id="XMLID_1_" r="0.698">
+        <stop offset="0" style="stop-color:#606060"/>
+        <stop offset="1" style="stop-color:#373737"/>
+        <a:midPointStop offset="0" style="stop-color:#606060"/>
+        <a:midPointStop offset="0.5" style="stop-color:#606060"/>
+        <a:midPointStop offset="1" style="stop-color:#373737"/>
+      </radialGradient>
+      <path d="M2.581,0.356h75.947c1.381,0,2.5,1.119,2.5,2.5v81.1c0,1.382-1.119,2.5-2.5,2.5H2.581      c-1.381,0-2.5-1.118-2.5-2.5v-81.1C0.081,1.475,1.2,0.356,2.581,0.356z" fill="url(#XMLID_1_)"/>
+      <path d="      M2.581,0.356h75.947c1.381,0,2.5,1.119,2.5,2.5v81.1c0,1.382-1.119,2.5-2.5,2.5H2.581c-1.381,0-2.5-1.118-2.5-2.5v-81.1      C0.081,1.475,1.2,0.356,2.581,0.356z" enable-background="new    " fill="none" i:isolated="yes" i:knockout="Off" opacity="0.4694" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.1625"/>
+    </g>
+    <path d="     M10.059,0.503h51.72c0.553,0,1,0.447,1,1v25.521c0,0.553-0.447,1-1,1h-51.72c-0.552,0-1-0.447-1-1V1.503     C9.059,0.951,9.506,0.503,10.059,0.503z" fill="#242424" id="rect318" stroke="#393939" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.1625"/>
+    <g i:knockout="Off" id="rect319">
+      <linearGradient gradientTransform="matrix(60.6374 0 0 48.1272 31918.293 -100.9185)" gradientUnits="userSpaceOnUse" id="XMLID_2_" x1="-526.0439" x2="-525.0439" y1="3.3809" y2="3.3809">
+        <stop offset="0" style="stop-color:#DDDDDD"/>
+        <stop offset="1" style="stop-color:#EFEEEE"/>
+        <a:midPointStop offset="0" style="stop-color:#DDDDDD"/>
+        <a:midPointStop offset="0.5" style="stop-color:#DDDDDD"/>
+        <a:midPointStop offset="1" style="stop-color:#EFEEEE"/>
+      </linearGradient>
+      <path d="M11.325,37.739h59.637c0.277,0,0.5,0.224,0.5,0.5v47.126c0,0.276-0.223,0.5-0.5,0.5H11.325      c-0.276,0-0.5-0.224-0.5-0.5V38.239C10.825,37.962,11.049,37.739,11.325,37.739z" fill="url(#XMLID_2_)"/>
+      <path d="      M11.325,37.739h59.637c0.277,0,0.5,0.224,0.5,0.5v47.126c0,0.276-0.223,0.5-0.5,0.5H11.325c-0.276,0-0.5-0.224-0.5-0.5V38.239      C10.825,37.962,11.049,37.739,11.325,37.739z" enable-background="new    " fill="none" i:isolated="yes" i:knockout="Off" opacity="0.5102" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.1625"/>
+    </g>
+    <radialGradient cx="-523.9478" cy="6.3809" fx="-523.9478" fy="6.3809" gradientTransform="matrix(39.8853 0 0 28.1111 20927.4883 -156.8872)" gradientUnits="userSpaceOnUse" id="rect330_1_" r="1.5258">
+      <stop offset="0" style="stop-color:#FFFFFF"/>
+      <stop offset="1" style="stop-color:#B9B9B9"/>
+      <a:midPointStop offset="0" style="stop-color:#FFFFFF"/>
+      <a:midPointStop offset="0.5" style="stop-color:#FFFFFF"/>
+      <a:midPointStop offset="1" style="stop-color:#B9B9B9"/>
+    </radialGradient>
+    <path d="     M22.658,0.061h38.886c0.275,0,0.5,0.224,0.5,0.5v27.11c0,0.276-0.225,0.5-0.5,0.5H22.658c-0.276,0-0.5-0.224-0.5-0.5V0.561     C22.158,0.285,22.382,0.061,22.658,0.061z" fill="url(#rect330_1_)" id="rect330" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.1225"/>
+    <g i:knockout="Off" id="rect335">
+      <rect fill="#323232" height="22.076" width="9.86" x="45.412" y="3.299"/>
+      <rect enable-background="new    " fill="none" height="22.076" i:isolated="yes" i:knockout="Off" opacity="0.7483" stroke="#000000" stroke-width="0.25" width="9.86" x="45.412" y="3.299"/>
+    </g>
+    <g enable-background="new    " i:isolated="yes" i:knockout="Off">
+      <switch enable-background="new    " i:isolated="yes" i:knockout="Off" i:objectNS="http://ns.adobe.com/Flows/1.0/" i:objectType="pointText">
+        <foreignObject height="1" overflow="visible" requiredExtensions="http://ns.adobe.com/Flows/1.0/" width="1" x="0" y="0">
+          <flowDef xmlns="http://ns.adobe.com/Flows/1.0/">
+            <region textMatrix="0.6305 0 0 1 0 0">
+              <path d="M65.213,12.458"/>
+            </region>
+            <flow font-family="'Helvetica-Bold'" font-size="7" xmlns="http://ns.adobe.com/Flows/1.0/">
+              <p>
+                <span fill="#D7D7D7">HD</span>
+              </p>
+            </flow>
+          </flowDef>
+          <x:targetRef xlink:href="#XMLID_3_"/>
+        </foreignObject>
+        <text id="XMLID_3_" transform="matrix(0.6305 0 0 1 65.2129 12.4575)">
+          <tspan fill="#D7D7D7" font-family="'Helvetica-Bold'" font-size="7" x="0" y="0">HD</tspan>
+        </text>
+      </switch>
+    </g>
+    <g i:knockout="Off" id="rect346">
+      <rect fill="#C1C1C0" height="2.498" width="3.434" x="3.463" y="76.773"/>
+      <rect enable-background="new    " fill="none" height="2.498" i:isolated="yes" i:knockout="Off" opacity="0.6531" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.5" width="3.434" x="3.463" y="76.773"/>
+    </g>
+    <g i:knockout="Off" id="rect347">
+      <rect fill="#C1C1C0" height="2.498" width="3.436" x="74.751" y="76.668"/>
+      <rect enable-background="new    " fill="none" height="2.498" i:isolated="yes" i:knockout="Off" opacity="0.6531" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.5" width="3.436" x="74.751" y="76.668"/>
+    </g>
+  </g>
+</svg>

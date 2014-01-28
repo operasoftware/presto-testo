@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+  xmlns:svg="http://www.w3.org/2000/svg" 
+  xmlns:xul="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+  >
+  <head>
+	
+	<script>
+	  <![CDATA[
+	  var dx,dy;
+	  var circle;
+
+	  function init()
+	  {
+	    circle = document.getElementById('circ');
+	    circle.addEventListener("mousedown", mousedown_listener, false);
+	  }	    
+
+	  function mousedown_listener(evt)
+	  {
+	    dx = circle.cx.baseVal.value - evt.clientX;
+	    dy = circle.cy.baseVal.value - evt.clientY;
+	    document.addEventListener("mousemove", mousemove_listener, true);
+	    document.addEventListener("mouseup", mouseup_listener, true);
+	  }
+
+	  function mouseup_listener(evt)
+	  {
+	    document.removeEventListener("mousemove", mousemove_listener, true);
+	    document.removeEventListener("mouseup", mouseup_listener, true);
+	  }
+
+	  function mousemove_listener(evt)
+	  {
+	    var id = circle.ownerSVGElement.suspendRedraw(1000);
+	    circle.cx.baseVal.value = evt.clientX + dx;
+	    circle.cy.baseVal.value = evt.clientY + dy;
+// alternatively we could set the corresponding attributes:
+// (slower method)
+//	    circle.setAttribute("cx", evt.clientX + dx);
+//	    circle.setAttribute("cy", evt.clientY + dy);
+	    circle.ownerSVGElement.unsuspendRedraw(id);
+	  }
+
+	  ]]>
+	</script>
+  </head>
+  <body onload="init();">
+	<h3>SVG + event handler demo</h3>
+    <p>Drag the circle with the mouse!</p>
+	<svg:svg width="600px" height="400px">
+	  <svg:polyline points="0,0 600,0 600,400 0,400 0,0" style="stroke:black; fill:none;"/>
+	  <svg:circle id="circ" r="1cm" cx="5cm" cy="3cm" style="fill:red; stroke:blue; stroke-width:3;"/>
+	</svg:svg>
+  </body>
+</html>

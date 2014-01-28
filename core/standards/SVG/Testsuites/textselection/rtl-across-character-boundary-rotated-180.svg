@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg">
+  <title>Text selection across character boundary between two RTL characters of 180 degree rotated text</title>
+
+  <style>#test::selection { color: red }</style>
+
+  <defs>
+    <linearGradient id="boundaries" x1="0" y1="0" x2="100%" y2="0">
+      <stop offset="25%" style="stop-color: white"/>
+      <stop offset="25%" style="stop-color: fuchsia"/>
+      <stop offset="50%" style="stop-color: fuchsia"/>
+      <stop offset="50%" style="stop-color: blue"/>
+      <stop offset="75%" style="stop-color: blue"/>
+      <stop offset="75%" style="stop-color: white"/>
+    </linearGradient>
+  </defs>
+
+  <text x="10" y="20">This test requires the Ahem font.</text>
+  <text x="10" y="50">Click on the blue rectangle and drag to the fuchsia rectangle.</text>
+  <text x="10" y="70">You should not see any red.</text>
+
+	<text x="-250" y="-120" id="test" font-size="120" font-family="Ahem" fill="url(#boundaries)" transform="rotate(180)" text-anchor="end" direction="rtl" unicode-bidi="bidi-override">&#8207;XX</text>
+</svg>
+

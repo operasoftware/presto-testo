@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1 Full//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11-flat.dtd">
+<svg version="1.1" baseProfile="full" id="svg-root" width="100%" height="100%" viewBox="0 0 480 360" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <!--========================================================================-->
+  <!--=  Copyright 2006 World Wide Web Consortium, (Massachusetts          =-->
+  <!--=  Institute of Technology, European Research Consortium for         =-->
+  <!--=  Informatics and Mathematics (ERCIM), Keio University).            =-->
+  <!--=  All Rights Reserved.                                              =-->
+  <!--=  See http://www.w3.org/Consortium/Legal/.                          =-->
+  <!--========================================================================-->
+  <!-- NOTE:  CVS will automatically update the                             -->
+  <!--        "$RCSfile$" and "$Revision$"         -->
+  <!--        fields in the file.                                           -->
+  <!--        There is no need to update this information.                  -->
+  <!-- =====================================================================-->
+  <SVGTestCase xmlns="http://www.w3.org/2000/02/svg/testsuite/description/" reviewer="[reviewer]" owner="[owner]" desc="[desc]" status="empty" version="$Revision$" testname="$RCSfile$">
+    <OperatorScript>
+      <Paragraph>
+                Test of feImage, feComponentTransfer, feGaussianBlur and feColorMatrix filter support.
+      </Paragraph>
+    </OperatorScript>
+  </SVGTestCase>
+  <title id="test-title">$RCSfile$</title>
+  <!--======================================================================-->
+  <!--Content of Test Case follows...                  =====================-->
+  <!--======================================================================-->
+  <g id="test-body-content">
+		<defs>
+			<!-- Row 1 -->
+			<filter id="image" x="0" y="0%" width="1" height="100%">
+				<feImage xlink:href="images/image1.jpg"/>
+			</filter>
+			<filter id="threshold" xlink:href="#greyscale">
+				<feImage xlink:href="images/image1.jpg"/>
+				<feColorMatrix type="matrix" values="0.2125 0.7154 0.0721 0 0   0.2125 0.7154 0.0721 0 0   0.2125 0.7154 0.0721 0 0   0 0 0 1 0"/>
+				<feComponentTransfer>
+					<feFuncR type="discrete" tableValues="0 0 1 1 1 1"/>
+					<feFuncG type="discrete" tableValues="0 0 1 1 1 1"/>
+					<feFuncB type="discrete" tableValues="0 0 1 1 1 1"/>
+				</feComponentTransfer>
+			</filter>
+			<filter id="blur" x="0" y="0%" width="1" height="100%">
+				<feImage xlink:href="images/image1.jpg"/>
+				<feGaussianBlur stdDeviation="1"/>
+			</filter>
+			<filter id="brightness" x="0" y="0%" width="1" height="100%">
+				<feImage xlink:href="images/image1.jpg"/>
+				<feComponentTransfer>
+					<feFuncR type="linear" intercept="0.2" slope=".8"/>
+					<feFuncG type="linear" intercept="0.2" slope=".8"/>
+					<feFuncB type="linear" intercept="0.2" slope=".8"/>
+				</feComponentTransfer>
+			</filter>
+			<filter id="contrast" x="0" y="0%" width="1" height="100%">
+				<feImage xlink:href="images/image1.jpg"/>
+				<feComponentTransfer>
+					<feFuncR type="table" tableValues="0 0 1 1 1"/>
+					<feFuncG type="table" tableValues="0 0 1 1 1"/>
+					<feFuncB type="table" tableValues="0 0 1 1 1"/>
+				</feComponentTransfer>
+			</filter>
+
+			<!-- Row 2 -->
+			<filter id="gamma" x="0" y="0%" width="1" height="100%">
+				<feImage xlink:href="images/image1.jpg"/>
+				<feComponentTransfer>
+					<feFuncR type="gamma" exponent="1.5"/>
+					<feFuncG type="gamma" exponent="1.5"/>
+					<feFuncB type="gamma" exponent="1.5"/>
+				</feComponentTransfer>
+			</filter>
+			<filter id="greyscale" x="0" y="0" width="1" height="1">
+				<feImage xlink:href="images/image1.jpg"/>
+				<feColorMatrix type="matrix" values="0.2125 0.7154 0.0721 0 0   0.2125 0.7154 0.0721 0 0   0.2125 0.7154 0.0721 0 0   0 0 0 1 0"/>
+			</filter>
+			<filter id="huerot" x="0" y="0%" width="1" height="100%">
+				<feImage xlink:href="images/image1.jpg"/>
+				<feColorMatrix type="hueRotate" values="45"/>
+			</filter>
+			<filter id="saturate" x="0" y="0%" width="1" height="100%">
+				<feImage xlink:href="images/image1.jpg"/>
+				<feColorMatrix type="saturate" values="0.4"/>
+			</filter>
+		</defs>
+		<text font-family="Arial" font-size="12" x="240" y="20" text-anchor="middle">Test of filter support.</text>
+		<rect x="25" y="50" width="95" height="95" filter="url(#image)"/>
+		<text font-family="Arial" font-size="10" x="70" y="155" text-anchor="middle">Original</text>
+		<rect x="130" y="50" width="95" height="95" filter="url(#threshold)"/>
+		<text font-family="Arial" font-size="10" x="175" y="155" text-anchor="middle">Threshold</text>
+		<rect x="235" y="50" width="95" height="95" filter="url(#blur)"/>
+		<text font-family="Arial" font-size="10" x="280" y="155" text-anchor="middle">Blur</text>
+		<rect x="340" y="50" width="95" height="95" filter="url(#contrast)"/>
+		<text font-family="Arial" font-size="10" x="385" y="155" text-anchor="middle">Contrast</text>
+		<rect x="25" y="165" width="95" height="95" filter="url(#gamma)"/>
+		<text font-family="Arial" font-size="10" x="70" y="270" text-anchor="middle">Gamma (1.2)</text>
+		<rect x="130" y="165" width="95" height="95" filter="url(#greyscale)"/>
+		<text font-family="Arial" font-size="10" x="175" y="270" text-anchor="middle">Greyscale</text>
+		<rect x="235" y="165" width="95" height="95" filter="url(#huerot)"/>
+		<text font-family="Arial" font-size="10" x="280" y="270" text-anchor="middle">Hue Rotate (45 deg)</text>
+		<rect x="340" y="165" width="95" height="95" filter="url(#saturate)"/>
+		<text font-family="Arial" font-size="10" x="385" y="270" text-anchor="middle">Saturate (.4)</text>
+	</g>
+  <text id="revision" x="10" y="340" font-size="40" stroke="none" fill="black">$Revision$</text>
+  <rect id="test-frame" x="1" y="1" width="478" height="358" fill="none" stroke="#000"/>
+</svg>

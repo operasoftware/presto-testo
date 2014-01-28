@@ -1,0 +1,118 @@
+<?xml version="1.0" standalone="no"?>
+<!--	Geschreven door Arjen Meijer op 26 december 2003 als oefening om SVG te leren.-->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" 	"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!--	Geschreven door Arjen Meijer op 26 december 2003 als oefening om SVG te leren.--><!--	Geschreven door Arjen Meijer op 26 december 2003 als oefening om SVG te leren.--><!--	Geschreven door Arjen Meijer op 26 december 2003 als oefening om SVG te leren.--><!--	Geschreven door Arjen Meijer op 26 december 2003 als oefening om SVG te leren.--><!--	Geschreven door Arjen Meijer op 26 december 2003 als oefening om SVG te leren.--><!--	Geschreven door Arjen Meijer op 26 december 2003 als oefening om SVG te leren.--><!--	Geschreven door Arjen Meijer op 26 december 2003 als oefening om SVG te leren.--><!--	Geschreven door Arjen Meijer op 26 december 2003 als oefening om SVG te leren.--><!--	Geschreven door Arjen Meijer op 26 december 2003 als oefening om SVG te leren.--><!--	Geschreven door Arjen Meijer op 26 december 2003 als oefening om SVG te leren.--><!--	Geschreven door Arjen Meijer op 26 december 2003 als oefening om SVG te leren.--><!--	Geschreven door Arjen Meijer op 26 december 2003 als oefening om SVG te leren.--><!--	Geschreven door Arjen Meijer op 26 december 2003 als oefening om SVG te leren.--><!--	Geschreven door Arjen Meijer op 26 december 2003 als oefening om SVG te leren.--><!--	Geschreven door Arjen Meijer op 26 december 2003 als oefening om SVG te leren.--><svg height="100%" style="background-color: #fffff0; font-family:Times New Roman;" viewBox="0 0 950 1050" width="100%" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <metadata>
+    <rdf:RDF xmlns:cc="http://web.resource.org/cc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+      <cc:Work rdf:about="">
+        <dc:title>Blokken</dc:title>
+        <dc:description></dc:description>
+        <dc:subject>
+          <rdf:Bag>
+            <rdf:li>opticalillusion</rdf:li>
+            <rdf:li>shape</rdf:li>
+          </rdf:Bag>
+        </dc:subject>
+        <dc:publisher>
+          <cc:Agent rdf:about="http://www.openclipart.org">
+            <dc:title>Arjen Meijer</dc:title>
+          </cc:Agent>
+        </dc:publisher>
+        <dc:creator>
+          <cc:Agent>
+            <dc:title>Arjen Meijer</dc:title>
+          </cc:Agent>
+        </dc:creator>
+        <dc:rights>
+          <cc:Agent>
+            <dc:title>Arjen Meijer</dc:title>
+          </cc:Agent>
+        </dc:rights>
+        <dc:date></dc:date>
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+        <cc:license rdf:resource="http://web.resource.org/cc/PublicDomain"/>
+        <dc:language>en</dc:language>
+      </cc:Work>
+      <cc:License rdf:about="http://web.resource.org/cc/PublicDomain">
+        <cc:permits rdf:resource="http://web.resource.org/cc/Reproduction"/>
+        <cc:permits rdf:resource="http://web.resource.org/cc/Distribution"/>
+        <cc:permits rdf:resource="http://web.resource.org/cc/DerivativeWorks"/>
+      </cc:License>
+    </rdf:RDF>
+  </metadata>
+  <title id="test-title">Optische illusie met zwartwit blokken</title>
+  <defs>
+    <symbol id="vierblokken">
+      <rect height="50" style="fill:#fffff0;" width="50" x="50" y="0"/>
+      <rect height="50" style="fill:#fffff0;" width="50" x="0" y="50"/>
+      <rect height="50" style="fill:#fffff0;" width="50" x="50" y="100"/>
+    </symbol>
+    <symbol id="regel">
+      <use x="  0" xlink:href="#vierblokken" y="0"/>
+      <use x="100" xlink:href="#vierblokken" y="0"/>
+      <use x="200" xlink:href="#vierblokken" y="0"/>
+      <use x="300" xlink:href="#vierblokken" y="0"/>
+      <use x="400" xlink:href="#vierblokken" y="0"/>
+      <use x="500" xlink:href="#vierblokken" y="0"/>
+      <use x="600" xlink:href="#vierblokken" y="0"/>
+      <use x="700" xlink:href="#vierblokken" y="0"/>
+      <use x="800" xlink:href="#vierblokken" y="0"/>
+      <rect height="50" style="fill:#fffff0;" width="50" x="900" y="50"/>
+    </symbol>
+    <symbol id="tweewitteblokken">
+      <rect height="8.5" style="fill:#fffff0;" width="8.5" x="37" y="37"/>
+      <rect height="8.5" style="fill:#fffff0;" width="8.5" x="54.5" y="54.5"/>
+    </symbol>
+    <symbol id="driewitrechterbenedenhoek">
+      <use x="0" xlink:href="#tweewitteblokken" y="0"/>
+      <use x="100" xlink:href="#tweewitteblokken" y="0"/>
+      <use x="200" xlink:href="#tweewitteblokken" y="0"/>
+    </symbol>
+    <symbol id="vierkeerwitinmidden">
+      <rect height="8.5" style="fill:#fffff0;" width="8.5" x="20.75" y=" 37"/>
+      <rect height="8.5" style="fill:#fffff0;" width="8.5" x="20.75" y="137"/>
+      <rect height="8.5" style="fill:#fffff0;" width="8.5" x="20.75" y="237"/>
+      <rect height="8.5" style="fill:#fffff0;" width="8.5" x="20.75" y="337"/>
+    </symbol>
+    <symbol id="kwartwit">
+      <use x="100" xlink:href="#driewitrechterbenedenhoek" y="  0"/>
+      <use x=" 50" xlink:href="#driewitrechterbenedenhoek" y=" 50"/>
+      <use x="100" xlink:href="#driewitrechterbenedenhoek" y="100"/>
+      <use x=" 50" xlink:href="#driewitrechterbenedenhoek" y="150"/>
+      <use x="100" xlink:href="#driewitrechterbenedenhoek" y="200"/>
+      <use x=" 50" xlink:href="#driewitrechterbenedenhoek" y="250"/>
+      <use x="100" xlink:href="#driewitrechterbenedenhoek" y="300"/>
+      <use x=" 50" xlink:href="#driewitrechterbenedenhoek" y="350"/>
+    </symbol>
+  </defs>
+  <g id="blok">
+    <rect height="1050" style="stroke: black; stroke-width: 5;" width="950" x="0" y="0"/>
+    <use x="0" xlink:href="#regel" y="  0"/>
+    <use x="0" xlink:href="#regel" y="100"/>
+    <use x="0" xlink:href="#regel" y="200"/>
+    <use x="0" xlink:href="#regel" y="300"/>
+    <use x="0" xlink:href="#regel" y="400"/>
+    <use x="0" xlink:href="#regel" y="500"/>
+    <use x="0" xlink:href="#regel" y="600"/>
+    <use x="0" xlink:href="#regel" y="700"/>
+    <use x="0" xlink:href="#regel" y="800"/>
+    <use x="0" xlink:href="#regel" y="900"/>
+  </g>
+  <g id="kwartier1-3wit">
+    <use transform="translate(500,500) scale(1,-1)" x="-100" xlink:href="#kwartwit" y="-50"/>
+  </g>
+  <g id="kwartier4-6wit">
+    <use x="400" xlink:href="#kwartwit" y="500"/>
+  </g>
+  <g id="kwartier7-9wit">
+    <use transform="translate(500,500) matrix(-1 0 0 1 0 0)" x="-50" xlink:href="#kwartwit" y="0"/>
+  </g>
+  <g id="kwartier9-12wit">
+    <use x="100" xlink:href="#kwartwit" y="100"/>
+  </g>
+  <g id="witinmidden">
+    <use x="450" xlink:href="#vierkeerwitinmidden" y="150"/>
+    <use transform="rotate(180,500,500)" x="500" xlink:href="#vierkeerwitinmidden" y="100"/>
+  </g>
+</svg>

@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<!--<meta http-equiv="cache-control" content="no-cache" />
+	<meta http-equiv="pragma" content="no-cache" />
+	<meta http-equiv="expires" content="0" />-->
+	<title>Circle of Blue - Urban Water Visualization</title>
+	<script type="text/javascript" src="array.js"></script>
+	<script type="text/javascript" src="string.js"></script>
+	<script type="text/javascript" src="jquery-1.4.4.min.js"></script>
+	<script type="text/javascript" src="jquery-ui-1.8.9.custom.min.js"></script>
+	<script type="text/javascript" src="d3.js"></script>
+	<script type="text/javascript" src="json1.js"></script>
+	<script type="text/javascript" src="json2.js"></script>
+	<script type="text/javascript" src="json3.js"></script>
+	<script type="text/javascript" src="/resources/fps.js"></script>
+	<link type="text/css" rel="stylesheet" href="reset.css" media="all"></link>
+	<link type="text/css" rel="stylesheet" href="grid960.css" media="all"></link>
+	<link type="text/css" rel="stylesheet" href="jquery-ui-1.8.9.custom.css" media="all"></link>
+	<style type="text/css">
+		body { 
+			background-color: #003; 
+			font-family: Arial;
+			fill: white;
+			color: white;
+		}
+		h1 {
+			font-size: 45px;
+			color: white;
+			text-align: center;
+			margin-top: 10px;
+			margin-bottom: 10px;
+			font-family: Arial;
+			letter-spacing: 12px;
+		}
+		h3 {
+			color: white;
+			font-weight: bold;
+			margin-left: 10px;
+			letter-spacing: 1pt;
+		}	
+		ul {
+			margin-left: 10px;
+			margin-bottom: 10px;
+		}
+		.graphLabel {
+			fill: white;
+			text-anchor: middle;
+			font-size: 10pt;
+			font-family: Arial;
+			letter-spacing: 1pt;
+		}
+		.waterLabel {
+			fill: white;
+			font-family: Arial;
+			font-size: 10pt;
+			text-anchor: middle;
+			letter-spacing: 2pt;
+		}
+		.waterTick {
+			fill: white;
+			font-family: Arial;
+			font-size: 8pt;
+			text-anchor: middle;
+			letter-spacing: 1pt;
+		}
+		input {
+			position: absolute;
+			left: 8px;
+			top: 8px;
+			width: 240px;
+		}
+		a, a:link, a:visited, a:active {
+			color: white;
+			font-size: 8pt;
+			text-decoration: none;
+			letter-spacing: 1pt;			
+		}
+		a:hover {
+			text-decoration: underline;
+		}
+		#rotateButton { width: 70px; position: absolute; top: 70px; left: 0px}
+		#slider { margin-top: 20px; margin-left: 10px; }
+	</style>
+  </head>
+  <body>
+		<h1>Urban Water Explorer</h1>
+		<!--<div id="slider" style="width:300px"></div>-->
+		<!--<input id="rotateButton" type="button" value="rotate" />-->
+		<script type="text/javascript">
+function run_test() {
+   checkfps(2000);
+}
+
+		
+			var w = screen.width,
+				h = screen.height,
+				r = 375,
+				s = 7
+			
+			var fills = []
+			for (i=0; i<10; i++) {
+				fills.push(d3.scale.linear().domain([0,100]).range(["hsl(0, 0%, 0%)", "hsl(" + (100 + (i*13)) + ", 100%, 50%)"]).interpolate(d3.interpolateHsl))
+			}
+
+			//d3.json('data.json', function(json) {
+				var data = d3.nest()
+					.key(function(d) { return d.Aspect; })
+					.sortValues(function(a,b) {return b.Value - a.Value})
+					.entries(json)
+
+	//console.log(data)
+							
+				var vis = d3.select("body")
+					.append("svg:svg")
+					.attr("class", "vis")
+					.attr("width", 1650)
+					.attr("height", 800)
+				  
+				var circleGroup = vis.append("svg:g")
+					.attr("id", "circleGroup")
+					.attr("transform", "translate(" + 500 + "," + 400 + ") rotate(-90)") // 500 -> w/2
+		
+				circleGroup.selectAll("text")
+					.data([-43, 13, 68]) // maybe use a scale here?
+				  .enter().append("svg:text")
+					.attr("id", function(d, i) { return "countryLabel" + i })
+					.attr("text-anchor", "middle")
+					.attr("transform", "rotate(90)")
+					.attr("font-size", "40pt")
+					.attr("dy", function(d, i) { return d })
+					.attr("fill", "white")
+					.attr("font-family", "Times New Roman")
+					
+				circleGroup.append("svg:text")
+					.attr("id", "instruction")
+					.text("click circles to explore")
+					.attr("x", 0)
+					.attr("y", 0)
+					.attr("fill", "FFF12E")
+					.attr("transform", "rotate(90)")
+					.attr("text-anchor", "middle")
+					.attr("font-family", "Arial")
+					.attr("font-size", "12pt")
+					.attr("letter-spacing", "3pt")
+												
+				var data2 = d3.nest()
+					.key(function(d) { return d.Country })
+					.sortValues(function(a,b) { return a.Year - b.Year })
+					.entries(json2)
+					
+				var x = d3.scale.linear().domain([0,16]).range([0,600])
+					y = d3.scale.linear().domain([0,100]).range([0,200]),
+					years = d3.scale.linear().domain([1950,2030]).range([0,600])
+
+				var zeroData = []			
+				for (i=0; i<17; i++) {
+					zeroData.push({"Value": 0})
+				}
+				
+				var line = d3.svg.line()
+					.x(function(d,i) { return x(i) })
+					.y(function(d) { return -1 * y(d.Value) })	
+					.interpolate("basis")
+					
+				var lineGroup = vis.append("svg:g")				
+					.attr("transform", "translate(950,750) rotate(0)")
+				
+				// y-axis	
+				lineGroup.append("svg:line")
+					.attr("x1", x(16))
+					.attr("y1", y(0))
+					.attr("x2", x(16))
+					.attr("y2", -1 * y(100))
+					.attr("stroke", "#999")
+				
+				// x-axis	
+				lineGroup.append("svg:line")
+					.attr("x1", x(0))
+					.attr("y1", y(0))
+					.attr("x2", x(16))
+					.attr("y2", y(0))
+					.attr("stroke", "#999")
+					
+				// x tick marks
+				lineGroup.selectAll(".yearLabel")
+					.data([1950, 2011, 2030])
+				  .enter().append("svg:text")
+					.attr("class", "yearLabel graphLabel")
+					.attr("x", function(d) { return years(d) })
+					.attr("y", 20 + y(0))
+					.text(function(d) { return d })
+				
+				// 2011 marker line	
+				lineGroup.append("svg:line")
+					.attr("x1", years(2011))
+					.attr("y1", y(0))
+					.attr("x2", years(2011))
+					.attr("y2", -1 * y(100))
+					.attr("stroke", "#999")
+					.attr("stroke-dasharray", "3, 6")
+				
+				// y tick marks	
+				lineGroup.selectAll(".pctLabel")
+					.data([50, 100])
+				  .enter().append("svg:text")
+					.attr("class", "pctLabel graphLabel")
+					.attr("x", 25 + x(16))
+					.attr("y", function(d) { return -1 * y(d) })
+					.attr("dy", 5)
+					.text(function(d) { return d + "%" })
+				
+				// graph label
+				lineGroup.append("svg:text")
+					.attr("x", x(8.5))
+					.attr("text-anchor", "middle")
+					.attr("y", 40 + y(0))
+					.text("% urban population")
+					.attr("fill", "white")		
+					.attr("font-size", "11pt")
+					.attr("letter-spacing", "3pt")
+					.attr("font-family", "Arial")	
+				
+				// urban population graph line
+				lineGroup.append("svg:path")
+					.attr("id", "line")
+					.attr("d", line(zeroData))
+					.attr("stroke", "#fff")
+					.attr("fill", "none")
+					.attr("stroke-width", 1)	
+					
+				var waterGroup = vis.append("svg:g")
+					.attr("id", "waterGroup")
+					.attr("transform", "translate(1050,270) rotate(0)")
+
+				var ren = d3.scale.log().domain([0.1, 10000]).range([0, 500]),
+					wdr = d3.scale.log().domain([0.1, d3.max(data3, function(d) { return d.Total_Fresh_Water_Withdrawal })]).range([0, 200])
+					pop = d3.scale.log().domain([0.1, d3.max(data3, function(d) { return d.Population2005 })]).range([0, 50]),
+					pcw = d3.scale.linear().domain([0, d3.max(data3, function(d) { return d.Per_capita_Waterwithdrawal })]).range([3, 100])
+
+				waterGroup.selectAll("circle")
+					.data(data3.sort(function(a,b) { return b.Per_capita_Waterwithdrawal - a.Per_capita_Waterwithdrawal }))
+				  .enter().append("svg:circle")
+					.attr("cx", function(d) { return ren(d.Annual_Renewable_Water_Resources) })
+					.attr("cy", function(d) { return -1 * wdr(d.Total_Fresh_Water_Withdrawal) })
+					.attr("r", function(d) { return pcw(d.Per_capita_Waterwithdrawal) })
+					.attr("fill", "#fff")
+					.attr("fill-opacity", .1)
+					.attr("stroke", "#fff")
+					.attr("stroke-opacity", .3)	
+					.attr("class", "waterCircle")
+					.on("click", update)
+					
+				// x-axis
+				waterGroup.append("svg:line")
+					.attr("x1", ren(0.01))
+					.attr("y1", -1 * wdr(.01))
+					.attr("x2", ren(10000))
+					.attr("y2", -1 * wdr(.01))
+					.attr("stroke", "#999")
+					
+				// x ticks
+				waterGroup.selectAll(".waterXTick")
+					.data([.01, 1, 100, 10000])
+				  .enter().append("svg:text")
+					.text(function(d) { return d })
+					.attr("class", "waterTick waterXTick")
+					.attr("x", function(d,i) { return ren(d) })
+					.attr("y", function(d,i) { return -1 * wdr(.01) })
+					.attr("dy", 15)
+					
+				// x label
+				waterGroup.append("svg:text")
+					.text("annual renewable water resources (km3/year)")
+					.attr("x", ren(10))
+					.attr("y", -1 * wdr(.01))
+					.attr("class", "waterLabel")
+					.attr("dy", 35)
+					
+				// y-axis	
+				waterGroup.append("svg:line")
+					.attr("x1", ren(10000))
+					.attr("y1", -1 * wdr(.01))
+					.attr("x2", ren(10000))
+					.attr("y2", -1 * wdr(1000))
+					.attr("stroke", "#999")
+					
+				// y ticks
+				waterGroup.selectAll(".waterYTick")
+					.data([.01, .1, 1, 10, 100, 1000])
+				  .enter().append("svg:text")
+					.text(function(d) { return d })
+					.attr("class", "waterTick waterYTick")
+					.attr("x", ren(10000))
+					.attr("y", function(d,i) { return -1 * wdr(d) })
+					.attr("dx", 20)
+					
+				// y label
+				waterGroup.append("svg:text")
+					.text("total fresh water withdrawal (km3/year)")
+					.attr("x", ren(10000))
+					.attr("y", -1 * wdr(1000))
+					.attr("class", "waterLabel")
+					.attr("dy", -25)
+					.attr("dx", -50)
+				
+				// size legend clip path
+				var legendData = [2400, 1800, 1200, 600]	
+				waterGroup.selectAll("clipPath")
+					.data(legendData)
+				  .enter().append("svg:clipPath")
+					.attr("id", function(d,i) { return "cp" + i })
+				  .append("svg:rect")
+					.attr("x", 50 + ren(0.001))
+					.attr("y", function(d,i) { return (-1 * wdr(1000)) - 10 + i * 15 })
+					.attr("width", 100)
+					.attr("height", 10)
+					
+				// size legend
+				waterGroup.selectAll(".sizeLegend")
+					.data(legendData)
+				  .enter().append("svg:circle")
+					.attr("class", "sizeLegend")
+					.attr("cx", ren(0.01))
+					.attr("cy", function(d,i) { return (-1 * wdr(1000)) - 5 + i * 15 })
+					.attr("r", function(d) { return pcw(d) })
+					.attr("stroke", "white")
+					.attr("stroke-opacity", .4)
+					.attr("fill", "white")
+					.attr("fill-opacity", .2)
+					.attr("clip-path", function(d,i) { return "url(#cp" + i + ")" })
+					
+				// size legend labels	
+				waterGroup.selectAll(".sizeLabel")
+					.data(legendData)
+				  .enter().append("svg:text")
+					.attr("class", "sizeLabel")
+					.attr("x", ren(0.1))
+					.attr("y", function(d,i) { return (-1 * wdr(1000)) + i * 15 })
+					.text(function(d) { return d })
+					.attr("fill", "white")
+					.attr("font-family", "Arial")
+					.attr("font-size", "9pt")
+					.attr("letter-spacing", "1pt")
+					.attr("text-anchor", "end")
+				
+				// legend label
+				waterGroup.append("svg:text")
+					.text("per capita water withdrawal (m3/person/year)")
+					.attr("x", ren(.1))
+					.attr("y", -1 * wdr(10000) - 10)
+					.attr("class", "waterLabel")
+					.attr("dy", 35)
+					.attr("fill", "white")
+					.attr("font-family", "Arial")
+					.attr("font-size", "10pt")
+					.attr("letter-spacing", "1pt")
+					
+				//var bw = d3.scale.linear().domain([0,100]).range([0,75])
+				var bh = d3.scale.linear().domain([0,100]).range([0,24])
+
+				var detailGroup = vis.append("svg:g")
+					.attr("transform", "translate(930,412) rotate(0)")
+					.attr("id", "detailGroup")
+
+				detailGroup.selectAll("text")
+					.data(["final", "climate", "safety", "infrastructure", "health", "freedom", "environment",
+							"economy", "culture", "cost of living"])
+				  .enter().append("svg:text")
+					.attr("id", "detailLabel")
+					.attr("x", function(d,i) { return i * 70 - 2 })
+					.attr("y", 15)
+					.attr("fill", "white")
+					.attr("text-anchor", "middle")				
+					.attr("font-family", "Arial")
+					.attr("letter-spacing", "1pt")
+					.attr("text-align", "left")
+					.attr("font-size", "8pt")
+					.attr("letter-spacing", "1pt")
+					.text(function(d) { return d})
+					
+				detailGroup.append("svg:text")
+					.text("quality of life index (%)")
+					.attr("x", 200)
+					.attr("y", 40)
+					.attr("fill", "white")
+					.attr("font-family", "Arial")
+					.attr("font-size", "11pt")
+					.attr("letter-spacing", "3pt")
+
+				detailGroup.selectAll("rect")
+					.data(d3.range(0,10))
+				  .enter().append("svg:rect")
+					.attr("id", function(d,i) { return "detailBar" + i })
+					.attr("x", function(d,i) { return i * 70 })
+					.attr("width", 68)
+					.attr("height", function() { return bh(0) })
+					.attr("fill", "white")	
+					.attr("transform", "rotate(180) translate(-660)")
+			
+				var r = d3.scale.linear().domain([0, 9]).range([200, 370])
+				
+				var g = circleGroup.selectAll("g")
+					.data(data)
+				  .enter().append("svg:g")
+					.attr("transform", "rotate(0)")
+					.each(rect)	
+					
+				function updateCountryLabel(countryName) {
+					var splitC = countryName.split("~")
+					switch(splitC.length) {
+						case 1:
+							d3.select("#countryLabel0").text("")
+							d3.select("#countryLabel1").text(splitC[0]).attr("dy", 13)
+							d3.select("#countryLabel2").text("")
+							break;
+						case 2:
+							d3.select("#countryLabel0").text(splitC[0]).attr("dy", -13)
+							d3.select("#countryLabel1").text(splitC[1]).attr("dy", 43)
+							d3.select("#countryLabel2").text("")
+							break;
+						default:
+							d3.select("#countryLabel0").text(splitC[0]).attr("dy", -43)
+							d3.select("#countryLabel1").text(splitC[1]).attr("dy", 13)
+							d3.select("#countryLabel2").text(splitC[2]).attr("dy", 68)
+					}
+				}	  
+				
+				function getSelectedIndex() {
+					var index = -1
+					for (i=0; i < data2.length; i++) {
+						if (data2[i].key == countrySelect) {
+							index = i
+						}
+					}
+					return index
+				}	
+				
+				var countrySelect = ""
+				
+				function update(d,i) {
+					countrySelect = d.Country
+					updateCountryLabel(countrySelect)
+					
+					d3.select("#instruction")
+						.attr("fill", "none")
+					
+					// mark selected country wedges
+					d3.selectAll("rect")
+						.attr("stroke-width", function(d) { return d.Country == countrySelect ? 2 : 0.001 }) 
+					// TODO: precalculate this!
+
+					// update urban population line
+					var index = getSelectedIndex()
+					
+					d3.select("#line")
+						.transition()
+							.duration(1750)
+							.attr("d", line(index == -1 ? zeroData : data2[index].values))
+							.attr("stroke-width", index == -1 ? 1 : 3)
+							.attr("stroke", index == -1 ? "#fff" : "#FFF12E")
+
+					
+					var angles = []
+					for (g=0; g<data.length; g++) {						
+						var index = data[g].values.map(function(b) { return b.Country }).indexOf(d.Country)
+					
+						// add angle
+						angles.push(90 - (index/194)*360)
+						
+						// transition detail bar
+						d3.select("#detailBar" + g)
+							.transition()
+								.duration(1750)
+								.attr("height", bh(data[g].values[index].Value))
+								.attr("fill", fills[g](data[g].values[index].Value))
+					}
+					
+					// update water circles
+					d3.selectAll(".waterCircle")
+						.transition()
+							.duration(1750)
+							.attr("fill", function(d) { return d.Country == countrySelect ? "#FFF12E" : "#fff" })
+							.attr("fill-opacity", function(d) { return d.Country == countrySelect ? .5 : .1 })
+							.attr("stroke", function(d) { return d.Country == countrySelect ? "#FFF12E" : "#fff" })
+							.attr("stroke-width", function(d) { return d.Country == countrySelect ? 2  : 1 })
+							.attr("stroke-opacity", function(d) { return d.Country == countrySelect ? 1 : .3 })
+					
+					// rotate
+					d3.selectAll("g g")
+						.transition()
+							.duration(1750)	
+							.attr("transform", function(d,h) { return "rotate(" + angles[h] + ")" })
+				}
+				
+				function rect(p, j) {
+					var hs = d3.scale.linear().domain([0,100]).range([1,17.5])
+					
+				  d3.select(this)
+					.selectAll("rect")
+						.data(function(d) { return d.values })
+					.enter().append("svg:rect")
+						.attr("x", function(d,i) { return r(j)})
+						.attr("width", function(d,i) { return hs(d.Value) })					
+						.attr("height", function(d,i) { return 6 + j * .6 })
+						.attr("fill", function(d) { return fills[j](d.Value)})
+						.attr("transform", function(d,i) { return "rotate(" + (i/194)*360 + ")" })
+						.attr("stroke", "#FFF12E")
+						.attr("stroke-width", 0.001)
+						.on("mouseover", function(d) {
+							
+						})
+						.on("click", update)
+				}			
+					
+			//})	
+
+window.onload = function () {
+	setTimeout(function () {
+		var evObj = document.createEvent('MouseEvents');
+		evObj.initMouseEvent( 'click', true, true, window, 1, 12, 345, 7, 220, false, false, true, false, 0, null );
+		document.getElementsByTagName("rect")[2].dispatchEvent(evObj);
+	},100);
+	setTimeout(function () {
+		var evObj = document.createEvent('MouseEvents');
+		evObj.initMouseEvent( 'click', true, true, window, 1, 12, 345, 7, 220, false, false, true, false, 0, null );
+		document.getElementsByTagName("circle")[31].dispatchEvent(evObj);
+	},600);
+	run_test();
+};
+			
+		</script>
+<p id="f">(not running)</p>
+<p id="result">Please enable Javascript.</p>
+		<h3>Data sources</h3>
+		<ul>
+			<li><a href="http://www.google.com/fusiontables/DataSource?snapid=134393" title="Everything about Water - Pacific Institute" target="_blank">Everything about Water - Pacific Institute</li>
+			<li><a href="http://www.google.com/fusiontables/DataSource?snapid=135634" title="Worldwide urban population - World Resources Institute" target="_blank">Worldwide urban population - World Resources Institute</a></li>
+			<li><a href="http://www.google.com/fusiontables/DataSource?snapid=134959" title="2010 Quality of Life Index - International Living" target="_blank">2010 Quality of Life Index - International Living</a></li>
+		</ul>
+
+  </body>
+</html>

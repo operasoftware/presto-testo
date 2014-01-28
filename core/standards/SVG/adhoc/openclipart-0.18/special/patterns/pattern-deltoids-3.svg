@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN"
+	"http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<svg height="100" version="1.0" width="100" xmlns="http://www.w3.org/2000/svg">
+  <metadata>
+    <rdf:RDF xmlns:cc="http://web.resource.org/cc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+      <cc:Work rdf:about="">
+        <dc:title>deltoids 3 pattern</dc:title>
+        <dc:description></dc:description>
+        <dc:subject>
+          <rdf:Bag>
+            <rdf:li>pattern</rdf:li>
+          </rdf:Bag>
+        </dc:subject>
+        <dc:publisher>
+          <cc:Agent rdf:about="http://www.openclipart.org">
+            <dc:title>Open Clip Art Library</dc:title>
+          </cc:Agent>
+        </dc:publisher>
+        <dc:creator>
+          <cc:Agent>
+            <dc:title>Alan Horkan</dc:title>
+          </cc:Agent>
+        </dc:creator>
+        <dc:rights>
+          <cc:Agent>
+            <dc:title>Alan Horkan</dc:title>
+          </cc:Agent>
+        </dc:rights>
+        <dc:date></dc:date>
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+        <cc:license rdf:resource="http://web.resource.org/cc/PublicDomain"/>
+        <dc:language>en</dc:language>
+      </cc:Work>
+      <cc:License rdf:about="http://web.resource.org/cc/PublicDomain">
+        <cc:permits rdf:resource="http://web.resource.org/cc/Reproduction"/>
+        <cc:permits rdf:resource="http://web.resource.org/cc/Distribution"/>
+        <cc:permits rdf:resource="http://web.resource.org/cc/DerivativeWorks"/>
+      </cc:License>
+    </rdf:RDF>
+  </metadata>
+  <defs>
+    <pattern height="100" id="Deltoids-3" patternContentUnits="userSpaceOnUse" patternUnits="userSpaceOnUse" stroke="black" stroke-width="1" width="100">
+      <path d="M0 0 L0 100 L100 100 L100 0 z" fill="green" id="background" stroke="black" stroke-width="0"/>
+      <path d="M0 75 C15 75 35 65 50 50 C35 65 35 85 50 100 C35 85 15 75 0 75 z" fill="white" stroke="black" stroke-width="0"/>
+      <path d="M0 25 C15 25 35 15 50 0 C35 15 35 35 50 50 C35 35 15 25 0 25 z" fill="white" stroke="black" stroke-width="0"/>
+      <path d="M50 50 C65 50 85 40 100 25 C85 40 85 60 100 75 C85 60 65 50 50 50 z" fill="white" stroke="black" stroke-width="0"/>
+      <path d="M50 0 C65 0 85 -10 100 -25 C85 -10 85 10 100 25 C85 10 65 0 50 0 z" fill="white" stroke="black" stroke-width="0"/>
+      <path d="M50 100 C65 100 85 90 100 75 C85 90 85 110 100 125 C85 110 65 100 50 100 z" fill="white" stroke="black" stroke-width="0"/>
+    </pattern>
+  </defs>
+  <rect fill="url(#Deltoids-3)" height="100" width="100" x="0" y="0"/>
+</svg>

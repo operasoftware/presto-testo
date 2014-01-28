@@ -1,0 +1,27 @@
+<svg width="600" height="600" viewBox="0 0 600 600"
+     xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
+<rect x="1" y="1" width="598" height="598"
+        fill="none" stroke="blue" />
+<defs>
+<text id="rottext" font-size="100" font-family="Helvetica" text-anchor="middle" x="300" y="300" stroke="blue">ABCDEF0123</text>
+</defs>
+
+	<use xlink:href="#rottext">
+	<animateTransform attributeName="transform" attributeType="XML" type="rotate" 
+	from="0,300,300" to="360,300,300" dur="4s" begin="0s" repeatCount="indefinite"/>
+<animate attributeName="stroke-width" from="1" to="4" dur="2s" begin="0s" repeatCount="indefinite"/>
+<animate attributeName="fill" values="blue;white;blue" keyTimes="0;0.5;1" dur="2s" begin="0s" repeatCount="indefinite"/>
+	</use>
+	<use xlink:href="#rottext" fill-opacity="0.5" stroke-opacity="0.5">
+<animateTransform attributeName="transform" attributeType="XML" type="rotate" 
+	from="0,300,300" to="360,300,300" dur="4s" begin="20ms" repeatCount="indefinite"/>
+<animate attributeName="stroke-width" from="1" to="4" dur="2s" begin="20ms" repeatCount="indefinite"/>
+<animate attributeName="fill" values="blue;white;blue" keyTimes="0;0.5;1" dur="2s" begin="20ms" repeatCount="indefinite"/>
+	</use>
+	<use xlink:href="#rottext" fill-opacity="0.25" stroke-opacity="0.25">
+<animateTransform attributeName="transform" attributeType="XML" type="rotate" 
+	from="0,300,300" to="360,300,300" dur="4s" begin="40ms" repeatCount="indefinite"/>
+<animate attributeName="stroke-width" from="1" to="4" dur="2s" begin="40ms" repeatCount="indefinite"/>
+<animate attributeName="fill" values="blue;white;blue" keyTimes="0;0.5;1" dur="2s" begin="40ms" repeatCount="indefinite"/>
+	</use>
+  </svg>

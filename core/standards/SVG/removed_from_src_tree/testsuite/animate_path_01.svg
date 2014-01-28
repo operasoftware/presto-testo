@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+
+<svg xmlns="http://www.w3.org/2000/svg" width="500" height="500">
+<g transform="translate(100,100)">
+<path d="M-15,0 L0,-30 L15,0 z" fill="blue" stroke="red" stroke-width="2">
+<animate attributeName="d" values="M-15,  0 L  0,-30 L15,0 z;
+                                   M-15,  0 L-15,-30 L-15,30 z;
+	                           M-15,-45 L-30,-30 L15,0 z;
+                                   M-15,  0 L  0,-30 L15,0 z" dur="4s" begin="0s" repeatCount="indefinite"/>
+</path>
+</g>
+</svg>

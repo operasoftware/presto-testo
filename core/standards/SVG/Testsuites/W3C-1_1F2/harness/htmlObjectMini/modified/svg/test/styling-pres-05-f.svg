@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="svg-root" width="100%" height="100%" viewBox="0 0 480 360">
+  <!--======================================================================-->
+  <!--=  Copyright 2008 World Wide Web Consortium, (Massachusetts          =-->
+  <!--=  Institute of Technology, European Research Consortium for         =-->
+  <!--=  Informatics and Mathematics (ERCIM), Keio University).            =-->
+  <!--=  All Rights Reserved.                                              =-->
+  <!--=  See http://www.w3.org/Consortium/Legal/.                          =-->
+  <!--======================================================================-->
+  <d:SVGTestCase xmlns:d="http://www.w3.org/2000/02/svg/testsuite/description/" template-version="1.4" reviewer="[reviewer]" author="Microsoft" status="created" version="$Revision: 1.4 $" testname="$RCSfile: template11-f.svg,v $">
+    <d:testDescription xmlns="http://www.w3.org/1999/xhtml" href="http://www.w3.org/TR/SVG11/styling.html#UsingPresentationAttributes">
+      <p>
+        <!--[[
+        Presentation attributes have lower priority than other CSS style rules specified in an external style sheet.
+        ]]-->
+      </p>
+    </d:testDescription>
+    <d:operatorScript xmlns="http://www.w3.org/1999/xhtml">
+      <p>
+        <!--[[
+        For each of a representative sampling of selectors, specify a 'fill: none' style rule for it, and add a corresponding
+        element with 'fill=red' presentation attribute to the markup. Verify there is no red on the page.
+        ]]-->
+      </p>
+    </d:operatorScript>
+    <d:passCriteria xmlns="http://www.w3.org/1999/xhtml">
+      <p>
+        <!--[[
+        Test passes if there is no red visible on the page.
+        ]]-->
+      </p>
+    </d:passCriteria>
+  </d:SVGTestCase>
+  <title id="test-title">$RCSfile: template11-f.svg,v $</title>
+  <defs>
+    <font-face font-family="SVGFreeSansASCII" unicode-range="U+0-7F">
+      <font-face-src>
+        <font-face-uri xlink:href="../resources/SVGFreeSans.svg#ascii"/>
+      </font-face-src>
+    </font-face>
+  </defs>
+  <g id="test-body-content" font-family="SVGFreeSansASCII,sans-serif" font-size="18">
+
+    <style type="text/css"><![CDATA[
+        @import url("../images/selector-types-fill-none.css");]]>
+    </style>
+
+    <path id="testTypeSelector" d="M 50 125 L 150 125 L 100 75 z" fill="blue"/>
+    <g>
+        <svg>
+            <circle id="testDescendantSelector" cx="50" cy="175" r="25" fill="blue"/>
+        </svg>
+    </g>
+    <g id="testParentContainer">
+        <ellipse id="testChildSelector" cx="160" cy="200" rx="25" ry="45" fill="blue"/>
+        <circle id="testAdjacentSiblingSelector" cx="100" cy="300" r="40" fill="blue"/>
+    </g>
+    <circle id="testAttributeSelector" cx="300" cy="80" r="35" fill="blue"/>
+    <circle id="testIdSelector" cx="400" cy="140" r="50" fill="blue"/> 
+    <g>
+        <rect id="testPseudoClassSelector" x="270" y="240" width="150" height="80" fill="blue"/>
+    </g>
+
+  </g>
+  <g font-family="SVGFreeSansASCII,sans-serif" font-size="32">
+    
+  </g>
+  
+  <!-- comment out this watermark once the test is approved -->
+  <g id="draft-watermark">
+    <rect x="1" y="1" width="478" height="20" fill="blue" stroke="black" stroke-width="1"/>
+    <text font-family="SVGFreeSansASCII,sans-serif" font-weight="bold" font-size="20" x="240" text-anchor="middle" y="18" stroke-width="0.5" stroke="black" fill="white">DRAFT</text>
+  </g>
+</svg>

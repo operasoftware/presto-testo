@@ -1,0 +1,31 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN"
+"http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" 
+     xmlns:xlink="http://www.w3.org/1999/xlink"
+     id="body" width="450" height="500" viewBox="0 0 450 500">
+  <title>Test of 'viewBox' attribute on 'pattern'</title>
+  <defs>
+    <pattern id="patternObjectBoundingBox" patternContentUnits="userSpaceOnUse"
+	     patternUnits="objectBoundingBox"
+	     x="0" y="0" width="1" height="1" viewBox="0 0 20 20">
+      <rect x="0" y="0" width="10" height="10" fill="#eee" />
+      <rect x="10" y="0" width="10" height="10" fill="black" />
+      <rect x="0" y="10" width="10" height="10" fill="black" />
+      <rect x="10" y="10" width="10" height="10" fill="#eee" />
+    </pattern>
+
+    <pattern id="patternUserSpaceOnUse" patternContentUnits="userSpaceOnUse"
+	     patternUnits="userSpaceOnUse"
+	     x="250" y="300" width="20" height="20" viewBox="250 300 20 20" >
+      <rect x="250" y="300" width="10" height="10" fill="#eee" />
+      <rect x="260" y="300" width="10" height="10" fill="black" />
+      <rect x="250" y="310" width="10" height="10" fill="black" />
+      <rect x="260" y="310" width="10" height="10" fill="#eee" />
+    </pattern>
+  </defs>
+
+  <rect x="50" y="300" width="90" height="85" fill="url(#patternObjectBoundingBox)"/>
+  <rect x="250" y="300" width="90" height="85" fill="url(#patternUserSpaceOnUse)"/>
+
+</svg>

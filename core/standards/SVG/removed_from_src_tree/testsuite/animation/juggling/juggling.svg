@@ -1,0 +1,653 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--======================================================================-->
+<!--=  Copyright 2004 Sony Ericsson Mobile Communications AB             =-->
+<!--=  All Rights Reserved.                                              =-->
+<!--=  User shall not remove or obscure this copyright notice or         =-->
+<!--=  proprietary legends contained within this source file.            =-->
+<!--======================================================================-->
+<!--=  Production & Design:  Amilon / Mellgren                           =-->
+<!--=  Vitamin Se Media AB (www.vitamin.se)                              =-->
+<!--======================================================================-->
+<!DOCTYPE svg>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" baseProfile="tiny" xml:space="preserve" width="128" height="160" viewBox="-64 -80 128 160">
+<rect fill="#ffffff" x="-64" y="-80" width="128" height="160"/>
+
+<g  id="splash">
+	<animate attributeName="visibility"
+		values="visible;hidden"
+		keyTimes="0.00;1"
+		dur="4.00s" fill="freeze"/>
+	<animateTransform attributeName="transform" type="translate"  additive="replace"
+		values="-90,-110;-90,-110"
+		keyTimes="0.00;1"
+		dur="0.10s" fill="freeze"/>
+	<animateTransform attributeName="transform" type="scale"  additive="sum"
+		values="1.18;1.18"
+		keyTimes="0.00;1"
+		dur="0.10s" fill="freeze"/>
+
+<path style="fill:#ffae00;"
+	d="M18.00 0.00 L18.00 161.00 L146.00 161.00 L146.00 0.00 L18.00 0.00 Z"/>
+<path style="fill:#fff03f;"
+	d="M18.00 65.00 L18.00 161.00 L111.00 161.00 "/>
+<path style="fill:#fff03f; stroke:#ffd400; stroke-linejoin:bevel; stroke-miterlimit:2.00;"
+	d="M112.00 168.00 C121.00 156.00 127.00 141.00 127.00 124.00 C127.00 84.00 95.00 51.00 54.00 51.00 
+		C39.00 51.00 24.00 56.00 12.00 64.00 "/>
+<path style="fill:#c3a890;"
+	d="M55.00 60.00 C53.00 56.00 48.00 55.00 44.00 56.00 C34.00 58.00 26.00 64.00 19.00 71.00 
+		L19.00 108.00 C21.00 104.00 25.00 98.00 31.00 91.00 C36.00 85.00 46.00 76.00 51.00 72.00 
+		C54.00 68.00 57.00 64.00 55.00 60.00 Z"/>
+<path style="fill:#b89e87;"
+	d="M84.00 142.00 C92.00 138.00 86.00 136.00 83.00 139.00 C83.00 138.00 85.00 136.00 83.00 135.00 
+		C81.00 135.00 79.00 141.00 80.00 144.00 C79.00 146.00 70.00 157.00 60.00 147.00 
+		L58.00 150.00 C69.00 160.00 76.00 154.00 80.00 150.00 C81.00 150.00 85.00 150.00 85.00 146.00 
+		C86.00 146.00 89.00 146.00 89.00 144.00 C89.00 142.00 85.00 142.00 84.00 142.00 
+		Z"/>
+<path style="fill:#c3a890;"
+	d="M55.00 99.00 C55.00 99.00 47.00 86.00 49.00 83.00 C51.00 81.00 67.00 85.00 67.00 85.00 
+		C67.00 85.00 63.00 72.00 66.00 71.00 C68.00 70.00 118.00 116.00 118.00 116.00 
+		C118.00 116.00 111.00 126.00 87.00 129.00 C64.00 132.00 47.00 127.00 47.00 127.00 
+		L55.00 99.00 Z"/>
+<path style="fill:#ffffff;"
+	d="M91.00 125.00 L73.00 118.00 C73.00 118.00 72.00 125.00 77.00 128.00 C83.00 129.00 91.00 125.00 91.00 125.00 
+		Z"/>
+<path style="fill:none; stroke:#785f4d; stroke-linejoin:bevel; stroke-miterlimit:2.00;"
+	d="M91.00 125.00 L73.00 118.00 "/>
+
+<path style="fill:#6a5140;"
+	d="M67.00 103.00 C67.00 107.00 70.00 110.00 75.00 110.00 C79.00 110.00 82.00 107.00 82.00 102.00 
+		C82.00 98.00 79.00 95.00 74.00 95.00 C70.00 95.00 67.00 99.00 67.00 103.00 
+		Z"/>
+<path style="fill:#000000;"
+	d="M73.00 103.00 C73.00 104.00 74.00 105.00 75.00 105.00 C76.00 105.00 77.00 104.00 77.00 103.00 
+		C77.00 102.00 76.00 101.00 75.00 101.00 C74.00 101.00 73.00 102.00 73.00 103.00 
+		Z"/>
+<path style="fill:#ffffff;"
+	d="M77.00 102.00 C77.00 103.00 77.00 103.00 76.00 103.00 C75.00 103.00 75.00 103.00 75.00 102.00 
+		C75.00 101.00 75.00 101.00 76.00 101.00 C77.00 101.00 77.00 101.00 77.00 102.00 
+		Z"/>
+<path style="fill:#6a5140;"
+	d="M82.00 93.00 C82.00 97.00 85.00 100.00 90.00 100.00 C94.00 100.00 97.00 97.00 97.00 92.00 
+		C97.00 87.00 94.00 85.00 89.00 85.00 C85.00 85.00 82.00 89.00 82.00 93.00 
+		Z"/>
+<path style="fill:#000000;"
+	d="M88.00 93.00 C88.00 94.00 89.00 95.00 90.00 95.00 C91.00 95.00 92.00 94.00 92.00 93.00 
+		C92.00 92.00 91.00 91.00 90.00 91.00 C89.00 91.00 88.00 92.00 88.00 93.00 
+		Z"/>
+<path style="fill:#ffffff;"
+	d="M92.00 93.00 C92.00 94.00 92.00 94.00 91.00 94.00 C90.00 94.00 90.00 94.00 90.00 93.00 
+		C90.00 92.00 90.00 92.00 91.00 92.00 C91.00 91.00 92.00 92.00 92.00 93.00 
+		Z"/>
+
+<path style="fill:#5c8326;"
+	d="M51.00 139.00 L63.00 147.00 L57.00 155.00 C57.00 155.00 46.00 150.00 47.00 144.00 
+		C48.00 139.00 51.00 139.00 51.00 139.00 Z"/>
+<path style="fill:#9fc74e;"
+	d="M22.00 114.00 C29.00 111.00 38.00 108.00 48.00 111.00 C47.00 121.00 55.00 135.00 65.00 141.00 
+		C59.00 143.00 48.00 149.00 41.00 157.00 C29.00 169.00 27.00 173.00 27.00 173.00 
+		L0.14 141.00 C0.14 141.00 5.00 121.00 22.00 114.00 Z"/>
+<path style="fill:#5c8326;"
+	d="M43.00 109.00 L43.00 142.00 L56.00 139.00 L57.00 144.00 L64.00 141.00 C64.00 141.00 46.00 135.00 44.00 110.00 
+		L43.00 109.00 Z"/>
+<path style="fill:#9fc74e;"
+	d="M45.00 107.00 L47.00 138.00 L59.00 137.00 L64.00 148.00 L69.00 143.00 C69.00 143.00 49.00 138.00 47.00 110.00 
+		L45.00 107.00 Z"/>
+<path style="fill:#5c8326;"
+	d="M44.00 154.00 C42.00 151.00 39.00 147.00 37.00 142.00 L41.00 141.00 C41.00 141.00 37.00 120.00 29.00 123.00 
+		C21.00 126.00 29.00 145.00 29.00 145.00 L33.00 144.00 C35.00 150.00 38.00 155.00 41.00 159.00 
+		L44.00 154.00 Z"/>
+<path style="fill:#b89e87;"
+	d="M50.00 161.00 L57.00 161.00 C51.00 157.00 44.00 150.00 38.00 138.00 L33.00 138.00 
+		C37.00 149.00 43.00 156.00 50.00 161.00 Z"/>
+<path style="fill:#b3da73;"
+	d="M29.00 141.00 C29.00 141.00 23.00 122.00 29.00 119.00 C35.00 116.00 41.00 137.00 41.00 137.00 
+		L29.00 141.00 Z"/>
+
+<path style="fill:#000000;"
+	d="M111.00 116.00 C111.00 117.00 112.00 119.00 114.00 119.00 C115.00 119.00 117.00 118.00 117.00 116.00 
+		C117.00 115.00 116.00 113.00 114.00 113.00 C112.00 113.00 111.00 114.00 111.00 116.00 
+		Z"/>
+
+
+<path style="fill:#6a5140;"
+	d="M24.00 99.00 L5.00 88.00 C5.00 87.00 6.00 85.00 8.00 83.00 L29.00 93.00 
+		C27.00 95.00 25.00 97.00 24.00 99.00 Z"/>
+<path style="fill:#6a5140;"
+	d="M33.00 88.00 L15.00 74.00 C16.00 73.00 18.00 71.00 19.00 70.00 L38.00 83.00 
+		C37.00 84.00 35.00 86.00 33.00 88.00 Z"/>
+<path style="fill:#6a5140;"
+	d="M51.00 71.00 C50.00 72.00 48.00 74.00 45.00 76.00 L28.00 62.00 C30.00 61.00 32.00 60.00 35.00 59.00 
+		L51.00 71.00 C51.00 71.00 51.00 71.00 51.00 71.00 Z"/>
+<path style="fill:#6a5140;"
+	d="M53.00 69.00 L42.00 56.00 C42.00 56.00 42.00 56.00 43.00 56.00 C43.00 56.00 43.00 56.00 43.00 56.00 
+		L54.00 63.00 C56.00 65.00 55.00 67.00 53.00 69.00 Z"/>
+
+</g>
+
+
+<g id="sc1">
+	<animate attributeName="visibility"
+		values="hidden;visible"
+		keyTimes="0.00;1"
+		dur="4s" fill="freeze"/>
+	<animateTransform attributeName="transform" type="translate"  additive="replace"
+		values="-122,-187;-122,-187;-72,-167;-72,-167"
+		keyTimes="0.00;0.35;0.59;1"
+		dur="22.00s" fill="freeze"/>
+	<animateTransform attributeName="transform" type="scale"  additive="sum"
+		values="0.673,0.673;0.673,0.673;0.393,0.393;0.393,0.393"
+		keyTimes="0.00;0.35;0.59;1"
+		dur="22.00s" fill="freeze"/>
+
+
+<g>
+<g  id="bakgrund">
+<path id="path_03" style="fill:#e1e9ff;"
+	d="M361.00 588.00 L0.00 588.00 L0.00 0.00 L361.00 0.00 L361.00 588.00 Z"/>
+<path id="path_04" style="fill:#abe358;"
+	d="M178.00 566.00 C103.00 571.00 60.00 584.00 26.00 577.00 L0.00 577.00 L0.00 688.00 
+		L361.00 688.00 L361.00 577.00 C361.00 577.00 262.00 560.00 178.00 566.00 Z"/>
+<path id="path_05" style="fill:#93c52b;"
+	d="M212.00 603.00 C212.70 610.00 182.00 616.00 145.00 616.00 C108.00 616.00 78.00 610.00 78.00 603.00 
+		C78.00 596.00 108.00 590.00 145.00 590.00 C182.00 589.00 212.00 595.00 212.00 603.00 
+		Z"/>
+
+</g>
+<g  id="armB">
+	<animateTransform attributeName="transform" type="rotate"  additive="replace"
+		values="12.5 172 512; -18.1 172 512; 6.8 172 512; 6.8 172 512"
+		keyTimes="0.00;0.5;0.95;1"
+		dur="0.5s" fill="freeze" repeatCount="indefinite"/>
+	<animateTransform attributeName="transform" type="translate"  additive="sum"
+		values="174,487;174,487;174,487;174,487"
+		keyTimes="0.00;0.5;0.51;1"
+		dur="0.5s" fill="freeze" repeatCount="indefinite"/>
+<path style="fill:#b89e87;"
+	d="M55.00 5.00 C55.00 4.00 53.00 0.00 52.00 2.00 C52.00 3.00 53.00 7.00 54.00 9.00 
+		C54.00 14.00 34.00 26.00 14.00 23.00 L15.00 27.00 C36.00 29.00 55.00 19.00 56.00 13.00 
+		C58.00 13.00 61.00 10.00 58.00 8.00 C59.00 8.00 63.00 6.00 62.00 4.00 
+		C62.00 2.00 57.00 4.00 56.00 5.00 C59.00 4.00 60.00 0.00 58.00 0.00 
+		C56.00 0.00 55.00 3.00 55.00 5.00 Z"/>
+<path id="path_04_28" style="fill:#608600;"
+	d="M0.00 19.00 L16.00 21.00 L15.00 35.00 C15.00 35.00 2.00 35.00 0.00 29.00 
+		C-1.00 22.00 0.00 19.00 0.00 19.00 Z"/>
+
+</g>
+<g  id="pose">
+	<animateTransform attributeName="transform" type="translate"  additive="replace"
+		values="53,441;53,441"
+		keyTimes="0.00;1"
+		dur="12.50s" fill="freeze"/>
+
+<path id="path_03_39" style="fill:#c3a890;"
+	d="M15.00 101.00 C21.00 103.00 36.00 107.00 45.00 108.00 C67.00 112.00 81.00 108.00 82.00 108.00 
+		C87.00 106.00 92.00 108.00 94.00 113.00 C96.00 117.00 93.00 118.00 88.00 120.00 
+		C88.00 120.00 71.00 135.00 42.00 132.00 C28.00 131.00 15.00 126.00 4.00 115.00 
+		C1.00 112.00 -1.00 106.00 2.00 102.00 C4.00 99.00 9.00 99.00 15.00 101.00 
+		Z"/>
+<path id="path_04_42" style="fill:#b89e87;"
+	d="M109.00 136.00 C109.00 136.00 109.00 150.00 101.00 156.00 L99.00 153.00 C99.00 153.70 106.00 148.00 103.00 128.00 
+		L109.00 136.00 Z"/>
+<path id="path_05_45" style="fill:#765527;"
+	d="M96.00 113.00 C92.00 104.00 113.00 116.00 110.00 116.00 C110.00 116.40 114.00 123.00 115.00 131.00 
+		C115.00 135.00 115.00 139.00 113.00 145.00 L93.00 139.00 C93.00 140.00 102.00 128.00 96.00 113.00 
+		Z"/>
+<path id="path_06" style="fill:#987850;"
+	d="M118.00 138.00 L117.00 148.00 L92.00 142.00 L95.00 133.00 L118.00 138.00 Z"/>
+<path id="path_07" style="fill:#52392f;"
+	d="M96.00 152.00 L104.00 156.00 L102.00 159.00 C102.00 159.80 110.00 158.00 109.00 161.00 
+		C109.00 164.00 109.00 164.00 109.00 164.00 L96.00 160.00 L96.00 159.00 L94.00 160.00 
+		L93.00 159.00 C90.00 159.00 89.00 153.00 96.00 152.00 Z"/>
+<path id="path_08" style="fill:none; stroke:#7e5e33; stroke-linejoin:bevel; stroke-miterlimit:2.00;"
+	d="M117.00 140.00 L94.00 135.00 "/>
+<path id="path_09" style="fill:#b89e87;"
+	d="M136.00 129.00 C136.00 129.70 143.00 130.00 143.00 145.00 L139.00 145.00 C139.00 145.10 140.00 138.00 132.00 129.00 
+		C129.00 129.00 136.00 129.00 136.00 129.00 Z"/>
+<path id="path_10" style="fill:#765527;"
+	d="M117.00 110.00 C122.00 112.00 126.00 110.00 126.00 110.00 C126.00 110.00 130.00 110.00 135.00 115.00 
+		C141.00 120.00 141.00 129.00 141.00 129.00 L124.00 134.00 C124.00 134.00 123.00 123.00 118.00 119.00 
+		C114.00 116.00 113.00 116.00 112.00 115.00 L117.00 110.00 Z"/>
+<path id="path_11" style="fill:#c3a890;"
+	d="M90.00 36.00 C90.00 36.00 74.00 29.00 74.00 25.00 C74.00 21.00 92.00 17.00 92.00 17.00 
+		C92.00 17.00 79.00 7.00 81.00 4.00 C82.00 1.00 157.00 12.00 157.00 12.00 
+		C157.00 12.00 157.00 26.00 138.00 44.00 C119.00 61.00 100.00 67.00 100.00 67.00 
+		L90.00 36.00 Z"/>
+<path id="path_12" style="fill:#6a5140;"
+	d="M103.00 32.00 C105.00 35.00 111.00 36.00 115.00 34.00 C118.00 32.00 119.00 26.00 117.00 22.00 
+		C115.00 19.00 109.00 18.00 105.00 20.00 C102.00 23.00 101.00 28.00 103.00 32.00 
+		Z"/>
+<path id="path_13" style="fill:#000000;"
+	d="M151.00 16.00 C152.00 17.00 154.00 18.00 156.00 16.00 C158.00 14.00 158.00 13.00 156.00 11.00 
+		C155.00 10.00 153.00 9.00 151.00 11.00 C150.00 12.00 149.00 14.00 151.00 16.00 
+		Z"/>
+<path id="path_14" style="fill:#7f7f7f;"
+	d="M153.00 13.00 C153.00 13.00 154.00 13.00 154.00 13.00 C154.00 13.00 154.00 12.00 154.00 12.00 
+		C154.00 12.00 153.00 12.00 153.00 12.00 C152.00 12.00 152.00 12.00 153.00 13.00 
+		Z"/>
+<path id="path_15" style="fill:#ffffff;"
+	d="M139.00 36.00 L118.00 40.00 C118.00 40.30 121.00 48.00 128.00 46.00 C134.00 46.00 139.00 36.00 139.00 36.00 
+		Z"/>
+<path id="path_16" style="fill:none; stroke:#785f4d; stroke-linejoin:bevel; stroke-miterlimit:2.00;"
+	d="M139.00 36.00 L118.00 40.00 "/>
+<path id="path_17" style="fill:#000000;"
+	d="M109.00 28.00 C109.00 29.00 111.00 29.00 112.00 28.00 C113.00 28.00 113.00 26.00 112.00 25.00 
+		C112.00 24.00 110.00 24.00 109.00 25.00 C108.00 26.00 108.00 27.00 109.00 28.00 
+		Z"/>
+<path id="path_18" style="fill:#ffffff;"
+	d="M109.00 27.00 C109.00 27.00 111.00 28.00 111.00 27.00 C111.00 27.00 112.00 25.00 111.00 25.00 
+		C111.00 25.00 109.00 24.00 109.00 25.00 C109.00 25.00 108.00 26.00 109.00 27.00 
+		Z"/>
+<path id="path_19" style="fill:#6a5140;"
+	d="M111.00 13.00 C113.00 16.00 119.00 17.00 123.00 15.00 C126.00 13.00 127.00 7.00 125.00 3.00 
+		C123.00 0.00 117.00 -1.00 113.00 1.00 C109.00 4.00 108.00 9.00 111.00 13.00 
+		Z"/>
+<path id="path_20" style="fill:#000000;"
+	d="M116.00 10.00 C116.00 11.00 118.00 11.00 119.00 10.00 C120.00 10.00 120.00 8.00 119.00 7.00 
+		C119.00 6.00 117.00 6.00 116.00 7.00 C116.00 7.00 115.00 9.00 116.00 10.00 
+		Z"/>
+<path id="path_21" style="fill:#ffffff;"
+	d="M116.00 9.00 C116.00 9.00 118.00 10.00 118.00 9.00 C118.00 9.00 119.00 7.00 118.00 7.00 
+		C118.00 7.00 116.00 6.00 116.00 7.00 C116.00 7.00 116.00 8.00 116.00 9.00 
+		Z"/>
+<path id="path_22" style="fill:#97b328;"
+	d="M92.00 55.00 C100.00 62.00 114.00 65.00 126.00 60.00 C125.00 67.00 123.00 80.00 125.00 92.00 
+		C128.00 111.00 130.00 115.00 130.00 115.00 L83.00 119.00 C83.00 121.00 49.00 75.00 92.00 55.00 
+		Z"/>
+<path id="path_23" style="fill:#608600;"
+	d="M84.00 60.00 L102.00 77.00 L110.00 72.00 L117.00 76.00 L126.00 61.00 C126.00 61.00 108.00 76.00 87.00 58.00 
+		L84.00 60.00 Z"/>
+<path id="path_24" style="fill:#608600;"
+	d="M74.00 72.00 C79.00 75.00 84.00 76.00 86.00 73.00 C87.00 71.00 86.00 66.00 83.00 61.00 
+		C80.00 63.00 76.00 67.00 74.00 72.00 Z"/>
+<path id="path_25" style="fill:#987850;"
+	d="M144.00 124.00 L146.00 134.00 L124.00 140.00 L123.00 132.00 L144.00 124.00 Z"/>
+<path id="path_26" style="fill:#52392f;"
+	d="M138.00 145.00 L147.00 144.00 L146.00 150.00 C146.00 150.80 154.00 146.00 154.00 150.00 
+		C154.00 154.00 154.00 154.00 154.00 154.00 L141.00 155.00 L141.00 154.00 L140.00 156.00 
+		L138.00 156.00 C136.00 154.00 133.00 151.00 138.00 145.00 Z"/>
+<path id="path_27" style="fill:none; stroke:#7e5e33; stroke-linejoin:bevel; stroke-miterlimit:2.00;"
+	d="M144.00 126.00 L124.00 134.00 "/>
+<path id="path_28" style="fill:#6a5140;"
+	d="M56.00 111.00 L56.00 135.00 C54.00 135.00 52.00 135.00 49.00 135.00 L47.00 110.00 
+		C50.00 110.00 53.00 110.00 56.00 111.00 Z"/>
+<path id="path_29" style="fill:#6a5140;"
+	d="M41.00 108.00 L38.00 133.00 C36.00 133.00 33.00 132.00 31.00 132.00 L32.00 106.00 
+		C35.00 107.00 38.00 107.00 41.00 108.00 Z"/>
+<path id="path_30" style="fill:#6a5140;"
+	d="M15.00 101.00 C17.00 101.00 20.00 102.00 24.00 103.00 L21.00 127.00 C19.00 126.00 16.00 125.00 14.00 123.00 
+		L16.00 100.00 C14.00 101.00 14.00 101.00 15.00 101.00 Z"/>
+<path id="path_31" style="fill:#6a5140;"
+	d="M76.00 110.00 L76.00 129.00 C74.00 129.00 72.00 130.00 69.00 131.00 L67.00 110.00 
+		C70.00 111.00 74.00 111.00 76.00 110.00 Z"/>
+<path id="path_32" style="fill:#6a5140;"
+	d="M11.00 100.00 L5.00 118.00 C5.00 118.00 5.00 118.00 5.00 118.00 C5.00 118.00 5.00 118.00 5.00 118.00 
+		L5.00 103.00 C5.00 100.00 8.00 100.00 11.00 100.00 Z"/>
+<path id="path_33" style="fill:#acc252;"
+	d="M87.00 56.00 L105.00 73.00 L113.00 68.00 L120.00 72.00 L129.00 57.00 C129.00 57.00 111.00 72.00 90.00 54.00 
+		L87.00 56.00 Z"/>
+
+</g>
+<g  id="armF">
+	<animateTransform attributeName="transform" type="rotate"  additive="replace"
+		values="0 133 507; -56.4 133 507; -0.00469 133 507; -0.00469 133 507"
+		keyTimes="0.00;0.4;0.91;1"
+		dur="0.5s" fill="freeze" repeatCount="indefinite"/>
+	<animateTransform attributeName="transform" type="translate"  additive="sum"
+		values="98,426;98,426;98,426;98,426"
+		keyTimes="0.00;0.4;0.91;1"
+		dur="0.5s" fill="freeze" repeatCount="indefinite"/>
+
+<path id="path_03_112" style="fill:#b89e87;"
+	d="M24.00 75.00 L27.00 68.00 C27.00 68.00 2.00 57.00 12.00 17.00 C15.00 17.00 16.00 11.00 17.00 8.00 
+		C17.00 3.00 14.00 5.00 13.00 9.00 C12.00 4.00 8.00 0.00 4.00 0.00 
+		C2.00 2.00 5.00 6.00 6.00 7.00 C5.00 7.00 0.00 6.00 0.90 9.00 
+		C-0.10 11.00 3.90 12.00 5.90 12.00 C3.90 13.00 4.90 16.00 5.90 17.00 
+		C0.00 49.00 8.00 60.00 24.00 75.00 Z"/>
+<path id="path_04_115" style="fill:#acc252;"
+	d="M17.00 74.00 C17.00 74.00 18.00 75.00 19.00 76.00 C26.00 83.00 35.00 86.00 38.00 83.00 
+		C40.00 80.00 37.00 71.00 29.00 63.00 C29.00 63.00 28.00 62.00 27.00 61.00 
+		L17.00 74.00 Z"/>
+</g>
+</g>
+
+<defs>
+<g id="chainsaw">
+<path id="path_03_126" style="fill:#fc7148;"
+	d="M20.00 70.00 L0.63 63.00 L11.63 60.00 L31.63 67.00 L20.00 70.00 Z"/>
+<path id="path_04_129" style="fill:#af1907;"
+	d="M11.00 38.00 L0.00 42.00 L0.00 62.00 L11.00 59.00 L11.00 38.00 Z"/>
+<path id="path_05_132" style="fill:#fc7148;"
+	d="M20.00 48.00 L0.00 42.00 L11.00 39.00 L31.00 45.00 L20.00 48.00 Z"/>
+<path id="path_06_135" style="fill:#af1907;"
+	d="M98.00 36.00 L70.00 45.00 L70.00 89.00 L98.00 80.00 L98.00 36.00 Z"/>
+<path id="path_07_138" style="fill:#fc7148;"
+	d="M70.00 45.00 L19.00 28.00 L47.00 19.00 L97.00 36.00 L70.00 45.00 Z"/>
+<path id="path_08_141" style="fill:#000000;"
+	d="M59.00 2.00 L44.00 7.00 L44.00 31.00 L59.00 26.00 L59.00 2.00 Z"/>
+<path id="path_09_144" style="fill:#595959;"
+	d="M37.00 5.00 L37.00 29.00 L43.00 31.00 L43.00 16.00 L57.00 21.00 L57.00 36.00 
+		L64.00 38.00 L64.00 14.00 L37.00 5.00 Z"/>
+<path id="path_10_147" style="fill:#000000;"
+	d="M81.00 9.00 L66.00 14.00 L66.00 38.00 L81.00 33.00 L81.00 9.00 Z"/>
+<path id="path_11_150" style="fill:#a6a6a6;"
+	d="M66.00 14.00 L37.00 5.00 L53.00 0.00 L81.00 9.00 L66.00 14.00 Z"/>
+<path id="path_12_153" style="fill:none; stroke:#d9d9d9; stroke-linejoin:bevel; stroke-miterlimit:2.00;"
+	d="M37.00 5.00 L65.00 14.00 L80.00 9.00 "/>
+<path id="path_13_156" style="fill:#a3b2af; stroke:#7f8b88; stroke-linejoin:bevel; stroke-miterlimit:2.00;"
+	d="M163.00 76.00 L85.00 49.00 L85.00 78.00 L163.00 104.00 C169.00 106.00 176.00 104.00 176.00 93.00 
+		C177.00 86.00 169.00 78.00 163.00 76.00 Z"/>
+<path id="path_14_159" style="fill:#ee411f;"
+	d="M19.00 28.00 L19.00 48.00 L0.00 41.00 L0.00 65.00 L70.00 89.00 L70.00 45.00 
+		L19.00 28.00 ZM19.00 65.00 L6.00 61.00 L6.00 50.00 L18.00 54.00 L19.00 65.00 
+		Z"/>
+<path id="path_15_162" style="fill:none; stroke:#fca584; stroke-linejoin:bevel; stroke-miterlimit:2.00;"
+	d="M19.00 28.00 L69.00 45.00 L97.00 36.00 "/>
+</g>
+
+<g  id="axe">
+<path id="path_03" style="fill:#b57e50;"
+	d="M49.00 4.00 C44.00 4.00 43.00 5.00 43.00 5.00 C43.00 5.00 43.00 49.00 43.00 76.00 
+		C43.26 102.00 40.00 157.00 40.00 157.00 C40.00 157.00 43.00 159.00 48.00 159.00 
+		C52.00 159.00 55.00 158.00 55.00 158.00 C55.00 158.00 55.00 110.00 55.00 87.00 
+		C55.00 64.00 55.00 6.00 55.00 6.00 C55.00 6.00 54.00 4.00 49.00 4.00 
+		Z"/>
+<path id="path_04" style="fill:#7c4e2a;"
+	d="M43.00 38.00 C43.00 42.00 43.00 46.00 43.00 51.00 L54.00 51.00 C54.00 46.00 54.00 42.00 54.00 38.00 
+		L43.00 38.00 Z"/>
+<path id="path_05" style="fill:#ca4323;"
+	d="M63.13 13.00 L63.13 45.00 C55.13 45.00 45.13 45.00 35.13 47.00 C22.00 50.00 12.00 54.00 3.59 59.00 
+		C3.59 59.00 1.59 48.00 1.59 28.00 C1.59 8.00 3.00 0.00 3.00 0.00 
+		C12.00 5.00 22.00 9.00 34.00 11.00 C44.00 13.00 54.00 14.00 63.13 13.00 
+		Z"/>
+<path id="path_06" style="fill:#808080;"
+	d="M11.00 27.00 C11.00 18.00 11.00 10.00 11.00 5.00 C9.00 3.00 5.00 1.00 3.00 0.00 
+		C3.00 0.00 0.20 8.00 0.73 27.00 C1.26 46.00 3.04 58.00 3.04 58.00 
+		C6.04 57.00 9.04 55.00 12.04 54.00 C12.00 48.00 11.00 39.00 11.00 27.00 
+		Z"/>
+<path id="path_07" style="fill:none; stroke:#d9d9d9; stroke-linejoin:bevel; stroke-miterlimit:2.00;"
+	d="M1.28 28.00 C1.80 8.00 3.00 0.00 3.00 0.00 "/>
+<path id="path_08" style="fill:none; stroke:#d9d9d9; stroke-linejoin:bevel; stroke-miterlimit:2.00;"
+	d="M3.59 59.00 C3.59 59.00 1.59 48.00 1.59 28.00 "/>
+</g>
+
+<g id="bomb">
+<g>
+<path id="path_03" style="fill:#000000;"
+	d="M48.31 31.00 C48.44 44.00 38.31 55.00 24.07 55.00 C9.83 55.00 0.07 45.00 0.07 31.00 
+		C0.07 17.00 10.07 6.76 24.07 7.00 C38.07 7.24 48.18 18.00 48.31 31.00 
+		Z"/>
+<path id="path_04" style="fill:#7f7f7f;"
+	d="M24.00 16.00 C24.00 18.00 24.00 20.00 21.00 21.00 C19.00 21.00 16.00 21.00 15.00 19.00 
+		C14.00 17.00 15.00 15.00 18.00 14.00 C20.00 13.00 23.00 14.00 24.00 16.00 
+		Z"/>
+<path id="path_05" style="fill:#000000;"
+	d="M40.00 17.00 L48.00 17.00 L50.00 24.00 L44.00 32.00 "/>
+<path id="path_06" style="fill:none; stroke:#000000; stroke-linejoin:bevel; stroke-miterlimit:2.00;"
+	d="M62.00 0.00 C66.00 10.00 55.00 21.00 45.00 21.00 "/>
+</g>
+<g  id="spark1">
+	<animate attributeName="visibility"
+		values="visible;visible;hidden;hidden"
+		keyTimes="0.00;0.20;0.70;1"
+		dur="0.50s" fill="freeze" repeatCount="indefinite" begin="4s"/>
+	<animateTransform attributeName="transform" type="translate"  additive="replace"
+		values="57,-6;57,-6;47,-22.7;47,-22.7"
+		keyTimes="0.00;0.20;0.70;1"
+		dur="0.50s" fill="freeze" repeatCount="indefinite" begin="4s"/>
+	<animateTransform attributeName="transform" type="scale"  additive="sum"
+		values="0.383,0.383;0.383,0.383;0.783,0.783;0.783,0.783"
+		keyTimes="0.00;0.20;0.70;1"
+		dur="0.50s" fill="freeze" repeatCount="indefinite" begin="4s"/>
+
+<path id="path_03_27" style="fill:#ff7f00;"
+	d="M0.00 2.00 L5.00 4.00 L10.00 0.00 L10.00 6.00 L15.00 8.00 L9.00 9.00 
+		L9.00 16.00 L6.00 11.00 L0.12 12.00 L3.00 7.00 L0.00 2.00 Z"/>
+
+</g>
+<g  id="spark2">
+	<animate attributeName="visibility"
+		values="hidden;visible;visible"
+		keyTimes="0.00;0.40;1"
+		dur="0.50s" fill="freeze" repeatCount="indefinite" begin="4s"/>
+	<animateTransform attributeName="transform" type="translate"  additive="replace"
+		values="60.5,-8.5;60.5,-8.5;59.8,-22.3"
+		keyTimes="0.00;0.40;1"
+		dur="0.50s" fill="freeze" repeatCount="indefinite" begin="4s"/>
+	<animateTransform attributeName="transform" type="scale"  additive="sum"
+		values="0.34,0.34;0.34,0.34;0.39,0.39"
+		keyTimes="0.00;0.40;1"
+		dur="0.50s" fill="freeze" repeatCount="indefinite" begin="4s"/>
+
+<path id="path_03_38" style="fill:#ffe000;"
+	d="M10.00 0.00 L15.00 8.00 L25.00 6.00 L19.00 14.00 L24.00 22.00 L15.00 19.00 
+		L9.00 27.00 L9.00 17.00 L0.13 13.00 L10.13 11.00 L10.00 0.00 Z"/>
+
+</g>
+</g>
+
+<g  id="dagger">
+<path id="path_03" style="fill:#4c3627;"
+	d="M18.00 98.00 L25.00 124.00 L37.00 121.00 L31.00 97.00 L18.00 98.00 Z"/>
+<path id="path_04" style="fill:#a6a6a6;"
+	d="M18.00 0.00 C18.00 0.00 16.00 54.00 26.00 94.00 L19.00 95.00 C19.00 95.00 16.00 85.00 7.00 85.00 
+		C7.00 85.00 -15.00 26.00 18.00 0.00 Z"/>
+<path id="path_05" style="fill:#a6a6a6;"
+	d="M40.00 90.00 L7.00 98.00 L8.00 102.00 L40.00 94.00 L40.00 90.00 Z"/>
+<path id="path_06" style="fill:#a6a6a6;"
+	d="M33.00 128.00 C37.00 127.00 39.00 125.00 39.00 125.00 L38.00 121.00 L23.00 125.00 
+		L24.00 128.00 C24.00 128.00 29.00 129.00 33.00 128.00 Z"/>
+<path id="path_07" style="fill:none; stroke:#7e604c; stroke-linejoin:bevel; stroke-miterlimit:2.00;"
+	d="M25.00 118.00 L34.00 116.00 "/>
+<path id="path_08" style="fill:none; stroke:#7e604c; stroke-linejoin:bevel; stroke-miterlimit:2.00;"
+	d="M23.00 111.00 L32.00 109.00 "/>
+<path id="path_09" style="fill:none; stroke:#7e604c; stroke-linejoin:bevel; stroke-miterlimit:2.00;"
+	d="M21.00 104.00 L30.00 102.00 "/>
+<path id="path_10" style="fill:#7f7f7f;"
+	d="M27.00 93.00 L25.00 84.00 C25.00 84.00 20.00 84.00 18.00 90.00 C18.00 90.20 20.00 93.00 20.00 95.00 
+		L27.00 93.00 Z"/>
+<path id="path_11" style="fill:none; stroke:#e6e6e6; stroke-linejoin:bevel; stroke-miterlimit:2.00;"
+	d="M7.00 98.00 L40.00 91.00 "/>
+</g>
+
+<g  id="scissors">
+<path id="path_03" style="fill:#a3b2af;"
+	d="M17.00 17.00 L17.00 19.00 L23.00 20.00 C23.00 20.33 56.00 19.00 56.00 14.00 
+		L17.00 17.00 Z"/>
+<path id="path_04" style="fill:#7f8b88;"
+	d="M23.00 31.00 L21.00 31.00 L22.00 25.00 C22.00 25.19 41.00 -2.00 46.00 1.00 
+		L23.00 31.00 Z"/>
+<path id="path_05" style="fill:#ee411f;"
+	d="M23.00 30.00 C21.00 29.00 16.00 30.00 14.00 34.00 C12.00 38.00 12.00 42.00 14.00 44.00 
+		C16.00 45.00 21.00 44.00 23.00 40.00 C26.00 36.00 26.00 32.00 23.00 30.00 
+		ZM21.00 39.00 C20.00 41.00 17.00 42.00 16.00 41.00 C15.00 40.00 15.00 38.00 16.00 35.00 
+		C17.00 32.00 20.00 32.00 21.00 33.00 C23.00 34.00 23.00 37.00 21.00 39.00 
+		Z"/>
+<path id="path_06" style="fill:#ee411f;"
+	d="M18.00 18.00 C18.00 15.00 16.00 12.00 11.00 11.00 C5.00 9.00 0.00 11.00 0.14 14.00 
+		C0.14 17.00 2.14 20.00 7.14 21.00 C12.00 23.00 17.00 21.00 18.00 18.00 
+		ZM8.00 20.00 C5.00 20.00 3.00 18.00 4.00 16.00 C4.00 14.00 7.00 13.00 10.00 14.00 
+		C13.00 14.00 15.00 16.00 14.00 18.00 C13.00 20.00 11.00 21.00 8.00 20.00 
+		Z"/>
+<path id="path_07" style="fill:#a3b2af;"
+	d="M32.00 18.00 C32.10 19.00 32.00 19.00 31.00 19.00 C30.00 19.00 30.00 19.00 30.00 18.00 
+		C30.00 17.00 30.00 17.00 31.00 17.00 C31.00 16.00 32.00 17.00 32.00 18.00 
+		Z"/>
+</g>
+
+<g  id="sword">
+<path id="path_03" style="fill:#655346;"
+	d="M6.00 135.00 L21.00 136.00 L23.00 107.00 L8.00 106.00 L6.00 135.00 Z"/>
+<path id="path_04" style="fill:#808080;"
+	d="M28.00 0.00 C28.00 0.90 37.00 16.00 36.00 22.00 L27.00 104.00 L18.00 104.00 
+		L28.00 0.00 C28.00 0.00 28.00 0.28 28.00 0.00 Z"/>
+<path id="path_05" style="fill:#a6a6a6;"
+	d="M15.00 20.00 C15.00 15.00 27.00 1.00 28.00 0.00 L17.00 104.00 L8.00 104.00 
+		L15.00 20.00 Z"/>
+<path id="path_06" style="fill:none; stroke:#c9c9c9; stroke-linejoin:bevel; stroke-miterlimit:2.00;"
+	d="M28.00 1.00 L18.00 104.00 "/>
+<path id="path_07" style="fill:#a6a6a6;"
+	d="M0.11 107.00 L35.11 110.00 L35.11 105.00 L0.11 102.00 L0.11 107.00 Z"/>
+<path id="path_08" style="fill:#a6a6a6;"
+	d="M3.00 141.00 C3.00 141.20 5.00 144.00 12.00 145.00 C19.00 146.00 22.00 144.00 22.00 144.00 
+		L22.00 138.00 L2.00 136.00 L3.00 141.00 Z"/>
+<path id="path_09" style="fill:none; stroke:#4c4036; stroke-linejoin:bevel; stroke-miterlimit:2.00;"
+	d="M22.00 113.00 L11.00 112.00 "/>
+<path id="path_10" style="fill:none; stroke:#4c4036; stroke-linejoin:bevel; stroke-miterlimit:2.00;"
+	d="M21.00 119.00 L10.00 118.00 "/>
+<path id="path_11" style="fill:none; stroke:#4c4036; stroke-linejoin:bevel; stroke-miterlimit:2.00;"
+	d="M21.00 125.00 L10.00 124.00 "/>
+<path id="path_12" style="fill:none; stroke:#4c4036; stroke-linejoin:bevel; stroke-miterlimit:2.00;"
+	d="M20.00 131.00 L9.00 130.00 "/>
+<path id="path_13" style="fill:none; stroke:#e6e6e6; stroke-linejoin:bevel; stroke-miterlimit:2.00;"
+	d="M0.00 101.00 L35.00 104.00 "/>
+</g>
+
+<g  id="waste">
+<path id="path_03" style="fill:#4d4d4d;"
+	d="M1.00 26.00 L24.00 130.00 C24.00 130.12 36.00 141.00 71.00 132.00 C106.00 123.00 106.00 110.00 106.00 110.00 
+		L85.00 8.00 L1.00 26.00 Z"/>
+<path id="path_04" style="fill:none; stroke:#7f7f7f; stroke-linejoin:bevel; stroke-miterlimit:2.00;"
+	d="M14.00 35.00 L32.00 119.00 "/>
+<path id="path_05" style="fill:#666666;"
+	d="M25.00 8.00 C4.00 16.00 -4.00 25.00 5.00 29.00 C14.00 33.00 39.00 30.00 60.00 24.00 
+		C81.00 17.00 91.00 7.00 81.00 3.00 C71.00 0.00 46.00 1.00 25.00 8.00 
+		Z"/>
+<path id="path_06" style="fill:none; stroke:#808080; stroke-linejoin:bevel; stroke-miterlimit:2.00;"
+	d="M25.00 8.00 C4.00 16.00 -4.00 25.00 5.00 29.00 C14.00 33.00 39.00 30.00 60.00 24.00 
+		C81.00 17.00 91.00 7.00 81.00 3.00 C71.00 0.00 46.00 1.00 25.00 8.00 
+		Z"/>
+<path id="path_07" style="fill:#e6b800;"
+	d="M42.00 47.00 C28.00 50.00 19.00 50.00 19.00 50.00 L29.00 96.00 C29.00 96.80 37.00 96.00 55.00 94.00 
+		C71.00 92.00 79.00 86.00 79.00 86.00 L69.00 38.00 C69.00 38.00 57.00 44.00 42.00 47.00 
+		Z"/>
+<path id="path_08" style="fill:#333333;"
+	d="M55.00 72.00 C55.20 74.00 53.00 77.00 50.00 77.00 C47.00 77.00 45.00 75.00 45.00 72.00 
+		C45.00 70.00 47.00 67.00 50.00 67.00 C53.00 66.00 55.00 69.00 55.00 72.00 
+		Z"/>
+<path id="path_09" style="fill:#333333;"
+	d="M44.00 64.00 L48.00 63.00 L50.00 51.00 C50.00 51.00 43.00 51.00 38.00 53.00 
+		L44.00 64.00 Z"/>
+<path id="path_10" style="fill:#333333;"
+	d="M45.00 79.00 L43.00 77.00 L33.00 81.00 C33.00 81.20 35.00 87.00 42.00 89.00 
+		L45.00 79.00 Z"/>
+<path id="path_11" style="fill:#333333;"
+	d="M59.00 72.00 L58.00 76.00 L68.00 83.00 C68.00 83.30 71.00 77.00 70.00 71.00 
+		L59.00 72.00 Z"/>
+</g>
+
+
+</defs>
+
+<g>
+	<animateTransform attributeName="transform" type="rotate"  additive="replace"
+		values="-55 208 461;-211 262 278;-421 122 218;-788 77 449;-1.14e+003 227 461;-1.14e+003 227 461"
+		keyTimes="0;0.2;0.4;0.8;0.99;1"
+		dur="3s" fill="freeze" repeatCount="indefinite"/>
+	<animateTransform attributeName="transform" type="translate"  additive="sum"
+		values="191,424;245,241;105,191;60,412;190,424;191,424"
+		keyTimes="0;0.2;0.4;0.8;0.99;1"
+		dur="3s" fill="freeze" repeatCount="indefinite"/>
+	<animateTransform attributeName="transform" type="scale"  additive="sum"
+		values="0.625,0.625;0.625,0.625;0.625,0.625;0.625,0.625;0.625,0.625;0.625,0.625"
+		keyTimes="0;0.2;0.4;0.8;0.99;1"
+		dur="3s" fill="freeze" repeatCount="indefinite"/>
+<use xlink:href="#chainsaw"/>
+</g>
+
+<g>
+	<animateTransform attributeName="transform" type="rotate"  additive="replace"
+		values="-55 208 461;-211 262 278;-421 122 218;-788 77 449;-1.14e+003 227 461;-1.14e+003 227 461"
+		keyTimes="0;0.2;0.4;0.8;0.99;1"
+		dur="3s" fill="freeze" repeatCount="indefinite" begin="0.4s"/>
+	<animateTransform attributeName="transform" type="translate"  additive="sum"
+		values="191,424;245,241;105,191;60,412;190,424;191,424"
+		keyTimes="0;0.2;0.4;0.8;0.99;1"
+		dur="3s" fill="freeze" repeatCount="indefinite" begin="0.4s"/>
+	<animateTransform attributeName="transform" type="scale"  additive="sum"
+		values="0.625,0.625;0.625,0.625;0.625,0.625;0.625,0.625;0.625,0.625;0.625,0.625"
+		keyTimes="0;0.2;0.4;0.8;0.99;1"
+		dur="3s" fill="freeze" repeatCount="indefinite" begin="0.4s"/>
+<use xlink:href="#axe"/>
+</g>
+
+<g>
+	<animateTransform attributeName="transform" type="rotate"  additive="replace"
+		values="-55 208 461;-211 262 278;-421 122 218;-788 77 449;-1.14e+003 227 461;-1.14e+003 227 461"
+		keyTimes="0;0.2;0.4;0.8;0.99;1"
+		dur="3s" fill="freeze" repeatCount="indefinite" begin="0.8s"/>
+	<animateTransform attributeName="transform" type="translate"  additive="sum"
+		values="191,424;245,241;105,191;60,412;190,424;191,424"
+		keyTimes="0;0.2;0.4;0.8;0.99;1"
+		dur="3s" fill="freeze" repeatCount="indefinite" begin="0.8s"/>
+	<animateTransform attributeName="transform" type="scale"  additive="sum"
+		values="0.825,0.825;0.825,0.825;0.825,0.825;0.825,0.825;0.825,0.825;0.825,0.825"
+		keyTimes="0;0.2;0.4;0.8;0.99;1"
+		dur="3s" fill="freeze" repeatCount="indefinite" begin="0.8s"/>
+<use xlink:href="#bomb"/>
+</g>
+
+<g>
+	<animateTransform attributeName="transform" type="rotate"  additive="replace"
+		values="-55 208 461;-211 262 278;-421 122 218;-788 77 449;-1.14e+003 227 461;-1.14e+003 227 461"
+		keyTimes="0;0.2;0.4;0.8;0.99;1"
+		dur="3s" fill="freeze" repeatCount="indefinite" begin="1.2s"/>
+	<animateTransform attributeName="transform" type="translate"  additive="sum"
+		values="191,424;245,241;105,191;60,412;190,424;191,424"
+		keyTimes="0;0.2;0.4;0.8;0.99;1"
+		dur="3s" fill="freeze" repeatCount="indefinite" begin="1.2s"/>
+	<animateTransform attributeName="transform" type="scale"  additive="sum"
+		values="0.825,0.825;0.825,0.825;0.825,0.825;0.825,0.825;0.825,0.825;0.825,0.825"
+		keyTimes="0;0.2;0.4;0.8;0.99;1"
+		dur="3s" fill="freeze" repeatCount="indefinite" begin="1.2s"/>
+<use xlink:href="#dagger"/>
+</g>
+
+<g>
+	<animateTransform attributeName="transform" type="rotate"  additive="replace"
+		values="-55 208 461;-211 262 278;-421 122 218;-788 77 449;-1.14e+003 227 461;-1.14e+003 227 461"
+		keyTimes="0;0.2;0.4;0.8;0.99;1"
+		dur="3s" fill="freeze" repeatCount="indefinite" begin="1.6s"/>
+	<animateTransform attributeName="transform" type="translate"  additive="sum"
+		values="191,424;245,241;105,191;60,412;190,424;191,424"
+		keyTimes="0;0.2;0.4;0.8;0.99;1"
+		dur="3s" fill="freeze" repeatCount="indefinite" begin="1.6s"/>
+	<animateTransform attributeName="transform" type="scale"  additive="sum"
+		values="0.825,0.825;0.825,0.825;0.825,0.825;0.825,0.825;0.825,0.825;0.825,0.825"
+		keyTimes="0;0.2;0.4;0.8;0.99;1"
+		dur="3s" fill="freeze" repeatCount="indefinite" begin="1.6s"/>
+<use xlink:href="#scissors"/>
+</g>
+
+<g>
+	<animateTransform attributeName="transform" type="rotate"  additive="replace"
+		values="-55 208 461;-211 262 278;-421 122 218;-788 77 449;-1.14e+003 227 461;-1.14e+003 227 461"
+		keyTimes="0;0.2;0.4;0.8;0.99;1"
+		dur="3s" fill="freeze" repeatCount="indefinite" begin="2s"/>
+	<animateTransform attributeName="transform" type="translate"  additive="sum"
+		values="191,424;245,241;105,191;60,412;190,424;191,424"
+		keyTimes="0;0.2;0.4;0.8;0.99;1"
+		dur="3s" fill="freeze" repeatCount="indefinite" begin="2s"/>
+	<animateTransform attributeName="transform" type="scale"  additive="sum"
+		values="0.825,0.825;0.825,0.825;0.825,0.825;0.825,0.825;0.825,0.825;0.825,0.825"
+		keyTimes="0;0.2;0.4;0.8;0.99;1"
+		dur="3s" fill="freeze" repeatCount="indefinite" begin="2s"/>
+<use xlink:href="#sword"/>
+</g>
+
+<g>
+	<animateTransform attributeName="transform" type="rotate"  additive="replace"
+		values="-55 208 461;-211 262 278;-421 122 218;-788 77 449;-1.14e+003 227 461;-1.14e+003 227 461"
+		keyTimes="0;0.2;0.4;0.8;0.99;1"
+		dur="3s" fill="freeze" repeatCount="indefinite" begin="2.5s"/>
+	<animateTransform attributeName="transform" type="translate"  additive="sum"
+		values="191,424;245,241;105,191;60,412;190,424;191,424"
+		keyTimes="0;0.2;0.4;0.8;0.99;1"
+		dur="3s" fill="freeze" repeatCount="indefinite" begin="2.5s"/>
+	<animateTransform attributeName="transform" type="scale"  additive="sum"
+		values="0.625,0.625;0.625,0.625;0.625,0.625;0.625,0.625;0.625,0.625;0.625,0.625"
+		keyTimes="0;0.2;0.4;0.8;0.99;1"
+		dur="3s" fill="freeze" repeatCount="indefinite" begin="2.5s"/>
+<use xlink:href="#waste"/>
+</g>
+</g>
+</svg>

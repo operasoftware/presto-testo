@@ -1,0 +1,25 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+<head>
+  <title>Overconstrained Absolute Positioning Replaced Elements with Intrinsic Ratio</title>
+  <style class="text/css">
+    .container {
+      position: relative;
+      width: 240px;
+      height: 240px;
+      border: solid gray;
+    }
+    object {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+    }
+  </style>
+</head>
+<body>
+
+<p>The 4:1 SVG image below is absolutely positioned within the box,
+  with its top/left/right/bottom offsets all set to zero (not auto).</p>
+
+<div class="container">
+  <object type="image/svg+xml" data="intrinsic-ratio.svg">FAIL</object>
+</div>

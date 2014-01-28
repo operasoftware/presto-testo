@@ -1,0 +1,96 @@
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1280" height="720" viewBox="0 0 1280 720" id="rootsvg" onload="initEpg();">
+<title>Dreampark EPG scrolling vertically</title>
+
+<script xlink:href="/resources/fps.js"/>
+<script><![CDATA[
+
+var NUM_CHANNELS=5
+var NUM_PROGRAMS=20
+
+function initEpg() {
+  // Find the program template
+  var programClone = document.getElementById("EpgMagazineViewProgramTemplate").cloneNode(true);
+  programClone.setAttribute("display", "block");
+
+  // Find the channel template
+  var channelClone = document.getElementById("ChannelTemplate").cloneNode(true);
+  channelClone.setAttribute("display", "block");
+
+  // Find the node where we will hook in the channels.
+  var epgContentNode = document.getElementById("epgContent");
+
+  var programHeight = 63;
+  var programWidth = 210;
+  var startX = 0;
+  var startY = 0;
+  var groupPrograms = true;
+
+  for (cn=0; cn < NUM_CHANNELS; cn++) {
+    var channel = channelClone.cloneNode(true);
+    var xPos = startX + programWidth * cn;
+    channel.setAttribute("transform", "translate(" + xPos + ",0)");
+    for (pn=0; pn < NUM_PROGRAMS; pn++) {
+      var program = programClone.cloneNode(true);
+      var yPos = startY + programHeight * pn;
+      program.setAttribute("transform", "translate(0," + yPos + ")");
+      channel.appendChild(program);
+    }
+    channel.setAttribute("buffered-rendering", "static");
+    epgContentNode.appendChild(channel);
+  }
+  document.documentElement.targetFps=100;
+  checkfps(2000);
+}
+]]></script>
+
+<g id="EpgMagazineViewProgramTemplate" width="null" height="63" themeClass="missingProgramFocused" display="none" transform="translate(0,0)">
+  <g id="EpgMagazineViewProgramResize">
+    <clipPath id="EpgMagazineViewProgram_1189_Past">
+      <rect id="EpgMagazineViewProgramPastRect" x="0" margin-right="0" y="0" width="224"/>
+    </clipPath>
+    <clipPath id="EpgMagazineViewProgram_1189_Future">
+      <rect id="EpgMagazineViewProgramFutureRect" x="0" margin-right="0" width="224"/>
+    </clipPath>
+    <rect id="EpgMagazineViewProgramBox" x="8" y="0" width="208" height="59" margin-right="8" margin-bottom="4" fill="#1E4053" rx="4" ry="4" fill-opacity="1" display="block"/>
+    <rect id="EpgMagazineViewProgramPastBox" x="8" y="0" width="208" height="59" margin-right="8" margin-bottom="4" fill="#192F40" rx="6" ry="6" fill-opacity="1" display="none"/>
+    <rect id="EpgMagazineViewProgramDecorationBox" x="12" y="4" width="50" height="20" rx="4" ry="4" fill="#000" display="none"/>
+    <textArea id="EpgMagazineViewProgramText" themeClass="textInItem" x="66" y="4" width="143" height="54" margin-right="15" margin-bottom="5" fill="#fff" font-size="15px" font-family="UniversOTS-Condensed" display="block">CBS 60 minutes</textArea>
+    <textArea id="EpgMagazineViewProgramStartTime" themeClass="textInItem" x="15" y="4" width="194" height="54" margin-right="15" margin-bottom="5" fill="#5B8090" font-size="14px" font-family="UniversOTS-Condensed" display="block">12:25</textArea>
+  </g>
+</g>
+<g id="ChannelTemplate" display="none" transform="translate(0,0)"/>
+
+  <g id="root">
+    <g themeClass="epgView" id="EpgMagazineView" display="block" opacity="1">
+      <g layerInfo="hardware, id=12" x="0" y="0" width="1230" height="720" display="block" id="EpgMagazineViewLayer" opacity="0.8">
+
+	<g id="EpgMagazineViewBackground" display="block" transform="translate(80,0)">
+          <g id="EpgMagazineViewBackgroundHorizontal" transform="scale(1120,1)" display="block"/>
+          <g id="EpgMagazineViewBackgroundResize" transform="translate(0,0)">
+            <rect themeClass="Background" x="-4" y="36" margin-right="-4" height="497" rx="11" ry="11" fill="#000" fill-opacity="1" display="block" width="1128"/>
+          </g>
+	</g>
+	<g transform="translate(80,100)">
+          <g id="EpgMagazineViewContent" x="80" y="104" height="426" width="1120">
+	    <clipPath id="clipPath9">
+	      <rect x="0" y="0" width="1120" height="426"/>
+	    </clipPath>
+            <g transform="translate(0,0)" x="0" y="0" clip-path="url(#clipPath9)">
+              <g id="epgContent" display="block">
+		<animateTransform id="viewboxTransform" attributeName="transform" type="translate" dur="6s" calcMode="linear" fill="freeze" repeatCount="indefinite" values="0,0;0,-400;0,0"/>
+		<g id="EpgMagazineViewCurrentTimeLine" display="block" transform="translate(0,2)">
+                  <g id="EpgMagazineViewCurrentTimeLineResize">
+                    <rect themeClass="progressBarTimeLine" margin-right="0" y="200" height="2" fill="#5B8090" display="block" width="3584"/>
+                  </g>
+		</g>
+	      </g>
+	    </g>
+	  </g>
+	</g>
+      </g>
+    </g>
+  </g>
+<text id="f" x="10" y="680"></text>
+<text id="result" x="10" y="700"></text>
+</svg>

@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.2" width="100%" height="100%" viewBox="0 0 300 300">
+ 	<style type="text/css">
+		@font-face {
+		font-family: FontTest;
+		src:  url(../fonts/Ahem.ttf);
+		}  
+	</style>
+	<title>Testing a svg included by animation having the same font as this svg</title>
+	<text y="40"  font-size="12px">You should see the word PASS below</text>
+	<animation y="80" width="300" height="300" xlink:href="support/font_test.svg"/>
+	</svg>

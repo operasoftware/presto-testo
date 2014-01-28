@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1 Tiny//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11-tiny.dtd">
+<svg version="1.1" baseProfile="tiny"
+     xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink"
+     id="svg-root" viewBox="0 0 639 361"
+     width="639" height="361">
+  <title id="document-title">Graph</title>
+  <desc id="document-desc">Test animation of lengths</desc>
+
+  <!-- This test assumes 96dpi (in opera svg this is hardcoded) -->
+  <!--                   fontheight == fontsize                 -->
+  <!--                   xheight == fontsize / 2                -->
+
+  <defs>
+    <line id="marker" x1="0" y1="0" x2="10" y2="0" stroke="#080" stroke-width="3"/>
+    <line id="vert-marker" x1="0" y1="0" x2="0" y2="10" stroke="#080" stroke-width="3"/>
+  </defs>
+
+  <rect x="0" y="0" width="639" height="361" fill="#eee" stroke="#888" stroke-width="2">
+  </rect>
+
+  <text x="150" y="30">
+    Test various length interpolations in nested svgs. See the green marks?
+  </text>
+
+  <svg x="50" y="50" width="550" height="100">
+    <rect x="0" y="0" width="550" height="100" fill="#cdc"/>
+
+    <!-- top horiz line -->
+    <line x1="0" y1="0" x2="551" y2="0" stroke="black" stroke-width="1"/>
+    <line x1="0" y1="0" x2="551" y2="0" stroke="black" stroke-dasharray="1,9" stroke-width="3"/>
+
+    <!-- bottom horiz line -->
+    <line x1="0" y1="100" x2="551" y2="100" stroke="black" stroke-width="1"/>
+    <line x1="0" y1="100" x2="551" y2="100" stroke="black" stroke-dasharray="1,9" stroke-width="3"/>
+
+    <!-- left vert line -->
+    <line x1="0" y1="0" x2="0" y2="100" stroke="black" stroke-width="1"/>
+    <line x1="0" y1="0" x2="0" y2="100" stroke="black" stroke-dasharray="1,9" stroke-width="3"/>
+
+    <!-- right vert line -->
+    <line x1="551" y1="0" x2="551" y2="100" stroke="black" stroke-width="1"/>
+    <line x1="551" y1="0" x2="551" y2="100" stroke="black" stroke-dasharray="1,9" stroke-width="3"/>
+
+    <!-- vertical grid -->
+    <!--
+	<line x1="61" y1="40" x2="61" y2="140" stroke="gray" stroke-dasharray="1,1" stroke-width="1"/>
+	<line x1="71" y1="40" x2="71" y2="140" stroke="gray" stroke-dasharray="1,1" stroke-width="1"/>
+	<line x1="81" y1="40" x2="81" y2="140" stroke="gray" stroke-dasharray="1,1" stroke-width="1"/>
+	<line x1="91" y1="40" x2="91" y2="140" stroke="gray" stroke-dasharray="1,1" stroke-width="1"/>
+    -->
+
+    <!-- horizontal grid -->
+    <line x1="0" y1="10" x2="551" y2="10" stroke="black" stroke-dasharray="1,1" stroke-width="1"/>
+    <line x1="0" y1="20" x2="551" y2="20" stroke="black" stroke-dasharray="1,1" stroke-width="1"/>
+    <line x1="0" y1="30" x2="551" y2="30" stroke="black" stroke-dasharray="1,1" stroke-width="1"/>
+    <line x1="0" y1="40" x2="551" y2="40" stroke="black" stroke-dasharray="1,1" stroke-width="1"/>
+    <line x1="0" y1="50" x2="551" y2="50" stroke="black" stroke-dasharray="1,1" stroke-width="1"/>
+    <line x1="0" y1="60" x2="551" y2="60" stroke="black" stroke-dasharray="1,1" stroke-width="1"/>
+    <line x1="0" y1="70" x2="551" y2="70" stroke="black" stroke-dasharray="1,1" stroke-width="1"/>
+    <line x1="0" y1="80" x2="551" y2="80" stroke="black" stroke-dasharray="1,1" stroke-width="1"/>
+    <line x1="0" y1="90" x2="551" y2="90" stroke="black" stroke-dasharray="1,1" stroke-width="1"/>
+    
+    <g transform="translate(0, 20) scale(1,-1)" font-size="18">
+      <use xlink:href="#vert-marker" x="0" y="0"/>
+      <use xlink:href="#vert-marker" x="275" y="0"/>
+      <rect x="0" y="0" width="0%" height="10" fill="#FF0" stroke-width="1" fill-opacity="0.6">
+	<animate attributeName="width" from="0%" to="50%" begin="0s" dur="4s" fill="freeze"/>
+      </rect>
+    </g>
+    <g transform="translate(0,108)">
+      <rect x="0" y="0" width="6" height="7" fill="#FF0" fill-opacity="0.6" />
+      <text x="10" y="6" font-size="9">%</text>
+    </g>
+
+  <g transform="translate(400, 100) scale(1,-1)">
+    <!-- Percentage -->
+    <!-- Reference: 361px height => 10px == 2.77% -->
+    <use xlink:href="#marker" x="0" y="6"/>
+    <use xlink:href="#marker" x="0" y="84"/>
+    <rect x="0" y="0" width="10" height="2.77%" fill="#008" stroke-width="1" fill-opacity="0.6">
+      <animate attributeName="height" from="6%" to="84%" begin="0s" dur="4s" fill="freeze"/>
+    </rect>
+  </g>
+  <g transform="translate(120,148)">
+    <rect x="0" y="0" width="6" height="7" fill="#008" fill-opacity="0.6" />
+    <text x="10" y="6" font-size="9">%</text>
+  </g>
+
+  </svg>
+
+</svg>

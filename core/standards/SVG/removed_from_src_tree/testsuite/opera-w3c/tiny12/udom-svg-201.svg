@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg version="1.2" baseProfile="tiny" id="svg-root" width="100%" height="100%" 
+  viewBox="0 0 480 360" xmlns="http://www.w3.org/2000/svg" 
+  xmlns:xlink="http://www.w3.org/1999/xlink" onload="init(evt)">
+  <!--======================================================================-->
+  <!--=  Copyright 2006 World Wide Web Consortium, (Massachusetts          =-->
+  <!--=  Institute of Technology, European Research Consortium for         =-->
+  <!--=  Informatics and Mathematics (ERCIM), Keio University).            =-->
+  <!--=  All Rights Reserved.                                              =-->
+  <!--=  See http://www.w3.org/Consortium/Legal/.                          =-->
+  <!--======================================================================-->
+  <!-- NOTE:  CVS will automatically update the                             -->
+  <!--        "$RCSfile$" and "$Revision$"         -->
+  <!--        fields in the file.                                           -->
+  <!--        There is no need to update this information.                  -->
+  <!-- =====================================================================-->
+  <SVGTestCase xmlns="http://www.w3.org/2000/02/svg/testsuite/description/" reviewer="[reviewer]" owner="[owner]" desc="[desc]" status="empty" version="$Revision$" testname="$RCSfile$">
+    <OperatorScript>
+      <Paragraph>
+                Put your testing instructions here.
+                Add other Paragraph elements as required
+      </Paragraph>
+    </OperatorScript>
+  </SVGTestCase>
+  <title id="test-title">$RCSfile$</title>
+  <!--======================================================================-->
+  <!--Content of Test Case follows...                  =====================-->
+  <!--======================================================================-->
+  <defs>
+    <font-face
+      font-family="SVGFreeSansASCII"
+      unicode-range="U+0-7F">
+      <font-face-src>
+        <font-face-uri xlink:href="../images/SVGFreeSans.svg#ascii"/>
+      </font-face-src>
+    </font-face>
+  </defs>
+  <g id="test-body-content" font-family="SVGFreeSansASCII" font-size="18">
+    
+	<script><![CDATA[
+		function init(evt)
+		{
+			var matrix = evt.target.createSVGMatrixComponents(2.1, 3, 0, 
+															  1, 32768.9999, -32768.9999);
+			
+			var str = "SVGMatrix: ";
+			if(matrix)
+			{
+				for(var i = 0; i < 6; i++)
+				{
+					str += matrix.getComponent(i).toFixed(2) + " ";
+				}
+			}
+			
+			document.getElementById("result").firstChild.data = str;
+			
+			pathTest();
+			
+			var pathelm = document.getElementById("path");
+			pathelm.setTrait("fill", "#0f0");
+			pathelm.setTraitNS(null, "stroke", "green");
+			document.getElementById("use").setTraitNS("http://www.w3.org/1999/xlink", "href", "#path");
+		}
+		
+		function pathTest()
+		{
+			var pathelm = document.getElementById("path");
+			var svgelm = document.getElementById("svg-root");
+			var newpath = svgelm.createSVGPath();
+			
+			newpath.moveTo(50,200);
+			newpath.lineTo(350,200);
+			newpath.lineTo(350,250);
+			newpath.lineTo(50,250);
+			newpath.close();
+			
+			pathelm.setPathTrait("d", newpath);
+
+			// This should not affect the pathelm
+			
+			//alert(pathelm.getTrait("d"));
+			
+			newpath.moveTo(0,0);
+			newpath.lineTo(480,360);
+			newpath.moveTo(480,0);
+			newpath.lineTo(0,360);
+			//pathelm.setPathTrait("d", newpath);
+			//alert(pathelm.getTrait("d"));
+		}
+	]]></script>
+	
+	<text id="result" y="100" x="30">SVGMatrix: </text>
+	<path id="path" d="M50 200l300 0l0 20" fill="red" stroke="red" stroke-width="10"/>
+	<use id="use" transform="translate(50 170) scale(0.5)" xlink:href="#result"/>
+  </g>
+  <g font-family="SVGFreeSansASCII" font-size="32">
+  <text id="revision" x="10" y="340" stroke="none" 
+    fill="black">$Revision$</text>
+  </g>
+  <rect id="test-frame" x="1" y="1" width="478" height="358" fill="none" stroke="#000"/>
+  <g id="draft-watermark">
+    <rect x="1" y="1" width="478" height="20" fill="red" stroke="black" stroke-width="1"/>
+    <text font-family="'Arial Black', Arial, sans-serif" font-weight="bold" font-size="20" x="240" 
+      text-anchor="middle" y="18" stroke-width="0.5" stroke="black" fill="white">DRAFT</text>
+  </g>
+</svg>

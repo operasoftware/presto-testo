@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1 Full//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11-flat.dtd">
+<svg version="1.1" baseProfile="full" id="svg-root" width="100%" height="100%" viewBox="0 0 480 360" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <!--========================================================================-->
+  <!--=  Copyright 2006 World Wide Web Consortium, (Massachusetts          =-->
+  <!--=  Institute of Technology, European Research Consortium for         =-->
+  <!--=  Informatics and Mathematics (ERCIM), Keio University).            =-->
+  <!--=  All Rights Reserved.                                              =-->
+  <!--=  See http://www.w3.org/Consortium/Legal/.                          =-->
+  <!--========================================================================-->
+  <!-- NOTE:  CVS will automatically update the                             -->
+  <!--        "$RCSfile$" and "$Revision$"         -->
+  <!--        fields in the file.                                           -->
+  <!--        There is no need to update this information.                  -->
+  <!-- =====================================================================-->
+  <SVGTestCase xmlns="http://www.w3.org/2000/02/svg/testsuite/description/" reviewer="[reviewer]" owner="[owner]" desc="[desc]" status="empty" version="$Revision$" testname="$RCSfile$">
+    <OperatorScript>
+      <Paragraph>
+                Put your testing instructions here.
+                Add other Paragraph elements as required
+      </Paragraph>
+    </OperatorScript>
+  </SVGTestCase>
+  <title id="test-title">$RCSfile$</title>
+  <!--======================================================================-->
+  <!--Content of Test Case follows...                  =====================-->
+  <!--======================================================================-->
+  <g id="test-body-content">
+	  <script><![CDATA[
+		function OrientAuto()
+		{
+			var markerElm = document.getElementById("mark");
+			markerElm.setOrientToAuto();
+			ShowMarkerInfo();
+		}
+	
+		function OrientAngle()
+		{
+			var markerElm = document.getElementById("mark");
+			var root = markerElm.ownerSVGElement;
+			var new_angle = root.createSVGAngle();
+			markerElm.setOrientToAngle(new_angle);
+			ShowMarkerInfo();
+		}
+	
+		function OrientAngleUp()
+		{
+			var markerElm = document.getElementById("mark");
+			var angle = markerElm.orientAngle.baseVal;
+			angle.value = angle.value + 5;
+			ShowMarkerInfo();
+		}
+	
+		function OrientAngleDown()
+		{
+			var markerElm = document.getElementById("mark");
+			var angle = markerElm.orientAngle.baseVal;
+			angle.value = angle.value - 5;
+			ShowMarkerInfo();
+		}
+	
+		function OrientRemoveAttribute()
+		{
+			var markerElm = document.getElementById("mark");
+			markerElm.removeAttribute("orient");    
+			ShowMarkerInfo();
+		}
+	
+		function AngleString(angle)
+		{
+			var str = angle.value+" ";
+			switch (angle.unitType)
+			{
+				default:
+				case 0: str += "?"; break;
+				case 1: str += "unspec"; break;
+				case 2: str += "deg"; break;
+				case 3: str += "rad"; break;
+				case 4: str += "grad"; break;
+			}
+			return str;
+		}
+	
+		function ShowMarkerInfo()
+		{
+			var markerElm = document.getElementById("mark");
+		
+			document.getElementById("rx").firstChild.data = markerElm.refX.baseVal.value;
+			document.getElementById("ry").firstChild.data = markerElm.refY.baseVal.value;
+			document.getElementById("mw").firstChild.data = markerElm.markerWidth.baseVal.value;
+			document.getElementById("mh").firstChild.data = markerElm.markerHeight.baseVal.value+" ";
+			document.getElementById("mu").firstChild.data = markerElm.markerUnits.baseVal+" ";
+			document.getElementById("ot").firstChild.data = markerElm.orientType.baseVal+" ";
+			document.getElementById("oab").firstChild.data = AngleString(markerElm.orientAngle.baseVal);
+			document.getElementById("oaa").firstChild.data = AngleString(markerElm.orientAngle.animVal);
+		}
+		]]>
+	</script>
+	<defs>
+		<marker id="mark" viewBox="0 0 10 10"
+			markerUnits="strokeWidth" orient="auto"
+			markerWidth="2" markerHeight="2" refX="5" refY="5">
+		  <line x1="0" y1="5" x2="10" y2="5" stroke-width="1" stroke="blue"/>
+		</marker>
+	</defs>
+
+	<polyline fill="none" stroke="black" stroke-width="8"
+		  style="marker: url('#mark')"
+		points="40,180 140,30 240,240 340,30 400,140"/>
+
+	<g  text-anchor="middle" transform="translate(0,-30)">
+		<g transform="scale(0.93)">
+			<rect x="10" y="330" width="50" height="25" rx="5"
+			  fill="grey" stroke="black" stroke-width="3"
+			  onclick="OrientAuto();"/>
+			<text x="35" y="345" pointer-events="none">auto</text>
+			
+			<rect x="70" y="330" width="50" height="25" rx="5"
+			  fill="grey" stroke="black" stroke-width="3"
+			  onclick="OrientAngle();"/>
+			<text x="95" y="345" pointer-events="none">angle</text>
+			
+			<rect x="130" y="330" width="50" height="25" rx="5"
+			  fill="grey" stroke="black" stroke-width="3"
+			  onclick="OrientAngleUp();"/>
+			<text x="155" y="345" pointer-events="none">angle+</text>
+			
+			<rect x="190" y="330" width="50" height="25" rx="5"
+			  fill="grey" stroke="black" stroke-width="3"
+			  onclick="OrientAngleDown();"/>
+			<text x="215" y="345" pointer-events="none">angle-</text>
+			
+			<rect x="250" y="330" width="50" height="25" rx="5"
+			  fill="grey" stroke="black" stroke-width="3"
+			  onclick="OrientRemoveAttribute();"/>
+			<text x="275" y="345" pointer-events="none">rm attr</text>
+		</g>
+		
+		<g transform="translate(290,200)">
+			<g transform="translate(125,0)" text-anchor="end">
+				<text>
+					<tspan x="0" dy="20">refX:</tspan>
+					<tspan x="0" dy="20">refY:</tspan>
+					<tspan x="0" dy="20">markerWidth:</tspan>
+					<tspan x="0" dy="20">markerHeight:</tspan>
+					<tspan x="0" dy="20">markerUnits:</tspan>
+					<tspan x="0" dy="20">orientType:</tspan>
+					<tspan x="0" dy="20">orientAngle(base):</tspan>
+					<tspan x="0" dy="20">orientAngle(anim):</tspan>
+				</text>
+			</g>
+			<g transform="translate(130,0)" text-anchor="start">
+				<text>
+					<tspan id="rx" x="0" dy="20">n/a</tspan>
+					<tspan id="ry" x="0" dy="20">n/a</tspan>
+					<tspan id="mw" x="0" dy="20">n/a</tspan>
+					<tspan id="mh" x="0" dy="20">n/a</tspan>
+					<tspan id="mu" x="0" dy="20">n/a</tspan>
+					<tspan id="ot" x="0" dy="20">n/a</tspan>
+					<tspan id="oab" x="0" dy="20">n/a</tspan>
+					<tspan id="oaa" x="0" dy="20">n/a</tspan>
+				</text>
+			</g>
+			<rect width="180" height="170" fill="none" stroke="black"/>
+		</g>
+	</g>  
+  </g>
+  <text id="revision" x="10" y="340" font-size="40" stroke="none" fill="black">$Revision$</text>
+  <rect id="test-frame" x="1" y="1" width="478" height="358" fill="none" stroke="#000"/>
+</svg>

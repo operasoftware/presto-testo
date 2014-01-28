@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 600 1000" preserveAspectRatio="none"
+	onmousemove="document.getElementById('status').firstChild.data='document coords: ['+evt.clientX+', '+evt.clientY+']';">
+	<foreignObject id="foo" x="0" y="0" width="360" height="250" xlink:href="fo1.html"/>
+	<foreignObject id="foo1" transform="translate(0 300)" width="360" height="250" xlink:href="fo1.html"/>
+	<foreignObject id="foo2" transform="rotate(35) translate(500 300)" width="360" height="250" xlink:href="fo1.html"/>
+	<foreignObject id="foo3" x="400" width="360" height="250" xlink:href="fo1.html"/>
+	
+	<text id="status" x="600" y="400">Hello</text>
+	<text id="status2" x="600" y="420">Hello</text>
+</svg>

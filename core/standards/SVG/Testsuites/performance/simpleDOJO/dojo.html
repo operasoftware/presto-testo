@@ -1,0 +1,213 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8;charset=utf-8" />
+<title>(DOJO-)SVG Benchmark</title>
+<style type="text/css">
+<!--
+.gfx-container {
+	height: 480px;
+	width: 640px;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-style: dotted;
+	border-right-style: dotted;
+	border-bottom-style: dotted;
+	border-left-style: dotted;
+	position: absolute;
+	left: 40%;
+	margin-left:-320px;
+}
+
+.result-container {
+	position: absolute;
+	width: 200px;
+	left: 40%;
+	margin-left: 380px;
+	
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-style: dotted;
+	border-right-style: dotted;
+	border-bottom-style: dotted;
+	border-left-style: dotted;
+}
+.Stil1 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	font-size: smaller;
+}
+-->
+</style>
+</head>
+
+
+<script type="text/javascript">
+	djConfig = { isDebug: false };
+</script>
+
+<script type="text/javascript" src="dojo/dojo.js"></script>
+
+
+
+<body id="main">
+<p align="center">Simple (DOJO-)SVG Benchmark </p>
+
+
+<div>
+<div class="gfx-container" id="gfx-container"></div>
+<div class="result-container" id="result-container">
+  <div align="center" class="Stil1">Result List</div>
+  <p id="results"></p>
+</div>
+</div>
+<p>&nbsp;</p>
+</body>
+
+<script type="text/javascript">
+window.addEventListener('load', startTest, false);
+
+dojo.require("dojo.event.*");
+dojo.require("dojo.io.*");
+dojo.require("dojo.widget.*");
+dojo.require("dojo.gfx.*");
+dojo.require("dojo.lfx.*");
+dojo.require("dojo.lfx.html.*");
+
+
+var NUM_ITERATIONS=1000;
+
+var res1, res2;
+var createdRects = new Array();
+
+/**
+ * Adds a little info message 
+ */
+function inform(info) {
+	var r = dojo.byId("results");
+	var node = document.createTextNode(info);
+
+	r.appendChild(node);
+	r.appendChild(document.createElement("br"));
+	r.appendChild(document.createElement("br"));
+}
+
+/**
+ * An empty loop.
+ */
+function simpleLoopTest() {
+	
+	var start = new Date();
+	
+	
+	for(var i = 0; i < NUM_ITERATIONS; i++) {
+	}
+
+	var end = new Date();
+	
+	var res = end-start;
+}
+
+
+/**
+ * Draw simple rects.
+ */
+function simpleRectTest() {
+	
+	var start = new Date();
+	
+	var node = document.getElementById("gfx-container");
+
+	var surfaceWidth = 640;
+	var surfaceHeight = 480;
+	
+	var surface = dojo.gfx.createSurface(node,surfaceWidth, surfaceHeight);
+	
+	for(var i=0; i<NUM_ITERATIONS; i++) {
+		var x = Math.random() * 600;
+		var y = Math.random() * 440;
+		var w = Math.random() * 40;
+		var h = Math.random() * 40;
+		
+		var r = Math.round(Math.random() * 255);
+		var g = Math.round(Math.random() * 255);
+		var b = Math.round(Math.random() * 255);
+
+		var rectCoords = { x: x, y: y, width: w, height: h };
+		var group = surface.createGroup();
+		var rect = group.createRect(rectCoords)
+			.setFill([r, g, b, 1]);
+	//		.applyTransform(dojo.gfx.matrix.identity);
+	
+		createdRects.push(rect);
+
+	}
+	
+
+	var end = new Date();
+	
+	var res = end-start;
+	var elemPerSec = Math.round(((NUM_ITERATIONS * 1E3) / res));
+
+	res1 = elemPerSec;
+	inform("Drawing Speed: " + elemPerSec + " Elements per Second");
+}
+
+
+/**
+ * Draw simple lines.
+ */
+function simpleMoveTest() {
+	
+	var start = new Date();
+	
+	for(var i=0; i<NUM_ITERATIONS; i++) {
+		var x = Math.random() * 40 - 20;
+		var y = Math.random() * 40 - 20;
+		var w = Math.random() * 40 - 20 ;
+		var h = Math.random() * 40 - 20;
+		
+
+		var rect = createdRects[i];
+		var s = rect.getShape();
+		s.x += x;
+		s.y += y;
+		s.width += w;
+		s.height += h;
+		rect.setShape(s);	
+	}
+	
+
+	var end = new Date();
+	
+	var res = end-start;
+	var elemPerSec = Math.round(((NUM_ITERATIONS * 1E3) / res));
+	
+	res2 = elemPerSec;
+	inform("Moving Speed: " + elemPerSec + " Elements per Second");
+}
+
+
+/**
+ * Start the Benchmark
+ */
+function startTest() {
+	//simpleLoopTest();
+	inform("Starting. Please wait a few seconds...");	
+	
+	simpleRectTest();
+	simpleMoveTest();
+	//send results to SPARTAN, convert to smaller is better
+	try{top.opener.rr(100000/res1, 100000/res2);}catch(e){}
+	
+}
+
+</script>
+
+
+</html>
+

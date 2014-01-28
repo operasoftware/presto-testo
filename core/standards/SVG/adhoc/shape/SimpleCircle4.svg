@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<!-- circle with black fill and white semitransparent outline -->
+<svg xmlns="http://www.w3.org/2000/svg" width="500" height="500">
+  <circle cx="250" cy="250" r="150" fill="black" stroke="white" stroke-opacity="0.5" stroke-width="10" />
+</svg> 

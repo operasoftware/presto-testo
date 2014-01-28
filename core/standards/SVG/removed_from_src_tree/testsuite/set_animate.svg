@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" width="600" height="400" onload="init(evt)">
+<script type="text/ecmascript"><![CDATA[
+
+function init(evt)
+{
+
+}
+
+function change(evt)
+{
+  document.getElementById("anime_1").setAttributeNS(null, "values", "510;1");
+
+  document.getElementById("anime_2").setAttributeNS(null, "from", "510");
+  document.getElementById("anime_2").setAttributeNS(null, "to", "1");
+
+  document.getElementById("anime_3").setAttributeNS(null, "from", "510");
+  document.getElementById("anime_3").setAttributeNS(null, "by", "-509");
+}
+
+]]></script>
+
+<rect x="20" y="20" width="1" height="19" fill="green">
+  <animate id="anime_1" fill="freeze" attributeName="width" repeatCount="1" values="1;510" dur="5s" calcMode="spline" keyTimes="0;1" begin="go.click" keySplines="0.25 0 0.75 1"/>
+</rect>
+
+<rect x="20" y="40" width="1" height="19" fill="green">
+  <animate id="anime_2" fill="freeze" attributeName="width" repeatCount="1" from="1" to="510" dur="5s" calcMode="spline" keyTimes="0;1" begin="go.click" keySplines="0.25 0 0.75 1"/>
+</rect>
+
+<rect x="20" y="60" width="1" height="19" fill="green">
+  <animate id="anime_3" fill="freeze" attributeName="width" repeatCount="1" from="1" by="509" dur="5s" calcMode="spline" keyTimes="0;1" begin="go.click" keySplines="0.25 0 0.75 1"/>
+</rect>
+
+<text x="90" y="350" font-family="Arial,Helvetica" text-anchor="middle" font-size="12px" pointer-events="none">Test animation</text>
+<rect id="go" x="40" y="335" width="100" height="20" fill="red" fill-opacity="0.2"/>
+
+<g transform="translate(0,30)">
+  <text x="140" y="350" font-family="Arial,Helvetica" text-anchor="middle" font-size="12px" pointer-events="none">Change animation element</text>
+  <rect onmouseup="change(evt)" x="40" y="335" width="200" height="20" fill="red" fill-opacity="0.2"/>
+</g>
+
+<text x="40" y="200" font-family="Arial,Helvetica" font-size="12px" pointer-events="none">Test that changing values/from/to/by during animation works as expecetd.</text>
+<text x="40" y="220" font-family="Arial,Helvetica" font-size="12px" pointer-events="none">The rects should be animated from (1-510) when 'Test animation' is pressed. After a </text>
+<text x="40" y="240" font-family="Arial,Helvetica" font-size="12px" pointer-events="none">press on the 'Change ...'-button the animation should animate in the interval (510-1)</text>
+</svg>

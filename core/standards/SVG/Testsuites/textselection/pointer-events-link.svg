@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink">
+  <title>Text selection on element with link</title>
+
+  <text x="10" y="20"><a xlink:href="#">You should be able to select this text.</a></text>
+</svg>
+

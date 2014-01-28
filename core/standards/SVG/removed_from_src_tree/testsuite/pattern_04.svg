@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 300 300">
+  <defs>
+    <pattern id="tile" x="0" y="0" width="100" height="100"
+	     patternUnits="objectBoundingBox" patternContentUnits="objectBoundingBox">
+      <rect x="1" y="1" width="99" height="99" fill="red"/>
+      <path d="M0,0 Q0.2 1 0.5 0.5 T 1 1" stroke="black" fill="none" stroke-width="0.05"/>
+      <path d="M0,0 h20 v20 h-20z" stroke="black" fill="none" stroke-width="0.05"/>
+    </pattern>
+  </defs>
+  <rect id="bkg" x="10" y="10" height="280" width="280"
+	fill="url(#tile)" stroke="#888" stroke-width="0.5"/>
+</svg>

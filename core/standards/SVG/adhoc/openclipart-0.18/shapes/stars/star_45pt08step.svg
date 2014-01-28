@@ -1,0 +1,45 @@
+<?xml version="1.0" ?>
+<svg height="100" width="100">
+  <metadata>
+    <rdf:RDF xmlns:cc="http://web.resource.org/cc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+      <cc:Work rdf:about="">
+        <dc:title>gramastar</dc:title>
+        <dc:description></dc:description>
+        <dc:subject>
+          <rdf:Bag>
+            <rdf:li>stars</rdf:li>
+            <rdf:li>shapes</rdf:li>
+            <rdf:li>magick</rdf:li>
+            <rdf:li>geometry</rdf:li>
+          </rdf:Bag>
+        </dc:subject>
+        <dc:publisher>
+          <cc:Agent rdf:about="http://www.openclipart.org/">
+            <dc:title>Open Clip Art Library</dc:title>
+          </cc:Agent>
+        </dc:publisher>
+        <dc:creator>
+          <cc:Agent>
+            <dc:title>codifiedivining</dc:title>
+          </cc:Agent>
+        </dc:creator>
+        <dc:rights>
+          <cc:Agent>
+            <dc:title>codifiedivining</dc:title>
+          </cc:Agent>
+        </dc:rights>
+        <dc:date></dc:date>
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+        <cc:license rdf:resource="http://web.resource.org/cc/PublicDomain"/>
+        <dc:language>en</dc:language>
+      </cc:Work>
+      <cc:License rdf:about="http://web.resource.org/cc/PublicDomain">
+        <cc:permits rdf:resource="http://web.resource.org/cc/Reproduction"/>
+        <cc:permits rdf:resource="http://web.resource.org/cc/Distribution"/>
+        <cc:permits rdf:resource="http://web.resource.org/cc/DerivativeWorks"/>
+      </cc:License>
+    </rdf:RDF>
+  </metadata>
+  <path d="M 50.0,90.0 L 85.951761852,67.5348458716 L 81.5204301443,25.373540987 L 41.6835323673,10.8740959706 L 11.188170949,40.323124176 L 24.2884956125,80.6417777248 L 66.269465723,86.5418183057 L 89.9756330808,51.3959798681 L 68.7788625114,14.6820962856 L 26.4885899083,17.639320225 L 10.6076898795,56.9459271067 L 38.9745057673,88.4504678375 L 79.7257930191,76.7652242544 L 87.0873541827,35.0157362634 L 52.7902589498,10.0974379896 L 15.3589838486,30.0 L 16.8384970978,72.3677161388 L 55.5669240384,89.6107227497 L 88.0422606518,62.360679775 L 77.7863348184,21.2264079865 L 36.319194267,12.4122951686 L 10.2191241853,45.8188614693 L 28.8032294307,83.9219238463 L 71.1967705693,83.9219238463 L 89.7808758147,45.8188614693 L 63.680805733,12.4122951686 L 22.2136651816,21.2264079865 L 11.9577393482,62.360679775 L 44.4330759616,89.6107227497 L 83.1615029022,72.3677161388 L 84.6410161514,30.0 L 47.2097410502,10.0974379896 L 12.9126458173,35.0157362634 L 20.2742069809,76.7652242544 L 61.0254942327,88.4504678375 L 89.3923101205,56.9459271067 L 73.5114100917,17.639320225 L 31.2211374886,14.6820962856 L 10.0243669192,51.3959798681 L 33.730534277,86.5418183057 L 75.7115043875,80.6417777248 L 88.811829051,40.323124176 L 58.3164676327,10.8740959706 L 18.4795698557,25.373540987 L 14.048238148,67.5348458716 L 50.0,90.0Z" fill="none" stroke="black" stroke-width="0.1" transform="matrix(1 0 0 -1 0 100)"/>
+</svg>

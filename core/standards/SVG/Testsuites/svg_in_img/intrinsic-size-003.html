@@ -1,0 +1,20 @@
+<!doctype html>
+<html style="height: 100%">
+  <head>
+    <title>TC #3</title>
+  </head>
+  <body style="height: 100%">
+    <h1>SVG with default size and viewBox in a html:object</h1>
+    <!--The size is determined by the object. The height is 40% of the
+      containing element and the width is computed using the height
+      and the intrinsic ratio of the SVG.-->
+<p>There should be a svg image below, it should use 40% of the height of the screen. No red should be visible.</p>
+
+    <object style="background:#ff0000" data="support/default-size-with-viewbox.svg"
+	    height="40%" type="image/svg+xml">[SVG NOT SUPPORTED]</object>
+
+    </div>
+  </body>
+</html>
+
+

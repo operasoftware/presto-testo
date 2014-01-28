@@ -1,0 +1,18 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:svg="http://www.w3.org/2000/svg">
+ <head>
+  <title>SVG mask from external file in HTML</title>
+</head>
+<body>
+  <style>
+    .target { mask: url(006-1.svg#m1); }
+    .success { display: block; height: 50px; width: 300px; background: lime; }
+    .failure { display: block; height: 50px; width: 300px; background: red; }
+  </style>
+  <p>There should be a green rectangle below, and there should be no red.
+  </p>
+  <p class="target">
+    <span class="failure"></span>
+    <span class="success"></span>
+  </p>
+</body>
+</html>

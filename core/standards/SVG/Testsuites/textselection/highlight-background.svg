@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg">
+  <title>Text selection highlighting of text background</title>
+
+  <text x="10" y="20">This test requires the Ahem font.</text>
+
+  <text x="10" y="50">Click on the blue rectangle and drag to the fuchsia rectangle.</text>
+  <text x="10" y="70">The word 'PASS' should appear.</text>
+
+  <text x="10" y="160" font-size="100" font-family="Ahem" fill="blue">É<tspan fill="fuchsia" dx="-50">É</tspan></text>
+  <text x="10" y="176" fill="white">PASS</text>
+</svg>
+

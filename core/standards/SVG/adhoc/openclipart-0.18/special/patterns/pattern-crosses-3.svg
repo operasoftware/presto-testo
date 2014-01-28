@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN"
+	"http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<svg height="100" width="100">
+  <metadata>
+    <rdf:RDF xmlns:cc="http://web.resource.org/cc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+      <cc:Work rdf:about="">
+        <dc:title>crosses 3 pattern</dc:title>
+        <dc:description></dc:description>
+        <dc:subject>
+          <rdf:Bag>
+            <rdf:li>pattern</rdf:li>
+          </rdf:Bag>
+        </dc:subject>
+        <dc:publisher>
+          <cc:Agent rdf:about="http://www.openclipart.org">
+            <dc:title>Alan Horkan</dc:title>
+          </cc:Agent>
+        </dc:publisher>
+        <dc:creator>
+          <cc:Agent>
+            <dc:title>Alan Horkan</dc:title>
+          </cc:Agent>
+        </dc:creator>
+        <dc:rights>
+          <cc:Agent>
+            <dc:title>Alan Horkan</dc:title>
+          </cc:Agent>
+        </dc:rights>
+        <dc:date></dc:date>
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+        <cc:license rdf:resource="http://web.resource.org/cc/PublicDomain"/>
+        <dc:language>en</dc:language>
+      </cc:Work>
+      <cc:License rdf:about="http://web.resource.org/cc/PublicDomain">
+        <cc:permits rdf:resource="http://web.resource.org/cc/Reproduction"/>
+        <cc:permits rdf:resource="http://web.resource.org/cc/Distribution"/>
+        <cc:permits rdf:resource="http://web.resource.org/cc/DerivativeWorks"/>
+      </cc:License>
+    </rdf:RDF>
+  </metadata>
+  <defs>
+    <pattern height="100" id="crosses-3" patternContentUnits="userSpaceOnUse" patternUnits="userSpaceOnUse" width="100">
+      <polygon fill="purple" id="background" points="0,0 100,0 100,100 0,100"/>
+      <g>
+        <polygon fill="red" id="cross-1" points="20,0 30,0 30,20 50,20 50,30 30,30 30,50 20,50 20,30 0,30 0,20 20,20"/>
+        <polygon fill="lime" id="cross-2" points="0,-40 10,-40 10,-20 30,-20 30,-10 10,-10 10,10 0,10 0,-10 -20,-10 -20,-20 0,-20"/>
+        <polygon fill="aqua" id="cross-3" points="60,-20 70,-20 70,0 90,0 90,10 70,10 70,30 60,30 60,10 40,10 40,0 60,0"/>
+        <polygon fill="#0080ff" id="cross-4" points="40,40 50,40 50,60 70,60 70,70 50,70 50,90 40,90 40,70 20,70 20,60 40,60"/>
+        <polygon fill="aqua" id="cross-5" points="60,80 70,80 70,100 90,100 90,110 70,110 70,130 60,130 60,110 40,110 40,100 60,100"/>
+        <polygon fill="yellow" id="cross-6" points="80,20 90,20 90,40 110,40 110,50 90,50 90,70 80,70 80,50 60,50 60,40 80,40"/>
+        <polygon fill="yellow" id="cross-7" points="-20,20 -10,20 -10,40 10,40 10,50 -10,50 -10,70 -20,70 -20,50 -40,50 -40,40 -20,40"/>
+        <polygon fill="lime" id="cross-8" points="100,60 110,60 110,80 130,80 130,90 110,90 110,110 100,110 100,90 80,90 80,80 100,80"/>
+        <polygon fill="lime" id="cross-9" points="0,60 10,60 10,80 30,80 30,90 10,90 10,110 0,110 0,90 -19.4,90 -19.4,80 0,80"/>
+      </g>
+    </pattern>
+  </defs>
+  <rect fill="url(#crosses-3)" height="100" width="100" x="0" y="0"/>
+</svg>

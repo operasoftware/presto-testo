@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN"
+	"http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<svg height="100" width="100">
+  <metadata>
+    <rdf:RDF xmlns:cc="http://web.resource.org/cc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+      <cc:Work rdf:about="">
+        <dc:title>circles 1 pattern</dc:title>
+        <dc:description></dc:description>
+        <dc:subject>
+          <rdf:Bag>
+            <rdf:li>pattern</rdf:li>
+          </rdf:Bag>
+        </dc:subject>
+        <dc:publisher>
+          <cc:Agent rdf:about="http://www.openclipart.org">
+            <dc:title>Alan Horkan</dc:title>
+          </cc:Agent>
+        </dc:publisher>
+        <dc:creator>
+          <cc:Agent>
+            <dc:title>Alan Horkan</dc:title>
+          </cc:Agent>
+        </dc:creator>
+        <dc:rights>
+          <cc:Agent>
+            <dc:title>Alan Horkan</dc:title>
+          </cc:Agent>
+        </dc:rights>
+        <dc:date></dc:date>
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+        <cc:license rdf:resource="http://web.resource.org/cc/PublicDomain"/>
+        <dc:language>en</dc:language>
+      </cc:Work>
+      <cc:License rdf:about="http://web.resource.org/cc/PublicDomain">
+        <cc:permits rdf:resource="http://web.resource.org/cc/Reproduction"/>
+        <cc:permits rdf:resource="http://web.resource.org/cc/Distribution"/>
+        <cc:permits rdf:resource="http://web.resource.org/cc/DerivativeWorks"/>
+      </cc:License>
+    </rdf:RDF>
+  </metadata>
+  <defs>
+    <pattern height="100" id="circles-1" patternContentUnits="userSpaceOnUse" patternUnits="userSpaceOnUse" width="100">
+      <g id="row-1">
+        <ellipse cx="25" cy="0" fill="white" rx="25" ry="25" stroke="black" stroke-width="1"/>
+        <ellipse cx="75" cy="0" fill="white" rx="25" ry="25" stroke="black" stroke-width="1"/>
+      </g>
+      <g id="row-2">
+        <ellipse cx="0" cy="25" fill="white" rx="25" ry="25" stroke="black" stroke-width="1"/>
+        <ellipse cx="50" cy="25" fill="white" rx="25" ry="25" stroke="black" stroke-width="1"/>
+        <ellipse cx="100" cy="25" fill="white" rx="25" ry="25" stroke="black" stroke-width="1"/>
+      </g>
+      <g id="row-3">
+        <ellipse cx="25" cy="50" fill="white" rx="25" ry="25" stroke="black" stroke-width="1"/>
+        <ellipse cx="75" cy="50" fill="white" rx="25" ry="25" stroke="black" stroke-width="1"/>
+      </g>
+      <g id="row-4">
+        <ellipse cx="0" cy="75" fill="white" rx="25" ry="25" stroke="black" stroke-width="1"/>
+        <ellipse cx="50" cy="75" fill="white" rx="25" ry="25" stroke="black" stroke-width="1"/>
+        <ellipse cx="100" cy="75" fill="white" rx="25" ry="25" stroke="black" stroke-width="1"/>
+      </g>
+      <g id="row-5">
+        <ellipse cx="25" cy="100" fill="white" rx="25" ry="25" stroke="black" stroke-width="1"/>
+        <ellipse cx="75" cy="100" fill="white" rx="25" ry="25" stroke="black" stroke-width="1"/>
+      </g>
+    </pattern>
+  </defs>
+  <rect fill="url(#circles-1)" height="100" width="100" x="0" y="0"/>
+</svg>

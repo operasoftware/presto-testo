@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding="iso-8859-1" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20001102//EN"
+    "http://www.w3.org/TR/2000/CR-SVG-20001102/DTD/svg-20001102.dtd">
+<svg xmlns="http://www.w3.org/2000/svg">
+<defs>
+	<linearGradient id="verlauf" x1="0" y1="0" x2="0" y2="1">
+ 		<stop offset="0" stop-color="#FFCCCC" />
+ 		<stop offset="0.5" stop-color="#ED1C2E" />
+ 		<stop offset="1" stop-color="#CC0000" />
+	</linearGradient>
+</defs>
+<a href="../index.xhtml">
+<rect x="30" y="20" rx="3" ry="3" width="105" height="20" class="button" style="fill:url(#verlauf);stroke:#000000;stroke-width:.2;"/>
+<text x="36" y="33" class="button" style="font-family:verdana,arial,sans-serif;font-size:11px;font-weight:bold;fill:#FFFFFF;text-rendering:optimizeSpeed;">Vodafone live!</text>
+</a>
+<a href="../index.xhtml">
+<rect x="30" y="44" rx="3" ry="3" width="105" height="20" class="button" style="fill:url(#verlauf);stroke:#000000;stroke-width:.2;"/>
+<text x="36" y="57" class="button" style="font-family:verdana,arial,sans-serif;font-size:11px;font-weight:bold;fill:#FFFFFF;text-rendering:optimizeSpeed;">VF LiveCast</text>
+</a>
+<a href="../index.xhtml">
+<rect x="30" y="68" rx="3" ry="3" width="105" height="20" class="button" style="fill:url(#verlauf);stroke:#000000;stroke-width:.2;"/>
+<text x="36" y="81" class="button" style="font-family:verdana,arial,sans-serif;font-size:11px;font-weight:bold;fill:#FFFFFF;text-rendering:optimizeSpeed;">VF Dynamic UI</text>
+</a>
+</svg>

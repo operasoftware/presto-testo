@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1 Basic//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11-basic.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink"
+     width="100%" height="100%" viewBox="0 0 200 120">
+  <defs>
+    <filter id="MyFilter" filterUnits="userSpaceOnUse" x="0" y="0" width="200" height="120">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="4" result="blur"/>
+      <feOffset in="blur" dx="4" dy="4" result="offsetBlur">
+	<animate attributeName="dx" attributeType="XML"
+		 from="4" to="-4" dur="10s" repeatCount="indefinite"/>
+      </feOffset>
+      <feComposite in="SourceGraphic" in2="offsetBlur" operator="over"/>
+    </filter>
+  </defs>
+  <g filter="url(#MyFilter)">
+    <path fill="none" stroke="#D90000" stroke-width="10"
+	  d="M50,90 C0,90 0,30 50,30 L150,30 C200,30 200,90 150,90 z"/>
+  </g>
+</svg>

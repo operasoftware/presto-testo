@@ -1,0 +1,93 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN" 
+  "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Examples of line angles and ending stoke styles</title>
+</head>
+
+<body>
+<h2>Examples of different stroking styles for line endings and angles.</h2>
+
+<ul>
+
+<li><h3>stroke-linecap: <i>butt</i> | <i>round</i> | <i>square</i>;</h3>
+<svg width="453.5" height="75.6" style="text-anchor:middle;"
+     xmlns="http://www.w3.org/2000/svg">
+  <desc>Example linecap - demonstrates three stroke-linecap values</desc>
+  <rect x="1" y="1" width="451" height="73" style="fill:none;stroke:blue;" />
+  <g transform="translate(75.6,28.3)" >
+    <line x1="-47.2" x2="47.2" y1="0" y2="0" style="stroke:black;stroke-width:26.4;stroke-linecap:butt;"/>
+    <line x1="-47.2" x2="47.2" y1="0" y2="0" style="stroke:#ffcccc;stroke-width:1.8;"/>
+    <circle id="circle1" cx="-47.2" cy="0" r="3" style="fill:#ffcccc;stroke:none;"/>
+    <circle id="circle2" cx="47.2" cy="0" r="3" style="fill:#ffcccc;stroke:none;"/>
+    <text y="34" >'butt' cap</text>
+  </g>
+  <g transform="translate(226.8,28.3)">
+    <line x1="-47.2" x2="47.2" y1="0" y2="0" style="fill:none; stroke:black;stroke-width:26.4;stroke-linecap:round;"/>
+    <line x1="-47.2" x2="47.2" y1="0" y2="0" style="fill:none; stroke:#ffcccc;stroke-width:1.8;"/>
+    <circle id="circle1" cx="-47.2" cy="0" r="3" style="fill:#ffcccc;stroke:none;"/>
+    <circle id="circle2" cx="47.2" cy="0" r="3" style="fill:#ffcccc;stroke:none;"/>
+    <text y="34">'round' cap</text>
+  </g>
+  <g transform="translate(378,28.3)">
+    <line x1="-47.2" x2="47.2" y1="0" y2="0" style="fill:none; stroke:black;stroke-width:26.4;stroke-linecap:square;"/>
+    <line x1="-47.2" x2="47.2" y1="0" y2="0" style="fill:none;stroke:#ffcccc;stroke-width:1.8;"/>
+    <circle id="circle1" cx="-47.2" cy="0" r="3" style="fill:#ffcccc;stroke:none;"/>
+    <circle id="circle2" cx="47.2" cy="0" r="3" style="fill:#ffcccc;stroke:none;"/>
+    <text y="34" >'square' cap</text>
+  </g>
+</svg></li>
+
+<li><h3>stroke-linejoin: <i>miter</i> | <i>round</i> | <i>bevel</i>;</h3>
+<svg width="453.5" height="132.3" style="text-anchor:middle;"
+     xmlns="http://www.w3.org/2000/svg">
+  <desc>Example linejoin - demonstrates three stroke-linejoin values</desc>
+  <rect x="1" y="1" width="451" height="130" style="fill:none;stroke:blue;" />
+  <g transform="translate(75.6,28.3)">
+    <path d="M -47.2,56.7 L 0,0 L 47.2,56.7" style="fill:none;stroke:black;stroke-width:26.4;stroke-linejoin:miter;"/>
+    <path d="M -47.2,56.7 L 0,0 L 47.2,56.7" style="fill:none;stroke:#ffcccc;stroke-width:1.8;"/>
+    <circle cx="0" cy="0" r="3" style="fill:#ffcccc;stroke:none;"/>
+    <text y="87">'miter' join</text>
+  </g>
+  <g transform="translate(226.8,28.3)">
+    <path d="M -47.2,56.7 L 0,0 L 47.2,56.7" style="fill:none;stroke:black;stroke-width:26.4;stroke-linejoin:round;"/>
+    <path d="M -47.2,56.7 L 0,0 L 47.2,56.7" style="fill:none;stroke:#ffcccc;stroke-width:1.8;"/>
+    <circle cx="0" cy="0" r="3" style="fill:#ffcccc;stroke:none;"/>
+    <text y="87">'round' join</text>
+  </g>
+  <g transform="translate(378,28.3)">
+    <path d="M -47.2,56.7 L 0,0 L 47.2,56.7" style="fill:none;stroke:black;stroke-width:26.4;stroke-linejoin:bevel;"/>
+    <path d="M -47.2,56.7 L 0,0 L 47.2,56.7" style="fill:none;stroke:#ffcccc;stroke-width:1.8;"/>
+    <circle cx="0" cy="0" r="3" style="fill:#ffcccc;stroke:none;"/>
+    <text y="87">'bevel' join</text>
+  </g>
+</svg></li>
+
+<li><h3>stroke-miterlimit: <i>1</i> , <i>5</i> and <i>6</i> ;</h3>
+    <h4>(stroke-linejoin:miter;)</h4>
+<svg width="453.5" height="132.3" xmlns="http://www.w3.org/2000/svg">
+  <desc>Example miterlimit - demonstrates three stroke-miterlimit values</desc>
+  <rect x="1" y="1" width="451" height="130" style="fill:none;stroke:blue;" />
+  <g transform="translate(75.6,58.3)">
+    <path d="M -15,56.7 L 0,0 L 5,56.7" style="fill:none;stroke:black;stroke-width:15;stroke-linejoin:miter;stroke-miterlimit:1;"/>
+    <path d="M -15,56.7 L 0,0 L 5,56.7" style="fill:none;stroke:#ffcccc;stroke-width:1.8;"/>
+    <circle cx="0" cy="0" r="3" style="fill:#ffcccc;stroke:none;"/>
+  </g>
+  <g transform="translate(226.8,58.3)">
+    <path d="M -10,56.7 L 0,0 L 10,56.7" style="fill:none;stroke:black;stroke-width:15;stroke-linejoin:miter;stroke-miterlimit:5;"/>
+    <path d="M -10,56.7 L 0,0 L 10,56.7" style="fill:none;stroke:#ffcccc;stroke-width:1.8;"/>
+    <circle cx="0" cy="0" r="3" style="fill:#ffcccc;stroke:none;"/>
+  </g>
+  <g transform="translate(378,58.3)">
+    <path d="M -5,56.7 L 0,0 L 15,56.7" style="fill:none;stroke:black;stroke-width:15;stroke-linejoin:miter;stroke-miterlimit:6;"/>
+    <path d="M -5,56.7 L 0,0 L 15,56.7" style="fill:none;stroke:#ffcccc;stroke-width:1.8;"/>
+    <circle cx="0" cy="0" r="3" style="fill:#ffcccc;stroke:none;"/>
+  </g>
+</svg></li>
+
+</ul>
+
+</body>
+</html>
+

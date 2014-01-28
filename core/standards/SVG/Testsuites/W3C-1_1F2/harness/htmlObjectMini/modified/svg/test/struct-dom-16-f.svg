@@ -1,0 +1,113 @@
+<?xml version="1.0"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="svg-root" width="100%" height="100%" viewBox="0 0 480 360">
+  <!--======================================================================-->
+  <!--=  Copyright 2008 World Wide Web Consortium, (Massachusetts          =-->
+  <!--=  Institute of Technology, European Research Consortium for         =-->
+  <!--=  Informatics and Mathematics (ERCIM), Keio University).            =-->
+  <!--=  All Rights Reserved.                                              =-->
+  <!--=  See http://www.w3.org/Consortium/Legal/.                          =-->
+  <!--======================================================================-->
+  <d:SVGTestCase xmlns:d="http://www.w3.org/2000/02/svg/testsuite/description/" template-version="1.4" reviewer="[reviewer]" author="Microsoft" status="created" version="$Revision: 1.1 $" testname="$RCSfile: struct-dom-16-f.svg,v $">
+    <d:testDescription xmlns="http://www.w3.org/1999/xhtml" href="http://dev.w3.org/SVG/profiles/1.1F2/publish/struct.html#InterfaceSVGSVGElement">
+      <p>
+        <!--[[
+        The 'SVGSVGElement' interface allows for creation of references to various primitive SVG interface types with explicitly defined default values.
+        ]]-->
+      </p>
+    </d:testDescription>
+    <d:operatorScript xmlns="http://www.w3.org/1999/xhtml">
+      <p>
+        <!--[[
+        A reference to an 'SVGSVGElement' is obtained through an 'svg' element in the page's markup. Each of the 'CreateSVG*' methods is called
+        from this reference and initial values are verified. A counter is used to determine whether all conditions are satisfied. The 'display'
+        property on the word 'fail' is used to determine pass/fail.
+        ]]-->
+      </p>
+    </d:operatorScript>
+    <d:passCriteria xmlns="http://www.w3.org/1999/xhtml">
+      <p>
+        <!--[[
+        Test passes if there is no red visible on the page.
+        ]]-->
+      </p>
+    </d:passCriteria>
+  </d:SVGTestCase>
+  <title id="test-title">$RCSfile: struct-dom-16-f.svg,v $</title>
+  <g id="test-body-content" font-size="18">
+    <svg id="testSVG"/>
+    <text id="failText" x="350" y="350" font-size="50" fill="blue">FAIL</text>
+    <script type="text/javascript"><![CDATA[
+        try
+        {
+            var passCount = 0;
+            var testSVG = document.getElementById("testSVG");
+
+            var testSVGNumber = testSVG.createSVGNumber();
+            if (0 == testSVGNumber.value)
+            {
+                passCount++;
+            }
+
+            var testSVGLength = testSVG.createSVGLength();
+            if (0 == testSVGLength.value)
+            {
+                passCount++;
+            }
+
+            var testSVGAngle = testSVG.createSVGAngle();
+            if (0 == testSVGAngle.value)
+            {
+                passCount++;
+            }
+
+            var testSVGPoint = testSVG.createSVGPoint();
+            if (0 == testSVGPoint.x && 0 == testSVGPoint.y)
+            {
+                passCount++;
+            }
+
+            var testSVGMatrix = testSVG.createSVGMatrix();
+            if (1 == testSVGMatrix.a && 0 == testSVGMatrix.b && 0 == testSVGMatrix.c && 0 == testSVGMatrix.c && 1 == testSVGMatrix.d && 0 == testSVGMatrix.e && 0 == testSVGMatrix.f) 
+            {
+                passCount++;
+            }
+
+            var testSVGRect = testSVG.createSVGRect();
+            if (0 == testSVGRect.x && 0 == testSVGRect.y && 0 == testSVGRect.width && 0 == testSVGRect.height)
+            {
+                passCount++;
+            }
+
+            var testSVGTransform = testSVG.createSVGTransform();
+            if (1 == testSVGTransform.type)
+            {
+                passCount++;
+            }
+
+            var testSVGTransformFromMatrix = testSVG.createSVGTransformFromMatrix(testSVGMatrix);
+            if (1 == testSVGTransformFromMatrix.type)
+            {
+                passCount++;
+            }
+
+            if (8 == passCount)
+            {
+                document.getElementById("failText").setAttribute("display", "none");
+            }
+        }
+        catch(ex)
+        {
+            alert('ERROR: ' + ex.message);
+        }]]>
+    </script>
+  </g>
+  <g font-size="32">
+    
+  </g>
+  
+  <!-- comment out this watermark once the test is approved -->
+  <g id="draft-watermark">
+    <rect x="1" y="1" width="478" height="20" fill="blue" stroke="black" stroke-width="1"/>
+    <text font-size="20" x="240" text-anchor="middle" y="18" stroke-width="0.5" stroke="black" fill="white">DRAFT</text>
+  </g>
+</svg>

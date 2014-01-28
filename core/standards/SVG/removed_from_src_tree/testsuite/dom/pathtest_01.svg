@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 480 360">
+  <script xlink:href="pathtest_01.js" type="text/ecmascript"/>
+
+  <path d="M 180,120
+	   L 240,120
+	   C 270,120 300,150 300,180
+	   L 300,240
+	   C 300,270 270,300 240,300
+	   L 180,300
+	   C 150,300 120,270 120,240
+	   L 120,180
+	   C 120,150 150,120 180,120" id="mypath" fill="none" stroke="black"/>
+
+  <g onclick="RunTest();">
+    <rect x="180" y="0" width="60" height="20"/>
+    <text x="210" y="15" text-anchor="middle" fill="white">Run test</text>
+  </g>
+
+  <text font-size="10" x="250" y="10" id="denorm">Vacant</text>
+  <text font-size="10" x="250" y="20" id="norm">Vacant</text>
+
+</svg>

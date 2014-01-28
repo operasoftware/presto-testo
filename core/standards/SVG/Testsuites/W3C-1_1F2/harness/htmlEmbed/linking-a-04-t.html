@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC  "-//CL//DTD XHTML 1.0 Transitional plus Embed//EN"
+  "http://www.w3.org/Graphics/xhtml1-transitional-plus-embed.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+      <meta name="keywords" content="W3C SVG 1.1 2nd Edition Test Suite"/>
+      <meta name="description" content="W3C SVG 1.1 2nd Edition Embedded Test Suite"/>
+      <title>
+SVG 1.1 2nd Edition Test (&lt;embed&gt;): linking-a-04-t.svg
+      </title>
+      <style type="text/css">
+        <!--
+         .bodytext      { font-family:verdana, helvetica, sans-serif; font-size: 12pt; line-height: 125%; text-align: Left; margin-top: 0; margin-bottom: 0 }
+         .pageTitle     { line-height: 150%; font-size: 20pt; font-weight : 900; margin-bottom: 20pt }
+         .pageSubTitle  { color : blue; line-height: 100%; font-size: 24pt; font-weight : 900 }
+         .openChapter   { color : blue; line-height: 125%; font-weight : 900 }
+         .openSection   { color : blue; line-height: 125%; font-weight : 900 }
+         .info          { color : black; line-height: 110%; font-size: 10pt; font-weight : 100 }
+         p              { margin-top:0; margin-bottom:0; padding-top:0; padding-bottom:0 }
+         blockquote     { margin-top:0; margin-bottom:0; padding-top:0; padding-bottom:0 }
+         .opscript      { margin-left: 3%; margin-right: 3%; }
+         .opscript p    { margin-top: 0.7em }
+         .navbar        { background: black; color: white; font-weight: bold }
+         .warning       { color: red; text-align: Center;}
+         a,a:visited    { color: blue }
+        -->
+      </style>
+      <link rel="prev" href="linking-a-03-b.html" />
+      <link rel="index" href="index.html" />
+      <link rel="next" href="linking-a-05-t.html" />
+      <script src="../resources/testharnessreport.js"></script>
+    </head>
+  <body class="bodytext">
+<div class="linkbar"> 
+  <p>Specification link: <a target="spec" href="http://www.w3.org/TR/SVG11/linking.html#Links">17.1 Links out of SVG content: the 'a' element</a></p>
+  <p>
+    <a href="linking-a-03-b.html" rel="prev">linking-a-03-b ←</a> 
+    <a href="index.html" rel="index">index</a>
+    <a href="linking-a-05-t.html" rel="next">→ linking-a-05-t</a>
+  </p>
+</div>
+<div>
+  <br />
+  <p class="warning">
+    Tests that contain the draft-watermark are under development and may be incorrectly testing a feature.
+  </p>
+</div>
+<table align="center" border="0" cellspacing="0" cellpadding="10">
+  <tr>
+    <td align="center" colspan="3">
+      <table border="0" cellpadding="8">
+        <tr>
+          <td align="center" colspan="2" class="pageTitle">
+            <h1>linking-a-04-t.svg</h1>
+          </td>
+        </tr>
+        <tr  class="navbar">
+          <td align="center">
+            SVG Image
+          </td>
+          <td align="center">
+            PNG Image
+          </td>
+        </tr>
+        <tr>
+          <td align="right">
+            <embed src="../../svg/linking-a-04-t.svg" width="480" height="360"/>
+          </td>
+          <td align="left">
+            <img alt="raster image of linking-a-04-t.svg" src="../../png/linking-a-04-t.png" width="480" height="360"/>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+
+<div class="opscript">
+    <h2 id="operatorscript">
+      Operator Script
+    </h2>
+    <div>
+<p>
+        The user should interact with each of the arrows activating each of the links,
+        using the UA's back mechanism to restart each link test.
+      </p>
+  </div>
+  <h2 id="passcriteria">
+    Pass Criteria
+  </h2>
+  <div>
+<p>
+        The top-most (yellow) arrow links to an external SVG file, which is
+        local (in the same directory).  The target file contains SVG 'text' elements
+        which comprise a TOC and brief description of all of the test files
+        for Linking.  Upon clicking the first arrow, the image of the linkingToc-t.svg
+        file should replace the initial view of this test case in the viewer frame.
+      </p><p>
+        The middle (green) arrow links to an object in this SVG test file, the yellow
+        circle (id="internal-circle") immediately to its right, using "#circle-object"
+        as the value of of the xlink:href attribute.
+        There should be no change to the viewer frame upon clicking this arrow.
+      </p><p>
+        The bottom-most (blue) arrow links to remote non-SVG content, the W3C home page
+        using xlink:href attribute value "http://www.w3.org".  For viewers in a Web
+        browser environment, the W3C home page should replace the initial view
+        of this test case in the browser/viewer frame.  For other viewers (e.g.,
+        interactive but SVG-only standalone viewers), the result is undefined, but could
+        include such actions as a diagnostic "Error parsing..." message.
+      </p>
+  </div>
+  <h2 id="testdescription">
+    Test Description
+  </h2>
+  <div>
+<p>
+        Verify the capability to handle basic links out of SVG content
+        using the 'a' element, with the xlink:href attributes.
+        There are three subtests, in each of which one
+        of three colored arrows comprise the content of an 'a' element.  The
+        link destination is expressed by "xlink:href=".
+        The initial view of this test contains the three arrows, a colored
+        circle, labelling text, and the usual template legend and frame.
+      </p><p>
+        There are several reference images associated with this test case.  The first
+        illustrates the correct "start" or initial state of the rendered SVG file.
+        The second illustrates the correct image after the first link is activated
+        (to the linkingToc.svg file).  The third (for browser-environment viewers)
+        should match the current image of the W3C home page, as viewed with a
+        conventional browser.  (Note.  This harness does not yet
+        provide access to multiple PNGs; the first, initial-state PNG is shown.)
+      </p><p>
+        The test uses the 'rect' and 'polygon' elements, as well as basic fill (solid simple colors),
+        stroke (black and colored wide and 1-pixel lines), font-family (Arial) and font-size properties.
+      </p>
+  </div>
+</div>
+<br/>
+<div class="linkbar">
+  <p>
+    <a href="linking-a-03-b.html" rel="prev">linking-a-03-b ←</a>
+    <a href="index.html" rel="index">index</a>
+    <a href="linking-a-05-t.html" rel="next">→ linking-a-05-t</a>
+  </p>
+</div>
+</body>
+</html>

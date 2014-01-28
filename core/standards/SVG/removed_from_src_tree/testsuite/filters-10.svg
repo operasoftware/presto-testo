@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg version="1.1" baseProfile="basic" id="svg-root" width="100%" height="100%" viewBox="0 0 480 360" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<title>Displacement Test</title>
+	<desc>Test for Displacement Map Filter</desc>
+    	<defs>
+        	<filter id='displaceimg0' filterUnits="objectBoundingBox" x='0%' y='0%' width='1' height='1'>
+            		<feImage xlink:href="image1.jpg" result="img"/>
+            		<feDisplacementMap result='disp' in='img' in2='SourceGraphic' scale='32' xChannelSelector='R' yChannelSelector='G' color-interpolation-filters="sRGB"/>
+        	</filter>
+        	<filter id='displaceimg1' filterUnits="objectBoundingBox" x='0%' y='0%' width='1' height='1'>
+            		<feImage xlink:href="image1.jpg" result="img" color-interpolation-filters="linearRGB"/>
+            		<feDisplacementMap result='disp' in='img' in2='SourceGraphic' scale='32' xChannelSelector='R' yChannelSelector='G' color-interpolation-filters="sRGB"/>
+        	</filter>
+			<filter id='displaceimg2' filterUnits="objectBoundingBox" x='0%' y='0%' width='1' height='1'>
+            		<feImage xlink:href="image1.jpg" result="img" color-interpolation-filters="sRGB"/>
+            		<feDisplacementMap result='disp' in='img' in2='SourceGraphic' scale='32' xChannelSelector='R' yChannelSelector='G' color-interpolation-filters="sRGB"/>
+        	</filter>
+			<filter id='displaceimg3' filterUnits="objectBoundingBox" x='0%' y='0%' width='1' height='1'>
+            		<feImage xlink:href="image1.jpg" result="img"/>
+            		<feDisplacementMap result='disp' in='img' in2='SourceGraphic' scale='32' xChannelSelector='R' yChannelSelector='G' color-interpolation-filters="linearRGB"/>
+        	</filter>
+			<filter id='displaceimg4' filterUnits="objectBoundingBox" x='0%' y='0%' width='1' height='1'>
+            		<feImage xlink:href="image1.jpg" result="img" color-interpolation-filters="linearRGB"/>
+            		<feDisplacementMap result='disp' in='img' in2='SourceGraphic' scale='32' xChannelSelector='R' yChannelSelector='G' color-interpolation-filters="linearRGB"/>
+        	</filter>
+			<filter id='displaceimg5' filterUnits="objectBoundingBox" x='0%' y='0%' width='1' height='1'>
+            		<feImage xlink:href="image1.jpg" result="img" color-interpolation-filters="sRGB"/>
+            		<feDisplacementMap result='disp' in='img' in2='SourceGraphic' scale='32' xChannelSelector='R' yChannelSelector='G' color-interpolation-filters="linearRGB"/>
+        	</filter>
+    	</defs>
+	
+	<!-- 
+	      rgb(56,0,0) gives approximately 10 pixels displacement in the red channel when using linearRGB.
+		  For sRGB it gives approximately 15 pixels displacement for the red channel.
+	-->
+	
+	<solidColor id="dispColor" solid-color="rgb(56,0,0)"/>
+
+	<g font-size="10" transform="translate(60 0)">
+		<rect x="10" y="10" width="100" height="100" fill="url(#dispColor)" stroke="black" stroke-width="1" filter="url(#displaceimg0)"/>
+		<rect x="10" y="10" width="100" height="100" fill="none" stroke="black" stroke-width="1" />
+
+		<rect x="120" y="10" width="100" height="100" fill="url(#dispColor)" stroke="black" stroke-width="1" filter="url(#displaceimg1)"/>
+		<rect x="120" y="10" width="100" height="100" fill="none" stroke="black" stroke-width="1" />
+		
+		<rect x="230" y="10" width="100" height="100" fill="url(#dispColor)" stroke="black" stroke-width="1" filter="url(#displaceimg2)"/>
+		<rect x="230" y="10" width="100" height="100" fill="none" stroke="black" stroke-width="1" />
+		
+		<rect x="10" y="120" width="100" height="100" fill="url(#dispColor)" stroke="black" stroke-width="1" filter="url(#displaceimg3)"/>
+		<rect x="10" y="120" width="100" height="100" fill="none" stroke="black" stroke-width="1" />
+		
+		<rect x="120" y="120" width="100" height="100" fill="url(#dispColor)" stroke="black" stroke-width="1" filter="url(#displaceimg4)"/>
+		<rect x="120" y="120" width="100" height="100" fill="none" stroke="black" stroke-width="1" />
+		
+		<rect x="230" y="120" width="100" height="100" fill="url(#dispColor)" stroke="black" stroke-width="1" filter="url(#displaceimg5)"/>
+		<rect x="230" y="120" width="100" height="100" fill="none" stroke="black" stroke-width="1" />
+		
+		<g stroke-opacity="0.5" stroke="red" stroke-width="1">
+			<line x1="19" x2="19" y1="0" y2="360" />
+			<line x1="24.5" x2="24.5" y1="0" y2="360" />
+			<line x1="129" x2="129" y1="0" y2="360" />
+			<line x1="134.5" x2="134.5" y1="0" y2="360" />
+			<line x1="239" x2="239" y1="0" y2="360" />
+			<line x1="244.5" x2="244.5" y1="0" y2="360" />
+		</g>
+	</g>
+</svg>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) --><svg height="64.000000" id="svg1291" version="1.0" width="64.000000" x="0.0000000" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0.0000000">
+  <metadata>
+    <rdf:RDF xmlns:cc="http://web.resource.org/cc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+      <cc:Work rdf:about="">
+        <dc:title>blueberry - iconset</dc:title>
+        <dc:description></dc:description>
+        <dc:subject>
+          <rdf:Bag>
+            <rdf:li>icon</rdf:li>
+            <rdf:li>desktop</rdf:li>
+            <rdf:li>computer</rdf:li>
+          </rdf:Bag>
+        </dc:subject>
+        <dc:publisher>
+          <cc:Agent rdf:about="http://www.openclipart.org/">
+            <dc:title>Open Clip Art Library</dc:title>
+          </cc:Agent>
+        </dc:publisher>
+        <dc:creator>
+          <cc:Agent>
+            <dc:title>Marko J. Kolehmainen</dc:title>
+          </cc:Agent>
+        </dc:creator>
+        <dc:rights>
+          <cc:Agent>
+            <dc:title>Marko J. Kolehmainen</dc:title>
+          </cc:Agent>
+        </dc:rights>
+        <dc:date></dc:date>
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+        <cc:license rdf:resource="http://web.resource.org/cc/PublicDomain"/>
+        <dc:language>en</dc:language>
+      </cc:Work>
+      <cc:License rdf:about="http://web.resource.org/cc/PublicDomain">
+        <cc:permits rdf:resource="http://web.resource.org/cc/Reproduction"/>
+        <cc:permits rdf:resource="http://web.resource.org/cc/Distribution"/>
+        <cc:permits rdf:resource="http://web.resource.org/cc/DerivativeWorks"/>
+      </cc:License>
+    </rdf:RDF>
+  </metadata>
+  <defs id="defs3">
+    <linearGradient id="linearGradient2097">
+      <stop id="stop2099" offset="0.0000000" style="stop-color:#67687d;stop-opacity:1.0000000;"/>
+      <stop id="stop2101" offset="1.0000000" style="stop-color:#b1bad7;stop-opacity:1.0000000;"/>
+    </linearGradient>
+    <linearGradient id="linearGradient2079">
+      <stop id="stop2081" offset="0.0000000" style="stop-color:#ffffff;stop-opacity:1.0000000;"/>
+      <stop id="stop2105" offset="0.50000000" style="stop-color:#eaebff;stop-opacity:1.0000000;"/>
+      <stop id="stop2107" offset="0.75000000" style="stop-color:#b3b6da;stop-opacity:1.0000000;"/>
+      <stop id="stop2083" offset="1.0000000" style="stop-color:#bdbfe5;stop-opacity:1.0000000;"/>
+    </linearGradient>
+    <linearGradient id="linearGradient2061">
+      <stop id="stop2063" offset="0.0000000" style="stop-color:#faf8ff;stop-opacity:1.0000000;"/>
+      <stop id="stop2109" offset="0.50000000" style="stop-color:#f1f1ff;stop-opacity:1.0000000;"/>
+      <stop id="stop2113" offset="0.75000000" style="stop-color:#abaddc;stop-opacity:1.0000000;"/>
+      <stop id="stop2065" offset="1.0000000" style="stop-color:#d5d7ff;stop-opacity:1.0000000;"/>
+    </linearGradient>
+    <linearGradient gradientTransform="scale(1.158349,0.863298)" gradientUnits="userSpaceOnUse" id="linearGradient2067" x1="11.830192" x2="43.220104" xlink:href="#linearGradient2079" y1="20.592365" y2="58.840500"/>
+    <linearGradient gradientTransform="scale(1.638871,0.610176)" gradientUnits="userSpaceOnUse" id="linearGradient2077" x1="14.952248" x2="28.472927" xlink:href="#linearGradient2061" y1="24.985840" y2="40.423176"/>
+    <linearGradient gradientTransform="scale(1.179897,0.847532)" gradientUnits="userSpaceOnUse" id="linearGradient2095" x1="47.873188" x2="28.943211" xlink:href="#linearGradient2097" y1="20.166553" y2="39.206215"/>
+  </defs>
+  <g id="layer1">
+    <rect height="39.500000" id="rect2059" rx="1.0000000" ry="1.0000000" style="fill:url(#linearGradient2067);fill-opacity:1.0000000;fill-rule:evenodd;stroke:#dcdaef;stroke-width:0.50000000;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4.0000000;stroke-opacity:1.0000000" width="53.000000" x="6.0000000" y="15.000000"/>
+    <path d="M 32.375000,32.500000 L 37.250000,35.125000 L 59.000000,15.000000 L 37.000000,18.000000 L 32.375000,32.500000 z " id="path2087" style="fill:url(#linearGradient2095);fill-opacity:1.0000000;fill-rule:evenodd;stroke:none;stroke-width:1.0000000px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1.0000000"/>
+    <path d="M 6.6250000,15.250000 L 33.000000,34.000000 L 58.500000,15.000000 L 6.6250000,15.250000 z " id="path2069" style="fill:url(#linearGradient2077);fill-opacity:1.0000000;fill-rule:evenodd;stroke:#cbc8e9;stroke-width:0.50000000;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4.0000000;stroke-opacity:1.0000000"/>
+  </g>
+</svg>

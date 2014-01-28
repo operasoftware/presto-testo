@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <!DOCTYPE html PUBLIC  "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>Tests handling of basic links of SVG content using 'a' element</title>
+</head>
+<body>
+<table>
+<tr>
+<td align="center">SVG Image</td>
+<td align="center">Reference Image</td>
+</tr>
+<tr>
+<td align="right">
+<object data="../svggen/linking-a-04-t.svg" width="480" height="360" type="image/svg+xml"/>
+</td>
+<td align="left">
+<img alt="raster image of linking-a-04-t" src="../png/full-linking-a-04-t.png" width="480" height="360"/>
+</td>
+</tr>
+</table>
+<p>
+Clicking the top-most (yellow) arrow, the image of the linkingToc-t.svg file should replace the initial view of 
+this test case in the viewer frame.
+</p>
+<p>
+The middle (green) arrow links to an object in this SVG test file, the yellow circle (id="internal-circle") immediately to its right  
+There should be no change to the viewer frame upon clicking this arrow.
+</p>
+<p>
+The bottom-most (blue) arrow links to remote non-SVG content, the W3C home page should replace the initial view
+of this test case in the browser/viewer frame.          
+</p>
+</body>
+</html>

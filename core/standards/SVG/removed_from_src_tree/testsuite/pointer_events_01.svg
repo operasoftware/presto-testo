@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11-basic.dtd">
+<svg xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink"
+     viewBox="0 0 480 360" width="100%" height="100%">
+  <SVGTestCase xmlns="http://www.w3.org/2000/02/svg/testsuite/description/">
+    <OperatorScript version="$Revision$" testname="pointer_events_01.svg">
+      <Paragraph>
+	Test pointer events.
+      </Paragraph>
+      <Paragraph>
+	Three colored circles are clickable in this image.
+      </Paragraph>
+      <Paragraph>
+	First described is the prerequisites and expected behavior of
+	the top-row. The left-most one is a regular circle with a
+	default value of pointer-events ('visiblePainted'), the circle
+	is visible and contains paint and thus clickable. The second
+	circle has fill and visibility set to hidden but
+	pointer-events set to all. This means it should be
+	clickable. The third circle has no paint what-so-ever and
+	pointer-events set to 'all' so it should also be clickable.
+      </Paragraph>
+      <Paragraph>
+	The second row. The left-most circle has visibility set to
+	hidden, no stroke but pointer-events set to 'stroke', so it
+	should be moving when the *stroke* is clicked.
+      </Paragraph>
+      <Paragraph>
+	During the animation, the circles are set to visible and/or
+	filled with paint to confirm their presence.
+      </Paragraph>
+    </OperatorScript>
+  </SVGTestCase>
+
+  <g>
+    <g stroke="black" stroke-width="1" fill="none">
+      <circle cx="100" cy="100" r="50"/>
+      <circle cx="200" cy="100" r="50"/>
+      <circle cx="300" cy="100" r="50"/>
+      <circle cx="100" cy="200" r="50"/>
+    </g>
+    <g fill="#eee">
+      <circle cx="100" cy="100" r="40"/>
+      <circle cx="200" cy="100" r="40"/>
+      <circle cx="300" cy="100" r="40"/>
+      <circle cx="100" cy="200" r="40" fill="none" stroke="#eee" stroke-width="10"/>
+    </g>
+  </g>
+  <g id="tests">
+    <g fill-opacity="0.6" stroke-width="1" stroke="#fff">
+      <circle cx="100" cy="100" r="40" fill="#00f">
+	<animate attributeName="r" begin="click" values="40;50;40" dur="2s"/>
+      </circle>
+      <circle cx="200" cy="100" r="40" fill="#ff0"
+	      visibility="hidden" pointer-events="all">
+	<animate attributeName="r" begin="click" values="40;50;40" dur="2s"/>
+	<set attributeName="visibility" to="visible" begin="click" dur="2s"/>
+      </circle>
+      <circle cx="300" cy="100" r="40"
+	      fill="none" stroke="none"
+	      pointer-events="all">
+	<animate attributeName="r" begin="click" values="40;50;40" dur="2s"/>
+	<set attributeName="fill" to="#f00" begin="click" dur="2s"/>
+      </circle>
+      <circle cx="100" cy="200" r="40"
+	      fill="none" stroke-width="10px" stroke="none" visibility="hidden"
+	      pointer-events="stroke">
+	<animate attributeName="r" begin="click" values="40;50;40" dur="2s"/>
+	<set attributeName="visibility" to="visible" begin="click" dur="2s"/>
+	<set attributeName="fill" to="#0f0" begin="click" dur="2s"/>
+      </circle>
+    </g>
+  </g>
+  <rect x="0" y="0" width="480" height="360" stroke="black" fill="none"/>
+</svg>
+

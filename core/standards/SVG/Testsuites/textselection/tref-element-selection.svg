@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink">
+  <title>Text selection in &lt;tref&gt;</title>
+
+  <def>
+    <text id="text">You should be able to select any and all of this text.</text>
+  </def>
+   
+  <text x="10" y="20"><tref xlink:href="#text"/></text>
+</svg>
+

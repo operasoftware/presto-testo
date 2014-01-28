@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="iso-8859-1" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/SVG/DTD/svg10.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+  <!-- Shortened testcase from the test in bug 209956 -->
+
+  <g id="mainlayer">
+    <rect x="-1000" y="-1000" width="4000" height="4000" fill="#FFFFFF"/>
+    <g transform="translate(680,680)">
+      <rect x="200" y="45" width="136" height="30" stroke-width="2" stroke="black" fill="none" rx="5" ry="5"/>
+    </g>
+
+    <svg x="10" y="10" width="100" height="100">
+      <rect x="0" y="0" width="100" height="100"
+	    stroke-width="1" stroke="black" fill="none" rx="5" ry="5"/>
+    </svg>
+  </g>
+
+<script type="text/javascript"><![CDATA[
+
+var down = false
+var lastX, lastY, origX, origY;
+var tx = 0, ty = 0
+var g = document.getElementById( "mainlayer" )
+
+function Down(evt)
+{
+  lastX = evt.clientX
+  lastY = evt.clientY
+  origX = document.rootElement.currentTranslate.x
+  origY = document.rootElement.currentTranslate.y
+  down = true
+}
+
+function Up(evt)
+{
+  down = false
+  if( lastX == evt.clientX && lastY == evt.clientY )
+  {
+    if( evt.shiftKey )
+    {
+      document.rootElement.currentScale *= 0.5
+      document.rootElement.currentTranslate.x *= 0.5
+      document.rootElement.currentTranslate.y *= 0.5
+      
+      document.rootElement.currentTranslate.x += 0.5 * evt.clientX
+      document.rootElement.currentTranslate.y += 0.5 * evt.clientY
+    }
+    else
+    {
+      if( document.rootElement.currentScale < 8 )
+      {
+        document.rootElement.currentScale *= 2
+        document.rootElement.currentTranslate.x *= 2
+        document.rootElement.currentTranslate.y *= 2
+        
+        document.rootElement.currentTranslate.x -= evt.clientX
+        document.rootElement.currentTranslate.y -= evt.clientY
+      }
+    }
+  }
+}
+
+
+function Move(evt)
+{
+  if( ! down )
+    return
+  var x = evt.clientX
+  var y = evt.clientY
+  var dx = x - lastX
+  var dy = y - lastY
+  document.rootElement.currentTranslate.x = origX + dx
+  document.rootElement.currentTranslate.y = origY + dy
+}
+
+g.addEventListener( "mousedown", Down, false )
+g.addEventListener( "mouseup", Up, false )
+g.addEventListener( "mousemove", Move, false )
+
+]]></script>
+
+</svg>

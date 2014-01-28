@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg version="1.1" baseProfile="basic" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="svg-root" viewBox="0 0 480 360">
+<defs>
+<linearGradient id="grad" gradientUnits="objectBoundingBox">
+<stop stop-color="blue" offset="0"/>
+<stop stop-color="red" offset="1"/>
+</linearGradient>
+</defs>
+ <text x="240" text-anchor="middle" y="50" font-size="6" text-rendering="optimizeLegibility">Tests the 'text-rendering' property</text>
+ <g font-size="18" font-family="serif">
+	<text x="10" y="180" id="text">Auto</text>
+	<text x="10" y="200" id="t" text-rendering="optimizeLegibility">Legible text</text>
+	<text x="10" y="220">Legible text here &gt;<tspan text-rendering="optimizeLegibility">optimizeLegibility</tspan>&lt;</text>
+	<text x="10" y="240" fill="url(#grad)" text-rendering="optimizeLegibility">Gradient legible (ignored)</text>
+	<text x="10" y="260" stroke="red" text-rendering="optimizeLegibility">Stroked legible (ignored)</text>
+ </g>
+</svg>

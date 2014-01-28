@@ -1,0 +1,459 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- shortName=A unique abbreviation to be used for a file name for this file             -->
+<!--        and column header for the matrix.  MUST be a legal xml id prefix and fileName -->
+<!--       (shortName.xml) please make it 3-12 characters and do not use spaces.          -->
+<!-- company=Your company name as you would like it to appear in documentation            -->
+<!-- product=The name of the product you are running the test on                          -->
+<!-- version=The version number of the product being tested                               -->
+<!-- platform=The platform(s) that the product is tested on                               -->
+<!-- date=The date of the submission in the form year/month/day, eg. 2002/08/30           -->
+<svg-status-query company="Inkscape" date="2010/12/10" product="Inkscape" version="0.48.1" platform="Linux" shortName="Inkscape" profile="full">
+<!-- test attributes:                                                                   -->
+<!--    status=must be one of 'OK', 'PARTIAL', or 'FAIL'                                -->
+<!--    comment=optional comment to publish with the result, like why you don't pass :) -->
+   <test name="animate-dom-01-f.svg" revision="1.11" status="NA" comment="No animation support."/>
+   <test name="animate-dom-02-f.svg" revision="1.7" status="NA" comment="No animation support."/>
+   <test name="animate-elem-02-t.svg" revision="1.8" status="NA" comment="No animation support."/>
+   <test name="animate-elem-03-t.svg" revision="1.8" status="NA" comment="No animation support."/>
+   <test name="animate-elem-04-t.svg" revision="1.7" status="NA" comment="No animation support."/>
+   <test name="animate-elem-05-t.svg" revision="1.7" status="NA" comment="No animation support."/>
+   <test name="animate-elem-06-t.svg" revision="1.8" status="NA" comment="No animation support."/>
+   <test name="animate-elem-07-t.svg" revision="1.7" status="NA" comment="No animation support."/>
+   <test name="animate-elem-08-t.svg" revision="1.9" status="NA" comment="No animation support."/>
+   <test name="animate-elem-09-t.svg" revision="1.6" status="NA" comment="No animation support."/>
+   <test name="animate-elem-10-t.svg" revision="1.6" status="NA" comment="No animation support."/>
+   <test name="animate-elem-11-t.svg" revision="1.6" status="NA" comment="No animation support."/>
+   <test name="animate-elem-12-t.svg" revision="1.6" status="NA" comment="No animation support."/>
+   <test name="animate-elem-13-t.svg" revision="1.7" status="NA" comment="No animation support."/>
+   <test name="animate-elem-14-t.svg" revision="1.7" status="NA" comment="No animation support."/>
+   <test name="animate-elem-15-t.svg" revision="1.6" status="NA" comment="No animation support."/>
+   <test name="animate-elem-17-t.svg" revision="1.6" status="NA" comment="No animation support."/>
+   <test name="animate-elem-19-t.svg" revision="1.6" status="NA" comment="No animation support."/>
+   <test name="animate-elem-20-t.svg" revision="1.6" status="NA" comment="No animation support."/>
+   <test name="animate-elem-21-t.svg" revision="1.6" status="NA" comment="No animation support."/>
+   <test name="animate-elem-22-b.svg" revision="1.6" status="NA" comment="No animation support."/>
+   <test name="animate-elem-23-t.svg" revision="1.7" status="NA" comment="No animation support."/>
+   <test name="animate-elem-24-t.svg" revision="1.8" status="NA" comment="No animation support."/>
+   <test name="animate-elem-25-t.svg" revision="1.7" status="NA" comment="No animation support."/>
+   <test name="animate-elem-26-t.svg" revision="1.6" status="NA" comment="No animation support."/>
+   <test name="animate-elem-27-t.svg" revision="1.7" status="NA" comment="No animation support."/>
+   <test name="animate-elem-28-t.svg" revision="1.7" status="NA" comment="No animation support."/>
+   <test name="animate-elem-29-b.svg" revision="1.8" status="NA" comment="No animation support."/>
+   <test name="animate-elem-30-t.svg" revision="1.6" status="NA" comment="No animation support."/>
+   <test name="animate-elem-31-t.svg" revision="1.7" status="NA" comment="No animation support."/>
+   <test name="animate-elem-32-t.svg" revision="1.6" status="NA" comment="No animation support."/>
+   <test name="animate-elem-33-t.svg" revision="1.6" status="NA" comment="No animation support."/>
+   <test name="animate-elem-34-t.svg" revision="1.6" status="NA" comment="No animation support."/>
+   <test name="animate-elem-36-t.svg" revision="1.7" status="NA" comment="No animation support."/>
+   <test name="animate-elem-37-t.svg" revision="1.6" status="NA" comment="No animation support."/>
+   <test name="animate-elem-38-t.svg" revision="1.6" status="NA" comment="No animation support."/>
+   <test name="animate-elem-39-t.svg" revision="1.6" status="NA" comment="No animation support."/>
+   <test name="animate-elem-40-t.svg" revision="1.6" status="NA" comment="No animation support."/>
+   <test name="animate-elem-41-t.svg" revision="1.8" status="NA" comment="No animation support."/>
+   <test name="animate-elem-44-t.svg" revision="1.6" status="NA" comment="No animation support."/>
+   <test name="animate-elem-46-t.svg" revision="1.8" status="NA" comment="No animation support."/>
+   <test name="animate-elem-52-t.svg" revision="1.6" status="NA" comment="No animation support."/>
+   <test name="animate-elem-60-t.svg" revision="1.7" status="NA" comment="No animation support."/>
+   <test name="animate-elem-61-t.svg" revision="1.6" status="NA" comment="No animation support."/>
+   <test name="animate-elem-62-t.svg" revision="1.6" status="NA" comment="No animation support."/>
+   <test name="animate-elem-63-t.svg" revision="1.6" status="NA" comment="No animation support."/>
+   <test name="animate-elem-64-t.svg" revision="1.6" status="NA" comment="No animation support."/>
+   <test name="animate-elem-65-t.svg" revision="1.6" status="NA" comment="No animation support."/>
+   <test name="animate-elem-66-t.svg" revision="1.6" status="NA" comment="No animation support."/>
+   <test name="animate-elem-67-t.svg" revision="1.6" status="NA" comment="No animation support."/>
+   <test name="animate-elem-68-t.svg" revision="1.6" status="NA" comment="No animation support."/>
+   <test name="animate-elem-69-t.svg" revision="1.6" status="NA" comment="No animation support."/>
+   <test name="animate-elem-70-t.svg" revision="1.6" status="NA" comment="No animation support."/>
+   <test name="animate-elem-77-t.svg" revision="1.8" status="NA" comment="No animation support."/>
+   <test name="animate-elem-78-t.svg" revision="1.7" status="NA" comment="No animation support."/>
+   <test name="animate-elem-80-t.svg" revision="1.6" status="NA" comment="No animation support."/>
+   <test name="animate-elem-81-t.svg" revision="1.7" status="NA" comment="No animation support."/>
+   <test name="animate-elem-82-t.svg" revision="1.7" status="NA" comment="No animation support."/>
+   <test name="animate-elem-83-t.svg" revision="1.7" status="NA" comment="No animation support."/>
+   <test name="animate-elem-84-t.svg" revision="1.6" status="NA" comment="No animation support."/>
+   <test name="animate-elem-88-t.svg" revision="1.6" status="NA" comment="No animation support."/>
+   <test name="animate-elem-89-t.svg" revision="1.4" status="NA" comment="No animation support."/>
+   <test name="animate-elem-90-b.svg" revision="1.3" status="NA" comment="No animation support."/>
+   <test name="animate-elem-92-t.svg" revision="1.7" status="NA" comment="No animation support."/>
+   <test name="animate-interact-events-01-t.svg" revision="1.2" status="NA" comment="No animation support."/>
+   <test name="animate-interact-pevents-01-t.svg" revision="1.3" status="NA" comment="No animation support."/>
+   <test name="animate-interact-pevents-02-t.svg" revision="1.2" status="NA" comment="No animation support."/>
+   <test name="animate-interact-pevents-03-t.svg" revision="1.2" status="NA" comment="No animation support."/>
+   <test name="animate-interact-pevents-04-t.svg" revision="1.2" status="NA" comment="No animation support."/>
+   <test name="animate-pservers-grad-01-b.svg" revision="1.2" status="NA" comment="No animation support."/>
+   <test name="animate-script-elem-01-b.svg" revision="1.1" status="NA" comment="No animation support."/>
+   <test name="animate-struct-dom-01-b.svg" revision="1.2" status="NA" comment="No animation support."/>
+   <test name="color-prop-01-b.svg" revision="1.8" status="OK" comment=""/>
+   <test name="color-prop-02-f.svg" revision="1.9" status="OK" comment=""/>
+   <test name="color-prop-03-t.svg" revision="1.9" status="OK" comment=""/>
+   <test name="color-prop-04-t.svg" revision="1.7" status="FAIL" comment="No support for system colors"/>
+   <test name="color-prop-05-t.svg" revision="1.8" status="FAIL" comment="No support for currentColor"/>
+   <test name="conform-viewers-01-t.svgz" revision="unknown" status="FAIL" comment="Inkscape can read gzipped data but not via command line."/>
+   <test name="conform-viewers-02-f.svg" revision="1.5" status="FAIL" comment="No support for gzipped uri content."/>
+   <test name="conform-viewers-03-f.svg" revision="1.3" status="NA" comment="No scripting support."/>
+   <test name="coords-coord-01-t.svg" revision="1.6" status="OK" comment=""/>
+   <test name="coords-coord-02-t.svg" revision="1.7" status="OK" comment=""/>
+   <test name="coords-dom-01-f.svg" revision="1.8" status="NA" comment="No DOM support."/>
+   <test name="coords-dom-02-f.svg" revision="1.7" status="NA" comment="No DOM support."/>
+   <test name="coords-dom-03-f.svg" revision="1.7" status="NA" comment="No DOM support."/>
+   <test name="coords-dom-04-f.svg" revision="1.5" status="NA" comment="No DOM support."/>
+   <test name="coords-trans-01-b.svg" revision="1.6" status="OK" comment=""/>
+   <test name="coords-trans-02-t.svg" revision="1.6" status="OK" comment=""/>
+   <test name="coords-trans-03-t.svg" revision="1.6" status="OK" comment=""/>
+   <test name="coords-trans-04-t.svg" revision="1.6" status="OK" comment=""/>
+   <test name="coords-trans-05-t.svg" revision="1.7" status="OK" comment=""/>
+   <test name="coords-trans-06-t.svg" revision="1.6" status="OK" comment=""/>
+   <test name="coords-trans-07-t.svg" revision="1.6" status="OK" comment=""/>
+   <test name="coords-trans-08-t.svg" revision="1.6" status="OK" comment=""/>
+   <test name="coords-trans-09-t.svg" revision="1.6" status="OK" comment=""/>
+   <test name="coords-trans-10-f.svg" revision="1.9" status="OK" comment=""/>
+   <test name="coords-trans-11-f.svg" revision="1.8" status="OK" comment=""/>
+   <test name="coords-trans-12-f.svg" revision="1.6" status="OK" comment=""/>
+   <test name="coords-trans-13-f.svg" revision="1.6" status="OK" comment=""/>
+   <test name="coords-trans-14-f.svg" revision="1.6" status="OK" comment=""/>
+   <test name="coords-transformattr-01-f.svg" revision="1.6" status="PARTIAL" comment="Four out of six passed."/>
+   <test name="coords-transformattr-02-f.svg" revision="1.4" status="OK" comment=""/>
+   <test name="coords-transformattr-03-f.svg" revision="1.3" status="OK" comment=""/>
+   <test name="coords-transformattr-04-f.svg" revision="1.3" status="OK" comment=""/>
+   <test name="coords-transformattr-05-f.svg" revision="1.4" status="OK" comment=""/>
+   <test name="coords-units-01-b.svg" revision="1.7" status="PARTIAL" comment="Overflow visible when it shouldn't be?"/>
+   <test name="coords-units-02-b.svg" revision="1.8" status="OK" comment=""/>
+   <test name="coords-units-03-b.svg" revision="1.7" status="OK" comment="x-height fixed to half font-size"/>
+   <test name="coords-viewattr-01-b.svg" revision="1.8" status="FAIL" comment=""/>
+   <test name="coords-viewattr-02-b.svg" revision="1.9" status="PARTIAL" comment="Would pass except that reference viewports not shown."/>
+   <test name="coords-viewattr-03-b.svg" revision="1.6" status="OK" comment="Inkscape doesn't handle overflow but passes test criteria."/>
+   <test name="extend-namespace-01-f.svg" revision="1.8" status="NA" comment="No scripting support."/>
+   <test name="filters-blend-01-b.svg" revision="1.9" status="PARTIAL" comment="Close, maybe a color-space issue."/>
+   <test name="filters-color-01-b.svg" revision="1.6" status="PARTIAL" comment="Maybe color space issue."/>
+   <test name="filters-color-02-b.svg" revision="1.7" status="OK" comment="Inkscape doesn't use linearRGB properly but passes test criteria."/>
+   <test name="filters-composite-02-b.svg" revision="1.6" status="PARTIAL" comment="Close, may be a color-space issue."/>
+   <test name="filters-composite-03-f.svg" revision="1.4" status="PARTIAL" comment="May be a color-space issue."/>
+   <test name="filters-comptran-01-b.svg" revision="1.6" status="FAIL" comment="May be a color-space issue."/>
+   <test name="filters-conv-01-f.svg" revision="1.6" status="OK" comment=""/>
+   <test name="filters-conv-02-f.svg" revision="1.9" status="PARTIAL" comment="Close, slight color variation."/>
+   <test name="filters-conv-03-f.svg" revision="1.8" status="NA" comment="No scripting suport."/>
+   <test name="filters-diffuse-01-f.svg" revision="1.6" status="PARTIAL" comment="Close, may be a color-space issue."/>
+   <test name="filters-displace-01-f.svg" revision="1.6" status="OK" comment=""/>
+   <test name="filters-displace-02-f.svg" revision="1.9" status="FAIL" comment="Part of gradient missing."/>
+   <test name="filters-example-01-b.svg" revision="1.7" status="FAIL" comment="?"/>
+   <test name="filters-felem-01-b.svg" revision="1.6" status="FAIL" comment="Incorrect handling of null filters."/>
+   <test name="filters-felem-02-f.svg" revision="1.7" status="FAIL" comment="Image filter coordinates incorrectly interpreted."/>
+   <test name="filters-gauss-01-b.svg" revision="1.7" status="OK" comment=""/>
+   <test name="filters-gauss-02-f.svg" revision="1.3" status="FAIL" comment="stdDeviation zero incorrectly handled"/>
+   <test name="filters-gauss-03-f.svg" revision="1.3" status="FAIL" comment="stdDeviation zero incorreclty handled"/>
+   <test name="filters-image-01-b.svg" revision="1.7" status="OK" comment=""/>
+   <test name="filters-image-02-b.svg" revision="1.8" status="NA" comment="No support for animation."/>
+   <test name="filters-image-03-f.svg" revision="1.3" status="FAIL" comment="Image filter coordinates incorrectly interpreted."/>
+   <test name="filters-image-04-f.svg" revision="1.3" status="OK" comment="Trunk"/>
+   <test name="filters-image-05-f.svg" revision="1.3" status="OK" comment="Trunk"/>
+   <test name="filters-light-01-f.svg" revision="1.6" status="OK" comment=""/>
+   <test name="filters-light-02-f.svg" revision="1.6" status="OK" comment="Failed to produce PNG but passes when checked by hand."/>
+   <test name="filters-light-03-f.svg" revision="1.9" status="PARTIAL" comment="primitiveUnites=objectBoundingBox fails."/>
+   <test name="filters-light-04-f.svg" revision="1.4" status="NA" comment="No animation support."/>
+   <test name="filters-morph-01-f.svg" revision="1.8" status="PARTIAL" comment="Close, slightly different thicknesses."/>
+   <test name="filters-offset-01-b.svg" revision="1.6" status="OK" comment=""/>
+   <test name="filters-overview-01-b.svg" revision="1.7" status="FAIL" comment="FillPaint, StrokePaint not supported."/>
+   <test name="filters-specular-01-f.svg" revision="1.6" status="PARTIAL" comment="Very close."/>
+   <test name="filters-tile-01-b.svg" revision="1.8" status="FAIL" comment="Not feTile support."/>
+   <test name="filters-turb-01-f.svg" revision="1.7" status="PARTIAL" comment="Close, maybe color-space issue."/>
+   <test name="filters-turb-02-f.svg" revision="1.7" status="OK" comment=""/>
+   <test name="fonts-desc-02-t.svg" revision="1.5" status="FAIL" comment=""/>
+   <test name="fonts-desc-03-t.svg" revision="1.6" status="FAIL" comment=""/>
+   <test name="fonts-desc-04-t.svg" revision="1.5" status="FAIL" comment=""/>
+   <test name="fonts-desc-05-t.svg" revision="1.5" status="FAIL" comment=""/>
+   <test name="fonts-elem-01-t.svg" revision="1.6" status="FAIL" comment="No SVG font support."/>
+   <test name="fonts-elem-02-t.svg" revision="1.7" status="FAIL" comment="No SVG font support."/>
+   <test name="fonts-elem-03-b.svg" revision="1.8" status="FAIL" comment="No SVG font support."/>
+   <test name="fonts-elem-04-b.svg" revision="1.8" status="FAIL" comment="No SVG font support."/>
+   <test name="fonts-elem-05-t.svg" revision="1.7" status="FAIL" comment="No SVG font support."/>
+   <test name="fonts-elem-06-t.svg" revision="1.6" status="FAIL" comment="No SVG font support."/>
+   <test name="fonts-elem-07-b.svg" revision="1.6" status="FAIL" comment="No SVG font support."/>
+   <test name="fonts-glyph-02-t.svg" revision="1.6" status="FAIL" comment="No SVG font support."/>
+   <test name="fonts-glyph-03-t.svg" revision="1.5" status="FAIL" comment="No SVG font support."/>
+   <test name="fonts-glyph-04-t.svg" revision="1.5" status="FAIL" comment="No SVG font support."/>
+   <test name="fonts-kern-01-t.svg" revision="1.7" status="FAIL" comment="No SVG font support."/>
+   <test name="fonts-overview-201-t.svg" revision="1.2" status="OK" comment=""/>
+   <test name="interact-cursor-01-f.svg" revision="1.5" status="NA" comment="No DOM support."/>
+   <test name="interact-dom-01-b.svg" revision="1.8" status="NA" comment="No DOM support."/>
+   <test name="interact-events-02-b.svg" revision="1.7" status="NA" comment="No DOM support."/>
+   <test name="interact-events-202-f.svg" revision="1.3" status="NA" comment="No DOM support."/>
+   <test name="interact-events-203-t.svg" revision="1.4" status="NA" comment="No DOM support."/>
+   <test name="interact-order-01-b.svg" revision="1.7" status="NA" comment="No DOM support."/>
+   <test name="interact-order-02-b.svg" revision="1.5" status="NA" comment="No DOM support."/>
+   <test name="interact-order-03-b.svg" revision="1.5" status="NA" comment="No DOM support."/>
+   <test name="interact-pevents-01-b.svg" revision="1.6" status="NA" comment="No DOM support."/>
+   <test name="interact-pevents-03-b.svg" revision="1.6" status="NA" comment="No DOM support."/>
+   <test name="interact-pevents-04-t.svg" revision="1.5" status="NA" comment="No DOM support."/>
+   <test name="interact-pevents-05-b.svg" revision="1.6" status="NA" comment="No DOM support."/>
+   <test name="interact-pevents-07-t.svg" revision="1.3" status="NA" comment="No DOM support."/>
+   <test name="interact-pevents-08-f.svg" revision="1.3" status="NA" comment="No DOM support."/>
+   <test name="interact-pevents-09-f.svg" revision="1.3" status="NA" comment="No DOM support."/>
+   <test name="interact-pevents-10-f.svg" revision="1.4" status="NA" comment="No DOM support."/>
+   <test name="interact-pointer-01-t.svg" revision="1.4" status="NA" comment="No DOM support."/>
+   <test name="interact-pointer-02-t.svg" revision="1.4" status="NA" comment="No DOM support."/>
+   <test name="interact-pointer-03-t.svg" revision="1.4" status="NA" comment="No DOM support."/>
+   <test name="interact-zoom-01-t.svg" revision="1.6" status="NA" comment="No DOM support."/>
+   <test name="interact-zoom-02-t.svg" revision="1.6" status="NA" comment="No DOM support."/>
+   <test name="interact-zoom-03-t.svg" revision="1.5" status="NA" comment="Always disabled!"/>
+   <test name="linking-a-01-b.svg" revision="1.5" status="NA" comment="No interactivity."/>
+   <test name="linking-a-03-b.svg" revision="1.5" status="NA" comment="No interactivity."/>
+   <test name="linking-a-04-t.svg" revision="1.5" status="NA" comment="No interactivity."/>
+   <test name="linking-a-05-t.svg" revision="1.5" status="NA" comment="No interactivity."/>
+   <test name="linking-a-07-t.svg" revision="1.7" status="NA" comment="No interactivity."/>
+   <test name="linking-a-08-t.svg" revision="1.6" status="NA" comment="No interactivity."/>
+   <test name="linking-a-09-b.svg" revision="1.5" status="NA" comment="No interactivity."/>
+   <test name="linking-a-10-f.svg" revision="1.4" status="NA" comment="No interactivity."/>
+   <test name="linking-uri-01-b.svg" revision="1.6" status="NA" comment="No interactivity."/>
+   <test name="linking-uri-02-b.svg" revision="1.5" status="NA" comment="No interactivity."/>
+   <test name="linking-uri-03-t.svg" revision="1.5" status="NA" comment="No interactivity."/>
+   <test name="masking-intro-01-f.svg" revision="1.5" status="FAIL" comment="Inkscape should pass!"/>
+   <test name="masking-filter-01-f.svg" revision="1.7" status="OK" comment=""/>
+   <test name="masking-mask-01-b.svg" revision="1.6" status="OK" comment=""/>
+   <test name="masking-mask-02-f.svg" revision="1.3" status="OK" comment=""/>
+   <test name="masking-opacity-01-b.svg" revision="1.6" status="OK" comment=""/>
+   <test name="masking-path-01-b.svg" revision="1.7" status="OK" comment=""/>
+   <test name="masking-path-02-b.svg" revision="1.8" status="FAIL" comment="objectBounding box not supported."/>
+   <test name="masking-path-03-b.svg" revision="1.7" status="FAIL" comment="overflow not supported correctly."/>
+   <test name="masking-path-04-b.svg" revision="1.5" status="OK" comment=""/>
+   <test name="masking-path-05-f.svg" revision="1.6" status="FAIL" comment="clip-rule evenodd fails."/>
+   <test name="masking-path-07-b.svg" revision="1.11" status="FAIL" comment="PNG failed to render."/>
+   <test name="masking-path-08-b.svg" revision="1.7" status="PARTIAL" comment="One out of nine fails."/>
+   <test name="masking-path-09-b.svg" revision="1.5" status="FAIL" comment="Bounding box calculation on clip."/>
+   <test name="masking-path-10-b.svg" revision="1.4" status="OK" comment=""/>
+   <test name="masking-path-11-b.svg" revision="1.4" status="FAIL" comment=""/>
+   <test name="masking-path-12-f.svg" revision="1.5" status="FAIL" comment=""/>
+   <test name="masking-path-13-f.svg" revision="1.2" status="OK" comment=""/>
+   <test name="masking-path-14-f.svg" revision="1.2" status="OK" comment=""/>
+   <test name="metadata-example-01-t.svg" revision="1.5" status="OK" comment=""/>
+   <test name="painting-control-01-f.svg" revision="1.4" status="OK" comment=""/>
+   <test name="painting-control-02-f.svg" revision="1.3" status="FAIL" comment="?"/>
+   <test name="painting-control-03-f.svg" revision="1.5" status="OK" comment=""/>
+   <test name="painting-control-04-f.svg" revision="1.4" status="FAIL" comment="Square missing."/>
+   <test name="painting-control-05-f.svg" revision="1.3" status="OK" comment=""/>
+   <test name="painting-control-06-f.svg" revision="1.4" status="FAIL" comment="?"/>
+   <test name="painting-fill-01-t.svg" revision="1.7" status="OK" comment=""/>
+   <test name="painting-fill-02-t.svg" revision="1.5" status="OK" comment=""/>
+   <test name="painting-fill-03-t.svg" revision="1.7" status="OK" comment=""/>
+   <test name="painting-fill-04-t.svg" revision="1.6" status="OK" comment=""/>
+   <test name="painting-fill-05-b.svg" revision="1.5" status="OK" comment=""/>
+   <test name="painting-marker-01-f.svg" revision="1.7" status="OK" comment=""/>
+   <test name="painting-marker-02-f.svg" revision="1.7" status="FAIL" comment="Marker paths too big."/>
+   <test name="painting-marker-03-f.svg" revision="1.6" status="OK" comment=""/>
+   <test name="painting-marker-04-f.svg" revision="1.7" status="FAIL" comment="Marker shorthand used in presentation attribute."/>
+   <test name="painting-marker-05-f.svg" revision="1.7" status="FAIL" comment="Markers not clipped."/>
+   <test name="painting-marker-06-f.svg" revision="1.9" status="OK" comment=""/>
+   <test name="painting-marker-07-f.svg" revision="1.3" status="FAIL" comment=""/>
+   <test name="painting-render-01-b.svg" revision="1.6" status="FAIL" comment=""/>
+   <test name="painting-render-02-b.svg" revision="1.7" status="FAIL" comment="color-interpolation."/>
+   <test name="painting-stroke-01-t.svg" revision="1.8" status="OK" comment=""/>
+   <test name="painting-stroke-02-t.svg" revision="1.7" status="OK" comment=""/>
+   <test name="painting-stroke-03-t.svg" revision="1.6" status="OK" comment=""/>
+   <test name="painting-stroke-04-t.svg" revision="1.6" status="OK" comment=""/>
+   <test name="painting-stroke-05-t.svg" revision="1.6" status="OK" comment=""/>
+   <test name="painting-stroke-06-t.svg" revision="1.7" status="FAIL" comment="stroke-dash array."/>
+   <test name="painting-stroke-07-t.svg" revision="1.7" status="OK" comment=""/>
+   <test name="painting-stroke-08-t.svg" revision="1.6" status="OK" comment=""/>
+   <test name="painting-stroke-09-t.svg" revision="1.7" status="OK" comment=""/>
+   <test name="painting-stroke-10-t.svg" revision="1.4" status="FAIL" comment="Square butt fails."/>
+   <test name="paths-data-01-t.svg" revision="1.7" status="OK" comment=""/>
+   <test name="paths-data-02-t.svg" revision="1.7" status="OK" comment=""/>
+   <test name="paths-data-03-f.svg" revision="1.7" status="OK" comment=""/>
+   <test name="paths-data-04-t.svg" revision="1.7" status="OK" comment=""/>
+   <test name="paths-data-05-t.svg" revision="1.7" status="OK" comment=""/>
+   <test name="paths-data-06-t.svg" revision="1.7" status="OK" comment=""/>
+   <test name="paths-data-07-t.svg" revision="1.7" status="OK" comment=""/>
+   <test name="paths-data-08-t.svg" revision="1.6" status="OK" comment=""/>
+   <test name="paths-data-09-t.svg" revision="1.6" status="OK" comment=""/>
+   <test name="paths-data-10-t.svg" revision="1.6" status="FAIL" comment="Open path corners wrong."/>
+   <test name="paths-data-12-t.svg" revision="1.5" status="OK" comment=""/>
+   <test name="paths-data-13-t.svg" revision="1.5" status="OK" comment=""/>
+   <test name="paths-data-14-t.svg" revision="1.6" status="OK" comment=""/>
+   <test name="paths-data-15-t.svg" revision="1.6" status="OK" comment=""/>
+   <test name="paths-data-16-t.svg" revision="1.4" status="OK" comment=""/>
+   <test name="paths-data-17-f.svg" revision="1.4" status="OK" comment=""/>
+   <test name="paths-data-18-f.svg" revision="1.5" status="PARTIAL" comment="One out of seven lines missing."/>
+   <test name="paths-data-19-f.svg" revision="1.3" status="OK" comment=""/>
+   <test name="paths-data-20-f.svg" revision="1.3" status="FAIL" comment="Elliptical arc parsing."/>
+   <test name="pservers-grad-01-b.svg" revision="1.7" status="OK" comment=""/>
+   <test name="pservers-grad-02-b.svg" revision="1.8" status="OK" comment=""/>
+   <test name="pservers-grad-03-b.svg" revision="1.8" status="OK" comment=""/>
+   <test name="pservers-grad-04-b.svg" revision="1.8" status="OK" comment=""/>
+   <test name="pservers-grad-05-b.svg" revision="1.9" status="OK" comment=""/>
+   <test name="pservers-grad-06-b.svg" revision="1.9" status="OK" comment=""/>
+   <test name="pservers-grad-07-b.svg" revision="1.8" status="PARTIAL" comment="Stroke width too narrow!"/>
+   <test name="pservers-grad-08-b.svg" revision="1.13" status="OK" comment=""/>
+   <test name="pservers-grad-09-b.svg" revision="1.9" status="OK" comment=""/>
+   <test name="pservers-grad-10-b.svg" revision="1.8" status="OK" comment=""/>
+   <test name="pservers-grad-11-b.svg" revision="1.8" status="OK" comment=""/>
+   <test name="pservers-grad-12-b.svg" revision="1.9" status="OK" comment=""/>
+   <test name="pservers-grad-13-b.svg" revision="1.5" status="OK" comment=""/>
+   <test name="pservers-grad-14-b.svg" revision="1.5" status="OK" comment=""/>
+   <test name="pservers-grad-15-b.svg" revision="1.5" status="OK" comment=""/>
+   <test name="pservers-grad-16-b.svg" revision="1.5" status="OK" comment=""/>
+   <test name="pservers-grad-17-b.svg" revision="1.4" status="FAIL" comment="Gradients not ignored."/>
+   <test name="pservers-grad-18-b.svg" revision="1.5" status="FAIL" comment="Stop inheritance."/>
+   <test name="pservers-grad-20-b.svg" revision="1.7" status="FAIL" comment="objectBoundingBox."/>
+   <test name="pservers-grad-21-b.svg" revision="1.4" status="FAIL" comment="Radial gradient inheritance."/>
+   <test name="pservers-grad-22-b.svg" revision="1.4" status="OK" comment=""/>
+   <test name="pservers-pattern-01-b.svg" revision="1.6" status="OK" comment=""/>
+   <test name="pservers-pattern-02-f.svg" revision="1.3" status="FAIL" comment="?"/>
+   <test name="pservers-pattern-04-f.svg" revision="1.3" status="FAIL" comment="Inherentance wrong."/>
+   <test name="render-elems-01-t.svg" revision="1.6" status="OK" comment=""/>
+   <test name="render-elems-02-t.svg" revision="1.6" status="OK" comment=""/>
+   <test name="render-elems-03-t.svg" revision="1.7" status="FAIL" comment="? Should pass."/>
+   <test name="render-elems-06-t.svg" revision="1.8" status="OK" comment=""/>
+   <test name="render-elems-07-t.svg" revision="1.8" status="OK" comment=""/>
+   <test name="render-elems-08-t.svg" revision="1.9" status="OK" comment=""/>
+   <test name="render-groups-01-b.svg" revision="1.8" status="OK" comment=""/>
+   <test name="render-groups-03-t.svg" revision="1.8" status="OK" comment=""/>
+   <test name="script-handle-01-b.svg" revision="1.7" status="NA" comment="No scripting support."/>
+   <test name="script-handle-02-b.svg" revision="1.7" status="NA" comment="No scripting support."/>
+   <test name="script-handle-03-b.svg" revision="1.7" status="NA" comment="No scripting support."/>
+   <test name="script-handle-04-b.svg" revision="1.7" status="NA" comment="No scripting support."/>
+   <test name="script-specify-02-f.svg" revision="1.7" status="NA" comment="No scripting support."/>
+   <test name="shapes-circle-01-t.svg" revision="1.7" status="OK" comment=""/>
+   <test name="shapes-circle-02-t.svg" revision="1.5" status="OK" comment=""/>
+   <test name="shapes-ellipse-01-t.svg" revision="1.6" status="OK" comment=""/>
+   <test name="shapes-ellipse-02-t.svg" revision="1.6" status="OK" comment=""/>
+   <test name="shapes-ellipse-03-f.svg" revision="1.5" status="OK" comment=""/>
+   <test name="shapes-grammar-01-f.svg" revision="1.2" status="OK" comment=""/>
+   <test name="shapes-intro-01-t.svg" revision="1.5" status="OK" comment=""/>
+   <test name="shapes-intro-02-f.svg" revision="1.3" status="OK" comment=""/>
+   <test name="shapes-line-01-t.svg" revision="1.5" status="OK" comment=""/>
+   <test name="shapes-line-02-f.svg" revision="1.3" status="OK" comment=""/>
+   <test name="shapes-polygon-01-t.svg" revision="1.7" status="OK" comment=""/>
+   <test name="shapes-polygon-02-t.svg" revision="1.2" status="OK" comment=""/>
+   <test name="shapes-polygon-03-t.svg" revision="1.1" status="OK" comment=""/>
+   <test name="shapes-polyline-01-t.svg" revision="1.5" status="PARTIAL" comment="Open path caps wrong."/>
+   <test name="shapes-polyline-02-t.svg" revision="1.3" status="PARTIAL" comment="Open path caps wrong."/>
+   <test name="shapes-rect-01-t.svg" revision="1.7" status="OK" comment=""/>
+   <test name="shapes-rect-02-t.svg" revision="1.5" status="OK" comment=""/>
+   <test name="shapes-rect-03-t.svg" revision="1.9" status="OK" comment=""/>
+   <test name="shapes-rect-04-f.svg" revision="1.3" status="OK" comment=""/>
+   <test name="shapes-rect-05-f.svg" revision="1.3" status="OK" comment=""/>
+   <test name="shapes-rect-06-f.svg" revision="1.3" status="OK" comment=""/>
+   <test name="shapes-rect-07-f.svg" revision="1.2" status="OK" comment=""/>
+   <test name="struct-cond-01-t.svg" revision="1.5" status="OK" comment=""/>
+   <test name="struct-cond-02-t.svg" revision="1.6" status="OK" comment="But system language is English."/>
+   <test name="struct-cond-03-t.svg" revision="1.7" status="FAIL" comment="No switch support?"/>
+   <test name="struct-defs-01-t.svg" revision="1.6" status="OK" comment=""/>
+   <test name="struct-dom-01-b.svg" revision="1.8" status="NA" comment="No DOM support."/>
+   <test name="struct-dom-02-b.svg" revision="1.9" status="NA" comment="No DOM support."/>
+   <test name="struct-dom-03-b.svg" revision="1.8" status="NA" comment="No DOM support."/>
+   <test name="struct-dom-04-b.svg" revision="1.8" status="NA" comment="No DOM support."/>
+   <test name="struct-dom-05-b.svg" revision="1.7" status="NA" comment="No DOM support."/>
+   <test name="struct-dom-06-b.svg" revision="1.8" status="NA" comment="No DOM support."/>
+   <test name="struct-dom-07-f.svg" revision="1.8" status="NA" comment="No DOM support."/>
+   <test name="struct-dom-08-f.svg" revision="1.8" status="NA" comment="No DOM support."/>
+   <test name="struct-dom-11-f.svg" revision="1.5" status="NA" comment="No DOM support."/>
+   <test name="struct-dom-12-b.svg" revision="1.3" status="NA" comment="No DOM support."/>
+   <test name="struct-dom-14-f.svg" revision="1.4" status="NA" comment="No DOM support."/>
+   <test name="struct-dom-15-f.svg" revision="1.2" status="NA" comment="No DOM support."/>
+   <test name="struct-frag-01-t.svg" revision="1.5" status="OK" comment=""/>
+   <test name="struct-frag-02-t.svg" revision="1.5" status="OK" comment="Blurred."/>
+   <test name="struct-frag-03-t.svg" revision="1.5" status="FAIL" comment="preserveAspectRatio."/>
+   <test name="struct-frag-04-t.svg" revision="1.5" status="FAIL" comment="Failed to generate PNG."/>
+   <test name="struct-frag-05-t.svg" revision="1.6" status="FAIL" comment="namespace."/>
+   <test name="struct-frag-06-t.svg" revision="1.5" status="OK" comment=""/>
+   <test name="struct-group-01-t.svg" revision="1.5" status="OK" comment=""/>
+   <test name="struct-group-02-b.svg" revision="1.6" status="OK" comment=""/>
+   <test name="struct-group-03-t.svg" revision="1.5" status="OK" comment=""/>
+   <test name="struct-image-01-t.svg" revision="1.7" status="OK" comment=""/>
+   <test name="struct-image-02-b.svg" revision="1.7" status="FAIL" comment="Blue rectangle missing."/>
+   <test name="struct-image-03-t.svg" revision="1.5" status="FAIL" comment="Gamma correction in PNG."/>
+   <test name="struct-image-04-t.svg" revision="1.7" status="OK" comment=""/>
+   <test name="struct-image-05-b.svg" revision="1.6" status="FAIL" comment="SVG image rendered but distorted."/>
+   <test name="struct-image-06-t.svg" revision="1.6" status="OK" comment=""/>
+   <test name="struct-image-07-t.svg" revision="1.5" status="FAIL" comment="Linked images not found."/>
+   <test name="struct-image-08-t.svg" revision="1.5" status="OK" comment=""/>
+   <test name="struct-image-09-t.svg" revision="1.5" status="OK" comment=""/>
+   <test name="struct-image-10-t.svg" revision="1.5" status="OK" comment=""/>
+   <test name="struct-image-13-f.svg" revision="1.2" status="PARTIAL" comment="Slight color difference in several PNGs."/>
+   <test name="struct-image-14-f.svg" revision="1.2" status="PARTIAL" comment="Slight color difference in several PNGs."/>
+   <test name="struct-image-15-f.svg" revision="1.2" status="PARTIAL" comment="Slight color difference in several PNGs."/>
+   <test name="struct-image-16-f.svg" revision="1.3" status="FAIL" comment="Linked image not found."/>
+   <test name="struct-svg-01-f.svg" revision="1.4" status="NA" comment="No scripting support."/>
+   <test name="struct-symbol-01-b.svg" revision="1.7" status="FAIL" comment="viewport problem?"/>
+   <test name="struct-use-01-t.svg" revision="1.5" status="OK" comment=""/>
+   <test name="struct-use-03-t.svg" revision="1.5" status="OK" comment=""/>
+   <test name="struct-use-04-b.svg" revision="1.6" status="FAIL" comment="No external SVG support."/>
+   <test name="struct-use-05-b.svg" revision="1.4" status="FAIL" comment="No external SVG support."/>
+   <test name="struct-use-10-f.svg" revision="1.6" status="OK" comment=""/>
+   <test name="struct-use-11-f.svg" revision="1.3" status="PARTIAL" comment="One out of twelve fails."/>
+   <test name="struct-use-12-f.svg" revision="1.3" status="FAIL" comment="Failed to generate PNG."/>
+   <test name="struct-use-13-f.svg" revision="1.3" status="NA" comment="No DOM support."/>
+   <test name="styling-class-01-f.svg" revision="1.3" status="OK" comment=""/>
+   <test name="styling-css-01-b.svg" revision="1.6" status="OK" comment=""/>
+   <test name="styling-css-02-b.svg" revision="1.6" status="OK" comment=""/>
+   <test name="styling-css-03-b.svg" revision="1.6" status="OK" comment=""/>
+   <test name="styling-css-04-f.svg" revision="1.8" status="PARTIAL" comment="One out of 18 test fail."/>
+   <test name="styling-css-05-b.svg" revision="1.5" status="FAIL" comment="Language selectors."/>
+   <test name="styling-css-06-b.svg" revision="1.4" status="NA" comment="No interactivety support."/>
+   <test name="styling-css-07-f.svg" revision="1.3" status="FAIL" comment="visibility: hidden."/>
+   <test name="styling-css-08-f.svg" revision="1.3" status="FAIL" comment="visibility: hidden."/>
+   <test name="styling-elem-01-b.svg" revision="1.6" status="FAIL" comment="type attribute."/>
+   <test name="styling-inherit-01-b.svg" revision="1.5" status="OK" comment=""/>
+   <test name="styling-pres-01-t.svg" revision="1.7" status="FAIL" comment="!important attribute."/>
+   <test name="styling-pres-02-f.svg" revision="1.9" status="NA" comment="No scripting support."/>
+   <test name="text-align-01-b.svg" revision="1.8" status="OK" comment=""/>
+   <test name="text-align-02-b.svg" revision="1.8" status="OK" comment=""/>
+   <test name="text-align-03-b.svg" revision="1.7" status="FAIL" comment="text-anchor."/>
+   <test name="text-align-04-b.svg" revision="1.8" status="OK" comment=""/>
+   <test name="text-align-05-b.svg" revision="1.8" status="OK" comment=""/>
+   <test name="text-align-06-b.svg" revision="1.7" status="FAIL" comment="Vertical baseline-shift in wrong direction."/>
+   <test name="text-align-07-t.svg" revision="1.8" status="FAIL" comment="hanging baseline, etc."/>
+   <test name="text-align-08-b.svg" revision="1.7" status="FAIL" comment="hanging baseline, etc."/>
+   <test name="text-altglyph-01-b.svg" revision="1.7" status="FAIL" comment="No support for SVG fonts."/>
+   <test name="text-altglyph-02-b.svg" revision="1.9" status="FAIL" comment="No support for SVG fonts."/>
+   <test name="text-deco-01-b.svg" revision="1.5" status="FAIL" comment="No support for underlining."/>
+   <test name="text-dom-02-f.svg" revision="1.8" status="NA" comment="No DOM support."/>
+   <test name="text-dom-03-f.svg" revision="1.9" status="NA" comment="No DOM support."/>
+   <test name="text-dom-04-f.svg" revision="1.2" status="NA" comment="No DOM support."/>
+   <test name="text-dom-05-f.svg" revision="1.2" status="NA" comment="No DOM support."/>
+   <test name="text-fonts-01-t.svg" revision="1.5" status="OK" comment=""/>
+   <test name="text-fonts-02-t.svg" revision="1.5" status="OK" comment=""/>
+   <test name="text-fonts-03-t.svg" revision="1.5" status="FAIL" comment="No support for SVG fonts."/>
+   <test name="text-fonts-04-t.svg" revision="1.5" status="OK" comment=""/>
+   <test name="text-fonts-202-t.svg" revision="1.3" status="FAIL" comment="Couldn't get Zalamander Caps installed."/>
+   <test name="text-fonts-203-t.svg" revision="1.4" status="FAIL" comment="Couldn't get Zalamander Caps installed."/>
+   <test name="text-intro-01-t.svg" revision="1.8" status="OK" comment=""/>
+   <test name="text-intro-02-b.svg" revision="1.8" status="FAIL" comment="LTR text, etc."/>
+   <test name="text-intro-03-b.svg" revision="1.5" status="FAIL" comment="Vertical text."/>
+   <test name="text-intro-04-t.svg" revision="1.6" status="OK" comment=""/>
+   <test name="text-intro-05-t.svg" revision="1.6" status="FAIL" comment="Arabic."/>
+   <test name="text-intro-06-t.svg" revision="1.8" status="FAIL" comment="Arabic ligature. Reference figure wrong?"/>
+   <test name="text-intro-07-t.svg" revision="1.2" status="FAIL" comment="Arabic ligature."/>
+   <test name="text-intro-09-b.svg" revision="1.3" status="FAIL" comment="LTR text, etc."/>
+   <test name="text-path-01-b.svg" revision="1.6" status="OK" comment=""/>
+   <test name="text-path-02-b.svg" revision="1.6" status="FAIL" comment="Negative offset."/>
+   <test name="text-spacing-01-b.svg" revision="1.6" status="OK" comment="Poor resolution for some reason."/>
+   <test name="text-text-01-b.svg" revision="1.8" status="FAIL" comment="textLength."/>
+   <test name="text-text-03-b.svg" revision="1.9" status="PARTIAL" comment="Underline, line through."/>
+   <test name="text-text-04-t.svg" revision="1.10" status="FAIL" comment="No support for SVG fonts."/>
+   <test name="text-text-05-t.svg" revision="1.7" status="FAIL" comment="No support for SVG fonts."/>
+   <test name="text-text-06-t.svg" revision="1.8" status="FAIL" comment="No support for SVG fonts."/>
+   <test name="text-text-07-t.svg" revision="1.6" status="OK" comment=""/>
+   <test name="text-text-08-b.svg" revision="1.6" status="OK" comment=""/>
+   <test name="text-text-09-t.svg" revision="1.7" status="OK" comment=""/>
+   <test name="text-text-10-t.svg" revision="1.3" status="OK" comment=""/>
+   <test name="text-text-11-t.svg" revision="1.3" status="FAIL" comment="Comment wrong about text-text-10-t?"/>
+   <test name="text-tref-01-b.svg" revision="1.6" status="FAIL" comment="tref."/>
+   <test name="text-tref-02-b.svg" revision="1.5" status="FAIL" comment="External tref."/>
+   <test name="text-tref-03-b.svg" revision="1.4" status="OK" comment=""/>
+   <test name="text-tselect-01-b.svg" revision="1.8" status="NA" comment="Not a browser."/>
+   <test name="text-tselect-02-f.svg" revision="1.6" status="NA" comment="Not a browser."/>
+   <test name="text-tselect-03-f.svg" revision="1.3" status="NA" comment="Not a browser."/>
+   <test name="text-tspan-01-b.svg" revision="1.10" status="FAIL" comment="dx spacing."/>
+   <test name="text-tspan-02-b.svg" revision="1.11" status="FAIL" comment="Character rotation."/>
+   <test name="text-ws-01-t.svg" revision="1.6" status="OK" comment=""/>
+   <test name="text-ws-02-t.svg" revision="1.6" status="OK" comment=""/>
+   <test name="text-ws-03-t.svg" revision="1.7" status="OK" comment=""/>
+   <test name="types-basic-01-f.svg" revision="1.3" status="OK" comment=""/>
+   <test name="types-dom-01-b.svg" revision="1.6" status="NA" comment="No DOM support."/>
+   <test name="types-dom-02-f.svg" revision="1.8" status="NA" comment="No DOM support."/>
+   <test name="types-dom-03-b.svg" revision="1.7" status="NA" comment="No DOM support."/>
+   <test name="types-dom-04-b.svg" revision="1.7" status="NA" comment="No DOM support."/>
+   <test name="types-dom-05-b.svg" revision="1.6" status="NA" comment="No DOM support."/>
+   <test name="types-dom-06-f.svg" revision="1.5" status="NA" comment="No DOM support."/>
+   <test name="types-dom-07-f.svg" revision="1.2" status="NA" comment="No DOM support."/>
+</svg-status-query>

@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg">
+
+  <title>Text selection with altered canvas position</title>
+
+  <text x="10" y="20">This test requires the Ahem font.</text>
+
+  <text x="10" y="50">Click on the blue rectangle and drag to the fuchsia rectangle.</text>
+  <text x="10" y="70">The word 'PASS' should appear.</text>
+
+  <text x="10" y="170" font-family="Ahem" font-size="100">
+    <tspan x="110" fill="fuchsia">É</tspan><tspan x="10" fill="blue">É</tspan>
+  </text>
+  <text x="110" y="187" width="100" text-anchor="middle" fill="white">PASS</text>
+
+  <rect x="10" y="90" width="50" height="100" fill="white"/>
+  <rect x="160" y="90" width="50" height="100" fill="white"/>
+</svg>
+

@@ -1,0 +1,124 @@
+<?xml version="1.0"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:svg="http://www.w3.org/2000/svg">
+  <head>
+    <title>Click on zoomed</title>
+  </head>
+  <body>
+    <table>
+      <tr>
+	<td>
+	  text text text text text text text text text text 
+	  text text text text text text text text text text 
+	</td>
+	<td>
+	  text text text text text text text text text text 
+	  text text text text text text text text text text 
+	</td>
+      </tr>
+      <tr>
+	<td>
+	  text text text text text text text text text text 
+	  text text text text text text text text text text 
+	</td>
+	<td>
+	  text text text text text text text text text text 
+	  text text text text text text text text text text 
+	</td>
+      </tr>
+      <tr>
+	<td>
+	  text text text text text text text text text text 
+	  text text text text text text text text text text 
+	</td>
+	<td>
+	  text text text text text text text text text text 
+	  text text text text text text text text text text 
+	</td>
+      </tr>
+      <tr>
+	<td>
+	  text text text text text text text text text text 
+	  text text text text text text text text text text 
+	</td>
+	<td>
+	  <svg:svg version="1.1" baseProfile="tiny" 
+	       xmlns="http://www.w3.org/2000/svg" 
+	       xmlns:xlink="http://www.w3.org/1999/xlink" 
+	       width="320px" height="240px" viewBox="0 0 480 360">
+	    <title>Animation start by hyperlink</title>
+	    <!-- animated orange box -->
+	    <rect x="20" y="20" width="180" height="180" fill="white">
+	      <animate id="fadein" attributeName="fill" 
+		       attributeType="auto" from="white" to="orange" 
+		       begin="indefinite" dur="3s" fill="freeze"/>
+	      <animate id="fadeout" attributeName="fill" 
+		       attributeType="auto" from="orange" to="white" 
+		       begin="indefinite" dur="3s" fill="freeze"/>
+	    </rect>
+	    <!-- animation of gray circle depends on SMIL element 'fadein' -->
+	    <circle stroke="white" stroke-width="20" fill="none" 
+		    cx="200" cy="110" r="80">
+	      <animate id="fadein3" attributeName="stroke" 
+		       attributeType="auto" from="white" to="silver"
+		       begin="fadein.begin+5" dur="3s" fill="freeze"/>
+	      <animate id="fadeout3" attributeName="stroke" 
+		       attributeType="auto" from="silver" to="white" 
+		       begin="fadeout.begin+5" dur="3s" fill="freeze"/>
+	    </circle>
+	    <!--buttons -->
+	    <g id="buttons">
+	      <a xlink:href="#fadein">
+		<rect x="320" y="0" width="160" height="180" fill="green"/>
+		<text fill="white" font-size="30" 
+		      font-weight="bold" x="330" y="90">
+		  Fade in
+		</text>
+	      </a>
+	      <a xlink:href="#fadeout">
+		<rect x="320" y="180" width="160" height="180" fill="red"/>
+		<text fill="white" font-size="30" 
+		      font-weight="bold" x="330" y="280">
+		  Fade out
+		</text>
+	      </a>
+	    </g>
+	    <!-- canvas outline -->
+	    <rect x="1" y="1" width="478" height="358" 
+		  fill="none" stroke-width="2" stroke="blue"/>
+	  </svg:svg>
+	</td>
+      </tr>
+      <tr>
+	<td>
+	  text text text text text text text text text text 
+	  text text text text text text text text text text 
+	</td>
+	<td>
+	  text text text text text text text text text text 
+	  text text text text text text text text text text 
+	</td>
+      </tr>
+      <tr>
+	<td>
+	  text text text text text text text text text text 
+	  text text text text text text text text text text 
+	</td>
+	<td>
+	  text text text text text text text text text text 
+	  text text text text text text text text text text 
+	</td>
+      </tr>
+      <tr>
+	<td>
+	  text text text text text text text text text text 
+	  text text text text text text text text text text 
+	</td>
+	<td>
+	  text text text text text text text text text text 
+	  text text text text text text text text text text 
+	</td>
+      </tr>
+    </table>
+  </body>
+</html>

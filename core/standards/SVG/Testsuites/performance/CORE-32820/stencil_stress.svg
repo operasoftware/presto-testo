@@ -1,0 +1,71 @@
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1280" height="720" viewBox="0 0 1280 720" id="rootsvg" onload="init()">
+<title>Stress test for clipPaths</title>
+
+<script xlink:href="/resources/fps.js"/>
+<script><![CDATA[
+
+var NUM_COLS=5
+var NUM_BOXES=10
+
+function init() {
+  // Find the box template
+  var boxClone = document.getElementById("boxTemplate").cloneNode(true);
+  boxClone.removeAttribute("display");
+  boxClone.removeAttribute("id");
+
+  // Find the column template
+  var colClone = document.getElementById("colTemplate").cloneNode(true);
+  colClone.removeAttribute("display");
+  colClone.removeAttribute("id");
+
+  // Find the node where we will hook in the columns.
+  var contentNode = document.getElementById("content");
+
+  var boxHeight = 55;
+  var boxWidth = 205;
+  var startX = 0;
+  var startY = 0;
+
+  for (cn=0; cn < NUM_COLS; cn++) {
+    var col = colClone.cloneNode(true);
+    var xPos = startX + boxWidth * cn;
+    col.setAttribute("transform", "translate(" + xPos + ",0)");
+    for (pn=0; pn < NUM_BOXES; pn++) {
+      var box = boxClone.cloneNode(true);
+      var yPos = startY + boxHeight * pn;
+      box.setAttribute("transform", "translate(0," + yPos + ")");
+      col.appendChild(box);
+    }
+    contentNode.appendChild(col);
+  }
+
+  document.documentElement.targetFps=100;
+  checkfps(2000);
+}
+
+]]></script>
+
+<defs>
+ <clipPath id="FirstClip">
+  <rect y="0" height="25.5" width="200"/>
+ </clipPath>
+ <clipPath id="SecondClip">
+  <rect y="25.5" height="24.5" width="200"/>
+ </clipPath>
+</defs>
+
+<g id="colTemplate" display="none"/>
+<g display="none" id="boxTemplate">
+ <rect width="200" height="50" fill="gray" clip-path="url(#FirstClip)"/>
+ <rect width="200" height="50" fill="lightgray" clip-path="url(#SecondClip)"/>
+</g>
+
+<g id="content">
+ <animateTransform id="viewboxTransform" attributeName="transform" type="translate" dur="6s" calcMode="linear" fill="freeze" repeatCount="indefinite" values="0,0;50,0;0,0"/>
+</g>
+
+<text id="f" x="10" y="680"></text>
+<text id="result" x="10" y="700"></text>
+
+</svg>

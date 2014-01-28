@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ev="http://www.w3.org/2001/xml-events">
+  <defs>
+    <rect id="redrect" fill="#f00" x="10" y="20" width="400" height="100"/>
+    <rect id="greenrect" fill="#0f0" x="10" y="20" width="400" height="100"/>
+  </defs>
+  <use id="use" xlink:href="#redrect">
+    <set id="setgreen" attributeName="xlink:href" to="#greenrect"
+	 begin="2s;setgreen.end+2s" dur="2s"/>  </use>
+  <text x="15" y="150" font-size="20">The colour should animate (switch back and forth)</text>
+</svg>

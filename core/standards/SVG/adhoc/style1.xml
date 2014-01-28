@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <script type="text/javascript">
+      function change_style(style_string)
+      {
+      document.getElementById("circ").setAttribute("style", style_string);
+      }
+    </script>
+  </head>
+  <body>
+    <button onclick="change_style('fill:red;');">red</button>
+    <button onclick="change_style('fill:blue;');">blue</button>
+    <svg xmlns="http://www.w3.org/2000/svg">
+      <circle cx="100" cy="100" r="1cm" id="circ" style="fill:red;"/>
+    </svg>
+  </body>
+</html>

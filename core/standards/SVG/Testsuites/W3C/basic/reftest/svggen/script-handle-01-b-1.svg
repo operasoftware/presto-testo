@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!--======================================================================-->
+<!--=  Copyright 2000 World Wide Web Consortium, (Massachusetts          =-->
+<!--=  Institute of Technology, Institut National de Recherche en        =-->
+<!--=  Informatique et en Automatique, Keio University). All Rights      =-->
+<!--=  Reserved. See http://www.w3.org/Consortium/Legal/.                =-->
+<!--======================================================================-->
+<!--======================================================================-->
+<!-- script-eventDom-BE-01.svg                                            -->
+<!-- renamed for 1.1 suite to script-handle-01-b                          -->
+<!-- Author : Vincent Hardy, March 27, 2000                               -->
+<!--======================================================================-->
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.1"
+   baseProfile="basic"
+   id="svg-root"
+   width="100%"
+   height="100%"
+   viewBox="0 0 480 360"
+   sodipodi:version="0.32"
+   inkscape:version="0.46"
+   sodipodi:docname="script-handle-01-b-1.svg"
+   inkscape:output_extension="org.inkscape.output.svg.inkscape">
+  <metadata
+     id="metadata28">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs26">
+    <inkscape:perspective
+       sodipodi:type="inkscape:persp3d"
+       inkscape:vp_x="0 : 0.5 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_z="1 : 0.5 : 1"
+       inkscape:persp3d-origin="0.5 : 0.33333333 : 1"
+       id="perspective30" />
+  </defs>
+  <sodipodi:namedview
+     inkscape:window-height="1144"
+     inkscape:window-width="1920"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     guidetolerance="10.0"
+     gridtolerance="10.0"
+     objecttolerance="10.0"
+     borderopacity="1.0"
+     bordercolor="#666666"
+     pagecolor="#ffffff"
+     id="base"
+     showgrid="false"
+     inkscape:zoom="1.1604167"
+     inkscape:cx="240"
+     inkscape:cy="180"
+     inkscape:window-x="0"
+     inkscape:window-y="25"
+     inkscape:current-layer="svg-root" />
+  <title
+     id="test-title">script-handle-01-b</title>
+  <desc
+     id="test-desc">
+		This test validates scripting support by using a simple mouse event
+		handler and manipulating the DOM with the ECMA binding DOM API.
+	</desc>
+<!--======================================================================--><!--Content of Test Case follows...                  =====================--><!--======================================================================-->  <text
+     style="fill:#000000"
+     id="text6"
+     y="20"
+     x="140">Event and DOM Access Test</text>
+  <g
+     id="testPassed">
+    <text
+       x="70"
+       y="170"
+       font-size="30"
+       font-weight="bold"
+       id="text19"
+       style="font-size:30px;font-weight:bold;fill:#008000">Scripting Test Passed!</text>
+  </g>
+  <text
+     id="revision"
+     x="10"
+     y="340"
+     font-size="40"
+     stroke="none"
+     fill="black">$Revision: 12710 $</text>
+  <rect
+     id="test-frame"
+     x="1"
+     y="1"
+     width="478"
+     height="358"
+     fill="none"
+     stroke="#000000" />
+</svg>

@@ -1,0 +1,22 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:svg="http://www.w3.org/2000/svg">
+ <head>
+  <title>SVG filter in HTML</title>
+  <style>
+    .target { filter:url(#f1); }
+    .failure { color: red; }
+  </style>
+ </head>
+<body>
+  <p>There should be no red.
+  </p>
+  <p class="target">
+    <span class="failure">FAIL</span>
+    <svg:svg height="0">
+    <svg:filter id="f1">
+      <svg:feFlood flood-color="white" />
+    </svg:filter>
+  </svg:svg>
+  </p>
+</body>
+</html>

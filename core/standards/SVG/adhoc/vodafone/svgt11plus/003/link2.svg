@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" id="SVGroot" xmlns:xlink="http://www.w3.org/1999/xlink">
+
+<image xlink:href="bg.jpg" x="-116" y="-30" width="176" height="208"/>
+
+<g  transform="translate(3 10)">
+	<g id="calendar">
+	<g>
+		<path fill="#FFFFFF" stroke="#000000" d="M10.563,3.423L9.438,4.485V23.36l1.875,2l17.313,0.063l2.813-2.875V4.423l-0.938-1
+			H10.563z"/>
+		<path fill="#C4C4C4" d="M27.798,22.683l-15.983,1.553l-0.253-13.59h19.408V8.704H9.912l-0.38,15.272l1.142,1.165h15.983"/>
+		<path fill="#E8E8E8" stroke="#000000" d="M9.563,8.485L9.5,4.61l1-1.125h20l1,1.125v3.813L9.563,8.485z"/>
+		<path fill="#C4C4C4" stroke="#000000" d="M28.75,25.527l-2.25-0.084V21.61l1-1l3.75-0.333l0.333,2.25L28.75,25.527z"/>
+		<path fill="#DDAA0A" d="M20,20.985h1.958v-9.958h-1.417l-2.583,2l-0.021,2.021l2.104-0.021"/>
+		<path fill="none" stroke="#000000" d="M10.563,3.423L9.438,4.485V23.36l1.875,2l17.313,0.063l2.813-2.875V4.423l-0.938-1H10.563z"/>
+		
+		<animateTransform id="animone" attributeName="transform" attributeType="XML" type="scale" values="1;1.55;1.45;1.5" begin="SVGroot.focusin" dur="0.5s" fill="freeze"/>
+		<animateTransform attributeName="transform" attributeType="XML" type="scale" values="1.5;1" begin="SVGroot.focusout" dur="0.2s" fill="freeze"/>
+
+	</g>
+		<animateTransform attributeName="transform" attributeType="XML" type="translate" values="0 0;-7 -3;-4 -1;-5 -2" begin="SVGroot.focusin" dur="0.5s" fill="freeze" />
+		<animateTransform attributeName="transform" attributeType="XML" type="translate" values="-5 -2;0 0" begin="SVGroot.focusout" dur="0.2s" fill="freeze" />
+	</g>
+</g>
+
+</svg>

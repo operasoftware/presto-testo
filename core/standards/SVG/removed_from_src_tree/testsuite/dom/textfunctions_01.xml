@@ -1,0 +1,191 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>My title</title>
+<script>
+<![CDATA[
+
+var svgroot;
+var svgtext;
+var string;
+var outlen;
+var outchars;
+var marker;
+var idx;
+var horiz;
+var vert;
+var endhoriz;
+var endvert;
+var firstline;
+var secondline;
+var inds;
+
+function init()
+{
+  svgroot = document.getElementById('svgroot');
+  svgtext = document.getElementById('svgtext');
+  string = document.getElementById('string');
+  outlen = document.getElementById('outlen');
+  outchars = document.getElementById('outchars');
+  marker = document.getElementById('marker');
+  idx = document.getElementById('idx');
+  horiz = document.getElementById('horiz');
+  vert = document.getElementById('vert');
+  endhoriz = document.getElementById('endhoriz');
+  endvert = document.getElementById('endvert');
+  firstline = document.getElementById('firstline');
+  secondline = document.getElementById('secondline');
+  inds = document.getElementById('inds');
+  MeasureString(svgtext, outlen, outchars);
+  DrawIndices();
+  MeasureString(document.getElementById('svgtexttspan'), document.getElementById('outlen2'), document.getElementById('outchars2'));
+  MeasureString(document.getElementById('tspan'), document.getElementById('outlen3'), document.getElementById('outchars3'));
+  MarkExtent(document.getElementById('svgtexttspan'), document.getElementById('str2width'));
+}
+
+function displayCharNum(evt) 
+{
+      var mySVGPoint = svgroot.createSVGPoint();
+      mySVGPoint.x = evt.clientX;
+      mySVGPoint.y = evt.clientY;
+	var matrix = evt.target.getScreenCTM();
+	var tp = mySVGPoint.matrixTransform(matrix.inverse());
+      alert("Clickpos: " + tp.x + "," + tp.y + "= Glyph-index: " + evt.target.getCharNumAtPosition(tp));
+}
+
+
+function MarkExtent(inelm, inline)
+{
+  var extent = inelm.getComputedTextLength();
+  var sp = inelm.getStartPositionOfChar(0);
+  inline.x1.baseVal.value = sp.x;
+  inline.x2.baseVal.value = sp.x + extent;
+}
+
+function SetString(str)
+{
+  svgtext.firstChild.data = str;
+}
+
+function DrawIndices()
+{
+  while (inds.firstChild) {
+   inds.removeChild(inds.firstChild);
+  }
+  
+  for(i = 0; i < svgtext.getNumberOfChars(); i++)
+  {
+	var sp = svgtext.getStartPositionOfChar(i);
+	var ep = svgtext.getEndPositionOfChar(i);
+	var elm = document.createElementNS("http://www.w3.org/2000/svg", "text");
+	elm.setAttribute("x", sp.x + (ep.x - sp.x)/2);
+	elm.setAttribute("y", "20");
+	var textnode = document.createTextNode(i);
+	elm.appendChild(textnode);
+	inds.appendChild(elm);
+  }
+}
+
+function MeasureString(insvgelm, len, chars)
+{
+  len.value = insvgelm.getComputedTextLength();
+  chars.value = insvgelm.getNumberOfChars();
+}
+
+function MarkCharacter(idx)
+{
+  var rect = svgtext.getExtentOfChar(idx);
+  marker.x.baseVal.value = rect.x;
+  marker.y.baseVal.value = rect.y;
+  marker.width.baseVal.value = rect.width;
+  marker.height.baseVal.value = rect.height;
+}
+
+function SplitMeasure(splitindex)
+{
+  var firstpos = svgtext.getStartPositionOfChar(0);
+  var firstlen = svgtext.getSubStringLength(0, splitindex);
+  var secpos = svgtext.getStartPositionOfChar(splitindex);
+  var seclen = svgtext.getSubStringLength(splitindex, svgtext.getNumberOfChars()-splitindex);
+  firstline.x1.baseVal.value = firstpos.x;
+  firstline.x2.baseVal.value = firstline.x1.baseVal.value + firstlen;
+  secondline.x1.baseVal.value = secpos.x;
+  secondline.x2.baseVal.value = secondline.x1.baseVal.value + seclen;
+}
+
+function MarkCharPosition(pt, horiz, vert)
+{
+  horiz.x1.baseVal.value = 0;
+  horiz.y1.baseVal.value = pt.y;
+  horiz.x2.baseVal.value = 400;
+  horiz.y2.baseVal.value = pt.y;
+  vert.x1.baseVal.value = pt.x;
+  vert.y1.baseVal.value = 0;
+  vert.x2.baseVal.value = pt.x;
+  vert.y2.baseVal.value = 400;
+}
+
+]]>
+</script>
+
+</head>
+
+<body onload="init();">
+  <table>
+    <tr>
+      <td>
+        <input type="text" id="string" size="20" value="Click on this text to get charnum at mouse-position"/>
+      	Length in user units: <input type="text" id="outlen" size="20" readonly="readonly"/>
+	Number of chars: <input type="text" id="outchars" size="10" readonly="readonly"/>
+	<button onclick="SetString(string.value); MeasureString(svgtext, outlen, outchars); DrawIndices();">Set and measure string</button>
+       </td>
+     </tr>
+   <tr>
+    <td>
+     CharIdx: <input type="text" id="idx" size="3" value="0"/>
+     <button onclick="MarkCharPosition(svgtext.getStartPositionOfChar(idx.value), horiz, vert);">Mark start pos of character</button>
+     <button onclick="MarkCharPosition(svgtext.getEndPositionOfChar(idx.value), endhoriz, endvert);">Mark end pos of character</button>
+     <button onclick="SplitMeasure(idx.value);">Split and measure</button>
+    </td>
+   </tr>
+   <tr>
+	<td>
+		Second string (using text element):
+      	Length in user units: <input type="text" id="outlen2" size="20" readonly="readonly"/>
+		Number of chars: <input type="text" id="outchars2" size="10" readonly="readonly"/>
+	</td>
+   </tr>
+   <tr>
+   	<td>
+		Second string (using tspan element):
+      	Length in user units: <input type="text" id="outlen3" size="20" readonly="readonly"/>
+		Number of chars: <input type="text" id="outchars3" size="10" readonly="readonly"/>		
+	</td>
+   </tr>
+   <tr>
+    <td>
+     <svg xmlns="http://www.w3.org/2000/svg" width="800" height="400" viewBox="0 0 900 400" id="svgroot">
+		<style>
+			<![CDATA[
+			.dashed { stroke-dasharray: 1,1; }
+			.index { font-size: 9px; }
+			]]>
+		</style>
+		<text x="20" y="50" id="svgtext" font-size="36" onclick="displayCharNum(evt)">Click on this text to get charnum at mouse-position</text>
+		<text x="20" y="150" id="svgtexttspan" font-size="36">123<tspan id="tspan" dx="40" dy="30" fill="red">456</tspan>789</text>
+		<g id="inds" class="index">
+		</g>
+		<rect x="20" y="50" width="0" height="0" fill="none" stroke="red" id="marker"/>
+		<line x1="20" y1="54" x2="20" y2="54" stroke="red" id="firstline"/>
+		<line x1="20" y1="58" x2="20" y2="58" stroke="blue" id="secondline"/>
+		<line class="dashed" x1="0" y1="0" x2="0" y2="0" stroke="red" id="horiz"/>
+		<line class="dashed" x1="0" y1="0" x2="0" y2="0" stroke="red" id="vert"/>
+		<line class="dashed" x1="0" y1="0" x2="0" y2="0" stroke="blue" id="endhoriz"/>
+		<line class="dashed" x1="0" y1="0" x2="0" y2="0" stroke="blue" id="endvert"/>
+		<line x1="0" y1="190" x2="0" y2="190" stroke="blue" id="str2width"/>
+     </svg>
+   </td>
+  </tr>
+ </table>
+</body>
+</html>
+

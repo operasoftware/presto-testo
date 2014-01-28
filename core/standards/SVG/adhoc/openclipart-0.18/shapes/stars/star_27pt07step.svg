@@ -1,0 +1,45 @@
+<?xml version="1.0" ?>
+<svg height="100" width="100">
+  <metadata>
+    <rdf:RDF xmlns:cc="http://web.resource.org/cc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+      <cc:Work rdf:about="">
+        <dc:title>gramastar</dc:title>
+        <dc:description></dc:description>
+        <dc:subject>
+          <rdf:Bag>
+            <rdf:li>stars</rdf:li>
+            <rdf:li>shapes</rdf:li>
+            <rdf:li>magick</rdf:li>
+            <rdf:li>geometry</rdf:li>
+          </rdf:Bag>
+        </dc:subject>
+        <dc:publisher>
+          <cc:Agent rdf:about="http://www.openclipart.org/">
+            <dc:title>Open Clip Art Library</dc:title>
+          </cc:Agent>
+        </dc:publisher>
+        <dc:creator>
+          <cc:Agent>
+            <dc:title>codifiedivining</dc:title>
+          </cc:Agent>
+        </dc:creator>
+        <dc:rights>
+          <cc:Agent>
+            <dc:title>codifiedivining</dc:title>
+          </cc:Agent>
+        </dc:rights>
+        <dc:date></dc:date>
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+        <cc:license rdf:resource="http://web.resource.org/cc/PublicDomain"/>
+        <dc:language>en</dc:language>
+      </cc:Work>
+      <cc:License rdf:about="http://web.resource.org/cc/PublicDomain">
+        <cc:permits rdf:resource="http://web.resource.org/cc/Reproduction"/>
+        <cc:permits rdf:resource="http://web.resource.org/cc/Distribution"/>
+        <cc:permits rdf:resource="http://web.resource.org/cc/DerivativeWorks"/>
+      </cc:License>
+    </rdf:RDF>
+  </metadata>
+  <path d="M 50.0,90.0 L 89.9323263309,47.6742068436 L 45.356283435,10.2704656903 L 10.6076898795,56.9459271067 L 59.2246348297,88.9217948232 L 88.3195804926,38.5278706916 L 36.319194267,12.4122951686 L 13.2713557248,65.8431906416 L 67.951967208,85.7453056129 L 84.6410161514,30.0 L 28.0196408772,16.5804875435 L 17.9150722898,73.8863436681 L 75.7115043875,80.6417777248 L 79.0949456629,22.5503344853 L 20.9050543371,22.5503344853 L 24.2884956125,80.6417777248 L 82.0849277102,73.8863436681 L 71.9803591228,16.5804875435 L 15.3589838486,30.0 L 32.048032792,85.7453056129 L 86.7286442752,65.8431906416 L 63.680805733,12.4122951686 L 11.6804195074,38.5278706916 L 40.7753651703,88.9217948232 L 89.3923101205,56.9459271067 L 54.643716565,10.2704656903 L 10.0676736691,47.6742068436 L 50.0,90.0Z" fill="none" stroke="black" stroke-width="0.1" transform="matrix(1 0 0 -1 0 100)"/>
+</svg>

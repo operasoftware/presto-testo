@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1 Full//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11-flat.dtd">
+<svg version="1.1" baseProfile="full" id="svg-root" width="100%" height="100%" viewBox="0 0 480 360" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <!--========================================================================-->
+  <!--=  Copyright 2006 World Wide Web Consortium, (Massachusetts          =-->
+  <!--=  Institute of Technology, European Research Consortium for         =-->
+  <!--=  Informatics and Mathematics (ERCIM), Keio University).            =-->
+  <!--=  All Rights Reserved.                                              =-->
+  <!--=  See http://www.w3.org/Consortium/Legal/.                          =-->
+  <!--========================================================================-->
+  <!-- NOTE:  CVS will automatically update the                             -->
+  <!--        "$RCSfile$" and "$Revision$"         -->
+  <!--        fields in the file.                                           -->
+  <!--        There is no need to update this information.                  -->
+  <!-- =====================================================================-->
+  <SVGTestCase xmlns="http://www.w3.org/2000/02/svg/testsuite/description/" reviewer="[reviewer]" owner="ED" 
+   desc="[desc]" status="empty" version="$Revision$" testname="$RCSfile$">
+    <OperatorScript>
+      <Paragraph>
+                Put your testing instructions here.
+                Add other Paragraph elements as required
+      </Paragraph>
+    </OperatorScript>
+  </SVGTestCase>
+  <title id="test-title">$RCSfile$</title>
+  <!--======================================================================-->
+  <!--Content of Test Case follows...                  =====================-->
+  <!--======================================================================-->
+  <g id="test-body-content" fill="yellow">
+		<defs>
+			<linearGradient id="yellowgreen" x1="0" y1="0" x2="0" y2="1">
+				<stop stop-color="yellow" offset="0"/>
+				<stop stop-color="green" offset="0.5"/>
+				<stop stop-color="yellow" offset="1"/>
+			</linearGradient>
+			<linearGradient id="bluegreen">
+				<stop stop-color="blue" offset="0"/>
+				<stop stop-color="green" offset="1"/>
+			</linearGradient>
+			<pattern id="simple" width="100%" height="100%" viewBox="0 0 10 10">
+				<circle cx="5" cy="5" r="2.5" fill="red"/>
+			</pattern>
+			
+			<pattern id="TrianglePattern" patternUnits="userSpaceOnUse"
+             x="0" y="0" width="100" height="100"
+             viewBox="0 0 10 10" >
+				<path d="M 0 0 L 7 0 L 3.5 7 z" fill="red" stroke="blue" />
+			</pattern>
+			
+			<filter id="blur" filterUnits="objectBoundingBox">
+				<feGaussianBlur stdDeviation="1"/>
+			</filter>
+			<filter id="turb" filterRes="48 48" filterUnits="objectBoundingBox">
+				<feTurbulence type="turbulence" baseFrequency="0.05" numOctaves="2"/>
+			</filter>
+			
+			<mask id="mask" x="0" y="0" width="100%" height="100%" maskContentUnits="objectBoundingBox">
+			  <rect x="0" y="0" width="100%" height="100%" fill="url(#yellowgreen)"  />
+			</mask>
+			<mask id="othermask" x="0" y="0" width="100%" height="100%" maskContentUnits="objectBoundingBox">
+			  <circle cx="50%" cy="50%" r="20%" fill="url(#simple) red"/>
+			</mask>
+			
+			<clipPath id="clip" clipPathUnits="objectBoundingBox">
+				<circle cx="0.5" cy="0.5" r="0.5"/>
+			</clipPath>
+			
+			<clipPath id="clip2" clipPathUnits="objectBoundingBox">
+				<text font-size="0.3" x="0" y="0.5">SVG</text>
+			</clipPath>
+			
+			<clipPath id="clip3">
+				<circle cx="50" cy="50" r="50"/>
+			</clipPath>
+			
+			<clipPath id="clip4">
+				<text font-size="32" x="0" y="50px">SVG</text>
+			</clipPath>
+			
+			<clipPath id="clip5" clipPathUnits="objectBoundingBox" clip-path="url(#clip6)">
+			  <circle cx="0.5" cy="0.5" r="0.25"/>
+			</clipPath>
+			<clipPath id="clip6" clipPathUnits="objectBoundingBox">
+			  <rect x="0.1" y="0.1" width=".5" height=".4"/>
+			</clipPath>
+		</defs>
+		<rect id="rect" x="10" y="10" width="100" height="100" fill="green"/>
+		<image id="img" xlink:href="image1_b.png" x="120" y="10" width="100" height="100" preserveAspectRatio="none"/>
+		<circle id="circle" cx="60" cy="170" r="50"/>
+		<use id="int-use" xlink:href="#circle" fill="blue" transform="translate(110, 0)"/>
+		<use id="ext-use" xlink:href="../struct-dom-08-f.svg#test" x="300" y="110"/>
+		
+  </g>
+  <text id="revision" x="10" y="340" font-size="40" stroke="none" fill="black">$Revision$</text>
+  <rect id="test-frame" x="1" y="1" width="478" height="358" fill="none" stroke="#000"/>
+</svg>

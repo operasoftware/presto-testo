@@ -1,0 +1,112 @@
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1280" height="720" viewBox="0 0 1280 720" id="rootsvg" onload="initEpg();">
+<script xlink:href="/resources/fps.js"/>
+<script><![CDATA[
+
+var NUM_CHANNELS=5
+var NUM_PROGRAMS=20
+
+function initEpg() {
+  // Find the program template
+  var programClone = document.getElementById("EpgMagazineViewProgramTemplate").cloneNode(true);
+  programClone.setAttribute("display", "block");
+
+  // Find the channel template
+  var channelClone = document.getElementById("ChannelTemplate").cloneNode(true);
+  channelClone.setAttribute("display", "block");
+
+  // Find the node where we will hook in the channels.
+  var epgContentNode = document.getElementById("epgContent");
+
+  var programHeight = 63;
+  var programWidth = 210;
+  var startX = 0;
+  var startY = 0;
+  var groupPrograms = true;
+
+  for (cn=0; cn < NUM_CHANNELS; cn++) {
+    var channel = channelClone.cloneNode(true);
+    var xPos = startX + programWidth * cn;
+    channel.setAttribute("transform", "translate(" + xPos + ",0)");
+    for (pn=0; pn < NUM_PROGRAMS; pn++) {
+      var program = programClone.cloneNode(true);
+      var yPos = startY + programHeight * pn;
+      program.setAttribute("transform", "translate(0," + yPos + ")");
+      channel.appendChild(program);
+    }
+    channel.setAttribute("buffered-rendering", "static");
+    epgContentNode.appendChild(channel);
+  }
+  document.documentElement.targetFps=100;
+  checkfps(2000);
+}
+
+]]></script>
+
+<defs>
+            <linearGradient id="progressGradient" x1="0" y1="0" x2="0" y2="1">
+              <stop stop-color="#1870b3" offset="0"/>
+              <stop stop-color="#005393" offset="1"/>
+            </linearGradient>
+            <linearGradient id="progressBackgroundGradient" x1="0" y1="0" x2="0" y2="1">
+              <stop stop-color="#4e4e4e" offset="0"/>
+              <stop stop-color="#171717" offset="1"/>
+            </linearGradient>
+            <linearGradient id="newDayGradient" x1="1" y1="0" x2="1" y2="1" spreadMethod="pad">
+              <stop offset="0.01" stop-color="#bcc2c6" stop-opacity="1"/>
+              <stop offset="0.01" stop-color="#dce8f2" stop-opacity="1"/>
+              <stop offset="0.7" stop-color="#dce8f2" stop-opacity="0"/>
+            </linearGradient>
+</defs>
+<g id="EpgMagazineViewProgramTemplate" width="null" height="63" themeClass="missingProgramFocused" display="none" transform="translate(0,0)">
+                                    <rect id="newDayBg" x="0" y="0" fill="url(#newDayGradient)" width="212" height="61" opacity="0"/>
+                                    <rect id="separatorLine" x="15" y="60" width="180" height="1" fill="#b6bbbe" opacity="1"/>
+                                    <rect id="progressbarBg" x="0" y="0" height="61" width="212" fill="url(#progressBackgroundGradient)" opacity="1"/>
+                                    <rect id="progressbar" x="0" y="0" height="61" width="100" fill="url(#progressGradient)" opacity="1"/>
+                                    <g transform="translate(10,13)">
+                                      <text id="epgProgramStartTime" x="5" y="11" fill="#1a6eae" font-size="16" font-family="EricssonSansBold">05:00</text>
+                                      <g id="epgProgramTitleWrapper" transform="translate(0,0)">
+                                        <textArea x="5" y="0" width="150" height="60" overflow="hidden" line-increment="20" font-size="16" font-family="EricssonSansBold">
+                                          <tspan id="epgProgramTimeSpacing" xml:space="preserve">         </tspan>
+                                          <tspan id="epgProgramTitle" fill="#4f4f4f">Road wars</tspan>
+                                        </textArea>
+                                      </g>
+                                    </g>
+                                    <image id="tomorrowIcon" width="14" height="7" x="180" y="17" xlink:href="arrow-tomorrow.png" opacity="0"/>
+                                    <image id="yesterdayIcon" width="14" height="7" x="180" y="17" xlink:href="arrow-yesterday.png" opacity="0"/>
+</g>
+<g id="ChannelTemplate" display="none" transform="translate(0,0)"/>
+
+  <g id="root">
+    <g themeClass="epgView" id="EpgMagazineView" display="block" opacity="1">
+      <g layerInfo="hardware, id=12" x="0" y="0" width="1230" height="720" display="block" id="EpgMagazineViewLayer" opacity="0.8">
+
+	<g id="EpgMagazineViewBackground" display="block" transform="translate(80,0)">
+          <g id="EpgMagazineViewBackgroundHorizontal" transform="scale(1120,1)" display="block"/>
+          <g id="EpgMagazineViewBackgroundResize" transform="translate(0,0)">
+            <rect themeClass="Background" x="-4" y="36" margin-right="-4" height="497" rx="11" ry="11" fill="#000" fill-opacity="1" display="block" width="1128"/>
+          </g>
+	</g>
+	<g transform="translate(80,100)">
+          <g id="EpgMagazineViewContent" x="80" y="104" height="426" width="1120">
+	    <clipPath id="clipPath9">
+	      <rect x="0" y="0" width="1120" height="426"/>
+	    </clipPath>
+            <g transform="translate(0,0)" x="0" y="0" clip-path="url(#clipPath9)">
+              <g id="epgContent" display="block">
+		<animateTransform id="viewboxTransform" attributeName="transform" type="translate" dur="6s" calcMode="linear" fill="freeze" repeatCount="indefinite" values="0,0;0,-400;0,0"/>
+		<g id="EpgMagazineViewCurrentTimeLine" display="block" transform="translate(0,2)">
+                  <g id="EpgMagazineViewCurrentTimeLineResize">
+                    <rect themeClass="progressBarTimeLine" margin-right="0" y="200" height="2" fill="#5B8090" display="block" width="3584"/>
+                  </g>
+		</g>
+	      </g>
+	    </g>
+	  </g>
+	</g>
+      </g>
+    </g>
+  </g>
+<text id="f" x="10" y="680"></text>
+<text id="result" x="10" y="700"></text>
+</svg>

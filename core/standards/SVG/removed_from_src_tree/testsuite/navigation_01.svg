@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 800 600" onload="init(evt);" font-size="32">
+
+	<defs>
+		<script><![CDATA[
+			function init(evt)
+			{
+				var list = ['first', 'second', 'third', 'fourth', 'fifth'];
+				for(var i = 0; i < list.length; i++)
+				{
+					var elm = document.getElementById(list[i]);
+					//alert(list[i] + ":" + elm);
+					elm.addEventListener('focus', focusHandler, false);
+					elm.addEventListener('blur', focusOutHandler, false);
+				}
+			}
+			
+			function focusHandler(evt)
+			{
+				evt.target.setAttribute("fill", "red");
+			}
+			
+			function focusOutHandler(evt)
+			{
+				evt.target.removeAttribute("fill");
+			}
+		]]></script>
+	</defs>
+	
+	<a id="first" xlink:href="http://www.opera.com">
+		<text x="10" y="40">www.opera.com</text>
+	</a>
+
+	<a id="second" xlink:href="http://www.google.com">
+		<text x="10" y="80">www.google.com</text>
+	</a>
+
+	<a id="third" xlink:href="http://slashdot.org">
+		<text x="10" y="120">slashdot.org</text>
+	</a>
+
+	<a id="fourth" xlink:href="http://www.apple.com">
+		<text x="10" y="160">www.apple.com</text>
+	</a>
+
+	<text x="10" y="200" onactivate="javascript:window.location.href='www.microsoft.com';">www.microsoft.com
+		<set attributeName="fill" to="red" begin="focusin" end="focusout"/>
+	</text>
+
+	<!-- We will get two stops here since <a> is always focusable, we will first focus the <g> element
+	     since it has eventHandlers and then the <a> element. -->
+	<g id="fifth">
+		<a xlink:href="http://www.mozilla.org" onfocusin="this.setAttribute('fill', 'blue');" onfocusout="this.removeAttribute('fill');">
+			<text x="10" y="240">www.mozilla.org</text>
+		</a>
+	</g>
+	
+	<text x="10" y="280">www.cnn.com
+		<set attributeName="fill" to="red" begin="focusin" end="focusout"/>
+	</text>
+	
+</svg>

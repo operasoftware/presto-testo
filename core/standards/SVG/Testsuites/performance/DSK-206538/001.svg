@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" 
+viewBox="0 0 1000 700" onload="window.setTimeout('generateUseInstances(10000)',100)">
+    <title>testing the performance of use elements</title>
+		<script type="text/ecmascript">
+			<![CDATA[
+			function generateUseInstances(nrEls) {
+			var docEl = document.documentElement;
+			var suspendHandle;
+			try {
+				suspendHandle = docEl.suspendRedraw(1000000);
+			}
+			catch(er) { }
+			document.getElementById("header").firstChild.nodeValue = "Generating "+nrEls+" <use/>; instances per script";
+			var before = new Date();
+			for (var i=0; i<nrEls; i++) {
+				var useInstance = document.createElementNS("http://www.w3.org/2000/svg","use");
+				var x = parseInt(Math.random()*1000);
+				var y = 50 + parseInt(Math.random()*600);
+				useInstance.setAttributeNS(null,"x",x);
+				useInstance.setAttributeNS(null,"y",y);
+				useInstance.setAttributeNS("http://www.w3.org/1999/xlink","href","#originalGroup");
+				docEl.appendChild(useInstance);
+			}
+			try {
+				docEl.unsuspendRedraw(suspendHandle);
+			}
+			catch(er) { }
+			var after = new Date();
+                        var duration = after.getTime() - before.getTime();
+			document.getElementById("time").firstChild.nodeValue = "Time it took: "+duration+" ms";
+                        try{top.opener.rr(duration);}catch(e){}
+			}
+			]]>
+		</script>
+    <defs>
+    	<g id="originalGroup" fill="black"><rect x="-10" y="-10" width="20" height="20"/><rect x="-10" y="-10" width="20" height="20" transform="rotate(30)"/><rect x="-10" y="-10" width="20" height="20" transform="rotate(60)"/></g>
+    </defs>
+    <text id="header" x="500" y="30" font-size="15" text-anchor="middle">Generating xx &lt;use/&gt; instances per script</text>
+	  <text id="time" x="500" y="690" font-size="15" text-anchor="middle">Time it took: </text>
+</svg>

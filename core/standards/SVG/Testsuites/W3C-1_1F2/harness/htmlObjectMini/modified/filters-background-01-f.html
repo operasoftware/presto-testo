@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC  "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+      <meta name="keywords" content="W3C SVG 1.1 2nd Edition Test Suite"/>
+      <meta name="description" content="W3C SVG 1.1 2nd Edition Object Test Suite"/>
+      <title>
+	<d:testDescription href='http://www.w3.org/TR/SVG11/filters.html#AccessingBackgroundImage' xmlns='http://www.w3.org/1999/xhtml'>
+      <p>
+        Test background image processing.
+      </p>
+      <p>
+        The first subtest enables background image processing and adds an empty &#x2018;g&#x2019; element 
+        which invokes the ShiftBGAndBlur filter. This filter takes the current accumulated 
+        background image (i.e., the entire reference graphic) as input, shifts its offscreen 
+        down, blurs it, and then writes the result to the canvas. Note that the offscreen for
+        the filter is initialized to transparent black, which allows the already rendered 
+        rectangle, circle and triangle to show through after the filter renders its own 
+        result to the canvas.
+      </p>
+      <p>
+        The second subtest enables background image processing and instead invokes the 
+        ShiftBGAndBlur filter on the inner &#x2018;g&#x2019; element. The accumulated background at the 
+        time the filter is applied contains only the rectangle. Because the children 
+        of the inner &#x2018;g&#x2019; (i.e., the circle and triangle) are not part of the inner &#x2018;g&#x2019; element's 
+        background and because ShiftBGAndBlur ignores SourceGraphic, the children of the inner &#x2018;g&#x2019;
+        do not appear in the result.
+      </p>
+      <p>
+        The third subtest enables background image processing and invokes the ShiftBGAndBlur on the 
+        &#x2018;polygon&#x2019; element that draws the triangle. The accumulated background at the time the filter 
+        is applied contains the rectangle plus the circle ignoring the effect of the &#x2018;opacity&#x2019; 
+        property on the inner &#x2018;g&#x2019; element. (Note that the blurred circle at the bottom does not 
+        let the rectangle show through on its left side. This is due to ignoring the effect of 
+        the &#x2018;opacity&#x2019; property.) Because the triangle itself is not part of the accumulated background 
+        and because ShiftBGAndBlur ignores SourceGraphic, the triangle does not appear in the result.
+      </p>
+      <p>
+        The fourth subtest is the same as the third except that filter ShiftBGAndBlur_WithSourceGraphic is 
+        invoked instead of ShiftBGAndBlur. ShiftBGAndBlur_WithSourceGraphic performs the same effect as 
+        ShiftBGAndBlur, but then renders the SourceGraphic on top of the shifted, blurred background 
+        image. In this case, SourceGraphic is the blue triangle; thus, the result is the same as in 
+        the fourth case except that the triangle now appears.
+      </p>
+    </d:testDescription>
+      </title>
+      <style type="text/css">
+        <!--
+         .bodytext      { font-family:verdana, helvetica, sans-serif; font-size: 12pt; line-height: 125%; text-align: Left; margin-top: 0; margin-bottom: 0 }
+         .pageTitle     { line-height: 150%; font-size: 20pt; font-weight : 900; margin-bottom: 20pt }
+         .pageSubTitle  { color : blue; line-height: 100%; font-size: 24pt; font-weight : 900 }
+         .openChapter   { color : blue; line-height: 125%; font-weight : 900 }
+         .openSection   { color : blue; line-height: 125%; font-weight : 900 }
+         .info          { color : black; line-height: 110%; font-size: 10pt; font-weight : 100 }
+         p              { margin-top:0; margin-bottom:0; padding-top:0; padding-bottom:0 }
+         blockquote     { margin-top:0; margin-bottom:0; padding-top:0; padding-bottom:0 }
+         .opscript      { margin-left: 3%; margin-right: 3%; }
+         .opscript p    { margin-top: 0.7em }
+         .navbar        { background: black; color: white; font-weight: bold }
+ 
+         a,a:visited    { color: blue }
+        -->
+      </style>
+      
+    </head>
+  <body class="bodytext">
+
+<table align="center" border="0" cellspacing="0" cellpadding="10">
+  <tr>
+    <td align="center" colspan="3">
+      <table border="0" cellpadding="8">
+        <tr>
+
+        </tr>
+        <tr  class="navbar">
+          <td align="center">
+            SVG Image - The test
+          </td>
+          <td align="center">
+            PNG Image - The reference
+          </td>
+        </tr>
+        <tr>
+          <td align="right" >
+            <object id="test" data="http://t/core/standards/SVG/Testsuites/W3C-1_1F2/harness/htmlObjectMini/modified/svg/test/filters-background-01-f.svg" width="480" height="360" type="image/svg+xml"> </object>
+          </td>
+          <td align="left">
+            <img id="ref" alt="raster image of filters-background-01-f.svg" src="http://t/core/standards/SVG/Testsuites/W3C-1_1F2/harness/htmlObjectMini/modified/svg/ref/filters-background-01-f.png " width="480" height="360"/>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<h2 id="testdescription">
+			    Test Description
+			  </h2>
+
+			  <div>
+			<p>
+				<d:testDescription href='http://www.w3.org/TR/SVG11/filters.html#AccessingBackgroundImage' xmlns='http://www.w3.org/1999/xhtml'>
+      <p>
+        Test background image processing.
+      </p>
+      <p>
+        The first subtest enables background image processing and adds an empty &#x2018;g&#x2019; element 
+        which invokes the ShiftBGAndBlur filter. This filter takes the current accumulated 
+        background image (i.e., the entire reference graphic) as input, shifts its offscreen 
+        down, blurs it, and then writes the result to the canvas. Note that the offscreen for
+        the filter is initialized to transparent black, which allows the already rendered 
+        rectangle, circle and triangle to show through after the filter renders its own 
+        result to the canvas.
+      </p>
+      <p>
+        The second subtest enables background image processing and instead invokes the 
+        ShiftBGAndBlur filter on the inner &#x2018;g&#x2019; element. The accumulated background at the 
+        time the filter is applied contains only the rectangle. Because the children 
+        of the inner &#x2018;g&#x2019; (i.e., the circle and triangle) are not part of the inner &#x2018;g&#x2019; element's 
+        background and because ShiftBGAndBlur ignores SourceGraphic, the children of the inner &#x2018;g&#x2019;
+        do not appear in the result.
+      </p>
+      <p>
+        The third subtest enables background image processing and invokes the ShiftBGAndBlur on the 
+        &#x2018;polygon&#x2019; element that draws the triangle. The accumulated background at the time the filter 
+        is applied contains the rectangle plus the circle ignoring the effect of the &#x2018;opacity&#x2019; 
+        property on the inner &#x2018;g&#x2019; element. (Note that the blurred circle at the bottom does not 
+        let the rectangle show through on its left side. This is due to ignoring the effect of 
+        the &#x2018;opacity&#x2019; property.) Because the triangle itself is not part of the accumulated background 
+        and because ShiftBGAndBlur ignores SourceGraphic, the triangle does not appear in the result.
+      </p>
+      <p>
+        The fourth subtest is the same as the third except that filter ShiftBGAndBlur_WithSourceGraphic is 
+        invoked instead of ShiftBGAndBlur. ShiftBGAndBlur_WithSourceGraphic performs the same effect as 
+        ShiftBGAndBlur, but then renders the SourceGraphic on top of the shifted, blurred background 
+        image. In this case, SourceGraphic is the blue triangle; thus, the result is the same as in 
+        the fourth case except that the triangle now appears.
+      </p>
+    </d:testDescription>
+				</p>
+			  </div>
+<div class="opscript">
+			    <h2 id="operatorscript">
+			      Operator Script
+			    </h2>
+			    <div>
+				   <p><d:operatorScript xmlns='http://www.w3.org/1999/xhtml'>
+      <p>
+        Run the test. No interaction required.
+      </p>
+    </d:operatorScript></p>
+  </div>
+			  <h2 id="passcriteria">
+			    Pass Criteria
+			  </h2>
+			  <div>
+			<p>
+			<d:passCriteria xmlns='http://www.w3.org/1999/xhtml'>
+      <p>
+        The test is passed if:
+      </p>
+      <ul>
+        <li>each blue rectangle has the same shapes twice inside, once without filters applied, once with (blurred)</li>
+        <li>from left to right, the blue rectangles contain the following shapes: [rectangle, circle, triangle], [rectangle], [rectangle, circle], [rectangle, circle, triangle]</li>
+      </ul>
+    </d:passCriteria>
+			      </p>
+			  </div> 
+
+ 
+
+</div>
+
+</div>
+</body>
+</html>
+</body> </html>

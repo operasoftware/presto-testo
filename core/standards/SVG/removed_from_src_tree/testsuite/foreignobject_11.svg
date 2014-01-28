@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 600 1000" preserveAspectRatio="none">
+	<foreignObject id="foo" x="0" y="0" width="360" height="250">
+		<html id="root" xmlns="http://www.w3.org/1999/xhtml">
+			<body bgcolor="red"><h1><a href="moo">Hello red!</a></h1>
+		</body>
+		</html>
+	</foreignObject>
+	<foreignObject id="foo1" transform="translate(0 300)" width="360" height="250">
+		<html id="root2" xmlns="http://www.w3.org/1999/xhtml">
+			<body bgcolor="blue"><h1><a href="moo">Hello blue!</a></h1>
+		</body>
+		</html>
+	</foreignObject>
+	<foreignObject id="foo2" transform="rotate(35) translate(500 300)" width="360" height="250">
+		<html id="root3" xmlns="http://www.w3.org/1999/xhtml">
+			<body bgcolor="green"><h1><a href="moo">Hello green!</a></h1>
+		</body>
+		</html>
+	</foreignObject>
+	<foreignObject id="foo3" x="400" width="360" height="250">
+		<html id="root4" xmlns="http://www.w3.org/1999/xhtml">
+			<body bgcolor="yellow"><h1><a href="moo">Hello yellow!</a></h1>
+		</body>
+		</html>
+	</foreignObject>
+</svg>

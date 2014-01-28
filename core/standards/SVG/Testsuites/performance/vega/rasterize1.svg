@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+<title>Performance test for rasterization (simple polylines)</title>
+<script xlink:href="/resources/fps.js"/>
+<script type="text/ecmascript"><![CDATA[
+
+window.onload = function() {
+	checkfps(1000);
+}
+
+]]></script>
+<defs>
+   <linearGradient id="MyGradient">
+        <stop offset="5%" stop-color="navy" />
+        <stop offset="95%" stop-color="blue" />
+   </linearGradient>
+   <polyline id="wigglything" fill="none" stroke="#eee" stroke-width="5" stroke-linejoin="round">
+      <animate attributeName="points"
+               values="100,110 200,120 100,130 200,140 100,150 200,160 100,170 200,180 100,190 200,200 100,210 200,220 100,230 200,240 100,250 200,260 100,270 200,280 100,290 200,300;
+                       200,220 100,240 200,260 100,280 200,300 100,320 200,340 100,360 200,380 100,400 200,420 100,440 200,460 100,480 200,500 100,520 200,540 100,560 200,580 100,600;
+                       100,110 200,120 100,130 200,140 100,150 200,160 100,170 200,180 100,190 200,200 100,210 200,220 100,230 200,240 100,250 200,260 100,270 200,280 100,290 200,300;"
+               dur="1s" repeatCount="indefinite" />
+   </polyline>
+</defs>
+<text id="result" x="0" y="30">NOT TESTED (please enable Javascript)</text>
+<text id="f" x="0" y="50"></text>
+<g id="AnimationContainer">
+   <use x="0" y="0" xlink:href="#wigglything" />
+   <use x="50" y="0" xlink:href="#wigglything" />
+   <use x="100" y="0" xlink:href="#wigglything" />
+   <use x="150" y="0" xlink:href="#wigglything" />
+   <use x="200" y="0" xlink:href="#wigglything" />
+   <use x="250" y="0" xlink:href="#wigglything" />
+   <use x="300" y="0" xlink:href="#wigglything" />
+   <use x="350" y="0" xlink:href="#wigglything" />
+   <use x="400" y="0" xlink:href="#wigglything" />
+   <use x="450" y="0" xlink:href="#wigglything" />
+   <use x="500" y="0" xlink:href="#wigglything" />
+   <use x="550" y="0" xlink:href="#wigglything" />
+   <use x="600" y="0" xlink:href="#wigglything" />
+</g>
+</svg>

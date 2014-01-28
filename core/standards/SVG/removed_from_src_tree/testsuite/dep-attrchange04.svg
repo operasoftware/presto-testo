@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ev="http://www.w3.org/2001/xml-events">
+  <defs>
+    <pattern id="subpattern" width="0.1" height="0.1">
+      <rect id="patrect" x="0" y="0" width="39" height="9" fill="#f00"/>
+    </pattern>
+    <pattern id="pat" xlink:href="#subpattern" width="0.1" height="0.1"></pattern>
+  </defs>
+  <rect fill="url(#pat)" x="10" y="20" width="400" height="100" onclick="test()"/>
+  <text x="15" y="150" font-size="20">Click once and it should be fully green</text>
+  <script>
+    function test()
+    {
+      var g = document.getElementById('patrect');
+      g.setAttributeNS(null, "fill", "#0f0");
+    }
+  </script>
+</svg>

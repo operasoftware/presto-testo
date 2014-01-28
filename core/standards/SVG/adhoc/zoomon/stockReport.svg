@@ -1,0 +1,720 @@
+<!--======================================================================-->
+<!--=  Copyright 2003 ZOOMON Mobile Solutions AB,                        =-->
+<!--=  (ZOOMON Stockholm Sweden)                                         =-->
+<!--=  All Rights Reserved. ZOOMON reserves all right, title, and        =-->
+<!--=  interest in the material herein.                                  =-->
+<!--=  User shall not remove or obscure any copyright notices or         =-->
+<!--=  proprietary legends contained within this source file.            =-->
+<!--======================================================================-->
+<!--=  Production & Design: Jakob Cederquist                             =-->
+<!--======================================================================-->
+<svg version="1.1" baseProfile="tiny" width="542" height="390" viewBox="0 348 542 390">
+	<g id="intro" stroke="rgb(0,0,0)" transform="translate(0 265) scale(1.36 1.36)">
+		<rect id="background" fill="rgb(250,250,250)" stroke="none" x="0" y="0"
+			height="400" width="400">
+			<animateColor attributeName="fill" begin="2s" dur="1.5s" fill="freeze"
+				from="rgb(250,250,250)" to="rgb(50,50,50)"/>
+			<animateColor attributeName="fill" begin="5s" dur="0.8s" fill="freeze"
+				from="rgb(50,50,50)" to="rgb(255,255,255)"/>
+		</rect>
+		<g id="rays" visibility="hidden" fill="rgb(250,250,250)" stroke="none">
+			<defs>
+				<path id="ray" d="M200 200 L0 -40 L-40 0 L200 200"/>
+			</defs>
+			<use x="0" y="0" xlink:href="#ray">
+				<animateTransform attributeName="transform" keyTimes="0; 0.7; 0.9; 1"
+					type="rotate" begin="3s" dur="3s"
+					values="230 200 200;260 200 200;340 200 200;320 200 200"/>
+				<set attributeName="visibility" begin="3.2s" end=" 6s" to="visible"/>
+			</use>
+			<use x="0" y="0" xlink:href="#ray">
+				<animateTransform attributeName="transform" keyTimes="0; 0.7; 0.9; 1"
+					type="rotate" begin="3s" dur="3s"
+					values="30 200 200;60 200 200;140 200 200;120 200 200"/>
+				<set attributeName="visibility" begin="3.2s" end=" 6s" to="visible"/>
+			</use>
+			<use x="0" y="0" xlink:href="#ray">
+				<animateTransform attributeName="transform" keyTimes="0; 0.7; 0.9; 1"
+					type="rotate" begin="3s" dur="3s"
+					values="200 200 200;230 200 200;310 200 200;290 200 200"/>
+				<set attributeName="visibility" begin="3.3s" end=" 6s" to="visible"/>
+			</use>
+			<use x="0" y="0" xlink:href="#ray">
+				<animateTransform attributeName="transform" keyTimes="0; 0.7; 0.9; 1"
+					type="rotate" begin="3s" dur="3s"
+					values="120 200 200;150 200 200;230 200 200;210 200 200"/>
+				<set attributeName="visibility" begin="3.4s" end=" 6s" to="visible"/>
+			</use>
+			<use x="0" y="0" xlink:href="#ray">
+				<animateTransform attributeName="transform" keyTimes="0; 0.7; 0.9; 1"
+					type="rotate" begin="3s" dur="3s"
+					values="310 200 200;340 200 200;420 200 200;400 200 200"/>
+				<set attributeName="visibility" begin="3.5s" end=" 6s" to="visible"/>
+			</use>
+			<use x="0" y="0" xlink:href="#ray">
+				<animateTransform attributeName="transform" keyTimes="0; 0.7; 0.9; 1"
+					type="rotate" begin="3s" dur="3s"
+					values="165 200 200;195 200 200;275 200 200;255 200 200"/>
+				<set attributeName="visibility" begin="3.6s" end=" 6s" to="visible"/>
+			</use>
+			<use x="0" y="0" xlink:href="#ray">
+				<animateTransform attributeName="transform" keyTimes="0; 0.7; 0.9; 1"
+					type="rotate" begin="3s" dur="3s"
+					values="280 200 200;310 200 200;390 200 200;370 200 200"/>
+				<set attributeName="visibility" begin="3.7s" end=" 6s" to="visible"/>
+			</use>
+			<use x="0" y="0" xlink:href="#ray">
+				<animateTransform attributeName="transform" keyTimes="0; 0.7; 0.9; 1"
+					type="rotate" begin="3s" dur="3s"
+					values="150 200 200;180 200 200;260 200 200;240 200 200"/>
+				<set attributeName="visibility" begin="3.8s" end=" 6s" to="visible"/>
+			</use>
+			<use x="0" y="0" xlink:href="#ray">
+				<animateTransform attributeName="transform" keyTimes="0; 0.7; 0.9; 1"
+					type="rotate" begin="3s" dur="3s"
+					values="70 200 200;100 200 200;180 200 200;160 200 200"/>
+				<set attributeName="visibility" begin="3.9s" end=" 6s" to="visible"/>
+			</use>
+			<use x="0" y="0" xlink:href="#ray">
+				<animateTransform attributeName="transform" keyTimes="0; 0.7; 0.9; 1"
+					type="rotate" begin="3s" dur="3s"
+					values="340 200 200;370 200 200;450 200 200;430 200 200"/>
+				<set attributeName="visibility" begin="4s" end=" 6s" to="visible"/>
+			</use>
+		</g>
+		<g id="circles" stroke="none">
+			<circle fill="rgb(200,200,200)" cx="200" cy="200" r="50">
+				<animateTransform attributeName="transform" begin="0s" dur="2s" fill="freeze"
+					type="translate" additive="sum" from="200 200" by="0 0"/>
+				<animateTransform attributeName="transform" keyTimes="0; 0.5; 0.9; 1"
+					begin="0s" dur="3s" fill="freeze" calcMode="linear" type="scale"
+					additive="sum" values="6 6;6 6;1 1;1 1"/>
+				<animateTransform attributeName="transform" begin="0s" dur="0.5s" fill="freeze"
+					type="translate" additive="sum" from="-200 -200" by="0 0"/>
+				<animateColor attributeName="fill" begin="5s" dur="1s" fill="freeze"
+					from="rgb(100,100,100)" to="rgb(255,255,255)"/>
+			</circle>
+			<circle fill="rgb(150,150,150)" cx="200" cy="200" r="50">
+				<animateTransform attributeName="transform" begin="0s" dur="2s" fill="freeze"
+					type="translate" additive="sum" from="200 200" by="0 0"/>
+				<animateTransform attributeName="transform" keyTimes="0; 0.4; 0.8; 1"
+					begin="0s" dur="3s" fill="freeze" calcMode="linear" type="scale"
+					additive="sum" values="6 6;6 6;0.1 0.1;0.1 0.1"/>
+				<animateTransform attributeName="transform" begin="0s" dur="0.5s" fill="freeze"
+					type="translate" additive="sum" from="-200 -200" by="0 0"/>
+				<set attributeName="visibility" begin="2.4s" to="hidden"/>
+			</circle>
+			<circle fill="rgb(100,100,100)" cx="200" cy="200" r="50">
+				<animateTransform attributeName="transform" begin="0s" dur="2s" fill="freeze"
+					type="translate" additive="sum" from="200 200" by="0 0"/>
+				<animateTransform attributeName="transform" keyTimes="0; 0.3; 0.7; 1"
+					begin="0s" dur="3s" fill="freeze" calcMode="linear" type="scale"
+					additive="sum" values="6 6;6 6;0.1 0.1;0.1 0.1"/>
+				<animateTransform attributeName="transform" begin="0s" dur="0.5s" fill="freeze"
+					type="translate" additive="sum" from="-200 -200" by="0 0"/>
+				<set attributeName="visibility" begin="2.1s" to="hidden"/>
+			</circle>
+			<circle fill="rgb(50,50,50)" cx="200" cy="200" r="50">
+				<animateTransform attributeName="transform" begin="0s" dur="2s" fill="freeze"
+					type="translate" additive="sum" from="200 200" by="0 0"/>
+				<animateTransform attributeName="transform" keyTimes="0; 0.2; 0.6; 1"
+					begin="0s" dur="3s" fill="freeze" calcMode="linear" type="scale"
+					additive="sum" values="6 6;6 6;0.1 0.1;0.1 0.1"/>
+				<animateTransform attributeName="transform" begin="0s" dur="0.5s" fill="freeze"
+					type="translate" additive="sum" from="-200 -200" by="0 0"/>
+				<set attributeName="visibility" begin="1.8s" to="hidden"/>
+			</circle>
+			<circle fill="rgb(0,0,0)" cx="200" cy="200" r="50">
+				<animateTransform attributeName="transform" begin="0s" dur="2s" fill="freeze"
+					type="translate" additive="sum" from="200 200" by="0 0"/>
+				<animateTransform attributeName="transform" keyTimes="0; 0.1; 0.5; 1"
+					begin="0s" dur="3s" fill="freeze" calcMode="linear" type="scale"
+					additive="sum" values="6 6;6 6;0.1 0.1;0.1 0.1"/>
+				<animateTransform attributeName="transform" begin="0s" dur="0.5s" fill="freeze"
+					type="translate" additive="sum" from="-200 -200" by="0 0"/>
+				<set attributeName="visibility" begin="1.5s" to="hidden"/>
+			</circle>
+		</g>
+		<g id="logo" stroke="rgb(0,0,0)" visibility="hidden"
+			transform="scale(0.8 0.8) translate(77 187)">
+			<path fill="rgb(212,212,212)" stroke="none"
+				d="M353.926 88.452 L353.926 37.264 L0 37.264 L0 88.452 z">
+				<animateColor attributeName="fill" begin="6s" dur="0.5s" fill="freeze"
+					from="rgb(255,255,255)" to="rgb(212,212,212)"/>
+				<set attributeName="visibility" begin="6s" dur="4s" to="visible"/>
+			</path>
+			<path fill="rgb(255,255,255)" stroke="rgb(191,191,191)" stroke-width="6"
+				d="M173.315 121.254 C205.969 121.254 232.442 94.781 232.442 62.127 C232.442 29.473 205.97
+					3 173.315 3 C140.66 3 114.188 29.473 114.188 62.127 C114.188 94.781 140.661
+					121.254 173.315 121.254 z">
+				<set attributeName="visibility" begin="3s" dur="7s" to="visible"/>
+			</path>
+			<path fill="rgb(242,242,242)" stroke="rgb(212,212,212)" stroke-width="6"
+				d="M173.412 91.445 C190.503 91.445 204.358 78.318 204.358 62.127 C204.358 45.935 190.503
+					32.809 173.412 32.809 C156.321 32.809 142.465 45.935 142.465 62.127 C142.465
+					78.318 156.321 91.445 173.412 91.445 z">
+				<set attributeName="visibility" begin="3s" dur="7s" to="visible"/>
+			</path>
+			<g stroke="none">
+			<!-- Z -->
+				<path
+					d="M17.96 69.183 L36.175 56.057 L36.175 55.987 L18.452 55.987 L18.452 49.88 L47.686
+						49.88 L47.686 55.986 L29.506 69.112 L29.506 69.182 L48.106 69.182 L48.106
+						75.288 L17.96 75.288 L17.96 69.182 z"/>
+			<!-- o -->
+				<path
+					d="M69.135 58.794 C69.135 51.355 73.311 49.6 80.33 49.6 L92.824 49.6 C99.843 49.6 104.019
+						51.355 104.019 58.794 L104.019 66.375 C104.019 73.815 99.842 75.569
+						92.824 75.569 L80.33 75.569 C73.31 75.569 69.135 73.815 69.135 66.375 L69.135
+						58.794 L69.135 58.794 L77.137 63.953 C77.137 67.639 77.908 69.042 81.593
+						69.042 L91.561 69.042 C95.246 69.042 96.018 67.639 96.018 63.953 L96.018
+						61.216 C96.018 58.058 95.246 56.127 91.14 56.127 L82.015 56.127 C77.909
+						56.127 77.137 58.058 77.137 61.216 L77.137 63.953 L77.137 63.953"/>
+			<!-- o -->
+				<path
+					d="M125.709 58.794 C125.709 51.355 129.886 49.6 136.904 49.6 L149.398 49.6 C156.418
+						49.6 160.593 51.355 160.593 58.794 L160.593 66.375 C160.593 73.815 156.417
+						75.569 149.398 75.569 L136.904 75.569 C129.885 75.569 125.709 73.815 125.709
+						66.375 L125.709 58.794 L125.709 58.794 L133.711 63.953 C133.711 67.639
+						134.483 69.042 138.168 69.042 L148.135 69.042 C151.821 69.042 152.592 67.639
+						152.592 63.953 L152.592 61.216 C152.592 58.058 151.821 56.127 147.714
+						56.127 L138.589 56.127 C134.484 56.127 133.711 58.058 133.711 61.216 L133.711
+						63.953 L133.711 63.953"/>
+			<!-- m -->
+				<path
+					d="M182.846 49.88 L194.814 49.88 L203.623 66.234 L212.432 49.88 L224.4 49.88 L224.4
+						75.289 L216.819 75.289 L216.819 57.039 L216.75 57.039 L206.537 75.289 L200.711
+						75.289 L190.498 57.039 L190.428 57.039 L190.428 75.289 L182.848 75.289
+						L182.848 49.88 z"/>
+			<!-- O -->
+				<path fill="rgb(196,0,0)"
+					d="M246.657 58.794 C246.657 51.355 250.833 49.6 257.852 49.6 L270.346 49.6 C277.365
+						49.6 281.541 51.355 281.541 58.794 L281.541 66.375 C281.541 73.815 277.364
+						75.569 270.346 75.569 L257.852 75.569 C250.832 75.569 246.657 73.815 246.657
+						66.375 L246.657 58.794 L246.657 58.794 L254.658 63.953 C254.658 67.639
+						255.43 69.042 259.116 69.042 L269.083 69.042 C272.768 69.042 273.54 67.639
+						273.54 63.953 L273.54 61.216 C273.54 58.058 272.768 56.127 268.662 56.127
+						L259.537 56.127 C255.431 56.127 254.658 58.058 254.658 61.216 L254.658 63.953
+						L254.658 63.953"/>
+			<!-- N -->
+				<path fill="rgb(196,0,0)"
+					d="M303.793 49.88 L315.866 49.88 L330.501 68.34 L330.571 68.34 L330.571 49.88 L338.362
+						49.88 L338.362 75.289 L326.289 75.289 L311.654 56.829 L311.584 56.829 L311.584
+						75.289 L303.793 75.289 z"/>
+				<set attributeName="visibility" begin="7s" dur="3s" to="visible"/>
+			</g>
+		</g>
+		<g id="a" visibility="hidden" transform="scale(0.35 0.35) translate(325 250)">
+			<path
+				d="M223.1 51.4 L243.1 0 L253.8 0 L274.5 51.4 L263.6 51.2 L248.2 12.3 L234.1 51.4 L223
+					51.4 z"/>
+			<path d="M237.1 39.9 L259.8 39.9 L256.9 31.1 L240.3 31.1 L237.2 39.9 z"/>
+			<animateColor attributeName="fill" begin="7.3s" dur="1s" fill="freeze"
+				from="rgb(255,255,255)" to="rgb(0,0,0)"/>
+			<animateColor attributeName="stroke" begin="7.3s" dur="1s" fill="freeze"
+				from="rgb(255,255,255)" to="rgb(0,0,0)"/>
+			<set attributeName="visibility" begin="7.3s" dur="2.7s" to="visible"/>
+		</g>
+		<g id="presentation" visibility="hidden"
+			transform="scale(0.35 0.35) translate(310 670)">
+			<path d="M10.8 225.2 L0.2 225.2 L0 174 L10.4 173.6 z"/>
+			<path
+				d="M9.4 206 L25.8 205.6 L34.6 202.3 L39.1 194.3 L39.3 184.5 L33.6 176.3 L26 174 L13.7
+					173.8 L10.4 173.6 L10.2 182.8 L21.5 182.8 L27.4 185.5 L28.8 190.8 L25.9 195.9
+					L17.9 197.1 L10.7 197.3 z"/>
+			<path d="M58.6 225.4 L48.3 225.4 L48.3 173.8 L58.5 173.8 L58.7 225.4 z"/>
+			<path
+				d="M58.2 182.6 L74.2 182.8 L77.9 184.2 L79.9 188.5 L78.3 193.2 L73.8 195.2 L66 195.6
+					L58.6 195.6 L58.4 204 L67.8 204 L77.2 203.2 L84.6 200.1 L89.7 193.5 L90.1
+					184.7 L87 178.4 L80 174.5 L72.4 173.9 L57.4 173.9 L58.4 182.7 z"/>
+			<path
+				d="M62.9 202.7 L68.6 206 L74.5 214 L82.1 225.3 L94.4 225.1 L86.2 211.8 L82.1 205.9 L77.2
+					203 L62.9 202.6 z"/>
+			<path
+				d="M100.1 173.8 L100.3 225.4 L139.4 225.6 L139.4 216.8 L110.7 216.6 L110.7 202.7 L136.5
+					202.7 L136.5 193.7 L110.7 193.9 L110.5 182.8 L138.3 182.4 L138.5 174 L100.2
+					173.8 z"/>
+			<path
+				d="M175.5 189 L185.7 188.6 L184.9 182.5 L179.6 176.2 L171.4 173.1 L161.2 173.3 L152.8
+					176.4 L148.5 181.9 L147.5 190.3 L151.2 196.6 L158 201.1 L166.4 203.4 L174.2
+					205.9 L176.9 210 L175.7 214.1 L170.6 217 L164 217 L158.3 214.1 L155.4 207.6
+					L145.4 208.6 L148.7 218.4 L155.9 224.5 L165.3 226.1 L175.3 225.3 L183.1
+					221 L187.2 212.2 L185.8 203 L179.5 196.9 L170.1 193.4 L160.5 190.5 L157.2
+					187.8 L158.2 183.7 L163.1 181.5 L168.4 181.9 L173.1 183.7 L175.2 189 z"/>
+			<path
+				d="M196.4 174 L196.4 225.4 L235.3 225.4 L235.3 217 L206.8 216.6 L206.8 202.5 L232.6
+					202.9 L232.6 193.9 L207 194.1 L206.8 182.4 L234.6 182.2 L234.4 174 L196.5 174
+					z"/>
+			<path
+				d="M244.3 174.1 L244.5 225.3 L254.3 225.1 L254.1 191.7 L275.2 225.3 L285.4 225.3 L285.4
+					174 L275.8 174 L275.6 208.2 L254.5 173.8 L244.3 174.2 z"/>
+			<path
+				d="M292.6 173.8 L292.6 182.6 L307.8 182.6 L307.8 225.4 L318.6 225.4 L318.4 182.6 L333.6
+					182.4 L333.6 174 z"/>
+			<path
+				d="M340.9 225.5 L329.8 225.1 L349.9 173.7 L361 173.7 L381.5 225.3 L370.6 225.5 L355.2
+					186.2 z"/>
+			<path d="M346.9 205 L364.3 205 L367.8 213.4 L343.6 213.6 z"/>
+			<path
+				d="M378 174 L377.8 182.6 L393 182.8 L393.4 225.4 L403.8 225.6 L403.8 182.8 L418.8 182.6
+					L418.8 174 z"/>
+			<path d="M425.3 174 L425.3 225.6 L435.7 225.4 L435.5 174 z"/>
+			<path
+				d="M470.4 173 L470.2 182 L460.6 184.1 L455.1 191.7 L454.3 201.3 L456.1 209.5 L460 214.2
+					L465.1 216.7 L471.7 217.1 L472.9 225.9 L464.1 225.9 L453.2 221.6 L446.2
+					213.6 L443.7 202.3 L445.3 187.8 L450.6 179.8 L458.4 174.1 L465.4 172.9 L470.5
+					172.9 z"/>
+			<path
+				d="M466.5 173.2 L475.1 173.4 L482.5 176.7 L489.3 183.3 L493.2 192.5 L493.6 201.5 L491.5
+					211.3 L486.2 219.5 L479.4 223.8 L471.8 226.1 L463.6 225.9 L465.2 216.7
+					L473 216.5 L478.7 212.8 L482.4 206 L482.6 197.6 L481 189.8 L476.3 183.9 L469.8
+					181.6 L465.3 181.8 z"/>
+			<path
+				d="M501.5 173.8 L501.7 225.4 L511.3 225.4 L511.5 192 L532.2 225.4 L542.6 225.4 L542.4
+					174 L533 173.8 L533 208.2 L512.1 174 z"/>
+			<animateColor attributeName="fill" begin="7.3s" dur="1s" fill="freeze"
+				from="rgb(255,255,255)" to="rgb(0,0,0)"/>
+			<animateColor attributeName="stroke" begin="7.3s" dur="1s" fill="freeze"
+				from="rgb(255,255,255)" to="rgb(0,0,0)"/>
+			<set attributeName="visibility" begin="7.3s" dur="2.7s" to="visible"/>
+		</g>
+		<set attributeName="visibility" begin="0s" dur="11s" to="visible"/>
+	</g>
+	<g id="graph" fill-rule="nonzero" stroke="rgb(0,0,0)"
+		font-family="'Myriad-Roman'" font-size="28" visibility="hidden">
+		<path d="M497.3 709.9 L39.3 709.9 L39.3 432.9 L497.3 432.9 z"
+			fill="rgb(222,219,214)"/>
+		<g id="scrollingPart">
+			<g id="grid" fill="none">
+				<path d="M78.1 432.9 L75.3 709.9"/>
+				<path d="M135 433.9 L135 708.9"/>
+				<path d="M199.1 432.9 L199.1 707.9"/>
+				<path d="M261.8 433.9 L261.8 708.9"/>
+				<path d="M324.5 433.9 L324.5 708.9"/>
+				<path d="M384.3 433.9 L384.3 708.9"/>
+				<path d="M449.8 433.9 L449.8 708.9"/>
+				<path d="M512.5 433.9 L512.5 708.9"/>
+				<path d="M575.1 432.9 L575.1 707.9"/>
+				<path d="M634.9 433.9 L634.9 708.9"/>
+				<path d="M694.8 433.9 L694.8 708.9"/>
+				<path d="M760.3 432.9 L760.3 707.9"/>
+				<path d="M822.9 432.9 L822.9 707.9"/>
+				<path d="M882.8 433.9 L882.8 708.9"/>
+				<path d="M948.3 433.9 L948.3 708.9"/>
+				<path d="M1010.9 433.9 L1010.9 708.9"/>
+				<path d="M1070.8 432.9 L1070.8 707.9"/>
+				<path d="M1130.6 434.9 L1130.6 709.9"/>
+				<path d="M1196.1 433.9 L1196.1 708.9"/>
+				<path d="M1258.8 433.9 L1258.8 708.9"/>
+				<path d="M1315.7 434.9 L1315.7 709.9"/>
+				<path d="M1348.5 668.9 L38.2 669.9"/>
+				<path d="M1349.9 629.9 L39.6 630.9"/>
+				<path d="M1347.1 590.9 L36.8 591.9"/>
+				<path d="M1347.1 549.9 L36.8 550.9"/>
+				<path d="M1347.1 472.9 L36.8 473.9"/>
+				<path d="M1348.2 510.1 L37.9 511.1"/>
+			</g>
+			<g id="columns" fill="rgb(215,189,225)" visibility="hidden">
+				<path d="M103.7 487.9 L43.9 487.9 L43.9 709.9 L103.7 709.9 z">
+					<animateTransform attributeName="transform" type="translate" begin="11s"
+						dur="0.5s" fill="freeze" additive="sum" values="0 222;0 0"/>
+					<set attributeName="visibility" begin="11s" dur="30s" to="visible"/>
+				</path>
+				<path d="M109.4 481.8 L164.4 481.8 L164.4 709.7 L109.4 709.7 z">
+					<animateTransform attributeName="transform" type="translate" begin="12s"
+						dur="0.5s" fill="freeze" additive="sum" values="0 228;0 0"/>
+					<set attributeName="visibility" begin="12s" dur="29s" to="visible"/>
+				</path>
+				<path d="M172.7 524.8 L224.4 524.8 L224.4 709.8 L172.7 709.8 z">
+					<animateTransform attributeName="transform" type="translate" begin="13s"
+						dur="0.5s" fill="freeze" additive="sum" values="0 185;0 0"/>
+					<set attributeName="visibility" begin="13s" dur="28s" to="visible"/>
+				</path>
+				<path d="M231.6 631.6 L291.4 631.6 L291.4 709.7 L231.6 709.7 z">
+					<animateTransform attributeName="transform" type="translate" begin="14s"
+						dur="0.5s" fill="freeze" additive="sum" values="0 77;0 0"/>
+					<set attributeName="visibility" begin="14s" dur="27s" to="visible"/>
+				</path>
+				<path d="M295.3 643.3 L351.9 643.3 L351.9 709.7 L295.3 709.7 z">
+					<animateTransform attributeName="transform" type="translate" begin="15s"
+						dur="0.5s" fill="freeze" additive="sum" values="0 66;0 0"/>
+					<set attributeName="visibility" begin="15s" dur="26s" to="visible"/>
+				</path>
+				<path d="M358.4 566.1 L415 566.1 L415 710.5 L358.4 710.5 z">
+					<animateTransform attributeName="transform" type="translate" begin="16s"
+						dur="0.5s" fill="freeze" additive="sum" values="0 154;0 0"/>
+					<set attributeName="visibility" begin="16s" dur="25s" to="visible"/>
+				</path>
+				<path d="M420.7 573.9 L477.3 573.9 L477.3 710.5 L420.7 710.5 z">
+					<animateTransform attributeName="transform" type="translate" begin="17s"
+						dur="0.5s" fill="freeze" additive="sum" values="0 137;0 0"/>
+					<set attributeName="visibility" begin="17s" dur="24s" to="visible"/>
+				</path>
+				<path d="M484.5 502.5 L541 502.5 L541 709.4 L484.4 709.4 L484.4 502.5 z">
+					<animateTransform attributeName="transform" type="translate" begin="18s"
+						dur="0.5s" fill="freeze" additive="sum" values="0 207;0 0"/>
+					<set attributeName="visibility" begin="18s" dur="23s" to="visible"/>
+				</path>
+				<path d="M545.9 622.8 L602.5 622.8 L602.5 708.7 L545.9 708.7 z">
+					<animateTransform attributeName="transform" type="translate" begin="19s"
+						dur="0.5s" fill="freeze" additive="sum" values="0 86;0 0"/>
+					<set attributeName="visibility" begin="19s" dur="22s" to="visible"/>
+				</path>
+				<path d="M605.7 654.1 L663.9 654.1 L663.9 708.8 L605.7 708.8 z">
+					<animateTransform attributeName="transform" type="translate" begin="20s"
+						dur="0.5s" fill="freeze" additive="sum" values="0 55;0 0"/>
+					<set attributeName="visibility" begin="20s" dur="21s" to="visible"/>
+				</path>
+				<path d="M668.7 658 L725.3 658 L725.3 708.8 L668.7 708.8 z">
+					<animateTransform attributeName="transform" type="translate" begin="21s"
+						dur="0.5s" fill="freeze" additive="sum" values="0 51;0 0"/>
+					<set attributeName="visibility" begin="21s" dur="20s" to="visible"/>
+				</path>
+				<path d="M731.8 500 L788.4 500 L788.4 708.5 L731.8 708.5 z">
+					<animateTransform attributeName="transform" type="translate" begin="22s"
+						dur="0.5s" fill="freeze" additive="sum" values="0 79;0 0"/>
+					<set attributeName="visibility" begin="22s" dur="19s" to="visible"/>
+				</path>
+				<path d="M794.1 618.9 L850.7 618.9 L850.7 708.7 L794.1 708.7 z">
+					<animateTransform attributeName="transform" type="translate" begin="23s"
+						dur="0.5s" fill="freeze" additive="sum" values="0 90;0 0"/>
+					<set attributeName="visibility" begin="23s" dur="18s" to="visible"/>
+				</path>
+				<path d="M854.6 552.4 L911.2 552.4 L911.2 708.6 L854.6 708.6 z">
+					<animateTransform attributeName="transform" type="translate" begin="24s"
+						dur="0.5s" fill="freeze" additive="sum" values="0 155;0 0"/>
+					<set attributeName="visibility" begin="24s" dur="17s" to="visible"/>
+				</path>
+				<path d="M917.7 588.6 L974.3 588.6 L974.3 709.6 L917.7 709.6 z">
+					<animateTransform attributeName="transform" type="translate" begin="25s"
+						dur="0.5s" fill="freeze" additive="sum" values="0 121;0 0"/>
+					<set attributeName="visibility" begin="25s" dur="16s" to="visible"/>
+				</path>
+				<path d="M980.7 603.1 L1035.7 603.1 L1035.7 708.5 L980.7 708.5 z">
+					<animateTransform attributeName="transform" type="translate" begin="26s"
+						dur="0.5s" fill="freeze" additive="sum" values="0 106;0 0"/>
+					<set attributeName="visibility" begin="26s" dur="15s" to="visible"/>
+				</path>
+				<path d="M1044.6 459.5 L1097.9 459.5 L1097.9 707.6 L1044.6 707.6 z">
+					<animateTransform attributeName="transform" type="translate" begin="27s"
+						dur="0.5s" fill="freeze" additive="sum" values="0 249;0 10"/>
+					<set attributeName="visibility" begin="27s" dur="14s" to="visible"/>
+				</path>
+				<path d="M1105.2 651.1 L1161.8 651.1 L1161.8 709.7 L1105.2 709.7 z">
+					<animateTransform attributeName="transform" type="translate" begin="28s"
+						dur="0.5s" fill="freeze" additive="sum" values="0 58;0 0"/>
+					<set attributeName="visibility" begin="28s" dur="13s" to="visible"/>
+				</path>
+				<path d="M1167.6 677.5 L1224.2 677.5 L1224.2 708.7 L1167.6 708.7 z">
+					<animateTransform attributeName="transform" type="translate" begin="29s"
+						dur="0.5s" fill="freeze" additive="sum" values="0 32;0 0"/>
+					<set attributeName="visibility" begin="29s" dur="12s" to="visible"/>
+				</path>
+				<path d="M1229.7 556.5 L1284.7 556.5 L1284.7 708.7 L1229.7 708.7 z">
+					<animateTransform attributeName="transform" type="translate" begin="30s"
+						dur="0.5s" fill="freeze" additive="sum" values="0 153;0 0"/>
+					<set attributeName="visibility" begin="30s" dur="11s" to="visible"/>
+				</path>
+				<path d="M1291.1 514.7 L1348.5 514.7 L1348.5 709.9 L1291.1 709.9 z">
+					<animateTransform attributeName="transform" type="translate" begin="31s"
+						dur="0.5s" fill="freeze" additive="sum" values="0 194;0 0"/>
+					<set attributeName="visibility" begin="31s" dur="10s" to="visible"/>
+				</path>
+			</g>
+			<path id="blackCurve" stroke-dasharray="1670"
+				d="M76.2 648.9 L138.9 519.9 L198.7 539.9 L261.4 510.9 L329.8 607.9 L383.9 510.9 L449.4
+					569.9 L517.8 530.9 L577.6 527.9 L637.4 569.9 L700.1 587.9 L762.8 687.9 L828.3
+					677.9 L891 666.9 L948 648.9 L1013.5 608.9 L1073.3 472.9 L1138.8 528.9
+					L1195.8 519.9 L1258.5 549.9 L1309.8 527.9" fill="none" stroke-width="5">
+				<animate attributeName="stroke-dashoffset" begin="11s" dur="20s" from="1670"
+					to="0">
+				</animate>
+			</path>
+			<path id="blueCurve"
+				d="M76.2 651.9 L136 602.9 L195.8 594.9 L267 575.9 L324 569.9 L386.7 546.9 L449.4 582.9
+					L512.1 583.9 L569.1 589.9 L634.6 612.9 L697.3 622.9 L760 667.9 L819.8 659.9
+					L885.3 609.9 L948 607.9 L1007.8 601.9 L1070.5 547.9 L1136 571.9 L1195.8
+					577.9 L1255.6 602.9 L1315.4 600.9" fill="none" stroke="rgb(0,0,255)"
+				stroke-width="5"/>
+			<g id="redDots" fill="rgb(255,0,0)" stroke="none">
+				<path
+					d="M271.5 510.9 C271.5 516.4 267 520.9 261.5 520.9 C256 520.9 251.5 516.4 251.5 510.9
+						C251.5 505.4 256 500.9 261.5 500.9 C267 500.9 271.5 505.4 271.5 510.9 z">
+					<set attributeName="visibility" begin="11s" dur="3s" to="hidden"/>
+				</path>
+				<path
+					d="M587.4 528.9 C587.4 534.4 582.9 538.9 577.4 538.9 C571.9 538.9 567.4 534.4 567.4
+						528.9 C567.4 523.4 571.9 518.9 577.4 518.9 C582.9 518.9 587.4 523.4 587.4
+						528.9 z">
+					<set attributeName="visibility" begin="11s" dur="8.5s" to="hidden"/>
+				</path>
+				<path
+					d="M772.8 686.4 C772.8 691.9 768.3 696.4 762.8 696.4 C757.3 696.4 752.8 691.9 752.8
+						686.4 C752.8 680.9 757.3 676.4 762.8 676.4 C768.3 676.4 772.8 680.9 772.8
+						686.4 z">
+					<set attributeName="visibility" begin="11s" dur="11.5s" to="hidden"/>
+				</path>
+				<path
+					d="M1083.4 474.4 C1083.4 479.9 1078.9 484.4 1073.4 484.4 C1067.9 484.4 1063.4 479.9
+						1063.4 474.4 C1063.4 468.9 1067.9 464.4 1073.4 464.4 C1078.9 464.4 1083.4
+						468.9 1083.4 474.4 z">
+					<set attributeName="visibility" begin="11s" dur="16s" to="hidden"/>
+				</path>
+			</g>
+			<animateTransform attributeName="transform" type="translate" begin="17s"
+				dur="13s" fill="freeze" additive="sum" values="0 0;-850 0"/>
+			<animateTransform attributeName="transform" begin="32s" dur="0.5s"
+				fill="freeze" type="translate" additive="sum" from="1350 45" by="0 0"/>
+			<animateTransform attributeName="transform" begin="32s" dur="1s" fill="freeze"
+				calcMode="linear" type="scale" additive="sum" values="1 1;0.35 1"/>
+			<animateTransform attributeName="transform" begin="32s" dur="0.5s"
+				fill="freeze" type="translate" additive="sum" from="-1350 -45" by="0 0"/>
+		</g>
+		<path id="bottomSide"
+			d="M535.7 739.6 L0.5 739.6 L0.5 708 L535.8 708 L535.8 739.6 z"
+			fill="rgb(189,207,227)" stroke="none"/>
+		<g id="dates" stroke="none">
+			<text transform="matrix(1 0 0 1 62.2661 729.141)">14</text>
+			<text transform="matrix(1 0 0 1 128.266 729.141)">17</text>
+			<text transform="matrix(1 0 0 1 189.266 729.141)">18</text>
+			<text transform="matrix(1 0 0 1 252.266 729.141)">19</text>
+			<text transform="matrix(1 0 0 1 315.266 729.141)">20</text>
+			<text transform="matrix(1 0 0 1 379.266 729.141)">21</text>
+			<text transform="matrix(1 0 0 1 442.266 729.141)">24</text>
+			<text transform="matrix(1 0 0 1 498.266 729.141)">25</text>
+			<text transform="matrix(1 0 0 1 565.266 729.141)">26</text>
+			<text transform="matrix(1 0 0 1 625.266 729.141)">27</text>
+			<text transform="matrix(1 0 0 1 688.266 729.141)">28</text>
+			<text transform="matrix(1 0 0 1 749.266 729.141)">31</text>
+			<text transform="matrix(1 0 0 1 805.266 729.141)">APR</text>
+			<text transform="matrix(1 0 0 1 877.266 729.141)">2</text>
+			<text transform="matrix(1 0 0 1 942.266 729.141)">3</text>
+			<text transform="matrix(1 0 0 1 1000.27 729.141)">4</text>
+			<text transform="matrix(1 0 0 1 1068.27 729.141)">7</text>
+			<text transform="matrix(1 0 0 1 1126.27 729.141)">8</text>
+			<text transform="matrix(1 0 0 1 1191.27 729.141)">9</text>
+			<text transform="matrix(1 0 0 1 1246.27 729.141)">10</text>
+			<text transform="matrix(1 0 0 1 1310.27 729.141)">11</text>
+			<animateTransform attributeName="transform" type="translate" begin="17s"
+				dur="13s" fill="freeze" additive="sum" values="0 0;-850 0"/>
+			<animateTransform attributeName="transform" begin="32s" dur="0.5s"
+				fill="freeze" type="translate" additive="sum" from="1350 45" by="0 0"/>
+			<animateTransform attributeName="transform" begin="32s" dur="1s" fill="freeze"
+				calcMode="linear" type="scale" additive="sum" values="1 1;0.35 1"/>
+			<animateTransform attributeName="transform" begin="32s" dur="0.5s"
+				fill="freeze" type="translate" additive="sum" from="-1350 -45" by="0 0"/>
+		</g>
+		<path id="rightSide"
+			d="M543.1 739.6 L496.2 739.6 L496.2 410.3 L543.1 410.3 L543.1 739.7 z"
+			fill="rgb(189,207,227)" stroke="none"/>
+		<path id="leftSide" d="M39.7 739.2 L0.4 739.2 L0.4 410.2 L39.7 410.2 z"
+			fill="rgb(189,207,227)" stroke="none"/>
+		<path id="topSide" d="M542 434.9 L0 434.9 L0 348.1 L542 348.1 z"
+			fill="rgb(189,207,227)" stroke="none"/>
+		<text transform="matrix(1 0 0 1 502.763 451.454)" font-size="12">(x100k)</text>
+		<g id="rollingFigures" stroke="none" font-size="28" visibility="hidden">
+			<g>
+				<g>
+					<text transform="matrix(1 0 0 1 500 431.459)">0,3 </text>
+					<animate attributeName="visibility" attributeType="CSS" begin="11s" dur="0.2s"
+						keyTimes="0; 0.2; 1" fill="freeze" repeatCount="150"
+						values="inherit;hidden;hidden">
+					</animate>
+				</g>
+				<g>
+					<text transform="matrix(1 0 0 1 500 431.687)">1,8</text>
+					<animate attributeName="visibility" attributeType="CSS" begin="11s" dur="0.2s"
+						keyTimes="0; 0.2; 0.4; 1" fill="freeze" repeatCount="150"
+						values="hidden;inherit;hidden;hidden">
+					</animate>
+				</g>
+				<g>
+					<text transform="matrix(1 0 0 1 500 431.688)">3,6</text>
+					<animate attributeName="visibility" attributeType="CSS" begin="11s" dur="0.2s"
+						keyTimes="0; 0.4; 0.6; 1" fill="freeze" repeatCount="150"
+						values="hidden;inherit;hidden;hidden">
+					</animate>
+				</g>
+				<g>
+					<text transform="matrix(1 0 0 1 500 431.688)">5,4</text>
+					<animate attributeName="visibility" attributeType="CSS" begin="11s" dur="0.2s"
+						keyTimes="0; 0.6; 0.8; 1" fill="freeze" repeatCount="150"
+						values="hidden;inherit;hidden;hidden">
+					</animate>
+				</g>
+				<g>
+					<text transform="matrix(1 0 0 1 500 431.688)">6,2</text>
+					<animate attributeName="visibility" attributeType="CSS" begin="11s" dur="0.2s"
+						keyTimes="0; 0.8; 1" fill="freeze" repeatCount="150"
+						values="hidden;inherit;hidden">
+					</animate>
+				</g>
+				<animate attributeName="visibility" attributeType="CSS" begin="11s" dur="1s"
+					keyTimes="0; 0.5; 1" fill="freeze" repeatCount="21"
+					values="visible;hidden;hidden">
+				</animate>
+			</g>
+			<g>
+				<g>
+					<text transform="matrix(1 0 0 1 500 430.791)">11</text>
+					<set attributeName="visibility" begin="11.5s" dur="0.5s" to="visible"/>
+				</g>
+				<g>
+					<text transform="matrix(1 0 0 1 500 430.791)">11</text>
+					<set attributeName="visibility" begin="12.5s" dur="0.5s" to="visible"/>
+				</g>
+				<g>
+					<text transform="matrix(1 0 0 1 500 430.791)">9,2</text>
+					<set attributeName="visibility" begin="13.5s" dur="0.5s" to="visible"/>
+				</g>
+				<g>
+					<text transform="matrix(1 0 0 1 500 430.791)">4,0</text>
+					<set attributeName="visibility" begin="14.5s" dur="0.5s" to="visible"/>
+				</g>
+				<g>
+					<text transform="matrix(1 0 0 1 500 430.791)">3,3</text>
+					<set attributeName="visibility" begin="15.5s" dur="0.5s" to="visible"/>
+				</g>
+				<g>
+					<text transform="matrix(1 0 0 1 500 430.791)">7,2</text>
+					<set attributeName="visibility" begin="16.5s" dur="0.5s" to="visible"/>
+				</g>
+				<g>
+					<text transform="matrix(1 0 0 1 500 430.791)">7,0</text>
+					<set attributeName="visibility" begin="17.5s" dur="0.5s" to="visible"/>
+				</g>
+				<g>
+					<text transform="matrix(1 0 0 1 5006 430.791)">10</text>
+					<set attributeName="visibility" begin="18.5s" dur="0.5s" to="visible"/>
+				</g>
+				<g>
+					<text transform="matrix(1 0 0 1 500 430.791)">4,2</text>
+					<set attributeName="visibility" begin="19.5s" dur="0.5s" to="visible"/>
+				</g>
+				<g>
+					<text transform="matrix(1 0 0 1 500 430.791)">2,8</text>
+					<set attributeName="visibility" begin="20.5s" dur="0.5s" to="visible"/>
+				</g>
+				<g>
+					<text transform="matrix(1 0 0 1 500 430.791)">2,6</text>
+					<set attributeName="visibility" begin="21.5s" dur="0.5s" to="visible"/>
+				</g>
+				<g>
+					<text transform="matrix(1 0 0 1 500 430.791)">10</text>
+					<set attributeName="visibility" begin="22.5s" dur="0.5s" to="visible"/>
+				</g>
+				<g>
+					<text transform="matrix(1 0 0 1 500 430.791)">4,3</text>
+					<set attributeName="visibility" begin="23.5s" dur="0.5s" to="visible"/>
+				</g>
+				<g>
+					<text transform="matrix(1 0 0 1 500 430.791)">7,8</text>
+					<set attributeName="visibility" begin="24.5s" dur="0.5s" to="visible"/>
+				</g>
+				<g>
+					<text transform="matrix(1 0 0 1 500 430.791)">6,1</text>
+					<set attributeName="visibility" begin="25.5s" dur="0.5s" to="visible"/>
+				</g>
+				<g>
+					<text transform="matrix(1 0 0 1 500 430.791)">7,1</text>
+					<set attributeName="visibility" begin="26.5s" dur="0.5s" to="visible"/>
+				</g>
+				<g>
+					<text transform="matrix(1 0 0 1 500 430.791)">4,6</text>
+					<set attributeName="visibility" begin="27.5s" dur="0.5s" to="visible"/>
+				</g>
+				<g>
+					<text transform="matrix(1 0 0 1 500 430.791)">12</text>
+					<set attributeName="visibility" begin="28.5s" dur="0.5s" to="visible"/>
+				</g>
+				<g>
+					<text transform="matrix(1 0 0 1 500 430.791)">2,9</text>
+					<set attributeName="visibility" begin="29.5s" dur="0.5s" to="visible"/>
+				</g>
+				<g>
+					<text transform="matrix(1 0 0 1 500 430.791)">7,8</text>
+					<set attributeName="visibility" begin="30.5s" dur="0.5s" to="visible"/>
+				</g>
+				<g>
+					<text transform="matrix(1 0 0 1 500 430.791)">9,8</text>
+					<set attributeName="visibility" begin="31.5s" dur="0.5s" to="visible"/>
+				</g>
+			</g>
+		</g>
+		<g id="eventText" stroke="none" font-size="28" visibility="hidden">
+			<g>
+				<rect x="45" y="440" width="350" height="30" fill="rgb(255,255,255)"/>
+				<text transform="matrix(1 0 0 1 50.9341 464.191)">CREDIT RATING ADJUSTED</text>
+				<line x1="262" y1="511" x2="220" y2="471" stroke="rgb(0,0,0)"/>
+				<set attributeName="visibility" begin="14s" dur="3s" to="visible"/>
+			</g>
+			<g>
+				<rect x="45" y="440" width="250" height="30" fill="rgb(255,255,255)"/>
+				<text transform="matrix(1 0 0 1 52.2656 464.191)">PROFIT WARNING</text>
+				<line x1="200" y1="529" x2="220" y2="471" stroke="rgb(0,0,0)">
+					<animate attributeName="x1" additive="sum" begin="19.5s" dur="3s" fill="freeze"
+						from="215" to="15">
+					</animate>
+				</line>
+				<set attributeName="visibility" begin="19.5s" dur="3s" to="visible"/>
+			</g>
+			<g>
+				<rect x="45" y="440" width="400" height="30" fill="rgb(255,255,255)"/>
+				<text transform="matrix(1 0 0 1 52.2656 463.523)">ANALIST MARKET PROGNOSIS</text>
+				<line x1="250" y1="685" x2="220" y2="471" stroke="rgb(0,0,0)">
+					<animate attributeName="x1" additive="sum" begin="22.5s" dur="3s" fill="freeze"
+						from="155" to="-45">
+					</animate>
+				</line>
+				<set attributeName="visibility" begin="22.5s" dur="3s" to="visible"/>
+			</g>
+			<g>
+				<rect x="45" y="440" width="270" height="30" fill="rgb(255,255,255)"/>
+				<text transform="matrix(1 0 0 1 51.5996 464.189)">QUARTERLY REPORT</text>
+				<line x1="250" y1="473" x2="220" y2="471" stroke="rgb(0,0,0)">
+					<animate attributeName="x1" additive="sum" begin="27s" dur="3s" fill="freeze"
+						from="168" to="-27">
+					</animate>
+				</line>
+				<set attributeName="visibility" begin="27s" dur="3s" to="visible"/>
+			</g>
+		</g>
+		<g id="explanations" stroke="none">
+			<path d="M58.3 428.9 L44.3 428.9 L44.3 414.9 L58.3 414.9 z" stroke="rgb(0,0,0)"/>
+			<path d="M291 428.8 L277 428.8 L277 414.8 L291 414.8 z" fill="rgb(0,0,255)"
+				stroke="rgb(0,0,255)"/>
+			<text transform="matrix(1 0 0 1 300.194 427.057)">INDEX</text>
+			<text transform="matrix(1 0 0 1 66.7798 426.828)">COMPANY A</text>
+		</g>
+		<g id="rightScale" stroke="none">
+			<text transform="matrix(1 0 0 1 505.182 676.189)">2</text>
+			<text transform="matrix(1 0 0 1 505.182 634.855)">4</text>
+			<text transform="matrix(1 0 0 1 505.182 594.853)">6</text>
+			<text transform="matrix(1 0 0 1 505.182 554.187)">8</text>
+			<text transform="matrix(1 0 0 1 501.02 513.855)">10</text>
+			<text transform="matrix(1 0 0 1 501.02 477.863)">12</text>
+			<set attributeName="visibility" begin="11s" dur="22s" to="hidden"/>
+		</g>
+		<text id="title" font-size="40" transform="matrix(1 0 0 1 43.9331 377.607)">LAST MONTH'S PROGRESS</text>
+		<g id="leftScale" stroke="none">
+			<text transform="matrix(1 0 0 1 0 673.718)">7,2</text>
+			<text transform="matrix(1 0 0 1 0 596.671)">7,4</text>
+			<text transform="matrix(1 0 0 1 0 515.534)">7,6</text>
+			<set attributeName="visibility" begin="11s" dur="22s" to="hidden"/>
+		</g>
+		<set attributeName="visibility" begin="11s" dur="30s" to="visible"/>
+	</g>
+	<g id="afterText" transform="translate(55 450)" font-size="33" visibility="hidden" fill="rgb(0,0,0)" stroke="rgb(0,0,0)">
+		<g >
+			<text x="110" y="30">COPYRIGHT 2003</text>
+			<text x="0" y="90">ZOOMON MOBILE SOLUTIONS</text>
+			<text x="65" y="150">ALL RIGHTS RESERVED</text>
+			<set attributeName="visibility" begin="42s" dur="3s" to="visible"/>
+		</g>
+		<g>
+			<text x="0" y="60">FOR MORE SVGT ANIMATIONS</text>
+			<text x="25" y="120">VISIT WWW.ZOOMON.COM</text>
+			<set attributeName="visibility" begin="45s" dur="3s" to="visible"/>
+		</g>
+	</g>
+</svg>

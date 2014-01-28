@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 250 100">
+<rect x="-125" y="0" width="500" height="100" fill="#933"/>
+<g transform="translate(215 80)">
+	<circle cx="0" cy="0" r="2" fill="#FFF">
+		<animate attributeName="r" values="220;190;210;200;230;220" keyTimes="0;0.2;0.4;0.6;0.8;1" repeatCount="indefinite" dur="5.6s"/>
+		<animate attributeName="fill-opacity" values="0.5;0.4;0.8;0.3;0.6;0.5" keyTimes="0;0.2;0.4;0.6;0.8;1" repeatCount="indefinite" dur="4.6s"/>
+	</circle>
+</g>
+<g transform="translate(160 20)">
+	<circle cx="0" cy="0" r="2" fill="#FFF">
+		<animate attributeName="r" values="30;27;34;24;32;30" keyTimes="0;0.2;0.4;0.6;0.8;1" repeatCount="indefinite" dur="3.6s"/>
+		<animate attributeName="fill-opacity" values="0.5;0.4;0.8;0.3;0.6;0.5" keyTimes="0;0.2;0.4;0.6;0.8;1" repeatCount="indefinite" dur="3.6s"/>
+	</circle>
+</g>
+<g transform="translate(215 60)">
+	<circle cx="0" cy="0" r="2" fill="#FFF">
+		<animate attributeName="r" values="70;90;60;80;65;70" keyTimes="0;0.2;0.4;0.6;0.8;1" repeatCount="indefinite" dur="5.6s"/>
+		<animate attributeName="fill-opacity" values="0.5;0.4;0.8;0.3;0.6;0.5" keyTimes="0;0.2;0.4;0.6;0.8;1" repeatCount="indefinite" dur="4.6s"/>
+	</circle>
+</g>
+<g transform="translate(-180 50)">
+	<circle cx="80" cy="0" r="11" fill="none" stroke="#FFF" stroke-width="1">
+		<animate attributeName="r" values="11;13;10;12;10;11" keyTimes="0;0.2;0.4;0.6;0.8;1" repeatCount="indefinite" dur="5.6s"/>
+		<animate attributeName="fill-opacity" values="0.5;0.4;0.8;0.3;0.6;0.5" keyTimes="0;0.2;0.4;0.6;0.8;1" repeatCount="indefinite" dur="4.6s"/>
+	</circle>
+	<circle cx="50" cy="20" r="2" fill="none" stroke="#FFF" stroke-width="1">
+		<animate attributeName="r" values="7;9;6;8;6;7" keyTimes="0;0.2;0.4;0.6;0.8;1" repeatCount="indefinite" dur="3.6s"/>
+		<animate attributeName="fill-opacity" values="0.5;0.4;0.8;0.3;0.6;0.5" keyTimes="0;0.2;0.4;0.6;0.8;1" repeatCount="indefinite" dur="4.6s"/>
+	</circle>
+	<circle cx="70" cy="40" r="2" fill="none" stroke="#FFF" stroke-width="1">
+		<animate attributeName="r" values="7;9;6;8;6;7" keyTimes="0;0.2;0.4;0.6;0.8;1" repeatCount="indefinite" dur="2.6s"/>
+		<animate attributeName="fill-opacity" values="0.5;0.4;0.8;0.3;0.6;0.5" keyTimes="0;0.2;0.4;0.6;0.8;1" repeatCount="indefinite" dur="4.6s"/>
+	</circle>
+	<animateTransform attributeName="transform" type="translate" dur="30s" values="-80 30;-65 20;-95 40;-77 10;-80 30" repeatCount="indefinite" />
+</g>
+<g fill="#933">
+	<g transform="translate(0 100)">
+
+<g transform="translate(80)">
+
+ <g font-size="24">
+<text x="0" y="24">Galactic</text>
+<text x="0" y="60">Pathways is</text>
+<text x="0" y="96">the first</text>
+<text x="0" y="132">massively</text>
+<text x="0" y="168">multiplayer</text>
+<text x="0" y="204">online game</text>
+<text x="0" y="240">(MMOG) with</text>
+<text x="0" y="276">the client</text>
+<text x="0" y="312">written</text>
+<text x="0" y="348">entirely in</text>
+<text x="0" y="384">SVG.</text>
+</g>
+
+</g>
+
+<animateTransform attributeName="transform" type="translate" from="0 100" to="0 -400" begin="0s" dur="20s" repeatCount="indefinite" />
+</g>
+</g>
+</svg>

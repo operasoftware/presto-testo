@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" 	"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg height="540" style="overflow:visible;enable-background:new 0 0 720 540;   background-color: #fffff0; font-family:Times New Roman;   ill-rule:evenodd;clip-rule:evenodd;   stroke:black;stroke-width:2;   stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" viewBox="0 0 720 540" width="720" xmlns="http://www.w3.org/2000/svg">
+  <metadata>
+    <rdf:RDF xmlns:cc="http://web.resource.org/cc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+      <cc:Work rdf:about="">
+        <dc:title>Piramide</dc:title>
+        <dc:description></dc:description>
+        <dc:subject>
+          <rdf:Bag>
+            <rdf:li></rdf:li>
+            <rdf:li>shape</rdf:li>
+          </rdf:Bag>
+        </dc:subject>
+        <dc:publisher>
+          <cc:Agent rdf:about="http://www.openclipart.org">
+            <dc:title>Arjen Meijer</dc:title>
+          </cc:Agent>
+        </dc:publisher>
+        <dc:creator>
+          <cc:Agent>
+            <dc:title>Arjen Meijer</dc:title>
+          </cc:Agent>
+        </dc:creator>
+        <dc:rights>
+          <cc:Agent>
+            <dc:title>Arjen Meijer</dc:title>
+          </cc:Agent>
+        </dc:rights>
+        <dc:date></dc:date>
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+        <cc:license rdf:resource="http://web.resource.org/cc/PublicDomain"/>
+        <dc:language>en</dc:language>
+      </cc:Work>
+      <cc:License rdf:about="http://web.resource.org/cc/PublicDomain">
+        <cc:permits rdf:resource="http://web.resource.org/cc/Reproduction"/>
+        <cc:permits rdf:resource="http://web.resource.org/cc/Distribution"/>
+        <cc:permits rdf:resource="http://web.resource.org/cc/DerivativeWorks"/>
+      </cc:License>
+    </rdf:RDF>
+  </metadata>
+  <desc>Piramide</desc>
+  <defs>
+    <filter id="l">
+      <!-- licht donkerder -->
+      <feColorMatrix type="saturate" values=".65"/>
+    </filter>
+    <filter id="d">
+      <!--  donkerder -->
+      <feColorMatrix type="saturate" values=".5"/>
+    </filter>
+  </defs>
+  <g id="piramide">
+    <g id="laag5" style="fill:RoyalBlue">
+      <polygon filter="url(#d)" points="  91 377, 575 377, 626 330, 160 330"/>
+      <polygon filter="url(#l)" opacity="0.8;" points="629 440, 575 377, 626 330, 690 384"/>
+      <polygon points="  91 377, 575 377, 629 440,  40, 440"/>
+    </g>
+    <g id="laag4" style="fill:CornflowerBlue">
+      <polygon filter="url(#d)" points="152 302, 515 302, 554 267, 224 267"/>
+      <polygon filter="url(#l)" opacity="0.8;" points="567 367, 515 302, 554 267, 617 322"/>
+      <polygon points="101,367, 567 367, 515 302, 152 302"/>
+    </g>
+    <g id="laag3" style="fill:DeepSkyBlue">
+      <polygon filter="url(#d)" points="212 229, 455 229, 480 206, 280 206"/>
+      <polygon filter="url(#l)" opacity="0.8;" points="455 229, 508 292, 544 260, 481 206"/>
+      <polygon points="161 292, 508 292, 455 229, 212 228"/>
+    </g>
+    <g id="laag2" style="fill:LightSkyBlue">
+      <polygon filter="url(#d)" points="274 154, 395 154, 408 142, 316 142"/>
+      <polygon filter="url(#l)" opacity="0.8;" points="447 218, 471 196, 408 142, 395 154"/>
+      <polygon points="221 218, 447 218, 395 154 274 154"/>
+    </g>
+    <g id="laag1" style="fill:PowderBlue">
+      <polygon points="281 143, 386 143, 334 79"/>
+      <polygon filter="url(#l)" opacity="0.8;" points="386, 143, 398 133, 334 79"/>
+    </g>
+  </g>
+</svg>

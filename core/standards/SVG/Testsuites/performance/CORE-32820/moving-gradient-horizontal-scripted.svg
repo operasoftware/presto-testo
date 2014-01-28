@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<svg x="0" y="0" width="1280" height="820" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title>Horizontal gradient animated with script</title>
+
+<script xlink:href="/resources/fps.js"/>
+<script><![CDATA[
+
+var e; 
+var ypos = 570, yspeed = -10;
+
+function animate()
+{
+	ypos += yspeed;
+
+	if (ypos < 0)
+		ypos = 0, yspeed = -yspeed;
+	else if (ypos > 570)
+		ypos = 570, yspeed = -yspeed;
+
+	e.y.baseVal.value = ypos;
+
+	setTimeout(animate, 10);
+}
+window.onload = function() {
+	e = document.getElementsByTagName('rect')[1];
+	document.documentElement.targetFps = 100;
+	checkfps(2000);
+	animate();
+}
+
+]]></script>
+
+  <defs>
+    <linearGradient id="g1" x1="0" y1="0" x2="0" y2="1" spreadMethod="pad">
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity="0"/>
+      <stop offset="1" stop-color="#BFBFBF" stop-opacity="0.7"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1280" height="720" fill="black"/>
+  <rect x="0" y="570" width="1280" height="150" fill="url(#g1)"/>
+<text id="f" x="10" y="750">Test not started</text>
+<text id="result" x="10" y="770"></text>
+
+</svg>

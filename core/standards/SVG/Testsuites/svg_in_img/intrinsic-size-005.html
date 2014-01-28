@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+  <head>
+    <title>TC #5</title>
+  </head>
+  <body>
+    <h1>SVG with default size and no viewBox in a html:object</h1>
+    <!--The size is determined by the object. 100% width of the svg
+      resolves to 100% of the containing element, which is 150px. 100%
+      height resolves to nothing and the default value is 150.-->
+<p>There should be a svg image of size 150 x 150 px below. No red
+      should be visible</p>
+    
+    <p>This TC originates from hixies tests</p>
+
+    <div style="position:absolute">
+
+      <div style="width: 150px; background: red; padding: 0 margin: 0px">
+	<object style="display:block" data="support/default-size-without-viewbox-red.svg" type="image/svg+xml">[SVG NOT SUPPORTED]</object>
+      </div>
+
+      <div style="position: absolute; top: 0px; left: 0; height: 150px; width: 150px; background: green">
+      </div>
+
+    </div>
+
+ </body>
+</html>
+
+

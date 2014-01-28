@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" id="SVGroot" width="176" height="18" xmlns:xlink="http://www.w3.org/1999/xlink">
+
+<image xlink:href="bg.jpg" x="0" y="-182" width="176" height="208"/>
+
+	<rect fill="#333333" x="0" y="0" width="176" height="20" opacity="0.4">
+		<animateColor attributeName="fill" attributeType="CSS" from="#333333" to="#ED1C2E" begin="6;SVGroot.focusin" dur="0.3s" fill="freeze" />
+		<animateColor attributeName="fill" attributeType="CSS" from="#ED1C2E" to="#333333" begin="7;SVGroot.focusout" dur="0.3s" fill="freeze" />
+
+	</rect>
+	<text fill="#EAEAEA" x="10" y="14">
+		Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adispisi velit
+		<animateColor attributeName="fill" attributeType="CSS" from="#EAEAEA" to="#FFFFFF" begin="6;SVGroot.focusin" dur="0.3s" fill="freeze" />
+		<animateColor attributeName="fill" attributeType="CSS" from="#FFFFFF" to="#EAEAEA" begin="7;SVGroot.focusout" dur="0.3s" fill="freeze" />
+		<animateTransform attributeName="transform" attributeType="XML" type="translate" values="176;-530" begin="0s" dur="12s" repeatCount="indefinite" />
+	</text>
+</svg>

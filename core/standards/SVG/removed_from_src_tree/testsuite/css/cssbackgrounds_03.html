@@ -1,0 +1,32 @@
+<html><head>
+<style type="text/css">
+body { background-color: black; }
+.div_roundedcorners {
+  background-image: url("rounded_rect.svg");
+  padding: 2px;
+  color: blue;
+}
+#fixedheight { height: 400px; }
+</style></head>
+<body>
+  <div class="div_roundedcorners">
+  This is a div that will have rounded corners thanks to the
+  SVG image used as a background (of course it scales to the
+  size of the div too).
+  </div>
+  <p/>
+  <div class="div_roundedcorners">
+  Which browser will be first with SVG in CSS background-image?
+  </div>
+  <p/>
+  <div class="div_roundedcorners">
+  This div has
+  <p>three</p>
+  <p>lines.</p>
+  </div>
+  <p/>
+  <div id="fixedheight" class="div_roundedcorners">
+  This div is 400px high, and still the SVG image scales nicely. Have you tried zooming yet?
+  </div>
+</body>
+</html>

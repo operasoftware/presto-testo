@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink"
+     width="480" height="360">
+  <defs>
+    <linearGradient id="lingrad" gradientUnits="userSpaceOnUse" x1="100" y1="100" x2="200" y2="200">
+      <stop stop-color="red" offset="0"/>
+      <stop stop-color="blue" offset="1"/>
+      <stop stop-color="green" offset="0.5"/>
+    </linearGradient>
+  </defs>
+
+  <rect x="40" y="30" width="400" height="300" fill="url(#lingrad)"/>
+</svg>

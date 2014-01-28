@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC  "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+      <meta name="keywords" content="W3C SVG 1.1 2nd Edition Test Suite"/>
+      <meta name="description" content="W3C SVG 1.1 2nd Edition Object Mini Test Suite"/>
+      <title>
+SVG 1.1 2nd Edition Test (&lt;object&gt;): animate-elem-41-t.svg
+      </title>
+      <link href="harness_mini.css" rel="stylesheet" type="text/css" />
+      <link rel="prev" href="animate-elem-40-t.html" />
+      <link rel="index" href="index.html" />
+      <link rel="next" href="animate-elem-44-t.html" />
+      <script src="../resources/testharnessreport.js"></script>
+    </head>
+  <body class="bodytext">
+    <div class="linkbar">
+      <p>
+        <a href="animate-elem-40-t.html" rel="prev">animate-elem-40-t ←</a>
+        <a href="index.html" rel="index">index</a>
+        <a href="animate-elem-44-t.html" rel="next">→ animate-elem-44-t</a>
+      </p>
+    </div>
+<table border="0" align="center" cellspacing="0" cellpadding="10">
+  <tr>
+    <td align="center" colspan="3">
+      <table border="0" cellpadding="8">
+        <tr  class="navbar">
+          <td align="center">
+            SVG Image
+          </td>
+          <td align="center">
+            PNG Image
+          </td>
+        </tr>
+        <tr>
+          <td align="right">
+            <object data="../../svg/animate-elem-41-t.svg" width="480" height="360" type="image/svg+xml"><p style="font-size:300%;color:red">FAIL</p></object>
+          </td>
+          <td align="left">
+            <img alt="raster image of animate-elem-41-t.svg" src="../../png/animate-elem-41-t.png" width="480" height="360"/>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+
+<div>
+    <h4 id="operatorscript" onclick="var t = document.getElementById('operatortext'); t.style.display=(t.style.display=='none' ? 'inline' : 'none');">
+      <em>Operator script (click here to toggle)</em>
+    </h4>
+    <div id="operatortext" style="display:none">
+<p>Run the test. No interaction required.</p>
+  </div>
+  </div>
+    <h4 id="passcriteria">
+      Pass Criteria
+    </h4>
+    <div>
+<p>
+        There are 11 graphics properties that are animated, and for each of these,
+        they are animated in one of three different ways (the three columns).  The
+        three animations in each row must be the same.
+      </p><p>
+        For each animation test, the element on which the animation is applied is also
+        translated by an animation so that the various states of the animation can
+        be checked more easily:
+      </p><ul>
+        <li>For those tests that have two light gray silhouettes
+        (fill-rule, stroke-linecap, stroke-linejoin, stroke-miterlimit and stroke-dashoffset),
+        the animated element's shape must be the same as the left silouhette at the
+        start of the animation and the same as the right silhouette at the end of
+        the animation.</li>
+        <li>For the continous paint animations (fill, stroke and color),
+        three references shapes show the color that the animated element must be
+        at the start, middle and end of the animation.</li>
+        <li>For the stroke-width test, the two dark gray reference shapes show the
+        width of the short, animated horizontal line must be at the start and the end
+        of the animation.</li>
+        <li>For the display and visibility tests, the single light gray silhouette
+        shows the position the animated element must be at at the start of the animation.
+        At the end of the animation, these animated elements must not be visible.</li>
+      </ul><p>
+        The following animations must show continuous changes: fill, stroke,
+        stroke-width, stroke-dashoffset and color.
+      </p><p>
+        The following animations must show discrete animation changes: fill-rule, stroke-linecap,
+        stroke-linejoin, stroke-miterlimit, display and visibility.  The point at which
+        the change takes place must be half way through the animation, except for the
+        stroke-miter animation, which must change a quarter of the way through.
+        (Note that visually, stroke-miterlimit shows a sharp transition even though its value
+        is animated continuously, but that is because the miter is cut off when
+        the animated miter limit reaches the test sharp angle's miter value.)
+      </p><p>The test passes if all of the above criteria are met.</p>
+    </div>
+    <br />
+    <div class="linkbar">
+      <p>
+        <a href="animate-elem-40-t.html" rel="prev">animate-elem-40-t ←</a>
+        <a href="index.html" rel="index">index</a>
+        <a href="animate-elem-44-t.html" rel="next">→ animate-elem-44-t</a>
+      </p>
+    </div>
+  </body>
+</html>

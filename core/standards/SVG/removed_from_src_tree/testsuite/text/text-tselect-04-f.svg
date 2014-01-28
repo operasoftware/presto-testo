@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg version="1.2" baseProfile="tiny" id="svg-root" width="100%" height="100%" viewBox="0 0 480 360" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+   <g id="test-body-content">
+	  <defs>
+		<path id="path" fill="none" stroke="#000000" d=" M 360 100 C 420 90 460 140 450 190 c 0 20 -16 36 -36 36 s -36 -16 -36 -36 s 16 -36 36 -36 s 36 16 36 36" />
+	  </defs>
+      <rect x="15" y="60" width="300" height="100" fill="none" stroke="black" stroke-width="0.25"/>
+      <textArea x="15" y="60" width="300" height="100" font-size="20" fill="#259" editable="simple">Editable textarea</textArea>
+	  <text id="first" x="15" y="20" font-size="20" editable="simple">Editable text</text>
+	  <text x="15" y="200" font-size="20" editable="simple">Text element <tspan fill="red">tspan text</tspan></text>
+	  <text font-size="30" y="250" editable="simple"><textPath xlink:href="#path">Now edit this on a path ok?</textPath></text>
+	  <use xlink:href="#path"/>
+	  <text x="15" y="230" font-size="20" text-decoration="line-through" editable="simple" fill-opacity="0.5">Text element <tspan fill="red">tspan text</tspan></text>
+	  <text x="15" y="250" font-size="20" editable="simple">Text element <tspan fill="red">tspan text</tspan><tspan fill="blue">tspan 2 text</tspan></text>
+	  <text x="15" y="270" font-size="20" editable="simple"><tref xlink:href="#first"/></text>
+   </g>
+   <text id="revision" x="10" y="340" font-size="40" stroke="none" fill="black">$Revision$</text>
+   <rect id="test-frame" x="1" y="1" width="478" height="358" fill="none" stroke="#000"/>
+</svg>

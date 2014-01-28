@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN"
+  "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd" [
+  <!ATTLIST svg xmlns:xlink CDATA #FIXED "http://www.w3.org/1999/xlink">
+]>
+
+<!-- SVG - Learning By Coding - http://www.datenverdrahten.de/svglbc/ -->
+<!--    Author: Dr. Thomas Meinike 03/03 - thomas@handmadecode.de     -->
+
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+
+  <title>SVG - Learning By Coding</title>
+  <desc>SVG-Spezifikation in Beispielen</desc>
+
+  <defs>
+
+    <linearGradient id="animlingra1" x1="0" y1="0" x2="1" y2="1"
+      spreadMethod="reflect">
+      <stop offset="0%" style="stop-color: #000"/>
+      <stop offset="50%" style="stop-color: #00F"/>
+      <stop offset="100%" style="stop-color: #FFF"/>
+
+      <animate attributeName="x1" attributeType="XML" begin="0s" dur="5s"
+        from="0" to="1" repeatCount="indefinite"/>
+      <animate attributeName="y1" attributeType="XML" begin="0s" dur="5s"
+        from="0" to="1" repeatCount="indefinite"/>
+
+      <animate attributeName="x2" attributeType="XML" begin="0s" dur="5s"
+        from="1" to="0" repeatCount="indefinite"/>
+      <animate attributeName="y2" attributeType="XML" begin="0s" dur="5s"
+        from="1" to="0" repeatCount="indefinite"/>
+    </linearGradient>
+
+
+    <linearGradient id="animlingra2">
+      <stop offset="0%" style="stop-color: #000">
+        <animate attributeName="stop-color" attributeType="CSS" begin="2s" dur="20s"
+          from="#000" to="#00F" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="50%" style="stop-color: #00F">
+        <animate attributeName="stop-color" attributeType="CSS" begin="2s" dur="20s"
+          from="#00F" to="#F00" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="100%" style="stop-color: #FFF"/>
+    </linearGradient>
+
+
+    <radialGradient id="animradgra1" cx="0" cy="0" fx="1" fy="1">
+      <stop offset="0%" style="stop-color: #FFF"/>
+      <stop offset="60%" style="stop-color: #FF9"/>
+      <stop offset="100%" style="stop-color: #F00"/>
+
+      <animate attributeName="cx" attributeType="XML" begin="0s" dur="10s"
+        from="0" to="1" repeatCount="indefinite"/>
+      <animate attributeName="cy" attributeType="XML" begin="0s" dur="10s"
+        from="0" to="1" repeatCount="indefinite"/>
+
+      <animate attributeName="fx" attributeType="XML" begin="0s" dur="10s"
+        from="1" to="0" repeatCount="indefinite"/>
+      <animate attributeName="fy" attributeType="XML" begin="0s" dur="10s"
+        from="1" to="0" repeatCount="indefinite"/>
+    </radialGradient>
+
+
+    <radialGradient id="animradgra2" cx="0.5" cy="0.5" fx="0.5" fy="0.5">
+      <stop offset="0%" style="stop-color: #FFF"/>
+      <stop offset="60%" style="stop-color: #FF9">
+        <animate attributeName="stop-color" attributeType="CSS" begin="2s" dur="20s"
+          from="#FF9" to="#000" repeatCount="indefinite"/>
+        <animate attributeName="offset" attributeType="XML" begin="2s" dur="20s"
+          from="60%" to="100%" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="100%" style="stop-color: #F00"/>
+    </radialGradient>
+
+  </defs>
+
+  <text x="20" y="30" style="fill: #000; font-size: 24px">
+    Animation von Gradienten</text>
+
+  <rect x="20" y="60" width="400" height="40" style="fill: url(#animlingra1)"/>
+  <rect x="20" y="130" width="400" height="40" style="fill: url(#animlingra2)"/>
+
+  <circle cx="120" cy="260" r="50" style="fill: url(#animradgra1)"/>
+  <circle cx="320" cy="260" r="50" style="fill: url(#animradgra2)"/>
+
+</svg>

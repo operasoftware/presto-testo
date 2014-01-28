@@ -1,0 +1,56 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <title>Scaling SVGs</title>
+  <style type="text/css">
+    object, img {
+      border: red thin solid;
+    }
+    code {
+      text-transform: uppercase;
+    }
+  </style>
+</head>
+
+<body>
+  <p>Only 'width' specified on the <code>object</code>:</p>
+      
+  <div>
+    <object data="006.svg" type="image/svg+xml" width="100">
+      The browser must be SVG capable for these tests to make sense.
+    </object>
+  </div>
+
+	<p>Correct:</p>
+  
+  <p><img src="expected.png" width="100" height="50" alt="" /></p>
+
+  <hr>
+
+  <p>Only 'height' specified on the <code>object</code>:</p>
+
+  <div>
+    <object data="006.svg" type="image/svg+xml" height="50">
+      The browser must be SVG capable for these tests to make sense.
+    </object>
+  </div>
+
+  <p>Correct:</p>
+
+   <p><img src="expected.png" width="100" height="50" alt=""></p>
+
+  <hr>
+
+  <p>Both 'height' and 'width' specified on the <code>object</code>:</p>
+
+  <div>
+    <object data="006.svg" type="image/svg+xml" height="50" width="100">
+      The browser must be SVG capable for these tests to make sense.
+    </object>
+  </div>
+
+  <p>Correct:</p>
+
+   <p><img src="expected.png" width="100" height="50" alt=""></p>
+</body>
+</html>

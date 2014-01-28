@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+ <head>
+  <title>SVG as background-image</title>
+  <style type="text/css">
+   div{
+    height:64px;
+	width:64px;
+	background:blue;
+   }
+   div .svgdiv{
+    background:url("circle16x16.svg");
+   }
+   div .pngdiv{
+    background:url("circle16x16.png");
+   }
+  </style>
+ </head>
+ <body>
+ <p>Opera may show the zoomed in version of the first div incorrectly when the area is not a multiple of the svg image width or height.
+ This can be fixed for example by allowing subpixel precision when tiling the bitmaps. Also note how the png version handles this case,
+ by squashing some of the tiles.</p>
+  <p>You should see a square with 4x4 red circles with blue background below:</p>
+  <p>
+  <div>
+	<div class="svgdiv"/>
+  </div>
+  </p>
+  <p>
+  <div>
+	<div class="pngdiv"/>
+  </div>
+ </p>
+ <p>You should see a square with 4x4 red circles above. This is a png pattern, for comparison.</p>
+ </body>
+</html>

@@ -1,0 +1,18 @@
+<!doctype html>
+<html>
+  <head>
+    <title>TC #7</title>
+  </head>
+  <body>
+    <h1>SVG with percentage size and viewBox in a html:object</h1>
+    <!--Both object (black border) and svg (blue background) has 50%
+      width. The SVG is given half the width of the object. The svg
+      has default height 100% and is given all the height of the
+      object. The objects height is computed using the intrinsic ratio
+      of the SVG.-->
+<p>There should be a svg image below, the svg should use half the width of the square with the black border and the whole height.</p>
+
+    <object data="support/half-width-with-viewbox.svg" width="50%" type="image/svg+xml" style="border: 2px solid black;">[SVG NOT SUPPORTED]</object>
+  </body>
+</html>
+

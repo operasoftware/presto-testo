@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<svg x="0" y="0" width="1280" height="820" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title>Vertical gradient with declarative animation</title>
+
+<script xlink:href="/resources/fps.js"/>
+<script><![CDATA[
+
+window.onload = function() {
+	e = document.getElementsByTagName('rect')[1];
+	document.documentElement.targetFps = 100;
+	checkfps(2000);
+}
+
+]]></script>
+  <defs>
+    <linearGradient id="g1" x1="0" y1="0" x2="1" y2="0" spreadMethod="pad">
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity="0"/>
+      <stop offset="1" stop-color="#BFBFBF" stop-opacity="0.7"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1280" height="720" fill="black"/>
+  <rect x="1130" y="0" width="150" height="720" fill="url(#g1)">
+     <animateTransform attributeName="transform" type="translate" begin="0s" dur="2s" calcMode="linear" fill="freeze" repeatCount="indefinite" values="0,0;-1130,0;0,0"/>
+  </rect>
+<text id="f" x="10" y="750">Test not started</text>
+<text id="result" x="10" y="770"></text>
+
+</svg>

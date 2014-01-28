@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <!DOCTYPE html PUBLIC  "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>Tests if the cursor property and cursor element are supported</title>
+</head>
+<body>
+<table>
+<tr>
+<td align="center">SVG Image</td>
+<td align="center">Reference Image</td>
+</tr>
+<tr>
+<td align="right">
+<object data="../svggen/interact-cursor-01-f.svg" width="480" height="360" type="image/svg+xml"/>
+</td>
+<td align="left">
+<img alt="raster image of interact-cursor-01-f" src="../png/full-interact-cursor-01-f.png" width="480" height="360"/>
+</td>
+</tr>
+</table>
+<p>
+Test passes if all the different cursor behaviour is correct according to the description.
+</p>
+<ol>
+<li>
+Move the cursor to the top left corner, in the white area. This is the default cursor. 
+</li>
+<li>
+Move the cursor over the text at the top of the example. The cursor changes to the<em> text </em>cursor. 
+</li>
+<li>
+Move the cursor to the blue link text - the cursor changes to the <em>pointer</em> cursor.
+</li>
+</ol>
+<p>
+Now, move the cursor in turn to each of the gray rectangles. From top to bottom in the first row, the cursor 
+should change to:
+<ol>
+<li>A crosshair or other 'accurate positioning'  cursor</li>
+<li>The 'default' cursor, as noted above</li>
+<li>The 'pointer' cursor, as noted above</li>
+<li>A cursor indicating movement, such as panning</li>
+</ol>
+</p>
+<p>Now from top to bottom in the second row, the cursor should change to:
+<ol>
+<li>The 'text' cursor, as noted above</li>
+<li>A 'wait' cursor</li>
+<li>A 'help' cursor</li>
+<li>A special cursor which looks like a small magnifying glass. This is a downloaded image cursor.</li>
+</ol>
+</p>
+<p>Moving to the bottom-rightmost of the eight red triangles, and moving around them clockwise, the
+cursor should change to:
+<ol>
+<li>
+SouthEast-resize
+</li>
+<li>
+South-resize
+</li>
+<li>
+SouthWest resize
+</li>
+<li>
+West-resize
+</li>
+<li>
+NorthWest-resize
+</li>
+<li>
+North-resize
+</li>
+<li>
+NorthEast-resize
+</li>
+<li>
+East-resize
+</li>
+</ol>
+</p>
+<p>Lastly, move the cursor to the target in the bottom-right of the test. The cursor must not 
+change to the 'pointer'  cursor, but instread to the special magnifying glass cursor.
+</p>
+</body>
+</html>  

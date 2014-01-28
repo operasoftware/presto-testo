@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <!DOCTYPE html PUBLIC  "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>Tests basic use of textLength and lengthAdjust</title>
+</head>
+<body>
+<table>
+<tr>
+<td align="center">SVG Image</td>
+<td align="center">Reference Image</td>
+</tr>
+<tr>
+<td align="right">
+<object data="../svggen/text-text-01-b.svg" width="480" height="360" type="image/svg+xml"/>
+</td>
+<td align="left">
+<img alt="raster image of text-text-01-b" src="../png/full-text-text-01-b.png" width="480" height="360"/>
+</td>
+</tr>
+</table>
+<p>
+Pass if the rendered picture match the reference image except for the fourth (bottommost) sub-test pair. The
+reference image illustrates one valid way to achieve the spacing and squeezing. But since there are other valid ways, the 
+rendered picture might not look exactly as the reference image.
+</p>
+</body>
+</html>

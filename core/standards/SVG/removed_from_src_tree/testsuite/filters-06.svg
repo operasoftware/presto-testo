@@ -1,0 +1,87 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1 Basic//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11-basic.dtd">
+<svg version="1.1" baseProfile="basic" id="svg-root" width="480" height="360" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+	<title id="test-title">Test for input keywords</title>
+	<desc id="test-desc">Test generation of predefined inputs</desc>
+	<g id="test-body-content">
+		<defs>
+			<filter id="filtSrcGrph">
+				<feMerge>
+					<feMergeNode in="SourceGraphic"/>
+				</feMerge>
+			</filter>
+
+			<filter id="filtSrcAlp">
+				<feMerge>
+					<feMergeNode in="SourceAlpha"/>
+				</feMerge>
+			</filter>
+
+			<filter id="filtBkImg">
+				<feMerge>
+					<feMergeNode in="BackgroundImage"/>
+				</feMerge>
+			</filter>
+
+			<filter id="filtBkAlp">
+				<feMerge>
+					<feMergeNode in="BackgroundAlpha"/>
+				</feMerge>
+			</filter>
+
+			<filter id="filtFill">
+				<feMerge>
+					<feMergeNode in="FillPaint"/>
+				</feMerge>
+			</filter>
+
+			<filter id="filtStroke">
+				<feMerge>
+					<feMergeNode in="StrokePaint"/>
+				</feMerge>
+			</filter>
+
+			<linearGradient id="fillgrad" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="480" y2="360">
+				<stop stop-color="#ff0000" offset="0"/>
+				<stop stop-color="#0000ff" offset="1"/>
+			</linearGradient>
+
+			<linearGradient id="strokegrad">
+				<stop stop-color="#00ff00" offset="0"/>
+				<stop stop-color="#ff0000" offset="1"/>
+			</linearGradient>
+
+			<pattern id="fillpat" width="1" height="1" patternContentUnits="objectBoundingBox">
+				<rect x="0" y="0" width="0.5" height="0.5" fill="black"/>
+				<rect x="0.5" y="0.5" width="0.5" height="0.5" fill="black"/>
+			</pattern>
+		</defs>
+
+		<rect x="10" y="10" width="100" height="100" filter="url(#filtSrcGrph)" fill="blue"/>
+
+		<rect x="120" y="10" width="100" height="100" filter="url(#filtSrcAlp)" fill="blue" fill-opacity="0.5"/>
+
+		<g enable-background="new">
+			<rect x="255" y="35" width="50" height="50" fill="red"/>
+			<rect x="230" y="10" width="100" height="100" filter="url(#filtBkImg)" fill="blue"/>
+		</g>
+		
+		<g enable-background="new">
+			<rect x="365" y="35" width="50" height="50" fill="red" fill-opacity="0.5"/>
+			<rect x="340" y="10" width="100" height="100" filter="url(#filtBkAlp)" fill="blue" fill-opacity="0.5"/>
+		</g>
+
+		<rect x="10" y="120" width="100" height="100" filter="url(#filtFill)" fill="url(#fillgrad)"/>
+
+		<rect x="120" y="120" width="100" height="100" filter="url(#filtStroke)" stroke="url(#strokegrad)"/>
+
+		<rect x="230" y="120" width="100" height="100" filter="url(#filtFill)" fill="url(#fillpat)"/>
+
+		<rect x="340" y="120" width="100" height="100" filter="url(#filtStroke)" stroke="url(#fillpat)"/>
+
+		<rect x="10" y="230" width="100" height="100" filter="url(#filtFill)" fill="#00ff00"/>
+
+		<rect x="120" y="230" width="100" height="100" filter="url(#filtStroke)" stroke="#00ff00"/>
+	</g>
+	<rect id="test-frame" x="1" y="1" width="478" height="358" fill="none" stroke="#000000"/>
+</svg>

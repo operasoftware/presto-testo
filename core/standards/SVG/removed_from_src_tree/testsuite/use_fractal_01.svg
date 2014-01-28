@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<svg width="600" height="400" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+   <defs>
+     <myInventedElement id="text">External text.</myInventedElement>
+     
+     <path id="level_0" fill="#003399" d="M0 0, 2 0, 1 1.732z" />
+     <g id="level_1">
+         <use xlink:href="#level_0" transform="matrix(0.5,0,0,0.5,0,0)" />
+         <use xlink:href="#level_0" transform="matrix(0.5,0,0,0.5,1,0)" />
+         <use xlink:href="#level_0" transform="matrix(0.5,0,0,0.5,0.5,0.866)" />
+     </g>
+     <g id="level_2">
+         <use xlink:href="#level_1" transform="matrix(0.5,0,0,0.5,0,0)" />
+         <use xlink:href="#level_1" transform="matrix(0.5,0,0,0.5,1,0)" />
+         <use xlink:href="#level_1" transform="matrix(0.5,0,0,0.5,0.5,0.866)" />
+     </g>
+     <g id="level_3">
+	 <use xlink:href="#level_2" transform="matrix(0.5,0,0,0.5,0,0)" />
+         <use xlink:href="#level_2" transform="matrix(0.5,0,0,0.5,1,0)" />
+         <use xlink:href="#level_2" transform="matrix(0.5,0,0,0.5,0.5,0.866)" />         
+     </g>
+     <g id="level_4">
+         <use xlink:href="#level_3" transform="matrix(0.5,0,0,0.5,0,0)" />
+         <use xlink:href="#level_3" transform="matrix(0.5,0,0,0.5,1,0)" />
+         <use xlink:href="#level_3" transform="matrix(0.5,0,0,0.5,0.5,0.866)" />
+     </g>
+     <g id="level_5">
+	 <use xlink:href="#level_4" transform="matrix(0.5,0,0,0.5,0,0)" />
+         <use xlink:href="#level_4" transform="matrix(0.5,0,0,0.5,1,0)" />
+         <use xlink:href="#level_4" transform="matrix(0.5,0,0,0.5,0.5,0.866)" />     </g>
+   </defs>
+   <use xlink:href="#level_5" transform="translate(200,200) scale(100)"/>
+</svg>

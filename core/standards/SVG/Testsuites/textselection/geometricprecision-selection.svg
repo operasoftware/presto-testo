@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg">
+  <title>Text selection of text with 'geometricPrecision' text-rendering</title>
+
+  <text x="10" y="20" text-rendering="geometricPrecision">You should be able to select any and all of this text.</text>
+</svg>
+

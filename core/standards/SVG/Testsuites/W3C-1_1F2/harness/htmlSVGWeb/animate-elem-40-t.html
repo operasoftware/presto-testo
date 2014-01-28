@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC  "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+      <script src="../../../../../tools/svgweb/src/svg.js" data-path="../../../../../tools/svgweb/src"></script>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+      <meta name="keywords" content="W3C SVG 1.1 2nd Edition Test Suite"/>
+      <meta name="description" content="W3C SVG 1.1 2nd Edition SVGWeb Test Suite"/>
+      <title>
+SVG 1.1 2nd Edition Test (svgweb): animate-elem-40-t.svg
+      </title>
+      <style type="text/css">
+        <!--
+         .bodytext      { font-family:verdana, helvetica, sans-serif; font-size: 12pt; line-height: 125%; text-align: Left; margin-top: 0; margin-bottom: 0 }
+         .pageTitle     { line-height: 150%; font-size: 20pt; font-weight : 900; margin-bottom: 20pt }
+         .pageSubTitle  { color : blue; line-height: 100%; font-size: 24pt; font-weight : 900 }
+         .openChapter   { color : blue; line-height: 125%; font-weight : 900 }
+         .openSection   { color : blue; line-height: 125%; font-weight : 900 }
+         .info          { color : black; line-height: 110%; font-size: 10pt; font-weight : 100 }
+         p              { margin-top:0; margin-bottom:0; padding-top:0; padding-bottom:0 }
+         blockquote     { margin-top:0; margin-bottom:0; padding-top:0; padding-bottom:0 }
+         .opscript      { margin-left: 3%; margin-right: 3%; }
+         .opscript p    { margin-top: 0.7em }
+         .navbar        { background: black; color: white; font-weight: bold }
+         .warning       { color: red; text-align: Center;}
+         a,a:visited    { color: blue }
+        -->
+      </style>
+      <link rel="prev" href="animate-elem-39-t.html" />
+      <link rel="index" href="index.html" />
+      <link rel="next" href="animate-elem-41-t.html" />
+      <script src="../resources/testharnessreport.js"></script>
+    </head>
+  <body class="bodytext">
+<div class="linkbar"> 
+  <p>Specification link: <a target="spec" href="http://www.w3.org/TR/SVG11/animate.html#Animation">19.2 Animation elements</a></p>
+  <p>
+    <a href="animate-elem-39-t.html" rel="prev">animate-elem-39-t ←</a> 
+    <a href="index.html" rel="index">index</a>
+    <a href="animate-elem-41-t.html" rel="next">→ animate-elem-41-t</a>
+  </p>
+</div>
+<div>
+  <br />
+  <p class="warning">
+    Tests that contain the draft-watermark are under development and may be incorrectly testing a feature.
+  </p>
+</div>
+<table align="center" border="0" cellspacing="0" cellpadding="10">
+  <tr>
+    <td align="center" colspan="3">
+      <table border="0" cellpadding="8">
+        <tr>
+          <td align="center" colspan="2" class="pageTitle">
+            <h1>animate-elem-40-t.svg</h1>
+          </td>
+        </tr>
+        <tr  class="navbar">
+          <td align="center">
+            SVG Image
+          </td>
+          <td align="center">
+            PNG Image
+          </td>
+        </tr>
+        <tr>
+          <td align="right">
+            <!--[if IE]>
+              <object src="../../svg/animate-elem-40-t.svg" width="480" height="360" classid="image/svg+xml"><p style="font-size:300%;color:red">FAIL</p>
+            <![endif]-->
+            <!--[if !IE]>-->
+              <object data="../../svg/animate-elem-40-t.svg" width="480" height="360" type="image/svg+xml"><p style="font-size:300%;color:red">FAIL</p>
+            <!--<![endif]-->
+              </object>
+          </td>
+          <td align="left">
+            <img alt="raster image of animate-elem-40-t.svg" src="../../png/animate-elem-40-t.png" width="480" height="360"/>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+
+<div class="opscript">
+    <h2 id="operatorscript">
+      Operator Script
+    </h2>
+    <div>
+<p>Run the test. No interaction required.</p>
+  </div>
+  <h2 id="passcriteria">
+    Pass Criteria
+  </h2>
+  <div>
+<p>Over the course of four seconds, the positions and sizes of elements
+      within the document are animated.  The test passes if the following
+      conditions are met:</p><ul>
+        <li>In the first four subtests, the shape, image or text moves clockwise once along
+        the perimeter of a square whose corners are indicated by the small grey squares.</li>
+        <li>In the fifth subtest ("x/y on &lt;text&gt;(2)"), the number "1" moves clockwise
+        along the perimeter of a square as in the first four subtests, while the number "2"
+        does the same except in an anti-clockise direction.</li>
+        <li>In the sixth subtest, the width and height of the image are animated continously,
+        from the initial square size, to the wide and short rectangle, to the narrow and
+        tall rectangle, and back to the square.  At each point when it reaches one of these
+        key sizes, the yellow outline indicating the size is shown thicker momentarily.
+        This animation takes only three seconds.</li>
+        <li>In the seventh subtest, the gray rectangle's width and height are animated in
+        the same way as the image in the sixth subtest.</li>
+      </ul>
+  </div>
+  <h2 id="testdescription">
+    Test Description
+  </h2>
+  <div>
+<p>
+        This test validates that the x and y attributes can be animated on
+        &lt;use&gt;, &lt;image&gt;, &lt;rect&gt; and &lt;text&gt; elements.
+        The test also validates that the width and height attributes can
+        be animated on &lt;image&gt; and &lt;rect&gt;
+      </p><p>
+        For x and y animation, each test shows the reference positions at
+        specific points in the animation. These markers are highlighted
+        at the time the target element's x/y position should match that of
+        the marker. For the &lt;text&gt; element, there are two tests. The
+        first one tests animating a single value on the text's x and y attributes.
+        The second one tests animating x, y values where there are values for each
+        of the text's characters. For that test (bottom left), there is a set of
+        reference markers for each of the characters ('1' and '2').
+      </p><p>
+        For width and height animation (the two tests on the bottom right), the
+        outline showing the expected width and height at given points in the animation
+        is highlighted at the time the marker's width and height should match that
+        of the target element.
+      </p>
+  </div>
+</div>
+<br/>
+<div class="linkbar">
+  <p>
+    <a href="animate-elem-39-t.html" rel="prev">animate-elem-39-t ←</a>
+    <a href="index.html" rel="index">index</a>
+    <a href="animate-elem-41-t.html" rel="next">→ animate-elem-41-t</a>
+  </p>
+</div>
+</body>
+</html>

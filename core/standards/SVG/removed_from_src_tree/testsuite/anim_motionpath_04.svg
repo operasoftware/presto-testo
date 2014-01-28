@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="400" height="400">
+ <defs>
+  <animateTransform attributeName="transform" attributeType="XML" type="rotate" from="0 150 150" to="360 150 150" begin="0s" dur="20s" xlink:href="#roto" />
+  <path id="thepath" d="M 50,150 c 100,-140 100,140 200,0 z" stroke="red" stroke-width="3" fill="none" pathLength="200"/>
+  <path id="rotpath" transform="rotate(90, 150, 150)" d="M 50,150 c 100,-140 100,140 200,0 z" stroke="red" stroke-width="3" fill="none" pathLength="200"/>
+ </defs>
+ <use xlink:href="#thepath"/>
+ <use xlink:href="#rotpath"/>
+ <circle cx="0" cy="0" r="5" fill="blue">
+  <animateMotion begin="0s" dur="10s" fill="freeze" repeatCount="indefinite">
+   <mpath xlink:href="#thepath"/>
+  </animateMotion>
+ </circle>
+ <circle cx="0" cy="0" r="5" fill="blue">
+   <animateMotion begin="0s" dur="10s" fill="freeze" repeatCount="indefinite">
+    <mpath xlink:href="#rotpath"/>
+   </animateMotion>
+ </circle>
+</svg>
+

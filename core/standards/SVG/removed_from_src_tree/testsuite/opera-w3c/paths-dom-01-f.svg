@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1 Full//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11-flat.dtd">
+<svg version="1.1" baseProfile="full" id="svg-root" width="100%" height="100%" viewBox="0 0 480 360" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" onload="init();">
+  <!--========================================================================-->
+  <!--=  Copyright 2006 World Wide Web Consortium, (Massachusetts          =-->
+  <!--=  Institute of Technology, European Research Consortium for         =-->
+  <!--=  Informatics and Mathematics (ERCIM), Keio University).            =-->
+  <!--=  All Rights Reserved.                                              =-->
+  <!--=  See http://www.w3.org/Consortium/Legal/.                          =-->
+  <!--========================================================================-->
+  <!-- NOTE:  CVS will automatically update the                             -->
+  <!--        "$RCSfile$" and "$Revision$"         -->
+  <!--        fields in the file.                                           -->
+  <!--        There is no need to update this information.                  -->
+  <!-- =====================================================================-->
+  <SVGTestCase xmlns="http://www.w3.org/2000/02/svg/testsuite/description/" reviewer="[reviewer]" owner="ED" desc="SVGPathElement DOM tests" status="empty" version="$Revision$" testname="$RCSfile$">
+    <OperatorScript>
+      <Paragraph>
+		The left green rect should have text around it. The text should start at 50 user units distance-along-the-path, which is the same as half the rect width.
+		The right green rect should also have text around it, but the text should start 50 units along the path relative to the provided pathLength. Since 50 is
+		half of the provided pathLength the text will start at the lower right-hand corner, and if the text is too long to fit it will be cut off when reaching 
+		the upper left corner of the rect.
+      </Paragraph>
+	  <Paragraph>
+		The values for getTotalLength should both be "300", and should not take into account the pathLength attribute.
+	  </Paragraph>
+	  <Paragraph>
+		The value for getPointAtLength should both be "(60,80)" for the left rect, and "(300,80)" for the right rect. It should not take into account the pathLength
+		attribute. The positions are shown in the image with a blue dot for the left rect, and a cyan dot for the right rect.
+	  </Paragraph>
+	  <Paragraph>
+		The values for getPathSegAtLength should both be 0, and should show "m 60 80" for the left rect and "m 300 80" for the right rect.
+	  </Paragraph>
+    </OperatorScript>
+  </SVGTestCase>
+  <title id="test-title">$RCSfile$</title>
+  <!--======================================================================-->
+  <!--Content of Test Case follows...                  =====================-->
+  <!--======================================================================-->
+  <g id="test-body-content">
+	<script>
+		function init()
+		{
+			var box = document.getElementById("box");
+			var boxpl = document.getElementById("boxWithPathlength");
+		
+			document.getElementById("tl1").firstChild.data = box.getTotalLength();
+			document.getElementById("tl2").firstChild.data = boxpl.getTotalLength();
+		
+			var pt = box.getPointAtLength(0);
+			document.getElementById("tp1").firstChild.data = "(" + pt.x + ", " + pt.y + ")";
+			var circle = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+			circle.setAttribute("cx", pt.x);
+			circle.setAttribute("cy", pt.y);
+			circle.setAttribute("r", 3);
+			circle.setAttribute("fill", "blue");
+			document.getElementById("test-body-content").appendChild(circle);
+			
+			pt = boxpl.getPointAtLength(0);
+			document.getElementById("tp2").firstChild.data = "(" + pt.x + ", " + pt.y + ")";
+			circle = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+			circle.setAttribute("cx", pt.x);
+			circle.setAttribute("cy", pt.y);
+			circle.setAttribute("r", 3);
+			circle.setAttribute("fill", "cyan");
+			document.getElementById("test-body-content").appendChild(circle);
+			
+			var segnum = box.getPathSegAtLength(0);
+			var seg = box.pathSegList.getItem(segnum);
+			document.getElementById("ts1").firstChild.data = segnum;
+			document.getElementById("tss1").firstChild.data = seg.pathSegTypeAsLetter + " " + seg.x + " " + seg.y;
+			
+			segnum = boxpl.getPathSegAtLength(0);
+			seg = boxpl.pathSegList.getItem(segnum);
+			document.getElementById("ts2").firstChild.data = segnum;
+			document.getElementById("tss2").firstChild.data = seg.pathSegTypeAsLetter + " " + seg.x + " " + seg.y;
+		}
+	</script>
+    <defs>
+		<path id="box" 
+		      d="m 60 80 h 100 v 50 h -100 v -50" 
+		      fill="green"/>
+		<path id="boxWithPathlength" 
+		      d="m 300 80 h 100 v 50 h -100 v -50" 
+		      fill="green" 
+		      pathLength="100"/>
+	</defs>
+	<text x="30" y ="30">Using startOffset="50":</text>
+	
+	<use xlink:href="#box"/>
+	<text>
+		<textPath xlink:href="#box" startOffset="50">
+			The text goes around the rect.
+		</textPath>
+	</text>
+
+	<text x="270" y ="30">Using startOffset="50" and</text>
+	<text x="270" y ="50">pathLength="100":</text>
+	<use xlink:href="#boxWithPathlength"/>
+	<text>
+		<textPath xlink:href="#boxWithPathlength" startOffset="50">
+			The text goes around the rect.
+		</textPath>
+	</text>
+	
+	<g id="dom-results" transform="translate(0,-10)">
+		<text x="10" y="180">getTotalLength:</text>
+		<text x="60" y="200" id="tl1">-1</text>
+		<text x="300" y="200" id="tl2">-1</text>
+	
+		<text x="10" y="220">getPointAtLength(0):</text>
+		<text x="60" y="240" id="tp1">-1</text>
+		<text x="300" y="240" id="tp2">-1</text>
+	
+		<text x="10" y="260">getPathSegAtLength(0):</text>
+		<text x="60" y="280" id="ts1">-1<tspan x="60" dy="20" id="tss1">n/a</tspan></text>
+		<text x="300" y="280" id="ts2">-1<tspan x="300" dy="20" id="tss2">n/a</tspan></text>
+	</g>
+  </g>
+  <text id="revision" x="10" y="340" font-size="40" stroke="none" fill="black">$Revision$</text>
+  <rect id="test-frame" x="1" y="1" width="478" height="358" fill="none" stroke="#000"/>
+</svg>

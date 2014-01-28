@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+<title>Performance test for opacity (large polygons)</title>
+<script xlink:href="/resources/fps.js"/>
+<script type="text/ecmascript"><![CDATA[
+
+window.onload = function() {
+	checkfps(1000);
+}
+
+]]></script>
+<text id="result" x="0" y="30">NOT TESTED (please enable Javascript)</text>
+<text id="f" x="0" y="50"></text>
+<g id="AnimationContainer">
+   <g>
+     <polygon fill="yellow" fill-opacity="0.8"
+               points="150,75  179,161 269,161 197,215
+                       223,301 150,250 77,301 103,215
+                       31,161 121,161"
+               transform="translate(50,50) scale(2)">
+     </polygon>
+     <animate attributeName="opacity" values="1;0.25;1" dur="1s" repeatCount="indefinite" />
+     <animateTransform attributeName="transform" attributeType="XML"
+                    type="rotate" from="0, 340, 460" to="360, 340, 460" dur="3s"
+                    repeatCount="indefinite" />
+   </g>
+   <g>
+     <polygon fill="cyan" fill-opacity="0.8"
+               points="150,75  179,161 269,161 197,215
+                       223,301 150,250 77,301 103,215
+                       31,161 121,161"
+               transform="translate(50,50) scale(2)">
+     </polygon>
+     <animate attributeName="opacity" values="1;0.25;1" dur="2s" repeatCount="indefinite" />
+     <animateTransform attributeName="transform" attributeType="XML"
+                    type="rotate" from="0, 340, 460" to="360, 340, 460" dur="5s"
+                    repeatCount="indefinite" />
+   </g>
+   <g>
+     <polygon fill="orange" fill-opacity="0.8"
+               points="150,75  179,161 269,161 197,215
+                       223,301 150,250 77,301 103,215
+                       31,161 121,161"
+               transform="translate(50,50) scale(2)">
+     </polygon>
+     <animate attributeName="opacity" values="1;0.25;1" dur="3s" repeatCount="indefinite" />
+     <animateTransform attributeName="transform" attributeType="XML"
+                    type="rotate" from="0, 340, 460" to="360, 340, 460" dur="7s"
+                    repeatCount="indefinite" />
+   </g>
+   <g>
+     <polygon fill="navy" fill-opacity="0.8"
+               points="150,75  179,161 269,161 197,215
+                       223,301 150,250 77,301 103,215
+                       31,161 121,161"
+               transform="translate(50,50) scale(2)">
+     </polygon>
+     <animate attributeName="opacity" values="1;0.25;1" dur="5s" repeatCount="indefinite" />
+     <animateTransform attributeName="transform" attributeType="XML"
+                    type="rotate" from="0, 340, 460" to="360, 340, 460" dur="11s"
+                    repeatCount="indefinite" />
+   </g>
+   <g>
+     <polygon fill="black" fill-opacity="0.8"
+               points="150,75  179,161 269,161 197,215
+                       223,301 150,250 77,301 103,215
+                       31,161 121,161"
+               transform="translate(50,50) scale(2)">
+     </polygon>
+     <animate attributeName="opacity" values="1;0.25;1" dur="7s" repeatCount="indefinite" />
+     <animateTransform attributeName="transform" attributeType="XML"
+                    type="rotate" from="0, 340, 460" to="360, 340, 460" dur="13s"
+                    repeatCount="indefinite" />
+   </g>
+</g>
+</svg>

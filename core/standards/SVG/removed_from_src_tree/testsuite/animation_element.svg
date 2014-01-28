@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  id="svg-root" width="100%" height="100%" viewBox="0 0 480 360" onload="getChildDocument()">
+	
+	<filter id="feImage" primitiveUnits="objectBoundingBox">
+		<feImage id="d" xlink:href="circles.svg" width="100%" height="100%"/>
+	</filter>
+	
+	<g transform="translate(50 0)">
+		<animation id="a" xlink:href="overflow_animation.svg" x="10" y="100" width="100" height="100"/>
+		<foreignObject id="b" xlink:href="overflow_animation.svg" x="110" y="100" width="100" height="100"/>
+		<image id="c" xlink:href="overflow_animation.svg" x="210" y="100" width="100" height="100"/>
+		<rect x="310" y="100" width="100" height="100" filter="url(#feImage)"/>
+		
+		<g style="font: 10px sans-serif">
+			<text x="10" y="80">&lt;animation&gt;</text>
+			<text x="110" y="80">&lt;foreignObject&gt;</text>
+			<text x="210" y="80">&lt;image&gt;</text>
+			<text x="310" y="80">&lt;feImage&gt;</text>
+		</g>
+	</g>
+	
+	<rect id="test-frame" x="1" y="1" width="478" height="358" fill="none" stroke="#000000"/>
+
+	<script>
+		function getChildDocument()
+		{
+			var a = document.getElementById("a");
+			var b = document.getElementById("b");
+			var c = document.getElementById("c");
+			var d = document.getElementById("d");
+			opera.postError("a: " + a + " b: " + b + " c: " + c + " d: " + d);
+			var subdoc = a.getSVGDocument();
+			subdoc.getElementById("r").setAttribute("fill", "green");
+			
+			subdoc = b.getSVGDocument();
+			subdoc.getElementById("r").setAttribute("fill", "yellow");
+			
+			subdoc = c.getSVGDocument();
+			subdoc.getElementById("r").setAttribute("fill", "purple");
+
+			subdoc = d.getSVGDocument();
+			subdoc.getElementById("c1").setAttribute("fill", "green");
+		}
+	</script>
+
+</svg>
+

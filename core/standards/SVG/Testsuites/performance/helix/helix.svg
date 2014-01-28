@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN"
+"http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style = "background: white;" onload="init()">
+<title>Performance test for SVG engine drawing a helix</title>
+  <script xlink:href="config.js" type="text/javascript" />
+  <script xlink:href="textEngine.js" type="text/javascript" />
+  <script xlink:href="drawerEngine.js" type="text/javascript" />
+  <script xlink:href="3dEngine.js" type="text/javascript" />
+  <script xlink:href="helix.js" type="text/javascript" />
+  <g id="helix"></g>
+  <g id="helixtext"></g>
+  <text x="100" y="100" fill="blue" id="status"></text>
+</svg>

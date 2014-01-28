@@ -1,0 +1,6 @@
+#!/bin/bash
+
+for file in `grep $1 *.svg | cut -d. -f1`; 
+do 
+   mv $file* ../$2/;
+done

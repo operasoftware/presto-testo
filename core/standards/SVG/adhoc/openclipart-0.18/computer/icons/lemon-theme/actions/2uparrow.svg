@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN"
+"http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<!-- Created with Sodipodi ("http://www.sodipodi.com/") --><svg height="437.5" id="svg1" sodipodi:docbase="/usr/share/icons/Lemon/scalable/actions/" sodipodi:docname="/usr/share/icons/Lemon/scalable/actions/2uparrow.svg" sodipodi:version="0.34" version="1.0" width="437.5" x="0" xmlns="http://www.w3.org/2000/svg" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:xlink="http://www.w3.org/1999/xlink" y="0">
+  <metadata>
+    <rdf:RDF xmlns:cc="http://web.resource.org/cc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+      <cc:Work rdf:about="">
+        <dc:title>Lemon SVG theme</dc:title>
+        <dc:description></dc:description>
+        <dc:subject>
+          <rdf:Bag>
+            <rdf:li>icon</rdf:li>
+            <rdf:li></rdf:li>
+            <rdf:li>lemon_theme_icon</rdf:li>
+            <rdf:li>icons</rdf:li>
+            <rdf:li>hash</rdf:li>
+            <rdf:li>action</rdf:li>
+            <rdf:li>computer</rdf:li>
+            <rdf:li>theme</rdf:li>
+          </rdf:Bag>
+        </dc:subject>
+        <dc:publisher>
+          <cc:Agent rdf:about="http://www.openclipart.org">
+            <dc:title>Jose Hevia</dc:title>
+          </cc:Agent>
+        </dc:publisher>
+        <dc:creator>
+          <cc:Agent>
+            <dc:title>Jose Hevia</dc:title>
+          </cc:Agent>
+        </dc:creator>
+        <dc:rights>
+          <cc:Agent>
+            <dc:title>Jose Hevia</dc:title>
+          </cc:Agent>
+        </dc:rights>
+        <dc:date></dc:date>
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+        <cc:license rdf:resource="http://web.resource.org/cc/PublicDomain"/>
+        <dc:language>en</dc:language>
+      </cc:Work>
+      <cc:License rdf:about="http://web.resource.org/cc/PublicDomain">
+        <cc:permits rdf:resource="http://web.resource.org/cc/Reproduction"/>
+        <cc:permits rdf:resource="http://web.resource.org/cc/Distribution"/>
+        <cc:permits rdf:resource="http://web.resource.org/cc/DerivativeWorks"/>
+      </cc:License>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview id="base"/>
+  <defs id="defs3">
+    <linearGradient id="linearGradient580">
+      <stop id="stop581" offset="0" style="stop-color:#ffffff;stop-opacity:1;"/>
+      <stop id="stop582" offset="1" style="stop-color:#ffff00;stop-opacity:0.6235;"/>
+    </linearGradient>
+    <linearGradient id="linearGradient53">
+      <stop id="stop54" offset="0" style="stop-color:#faff00;stop-opacity:1;"/>
+      <stop id="stop55" offset="1" style="stop-color:#026d00;stop-opacity:1;"/>
+    </linearGradient>
+    <linearGradient id="linearGradient48">
+      <stop id="stop49" offset="0" style="stop-color:#000f67;stop-opacity:1;"/>
+      <stop id="stop50" offset="1" style="stop-color:#ffffff;stop-opacity:1;"/>
+    </linearGradient>
+    <linearGradient id="linearGradient51" x1="0.33333299" x2="0.74774802" xlink:href="#linearGradient53" y1="0.41406199" y2="0.546875"/>
+    <linearGradient id="linearGradient52" x1="0.48895901" x2="0.48895901" xlink:href="#linearGradient53" y1="0.19354799" y2="1"/>
+    <linearGradient id="linearGradient32" x1="0.101911" x2="0.94267499" xlink:href="#linearGradient48" y1="0.46540901" y2="0.45282999"/>
+    <linearGradient id="linearGradient33" x1="-6.84581591e-9" x2="1" xlink:href="#linearGradient48" y1="-4.18149391e-8" y2="1"/>
+    <radialGradient cx="0.28301901" cy="0.27343801" fx="0.28301901" fy="0.27343801" id="radialGradient579" r="1.54766297" xlink:href="#linearGradient580"/>
+  </defs>
+  <path d="M 226.3828 430.0775 C 280.4257 430.0576 397.0314 408.7809 397.2679 397.5181 C 373.1473 380.6991 246.6669 231.4151 218.9349 230.8768 C 188.4861 231.0256 74.84071 388.4058 59.12437 398.5013 C 59.12437 409.1095 167.1886 430.3328 226.3828 430.0775 z " id="path595" style="font-size:12;fill:#ffb300;fill-opacity:1;fill-rule:evenodd;stroke:#ff7f00;stroke-width:18.75;stroke-opacity:1;stroke-dasharray:none;"/>
+  <path d="M 165.3438 410.075 C 151.3065 416.3181 86.58208 400.1873 82.7603 390.7477 C 80.29496 380.0768 114.7136 346.5163 125.1568 332.3406 C 136.5205 321.6428 199.3124 246.9511 215.0978 243.8121 C 235.9405 242.5168 177.6242 403.9008 165.3438 410.075 z " id="path578" style="font-size:12;fill:url(#radialGradient579);fill-opacity:1;fill-rule:evenodd;stroke-width:1;"/>
+  <path d="M 222.894 220.7204 C 276.9368 220.7005 393.5426 199.4238 393.779 188.161 C 369.6584 171.342 243.178 22.05814 215.446 21.51979 C 184.9973 21.66861 71.35186 179.0487 55.63552 189.1442 C 55.63552 199.7524 163.6997 220.9757 222.894 220.7204 z " id="path622" style="font-size:12;fill:#ffb300;fill-opacity:1;fill-rule:evenodd;stroke:#ff7f00;stroke-width:18.75;stroke-opacity:1;stroke-dasharray:none;"/>
+  <path d="M 161.8549 200.7178 C 147.8176 206.961 83.09324 190.8301 79.27145 181.3906 C 76.80611 170.7197 111.2248 137.1592 121.6679 122.9835 C 133.0316 112.2857 195.8235 37.59407 211.609 34.45509 C 232.4516 33.15982 174.1353 194.5437 161.8549 200.7178 z " id="path623" style="font-size:12;fill:url(#radialGradient579);fill-opacity:1;fill-rule:evenodd;stroke-width:1;"/>
+</svg>

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<svg width="95%" height="100%" viewBox="0 0 1000 1000"
+   version="1.2" baseProfile="tiny"
+   xmlns="http://www.w3.org/2000/svg"  
+   xmlns:xlink="http://www.w3.org/1999/xlink">
+
+<title>Additive animation of text y and y </title> 
+<desc>
+Two values animations are added with additive sum for
+x and y of text. The visible result for an additive behaviour 
+is that the blue 'text' (with all glyphs at the same position) 
+covers exactly the red 'text' without any visible animation effect.
+If the blue text moves somehow and the red gets visible,
+the animation is not additive as indicated in grey.
+
+
+Behaviour of different viewers:
+
+
+Adobe plugin (3.01 Beta Release 1, Build 88): shows additive behaviour
+Squiggle 1.7:  shows additive behaviour
+Opera 8.x: no animation here and some more nonsense
+Opera9tp1/2/beta1/2: different nonsense,  only the first list item used for animation, for this not 
+                     additive behaviour
+Opera9.00/9.10: wrong timing, something like not additive behaviour
+Opera9.50 alpha/beta: not additive behaviour
+
+</desc> 
+
+
+<animate xlink:href="#text"
+	attributeName="x" 
+	attributeType="XML"
+	values="100,150,200,250;500,450,400,350"
+	dur="6s"
+	repeatCount="indefinite" />
+<animate xlink:href="#text"
+	attributeName="y" 
+	attributeType="XML"
+	values="100,150,200,250;500,450,400,350"
+	dur="5.3s"
+	repeatCount="indefinite" />
+
+<animate xlink:href="#text"
+	attributeName="x" 
+	attributeType="XML"
+	values="500,450,400,350;100,150,200,250"
+	dur="6s"
+	repeatCount="indefinite"
+	additive="sum" />
+<animate xlink:href="#text"
+	attributeName="y" 
+	attributeType="XML"
+	values="500,450,400,350;100,150,200,250"
+	dur="5.3s"
+	repeatCount="indefinite"
+	additive="sum" />
+
+<animate xlink:href="#notadditive"
+	attributeName="x" 
+	attributeType="XML"
+	from="500,450,400,350" 
+	to="100,150,200,250"
+	dur="6s"
+	repeatCount="indefinite" />
+<animate xlink:href="#notadditive"
+	attributeName="y" 
+	attributeType="XML"
+	from="500,450,400,350" 
+	to="100,150,200,250"
+	dur="5.3s"
+	repeatCount="indefinite" />
+
+
+<rect x="0" y="0" width="1000" height="1000" fill="#ffd" />
+
+
+<g font-size="200" stroke-width="2" fill="none">
+<text xml:id="notadditive"  id="notadditive" x="600" y="600"  fill="#ccc">text</text>
+<text x="600,600,600,600" y="600,600,600,600" stroke="none" fill="#f00">text</text> 
+<text xml:id="text" id="text" x="0" y="0" stroke="none" fill="#00f">text</text> 
+</g>
+
+
+</svg>
+

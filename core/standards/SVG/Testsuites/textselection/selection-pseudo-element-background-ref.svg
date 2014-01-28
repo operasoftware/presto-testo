@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg">
+  <title>Text selection background color using ::selection (reference)</title>
+
+  <text x="20" y="40">This test requires the Ahem font.</text>
+
+  <text x="20" y="70">You should see a blue square below:</text>
+  <rect x="20" y="84" width="20" height="20" fill="#0080FF"/>
+</svg>
+

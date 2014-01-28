@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1 Tiny//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11-tiny.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" baseProfile="tiny" width="200" height="100" >
+  <rect x="0" y="0" width="200" height="100" fill="green" stroke="black" stroke-width="4"/>
+  <line x1="0" y1="0" x2="200" y2="100" stroke="black" />
+  <line x1="0" y1="100" x2="200" y2="0" stroke="black" />
+</svg>

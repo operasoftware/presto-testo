@@ -1,0 +1,13 @@
+<html>
+<title>Testing object tag embedding of svg</title>
+<body>
+This is HTML, and this is a SVG embedded inside an object tag:
+<object type="image/svg+xml" data="fill_rgb_01.svg" width="60" height="20" style="border: 2px solid green;"></object>
+<p>This is more HTML. Here is a PNG showing how the SVG above should look like:
+<img src="rgb.png" style="border: 2px solid green;"></p>
+<p>Now some more HTML. And then an SVG that will be stretched
+<object type="image/svg+xml" data="fill_rgb_01.svg" width="400" height="40"  style="border: 2px solid green;"></object>
+</p>
+<p>Here is a PNG showing how the SVG above should look like:
+<img src="rgb.png" width="400" height="40" style="border: 2px solid green;"></p>
+</body></html>

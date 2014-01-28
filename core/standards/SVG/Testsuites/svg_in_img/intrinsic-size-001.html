@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+  <head>
+    <title>TC #1</title>
+  </head>
+  <body>
+    <h1>SVG with default size and viewBox in a html:object</h1>
+    <!--The width is decided by the object which uses its containing
+      element (176x62) to resolve the percentage value.  The object
+      uses the intrinsic ratio, defined by the viewBox of the svg, to
+      compute the height.-->
+<p>There should be a svg image below. No red should be visible.</p>
+
+    <div style="width:176px;height:62px;background:#ff0000">
+      <object data="support/default-size-with-viewbox.svg" width="100%">[SVG NOT SUPPORTED]</object>
+    </div>
+  </body>
+</html>
+

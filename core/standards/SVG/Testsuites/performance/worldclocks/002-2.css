@@ -1,0 +1,25 @@
+html{ height:98%; background:black;  }
+body{ height:98%; padding:0; margin:0; margin-top:0; color:lime; }
+
+/* default: two columns */
+body {margin-top:1px; margin-left:0px; margin-right:0px; margin-bottom:0px}
+.clockObj { width:100%; align:top; margin-bottom:-3px; margin-left:4px; margin-right:-5px;}
+.infoObj { width:37.3%; align:top; margin-bottom:-3px; margin-right:2px;}
+
+/* taller than wide: 1 column */
+@media all and (max-aspect-ratio: 1/1)
+{ 
+  body {margin-top:0px; margin-left:1px; margin-right:1px; margin-bottom:0px}
+  .clockObj { width:100%; align:top; margin-bottom:-5px; margin-right:-5px; margin-top:2px}
+  .infoObj { width:73.8%; align:top; margin-bottom:-5px; margin-right:0px; }
+}
+
+/* very wide aspect-ratio: 3 columns */
+@media all and (min-aspect-ratio: 3/1)
+{ 
+  body {margin-top:0px; margin-left:0.2px; margin-right:1px; margin-bottom:0px}
+  .clockObj { width:8.50%; align:top; margin-bottom:-5px; margin-right:-4px; margin-top:1px}
+  .infoObj { width:25.3%; align:top; margin-bottom:-5px; margin-right:-2px; }
+}
+
+

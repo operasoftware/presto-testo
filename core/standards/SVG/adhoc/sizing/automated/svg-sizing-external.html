@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>SVG sizing: External</title>
+    <link rel="author" title="Opera Software ASA" href="http://www.opera.com/">
+    <script src="/resources/testharness.js"></script>
+    <script src="/resources/testharnessreport.js"></script>
+    <script src="../resources/utils.js"></script>
+
+    <style>
+      iframe { border: 0 }
+    </style>
+
+  </head>
+  <body>
+    <noscript><p>Enable JavaScript and reload</p></noscript>
+    <div id="log"></div>
+
+    <script>
+      var NSSVG = "http://www.w3.org/2000/svg";
+
+      setup({timeout:300000});
+
+      var placeholderElements = [
+          "object",
+          "img",
+          "iframe",
+      ];
+
+      var widthHeightAttrValues = [
+          null,
+          "100",
+          "100%"
+      ];
+
+      var maxWidthHeightStyleValue = [
+          null,
+//          "50px", // max-width testing not complete
+      ];
+
+      var viewBoxAttrValues = [
+          null,
+          "0 0 100 200"
+      ];
+
+      function checkWidthRatioControlledSize(id, testData, placeholderRect, width, ratio, str) {
+          var constrained_width = width;
+
+          if (constrained_width < testData.minWidth())
+              constrained_width = testData.minWidth();
+          else if (constrained_width > testData.maxWidth())
+              constrained_width = testData.maxWidth();
+
+          var constrained_height = constrained_width / ratio;
+
+          if (constrained_height < testData.minWidth())
+          {
+              constrained_height = testData.minWidth();
+              constrained_width = constrained_height * ratio;
+          }
+          else if (constrained_height > testData.maxHeight())
+          {
+              constrained_height = testData.maxHeight();
+              constrained_width = constrained_height * ratio;
+          }
+
+          assert_equals(placeholderRect.width, constrained_width, "id " + id + ": width," + str);
+          assert_equals(placeholderRect.height, constrained_height, "id " + id + ": height," + str);
+      }
+
+      function checkHeightRatioControlledSize(id, testData, placeholderRect, height, ratio, str) {
+          var constrained_height = height;
+
+          if (constrained_height < testData.minHeight())
+              constrained_height = testData.minHeight();
+          else if (constrained_height > testData.maxHeight())
+              constrained_height = testData.maxHeight();
+
+          var constrained_width = constrained_height * ratio;
+
+          if (constrained_width < testData.minWidth())
+          {
+              constrained_width = testData.minWidth();
+              constrained_height = constrained_width / ratio;
+          }
+          else if (constrained_width > testData.maxWidth())
+          {
+              constrained_width = testData.maxWidth();
+              constrained_height = constrained_width / ratio;
+          }
+
+          assert_equals(placeholderRect.width, constrained_width, "id " + id + ": width," + str);
+          assert_equals(placeholderRect.height, constrained_height, "id " + id + ": height," + str);
+      }
+
+      function checkIndependentWidth(id, testData, placeholderRect, width, str) {
+          if (width < testData.minWidth())
+              assert_equals(placeholderRect.width, testData.minWidth(), "id " + id + ": min width," + str);
+          else if (width > testData.maxWidth())
+              assert_equals(placeholderRect.width, testData.maxWidth(), "id " + id + ": max width," + str);
+          else
+              assert_equals(placeholderRect.width, width, "id " + id + ": unbounded width," + str);
+      }
+
+      function checkIndependentHeight(id, testData, placeholderRect, height, str) {
+          if (height < testData.minHeight())
+              assert_equals(placeholderRect.height, testData.minHeight(), "id " + id + ": min height," + str);
+          else if (height > testData.maxHeight())
+              assert_equals(placeholderRect.height, testData.maxHeight(), "id " + id + ": max height," + str);
+          else
+              assert_equals(placeholderRect.height, height, "id " + id + ": unbounded height," + str);
+      }
+
+      function checkObjectSize(id, testData, placeholderRect) {
+          if (testData.usedPlaceholderWidthIsAuto())
+          {
+              if (testData.intrinsicRatio())
+              {
+                  if (testData.usedPlaceholderHeightIsAuto())
+                  {
+                      if (testData.intrinsicWidth())
+                          checkWidthRatioControlledSize(id, testData, placeholderRect, testData.intrinsicWidth(), testData.intrinsicRatio(), " (1),");
+                      else if (testData.intrinsicHeight())
+                          checkHeightRatioControlledSize(id, testData, placeholderRect, testData.intrinsicHeight(), testData.intrinsicRatio(), " (2),");
+                      else
+                      {
+                          checkIndependentWidth(id, testData, placeholderRect, testData.usedPlaceholderWidth(), " (3a),");
+                          checkIndependentHeight(id, testData, placeholderRect, testData.usedPlaceholderWidth() / testData.intrinsicRatio(), " (3b),");
+                      }
+                  }
+                  else
+                      checkHeightRatioControlledSize(id, testData, placeholderRect, testData.usedPlaceholderHeight(), testData.intrinsicRatio(), " (4),");
+              }
+              else
+              {
+                  if (testData.intrinsicWidth())
+                      checkIndependentWidth(id, testData, placeholderRect, testData.intrinsicWidth(), " (5),");
+                  else
+                      checkIndependentWidth(id, testData, placeholderRect, 300, " (6),");
+
+                  if (testData.usedPlaceholderHeightIsAuto())
+                  {
+                      if (testData.intrinsicHeight())
+                          checkIndependentHeight(id, testData, placeholderRect, testData.intrinsicHeight(), " (7),");
+                      else
+                          checkIndependentHeight(id, testData, placeholderRect, 150, " (8),");
+                  }
+                  else
+                      checkIndependentHeight(id, testData, placeholderRect, testData.usedPlaceholderHeight(), " (9),");
+              }
+          }
+          else
+          {
+              if (testData.intrinsicRatio())
+              {
+                  if (testData.usedPlaceholderHeightIsAuto())
+                      checkWidthRatioControlledSize(id, testData, placeholderRect, testData.usedPlaceholderWidth(), testData.intrinsicRatio());
+                  else
+                  {
+                      checkIndependentWidth(id, testData, placeholderRect, testData.usedPlaceholderWidth());
+                      checkIndependentHeight(id, testData, placeholderRect, testData.usedPlaceholderHeight());
+                  }
+              }
+              else
+              {
+                  checkIndependentWidth(id, testData, placeholderRect, testData.usedPlaceholderWidth());
+
+                  if (testData.usedPlaceholderHeightIsAuto())
+                  {
+                      if (testData.intrinsicHeight())
+                          checkIndependentHeight(id, testData, placeholderRect, testData.intrinsicHeight());
+                      else
+                          checkIndependentHeight(id, testData, placeholderRect, 150);
+                  }
+                  else
+                      checkIndependentHeight(id, testData, placeholderRect, testData.usedPlaceholderHeight());
+              }
+          }
+      }
+
+      function checkIFrameSize(id, testData, placeholderRect) {
+          if (testData.usedPlaceholderWidthIsAuto())
+              assert_equals(placeholderRect.width, 300, "id " + id + ":,");
+          else
+              assert_equals(placeholderRect.width, testData.usedPlaceholderWidth(), "id " + id + ":,");
+      }
+
+      function checkImgSize(id, testData, placeholderRect) {
+          // <img> sized like <object>
+          checkObjectSize(id, testData, placeholderRect);
+      }
+
+      function checkSize(id, testData, placeholderRect) {
+          if (testData.placeholderElement == "object")
+              checkObjectSize(id, testData, placeholderRect);
+          else if (testData.placeholderElement == "iframe")
+              checkIFrameSize(id, testData, placeholderRect);
+          else if (testData.placeholderElement == "img")
+              checkImgSize(id, testData, placeholderRect);
+      }
+
+      function setupContainer(testData) {
+          var container = document.createElement("div");
+
+          if (testData.containerWidthStyle)
+              container.style.width = testData.containerWidthStyle;
+
+          if (testData.containerHeightStyle)
+              container.style.height = testData.containerHeightStyle;
+
+          return container;
+      }
+
+      function generateSVG(testData) {
+          var res = 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg"';
+
+          if (testData.widthAttr)
+              res += ' width="' + testData.widthAttr + '"';
+
+          if (testData.heightAttr)
+              res += ' height="' + testData.heightAttr + '"';
+
+          if (testData.viewBoxAttr)
+              res += ' viewBox="' + testData.viewBoxAttr + '"';
+
+          res += '></svg>';
+
+          return res;
+      }
+
+      function setupPlaceholder(testData, i) {
+          var placeholder = document.createElement(testData.placeholderElement);
+
+          if (testData.placeholderWidthAttr)
+              placeholder.setAttribute("width", testData.placeholderWidthAttr);
+
+          if (testData.placeholderHeightAttr)
+              placeholder.setAttribute("height", testData.placeholderHeightAttr);
+
+          if (testData.maxWidthStyle)
+              placeholder.style.maxWidth = testData.maxWidthStyle;
+
+          if (testData.maxHeightStyle)
+              placeholder.style.maxHeight = testData.maxHeightStyle;
+
+          placeholder.setAttribute(testData.placeholderDataAttribute(), generateSVG(testData));
+
+          return placeholder;
+      }
+
+      OUTER_WIDTH = 1500;
+      OUTER_HEIGHT = 1500;
+
+      var testContainer = document.createElement("div");
+      testContainer.style.position = "absolute";
+      testContainer.style.left = "0px";
+      testContainer.style.top = "0px";
+      testContainer.style.width = OUTER_WIDTH + "px";
+      testContainer.style.height = OUTER_HEIGHT + "px";
+
+      document.body.appendChild(testContainer);
+
+      var i = 0;
+      var testId = getQueryVariable("id");
+
+      function smoketest()
+      {
+          var testData = new TestData({
+              "placeholderElement" : "object",
+              "placeholderHeightAttr" : "100",
+              "viewboxAttr" : "0 0 100 200"
+          });
+
+          assert_false(testData.computedPlaceholderHeightIsAuto());
+
+          /* Testing ground for the test itself */
+      }
+
+      if (!testId)
+          test(smoketest, "Smoke test");
+
+      var test_steps = [];
+
+      maxWidthHeightStyleValue.forEach(function(maxWidthStyle) {
+          maxWidthHeightStyleValue.forEach(function(maxHeightStyle) {
+              widthHeightAttrValues.forEach(function(widthAttr) {
+                  widthHeightAttrValues.forEach(function(heightAttr) {
+                      viewBoxAttrValues.forEach(function(viewBoxAttr) {
+                          widthHeightAttrValues.forEach(function(placeholderWidthAttr) {
+                              widthHeightAttrValues.forEach(function(placeholderHeightAttr) {
+                                  placeholderElements.forEach(function(placeholderElement) {
+
+                                      if (testId == undefined || testId == i)
+                                      {
+                                          var testData = new TestData({
+                                              "placeholderElement" : placeholderElement,
+                                              "placeholderWidthAttr": placeholderWidthAttr,
+                                              "placeholderHeightAttr": placeholderHeightAttr,
+                                              "viewBoxAttr" : viewBoxAttr,
+                                              "widthAttr" : widthAttr,
+                                              "heightAttr" : heightAttr,
+                                              "maxWidthStyle" : maxWidthStyle,
+                                              "maxHeightStyle" : maxHeightStyle,
+                                          });
+
+                                          var t = async_test(testData.name);
+                                          var idx = i;
+
+                                          var step = t.step_func(function () {
+                                              var container = setupContainer(testData);
+                                              var placeholder = setupPlaceholder(testData, i);
+
+                                              placeholder.onload = this.step_func(function() {
+                                                  var placeholderRect = placeholder.getBoundingClientRect();
+
+                                                  try {
+                                                      checkSize(idx, testData, placeholderRect);
+                                                  }
+                                                  finally
+                                                  {
+                                                      if (!testId)
+                                                          testContainer.removeChild(container);
+                                                  }
+
+                                                  this.done();
+                                              });
+
+                                              container.appendChild(placeholder);
+                                              testContainer.appendChild(container);
+                                          });
+                                          test_steps.push(step);
+                                      }
+
+                                      i++;
+                                  });
+                              });
+                          });
+                      });
+                  });
+              });
+          });
+      });
+
+      var step_idx = -1;
+      function test_next() {
+          step_idx++;
+          if (step_idx < test_steps.length) {
+            setTimeout(function() {test_steps[step_idx]();}, 0);
+          }
+      }
+
+      add_result_callback(test_next);
+      test_next();
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg">
+  <title>Text selection across multiple lines within a single &lt;text&gt; element</title>
+ 
+  <text x="10" y="20">
+    <tspan>You should be able to select text from</tspan>
+    <tspan x="10" y="40">both of these two lines at the same time.</tspan>
+  </text>
+</svg>
+

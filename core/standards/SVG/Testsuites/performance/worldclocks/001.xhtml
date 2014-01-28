@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML Basic 1.1//EN" "http://www.w3.org/TR/xhtml-basic/xhtml-basic11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>WorldClocks SVG performance</title> 
+  <meta name = "viewport" content = "width = device-width, user-scalable = no" />
+  <meta name="description" content="SVG loading performance test, based on the Vienna SVG demos." />
+  <link rel="author" href="mailto:arntj@opera.com" />
+  <link rel="stylesheet" type="text/css" href="001-2.css"/>
+</head>
+<body onload="myLoad()" _onresize="myResize()">
+<div id="f">(No fps data.)</div>
+<div id="g">Test not started.</div>
+	<div id="main">
+	  <!-- all dynamic markup goes here -->
+	</div>
+</body>
+
+<script type="application/ecmascript">
+<![CDATA[
+    Array.prototype.average = function ()
+      {
+         for( var i = 0, s = 0; i < this.length; i++ )
+         {
+            s += this[i];
+         }
+         return this.length ? ( s / this.length ) : 0;
+      };
+    var fpsValues = [];
+      function checkfps()
+      {
+        setInterval(update, 100);
+        document.getElementById("g").textContent = "Running...";
+        setTimeout(function () { returnFps(fpsValues); }, 2000);
+      }
+   
+      function update()
+      {
+        cfps = document.getElementById("o").contentDocument.documentElement.currentFps;
+        tfps = document.getElementById("o").contentDocument.documentElement.targetFps;
+        document.getElementById("f").textContent = "currentFps: " + cfps + " targetFps: " + tfps;
+        fpsValues.push(cfps)
+      }
+      
+      function incFps()
+      {
+        svg = document.getElementById("o").contentDocument.documentElement.targetFps++;
+      }
+
+      function decFps()
+      {
+        svg = document.getElementById("o").contentDocument.documentElement.targetFps--;
+      }
+      
+      function returnFps(fpsValues)
+      {
+      var afps = fpsValues.average();
+      document.getElementById("g").textContent = "Test complete. Average fps: " + afps;
+      try{top.opener.rr(100/afps);}catch(e){}
+      }
+      
+var drawMode=1;     // 0 = sort&highlight by distance, 1 = sort&highlight by time
+
+function makeParam(name,value)
+{
+  var param = document.createElement("param");
+  param.setAttribute("name", name);
+  param.setAttribute("value", value);
+  return param;
+}
+
+function drawPage()
+{
+  try 
+  {
+    var mainDiv = document.getElementById("main");
+
+/*
+    var displayField = document.createElement("div");
+    displayField.setAttribute("id", "disp");
+    displayField.setAttribute("class", "displayField");
+    mainDiv.appendChild(displayField);
+
+    var obj= document.createElement("object");
+    obj.setAttribute("data", "lcddisplay.svg");
+    obj.setAttribute("width", "100%");
+    displayField.appendChild(obj);
+*/
+
+    var numField = document.getElementById("sub");
+    if(numField) // if a previous numfield element exist, removed it first
+      mainDiv.removeChild(numField);
+    numField = document.createElement("div");
+    numField.setAttribute("id", "sub");
+    mainDiv.appendChild(numField);
+
+/*
+    // header object
+    var obj= document.createElement("object");
+    obj.setAttribute("data", "button.svg");
+    obj.setAttribute("width", "94%");
+      obj.appendChild(makeParam("text0",""));
+      obj.appendChild(makeParam("text1","last ping"));
+      if(drawMode==1) // 0 = sort&highlight by distance, 1 = sort&highlight by time
+        obj.appendChild(makeParam("textcolor1","#0c0"));
+      obj.appendChild(makeParam("fontsize1","80px"));
+      obj.appendChild(makeParam("url1","#"));   // tmtm
+      obj.appendChild(makeParam("text2","distance"));
+      if(drawMode==0)  // 0 = sort&highlight by distance, 1 = sort&highlight by time
+        obj.appendChild(makeParam("textcolor2","#cc0"));
+      obj.appendChild(makeParam("fontsize2","80px"));
+      obj.appendChild(makeParam("url2","#"));   // tmtm
+    numField.appendChild(obj);
+*/
+
+     document.getElementById("g").textContent = "Loading clocks...";
+    for(i=0; i<friendsData.length; i++)
+    {
+      var obj= document.createElement("object");
+      obj.setAttribute("data", "001-1.svg");
+      obj.setAttribute("class", "clockObj");
+      obj.appendChild(makeParam("offset",""+friendsData[i][2]));
+
+//alert("send:"+friendsData[i][0]);
+      if(i==0)
+        obj.appendChild(document.createTextNode("[SVG NOT SUPPORTED]"));
+      numField.appendChild(obj);
+
+
+      var obj= document.createElement("object");
+      obj.setAttribute("data", "timeInfo.svg");
+      obj.setAttribute("class", "infoObj");
+
+      obj.appendChild(makeParam("text0",""+friendsData[i][0]));     // city
+      obj.appendChild(makeParam("offset",""+friendsData[i][2]));    // offset
+
+      obj.appendChild(makeParam("url","action"+i));
+
+      numField.appendChild(obj);
+    }
+    var subDiv = document.getElementById("sub");
+    var firstClock = subDiv.firstChild;;
+    firstClock.setAttribute('id', 'o');
+checkfps();
+
+  }
+  catch(err)
+  {
+    alert(err);
+  }
+}
+
+function setupNewPage()
+{
+  drawPage();  
+}
+
+function sortByDistance(a, b) 
+{ 
+  if(a[2] < b[2]) 
+    return -1;
+  if(a[2] > b[2]) 
+    return 1;
+  return 0;
+} 
+
+function sortByTime(a, b) 
+{ 
+  if(a[1] < b[1]) 
+    return -1;
+  if(a[1] > b[1]) 
+    return 1;
+  return 0;
+} 
+
+var friendsData = new Array
+(
+   new Array("San Francisco","08:22",-9*60)
+  ,new Array("Rio","10:22",-7*60)
+  ,new Array("New York","11:22",-6*60)
+  ,new Array("Amsterdam","17:22",0*60)
+  ,new Array("Paris","17:22",0*60)
+  ,new Array("Munich","17:22",0*60)
+  ,new Array("Moscow","20:22",3*60)
+  ,new Array("Sydney","02:22",9*60)
+  ,new Array("Tokyo","03:22",10*60)
+
+  ,new Array("San Francisco","08:22",-9*60)
+  ,new Array("Rio","10:22",-7*60)
+  ,new Array("New York","11:22",-6*60)
+  ,new Array("Amsterdam","17:22",0*60)
+  ,new Array("Paris","17:22",0*60)
+  ,new Array("Munich","17:22",0*60)
+  ,new Array("Moscow","20:22",3*60)
+  ,new Array("Sydney","02:22",9*60)
+  ,new Array("Tokyo","03:22",10*60)
+
+  ,new Array("San Francisco","08:22",-9*60)
+  ,new Array("Rio","10:22",-7*60)
+  ,new Array("New York","11:22",-6*60)
+  ,new Array("Amsterdam","17:22",0*60)
+  ,new Array("Paris","17:22",0*60)
+  ,new Array("Munich","17:22",0*60)
+  ,new Array("Moscow","20:22",3*60)
+  ,new Array("Sydney","02:22",9*60)
+  ,new Array("Tokyo","03:22",10*60)
+
+  ,new Array("San Francisco","08:22",-9*60)
+  ,new Array("Rio","10:22",-7*60)
+  ,new Array("New York","11:22",-6*60)
+  ,new Array("Amsterdam","17:22",0*60)
+  ,new Array("Paris","17:22",0*60)
+  ,new Array("Munich","17:22",0*60)
+  ,new Array("Moscow","20:22",3*60)
+  ,new Array("Sydney","02:22",9*60)
+  ,new Array("Tokyo","03:22",10*60)
+);
+
+
+//alert("start clocks.xhtml");
+setupNewPage();
+
+// manage reload on aspect ratio change
+var myWidth;
+var myHeight;
+
+
+function myLoad()
+{
+  if(typeof container!="undefined")
+    container.log("index myLoad()");
+  myWidth = window.innerWidth;
+  myHeight = window.innerHeight; 
+}
+
+/*
+function myResize()
+{
+  if(typeof container!="undefined")
+    container.log("myResize() myWidth="+myWidth+" myHeight="+myHeight+" window.innerWidth="+window.innerWidth+" window.innerHeight="+window.innerHeight);
+
+  if((myWidth>myHeight && window.innerWidth<window.innerHeight) ||
+     (myWidth<myHeight && window.innerWidth>window.innerHeight))
+  {
+    if(typeof container!="undefined")
+      container.log("reload on aspect ratio change");
+
+    myWidth = window.innerWidth;
+    myHeight = window.innerHeight; 
+    location.reload();
+  }
+}
+*/
+
+
+]]>
+</script>
+</html>
+

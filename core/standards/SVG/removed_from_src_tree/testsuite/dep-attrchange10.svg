@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ev="http://www.w3.org/2001/xml-events">
+  <defs>
+    <rect id="redrect" fill="#f00" x="10" y="20" width="400" height="100" onclick="test()"/>
+    <rect id="greenrect" fill="#0f0" x="10" y="20" width="400" height="100" onclick="test()"/>
+  </defs>
+  <use id="use" xlink:href="#redrect"/>
+  <text x="15" y="150" font-size="20">Click once and it should be fully green</text>
+  <script>
+    function test()
+    {
+      var g = document.getElementById('use');
+      g.setAttributeNS("http://www.w3.org/1999/xlink", "href", "#greenrect");
+    }
+  </script>
+</svg>

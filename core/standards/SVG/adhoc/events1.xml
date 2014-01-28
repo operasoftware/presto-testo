@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+  xmlns:svg="http://www.w3.org/2000/svg" 
+  xmlns:xul="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+  >
+  <head>
+	
+	<script>
+	  <![CDATA[
+	  function init()
+	  {
+	    circle = document.getElementById('group');
+	    circle.addEventListener("click", mouseclick_listener, false);
+	  }	    
+
+	  function mouseclick_listener(evt)
+	  {
+	    alert("booya\n");
+	  }
+
+	  ]]>
+	</script>
+  </head>
+  <body onload="init();">
+	<h1>Click on the circles!</h1>
+	<svg:svg width="600px" height="400px">
+	  <svg:g id="group">
+		<svg:circle id="circ1" r="1cm" cx="3cm" cy="3cm" style="fill:red;"/>
+		<svg:circle id="circ2" r="1cm" cx="7cm" cy="3cm" style="fill:red;"/>
+	  </svg:g>
+	</svg:svg>
+  </body>
+</html>

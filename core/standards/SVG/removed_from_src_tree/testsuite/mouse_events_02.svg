@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+
+<svg xmlns="http://www.w3.org/2000/svg" width="500" height="500">
+  <circle cx="50" cy="50" r="40" fill="red" stroke="blue" stroke-opacity="0.25" stroke-width="10">
+    <animateColor attributeName="fill" from="red" to="blue" begin="mousedown+1s" dur="3s" />
+  </circle>
+</svg>

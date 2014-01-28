@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" viewport-fill="green">
+<title>SVG animation with buffer-rendering=static</title>
+ <g style="buffered-rendering:static">
+  <rect x="-100" y ="-100" width="100" height="100" fill="red"/>
+  <animateTransform type="translate" attributeName="transform" values="-100 -100; 500 500; -100 -100" dur="3s" repeatCount="1"/>
+ </g>
+  <text x="20" y ="20" fill="black" font-size="10">There should be no red on this page after the animation stops.</text>
+</svg>

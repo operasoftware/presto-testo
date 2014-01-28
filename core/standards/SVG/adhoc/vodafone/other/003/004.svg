@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 250 100">
+  <rect x="-999" y="-999" width="3000" height="3000" fill="#00CC00" stroke="none"/>
+  <line x1="-5" y1="-999" x2="-5" y2="999" fill="none" stroke="#99ff99" stroke-width="2"/>
+  <line x1="201" y1="-999" x2="201" y2="999" fill="none" stroke="#99ff99" stroke-width="2"/>
+  <circle cx="200" cy="45" r="30" fill="none" stroke="#99ff99" stroke-width="2"/>
+  <rect x="-5" y="5" width="40" height="100" fill="none" stroke="#99ff99" stroke-width="2"/>
+  <circle cx="500" cy="30" r="5" stroke="none" fill="#FFFFFF">
+    <animate id="start" attributeName="cx" attributeType="XML" begin="0.5s;finish.end" dur="1s" fill="freeze" values="500; 90; 120; -150" keyTimes="0.1;0.3;0.6;1"/>
+    <animate attributeName="cy" attributeType="XML" begin="start.begin" dur="1s" fill="freeze" values="40; 20; 60; 55" keyTimes="0.1;0.3;0.6;1"/>
+  </circle>
+  <text x="240" y="56" font-size="30" fill="#00CC00">
+    751 TRE 0.7.2
+    <animate attributeName="x" attributeType="XML" begin="start.begin+1s" dur="0.5s" fill="freeze" from="240" to="20"/>
+    <animate attributeName="x" attributeType="XML" begin="start.begin+5.5s" dur="0.5s" fill="freeze" from="20" to="-500"/>
+    <animateColor attributeName="fill" from="#00CC00" to="#FFFFFF" begin="start.begin+1s" dur="1s" fill="freeze" />
+    <animateColor id="finish" attributeName="fill" from="#FFFFFF" to="#00CC00" begin="start.begin+5s" dur="1s" fill="freeze" />
+  </text>
+</svg>

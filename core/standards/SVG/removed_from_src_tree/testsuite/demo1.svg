@@ -1,0 +1,26 @@
+<svg width="640" height="480" viewBox="-320 -240 640 480" preserveAspectRatio="xMidYMid meet" xmlns:a="http://www.adobe.com/svg10-extensions" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<filter id="shape3filter" filterUnits="objectBoundingBox" x="-14%" y="-21%" width="129%" height="142%" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" flood-color="#000000" result="shapeCanvas" />
+<!-- Outer Glow -->
+<feGaussianBlur in="SourceAlpha" stdDeviation="2.156" result="outerGlow">
+</feGaussianBlur>
+<feFlood flood-opacity="1" flood-color="#F21616" result="blackPlane">
+</feFlood>
+<feComposite in="blackPlane" in2="outerGlow" operator="in" result="outerGlow" />
+<feComposite in="outerGlow" operator="arithmetic" k1="0" k2="1" k3="0" k4="0" result="outerGlow">
+</feComposite>
+<feBlend mode="screen" in="shapeCanvas" in2="outerGlow" result="shapeCanvas"/>
+<feComposite in="SourceGraphic" in2="shapeCanvas" result="shapeCanvas" />
+<feMerge>
+<feMergeNode in="shapeCanvas" />
+</feMerge>
+</filter>
+</defs>
+<g>
+<path transform="translate(-262.5,-215) scale(1,1.041)" filter="url(#shape3filter)" fill="white" stroke="black" fill-rule="evenodd" d="M-56,-24L56,-24L56,24L-56,24L-56,-24z">
+<animateTransform attributeName="transform" type="translate" additive="replace" fill="freeze" values="-262.5,-215;259.5,-214;-6.5,-14" keyTimes="0;0.508;1" begin="0s" dur="2.03s" />
+<animateTransform attributeName="transform" type="scale" additive="sum" fill="freeze" values="1,1.041;1,6;4.625,6;6.013,7.8;2.776,3.601;4.625,6;4.625,6;6.013,7.8;2.776,3.601;4.625,6;4.625,6;6.013,7.8;2.776,3.601;4.625,6;4.625,6;6.013,7.8;2.776,3.601;4.625,6;4.625,6" keyTimes="0;0.506;0.673;0.683;0.703;0.713;0.755;0.765;0.785;0.795;0.837;0.847;0.867;0.877;0.919;0.929;0.949;0.959;1" begin="0s" dur="5.99s" />
+</path>
+</g>
+</svg>

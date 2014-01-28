@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 360" onload="init(evt); getAndSetReference();">
+<script>
+var doc;
+var rectelm;
+var textelm;
+function init(evt)
+{
+	doc = evt.target.ownerDocument;
+	rectelm = doc.getElementById('rect');
+	textelm = doc.getElementById('text');
+}
+
+function getAndSetReference()
+{
+	var rectx = rectelm.x.baseVal;
+	var textx = textelm.x.baseVal.getItem(0);
+	//alert("rect x = " + rectx.valueAsString + ", text x = " + textx.valueAsString);
+	textx = textelm.x.baseVal.replaceItem(rectx, 0);
+	//alert("rect x = " + rectx.valueAsString + ", text x = " + textx.valueAsString);
+	if(rectx == textx)
+	{
+		testPassed();
+	}
+}
+
+function testPassed()
+{
+	rectelm.setAttribute('fill', 'green');
+	textelm.firstChild.data = "Passed";
+	textelm.setAttribute('x', '125');
+}
+
+</script>
+<rect id="rect" x="10" y="10" width="230" height="170" fill="red"/>
+<text id="text" x="125" y="100" text-anchor="middle" font-size="36">Failed</text>
+</svg>

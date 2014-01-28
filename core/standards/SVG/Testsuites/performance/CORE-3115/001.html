@@ -1,0 +1,73 @@
+<html>
+  <head>
+    <title>FPS test for Opacity demo from Croczilla</title>
+    <script>
+    Array.prototype.average = function ()
+      {
+         for( var i = 0, s = 0; i < this.length; i++ )
+         {
+            s += this[i];
+         }
+         return this.length ? ( s / this.length ) : 0;
+      };
+    var fpsValues = [];
+      function checkfps()
+      {
+        setInterval(update, 50);
+        document.getElementById("g").textContent = "Running...";
+        setTimeout(function () { returnFps(fpsValues); }, 2000);
+      }
+   
+      function update()
+      {
+        cfps = document.getElementById("o").getSVGDocument().getElementById("foo").parentNode.parentNode.currentFps;
+        tfps = document.getElementById("o").getSVGDocument().getElementById("foo").parentNode.parentNode.targetFps;
+        document.getElementById("f").textContent = "currentFps: " + cfps + " targetFps: " + tfps;
+        fpsValues.push(cfps)
+      }
+      
+      function incFps()
+      {
+        svg = document.getElementById("o").contentDocument.documentElement.targetFps++;
+      }
+
+      function decFps()
+      {
+        svg = document.getElementById("o").contentDocument.documentElement.targetFps--;
+      }
+      
+      function incSize(d)
+      {
+        o = document.getElementById("o");
+        o.width = d + parseFloat(o.width);
+        o.height = d + parseFloat(o.height);
+      }
+      function returnFps(fpsValues)
+      {
+      var afps = fpsValues.average();
+      document.getElementById("g").textContent = "Test complete. Average fps: " + afps;
+      try{top.opener.rr(10000/afps);}catch(e){}
+      }
+      
+      function decSize(d)
+      {
+        o = document.getElementById("o");
+        o.width = parseFloat(o.width) - d;
+        o.height = parseFloat(o.height) - d;
+      }      
+    </script>
+  </head>
+  <body onload="checkfps()">
+    <div id="f"></div>
+    <div id="g">Test not started.</div>
+    <div>
+    <button onclick="incFps()">TargetFps++</button>
+    <button onclick="decFps()">TargetFps--</button>
+    <button onclick="incSize(50)">Size++</button>
+    <button onclick="decSize(50)">Size--</button>
+    </div>
+    <object id="o" data="001-1.xml" type="application/xml" width="1200" height="1000"></object>
+  </body>
+</html>
+
+

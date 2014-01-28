@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:svg="http://www.w3.org/2000/svg" 
+xmlns:xul="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+>
+<head>
+<script>
+<![CDATA[
+var triangle;
+var point0;
+
+function init()
+{
+  triangle = document.getElementById('triangle');
+  point0 = triangle.points.getItem(0);
+}
+
+function DOMTest()
+{
+var i;
+for( i=0;i<100;i+=2)
+  point0.x = i;
+for(i=0;i<100;i+=2)
+  point0.y = i;
+}
+]]>
+</script>
+</head>
+<body onload="init();">
+  <button onclick="DOMTest();">DOM test</button>
+	<svg:svg width="600px" height="400px">
+      <svg:polygon id="triangle" points="50,50 50,300 300,300"
+		style=" fill:blue; stroke:black;"/>
+	</svg:svg>
+</body>
+</html>

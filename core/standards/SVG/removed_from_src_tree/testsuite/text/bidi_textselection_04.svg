@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 170" onload="doSelection();">
+	<script><![CDATA[
+	var startIndex = 0;
+	var numChars = 3;
+	
+	function doSelection()
+	{
+		document.getElementById('info').firstChild.data = "StartIndex: " + startIndex + ". NumChars: " + numChars;
+		document.getElementById('text').selectSubString(startIndex, numChars);
+	}
+	
+	]]></script>
+	
+	<text id="info" font-size="16" x="10" y="10"> </text>
+	
+	<text id="text" font-size="128" y="128" x="10">
+		abc &#1488;&#1489;&#1490; 123 &#1491;&#1492;&#1493; def
+	</text>
+	
+	<rect x="10" y="160" width="100" height="20" fill="blue" onclick="startIndex++;doSelection();"/>
+	<text x="60" y="175" text-anchor="middle" font-size="16" fill="white" pointer-events="none">startIndex++</text>
+	
+	<rect x="120" y="160" width="100" height="20" fill="blue" onclick="startIndex--;doSelection();"/>
+	<text x="170" y="175" text-anchor="middle" font-size="16" fill="white" pointer-events="none">startIndex--</text>
+
+	<rect x="230" y="160" width="100" height="20" fill="blue" onclick="numChars++;doSelection();"/>
+	<text x="280" y="175" text-anchor="middle" font-size="16" fill="white" pointer-events="none">numChars++</text>
+
+	<rect x="340" y="160" width="100" height="20" fill="blue" onclick="numChars--;doSelection();"/>
+	<text x="390" y="175" text-anchor="middle" font-size="16" fill="white" pointer-events="none">numChars--</text>
+
+</svg>

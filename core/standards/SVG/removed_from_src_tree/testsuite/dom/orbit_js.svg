@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN"
+    "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd" [
+    <!ATTLIST svg
+              xmlns:a3 CDATA #IMPLIED
+              a3:scriptImplementation CDATA #IMPLIED>
+    <!ATTLIST script
+              a3:scriptImplementation CDATA #IMPLIED>
+]>
+<svg width="600" height="600" onload="setup(evt)"
+     xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink">
+    <script type="text/ecmascript"><![CDATA[
+        var sun_width          = 150;
+        var earth_width        = 50;
+        var earth_radius       = earth_width / 2;
+        var earth_orbit_radius = sun_width + 50;
+        var earth_angle        = 0;
+        var earth_angle_step   = .0072;
+        var moon_orbit_radius  = earth_width + 5;
+        var moon_width         = 20;
+        var moon_radius        = moon_width / 2;
+        var moon_angle         = 0;
+        var moon_angle_step    = .0942;
+        var speed              = 30;
+        var sun_center_x;
+        var sun_center_y;
+        var int_id;
+
+        function setup(e) {
+            if ( window.svgDocument == null )
+                svgDocument = e.target.ownerDocument;
+		
+            the_sun   = svgDocument.getElementById("the_sun");
+            the_earth = svgDocument.getElementById("the_earth");
+            the_moon  = svgDocument.getElementById("the_moon");
+		
+            center_sun();
+
+            int_id = setTimeout("move_satellites()", speed);
+        }
+
+        function center_sun() {
+            var doc_width  = parseFloat( svgDocument.documentElement.getAttributeNS("", "width") );
+            var doc_height = parseFloat( svgDocument.documentElement.getAttributeNS("", "height") );
+
+            sun_center_x = doc_width / 2;
+            sun_center_y = doc_height / 2;
+
+            the_sun.setAttributeNS(
+                "",
+                "transform",
+                "translate(" + sun_center_x  + "," + sun_center_y + ")"
+            );
+        }
+
+        function move_satellites() {
+            var earth_center_x = sun_center_x   + Math.sin(earth_angle) * earth_orbit_radius;
+            var earth_center_y = sun_center_y   + Math.cos(earth_angle) * earth_orbit_radius;
+            var moon_center_x  = earth_center_x + Math.sin(moon_angle)  * moon_orbit_radius;
+            var moon_center_y  = earth_center_y + Math.cos(moon_angle)  * moon_orbit_radius;
+
+            the_earth.setAttributeNS(
+                "",
+                "transform",
+                make_transform( earth_center_x, earth_center_y, 270 - (earth_angle * 180 / Math.PI) )
+            );
+            the_moon.setAttributeNS(
+                "",
+                "transform",
+                make_transform( moon_center_x, moon_center_y, moon_angle * 180 / Math.PI )
+            );
+
+            earth_angle += earth_angle_step;
+            moon_angle  += moon_angle_step;
+
+            int_id = setTimeout("move_satellites()", speed);
+        }
+
+        function make_transform(x, y, angle) {
+            var text = "";
+
+            text  = "translate(" + x + "," + y + ") ";
+            text += "rotate(" + angle + ")";
+
+            return text;
+        }
+    ]]></script>
+    <rect width="600" height="600" fill="black"/>
+    <image id="the_sun"   x="-75" y="-75" transform="rotate(0)" width="150" height="150" xlink:href="sun.jpg"/>
+    <image id="the_earth" x="-25" y="-25" transform="rotate(0)" width="50"  height="50"  xlink:href="earth.jpg"/>
+    <image id="the_moon"  x="-10" y="-10" transform="rotate(0)" width="20"  height="20"  xlink:href="moon.jpg"/>
+</svg>

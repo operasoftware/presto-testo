@@ -1,0 +1,128 @@
+<?xml version="1.0" standalone="no"?>
+<svg viewBox="-1 -1 2 2" shape-rendering="optimizeSpeed" color-rendering="optimizeSpeed"  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <script xlink:href="3dsvg.js" />
+  <script><![CDATA[
+    var tau = (Math.sqrt(5) + 1)/2;
+    var points = [];
+    var polys = [];
+    
+    var g_polys;
+    var g_polys_shadow
+    var t0;
+    var tra = 0;
+    var trb = 0;
+    var trr = 1;
+    
+    function start() 
+    {
+      g_polys = document.getElementById("polys");
+      g_polys_shadow = document.getElementById("polys_shadow");
+
+      // Construct cube
+      for (var i = 0; i<8; i++)
+        points[i] = new Point(i&1?-1:1, i&2?-1:1, i&4?-1:1);
+        
+      polys = polys.concat(createDodecaCapOnCubeFace(createFace(0,2,3,1)));
+      polys = polys.concat(createDodecaCapOnCubeFace(createFace(0,1,5,4)));
+      polys = polys.concat(createDodecaCapOnCubeFace(createFace(0,4,6,2)));
+      polys = polys.concat(createDodecaCapOnCubeFace(createFace(6,4,5,7)));
+      polys = polys.concat(createDodecaCapOnCubeFace(createFace(3,2,6,7)));
+      polys = polys.concat(createDodecaCapOnCubeFace(createFace(5,1,3,7)));
+      
+      t0 = +new Date();
+      
+      animate();
+    }
+    
+    function animate()
+    {
+      var t = new Date() - t0;
+      
+      trb = t/2500;
+      tra = t/822;
+      trf = -Math.cos(t/2000) * 0.8 + 0.5;
+      if (trf<0) trf = 0;
+      if (trf>1) trf = 1;
+      trr = 1.2-0.2*trf;
+
+      for (var i=0; i<points.length; i++)
+      {
+        points[i].setF(trf);
+        points[i].transform0(tra, trb, trr);
+        points[i].to2d();
+      }
+      for (var i=0; i<polys.length; i++)
+        polys[i].calculateNormal();
+      polys.sort(function(p1,p2) {return p2.normal.z-p1.normal.z});
+      for (var i=0; i<polys.length; i++)
+      {
+        polys[i].to2d();
+        g_polys.appendChild(polys[i].elt);
+      }
+      for (var i=0; i<points.length; i++)
+      {
+        points[i].y = -3;
+        points[i].x *= 1.2;
+        points[i].z *= 1.2;
+        points[i].to2d();
+      }
+      for (var i=0; i<polys.length; i++)
+        polys[i].shadowTo2d();
+
+      setTimeout("animate()", 30);
+    }
+    
+    function createFace()
+    {
+      var pts = [];
+      for (var i=0;i<arguments.length;i++)
+        pts.push(points[ arguments[i] ]);
+      return new Poly(pts);
+    }
+    
+    function createDodecaCapOnCubeFace(face)
+    {
+      var pts = face.points;
+      var out = face.calculateNormal();
+      var topEdgeDir = pts[0].to(pts[1]).normalize();
+      var middle = average(face.points);
+      var p01 = middle.add(topEdgeDir, 1/tau);
+      var p1 = new AnimatedPoint(p01, p01.add(out, tau-1));
+      var p02 = middle.add(topEdgeDir, -1/tau);
+      var p2 = new AnimatedPoint(p02, p02.add(out, tau-1));
+      points.push(p1);
+      points.push(p2);
+      return [
+        new VisiblePoly([pts[1], pts[2], p1]), 
+        new VisiblePoly([pts[0], pts[1], p1, p2]),
+        new VisiblePoly([pts[3], pts[0], p2]),
+        new VisiblePoly([pts[2], pts[3], p2, p1])
+      ];
+    }
+      
+    function average(pts)
+    {
+      var a = new Point(0,0,0);
+      var f = 1/pts.length;
+      for (var i=0;i<pts.length;i++)
+        a = a.add(pts[i], f);
+      return a;
+    }
+      
+  ]]></script>
+
+  <defs>
+    <linearGradient id="sky" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#369" />
+      <stop offset="30%" stop-color="#224" />
+      <stop offset="100%" stop-color="#fee" />
+    </linearGradient>
+  </defs>
+  
+  <rect x="-100%" y="-50%" width="200%" height="100%" fill="url(#sky)" />
+  <g id="polys" />
+  <g id="polys_shadow" opacity="0.1" />
+  
+  <script type="text/javascript">start()</script>
+
+</svg>

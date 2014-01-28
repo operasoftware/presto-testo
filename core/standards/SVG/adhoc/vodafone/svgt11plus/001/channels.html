@@ -1,0 +1,168 @@
+<html>
+<head>
+<title>live!cast Channel selectItem</title>
+<script type="text/javascript">
+<!--
+
+function playAnimation(id) {
+	var param = document.getElementById("p"+id);
+	param.setAttribute("value", "play");
+}
+
+function stopAnimation(id) {
+	var param = document.getElementById("p"+id);
+	param.setAttribute("value", "stop");
+}
+
+
+function selectItem(w){
+	if(document.getElementById(w).value==0){
+		document.getElementById(w).value=1;
+		document.getElementById("ch"+w+"on").style.visibility="visible";
+		document.getElementById("ch"+w+"off").style.visibility="hidden";
+		document.getElementsByTagName("object")[w].focus();
+	}
+	else if(document.getElementById(w).value==1){
+		document.getElementById(w).value=0;
+		document.getElementById("ch"+w+"off").style.visibility="visible";
+		document.getElementById("ch"+w+"on").style.visibility="hidden";
+		document.getElementsByTagName("object")[w].focus();
+	}
+}
+
+
+function submitForm(){
+	document.channel.submit();
+}
+
+function init(){
+	for(i=0;i<5;i++){
+		if(document.getElementById(i).value==0){
+			document.getElementById("ch"+i+"off").style.visibility="visible";
+			document.getElementById("ch"+i+"on").style.visibility="hidden";
+		}
+		else if(document.getElementById(i).value==1){
+			document.getElementById("ch"+i+"on").style.visibility="visible";
+			document.getElementById("ch"+i+"off").style.visibility="hidden";
+		}
+	}
+}
+
+function drawBorder(w) {
+	for(i=0;i<6;i++){
+		document.getElementById("s"+i).setAttribute("style", "");
+	}
+	document.getElementById("s"+w).setAttribute("style", "border: 2px solid red");
+}
+
+function focusEffect(w) {
+	//drawBorder(w);
+
+	for(i=0;i<5;i++){
+		if (i != w) {
+			stopAnimation(i);
+		}
+	}
+	if (w < 5) {
+		playAnimation(w);
+	}
+}
+//-->
+</script>
+
+<style type="text/css">
+	div.header{position:absolute;left:0;top:0}
+	div.ch0{position:absolute;left:0;top:50}
+	div.ch1{position:absolute;left:0;top:86}
+	div.ch2{position:absolute;left:0;top:122}
+	div.ch3{position:absolute;left:0;top:158}
+	div.ch4{position:absolute;left:0;top:194}
+	div.svg0{position:absolute;left:33;top:50}
+	div.svg1{position:absolute;left:33;top:86}
+	div.svg2{position:absolute;left:33;top:122}
+	div.svg3{position:absolute;left:33;top:158}
+	div.svg4{position:absolute;left:33;top:194}
+	div.submit{position:absolute;left:0;top:230}
+</style>
+
+
+<meta http-equiv="Content-Type" content="text/html;charset=windows-1252">
+</head>
+
+<body bgcolor="#999999" onload="init()">
+
+<!-- form channels activated (1) or not activated (0) -->
+
+<form name="channel" action="choff.svg" method="post">
+	<input type="hidden" id=0 value="0" />
+	<input type="hidden" id=1 value="0" />
+	<input type="hidden" id=2 value="1" />
+	<input type="hidden" id=3 value="0" />
+	<input type="hidden" id=4 value="1" />
+</form>
+
+<!-- please do not change the order of the following SVG-objects! -->
+
+<!-- textbanner -->
+
+<div id="svg0" class="svg0"><a id=s0 onfocus="focusEffect(0)" href="javascript:selectItem(0)"><object type="image/svg+xml" width="141" height="35" data="0.svg"><param id="p0" name="animation" value="play" /></object></a></div>
+
+<div id="svg1" class="svg1"><a id=s1 onfocus="focusEffect(1)" href="javascript:selectItem(1)"><object type="image/svg+xml" width="141" height="35" data="1_2.svg"><param id="p1" name="animation" value="paused" /></object></a></div>
+
+<div id="svg2" class="svg2"><a id=s2 onfocus="focusEffect(2)" href="javascript:selectItem(2)"><object type="image/svg+xml" width="141" height="35" data="2.svg"><param id="p2" name="animation" value="paused" /></object></a></div>
+
+<div id="svg3" class="svg3"><a id=s3 onfocus="focusEffect(3)" href="javascript:selectItem(3)"><object type="image/svg+xml" width="141" height="35" data="3.svg"><param id="p3" name="animation" value="paused" /></object></a></div>
+
+<div id="svg4" class="svg4"><a id=s4 onfocus="focusEffect(4)" href="javascript:selectItem(4)"><object type="image/svg+xml" width="141" height="35" data="4.svg"><param id="p4" name="animation" value="paused" /></object></a></div>
+
+<!-- checked checkboxes -->
+
+<div id="ch0on" class="ch0" style="visibility:hidden;z-index:1">
+	<object type="image/svg+xml" width="33" height="35" data="chon.svg"><param name="animation" value="paused" /></object>
+</div>
+<div id="ch1on" class="ch1" style="visibility:hidden;z-index:1">
+	<object type="image/svg+xml" width="33" height="35" data="chon.svg"><param name="animation" value="paused" /></object>
+</div>
+<div id="ch2on" class="ch2" style="visibility:visible;z-index:1">
+	<object type="image/svg+xml" width="33" height="35" data="chon.svg"><param name="animation" value="paused" /></object>
+</div>
+<div id="ch3on" class="ch3" style="visibility:hidden;z-index:1">
+	<object type="image/svg+xml" width="33" height="35" data="chon.svg"><param name="animation" value="paused" /></object>
+</div>
+<div id="ch4on" class="ch4" style="visibility:visible;z-index:1">
+	<object type="image/svg+xml" width="33" height="35" data="chon.svg"><param name="animation" value="paused" /></object>
+</div>
+
+<!-- unchecked checkboxes -->
+
+<div id="ch0off" class="ch0" style="visibility:visible;z-index:2">
+	<object type="image/svg+xml" width="33" height="35" data="choff.svg"><param name="animation" value="paused" /></object>
+</div>
+<div id="ch1off" class="ch1" style="visibility:visible;z-index:2">
+	<object type="image/svg+xml" width="33" height="35" data="choff.svg"><param name="animation" value="paused" /></object>
+</div>
+<div id="ch2off" class="ch2" style="visibility:hidden;z-index:2">
+	<object type="image/svg+xml" width="33" height="35" data="choff.svg"><param name="animation" value="paused" /></object>
+</div>
+<div id="ch3off" class="ch3" style="visibility:visible;z-index:2">
+	<object type="image/svg+xml" width="33" height="35" data="choff.svg"><param name="animation" value="paused" /></object>
+</div>
+<div id="ch4off" class="ch4" style="visibility:hidden;z-index:2">
+	<object type="image/svg+xml" width="33" height="35" data="choff.svg"><param name="animation" value="paused" /></object>
+</div>
+
+<!-- header image -->
+
+<div id="header" class="header">
+	<object type="image/svg+xml" width="176" height="49" data="header.svg"></object>
+</div>
+
+<!-- submit button -->
+
+<div id="submit" class="submit">
+	<!-- sbm -->
+	<a id=s5 onfocus="focusEffect(5)" href="javascript:submitForm()"><object type="image/svg+xml" width="174" height="29" data="submit.svg"><param name="animation" value="paused" /></object></a>
+</div>
+
+</body>
+</html>

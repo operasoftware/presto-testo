@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg">
+  <title>Text selection highlight over preceding element (with 'geometricPrecision' text-rendering)</title>
+
+  <style>
+  #a, #b { font-size: 100px; font-family: Ahem; text-rendering: geometricPrecision }
+  #a::selection { color: red }
+  #b { fill: cyan }
+
+  #c1 { stroke: white; stroke-width: 2; fill: none }
+  #c2 { stroke: blue; stroke-width: 2; fill: none }
+  </style>
+
+  <text x="20" y="20">This test requires the Ahem font.</text>
+
+  <text x="20" y="50">Click in the blue circle and release in the white circle. You should not see any red.</text>
+
+  <text id="a" x="20" y="140">X</text>
+  <text id="b" x="20" y="160">p</text>
+
+  <circle id="c1" cx="30" cy="70" r="8"/>
+  <circle id="c2" cx="30" cy="170" r="8"/>
+</svg>
+

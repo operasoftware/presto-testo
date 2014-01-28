@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="yes"?>
+<svg height="153.122" width="95.1158">
+  <metadata>
+    <rdf:RDF xmlns:cc="http://web.resource.org/cc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+      <cc:Work rdf:about="">
+        <dc:title>treble clef</dc:title>
+        <dc:description>email adress</dc:description>
+        <dc:subject>
+          <rdf:Bag>
+            <rdf:li></rdf:li>
+            <rdf:li>symbol</rdf:li>
+            <rdf:li>musicsym</rdf:li>
+            <rdf:li>music</rdf:li>
+            <rdf:li>recreation</rdf:li>
+          </rdf:Bag>
+        </dc:subject>
+        <dc:publisher>
+          <cc:Agent rdf:about="http://www.openclipart.org">
+            <dc:title>Yves Aubry (yvounet)</dc:title>
+          </cc:Agent>
+        </dc:publisher>
+        <dc:creator>
+          <cc:Agent>
+            <dc:title>Yves Aubry (yvounet)</dc:title>
+          </cc:Agent>
+        </dc:creator>
+        <dc:rights>
+          <cc:Agent>
+            <dc:title>Yves Aubry (yvounet)</dc:title>
+          </cc:Agent>
+        </dc:rights>
+        <dc:date></dc:date>
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+        <cc:license rdf:resource="http://web.resource.org/cc/PublicDomain"/>
+        <dc:language>en</dc:language>
+      </cc:Work>
+      <cc:License rdf:about="http://web.resource.org/cc/PublicDomain">
+        <cc:permits rdf:resource="http://web.resource.org/cc/Reproduction"/>
+        <cc:permits rdf:resource="http://web.resource.org/cc/Distribution"/>
+        <cc:permits rdf:resource="http://web.resource.org/cc/DerivativeWorks"/>
+      </cc:License>
+    </rdf:RDF>
+  </metadata>
+  <defs><marker id="ArrowEnd" markerHeight="3" markerUnits="strokeWidth" markerWidth="4" orient="auto" refX="0" refY="5" viewBox="0 0 10 10"><path d="M 0 0 L 10 5 L 0 10 z"/></marker><marker id="ArrowStart" markerHeight="3" markerUnits="strokeWidth" markerWidth="4" orient="auto" refX="10" refY="5" viewBox="0 0 10 10"><path d="M 10 0 L 0 5 L 10 10 z"/></marker> </defs>
+  <g>
+    <path d="M 10.9855 114.184L 84.5769 114.212" style="stroke:#636363; stroke-width:2.0; fill:none"/>
+    <path d="M 10.4817 94.2814L 84.2962 94.31" style="stroke:#636363; stroke-width:2.0; fill:none"/>
+    <path d="M 10.5963 74.883L 84.6341 74.9116" style="stroke:#636363; stroke-width:2.0; fill:none"/>
+    <path d="M 10.4817 55.2327L 84.5195 55.2614" style="stroke:#636363; stroke-width:2.0; fill:none"/>
+    <path d="M 10.7336 36.0862L 84.3249 35.8916" style="stroke:#636363; stroke-width:2.0; fill:none"/>
+    <path d="M 39.542 140.49C 39.5639 148.96 58.3579 147.884 58.2954 133.917C 58.3202 120.31 40.3408 44.1715 40.1401 29.6106C 39.9287 18.0538 46.2624 5.10107 51.6885 5.242C 55.9871 5.383 60.0261 15.1149 60.0039 27.2284C 60.3303 66.4012 26.0231 63.8691 26.0231 90.6372C 26.0231 107.939 40.3865 112.509 47.5682 112.509C 71.888 112.346 67.8074 83.1292 52.3015 83.1292C 43.1612 82.8026 35.1634 95.2074 47.2417 105.49C 26.8392 96.5132 37.775 74.805 53.9337 74.6417C 75.4788 74.8048 79.2329 114.304 47.5682 114.467C 28.6346 114.631 20.6368 97.9821 20.8 84.9245C 20.8 59.7886 57.851 45.262 57.3614 24.0434C 57.3614 10.6594 43.4876 16.6985 43.1612 38.2436C 43.4877 51.6277 60.789 122.302 60.6258 133.238C 60.6258 155.762 31.7358 148.417 31.7358 136.992C 31.899 120.67 48.7107 132.258 43.4877 132.748C 39.4071 139.93 39.542 140.49 39.542 140.49z" style="stroke:#000000; stroke-width:1; fill:#000000"/>
+    <path d="M 47.3695 133.394C 47.3695 137.183 44.2094 140.259 40.3161 140.259C 36.4228 140.259 33.2626 137.183 33.2626 133.394C 33.2626 129.604 36.4228 126.528 40.3161 126.528C 44.2094 126.528 47.3695 129.604 47.3695 133.394z" style="stroke:#000000; stroke-width:1; fill:#636363"/>
+    <path d="M 55.0311 110.984L 57.3436 110.984L 57.3436 113.234L 55.0311 113.234L 55.0311 110.984z" style="stroke:none; fill:#000000"/>
+    <path d="M 48.2811 75.672L 51.2186 75.672L 51.2186 82.9845L 48.2811 82.9845L 48.2811 75.672z" style="stroke:none; fill:#000000"/>
+    <path d="M 43.0732 48.5112L 44.4662 48.2707L 46.4265 61.2078L 45.0335 61.4483L 43.0732 48.5112z" style="stroke:none; fill:#000000"/>
+  </g>
+</svg>

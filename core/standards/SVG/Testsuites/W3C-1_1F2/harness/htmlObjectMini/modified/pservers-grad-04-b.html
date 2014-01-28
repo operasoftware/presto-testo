@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC  "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+      <meta name="keywords" content="W3C SVG 1.1 2nd Edition Test Suite"/>
+      <meta name="description" content="W3C SVG 1.1 2nd Edition Object Test Suite"/>
+      <title>
+	<d:testDescription href='http://www.w3.org/TR/SVG11/pservers.html#Gradients' xmlns='http://www.w3.org/1999/xhtml'>
+        <p>
+          Test that checks the capability of the stop element in linear and radial
+          gradients.
+        </p>
+    </d:testDescription>
+      </title>
+      <style type="text/css">
+        <!--
+         .bodytext      { font-family:verdana, helvetica, sans-serif; font-size: 12pt; line-height: 125%; text-align: Left; margin-top: 0; margin-bottom: 0 }
+         .pageTitle     { line-height: 150%; font-size: 20pt; font-weight : 900; margin-bottom: 20pt }
+         .pageSubTitle  { color : blue; line-height: 100%; font-size: 24pt; font-weight : 900 }
+         .openChapter   { color : blue; line-height: 125%; font-weight : 900 }
+         .openSection   { color : blue; line-height: 125%; font-weight : 900 }
+         .info          { color : black; line-height: 110%; font-size: 10pt; font-weight : 100 }
+         p              { margin-top:0; margin-bottom:0; padding-top:0; padding-bottom:0 }
+         blockquote     { margin-top:0; margin-bottom:0; padding-top:0; padding-bottom:0 }
+         .opscript      { margin-left: 3%; margin-right: 3%; }
+         .opscript p    { margin-top: 0.7em }
+         .navbar        { background: black; color: white; font-weight: bold }
+ 
+         a,a:visited    { color: blue }
+        -->
+      </style>
+      
+    </head>
+  <body class="bodytext">
+
+<table align="center" border="0" cellspacing="0" cellpadding="10">
+  <tr>
+    <td align="center" colspan="3">
+      <table border="0" cellpadding="8">
+        <tr>
+
+        </tr>
+        <tr  class="navbar">
+          <td align="center">
+            SVG Image - The test
+          </td>
+          <td align="center">
+            PNG Image - The reference
+          </td>
+        </tr>
+        <tr>
+          <td align="right" >
+            <object id="test" data="http://t/core/standards/SVG/Testsuites/W3C-1_1F2/harness/htmlObjectMini/modified/svg/test/pservers-grad-04-b.svg" width="480" height="360" type="image/svg+xml"> </object>
+          </td>
+          <td align="left">
+            <img id="ref" alt="raster image of pservers-grad-04-b.svg" src="http://t/core/standards/SVG/Testsuites/W3C-1_1F2/harness/htmlObjectMini/modified/svg/ref/pservers-grad-04-b.png " width="480" height="360"/>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<h2 id="testdescription">
+			    Test Description
+			  </h2>
+
+			  <div>
+			<p>
+				<d:testDescription href='http://www.w3.org/TR/SVG11/pservers.html#Gradients' xmlns='http://www.w3.org/1999/xhtml'>
+        <p>
+          Test that checks the capability of the stop element in linear and radial
+          gradients.
+        </p>
+    </d:testDescription>
+				</p>
+			  </div>
+<div class="opscript">
+			    <h2 id="operatorscript">
+			      Operator Script
+			    </h2>
+			    <div>
+				   <p><d:operatorScript xmlns='http://www.w3.org/1999/xhtml'>           
+      <p>
+        The rendered picture should match the reference image exactly, except for possible
+        variations in the labelling text (per CSS2 rules).
+      </p>
+    </d:operatorScript></p>
+  </div>
+			  <h2 id="passcriteria">
+			    Pass Criteria
+			  </h2>
+			  <div>
+			<p>
+			<d:passCriteria xmlns='http://www.w3.org/1999/xhtml'>
+      <p>
+        The first rectangle has a linear gradient fill with a vector starting at top left
+        and going to bottom right. The stop colors are at 20% spacing apart and are in the
+        following order : violet, blue, lime, yellow, orange, red.
+        Because the gradient vector vector goes from (0,0) to (1,1) in object bounding box space
+        and because the object bounding box has a larger width than height, the gradient vector
+        is skewed off of a pure 45 degree angle. The gradient stripes are also skewed
+        so that they are no longer perpendicular to the gradient vector.
+      </p>
+      <p>
+        The next rectangle has a radial gradient fill with a multi-color stops from innermost
+        to outermost in the following order : black, yellow, red, blue, white, green.
+      </p>
+    </d:passCriteria>
+			      </p>
+			  </div> 
+
+ 
+
+</div>
+
+</div>
+</body>
+</html>
+</body> </html>

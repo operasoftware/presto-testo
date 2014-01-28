@@ -1,0 +1,17 @@
+<!doctype html>
+<html>
+  <head>
+    <title>TC #6</title>
+  </head>
+  <body>
+    <h1>SVG with default size and viewBox in a html:object</h1>
+    <!--The object has no size of its own, the default size is used
+      from the SVG. The width is resolved to the width of the
+      containing block (100% of viewport width) and the height is
+      calculated using the intrinsic ratio of the SVG.-->
+<p>There should be a svg image below, it should use 100 % of the width of the screen. No red should be visible.</p>
+
+    <object style="background:#ff0000" data="support/default-size-with-viewbox.svg">[SVG NOT SUPPORTED]</object>
+  </body>
+</html>
+

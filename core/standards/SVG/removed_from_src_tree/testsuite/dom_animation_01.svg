@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+         "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11-basic.dtd">
+<svg xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="10 0 180 300" onload="javascript:init();">
+  <script type="javascript/text">
+<![CDATA[
+
+var MAX_TIMEOUT = 10000;
+var TRANSFER_TIMEOUT = 500;
+
+function init()
+{
+  setTimeout(function() { startAnim("Blue"); } , Math.random() * MAX_TIMEOUT);
+  setTimeout(function() { startAnim("Purple"); } , Math.random() * MAX_TIMEOUT);
+  setTimeout(function() { startAnim("Yellow"); } , Math.random() * MAX_TIMEOUT);
+
+  setTimeout(function() { copy(document.getElementById("circleBlue"),
+                               document.getElementById("rectBlue")); }, TRANSFER_TIMEOUT );
+  setTimeout(function() { copy(document.getElementById("circleYellow"),
+                               document.getElementById("rectYellow")); }, TRANSFER_TIMEOUT );
+  setTimeout(function() { copy(document.getElementById("circlePurple"),
+                               document.getElementById("rectPurple")); }, TRANSFER_TIMEOUT );
+}
+
+function startAnim(name)
+{
+  var rect = document.getElementById("rect" + name);
+  var anim = document.getElementById("anim" + name);
+  var circle = document.getElementById("circle" + name);
+
+  anim.beginElement();
+  setTimeout(function() { startAnim(name); } , Math.random() * MAX_TIMEOUT);
+}
+
+function copy(circle, rect)
+{
+  rect.height.baseVal.value = circle.r.animVal.value;
+  setTimeout(function() { copy(circle, rect); }, TRANSFER_TIMEOUT );
+}
+
+]]>
+  </script>
+  <g fill-opacity="0.6" stroke="#fff" stroke-width="1px">
+    <circle id="circleBlue" stroke-dasharray="none" cx="100px" cy="50px" r="50" fill="#00f"
+            transform="translate(0,0)" >
+      <animate id="animBlue" attributeName="r" values="50;10" keySplines=".75,0,0,.75" calcMode="spline" begin="indefinite" dur="10s" fill="freeze"/>
+    </circle>
+
+    <circle id="circleYellow" cx="100px" cy="50px" r="50" fill="#ff0"
+            transform="translate(30,50)" >
+      <animate id="animYellow" attributeName="r" values="50;10" keySplines=".75,0,0,.75" calcMode="spline" begin="indefinite" dur="10s" fill="freeze"/>
+    </circle>
+
+    <circle id="circlePurple" cx="100px" cy="50px" r="50" fill="#f0f"
+            transform="translate(-30,50)">
+      <animate id="animPurple" attributeName="r" values="50;10" keySplines=".75,0,0,.75" calcMode="spline" begin="indefinite" dur="10s" fill="freeze"/>
+    </circle>
+  </g>
+  <g transform="translate(0,150)" fill-opacity="0.6" stroke="#fff" stroke-width="1px">
+    <rect id="rectPurple" x="10" y="0" width="30" height="50" fill="#f0f"/>
+    <rect id="rectBlue" x="30" y="10" width="30" height="50" fill="#00f"/>
+    <rect id="rectYellow" x="50" y="20" width="30" height="50" fill="#ff0"/>
+  </g>
+</svg>

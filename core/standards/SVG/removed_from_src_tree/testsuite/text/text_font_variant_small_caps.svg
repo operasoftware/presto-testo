@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 80" font-size="30">
+  <g font-variant="small-caps">
+    <text font-size="10" x="10" y="10">Word word wOrd WorD</text>
+    <line x1="0" y1="12" x2="240" y2="12" stroke-width="1" stroke="black"/>
+    <text font-variant="small-caps" x="10" y="40">Small Caps</text>
+  </g>
+
+  <text x="10" y="50" font-size="5">Approximate result:</text>
+  <text x="10" y="80">S<tspan font-size="24">MALL</tspan> C<tspan font-size="24">APS</tspan></text>
+</svg>

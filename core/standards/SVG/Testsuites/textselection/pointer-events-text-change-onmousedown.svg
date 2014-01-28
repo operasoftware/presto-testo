@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     onload="document.getElementById('nojs').textContent = ''">
+  <title>Text selection when changing text content onmousedown</title>
+
+  <text x="10" y="20" id="nojs">NOT TESTED (JavaScript did not run)</text>
+
+  <text x="10" y="50" onmousedown="this.textContent+=''">You should be able to select this text.</text>
+</svg>
+

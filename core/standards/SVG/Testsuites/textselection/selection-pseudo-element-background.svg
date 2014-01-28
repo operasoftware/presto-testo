@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" onload="document.getElementById('nojs').textContent=''">
+  <title>Text selection background color using ::selection</title>
+
+  <style>
+  ::selection { color: white; background: #0080FF }
+  </style>
+
+  <text id="nojs" x="20" y="20">NOT TESTED (JavaScript required)</text>
+  <text x="20" y="40">This test requires the Ahem font.</text>
+
+  <text x="20" y="70">You should see a blue square below:</text>
+  <text id="selected" x="20" y="100" font-size="20" font-family="Ahem">&#160;</text>
+
+  <script>document.getElementById('selected').selectSubString(0, 1)</script>
+</svg>
+

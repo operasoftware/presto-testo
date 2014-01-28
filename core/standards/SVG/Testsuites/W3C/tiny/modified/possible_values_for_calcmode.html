@@ -1,0 +1,55 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+    "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+    <title>Test possible values for 'calcMode="discrete"'</title>
+    
+    <style type="text/css">
+    thead {
+     background-color: #A8A8A8;
+     font-size:20px;
+     color:#FFFFFF;
+        
+    }
+
+    </style>  
+</head>
+<body>
+    <h2>Test different values for calcMode</h2>
+	
+        		<table>
+			
+			<thead>
+				<th>Test image</th>
+				<th>Reference images</th>
+				<th>Test description and test criteria</th>
+			</thead>
+			
+			<tr>
+			    <td><object id="testimage_discrete" data="test/possible_values_for_calcmode_discrete.svg" type="image/svg+xml" alt="Image to be tested" width="480" height="360"/></td>
+			    <td><object id="refimage" data="ref/ref_possible_values_for_calcmode_discrete.svg" type="image/svg+xml" alt="ref image" width="480" height="360"/></td>
+			    <td> <h4>Possible values for calcMode='discrete'</h4><p>When the animation is done, the image on the left should look identical to the one on the right</p> </td>
+			</tr>
+			
+			<tr>
+			    <td><object id="testimage_linear" data="test/possible_values_for_calcmode_linear.svg" type="image/svg+xml" alt="image to be tested" width="480" height="360" /> </td>
+			    <td><object id="refimage2" data="ref/ref_possible_values_for_calcmode_spline2.svg" type="image/svg+xml" alt="image to be tested" width="480" height="360" /> </td>
+			    <td><h4>Possible values for calcMode='linear'</h4><p>When the animation is done, the image on the left should look identical to the one on the right</p></td>    			   
+			</tr>
+			
+			<tr>
+			    <td><object id="testimage_paced" data="test/possible_values_for_calcmode_paced.svg" type="image/svg+xml" alt="image to be tested" width="480" height="360" /> </td>
+			    <td><object id="refimage3" data="ref/ref_possible_values_for_calcmode_spline3.svg" type="image/svg+xml" alt="image to be tested" width="480" height="360" /> </td>
+			    <td><h4>Possible values for calcMode='paced'</h4><p>When the animation is done, the image on the left should look identical to the one on the right</p></td>      
+			</tr>
+			
+			<tr>
+			    <td><object id="testimage_spline" data="test/possible_values_for_calcmode_spline.svg" type="image/svg+xml" alt="image to be tested" width="480" height="360" /> </td>
+			    
+			    <td><object id="refimage4" data="ref/ref_possible_values_for_calcmode_spline4.svg" type="image/svg+xml" alt="image to be tested" width="480" height="360" /> </td>
+			    <td><h4>Possible values for calcMode='spline'</h4><p>When the animation is done, the image on the left should look identical to the one on the right</p></td>
+			</tr>
+			
+		</table>
+</body>
+</html>

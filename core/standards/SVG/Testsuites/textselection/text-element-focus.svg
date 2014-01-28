@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg">
+  <title>An SVG text element gains focus when it is selected</title>
+
+  <style>
+    text:focus { fill: green }
+  </style>
+
+  <text x="10" y="20">This text should turn green when you click on it.</text>
+</svg>
+

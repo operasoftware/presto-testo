@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC  "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+      <meta name="keywords" content="W3C SVG 1.1 2nd Edition Test Suite"/>
+      <meta name="description" content="W3C SVG 1.1 2nd Edition Object Mini Test Suite"/>
+      <title>
+SVG 1.1 2nd Edition Test (&lt;object&gt;): interact-cursor-01-f.svg
+      </title>
+      <link href="harness_mini.css" rel="stylesheet" type="text/css" />
+      <link rel="prev" href="imp-path-01-f.html" />
+      <link rel="index" href="index.html" />
+      <link rel="next" href="interact-dom-01-b.html" />
+      <script src="../resources/testharnessreport.js"></script>
+    </head>
+  <body class="bodytext">
+    <div class="linkbar">
+      <p>
+        <a href="imp-path-01-f.html" rel="prev">imp-path-01-f ←</a>
+        <a href="index.html" rel="index">index</a>
+        <a href="interact-dom-01-b.html" rel="next">→ interact-dom-01-b</a>
+      </p>
+    </div>
+<table border="0" align="center" cellspacing="0" cellpadding="10">
+  <tr>
+    <td align="center" colspan="3">
+      <table border="0" cellpadding="8">
+        <tr  class="navbar">
+          <td align="center">
+            SVG Image
+          </td>
+          <td align="center">
+            PNG Image
+          </td>
+        </tr>
+        <tr>
+          <td align="right">
+            <object data="../../svg/interact-cursor-01-f.svg" width="480" height="360" type="image/svg+xml"><p style="font-size:300%;color:red">FAIL</p></object>
+          </td>
+          <td align="left">
+            <img alt="raster image of interact-cursor-01-f.svg" src="../../png/interact-cursor-01-f.png" width="480" height="360"/>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+
+<div>
+    <h4 id="operatorscript" onclick="var t = document.getElementById('operatortext'); t.style.display=(t.style.display=='none' ? 'inline' : 'none');">
+      <em>Operator script (click here to toggle)</em>
+    </h4>
+    <div id="operatortext" style="display:none">
+<p>
+        This test requires user interaction. Firstly, the default cursor behaviour should be examined.
+        Move the cursor to the top left corner, in the white area. This is the default
+        cursor. Now move the cursor over the text at the top of the example. The cursor
+        changes to the text cursor. Lastly, move the cursor to the  blue link
+        text - the cursor changes to the pointer cursor.
+      </p><p>
+        Now, move the cursor in turn to each of the gray rectangles (but not on top
+        of the white text label text). From top to bottom in the first row,  the cursor
+        should change to:
+      </p><p>
+        A crosshair or other 'accurate positioning'  cursor
+        The 'default' cursor, as noted above
+        The 'pointer' cursor, as noted above
+        A cursor indicating movement, such as panning
+      </p><p>Now from top to bottom in the second row, the cursor should change to: </p><p>
+        The 'text' cursor, as noted above
+        A 'wait' cursor
+        A 'help' cursor
+        A special cursor which looks like a small magnifying glass. This is a downloaded image cursor.
+
+      </p><p>
+        Moving to the bottom-leftmost of the eight red triangles, and moving around them clockwise, the
+        cursor should change to:
+      </p><p>
+        SouthEast-resize, South-resize, SouthWest resize, West-resize,
+        NorthWest-resize, North-resize, NorthEast-resize, East-resize.
+      </p><p>
+        Lastly, move the cursor to the target in the bottom-right of the test. The cursor must not
+        change to the 'pointer'  cursor, but instead to the custom magnifying glass cursor as noted
+        above.
+      </p>
+  </div>
+  </div>
+    <h4 id="passcriteria">
+      Pass Criteria
+    </h4>
+    <div>
+<p>
+        The test is passed if, at each position, the cursor changes as described in the operator script.
+      </p>
+    </div>
+    <br />
+    <div class="linkbar">
+      <p>
+        <a href="imp-path-01-f.html" rel="prev">imp-path-01-f ←</a>
+        <a href="index.html" rel="index">index</a>
+        <a href="interact-dom-01-b.html" rel="next">→ interact-dom-01-b</a>
+      </p>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN"
+    "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<svg xmlns="http://www.w3.org/2000/svg">
+<g font-family="Times" font-size="24">
+    	<text x="100" y="30" fill="red">Times (inherited)</text>
+	<text x="100" y="60" fill="red" font-family=" Arial, Helvetica">Helvetica/Arial (overridden)</text>
+	<text x="100" y="90" fill="red">Times (more inherited)</text>
+</g>
+</svg>

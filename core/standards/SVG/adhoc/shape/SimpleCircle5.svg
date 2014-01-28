@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<!-- circle with red fill and blue semitransparent outline, this test checks if scientific notation works for values -->
+<svg xmlns="http://www.w3.org/2000/svg" width="500" height="500">
+  <circle cx="250e0" cy="2500E-1" r="15e1" fill="red" stroke="blue" stroke-opacity="0.5" stroke-width="16" />
+</svg> 

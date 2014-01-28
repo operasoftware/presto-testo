@@ -1,0 +1,56 @@
+<html xmlns='http://www.w3.org/1999/xhtml'
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+      xmlns:svg="http://www.w3.org/2000/svg">
+  <head>
+    <title>Test paintserver references in compound documents</title>
+  </head>
+  <body>
+    <p>There should be only green rects below</p>
+    <svg:svg viewBox="0 0 100 100" width="0" height="0"
+	     xmlns="http://www.w3.org/2000/svg">
+      <linearGradient id="red">
+	<stop offset="0" stop-color="red"/>
+      </linearGradient>
+      <linearGradient id="green">
+	<stop offset="0" stop-color="green"/>
+      </linearGradient>
+    </svg:svg>
+
+    <table>
+      <tr>
+	<td>
+	  Embedded
+	  <svg:svg viewBox="0 0 100 100" width="100" height="100"
+		   xmlns="http://www.w3.org/2000/svg">
+	    <linearGradient id="green">
+	      <stop offset="0" stop-color="red"/>
+	    </linearGradient>
+	    <rect width='100' height='100' fill="url(#green)"/>
+	  </svg:svg>
+	</td>
+
+	<td>
+	  Object
+	  <object data="cdf-references-external.svg" type="image/svg+xml"/>
+	</td>
+
+	<td>
+	  Embed
+	  <embed src="cdf-references-external.svg" type="image/svg+xml"></embed>
+	</td>
+      </tr>
+      <tr>
+
+	<td>
+	  Img
+	  <img src="cdf-references-external.svg"/>
+	</td>
+
+	<td>
+	  IFrame
+	  <iframe src="cdf-references-external.svg"/>
+	</td>
+      </tr>
+    </table>
+  </body>
+</html>

@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="svg-root" width="100%" height="100%" viewBox="0 0 480 360">
+  <!--======================================================================-->
+  <!--=  Copyright 2008 World Wide Web Consortium, (Massachusetts          =-->
+  <!--=  Institute of Technology, European Research Consortium for         =-->
+  <!--=  Informatics and Mathematics (ERCIM), Keio University).            =-->
+  <!--=  All Rights Reserved.                                              =-->
+  <!--=  See http://www.w3.org/Consortium/Legal/.                          =-->
+  <!--======================================================================-->
+  <d:SVGTestCase xmlns:d="http://www.w3.org/2000/02/svg/testsuite/description/" template-version="1.4" reviewer="[reviewer]" author="Microsoft" status="created" version="$Revision: 1.1 $" testname="$RCSfile: text-fonts-05-f.svg,v $">
+    <d:testDescription xmlns="http://www.w3.org/1999/xhtml" href="http://dev.w3.org/SVG/profiles/1.1F2/publish/text.html#FontPropertiesUsedBySVG">
+      <p>
+        <!--[[
+        The 'line-height' property has no effect on text layout.
+        ]]-->
+      </p>
+    </d:testDescription>
+    <d:passCriteria xmlns="http://www.w3.org/1999/xhtml">
+      <p>
+        <!--[[
+        Test passes if the three blue instances of 'Filler Text' are all the same size.
+        ]]-->
+      </p>
+    </d:passCriteria>
+  </d:SVGTestCase>
+  <title id="test-title">$RCSfile: text-fonts-05-f.svg,v $</title>
+  <g id="test-body-content" font-size="18">
+    <text x="100" y="100" fill="blue" font-size="25">
+        <tspan x="50" line-height="10">FillerText</tspan>
+        <tspan x="160" line-height="100">FillerText</tspan>
+        <tspan x="270" line-height="200">FillerText</tspan>
+    </text>
+  </g>
+  <g font-size="32">
+    
+  </g>
+  
+  <!-- comment out this watermark once the test is approved -->
+  <g id="draft-watermark">
+    <rect x="1" y="1" width="478" height="20" fill="blue" stroke="black" stroke-width="1"/>
+    <text font-size="20" x="240" text-anchor="middle" y="18" stroke-width="0.5" stroke="black" fill="white">DRAFT</text>
+  </g>
+</svg>

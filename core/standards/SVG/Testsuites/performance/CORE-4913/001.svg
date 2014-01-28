@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg width="100%" height="100%" viewBox="0 200 1024 400" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title>Performance with many elements in &lt;defs&gt;</title>
+<script xlink:href="/resources/fps.js"/>
+<script type="text/ecmascript"><![CDATA[
+
+function run_test() {   
+   var res = document.getElementById("result");
+   res.textContent = "Adding defs, please wait ...";
+   var defs = document.createElement("defs");
+   document.firstChild.appendChild(defs);
+   for (i=1; i <= 10000; i++)
+   {
+      var rect = document.createElement("rect");
+      rect.setAttribute("width", "20");
+      rect.setAttribute("height", String(i));
+      defs.appendChild(rect);
+      var flt = document.createElement("filter");
+      flt.setAttribute("id", "generatedFilter" + String(i));
+      flt.setAttribute("filterUnits", "userSpaceOnUse");
+      flt.setAttribute("x", "0");
+      flt.setAttribute("y", "0");
+      flt.setAttribute("width", "100");
+      flt.setAttribute("height", "100");
+      var fe = document.createElement("feTurbulence");
+      fe.setAttribute("baseFrequency", "0.4");
+      fe.setAttribute("numOctaves", String(i));
+      fe.setAttribute("type", "fractalNoise");
+      flt.appendChild(fe)
+      defs.appendChild(flt)
+   }
+   var rect = document.createElement("rect");
+   rect.setAttribute("width", "200");
+   rect.setAttribute("height", "200");
+   rect.setAttribute("x", "100");
+   rect.setAttribute("y", "100");
+   rect.setAttribute("fill", "navy");
+   var anim = document.createElement("animateTransform")
+   anim.setAttribute("attributeName", "transform")
+   anim.setAttribute("type", "rotate")
+   anim.setAttribute("from", "0, 200, 200")
+   anim.setAttribute("to", "360, 200, 200")
+   anim.setAttribute("dur", "5s")
+   anim.setAttribute("fill", "freeze")
+   rect.appendChild(anim)
+   document.firstChild.appendChild(rect);
+   checkfps(2000);
+}
+
+window.onload = run_test;
+]]></script>
+
+<text y="400">Adding many invisible elements in &lt;defs&gt; should not slow the browser down. </text>
+<text id="result" y="420">NOT TESTED (Enable Javascript)</text>
+</svg>
+
+

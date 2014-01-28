@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg">
+  <title>Text selection along character boundary</title>
+
+  <style>#test::selection { color: red }</style>
+
+  <defs>
+    <linearGradient id="boundaries" x1="0" y1="0" x2="0" y2="100%">
+      <stop offset="50%" style="stop-color: fuchsia"/>
+      <stop offset="50%" style="stop-color: blue"/>
+    </linearGradient>
+  </defs>
+
+  <text x="10" y="20">This test requires the Ahem font.</text>
+
+  <text x="10" y="50">Click on the fuchsia square, drag into the blue square and release. You should NOT see any red.</text>
+
+  <text x="20" y="240" id="test" font-size="200" fill="url(#boundaries)" font-family="Ahem">X</text>
+  <rect x="120" y="80" width="100" height="200" fill="white"/>
+</svg>
+

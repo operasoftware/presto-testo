@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  viewBox="0 0 480 360">
+	<foreignObject id="foo" x="60" y="50" width="360" height="250"><html id="root" xlmns="http://www.w3.org/1999/xhtml"><body bgcolor="red"><h1>Hello world!</h1></body></html></foreignObject>
+	<rect id="fo" x="60" y="50" width="360" height="250" fill="none" stroke="black"/>
+	<text x="240" y="340" text-anchor="middle" font-size="24">ForeignObject with html child elements</text>
+	<rect id="test-frame" x="1" y="1" width="478" height="358" fill="none" stroke="black"/>
+</svg>

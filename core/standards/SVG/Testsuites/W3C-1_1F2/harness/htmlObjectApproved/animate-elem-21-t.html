@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC  "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+      <meta name="keywords" content="W3C SVG 1.1 2nd Edition Test Suite"/>
+      <meta name="description" content="W3C SVG 1.1 2nd Edition Object Test Suite"/>
+      <title>
+SVG 1.1 2nd Edition Test (&lt;object&gt;): animate-elem-21-t.svg
+      </title>
+      <style type="text/css">
+        <!--
+         .bodytext      { font-family:verdana, helvetica, sans-serif; font-size: 12pt; line-height: 125%; text-align: Left; margin-top: 0; margin-bottom: 0 }
+         .pageTitle     { line-height: 150%; font-size: 20pt; font-weight : 900; margin-bottom: 20pt }
+         .pageSubTitle  { color : blue; line-height: 100%; font-size: 24pt; font-weight : 900 }
+         .openChapter   { color : blue; line-height: 125%; font-weight : 900 }
+         .openSection   { color : blue; line-height: 125%; font-weight : 900 }
+         .info          { color : black; line-height: 110%; font-size: 10pt; font-weight : 100 }
+         p              { margin-top:0; margin-bottom:0; padding-top:0; padding-bottom:0 }
+         blockquote     { margin-top:0; margin-bottom:0; padding-top:0; padding-bottom:0 }
+         .opscript      { margin-left: 3%; margin-right: 3%; }
+         .opscript p    { margin-top: 0.7em }
+         .navbar        { background: black; color: white; font-weight: bold }
+         .warning       { color: red; text-align: Center;}
+         a,a:visited    { color: blue }
+        -->
+      </style>
+      <link rel="prev" href="animate-elem-20-t.html" />
+      <link rel="index" href="index.html" />
+      <link rel="next" href="animate-elem-22-b.html" />
+      <script src="../resources/testharnessreport.js"></script>
+    </head>
+  <body class="bodytext">
+<div class="linkbar"> 
+  <p>Specification link: <a target="spec" href="http://www.w3.org/TR/SVG11/animate.html#Animation">19.2 Animation elements</a></p>
+  <p>
+    <a href="animate-elem-20-t.html" rel="prev">animate-elem-20-t ←</a> 
+    <a href="index.html" rel="index">index</a>
+    <a href="animate-elem-22-b.html" rel="next">→ animate-elem-22-b</a>
+  </p>
+</div>
+<div>
+  <br />
+  <p class="warning">
+    Tests that contain the draft-watermark are under development and may be incorrectly testing a feature.
+  </p>
+</div>
+<table align="center" border="0" cellspacing="0" cellpadding="10">
+  <tr>
+    <td align="center" colspan="3">
+      <table border="0" cellpadding="8">
+        <tr>
+          <td align="center" colspan="2" class="pageTitle">
+            <h1>animate-elem-21-t.svg</h1>
+          </td>
+        </tr>
+        <tr  class="navbar">
+          <td align="center">
+            SVG Image
+          </td>
+          <td align="center">
+            PNG Image
+          </td>
+        </tr>
+        <tr>
+          <td align="right">
+            <object data="../../svg/animate-elem-21-t.svg" width="480" height="360" type="image/svg+xml"><p style="font-size:300%;color:red">FAIL</p></object>
+          </td>
+          <td align="left">
+            <img alt="raster image of animate-elem-21-t.svg" src="../../png/animate-elem-21-t.png" width="480" height="360"/>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+
+<div class="opscript">
+    <h2 id="operatorscript">
+      Operator Script
+    </h2>
+    <div>
+<p>
+      	Click "fade in", wait 3 seconds. Click "fade out", wait 3 seconds. Click "fade in" again, wait 6 seconds.
+      </p>
+  </div>
+  <h2 id="passcriteria">
+    Pass Criteria
+  </h2>
+  <div>
+<p>The test is passed if:</p><ul>
+      	<li>The first time "fade in" is clicked, a blue rectangle should smoothly fade from white to blue, and two circles should fade from white to gray, all over the course of three seconds</li>
+      	<li>When "fade out" is clicked, the blue rectangle should smoothly fade from blue to white, and the two circles should fade from gray to white, all over the course of three seconds.</li>
+      	<li>When "fade in" is clicked the second time, it should behave as the first time "fade in" was clicked but immediately followed by the "fade out" behaviour described above, so that the shapes all fade in over the course of three seconds, and then out again over the course of three seconds.</li>
+      	<li>The rendered picture matches the reference image, (except
+        for possible variations in the labeling text (per CSS2 rules))
+        after activating the link on the fade-in button the first time
+        and waiting three seconds for the animation to compete. The picture
+        should remain looking the same way indefinitely, until another
+        link is activated.</li>
+      </ul>
+  </div>
+  <h2 id="testdescription">
+    Test Description
+  </h2>
+  <div>
+<p>
+        Test for chained animations.
+      </p><p>
+        The assumption is that you will first click on "fade in" and
+        then click on "fade out", each exactly once. The first time you
+        select the link 'fade in', you should see a blue square appearing,
+        gradually and smoothly fading from white to blue over the
+        course of three seconds. This square is in front of and thus
+        obscures the lower left circle, but is behind the upper right
+        circle. The fill color of these circles is also animated, from white to
+        grey. The animations are triggered by the start of the corresponding
+        animation of the blue square.
+      </p><p>
+        With the second click on "fade in", however, the behavior might
+        be different. In the case of having a first click on "fade in",
+        waiting three seconds, and then immediately perform a first click
+        on "fade out", waiting three seconds, and then immediately perform
+        a second click on "fade in", you should see the following. After
+        the first click on "fade in", the blue square goes from white to blue. 
+        After the first click on "fade out", the blue square goes
+        from blue to white. After the second click on "fade in",
+        however, the blue square goes from white to blue, and then
+        goes back from blue to white. This is because of the
+        hyperlinking rules as they relate to resolved start times in the
+        SMIL Animation specification.
+      </p>
+  </div>
+</div>
+<br/>
+<div class="linkbar">
+  <p>
+    <a href="animate-elem-20-t.html" rel="prev">animate-elem-20-t ←</a>
+    <a href="index.html" rel="index">index</a>
+    <a href="animate-elem-22-b.html" rel="next">→ animate-elem-22-b</a>
+  </p>
+</div>
+</body>
+</html>

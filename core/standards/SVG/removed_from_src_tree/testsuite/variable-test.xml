@@ -1,0 +1,32 @@
+<?xml version="1.0" ?>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<script>
+<![CDATA[
+function test()
+{
+  var svgelm = document.getElementById('svgelm');
+  svgelm.setAttribute('foo', 'bar');
+  svgelm.setAttribute('hoo', 'hum');
+  if(svgelm.getAttribute('foo') == 'bar' &&
+     svgelm.getAttribute('fie') == 'fum' &&
+     svgelm.getAttribute('hoo') == 'hum')
+  {
+    alert("passed");
+  }
+  else
+  {
+    alert("failed");
+  }
+}
+]]>
+</script>
+</head>
+<body onload="test();">
+Some html.
+<svg id="svgelm" xmlns="http://www.w3.org/2000/svg" width="10" height="10" fie="fum">
+<rect x="0" y="0" width="10" height="10" fill="red"/>
+</svg>
+Some more html.
+</body>
+</html>

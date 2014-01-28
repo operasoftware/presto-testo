@@ -1,0 +1,138 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+      xmlns:svg="http://www.w3.org/2000/svg">
+  <head>
+    <title>My title</title>
+    <script src="pathtest_04.js" type="text/ecmascript">
+    </script>
+    <style type="text/css">
+      *
+      {
+      font-family: sans-serif;
+      font-size:10px;
+      }
+
+      h1
+      {
+      font-size:16px;
+      }
+    </style>
+
+  </head>
+
+  <body onload="init();">
+    <table>
+      <tr>
+	<td>
+	  <table border="0">
+	    <tr>
+	      <td></td>
+	      <td>
+		<input type="button" onclick="do_test(document.getElementById('svgElement'));" value="Start test" /><br/>
+	      </td>
+	    </tr>
+	    <tr>
+	      <td>Axiom</td>
+	      <td>
+		<input type="text" id="axiom_edit" value="F++F++F"/>
+	      </td>
+	    </tr>
+	    <tr>
+	      <td>F Substitute</td>
+	      <td>
+		<input type="text" id="expand_f_edit" value="F-F++F-F" />
+	      </td>
+	    </tr>
+	    <tr>
+	      <td>Iterations</td>
+	      <td>
+		<input type="text" id="iterations_edit" value="5" />
+	      </td>
+	    </tr>
+	    <tr>
+	      <td>Step length</td>
+	      <td>
+		<input type="text" id="step_length_edit" value="0.0034" />
+	      </td>
+	    </tr>
+	    <tr>
+	      <td>Angle</td>
+	      <td>
+		<input type="text" id="angle_edit" value="M_PI / 3.0" />
+	      </td>
+	    </tr>
+	    <tr>
+	      <td>Use normalized list</td>
+	      <td>
+		<input type="checkbox" value="1" id="should_use_normalized_toggle"/>
+	      </td>
+	    </tr>
+	    <tr>
+	      <td>Use DOM Core</td>
+	      <td>
+		<input type="checkbox" value="1" id="should_use_dom_core_toggle"/>
+	      </td>
+	    </tr>
+	    <tr>
+	      <td>Suspend redraw</td>
+	      <td>
+		<input type="checkbox" value="1" id="should_suspend_redraw_toggle" checked=""/>
+	      </td>
+	    </tr>
+	    <tr>
+	      <td>Use unsuspendRedrawAll</td>
+	      <td>
+		<input type="checkbox" value="1" id="should_use_unsuspend_redraw_all_toggle"/>
+	      </td>
+	    </tr>
+	    <tr>
+	      <td colspan="2">Information</td>
+	    </tr>
+	    <tr>
+	      <td>Path length</td>
+	      <td>
+		<input type="text" id="pathseg_list_length_info" value="0" />
+	      </td>
+	    </tr>
+	    <tr>
+	      <td>Total generation time</td>
+	      <td>
+		<input type="text" id="total_generation_time_info" value="0" />
+	      </td>
+	    </tr>
+	    <tr>
+	      <td>Path generation time</td>
+	      <td>
+		<input type="text" id="path_generation_time_info" value="0" />
+	      </td>
+	    </tr>
+	    <tr>
+	      <td>DOM Code setAttribute time</td>
+	      <td>
+		<input type="text" id="set_attribute_time_info" value="0" />
+	      </td>
+	    </tr>
+	    <tr>
+	      <td>Clear previous path time</td>
+	      <td>
+		<input type="text" id="clear_path_time_info" value="0" />
+	      </td>
+	    </tr>
+	  </table>
+	  </td><td>
+
+	  <svg:svg xmlns="http://www.w3.org/2000/svg" width="600px" height="400px" id="svgElement">
+	    <svg:g transform="scale(400, 400)">
+	      <svg:path d=""
+			id="workpath"
+			stroke-width="0.002px"
+			stroke="#203040"
+			fill="#403020"
+			fill-opacity="0.4"/>
+	    </svg:g>
+	  </svg:svg>
+	</td>
+      </tr>
+    </table>
+  </body>
+</html>

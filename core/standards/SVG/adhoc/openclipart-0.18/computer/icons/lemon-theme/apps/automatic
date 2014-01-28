@@ -1,0 +1,32 @@
+#! /bin/bash
+
+anchura="--export-width=16"
+altura="--export-height=16"
+
+for i in *.svg; do inkscape -z "--file=$i" ${anchura} ${altura} -e "../../16x16/apps/${i//.svg/.png}" ;done
+
+anchura="--export-width=22"
+altura="--export-height=22"
+
+for i in *.svg; do inkscape -z "--file=$i" ${anchura} ${altura} -e "../../22x22/apps/${i//.svg/.png}" ;done
+
+anchura="--export-width=32"
+altura="--export-height=32"
+
+for i in *.svg; do inkscape -z "--file=$i" ${anchura} ${altura} -e "../../32x32/apps/${i//.svg/.png}" ;done
+
+anchura="--export-width=48"
+altura="--export-height=48"
+
+for i in *.svg; do inkscape -z "--file=$i" ${anchura} ${altura} -e "../../48x48/apps/${i//.svg/.png}" ;done
+
+anchura="--export-width=64"
+altura="--export-height=64"
+
+for i in *.svg; do inkscape -z "--file=$i" ${anchura} ${altura} -e "../../64x64/apps/${i//.svg/.png}" ;done
+
+anchura="--export-width=128"
+altura="--export-height=128"
+
+for i in *.svg; do inkscape -z "--file=$i" ${anchura} ${altura} -e "../../128x128/apps/${i//.svg/.png}" ;done
+exit 0 

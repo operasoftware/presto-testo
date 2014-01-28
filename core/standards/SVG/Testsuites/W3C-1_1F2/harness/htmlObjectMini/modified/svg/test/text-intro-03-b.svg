@@ -1,0 +1,81 @@
+<?xml version="1.0"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" baseProfile="basic" id="svg-root" width="100%" height="100%" viewBox="0 0 480 360">
+  <!--======================================================================-->
+  <!--=  SVG 1.1 2nd Edition Test Case                                     =-->
+  <!--======================================================================-->
+  <!--=  Copyright 2009 World Wide Web Consortium, (Massachusetts          =-->
+  <!--=  Institute of Technology, European Research Consortium for         =-->
+  <!--=  Informatics and Mathematics (ERCIM), Keio University).            =-->
+  <!--=  All Rights Reserved.                                              =-->
+  <!--=  See http://www.w3.org/Consortium/Legal/.                          =-->
+  <!--======================================================================-->
+  <d:SVGTestCase xmlns:d="http://www.w3.org/2000/02/svg/testsuite/description/" template-version="1.4" reviewer="SVGWG" author="Jon Ferraiolo" status="accepted" version="$Revision: 1.5 $" testname="$RCSfile: text-intro-03-b.svg,v $">
+    <d:testDescription xmlns="http://www.w3.org/1999/xhtml" href="http://www.w3.org/TR/SVG11/text.html#Introduction">
+        <p>
+          Test top-to-bottom internationalized text and the
+          following properties: 'writing-mode',
+          'glyph-orientation-vertical', 'glyph-orientation-horizontal'.
+        </p>
+        <p>
+          Various text strings in various languages appear. The main
+          purpose of the test is to verify that the correct characters
+          appear and that they appear in the correct order and orientation.
+          Ensure that the two lines of
+          vertical Japanese text have the proper orientation
+          (test of 'glyph-orientation-vertical' property).
+        </p>
+    </d:testDescription>
+    <d:operatorScript xmlns="http://www.w3.org/1999/xhtml">
+      <p>
+        This test requires installation of a system font that supports
+        the various international characters used in this test case. A
+        suitable font should be used by the SVG renderer if none of the
+        specified font families are available (or if they are available but do
+        not have the required glyphs). To
+        minimize system dependencies, a future version of this test
+        might include all necessary glyphs as an SVG font.
+      </p>
+      <p>
+        Run the test. No interaction required.
+      </p>
+    </d:operatorScript>
+    <d:passCriteria xmlns="http://www.w3.org/1999/xhtml">
+      <p>
+        The test is passed if first line of text has the english text "Text" and
+        "in Chinese" rotated 270 degrees and the Chinese text displayed top to
+        bottom. The second line of text has the english text "Japanese:" rotated
+        270 degrees and the Japanese text displayed top to bottom. The third
+        line of text has the letters in the english text "Japanese:" displayed
+        virtically and the Japanese text displayed top to bottom.
+      </p>
+    </d:passCriteria>
+  </d:SVGTestCase>
+  <title id="test-title">$RCSfile: text-intro-03-b.svg,v $</title>
+  <defs>
+    <font-face font-family="SVGFreeSansASCII" unicode-range="U+0-7F">
+      <font-face-src>
+        <font-face-uri xlink:href="../resources/SVGFreeSans.svg#ascii"/>
+      </font-face-src>
+    </font-face>
+  </defs>
+  <g id="test-body-content" font-family="SVGFreeSansASCII,sans-serif" font-size="18">
+    <g font-size="14" font-family="'Arial Unicode MS', 'LucidaSansUnicode','MS-Gothic'" writing-mode="tb">
+      <text x="70" y="10">Text "&#x6211;&#x80FD;&#x541E;&#x4E0B;&#x73BB;&#x7483;&#x800C;&#x4E0D;&#x4F24;&#x8EAB;&#x4F53;&#x3002;" in Chinese</text>
+      <text x="230" y="10" font-size="13">Japanese: &#x79C1;&#x306F;&#x30AC;&#x30E9;&#x30B9;&#x3092;&#x98DF;&#x3079;&#x3089;&#x308C;&#x307E;&#x3059;&#x3002;&#x305D;&#x308C;&#x306F;&#x79C1;&#x3092;&#x50B7;&#x3064;&#x3051;&#x307E;&#x305B;&#x3093;&#x3002;</text>
+      <text x="370" y="13" glyph-orientation-vertical="0" font-size="10">Japanese: &#x79C1;&#x306F;&#x30AC;&#x30E9;&#x30B9;&#x3092;&#x98DF;&#x3079;&#x3089;&#x308C;&#x307E;&#x3059;&#x3002;&#x305D;&#x308C;&#x306F;&#x79C1;&#x3092;&#x50B7;&#x3064;&#x3051;&#x307E;&#x305B;&#x3093;&#x3002;</text>
+      <text x="120" y="80" font-size="32">xt "&#x6211;&#x80FD;&#x541E;</text>
+      <text x="280" y="80" font-size="36">se: &#x79C1;&#x306F;</text>
+      <text x="420" y="80" glyph-orientation-vertical="0" font-size="32">se: &#x79C1;&#x306F;</text>
+    </g>
+  </g>
+  <g font-family="SVGFreeSansASCII,sans-serif" font-size="32">
+    
+  </g>
+  
+  <!-- comment out this watermark once the test is approved -->
+  <!--<g id="draft-watermark">
+    <rect x="1" y="1" width="478" height="20" fill="red" stroke="black" stroke-width="1"/>
+    <text font-family="SVGFreeSansASCII,sans-serif" font-weight="bold" font-size="20" x="240"
+      text-anchor="middle" y="18" stroke-width="0.5" stroke="black" fill="white">DRAFT</text>
+  </g>-->
+</svg>

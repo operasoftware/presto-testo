@@ -1,0 +1,690 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN"
+    "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd" [
+    <!ENTITY sw "400">
+    <!ENTITY sh "300">
+]>
+<svg width="&sw;" height="&sh;" onload="do_on_load(evt)"
+     xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink">
+    <script type="text/ecmascript" xlink:href="Node_Builder.js"/>
+    <script type="text/ecmascript" xlink:href="Scheduler.js"/>
+    <script type="text/ecmascript" xlink:href="KEL_Game_Lib.js"/>
+    <script type="text/ecmascript"><![CDATA[
+		/*****
+		*
+		*	Globals
+		*
+		*****/
+		var version = "1.5";
+		var playfield;
+		var screen_width;
+		var screen_height;
+
+		var life_count = 3;
+		var score      = 0;
+		var roid_max   = 4;
+
+		var splash;
+		var info;
+		var letters = new Array();
+		var x_pos = new Array(133, 148, 163, 193, 217, 228, 253);
+		var ship;
+		var t_score;
+		var t_bye;
+		var shots = new Array();
+		var booms = new Array();
+		var roids = new Array();
+		var lives = new Array();
+
+		Math.TWO_PI      = Math.PI * 2;
+		Math.PI_OVER_180 = Math.PI / 180;
+		Math.PI_OVER_4   = Math.PI / 4;
+
+
+		/*****
+		*
+		*	do_stabilize
+		*
+		*****/
+		function do_stabilize() {
+			var change = 0;
+
+			change = ship.angle_velocity + ship.x_velocity + ship.y_velocity;
+			if (ship.angle_velocity) ship.angle_velocity = to_zero(ship.angle_velocity);
+			if (ship.x_velocity)     ship.x_velocity     = to_zero(ship.x_velocity);
+			if (ship.y_velocity)     ship.y_velocity     = to_zero(ship.y_velocity);
+
+			if ( change == 0 ) {
+				scheduler.delete_task(do_stabilize);
+			}
+		}
+
+
+		/*****
+		*
+		*	to_zero
+		*
+		******/
+		function to_zero(num) {
+			if (Math.abs(num) < 1) {
+				num = 0;
+			} else if (num < 0) {
+				num++;
+			} else {
+				num--;
+			}
+
+			return num;
+		}
+
+
+		/*****
+		*
+		*	do_collision_detect
+		*
+		*****/
+		function do_collision_detect() {
+			for ( var i = 0; i < roids.length; i++) {
+				var dist = roids[i].distance_from(ship.x, ship.y);
+
+                dist -= 5 // Take off size of ship
+				if (dist <= roids[i].hit_distance) {
+					split_roid(i);
+					delete_life();
+					break;
+				}
+			}
+		}
+
+
+		/*****
+		*
+		*	delete_life
+		*
+		*****/
+		function delete_life() {
+			var index = lives.length - 1;
+			var life = lives[index];
+
+			life.remove();
+			lives.length--;
+
+			if (lives.length == 0) do_game_over();
+		}
+
+
+		/*****
+		*
+		*	do_game_over
+		*
+		*****/
+		function do_game_over() {
+			scheduler.delete_task(ship_advance);
+			scheduler.delete_task(do_collision_detect);
+			key_handler.clear_all();
+			ship.remove();
+			t_bye.setAttributeNS(null, "visibility", "visible");
+			setTimeout("do_splash()", 4000);
+		}
+
+
+		/*****
+		*
+		*	do_boom
+		*
+		*****/
+		function do_boom(x, y) {
+			var data = make_burst(15, 30, Math.round(Math.random() * 3 + 7));
+			var boom = new Projectile(
+				x, y, 30, 30,
+				playfield,
+				[
+					new Node_Builder(
+						"polygon",
+						{ points: data, stroke: "red", 'stroke_width': 1, fill: "yellow" }
+					)
+				]
+			);
+
+			boom.opacity      = 1;
+			boom.opacity_diff = -0.2;
+			boom.node = boom.shapes[0].node;
+			booms[booms.length] = boom;
+
+			if (booms.length == 1) scheduler.add_task(fade_boom, 2);
+		}
+
+
+		/*****
+		*
+		*	fade_boom
+		*
+		*****/
+		function fade_boom() {
+			for (var i = 0; i < booms.length; i++) {
+				var boom = booms[i];
+				boom.opacity += boom.opacity_diff;
+				if (boom.opacity < -boom.opacity_diff) {
+					boom.remove();
+					for (var j = i; j < booms.length - 1; j++) {
+						booms[j] = booms[j+1];
+					}
+					booms.length--;
+				} else {
+					boom.node.setAttributeNS(null, "opacity", boom.opacity);
+				}
+			}
+			if (booms.length == 0) scheduler.delete_task(fade_boom);
+		}
+
+
+		/*****
+		*
+		*	do_shot
+		*
+		*****/
+		function do_shot() {
+			for (var i = 0; i < shots.length; i++) {
+				var shot = shots[i];
+				shot.count--;
+				if (shot.count) {
+					shot.advance();
+					for (var j = 0; j < roids.length; j++) {
+						var roid = roids[j];
+						var dist = roid.distance_from(shot.x, shot.y);
+
+						if (dist <= roid.hit_distance) {
+							score += 50 * ( 4 - roid.size );
+							update_score();
+							split_roid(j);
+
+							shot.remove();
+							for (var k = i; k < shots.length - 1; k++) {
+								shots[k] = shots[k+1];
+							}
+							shots.length--;
+							break;
+						}
+					}
+				} else {
+					shot.remove();
+					for (var j = i; j < shots.length - 1; j++) {
+						shots[j] = shots[j+1];
+					}
+					shots.length--;
+					break;
+				}
+			}
+			if (shots.length == 0) scheduler.delete_task(do_shot);
+		}
+
+
+		/*****
+		*
+		*	update_score
+		*
+		*****/
+		function update_score() {
+			var zeros = "000000";
+			var size = score.toString().length;
+			var text = zeros.substr(0, 6 - size) + score;
+
+			t_score.data = text;
+		}
+
+
+		/*****
+		*
+		*	do_space
+		*
+		*****/
+		function do_space() {
+			if ( shots.length < 5 ) {
+				var shot = new Projectile(
+					ship.x, ship.y, 2, 2,
+					playfield,
+					[
+						new Node_Builder(
+							"circle",
+							{ cx: 0, cy: 0, r: 1, fill: "#fff" }
+						)
+					]
+				);
+				var r_angle = ship.angle * Math.PI_OVER_180;
+				shot.x_velocity = 10 * Math.cos(r_angle);
+				shot.y_velocity = 10 * Math.sin(r_angle);
+				shot.count = 25;
+				shots[shots.length] = shot;
+				if (shots.length == 1) scheduler.add_task(do_shot, 1);
+			}
+		}
+
+		/*****	Initialization	*****/
+
+		/*****
+		*
+		*	do_on_load
+		*
+		*****/
+		function do_on_load(e) {
+			// Initialize globals
+			if ( window.svgDocument == null )
+				svgDocument = e.target.ownerDocument;
+
+			var svgRoot   = svgDocument.documentElement;
+			playfield     = svgDocument.getElementById("playfield");
+			screen_width  = parseInt( svgRoot.getAttributeNS(null, "width") );
+			screen_height = parseInt( svgRoot.getAttributeNS(null, "height") );
+			t_score       = svgDocument.getElementById("t_score").firstChild;
+			t_bye         = svgDocument.getElementById("t_bye");
+			splash        = svgDocument.getElementById("splash");
+			info          = svgDocument.getElementById("info");
+
+			scheduler.add_task(
+				function () {
+					for (var i = 0; i < roids.length; i++) {
+						roids[i].advance();
+					}
+				}, 1
+			);
+			do_splash();
+			scheduler.start();
+
+			var keycapt = svgDocument.getElementById("coverall");
+			keycapt.addEventListener("keydown", Key_handler.process, false);
+            //exit_splash();
+		}
+
+
+		/*****
+		*
+		*	do_splash
+		*
+		*****/
+		function do_splash() {
+			t_bye.setAttributeNS(null, "visibility", "hidden");
+			if (letters.length == 0) {
+				letters[letters.length] = make_letter("*", 10, 350, x_pos[0], 120);
+				letters[letters.length] = make_letter("-", 10, -50, x_pos[1], 120);
+				letters[letters.length] = make_letter("R", 450, 10, x_pos[2], 120);
+				letters[letters.length] = make_letter("o", 260, 350, x_pos[3], 120);
+				letters[letters.length] = make_letter("i", 380, -50, x_pos[4], 120);
+				letters[letters.length] = make_letter("d", 450, 180, x_pos[5], 120);
+				letters[letters.length] = make_letter("s", -50, 280, x_pos[6], 120);
+			} else {
+				for (var i = 0; i < letters.length; i++) {
+					letters[i].shapes[0].node.setAttributeNS(null, "visibility", "visible");
+				}
+				info.setAttributeNS(null, "visibility", "visible");
+			}
+			key_handler.add_task(exit_splash, "P".charCodeAt(0));
+		}
+
+
+		/*****
+		*
+		*	make_letter
+		*
+		*****/
+		function make_letter(letter, x1, y1, x2, y2) {
+			var text = new Node_Builder("text", {});
+			var text2 = svgDocument.createTextNode(letter);
+
+			var obj = new Projectile(
+				0, 0, 0, 0,
+				splash,
+				[
+					text,
+					new Node_Builder(
+						"animateTransform",
+						{
+							attributeName: "transform",
+							type: "rotate",
+							from: "0",
+							to: "359",
+							begin: "0s",
+							dur: "2s",
+							repeatCount: "3",
+							fill: "freeze"
+						}
+					)
+				]
+			);
+			var anim = new Node_Builder(
+				"animateTransform",
+				{
+					attributeName: "transform",
+					type: "translate",
+					from: x1 + "," + y1,
+					to: x2 + "," + y2,
+					begin: "0s",
+					dur: "6s",
+					fill: "freeze"
+				}
+			);
+			anim.appendTo(obj.translate);
+			text.node.appendChild(text2);
+
+			return obj;
+		}
+
+
+		/*****
+		*
+		*	exit_splash
+		*
+		*****/
+		function exit_splash() {
+			info.setAttributeNS(null, "visibility", "hidden");
+			letters.index = 0;
+			remove_letter();
+		}
+
+
+		/*****
+		*
+		*	remove_letter
+		*
+		*****/
+		function remove_letter() {
+			letters[letters.index].shapes[0].node.setAttributeNS(null, "visibility", "hidden");
+			do_boom(x_pos[letters.index], 100);
+			letters.index++;
+			if (letters.index < letters.length) {
+				setTimeout("remove_letter()", 100);
+			} else {
+				setTimeout("start_game()", 500);
+			}
+		}
+
+
+		/*****
+		*
+		*	start_game
+		*
+		*****/
+		function start_game() {
+			score = 0;
+			update_score();
+			key_handler.clear_all();
+
+			setup_ship();
+			setup_key_handlers();
+			draw_lives();
+			setup_roids();
+			scheduler.add_task(ship_advance, 1);
+			scheduler.add_task(do_collision_detect, 1);
+		}
+
+
+		/*****
+		*
+		*	setup_ship
+		*
+		*****/
+		function setup_ship() {
+			ship = new Projectile(
+				200, 150, 12, 12,
+				playfield,
+				[
+					new Node_Builder(
+						"path",
+						{ d: "M-12 -12 12 0 -12 12 -6.25 0z",
+                          fill: "rgb(0,255,255)",
+                          'fill-opacity': .75,
+                          stroke: "rgb(0,65%,65%)",
+                          'stroke-width': 1
+						}
+					),
+					new Node_Builder(
+						"circle",
+						{ cx: 0, cy: 0, r: 1, fill: "rgb(100%, 50%, 50%)" }
+					)
+				]
+			);
+
+			var opacity = new Node_Builder(
+				"animate",
+				{
+					attributeName: "fill-opacity",
+					attributeType: "CSS",
+					values:        ".75;0;.75",
+					dur:           "2s",
+					begin:         "0s",
+					repeatCount:   "indefinite"
+				}
+			);
+			opacity.appendTo(ship.shapes[0].node);
+		}
+
+
+		/*****
+		*
+		*	draw_lives
+		*
+		*****/
+		function draw_lives() {
+			var scale = 0.5;
+
+			for (var i = 0; i < life_count; i++) {
+				var life = new Projectile(
+					screen_width - (i * 26 * scale) - 15, 15, 0, 0,
+					playfield,
+					[
+						new Node_Builder(
+							"path",
+							{
+								d: "M-12 -12 12 0 -12 12 -6.25 0z",
+								transform: "scale(" + scale + ")",
+								fill: "rgb(0,255,255)",
+								stroke: "rgb(0,65%,65%)",
+								'stroke-width': 1
+							}
+						)
+					]
+				);
+				life.angle = 270;
+				life.advance();
+
+				lives[lives.length] = life;
+			}
+		}
+
+
+		/*****
+		*
+		*	setup_key_handlers
+		*
+		*****/
+		function setup_key_handlers() {
+			key_handler.add_task(do_space, 32);
+
+			key_handler.add_task(
+				function() {
+					// do_left or num_pad_4
+					ship.rrotation(-2);
+				}, 37, 100 );
+
+			key_handler.add_task(
+				function() {
+					// do_up or num_pad_8
+					var r_angle = ship.angle * Math.PI_OVER_180;
+					ship.rvelocity( Math.cos(r_angle), Math.sin(r_angle) );
+				}, 38, 104 );
+
+			key_handler.add_task(
+				function() {
+					// do_right or num_pad_6
+					ship.rrotation(2);
+				}, 39, 102 );
+
+			key_handler.add_task(
+				function() {
+					// do_down or num_pad_2
+					var r_angle = ship.angle * Math.PI_OVER_180;
+					ship.rvelocity( -Math.cos(r_angle), -Math.sin(r_angle) );
+				}, 40, 98 );
+
+			key_handler.add_task(
+				function() {
+					// do_s or num_pad_5
+					scheduler.add_task(do_stabilize, 4);
+				}, "S".charCodeAt(0), 101 );
+		}
+
+
+		/*****
+		*
+		*	ship_advance
+		*
+		*****/
+		function ship_advance() {
+			ship.advance()
+		}
+
+
+		/*****
+		*
+		*	setup_roids
+		*
+		*****/
+		function setup_roids() {
+			for (var i = 0; i < roids.length; i++) roids[i].remove();
+			roids.length = roid_max;
+			for (var i = 0; i < roid_max; i++) {
+				var roid = make_roid(3);
+
+				roid.x = Math.random() * 100 - 50 + screen_width;
+				roid.y = Math.random() * 100 - 50 + screen_height;
+				roid.advance();
+				roids[i] = roid;
+			}
+		}
+
+
+		/*****
+		*
+		*	split_roids
+		*
+		*****/
+		function split_roid(index) {
+			var roid = roids[index];
+			var size = roid.size - 1;
+
+			roids[index].remove();
+			for (var i = index; i < roids.length - 1; i++) {
+				roids[i] = roids[i+1];
+			}
+			roids.length--;
+
+			do_boom(roid.x, roid.y);
+
+			if (size) {
+				var speed = roid.speed() * 2;
+				var angle = Math.atan2(roid.x_velocity, roid.y_velocity);
+				var new_roid;
+
+				new_roid = make_roid( size );
+				new_roid.x_velocity = speed * Math.cos(angle + Math.PI_OVER_4);
+				new_roid.y_velocity = speed * Math.sin(angle + Math.PI_OVER_4);
+				new_roid.angle_velocity = roid.angle_velocity * 2;
+				new_roid.x = roid.x;
+				new_roid.y = roid.y;
+				new_roid.advance();
+				roids[roids.length] = new_roid;
+
+				new_roid = make_roid( size );
+				new_roid.x_velocity = speed * Math.cos(angle - Math.PI_OVER_4);
+				new_roid.y_velocity = speed * Math.sin(angle - Math.PI_OVER_4);
+				new_roid.angle_velocity = roid.angle_velocity * -2;
+				new_roid.x = roid.x;
+				new_roid.y = roid.y;
+				new_roid.advance();
+				roids[roids.length] = new_roid;
+			}
+
+			if (roids.length == 0) setup_roids();
+		}
+
+
+		/*****
+		*
+		*	make_roid
+		*
+		*****/
+		function make_roid(size) {
+			var scale = 8 * size / 3;
+			var min_point = Math.round(size * 7 / 3);
+			var inner = Math.round(scale * size);
+			var outer = Math.round(scale * (size + 1));
+			var data = make_burst(inner, outer, Math.round(Math.random() * 3 + min_point));
+
+			var roid = new Projectile(
+				Math.round(Math.random() * 400), Math.round(Math.random() * 300), inner, inner,
+				playfield,
+				[
+					new Node_Builder(
+						"polygon",
+						{ points: data, stroke: "white", 'stroke-width': 1, fill: "gray" }
+					)
+				]
+			);
+
+			roid.x_velocity = Math.random() * 2 - 1;
+			roid.y_velocity = Math.random() * 2 - 1;
+			roid.angle_velocity = Math.random() * 6 - 3;
+			roid.hit_distance = outer;
+			roid.size = size;
+
+			return roid;
+		}
+
+
+		/*****
+		*
+		*	make_burst
+		*
+		*****/
+		function make_burst(inner_radius, outer_radius, num_points) {
+			var step = Math.TWO_PI / (num_points * 2);
+			var half_step = step / 2;
+			var current = 0;
+			var points = "";
+
+			for (var a = 0; a < num_points; a++) {
+				var av = Math.random() * step - half_step;
+				points += inner_radius * Math.cos(current + av) + " " + inner_radius * Math.sin(current + av) + " ";
+				current += step;
+
+				var av = Math.random() * step - half_step;
+				points += outer_radius * Math.cos(current + av) + " " + outer_radius * Math.sin(current + av) + " ";
+				current += step;
+			}
+
+			return points;
+		}
+		]]></script>
+
+    <g>
+      <rect x="0" y="0" width="&sw;" height="&sh;" fill="darkblue"/>
+    </g>
+
+    <g id="playfield"/>
+
+    <g style="font-family: Courier; fill: rgb(255,255,0)" transform="translate(2,2)">
+      <text id="t_score" x="200" y="13" text-anchor="middle">000000</text>
+      <text id="t_bye" x="200" y="133" text-anchor="middle" visibility="hidden">Game Over</text>
+    </g>
+
+    <g id="splash" style="fill:white;font-size:40px">
+      <text id="info" transform="translate(205,135)"
+	    font-size="10" text-anchor="middle">
+	<tspan x="0" y="0">by Kevin Lindsey, Copyright 2000-2002</tspan>
+	<tspan x="0" dy="1em">Click Here and Press P to Play</tspan>
+      </text>
+    </g>
+
+    <rect id="coverall" width="100%" height="100%" opacity="0"/>
+
+</svg>

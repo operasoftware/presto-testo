@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink"
+     onload="document.getElementById('nojs').textContent = ''">
+  <title>Text selection start on element with canceled onmousedown event</title>
+
+  <text x="10" y="20" id="nojs">NOT TESTED (JavaScript did not run)</text>
+
+  <text x="10" y="50" onmousedown="return false">You should be able to select this text.</text>
+</svg>
+

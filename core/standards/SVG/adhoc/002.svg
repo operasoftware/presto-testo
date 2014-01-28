@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<svg onload="SetTime(evt)">
+  <defs>
+    <script language="Javascript">
+      <![CDATA[
+      
+        function SetTime(LoadEvent)
+          {
+            var Now = new Date();
+            
+            var Seconds = Now.getSeconds();
+            var Minutes = Now.getMinutes() + Seconds / 60;
+            var Hours = Now.getHours() + Minutes / 60;
+          
+            var SVGDocument = LoadEvent.getTarget().getOwnerDocument();
+          
+            SVGDocument.getElementById("seconds").setAttribute('transform', 'rotate(' + (Seconds * 6) + ')');
+            SVGDocument.getElementById("minutes").setAttribute('transform', 'rotate(' + (Minutes * 6) + ')');
+            SVGDocument.getElementById("hours").setAttribute('transform', 'rotate(' + (Hours * 30) + ')');
+          }
+          
+      ]]>
+    </script>
+  </defs>
+  <circle cx="100" cy="100" r="80" style="fill:white;stroke:black"/>
+  <text x="88" y="80" style="font-size:12">Jien</text>
+  <text x="130" y="46" style="font-size:15">1</text>
+  <text x="154" y="71" style="font-size:15">2</text>
+  <text x="165" y="106" style="font-size:15">3</text>
+  <text x="155" y="140" style="font-size:15">4</text>
+  <text x="130" y="166" style="font-size:15">5</text>
+  <text x="96" y="175" style="font-size:15">6</text>
+  <text x="62" y="166" style="font-size:15">7</text>
+  <text x="37" y="140" style="font-size:15">8</text>
+  <text x="27" y="106" style="font-size:15">9</text>
+  <text x="34" y="71" style="font-size:15">10</text>
+  <text x="58" y="46" style="font-size:15">11</text>
+  <text x="92" y="37" style="font-size:15">12</text>
+  <g transform="translate(100 100)">
+    <g id="hours">
+      <line x1="0" y1="0" x2="0" y2="-35" style="stroke-width:4;stroke:black">
+        <animateTransform attributeName="transform" type="rotate" dur="43200s" values="0;360" repeatCount="indefinite"/>
+      </line>
+      <text x="-18" y="-81" style="font-size:12">
+        <animateTransform attributeName="transform" type="rotate" dur="43200s" values="0;360" repeatCount="indefinite"/>
+      (･∀･)
+      </text>
+    </g>
+    <g id="minutes">
+      <line x1="0" y1="0" x2="0" y2="-55" style="stroke-width:2;stroke:black">
+        <animateTransform attributeName="transform" type="rotate" dur="3600s" values="0;360" repeatCount="indefinite"/>
+      </line>
+      <text x="-18" y="-81" style="font-size:12">
+        <animateTransform attributeName="transform" type="rotate" dur="3600s" values="0;360" repeatCount="indefinite"/>
+      (･∀･)
+      </text>
+    </g>
+    <g id="seconds">
+      <line x1="0" y1="0" x2="0" y2="-75" style="stroke-width:1;stroke:red">
+        <animateTransform attributeName="transform" type="rotate" dur="60s" values="0;360" repeatCount="indefinite"/>
+      </line>
+      <text x="-18" y="-81" style="font-size:12">
+        <animateTransform attributeName="transform" type="rotate" dur="60s" values="0;360" repeatCount="indefinite"/>
+      (･∀･)
+      </text>
+    </g>
+  </g>  
+  <circle cx="100" cy="100" r="3" style="fill:black;stroke:black"/>
+</svg>

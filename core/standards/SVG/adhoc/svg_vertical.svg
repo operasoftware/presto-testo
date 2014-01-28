@@ -1,0 +1,28 @@
+<?xml version="1.0" standalone="yes" ?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN" 
+  "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<svg width="400" height="400" xmlns="http://www.w3.org/2000/svg">
+  <desc>text element</desc>
+  <desc>Example text03 - poem</desc>
+  <text x="340" y="20" font-family="MS-Mincho" font-size="30" fill="navy" writing-mode="tb" >
+春過ぎて
+  </text>
+  <text x="260" y="40" font-family="MS-Mincho" font-size="30" fill="navy" writing-mode="tb" >
+夏来るらし<tspan fill="green">白栲</tspan>の
+  </text>
+  <text x="280" y="190" font-family="MS-Mincho" font-size="16" fill="navy" writing-mode="tb" >
+しろたへ
+  </text>
+  <text x="180" y="40" font-family="MS-Mincho" font-size="30" fill="navy" writing-mode="tb" >
+衣干したり天の<tspan fill="green">香具山</tspan>
+  </text>
+  <text x="200" y="260" font-family="MS-Mincho" font-size="16" fill="navy" writing-mode="tb" >
+か<tspan dy="10">ぐ</tspan><tspan dy="6">やま</tspan>
+  </text>
+  <text x="100" y="240" font-family="MS-Mincho" font-size="24" writing-mode="tb" >
+持統天皇
+  </text>
+  <text x="118" y="248" font-family="MS-Mincho" font-size="12" fill="navy" writing-mode="tb" >
+じ<tspan dy="5">とうてんのう</tspan>
+  </text>
+</svg>

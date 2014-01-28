@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg version="1.2" baseProfile="tiny" xmlns="http://www.w3.org/2000/svg">
+   <title>Editable text input</title>
+   <desc>Illustrates how to create an editable input box without script</desc>
+
+   <rect x='0' y='0' width='100%' height='100%' fill='#87ceeb'>
+      <title>background rectangle</title>
+   </rect>
+
+   <g id="nameInput" transform='translate(50, 20)'>
+      <text x="0" y="20" font-size="18" font-family="Arial" fill="#000080">Name:</text>
+      <rect x="0" y="25" width="156" height="26" rx="3" ry="3"
+         fill="white" stroke-width="2" stroke="#000080"/>
+      <textArea x="3" y="27" width="150" height="20" font-size="18" font-family="Arial"
+         editable="simple" focusable="true" pointer-events="boundingBox"/>
+   </g>
+
+</svg>

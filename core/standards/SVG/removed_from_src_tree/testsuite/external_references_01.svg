@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" ?>
+<svg width="600" height="400" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<defs>
+<thisIsNotSVG id="text">Internal text.</thisIsNotSVG>
+</defs>
+<text font-size="32" x="50" y="100">External tref after this: <tref fill="green" xlink:href="./use_fractal_01.svg#text"/></text>
+<text font-size="32" x="50" y="150">Internal tref after this: <tref fill="green" xlink:href="#text"/></text>
+<use xlink:href="anim_motionpath_03.svg" x="130" y="130" viewBox="0 0 300 300"/>
+<rect x="1" y="1" width="598" height="398" fill="none" stroke-width="10px" stroke="blue"/>
+</svg>

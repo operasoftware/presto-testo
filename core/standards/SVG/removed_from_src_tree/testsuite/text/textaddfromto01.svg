@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<svg width="95%" height="100%" viewBox="0 0 1000 1000"
+   version="1.2" baseProfile="tiny"
+   xmlns="http://www.w3.org/2000/svg"  
+   xmlns:xlink="http://www.w3.org/1999/xlink">
+
+<title>Additive animation of text y and y </title> 
+<desc>
+Two from-to animations are added with additive sum for
+x and y of text. The visible result for an additive behaviour 
+is that the blue 'text' covers exactly the red 'text' without 
+any visible animation effect.
+If the blue text moves somehow and the red gets visible,
+the animation is not additive as indicated in grey.
+
+
+Behaviour of different viewers:
+
+Amaya 9.51: additive behaviour seems not to be implemented yet for any attribute or property; 
+                    red text vanishes for whatever reason ;o)
+KSVG1 (KDE, Konqueror plugin):  additive behaviour and repetitions are not implemented yet in general
+Adobe plugin (3.01 Beta Release 1, Build 88): shows additive behaviour
+Squiggle 1.7:  shows additive behaviour
+Opera 8.x: shows additive behaviour
+Opera9tp1/2/beta1/2/ 9.00/9.10/ 9.50 alpha/beta: not additive
+
+</desc> 
+
+
+<rect x="0" y="0" width="1000" height="1000" fill="#ffd" />
+
+
+<g font-size="200" stroke-width="2" stroke="none">
+<text xml:id="notadditive"  id="notadditive" x="600" y="600"  fill="#ccc">text</text>
+<text x="600" y="600"  fill="#f00">text</text> 
+<text xml:id="text"  id="text" x="0" y="0" fill="#00f">text</text> 
+</g>
+
+<animate xlink:href="#text"
+	attributeName="x" 
+	attributeType="XML"
+	from="100"
+        to="500"
+	dur="6s"
+	repeatCount="indefinite" />
+<animate xlink:href="#text"
+	attributeName="y" 
+	attributeType="XML"
+	from="100"
+        to="500"
+	dur="5.3s"
+	repeatCount="indefinite" />
+
+<animate xlink:href="#text"
+	attributeName="x" 
+	attributeType="XML"
+	from="500"
+        to="100"
+	dur="6s"
+	repeatCount="indefinite"
+	additive="sum" />
+<animate xlink:href="#text"
+	attributeName="y" 
+	attributeType="XML"
+	from="500"
+        to="100"
+	dur="5.3s"
+	repeatCount="indefinite"
+	additive="sum" />
+
+
+
+
+<animate xlink:href="#notadditive"
+	attributeName="x" 
+	attributeType="XML"
+	from="500"
+        to="100"
+	dur="6s"
+	repeatCount="indefinite" />
+<animate xlink:href="#notadditive"
+	attributeName="y" 
+	attributeType="XML"
+	from="500"
+        to="100"
+	dur="5.3s"
+	repeatCount="indefinite" />
+
+</svg>
+

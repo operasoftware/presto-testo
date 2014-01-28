@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg id="svgsvg" version="1.1" 
+    width="100%" height="100%" 
+    viewBox="0 0 1500 1100"
+    xmlns="http://www.w3.org/2000/svg" 
+    xmlns:xlink="http://www.w3.org/1999/xlink">
+  <style>
+    text { font-size: 70px; }
+    text.description { font-size: 40px; }
+    text.note { font-size: 20px; }
+  </style>
+
+  <!-- Case 1 -->
+  <text class="description" x="0" y="100">The text below should say "This is text that" with only the four letters "text" underlined</text>
+  <text class="note" x="20" y="140">SVG 1.1 says "This istextthat" with "that" underlined</text>
+  <text x="10" y="200" editable="simple">This i<tspan>s</tspan> text <tspan text-decoration="underline"> that</tspan></text>
+
+  <!-- Case 2 -->
+  <text class="description" x="0" y="300">The text below should say "This is broken"</text>
+  <text class="note" x="20" y="340">SVG 1.1 says "This isbroken"</text>
+  <text x="10" y="400" editable="simple">This is<tspan style="display:none"> </tspan> broken</text>
+
+  <!-- Case 3 -->
+  <text class="description" x="0" y="500">The text below should say "This is" with only the two letters "is" underlined</text>
+  <text class="note" x="20" y="540">SVG 1.1 says "Thisis" with "is" underlined</text>
+  <text x="10" y="600" editable="simple">This <tspan text-decoration="underline">is </tspan><tspan style="display:none">notdisplayed</tspan></text>
+
+  <!-- Case 4 -->
+  <text class="description" x="0" y="700">The text below should say "To be" with the space underlined</text>
+  <text class="note" x="20" y="740">SVG 1.1 says "Tobe"</text>
+  <text x="10" y="800" editable="simple">To<tspan text-decoration="underline">     </tspan> be</text>
+
+  <!-- Case 5 (from text-align-08-b), don't remove trailing whitespace
+       on lines -->
+  <text class="description" x="0" y="900">The text below should say "ABCabc abc" with a large underlined whitespace and underlined ABC</text>
+  <text class="note" x="20" y="940">SVG 1.1 says "ABCabcabc"</text>
+  <text x="10" y="1000" text-decoration="underline" editable="simple">ABC<tspan font-size="30%" text-decoration="none">abc</tspan> 
+<tspan text-decoration="none" font-size="30%">abc</tspan></text>
+</svg>

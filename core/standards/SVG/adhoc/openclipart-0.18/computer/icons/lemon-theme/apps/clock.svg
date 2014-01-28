@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN"
+"http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<!-- Created with Sodipodi ("http://www.sodipodi.com/") --><svg height="437.5" id="svg1" sodipodi:docbase="/usr/share/icons/Lemon/scalable/apps/" sodipodi:docname="/usr/share/icons/Lemon/scalable/apps/clock.svg" sodipodi:version="0.34" version="1.0" width="437.5" x="0" xmlns="http://www.w3.org/2000/svg" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:xlink="http://www.w3.org/1999/xlink" y="0">
+  <metadata>
+    <rdf:RDF xmlns:cc="http://web.resource.org/cc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+      <cc:Work rdf:about="">
+        <dc:title>Lemon SVG theme</dc:title>
+        <dc:description></dc:description>
+        <dc:subject>
+          <rdf:Bag>
+            <rdf:li>icon</rdf:li>
+            <rdf:li></rdf:li>
+            <rdf:li>application</rdf:li>
+            <rdf:li>lemon_theme_icon</rdf:li>
+            <rdf:li>icons</rdf:li>
+            <rdf:li>hash</rdf:li>
+            <rdf:li>computer</rdf:li>
+            <rdf:li>theme</rdf:li>
+          </rdf:Bag>
+        </dc:subject>
+        <dc:publisher>
+          <cc:Agent rdf:about="http://www.openclipart.org">
+            <dc:title>Jose Hevia</dc:title>
+          </cc:Agent>
+        </dc:publisher>
+        <dc:creator>
+          <cc:Agent>
+            <dc:title>Jose Hevia</dc:title>
+          </cc:Agent>
+        </dc:creator>
+        <dc:rights>
+          <cc:Agent>
+            <dc:title>Jose Hevia</dc:title>
+          </cc:Agent>
+        </dc:rights>
+        <dc:date></dc:date>
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+        <cc:license rdf:resource="http://web.resource.org/cc/PublicDomain"/>
+        <dc:language>en</dc:language>
+      </cc:Work>
+      <cc:License rdf:about="http://web.resource.org/cc/PublicDomain">
+        <cc:permits rdf:resource="http://web.resource.org/cc/Reproduction"/>
+        <cc:permits rdf:resource="http://web.resource.org/cc/Distribution"/>
+        <cc:permits rdf:resource="http://web.resource.org/cc/DerivativeWorks"/>
+      </cc:License>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview id="base"/>
+  <defs id="defs3">
+    <linearGradient id="linearGradient580">
+      <stop id="stop581" offset="0" style="stop-color:#ffffff;stop-opacity:0.7412;"/>
+      <stop id="stop582" offset="1" style="stop-color:#ffffea;stop-opacity:0.2157;"/>
+    </linearGradient>
+    <linearGradient id="linearGradient53">
+      <stop id="stop54" offset="0" style="stop-color:#faff00;stop-opacity:1;"/>
+      <stop id="stop55" offset="1" style="stop-color:#ff6d00;stop-opacity:1;"/>
+    </linearGradient>
+    <linearGradient id="linearGradient48">
+      <stop id="stop49" offset="0" style="stop-color:#ffff32;stop-opacity:1;"/>
+      <stop id="stop50" offset="1" style="stop-color:#ffffff;stop-opacity:0.0196;"/>
+    </linearGradient>
+    <linearGradient id="linearGradient51" xlink:href="#linearGradient53"/>
+    <linearGradient id="linearGradient52" x1="0.23077101" x2="0.76923102" xlink:href="#linearGradient53" y1="0.50781298" y2="0.515625"/>
+    <linearGradient id="linearGradient32" x1="0.482761" x2="0.321839" xlink:href="#linearGradient53" y1="0.38281" y2="0.53125"/>
+    <linearGradient id="linearGradient33" x1="0.50746274" x2="0.55223888" xlink:href="#linearGradient48" y1="0.875" y2="6.24999888e-2"/>
+    <radialGradient cx="0.43720931" cy="0.40625" fx="0.43720931" fy="0.40625" id="radialGradient579" r="0.81510514" xlink:href="#linearGradient580"/>
+    <radialGradient id="radialGradient625" xlink:href="#linearGradient580"/>
+  </defs>
+  <path d="M 414.1881 218.3643 C 414.1881 324.9585 326.9879 411.3702 219.421 411.3702 C 111.8542 411.3702 24.654 324.9585 24.654 218.3643 C 24.654 111.77 111.8542 25.35831 219.421 25.35831 C 326.9879 25.35831 414.1881 111.77 414.1881 218.3643 z " id="path581" style="font-size:12;fill:#ff6f00;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:15;"/>
+  <path d="M 387.4598 212.7372 C 387.4598 319.3315 325.5812 387.4554 218.0143 387.4554 C 110.4475 387.4554 68.26335 309.4842 59.82284 253.5331 C 59.82284 146.9388 111.8542 212.4564 219.421 212.4564 C 326.9879 212.4564 387.4598 106.143 387.4598 212.7372 z " id="path624" sodipodi:nodetypes="ccccc" style="font-size:12;fill:url(#linearGradient33);fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:15;"/>
+  <path d="M 390.2733 222.5845 C 390.2733 329.1788 322.7677 182.0695 215.2008 182.0695 C 107.6339 182.0695 47.16206 317.9247 47.16206 211.3305 C 47.16206 127.2443 120.2947 49.27307 213.7939 49.27307 C 321.3608 49.27307 390.2733 115.9903 390.2733 222.5845 z " id="path623" sodipodi:nodetypes="ccccc" style="font-size:12;fill:url(#radialGradient579);fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:15;"/>
+  <path d="M 420.5275 218.7164 C 420.5275 328.2284 330.6467 417.0054 219.7731 417.0054 C 108.8995 417.0054 19.01878 328.2284 19.01878 218.7164 C 19.01878 109.2045 108.8995 20.42746 219.7731 20.42746 C 330.6467 20.42746 420.5275 109.2045 420.5275 218.7164 z " id="path582" style="font-size:12;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:url(#linearGradient51);stroke-width:12.23018;stroke-opacity:0;"/>
+  <path d="M 210.9073 228.236 C 234.9433 228.5943 240.9769 217.012 243.2733 194.071 C 234.5876 171.1341 225.4292 79.72694 213.9928 45.7983 C 202.7241 79.45526 180.1638 175.3684 177.8686 190.9028 C 178.5661 199.3699 181.5859 226.3625 210.9073 228.236 z " id="path583" sodipodi:nodetypes="ccccc" style="font-size:12;fill:url(#linearGradient52);fill-rule:evenodd;stroke:#000000;stroke-width:7.515851;stroke-opacity:1;"/>
+  <path d="M 202.4643 186.173 C 185.594 195.5098 191.2767 211.5797 201.8591 222.612 C 211.1221 231.0174 291.4961 302.7957 318.0101 327.46 C 297.4239 299.2469 244.7865 211.2125 234.5501 198.6725 C 228.4786 192.1599 217.1334 181.645 202.4643 186.173 z " id="path584" sodipodi:nodetypes="ccccc" style="font-size:12;fill:url(#linearGradient32);fill-rule:evenodd;stroke:#000000;stroke-width:7.606392;"/>
+</svg>

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg">
+  <title>An SVG tspan element gains focus when it is selected</title>
+
+  <style>
+    tspan:focus { fill: green }
+  </style>
+
+  <text x="10" y="20"><tspan>This text should turn green when you click on it.</tspan></text>
+</svg>
+

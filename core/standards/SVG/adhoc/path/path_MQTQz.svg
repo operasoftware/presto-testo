@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1 Tiny//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11-tiny.dtd">
+<svg version="1.1" baseProfile="tiny" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="svg-root" width="960" height="720" viewBox="0 0 480 360">
+  <title id="test-title">paths-data-02-t</title>
+  <g id="test-body-content">
+    <!-- ====================================================================== -->
+    <!-- Tri Bezier using M, Q, T, Q, & z ===================================== -->
+    <!-- ====================================================================== -->
+    <path id="Tri_MQTQz" fill="#00C000" stroke="#000000" d="M208 168Q258 268 308 168T258 118Q128 88 208 168z"/>
+    <text font-family="Arial" font-size="12" x="308" y="188">M, Q, T, Q, z</text>
+    <rect x="206" y="166" width="4" height="4" fill="#0000FF" stroke="none"/>
+    <rect x="306" y="166" width="4" height="4" fill="#0000FF" stroke="none"/>
+    <rect x="256" y="116" width="4" height="4" fill="#0000FF" stroke="none"/>
+    <rect x="206" y="206" width="4" height="4" fill="#0000FF" stroke="none"/>
+  </g>
+	<rect id="test-frame" x="1" y="1" width="478" height="358" fill="none" stroke="#000000"/>
+</svg>
+

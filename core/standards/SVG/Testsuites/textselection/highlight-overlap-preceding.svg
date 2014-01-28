@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg">
+  <title>Text selection highlight over preceding element</title>
+
+  <style>
+  #a, #b { font-size: 100px; font-family: Ahem }
+  #a::selection { color: red }
+  #b { fill: cyan }
+
+  #c1 { stroke: white; stroke-width: 2; fill: none }
+  #c2 { stroke: blue; stroke-width: 2; fill: none }
+  </style>
+
+  <text x="20" y="20">This test requires the Ahem font.</text>
+
+  <text x="20" y="50">Click in the blue circle and release in the white circle.</text>
+  <text x="20" y="70">You should not see any red or any other color changes in the black square.</text>
+
+  <text id="a" x="20" y="160">X</text>
+  <text id="b" x="20" y="180">p</text>
+
+  <circle id="c1" cx="30" cy="90" r="8"/>
+  <circle id="c2" cx="30" cy="190" r="8"/>
+</svg>
+

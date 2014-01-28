@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" onload="document.getElementById('nojs').textContent=''">
+  <title>Text selection text color using ::selection</title>
+
+  <style>
+  ::selection { color: #0080FF; background: white }
+  </style>
+
+  <text id="nojs" x="20" y="20">NOT TESTED (JavaScript required)</text>
+
+  <text id="selected" x="20" y="50" font-size="18">This text should be blue on a white background.</text>
+
+  <script>document.getElementById('selected').selectSubString(0, 47)</script>
+</svg>

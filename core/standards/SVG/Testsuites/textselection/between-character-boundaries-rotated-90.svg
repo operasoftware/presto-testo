@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg">
+  <title>Text selection between character boundaries of a 90 degree rotated character</title>
+
+  <style>#test::selection { background: green; color: green }</style>
+
+  <defs>
+    <linearGradient id="boundaries" x1="0" y1="0" x2="100%" y2="0">
+      <stop offset="50%" style="stop-color: fuchsia"/>
+      <stop offset="50%" style="stop-color: blue"/>
+    </linearGradient>
+  </defs>
+
+  <text x="10" y="20">This test requires the Ahem font.</text>
+
+  <text x="10" y="50">Click on the fuchsia rectangle, drag into the blue rectangle and release. You should see a green square.</text>
+
+  <text x="20" y="200" id="test" font-size="200" fill="url(#boundaries)" font-family="Ahem" transform="rotate(90 100 160)">p</text>
+</svg>
+

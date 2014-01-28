@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" id="SVGroot" xmlns:xlink="http://www.w3.org/1999/xlink">
+
+<image xlink:href="bg.jpg" x="-116" y="-82" width="176" height="208"/>
+
+<g  transform="translate(2 10)">
+	<g id="bluetooth">
+		<g>
+			<path fill="#DDAA0A" stroke="#000000" d="M10.125,4.5l7.542,5.25l-3.833,3.667L18,17.667l-7.75,5.291l-0.083-6.25l-2.083,1.875
+			l-1.458-2.458l2.5-2.25l-2.75-2.25L8,8.75l2.083,1.5L10.125,4.5z"/>
+			<path fill="#DDAA0A" stroke="#000000" d="M17.167,13.5l6.417-5.584l2.5,3l-3.334,2.75L26.25,17l-2.75,2.75L17.167,13.5z"/>
+			<path fill="#DDAA0A" stroke="#000000" d="M25.833,13.583l6.417-5.584l2.5,3l-3.334,2.75L35,17l-2.834,2.833L25.833,13.583z"/>
+			<path d="M13.667,9.875l-1.375-0.833l-0.042,1.875"/>
+			<path d="M14.083,16.959l-1.375-0.833l-0.042,1.875"/>
+			<animateTransform id="animone" attributeName="transform" attributeType="XML" type="scale" values="1;1.55;1.45;1.5" begin="SVGroot.focusin" dur="0.5s" fill="freeze"/>
+			<animateTransform attributeName="transform" attributeType="XML" type="scale" values="1.5;1" begin="SVGroot.focusout" dur="0.2s" fill="freeze"/>
+		</g>
+		<animateTransform attributeName="transform" attributeType="XML" type="translate" values="0 0;-7 -3;-4 -1;-5 -2" begin="SVGroot.focusin" dur="0.5s" fill="freeze" />
+		<animateTransform attributeName="transform" attributeType="XML" type="translate" values="-5 -2;0 0" begin="SVGroot.focusout" dur="0.2s" fill="freeze" />
+	</g>
+</g>
+
+
+</svg>

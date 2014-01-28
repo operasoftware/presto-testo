@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  id="svg-root" width="800" height="600">
+	<foreignObject width="800" height="600">
+		<html xmlns="http://www.w3.org/1999/xhtml">
+			<body bgcolor="beige" style="font-size:48px">
+				<p>This is XHTML</p>
+				<p>Click to <a href="http://www.mozilla.org/">visit Mozilla.org</a></p>
+				<p>This is XHTML</p>
+				<p>This is XHTML</p>
+				<p>This is XHTML</p>
+			</body>
+		</html>
+	</foreignObject>
+		
+	<defs>
+		<linearGradient id="gradient">
+			<stop stop-color="yellow" offset="0"/>
+			<stop stop-color="red" offset="1"/>
+		</linearGradient>
+	</defs>
+	<text fill="url(#gradient)" fill-opacity="0.5" transform="rotate(-45 700 100)" font-size="100" pointer-events="none" font-family="sans-serif">SVG on top</text>
+</svg>

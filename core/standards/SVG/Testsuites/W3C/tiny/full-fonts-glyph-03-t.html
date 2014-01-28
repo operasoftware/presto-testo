@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <!DOCTYPE html PUBLIC  "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>Tests lang attribute support of the glyph element</title>
+</head>
+<body>
+<table>
+<tr>
+<td align="center">SVG Image</td>
+<td align="center">Reference Image</td>
+</tr>
+<tr>
+<td align="right">
+<object data="../svggen/fonts-glyph-03-t.svg" width="480" height="360" type="image/svg+xml"/>
+</td>
+<td align="left">
+<img alt="raster image of fonts-glyph-03-t" src="../png/full-fonts-glyph-03-t.png" width="480" height="360"/>
+</td>
+</tr>
+</table>
+<p>
+The test should produce an upward-triangle for the first (en) test element and a square for the second (fr)
+and third (fr-ca)  text element. In the third case, a glyph for fr is also suitable for a more specific language text fr-ca.
+In the fourth case, no suitable language specific or general glyph is provided by the test so a fallback font for the letter 
+'a' should be used. A triangle or square must not be displayed in the fourth case
+</p>
+</body>
+</html>

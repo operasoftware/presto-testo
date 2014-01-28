@@ -1,0 +1,18 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" 
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="8cm" height="4cm" viewBox="0 0 800 400" version="1.1"
+     xmlns="http://www.w3.org/2000/svg">
+  <desc>
+  </desc>
+  <g>
+    <!-- Outline the drawing area in blue -->
+    <rect fill="none" stroke="blue" 
+          x="1" y="1" width="798" height="398"/>
+
+    <text fill="black" x="100" y="250" rotate="5, 10, 15, 20, 25, 30" font-size="200">
+	Hello!
+    </text>
+  </g>
+</svg>
+

@@ -1,0 +1,37 @@
+﻿<html>
+  <head>
+    <title>Sample 1.8</title>
+	<style>
+	
+	div.svg{position:absolute;left:20px;top:20px;width:100px;height:100px;z-index:1;}
+	div.overlap{position:absolute;left:60px;top:20px;width:100px;height:100px;z-index:2;}
+
+	</style>
+	<script>
+	
+	function show(){
+	document.getElementById('overlap').style.visibility="visible";
+	setTimeout("hide()",2000);
+	}
+	
+	function hide(){
+	document.getElementById('overlap').style.visibility="hidden";
+	setTimeout("show()",2000);
+	}
+	
+	</script>
+  
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+</head>
+  <body onload="hide()">
+  
+  	<div id="svg" class="svg">
+		<object width="100" height="100" type="image/svg+xml" data="sample1_8.svg"></object>
+	</div>	
+	
+	<div id="overlap" class="overlap">
+		This is Text overlapping SVG content
+	</div>	
+
+  </body>
+</html>

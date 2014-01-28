@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN"
+	"http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<svg height="150" width="200">
+  <metadata>
+    <rdf:RDF xmlns:cc="http://web.resource.org/cc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+      <cc:Work rdf:about="">
+        <dc:title>pinstripe diagonal pattern</dc:title>
+        <dc:description></dc:description>
+        <dc:subject>
+          <rdf:Bag>
+            <rdf:li>pattern</rdf:li>
+          </rdf:Bag>
+        </dc:subject>
+        <dc:publisher>
+          <cc:Agent rdf:about="http://www.openclipart.org">
+            <dc:title>Alan Horkan</dc:title>
+          </cc:Agent>
+        </dc:publisher>
+        <dc:creator>
+          <cc:Agent>
+            <dc:title>Alan Horkan</dc:title>
+          </cc:Agent>
+        </dc:creator>
+        <dc:rights>
+          <cc:Agent>
+            <dc:title>Alan Horkan</dc:title>
+          </cc:Agent>
+        </dc:rights>
+        <dc:date></dc:date>
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+        <cc:license rdf:resource="http://web.resource.org/cc/PublicDomain"/>
+        <dc:language>en</dc:language>
+      </cc:Work>
+      <cc:License rdf:about="http://web.resource.org/cc/PublicDomain">
+        <cc:permits rdf:resource="http://web.resource.org/cc/Reproduction"/>
+        <cc:permits rdf:resource="http://web.resource.org/cc/Distribution"/>
+        <cc:permits rdf:resource="http://web.resource.org/cc/DerivativeWorks"/>
+      </cc:License>
+    </rdf:RDF>
+  </metadata>
+  <defs>
+    <pattern height="100" id="Pinstripe-Diagonal" patternContentUnits="userSpaceOnUse" patternUnits="userSpaceOnUse" width="100" x="0" y="0">
+      <g id="diagonal-lines">
+        <line style="stroke:black;stroke-width:2;stroke-linecap:square" x1="0" x2="0" y1="0" y2="0"/>
+        <line style="stroke:black;stroke-width:2;stroke-linecap:square" x1="0" x2="10" y1="10" y2="0"/>
+        <line style="stroke:black;stroke-width:2;stroke-linecap:square" x1="0" x2="20" y1="20" y2="0"/>
+        <line style="stroke:black;stroke-width:2;stroke-linecap:square" x1="0" x2="30" y1="30" y2="0"/>
+        <line style="stroke:black;stroke-width:2;stroke-linecap:square" x1="0" x2="40" y1="40" y2="0"/>
+        <line style="stroke:black;stroke-width:2;stroke-linecap:square" x1="0" x2="50" y1="50" y2="0"/>
+        <line style="stroke:black;stroke-width:2;stroke-linecap:square" x1="0" x2="60" y1="60" y2="0"/>
+        <line style="stroke:black;stroke-width:2;stroke-linecap:square" x1="0" x2="70" y1="70" y2="0"/>
+        <line style="stroke:black;stroke-width:2;stroke-linecap:square" x1="0" x2="90" y1="90" y2="0"/>
+        <line style="stroke:black;stroke-width:2;stroke-linecap:square" x1="0" x2="80" y1="80" y2="0"/>
+        <line style="stroke:black;stroke-width:2;stroke-linecap:square" x1="0" x2="100" y1="100" y2="0"/>
+        <line style="stroke:black;stroke-width:2;stroke-linecap:square" x1="10" x2="100" y1="100" y2="10"/>
+        <line style="stroke:black;stroke-width:2;stroke-linecap:square" x1="20" x2="100" y1="100" y2="20"/>
+        <line style="stroke:black;stroke-width:2;stroke-linecap:square" x1="30" x2="100" y1="100" y2="30"/>
+        <line style="stroke:black;stroke-width:2;stroke-linecap:square" x1="40" x2="100" y1="100" y2="40"/>
+        <line style="stroke:black;stroke-width:2;stroke-linecap:square" x1="50" x2="100" y1="100" y2="50"/>
+        <line style="stroke:black;stroke-width:2;stroke-linecap:square" x1="60" x2="100" y1="100" y2="60"/>
+        <line style="stroke:black;stroke-width:2;stroke-linecap:square" x1="70" x2="100" y1="100" y2="70"/>
+        <line style="stroke:black;stroke-width:2;stroke-linecap:square" x1="80" x2="100" y1="100" y2="80"/>
+        <line style="stroke:black;stroke-width:2;stroke-linecap:square" x1="90" x2="100" y1="100" y2="90"/>
+        <line style="stroke:black;stroke-width:2;stroke-linecap:square" x1="100" x2="100" y1="100" y2="100"/>
+      </g>
+    </pattern>
+  </defs>
+  <rect fill="url(#Pinstripe-Diagonal)" height="150" width="200" x="0" y="0"/>
+</svg>

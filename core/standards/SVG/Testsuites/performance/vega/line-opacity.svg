@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+<title>Performance test for opacity on lines</title>
+<script xlink:href="/resources/fps.js"/>
+<script><![CDATA[
+window.onload = function() {
+	checkfps(1000)
+}
+]]></script>
+<text id="result" x="0" y="30">NOT TESTED (please enable Javascript)</text>
+<text id="f" x="0" y="50"></text>
+<g id="AnimationContainer" stroke-width="50" transform="translate(100 300)">
+   <g fill="red">
+		 <line x1="0" y1="0" x2="300" y2="0" stroke="yellow" opacity="0.8"/>
+     <animate attributeName="opacity" values="1;0.25;1" dur="1s" repeatCount="indefinite" />
+     <animateTransform attributeName="transform" attributeType="XML"
+                    type="rotate" from="0, 150, 0" to="360, 150, 0" dur="3s"
+                    repeatCount="indefinite" />
+   </g>
+   <g>
+		 <line x1="0" y1="0" x2="300" y2="0" stroke="cyan" opacity="0.8"/>
+     <animate attributeName="opacity" values="1;0.25;1" dur="2s" repeatCount="indefinite" />
+     <animateTransform attributeName="transform" attributeType="XML"
+                    type="rotate" from="0, 150, 0" to="360, 150, 0" dur="5s"
+                    repeatCount="indefinite" />
+   </g>
+   <g>
+		 <line x1="0" y1="0" x2="300" y2="0" stroke="orange" opacity="0.8"/>
+     <animate attributeName="opacity" values="1;0.25;1" dur="3s" repeatCount="indefinite" />
+     <animateTransform attributeName="transform" attributeType="XML"
+                    type="rotate" from="0, 150, 0" to="360, 150, 0" dur="7s"
+                    repeatCount="indefinite" />
+   </g>
+   <g>
+		 <line x1="0" y1="0" x2="300" y2="0" stroke="navy" opacity="0.8"/>
+     <animate attributeName="opacity" values="1;0.25;1" dur="5s" repeatCount="indefinite" />
+     <animateTransform attributeName="transform" attributeType="XML"
+                    type="rotate" from="0, 150, 0" to="360, 150, 0" dur="11s"
+                    repeatCount="indefinite" />
+   </g>
+   <g>
+		 <line x1="0" y1="0" x2="300" y2="0" stroke="black" opacity="0.8"/>
+     <animate attributeName="opacity" values="1;0.25;1" dur="7s" repeatCount="indefinite" />
+     <animateTransform attributeName="transform" attributeType="XML"
+                    type="rotate" from="0, 150, 0" to="360, 150, 0" dur="13s"
+                    repeatCount="indefinite" />
+   </g>
+</g>
+<use xlink:href="#AnimationContainer" transform="rotate(-25)"/>
+<use xlink:href="#AnimationContainer" transform="rotate(-15)"/>
+<use xlink:href="#AnimationContainer" transform="rotate(-5)"/>
+<use xlink:href="#AnimationContainer" transform="rotate(5)"/>
+<use xlink:href="#AnimationContainer" transform="rotate(15)"/>
+<use xlink:href="#AnimationContainer" transform="rotate(25)"/>
+<use xlink:href="#AnimationContainer" transform="rotate(35)"/>
+<use xlink:href="#AnimationContainer" transform="rotate(-15) translate(200 0)"/>
+<use xlink:href="#AnimationContainer" transform="rotate(-5) translate(200 0)"/>
+<use xlink:href="#AnimationContainer" transform="rotate(5) translate(200 0)"/>
+<use xlink:href="#AnimationContainer" transform="rotate(15) translate(200 0)"/>
+<use xlink:href="#AnimationContainer" transform="rotate(25) translate(200 0)"/>
+<use xlink:href="#AnimationContainer" transform="rotate(35) translate(200 0)"/>
+<use xlink:href="#AnimationContainer" transform="rotate(45) translate(200 0)"/>
+<use xlink:href="#AnimationContainer" transform="rotate(55) translate(200 0)"/>
+
+<use xlink:href="#AnimationContainer" transform="rotate(-15) translate(400 0)"/>
+<use xlink:href="#AnimationContainer" transform="rotate(-5) translate(400 0)"/>
+<use xlink:href="#AnimationContainer" transform="rotate(5) translate(400 0)"/>
+<use xlink:href="#AnimationContainer" transform="rotate(15) translate(400 0)"/>
+<use xlink:href="#AnimationContainer" transform="rotate(25) translate(400 0)"/>
+<use xlink:href="#AnimationContainer" transform="rotate(35) translate(400 0)"/>
+<use xlink:href="#AnimationContainer" transform="rotate(45) translate(400 0)"/>
+<use xlink:href="#AnimationContainer" transform="rotate(55) translate(400 0)"/>
+
+<use xlink:href="#AnimationContainer" transform="rotate(-15) translate(600 0)"/>
+<use xlink:href="#AnimationContainer" transform="rotate(-5) translate(600 0)"/>
+<use xlink:href="#AnimationContainer" transform="rotate(5) translate(600 0)"/>
+<use xlink:href="#AnimationContainer" transform="rotate(15) translate(600 0)"/>
+<use xlink:href="#AnimationContainer" transform="rotate(25) translate(600 0)"/>
+<use xlink:href="#AnimationContainer" transform="rotate(35) translate(600 0)"/>
+<use xlink:href="#AnimationContainer" transform="rotate(45) translate(600 0)"/>
+<use xlink:href="#AnimationContainer" transform="rotate(55) translate(600 0)"/>
+
+</svg>

@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN"
+  "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd" [
+  <!ATTLIST svg xmlns:xlink CDATA #FIXED "http://www.w3.org/1999/xlink">
+  <!ENTITY title "Landtagswahl 2003">
+  <!ENTITY subtitle "Nordrhein-Westfalen">
+]>
+
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  zoomAndPan="enable" onload="startup(evt)">
+  <defs>
+    <script type="text/javascript">
+      <![CDATA[
+	  var id_1="cdu";
+	  var farbe_1="666666";
+	  var prozent_1=25;
+	  var name_1="CDU";
+	  var timevalue_1=0;
+	  
+	  var id_2="spd";
+	  var farbe_2="FF0000";
+	  var prozent_2=45;
+	  var name_2="SPD";
+	  var timevalue_2=0;
+	  
+	  var id_3="gru";
+	  var farbe_3="00FF00";
+	  var prozent_3=20;
+	  var name_3="Die Grünen";
+	  var timevalue_3=0;
+	  
+	  var id_4="fdp";
+	  var farbe_4="FFFF00";
+	  var prozent_4=10;
+	  var name_4="FDP";
+	  var timevalue_4=0;
+	  
+    var timer_increment = 30;
+    var max_time = 300;
+		
+		
+function animateIt(time,id) {
+		time = time + timer_increment;
+		hlftime=time;
+		hlfid=id;
+      	if (time > max_time){
+		
+		 return;
+		 }
+    	scalefactor = 2 - (time / max_time);
+		xfactor = 150-(scalefactor*100);
+		yfactor = 100-(scalefactor*100);
+		eval("document.getElementById('layer"+id+"').setAttribute('visibility','visible')\;");
+		eval("document.getElementById('layer"+id+"').setAttribute('transform', 'scale("+scalefactor+") translate("+xfactor+","+yfactor+")')\;");
+		setTimeout('animateIt(hlftime,hlfid)',timer_increment);
+    	}
+	  
+	  function showText(i){
+	  	var y_pos=(30*i)+90;
+		var textname = eval("name_"+i);
+		var textprozent = eval("prozent_"+i);
+		var textnode = document.createTextNode(textname +" "+ textprozent +"%");
+    	var textuntenobject = document.createElement("text");
+     	textuntenobject.setAttribute("x", "40");
+     	textuntenobject.setAttribute( "y", y_pos);
+ 		textuntenobject.setAttribute("style","fill: #000; stroke:#FFF; stroke-width:8px; font-size: 26px;");
+    	textuntenobject.appendChild(textnode);
+     	document.getElementById("textdisplay").appendChild(textuntenobject);
+    	var textnode = document.createTextNode(textname +" "+ textprozent +"%");
+		var textobenobject = document.createElement("text");
+     	textobenobject.setAttribute("x", "40");
+     	textobenobject.setAttribute( "y", y_pos);
+ 		textobenobject.setAttribute("style","fill: #000; stroke:#000; stroke-width:1px; font-size: 26px;");
+    	textobenobject.appendChild(textnode);
+     	document.getElementById("textdisplay").appendChild(textobenobject);
+	
+	  }
+	 
+	 
+	 function drawIt(start,ende,farbe,id){
+		for(i=start;i<ende;i++){
+	 	eval("strich"+i+farbe+"=svgdoc.createElement('line')\;");
+		eval("strich"+i+farbe+".setAttribute('x1', 200)\;");
+		eval("strich"+i+farbe+".setAttribute('x2', 200)\;");
+		eval("strich"+i+farbe+".setAttribute('y1', 100)\;");
+		eval("strich"+i+farbe+".setAttribute('y2', 200)\;");
+		eval("strich"+i+farbe+".setAttribute('style', 'stroke-width:2.5\;stroke:#"+farbe+"\;stroke-linecap:round\;')\;");
+		eval("strich"+i+farbe+".setAttribute('transform', 'rotate("+i+",200,200)')\;");
+		eval("document.getElementById('layer"+id+"').appendChild(strich"+i+farbe+")\;");
+		}
+		}
+	
+	function startup(load_evt){
+				
+		svgdoc=load_evt.target.ownerDocument;
+        svgroot=svgdoc.rootElement;
+		var start_1=0;
+		var ende_1=prozent_1*3.6;
+		var start_2=ende_1;
+		var ende_2=(prozent_2*3.6)+start_2;
+		var start_3=ende_2;
+		var ende_3=(prozent_3*3.6)+start_3;
+		var start_4=ende_3;
+		var ende_4=(prozent_4*3.6)+start_4;
+		drawIt(start_1,ende_1,farbe_1,id_1);
+		drawIt(start_2,ende_2,farbe_2,id_2);
+		drawIt(start_3,ende_3,farbe_3,id_3);
+		drawIt(start_4,ende_4,farbe_4,id_4);
+		start();
+		}
+	
+	function start(){
+	animateIt(timevalue_1,id_1);
+	showText(1);
+	setTimeout("zwei()", 2000);
+    }
+	function zwei(){
+	animateIt(timevalue_2,id_2);
+	showText(2);
+	setTimeout("drei()", 2000);
+    }
+	function drei(){
+	animateIt(timevalue_3,id_3);
+	showText(3);
+	setTimeout("vier()", 2000);
+    }
+	function vier(){
+	animateIt(timevalue_4,id_4);
+	showText(4);
+	}
+		
+        ]]>
+    </script>
+
+  </defs>
+  
+
+  <rect x="2" y="2" width="166" height="42" rx="8.3" ry="7" style="fill:#F00;stroke-width:2"/>
+  <rect x="2" y="2" width="166" height="42" rx="8.3" ry="7" style="fill:#F00;stroke-width:2"/>
+  <rect x="-2" y="34" width="172" height="110" style="fill:rgb(255,255,255);stroke-width:2"/>
+  <rect x="2" y="2" width="166" height="140" rx="8.3" ry="7" style="fill:none;stroke:#999999;stroke-width:2"/>
+  <text x="10" y="16" style="fill: #FFF; font-size: 14px;">&title;</text>
+  <text x="10" y="30" style="fill: #FFF; font-size: 12px;">&subtitle;</text>
+
+  <g id="stage" transform="scale(0.45)translate(-14,-5)">
+    <g id="layercdu" visibility="hidden"></g>
+    <g id="layerspd" visibility="hidden"></g>
+    <g id="layergru" visibility="hidden"></g>
+    <g id="layerfdp" visibility="hidden"></g>
+    <g id="textdisplay"></g>
+  </g>
+  
+</svg>
+

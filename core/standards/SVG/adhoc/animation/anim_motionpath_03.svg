@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<svg xmlns="http://www.w3.org/2000/svg">
+ <defs>
+  <animateTransform attributeName="transform" attributeType="XML" type="rotate" from="0 150 150" to="360 150 150" begin="0s" dur="20s" xlink:href="#roto" />
+ </defs>
+ <g id="roto">
+  <path d="M 50,150 c 100,-140 100,140 200,0 z" stroke="red" stroke-width="3" fill="none" />
+  <g transform="rotate(90, 150, 150)">
+   <path d="M 50,150 c 100,-140 100,140 200,0 z" stroke="red" stroke-width="3" fill="none" />
+  </g> 
+  <circle cx="0" cy="0" r="5" fill="blue">
+   <animateMotion path="M 50,150 c 100,-140 100,140 200,0 z" begin="0s" dur="10s" fill="freeze" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="0" cy="0" r="5" fill="blue">
+    <animateMotion path="M 150,50 c 140,100 -140,100 0,200 z" begin="0s" dur="10s" fill="freeze" repeatCount="indefinite"/>
+  </circle>
+ </g>
+</svg>

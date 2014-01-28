@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="iso-8859-1" ?> 
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG Tiny 1.1//EN"
+"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11-tiny.dtd">
+<svg viewBox="-100 -100 500 500"
+     xmlns="http://www.w3.org/2000/svg" version="1.1" baseProfile="tiny"
+     xmlns:xlink="http://www.w3.org/1999/xlink">
+
+  <style>
+    text { font-family: verdana; }
+  </style>
+  
+  <title>animate transforms</title> 
+  <desc>
+    This testcase investigates in what order the resulting transform
+    from animateMotions is applied in respect to the
+    'transform'-attribute, and animateTransform element on the same
+    element.
+  </desc> 
+
+  <rect x="-100" y="-100" width="500" height="500" fill="#000">
+  </rect>
+
+  <g transform="scale(1.5) translate(-70)">
+
+    <g id="Background" transform="scale(0.7,0.7)">
+      <animateMotion path="M 90 0 l 0 0" begin="0s" dur="indefinite"
+                     fill="freeze"/>
+      <animateTransform attributeName="transform" attributeType="XML"
+                        type="rotate" from="-10" to="0" begin="0s"
+                        additive="sum" dur="indefinite" fill="freeze"/>
+      <animateTransform attributeName="transform" attributeType="XML"
+                        type="scale" from="0.8" to="1"
+                        additive="sum" begin="0s" dur="indefinite"
+                        fill="freeze"/>
+
+      <g>
+        <rect x="0" y="0" width="300" height="300" fill="#888" fill-opacity="0.4">
+        </rect>
+      </g>
+    </g>
+
+    <!-- Three alternatives -->
+    <g stroke="rgb(0, 160, 0)" letter-spacing="2.0"
+       transform="scale(0.7,0.7) rotate(-10) scale(0.8) translate(90,0)">
+      <rect x="0" y="0" width="300" height="300" fill="none">
+      </rect>
+      <text x="5" y="295">animateMotion applied last</text>
+    </g>
+
+    <g stroke="rgb(160, 160, 0)" letter-spacing="2.0"
+       transform="scale(0.7,0.7) translate(90,0) rotate(-10) scale(0.8)">
+      <rect x="0" y="0" width="300" height="300" fill="none">
+      </rect>
+      <text x="5" y="295">animateMotion applied in between</text>
+    </g>
+
+    <g stroke="rgb(0, 160, 160)" letter-spacing="2.0"
+       transform="translate(90,0) scale(0.7,0.7) rotate(-10) scale(0.8)">
+      <rect x="0" y="0" width="300" height="300" fill="none">
+      </rect>
+      <text x="5" y="295">animateMotion applied first</text>
+    </g>
+  </g>
+
+  <g font-size="10" fill="#383">
+    <text x="150" text-anchor="middle" y="330">Apply animateMotion in different orders</text>
+    <text x="150" y="345" text-anchor="middle">The filled one indicates which one the viewer has implemented</text>
+  </g>
+
+</svg>
+

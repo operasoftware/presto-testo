@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<svg width="95%" height="100%" viewBox="-100 -100 1000 1000"
+   version="1.2" baseProfile="tiny"
+   xmlns="http://www.w3.org/2000/svg"  
+   xmlns:xlink="http://www.w3.org/1999/xlink">
+
+<title>Additive animation of text  y and y with tspan</title> 
+<desc>
+Two values animations are added with additive sum for
+x and y of text ('abcd') containing a tspan ('ab') without any attributes.
+
+The visible result for an additive behaviour 
+is that the blue 'abcd' (with all glyphs at the same position) 
+covers exactly the red 'abcd' without any visible animation effect.
+If the blue text moves somehow and the red gets visible,
+the animation is not additive as indicated in grey.
+If red and grey glyphs are both visible, this indicates an even
+different behaviour.
+
+Behaviour of different viewers:
+
+Adobe plugin (3.01 Beta Release 1, Build 88): shows additive behaviour
+Squiggle 1.7:  shows additive behaviour
+Opera 8.x/9.x: different behaviour changes in several versions
+
+</desc> 
+
+
+<animate xlink:href="#text"
+	attributeName="x" 
+	attributeType="XML"
+	values="100,150,200,250;500,450,400,350"
+	dur="6s"
+	repeatCount="indefinite" />
+<animate xlink:href="#text"
+	attributeName="y" 
+	attributeType="XML"
+	values="100,150,200,250;500,450,400,350"
+	dur="5.3s"
+	repeatCount="indefinite" />
+
+<animate xlink:href="#text"
+	attributeName="x" 
+	attributeType="XML"
+	values="500,450,400,350;100,150,200,250"
+	dur="6s"
+	repeatCount="indefinite"
+	additive="sum" />
+<animate xlink:href="#text"
+	attributeName="y" 
+	attributeType="XML"
+	values="500,450,400,350;100,150,200,250"
+	dur="5.3s"
+	repeatCount="indefinite"
+	additive="sum" />
+
+
+<animate xlink:href="#na1"
+	attributeName="x" 
+	attributeType="XML"
+	from="500" 
+	to="100"
+	dur="6s"
+	repeatCount="indefinite" />
+<animate xlink:href="#na1"
+	attributeName="y" 
+	attributeType="XML"
+	from="500" 
+	to="100"
+	dur="5.3s"
+	repeatCount="indefinite" />
+
+<animate xlink:href="#na2"
+	attributeName="x" 
+	attributeType="XML"
+	from="450" 
+	to="150"
+	dur="6s"
+	repeatCount="indefinite" />
+<animate xlink:href="#na2"
+	attributeName="y" 
+	attributeType="XML"
+	from="450" 
+	to="150"
+	dur="5.3s"
+	repeatCount="indefinite" />
+
+<animate xlink:href="#na3"
+	attributeName="x" 
+	attributeType="XML"
+	from="400" 
+	to="200"
+	dur="6s"
+	repeatCount="indefinite" />
+<animate xlink:href="#na3"
+	attributeName="y" 
+	attributeType="XML"
+	from="400" 
+	to="200"
+	dur="5.3s"
+	repeatCount="indefinite" />
+
+<animate xlink:href="#na4"
+	attributeName="x" 
+	attributeType="XML"
+	from="350" 
+	to="250"
+	dur="6s"
+	repeatCount="indefinite" />
+<animate xlink:href="#na4"
+	attributeName="y" 
+	attributeType="XML"
+	from="350" 
+	to="250"
+	dur="5.3s"
+	repeatCount="indefinite" />
+
+
+
+<rect x="-100" y="-100" width="1000" height="1000" fill="#ffd" />
+
+
+<g font-size="200" font-family="monospace" fill="#f00">
+<text xml:id="na1" id="na1" x="0" y="0" fill="#ccc">a</text>
+<text xml:id="na2" id="na2" x="0" y="0" fill="#ccc">b</text>
+<text xml:id="na3" id="na3" x="0" y="0" fill="#ccc">c</text>
+<text xml:id="na4" id="na4" x="0" y="0" fill="#ccc">d</text>
+
+<text x="600" y="600">a</text>
+<text x="600" y="600">b</text>
+<text x="600" y="600">c</text>
+<text x="600" y="600">d</text>
+
+
+<text xml:id="text" id="text" x="0" y="0" fill="#00f">a<tspan>bc</tspan>d</text> 
+</g>
+
+
+</svg>
+

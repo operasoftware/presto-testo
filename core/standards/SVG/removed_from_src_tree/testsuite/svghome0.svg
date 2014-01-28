@@ -1,0 +1,733 @@
+<?xml version="1.0" standalone="no"?>
+
+<svg id="main" width="570" height="320" viewBox="0 0 570 320" 
+     preserveAspectRatio="xMidYMid meet" enableZoomAndPanControls="false" 
+     shape-rendering="optimizeSpeed" visibility="visible"
+     version="1.1" baseProfile="full"
+     xmlns:a="http://www.adobe.com/svg10-extensions"
+     xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink"
+     xmlns:ev="http://www.w3.org/2001/xml-events" a:timeline="independent">
+
+  <title>Burning Pixel SVG site</title>
+  <desc>Experimental site using Scalable Vector Graphics format,
+  with animated interface and bitmap graphics
+  </desc>
+
+  <style type="text/css"><![CDATA[
+
+ .backDrop {
+		fill:			rgb(160,130,110);
+	  }
+
+ .butnText1 {
+		fill:			rgb(255,240,225);
+		font-family:	Arial; 
+		font-size:		11px;
+		font-weight:	bold;
+	  }
+
+ .hitBox  {
+		fill:			rgb(0,0,0);
+		stroke:		none;
+		fill-opacity:	0;
+	  }
+
+ .clsBrown1 {
+		fill:			rgb(90,90,90);
+		stroke:		rgb(80,80,80);
+		stroke-width:	2;
+	  }
+
+ .clsDrop {
+		stroke:		rgb(90,70,50);
+		stroke-width:	1;
+	  }
+
+	  ]]>
+  </style>
+  <!-- ==================================== -->
+
+  <defs>
+
+    <!--  Fill Pattern defs  -->
+	
+    <pattern id="SphA" x="-32" y="-20" width="126" height="91" patternUnits="userSpaceOnUse">
+      <image width="64" height="42" xlink:href="buttona.jpg"/>
+    </pattern>
+
+    <!--  Filter FX defs   -->
+
+    <filter id="Shadow2" x="-25%" y="-25%" width="150%" height="150%">
+      <feGaussianBlur in="SourceAlpha"
+		      stdDeviation="3.5"
+		      result="blurredAlpha" />
+      <feOffset in="blurredAlpha"
+		dx="-1" dy="1"
+		result="offsetBlurredAlpha" />
+      <feFlood style="flood-color:#111; flood-opacity:0.8" result="color"/>
+      <feComposite id="shadowColor" in="color" in2="offsetBlurredAlpha" 
+	operator="in" 
+	result="offsetBlurredAlpha"/>
+      <feMerge>
+	<feMergeNode in="offsetBlurredAlpha" />
+	<feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <!--  Vector Object defs  -->
+
+    <!--  Button 1 def  -->  
+
+    <g id="BtnS1">
+      <ellipse id="dBShadow1" cx="-4" cy="4" rx="34" ry="20"
+	       style="fill:rgb(110,70,60); stroke:rgb(140,105,95);stroke-width:2" />
+      <ellipse id="dBShadow2" cx="-4" cy="4" rx="30" ry="17"
+	       style="fill:rgb(70,30,25); opacity:1; stroke:none" />
+
+      <ellipse id="dBMAin" cx="0" cy="0" rx="32" ry="20"
+	       style="fill:url(#SphA); stroke:rgb(30,20,10);stroke-width:0.5" />
+
+    </g>
+
+
+    <!--  Droplet dude def  -->
+    <g id="drop" class="clsDrop" transform="translate(0,0) scale(0.4)">
+      <path id="dropBody" style="fill:rgb(210,190,174);"
+	    d="M28.171 56.992
+	       c13.386 -22.946 28.323 -39.34 48.041 -43.673
+	       18.781 -4.127 36.938 -1.25 55.902 21.837
+	       20.09 24.457 16.596 57.649 51.535 87.347
+	       34.001 28.9 90.917 33.814 119.181 44.001
+	       6.278 2.263 -51.852 3.44 -63.279 4.04
+	       -13.957 0.732 -47.201 0.497 -61.143 0
+	       -22.364 -0.798 -68.131 -2.62 -97.829 -6.988
+	       -15.458 -2.273 -38.432 -3.494 -56.775 -31.445
+	       -13.027 -19.851 -7.861 -54.155 4.367 -75.119 z"/>
+      <path id="dropLight" style="fill:rgb(248,240,236);"
+	    d="M69.739 37.908
+	       c2.358 -6.888 8.604 -10.635 18.733 -9.751
+	       12.201 1.065 22.943 6.657 32.334 17.193
+	       10.522 11.805 19.483 35.444 20.017 41.316
+	       -5.667 -9.208 -13.088 -23.096 -28.485 -28.741
+	       -13.146 -4.82 -24.122 1.539 -33.617 -1.54
+	       -9.128 -2.96 -10.934 -12.773 -8.982 -18.477 z"/>
+      <path id="dropDark" style="fill:rgb(180,156,146);"
+	    d="M22.688 68.702
+	       c0.724 -1.988 -7.032 27.797 11.312 50.458
+	       17 21 38.429 24.024 52 29
+	       30 11 206.278 20.555 205.041 20.722
+	       -28.996 3.918 -202.345 2.258 -230.575 -8.389
+	       -16.862 -6.359 -31.702 -12.622 -42.269 -37.866
+	       -8.126 -19.412 -0.945 -39 4.491 -53.925 z"/>
+    </g>		<!--  end droplet def -->
+
+    <!--  space ship - copyright 2000 Ron Lussier -->
+    <path id="spcShipE" transform="scale(0.6)" style="stroke:#223344;stroke-width:1; fill:none"
+	  d="M0 9.443
+	     c37.608 -0.411  62.333 9.17    80.188 19.785
+	     12.769  7.591  39.187 27.193  39.826 43.622
+	     -28.32 -1.368  -45.382 6.025  -75.785  8.542
+	     -2.472  4.116   -2.663 4.103   -4.89   9.017
+	     -9.132 -0.055  -30.505 0.014  -42.513 -0.248"/>
+    <path id="spcShipBG" transform="scale(0.6)" style="stroke:#223344;stroke-width:1.5; fill:#888899"
+	  d="M0 9.443
+	     c37.608 -0.411  62.333 9.17    80.188 19.785
+	     12.769  7.591  39.187 27.193  39.826 43.622
+	     -28.32 -1.368  -45.382 6.025  -75.785  8.542
+	     -2.472  4.116   -2.663 4.103   -4.89   9.017
+	     -9.132 -0.055  -30.505 0.014  -42.513 -0.248
+	     "/>
+
+    <g id="spaceShip">
+      <use xlink:href="#spcShipBG" transform="scale(1,1)" />
+      <use xlink:href="#spcShipBG" transform="scale(-1,1)" />
+      <polyline points="0,0 140,0" transform="translate(-70,41)"
+		style="stroke:#000;stroke-width:0.4 " />
+      <polyline points="0,0 140,0" transform="translate(-70,43.6)"
+		style="stroke:#000;stroke-width:0.4 " />
+      <polyline points="0,0 50,0" transform="translate(-25,49)"
+		style="stroke:#000;stroke-width:0.4 " />
+      <polyline points="0,0 50,0" transform="translate(-25,50.5)"
+		style="stroke:#000;stroke-width:0.4 " />
+      <!--  first half  -->
+      <use xlink:href="#spcShipE" transform="scale(1,1)" >
+	<animateTransform attributeName="transform" type="scale" begin="0s" dur="0.4" values="1,1;0.9,1" repeatDur="indefinite" />
+      </use>
+      <use xlink:href="#spcShipE" transform="scale(1,1)" >
+	<animateTransform attributeName="transform" type="scale" begin="0s" dur="0.4" values="0.9,1;0.75,1" repeatDur="indefinite" />
+      </use>
+      <use xlink:href="#spcShipE" transform="scale(1,1)" >
+	<animateTransform attributeName="transform" type="scale" begin="0s" dur="0.4" values="0.75,1;0.54,1" repeatDur="indefinite" />
+      </use>
+      <use xlink:href="#spcShipE" transform="scale(1,1)" >
+	<animateTransform attributeName="transform" type="scale" begin="0s" dur="0.4" values="0.54,1;0.27,1" repeatDur="indefinite" />
+      </use>
+      <use xlink:href="#spcShipE" transform="scale(1,1)" >
+	<animateTransform attributeName="transform" type="scale" begin="0s" dur="0.4" values="0.27,1;0.001,1" repeatDur="indefinite" />
+      </use>
+      <!--  second half  -->
+      <use xlink:href="#spcShipE" transform="scale(1,1)" >
+	<animateTransform attributeName="transform" type="scale" begin="0s" dur="0.4" values="-0.001,1;-0.27,1" repeatDur="indefinite" />
+      </use>
+      <use xlink:href="#spcShipE" transform="scale(1,1)" >
+	<animateTransform attributeName="transform" type="scale" begin="0s" dur="0.4" values="-0.27,1;-0.54,1" repeatDur="indefinite" />
+      </use>
+      <use xlink:href="#spcShipE" transform="scale(1,1)" >
+	<animateTransform attributeName="transform" type="scale" begin="0s" dur="0.4" values="-0.54,1;-0.75,1" repeatDur="indefinite" />
+      </use>
+      <use xlink:href="#spcShipE" transform="scale(1,1)" >
+	<animateTransform attributeName="transform" type="scale" begin="0s" dur="0.4" values="-0.75,1;-0.9,1" repeatDur="indefinite" />
+      </use>
+      <use xlink:href="#spcShipE" transform="scale(1,1)" >
+	<animateTransform attributeName="transform" type="scale" begin="0s" dur="0.4" values="-0.9,1;-1,1" repeatDur="indefinite" />
+      </use>
+    </g>
+
+
+  </defs>
+
+  <!--  End Defs   -->
+
+  <!-- ==================================== -->
+  <!--   ==  AUDIO!  ==   -->
+
+  <!--  Button sounds  -->
+
+  <a:audio xlink:href="../Music/sync1.mp3" volume="6" begin="Btn1.click">
+  </a:audio>
+  <a:audio xlink:href="../Music/Byoing.mp3" volume="1" begin="Btn2.click+0.3s">
+  </a:audio>
+
+  <!--  crappy music test - SpcShip SndTrak  -->
+
+  <a:audio xlink:href="../Music/synlk1.mp3" id="Music1a" 
+	   volume="6" begin="Btn4.click+0.02s" dur="5.8s" repeatDur="11s">
+  </a:audio>
+  <a:audio xlink:href="../Music/synlowb.mp3"
+	   volume="5" begin="Btn4.click+0.97" dur="0.964s" repeatDur="14s">
+  </a:audio>
+  <a:audio xlink:href="../Music/synmedbc.mp3"
+	   volume="4" begin="Btn4.click+2.94" dur="1.45s" repeatDur="14.5s">
+  </a:audio>
+  <a:audio xlink:href="../Music/synmedb.mp3" 
+	   volume="4" begin="Btn4.click+4.35s" dur="5.8s" repeatDur="13s">
+  </a:audio>
+  <a:audio xlink:href="../Music/synoctb.mp3" 
+	   volume="3" begin="Btn4.click+3.65" dur="5.8s" repeatDur="15s">
+  </a:audio>
+
+  <!-- ===================================== -->
+  <!--   == PAGE START ==    -->
+
+  <!--  background plates  -->
+
+  <rect id="bg" class="backDrop" width="570" height="320" />
+
+  <!-- Top interface curve -->
+
+  <path id="topCrvEdge" d="M2,0 C6,150,120,0,580,0" 
+	style="fill:none; stroke:rgb(80,40,30);stroke-width:6"/>
+  <path id="topCrv" d="M2,0 C6,150,120,0,580,0" 
+	style="fill:rgb(115,70,55); stroke:rgb(100,60,50);stroke-width:3"/>
+
+  <!--  oval  -->
+
+  <ellipse id="arrowBG" cx="50" cy="48" rx="21" ry="10"
+	   style="fill:rgb(140,95,80); stroke:rgb(100,60,50);stroke-width:4" />
+  <ellipse id="arrBGedge" cx="50" cy="48" rx="23" ry="11.5"
+	   style="filter:url(#Shadow2);fill:none; stroke:rgb(80,40,30);stroke-width:1.5" />
+
+  <!--  2 arrow buttons on oval  -->
+
+  <a xlink:href="AlienPg1.htm">
+    <path id="arrowR" transform="translate(52,42)" d="M2,1 L2,11, 13,6z"  
+	  style="fill:rgb(255,240,230); stroke:rgb(110,70,60); stroke-width:1;
+		 opacity:1;stroke-linejoin:round" />
+
+    <animate id="a1fadeUp" attributeType="CSS" attributeName="opacity" 
+	     begin="arrowR.mouseover" dur="0.4s" values="0.4;1" 
+	     calcMode="spline" keySplines="0.1 0  0.2 1" fill="freeze" />
+    <animate id="a1fadeBack" attributeType="CSS" attributeName="opacity" 
+	     begin="0s;arrowR.mouseout" dur="0.7s" values="1;0.4" 
+	     calcMode="spline" keySplines="0.1 0  0.2 1" fill="freeze" />
+  </a>
+
+  <a xlink:href="svgsitea.htm">
+    <path id="arrowL" transform="translate(44,42)" d="M2,1 L2,11, -9,6z" 
+	  style="fill:rgb(255,240,230); stroke:rgb(110,70,60); stroke-width:1;
+		 opacity:1; stroke-linejoin:round" />
+
+    <animate id="a2fadeUp" attributeName="opacity" 
+	     begin="arrowL.mouseover" dur="0.4s" values="0.4;1" 
+	     calcMode="spline" keySplines="0.1 0  0.2 1" fill="freeze" />
+    <animate id="a2fadeBack" attributeName="opacity" 
+	     begin="0s;arrowL.mouseout" dur="0.7s" values="1;0.4" 
+	     calcMode="spline" keySplines="0.1 0  0.2 1" fill="freeze" />
+  </a>
+
+  <!--  Text on curve - BPP, SVG site  -->
+
+  <text id="exp" x="0" y="0" transform="translate(10,31) rotate(-4) scale(2,1)"
+	style="font-family:Arial;font-size:13px; fill:rgb(60,20,20)"
+
+	>Experimental
+
+  </text>
+  <text id="site" x="0" y="0" transform="translate(105,54) rotate(-12)"
+	style="font-family:Arial;font-size:26px;font-weight:bold; 
+	       fill:#ccbbaa;stroke:rgb(90,25,20);stroke-width:1;"
+
+	>SVG Site
+
+  </text>
+  <g>
+    <text id="bpp" x="10" y="10" transform="translate(45,130) scale(3.5)"
+	  style="font-family:Arial;font-size:10px;fill:#211; stroke:#555;stroke-width:0.3"
+
+	>Burning Pixel Productions'
+
+    <animate attributeName="stroke-width" begin="1s" dur="1.5s" values="0.3;0" 
+	     calcMode="spline" keySplines=".5 0 1 .5" fill="freeze" />
+    <animateColor attributeName="fill" begin="0.5s" dur="3s" values="#211;#ccbbaa" fill="freeze" />
+    <animateTransform id="bppInt" attributeName="transform" type="scale" begin="1.5s" dur="1s" 
+		      values="3.5; 1" calcMode="spline" keySplines=".5 0 .5 1" fill="freeze" />
+    </text>
+    <animateTransform attributeName="transform" type="translate" begin="1.5s" dur="1.5s" 
+		      values="45 130; 0 0" calcMode="spline" keySplines=".5 0 .5 1" fill="freeze" />
+  </g>
+
+  <!--  Top and bottom blocker rects  -->
+
+  <rect id="topBlock" x="0" y="-10" width="570" height="10" style="fill:rgb(112,112,112);" />
+  <rect id="botmBlock" x="0" y="320" width="570" height="60" style="fill:rgb(130,100,85);" />
+
+  <!--   Clock SVG file   -->
+  <!-- ==================================== -->
+
+  <svg id="clock" onload="SetTime(evt);">
+    <defs>
+      <script language="Javascript">
+	<![CDATA[
+
+function SetTime(LoadEvent)
+{
+var Now = new Date();
+
+var Seconds = Now.getSeconds();
+var Minutes = Now.getMinutes() + Seconds / 60;
+var Hours = Now.getHours() + Minutes / 60;
+
+var SVGDocument = LoadEvent.target.ownerDocument;
+
+SVGDocument.getElementById("seconds").setAttribute('transform', 'rotate(' + (Seconds * 6) + ')');
+SVGDocument.getElementById("minutes").setAttribute('transform', 'rotate(' + (Minutes * 6) + ')');
+SVGDocument.getElementById("hours").setAttribute('transform', 'rotate(' + (Hours * 30) + ')');
+}
+          
+	]]>
+      </script>
+    </defs>
+    <g id="allClock" style="opacity:0.2" >
+      <g transform="translate(495,-2) scale(0.4,0.3)">
+	<circle cx="100" cy="100" r="85" style="fill:#866; stroke:#555; stroke-width:1.5"/>
+	<circle cx="100" cy="100" r="80" style="fill:#BA9; stroke:#A98; stroke-width:1.5"/>
+	<text x="128" y="48" style="font-size:21px">1</text>
+	<text x="152" y="73" style="font-size:21px">2</text>
+	<text x="163" y="108" style="font-size:21px">3</text>
+	<text x="153" y="142" style="font-size:21px">4</text>
+	<text x="128" y="168" style="font-size:21px">5</text>
+	<text x="94" y="177" style="font-size:21px">6</text>
+	<text x="60" y="168" style="font-size:21px">7</text>
+	<text x="35" y="142" style="font-size:21px">8</text>
+	<text x="25" y="108" style="font-size:21px">9</text>
+	<text x="32" y="73" style="font-size:21px">10</text>
+	<text x="56" y="48" style="font-size:21px">11</text>
+	<text x="90" y="39" style="font-size:21px">12</text>
+	<g transform="translate(100 100)">
+	  <g id="hours">
+	    <line x1="0" y1="0" x2="0" y2="-36" style="stroke-width:7;stroke:black">
+	      <animateTransform attributeName="transform" type="rotate" dur="43200s" values="0;360" repeatCount="indefinite"/>
+	    </line>
+	  </g>
+	  <g id="minutes">
+	    <line x1="0" y1="0" x2="0" y2="-58" style="stroke-width:2.5;stroke:black">
+	      <animateTransform attributeName="transform" type="rotate" dur="3600s" values="0;360" repeatCount="indefinite"/>
+	    </line>
+	  </g>
+	  <g id="seconds">
+	    <line x1="0" y1="0" x2="0" y2="-76" style="stroke-width:1.6;stroke:#F88">
+	      <animateTransform attributeName="transform" type="rotate" dur="60s" values="0;360" repeatCount="indefinite"/>
+	    </line>
+	  </g>
+	</g>  
+	<circle id="dot" cx="100" cy="100" r="3" style="fill:black;stroke:black"/>
+	<circle id="ClkHit" cx="100" cy="100" r="86" style="opacity:0" />
+      </g>
+      <animate id="CfadeIn" attributeName="opacity" 
+	       begin="ClkHit.mouseover" dur="1.2s" values="0.2;0.8" 
+	       calcMode="spline" keySplines="0.1 0  0.2 1" fill="freeze" />
+      <animate id="CfadeBack" attributeName="opacity" 
+	       begin="ClkHit.mouseout" dur="1.2s" values="0.8;0.2" 
+	       calcMode="spline" keySplines="0.1 0  0.2 1" fill="freeze" />
+    </g>
+  </svg>
+
+  <!--  end Clock SVG file  -->
+
+  <!-- Enter button  -->
+
+  <g id="startBtn" transform="translate(40 110)">
+    <text x="-110" y="0" 
+	  style="font-size:20px;font-family:Arial;fill:rgb(50,35,30);cursor:pointer;"
+ 
+		>E n t e r
+
+    <animate id="enter" attributeName="x" begin="3.5s" dur="0.8s" 
+	     values="-110;0" fill="freeze" calcMode="spline" keySplines="0 0 0.5 1"/>
+    <animate id="startAnim" attributeName="x" begin="startBtn.click" dur="0.2s" 
+	     values="0;-110" fill="freeze" calcMode="spline" keySplines="0.5 0 1 1"/>
+
+    <animate id="EBfadeUp" attributeType="CSS" attributeName="opacity" 
+	     begin="startBtn.mouseover" dur="0.4s" values="0.3;1" 
+	     calcMode="spline" keySplines="0.1 0  0.2 1" fill="freeze" />
+    <animate id="EBfadeBack" attributeType="CSS" attributeName="opacity" 
+	     begin="0s;startBtn.mouseout" dur="0.7s" values="1;0.3" 
+	     calcMode="spline" keySplines="0.1 0  0.2 1" fill="freeze" />
+
+    </text>
+  </g>
+
+  <!-- 5 Button set - left column -->
+
+  <g id="Btn1" transform="translate(40 500)">
+    <use xlink:href="#BtnS1" /> 
+    <text x="-17" y="3"
+	  class="butnText1"
+ 
+		>Page 2
+
+    <animate id="sLeft" attributeName="x" begin="Btn1.click" dur="1s" 
+	     values="-17;15" repeatDur="1" fill="freeze" restart="whenNotActive" endActive="sRgt.begin" />
+    <animate id="sRgt" attributeName="x" begin="cBack.begin" dur="1s" 
+	     values="15;-17" repeatDur="1" fill="freeze" />
+
+    <animateTransform attributeName="transform" type="scale" begin="sLeft.begin" dur="1.1s" 
+		      values="1;3" fill="freeze" />
+    <animateTransform attributeName="transform" type="scale" begin="cBack.begin" dur="1.1s" 
+		values="3;1" fill="freeze" />
+
+    </text>
+
+    <ellipse id="Btn1Hit" class="hitBox" cx="0" cy="0" rx="28" ry="12" />
+    <animate id="b1fadeUp" attributeName="opacity" 
+	     begin="Btn1Hit.mouseover" dur="0.25s" values="1;0.8" 
+	     calcMode="spline" keySplines="0.1 0  0.2 1" fill="freeze" />
+    <animate id="b1fadeBack" attributeName="opacity" 
+	     begin="Btn1Hit.mouseout" dur="0.4s" values="0.8;1" 
+	     calcMode="spline" keySplines="0.1 0  0.2 1" fill="freeze" />
+
+    <animateTransform id="onUp1" attributeName="transform" type="translate" begin="startAnim.begin" dur="0.7s" 
+		      values="40, 500; 40,95" fill="freeze" calcMode="spline" keySplines="0 0 0.5 1" />
+  </g>
+
+  <g id="Btn2" transform="translate(40 500)">
+    <use xlink:href="#BtnS1" />
+    <text x="-18" y="3"
+	  class="butnText1" 
+
+		>dj Drop
+
+    <animate id="sBot" attributeName="y" begin="Btn2.click" dur="0.5s" 
+	     values="3;10;3" repeatDur="1" />
+    </text>
+
+    <ellipse id="Btn2Hit" class="hitBox" cx="0" cy="0" rx="28" ry="12" />
+    <animate id="b2fadeUp" attributeName="opacity" 
+	     begin="Btn2Hit.mouseover" dur="0.25s" values="1;0.8" 
+	     calcMode="spline" keySplines="0.1 0  0.2 1" fill="freeze" />
+    <animate id="b2fadeBack" attributeName="opacity" 
+	     begin="Btn2Hit.mouseout" dur="0.4s" values="0.8;1" 
+	     calcMode="spline" keySplines="0.1 0  0.2 1" fill="freeze" />
+
+     <animateTransform attributeName="transform" type="translate" begin="startAnim.begin+0.2s" 
+	values="40, 500; 40,143" dur="0.8s" fill="freeze" calcMode="spline" keySplines="0 0 0.5 1" />
+  </g>
+
+
+  <g id="Btn3" transform="translate(40 500)">
+    <use xlink:href="#BtnS1" />
+    <text x="-18" y="3"
+	  class="butnText1" 
+
+	>Splines
+
+    </text>
+    <a xlink:href="keySplineTool.htm" target="displayWindow" onClick="openWin()">
+      <ellipse id="Btn3Hit" class="hitBox" cx="0" cy="0" rx="28" ry="12" />
+    </a>
+    <animate id="b3fadeUp" attributeName="opacity" 
+	     begin="Btn3Hit.mouseover" dur="0.25s" values="1;0.8" 
+	     calcMode="spline" keySplines="0.1 0  0.2 1" fill="freeze" />
+     <animate id="b3fadeBack" attributeName="opacity" 
+	      begin="Btn3Hit.mouseout" dur="0.4s" values="0.8;1" 
+	      calcMode="spline" keySplines="0.1 0  0.2 1" fill="freeze" />
+
+     <animateTransform attributeName="transform" type="translate" begin="startAnim.begin+0.4s" 
+		       values="40, 500; 40,191" dur="1s" fill="freeze" calcMode="spline" keySplines="0 0 0.5 1" />
+  </g>
+
+  <g id="Btn4" transform="translate(40 500)">
+    <use xlink:href="#BtnS1" />
+    <text x="-21" y="3"
+	  class="butnText1" 
+
+	>Invasion
+
+    </text>
+    <ellipse id="Btn4Hit" class="hitBox" cx="0" cy="0" rx="28" ry="12" />
+    <animate id="b4fadeUp" attributeName="opacity" 
+	     begin="Btn4Hit.mouseover" dur="0.25s" values="1;0.8" 
+	     calcMode="spline" keySplines="0.1 0  0.2 1" fill="freeze" />
+    <animate id="b4fadeBack" attributeName="opacity" 
+	     begin="Btn4Hit.mouseout" dur="0.4s" values="0.8;1" 
+	     calcMode="spline" keySplines="0.1 0  0.2 1" fill="freeze" />
+
+    <animateTransform attributeName="transform" type="translate" begin="startAnim.begin+0.5s" 
+		      values="40, 500; 40,239" dur="1s" fill="freeze" calcMode="spline" keySplines="0 0 0.4 1" />
+  </g>
+
+  <g id="Btn5" transform="translate(40 500)">
+    <use xlink:href="#BtnS1" />
+    <text x="-24" y="3"
+	  class="butnText1" 
+
+	>Feedback
+
+    </text>
+    <a xlink:href="mailto:rlussier@compuserve.com">
+      <ellipse id="Btn5Hit" class="hitBox" cx="0" cy="0" rx="28" ry="12" />
+    </a>
+    <animate id="b5fadeUp" attributeName="opacity" 
+	     begin="Btn5Hit.mouseover" dur="0.25s" values="1;0.8" 
+	     calcMode="spline" keySplines="0.1 0  0.2 1" fill="freeze" />
+    <animate id="b5fadeBack" attributeName="opacity" 
+	     begin="Btn5Hit.mouseout" dur="0.4s" values="0.8;1" 
+	     calcMode="spline" keySplines="0.1 0  0.2 1" fill="freeze" />
+
+    <animateTransform attributeName="transform" type="translate" begin="startAnim.begin+0.7s" 
+		      values="40, 500; 40,287" dur="1s" fill="freeze" calcMode="spline" keySplines="0 0 0.4 1" />
+  </g>
+
+
+  <!--  Spinning Circles anim -->
+
+  <g id="cGrp" transform="translate(320,170)">
+
+    <!-- path id="halfC" d="M0,-30 A30,30 0 1 1 0,30"
+	 style="fill:none; stroke:#C6B098;stroke-width:3">
+	 <animate attributeName="rx" begin="0s" values="30;0;30" calcMode="spline" 
+	 keySplines=".5 0 1 1; 0 0 .5 1" dur="3s" repeatDur="indefinite" />
+	 </path -->
+
+    <g id="cAnimGrp" transform="scale(0.2)">
+      <g id="cLgt" transform="translate(0,0)">
+	<ellipse cx="0" cy="0" rx="30" ry="30"
+		 style="fill:none; stroke:rgb(176,140,130);stroke-width:3">
+	  <animate attributeName="rx" begin="0s" values="30;0;30" calcMode="spline" 
+		   keySplines=".5 0 1 1; 0 0 .5 1" dur="3s" repeatDur="indefinite" />
+	</ellipse>
+      </g>
+      <g id="cDim" transform="translate(0,0)">
+	<ellipse cx="0" cy="0" rx="40" ry="40"
+		 style="fill:none; stroke:rgb(170,135,125);stroke-width:2">
+	  <animate attributeName="rx" begin="0s" values="40;0;40" calcMode="spline" 
+		   keySplines=".5 0 1 1; 0 0 .5 1" dur="4s" repeatDur="indefinite" />
+	</ellipse>
+      </g>
+
+      <g id="spinnerBtn" >
+	<g id="cDot">
+
+	  <g id="cDotEdgeO" transform="translate(0,0)">
+	    <ellipse cx="0" cy="0" rx="12" ry="12"
+		     style="fill:none; stroke:rgb(190,150,140);stroke-width:11">
+	      <animate attributeName="rx" begin="0s" values="12;0;12" calcMode="spline" 
+		       keySplines=".5 0 1 1; 0 0 .5 1" dur="1.5s" repeatDur="indefinite" />
+	    </ellipse>
+	  </g>
+	  <g id="cDotEdgeI" transform="translate(0,0)">
+	    <ellipse cx="0" cy="0" rx="12" ry="12"
+		     style="fill:none; stroke:rgb(210,180,170);stroke-width:5">
+	      <animate attributeName="rx" begin="0s" values="12;0;12" calcMode="spline" 
+		       keySplines=".5 0 1 1; 0 0 .5 1" dur="1.5s" repeatDur="indefinite" />
+	    </ellipse>
+	  </g>
+	  <g id="cDotCore" transform="translate(0,0)">
+	    <ellipse cx="0" cy="0" rx="12" ry="12"
+		     style="fill:none; stroke:rgb(240,210,200);stroke-width:1">
+	      <animate attributeName="rx" begin="0s" values="12;0;12" calcMode="spline" 
+		       keySplines=".5 0 1 1; 0 0 .5 1" dur="1.5s" repeatDur="indefinite" />
+	    </ellipse>
+	  </g>
+	</g>
+      </g>
+
+      <animateTransform attributeName="transform" type="scale" begin="startAnim.begin" values="0.2;1;0.2" 
+			calcMode="spline" keySplines=".2 0 .8 1; .2 0 .8 1" dur="15s" repeatDur="indefinite" />
+    </g> <!-- end cAnimGrp  -->
+    <animateTransform id="cOut" attributeName="transform" type="translate" begin="sLeft.begin" 
+		      dur="1s" values="320,170;320,500" repeatDur="1" fill="freeze" restart="whenNotActive" />
+    <animateTransform id="cBack" attributeName="transform" type="translate" begin="LvP2Btn.click" 
+		      dur="1s" values="320,500;320,170" repeatDur="1" fill="freeze" restart="whenNotActive" />
+  </g> <!--  end cGrp  -->
+
+  <!--  ===========   Space Ship   ============  -->
+  <!--  This Space Ship object is Copyright 2000 Ron K. Lussier - Do Not Use  -->
+  <g transform="translate(-10,-10)" >
+    <g transform="scale(0.1)">
+      <g transform="rotate(0)">
+	<use xlink:href="#spaceShip" />
+	<animateTransform attributeName="transform" type="rotate" begin="ssPath.begin" dur="5s" repeatDur="indefinite"
+			  values="0;15;-15;0" keyTimes="0;0.24;0.76;1" calcMode="spline" keySplines="0 0 .5 1;0.5 0 0.5 1;0.5 0 1 1" />
+      </g>
+      <animateTransform attributeName="transform" type="scale" begin="ssPath.begin" dur="15s"  fill="freeze"
+			values="0.01;0.5;1.2" keyTimes="0;0.4;1" calcMode="spline" keySplines="0 0 0.5 0.8;0.5 0.2 0.1 1" />
+      <animateTransform attributeName="transform" type="scale" begin="ssPath.end" dur="0.01s" 
+			values="0.01;0.01" fill="freeze" />
+    </g>
+    <animateMotion id="ssPath" path="M500,10 C 290,90 50,120 120,210 200,320 300,110 700,200" 
+		   begin="Btn4.click" dur="15s" restart="notWhenActive" 
+		   keyTimes="0;0.7;1" keyPoints="0;0.5;1" />
+  </g>
+  <!-- path x="0" y="0" d="M500,10 C 290,90 50,120 120,210 200,320 300,110 700,200"
+       style="fill:none;stroke:black;stroke-width:2" /  -->
+
+  <!--  end of copyrighted Space Ship  -->
+
+  <!--  Drop art walking -->
+
+  <g id="drop1" transform="translate(1200,251)">
+    <g id="skew">
+      <use xlink:href="#drop" />
+      <animateTransform attributeName="transform" type="skewX" 
+			begin="sBot.begin" dur="0.75s" values="0;16;-16;0" 
+			keyTimes="0 0.25 0.75 1" repeatDur="indefinite" />
+    </g>
+    <animateTransform id="dWalk" attributeName="transform" type="translate" 
+		      begin="sBot.begin" dur="9s" values="580,251;-120,251" restart="whenNotActive" />
+  </g>
+
+
+  <!-- ========================================== -->
+  <!--  !!! Page 2 SVG FILE !!!    -->
+
+  <svg id="pageTwo" x="460" y="-60" viewBox="-700 -160 1600 600" xml:space="preserve">
+    <desc>Exp. SVG site - Page 2</desc>
+
+    <defs>
+    </defs>
+
+    <g id="swingMain">
+
+      <!--  drop-down frame  -->
+      <rect x="10" y="-40" width="810" height="0" rx="20"
+	    style="fill:rgb(160,120,100); stroke:rgb(90,60,50); stroke-width:6">
+	<animate attributeName="height" attribute-type="XML"
+		 begin="sLeft.end" dur="2.4s" from="0" to="590" fill="freeze"/>
+      </rect>
+      <image id="snowBG" x="22" y="-29" width="786" height="570" xlink:href="SnoScp4s.JPG"
+	     style="opacity:0.25">
+	<animate attributeName="height" attribute-type="XML"
+		 begin="sLeft.end" dur="2.4s" from="0" to="570" fill="freeze"/>
+      </image>
+
+      <!--  Small Leave box on Left  -->
+
+      <g id="LvP2Btn" transform="translate(0,0)">
+	<rect x="30" y="180" width="0" height="120" rx="40"
+	      style="fill:rgb(180,150,140);fill-opacity:0.3; stroke:rgb(130,100,85);stroke-width:6">
+	  <animate attributeName="width" attributeType="XML"
+		   begin="sLeft.end" dur="3s" from="0" to="250" fill="freeze"/>
+	  <animate attributeName="opacity" attributeType="text/css"
+		   begin="sLeft.end" dur="3s" from="0" to="1" fill="freeze" />
+	</rect>
+	<text id="outta" x="45" y="240"
+	      style="font-size:30px; fill:#235; opacity:0"
+	      >Leave page 2 ->
+	<animate attributeName="opacity" attributeType="text/css"
+		 begin="sLeft.end" dur="4s" from="0" to="1" fill="freeze" />
+	</text>
+      </g>
+
+      <!--   Yellow top box   -->
+      <rect width="-120" height="150" x="1400" y="0" rx="40"
+	    style="fill:rgb(130,100,85);fill-opacity:0.4;stroke:rgb(190,140,90);stroke-width:20">
+	<animate attributeName="x" attributeType="XML"
+		 begin="sLeft.end" dur="3s" from="1400" to="40" fill="freeze" />
+	<animate attributeName="width" attributeType="XML"
+		 begin="sLeft.end" dur="3s" from="-120" to="850" fill="freeze" />
+      </rect>
+      <rect width="-120" height="150" x="1400" y="0" rx="40"
+	    style="fill:none;stroke:rgb(220,160,120);stroke-width:8">
+	<animate attributeName="x" attributeType="XML"
+		 begin="sLeft.end" dur="3s" from="1400" to="40" fill="freeze" />
+	<animate attributeName="width" attributeType="XML"
+		 begin="sLeft.end" dur="3s" from="-120" to="850" fill="freeze" />
+      </rect>
+
+      <!--   the Star   -->
+      <g id="starGrp">
+
+	<polygon id="star" style="fill:white;fill-rule:nonzero;opacity:0.2"
+		 points="0,-140 82.29,113.26 -133.15,-43.26 133.15,-43.26 -82.29,113.26">
+	</polygon>
+	<g id="textSwing">
+	  <text x="-80" y="90" opacity="1" style="font-family:verdana; font-size:32px; fill:black">SVG Rocks!
+	  <animate id="dropText" attributeName="y" begin="textSwing.click" dur="0.3s" values="80;180" fill="freeze" />
+	  <animate id="fade" attributeName="opacity" begin="dropText.begin" dur="0.3s" values="1;0.5" fill="freeze" />
+	  </text>
+	  <rect x="-10" y="-10" width="20" height="100" style="opacity:0.5; fill:#644" />
+
+	  <!-- swinging animation -->
+	  <animateTransform attributeName="transform" type="rotate" keyTimes="0; 0.25; 0.5; 0.75; 1" 
+			    calcMode="spline" keySplines=".5 0 .5 1; .5 0 .5 1; .5 0 .5 1; .5 0 .5 1" 
+			    values="40;-40;40;-40;40" dur="3s" repeatDur="indefinite" />
+	</g>
+	<!-- a Pin -->
+	<circle r="3" style="fill:#AAA"/>
+
+	<!-- starGrp path anim -->
+	<animateTransform attributeName="transform" type="translate" keyTimes="0; .5; .8; 1.0" 
+			  calcMode="spline" keySplines=".5 0 1 1; 0 0 .5 1; .5 0 .5 1" 
+			  values="135,450;600,180;600,450;135,450" dur="5s" repeatDur="indefinite" />
+      </g> 		<!--  end starGrp  -->
+
+      <!-- Swing almost everything -->
+      <animateTransform attributeName="transform" type="rotate" keyTimes="0; 0.25; 0.5; 0.75; 1" 
+			calcMode="spline" keySplines=".5 0 .5 1; .5 0 .5 1; .5 0 .5 1; .5 0 .5 1" 
+			values="1; -1; 1; -1; 1" dur="4s" repeatDur="indefinite" />
+
+    </g> 		<!-- end of everything but the text  -->
+
+    <!--   non-swinging  text    -->
+    <text x="3200" y="70" style="font-family:Verdana; font-size:50px; fill:#643"
+	>Scalable Vector Graphics!
+    <animate attributeName="x" attributeType="XML"
+	     begin="sLeft.end" dur="3.2s" from="3200" to="80" fill="freeze" />
+    </text> 
+    <text x="3600" y="120" style="font-family:Verdana; font-size:30px; fill:#FFF"
+	>welcome to the future
+    <animate attributeName="x" attributeType="XML"
+	     begin="sLeft.end" dur="4.5s" from="3600" to="360" fill="freeze"/>
+    </text> 
+
+    <animate id="enterP2" attributeName="x" begin="sLeft.end" dur="0.8s" 
+	     values="460, -60; -30,-60" restart="whenNotActive" fill="freeze" />
+    <animate id="leaveP2" attributeName="x" begin="cBack.begin" dur="0.7s" 
+	     values="-30, -60; 460,-60" restart="whenNotActive" fill="freeze" />
+  </svg> 	<!--  end of page 2  -->
+
+</svg>
+
+<!--  end of Page 1 -->

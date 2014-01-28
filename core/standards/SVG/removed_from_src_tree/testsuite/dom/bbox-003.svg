@@ -1,0 +1,79 @@
+<svg width='100%' height='100%' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'
+	   onload='Init(evt)' onclick='ShowBoundingBox(evt)'>
+
+	<title>Show Bounding Box</title>
+	<desc>Test the "getBBox()" method on a variety of shapes with different geometries, including width and height of 0. Schepers, 06-03-2008</desc>
+
+	<script><![CDATA[
+		var svgns = 'http://www.w3.org/2000/svg';
+		var xlinkns = 'http://www.w3.org/1999/xlink';
+		var i = 0;
+
+		function Init()
+		{
+			window.setTimeout( ShowBoundingBox, 600 );
+		};
+
+		function ShowBoundingBox()
+		{
+			//return object with focus, as object
+			var targetElement = document.getElementById( 'el-' + i );
+
+			var repeat = false;
+			if ( targetElement )
+			{
+				i++;
+
+				try
+				{
+					//get dimensions of object as rectangle
+					var outline = targetElement.getBBox();
+
+					//create rectangle around object as SVGRect object
+					var bbox = document.createElementNS(svgns, 'rect');
+					bbox.setAttribute( 'x', outline.x );
+					bbox.setAttribute( 'y', outline.y );
+					bbox.setAttribute( 'width',  outline.width );
+					bbox.setAttribute( 'height', outline.height );
+					bbox.setAttribute( 'fill', 'none' );
+					bbox.setAttribute( 'stroke', 'lime' );
+					bbox.setAttribute( 'stroke-width', '2' );
+					bbox.setAttribute( 'stroke-dasharray', '5' );
+					document.documentElement.appendChild( bbox );
+
+					alert( 'Element Type: ' + targetElement.localName + '\nx: ' + outline.x + '\ny: ' + outline.y + '\nwidth: ' + outline.width +  '\nheight: ' + outline.height );
+				}
+				catch(er)
+				{
+				   alert('Error:\n' + er.message);
+				}
+
+				window.setTimeout( ShowBoundingBox, 500 );
+			}
+		};
+
+	]]></script>
+
+	<path id='el-0' stroke-width='1' stroke='orange' fill='yellow' fill-rule='evenodd'
+	   d='M10,10 H60 V60 H10 Z M70,70 H120 V120 H70 Z'/>
+
+	<g>
+		<path id='el-1' stroke-width='1' stroke='orange' fill='yellow' fill-rule='evenodd'
+	   d='M150,10 H200 V60 H150 Z M175,80 Z'/>
+		
+	    <circle cx='175' cy='80' r='2' fill='none' stroke='gray' />
+	</g>
+	
+	<path id='el-2' stroke-width='1' stroke='orange' fill='yellow' fill-rule='evenodd'
+	   d='M220,10 H320 V110 H220 Z M240,30 H260 V90 H240 Z M300,30 H280 V90 H300 Z'/>
+	
+	<path id='el-3' stroke-width='1' stroke='orange' fill='yellow' fill-rule='evenodd'
+	   d='M330,10 H390 V70 H330 Z M340,50 H360 V110 Z M370,20 V40 H430 Z'/>
+
+	<path id='el-4' stroke-width='1' stroke='orange' fill='yellow' fill-rule='nonzero'
+	   d='M440,10 H500 V70 H440 Z M450,50 H470 V110 Z M480,20 V40 H540 Z'/>
+
+	<path id='el-5' stroke-width='1' stroke='orange' fill='yellow' fill-rule='evenodd'
+	   d='M550,10 H600 V110 H550 Z M580,20 Q650,60 580,100'/>
+	
+</svg>

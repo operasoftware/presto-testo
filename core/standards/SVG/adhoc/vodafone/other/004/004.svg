@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 250 100">
+<rect x="-125" y="0" width="500" height="100" fill="#F00">
+	<animateColor attributeName="fill" values="#FFF;#FFF;#F00" keyTimes="0;0.4;1" begin="a.begin" dur="2.5s" fill="freeze"/>
+	<animate id="d" attributeName="x" values="-125;-625" begin="c.end" dur="0.45s" fill="freeze"/>
+	<set id="f" attributeName="fill" to="#FFF" begin="e.end" dur="1s" fill="freeze"/>
+	<set attributeName="x" to="-125" begin="e.end" dur="1s" fill="freeze"/>
+</rect>
+<g>
+	<path d="M71.33,3.838c-9.096,1.989-15.947,10.083-15.947,19.769c0,0.209,0.054,0.458,0.058,0.665 c14.383,3.06,21.636,12.752,21.636,25.536c0,14.364-11.749,26.008-26.11,26.008c-14.366,0-27.781-11.981-27.781-29.75 c0-21.689,18.592-42.037,45.089-42.681c0.478-0.011,1.237,0.006,2.008,0.042C64.461,1.216,58.116,0,51.483,0 C23.051,0,0,22.3,0,49.808c0,27.506,23.051,49.806,51.483,49.806c28.43,0,51.479-22.299,51.479-49.806 C102.963,29.106,89.909,11.356,71.33,3.838z"/>
+	<animateColor id="a" attributeName="fill" values="#FFF;#F00;#F00;#F00;#F00;#FFF;#F99;#F00" keyTimes="0;0.2;0.3;0.4;0.5;0.6;0.8;1" begin="0s;f.end" dur="2s" fill="freeze"/>
+	<animateTransform attributeName="transform" type="translate" additive="replace" begin="a.begin" values="125,55;75,0;80,5;75,0;95,15;75,0;-185,-225;-500" keyTimes="0;0.2;0.3;0.4;0.5;0.6;0.8;1" dur="2s" fill="freeze"/>
+	<animateTransform attributeName="transform" type="scale" additive="sum" begin="a.begin" values="0.01;1;0.9;1;0.7;1;6;0.2" keyTimes="0;0.2;0.3;0.4;0.5;0.6;0.8;1" dur="2s" fill="freeze"/>
+</g>
+<text x="500" y="60" font-size="30" font-weight="bold" fill="#FFF">This
+	<animateColor id="b" attributeName="fill" values="#F00;#FFF;#FFF;#F00" keyTimes="0;0.25;0.75;1" begin="a.begin+1s" dur="4s"/>
+	<animate attributeName="x" values="250;80;-60;-300" keyTimes="0;0.15;0.85;1" begin="a.begin+1s" dur="4s"/>
+</text>
+<text x="125" y="130" font-size="20" font-weight="bold" fill="#FFF" text-anchor="middle">test
+	<animateColor id="c" attributeName="fill" values="#F00;#FFF;#FFF;#F00" keyTimes="0;0.25;0.75;1" begin="b.begin+3.5s" dur="4s"/>
+	<animate attributeName="y" values="100;80;30;0" keyTimes="0;0.15;0.85;1" begin="b.begin+3.5s" dur="4s"/>
+</text>
+<text x="500" y="60" font-size="20" font-weight="bold" fill="#FFF">rocks!
+	<animateColor id="e" attributeName="fill" values="#FFF;#666;#666;#FFF" keyTimes="0;0.25;0.75;1" begin="d.begin" dur="4s"/>
+	<animate attributeName="x" values="250;80;-60;-250" keyTimes="0;0.15;0.85;1" begin="d.begin" dur="4s"/>
+</text>
+</svg>

@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN"
+	"http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<svg height="100" version="1.0" width="100" xmlns="http://www.w3.org/2000/svg">
+  <metadata>
+    <rdf:RDF xmlns:cc="http://web.resource.org/cc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+      <cc:Work rdf:about="">
+        <dc:title>arrows reverse 1 pattern</dc:title>
+        <dc:description></dc:description>
+        <dc:subject>
+          <rdf:Bag>
+            <rdf:li>pattern</rdf:li>
+          </rdf:Bag>
+        </dc:subject>
+        <dc:publisher>
+          <cc:Agent rdf:about="http://www.openclipart.org">
+            <dc:title>Open Clip Art Library</dc:title>
+          </cc:Agent>
+        </dc:publisher>
+        <dc:creator>
+          <cc:Agent>
+            <dc:title>Alan Horkan</dc:title>
+          </cc:Agent>
+        </dc:creator>
+        <dc:rights>
+          <cc:Agent>
+            <dc:title>Alan Horkan</dc:title>
+          </cc:Agent>
+        </dc:rights>
+        <dc:date></dc:date>
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+        <cc:license rdf:resource="http://web.resource.org/cc/PublicDomain"/>
+        <dc:language>en</dc:language>
+      </cc:Work>
+      <cc:License rdf:about="http://web.resource.org/cc/PublicDomain">
+        <cc:permits rdf:resource="http://web.resource.org/cc/Reproduction"/>
+        <cc:permits rdf:resource="http://web.resource.org/cc/Distribution"/>
+        <cc:permits rdf:resource="http://web.resource.org/cc/DerivativeWorks"/>
+      </cc:License>
+    </rdf:RDF>
+  </metadata>
+  <defs>
+    <pattern height="100" id="Arrows-Reverse-1" patternContentUnits="userSpaceOnUse" patternUnits="userSpaceOnUse" width="100">
+      <polygon id="background" points="0,0 0,100 100,100 100,0" stroke="black" stroke-width="1" style="fill:black"/>
+      <polygon points="0,25 25,0 50,25 40,25 40,50 10,50 10,25" style="fill:white"/>
+      <polygon points="50,25 75,0 100,25 90,25 90,50 60,50 60,25" style="fill:white"/>
+      <polygon points="0,75 25,50 50,75 40,75 40,100 10,100 10,75" style="fill:white"/>
+      <polygon points="50,75 75,50 100,75 90,75 90,100 60,100 60,75" style="fill:white"/>
+    </pattern>
+  </defs>
+  <rect fill="url(#Arrows-Reverse-1)" height="100" width="100" x="0" y="0"/>
+</svg>

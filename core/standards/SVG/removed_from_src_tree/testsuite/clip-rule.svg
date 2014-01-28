@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 360">
+  <defs>
+    <clipPath id="clip1">
+      <path d="M0,-60 L-35.3,48.5 L57,-18.5 L-57,-18.5 L35.3,48.5 z"
+	    clip-rule="evenodd" transform="translate(120 120)"/>
+      <path d="M0,-60 L-35.3,48.5 L57,-18.5 L-57,-18.5 L35.3,48.5 z"
+	    clip-rule="nonzero" transform="translate(360 120)"/>
+    </clipPath>
+  </defs>
+  <rect width="100%" height="100%" fill="red"
+	clip-path="url(#clip1)"
+	onmouseover="this.style.fill='green'"
+	onmouseout="this.style.fill='red'"/>
+  <text x="240" y="240" text-anchor="middle">
+    Objects should turn green when hovered.
+  </text>
+</svg>

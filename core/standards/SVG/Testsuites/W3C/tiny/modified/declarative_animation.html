@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title><!-- Insert your title here --></title>
+</head>
+<body>
+    <h1>Test which verifies that the basic facilities of declarative animation are working</h1>
+            <table>
+            
+            <tr>
+                <th>Test image</th>
+                <th>Reference images</th>
+                <th>Test description and test criteria</th>
+            </tr>
+            
+            <tr>
+                    
+                <td><object id="testimage" data="test/basics_of_declarative_animation.svg" type="image/svg+xml" alt="Test image" width="480" height="360"/></td>
+                <td><object id="refimage" data="ref/basics_of_declarative_animation.svg" type="image/svg+xml" alt="Ref image" width="480" height="360"/></td>
+                <td>The following illustrates the use of the 'set', 
+		<br />and 'animateColor' elements. The 'text' element 
+		<br />below starts off hidden (i.e., invisible). At 3 seconds, it:
+		<br />* becomes visible
+		<br />* changes color from blue to dark red
+                <br />After the animation is over, the two pictures should be identical </td>
+            </tr>
+             
+            <tr>
+                    
+                <td><object id="testimage_declarative_animation" data="support/basics_of_declarative_animation_2.svg" type="image/svg+xml" alt="Test image" width="480" height="360"/></td>
+                <td><object id="ref_testimage_declarative_animation" data="support/ref_basics_of_declarative_animation_2.svg" type="image/svg+xml" alt="Ref image" width="480" height="360"/></td>
+                <td>The following illustrates the use of the 'animateMotion', and 'animateTransform' elements. At 3 seconds, the text:
+                <br />* continuously moves diagonally across the viewport
+                <br />* rotates from -30 to zero degrees
+                <br />* scales by a factor of three.
+                <br />After the animation is over, the two pictures should be identical </td>
+            </tr>
+            
+    </table>
+</body>
+</html>

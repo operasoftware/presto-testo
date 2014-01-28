@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 250 100">
+  <defs>
+    <circle id="food" cx="0" cy="0" r="6" fill="#FFF"/>
+  </defs> 
+  <rect x="0" y="0" width="250" height="100" fill="#000"/>
+<g transform="translate(0 -10)">
+  <g transform="translate(0 0)">
+    <use xlink:href="#food" x="20" y="50"/>
+    <use xlink:href="#food" x="50" y="50"/>
+    <use xlink:href="#food" x="80" y="50"/>
+    <use xlink:href="#food" x="110" y="50"/>
+    <use xlink:href="#food" x="140" y="50"/>
+    <use xlink:href="#food" x="170" y="50"/>
+    <use xlink:href="#food" x="200" y="50"/>
+    <use xlink:href="#food" x="230" y="50"/> 
+  </g>
+  <rect x="0" y="42" width="10" height="15" fill="#000">
+    <animateTransform id="food_leave" attributeName="transform" type="scale" from="1 1" to="25 1" begin="0s;pac_go.repeat" dur="2.9s" fill="freeze"/>
+  </rect>
+  <g transform="translate(-40 50)">
+    <circle cx="30" cy="30" r="30" fill="#FFFF00" visibility="hidden">
+      <animate id="pac_eat" attributeName="visibility" from="hidden" to="inherit" begin="0s" dur="0.4s" repeatCount="indefinite"/>
+    </circle>
+    <path fill="#FFFF00" d="M27.877,29.548l28.39-14.042C51.156,6.262,41.311,0,30,0C13.432,0,0,13.431,0,29.999
+  	  C0,46.567,13.432,60,30,60c11.428,0,21.362-6.392,26.427-15.794l-0.095-0.646L27.877,29.548z"/>
+      <animateTransform id="pac_go" attributeName="transform" type="translate" from="-40 20" to="300 20" begin="0s" dur="4s" fill="freeze" repeatCount="indefinite"/>
+    <circle id="eye" cx="35" cy="12" r="3" fill="#000"/>
+  </g>
+</g>
+<g fill="#CCCCCC" transform="translate(0 75)">
+<g font-size="25">
+<text x="5" y="18.75">
+&#214;Umlaut before this text
+</text>
+</g>
+
+</g>
+</svg>

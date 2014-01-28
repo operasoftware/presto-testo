@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <!DOCTYPE html PUBLIC  "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>This test performs basic test on the end attribute</title>
+</head>
+<body>
+<table>
+<tr>
+<td align="center">SVG Image</td>
+<td align="center">Reference Image</td>
+</tr>
+<tr>
+<td align="right">
+<object data="../svggen/animate-elem-62-t.svg" width="480" height="360" type="image/svg+xml"/>
+</td>
+<td align="left">
+<img alt="raster image of animate-elem-62-t" src="../png/full-animate-elem-62-t.png" width="480" height="360"/>
+</td>
+</tr>
+</table>
+<p>
+The test validates the various possibilities for the end attribute value: no specified value, offset value, 
+event base value, sync base value, indefinite value, repeat value, accessKey value and wallclock.
+</p>
+
+<p>Quick description to run test in gogi:</p>
+<p>all red rectangles should turn green in order from left to right, at the given second. 
+
+<p>The sequences to the left starts at load. The sequences to the right are started like this:</p>
+
+<ul>
+<li>"event base": click on corresponding red rectangle.</li>
+<li>"accessKeys()": choose "Enable access key mode" in menu, click on svg image to focus it, and press "a".</li>
+</ul>
+
+</body>
+</html>
+

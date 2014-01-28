@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+         "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11-basic.dtd">
+<!--viewBox="10 0 180 150"-->
+<svg xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink"
+>
+  <g fill-opacity="0.6" stroke="#fff" stroke-width="1px">
+    <circle id="c1" cx="100px" cy="50px" r="50" fill="#00f"
+    
+                    transform="translate(0,0)" />
+    <circle id="c2" cx="100px" cy="50px" r="50" fill="#ff0"
+                    transform="translate(30,50)" />
+    <circle id="c3" cx="100px" cy="50px" r="50" fill="#f0f"
+                    transform="translate(-30,50)"/>
+  </g>
+</svg>

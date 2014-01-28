@@ -1,0 +1,82 @@
+<?xml version="1.0"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:svg="http://www.w3.org/2000/svg" 
+xmlns:xul="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+>
+<head>
+<style>
+polygon {  fill-opacity:0.2; }
+polygon:hover { fill-opacity:1; }
+</style>
+
+<script>
+<![CDATA[
+function init()
+{
+document.getElementById('bar').setAttribute('points',pentagon(150,.2,200,200));
+
+document.getElementById('foo').setAttribute('points',pentagon(150,0,200,200));
+}
+
+var steps = 400;
+var step = 0;
+var el1, el2, el3;
+var anim_running = 0;
+
+function start_animation()
+{
+  el1 = document.getElementById('foo');
+  el2 = document.getElementById('bar');
+  el3 = document.getElementById('group');
+  animate();
+}
+
+function stop_animation()
+{
+  if (!anim_running) return;
+  clearTimeout(anim_running);
+  anim_running = 0;
+}
+
+function animate()
+{
+  var id = el2.ownerSVGElement.suspendRedraw(1000);	  
+  el2.setAttribute('transform','translate ('+step%steps+') rotate ('+step%steps+' 200,200)');
+  el3.setAttribute('transform','scale('+(0.5+(step%steps)/steps/2.0)+')');
+  el2.ownerSVGElement.unsuspendRedraw(id);
+  ++step;
+  anim_running = setTimeout("animate()",30);
+}
+
+function pentagon(radius, angle, dx, dy)
+{
+  var str="";
+  for (var i=0;i<6;++i)
+    str+=vertex(i%5, radius, angle, dx, dy);
+  return str;
+}
+
+function vertex(i,radius, da, dx, dy)
+{
+  var angle = 4*Math.PI*i/5+da;
+  var x = radius * Math.cos(angle) + dx;
+  var y = radius * Math.sin(angle) + dy;
+  return " "+x+","+y+" ";
+}
+]]>
+</script>
+</head>
+<body onload="init();">
+  <button onclick="start_animation();">Start</button>
+  <button onclick="stop_animation();">Stop</button>
+  <svg:svg width="600px" height="400px">
+	<svg:polyline points="0,0 600,0 600,400 0,400 0,0" style="stroke:black; fill:none;"/>
+	<svg:g transform="scale(0.5)" id="group">
+      <svg:polygon id="foo"
+       style="fill:red; fill-opacity:1;" />
+      <svg:polygon id="bar"
+       style=" fill:blue; stroke:black;"/>
+    </svg:g>
+  </svg:svg>
+</body>
+</html>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg version="1.2" baseProfile="tiny" id="svg-root" width="100%" height="100%" viewBox="0 0 480 360" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+   <g id="test-body-content">
+      <rect x="15" y="60" width="300" height="100" fill="none" stroke="black" stroke-width="0.25"/>
+      <textArea x="15" y="60" width="300" height="100" font-size="20" fill="#259" editable="simple" text-rendering="geometricPrecision">Editable <tbreak/>textarea <tbreak/>4</textArea>
+
+      <rect x="15" y="170" width="300" height="100" fill="none" stroke="black" stroke-width="0.25"/>
+      <textArea x="15" y="170" width="300" height="100" font-size="20" fill="#259" editable="simple">Editable <tbreak/>textarea <tbreak/>4</textArea>
+   </g>
+   <text id="revision" x="10" y="340" font-size="40" stroke="none" fill="black">$Revision$</text>
+   <rect id="test-frame" x="1" y="1" width="478" height="358" fill="none" stroke="#000"/>
+</svg>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg version="1.2" baseProfile="tiny" id="svg-root" width="100%" height="100%" viewBox="0 0 480 360" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<g id="animatedSlider">
+		<g stroke="#999" fill="none">
+			<line x1="0" x2="480" y1="10" y2="10"/>
+			<line x1="00" x2="0" y1="2" y2="18"/>
+			<line x1="20" x2="20" y1="6" y2="14"/>
+			<line x1="40" x2="40" y1="6" y2="14"/>
+			<line x1="60" x2="60" y1="6" y2="14"/>
+			<line x1="80" x2="80" y1="6" y2="14"/>
+			<line x1="100" x2="100" y1="6" y2="14"/>
+			<line x1="120" x2="120" y1="6" y2="14"/>
+			<line x1="140" x2="140" y1="6" y2="14"/>
+			<line x1="160" x2="160" y1="6" y2="14"/>
+			<line x1="180" x2="180" y1="6" y2="14"/>
+			<line x1="200" x2="200" y1="6" y2="14"/>
+			<line x1="220" x2="220" y1="6" y2="14"/>
+			<line x1="240" x2="240" y1="2" y2="18"/>
+			<line x1="260" x2="260" y1="6" y2="14"/>
+			<line x1="280" x2="280" y1="6" y2="14"/>
+			<line x1="300" x2="300" y1="6" y2="14"/>
+			<line x1="320" x2="320" y1="6" y2="14"/>
+			<line x1="340" x2="340" y1="6" y2="14"/>
+			<line x1="360" x2="360" y1="6" y2="14"/>
+			<line x1="380" x2="380" y1="6" y2="14"/>
+			<line x1="400" x2="400" y1="6" y2="14"/>
+			<line x1="420" x2="420" y1="6" y2="14"/>
+			<line x1="440" x2="440" y1="6" y2="14"/>
+			<line x1="460" x2="460" y1="6" y2="14"/>
+			<line x1="480" x2="480" y1="2" y2="18"/>
+			
+			<rect id="slider" x="0" y="0" width="4" height="20" fill="green" stroke="none">
+				<animate attributeName="x" attributeType="XML" dur="10s" from="0" to="476" fill="freeze"/>
+			</rect>
+		</g>
+	</g>
+</svg>

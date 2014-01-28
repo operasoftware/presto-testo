@@ -1,0 +1,116 @@
+<svg viewBox="0 0 200 200" id="root" xmlns="http://www.w3.org/2000/svg" onload="init();"
+     xmlns:xlink="http://www.w3.org/1999/xlink">
+
+  <script>
+function test_done()
+{
+  document.getElementById('status').firstChild.data = "Test done.";
+}
+
+function init()
+{
+  document.getElementById('rot').addEventListener("endEvent", test_done, false);
+}
+  </script>
+
+  <g transform="translate(100,100) scale(0.1)">
+    <g>
+      <path fill="#888" transform="translate(0,-50) rotate(90)" d="M 0 0 A 50,50 0 0,0 50,50 L 50 0 z"/>
+      <path fill="#444" transform="translate(-50,0)" d="M 0 0 A 50,50 0 0,0 50,50 L 50 0 z"/>
+      <path fill="#444" transform="translate(50,0) rotate(180)" d="M 0 0 A 50,50 0 0,0 50,50 L 50 0 z"/>
+      <path fill="#888" transform="translate(0,50) rotate(270)" d="M 0 0 A 50,50 0 0,0 50,50 L 50 0 z"/>
+      <animateTransform id="rot" type="rotate" attributeName="transform" additive="sum" from="0" to="180" dur="1s" repeatDur="4"/>
+    </g>
+    <text id="status" font-size="30" text-anchor="middle" y="90">Testing ... </text>
+    <text font-size="30" text-anchor="middle" y="125">Only the rotating circle should be repainted after 1 sec</text>
+  </g>
+  
+  <g transform="translate(0, 0)">
+    <rect x="0" y="0" width="10" height="10" fill="red">
+      <animate attributeName="y" from="0" to="5" begin="0" dur="1s" fill="freeze"/>
+    </rect>
+  </g>
+
+  <g transform="translate(20, 0)">
+    <rect x="0" y="0" width="10" height="10" fill="red" fill-opacity="1">
+      <animate attributeName="fill-opacity" from="1" to="0" begin="0" dur="1s" fill="freeze"/>
+    </rect>
+  </g>
+
+  <g transform="translate(40, 0)">
+    <rect x="0" y="0" width="10" height="10" fill="red">
+      <animateMotion from="0,0" to="10,10" begin="0" dur="1s" fill="freeze"/>
+    </rect>
+  </g>
+
+  <g transform="translate(40, 0)">
+    <rect x="0" y="0" width="10" height="10" fill="red">
+      <animateMotion from="0,0" to="10,10" begin="0" dur="1s" fill="freeze"/>
+    </rect>
+  </g>
+
+  <g transform="translate(60, 0)">
+    <rect x="5" y="5" width="10" height="10" fill="red">
+      <animateTransform attributeName="transform" type="rotate" from="0" to="10" dur="1s" fill="freeze"/>
+    </rect>
+  </g>
+
+  <g transform="translate(80, 0)">
+    <rect x="0" y="0" width="10" height="10" fill="red">
+      <animate attributeName="fill" from="red" to="green" begin="0" dur="1s" fill="freeze"/>
+    </rect>
+  </g>
+
+  <g transform="translate(100, 0)">
+    <polyline x="0" y="0" points="0,0 10,0 0,10" fill="red">
+      <animate attributeName="points" values="0,0 10,0 10,10 0,10;
+					      0,0 10,0 0,10 10,10"
+	       calcMode="discrete" begin="0" dur="1s" fill="freeze"/>
+    </polyline>
+  </g>
+
+  <g transform="translate(120, 0)">
+    <polygon x="0" y="0" points="0,0 10,0 10,10 0,10" fill="none"
+	     stroke="#F00" stroke-width="2" stroke-dasharray="2">
+      <animate attributeName="stroke-dasharray" values="2 ; 1 "
+	       calcMode="discrete" begin="0" dur="1s" fill="freeze"/>
+    </polygon>
+  </g>
+
+  <g transform="translate(0, 30)">
+    <polygon x="0" y="0" points="0,0 10,0 10,10 0,10" fill="none"
+	     stroke="#F00" stroke-width="2" stroke-dasharray="2">
+      <animate attributeName="stroke-dashoffset" values="9 ; 0"
+	       begin="0" dur="1s" fill="freeze"/>
+    </polygon>
+  </g>
+
+  <g transform="translate(20, 30)">
+    <defs>
+      <polygon id="use1" x="0" y="0" points="0,0 10,0 10,10 0,10" fill="red">
+      </polygon>
+      <polygon id="use2" x="0" y="0" points="0,0 10,0 0,10 10,10" fill="red">
+      </polygon>
+    </defs>
+    <use xlink:href="#use1">
+      <animate attributeName="xlink:href" values="#use1;#use2" calcMode="discrete" dur="1s" fill="freeze"/>
+    </use>
+  </g>
+
+  <g transform="translate(40, 30)">
+    <path fill="blue">
+      <animate attributeName="d" values="M0, 0 L 0,10 L10,0 z;
+					 M0, 0 L 10,10 L5,0 z"
+	       fill="freeze" dur="1s"/>
+    </path>
+  </g>
+
+  <g transform="translate(60, 30)">
+    <rect x="0" y="0" width="10" height="10" fill="currentColor">
+      <animate attributeName="color" values="red;green"
+	       fill="freeze" dur="1s"/>
+    </rect>
+  </g>
+  
+
+</svg>

@@ -1,0 +1,449 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+  <head>
+    <title>SVG Testing - Opera 7 for Series 60</title>
+
+<!--
+The material, including but not limited to all software, design,
+drawings, technical specifications and other confidential information
+sent to you (Material), is the exclusive property of Opera Software
+ASA and its suppliers. The Material is classified as strictly
+confidential information and is internationally protected by copyright-,
+trademark- and other such laws. The Material is sent to you for internal
+use only and shall only be used as expressly instructed by Opera
+Software.
+
+Any copying, reproduction, modification or distribution not in
+accordance with a special written license agreement with Opera Software
+is expressly prohibited, and may result in severe civil and criminal
+penalties. Opera Software actively and aggressively enforces its
+intellectual property rights to the fullest extent of the law.
+-->
+
+    <style type="text/css">
+      body {
+         max-width: 95%;
+         background: #FFFFF9;
+      }
+      img {
+        border: none;
+      }
+      table {
+        empty-cells: show;
+        border-collapse: collapse;
+        background-color: white;
+      }
+      td, th {
+        border: thin solid #EEC;
+        padding: 2px;
+      }
+      thead th {
+        color: black;
+        background: #CC9;
+        font-weight: 800;
+      }
+      tbody th {
+        text-align: left;
+        color: black;
+        background: #ffffcc
+      }
+      .coloured {
+        color: black;
+        background: #FEFFEE;
+      }
+
+      .img_right {
+        float: right;
+      }
+
+      dl.metadata {
+        padding: 0.3em;
+        background: #EEE;
+       }
+      dd p {
+        margin: 0 auto;
+        padding: 0 auto;
+      }
+      .metadata dt {
+        font-weight: bold;
+      }
+      .metadata .circulation {
+        text-transform: uppercase;
+        font-weight: bold;
+        background-color: transparent;
+        color: red;
+      }
+
+      .copyright {
+        font-size: smaller;
+        font-style: italic;
+      }
+
+      .ui {
+        text-align: center;
+        color: white;
+        background-color: blue;
+        font-weight: bold;
+       }
+      .pass {
+        text-align: center;
+        color: white;
+        background-color: green;
+        font-weight: bold;
+      }
+      .fail {
+        text-align: center;
+        color: white;
+        background-color: red;
+        font-weight: bold;
+      }
+      .todo {
+        text-align: center;
+        color: white;
+        background: blue;
+        font-weight: bold;
+      }
+      .na {
+        text-align: center;
+        color: white;
+        background-color: grey;
+        font-weight: bold;
+      }
+      .retest {
+        text-align: center;
+        color: white;
+        background-color: dodgerblue;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="img_right">
+      <a href="http://www.opera.com"><img src="/resources/images/opera.png" alt="Opera logo" /></a>
+    </div>
+
+    <h2>Test Component Specification for Opera Web Browser</h2>
+
+    <hr>
+
+    <h1>[Ramses] SVG Testing</h1>
+
+    <dl class="metadata">
+      <dt>Author</dt>
+      <dd>Tim Altman &lt;<a href="mailto:tim@opera.com">tim@opera.com</a>&gt;</dd>
+      <dt>Date</dt>
+      <dd>2004-10-22</dd>
+      <dt>Status</dt>
+      <dd>Proposal</dd>
+      <dt>Circulation</dt>
+      <dd class="circulation">Opera Software internal</dd>
+      <dt>Abstract</dt>
+      <dd>
+        <p>This document details the current active plan for testing the support for
+        the SVG plug-in in Opera 7 for the Ramses project.</p>
+        <p>All tests should be performed with both Desktop mode (SCR) enabled.</p>
+      </dd>
+    </dl>
+
+    <p class="copyright">The material, including but not limited to all software,
+    design, drawings, technical specifications and other confidential information
+    sent to you (&quot;Material&quot;), is the exclusive property of Opera Software
+    ASA and its suppliers. The Material is classified as strictly confidential information
+    and is internationally protected by copyright-, trademark- and other such laws.
+    The Material is sent to you for internal use only and shall only be used as
+    expressly instructed by Opera Software.</p>
+
+    <p class="copyright">Any copying, reproduction, modification or distribution
+    not in accordance with a special written license agreement with Opera Software
+    is expressly prohibited, and may result in severe civil and criminal penalties.
+    Opera Software actively and aggressively enforces its intellectual property
+    rights to the fullest extent of the law.</p>
+
+    <h3>Revision history</h3>
+
+    <table width="100%" border="1">
+      <thead>
+        <tr>
+          <th>Version</th>
+          <th>Date</th>
+          <th>Status</th>
+          <th>Author</th>
+          <th>Revision comment</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>0.1</td>
+          <td>2004.10.22</td>
+          <td>First draft created</td>
+          <td><a href="mailto:tim@opera.com">Tim Altman</a></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>0.2</td>
+          <td>2004.11.05</td>
+          <td>Some test descriptions added</td>
+          <td><a href="mailto:tim@opera.com">Tim Altman</a></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>0.3</td>
+          <td>2004.12.02</td>
+          <td>Removed review section and commented-out a:hover style, fixed CSS typo</td>
+          <td><a href="mailto:tim@opera.com">Tim Altman</a></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>0.4</td>
+          <td>2004.12.10</td>
+          <td>Stylesheet updates</td>
+          <td><a href="mailto:tim@opera.com">Tim Altman</a></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>0.5</td>
+          <td>2005.02.02</td>
+          <td>Added more tests, changed file from XHTML to HTML</td>
+          <td><a href="mailto:tim@opera.com">Tim Altman</a></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>0.6</td>
+          <td>2005.02.04</td>
+          <td>Removed first section of tests, as they were mostly invalid</td>
+          <td><a href="mailto:tim@opera.com">Tim Altman</a></td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>Test Specifics</h3>
+
+    <table width="100%" border="1">
+      <thead>
+        <tr>
+          <th>Requirement</th>
+          <th>Tested by</th>
+          <th>Date</th>
+          <th>Opera build</th>
+          <th>Testcases</th>
+          <th>Passrate</th>
+          <th>SDK release / Hardware release</th>
+          <th>Phone version</th>
+          <th>Plug-in version</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>SVG</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>%</td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <hr>
+
+    <table border="1">
+      <col>
+      <col>
+      <col align="center">
+      <col>
+      <col>
+      <col>
+      <thead>
+        <tr>
+          <th>Test #</th>
+          <th>Title</th>
+          <th>Test Case</th>
+          <th>Expected result</th>
+          <th>Actual result</th>
+          <th>Comments</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th colspan="6">1) Vodafone Recommended Samples</th>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>1.1.1 - Restrictions of icon mode SVGT</td>
+          <td><a href="vodafone/001/sample1_1_1.html">test</a></td>
+          <td></td>
+          <td class=""></td>
+          <td></td>
+        </tr>
+        <tr class="coloured">
+          <td>2</td>
+          <td>1.1.2 - Going from icon mode to full view mode</td>
+          <td><a href="vodafone/002/sample1_1_2.html">test</a></td>
+          <td>SVG can be clicked to load in full view</td>
+          <td class=""></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>1.3 SVGT and xembedded bitmap images</td>
+          <td><a href="vodafone/003/sample1_3.html">test</a></td>
+          <td>Background image is visible behind SVG content</td>
+          <td class=""></td>
+          <td></td>
+        </tr>
+        <tr class="coloured">
+          <td>4</td>
+          <td>1.4 XHTML browser drawing focus outline for SVGT icons</td>
+          <td><a href="vodafone/004/sample1_4.html">test</a></td>
+          <td>SVG outlined and animation drawn when (un)focusing SVG, Javascript dialog stating which SVG was clicked</td>
+          <td class=""></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td>1.5.1 - Setting SVGT icon dimensions</td>
+          <td><a href="vodafone/005/sample1_5_1.html">test</a></td>
+          <td>SVG should be 100px X 100px</td>
+          <td class=""></td>
+          <td></td>
+        </tr>
+        <tr class="coloured">
+          <td>6</td>
+          <td>1.5.2 - Banner type SVGT icons</td>
+          <td><a href="vodafone/006/sample1_5_2.html">test</a></td>
+          <td>SVG should be square and as large as possible, minus margins and padding for the HTML document</td>
+          <td class=""></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>7</td>
+          <td>1.6 - Multiple animating SVGT icons</td>
+          <td><a href="vodafone/007/sample1_6.html">test</a></td>
+          <td>"1.6" and "B" SVGs should animate simultaneously</td>
+          <td class=""></td>
+          <td></td>
+        </tr>
+        <tr class="coloured">
+          <td>8</td>
+          <td>1.8 - Animating SVGT icons and XHTML overlap</td>
+          <td><a href="vodafone/008/sample1_8.html">test</a></td>
+          <td>Text should overlap animation and SVG should pause while overlap occurs</td>
+          <td class=""></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>9</td>
+          <td>2.1.2 - Full view SVGT and aspect ratio</td>
+          <td><a href="vodafone/009/sample2_1_2.html">test</a></td>
+          <td>SVG should be square and as large as possible, minus margins and padding for the HTML document</td>
+          <td class=""></td>
+          <td></td>
+        </tr>
+        <tr class="coloured">
+          <td>10</td>
+          <td>2.1.5 - Scaling may not be wanted when bitmap images are xembedded</td>
+          <td><a href="vodafone/010/sample2_1_5.html">test</a></td>
+          <td>SVG should be 200px X 200px with a background image</td>
+          <td class=""></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>11</td>
+          <td>8.1 - SVG Version and SVG Performance Index</td>
+          <td><a href="vodafone/011/accept.php">test</a><br>(requires PHP)</td>
+          <td>The SVG MIME type (image/svg+xml), a list of supported SVG profiles and the SVG Performance Index in the HTTP accept header</td>
+          <td class=""></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th colspan="6">2) Other Samples</th>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>HTML entities in SVGs</td>
+          <td><a href="other/001/001.html">test</a></td>
+          <td></td>
+          <td class=""></td>
+          <td></td>
+        </tr>
+        <tr class="coloured">
+          <td>2</td>
+          <td>HTML entities from various languages in SVGs</td>
+          <td><a href="other/002/002.html">test</a></td>
+          <td></td>
+          <td class=""></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>SVG aspect ratios</td>
+          <td><a href="other/003/003.html">test</a></td>
+          <td></td>
+          <td class=""></td>
+          <td></td>
+        </tr>
+        <tr class="coloured">
+          <td>4</td>
+          <td>Random SVG for testing</td>
+          <td><a href="other/004/004.svg">test</a></td>
+          <td></td>
+          <td class=""></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td>Random SVG for testing</td>
+          <td><a href="other/005/005.svg">test</a></td>
+          <td></td>
+          <td class=""></td>
+          <td></td>
+        </tr>
+        <tr class="coloured">
+          <td>6</td>
+          <td>Scaling SVGs</td>
+          <td><a href="other/006/006.html">test</a></td>
+          <td></td>
+          <td class=""></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>7</td>
+          <td>Embedding images in SVG</td>
+          <td><a href="other/007/007.html">test</a></td>
+          <td></td>
+          <td class=""></td>
+          <td></td>
+        </tr>
+        <tr class="coloured">
+          <td>8</td>
+          <td>Random SVG for testing</td>
+          <td><a href="other/008/008.svg">test</a></td>
+          <td></td>
+          <td class=""></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>9</td>
+          <td>Random SVG for testing</td>
+          <td><a href="other/009/009.svg">test</a></td>
+          <td></td>
+          <td class=""></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>10</td>
+          <td>SVG declared in OBJECT with no type attribute</td>
+          <td><a href="other/010/010.html">test</a></td>
+          <td></td>
+          <td class=""></td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>

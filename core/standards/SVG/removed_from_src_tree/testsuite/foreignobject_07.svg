@@ -1,0 +1,43 @@
+<svg width="500" height="280" xmlns:svg="http://www.w3.org/2000/svg"
+     xmlns="http://www.w3.org/2000/svg">
+  <!-- an SVG rectangle acts as background -->
+  <rect width="100%" height="100%" fill="pink" />
+  <!-- we're leaving the SVG dimension -->
+  <foreignObject width="500" height="280">
+    <!-- as we step into the XHTML world --> 
+	<html xmlns="http://www.w3.org/1999/xhtml">
+    <style type="text/css">
+      table { border-width: 1; border-color: black; margin: 20; border-spacing: 2}
+      p      { margin: 10 50 }
+      td    { border-width: 1; border-color: black; padding: 8 }
+      .td    { margin: 7 30; border-width: 1; border-color: black; padding: 8 }
+    </style>
+    <body bgcolor="white">
+	<div>
+        <p style="font-style: oblique">This is a paragraph with oblique font-styling</p>
+        <p style="text-align: right">Another one, except right-aligned</p>
+      </div>
+      <div>
+        <p style="font-weight: bold; font-size: 20;">This is a table test</p>
+        <table border="2px">
+          <tr>
+            <p class="td">This is cell A1</p>
+            <p class="td">This is cell B1</p>
+            <p class="td">This is cell C1</p>
+            <td rowspan="2">
+              <svg:rect width="100%" height="100%" fill="red" />
+              <p>This is joint cell D1:D2</p>
+            </td>
+          </tr>
+          <tr>
+            <p class="td">This is cell A2</p>
+            <td colspan="2" style="background-color: pink">
+              <p>This is a joint cell B2:C2</p>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </body>
+	</html>
+  </foreignObject>
+</svg>

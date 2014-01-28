@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- =====================================================================-->
+<!-- animate-elem-37-t.svg                                                -->
+<!--                                                                      -->
+<!-- transform on shape elements                                          -->
+<!--                                                                      -->
+<!-- Author : Vincent Hardy                                               -->
+<!-- =====================================================================--><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1 Tiny//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11-tiny.dtd">
+
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" baseProfile="tiny" id="svg-root" width="100%" height="100%" viewBox="0 0 480 360">
+
+
+
+
+    <g transform="translate(0,0)">
+
+        <g transform="translate(60,90)">
+            <path id="pathID" fill="rgb(230,230,230)" stroke="rgb(255,180,0)" d="M 0 0 Q 30 0 30 -30 Q 0 -30 0 0 Q 0 -30 -30 -30 Q -30 0 0 0 Q -30 0 -30 30 Q 0 30 0 0 Q 0 30 30 30 Q30 0 0 0 Z"/>
+            
+            <animateTransform attributeName="transform" xlink:href="#pathID" type="rotate" values="0;45" fill="freeze" begin="0s" dur="1s"/>
+            <animateTransform attributeName="transform" xlink:href="#pathID" type="rotate" values="180;0" fill="freeze" begin="6s" dur="1s"/>  
+            
+        </g>
+
+        <g transform="translate(180,90)">
+            <rect id="rectID" fill="rgb(230,230,230)" stroke="rgb(255,180,0)" x="-30" y="-20" width="60" height="40"/>
+            
+            <animateTransform attributeName="transform" xlink:href="#rectID" type="rotate" values="0;90" fill="freeze" begin="0s" dur="1s" />
+            <animateTransform attributeName="transform" xlink:href="#rectID" type="rotate" values="90;180;0" fill="freeze" begin="6s" dur="1s" />
+            
+        </g>
+            
+        <g transform="translate(300,90)">
+            <circle id="circleID" fill="rgb(230,230,230)" stroke="rgb(255,180,0)" r="30"/>
+            
+            <animateTransform attributeName="transform" xlink:href="#circleID" type="scale" values="1;0.2" fill="freeze" begin="0s" dur="1s" />
+            <animateTransform attributeName="transform" xlink:href="#circleID" type="scale" values="0.2;2;1" fill="freeze" begin="6s" dur="1s" />
+            
+        </g>
+
+        <g transform="translate(420,90)">
+            <ellipse id="ellipseID" fill="rgb(230,230,230)" stroke="rgb(255,180,0)" rx="40" ry="20"/>
+            
+            <animateTransform attributeName="transform" xlink:href="#ellipseID" type="rotate" values="0;90" fill="freeze" begin="0s" dur="1s"/>
+            <animateTransform attributeName="transform" xlink:href="#ellipseID" type="rotate" values="90;360;0" fill="freeze" begin="6s" dur="1s"/>
+            
+        </g>
+
+        <g transform="translate(60,220)">
+            <line id="lineID" stroke="rgb(255,180,0)" stroke-width="10" stroke-linecap="round" x1="-30" y1="-20" x2="30" y2="20"/>
+            <animateTransform attributeName="transform" xlink:href="#lineID" type="rotate" values="0;90" fill="freeze" begin="0s" dur="1s"/>
+            <animateTransform attributeName="transform" xlink:href="#lineID" type="rotate" values="90;180;0" fill="freeze" begin="6s" dur="1s"/>
+            
+        </g>
+            
+        <g transform="translate(180,220)">
+            <polyline id="polylineID" stroke="rgb(255,180,0)" stroke-width="10" stroke-linecap="round" fill="none" stroke-linejoin="round" points="-30 20 -30 -20 30 20 30 -20"/>
+            <animateTransform attributeName="transform" xlink:href="#polylineID" type="rotate" values="0;90" begin="0s" fill="freeze" dur="1s"/>
+            <animateTransform attributeName="transform" xlink:href="#polylineID" type="rotate" values="90;180;0" begin="6s" fill="freeze" dur="1s"/>
+            
+        </g>
+            
+        <g transform="translate(300,220)">
+            <polygon id="polygonID" fill="rgb(230,230,230)" stroke="rgb(255,180,0)" points="-30 20 -30 -20 30 20 30 -20"/>
+            <animateTransform attributeName="transform" xlink:href="#polygonID" type="rotate" values="0;90" fill="freeze" begin="0s" dur="1s"/>
+            <animateTransform attributeName="transform" xlink:href="#polygonID" type="rotate" values="90;180;0" fill="freeze" begin="6s" dur="1s"/>
+            
+        </g>
+    </g>
+</svg>

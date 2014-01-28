@@ -1,0 +1,137 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>My title</title>
+<script>
+<![CDATA[
+
+function init()
+{
+  document.getElementById('numval').value = document.getElementById('redrect').width.baseVal.value;
+  var opt = document.getElementById('redrect').width.baseVal.unitType;
+  document.getElementById('numunit').options[opt].selected = "selected";
+}
+
+function GetViewport(elm)
+{
+  var vp = elm.viewport;
+
+  if (!vp)
+    vp = elm.viewportElement.viewport;
+
+  var str = "Viewport: [x = " + vp.x + " y = " + vp.y + " w = " + vp.width + " h = " + vp.height + "]";
+  alert(str);
+}
+
+function AnimationStatus(elm)
+{
+  var status = elm.animationsPaused();
+  var statstr = "running";
+  if(status == true)
+    statstr = "paused";
+
+  var str = "Animations are " + statstr + ".";
+  alert(str);
+}
+
+function GetClock(elm)
+{
+  var time = elm.getCurrentTime();
+  var str = "Current time: " + time + ".";
+  alert(str);
+}
+
+function GetAnimClock(elm)
+{
+  var time = document.getElementById('secondsvg').getCurrentTime();
+  var anim_time = elm.getCurrentTime();
+  var start_time = elm.getStartTime();
+  var duration = elm.getSimpleDuration();
+  var target = elm.targetElement;
+  var str = "Current (anim) time: " + time + " / " + anim_time + " / " + start_time + " / " + duration + " : " + target;
+  alert(str);
+}
+
+function PrintLength(elm)
+{
+  var len = elm.width.baseVal;
+  var str = "Width: " + len.valueAsString + ".";
+  alert(str);
+}
+
+function PrintUserLength(elm)
+{
+  var len = elm.width.baseVal;
+  var str = "Width: " + len.value + ".";
+  alert(str);
+}
+
+function ChangeLength(elm)
+{
+  var newval = parseFloat(document.getElementById('numval').value);
+  var unitdropdown = document.getElementById('numunit');
+  var unit = SVGLength[unitdropdown.value];
+  elm.width.baseVal.newValueSpecifiedUnits(unit, newval);
+  
+  //var str = "Setting value: " + newval + " " + unit + ".";
+  //alert(str);
+}
+
+]]>
+</script>
+
+</head>
+
+<body onload="init();">
+<div style="margin-left: 10px"><span style="margin-left: -10px">Select me!</span>asd</div>asd
+  <table><tr><td>
+  <button onclick="GetViewport(document.getElementById('svgElement'));">Get viewport of root</button><br/>
+  <button onclick="GetViewport(document.getElementById('triangle'));">Get viewport of triangle</button><br/>
+  <button onclick="GetViewport(document.getElementById('subSvgElement'));">Get viewport of subdoc</button><br/>
+  <button onclick="document.getElementById('secondsvg').pauseAnimations();">Pause animation</button><br/>
+  <button onclick="document.getElementById('secondsvg').unpauseAnimations();">Unpause animation</button><br/>
+  <button onclick="AnimationStatus(document.getElementById('secondsvg'));">IsPaused?</button><br/>
+  <button onclick="document.getElementById('secondsvg').setCurrentTime(0);">Set clock to zero</button><br/>
+  <button onclick="GetClock(document.getElementById('secondsvg'));">Get clock</button><br/>
+  <button onclick="GetAnimClock(document.getElementById('anim'));">Get elm clock</button><br/>
+  <button onclick="PrintLength(document.getElementById('redrect'));">Measure rect (spec)</button><br/>
+  <button onclick="PrintUserLength(document.getElementById('redrect'));">Measure rect (user)</button><br/>
+  <button onclick="ChangeLength(document.getElementById('redrect'));">Set red rect width</button><br/>
+  <input type="text" name="len" id="numval" size="10"/>
+  <select id="numunit">
+   <option value="SVG_LENGTHTYPE_UNKNOWN">unknown</option>
+   <option value="SVG_LENGTHTYPE_NUMBER">number</option>
+   <option value="SVG_LENGTHTYPE_PERCENTAGE">%</option>
+   <option value="SVG_LENGTHTYPE_EMS">em</option>
+   <option value="SVG_LENGTHTYPE_EXS">ex</option>
+   <option value="SVG_LENGTHTYPE_PX">px</option>
+   <option value="SVG_LENGTHTYPE_CM">cm</option>
+   <option value="SVG_LENGTHTYPE_MM">mm</option>
+   <option value="SVG_LENGTHTYPE_IN">in</option>
+   <option value="SVG_LENGTHTYPE_PT">pt</option>
+   <option value="SVG_LENGTHTYPE_PC">pc</option>
+  </select>
+  </td><td>
+  <svg xmlns="http://www.w3.org/2000/svg" width="600px" height="400px" id="svgElement">
+    <polyline points="0,0 600,0 600,400 0,400 0,0"
+                  style="stroke:black; fill:none;"/>
+    <polygon id="triangle"
+                 points="50,50 50,300 300,300"
+                 style=" fill:blue; stroke:black;"/>
+  <svg width="100" height="100" x="400" y="200" id="subSvgElement">
+	<rect id="redrect2" x="1" y="1" width="50" height="50" fill="red" stroke="blue" stroke-width="2"/>
+  </svg>
+  </svg>
+  </td></tr>
+  <tr>
+   <td>
+    <svg id="secondsvg" xmlns="http://www.w3.org/2000/svg" width="400" height="400">
+	<polyline points="0,0 400,0 400,400 0,400 0,0" stroke="black" fill="none"/>
+	<rect id="redrect" x="10" y="10" width="100" height="100" stroke="blue" stroke-width="4" fill="white">
+	 <animate id="anim" attributeName="fill" values="red;violet;blue;green;yellow;blue;white;brown" dur="20s" begin="2s" repeatCount="indefinite"/>
+	</rect>
+    </svg>
+   </td>
+  </tr></table>
+</body>
+</html>
+

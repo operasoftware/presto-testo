@@ -1,0 +1,19 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:svg="http://www.w3.org/2000/svg">
+ <head>
+  <title>SVG clip-path from external file in HTML</title>
+  <style>
+    .target { clip-path: url(003-1.svg#c1); }
+    .success { display: block-inline; height: 50px; width: 300px; background: lime; }
+    .failure { display: block-inline; height: 50px; width: 300px; background: red; }
+  </style>
+ </head>
+<body>
+  <p>There should be a green rectangle below, and there should be no red.
+  </p>
+  <p class="target">
+    <span class="failure"></span>
+    <span class="success"></span>
+  </p>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN"
+"http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<!-- Created with Sodipodi ("http://www.sodipodi.com/") --><svg height="437.5" id="svg1" version="1.0" width="437.5" x="0" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0">
+  <metadata>
+    <rdf:RDF xmlns:cc="http://web.resource.org/cc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+      <cc:Work rdf:about="">
+        <dc:title>Lemon SVG theme</dc:title>
+        <dc:description></dc:description>
+        <dc:subject>
+          <rdf:Bag>
+            <rdf:li>icon</rdf:li>
+            <rdf:li></rdf:li>
+            <rdf:li>application</rdf:li>
+            <rdf:li>lemon_theme_icon</rdf:li>
+            <rdf:li>icons</rdf:li>
+            <rdf:li>hash</rdf:li>
+            <rdf:li>computer</rdf:li>
+            <rdf:li>theme</rdf:li>
+          </rdf:Bag>
+        </dc:subject>
+        <dc:publisher>
+          <cc:Agent rdf:about="http://www.openclipart.org">
+            <dc:title>Jose Hevia</dc:title>
+          </cc:Agent>
+        </dc:publisher>
+        <dc:creator>
+          <cc:Agent>
+            <dc:title>Jose Hevia</dc:title>
+          </cc:Agent>
+        </dc:creator>
+        <dc:rights>
+          <cc:Agent>
+            <dc:title>Jose Hevia</dc:title>
+          </cc:Agent>
+        </dc:rights>
+        <dc:date></dc:date>
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+        <cc:license rdf:resource="http://web.resource.org/cc/PublicDomain"/>
+        <dc:language>en</dc:language>
+      </cc:Work>
+      <cc:License rdf:about="http://web.resource.org/cc/PublicDomain">
+        <cc:permits rdf:resource="http://web.resource.org/cc/Reproduction"/>
+        <cc:permits rdf:resource="http://web.resource.org/cc/Distribution"/>
+        <cc:permits rdf:resource="http://web.resource.org/cc/DerivativeWorks"/>
+      </cc:License>
+    </rdf:RDF>
+  </metadata>
+  <defs id="defs3">
+    <linearGradient id="linearGradient573">
+      <stop id="stop574" offset="0" style="stop-color:#ffff00;stop-opacity:1;"/>
+      <stop id="stop575" offset="1" style="stop-color:#9ddd00;stop-opacity:1;"/>
+    </linearGradient>
+    <linearGradient id="linearGradient51">
+      <stop id="stop52" offset="0" style="stop-color:#001d00;stop-opacity:0.749;"/>
+      <stop id="stop53" offset="1" style="stop-color:#001f00;stop-opacity:0;"/>
+    </linearGradient>
+    <linearGradient id="linearGradient54" xlink:href="#linearGradient573"/>
+    <linearGradient id="linearGradient55" x1="0.38211399" x2="0.52032501" xlink:href="#linearGradient573" y1="0.453134" y2="0.53906202"/>
+    <radialGradient id="radialGradient717" xlink:href="#linearGradient51"/>
+    <radialGradient cx="0.5" cy="0.5" fx="0.5" fy="0.5" id="radialGradient718" r="0.5" xlink:href="#linearGradient51"/>
+  </defs>
+  <path d="M 425.0439 381.7509 C 425.0439 399.0716 339.2337 413.1126 233.3813 413.1126 C 127.529 413.1126 41.7189 399.0716 41.7189 381.7509 C 41.7189 364.4302 127.529 350.3889 233.3813 350.3889 C 339.2337 350.3889 425.0439 364.4302 425.0439 381.7509 z " id="path703" style="font-size:12;fill:url(#radialGradient718);fill-opacity:1;fill-rule:evenodd;stroke:url(#radialGradient717);stroke-width:1.554943;"/>
+  <path d="M 212.1552 16.92088 C 157.2264 6.251669 1.393262 303.1454 50.96076 326.7735 C 93.28229 343.5149 289.1469 244.7116 296.1819 226.7682 C 298.5696 215.147 99.38739 302.6417 92.11679 275.9511 C 85.27748 261.6277 196.9609 79.54847 210.4403 80.85873 C 225.1525 81.92251 353.3969 326.5953 361.3457 323.4947 C 382.1296 270.2819 264.7039 31.30782 212.1552 16.92088 z " id="path694" style="font-size:12;fill:url(#linearGradient54);fill-opacity:1;fill-rule:evenodd;stroke:#006930;stroke-width:7.449378;"/>
+</svg>

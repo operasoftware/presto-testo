@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC  "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+      <meta name="keywords" content="W3C SVG 1.1 2nd Edition Test Suite"/>
+      <meta name="description" content="W3C SVG 1.1 2nd Edition Object Mini Test Suite"/>
+      <title>
+SVG 1.1 2nd Edition Test (&lt;object&gt;): interact-pevents-05-b.svg
+      </title>
+      <link href="harness_mini.css" rel="stylesheet" type="text/css" />
+      <link rel="prev" href="interact-pevents-04-t.html" />
+      <link rel="index" href="index.html" />
+      <link rel="next" href="interact-pevents-07-t.html" />
+      <script src="../resources/testharnessreport.js"></script>
+    </head>
+  <body class="bodytext">
+    <div class="linkbar">
+      <p>
+        <a href="interact-pevents-04-t.html" rel="prev">interact-pevents-04-t ←</a>
+        <a href="index.html" rel="index">index</a>
+        <a href="interact-pevents-07-t.html" rel="next">→ interact-pevents-07-t</a>
+      </p>
+    </div>
+<table border="0" align="center" cellspacing="0" cellpadding="10">
+  <tr>
+    <td align="center" colspan="3">
+      <table border="0" cellpadding="8">
+        <tr  class="navbar">
+          <td align="center">
+            SVG Image
+          </td>
+          <td align="center">
+            PNG Image
+          </td>
+        </tr>
+        <tr>
+          <td align="right">
+            <object data="../../svg/interact-pevents-05-b.svg" width="480" height="360" type="image/svg+xml"><p style="font-size:300%;color:red">FAIL</p></object>
+          </td>
+          <td align="left">
+            <img alt="raster image of interact-pevents-05-b.svg" src="../../png/interact-pevents-05-b.png" width="480" height="360"/>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+
+<div>
+    <h4 id="operatorscript" onclick="var t = document.getElementById('operatortext'); t.style.display=(t.style.display=='none' ? 'inline' : 'none');">
+      <em>Operator script (click here to toggle)</em>
+    </h4>
+    <div id="operatortext" style="display:none">
+<p>Consider each of the two light blue boxes to be divided up into nine vertical strips:
+      five consisting of areas just wide enough to fit each of the glyphs, and four
+      consisting of the white space between those five other strips.  For each of these
+      vertical strips, move the mouse slowly from the top of the light blue box to the bottom,
+      keeping the mouse within the strip.  At various points, all of the glyphs within
+      the box will be green and at others they will all be black.</p>
+  </div>
+  </div>
+    <h4 id="passcriteria">
+      Pass Criteria
+    </h4>
+    <div>
+<p>When the mouse is over a glyph, then all of the glyphs within the light blue box
+      must be green.</p><p>When the mouse is within one of the white space strips, then all of the glyphs
+      within the light blue box must be black.</p><p>When the mouse is within the strip containing the first, second or fourth
+      glyph ("@", "A" or "Ö") and it is below the glyph, then all of the glyphs
+      within the light blue box must be black.</p><p>When the mouse is within the strip containing the second, third, fourth or
+      fifth glyph ("A", "y", "Ö" or "ç") and it is above the glyph, then all of the glyphs
+      within the light blue box must be black.</p>
+    </div>
+    <br />
+    <div class="linkbar">
+      <p>
+        <a href="interact-pevents-04-t.html" rel="prev">interact-pevents-04-t ←</a>
+        <a href="index.html" rel="index">index</a>
+        <a href="interact-pevents-07-t.html" rel="next">→ interact-pevents-07-t</a>
+      </p>
+    </div>
+  </body>
+</html>

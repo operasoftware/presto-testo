@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="iso-8859-1" ?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" 
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="95%" height="100%" viewBox="-200 -200 1000 1000"
+  xmlns="http://www.w3.org/2000/svg" version="1.1"
+  xmlns:xlink="http://www.w3.org/1999/xlink">
+
+<title>Additive animation of text  y and y with tspan</title> 
+<desc>
+Two values animations are added with additive sum for
+x and y of text ('abcd') and tspan inside ('bc').
+The visible result for an additive behaviour 
+is that the blue 'abcd' covers exactly the red 'abcd' without 
+any visible animation effect.
+If the blue text moves somehow and the red gets visible,
+the animation is not additive as indicated in grey.
+If red and grey glyphs are both visible, this indicates an even
+different behaviour.
+
+Behaviour of different viewers:
+
+Adobe plugin (3.01 Beta Release 1, Build 88): shows additive behaviour
+Squiggle 1.7:  shows additive behaviour
+Opera 8.x: different nonsense
+Opera 9.tp1: non additive behaviour
+Opera 9.tp2/beta1: 3/4 non additive behaviour, 1/4 nonsense
+Opera 9beta2/9.0x/9.1x/9.2x: different behaviour
+Opera 9.50alpha/beta: 3/4 non additive behaviour, 1/4 nonsense
+</desc> 
+
+
+<animate xlink:href="#text"
+	attributeName="x" 
+	attributeType="XML"
+	values="100,150,200,250;200,200,200,200"
+	dur="6s"
+	repeatCount="indefinite" />
+<animate xlink:href="#text"
+	attributeName="y" 
+	attributeType="XML"
+	values="100,150,200,250;500,450,400,350"
+	dur="5.3s"
+	repeatCount="indefinite" />
+
+<animate xlink:href="#text"
+	attributeName="x" 
+	attributeType="XML"
+	values="200,200,200,200;100,150,200,250"
+	dur="6s"
+	repeatCount="indefinite"
+	additive="sum" />
+<animate xlink:href="#text"
+	attributeName="y" 
+	attributeType="XML"
+	values="500,450,400,350;100,150,200,250"
+	dur="5.3s"
+	repeatCount="indefinite"
+	additive="sum" />
+
+
+<animate xlink:href="#tspan"
+	attributeName="x" 
+	attributeType="XML"
+	values="50,100;100,200"
+	dur="6s"
+	repeatCount="indefinite" />
+<animate xlink:href="#tspan"
+	attributeName="y" 
+	attributeType="XML"
+	values="50,100;100,50"
+	dur="5.3s"
+	repeatCount="indefinite" />
+
+<animate xlink:href="#tspan"
+	attributeName="x" 
+	attributeType="XML"
+	values="250,350;200,250"
+	dur="6s"
+	repeatCount="indefinite"
+	additive="sum" />
+<animate xlink:href="#tspan"
+	attributeName="y" 
+	attributeType="XML"
+	values="350,300;300,350"
+	dur="5.3s"
+	repeatCount="indefinite"
+	additive="sum" />
+
+
+
+
+
+
+<animate xlink:href="#na1"
+	attributeName="x" 
+	attributeType="XML"
+	values="200;100"
+	dur="6s"
+	repeatCount="indefinite" />
+<animate xlink:href="#na1"
+	attributeName="y" 
+	attributeType="XML"
+	values="500;100" 
+	dur="5.3s"
+	repeatCount="indefinite" />
+
+
+<animate xlink:href="#na2"
+	attributeName="x" 
+	attributeType="XML"
+	values="250;200"
+	dur="6s"
+	repeatCount="indefinite" />
+<animate xlink:href="#na2"
+	attributeName="y" 
+	attributeType="XML"
+	values="350;300" 
+	dur="5.3s"
+	repeatCount="indefinite" />
+
+
+<animate xlink:href="#na3"
+	attributeName="x" 
+	attributeType="XML"
+	values="350;250"
+	dur="6s"
+	repeatCount="indefinite" />
+<animate xlink:href="#na3"
+	attributeName="y" 
+	attributeType="XML"
+	values="300;350" 
+	dur="5.3s"
+	repeatCount="indefinite" />
+
+
+<animate xlink:href="#na4"
+	attributeName="x" 
+	attributeType="XML"
+	values="200;250"
+	dur="6s"
+	repeatCount="indefinite" />
+<animate xlink:href="#na4"
+	attributeName="y" 
+	attributeType="XML"
+	values="350;250" 
+	dur="5.3s"
+	repeatCount="indefinite" />
+
+
+
+
+
+
+
+
+
+<rect x="-200" y="-200" width="1000" height="1000" fill="#ffd" />
+
+
+<g font-size="200" font-family="monospace" fill="#f00">
+
+<text id="na1" x="0" y="0" fill="#ccc">a</text>
+<text id="na2" x="500" y="500" fill="#ccc">b</text>
+<text id="na3" x="500" y="500" fill="#ccc">c</text>
+<text id="na4" x="0" y="0" fill="#ccc">d</text>
+
+<text x="300" y="600">a</text>
+<text x="300" y="400">b</text>
+<text x="450" y="400">c</text>
+<text x="450" y="600">d</text>
+
+<text id="text" x="0,0,0,0" y="0,0,0,0" 
+          fill="#00f">a<tspan id="tspan" 
+          x="500,500" y="500,500">bc</tspan>d</text> 
+
+</g>
+
+
+</svg>
+

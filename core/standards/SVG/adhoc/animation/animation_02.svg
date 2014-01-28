@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1 Tiny//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11-tiny.dtd">
+
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="400" height="400">
+  <rect  x="140" y="-10" width="60" height="210" fill="#FFAA44" stroke="#FF00FF" stroke-width="4">
+      <animate attributeName="height" calcMode="discrete" values="210;177;121;10" begin="0s" dur="8s" fill="freeze"/>
+  </rect>
+</svg>

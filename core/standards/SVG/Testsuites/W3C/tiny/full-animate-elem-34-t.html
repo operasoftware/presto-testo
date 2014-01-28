@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <!DOCTYPE html PUBLIC  "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>Tests animation of attributes points and fill-rule</title>
+</head>
+<body>
+<table>
+<tr>
+<td align="center">SVG Image</td>
+<td align="center">Reference Image</td>
+</tr>
+<tr>
+<td align="right">
+<object data="../svggen/animate-elem-34-t.svg" width="480" height="360" type="image/svg+xml"/>
+</td>
+<td align="left">
+<img alt="raster image of animate-elem-34-t" src="../png/full-animate-elem-34-t.png" width="480" height="360"/>
+</td>
+</tr>
+</table>
+<p>
+The first test is a polygon shaped as a digit. The polygon has an animation on its vertex points which
+morphs the polygon between the numbers 1, 2, 3 and 4. The gray outlines indicates the expected position 
+of the polygon at 1, 2, 3 and 4s.
+</p>
+<p>
+The second test is 4 paths in a u-shape. The expected result is that one path at a time is filled.
+Which path that should be filled at which time is indicated by the number above it.
+</p>
+</body>
+</html>

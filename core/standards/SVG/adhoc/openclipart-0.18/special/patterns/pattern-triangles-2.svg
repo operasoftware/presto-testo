@@ -1,0 +1,124 @@
+<?xml version="1.0"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN"
+	"http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<svg height="200" width="100">
+  <metadata>
+    <rdf:RDF xmlns:cc="http://web.resource.org/cc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+      <cc:Work rdf:about="">
+        <dc:title>triangles equal 2 pattern</dc:title>
+        <dc:description></dc:description>
+        <dc:subject>
+          <rdf:Bag>
+            <rdf:li>pattern</rdf:li>
+          </rdf:Bag>
+        </dc:subject>
+        <dc:publisher>
+          <cc:Agent rdf:about="http://www.openclipart.org">
+            <dc:title>Alan Horkan</dc:title>
+          </cc:Agent>
+        </dc:publisher>
+        <dc:creator>
+          <cc:Agent>
+            <dc:title>Alan Horkan</dc:title>
+          </cc:Agent>
+        </dc:creator>
+        <dc:rights>
+          <cc:Agent>
+            <dc:title>Alan Horkan</dc:title>
+          </cc:Agent>
+        </dc:rights>
+        <dc:date></dc:date>
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+        <cc:license rdf:resource="http://web.resource.org/cc/PublicDomain"/>
+        <dc:language>en</dc:language>
+      </cc:Work>
+      <cc:License rdf:about="http://web.resource.org/cc/PublicDomain">
+        <cc:permits rdf:resource="http://web.resource.org/cc/Reproduction"/>
+        <cc:permits rdf:resource="http://web.resource.org/cc/Distribution"/>
+        <cc:permits rdf:resource="http://web.resource.org/cc/DerivativeWorks"/>
+      </cc:License>
+    </rdf:RDF>
+  </metadata>
+  <defs>
+    <pattern height="200" id="triangles-equal-2" patternContentUnits="userSpaceOnUse" patternUnits="userSpaceOnUse" width="100">
+      <g>
+        <polygon points="0,20 10,0 20,20" style="fill:red;stroke:red;stroke-width:0"/>
+        <polygon points="20,20 30,0 40,20" style="fill:red;stroke:red;stroke-width:0"/>
+        <polygon points="40,20 50,0 60,20" style="fill:red;stroke:red;stroke-width:0"/>
+        <polygon points="60,20 70,0 80,20" style="fill:red;stroke:red;stroke-width:0"/>
+        <polygon points="80,20 90,0 100,20" style="fill:red;stroke:red;stroke-width:0"/>
+      </g>
+      <!--Alan woz 'ere.  -->
+      <g>
+        <polygon points="-10,40 0,20 10,40" style="fill:red;stroke:red;stroke-width:0"/>
+        <polygon points="10,40 20,20 30,40" style="fill:red;stroke:red;stroke-width:0"/>
+        <polygon points="30,40 40,20 50,40" style="fill:red;stroke:red;stroke-width:0"/>
+        <polygon points="50,40 60,20 70,40" style="fill:red;stroke:red;stroke-width:0"/>
+        <polygon points="70,40 80,20 90,40" style="fill:red;stroke:red;stroke-width:0"/>
+        <polygon points="90,40 100,20 110,40" style="fill:red;stroke:red;stroke-width:0"/>
+      </g>
+      <g>
+        <polygon points="0,60 10,40 20,60" style="fill:red;stroke:red;stroke-width:0"/>
+        <polygon points="20,60 30,40 40,60" style="fill:red;stroke:red;stroke-width:0"/>
+        <polygon points="40,60 50,40 60,60" style="fill:red;stroke:red;stroke-width:0"/>
+        <polygon points="60,60 70,40 80,60" style="fill:red;stroke:red;stroke-width:0"/>
+        <polygon points="80,60 90,40 100,60" style="fill:red;stroke:red;stroke-width:0"/>
+      </g>
+      <g>
+        <polygon points="-10,80 0,60 10,80" style="fill:red;stroke:red;stroke-width:0"/>
+        <polygon points="10,80 20,60 30,80" style="fill:red;stroke:red;stroke-width:0"/>
+        <polygon points="30,80 40,60 50,80" style="fill:red;stroke:red;stroke-width:0"/>
+        <polygon points="50,80 60,60 70,80" style="fill:red;stroke:red;stroke-width:0"/>
+        <polygon points="70,80 80,60 90,80" style="fill:red;stroke:red;stroke-width:0"/>
+        <polygon points="90,80 100,60 110,80" style="fill:red;stroke:red;stroke-width:0"/>
+      </g>
+      <g>
+        <polygon points="0,100 10,80 20,100" style="fill:red;stroke:red;stroke-width:0"/>
+        <polygon points="20,100 30,80 40,100" style="fill:red;stroke:red;stroke-width:0"/>
+        <polygon points="40,100 50,80 60,100" style="fill:red;stroke:red;stroke-width:0"/>
+        <polygon points="60,100 70,80 80,100" style="fill:red;stroke:red;stroke-width:0"/>
+        <polygon points="80,100 90,80 100,100" style="fill:red;stroke:red;stroke-width:0"/>
+      </g>
+      <g>
+        <polygon points="-10,120 0,100 10,120" style="fill:red;stroke:red;stroke-width:0"/>
+        <polygon points="10,120 20,100 30,120" style="fill:red;stroke:red;stroke-width:0"/>
+        <polygon points="30,120 40,100 50,120" style="fill:red;stroke:red;stroke-width:0"/>
+        <polygon points="50,120 60,100 70,120" style="fill:red;stroke:red;stroke-width:0"/>
+        <polygon points="70,120 80,100 90,120" style="fill:red;stroke:red;stroke-width:0"/>
+        <polygon points="90,120 100,100 110,120" style="fill:red;stroke:red;stroke-width:0"/>
+      </g>
+      <g>
+        <polygon points="0,140 10,120 20,140" style="fill:red;stroke:red;stroke-width:0"/>
+        <polygon points="20,140 30,120 40,140" style="fill:red;stroke:red;stroke-width:0"/>
+        <polygon points="40,140 50,120 60,140" style="fill:red;stroke:red;stroke-width:0"/>
+        <polygon points="60,140 70,120 80,140" style="fill:red;stroke:red;stroke-width:0"/>
+        <polygon points="80,140 90,120 100,140" style="fill:red;stroke:red;stroke-width:0"/>
+      </g>
+      <g>
+        <polygon points="-10,160 0,140 10,160" style="fill:red;stroke:red;stroke-width:0"/>
+        <polygon points="10,160 20,140 30,160" style="fill:red;stroke:red;stroke-width:0"/>
+        <polygon points="30,160 40,140 50,160" style="fill:red;stroke:red;stroke-width:0"/>
+        <polygon points="50,160 60,140 70,160" style="fill:red;stroke:red;stroke-width:0"/>
+        <polygon points="70,160 80,140 90,160" style="fill:red;stroke:red;stroke-width:0"/>
+        <polygon points="90,160 100,140 110,160" style="fill:red;stroke:red;stroke-width:0"/>
+      </g>
+      <g>
+        <polygon points="0,180 10,160 20,180" style="fill:red;stroke:red;stroke-width:0"/>
+        <polygon points="20,180 30,160 40,180" style="fill:red;stroke:red;stroke-width:0"/>
+        <polygon points="40,180 50,160 60,180" style="fill:red;stroke:red;stroke-width:0"/>
+        <polygon points="60,180 70,160 80,180" style="fill:red;stroke:red;stroke-width:0"/>
+        <polygon points="80,180 90,160 100,180" style="fill:red;stroke:red;stroke-width:0"/>
+      </g>
+      <g>
+        <polygon points="-10,200 0,180 10,200" style="fill:red;stroke:red;stroke-width:0"/>
+        <polygon points="10,200 20,180 30,200" style="fill:red;stroke:red;stroke-width:0"/>
+        <polygon points="30,200 40,180 50,200" style="fill:red;stroke:red;stroke-width:0"/>
+        <polygon points="50,200 60,180 70,200" style="fill:red;stroke:red;stroke-width:0"/>
+        <polygon points="70,200 80,180 90,200" style="fill:red;stroke:red;stroke-width:0"/>
+        <polygon points="90,200 100,180 110,200" style="fill:red;stroke:red;stroke-width:0"/>
+      </g>
+    </pattern>
+  </defs>
+  <rect fill="url(#triangles-equal-2)" height="200" width="100" x="0" y="0"/>
+</svg>
