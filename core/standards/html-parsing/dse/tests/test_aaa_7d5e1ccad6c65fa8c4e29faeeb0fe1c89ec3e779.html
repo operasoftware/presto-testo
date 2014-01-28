@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf8">
+    <title>HTML 5 Parser test</title>
+    <script src="../common.js"></script>
+    <script src="../test.js"></script>
+    <script src="/resources/testharness.js"></script>
+    <script src="/resources/testharnessreport.js"></script>
+    <script>
+      var t = async_test();
+      on_event(window, "load", function() {
+        t.step(function() {
+          test_in_data_uri("%3Cscript%20data-skip%3Edocument.write%28%22%3Cb%3E%22%29%3C/script%3Ea%3Ci%3Eb%3Cdiv%3Ec%3C/b%3Ed%3C/i%3Ee%3C/div%3E", "%23document%0A%7C%20%3Chtml%3E%0A%7C%20%20%20%3Chead%3E%0A%7C%20%20%20%3Cbody%3E%0A%7C%20%20%20%20%20%3Cb%3E%0A%7C%20%20%20%20%20%20%20%22a%22%0A%7C%20%20%20%20%20%20%20%3Ci%3E%0A%7C%20%20%20%20%20%20%20%20%20%22b%22%0A%7C%20%20%20%20%20%3Ci%3E%0A%7C%20%20%20%20%20%3Cdiv%3E%0A%7C%20%20%20%20%20%20%20%3Ci%3E%0A%7C%20%20%20%20%20%20%20%20%20%3Cb%3E%0A%7C%20%20%20%20%20%20%20%20%20%20%20%22c%22%0A%7C%20%20%20%20%20%20%20%20%20%22d%22%0A%7C%20%20%20%20%20%20%20%22e%22");
+        })
+      })
+    </script>
+  </head>
+  <body>
+    <h1>html5lib Parser Test</h1>
+    <div id="log"></div>
+    <div id="input">
+      <h2>Input</h2>
+      <pre><code>&lt;script data-skip&gt;document.write("&lt;b&gt;")&lt;/script&gt;a&lt;i&gt;b&lt;div&gt;c&lt;/b&gt;d&lt;/i&gt;e&lt;/div&gt;</code></pre>
+    </div>
+    <div id="expected">
+      <h2>Expected</h2>
+      <pre><code>#document
+| &lt;html&gt;
+|   &lt;head&gt;
+|   &lt;body&gt;
+|     &lt;b&gt;
+|       "a"
+|       &lt;i&gt;
+|         "b"
+|     &lt;i&gt;
+|     &lt;div&gt;
+|       &lt;i&gt;
+|         &lt;b&gt;
+|           "c"
+|         "d"
+|       "e"</code></pre>
+    </div>
+    <div id="actual">
+      <h2>Actual</h2>
+      <pre><code></code></pre>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<title>Wrapping in textareas</title>
+<style>
+pre, textarea {
+	font: 12px "Courier New" monospace;
+	resize: none;
+}
+textarea {
+	overflow: auto;
+}
+</style>
+</head>
+<body>
+
+<p>The text in the textarea below should wrap at the same place as in the paragraph below it.</p>
+
+<p>
+  <textarea rows="10" cols="50">If a line of text in a textarea is the exact width of the textarea and the next character is a space, the last word on the line should wrap to the following line.</textarea>
+</p>
+
+<pre>If a line of text in a textarea is the exact
+width of the textarea and the next character is a
+space, the last word on the line should wrap to
+the following line.</pre>
+
+</body>
+</html>

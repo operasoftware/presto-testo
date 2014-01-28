@@ -1,0 +1,39 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+<head>
+<title>COLGROUP :: width : pixels</title>
+<style type="text/css">
+table {
+	border-spacing: 0;
+	margin-bottom: 20px;
+}
+td, div {
+	padding: 0;
+	border: 1px solid black;
+}
+div {
+	width: 75px;
+	display: table-cell;
+}
+</style>
+</head>
+
+<body>
+<p>you should see two identical boxes below</p>
+
+<table>
+<colgroup width="75">
+	<col>
+	<col>
+</colgroup>
+	<tr>
+		<td>text </td>
+		<td>text </td>
+	</tr>
+</table>
+
+<div>text </div>
+<div>text </div>
+
+</body>
+</html>

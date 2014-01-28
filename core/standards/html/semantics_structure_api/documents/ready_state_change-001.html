@@ -1,0 +1,35 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>readystatechange Events</title>
+<script src="/resources/testharness.js"></script>
+<script src="/resources/testharnessreport.js"></script>
+<div id="log"></div>
+<script>
+var readystatechange_count = 0;
+var domcontentloaded_count = 0;
+var load_count = 0;
+
+document.addEventListener("readystatechange", function() {
+  readystatechange_count++;
+}, false);
+
+var t_domcontentloaded = async_test("readystatechange before DOMContentLoaded (transition to interactive state)");
+document.addEventListener("DOMContentLoaded", 
+  t_domcontentloaded.step_func(
+    function() {
+        domcontentloaded_count = readystatechange_count;
+        assert_equals(domcontentloaded_count, 1);
+        t_domcontentloaded.done();
+    },
+  false));
+
+var t_load = async_test("readystatechange event before load (transition to complete state)");
+window.addEventListener("load", 
+  t_load.step_func(
+    function() {
+        load_count = readystatechange_count - domcontentloaded_count;
+        assert_equals(load_count, 1);
+        t_load.done();
+    },
+  false));
+</script>

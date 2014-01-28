@@ -1,0 +1,23 @@
+<!doctype html>
+006-1
+<script>
+onpagehide = function() {
+  console.log("pagehide");
+  onpagehide = null;
+  setTimeout(function() {
+               console.log("timeout");
+               parent.t.done()
+             }, 1000);
+}
+onload = function() {
+  if (!parent.loaded) {
+    parent.loaded = true;
+    setTimeout(parent.t.step_func(
+       function() {
+         console.log(history.length)
+         location="006-2.html?" + Math.random();
+       }
+    ), 100);
+  }
+}
+</script>

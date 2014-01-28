@@ -1,0 +1,28 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+<head>
+<title>IFRAME :: width : %</title>
+<style type="text/css">
+div, iframe {
+	border: 1px solid black;
+}
+div {
+	width: 20%;
+	height: 100px;
+	background: #3366CC;
+}
+iframe {
+	height: 100px;
+}
+</style>
+</head>
+
+<body>
+<p>the two boxen below should be identical in width</p>
+
+<iframe src="http://t/core/standards/html401/helper-dummy.html" width="20%">FAIL</iframe>
+
+<div></div>
+
+</body>
+</html>

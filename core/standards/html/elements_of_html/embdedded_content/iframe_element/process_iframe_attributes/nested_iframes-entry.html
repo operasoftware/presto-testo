@@ -1,0 +1,27 @@
+<!doctype html>
+<iframe></iframe>
+<script>
+function parse_query() {
+    var query = location.search.slice(1);
+    var vars = query.split("&");
+    var fields = {};
+    vars.forEach(
+        function (x) {
+            var split = x.split("=");
+            return fields[split[0]] = split.slice(1).join("=");
+        });
+    return fields;
+}
+
+var query_parts = parse_query();
+var urls_to_load = query_parts.urls.split(",");
+
+var next_page = decodeURIComponent(urls_to_load[0]);
+(next_page.indexOf("?") > -1) ? (next_page += "&") : (next_page += "?");
+next_page += "urls=" + urls_to_load.slice(1).join(",");
+if ("fragments" in query_parts) {
+  next_page += "&fragments=true";
+  next_page += "#" + Math.random();
+}
+document.getElementsByTagName("iframe")[0].src = next_page;
+</script>

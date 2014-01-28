@@ -1,0 +1,30 @@
+<!doctype html>
+<title>IDL attributes of script elements></title>
+<script src="/resources/testharness.js"></script>
+<script src="/resources/idlharness.js"></script>
+<script src="/resources/WebIDLParser.js"></script>
+<script src="/resources/testharnessreport.js"></script>
+<script type="text/plain" id="idl">
+interface HTMLScriptElement : HTMLElement {
+           attribute DOMString src;
+           attribute boolean async;
+           attribute boolean defer;
+           attribute DOMString type;
+           attribute DOMString charset;
+           attribute DOMString text;
+};
+</script>
+<div id="log"></div>
+<script>
+ var idl_array = new IdlArray();
+ idl_array.add_idls(document.getElementById("idl").textContent);
+ idl_array.add_objects({HTMLScriptElement: ["document.createElement('script')"]});
+ idl_array.test();
+</script>
+<script>
+["src", "async", "defer", "type", "charset", "text"].forEach(function(x) {
+  test(function() {x in document.createElement("script")}, x + " attribute somewhere on script prototype chain");
+});
+test(function() {assert_true(document.createElement("script").async)}, "async attribute is true for empty script");
+test(function() {assert_false(document.createElement("script").defer)}, "defer attribute is false for empty script");
+</script>

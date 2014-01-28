@@ -1,0 +1,15 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>document.readyState</title>
+<script src="/resources/testharness.js"></script>
+<script src="/resources/testharnessreport.js"></script>
+<div id="log"></div>
+<script>
+test(function() {assert_equals(document.readyState, "loading")},
+     "readyState before document has loaded");
+var t = async_test("readyState after document has loaded");
+onload = t.step_func(function() {assert_equals(document.readyState, "complete"); onload_fired=true; t.done();});
+
+var t_defer = async_test("readyState in defer script");
+</script>
+<script defer src="data:text/javascript,t_defer.step(function() {assert_equals(document.readyState, 'interactive'); t_defer.done();});"></script>

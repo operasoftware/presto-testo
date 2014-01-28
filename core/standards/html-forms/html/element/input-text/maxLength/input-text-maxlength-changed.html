@@ -1,0 +1,26 @@
+<!doctype html>
+<meta charset="utf-8" />
+<title>input type=text Dynamic maxlength change</title>
+
+<p>
+	Enter the word ”foobar” in the text field below.  You should only be able to
+	enter the first three characters of the word, as the variable of the
+	<var>maxlength</var> attribute has been dynamically reduced on page load.
+</p>
+
+<p>
+	Click submit.  You should see the word ”foo” on the following page.
+</p>
+
+<form action="../../../../res/return_single_post.rb" method="post">
+	<p>
+		<input id="test" name="test" type="text" maxlength="42" />
+		<input type="submit" name="submit" />
+	</p>
+</form>
+
+<script>
+	var test       = document.getElementById("test");
+	test.maxLength = "3";
+</script>
+

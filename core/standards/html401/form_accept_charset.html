@@ -1,0 +1,23 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Form accept-charset</title>
+</head>
+
+<body onload="document.forms[0].submit();">
+
+<form action="hlp/form_accept_charset.php" method="post" accept-charset="ISO-8859-5">
+
+	<p>Fail if the form submits without showing any warnings about invalid characters.</p>
+
+	<p><input type="text" name="textinput" value="♠"></p>
+
+	<noscript>
+		<p><input type="submit" value="Submit"></p>
+	</noscript>
+
+</form>
+
+</body>
+</html>

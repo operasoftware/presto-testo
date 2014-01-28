@@ -1,0 +1,83 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+    "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+    <title>SCRIPT :: type </title>
+    <style type="text/css">
+html {
+	font-family: sans-serif;
+	height: 100%;
+}
+#GOGIDialog {
+ 
+	color: rgb(0,0,0);
+	background-color: rgb(246,246,246);
+	margin: 0;
+	border: 1px solid rgb(0,0,0);
+	width:478px;
+        height:475px;
+}
+h1, input {
+	color: white;
+	background-color: rgb(185,18,41);
+}
+h1 {
+	font-size: 100%;
+	margin: 0;
+	border: 1px solid rgb(200, 48, 61);
+	border-right: 1px solid darkred;
+	border-bottom: 1px solid darkred;
+}
+#message {
+	font-family: monospace;
+	font-size: 83%;
+	padding: 5px;
+	border-top: 1px solid;
+	border-bottom: 1px solid lightgray;
+	max-height: 50%;
+	overflow: auto;
+	white-space: pre-wrap;
+}
+form {
+	text-align: right;
+	margin: 0;
+	min-height: 2em;
+}
+fieldset {border: none;}
+#prompt_field {
+	max-width: 98%;
+	display: none;
+}
+input {border: 1px solid black;}
+</style>
+</head>
+<body>
+    <p><a href ="javascript:damer()" id="link">clicking this you should get a dialog</a></p>
+    
+    
+    <p>In GOGI, the dialog should look like the one below</p>
+    
+    
+    
+    
+    
+    
+    <div id="GOGIDialog">
+        
+        <h1>GOGI Dialog</h1>
+	<div id="message">PASS</div>
+	    <form name=f>
+		<fieldset>
+		    <input type="text" id="prompt_field">
+		</fieldset>
+		<fieldset>
+		    <input type="submit" value="OK" onclick="SignalOK();" id="ok_button">
+		</fieldset>
+	    </form>
+        
+    </div>
+    
+    
+
+</body>
+</html>

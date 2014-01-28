@@ -1,0 +1,1 @@
+parent.t.step(function() {parent.assert_equals(document.readyState, 'interactive'); parent.events.push('async')})

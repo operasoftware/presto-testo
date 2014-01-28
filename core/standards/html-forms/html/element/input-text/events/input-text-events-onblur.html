@@ -1,0 +1,19 @@
+<!doctype html>
+<meta charset="utf-8" />
+<title>input type=text onblur event</title>
+
+<p>
+	Click on the text field below.  Then click on the submit button.  The text in
+	the field should change to ”foobar”.
+</p>
+
+<form>
+	<p>
+		<input name="test" id="test" type="text" value="This should change when you select something else!" onblur="this.value = 'foobar';" />
+	</p>
+</form>
+
+<p>
+	<input type="submit" name="submit" />
+</p>
+

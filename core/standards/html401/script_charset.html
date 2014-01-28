@@ -1,0 +1,29 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html;charset=iso-8859-2">
+<title>SCRIPT :: charset</title>
+<script charset="utf-8" type="text/javascript" src="data:text/javascript;charset=utf-8,var%20teststr%3D'%E2%96%A0'"></script>
+<style type="text/css">
+p {
+	color: #3366CC;
+	font-size: 72px;
+}
+</style>
+</head>
+
+<body>
+<p>FAILED TO EXECUTE SCRIPT</p>
+<script type="text/javascript">
+onload=function() {
+	if(teststr='\u9632') {
+		document.getElementsByTagName('p')[0].firstChild.data='PASS';
+	}
+	else {
+		document.getElementsByTagName('p')[0].firstChild.data='FAIL';
+	}
+}
+</script>
+
+</body>
+</html>

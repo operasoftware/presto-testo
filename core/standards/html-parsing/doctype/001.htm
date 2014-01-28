@@ -1,0 +1,232 @@
+<!doctype html>
+<title>The major DOCTYPE sniffing test</title>
+<p id="r">FAIL (script did not run)</p>
+<dl>
+ <dt><dfn>S</dfn>
+ <dd>No Quirks mode (or Standards mode)
+ <dt><dfn>A</dfn>
+ <dd>Limited Quirks mode (or Almost Standards mode)
+ <dt><dfn>Q</dfn>
+ <dd>Quirks mode
+</dl>
+<table id="f"></table>
+<iframe src="support/fail.htm"></iframe> <!-- need to display iframe for Firefox -->
+<script>
+  var tests = [
+    // Start HTML5 Stuff
+    ['<!DOCTYPE nothtml>', 'q'],
+    ['<!DOCTYPE html PUBLIC "+//Silmaril//dtd html Pro v0r11 19970101//EN" "TEST">', 'q'],
+    ['<!DOCTYPE html PUBLIC "-//AdvaSoft Ltd//DTD HTML 3.0 asWedit + extensions//EN" "TEST">', 'q'],
+    ['<!DOCTYPE html PUBLIC "-//AS//DTD HTML 3.0 asWedit + extensions//EN" "TEST">', 'q'],
+    ['<!DOCTYPE html PUBLIC "-//IETF//DTD HTML 2.0 Level 1//EN" "TEST">', 'q'],
+    ['<!DOCTYPE html PUBLIC "-//IETF//DTD HTML 2.0 Level 2//EN" "TEST">', 'q'],
+    ['<!DOCTYPE html PUBLIC "-//IETF//DTD HTML 2.0 Strict Level 1//EN" "TEST">', 'q'],
+    ['<!DOCTYPE html PUBLIC "-//IETF//DTD HTML 2.0 Strict Level 2//EN" "TEST">', 'q'],
+    ['<!DOCTYPE html PUBLIC "-//IETF//DTD HTML 2.0 Strict//EN" "TEST">', 'q'],
+    ['<!DOCTYPE html PUBLIC "-//IETF//DTD HTML 2.0//EN" "TEST">', 'q'],
+    ['<!DOCTYPE html PUBLIC "-//IETF//DTD HTML 2.1E//EN" "TEST">', 'q'],
+    ['<!DOCTYPE html PUBLIC "-//IETF//DTD HTML 3.0//EN" "TEST">', 'q'],
+    ['<!DOCTYPE html PUBLIC "-//IETF//DTD HTML 3.0//EN//" "TEST">', 'q'],
+    ['<!DOCTYPE html PUBLIC "-//IETF//DTD HTML 3.2 Final//EN" "TEST">', 'q'],
+    ['<!DOCTYPE html PUBLIC "-//IETF//DTD HTML 3.2//EN" "TEST">', 'q'],
+    ['<!DOCTYPE html PUBLIC "-//IETF//DTD HTML 3//EN" "TEST">', 'q'],
+    ['<!DOCTYPE html PUBLIC "-//IETF//DTD HTML Level 0//EN" "TEST">', 'q'],
+    ['<!DOCTYPE html PUBLIC "-//IETF//DTD HTML Level 0//EN//2.0">', 'q'],
+    ['<!DOCTYPE html PUBLIC "-//IETF//DTD HTML Level 1//EN" "TEST">', 'q'],
+    ['<!DOCTYPE html PUBLIC "-//IETF//DTD HTML Level 1//EN//2.0">', 'q'],
+    ['<!DOCTYPE html PUBLIC "-//IETF//DTD HTML Level 2//EN" "TEST">', 'q'],
+    ['<!DOCTYPE html PUBLIC "-//IETF//DTD HTML Level 2//EN//2.0">', 'q'],
+    ['<!DOCTYPE html PUBLIC "-//IETF//DTD HTML Level 3//EN" "TEST">', 'q'],
+    ['<!DOCTYPE html PUBLIC "-//IETF//DTD HTML Level 3//EN//3.0">', 'q'],
+    ['<!DOCTYPE html PUBLIC "-//IETF//DTD HTML Strict Level 0//EN" "TEST">', 'q'],
+    ['<!DOCTYPE html PUBLIC "-//IETF//DTD HTML Strict Level 0//EN//2.0" "TEST">', 'q'],
+    ['<!DOCTYPE html PUBLIC "-//IETF//DTD HTML Strict Level 1//EN" "TEST">', 'q'],
+    ['<!DOCTYPE html PUBLIC "-//IETF//DTD HTML Strict Level 1//EN//2.0" "TEST">', 'q'],
+    ['<!DOCTYPE html PUBLIC "-//IETF//DTD HTML Strict Level 2//EN" "TEST">', 'q'],
+    ['<!DOCTYPE html PUBLIC "-//IETF//DTD HTML Strict Level 2//EN//2.0" "TEST">', 'q'],
+    ['<!DOCTYPE html PUBLIC "-//IETF//DTD HTML Strict Level 3//EN" "TEST">', 'q'],
+    ['<!DOCTYPE html PUBLIC "-//IETF//DTD HTML Strict Level 3//EN//3.0" "TEST">', 'q'],
+    ['<!DOCTYPE html PUBLIC "-//IETF//DTD HTML Strict//EN" "TEST">', 'q'],
+    ['<!DOCTYPE html PUBLIC "-//IETF//DTD HTML Strict//EN//2.0">', 'q'],
+    ['<!DOCTYPE html PUBLIC "-//IETF//DTD HTML Strict//EN//3.0">', 'q'],
+    ['<!DOCTYPE html PUBLIC "-//IETF//DTD HTML//EN" "TEST">', 'q'],
+    ['<!DOCTYPE html PUBLIC "-//IETF//DTD HTML//EN//2.0">', 'q'],
+    ['<!DOCTYPE html PUBLIC "-//IETF//DTD HTML//EN//3.0">', 'q'],
+    ['<!DOCTYPE html PUBLIC "-//Metrius//DTD Metrius Presentational//EN" "TEST">', 'q'],
+    ['<!DOCTYPE html PUBLIC "-//Microsoft//DTD Internet Explorer 2.0 HTML Strict//EN" "TEST">', 'q'],
+    ['<!DOCTYPE html PUBLIC "-//Microsoft//DTD Internet Explorer 2.0 HTML//EN" "TEST">', 'q'],
+    ['<!DOCTYPE html PUBLIC "-//Microsoft//DTD Internet Explorer 2.0 Tables//EN" "TEST">', 'q'],
+    ['<!DOCTYPE html PUBLIC "-//Microsoft//DTD Internet Explorer 3.0 HTML Strict//EN" "TEST">', 'q'],
+    ['<!DOCTYPE html PUBLIC "-//Microsoft//DTD Internet Explorer 3.0 HTML//EN" "TEST">', 'q'],
+    ['<!DOCTYPE html PUBLIC "-//Microsoft//DTD Internet Explorer 3.0 Tables//EN" "TEST">', 'q'],
+    ['<!DOCTYPE html PUBLIC "-//Netscape Comm. Corp.//DTD HTML//EN" "TEST">', 'q'],
+    ['<!DOCTYPE html PUBLIC "-//Netscape Comm. Corp.//DTD Strict HTML//EN" "TEST">', 'q'],
+    ['<!DOCTYPE html PUBLIC "-//O\'Reilly and Associates//DTD HTML 2.0//EN" "TEST">', 'q'],
+    ['<!DOCTYPE html PUBLIC "-//O\'Reilly and Associates//DTD HTML Extended 1.0//EN" "TEST">', 'q'],
+    ['<!DOCTYPE html PUBLIC "-//Spyglass//DTD HTML 2.0 Extended//EN" "TEST">', 'q'],
+    ['<!DOCTYPE html PUBLIC "-//SQ//DTD HTML 2.0 HoTMetaL + extensions//EN" "TEST">', 'q'],
+    ['<!DOCTYPE html PUBLIC "-//Sun Microsystems Corp.//DTD HotJava HTML//EN" "TEST">', 'q'],
+    ['<!DOCTYPE html PUBLIC "-//Sun Microsystems Corp.//DTD HotJava Strict HTML//EN" "TEST">', 'q'],
+    ['<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3 1995-03-24//EN" "TEST">', 'q'],
+    ['<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2 Draft//EN" "TEST">', 'q'],
+    ['<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2 Final//EN" "TEST">', 'q'],
+    ['<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN" "TEST">', 'q'],
+    ['<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2S Draft//EN" "TEST">', 'q'],
+    ['<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Frameset//EN" "TEST">', 'q'],
+    ['<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "TEST">', 'q'],
+    ['<!DOCTYPE html PUBLIC "-//W3C//DTD HTML Experimental 19960712//EN" "TEST">', 'q'],
+    ['<!DOCTYPE html PUBLIC "-//W3C//DTD HTML Experimental 970421//EN" "TEST">', 'q'],
+    ['<!DOCTYPE html PUBLIC "-//W3C//DTD W3 HTML//EN" "TEST">', 'q'],
+    ['<!DOCTYPE html PUBLIC "-//W3O//DTD W3 HTML 3.0//EN" "TEST">', 'q'],
+    ['<!DOCTYPE html PUBLIC "-//W3O//DTD W3 HTML 3.0//EN//">', 'q'], 
+    ['<!DOCTYPE html PUBLIC "-//W3O//DTD W3 HTML Strict 3.0//EN//">', 'q'], 
+    ['<!DOCTYPE html PUBLIC "-//WebTechs//DTD Mozilla HTML 2.0//EN" "TEST">', 'q'],
+    ['<!DOCTYPE html PUBLIC "-//WebTechs//DTD Mozilla HTML//EN" "TEST">', 'q'],
+    ['<!DOCTYPE html PUBLIC "-/W3C/DTD HTML 4.0 Transitional/EN" "TEST">', 'q'],
+    ['<!DOCTYPE html PUBLIC "HTML">', 'q'],
+    
+    // Test for SYSTEM identifier
+    ['<!DOCYTPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.ibm.com/data/dtd/v11/ibmxhtml1-transitional.dtd">', 'q'],
+    ['<!DOCYTPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.ibm.com/data/dtd/v11/ibmxhtml1-TRANSITIONAL.dtd">', 'q'],
+    
+    // SYSTEM identifier must be missing
+    ['<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN">', 'q'],
+    ['<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">', 'q'],
+
+    // Limited quirks mode start
+    ['<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN">', 'lq'],
+    ['<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "TEST">', 'lq'],
+    
+    // SYSTEM identifier must be present
+    ['<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN" "">', 'lq'],
+    ['<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "">', 'lq'],
+    ['<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN" "x">', 'lq'],
+    ['<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "x">', 'lq'],
+    
+    // No quirks mode
+    ['<!doctype html>', 'nq'],
+    
+    // HTML5 end
+
+    
+    // missing from HTML5 (now added to HTML5)
+    ['<!doctype html PUBLIC "-//o\'reilly and associates//dtd html extended relaxed 1.0//en">', 'q'],
+    ['<!doctype html PUBLIC "-//softquad software//dtd hotmetal pro 6.0::19990601::extensions to html 4.0//en">', 'q'],
+    ['<!doctype html PUBLIc "-//softquad//dtd hotmetal pro 4.0::19971010::extensions to html 4.0//en">', 'q'],
+
+    // More tests based on HTML5
+    ['<\?><!doctype html>', 'nq'],
+    ['<!--><!doctype html>', 'nq'],
+    ['</><!doctype html>', 'nq'],
+    ['x<!doctype html>', 'q'],
+    // ['</x><!doctype html>', 'q'],
+    ['<x><!doctype html>', 'q'],
+    ['<!doctype>', 'q'],
+    ['\n\r\f\t <!doctype html>', 'nq'],
+    ['<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Frameset//NL">', 'q'],
+    ['<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN" x>', 'q'],
+    ['<!DOCTYPE html "-//W3C//DTD XHTML 1.0 Frameset//EN">', 'q'],
+    ['<!doctype html x-test>', 'q'],
+    ['<!doctype html system>', 'q'],
+    ['<!doctype html public>', 'q'],
+    ['<!DOCTYPE HTML PUBLIC "-//SoftQuad Software//DTD HoTMetaL PRO 5.0::19981217::extensions to HTML 4.0//EN" "hmpro5.dtd">', 'nq'], // for safety
+    ['<!DOCTYPE html PUBLIC "-//W3C/DTD HTML 4.01 Frameset//EN">', 'nq'], // single slash in W3C/DTD
+    ['<!doctype html -- x -->', 'q'],
+    ['<!doctype html [ x ]>', 'q'],
+    ['<!doctype html public ">', 'q'],
+    ['<!doctype html public "" ">', 'q'],
+    ['<!doctype html public "" "" ">', 'nq'],
+    ['<!doctype html public"html">', 'q'],
+    ['<!doctype htmlpublic "">', 'q'],
+    ['', 'q'],
+    ['<!doctypehtml>', 'nq'],
+    ['<!doctypehtml public"">', 'nq'],
+    ['<!doctypehtml public"""">', 'nq'],
+    ['<!doctypehtml public""""[>]>', 'nq'], // ignored trailing garbage in doctype "[", text after doctype "]>"
+    ['<!doctypehtml public""[>]>', 'q'], // garbage after FPI sets force-quirks
+    ['<!doctypehtml public[>]>', 'q'], // garbage after "PUBLIC" sets force-quirks
+    ['<!doctypehtml system[>]>', 'q'], // garbage after "SYSTEM" sets force-quirks
+    ['<!doctypehtml[>]>', 'q'], // doctype name is "html["
+    ['<!doctype html><!doctype quirky>', 'nq'],
+    ['<!doctype quirky><!doctype html>', 'q'],
+    ['<!doctype html public "" "" foo foo>', 'nq'],
+    ['<!doctype html system "" foo foo>', 'nq'],
+    
+    // trailing space
+    ['<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" >', 'q']
+
+  ],dict = {
+    "q": "Q",
+    "nq": "S",
+    "lq": "A",
+    "f": "Failure",
+    "e": "Error"
+  }
+
+  function getQuirksMode(doc) {
+    doc.body.innerHTML = "<table><tbody><tr><td><iframe height=1 width=1></iframe></td></table>\n<div style=width:10></div>"
+    // offsetHeight is 11, but 7 in IE
+    var lq_i = doc.body.firstChild.offsetHeight < 12 ? true : false,
+        q_i1 = doc.body.lastChild.style.width == "10px" ? true : false,
+        q_i2 = doc.compatMode == "CSS1Compat" ? false : true
+    if(!lq_i && !q_i1 && !q_i2)
+      return "nq"
+    else if(lq_i && !q_i1 && !q_i2)
+      return "lq"
+    else if(lq_i && q_i1 && q_i2)
+      return "q"
+    else
+      return "e"
+  }
+
+  function addCell(row, data) {
+    var cell = row.insertCell(-1)
+    text = document.createTextNode(data)
+    cell.appendChild(text)
+  }
+  
+  function addRow(table, c1, c2, c3) {
+    var row = table.insertRow(-1)
+    addCell(row, c1)
+    addCell(row, c2)
+    addCell(row, c3)
+  }
+
+  function runTests() {
+    var testDoc = frames[0].document,
+        r = document.getElementById("r").firstChild,
+        f = document.getElementById("f"),
+        failures = []
+    for(var i = 0, l = tests.length; i < l; i++) {
+      var input = tests[i][0],
+          expected = tests[i][1],
+          actual = "f"
+      testDoc.open()
+      testDoc.write(input + 'x')
+      testDoc.close()
+      actual = getQuirksMode(testDoc)
+      if(expected != actual) {
+        failures.push([expected, actual, input])
+      }
+    }
+    if(failures.length) {
+      r.data = "FAIL"
+      addRow(f, "Expected", "Actual", "Input")
+      for(var i = 0, l = failures.length; i < l; i++) {
+        addRow(f, dict[failures[i][0]],dict[failures[i][1]],failures[i][2])
+      }
+      try{top.opener.rr(false)}catch(e){}
+    } else {
+      r.data = "PASS"
+      f.data = ""
+      try{top.opener.rr(true)}catch(e){}
+    }
+  }
+
+  runTests()
+  document.getElementsByTagName("iframe")[0].style.display = "none"
+</script>
+
+
+
+

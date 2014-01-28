@@ -1,0 +1,26 @@
+<!doctype html>
+<meta charset="utf-8" />
+<title>input type=text Invalid size</title>
+<script src="/resources/testharnessreport.js"></script>
+<script src="/resources/testharness.js"></script>
+
+<p>
+	Below you should see an empty field that is 150 px in width. 
+</p>
+
+<form>
+	<p>
+		<input id="test" name="test" type="text" size="asd" />
+	</p>
+</form>
+
+<div id='log'></div>
+
+<script>
+var text_field = document.getElementById("test");
+
+test(function() {
+	assert_true(text_field.clientWidth >= 140 || text_field.clientWidth <= 160);
+});
+</script>
+

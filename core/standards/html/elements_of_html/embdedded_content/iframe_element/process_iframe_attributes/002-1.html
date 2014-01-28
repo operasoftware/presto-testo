@@ -1,0 +1,24 @@
+<body>
+<script>
+function log(text) {
+var p = document.createElement("p");
+p.textContent = text;
+document.body.appendChild(p);
+}
+onload = function() {
+log(history.length);
+iframe = document.createElement("iframe");
+iframe.onload = function() {
+  log(history.length);
+  iframe.src = "002-2.html";
+  iframe.onload = function() {
+    log(history.length);
+    setTimeout(function() {
+      iframe.src = "002-3.html";
+      iframe.onload = function() { log(history.length);}
+    });
+  }
+}
+document.body.appendChild(iframe);
+}
+</script>

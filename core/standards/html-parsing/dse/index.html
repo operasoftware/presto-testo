@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>HTML 5 Parser test</title>
+    <script src="common.js"></script>
+    <script src="testharness.js"></script>
+    <script src="harness.js"></script>
+    <script>
+      var document_file_names = ["tests/test_001_de7ec4c658ab96ab179b365247c2e3fee40f5f33.html",
+"tests/test_001_3005c1496accc56173ad823d1f521f7c972108c7.html",
+"tests/test_001_0d1d4f3d9a049298643049635c3bd0beeeb1edd5.html",
+"tests/test_001_c12e078e10eb70176d21a7ca954d8192dff1d31a.html",
+"tests/test_aaa_79d7879f515509be3643287c9bd6072b065f7d2c.html",
+"tests/test_aaa_f864d2362686e07081c9d97ad055b6cd0ab92260.html",
+"tests/test_aaa_7d5e1ccad6c65fa8c4e29faeeb0fe1c89ec3e779.html",
+"tests/test_aaa_1954d71f4010f3a13517400821eb14b2894f7cb7.html",
+"tests/test_aaa_8c874363498742b684198e898da5bcdfccd0835c.html",
+"tests/test_aaa_8c874363498742b684198e898da5bcdfccd0835c.html",
+"tests/test_aaa_57c0eb1198e19c4cf7541a4b32d1e734e3788892.html",
+"tests/test_body_0a82281c216a654510ef63929e2abd95ed00a144.html",
+"tests/test_body_55e5fa0de574431e39bb55319880e52393288870.html",
+"tests/test_body_844a59021ae5675fe4b2781a58bc4692119cb3e2.html",
+"tests/test_body_8a42437199044894e0232e9faaef1b0fb91ad7a2.html",
+"tests/test_body_123faf6067e90c5db33d68f09fbe0bf1480f0f3c.html",
+"tests/test_body_97be268ead002d976d80b2b9f98b61fc41c9fe55.html",
+"tests/test_foreign_476458af4f8be00b2aa204a121eef46360f2e1b4.html",
+"tests/test_foster_577c88a84793101b7482c59873c5556eaf83852d.html",
+"tests/test_foster_4850a54db525c39d0d45cd3c0489938db5c18496.html",
+"tests/test_foster_431d4b41fe1d51c6c9311114de2ccf9a2b4235cb.html",
+"tests/test_foster_d7b8c657f66a5d2392020e573128af7b5d6e50eb.html",
+"tests/test_foster_b34c90dad001c02662992ba2b941674b33cabe89.html",
+"tests/test_foster_903ac6eb02809df49cd4d8194aa45dd396a38047.html",
+"tests/test_foster_903ac6eb02809df49cd4d8194aa45dd396a38047.html",
+"tests/test_foster_7879f6ee87f900adf417aeb4bd449beb25e6ca57.html",
+"tests/test_frameset_15243ba5211301a38c8e735814030d3d39522730.html",
+"tests/test_frameset_bf9ade19e252ae84f5614933b8915b7ca0491dbc.html",
+"tests/test_frameset_0b734cc79ccc11b68065915396771ff92a8536a4.html",
+"tests/test_frameset_f4d750fee96e16bac8003c2458695bae713309a5.html",
+"tests/test_reconstruct_deacdffbf1f97fce0186caedcf80703ee7950266.html",
+"tests/test_reconstruct_c3d9316709b39add55952660cf6afb841757aaec.html"];
+      var inner_html_file_names = [];
+      function run(file_names, filters) {
+        clear();
+        var limits = get_limits();
+        var filter = get_filter();
+        if (filter) {
+          filters.push(filter);
+        }
+        document.getElementById("stop").disabled = false;
+        run_tests(file_names, filters, limits[0], limits[1]);
+      }
+      function get_limits() {
+        return ["min_index", "max_index"].map(function(x) {
+          var element = document.getElementById(x);
+          var value = Number(element.value !== "" ? element.value : undefined);
+          if (value !== value) {
+            return undefined;
+          } else {
+            return value;
+          }
+        });
+      }
+      function get_filter() {
+        var element = document.getElementById("filter");
+        var re = undefined;
+        try {
+          re = new RegExp(element.value, "g");
+        } catch(e) {}
+        return re;
+      }
+      function stop() {
+        done = true;
+        document.getElementById("stop").disabled = true;
+      }
+    </script>
+  </head>
+  <body>
+    <h1>html5lib Parser Tests</h1>
+    <p>
+      Run from test <input type="number" id="min_index"> to test <input type="number" id="max_index"> (leave blank for 0 -&gt; maximum)
+    </p>
+    <p>Test filter (regexp on filename)<input type="text" id="filter"></p>
+    <p>
+      <button onclick="run(document_file_names, [])">Run Parser Tests</button>
+      <button onclick="run(document_file_names, [/_scripted_/g])">Run Scripted Parser Tests</button>
+      <button onclick="run(inner_html_file_names, [])">Run innerHTML Tests</button>
+      <button onclick="run(document_file_names.concat(inner_html_file_names), [])">Run All Tests</button>
+    </p>
+    <p>
+      <button id="stop" onclick="stop()" disabled>Stop</button>
+    </p>
+    <div id="status"></div>
+    <div id="progress"></div>
+    <div id="details"></div>
+  </body>
+</html>

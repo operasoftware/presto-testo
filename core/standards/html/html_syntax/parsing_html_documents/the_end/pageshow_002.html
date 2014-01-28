@@ -1,0 +1,19 @@
+<!doctype html>
+<script src="/resources/testharness.js"></script>
+<script src="/resources/testharnessreport.js"></script>
+<title>Properties of the pageshow event</title>
+<div id="log"></div>
+<script>
+events = [];
+var t = async_test();
+addEventListener("pageshow", t.step_func(
+function(e) {
+  assert_equals(e.type, "pageshow");
+  assert_equals(e.target, document);
+  assert_equals(e.currentTarget, window);
+  assert_false(e.persisted, "persisted");
+  assert_false(e.bubbles, "bubbles property");
+  assert_false(e.cancelable, "cancelable property");
+  t.done();
+}), false);
+</script>

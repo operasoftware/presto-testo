@@ -1,0 +1,77 @@
+<!doctype html>
+<title>Nesting iframes</title>
+<script src="/resources/testharness.js"></script>
+<script src="/resources/testharnessreport.js"></script>
+<div id="log"></div>
+
+<iframe src=""></iframe>
+<iframe src="#"></iframe>
+<iframe src="#foo"></iframe>
+<iframe></iframe>
+<iframe src="nested_iframes-1.html"> </iframe>
+<iframe src="nested_iframes-2.html"> </iframe>
+
+<script>
+setup({explicit_done:true});
+iframes = document.getElementsByTagName("iframe");
+iframes[3].src = location.href;
+onload = function() {
+
+  test(function() {
+    assert_equals(iframes[0].src, location.href);
+    assert_equals(iframes[0].contentWindow.location.href, "about:blank");
+  }, "iframe src is empty string");
+
+  test(function() {
+    assert_equals(iframes[1].src, location.href + "#");
+    assert_equals(iframes[1].contentWindow.location.href, "about:blank");
+  }, "iframe src is empty fragment");
+
+  test(function() {
+    assert_equals(iframes[2].src, location.href + "#foo");
+    assert_equals(iframes[2].contentWindow.location.href, "about:blank");
+  }, "iframe src is #foo");
+
+  test(function() {
+    assert_equals(iframes[3].src, location.href);
+    assert_equals(iframes[3].contentWindow.location.href, "about:blank");
+  }, "iframe src is location.href");
+
+  test(function() {
+    var iframe = iframes[4];
+    expected_src = ["nested_iframes-1.html", "nested_iframes-entry.html", "nested_iframes-entry.html", "nested_iframes-1.html", "nested_iframes-entry.html"];
+    expected_location = expected_src.slice()
+    expected_location[expected_location.length - 1] = "about:blank";
+    var a = document.createElement("a");
+    for(var i=0; i<expected_src.length; i++) {
+      a.href = expected_src[i];
+      var src = a.href;
+      a.href = expected_location[i];
+      var loc = a.href;
+      assert_equals(iframe.src.split("?")[0], src, "src " + i);
+      assert_equals(iframe.contentWindow.location.href.split("?")[0], loc, "location " + i);
+      iframe = iframe.contentDocument.getElementsByTagName("iframe")[0];
+    }
+  }, "Loop with multiple nested iframes");
+
+  test(function() {
+    var iframe = iframes[5];
+    expected_src = ["nested_iframes-2.html", "nested_iframes-entry.html", "nested_iframes-entry.html", "nested_iframes-2.html", "nested_iframes-entry.html"];
+    expected_location = expected_src.slice()
+    expected_location[expected_location.length - 1] = "about:blank";
+    var a = document.createElement("a");
+    for(var i=0; i<expected_src.length; i++) {
+      a.href = expected_src[i];
+      var src = a.href;
+      a.href = expected_location[i];
+      var loc = a.href;
+      assert_equals(iframe.src.split("?")[0], src, "src " + i);
+      assert_equals(iframe.contentWindow.location.href.split("?")[0], loc, "location " + i);
+      iframe = iframe.contentDocument.getElementsByTagName("iframe")[0];
+    }
+  }, "Loop with nested iframes and different fragment ids");
+
+  done();
+}
+</script>
+

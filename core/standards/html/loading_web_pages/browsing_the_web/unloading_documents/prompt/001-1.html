@@ -1,0 +1,10 @@
+<script>
+addEventListener("beforeunload", 
+function() {
+   parent.events.push("beforeunload");
+}, false);
+parent.events.push("before src change");
+
+location.href = "slice-and-dice.cgi?file=001-2.html&parts=d2";
+parent.events.push("after src change");
+</script>

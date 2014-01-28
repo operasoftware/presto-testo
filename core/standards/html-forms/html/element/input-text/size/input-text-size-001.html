@@ -1,0 +1,55 @@
+<!doctype html>
+<meta charset="utf-8" />
+<title>input type=text size</title>
+<script src="/resources/testharnessreport.js"></script>
+<script src="/resources/testharness.js"></script>
+<p>
+	There should be seven text fields below.  Each one slightly smaller than the
+	next. 
+</p>
+
+<form>
+	<p><input id="number_1" name="number_1" type="text" size="1" /></p>
+	<p><input id="number_2" name="number_2" type="text" size="2" /></p>
+	<p><input id="number_3" name="number_3" type="text" size="3" /></p>
+	<p><input id="number_4" name="number_4" type="text" size="4" /></p>
+	<p><input id="number_5" name="number_5" type="text" size="5" /></p>
+	<p><input id="number_6" name="number_6" type="text" size="6" /></p>
+	<p><input id="number_7" name="number_7" type="text" /></p>
+</form>
+
+<div id='log'></div>
+
+<script>
+var number_1 = document.getElementById("number_1");
+var number_2 = document.getElementById("number_2");
+var number_3 = document.getElementById("number_3");
+var number_4 = document.getElementById("number_4");
+var number_5 = document.getElementById("number_5");
+var number_6 = document.getElementById("number_6");
+var number_7 = document.getElementById("number_7");
+
+test(function() {
+	assert_true(number_1.clientWidth < number_2.clientWidth);
+}, "second textfield should be larger than the first");
+
+test(function() {
+        assert_true(number_2.clientWidth < number_3.clientWidth);
+}, "third textfield should be larger than the second");
+
+test(function() {
+	assert_true(number_3.clientWidth < number_4.clientWidth);
+}, "fourth textfield should be larger than the third");
+
+test(function() {
+	assert_true(number_4.clientWidth < number_5.clientWidth);
+}, "fifth textfield should be larger than the fourth");
+
+test(function() {
+	assert_true(number_5.clientWidth < number_6.clientWidth);
+}, "sixth textfield should be larger than the fifth");
+
+test(function() {
+	assert_true(number_6.clientWidth < number_7.clientWidth)
+}, "seventh textfield should be larger than the sixth");
+</script>

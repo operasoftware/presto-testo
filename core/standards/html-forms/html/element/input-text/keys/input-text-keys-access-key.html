@@ -1,0 +1,18 @@
+<!doctype html>
+<meta charset="utf-8" />
+<title>input type=text accesskey</title>
+
+<p>
+	Press <kbd>Shift</kbd>+<kbd>Esc</kbd> and release, then press <kbd>o</kbd>
+	(Opera action <var>Enter access key mode</var>).  The contents of the text
+	field below should be selected.  Clear any content from the field and click
+	submit.  You should see “PASS” on the following page.
+</p>
+
+<form action="../../../../res/empty_post.rb" method="post">
+	<p>
+		<input name="test" id="test" type="text" value="foo" accesskey="o" />
+		<input type="submit" name="submit" />
+	</p>
+</form>
+

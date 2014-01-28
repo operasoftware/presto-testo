@@ -1,0 +1,55 @@
+#data
+<body a=b><script data-skip> </script><body c=d>
+#document
+| <html>
+|   <head>
+|   <body>
+|     a="b"
+|     c="d"
+
+#data
+<body a=b><script data-skip>document.write("<body c=d>")</script>
+#document
+| <html>
+|   <head>
+|   <body>
+|     a="b"
+|     c="d"
+
+#data
+<body a=b><script data-skip>document.write(document.body.attributes.length)</script><body c="d">
+#document
+| <html>
+|   <head>
+|   <body>
+|     a="b"
+|     c="d"
+|     "1"
+
+#data
+<html a=b><script data-skip> </script><html c=d>
+#document
+| <html>
+|   a="b"
+|   c="d"
+|   <head>
+|   <body>
+
+#data
+<html a=b><script data-skip>document.write("<html c=d>")</script>
+#document
+| <html>
+|   a="b"
+|   c="d"
+|   <head>
+|   <body>
+
+#data
+<html a=b><script data-skip>document.write(document.documentElement.attributes.length)</script><html c="d">
+#document
+| <html>
+|   a="b"
+|   c="d"
+|   <head>
+|   <body>
+|     "1"

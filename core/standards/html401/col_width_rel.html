@@ -1,0 +1,44 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+<head>
+<title>COL :: width : rel</title>
+<style type="text/css">
+table {
+	border-spacing: 0;
+	width: 90px;
+	margin-bottom: 20px;
+}
+td {
+	padding: 0;
+	border: 1px solid black;
+}
+</style>
+</head>
+
+<body>
+<p>you should see two identical boxes below</p>
+
+<table>
+<colgroup>
+	<col width="1*">
+	<col width="2*">
+</colgroup>
+<tr>
+	<td>text</td>
+	<td>text</td>
+</tr>
+</table>
+
+<table>
+<colgroup>
+	<col>
+	<col>
+</colgroup>
+<tr>
+	<td width="30">text</td>
+	<td width="60">text</td>
+</tr>
+</table>
+
+</body>
+</html>

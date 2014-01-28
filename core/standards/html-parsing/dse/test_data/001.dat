@@ -1,0 +1,34 @@
+#data
+<script data-skip>document.write("PASS");</script>
+#document
+| <html>
+|   <head>
+|   <body>
+|     "PASS"
+
+#data
+<script data-skip>var c = 0;</script><script data-skip>document.write(c++)</script><script data-skip>document.write(c++);</script>
+#document
+| <html>
+|   <head>
+|   <body>
+|     "01"
+
+#data
+<script data-skip>document.write("<p>")</script>01
+#document
+| <html>
+|   <head>
+|   <body>
+|     <p>
+|       "01"
+
+#data
+<div><script data-skip>document.write("</div>")</script><span>abc</span>
+#document
+| <html>
+|   <head>
+|   <body>
+|     <div>
+|     <span>
+|       "abc"

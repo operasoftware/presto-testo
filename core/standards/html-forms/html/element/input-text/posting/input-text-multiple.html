@@ -1,0 +1,18 @@
+<!doctype html>
+<meta charset="utf-8" />
+<title>input type=text Multiple unique inputs</title>
+
+<p>
+	You should see two text fields below.  The first should have the value
+	“foo”.  The second should have the value “bar”.  Click submit.  The same words
+	should be appear on the following page.
+</p>
+
+<form action="../../../../res/return_multiple_post.rb" method="post">
+	<p>
+		<input name="test1" type="text" value="foo" />
+		<input name="test2" type="text" value="bar" />
+		<input name="submit" type="submit" />
+	</p>
+</form>
+

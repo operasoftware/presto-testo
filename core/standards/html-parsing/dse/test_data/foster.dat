@@ -1,0 +1,89 @@
+#data
+<table><script> </script><div>
+#document
+| <html>
+|   <head>
+|   <body>
+|     <div>
+|     <table>
+|       <script>
+|         " "
+
+#data
+<table><div><script> </script>
+#document
+| <html>
+|   <head>
+|   <body>
+|     <div>
+|       <script>
+|         " "
+|     <table>
+
+#data
+<table><div id=1></div><script data-skip> </script><div id=2>
+#document
+| <html>
+|   <head>
+|   <body>
+|     <div>
+|       id="1"
+|     <div>
+|       id="2"
+|     <table>
+
+#data
+<table><script data-skip>document.write("<tr><td>")</script><div>
+#document
+| <html>
+|   <head>
+|   <body>
+|     <table>
+|       <tbody>
+|         <tr>
+|           <td>
+|             <div>
+
+#data
+<table><script data-skip>document.write("<tr><td>")</script><div><script data-skip>document.write("</tr>")</script><div id=1>
+#document
+| <html>
+|   <head>
+|   <body>
+|     <div>
+|       id="1"
+|     <table>
+|       <tbody>
+|         <tr>
+|           <td>
+|             <div>
+
+#data
+<table><script data-skip>document.write("<plaintext>")</script><div><tr>
+#document
+| <html>
+|   <head>
+|   <body>
+|     <plaintext>
+|       "<div><tr>"
+|     <table>
+
+#data
+<table><script data-skip>document.write("<plaintext>")</script><div><tr>
+#document
+| <html>
+|   <head>
+|   <body>
+|     <plaintext>
+|       "<div><tr>"
+|     <table>
+
+#data
+<table>  <script data-skip>document.write("A")</script>
+#document
+| <html>
+|   <head>
+|   <body>
+|     "A"
+|     <table>
+|       " "

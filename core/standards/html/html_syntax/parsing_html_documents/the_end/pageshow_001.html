@@ -1,0 +1,12 @@
+<!doctype html>
+<script src="/resources/testharness.js"></script>
+<script src="/resources/testharnessreport.js"></script>
+<title>pageshow event should fire after the load event</title>
+<div id="log"></div>
+<script>
+events = [];
+var t = async_test();
+onload = t.step_func(function() {events.push("load")});
+addEventListener("pageshow", t.step_func(function() {events.push("pageshow")}), false);
+setTimeout(t.step_func(function() {assert_array_equals(events, ["load", "pageshow"]); t.done()}), 500)
+</script>

@@ -1,0 +1,30 @@
+#data
+<script data-skip>document.write("<!--comment-->")</script><frameset>
+#document
+| <html>
+|   <head>
+|     <!-- comment -->
+|   <frameset>
+
+#data
+<script data-skip>document.write("<body>")</script><frameset>
+#document
+| <html>
+|   <head>
+|   <body>
+
+#data
+<input><script data-skip>document.getElementsByTagName("input")[0].setAttribute("type", "hidden")</script><frameset>
+#document
+| <html>
+|   <head>
+|   <body>
+|     <input>
+|       type="hidden"
+
+#data
+<input type=hidden><script data-skip>document.getElementsByTagName("input")[0].removeAttribute("type")</script><frameset>
+#document
+| <html>
+|   <head>
+|   <frameset>

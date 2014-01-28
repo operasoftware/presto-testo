@@ -1,0 +1,90 @@
+<!--
+  AUTHOR:   KARL W. FROGNER
+    DATE:   18. MARCH 2010
+COMMENTS:   THE HTML FILE FOR THE <AREA> WATIR TEST
+-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+    <head>
+        <TITLE>AREA :: shape : poly</TITLE>
+        <script type="text/javascript">
+
+            document.addEventListener('mousedown', function()
+            {
+              document.getElementById("status").textContent="FAIL";
+            }, false);
+
+            function clickLink(number){
+                if(number==1){
+                    document.getElementById("Pass").textContent="Pass";
+                }
+                if(number==2){
+
+                    document.getElementById("Pass").textContent="It truly passes";
+                }
+            }
+        </script>
+
+    </head>
+
+    <body>
+
+        <h4>the entire image area should <em>not</em> be clickable</h4>
+
+
+    <object id="maps1" type="support/png" usemap="#maps1" data="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAyCAYAAAAayliMAAAAV0lEQVRoge3PQQ3AIADAQMASnlCLp03EHpclPQXt3Oc%2B48eWDviqAa0BrQGtAa0BrQGtAa0BrQGtAa0BrQGtAa0BrQGtAa0BrQGtAa0BrQGtAa0BrQHtBZ5OAsiV6GzbAAAAAElFTkSuQmCC">
+        <map name="maps1">
+            <area id="shape" shape="rect" alt="FAIL" coords="0,0,48,50" nohref >
+        </map>
+    </object>
+
+
+
+    <br /><br />
+
+    <p>Click on the purple circle below and pass should appear on the bottom of the page</p>
+
+    <img id="maps2" src="support/circle.png" alt="circle" usemap="#circle">
+    <map name="circle">
+        <area shape=circle coords="32,32,32" href="javascript:clickLink(1)" alt="red circle">
+    </map>
+    <br /><br />
+
+
+    <p>Click on the polygon below and pass should appear on the bottom of the page</p>
+
+    <img id="mapsPolygon" src="support/polygon.gif" alt="polygon" usemap="#polygon">
+    <map name="polygon">
+        <area shape="poly" coords="44,1,1,70,61,199,130,61,95,2,43,1" href="javascript:clickLink(1)" alt="polygon">
+    </map>
+    <br /><br />
+
+    <h4>the entire image area should be clickable, and pass should appear on the bottom of the page</h4>
+
+    <object id="rectMaps" type="support/png" usemap="#maps2" data="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAyCAYAAAAayliMAAAAV0lEQVRoge3PQQ3AIADAQMASnlCLp03EHpclPQXt3Oc%2B48eWDviqAa0BrQGtAa0BrQGtAa0BrQGtAa0BrQGtAa0BrQGtAa0BrQGtAa0BrQGtAa0BrQHtBZ5OAsiV6GzbAAAAAElFTkSuQmCC">
+        <map name="maps2">
+            <area shape="rect" alt="FAIL" coords="0,0,48,50" href="javascript:clickLink(1)">
+        </map>
+    </object>
+    <br /><br />
+
+    <h4>pressing <kbd>tab</kbd> twice you should first highlight the bottom-right corner of the image, and then top-left corner of the image</h4>
+
+    <object id="tabsMaps" type="support/png" usemap="#maps3" data="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAyCAYAAAAayliMAAAAV0lEQVRoge3PQQ3AIADAQMASnlCLp03EHpclPQXt3Oc%2B48eWDviqAa0BrQGtAa0BrQGtAa0BrQGtAa0BrQGtAa0BrQGtAa0BrQGtAa0BrQGtAa0BrQHtBZ5OAsiV6GzbAAAAAElFTkSuQmCC">
+        <map name="maps3">
+            <area shape="rect" alt="FAIL" coords="0,0,10,10" href="javascript:clickLink(1)" tabindex="2">
+            <area shape="rect" alt="FAIL" coords="38,40,48,50" href="javascript:clickLink(2)" tabindex="1">
+        </map>
+    </object>
+    <img id="image1Tab" src="support/1.png" />
+    <img id="image2Tab" src="support/2.png" />
+
+
+
+
+
+    <p id="Pass">NOT TESTED</p>
+
+
+</body>
+</html>

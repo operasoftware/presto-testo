@@ -1,0 +1,12 @@
+<!doctype html>
+004-1
+<script>
+addEventListener("beforeunload", 
+function() {
+console.log("beforeunload");
+if (top.counter++ < 999) {
+  console.log("setting location")
+  location = "004-2.html?" + top.counter;
+}
+}, false);
+</script>

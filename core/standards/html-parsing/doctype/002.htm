@@ -1,0 +1,100 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<head>
+<title>Doctype Testing</title>
+<style type="text/css">
+ .pass {background-color : green}
+ .fail {background-color : red}
+ .manual {background-color : yellow}
+ iframe {position:absolute; left:600px; top:0px; height:40px }
+ tr, td, th {border:solid}
+</style>
+<script type="text/javascript">
+ var URLs = new Array (
+  new Array("No DOCTYPE", 			"nono.htm", "BackCompat",			"nono.htm", "BackCompat"),
+  new Array("HTML 2.0", 			"2URL.htm", "BackCompat", 			"2no.htm", "BackCompat"),
+  new Array("HTML 3.0", 			"3URL.htm", "BackCompat", 			"3no.htm", "BackCompat"),
+  new Array("HTML 3.2", 			"32URL.htm", "BackCompat", 			"32no.htm", "BackCompat"),
+  new Array("HTML 4.0", 			"4URL.htm", "CSS1Compat", 			"4no.htm", "CSS1Compat"),
+  new Array("HTML 4.0 Frameset", 	"4fURL.htm", "BackCompat", 			"4fno.htm", "BackCompat"),
+  new Array("HTML 4.0 Transitional","4tURL.htm", "BackCompat", 			"4tno.htm", "BackCompat"),
+  new Array("HTML 4.0 Strict", 		"4sURL.htm", "CSS1Compat", 			"4sno.htm", "CSS1Compat"),
+  new Array("HTML 4.01 Transitional","401tURL.htm","CSS1Compat",		"401tno.htm",	"BackCompat"),
+  new Array("HTML 4.01 Transitional Frameset", "401fURL.html", "CSS1Compat",	"401fno.html",	"BackCompat"),
+  new Array("HTML 4.01 Strict",		"401sURL.htm", "CSS1Compat",		"401sno.html",	"CSS1Compat"),
+  new Array("HTML5",				"5.htm", "CSS1Compat",				"5.htm",	"CSS1Compat"),
+  new Array("XHTML 1.0 Strict",		"XHTML1s.html",	"CSS1Compat",		"XHTML1sno.html",	"CSS1Compat"),
+  new Array("XHTML 1.0 Transitional", "XHTML1t.html", "CSS1Compat",		"XHTML1tno.html", "CSS1Compat"),
+  new Array("XHTML 1.0 Frameset",	"XHTML1f.html", "CSS1Compat",		"XHTML1fno.html", "CSS1Compat"),
+  new Array("WML 2.0", 				"WMLURL.wml", "CSS1Compat", 		"WMLno.wml", "CSS1Compat"),
+  new Array("XML", 					"XMLURL.xml", "CSS1Compat", 		"XMLno.xml", "CSS1Compat"),
+  new Array("Unrecognized DOCTYPE", "unknownURL.htm", "CSS1Compat",		"unknownno.htm", "CSS1Compat"),
+  new Array("HTML with XHTML DOCTYPE (invalid street HTML, and not part of the specifications)","brokenHTMLURL.htm", "CSS1Compat",	"brokenHTMLno.htm", "CSS1Compat"),
+  new Array("XML with HTML DOCTYPE (invalid street HTML, and not part of the specifications)","brokenXMLURL.xml", "CSS1Compat",	"brokenXMLno.xml", "CSS1Compat")
+ );
+ var i = 0;
+ var j = 1;
+ var timeout = 5000;
+ var tests = 39;
+ var testno = 1;
+ var timeoutevent;
+ var outputstring="<table><tr><th>Doctype<th>URL present<th>URL absent<tr><td>"+URLs[0][0] + "<td> Impossible";
+
+ function report (type) {
+  if (type == URLs[i][j*2+2]) {
+   outputstring += '<td class="pass"><a href="hlp/' + URLs[i][j*2+1] + '">PASS</a><br>(' + type + ")";
+ 	addToForm(true); ++testno;
+ } else if (type == "timeout") {
+   outputstring += '<td class="manual"><a href="hlp/' + URLs[i][j*2+1] + '">MANUAL</a> test necessary (timeout)<br>The document could not be found, loaded, or the embedded JavaScript was not executed.';
+   addToForm(false); ++testno;
+  } else {
+   outputstring += '<td class="fail"><a href="hlp/' + URLs[i][j*2+1] + '">FAIL</a><br>Got: ' + type + "<br>Wanted: " + URLs[i][j*2+2];
+  addToForm(false); ++testno;
+  }
+  LoadNext();
+ };
+
+ function LoadNext(type) {
+  if (j == 0) {
+   j++;
+  } else {
+   j = 0;
+   i++;
+   if (i >= URLs.length) {
+    WriteToScreen();
+    return;
+   }
+   outputstring += "<tr><td>" + URLs[i][0];
+  }
+  document.getElementById('doc').src = 'hlp/'+URLs[i][j*2+1];
+  window.clearTimeout(timeoutevent);
+  timeoutevent = window.setTimeout('report("timeout")', timeout);
+ }
+
+ function addToForm(passed){
+ 	var result = passed?"PASSED":"FAILED";
+	document.getElementById('results').innerHTML+='<input name="jstests[]" value="Doctype Testsuite: '+  URLs[i][j*2+1] + '\t'+result+'" type="hidden">';
+ }
+
+ function WriteToScreen() {
+  document.getElementById('doc').src="";
+  window.clearTimeout(timeoutevent);
+  document.body.innerHTML += outputstring;
+  document.getElementById('results').submit();
+ }
+
+ function start() {
+  document.getElementById('doc').src='hlp/'+URLs[0][3];
+  timeoutevent = window.setTimeout('report("timeout")', timeout);
+ }
+</script>
+</head>
+<body onload="start()">
+If no table shows up below, this is a fail (but give it some time first).<br>
+Doctype switching according to <a href="http://www.opera.com/docs/specs/doctype/">Opera's official specifications</a>
+<iframe id="doc"></iframe>
+<form id="results" name="results" action="http://localhost/" method="post">
+
+</form>
+</body>
+</html>

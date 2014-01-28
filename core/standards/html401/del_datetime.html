@@ -1,0 +1,17 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+<head>
+<title>DEL :: datetime</title>
+</head>
+
+<body>
+<p><del datetime="foobar"></del>Enable script and reload</p>
+
+<script type="text/javascript">
+// using resolved attribute value, not getAttribute - shows what the browser interpreted
+document.getElementsByTagName('p')[0].childNodes[1].nodeValue =(document.getElementsByTagName('del')[0].dateTime == 'foobar' ) ? 'FAIL' : 'PASS';
+</script>
+
+</body>
+</html>
+

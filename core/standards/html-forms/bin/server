@@ -1,0 +1,12 @@
+#!/usr/bin/env ruby
+
+begin
+  require 'rubygems'
+rescue LoadError
+end
+
+require 'sinatra/base'
+
+%w{ htmlforms server }.each { |l| require "#{File.dirname(__FILE__)}/../lib/#{l}" }
+
+HTMLForms::Server.run!

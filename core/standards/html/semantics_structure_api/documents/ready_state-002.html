@@ -1,0 +1,30 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>document.readystate waiting for load</title>
+<script src="/resources/testharness.js"></script>
+<script src="/resources/testharnessreport.js"></script>
+<div id="log"></div>
+<script>
+setup(function(){}, {
+timeout:10000
+})
+
+var t_loading = async_test("readyState before load");
+window.addEventListener("DOMContentLoaded",
+t_loading.step_func(
+function() {
+  assert_equals(document.readyState, "interactive");
+  t_loading.done();
+}), 500);
+
+var t_loaded = async_test("readyState after load");
+onload = t_loaded.step_func(
+function() {
+  assert_equals(document.readyState, "complete");
+  t_loaded.done();
+}
+);
+
+</script>
+<img src="/resources/scripts/slice-and-dice.cgi?file=resources/images/1x1-transparent.png&parts=d2">
+<div id="log"></div>

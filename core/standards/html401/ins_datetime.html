@@ -1,0 +1,17 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+<head>
+<title>INS :: datetime</title>
+</head>
+
+<body>
+<p><ins datetime="foobar"></ins>Enable script and reload</p>
+
+<script type="text/javascript">
+// using resolved attribute value, not getAttribute - shows what the browser interpreted
+document.getElementsByTagName('p')[0].childNodes[1].nodeValue = (document.getElementsByTagName('ins')[0].dateTime == 'foobar' ) ? 'FAIL' : 'PASS';
+</script>
+
+</body>
+</html>
+

@@ -1,0 +1,10 @@
+<!doctype html>
+<script>
+var w = new SharedWorker("link_click_close_window-1.js"); 
+document.write("Should be a PASS if you see this (but check the original window)")
+w.port.onmessage = function(event) {
+  event.ports[0].postMessage("PASS")
+  window.close();
+};
+w.port.postMessage("child");
+</script>

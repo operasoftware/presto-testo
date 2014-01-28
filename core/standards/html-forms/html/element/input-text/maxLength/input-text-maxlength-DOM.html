@@ -1,0 +1,31 @@
+<!doctype html>
+<meta charset="utf-8" />
+<title>input type=text Value of maxlength field available in DOM</title>
+
+<p>
+	Below you should see two text fields.  The first should be empty.  The second
+	should contain the value of the <var>maxlength</var> attribute of the first,
+	143.
+</p>
+
+<p>
+	Click submit.  You should see the number 143 on the following page.
+</p>
+
+<form action="../../../../res/return_single_post.rb" method="post">
+	<p>
+		<input id="first_field" name="first_field" type="text" maxlength="143" />
+		<input id="test" name="test" type="text" />
+		<input type="submit" name="submit" />
+	</p>
+</form>
+
+<script>
+
+	var first_field = document.getElementById("first_field");
+	var test        = document.getElementById("test");
+
+	test.value      = first_field.getAttribute("maxlength");
+
+</script>
+

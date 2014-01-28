@@ -1,0 +1,23 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+<head>
+<title>OBJECT :: tabindex</title>
+<style type="text/css">
+object:focus {
+	border: 10px solid black;
+}
+</style>
+</head>
+
+<body>
+<p><a href="http://opera.com" tabindex="1">text</a>
+
+tab twice - the blue box should be focused, and if it is, it should get a black border
+
+<object type="image/png" tabindex="2" data="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAyCAYAAAAayliMAAAAV0lEQVRoge3PQQ3AIADAQMASnlCLp03EHpclPQXt3Oc%2B48eWDviqAa0BrQGtAa0BrQGtAa0BrQGtAa0BrQGtAa0BrQGtAa0BrQGtAa0BrQGtAa0BrQHtBZ5OAsiV6GzbAAAAAElFTkSuQmCC">
+FAIL
+</object>
+</p>
+
+</body>
+</html>

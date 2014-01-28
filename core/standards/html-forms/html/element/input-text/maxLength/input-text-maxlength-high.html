@@ -1,0 +1,21 @@
+<!doctype html>
+<meta charset="utf-8" />
+<title>input type=text High maxlength</title>
+
+<p>Copy the text from the first text field and paste it in to the second one.
+As the second field has a <var>maxlength</var> of 300 characters, only the
+first 300 characters should be pasted.  Click submit, and you should see the
+word ”PASS” on the following page.</p>
+
+<form action="../../../../res/character_count.rb" method="post">
+	<p>
+		<input name="text" type="text" value="Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." readonly />
+	</p>
+	<p>
+		<input name="test" id="test" type="text" maxlength="300" />
+	</p>
+	<p>
+		<input type="submit" name="submit" />
+	</p>
+</form>
+

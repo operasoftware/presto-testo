@@ -1,0 +1,30 @@
+<!doctype html>
+<meta charset="utf-8" />
+<title>input type=text Concatenation of two values</title>
+
+<p>
+	There should be three text fields on this page.  The first should contain
+	“foo”, the second “bar”.  Upon page load, the third should automatically be
+	filled with the word “foobar”.
+</p>
+
+<p>
+	Click submit.  The word “foobar” should appear on the following page.
+</p>
+
+<form action="../../../../res/return_single_post.rb" method="post">
+	<p>
+		<input id="first_field" name="first_field" value="foo" />
+		<input id="second_field" name="second_field" value="bar" />
+		<input id="third_field" name="test" value="" />
+		<input type="submit" name="submit" />
+	</p>
+</form>
+
+<script>
+	var first_field   = document.getElementById("first_field");
+	var second_field  = document.getElementById("second_field");
+	var third_field   = document.getElementById("third_field");
+	third_field.value = first_field.value + second_field.value;
+</script>
+

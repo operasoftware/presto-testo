@@ -1,0 +1,3 @@
+#!/bin/bash
+source bin/activate
+python ../html5lib_harness/maketests.py test_data

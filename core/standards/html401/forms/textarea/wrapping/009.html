@@ -1,0 +1,28 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<title>Wrapping in textareas</title>
+<style>
+pre, textarea {
+	font: 12px "Courier New" monospace;
+}
+textarea {
+	overflow: auto;
+	resize: none;
+}
+</style>
+</head>
+<body>
+
+<p>The text in the textarea below should wrap at the same place as in the paragraph below it.</p>
+
+<p>
+  <textarea rows="10" cols="50">If the terminal word within the line has a soft hy&shy;phen that doesn't fit on the line, the word should wrap to the next line.</textarea>
+</p>
+
+<pre>If the terminal word within the line has a soft
+hyphen that doesn't fit on the line, the word
+should wrap to the next line.</pre>
+
+</body>
+</html>

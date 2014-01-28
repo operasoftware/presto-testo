@@ -1,0 +1,31 @@
+#data
+<p><a><script data-skip>document.write("<b>")</script><i><p>A
+#document
+| <html>
+|   <head>
+|   <body>
+|     <p>
+|       <a>
+|         <b>
+|           <i>
+|     <p>
+|       <a>
+|         <b>
+|           <i>
+|             "A"
+
+#data
+<p><a><script data-skip>document.write("<b>")</script><i><plaintext>A
+#document
+| <html>
+|   <head>
+|   <body>
+|     <p>
+|       <a>
+|         <b>
+|           <i>
+|     <plaintext>
+|       <a>
+|         <b>
+|           <i>
+|             "A"

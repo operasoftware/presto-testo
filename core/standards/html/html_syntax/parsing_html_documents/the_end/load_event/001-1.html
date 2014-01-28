@@ -1,0 +1,27 @@
+<!doctype html>
+<script>
+onload = parent.t.step_func(function() {
+  onload = null;
+  parent.assert_equals(document.readyState, "complete");
+  document.open();
+  parent.assert_equals(document.readyState, "loading");
+  document.write("");
+  onload = parent.t.step_func(function() {
+    parent.assert_unreached();
+  });
+  dcl_fired = false;
+  addEventListener("DOMContentLoaded",
+                   parent.t.step_func(function() {
+                     dcl_fired = true;
+                     parent.assert_equals(document.readyState, "interactive");
+                   }));
+  setTimeout(parent.t.step_func(
+    function() {
+      parent.assert_true(dcl_fired);
+      parent.assert_equals(document.readyState, "interactive");
+      parent.t.done();
+     }), 500);
+  document.close();
+});
+
+</script>

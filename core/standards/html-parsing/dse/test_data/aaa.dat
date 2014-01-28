@@ -1,0 +1,127 @@
+#data
+<b>a<i>b<div>c<script data-skip>document.write("</b>")</script>d</i>e</div>
+#document
+| <html>
+|   <head>
+|   <body>
+|     <b>
+|       "a"
+|       <i>
+|         "b"
+|     <i>
+|     <div>
+|       <i>
+|         <b>
+|           "c"
+|         "d"
+|       "e"
+
+#data
+<b>a<i>b<div>c</b>d<script data-skip>document.write("</i>")</script>e</div>
+#document
+| <html>
+|   <head>
+|   <body>
+|     <b>
+|       "a"
+|       <i>
+|         "b"
+|     <i>
+|     <div>
+|       <i>
+|         <b>
+|           "c"
+|         "d"
+|       "e"
+
+#data
+<script data-skip>document.write("<b>")</script>a<i>b<div>c</b>d</i>e</div>
+#document
+| <html>
+|   <head>
+|   <body>
+|     <b>
+|       "a"
+|       <i>
+|         "b"
+|     <i>
+|     <div>
+|       <i>
+|         <b>
+|           "c"
+|         "d"
+|       "e"
+
+#data
+<b>a<script data-skip>document.write("<i>")</script>b<div>c</b>d</i>e</div>
+#document
+| <html>
+|   <head>
+|   <body>
+|     <b>
+|       "a"
+|       <i>
+|         "b"
+|     <i>
+|     <div>
+|       <i>
+|         <b>
+|           "c"
+|         "d"
+|       "e"
+
+#data
+<b>a<i>b<script data-skip>document.write("<div>")</script>c</b>d</i>e</div>
+#document
+| <html>
+|   <head>
+|   <body>
+|     <b>
+|       "a"
+|       <i>
+|         "b"
+|     <i>
+|     <div>
+|       <i>
+|         <b>
+|           "c"
+|         "d"
+|       "e"
+
+#data
+<b>a<i>b<script data-skip>document.write("<div>")</script>c</b>d</i>e</div>
+#document
+| <html>
+|   <head>
+|   <body>
+|     <b>
+|       "a"
+|       <i>
+|         "b"
+|     <i>
+|     <div>
+|       <i>
+|         <b>
+|           "c"
+|         "d"
+|       "e"
+
+#data
+<table><b>a<i>b<div>c</b>d<script data-skip>document.write("</table>")</script>e</i>f
+#document
+| <html>
+|   <head>
+|   <body>
+|     <b>
+|       "a"
+|       <i>
+|         "b"
+|     <i>
+|       <div>
+|         <b>
+|           "c"
+|         "d"
+|     <table>
+|     <i>
+|       "e"
+|     "f"

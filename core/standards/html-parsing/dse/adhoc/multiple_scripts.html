@@ -1,0 +1,9 @@
+<!doctype html>
+<title>Executing multiple scripts</title>
+<p id="log">FAIL</p>
+<script>var c=0; var passed=false;</script>
+<script>c++; passed = (c === 1);</script>
+<script>c++; passed = passed && (c === 2)</script>
+<script>document.getElementById("log").textContent = passed ? "PASS":"FAIL";
+try {top.opener.rr(passed)} catch(e) {}
+</script>

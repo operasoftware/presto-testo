@@ -1,0 +1,21 @@
+<!doctype html>
+<script>
+onload = parent.t.step_func(function() {
+  onload = null;
+  document.open();
+  onload = parent.t.step_func(function() {
+    parent.assert_unreached();
+  });
+  pageshow_fired = false;
+  addEventListener("pageshow",
+                   parent.t.step_func(function() {
+                     pageshow_fired = true;
+                   }), false);
+  setTimeout(parent.t.step_func(
+    function() {
+      parent.assert_true(pageshow_fired);
+      parent.t.done();
+     }), 500);
+  document.close();
+});
+</script>

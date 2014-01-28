@@ -1,0 +1,20 @@
+<!doctype html>
+<title>CompatMode Override 2, standards mode</title>
+<style>
+td.almost {
+  background-color:blue;
+}
+</style>
+<p>This test must be run with opera:config#UserPrefs|CompatModeOverride set to 2</p>
+<p id="log">FAIL (script did not run)</p>
+
+<table>
+<tr><td class="almost"><img alt="" src="spacer.gif" height="1" width="10"></td></tr>
+<tr><td class="almost"><img alt="" src="spacer.gif" height="1" width="10"></td></tr>
+</table>
+
+<script>
+var expected_mode_string = "standards";
+</script>
+
+<script src='test.js'></script>

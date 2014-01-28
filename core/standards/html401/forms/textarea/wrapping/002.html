@@ -1,0 +1,28 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<title>Wrapping in textareas</title>
+<style>
+pre, textarea {
+	font: 12px "Courier New" monospace;
+	resize: none;
+}
+textarea {
+	overflow: auto;
+}
+</style>
+</head>
+<body>
+
+<p>The text in the textarea below should wrap at the same place as in the paragraph below it.</p>
+
+<p>
+  <textarea rows="10" cols="50">When the final character in a line is punctuation, the last word should wrap to the next line.</textarea>
+</p>
+
+<pre>When the final character in a line is
+punctuation, the last word should wrap to the
+next line.</pre>
+
+</body>
+</html>

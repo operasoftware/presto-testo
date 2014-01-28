@@ -1,0 +1,15 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+<head>
+<title>OBJECT :: standby</title>
+</head>
+
+<body>
+<p>It should say "PASS" below (and the page should still be loading):</p>
+
+<object data="http://software.hixie.ch/utilities/cgi/test-tools/delayed-file?pause=120&amp;mime=text%2Fplain&amp;text=Reload+test." type="text/plain" standby="PASS (if the page is still loading)">
+FAIL
+</object>
+
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+<head>
+<title>IFRAME :: height : %</title>
+<style type="text/css">
+div {
+	height: 200px;
+}
+p, iframe {
+	border: 1px solid black;
+}
+p {
+	height: 20%;
+	width: 100px;
+	background: #3366CC;
+}
+iframe {
+	width: 100px;
+}
+</style>
+</head>
+
+<body>
+<h5>the two boxen below should be identical in height</h5>
+
+<div>
+<iframe src="http://t/core/standards/html401/helper-dummy.html" height="20%">FAIL</iframe>
+<p></p>
+</div>
+
+</body>
+</html>

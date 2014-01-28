@@ -1,0 +1,28 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+
+<html>
+
+<head>
+
+
+<!-- Purpose: To test the FORM Element with the enctype attribute as multipart/form-data. -->
+
+<!-- Expected result: Upon submission, encapsulates the fields in the form as parts of a MIME-compatible compound document. -->
+
+<TITLE>HTML Functional -- FORM - ENCTYPE="multipart/form-data"</TITLE>
+
+</head>
+
+<body onload="document.f1.submit()">
+
+<form action="hlp/form_enctype_multipart.php" method="post" name="f1" enctype="multipart/form-data">
+
+	<input type="hidde" name="inp" value="submit to see result">
+	<input type="submit">
+
+</form>
+
+</body>
+
+</html>
+

@@ -1,0 +1,40 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+<head>
+<title>COLGROUP :: width %</title>
+<style type="text/css">
+table {
+	border-spacing: 0;
+	width: 100px;
+	margin-bottom: 20px;
+}
+td {
+	padding: 0;
+	border: 1px solid black;
+}
+</style>
+</head>
+
+<body>
+<p>you should see two identical boxes below</p>
+
+<table>
+	<colgroup width="25%"><col></colgroup>
+	<colgroup width="75%"><col></colgroup>
+<tr>
+	<td>text</td>
+	<td>text</td>
+</tr>
+</table>
+
+<table>
+	<colgroup><col></colgroup>
+	<colgroup><col></colgroup>
+<tr>
+	<td width="25">text</td>
+	<td width="75">text</td>
+</tr>
+</table>
+
+</body>
+</html>

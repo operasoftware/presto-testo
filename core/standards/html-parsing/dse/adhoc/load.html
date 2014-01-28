@@ -1,0 +1,19 @@
+<!doctype html>
+<title>Scripts execute before load</title>
+<p id="log">FAIL (script not complete)</p>
+<script>
+addEventListener("load", function() {
+  passed = document.body.lastChild.nodeValue === "Filler Text";
+  report_result(passed);
+}, false);
+document.body.appendChild(document.createTextNode("Filler Text"))
+
+function report_result(passed) {
+  clearTimeout(timeout_id)
+  try{top.opener.rr(passed)} catch(e) {}
+  document.getElementById("log").textContent = passed ? "PASS" : "FAIL";
+}
+
+var timeout_id = setTimeout(function() {report_result(false)}, 1000);
+
+</script>

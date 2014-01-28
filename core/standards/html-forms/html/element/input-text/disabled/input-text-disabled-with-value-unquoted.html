@@ -1,0 +1,17 @@
+<!doctype html>
+<meta charset="utf-8" />
+<title>input type=text disabled defined with unquoted value disabled</title>
+
+<p>
+	Try append “bar” to the contents in the text field.  You should not be able
+	to, as it is set to <var>disabled</var>.  Click the submit button.  You should
+	see “PASS” on the following page.
+</p>
+
+<form action="../../../../res/null_post.rb" method="post">
+	<p>
+		<input name="test" id="test" type="text" value="foo" disabled=disabled />
+		<input type="submit" name="submit" />
+	</p>
+</form>
+

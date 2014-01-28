@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf8">
+    <title>HTML 5 Parser tests tests/test_scripted_change.html</title>
+  </head>
+  <body>
+    <h1>html5lib Parser Test</h1>
+    <div id="log"></div>
+    <script src="../common.js"></script>
+    <script src="../test.js"></script>
+    <script src="/resources/testharness.js"></script>
+    <script src="/resources/testharnessreport.js"></script>
+    <script>
+      var num_iframes = 8;
+      var order = ['47cd96ab80e4fe6dadab72a9f6fd8d97f1a77284','94fdf723d869eef3f5adabe35dc130f05ab4f32d','0ad109450f7e5afe1eed535b0a9ffa56df085165',];
+      var tests = {
+          "47cd96ab80e4fe6dadab72a9f6fd8d97f1a77284":[async_test('tests/test_scripted_change.html 47cd96ab80e4fe6dadab72a9f6fd8d97f1a77284', {'timeout':1000}), "%3Ca%3E%3Ci%3E%3Cb%3E%3Cscript%3Evar%20e%20%3D%20document.createElement%28%22a%22%29%3B%20document.body.appendChild%28e%29%3B%20e.appendChild%28document.getElementsByTagName%28%22b%22%29%5B0%5D%29%3C/script%3E%3Ca%3Ea", "%23document%0A%7C%20%3Chtml%3E%0A%7C%20%20%20%3Chead%3E%0A%7C%20%20%20%3Cbody%3E%0A%7C%20%20%20%20%20%3Ca%3E%0A%7C%20%20%20%20%20%20%20%3Ci%3E%0A%7C%20%20%20%20%20%3Ca%3E%0A%7C%20%20%20%20%20%20%20%3Cb%3E%0A%7C%20%20%20%20%20%20%20%20%20%3Cscript%3E%0A%7C%20%20%20%20%20%20%20%20%20%20%20%22var%20e%20%3D%20document.createElement%28%22a%22%29%3B%20document.body.appendChild%28e%29%3B%20e.appendChild%28document.getElementsByTagName%28%22b%22%29%5B0%5D%29%22%0A%7C%20%20%20%20%20%3Ci%3E%0A%7C%20%20%20%20%20%20%20%3Cb%3E%0A%7C%20%20%20%20%20%20%20%20%20%3Ca%3E%0A%7C%20%20%20%20%20%20%20%20%20%20%20%22a%22"],"94fdf723d869eef3f5adabe35dc130f05ab4f32d":[async_test('tests/test_scripted_change.html 94fdf723d869eef3f5adabe35dc130f05ab4f32d', {'timeout':1000}), "%3Ca%3Ea%3Cb%3Eb%3Cscript%3Evar%20e%20%3D%20document.createElement%28%22i%22%29%3B%20document.body.appendChild%28e%29%3B%20e.appendChild%28document.getElementsByTagName%28%22b%22%29%5B0%5D%29%3C/script%3E%3C/a%3Ec%3C/b%3E", "%23document%0A%7C%20%3Chtml%3E%0A%7C%20%20%20%3Chead%3E%0A%7C%20%20%20%3Cbody%3E%0A%7C%20%20%20%20%20%3Ca%3E%0A%7C%20%20%20%20%20%20%20%22a%22%0A%7C%20%20%20%20%20%3Ci%3E%0A%7C%20%20%20%20%20%20%20%3Cb%3E%0A%7C%20%20%20%20%20%20%20%20%20%22b%22%0A%7C%20%20%20%20%20%20%20%20%20%3Cscript%3E%0A%7C%20%20%20%20%20%20%20%20%20%20%20%22var%20e%20%3D%20document.createElement%28%22i%22%29%3B%20document.body.appendChild%28e%29%3B%20e.appendChild%28document.getElementsByTagName%28%22b%22%29%5B0%5D%29%22%0A%7C%20%20%20%20%20%3Cb%3E%0A%7C%20%20%20%20%20%20%20%22c%22"],"0ad109450f7e5afe1eed535b0a9ffa56df085165":[async_test('tests/test_scripted_change.html 0ad109450f7e5afe1eed535b0a9ffa56df085165', {'timeout':1000}), "%3Cbody%3E%3Cscript%3Edocument.body.appendChild%28document.createElement%28%22div%22%29%29%3C/script%3E%3Cdiv%3E", "%23document%0A%7C%20%3Chtml%3E%0A%7C%20%20%20%3Chead%3E%0A%7C%20%20%20%3Cbody%3E%0A%7C%20%20%20%20%20%3Cscript%3E%0A%7C%20%20%20%20%20%20%20%22document.body.appendChild%28document.createElement%28%22div%22%29%29%22%0A%7C%20%20%20%20%20%3Cdiv%3E%0A%7C%20%20%20%20%20%3Cdiv%3E"],
+      }
+      init_tests(get_type(), 3000);
+    </script>
+  </body>
+</html>

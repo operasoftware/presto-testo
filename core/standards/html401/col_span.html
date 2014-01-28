@@ -1,0 +1,37 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+<head>
+<title>COL :: span</title>
+<style type="text/css">
+table {
+	border-spacing: 0;
+	width: 90px;
+	margin-bottom: 20px;
+}
+td {
+	padding: 0;
+	border: 1px solid black;
+}
+[span] {
+	background: lime;
+}
+</style>
+</head>
+
+<body>
+<p>the first two cells should be green</p>
+
+<table>
+<colgroup>
+	<col span="2">
+	<col>
+</colgroup>
+<tr>
+	<td>text</td>
+	<td>text</td>
+	<td>text</td>
+</tr>
+</table>
+
+</body>
+</html>

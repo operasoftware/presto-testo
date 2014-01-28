@@ -1,0 +1,312 @@
+{
+"(u'tests/test_001_0d1d4f3d9a049298643049635c3bd0beeeb1edd5.html', 'HTML 5 Parser test')": {
+"results": {
+"default": "pass"
+}
+}, 
+"(u'tests/test_001_0d1d4f3d9a049298643049635c3bd0beeeb1edd5.html', None)": {
+"results": {
+"default": "crash"
+}
+}, 
+"(u'tests/test_001_3005c1496accc56173ad823d1f521f7c972108c7.html', 'HTML 5 Parser test')": {
+"results": {
+"default": "fail"
+}
+}, 
+"(u'tests/test_001_3005c1496accc56173ad823d1f521f7c972108c7.html', None)": {
+"results": {
+"default": "crash"
+}
+}, 
+"(u'tests/test_001_c12e078e10eb70176d21a7ca954d8192dff1d31a.html', 'HTML 5 Parser test')": {
+"results": {
+"default": "pass"
+}
+}, 
+"(u'tests/test_001_c12e078e10eb70176d21a7ca954d8192dff1d31a.html', None)": {
+"results": {
+"default": "crash"
+}
+}, 
+"(u'tests/test_001_de7ec4c658ab96ab179b365247c2e3fee40f5f33.html', 'HTML 5 Parser test')": {
+"results": {
+"default": "pass"
+}
+}, 
+"(u'tests/test_001_de7ec4c658ab96ab179b365247c2e3fee40f5f33.html', None)": {
+"results": {
+"default": "crash"
+}
+}, 
+"(u'tests/test_aaa_1954d71f4010f3a13517400821eb14b2894f7cb7.html', 'HTML 5 Parser test')": {
+"results": {
+"default": "pass"
+}
+}, 
+"(u'tests/test_aaa_1954d71f4010f3a13517400821eb14b2894f7cb7.html', None)": {
+"results": {
+"default": "crash"
+}
+}, 
+"(u'tests/test_aaa_57c0eb1198e19c4cf7541a4b32d1e734e3788892.html', 'HTML 5 Parser test')": {
+"results": {
+"default": "pass"
+}
+}, 
+"(u'tests/test_aaa_57c0eb1198e19c4cf7541a4b32d1e734e3788892.html', None)": {
+"results": {
+"default": "crash"
+}
+}, 
+"(u'tests/test_aaa_79d7879f515509be3643287c9bd6072b065f7d2c.html', 'HTML 5 Parser test')": {
+"results": {
+"default": "pass"
+}
+}, 
+"(u'tests/test_aaa_79d7879f515509be3643287c9bd6072b065f7d2c.html', None)": {
+"results": {
+"default": "crash"
+}
+}, 
+"(u'tests/test_aaa_7d5e1ccad6c65fa8c4e29faeeb0fe1c89ec3e779.html', 'HTML 5 Parser test')": {
+"results": {
+"default": "pass"
+}
+}, 
+"(u'tests/test_aaa_7d5e1ccad6c65fa8c4e29faeeb0fe1c89ec3e779.html', None)": {
+"results": {
+"default": "crash"
+}
+}, 
+"(u'tests/test_aaa_8c874363498742b684198e898da5bcdfccd0835c.html', 'HTML 5 Parser test')": {
+"results": {
+"default": "pass"
+}
+}, 
+"(u'tests/test_aaa_8c874363498742b684198e898da5bcdfccd0835c.html', None)": {
+"results": {
+"default": "crash"
+}
+}, 
+"(u'tests/test_aaa_f864d2362686e07081c9d97ad055b6cd0ab92260.html', 'HTML 5 Parser test')": {
+"results": {
+"default": "pass"
+}
+}, 
+"(u'tests/test_aaa_f864d2362686e07081c9d97ad055b6cd0ab92260.html', None)": {
+"results": {
+"default": "crash"
+}
+}, 
+"(u'tests/test_body_0a82281c216a654510ef63929e2abd95ed00a144.html', 'HTML 5 Parser test')": {
+"results": {
+"default": "pass"
+}
+}, 
+"(u'tests/test_body_0a82281c216a654510ef63929e2abd95ed00a144.html', None)": {
+"results": {
+"default": "crash"
+}
+}, 
+"(u'tests/test_body_123faf6067e90c5db33d68f09fbe0bf1480f0f3c.html', 'HTML 5 Parser test')": {
+"results": {
+"default": "pass"
+}
+}, 
+"(u'tests/test_body_123faf6067e90c5db33d68f09fbe0bf1480f0f3c.html', None)": {
+"results": {
+"default": "crash"
+}
+}, 
+"(u'tests/test_body_55e5fa0de574431e39bb55319880e52393288870.html', 'HTML 5 Parser test')": {
+"results": {
+"default": "pass"
+}
+}, 
+"(u'tests/test_body_55e5fa0de574431e39bb55319880e52393288870.html', None)": {
+"results": {
+"default": "crash"
+}
+}, 
+"(u'tests/test_body_844a59021ae5675fe4b2781a58bc4692119cb3e2.html', 'HTML 5 Parser test')": {
+"results": {
+"default": "pass"
+}
+}, 
+"(u'tests/test_body_844a59021ae5675fe4b2781a58bc4692119cb3e2.html', None)": {
+"results": {
+"default": "crash"
+}
+}, 
+"(u'tests/test_body_8a42437199044894e0232e9faaef1b0fb91ad7a2.html', 'HTML 5 Parser test')": {
+"results": {
+"default": "pass"
+}
+}, 
+"(u'tests/test_body_8a42437199044894e0232e9faaef1b0fb91ad7a2.html', None)": {
+"results": {
+"default": "crash"
+}
+}, 
+"(u'tests/test_body_97be268ead002d976d80b2b9f98b61fc41c9fe55.html', 'HTML 5 Parser test')": {
+"results": {
+"default": "pass"
+}
+}, 
+"(u'tests/test_body_97be268ead002d976d80b2b9f98b61fc41c9fe55.html', None)": {
+"results": {
+"default": "crash"
+}
+}, 
+"(u'tests/test_foreign_0ae679054312010b3542594befe32c6a01031582.html', 'HTML 5 Parser test')": {
+"results": {
+"default": "fail"
+}
+}, 
+"(u'tests/test_foreign_476458af4f8be00b2aa204a121eef46360f2e1b4.html', 'HTML 5 Parser test')": {
+"results": {
+"default": "pass"
+}
+}, 
+"(u'tests/test_foreign_476458af4f8be00b2aa204a121eef46360f2e1b4.html', None)": {
+"results": {
+"default": "crash"
+}
+}, 
+"(u'tests/test_foster_431d4b41fe1d51c6c9311114de2ccf9a2b4235cb.html', 'HTML 5 Parser test')": {
+"results": {
+"default": "pass"
+}
+}, 
+"(u'tests/test_foster_431d4b41fe1d51c6c9311114de2ccf9a2b4235cb.html', None)": {
+"results": {
+"default": "crash"
+}
+}, 
+"(u'tests/test_foster_4850a54db525c39d0d45cd3c0489938db5c18496.html', 'HTML 5 Parser test')": {
+"results": {
+"default": "pass"
+}
+}, 
+"(u'tests/test_foster_4850a54db525c39d0d45cd3c0489938db5c18496.html', None)": {
+"results": {
+"default": "crash"
+}
+}, 
+"(u'tests/test_foster_577c88a84793101b7482c59873c5556eaf83852d.html', 'HTML 5 Parser test')": {
+"results": {
+"default": "pass"
+}
+}, 
+"(u'tests/test_foster_577c88a84793101b7482c59873c5556eaf83852d.html', None)": {
+"results": {
+"default": "crash"
+}
+}, 
+"(u'tests/test_foster_6c1c4443b89879a5a4cd87ebb1e72b571af1047a.html', 'HTML 5 Parser test')": {
+"results": {
+"default": "fail"
+}
+}, 
+"(u'tests/test_foster_7879f6ee87f900adf417aeb4bd449beb25e6ca57.html', 'HTML 5 Parser test')": {
+"results": {
+"default": "fail"
+}
+}, 
+"(u'tests/test_foster_7879f6ee87f900adf417aeb4bd449beb25e6ca57.html', None)": {
+"results": {
+"default": "crash"
+}
+}, 
+"(u'tests/test_foster_903ac6eb02809df49cd4d8194aa45dd396a38047.html', 'HTML 5 Parser test')": {
+"results": {
+"default": "pass"
+}
+}, 
+"(u'tests/test_foster_903ac6eb02809df49cd4d8194aa45dd396a38047.html', None)": {
+"results": {
+"default": "crash"
+}
+}, 
+"(u'tests/test_foster_b34c90dad001c02662992ba2b941674b33cabe89.html', 'HTML 5 Parser test')": {
+"results": {
+"default": "pass"
+}
+}, 
+"(u'tests/test_foster_b34c90dad001c02662992ba2b941674b33cabe89.html', None)": {
+"results": {
+"default": "crash"
+}
+}, 
+"(u'tests/test_foster_d7b8c657f66a5d2392020e573128af7b5d6e50eb.html', 'HTML 5 Parser test')": {
+"results": {
+"default": "pass"
+}
+}, 
+"(u'tests/test_foster_d7b8c657f66a5d2392020e573128af7b5d6e50eb.html', None)": {
+"results": {
+"default": "crash"
+}
+}, 
+"(u'tests/test_frameset_0b734cc79ccc11b68065915396771ff92a8536a4.html', 'HTML 5 Parser test')": {
+"results": {
+"default": "pass"
+}
+}, 
+"(u'tests/test_frameset_0b734cc79ccc11b68065915396771ff92a8536a4.html', None)": {
+"results": {
+"default": "crash"
+}
+}, 
+"(u'tests/test_frameset_15243ba5211301a38c8e735814030d3d39522730.html', 'HTML 5 Parser test')": {
+"results": {
+"default": "pass"
+}
+}, 
+"(u'tests/test_frameset_15243ba5211301a38c8e735814030d3d39522730.html', None)": {
+"results": {
+"default": "crash"
+}
+}, 
+"(u'tests/test_frameset_bf9ade19e252ae84f5614933b8915b7ca0491dbc.html', 'HTML 5 Parser test')": {
+"results": {
+"default": "pass"
+}
+}, 
+"(u'tests/test_frameset_bf9ade19e252ae84f5614933b8915b7ca0491dbc.html', None)": {
+"results": {
+"default": "crash"
+}
+}, 
+"(u'tests/test_frameset_f4d750fee96e16bac8003c2458695bae713309a5.html', 'HTML 5 Parser test')": {
+"results": {
+"default": "fail"
+}
+}, 
+"(u'tests/test_frameset_f4d750fee96e16bac8003c2458695bae713309a5.html', None)": {
+"results": {
+"default": "crash"
+}
+}, 
+"(u'tests/test_reconstruct_c3d9316709b39add55952660cf6afb841757aaec.html', 'HTML 5 Parser test')": {
+"results": {
+"default": "pass"
+}
+}, 
+"(u'tests/test_reconstruct_c3d9316709b39add55952660cf6afb841757aaec.html', None)": {
+"results": {
+"default": "crash"
+}
+}, 
+"(u'tests/test_reconstruct_deacdffbf1f97fce0186caedcf80703ee7950266.html', 'HTML 5 Parser test')": {
+"results": {
+"default": "pass"
+}
+}, 
+"(u'tests/test_reconstruct_deacdffbf1f97fce0186caedcf80703ee7950266.html', None)": {
+"results": {
+"default": "crash"
+}
+}
+}

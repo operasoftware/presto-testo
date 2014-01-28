@@ -1,0 +1,16 @@
+<!doctype html>
+<script>
+onload = parent.t.step_func(function() {
+  onload = null;
+  document.open();
+  document.write("<script defer src='003-1.js'><\/script>");
+  document.write("<script>parent.t.step(function() {parent.assert_equals(document.readyState, 'loading'); parent.events.push('script')})<\/script>");
+
+  addEventListener("DOMContentLoaded", parent.t.step_func(function() {
+    parent.events.push("DOMContentLoaded"), 
+    parent.assert_array_equals(parent.events, ["script", "defer", "DOMContentLoaded"]);
+    parent.t.done()
+  }), false);
+  document.close();
+});
+</script>

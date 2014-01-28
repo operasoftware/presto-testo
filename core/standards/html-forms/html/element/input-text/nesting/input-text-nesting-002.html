@@ -1,0 +1,18 @@
+<!doctype html>
+<meta charset="utf-8" />
+<title>input type=text Two nested forms with an input</title>
+
+<p>
+	Click the submit button below.  You should see the word ”foobar” on the
+	following page.
+</p>
+
+<form action="../../../../res/return_single_post.rb" method="post"> <!-- If this is triggered, it will show “foobar” -->
+	<form action="../../../../res/null_post.rb" method="post"> <!-- If this is triggered, it will show “FAIL” -->
+		<p>
+			<input name="test" type="text" value="foobar" />
+			<input type="submit" name="submit" />
+		</p>
+	</form>
+</form>
+

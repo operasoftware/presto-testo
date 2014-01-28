@@ -1,0 +1,37 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>document.readyState</title>
+<script src="/resources/testharness.js"></script>
+<script src="/resources/testharnessreport.js"></script>
+<div id="log"></div>
+<script>
+test(function() {
+  assert_equals(window, top, "Top level browsing context has top equal to window")
+});
+
+function test_func(top_pointer) {
+  test(function() {assert_equals(window, top_pointer)});
+}
+
+test(function() {
+  var iframe = document.createElement("iframe");
+  var doc = iframe.contentDocument;
+
+  iframe.contentWindow.test_func = test_func();
+  doc.documentElement.innerHTML = "<script>test_func(top);</script>"
+});
+
+test(function() {
+  var iframe = document.createElement("iframe");
+  var doc = iframe.contentDocument;
+
+  iframe2 = document.createElement("iframe");
+  var doc2 = iframe.contentDocument;
+
+  doc.body.appendChild(iframe2);
+
+  iframe2.contentWindow.test_func = test_func();
+  doc2.documentElement.innerHTML = "<script>test_func(top);</script>"
+});
+
+</script>

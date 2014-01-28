@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf8">
+    <title>HTML 5 Parser test</title>
+    <script src="../common.js"></script>
+    <script src="../test.js"></script>
+    <script src="/resources/testharness.js"></script>
+    <script src="/resources/testharnessreport.js"></script>
+    <script>
+      var t = async_test();
+      on_event(window, "load", function() {
+        t.step(function() {
+          test_in_data_uri("%3Csvg%3E%3Cscript%20data-skip%3Edocument.write%28%22%3CforeignObject%3E%22%29%3C/script%3E%3Cp%3E", "%23document%0A%7C%20%3Chtml%3E%0A%7C%20%20%20%3Chead%3E%0A%7C%20%20%20%3Cbody%3E%0A%7C%20%20%20%20%20%3Csvg%20svg%3E%0A%7C%20%20%20%20%20%20%20%3Csvg%20foreignObject%3E%0A%7C%20%20%20%20%20%20%20%20%20%3Cp%3E");
+        })
+      })
+    </script>
+  </head>
+  <body>
+    <h1>html5lib Parser Test</h1>
+    <div id="log"></div>
+    <div id="input">
+      <h2>Input</h2>
+      <pre><code>&lt;svg&gt;&lt;script data-skip&gt;document.write("&lt;foreignObject&gt;")&lt;/script&gt;&lt;p&gt;</code></pre>
+    </div>
+    <div id="expected">
+      <h2>Expected</h2>
+      <pre><code>#document
+| &lt;html&gt;
+|   &lt;head&gt;
+|   &lt;body&gt;
+|     &lt;svg svg&gt;
+|       &lt;svg foreignObject&gt;
+|         &lt;p&gt;</code></pre>
+    </div>
+    <div id="actual">
+      <h2>Actual</h2>
+      <pre><code></code></pre>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,22 @@
+<!doctype html>
+<meta charset="utf-8" />
+<title>input type=text Undo buffer with script</title>
+
+<p>
+	Focus the text field and press <kbd>C-z</kbd> to trigger the undo action.
+	You should see the word “foobar” in the text field.
+</p>
+
+<form>
+	<p>
+		<input id="test" type="text" value="foobar" />
+	</p>
+</form>
+
+<script>
+
+	var test = document.getElementById("test");
+	test.value = "";
+
+</script>
+

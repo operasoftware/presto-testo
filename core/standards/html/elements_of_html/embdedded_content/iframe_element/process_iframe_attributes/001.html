@@ -1,0 +1,120 @@
+<!doctype html>
+<title>Prepare the iframe attributes</title>
+<script src="/resources/testharness.js"></script>
+<script src="/resources/testharnessreport.js"></script>
+<div id="log"></div>
+<script>
+function do_test(test_func) {
+  var iframes = document.getElementsByTagName("iframe");
+  while (iframes.length) {
+    iframes[0].parentNode.removeChild(iframes[0]);
+  }
+
+  var iframe = document.createElement("iframe");
+  var before = document.getElementById("log");
+  iframe.onload = this.step_func(function() {test_func.call(this, iframe)});
+  log.parentNode.insertBefore(iframe, before);
+}
+
+var test_data = [
+["Set empty URL",
+  function(iframe) {
+   var src = iframe.src;
+   assert_equals(src, "");
+   iframe.src = "data:text/html,initial";
+   iframe.onload = this.step_func(function() {
+     assert_equals(iframe.src, "data:text/html,initial");
+     iframe.src = "";
+     iframe.onload = this.step_func(function() {
+       assert_equals(iframe.src, "data:text/html,initial");
+       this.done();
+     });
+   })
+   iframe.src = "data:text/html,initial";
+  }],
+
+["Set Empty URL twice",
+ function(iframe) {
+   var src = iframe.src;
+   assert_equals(src, "");
+   iframe.src = "data:text/html,initial";
+   iframe.onload = this.step_func(function() {
+     assert_equals(iframe.src, "data:text/html,initial");
+     iframe.src = "";
+     iframe.onload = this.step_func(function() {
+       assert_equals(iframe.src, "data:text/html,initial");
+       iframe.src = "";
+       iframe.onload = this.step_func(function() {
+         assert_equals(iframe.src, "data:text/html,initial");
+         this.done();
+       });
+     });
+   })
+   iframe.src = "data:text/html,initial";
+  }],
+
+["Set Empty URL and back to normal",
+ function(iframe) {
+   var src = iframe.src;
+   assert_equals(src, "");
+   iframe.src = "data:text/html,initial";
+   iframe.onload = this.step_func(function() {
+//     assert_equals(iframe.src, "data:text/html,initial");
+     iframe.src = "";
+     iframe.onload = this.step_func(function() {
+//       assert_equals(iframe.src, "data:text/html,initial");
+       iframe.src = "data:text/html,final";
+       iframe.onload = this.step_func(function() {
+         assert_equals(iframe.src, "data:text/html,final");
+         this.done();
+       });
+     });
+   })
+   iframe.src = "data:text/html,initial";
+  }],
+
+["Set Empty URL and back to normal, history length",
+ function(iframe) {
+   var src = iframe.src;
+   assert_equals(src, "");
+   var history_length = history.length;
+   iframe.src = "data:text/html,initial";
+   iframe.onload = this.step_func(function() {
+     assert_equals(history.length, history_length + 1, "After setting initial data url");
+     iframe.src = "";
+     iframe.onload = this.step_func(function() {
+       assert_equals(history.length, history_length + 1, "After setting empty");
+       iframe.src = "data:text/html,final";
+       iframe.onload = this.step_func(function() {
+         assert_equals(history.length, history_length + 2, "After setting final data URL");
+         assert_equals(iframe.src, "data:text/html,final");
+         this.done();
+       });
+     });
+   })
+   iframe.src = "data:text/html,initial";
+  }],
+
+]
+
+
+
+var tests = test_data.map(
+  function(x) {
+    var t = async_test(x[0]); 
+    return [t, t.step_func(function() {do_test.call(t, x[1])})]
+  });
+var index = -1;
+
+function next() {
+  if (index < tests.length - 1) {
+    index++;
+    tests[index][1]();
+  }
+}
+
+add_result_callback(next);
+
+onload = next;
+</script>
+

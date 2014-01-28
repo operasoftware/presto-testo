@@ -1,0 +1,27 @@
+<!doctype html>
+<title>Triggering navigation from withing beforeunload event</title>
+<script src="/resources/testharness.js"></script>
+<script src="/resources/testharnessreport.js"></script>
+<div id="log"></div>
+<script>
+beforeunload_fired = false;
+var t = async_test();
+
+var base_count = 0;
+var counter = 0;
+
+onload = function() {setTimeout(function() {
+  var iframe = document.getElementsByTagName("iframe")[0]
+
+  iframe.onload = function() {
+                    console.log("onload");
+                    setTimeout(function() {console.log("timeout"); iframe.contentWindow.location="004-2.html"; console.log("after setting src")}, 100);
+                    iframe.onload = t.step_func(function() {assert_equals(counter, 1000); t.done()});
+                  };
+
+  iframe.src = "004-1.html?" + Math.random();
+
+}, 100)};
+
+</script>
+<iframe src="base.html"></iframe>
