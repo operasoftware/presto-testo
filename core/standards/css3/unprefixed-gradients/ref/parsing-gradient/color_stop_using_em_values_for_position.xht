@@ -1,0 +1,27 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>CSS Image Values (Gradients): Gradient function, color stop using em values for position</title>
+    <link rel="author" title="Opera Software" href="http://www.opera.com/"/>
+    <link rel="help" href="{{test.specurl}}"/>
+    <meta name="flags" content="dom"/>
+    <script src="../../support/peg.js"/>
+    <script src="../../support/css-gradients-via-canvas.js"/>
+    <style>
+      div {
+        width: 200px;
+        height: 100px;
+        font-family: Ahem;
+        font-style: normal;
+      }
+      .test {
+        background-image: linear-gradient(to right, lightblue, white 4em, teal 4em);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="test">FAIL</div>
+    <h4>Patterns above and below should be identical and there should be sudden change of color where black line ends. AHEM font required for this test.</h4>
+    <div class="ref">FAIL</div>
+  </body>
+</html>

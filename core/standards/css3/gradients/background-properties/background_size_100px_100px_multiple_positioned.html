@@ -1,0 +1,30 @@
+<!doctype html>
+<html><head>
+  <title>Background properties, background-size: 100px 100px with multiple positioned gradients</title>
+  <script src="../support/css-gradients-via-canvas.js"></script>
+  <style>
+  div {
+    width: 200px;
+    height: 100px;
+    -moz-background-size: 100px 100px;
+    -o-background-size: 100px 100px;
+    -webkit-background-size: 100px 100px;
+    -ms-background-size: 100px 100px;
+    background-size: 100px 100px;
+    background-position: 0 0, 50px 0, 50px -50px, 0px 50px;
+  }
+  .test {
+    background-image: -moz-linear-gradient(45deg, #000 25%, transparent 25%), -moz-linear-gradient(-45deg, #000 25%, transparent 25%),-moz-linear-gradient(45deg, transparent 75%, #000 75%),-moz-linear-gradient(-45deg, transparent 75%, #000 75%);
+    background-image: -o-linear-gradient(45deg, #000 25%, transparent 25%), -o-linear-gradient(-45deg, #000 25%, transparent 25%),-o-linear-gradient(45deg, transparent 75%, #000 75%),-o-linear-gradient(-45deg, transparent 75%, #000 75%);
+    background-image: -webkit-linear-gradient(45deg, #000 25%, transparent 25%), -webkit-linear-gradient(-45deg, #000 25%, transparent 25%),-webkit-linear-gradient(45deg, transparent 75%, #000 75%),-webkit-linear-gradient(-45deg, transparent 75%, #000 75%);
+    background-image: -ms-linear-gradient(45deg, #000 25%, transparent 25%), -ms-linear-gradient(-45deg, #000 25%, transparent 25%),-ms-linear-gradient(45deg, transparent 75%, #000 75%),-ms-linear-gradient(-45deg, transparent 75%, #000 75%);
+    background-image: linear-gradient(45deg, #000 25%, transparent 25%), linear-gradient(-45deg, #000 25%, transparent 25%),linear-gradient(45deg, transparent 75%, #000 75%),linear-gradient(-45deg, transparent 75%, #000 75%);
+  }
+
+  </style>
+</head><body>
+  <div class="test"></div>
+  <h4>There should be identical patterns above and below this line.</h4>
+  <div class="ref"></div>
+
+</body></html>

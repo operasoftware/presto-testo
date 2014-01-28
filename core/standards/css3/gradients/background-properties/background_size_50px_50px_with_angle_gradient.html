@@ -1,0 +1,30 @@
+<!doctype html>
+<html><head>
+  <title>Background properties, background-size: 50px 50px with angle gradient</title>
+  <script src="../support/css-gradients-via-canvas.js"></script>
+  <style>
+  div {
+    width: 201px;
+    height: 100px;
+    background-color: blue;
+    -moz-background-size: 50px 50px;
+    -o-background-size: 50px 50px;
+    -webkit-background-size: 50px 50px;
+    -ms-background-size: 50px 50px;
+    background-size: 50px 50px;
+  }
+  .test {
+    background-image: -moz-linear-gradient(top right, rgba(255, 255, 255, 1) 25%, transparent 25%,transparent 50%, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 1) 75%,transparent 75%, transparent);
+    background-image: -o-linear-gradient(top right, rgba(255, 255, 255, 1) 25%, transparent 25%,transparent 50%, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 1) 75%,transparent 75%, transparent);
+    background-image: -webkit-linear-gradient(top right, rgba(255, 255, 255, 1) 25%, transparent 25%,transparent 50%, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 1) 75%,transparent 75%, transparent);
+    background-image: -ms-linear-gradient(top right, rgba(255, 255, 255, 1) 25%, transparent 25%,transparent 50%, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 1) 75%,transparent 75%, transparent);
+    background-image: linear-gradient(top right, rgba(255, 255, 255, 1) 25%, transparent 25%,transparent 50%, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 1) 75%,transparent 75%, transparent);
+  }
+
+  </style>
+</head><body>
+  <div class="test"></div>
+  <h4>There should be identical patterns above and below this line.</h4>
+  <div class="ref"></div>
+
+</body></html>

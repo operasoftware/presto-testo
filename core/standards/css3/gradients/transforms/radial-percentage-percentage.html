@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html><head>
+  <title>Transforms, radial gradient (percentage size, percentage stops)</title>
+  <script src="../support/css-gradients-via-canvas.js"></script>
+  <style>
+  div {
+    width: 250px;
+    height: 100px;
+    margin: 100px;
+    -moz-transform: scale(1.5);
+    -o-transform: scale(1.5);
+    -webkit-transform: scale(1.5);
+    -ms-transform: scale(1.5);
+    transform: scale(1.5);
+  }
+  div.test {
+    background-image: -moz-radial-gradient(33% 33%, 30% 30%, orange 100%, teal 100%);
+    background-image: -o-radial-gradient(33% 33%, 30% 30%, orange 100%, teal 100%);
+    background-image: -webkit-radial-gradient(33% 33%, 30% 30%, orange 100%, teal 100%);
+    background-image: -ms-radial-gradient(33% 33%, 30% 30%, orange 100%, teal 100%);
+    background-image: radial-gradient(33% 33%, 30% 30%, orange 100%, teal 100%);
+  }
+
+  </style>
+</head><body>
+  <div class="test"></div>
+  <h4>There should be identical patterns above and below this line (differences in aliasing are tolerable).</h4>
+  <div class="ref"></div>
+
+</body></html>

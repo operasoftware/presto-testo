@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>CSS Image Values (Gradients): Background properties with border, background-size: 50px 50px with angle gradient</title>
+    <link rel="author" title="Opera Software" href="http://www.opera.com/"/>
+    <link rel="help" href="{{test.specurl}}"/>
+    <meta name="flags" content="dom"/>
+    <script src="../../support/peg.js"/>
+    <script src="../../support/css-gradients-via-canvas.js"/>
+    <style>
+      div {
+        width: 201px;
+        height: 100px;
+        border: 10px dotted rgba(0,0,0,.5);
+        background-color: blue;
+        background-size: 50px 50px;
+        -o-background-size: 50px 50px;
+      }
+      .test {
+        background-image: linear-gradient(to bottom left, rgba(255, 255, 255, 1) 25%, transparent 25%,transparent 50%, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 1) 75%,transparent 75%, transparent);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="ref"/>
+    <h4>There should be identical patterns above and below this line.</h4>
+    <div class="ref"/>
+  </body>
+</html>

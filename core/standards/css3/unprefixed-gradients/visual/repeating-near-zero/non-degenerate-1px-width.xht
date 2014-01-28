@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>CSS Image Values (Gradients): Near zero stops, non-degenerate shape (1px width)</title>
+    <link rel="author" title="Opera Software" href="http://www.opera.com/"/>
+    <link rel="help" href="{{test.specurl}}"/>
+    <meta name="flags" content="dom"/>
+    <script src="../../support/peg.js"/>
+    <script src="../../support/css-gradients-via-canvas.js"/>
+    <style>
+      div {
+        width: 200px;
+        height: 100px;
+        display: inline-block;
+      }
+      div.test {
+        background-image: repeating-radial-gradient(1px 5px at center, red, lime 100%, blue 10px);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="test"/>
+    <h4>There should be identical patterns above and below this line.</h4>
+    <div class="ref"/>
+  </body>
+</html>

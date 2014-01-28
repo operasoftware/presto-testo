@@ -1,0 +1,28 @@
+<!doctype html>
+<html><head>
+  <title>Background properties with border, background-attachment: fixed</title>
+  <script src="../support/css-gradients-via-canvas.js"></script>
+  <style>
+  div {
+    width: 200px;
+    height: 100px;
+    border: 10px dotted rgba(0,0,0,.5);
+    background-attachment: fixed;
+    float: left;
+    margin: 0 1em;
+  }
+  .test {
+    background-image: -moz-linear-gradient(orange 10%, blue 10%, orange 20%, blue 20%, orange 30%, blue 30%, orange, blue, orange, blue, orange);
+    background-image: -o-linear-gradient(orange 10%, blue 10%, orange 20%, blue 20%, orange 30%, blue 30%, orange, blue, orange, blue, orange);
+    background-image: -webkit-linear-gradient(orange 10%, blue 10%, orange 20%, blue 20%, orange 30%, blue 30%, orange, blue, orange, blue, orange);
+    background-image: -ms-linear-gradient(orange 10%, blue 10%, orange 20%, blue 20%, orange 30%, blue 30%, orange, blue, orange, blue, orange);
+    background-image: linear-gradient(orange 10%, blue 10%, orange 20%, blue 20%, orange 30%, blue 30%, orange, blue, orange, blue, orange);
+  }
+
+  </style>
+</head><body>
+  
+  <h4>There should be two identical patterns below.</h4>
+  <div class="test"></div><div class="ref"></div>
+
+</body></html>

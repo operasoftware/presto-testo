@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html><head>
+  <title>Border Image, input with border image and background color</title>
+  <script src="../support/css-gradients-via-canvas.js"></script>
+  <style>
+  input {
+    border: 20px solid;
+    background-color: orange;
+  }
+  input.test {
+    border-image: -moz-linear-gradient(navy, transparent) 1 100% 1 100%;
+    border-image: -o-linear-gradient(navy, transparent) 1 100% 1 100%;
+    border-image: -webkit-linear-gradient(navy, transparent) 1 100% 1 100%;
+    border-image: -ms-linear-gradient(navy, transparent) 1 100% 1 100%;
+    -moz-border-image: -moz-linear-gradient(navy, transparent) 1 100% 1 100%;
+    -o-border-image: -o-linear-gradient(navy, transparent) 1 100% 1 100%;
+    -webkit-border-image: -webkit-linear-gradient(navy, transparent) 1 100% 1 100%;
+    -ms-border-image: -ms-linear-gradient(navy, transparent) 1 100% 1 100%;
+    border-image: linear-gradient(navy, transparent) 1 100% 1 100%;
+  }
+
+  </style>
+</head><body>
+  <input class="test">
+  <h4>There should be identical patterns above and below this line (differences in aliasing are tolerable).</h4>
+  <input class="ref">
+
+</body></html>

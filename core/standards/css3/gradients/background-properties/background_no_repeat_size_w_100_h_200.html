@@ -1,0 +1,30 @@
+<!doctype html>
+<html><head>
+  <title>Background properties, background-repeat: no-repeat, size w:100% h:200%</title>
+  <script src="../support/css-gradients-via-canvas.js"></script>
+  <style>
+  div {
+    width: 200px;
+    height: 100px;
+    background-repeat: no-repeat;
+    -moz-background-size: 100% 200%;
+    -o-background-size: 100% 200%;
+    -webkit-background-size: 100% 200%;
+    -ms-background-size: 100% 200%;
+    background-size: 100% 200%;
+  }
+  .test {
+    background-image: -moz-linear-gradient(orange, blue);
+    background-image: -o-linear-gradient(orange, blue);
+    background-image: -webkit-linear-gradient(orange, blue);
+    background-image: -ms-linear-gradient(orange, blue);
+    background-image: linear-gradient(orange, blue);
+  }
+
+  </style>
+</head><body>
+  <div class="test"></div>
+  <h4>There should be identical patterns above and below this line.</h4>
+  <div class="ref"></div>
+
+</body></html>

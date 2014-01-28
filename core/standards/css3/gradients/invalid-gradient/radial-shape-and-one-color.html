@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html><head>
+  <title>Invalid radial, shape and one color</title>
+  
+  <style>
+  div {
+    background: red;
+    background-image: -moz-radial-gradient(green, green);
+    background-image: -o-radial-gradient(green, green);
+    background-image: -webkit-radial-gradient(green, green);
+    background-image: -ms-radial-gradient(green, green);
+    background-image: radial-gradient(green, green);
+    width: 100px;
+    height: 100px;
+  }
+  div.test {
+    background-image: -moz-radial-gradient(circle, red);
+    background-image: -o-radial-gradient(circle, red);
+    background-image: -webkit-radial-gradient(circle, red);
+    background-image: -ms-radial-gradient(circle, red);
+    background-image: radial-gradient(circle, red);
+  }
+
+  </style>
+</head><body>
+  
+  <h4>Test passes if there is a green square below and no red.</h4>
+  <div class="test"></div>
+
+</body></html>

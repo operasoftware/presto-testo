@@ -1,0 +1,25 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>CSS Image Values (Gradients): Radial gradient, circle with specified size, flipped</title>
+    <link rel="author" title="Opera Software" href="http://www.opera.com/"/>
+    <link rel="help" href="{{test.specurl}}"/>
+    <meta name="flags" content="dom"/>
+    <script src="../../support/peg.js"/>
+    <script src="../../support/css-gradients-via-canvas.js"/>
+    <style>
+      div {
+        width: 250px;
+        height: 100px;
+      }
+      div.test {
+        background-image: radial-gradient(50px circle, orange 50%, teal 50%);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="ref"/>
+    <h4>There should be identical patterns above and below this line.</h4>
+    <div class="ref"/>
+  </body>
+</html>

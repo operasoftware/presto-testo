@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>CSS Image Values (Gradients): Near zero stops, blue 0, blue, blue, blue, blue, blue, blue, blue, blue, blue, blue, blue, blue, blue, blue, blue, blue 0</title>
+    <link rel="author" title="Opera Software" href="http://www.opera.com/"/>
+    <link rel="help" href="{{test.specurl}}"/>
+    <style>
+      div {
+        width: 100px;
+        height: 100px;
+        display: inline-block;
+      }
+      div.test {
+        background: repeating-linear-gradient(blue 0, blue, blue, blue, blue, blue, blue, blue, blue, blue, blue, blue, blue, blue, blue, blue, blue 0);
+      }
+      div.ref {
+        background: rgba(0, 0, 255, 1);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="test"/>
+    <h4>Squares above and below should be filled with the same single color.</h4>
+    <div class="ref"/>
+  </body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>CSS Image Values (Gradients): Interactive, change on hover</title>
+    <link rel="author" title="Opera Software" href="http://www.opera.com/"/>
+    <link rel="help" href="{{test.specurl}}"/>
+    <meta name="flags" content="dom"/>
+    <script src="../../support/peg.js"/>
+    <script src="../../support/css-gradients-via-canvas.js"/>
+    <style>
+      div {
+        width: 200px;
+        height: 100px;
+      }
+      .test {
+        background-image: linear-gradient(orange, blue);
+      }
+      .test:hover, .test.hover {
+        background-image: linear-gradient(teal, white);
+      }
+      p {
+        margin-bottom: 0;
+      }
+    </style>
+  </head>
+  <body>
+    
+    <h4>Top box should look like first reference image when not hovered and like second when hovered.</h4>
+    <div class="test"/><p>Reference 1:</p><div class="ref"/><p>Reference 2:</p><div class="ref hover"/>
+  </body>
+</html>

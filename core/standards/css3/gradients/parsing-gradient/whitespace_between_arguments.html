@@ -1,0 +1,24 @@
+<!doctype html>
+<html><head>
+  <title>Gradient function, whitespace between arguments</title>
+  <script src="../support/css-gradients-via-canvas.js"></script>
+  <style>
+  div {
+    width: 200px;
+    height: 100px;
+  }
+  .test {
+    background-image:  -moz-linear-gradient( teal , silver ) ;
+    background-image:  -o-linear-gradient( teal , silver ) ;
+    background-image:  -webkit-linear-gradient( teal , silver ) ;
+    background-image:  -ms-linear-gradient( teal , silver ) ;
+    background-image:  linear-gradient( teal , silver ) ;
+  }
+
+  </style>
+</head><body>
+  <div class="test"></div>
+  <h4>There should be identical patterns above and below this line.</h4>
+  <div class="ref"></div>
+
+</body></html>

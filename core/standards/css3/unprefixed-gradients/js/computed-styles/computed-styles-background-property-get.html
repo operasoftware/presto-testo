@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CSS Gradients - computed styles - setting background property</title>
+  <style>
+    ol#log {
+      font-family: monospace;
+      font-size: 8pt;
+      white-space: pre-wrap;
+      list-style-type: decimal-leading-zero;
+    }
+
+    hr {
+      border: 1px solid #ccc;
+      margin: 0;
+    }
+
+    div#g, form#results, iframe {
+      visibility: hidden;
+    }
+  </style>
+  <script src="include.js"></script>
+  <script>
+    var g_property_set = 'background';
+    var g_property_get = 'background';
+
+    /* Do not inherit tests for simple things as we need to handle invalid
+       rules differently. Opera returns:
+       "transparent repeat scroll 0% 0% / auto padding-box border-box"
+       after setting invalid rule on the background property. */
+    test_arr = [];
+
+    /* Tests for setting linear-gradient on background shorthand property
+       together with other values. */
+    test_arr.push(['lime linear-gradient(green, green)', '$color linear-gradient($color, $color)']);
+    test_arr.push(['#0f0 linear-gradient(green, green)', '$color linear-gradient($color, $color)']);
+    test_arr.push(['rgba(0, 80, 0, .8) linear-gradient(green, green)', '$color linear-gradient($color, $color)']);
+    test_arr.push(['linear-gradient(green, green) #0f0', '$color linear-gradient($color, $color)']);
+
+    // Invalid.
+    // Background-color defined twice.
+    test_arr.push(['#0f0 linear-gradient(green, green) #0f0', 'transparent repeat scroll 0% 0% / auto padding-box border-box']);
+    // Missing closing parenthesis.
+    /* T-356 - not invalid as parser closes parenthesis. */
+    test_arr.push(['#0f0 linear-gradient(green, green', '$color linear-gradient($color, $color)']);
+    test_arr.push(['#0f0 linear-gradient(green, green, linear-gradient(green, green)', 'transparent repeat scroll 0% 0% / auto padding-box border-box']);
+
+    // Mixing with various background properties.
+    test_arr.push(['linear-gradient(green, green) 10px 10px', 'linear-gradient($color, $color) 10px 10px']);
+    test_arr.push(['linear-gradient(green, green) no-repeat', 'linear-gradient($color, $color) no-repeat']);
+    test_arr.push(['linear-gradient(green, green) fixed', 'linear-gradient($color, $color) fixed']);
+    test_arr.push(['linear-gradient(green, green) border-box', 'linear-gradient($color, $color) border-box']);
+    test_arr.push(['40% linear-gradient(green, green) gray round fixed border-box', '$color linear-gradient($color, $color) round fixed 40% 50% border-box']);
+    test_arr.push(['linear-gradient(green, green) 40% / 10em gray round fixed border-box', '$color linear-gradient($color, $color) round fixed 40% 50% / 10em border-box']);
+
+    // Multiple gradients.
+    test_arr.push(['linear-gradient(green, green),linear-gradient(green, green)', 'linear-gradient($color, $color), linear-gradient($color, $color)']);
+    test_arr.push(['linear-gradient(green, green), repeating-linear-gradient(green, green)', 'linear-gradient($color, $color), repeating-linear-gradient($color, $color)']);
+
+    // Multiple gradients + additional properties.
+    test_arr.push(['linear-gradient(green, green) , green     linear-gradient(green, green)', 'linear-gradient($color, $color), $color linear-gradient($color, $color)']);
+    test_arr.push(['linear-gradient(green, green), repeating-linear-gradient(green, green) #00f 10px 20px', 'linear-gradient($color, $color), $color repeating-linear-gradient($color, $color) 10px 20px']);
+
+
+    /* Same tests repeated for radial gradients. */
+    test_arr.push(['lime radial-gradient(green, green)', '$color radial-gradient($color, $color)']);
+    test_arr.push(['#0f0 radial-gradient(green, green)', '$color radial-gradient($color, $color)']);
+    test_arr.push(['rgba(0, 80, 0, .8) radial-gradient(green, green)', '$color radial-gradient($color, $color)']);
+    test_arr.push(['radial-gradient(green, green) #0f0', '$color radial-gradient($color, $color)']);
+
+    // Invalid.
+    // Background-color defined twice.
+    test_arr.push(['#0f0 radial-gradient(green, green) #0f0', 'transparent repeat scroll 0% 0% / auto padding-box border-box']);
+    // Missing closing parenthesis.
+    /* T-356 - not invalid as parser closes parenthesis. */
+    test_arr.push(['#0f0 radial-gradient(green, green', '$color radial-gradient($color, $color)']);
+    test_arr.push(['#0f0 radial-gradient(green, green, radial-gradient(green, green)', 'transparent repeat scroll 0% 0% / auto padding-box border-box']);
+
+    // Mixing with various background properties.
+    test_arr.push(['radial-gradient(green, green) 10px 10px', 'radial-gradient($color, $color) 10px 10px']);
+    test_arr.push(['radial-gradient(green, green) no-repeat', 'radial-gradient($color, $color) no-repeat']);
+    test_arr.push(['radial-gradient(green, green) fixed', 'radial-gradient($color, $color) fixed']);
+    test_arr.push(['radial-gradient(green, green) border-box', 'radial-gradient($color, $color) border-box']);
+    test_arr.push(['40% radial-gradient(green, green) gray round fixed border-box', '$color radial-gradient($color, $color) round fixed 40% 50% border-box']);
+    test_arr.push(['radial-gradient(green, green) 40% / 10em gray round fixed border-box', '$color radial-gradient($color, $color) round fixed 40% 50% / 10em border-box']);
+
+    // Multiple gradients.
+    test_arr.push(['radial-gradient(green, green),radial-gradient(green, green)', 'radial-gradient($color, $color), radial-gradient($color, $color)']);
+    test_arr.push(['radial-gradient(green, green), repeating-radial-gradient(green, green)', 'radial-gradient($color, $color), repeating-radial-gradient($color, $color)']);
+
+    // Multiple gradients + additional properties.
+    test_arr.push(['radial-gradient(green, green) , green     radial-gradient(green, green)', 'radial-gradient($color, $color), $color radial-gradient($color, $color)']);
+    test_arr.push(['radial-gradient(green, green), repeating-radial-gradient(green, green) #00f 10px 20px', 'radial-gradient($color, $color), $color repeating-radial-gradient($color, $color) 10px 20px']);
+  </script>
+</head>
+<body>
+
+  <h3>computed style, setting background shorthand, reading background shorthand:</h3>
+
+  <ol id="log"></ol>
+
+  <div id="g"></div>
+
+  <form id="results" action="http://localhost/" method="post" target="results_frame"></form>
+  <iframe name="results_frame" src="about:blank"></iframe>
+
+</body></html>

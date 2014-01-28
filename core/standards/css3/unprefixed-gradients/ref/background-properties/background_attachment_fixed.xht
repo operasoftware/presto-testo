@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>CSS Image Values (Gradients): Background properties, background-attachment: fixed</title>
+    <link rel="author" title="Opera Software" href="http://www.opera.com/"/>
+    <link rel="help" href="{{test.specurl}}"/>
+    <meta name="flags" content="dom"/>
+    <script src="../../support/peg.js"/>
+    <script src="../../support/css-gradients-via-canvas.js"/>
+    <style>
+      div {
+        width: 200px;
+        height: 100px;
+        background-attachment: fixed;
+        position: absolute;
+        top: 100px;
+        left: 20px;
+        margin: 0 1em;
+      }
+      .test {
+        background-image: linear-gradient(orange 10%, blue 10%, orange 20%, blue 20%, orange 30%, blue 30%, orange, blue, orange, blue, orange);
+      }
+      div ~ .ref {
+        left: 250px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="test"/>
+    <h4>There should be two identical patterns below.</h4>
+    <div class="ref"/>
+  </body>
+</html>

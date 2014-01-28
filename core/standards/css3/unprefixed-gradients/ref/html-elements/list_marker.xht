@@ -1,0 +1,21 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>CSS Image Values (Gradients): HTML elements, list marker</title>
+    <link rel="author" title="Opera Software" href="http://www.opera.com/"/>
+    <link rel="help" href="{{test.specurl}}"/>
+    <meta name="flags" content="dom"/>
+    <script src="../../support/peg.js"/>
+    <script src="../../support/css-gradients-via-canvas.js"/>
+    <style>
+      .test {
+        list-style-image: linear-gradient(to bottom right, orange 50%, #000 50%);
+      }
+    </style>
+  </head>
+  <body>
+    <ul><li class="test">List item</li></ul>
+    <h4>There should be two identical list items above and below this line.</h4>
+    <ul><li class="ref">List item</li></ul>
+  </body>
+</html>

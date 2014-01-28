@@ -1,0 +1,29 @@
+<!doctype html>
+<html><head>
+  <title>Gradient function, stop using currentColor - html element</title>
+  
+  <style>
+  div {
+    width: 200px;
+    height: 100px;
+  }
+  html {
+    color: green;
+    background-color: red;
+    background-image: -moz-linear-gradient(currentColor, currentColor);
+    background-image: -o-linear-gradient(currentColor, currentColor);
+    background-image: -webkit-linear-gradient(currentColor, currentColor);
+    background-image: -ms-linear-gradient(currentColor, currentColor);
+    background-image: linear-gradient(currentColor, currentColor);
+  }
+  body > * {
+    color: #ccc;
+  }
+
+  </style>
+</head><body>
+  
+  <h4>Page must have green background.</h4>
+  
+
+</body></html>

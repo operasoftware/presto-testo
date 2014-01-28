@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html><head>
+  <title>Repeating radial, stops at 90%, 150%</title>
+  
+  <style>
+  div {
+    width: 250px;
+    height: 100px;
+  }
+  div.test {
+    background-image: -moz-repeating-radial-gradient(left, 50px 50px, #d9e6a7 90%, #798b3c 90%, #798b3c 150%, #fff 150%);
+    background-image: -o-repeating-radial-gradient(left, 50px 50px, #d9e6a7 90%, #798b3c 90%, #798b3c 150%, #fff 150%);
+    background-image: -webkit-repeating-radial-gradient(left, 50px 50px, #d9e6a7 90%, #798b3c 90%, #798b3c 150%, #fff 150%);
+    background-image: -ms-repeating-radial-gradient(left, 50px 50px, #d9e6a7 90%, #798b3c 90%, #798b3c 150%, #fff 150%);
+    background-image: repeating-radial-gradient(left, 50px 50px, #d9e6a7 90%, #798b3c 90%, #798b3c 150%, #fff 150%);
+  }
+  div.ref {
+    background: #798b3c;
+  }
+
+  </style>
+</head><body>
+  <div class="test"></div>
+  <h4>There should be identical patterns above and below this line.</h4>
+  <div class="ref"></div>
+
+</body></html>

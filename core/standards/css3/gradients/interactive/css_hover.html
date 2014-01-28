@@ -1,0 +1,34 @@
+<!doctype html>
+<html><head>
+  <title>Interactive, change on hover</title>
+  <script src="../support/css-gradients-via-canvas.js"></script>
+  <style>
+  div {
+    width: 200px;
+    height: 100px;
+  }
+  .test {
+    background-image: -moz-linear-gradient(orange, blue);
+    background-image: -o-linear-gradient(orange, blue);
+    background-image: -webkit-linear-gradient(orange, blue);
+    background-image: -ms-linear-gradient(orange, blue);
+    background-image: linear-gradient(orange, blue);
+  }
+  .test:hover, .test.hover {
+    background-image: -moz-linear-gradient(teal, white);
+    background-image: -o-linear-gradient(teal, white);
+    background-image: -webkit-linear-gradient(teal, white);
+    background-image: -ms-linear-gradient(teal, white);
+    background-image: linear-gradient(teal, white);
+  }
+  p {
+    margin-bottom: 0;
+  }
+
+  </style>
+</head><body>
+  
+  <h4>Top box should look like first reference image when not hovered and like second when hovered.</h4>
+  <div class="test"></div><p>Reference 1:</p><div class="ref"></div><p>Reference 2:</p><div class="ref hover"></div>
+
+</body></html>

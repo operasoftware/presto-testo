@@ -1,0 +1,24 @@
+<!doctype html>
+<html><head>
+  <title>Repeating gradient, 1rad angle, stops 20%, 40%</title>
+  <script src="../support/css-gradients-via-canvas.js"></script>
+  <style>
+  div {
+    width: 200px;
+    height: 100px;
+  }
+  .test {
+    background-image: -moz-repeating-linear-gradient(1rad, blue 20%, white 40%);
+    background-image: -o-repeating-linear-gradient(1rad, blue 20%, white 40%);
+    background-image: -webkit-repeating-linear-gradient(1rad, blue 20%, white 40%);
+    background-image: -ms-repeating-linear-gradient(1rad, blue 20%, white 40%);
+    background-image: repeating-linear-gradient(1rad, blue 20%, white 40%);
+  }
+
+  </style>
+</head><body>
+  <div class="test"></div>
+  <h4>There should be identical patterns above and below this line.</h4>
+  <div class="ref"></div>
+
+</body></html>

@@ -1,0 +1,24 @@
+<!doctype html>
+<html><head>
+  <title>HTML elements, table cell</title>
+  <script src="../support/css-gradients-via-canvas.js"></script>
+  <style>
+  table {
+    width: 300px;
+    border-spacing: 0;
+  }
+  .test {
+    background-image: -moz-linear-gradient(top left, orange 50%, #000 50%);
+    background-image: -o-linear-gradient(top left, orange 50%, #000 50%);
+    background-image: -webkit-linear-gradient(top left, orange 50%, #000 50%);
+    background-image: -ms-linear-gradient(top left, orange 50%, #000 50%);
+    background-image: linear-gradient(top left, orange 50%, #000 50%);
+  }
+
+  </style>
+</head><body>
+  <table><tbody><tr><td class="test">&nbsp;</td><td class="test">&nbsp;</td></tr><tr><td class="test">&nbsp;</td><td class="test">&nbsp;</td></tr></tbody></table>
+  <h4>There should be identical patterns above and below this line.</h4>
+  <table><tbody><tr><td class="ref">&nbsp;</td><td class="ref">&nbsp;</td></tr><tr><td class="ref">&nbsp;</td><td class="ref">&nbsp;</td></tr></tbody></table>
+
+</body></html>

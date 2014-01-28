@@ -1,0 +1,31 @@
+<!doctype html>
+<html><head>
+  <title>Crashers, gradient resized with background-size</title>
+  
+  <style>
+  div {
+    overflow: hidden;
+    height: 10px;
+  }
+  div div {
+    background-image: -moz-linear-gradient(orange, red);
+    background-image: -o-linear-gradient(orange, red);
+    background-image: -webkit-linear-gradient(orange, red);
+    background-image: -ms-linear-gradient(orange, red);
+    background-image: linear-gradient(orange, red);
+    overflow: visible;
+    height: 4000px;
+    -moz-background-size: auto 60%;
+    -o-background-size: auto 60%;
+    -webkit-background-size: auto 60%;
+    -ms-background-size: auto 60%;
+    background-size: auto 60%;
+  }
+
+  </style>
+</head><body>
+  
+  <h4>PASS if did not crash nor freeze.</h4>
+  <div><div></div></div>
+
+</body></html>

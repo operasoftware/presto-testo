@@ -1,0 +1,24 @@
+<!doctype html>
+<html><head>
+  <title>Interactive, gradient overlaying animated image</title>
+  <script src="../support/css-gradients-via-canvas.js"></script>
+  <style>
+  div {
+    width: 200px;
+    height: 100px;
+  }
+  .test {
+    background-image: -moz-linear-gradient(orange, transparent, lightblue), url(/resources/images/rotating_earth.gif);
+    background-image: -o-linear-gradient(orange, transparent, lightblue), url(/resources/images/rotating_earth.gif);
+    background-image: -webkit-linear-gradient(orange, transparent, lightblue), url(/resources/images/rotating_earth.gif);
+    background-image: -ms-linear-gradient(orange, transparent, lightblue), url(/resources/images/rotating_earth.gif);
+    background-image: linear-gradient(orange, transparent, lightblue), url(/resources/images/rotating_earth.gif);
+  }
+
+  </style>
+</head><body>
+  <div class="test"></div>
+  <h4>There should be identical patterns above and below this line.</h4>
+  <div class="ref"></div>
+
+</body></html>

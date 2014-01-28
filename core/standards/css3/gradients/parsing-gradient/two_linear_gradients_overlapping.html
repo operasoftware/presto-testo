@@ -1,0 +1,24 @@
+<!doctype html>
+<html><head>
+  <title>Gradient function, two linear gradients overlapping</title>
+  <script src="../support/css-gradients-via-canvas.js"></script>
+  <style>
+  div {
+    width: 200px;
+    height: 100px;
+  }
+  .test {
+    background-image: -moz-linear-gradient(transparent, transparent 40%, white 40%, black 60%, transparent 60%, transparent), -moz-linear-gradient(blue, lightblue);
+    background-image: -o-linear-gradient(transparent, transparent 40%, white 40%, black 60%, transparent 60%, transparent), -o-linear-gradient(blue, lightblue);
+    background-image: -webkit-linear-gradient(transparent, transparent 40%, white 40%, black 60%, transparent 60%, transparent), -webkit-linear-gradient(blue, lightblue);
+    background-image: -ms-linear-gradient(transparent, transparent 40%, white 40%, black 60%, transparent 60%, transparent), -ms-linear-gradient(blue, lightblue);
+    background-image: linear-gradient(transparent, transparent 40%, white 40%, black 60%, transparent 60%, transparent), linear-gradient(blue, lightblue);
+  }
+
+  </style>
+</head><body>
+  <div class="test"></div>
+  <h4>There should be identical patterns above and below this line.</h4>
+  <div class="ref"></div>
+
+</body></html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html><head>
+  <title>Near zero stops, non-degenerate shape (1px width)</title>
+  <script src="../support/css-gradients-via-canvas.js"></script>
+  <style>
+  div {
+    width: 200px;
+    height: 100px;
+    display: inline-block;
+  }
+  div.test {
+    background-image: -moz-repeating-radial-gradient(center, 1px 5px, red, lime 100%, blue 10px);
+    background-image: -o-repeating-radial-gradient(center, 1px 5px, red, lime 100%, blue 10px);
+    background-image: -webkit-repeating-radial-gradient(center, 1px 5px, red, lime 100%, blue 10px);
+    background-image: -ms-repeating-radial-gradient(center, 1px 5px, red, lime 100%, blue 10px);
+    background-image: repeating-radial-gradient(center, 1px 5px, red, lime 100%, blue 10px);
+  }
+
+  </style>
+</head><body>
+  <div class="test"></div>
+  <h4>There should be identical patterns above and below this line.</h4>
+  <div class="ref"></div>
+
+</body></html>

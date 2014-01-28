@@ -1,0 +1,24 @@
+<!doctype html>
+<html><head>
+  <title>Gradient function, two color stops without position followed by color stop positioned before 0%</title>
+  <script src="../support/css-gradients-via-canvas.js"></script>
+  <style>
+  div {
+    width: 200px;
+    height: 100px;
+  }
+  .test {
+    background-image: -moz-linear-gradient(red, red, gray -200%, yellow);
+    background-image: -o-linear-gradient(red, red, gray -200%, yellow);
+    background-image: -webkit-linear-gradient(red, red, gray -200%, yellow);
+    background-image: -ms-linear-gradient(red, red, gray -200%, yellow);
+    background-image: linear-gradient(red, red, gray -200%, yellow);
+  }
+
+  </style>
+</head><body>
+  <div class="test"></div>
+  <h4>There should be identical patterns above and below this line.</h4>
+  <div class="ref"></div>
+
+</body></html>

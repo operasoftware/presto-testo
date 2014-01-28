@@ -1,0 +1,24 @@
+<!doctype html>
+<html><head>
+  <title>Gradient line argument, top + bottom</title>
+  <script src="../support/css-gradients-via-canvas.js"></script>
+  <style>
+  div {
+    width: 200px;
+    height: 100px;
+  }
+  .test {
+    background-image: -moz-linear-gradient(top, teal, transparent, transparent), -moz-linear-gradient(bottom, blue, transparent, transparent);
+    background-image: -o-linear-gradient(top, teal, transparent, transparent), -o-linear-gradient(bottom, blue, transparent, transparent);
+    background-image: -webkit-linear-gradient(top, teal, transparent, transparent), -webkit-linear-gradient(bottom, blue, transparent, transparent);
+    background-image: -ms-linear-gradient(top, teal, transparent, transparent), -ms-linear-gradient(bottom, blue, transparent, transparent);
+    background-image: linear-gradient(top, teal, transparent, transparent), linear-gradient(bottom, blue, transparent, transparent);
+  }
+
+  </style>
+</head><body>
+  <div class="test"></div>
+  <h4>There should be identical patterns above and below this line.</h4>
+  <div class="ref"></div>
+
+</body></html>

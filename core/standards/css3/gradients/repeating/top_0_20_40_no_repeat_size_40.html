@@ -1,0 +1,30 @@
+<!doctype html>
+<html><head>
+  <title>Repeating gradient, top left, stops 0, 20%, 40%, no-repeat</title>
+  <script src="../support/css-gradients-via-canvas.js"></script>
+  <style>
+  div {
+    width: 200px;
+    height: 100px;
+    background-repeat: no-repeat;
+    -moz-background-size: 40%;
+    -o-background-size: 40%;
+    -webkit-background-size: 40%;
+    -ms-background-size: 40%;
+    background-size: 40%;
+  }
+  .test {
+    background-image: -moz-repeating-linear-gradient(orange, teal 20%, orange 40%);
+    background-image: -o-repeating-linear-gradient(orange, teal 20%, orange 40%);
+    background-image: -webkit-repeating-linear-gradient(orange, teal 20%, orange 40%);
+    background-image: -ms-repeating-linear-gradient(orange, teal 20%, orange 40%);
+    background-image: repeating-linear-gradient(orange, teal 20%, orange 40%);
+  }
+
+  </style>
+</head><body>
+  <div class="test"></div>
+  <h4>There should be identical patterns above and below this line.</h4>
+  <div class="ref"></div>
+
+</body></html>

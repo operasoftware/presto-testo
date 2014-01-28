@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>CSS Image Values (Gradients): Near zero stops, lime 0, transparent, blue 0</title>
+    <link rel="author" title="Opera Software" href="http://www.opera.com/"/>
+    <link rel="help" href="{{test.specurl}}"/>
+    <style>
+      div {
+        width: 100px;
+        height: 100px;
+        display: inline-block;
+      }
+      div.test {
+        background: repeating-linear-gradient(lime 0, transparent, blue 0);
+      }
+      div.ref1 {
+        width: 50px;
+        background: #7fbfbf;
+      }
+      div.ref2 {
+        width: 50px;
+        background: rgba(0%, 50%, 50%, 0.5);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="ref1"/><div class="ref2"/>
+    <h4>Squares above and below should be filled with the same single color.</h4>
+    <div class="ref1"/><div class="ref2"/>
+  </body>
+</html>

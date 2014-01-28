@@ -1,0 +1,26 @@
+<!doctype html>
+<html><head>
+  <title>Gradient function, color stop using em values for position</title>
+  <script src="../support/css-gradients-via-canvas.js"></script>
+  <style>
+  div {
+    width: 200px;
+    height: 100px;
+    font-family: Ahem;
+    font-style: normal;
+  }
+  .test {
+    background-image: -moz-linear-gradient(left, lightblue, white 4em, teal 4em);
+    background-image: -o-linear-gradient(left, lightblue, white 4em, teal 4em);
+    background-image: -webkit-linear-gradient(left, lightblue, white 4em, teal 4em);
+    background-image: -ms-linear-gradient(left, lightblue, white 4em, teal 4em);
+    background-image: linear-gradient(left, lightblue, white 4em, teal 4em);
+  }
+
+  </style>
+</head><body>
+  <div class="test">FAIL</div>
+  <h4>Patterns above and below should be identical and there should be sudden change of color where black line ends. AHEM font required for this test.</h4>
+  <div class="ref">FAIL</div>
+
+</body></html>

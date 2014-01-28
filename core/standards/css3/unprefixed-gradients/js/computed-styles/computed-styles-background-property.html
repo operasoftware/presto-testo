@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CSS Gradients - computed styles - setting background property</title>
+  <style>
+    ol#log {
+      font-family: monospace;
+      font-size: 8pt;
+      white-space: pre-wrap;
+      list-style-type: decimal-leading-zero;
+    }
+
+    hr {
+      border: 1px solid #ccc;
+      margin: 0;
+    }
+
+    div#g, form#results, iframe {
+      visibility: hidden;
+    }
+  </style>
+  <script src="include.js"></script>
+  <script>
+    var g_property_set = 'background';
+    var g_property_get = 'backgroundImage';
+
+    /* Tests for setting linear-gradient on background shorthand property
+       together with other values. */
+    test_arr.push(['lime linear-gradient(green, green)', 'linear-gradient($color, $color)']);
+    test_arr.push(['#0f0 linear-gradient(green, green)', 'linear-gradient($color, $color)']);
+    test_arr.push(['rgba(0, 80, 0, .8) linear-gradient(green, green)', 'linear-gradient($color, $color)']);
+    test_arr.push(['linear-gradient(green, green) #0f0', 'linear-gradient($color, $color)']);
+    // Invalid - background-color defined twice.
+    test_arr.push(['#0f0 linear-gradient(green, green) #0f0', 'none']);
+
+    // Mixing with various background properties.
+    test_arr.push(['linear-gradient(green, green) 10px 10px', 'linear-gradient($color, $color)']);
+    test_arr.push(['linear-gradient(green, green) no-repeat', 'linear-gradient($color, $color)']);
+    test_arr.push(['linear-gradient(green, green) fixed', 'linear-gradient($color, $color)']);
+    test_arr.push(['linear-gradient(green, green) border-box', 'linear-gradient($color, $color)']);
+    test_arr.push(['40% linear-gradient(green, green) gray round fixed border-box', 'linear-gradient($color, $color)']);
+    test_arr.push(['linear-gradient(green, green) 40% / 10em gray round fixed border-box', 'linear-gradient($color, $color)']);
+
+    /* Same for radial-gradient. */
+    test_arr.push(['lime radial-gradient(green, green)', 'radial-gradient($color, $color)']);
+    test_arr.push(['#0f0 radial-gradient(green, green)', 'radial-gradient($color, $color)']);
+    test_arr.push(['rgba(0, 80, 0, .8) radial-gradient(green, green)', 'radial-gradient($color, $color)']);
+    test_arr.push(['radial-gradient(green, green) #0f0', 'radial-gradient($color, $color)']);
+    // Invalid - background-color defined twice.
+    test_arr.push(['#0f0 radial-gradient(green, green) #0f0', 'none']);
+
+    // Mixing with various background properties.
+    test_arr.push(['radial-gradient(green, green) 10px 10px', 'radial-gradient($color, $color)']);
+    test_arr.push(['radial-gradient(green, green) no-repeat', 'radial-gradient($color, $color)']);
+    test_arr.push(['radial-gradient(green, green) fixed', 'radial-gradient($color, $color)']);
+    test_arr.push(['radial-gradient(green, green) border-box', 'radial-gradient($color, $color)']);
+    test_arr.push(['40% radial-gradient(green, green) gray round fixed border-box', 'radial-gradient($color, $color)']);
+    test_arr.push(['radial-gradient(green, green) 40% / 10em gray round fixed border-box', 'radial-gradient($color, $color)']);
+
+    test_arr.push(['repeating-radial-gradient(green, green) 40% / 10em gray round fixed border-box', 'repeating-radial-gradient($color, $color)']);
+  </script>
+</head>
+<body>
+
+  <h3>computed style, setting background shorthand, reading background-image:</h3>
+
+  <ol id="log"></ol>
+
+  <div id="g"></div>
+
+  <form id="results" action="http://localhost/" method="post" target="results_frame"></form>
+  <iframe name="results_frame" src="about:blank"></iframe>
+
+</body></html>

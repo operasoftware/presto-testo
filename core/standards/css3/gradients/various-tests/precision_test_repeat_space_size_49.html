@@ -1,0 +1,25 @@
+<!doctype html>
+<html><head>
+  <title>Various, precision of background-repeat:space with 49% background-size</title>
+  
+  <style>
+  div {
+    width: 100px;
+    height: 100px;
+    background-image: url(../support/box_outline.png);
+    background-repeat: space;
+    -moz-background-size: 49%;
+    -o-background-size: 49%;
+    -webkit-background-size: 49%;
+    -ms-background-size: 49%;
+    background-size: 49%;
+    border: 1px solid #fff;
+  }
+
+  </style>
+</head><body>
+  
+  <h4>There should be four identical, square outlines below.</h4>
+  <div></div>
+
+</body></html>

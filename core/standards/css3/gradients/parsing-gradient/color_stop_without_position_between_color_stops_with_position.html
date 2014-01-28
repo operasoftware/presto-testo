@@ -1,0 +1,24 @@
+<!doctype html>
+<html><head>
+  <title>Gradient function, color stop without position between color stops with position</title>
+  <script src="../support/css-gradients-via-canvas.js"></script>
+  <style>
+  div {
+    width: 200px;
+    height: 100px;
+  }
+  .test {
+    background-image: -moz-linear-gradient(orange 10%, white, teal 90%);
+    background-image: -o-linear-gradient(orange 10%, white, teal 90%);
+    background-image: -webkit-linear-gradient(orange 10%, white, teal 90%);
+    background-image: -ms-linear-gradient(orange 10%, white, teal 90%);
+    background-image: linear-gradient(orange 10%, white, teal 90%);
+  }
+
+  </style>
+</head><body>
+  <div class="test"></div>
+  <h4>There should be identical patterns above and below this line.</h4>
+  <div class="ref"></div>
+
+</body></html>

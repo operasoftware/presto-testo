@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html><head>
+  <title>Form elements, select</title>
+  <script src="../support/css-gradients-via-canvas.js"></script>
+  <style>
+  .test {
+    background-image: -moz-linear-gradient(top left, blue 50%, lightgray 50%);
+    background-image: -o-linear-gradient(top left, blue 50%, lightgray 50%);
+    background-image: -webkit-linear-gradient(top left, blue 50%, lightgray 50%);
+    background-image: -ms-linear-gradient(top left, blue 50%, lightgray 50%);
+    background-image: linear-gradient(top left, blue 50%, lightgray 50%);
+  }
+  .ref {
+    background: none;
+  }
+
+  </style>
+</head><body>
+  <select class="test"><option>Option element</option><option>Option element</option></select>
+  <h4>There should be two identical elements above and below this line.</h4>
+  <select class="ref"><option>Option element</option><option>Option element</option></select>
+
+</body></html>

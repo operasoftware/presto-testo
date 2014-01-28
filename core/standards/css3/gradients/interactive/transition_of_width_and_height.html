@@ -1,0 +1,39 @@
+<!doctype html>
+<html><head>
+  <title>Interactive, transition of width and height</title>
+  <script src="../support/css-gradients-via-canvas.js"></script>
+  <style>
+  div {
+    width: 200px;
+    height: 100px;
+    -moz-background-size: 100% 100%;
+    -o-background-size: 100% 100%;
+    -webkit-background-size: 100% 100%;
+    -ms-background-size: 100% 100%;
+    background-size: 100% 100%;
+    -moz-transition: all 1s;
+    -o-transition: all 1s;
+    -webkit-transition: all 1s;
+    -ms-transition: all 1s;
+    transition: all 1s;
+    margin-bottom: 10px;
+  }
+  div:hover {
+    width: 250px;
+    height: 150px;
+  }
+  .test {
+    background-image: -moz-linear-gradient(orange, blue);
+    background-image: -o-linear-gradient(orange, blue);
+    background-image: -webkit-linear-gradient(orange, blue);
+    background-image: -ms-linear-gradient(orange, blue);
+    background-image: linear-gradient(orange, blue);
+  }
+
+  </style>
+</head><body>
+  
+  <h4>There should be two identical patterns below and behave the same on hovering (enlarge).</h4>
+  <div class="test"></div><div class="ref"></div>
+
+</body></html>

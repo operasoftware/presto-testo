@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>CSS Image Values (Gradients): Border Image, radial gradient (currentColor)</title>
+    <link rel="author" title="Opera Software" href="http://www.opera.com/"/>
+    <link rel="help" href="{{test.specurl}}"/>
+    <style>
+      div {
+        width: 60px;
+        height: 60px;
+        border: 20px solid transparent;
+        color: navy;
+      }
+      div.test {
+        border-image: radial-gradient(currentColor, currentColor) 30 30;
+        -o-border-image: radial-gradient(currentColor, currentColor) 30 30;
+      }
+      div.ref {
+        border-color: navy;
+        background-color: navy;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="test"/>
+    <h4>There should be identical patterns above and below this line.</h4>
+    <div class="ref"/>
+  </body>
+</html>

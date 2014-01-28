@@ -1,0 +1,28 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>CSS Image Values (Gradients): Transforms, radial gradient (percentage size, pixel stops)</title>
+    <link rel="author" title="Opera Software" href="http://www.opera.com/"/>
+    <link rel="help" href="{{test.specurl}}"/>
+    <meta name="flags" content="dom"/>
+    <script src="../../support/peg.js"/>
+    <script src="../../support/css-gradients-via-canvas.js"/>
+    <style>
+      div {
+        width: 250px;
+        height: 100px;
+        margin: 100px;
+        transform: scale(1.5);
+        -o-transform: scale(1.5);
+      }
+      div.test {
+        background-image: radial-gradient(30% 30% at 33% 33%, orange 30px, teal 30px);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="test"/>
+    <h4>There should be identical patterns above and below this line (differences in aliasing are tolerable).</h4>
+    <div class="ref"/>
+  </body>
+</html>

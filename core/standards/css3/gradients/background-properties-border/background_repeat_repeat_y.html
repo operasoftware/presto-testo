@@ -1,0 +1,31 @@
+<!doctype html>
+<html><head>
+  <title>Background properties with border, background-repeat: repeat-y</title>
+  <script src="../support/css-gradients-via-canvas.js"></script>
+  <style>
+  div {
+    width: 200px;
+    height: 100px;
+    border: 10px dotted rgba(0,0,0,.5);
+    -moz-background-size: 50px 50px;
+    -o-background-size: 50px 50px;
+    -webkit-background-size: 50px 50px;
+    -ms-background-size: 50px 50px;
+    background-size: 50px 50px;
+    background-repeat: repeat-y;
+  }
+  .test {
+    background-image: -moz-linear-gradient(top left, orange, blue);
+    background-image: -o-linear-gradient(top left, orange, blue);
+    background-image: -webkit-linear-gradient(top left, orange, blue);
+    background-image: -ms-linear-gradient(top left, orange, blue);
+    background-image: linear-gradient(top left, orange, blue);
+  }
+
+  </style>
+</head><body>
+  <div class="test"></div>
+  <h4>There should be identical patterns above and below this line.</h4>
+  <div class="ref"></div>
+
+</body></html>

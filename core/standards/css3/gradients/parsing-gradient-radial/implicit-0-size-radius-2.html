@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html><head>
+  <title>Radial gradient, degenerate shape (top left, closest-corner)</title>
+  
+  <style>
+  div {
+    width: 250px;
+    height: 100px;
+  }
+  div.test {
+    background-image: -moz-radial-gradient(top left, closest-corner, red, navy);
+    background-image: -o-radial-gradient(top left, closest-corner, red, navy);
+    background-image: -webkit-radial-gradient(top left, closest-corner, red, navy);
+    background-image: -ms-radial-gradient(top left, closest-corner, red, navy);
+    background-image: radial-gradient(top left, closest-corner, red, navy);
+  }
+  div.ref {
+    background: navy;
+  }
+
+  </style>
+</head><body>
+  <div class="test"></div>
+  <h4>There should be identical patterns above and below this line.</h4>
+  <div class="ref"></div>
+
+</body></html>

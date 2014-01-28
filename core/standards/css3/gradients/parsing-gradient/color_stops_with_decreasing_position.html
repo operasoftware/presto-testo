@@ -1,0 +1,24 @@
+<!doctype html>
+<html><head>
+  <title>Gradient function, color stops with decreasing position</title>
+  <script src="../support/css-gradients-via-canvas.js"></script>
+  <style>
+  div {
+    width: 200px;
+    height: 100px;
+  }
+  .test {
+    background-image: -moz-linear-gradient(orange 50%, teal 30%, black 40%);
+    background-image: -o-linear-gradient(orange 50%, teal 30%, black 40%);
+    background-image: -webkit-linear-gradient(orange 50%, teal 30%, black 40%);
+    background-image: -ms-linear-gradient(orange 50%, teal 30%, black 40%);
+    background-image: linear-gradient(orange 50%, teal 30%, black 40%);
+  }
+
+  </style>
+</head><body>
+  <div class="test"></div>
+  <h4>There should be identical patterns above and below this line.</h4>
+  <div class="ref"></div>
+
+</body></html>

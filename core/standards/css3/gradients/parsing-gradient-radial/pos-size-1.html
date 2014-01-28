@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html><head>
+  <title>Radial gradient, position and size (bottom left, farthest-side)</title>
+  <script src="../support/css-gradients-via-canvas.js"></script>
+  <style>
+  div {
+    width: 250px;
+    height: 100px;
+  }
+  div.test {
+    background-image: -moz-radial-gradient(bottom left, farthest-side, orange 50%, teal 50%);
+    background-image: -o-radial-gradient(bottom left, farthest-side, orange 50%, teal 50%);
+    background-image: -webkit-radial-gradient(bottom left, farthest-side, orange 50%, teal 50%);
+    background-image: -ms-radial-gradient(bottom left, farthest-side, orange 50%, teal 50%);
+    background-image: radial-gradient(bottom left, farthest-side, orange 50%, teal 50%);
+  }
+
+  </style>
+</head><body>
+  <div class="test"></div>
+  <h4>There should be identical patterns above and below this line.</h4>
+  <div class="ref"></div>
+
+</body></html>

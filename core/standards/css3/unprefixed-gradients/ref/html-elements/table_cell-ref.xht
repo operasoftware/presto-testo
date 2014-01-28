@@ -1,0 +1,25 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>CSS Image Values (Gradients): HTML elements, table cell</title>
+    <link rel="author" title="Opera Software" href="http://www.opera.com/"/>
+    <link rel="help" href="{{test.specurl}}"/>
+    <meta name="flags" content="dom"/>
+    <script src="../../support/peg.js"/>
+    <script src="../../support/css-gradients-via-canvas.js"/>
+    <style>
+      table {
+        width: 300px;
+        border-spacing: 0;
+      }
+      .test {
+        background-image: linear-gradient(to bottom right, orange 50%, #000 50%);
+      }
+    </style>
+  </head>
+  <body>
+    <table><tbody><tr><td class="ref"> </td><td class="ref"> </td></tr><tr><td class="ref"> </td><td class="ref"> </td></tr></tbody></table>
+    <h4>There should be identical patterns above and below this line.</h4>
+    <table><tbody><tr><td class="ref"> </td><td class="ref"> </td></tr><tr><td class="ref"> </td><td class="ref"> </td></tr></tbody></table>
+  </body>
+</html>

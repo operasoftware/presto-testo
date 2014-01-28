@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html><head>
+  <title>Border Image, radial gradient (25 stretch)</title>
+  <script src="../support/css-gradients-via-canvas.js"></script>
+  <style>
+  div {
+    width: 60px;
+    height: 60px;
+    border: 20px solid transparent;
+  }
+  div.test {
+    border-image: -moz-radial-gradient(circle contain, orange 50%, teal 50%, teal 100%, #ffd800 101%) 25 stretch;
+    border-image: -o-radial-gradient(circle contain, orange 50%, teal 50%, teal 100%, #ffd800 101%) 25 stretch;
+    border-image: -webkit-radial-gradient(circle contain, orange 50%, teal 50%, teal 100%, #ffd800 101%) 25 stretch;
+    border-image: -ms-radial-gradient(circle contain, orange 50%, teal 50%, teal 100%, #ffd800 101%) 25 stretch;
+    -moz-border-image: -moz-radial-gradient(circle contain, orange 50%, teal 50%, teal 100%, #ffd800 101%) 25 stretch;
+    -o-border-image: -o-radial-gradient(circle contain, orange 50%, teal 50%, teal 100%, #ffd800 101%) 25 stretch;
+    -webkit-border-image: -webkit-radial-gradient(circle contain, orange 50%, teal 50%, teal 100%, #ffd800 101%) 25 stretch;
+    -ms-border-image: -ms-radial-gradient(circle contain, orange 50%, teal 50%, teal 100%, #ffd800 101%) 25 stretch;
+    border-image: radial-gradient(circle contain, orange 50%, teal 50%, teal 100%, #ffd800 101%) 25 stretch;
+  }
+
+  </style>
+</head><body>
+  <div class="test"></div>
+  <h4>There should be identical patterns above and below this line (differences in aliasing are tolerable).</h4>
+  <div class="ref"></div>
+
+</body></html>

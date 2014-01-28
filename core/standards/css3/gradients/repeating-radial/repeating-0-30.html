@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html><head>
+  <title>Repeating radial, stops at 0, 30px</title>
+  <script src="../support/css-gradients-via-canvas.js"></script>
+  <style>
+  div {
+    width: 250px;
+    height: 100px;
+  }
+  div.test {
+    background-image: -moz-repeating-radial-gradient(right, 100px 100px, #d9e6a7 0, #798b3c 30px);
+    background-image: -o-repeating-radial-gradient(right, 100px 100px, #d9e6a7 0, #798b3c 30px);
+    background-image: -webkit-repeating-radial-gradient(right, 100px 100px, #d9e6a7 0, #798b3c 30px);
+    background-image: -ms-repeating-radial-gradient(right, 100px 100px, #d9e6a7 0, #798b3c 30px);
+    background-image: repeating-radial-gradient(right, 100px 100px, #d9e6a7 0, #798b3c 30px);
+  }
+
+  </style>
+</head><body>
+  <div class="test"></div>
+  <h4>There should be identical patterns above and below this line.</h4>
+  <div class="ref"></div>
+
+</body></html>

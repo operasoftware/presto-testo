@@ -1,0 +1,24 @@
+<!doctype html>
+<html><head>
+  <title>HTML elements, image element</title>
+  <script src="../support/css-gradients-via-canvas.js"></script>
+  <style>
+  img {
+    width: 200px;
+    height: 100px;
+  }
+  .test {
+    background-image: -moz-linear-gradient(top left, orange 50%, #000 50%);
+    background-image: -o-linear-gradient(top left, orange 50%, #000 50%);
+    background-image: -webkit-linear-gradient(top left, orange 50%, #000 50%);
+    background-image: -ms-linear-gradient(top left, orange 50%, #000 50%);
+    background-image: linear-gradient(top left, orange 50%, #000 50%);
+  }
+
+  </style>
+</head><body>
+  <img class="test" src="/resources/images/1x1-transparent.png">
+  <h4>There should be identical patterns above and below this line.</h4>
+  <img class="ref" src="/resources/images/1x1-transparent.png">
+
+</body></html>

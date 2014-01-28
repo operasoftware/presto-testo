@@ -1,0 +1,24 @@
+<!doctype html>
+<html><head>
+  <title>Gradient function, gradient overlaying static image</title>
+  <script src="../support/css-gradients-via-canvas.js"></script>
+  <style>
+  div {
+    width: 200px;
+    height: 100px;
+  }
+  .test {
+    background-image: -moz-linear-gradient(orange 25%, transparent 25%, transparent, lightblue), url(/resources/images/opera.png);
+    background-image: -o-linear-gradient(orange 25%, transparent 25%, transparent, lightblue), url(/resources/images/opera.png);
+    background-image: -webkit-linear-gradient(orange 25%, transparent 25%, transparent, lightblue), url(/resources/images/opera.png);
+    background-image: -ms-linear-gradient(orange 25%, transparent 25%, transparent, lightblue), url(/resources/images/opera.png);
+    background-image: linear-gradient(orange 25%, transparent 25%, transparent, lightblue), url(/resources/images/opera.png);
+  }
+
+  </style>
+</head><body>
+  <div class="test"></div>
+  <h4>There should be identical patterns above and below this line.</h4>
+  <div class="ref"></div>
+
+</body></html>

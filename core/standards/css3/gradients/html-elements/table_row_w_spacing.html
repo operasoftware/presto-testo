@@ -1,0 +1,27 @@
+<!doctype html>
+<html><head>
+  <title>HTML elements, table row with spacing</title>
+  <script src="../support/css-gradients-via-canvas.js"></script>
+  <style>
+  table {
+    width: 300px;
+    border-spacing: 20px;
+  }
+  tr {
+    height: 50px;
+  }
+  .test {
+    background-image: -moz-linear-gradient(top left, orange 50%, #000 50%);
+    background-image: -o-linear-gradient(top left, orange 50%, #000 50%);
+    background-image: -webkit-linear-gradient(top left, orange 50%, #000 50%);
+    background-image: -ms-linear-gradient(top left, orange 50%, #000 50%);
+    background-image: linear-gradient(top left, orange 50%, #000 50%);
+  }
+
+  </style>
+</head><body>
+  <table><tbody><tr class="test"><td>&nbsp;</td><td>&nbsp;</td></tr><tr class="test"><td>&nbsp;</td><td>&nbsp;</td></tr></tbody></table>
+  <h4>There should be identical patterns above and below this line.</h4>
+  <table><tbody><tr class="ref"><td>&nbsp;</td><td>&nbsp;</td></tr><tr class="ref"><td>&nbsp;</td><td>&nbsp;</td></tr></tbody></table>
+
+</body></html>

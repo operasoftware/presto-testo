@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html><head>
+  <title>Radial gradient, stop after 0 followed by stop before 0, followed by stops after 0</title>
+  <script src="../support/css-gradients-via-canvas.js"></script>
+  <style>
+  div {
+    width: 250px;
+    height: 100px;
+  }
+  div.test {
+    background-image: -moz-radial-gradient(left, blue 20px, yellow -50px, yellow 50px, teal 50px);
+    background-image: -o-radial-gradient(left, blue 20px, yellow -50px, yellow 50px, teal 50px);
+    background-image: -webkit-radial-gradient(left, blue 20px, yellow -50px, yellow 50px, teal 50px);
+    background-image: -ms-radial-gradient(left, blue 20px, yellow -50px, yellow 50px, teal 50px);
+    background-image: radial-gradient(left, blue 20px, yellow -50px, yellow 50px, teal 50px);
+  }
+
+  </style>
+</head><body>
+  <div class="test"></div>
+  <h4>There should be identical patterns above and below this line.</h4>
+  <div class="ref"></div>
+
+</body></html>

@@ -1,0 +1,40 @@
+<!doctype html>
+<html><head>
+  <title>Transforms, transformed inline element: rotate(25deg)</title>
+  <script src="../support/css-gradients-via-canvas.js"></script>
+  <style>
+  div {
+    width: 200px;
+    height: 100px;
+    background-color: red;
+  }
+  .test {
+    background-image: -moz-linear-gradient(orange, blue);
+    background-image: -o-linear-gradient(orange, blue);
+    background-image: -webkit-linear-gradient(orange, blue);
+    background-image: -ms-linear-gradient(orange, blue);
+    background-image: linear-gradient(orange, blue);
+  }
+  p {
+    padding: 50px;
+  }
+  span {
+    -moz-transform: rotate(25deg);
+    -o-transform: rotate(25deg);
+    -webkit-transform: rotate(25deg);
+    -ms-transform: rotate(25deg);
+    transform: rotate(25deg);
+    -moz-transform-origin: 0 0;
+    -o-transform-origin: 0 0;
+    -webkit-transform-origin: 0 0;
+    -ms-transform-origin: 0 0;
+    transform-origin: 0 0;
+  }
+
+  </style>
+</head><body>
+  <p><span class="test">transformed</span></p>
+  <h4>There should be identical patterns above and below this line.</h4>
+  <p><span class="ref">transformed</span></p>
+
+</body></html>

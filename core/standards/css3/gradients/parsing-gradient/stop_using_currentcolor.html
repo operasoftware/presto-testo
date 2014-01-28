@@ -1,0 +1,25 @@
+<!doctype html>
+<html><head>
+  <title>Gradient function, stop using currentColor</title>
+  <script src="../support/css-gradients-via-canvas.js"></script>
+  <style>
+  div {
+    width: 200px;
+    height: 100px;
+    color: green;
+  }
+  .test {
+    background-image: -moz-linear-gradient(currentColor, currentColor);
+    background-image: -o-linear-gradient(currentColor, currentColor);
+    background-image: -webkit-linear-gradient(currentColor, currentColor);
+    background-image: -ms-linear-gradient(currentColor, currentColor);
+    background-image: linear-gradient(currentColor, currentColor);
+  }
+
+  </style>
+</head><body>
+  <div class="test"></div>
+  <h4>There should be identical patterns above and below this line.</h4>
+  <div class="ref"></div>
+
+</body></html>

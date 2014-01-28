@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html><head>
+  <title>Border Image, linear gradient (90 repeat)</title>
+  <script src="../support/css-gradients-via-canvas.js"></script>
+  <style>
+  div {
+    width: 60px;
+    height: 60px;
+    border: 20px solid transparent;
+  }
+  div.test {
+    border-image: -moz-linear-gradient(to bottom right, orange 50%, teal 50%) 90 repeat;
+    border-image: -o-linear-gradient(to bottom right, orange 50%, teal 50%) 90 repeat;
+    border-image: -webkit-linear-gradient(to bottom right, orange 50%, teal 50%) 90 repeat;
+    border-image: -ms-linear-gradient(to bottom right, orange 50%, teal 50%) 90 repeat;
+    -moz-border-image: -moz-linear-gradient(to bottom right, orange 50%, teal 50%) 90 repeat;
+    -o-border-image: -o-linear-gradient(to bottom right, orange 50%, teal 50%) 90 repeat;
+    -webkit-border-image: -webkit-linear-gradient(to bottom right, orange 50%, teal 50%) 90 repeat;
+    -ms-border-image: -ms-linear-gradient(to bottom right, orange 50%, teal 50%) 90 repeat;
+    border-image: linear-gradient(to bottom right, orange 50%, teal 50%) 90 repeat;
+  }
+
+  </style>
+</head><body>
+  <div class="test"></div>
+  <h4>There should be identical patterns above and below this line (differences in aliasing are tolerable).</h4>
+  <div class="ref"></div>
+
+</body></html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CSS Gradients - computed styles - setting backgroundImage property</title>
+  <style>
+    ol#log {
+      font-family: monospace;
+      font-size: 8pt;
+      white-space: pre-wrap;
+      list-style-type: decimal-leading-zero;
+    }
+
+    hr {
+      border: 1px solid #ccc;
+      margin: 0;
+    }
+
+    div#g, form#results, iframe {
+      visibility: hidden;
+    }
+  </style>
+  <script src="include.js"></script>
+  <script>
+    var g_property_set = 'backgroundImage';
+    var g_property_get = 'backgroundImage';
+  </script>
+</head>
+<body>
+
+  <h3>computed style, setting background-image, reading background-image:</h3>
+
+  <ol id="log"></ol>
+
+  <div id="g"></div>
+
+  <form id="results" action="http://localhost/" method="post" target="results_frame"></form>
+  <iframe name="results_frame" src="about:blank"></iframe>
+
+</body></html>

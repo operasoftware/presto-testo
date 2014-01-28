@@ -1,0 +1,32 @@
+<!doctype html>
+<html><head>
+  <title>Interactive, background-attachment: local</title>
+  <script src="../support/css-gradients-via-canvas.js"></script>
+  <style>
+  div {
+    width: 200px;
+    height: 100px;
+    background-attachment: local;
+    overflow: auto;
+    border: 10px dashed #aaa;
+    float: left;
+    margin-right: 10px;
+  }
+  .test {
+    background-image: -moz-linear-gradient(orange, blue);
+    background-image: -o-linear-gradient(orange, blue);
+    background-image: -webkit-linear-gradient(orange, blue);
+    background-image: -ms-linear-gradient(orange, blue);
+    background-image: linear-gradient(orange, blue);
+  }
+  div p {
+    height: 500px;
+  }
+
+  </style>
+</head><body>
+  
+  <h4>Both boxes should behave identical when using scrollbar - their background should scroll.</h4>
+  <div class="test"><p></p></div><div class="ref"><p></p></div>
+
+</body></html>

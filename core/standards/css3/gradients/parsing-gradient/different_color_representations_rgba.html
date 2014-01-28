@@ -1,0 +1,24 @@
+<!doctype html>
+<html><head>
+  <title>Gradient function, different color representations - rgb(a)</title>
+  <script src="../support/css-gradients-via-canvas.js"></script>
+  <style>
+  div {
+    width: 200px;
+    height: 100px;
+  }
+  .test {
+    background-image: -moz-linear-gradient(left, rgba(0,0,255,.3) 0, white 50%, rgb(0,0,255));
+    background-image: -o-linear-gradient(left, rgba(0,0,255,.3) 0, white 50%, rgb(0,0,255));
+    background-image: -webkit-linear-gradient(left, rgba(0,0,255,.3) 0, white 50%, rgb(0,0,255));
+    background-image: -ms-linear-gradient(left, rgba(0,0,255,.3) 0, white 50%, rgb(0,0,255));
+    background-image: linear-gradient(left, rgba(0,0,255,.3) 0, white 50%, rgb(0,0,255));
+  }
+
+  </style>
+</head><body>
+  <div class="test"></div>
+  <h4>There should be identical patterns above and below this line. NOTE: Reference below is not entirely correct (slightly darker blue on the left) but small difference is OK.</h4>
+  <div class="ref"></div>
+
+</body></html>

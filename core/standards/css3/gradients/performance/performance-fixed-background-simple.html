@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CSS Gradients - painting fixed positioned element with simple gradient</title>
+  <style>
+    div {
+      height: 100000px;
+      background-image: -moz-linear-gradient(transparent, orange);
+      background-image: -webkit-linear-gradient(transparent, orange);
+      background-image: -o-linear-gradient(transparent, orange);
+      background-image: -ms-linear-gradient(transparent, orange);
+      background-image: linear-gradient(transparent, orange);
+      background-attachment: fixed;
+    }
+  </style>
+  <script>
+    var interval, y = 50000, step = 1000;
+
+    onload = function()
+    {
+      var start = Date.now();
+
+      // Scroll to the bottom
+      window.scrollTo(0, y);
+
+      // Scroll back up progressively
+      interval = setInterval(function(){
+        window.scrollTo(0, y-=step);
+
+        if (y <= 0)
+        {
+          var total = Date.now() - start;
+          clearInterval(interval);
+          document.getElementById("result").textContent = "Test complete. Time was: " + total;
+          try{top.opener.rr(total)}catch(e){}
+        }
+      });
+    }
+  </script>
+</head>
+<body>
+
+  <p>Element with background-attachment: fixed with complicated gradient rule. Performance depends on how complicated rule is, not so much on size of the gradient.</p>
+
+  <p id="result"></p>
+
+  <div></div>
+
+</body>
+</html>
+

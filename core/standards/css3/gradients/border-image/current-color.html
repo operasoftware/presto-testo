@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html><head>
+  <title>Border Image, radial gradient (currentColor)</title>
+  
+  <style>
+  div {
+    width: 60px;
+    height: 60px;
+    border: 20px solid transparent;
+    color: navy;
+  }
+  div.test {
+    border-image: -moz-radial-gradient(currentColor, currentColor) 30 30;
+    border-image: -o-radial-gradient(currentColor, currentColor) 30 30;
+    border-image: -webkit-radial-gradient(currentColor, currentColor) 30 30;
+    border-image: -ms-radial-gradient(currentColor, currentColor) 30 30;
+    -moz-border-image: -moz-radial-gradient(currentColor, currentColor) 30 30;
+    -o-border-image: -o-radial-gradient(currentColor, currentColor) 30 30;
+    -webkit-border-image: -webkit-radial-gradient(currentColor, currentColor) 30 30;
+    -ms-border-image: -ms-radial-gradient(currentColor, currentColor) 30 30;
+    border-image: radial-gradient(currentColor, currentColor) 30 30;
+  }
+  div.ref {
+    border-color: navy;
+  }
+
+  </style>
+</head><body>
+  <div class="test"></div>
+  <h4>There should be identical patterns above and below this line.</h4>
+  <div class="ref"></div>
+
+</body></html>

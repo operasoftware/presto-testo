@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html><head>
+  <title>To side-or-corner argument, to bottom left</title>
+  <script src="../support/css-gradients-via-canvas.js"></script>
+  <style>
+  div {
+    width: 200px;
+    height: 100px;
+  }
+  div.test {
+    background: -moz-linear-gradient(to bottom left, orange 50%, teal 50%);
+    background: -o-linear-gradient(to bottom left, orange 50%, teal 50%);
+    background: -webkit-linear-gradient(to bottom left, orange 50%, teal 50%);
+    background: -ms-linear-gradient(to bottom left, orange 50%, teal 50%);
+    background: linear-gradient(to bottom left, orange 50%, teal 50%);
+  }
+
+  </style>
+</head><body>
+  <div class="test"></div>
+  <h4>There should be identical patterns above and below this line.</h4>
+  <div class="ref"></div>
+
+</body></html>

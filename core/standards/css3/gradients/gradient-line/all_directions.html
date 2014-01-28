@@ -1,0 +1,24 @@
+<!doctype html>
+<html><head>
+  <title>Gradient line argument, all directions</title>
+  <script src="../support/css-gradients-via-canvas.js"></script>
+  <style>
+  div {
+    width: 200px;
+    height: 100px;
+  }
+  .test {
+    background-image: -moz-linear-gradient(top, transparent 10%, orange, transparent 20%), -moz-linear-gradient(top right, transparent 10%, teal, transparent 20%), -moz-linear-gradient(right, transparent 30%, blue, transparent 40%), -moz-linear-gradient(bottom right, transparent 10%, black, transparent 20%), -moz-linear-gradient(bottom, transparent 10%, orange, transparent 20%), -moz-linear-gradient(bottom left, transparent 10%, teal, transparent 20%), -moz-linear-gradient(left, transparent 30%, blue, transparent 40%), -moz-linear-gradient(top left, transparent 10%, black, transparent 20%);
+    background-image: -o-linear-gradient(top, transparent 10%, orange, transparent 20%), -o-linear-gradient(top right, transparent 10%, teal, transparent 20%), -o-linear-gradient(right, transparent 30%, blue, transparent 40%), -o-linear-gradient(bottom right, transparent 10%, black, transparent 20%), -o-linear-gradient(bottom, transparent 10%, orange, transparent 20%), -o-linear-gradient(bottom left, transparent 10%, teal, transparent 20%), -o-linear-gradient(left, transparent 30%, blue, transparent 40%), -o-linear-gradient(top left, transparent 10%, black, transparent 20%);
+    background-image: -webkit-linear-gradient(top, transparent 10%, orange, transparent 20%), -webkit-linear-gradient(top right, transparent 10%, teal, transparent 20%), -webkit-linear-gradient(right, transparent 30%, blue, transparent 40%), -webkit-linear-gradient(bottom right, transparent 10%, black, transparent 20%), -webkit-linear-gradient(bottom, transparent 10%, orange, transparent 20%), -webkit-linear-gradient(bottom left, transparent 10%, teal, transparent 20%), -webkit-linear-gradient(left, transparent 30%, blue, transparent 40%), -webkit-linear-gradient(top left, transparent 10%, black, transparent 20%);
+    background-image: -ms-linear-gradient(top, transparent 10%, orange, transparent 20%), -ms-linear-gradient(top right, transparent 10%, teal, transparent 20%), -ms-linear-gradient(right, transparent 30%, blue, transparent 40%), -ms-linear-gradient(bottom right, transparent 10%, black, transparent 20%), -ms-linear-gradient(bottom, transparent 10%, orange, transparent 20%), -ms-linear-gradient(bottom left, transparent 10%, teal, transparent 20%), -ms-linear-gradient(left, transparent 30%, blue, transparent 40%), -ms-linear-gradient(top left, transparent 10%, black, transparent 20%);
+    background-image: linear-gradient(top, transparent 10%, orange, transparent 20%), linear-gradient(top right, transparent 10%, teal, transparent 20%), linear-gradient(right, transparent 30%, blue, transparent 40%), linear-gradient(bottom right, transparent 10%, black, transparent 20%), linear-gradient(bottom, transparent 10%, orange, transparent 20%), linear-gradient(bottom left, transparent 10%, teal, transparent 20%), linear-gradient(left, transparent 30%, blue, transparent 40%), linear-gradient(top left, transparent 10%, black, transparent 20%);
+  }
+
+  </style>
+</head><body>
+  <div class="test"></div>
+  <h4>There should be identical patterns above and below this line.</h4>
+  <div class="ref"></div>
+
+</body></html>

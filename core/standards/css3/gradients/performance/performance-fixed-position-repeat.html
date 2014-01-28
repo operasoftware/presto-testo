@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CSS Gradients - painting fixed positioned, repeating element background</title>
+  <style>
+    body {
+      height: 10000px;
+    }
+
+    div {
+      height: 600px;
+      width: 600px;
+      background-repeat: repeat;
+      background-size: 590px 590px;
+      position: fixed;
+      right: 0;
+      top: 0;
+      background-image: -moz-linear-gradient(left top, orange, blue);
+      background-image: -webkit-linear-gradient(left top, orange, blue);
+      background-image: -o-linear-gradient(left top, orange, blue);
+      background-image: -ms-linear-gradient(left top, orange, blue);
+      background-image: linear-gradient(left top, orange, blue);
+    }
+  </style>
+  <script>
+    var interval, y = 10000, step = 100;
+
+    onload = function()
+    {
+      var start = Date.now();
+
+      // Scroll to the bottom
+      window.scrollTo(0, y);
+
+      // Scroll back up progressively
+      interval = setInterval(function(){
+        window.scrollTo(0, y-=step);
+
+        if (y <= 0)
+        {
+          var total = Date.now() - start;
+          clearInterval(interval);
+          document.getElementById("result").textContent = "Test complete. Time was: " + total;
+          try{top.opener.rr(total)}catch(e){}
+        }
+      });
+    }
+  </script>
+</head>
+<body>
+
+  <p>Fixed positioned gradient, repeated, smaller than viewport.</p>
+  <p>Requires viewport to be at least 600x600px.</p>
+
+  <p id="result"></p>
+
+  <div></div>
+
+</body>
+</html>
+
