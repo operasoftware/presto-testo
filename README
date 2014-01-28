@@ -1,0 +1,14 @@
+This is Opera's Presto test repository. After the Presto project was mostly
+discontinued, Opera decided to released this repository at the urging of test
+enthusiasts involved with the W3C.
+
+These are not production-ready, they need to be checked/fixed for all W3C
+requirements before submitting. Some of these may already be submitted. None of
+this has been recently checked in any way other than a quick skim for
+confidential material. Much of it will be irrelevant for standards, though some
+stress tests may be useful, if tangential.
+
+Test suites are gradually uploaded after they've been checked. Specification
+testsuites will be worked on first, look in core/standards for the action.
+
+Special thanks to Florian Rivoal for the idea and enthusiasm.
