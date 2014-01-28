@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <title>moveTo(0,0) is not implied</title>
+  <link rel="help" href="http://whatwg.org/specs/web-apps/current-work/#beginpath" title="beginPath()">
+  <script>
+   window.onload = function(){
+    with(document.getElementsByTagName('canvas')[0].getContext('2d')){
+     strokeStyle = 'red';
+     lineWidth = 10;
+     lineTo(300, 0);
+     stroke();
+    }
+   }
+  </script>
+ </head>
+ <body>
+  <p>This text should be all there is on this page.</p>
+  <canvas height="10" width="300">FAIL: <code>html:canvas</code> not enabled.</canvas>
+ </body>
+</html>

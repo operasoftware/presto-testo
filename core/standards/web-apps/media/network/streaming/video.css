@@ -1,0 +1,6 @@
+body  { font-size:  10px;                       }
+.lite { background: silver;                     }
+.dark { background: gray;                       }
+.PASS { color:      darkgreen;                  }
+.FAIL { color:      darkred;                    }
+video { width:      160px;      height: 120px;  }

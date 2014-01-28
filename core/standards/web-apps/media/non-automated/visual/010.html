@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<title>Broken poster can be replaced by a valid one</title>
+<p>You should see a PASS image below</p>
+<video poster="#" style="background:url(fail.png)"></video>
+<script>
+window.onload = function() {
+  var v = document.querySelector('video');
+  v.poster = "pass.png";
+}
+</script>

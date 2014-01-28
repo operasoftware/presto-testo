@@ -1,0 +1,13 @@
+<!doctype html>
+<title>setting HTMLMediaElement.controls</title>
+<p>FAIL (script didn't run)</p>
+<video></video><audio></audio>
+<script>
+var video = document.getElementsByTagName('video')[0];
+var audio = document.getElementsByTagName('audio')[0];
+video.controls = true;
+audio.controls = true;
+var passed = video.hasAttribute('controls') && audio.hasAttribute('controls');
+document.getElementsByTagName('p')[0].firstChild.data = passed ? 'PASS' : 'FAIL';
+try{top.opener.rr(passed)}catch(e){}
+</script>

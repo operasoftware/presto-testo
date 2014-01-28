@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <title>globalAlpha set to out of range value</title>
+  <style> canvas { background:lime } </style>
+  <script>
+   window.onload = function(){
+    var t = document.createElement("canvas");
+    t.height = 300;
+    with(t.getContext("2d")){
+     fillStyle = "red";
+     fillRect(0, 0, 300, 300);
+    }
+    with(document.getElementsByTagName('canvas')[0].getContext("2d")){
+     globalAlpha = 0;
+     drawImage(t, 0, 0);
+    }
+   }
+  </script>
+ </head>
+ <body>
+  <p>There should be a green square below:</p>
+  <p><canvas height="300">FAIL: <code>html:canvas</code> not enabled.</canvas></p>
+ </body>
+</html>

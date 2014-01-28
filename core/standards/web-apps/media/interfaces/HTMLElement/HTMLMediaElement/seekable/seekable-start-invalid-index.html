@@ -1,0 +1,28 @@
+<!doctype html>
+<title>HTMLMediaElement.seekable.start should throw if the index is out of range</title>
+<p>FAIL (script didn't run)</p>
+<audio></audio><video></video>
+<script>
+var passed = false;
+var a = document.getElementsByTagName('audio')[0];
+var v = document.getElementsByTagName('video')[0];
+try {
+    try {
+    var start = a.seekable.start(0);
+    }
+    catch (e) {
+    passed = e.code == DOMException.INDEX_SIZE_ERR;
+    }
+    if (passed) {
+    try {
+        var start = v.seekable.start(0);
+    }
+    catch (e) {
+        passed = e.code == DOMException.INDEX_SIZE_ERR;
+    }
+    }
+}
+catch (e) {}
+document.getElementsByTagName('p')[0].firstChild.data = passed ? 'PASS' : 'FAIL';
+try{top.opener.rr(passed)}catch(e){}
+</script>

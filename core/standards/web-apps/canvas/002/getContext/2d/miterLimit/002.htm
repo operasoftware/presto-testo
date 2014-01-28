@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <title>miterLimit error handling (0)</title>
+  <style> canvas { border:solid } </style>
+  <script>
+   window.onload = function(){
+    var ctx = document.getElementsByTagName('canvas')[0].getContext('2d');
+    ctx.miterLimit = 1;
+    ctx.miterLimit = 0;
+    ctx.lineWidth = 5;
+    ctx.moveTo(10,80);
+    ctx.lineTo(30,20);
+    ctx.lineTo(50,80);
+    ctx.lineTo(10,80);
+    ctx.stroke();
+    ctx.beginPath();
+    ctx.lineWidth = 5;
+    ctx.miterLimit = 1000;
+    ctx.moveTo(70,80);
+    ctx.lineTo(90,20);
+    ctx.lineTo(110,80);
+    ctx.lineTo(70,80);
+    ctx.stroke();
+   }
+  </script>
+ </head>
+ <body>
+  <p>The first triangle (seen from the left) should have a flat top:</p>
+  <p><canvas height="100" width="120">FAIL</canvas></p>
+ </body>
+</html>

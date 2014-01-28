@@ -1,0 +1,24 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <title>&lt;canvas>.drawImage(SVGSVGElement, sx, sy, sw, sh, dx, dy, dw, dh)</title>
+  <style>
+   svg { display:none }
+   canvas { background:red }
+  </style>
+ </head>
+ <body>
+  <p>There should be a green square below:</p>
+  <p>
+   <svg xmlns="http://www.w3.org/2000/svg" width="900" height="900" viewport-fill="red" id="i">
+    FAIL
+    <rect x="300" y="300" width="300" height="300" fill="lime"/>
+   </svg>
+   <canvas width="100" height="100" id="c">FAIL</canvas>
+  </p>
+  <script>
+   var c = document.getElementById("c").getContext("2d"),
+       i = document.getElementById("i")
+   c.drawImage(i, 300, 300, 300, 300, 0, 0, 100, 100)
+  </script>
+ </body>
+</html>

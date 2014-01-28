@@ -1,0 +1,52 @@
+<!doctype html>
+<title>HTMLMediaElement.error should be readonly</title>
+<p>FAIL (script didn't run)</p>
+<audio></audio><video></video>
+<script>
+var passed = false;
+var secondEvent = false;
+var a = document.getElementsByTagName('audio')[0];
+var v = document.getElementsByTagName('video')[0];
+a.addEventListener('error', runTest, false);
+v.addEventListener('error', runTest, false);
+a.src = 'invalid://';
+v.src = 'invalid://';
+document.getElementsByTagName('p')[0].firstChild.data = 'Test is running...';
+
+function runTest(e) {
+    var srcEl = e.srcElement ? e.srcElement : e.target;
+    if (srcEl == a) {
+    try {
+        a.error = null;
+        passed = a.error instanceof MediaError;
+    }
+    catch (e) {
+        v.removeEventListener('error', runTest, false);
+        endTest();
+    }
+    }
+    if (srcEl == v) {
+    try {
+        v.error = null;
+        passed = v.error instanceof MediaError;
+    }
+    catch (e) {
+        a.removeEventListener('error', runTest, false);
+        endTest();
+    }
+    }
+    if (secondEvent) endTest();
+    secondEvent = true;
+}
+
+var done = false;
+var timeout = setTimeout(endTest, 1000);
+function endTest() {
+    if (done)
+        return;
+    done = true;
+    clearTimeout(timeout);
+    document.getElementsByTagName('p')[0].firstChild.data = passed ? 'PASS' : 'FAIL';
+    try{top.opener.rr(passed)}catch(e){}
+}
+</script>

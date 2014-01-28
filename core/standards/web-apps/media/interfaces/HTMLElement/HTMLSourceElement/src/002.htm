@@ -1,0 +1,9 @@
+<!doctype html>
+<title>getting HTMLSourceElement.src</title>
+<p>FAIL (script didn't run)</p>
+<video><source src="#"></video><audio><source src="#"></audio><a href="#"></a>
+<script>
+var passed = document.getElementsByTagName("source")[0].src == document.links[0].href && document.getElementsByTagName("source")[1].src == document.links[0].href;
+document.getElementsByTagName("p")[0].firstChild.data = passed ? "PASS" : "FAIL";
+try{top.opener.rr(passed);}catch(e){}
+</script>

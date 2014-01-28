@@ -1,0 +1,25 @@
+<!doctype html>
+<p>FAIL (script didn't run)</p>
+<video><font>a</video>b</font><script>
+var fonts = document.getElementsByTagName('font');
+var videos = document.getElementsByTagName('video');
+var log = '';
+if (fonts.length != 2)
+  log += 'The FONT was not reopened after </video>. ';
+if (fonts[0].childNodes.length != 1)
+  log += 'The first FONT had the wrong number of children. ';
+if (fonts[1] && fonts[1].childNodes.length != 1)
+  log += 'The second FONT had the wrong number of children. ';
+if (videos.length != 1)
+  log += 'Found ' + videos.length + ' VIDEOs, expected 1. ';
+if (videos[0].childNodes.length != 1)
+  log += 'VIDEO had the wrong number of children. ';
+if (fonts[0].innerHTML != 'a')
+  log += 'innerHTML of the first FONT was ' + fonts[0].innerHTML + ', expected a. ';
+if (videos[0].innerHTML != '<font>a</font>')
+  log += 'innerHTML of VIDEO was ' + videos[0].innerHTML + ', expected a. ';
+var passed = log == '';
+window.onload = function () {
+  document.getElementsByTagName('p')[0].firstChild.data = passed ? 'PASS' : 'FAIL: ' + log;try{top.opener.rr(passed);}catch(e){}
+}
+</script>

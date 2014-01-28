@@ -1,0 +1,34 @@
+<!doctype html>
+<title>invalid host in source element</title>
+<p>FAIL (script didn't run)</p>
+<script>
+var video = document.getElementsByTagName('video')[0];
+var passed = false;
+function video() {
+  passed = false;
+  end();
+}
+function source() {
+  passed = true;
+  end();
+}
+var longtimeout = setTimeout(end, 10000);
+onload = function() {
+clearTimeout(longtimeout);
+end();
+}
+var hasrun = false;
+function end() {
+  if (hasrun)
+    return;
+  document.getElementsByTagName('p')[0].firstChild.data = passed ? 'PASS' : 'FAIL';
+  try{top.opener.rr(passed)}catch(e){}
+  hasrun = true;
+}
+</script>
+<video onerror="video();">
+<source src="http://this-domain-must-not-exist.com/" onerror="source();">
+</video>
+
+
+

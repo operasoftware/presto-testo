@@ -1,0 +1,16 @@
+<!doctype html>
+<title>getting HTMLMediaElement.start</title>
+<p>FAIL (script didn't run)</p>
+<video></video><audio></audio>
+<video start=1.5></video><audio start=1.5></audio>
+<script>
+var video0 = document.getElementsByTagName('video')[0];
+var audio0 = document.getElementsByTagName('audio')[0];
+var video1 = document.getElementsByTagName('video')[1];
+var audio1 = document.getElementsByTagName('audio')[1];
+var passed = false;
+if (typeof video0.start == 'undefined' && typeof audio0.start == 'undefined' && typeof video1.start == 'undefined' && typeof audio1.start == 'undefined')
+  passed = true;
+document.getElementsByTagName('p')[0].firstChild.data = passed ? 'PASS' : 'FAIL';
+try{top.opener.rr(passed)}catch(e){}
+</script>

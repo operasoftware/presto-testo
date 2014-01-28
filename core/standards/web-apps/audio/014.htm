@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <title>Audio.removeEventListener ...</title>
+  <script>
+   window.onload = function(){
+    var x = new Audio("support/missile.wav");
+    function stop(e){ e.target.pause() }
+    function play(e){ e.target.play() }
+    x.addEventListener("loadstart",stop,false);
+    x.addEventListener("loadstart",play,false);
+    x.removeEventListener("loadstart",stop,false);
+   }
+  </script>
+ </head>
+ <body>
+  <p>You should hear a missile sound once.</p>
+ </body>
+</html>

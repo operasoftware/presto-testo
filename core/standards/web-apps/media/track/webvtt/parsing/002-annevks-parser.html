@@ -1,0 +1,85 @@
+<!doctype html>
+<title>WebVTT parser tests for annevk's webvtt js parser</title>
+<script src="/resources/testharness.js"></script>
+<script src="/resources/testharnessreport.js"></script>
+<script src="http://quuz.org/webvtt/parser.js"></script>
+<div id=log></div>
+<script>
+setup({explicit_done: true});
+var files = [];
+var path = 'support/';
+var cueDefaults = {
+"id":"",
+"startTime":0,
+"endTime":1,
+"pauseOnExit":false,
+"vertical":"",
+"snapToLines":true,
+"line":-1,
+"position":50,
+"size":100,
+"align":"middle"
+}
+var cueCounts;
+(function(){
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', path+'cue-counts.json', true);
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState == 4) {
+            cueCounts = JSON.parse(xhr.responseText);
+            for (var file in cueCounts) {
+                files.push(file);
+            }
+            startTests();
+        }
+    }
+    xhr.send();
+})();
+
+function checkProps(cue, exp, i) {
+    for (var prop in cueDefaults) {
+        if (!(prop in exp))
+            exp[prop] = cueDefaults[prop];
+        assert_equals(cue[prop], exp[prop], prop + ' (cue '+(i+1)+')');
+    }
+}
+
+function startTests() {
+    files.forEach(function(file) {
+        var t = async_test(document.title+', '+file);
+        t.step(function(){
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', path + file, true);
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState == 4) {
+                    t.step(trackLoaded, t, xhr.responseText, file);
+                }
+            }
+            xhr.send();
+        });
+    });
+    done();
+}
+
+function trackLoaded(text, file) {
+    var parser = new WebVTTParser();
+    var result = parser.parse(text);
+    var cues = result.cues;
+    if (cueCounts[file] == 'error') {
+        assert_not_equals(result.errors.length, 0);
+        assert_equals(cues.length, 0);
+        assert_regexp_match(result.errors[0].message, /signature/);
+    } else {
+        assert_equals(cues.length, cueCounts[file], 'number of cues');
+        var expected;
+        var cue;
+        for (var i = 0; i < cues.length; ++i) {
+            cue = cues[i];
+            expected = JSON.parse(cue.text);
+            assert_not_equals(expected, 'FAIL', 'cue '+(i+1)+' should have been dropped');
+            checkProps(cue, expected, i);
+        }
+    }
+    this.done();
+}
+</script>

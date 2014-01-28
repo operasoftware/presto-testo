@@ -1,0 +1,19 @@
+<!doctype html>
+<title>video autoplay</title>
+<script>
+var passed = false;
+function end() {
+  if (arguments.callee.done) return;
+  arguments.callee.done = true;
+  document.getElementsByTagName('p')[0].firstChild.data = passed ? 'PASS':'FAIL';
+  try{top.opener.rr(passed)}catch(e){}
+}
+setTimeout(end, 4000);
+</script>
+<p>The video below should automatically start playing.</p>
+<video autoplay src="/resources/objects/video.ogg" onplaying="passed = true; end()"></video>
+<script>
+if (document.getElementsByTagName('video')[0].play == undefined)
+  end();
+</script>
+

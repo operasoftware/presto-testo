@@ -1,0 +1,40 @@
+<!doctype html>
+<title>HTMLMediaElement.preload:metadata test for HAVE_METADATA</title>
+<script src="/resources/testharness.js"></script>
+<script src="/resources/testharnessreport.js"></script>
+<script src="../../../support/common.js"></script>
+<p id="log">FAIL (script didn't run)</p>
+<audio preload="metadata"></audio>
+<video preload="metadata" controls></video>
+<script>
+var tests = init_tests("HTMLAudioElement.preload:metadata test for HAVE_METADATA", "HTMLVideoElement.preload:metadata test for HAVE_METADATA", {timeout:10000});
+tests.forEach(function(vars) {
+    var t = vars[0];
+    t.step(function() {
+    var tag_name = vars[1];
+    var states_actual = [];
+    var node = document.getElementsByTagName(tag_name)[0];
+    startTest();
+
+    function startTest() {
+        node.addEventListener('loadedmetadata', endTest, false);
+        node.addEventListener('error', function() {
+        if (!node.canPlayType(tag_name + '/webm')) {
+            t.step(function() {
+            assert_unreached("Cannot play '" + tag_name + "/webm'");
+            t.done();
+            });
+        }
+        }, false);
+        node.src = '../../../network/range-request-log/range-request.php?fileloc=../../../../../../resources/media/webm/sunflower.webm&rate=10000&contenttype=video/webm&status=200%20OK&contentrange=no&acceptranges=none&size=576';
+    }
+
+    function endTest() {
+        t.step(function() {
+        assert_equals(node.readyState, HTMLMediaElement.HAVE_METADATA, "readyState should be HAVE_METADATA after recieving the metadata part of the media");
+        t.done();
+        });
+    }
+    });
+});
+</script>

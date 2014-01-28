@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <title>fillRect() with negative width</title>
+  <style> canvas { display:none } </style>
+ </head>
+ <body>
+  <p>FAIL <canvas height="150" width="150"></canvas></p>
+  <script>
+   window.onload = function(){
+    var r = document.getElementsByTagName('p')[0],
+        ctx = document.getElementsByTagName('canvas')[0].getContext('2d');
+    var passed = true;
+    try{
+     ctx.fillRect(0, 0, -1, 1);
+    }catch(e){
+     passed = false;
+    }
+    r.firstChild.data = passed ? "PASS" : "FAIL";
+   }
+  </script>
+ </body>
+</html>

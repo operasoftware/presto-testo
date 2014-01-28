@@ -1,0 +1,18 @@
+<!DOCTYPE HTML>
+<!-- adapted from http://canvex.lazyilluminati.com/misc/pattern.html -->
+<title>createPattern: using &lt;canvas></title>
+<p>There should be a green square below:</p>
+<canvas id="c" width="200" height="200"></canvas>
+<script>
+  window.onload = function () {
+    var canvas = document.getElementById('c');
+    var ctx = canvas.getContext('2d');
+    ctx.fillStyle = '#0f0';
+    ctx.fillRect(0, 0, 200, 200);
+    var p = ctx.createPattern(canvas, 'no-repeat');
+    ctx.fillStyle = '#f00';
+    ctx.fillRect(0, 0, 200, 200);
+    ctx.fillStyle = p;
+    ctx.fillRect(0, 0, 200, 200);
+  }
+</script>

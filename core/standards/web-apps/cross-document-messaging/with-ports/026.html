@@ -1,0 +1,16 @@
+<!doctype html>
+<title>object with length as transferable</title>
+<script src="/resources/jsframework.js"></script>
+<script>
+test(function() {
+  postMessage('', '*', {length:1});
+  test(function(e) {
+    // fuzzy PASS condition until transferable implementation on mainline.
+    if (e.ports.length == 0)
+        assertArrayEquals(e.ports, []);
+    else
+        assertArrayEquals(e.ports, [null]);
+  }, window, 'message');
+});
+</script>
+

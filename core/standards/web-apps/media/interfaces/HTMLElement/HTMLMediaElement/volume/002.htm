@@ -1,0 +1,14 @@
+<!doctype html>
+<title>getting HTMLMediaElement.volume</title>
+<p>FAIL (script didn't run)</p>
+<p>(This test assumes that the volume is at 1.0.)</p>
+<video volume=0.2></video><audio volume=0.2></audio>
+<script>
+var video = document.getElementsByTagName('video')[0];
+var audio = document.getElementsByTagName('audio')[0];
+var passed = false;
+if (video.volume == 1 && audio.volume == 1)
+  passed = true;
+document.getElementsByTagName('p')[0].firstChild.data = passed ? 'PASS' : 'FAIL';
+try{top.opener.rr(passed)}catch(e){}
+</script>

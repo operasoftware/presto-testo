@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+<head>
+<title>2 &lt;video>s, 1 URL</title>
+<script src="/resources/testharness.js"></script>
+<script src="/resources/testharnessreport.js"></script>
+</head>
+<body>
+<div id="log"></div>
+<video></video><video></video>
+<script>
+var t = async_test("loadedmetadata event is fired on both videos", {timeout:5000});
+t.step(function() {
+  var v = document.querySelectorAll("video");
+  var events = 0;
+  v[0].onloadedmetadata = v[1].onloadedmetadata = function() {
+    if (++events == 2)
+      t.done();
+  };
+  v[0].src = v[1].src = "../range-request-log/range-request.php?fileloc=../../../../../../resources/media/webm/movie_300.webm&rate=30000";
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!doctype html>
+<title>&lt;video src="?"></title>
+<p>FAIL (script didn't run)</p>
+<video src="?"></video>
+<script>
+loaded = false;
+onload = function() {
+  loaded = true;
+  try{top.opener.rr(true)}catch(e){}
+  document.querySelector('p').firstChild.data = 'PASS';
+}
+setTimeout(function() {
+  if (loaded)
+    return;
+  try{top.opener.rr(false)}catch(e){}
+  document.querySelector('p').firstChild.data = 'FAIL';
+}, 2000);
+</script>

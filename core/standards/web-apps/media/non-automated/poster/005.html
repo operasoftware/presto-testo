@@ -1,0 +1,34 @@
+<!doctype html>
+<title>poster (PNG) resizing</title>
+<style>
+ video { border:solid }
+ div { display:inline-block; border:solid; width:300px; height:150px }
+ div.poster { width:102px; height:39px }
+ div.src { width:400px; height:304px }
+</style>
+<p><button onclick="document.getElementsByTagName('video')[0].removeAttribute('src');
+         document.getElementsByTagName('video')[0].removeAttribute('poster');
+         document.getElementsByTagName('div')[0].className = '';
+         document.getElementsByTagName('video')[0].load();">(initial state)</button>
+First, confirm that the two boxes below have the same size.
+<p>Then,
+ <button onclick="document.getElementsByTagName('video')[0].removeAttribute('src');
+                  document.getElementsByTagName('video')[0].poster = '/resources/images/opera.png';
+                  document.getElementsByTagName('div')[0].className = 'poster';
+                  document.getElementsByTagName('video')[0].load();">click here</button>
+ and confirm that the two boxes have the same size (when the image has loaded). 
+<p>Then,
+ <button onclick="document.getElementsByTagName('video')[0].removeAttribute('poster');
+                  document.getElementsByTagName('video')[0].src = '/resources/objects/video.ogg';
+                  document.getElementsByTagName('video')[0].autobuffer = true;
+                  document.getElementsByTagName('video')[0].preload = 'auto';
+                  document.getElementsByTagName('div')[0].className = 'src'">click here</button>
+ and confirm that the two boxes have the same size (when video data is available).
+</p>
+<p>Finally, repeat the steps backwards.</p>
+<video></video>
+<div></div>
+
+
+
+

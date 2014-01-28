@@ -1,0 +1,32 @@
+<!doctype html>
+<title>Chunked response / Etag/ cache-control: must-revalidate </title>
+<pre>FAIL (script didn't run)</pre>
+<p><video controls></video>
+<script>
+var p = document.querySelector('pre');
+var log = [];
+
+var video = document.querySelector('video');
+
+// load video
+video.src = '../range-request-log/range-request.php?etag=yes&cachecontrol=must-revalidate&status=200%20OK&acceptranges=no&contentrange=no&chunked=yes&rate=10000';
+
+video.addEventListener('loadedmetadata', function() {
+  end();
+}, false);
+
+setTimeout(function() {
+  log.push('timed out');
+  end();
+}, 10000);
+
+function end() {
+  if (arguments.callee.done)
+    return;
+  arguments.callee.done = true;
+  var passed = log.length == 0;
+  p.textContent = passed ? 'PASS' : 'FAIL\n' + log.join('\n');
+  try{top.opener.rr(passed)}catch(e){}
+}
+</script>
+

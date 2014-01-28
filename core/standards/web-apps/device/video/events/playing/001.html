@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<title>playing event - check readyState==4</title>
+<p>FAIL: script did not run.</p>
+<video style="visibility:hidden;"></video>
+<script type="text/javascript" src="../../../runner.js"></script>
+<script type="text/javascript">
+var videoEl = document.getElementsByTagName('video')[0];
+var passed = false;
+
+navigator.getUserMedia("video", function(stream) {
+	videoEl.src = stream;
+	videoEl.play();
+});
+
+videoEl.addEventListener('playing', function() {
+  if(videoEl.readyState == 4) {
+		document.getElementsByTagName('p')[0].firstChild.data = 'PASS';
+    passed = true;
+  }  else {
+		document.getElementsByTagName('p')[0].firstChild.data = 'FAIL';
+  }
+  runnerResult(passed);
+}, false);
+</script>

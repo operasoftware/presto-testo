@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <title>simple arc() test</title>
+  <style> canvas { margin:1em } </style>
+  <script>
+   window.onload = function(){
+    with(document.getElementsByTagName('canvas')[0].getContext('2d')){
+     arc(50,50,50,0,Math.PI*2,true);
+     stroke();
+    }
+   }
+  </script>
+ </head>
+ <body>
+  <p>There should be full black border circle below:</p>
+  <canvas></canvas>
+ </body>
+</html>

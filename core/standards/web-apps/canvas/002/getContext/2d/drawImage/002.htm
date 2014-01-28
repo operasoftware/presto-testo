@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <title>drawImage with an incorrect type for the image argument</title>
+  <style> canvas { display:none } </style>
+  <script>
+   window.onload = function(){
+    var r = document.getElementById('r');
+        ctx = document.getElementsByTagName('canvas')[0].getContext('2d');
+    r.firstChild.data = "FAIL (Wrong or no exception thrown.)";
+    try{
+     ctx.drawImage("foo", 0, 0, 150, 150); // passing a string
+    }catch(e){
+     r.firstChild.data = e.code === 17 ? "PASS" : "FAIL";
+    }
+   }
+  </script>
+ </head>
+ <body>
+  <p id="r">FAIL (Script did not run.)</p>
+  <p><canvas></canvas></p>
+ </body>
+</html>

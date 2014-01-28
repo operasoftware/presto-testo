@@ -1,0 +1,31 @@
+<!doctype html>
+<title>no content-length</title>
+<pre>FAIL (script didn't run)</pre>
+<p><video controls></video>
+<script>
+var p = document.querySelector('pre');
+var log = [];
+
+var video = document.querySelector('video');
+
+// load video
+video.src = '/resources/file.php?file=media%2Fxiph%2Ftheora_testsuite%2F320x240.ogg&type=video/ogg&status=200%20OK&sleep=0'
+
+video.addEventListener('loadedmetadata', function() {
+  end();
+}, false);
+
+setTimeout(function() {
+  log.push('timed out');
+  end();
+}, 5000);
+
+function end() {
+  if (arguments.callee.done)
+    return;
+  arguments.callee.done = true;
+  var passed = log.length == 0;
+  p.textContent = passed ? 'PASS' : 'FAIL\n' + log.join('\n');
+  try{top.opener.rr(passed)}catch(e){}
+}
+</script>

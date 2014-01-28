@@ -1,0 +1,12 @@
+<!doctype html>
+<title>onmessage implied start()</title>
+<script src="/resources/jsframework.js"></script>
+<script>
+test(function() {
+  var channel = new MessageChannel();
+  channel.port1.postMessage(1);
+  var i = 0;
+  channel.port2.onmessage = function() { i++; }; // implies start()
+  test(function() { assertEquals(i, 1); }, 50);
+});
+</script>

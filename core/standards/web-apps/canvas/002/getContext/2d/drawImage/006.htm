@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <title>invoke drawImage() multiple times</title>
+  <script>
+   var i = new Image();
+   i.src = "support/square-50x50.png";
+   window.onload = function(){
+    with(document.getElementsByTagName('canvas')[0].getContext('2d')){
+     fillStyle = "red";
+     fillRect(0, 0, 150, 150);
+     drawImage(i, 0, 0);
+     drawImage(i, 0, 50);
+     drawImage(i, 0, 100);
+     drawImage(i, 50, 0);
+     drawImage(i, 50, 50);
+     drawImage(i, 50, 100);
+     drawImage(i, 100, 0);
+     drawImage(i, 100, 50);
+     drawImage(i, 100, 100);
+    }
+   }
+  </script>
+ </head>
+ <body>
+  <p>There should be a green square below:</p>
+  <p><canvas height="150" width="150"></canvas></p>
+ </body>
+</html>

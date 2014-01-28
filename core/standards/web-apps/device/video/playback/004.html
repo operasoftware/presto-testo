@@ -1,0 +1,38 @@
+<!doctype html>
+  <title>playback of a single Stream via multiple device-associable elements operates independently from each other</title>
+  <p>FAIL: script did not run.</p>
+  <video id="video1" src=""></video>
+  <video id="video2" src=""></video>
+
+  <script type="text/javascript" src="../../runner.js"></script>
+  <script>
+	navigator.getUserMedia("video", function(stream) {
+      var videoEl1 = document.getElementById( 'video1' ),
+	  		  videoEl2 = document.getElementById( 'video2' ),
+					initialised = false;
+      
+      videoEl1.src = stream;
+      videoEl1.addEventListener('playing', function() {
+			  if( initialised ) { // we've been through here once so this is a fail
+					document.getElementsByTagName("p")[0].innerHTML = "FAIL";
+					runnerResult(false);
+					return;
+			  } else {
+					initialised = true;
+			  }
+				videoEl1.pause();
+				videoEl2.src = stream;
+				videoEl2.addEventListener('playing', function() {
+					document.getElementsByTagName("p")[0].innerHTML = "PASS";
+					runnerResult(true);
+				}, false);
+				videoEl2.play();
+      }, false);
+			videoEl1.play();
+
+      overrideCurrentRunner(function() {
+				document.getElementsByTagName("p")[0].innerHTML = "FAIL";
+				runnerResult(false);
+      }, 2000);
+  });
+  </script>

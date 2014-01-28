@@ -1,0 +1,66 @@
+<!doctype html>
+  <title>playback of multiple Streams via multiple device-associable elements operate independently from each other</title>
+  <p>FAIL: script did not run.</p>
+  <video id="video1" src=""></video>
+  <video id="video2" src=""></video>
+
+  <script type="text/javascript" src="../../runner.js"></script>
+  <script>
+   var el1Data, el2Data;
+	
+		// Recursive test loop will run the test when both device elements have been authorized:
+		(function testLoop(){
+		   setTimeout(function(){
+					 if(el1Data && el2Data) {
+							// TEST:
+						
+							var videoEl1 = document.getElementById( 'video1' ),
+									videoEl2 = document.getElementById( 'video2' ),
+									videoEl1Playing, videoEl2Playing;
+									
+				      videoEl1.src = el1Data;
+							videoEl2.src = el2Data;
+							
+							videoEl1.addEventListener( 'playing', function() {
+								videoEl1Playing = true;
+							}, false);
+							videoEl2.addEventListener( 'playing', function() {
+								videoEl2Playing = true;
+							}, false);
+							
+							(function testPlayback() {
+								setTimeout(function() {
+									if( videoEl1Playing && videoEl2Playing ) {
+										// check pausing one video does not affect the other
+										videoEl2.addEventListener( 'pause', function() {
+											document.getElementsByTagName("p")[0].innerHTML = "FAIL";
+											runnerResult(false);
+										}, false);
+										videoEl1.pause();
+										setTimeout(function() {
+											document.getElementsByTagName("p")[0].innerHTML = "PASS";
+											runnerResult(true);
+										}, 1000);
+									} else {
+										testPlayback();
+									}
+								}, 200);
+							})();
+							
+							videoEl1.play();
+							videoEl2.play();
+							
+					 } else {
+							testLoop();
+					 }
+		   }, 500);
+		})();
+		
+    navigator.getUserMedia("video", function(stream) {
+				el1Data = stream;
+   	});
+	  navigator.getUserMedia("video", function(stream) {
+				el2Data = stream;
+   	});
+
+  </script>

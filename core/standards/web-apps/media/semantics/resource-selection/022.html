@@ -1,0 +1,19 @@
+<!doctype html>
+<title>invoking resource selection by inserting document fragment into a document</title>
+<p>FAIL (script didn't run)</p>
+<script>
+var v = document.createElement('video');
+var fragment = document.createDocumentFragment();
+fragment.appendChild(v);
+var passed = true;
+passed &= v.networkState == 0;
+document.body.appendChild(fragment);
+passed &= v.networkState == 3;
+onload = function() {
+  document.querySelector('p').textContent = passed ? 'PASS' : 'FAIL';
+  try{top.opener.rr(passed)}catch(e){}
+}
+</script>
+<script>
+passed &= v.networkState == 0;
+</script>

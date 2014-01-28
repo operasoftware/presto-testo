@@ -1,0 +1,88 @@
+<html>
+    <style>
+        video { display:block; border:solid }
+        label:after { content:'\A'; white-space:pre }
+    </style>
+    <script type="text/javascript">
+        var logfile;
+        var videoloc="../../../../../../resources/media/xiph/theora_testsuite/sign_irene_cif-3qi-b.ogg";
+
+        function GetXmlHttpObject()
+        {
+            if (window.XMLHttpRequest)
+            {
+                return new XMLHttpRequest();
+             }
+            if (window.ActiveXObject)
+            {
+                return new ActiveXObject("Microsoft.XMLHTTP");
+            }
+            return null;
+        }
+
+        function genId(){
+            var chars = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXTZabcdefghiklmnopqrstuvwxyz";
+            var string_length = 8;
+            var randomstring = '';
+            for (var i=0; i<string_length; i++) {
+                var rnum = Math.floor(Math.random() * chars.length);
+                randomstring += chars.substring(rnum,rnum+1);
+            }
+            logfile = "../logfiles/"+randomstring+".log";
+        }
+
+        function resetLog(){
+            xmlhttp=GetXmlHttpObject();
+            if (xmlhttp==null)
+            {
+                alert ("Your browser does not support XMLHTTP!");
+                return;
+            }
+            //xmlhttp.onreadystatechange=stateChanged;
+            xmlhttp.open("GET","../resetlog.php?logfile="+logfile,true);
+            xmlhttp.send(null);
+        }
+        function loadIframe(){
+            document.getElementById('ifstatus').src = "../" + logfile;
+            document.getElementById('ifsummary').src = "../processlog.php?logfile="+logfile+"&fileloc="+videoloc;
+        }
+
+        function loadVideo(){
+            document.getElementById('video').src = "../range-request.php?rate="+document.getElementById('rate').value+"&logfile="+logfile+"&fileloc="+videoloc;
+        }
+
+        function init(){
+            genId();
+            resetLog();
+            loadVideo();
+            deleteLog();
+            setTimeout("loadIframe()", 3000);
+        }
+        function deleteLog(){
+            xmlhttp=GetXmlHttpObject();
+            if (xmlhttp==null)
+            {
+                alert ("Your browser does not support XMLHTTP!");
+                return;
+            }
+            //xmlhttp.onreadystatechange=stateChanged;
+            xmlhttp.open("GET","../deletelog.php?logfile="+logfile,true);
+            xmlhttp.send(null);
+        }
+    </script>
+    <body>
+        <p>Only a demo, no pass condition</p>
+        <div>
+            <video id="video" controls height="300" width="400">Your browser does not support video</video>
+        </div>
+        <form>
+            <label>Download rate (B/s):&nbsp;<input type="text" name="downloadspeed" id="rate" value="10000" size = "8" /></label>
+            <input type="button" value="Load" onclick="init()" ?>
+        </form>
+        <h3>Byte range request server feedback</h3>
+        <iframe id="ifstatus" name="ifstat" width="700" frameborder="1" src="">Your browser does not support iframe</iframe>
+        <h3>Summary</h3>
+        <iframe id="ifsummary" name="ifsum" width="700" frameborder="1" src="">Your browser does not support iframe</iframe>
+        <input type="button" value="Refresh" onclick="loadIframe()">
+        </body>
+</html>

@@ -1,0 +1,20 @@
+<!doctype html>
+<title>audio autoplay</title>
+<p>You should hear a ringing sound.</p>
+<script>
+var passed = false;
+var timeout;
+function end() {
+  if (arguments.callee.done) return;
+  arguments.callee.done = true;
+  document.getElementsByTagName('p')[0].firstChild.data = passed ? 'PASS':'FAIL';
+  clearTimeout(timeout);
+  try{top.opener.rr(passed)}catch(e){}
+}
+timeout = setTimeout(end, 10000);
+</script>
+<audio controls autoplay src="/resources/objects/ringin.wav" onplaying="passed = true; end()"></audio>
+<script>
+if (document.getElementsByTagName('audio')[0].play == undefined)
+  end();
+</script>

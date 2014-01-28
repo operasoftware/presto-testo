@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <title>clearRect() and translate()</title>
+  <script>
+   window.onload = function(){
+    with(document.getElementsByTagName('canvas')[0].getContext('2d')){
+     fillStyle = "red";
+     translate(50,50);
+     fillRect(0,0,100,100);
+     clearRect(0,0,100,100);
+    }
+   }
+  </script>
+ </head>
+ <body>
+  <p>This text should be all there is on this page.</p>
+  <canvas width="150">FAIL: <code>html:canvas</code> not enabled.</canvas>
+ </body>
+</html>

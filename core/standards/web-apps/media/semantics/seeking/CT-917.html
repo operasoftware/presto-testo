@@ -1,0 +1,31 @@
+<!doctype html>
+<title>CT-917: Suspend event should be fired when loading stops at the end of media - webm</title>
+<script src="/resources/testharness.js"></script>
+<script src="/resources/testharnessreport.js"></script>
+<script src="/core/standards/web-apps/media/support/common.js"></script>
+<p id="log">FAIL (script didn't run)</p>
+<audio autoplay controls></audio>
+<video autoplay controls></video>
+<script>
+var tests = init_tests("HTMLAudioElement: Suspend event should be fired when loading stops at the end of audio - webm", "HTMLVideoElement: Suspend event should be fired when loading stops at the end of video - webm", {timeout:10000});
+tests.forEach(function(vars) {
+    var t = vars[0];
+    t.step(function() {
+    var tag_name = vars[1];
+    var node = document.getElementsByTagName(tag_name)[0];
+    node.addEventListener('loadedmetadata', startTest, false);
+    node.src = '/core/standards/web-apps/media/network/range-request-log/range-request.php?rate=100000&fileloc=../../support/preload.webm&nocache=' + Math.random();
+
+    function startTest() {
+        node.addEventListener('suspend', endTest, false);
+        node.currentTime = node.duration - 1;
+    }
+
+    function endTest() {
+        t.step(function() {
+        t.done();
+        });
+    }
+    });
+});
+</script>

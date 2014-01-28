@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>html5 video - src: video.php?secure=1</title>
+    <style type="text/css">
+        body  { font-size: 10px; }
+        span  { width:200px; display:inline-block; background:lightgray; overflow:hidden; white-space:nowrap; vertical-align:top; margin-top:2px; }
+        b     { display:inline-block; background:darkgray;  overflow:hidden; float:right; }
+        .lite { background: silver; }
+        .dark { background: gray;   }
+    </style>
+    <script type="application/ecmascript">
+        var codes   =   {
+                            readyState:     {
+                                                0:  "HAVE_NOTHING",
+                                                1:  "HAVE_METADATA",
+                                                2:  "HAVE_CURRENT_DATA",
+                                                3:  "HAVE_FUTURE_DATA",
+                                                4:  "HAVE_ENOUGH_DATA"
+                                            },
+                            networkState:   {
+                                                0:  "NETWORK_EMPTY",
+                                                1:  "NETWORK_IDLE",
+                                                2:  "NETWORK_LOADING",
+                                                3:  "NETWORK_LOADED",
+                                                4:  "NETWORK_NO_SOURCE"
+                                            },
+                            error:          {
+                                                1:  "MEDIA_ERR_ABORTED",
+                                                2:  "MEDIA_ERR_NETWORK",
+                                                3:  "MEDIA_ERR_DECODE",
+                                                4:  "MEDIA_ERR_SRC_NOT_SUPPORTED"
+                                            },
+                            
+                            get: function(name, code)
+                            {
+                                if (name in this)
+                                {
+                                    if (code in this[name]) { return this[name][code];              }
+                                    else                    { return 'bad '+name+' code: '+code;    }
+                                }
+                                else                        { return 'bad name: '+name;             }
+                            }
+                        };
+        
+        function test()
+        {
+            var video   = document.querySelector('video');
+            var events  = [
+                            'loadstart',
+                            'progress',
+                            'suspend',
+                            'abort',
+                            'error',
+                            'emptied',
+                            'stalled',
+                            'play',
+                            'pause',
+                            'loadedmetadata',
+                            'loadeddata',
+                            'waiting',
+                            'playing',
+                            'canplay',
+                            'canplaythrough',
+                            'seeking',
+                            'seeked',
+                            'timeupdate',
+                            'ended',
+                            'ratechange',
+                            'durationchange',
+                            'volumechange'
+                          ];
+            
+            document.querySelector('#log').lite = true;
+            
+            try
+            {
+                for (var event in events)
+                {
+                    event = events[event];
+                    video.addEventListener(event, eval(event), false);
+                }
+                
+                // load video
+                video.src = '../video.php?secure=1';
+            }
+            catch(e){alert(e);}
+        }
+        
+        function loadstart      () { logger('loadstart'     ); updateStatus(this, [             'states'    ]  ); }
+        function progress       () { logger('progress: ['+timeRange2String(this.buffered, ',')+']' ); updateStatus(this, ['status',    'ranges',   'states'    ]  ); }
+        function suspend        () { logger('suspend'       ); updateStatus(this, ['status',    'states'    ]  ); }
+        function abort          () { logger('abort'         ); updateStatus(this, ['status',    'states'    ]  ); }
+        function error          () { logger('error: '+codes.get('error', this.error.code));
+                                                               updateStatus(this, [                         'states'    ]  ); }
+        function emptied        () { logger('emptied'       ); updateStatus(this, ['status',    'states'    ]  ); }
+        function stalled        () { logger('stalled'       ); updateStatus(this, ['status',    'states'    ]  ); }
+        function play           () { logger('play'          ); updateStatus(this, ['status',    'ranges'    ]  ); }
+        function pause          () { logger('pause'         ); updateStatus(this, ['status',    'ranges',               ]  ); }
+        function loadedmetadata () { logger('loadedmetadata'); updateStatus(this, ['options',   'ranges',   'states',   'rate', 'volume']  ); }
+        function loadeddata     () { logger('loadeddata'    ); updateStatus(this, ['status',    'ranges',   'states'    ]  ); }
+        function waiting        () { logger('waiting'       ); updateStatus(this, ['status',    'ranges',   'states'    ]  ); }
+        function playing        () { logger('playing'       ); updateStatus(this, ['status',    'ranges'                ]  ); }
+        function canplay        () { logger('canplay'       ); updateStatus(this, ['status',    'ranges',   'states'    ]  ); }
+        function canplaythrough () { logger('canplaythrough'); updateStatus(this, ['status',    'ranges',   'states'    ]  ); }
+        function seeking        () { logger('seeking'       ); updateStatus(this, ['status',    'ranges'    ]  ); }
+        function seeked         () { logger('seeked'        ); updateStatus(this, ['status',    'ranges'    ]  ); }
+        function timeupdate     () {                           updateStatus(this, ['time'   ]  ); }
+        function ended          () { logger('ended'         ); updateStatus(this, ['status',    'ranges'    ]  ); }
+        function ratechange     () { logger('ratechange'    ); updateStatus(this, ['rate'   ]  ); }
+        function durationchange () { logger('durationchange'); updateStatus(this, ['time'   ]  ); }
+        function volumechange   () { logger('volumechange'  ); updateStatus(this, ['volume' ]  ); }
+        
+        function logger(msg)
+        {
+            var log             = document.querySelector('#log');
+            var div             = document.createElement('div');
+                div.className   = log.lite?'lite':'dark';
+                div.innerHTML   = msg;
+            
+            log.appendChild(div);
+            log.lite = !(log.lite);
+        }
+        
+        function updateStatus       (video, setItems)
+        {
+            var sets = {
+                            status:     ['paused',              'ended',        'seeking'   ],
+                            volume:     ['muted',               'volume'                    ],
+                            options:    ['autoplay',            'loop',         'autobuffer'],
+                            rate:       ['defaultPlaybackRate', 'playbackRate'              ],
+                            time:       ['currentTime',         'startTime',    'duration'  ],
+                            ranges:     ['seekable',            'buffered',     'played'    ],
+                            states:     ['readyState',          'networkState'              ]
+                       }
+            
+            for (var set in setItems)
+            {
+                set = setItems[set];
+                
+                for (var item in sets[set])
+                {
+                    item    = sets[set][item];
+                    value   = eval('video.'+item);
+                    
+                    if (set == 'ranges')
+                    {
+                        string = 'ranges: '+value.length+'<br />'+timeRange2String(value, '<br />');
+                        
+                        try { document.querySelector('#'+item).innerHTML = item+': <b>'+string+'</b>'; } catch(e) {alert(set+'['+item+']\n'+e);}
+                    }
+                    else if (set == 'time')
+                    {
+                        try { document.querySelector('#'+item).innerHTML = item+': <b>'+(value?value.toFixed(2):value)+'</b>'; } catch(e) {alert(set+'['+item+']\n'+e);}
+                    }
+                    else if (set == 'states')
+                    {
+                        try { document.querySelector('#'+item).innerHTML = item+': <b>'+codes.get(item, value)+'</b>'; } catch(e) {alert(set+'['+item+']\n'+e);}
+                    }
+                    else
+                    {
+                        try { document.querySelector('#'+item).innerHTML = item+': <b>'+value+'</b>'; } catch(e) {alert(set+'['+item+']\n'+e);}
+                    }
+                }
+            }
+        }
+        
+        function timeRange2String(timeRange, separator)
+        {
+            ranges = new Array()
+            
+            for (var i = 0; i < timeRange.length; i++)
+            {
+                start   = (timeRange.start(i)).toFixed(2);
+                end     = (timeRange.end  (i)).toFixed(2);
+                diff    = (end - start       ).toFixed(2);
+                
+                ranges.push((start+':'+end+' ('+diff+') '));
+            }
+            
+            return ranges.join(separator);
+        }
+        
+        window.addEventListener('load', test, false);
+    </script>
+</head>
+
+<body>
+<video controls="controls"></video>
+<div><span>Time:</span> <span id='startTime'>start: </span> <span id='currentTime'>current: </span> <span id='duration'>duration: </span></div>
+<div><span>Video status:</span> <span id='paused'>paused: </span> <span id='ended'>ended: </span> <span id='seeking'>seeking: </span></div>
+<div><span>Sound:</span> <span id='muted'>muted: </span> <span id='volume'>volume: </span></div>
+<div><span>Video options:</span> <span id='autoplay'>autoplay: </span> <span id='loop'>loop: </span> <span id='autobuffer'>autobuffer: </span></div>
+<div><span>Video data:</span> <span id='defaultPlaybackRate'>default playback rate: </span> <span id='playbackRate'>playback rate: </span></div>
+<div>
+    <span>Ranges:</span>
+    <span id='seekable'>seekable: </span>
+    <span id='buffered'>buffered: </span>
+    <span id='played'>played: </span>
+</div>
+<div>
+    <span>Video state</span>
+    <span id='readyState'>ready state: </span>
+    <span id='networkState'>network state: </span>
+</div>
+<pre id='log'></pre>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <title>fillStyle with invalid hexadecimal color value</title>
+  <link rel="help" href="http://whatwg.org/specs/web-apps/current-work/#fillstyle" title="fillStyle">
+  <style> canvas { background:red } </style>
+  <script>
+   window.onload = function(){
+    with(document.getElementsByTagName('canvas')[0].getContext('2d')){
+     fillStyle = 'lime';
+     fillStyle = 'ff0000'; // invalid values are to be ignored (they should not throw exceptions and all that)
+     fillRect(0,0,300,150);
+    }
+   }
+  </script>
+ </head>
+ <body>
+  <p>There should be a green rectangle below:</p>
+  <canvas>FAIL: <code>html:canvas</code> not enabled.</canvas>
+ </body>
+</html>

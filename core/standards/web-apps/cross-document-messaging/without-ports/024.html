@@ -1,0 +1,21 @@
+<!doctype html>
+<title>Object cloning: throw an exception if function values encountered</title>
+<script src="/resources/jsframework.js"></script>
+<script>
+// CORE-31681: Web Workers: Sending objects with methods using postMessage does not throw exception
+test(function() { 
+   var obj = { f : function() { return; }};
+
+   assertTrue("MessageChannel" in window, "No MessageChannel support");
+
+   var ch = new MessageChannel();
+   ch.port1.onmessage = function() { return false; };
+   try {
+       ch.port2.start();
+       ch.port2.postMessage({obj: obj});
+       test(function(e){ assertTrue(e.data, "Function-valued field successfully cloned");}, ch.port2, 'message');
+   } catch (e) {
+      ;
+   }
+});
+</script>

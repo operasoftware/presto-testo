@@ -1,0 +1,39 @@
+<!doctype html>
+<title>ended, audio</title>
+<pre>FAIL (script didn't run)</pre>
+<script>
+ var p = document.querySelector('pre');
+ p.textContent = 'Running...';
+ var v = document.createElement('audio');
+ v.src = '/resources/media/acm/11k16bitpcm.wav';
+ v.autoplay = true;
+ v.controls = true;
+
+ var log = [];
+ var i = 0;
+ function assertEquals(a, b) {
+   i++;
+   var evaledA = eval(a);
+   if (evaledA !== b)
+     log.push(a+' was '+evaledA+', expected '+b+' (test '+i+')');
+ }
+ assertEquals('v.ended', false); // test 1
+ v.addEventListener('playing', function(e) {
+   assertEquals('v.ended', false); // test 2
+ }, false);
+ v.addEventListener('ended', function(e) {
+   assertEquals('v.ended', true); // test 3
+   v.pause();
+   assertEquals('v.ended', true); // test 4
+   v.currentTime = 1;
+   assertEquals('v.ended', false); // test 5
+   end();
+ }, false);
+ document.body.appendChild(v);
+ 
+ function end() {
+   var passed = log.length == 0;
+   p.textContent = passed ? 'PASS' : 'FAIL\n' + log.join('\n');
+   try{top.opener.rr(passed)}catch(e){}
+ }
+</script>

@@ -1,0 +1,18 @@
+<!doctype html>
+<title>redirect in poster</title>
+<pre>FAIL (script didn't run)</pre>
+<script>
+var log = '';
+var gotSuspend = false;
+onload = function() {
+  if (getComputedStyle(document.querySelector('video'), '').width == '300px')
+    log += "Poster image didn't delay load event, or video wasn't resized\n";
+  if (gotSuspend)
+    log += 'Got unexpected suspend event\n';
+  var passed = log == '';
+  document.querySelector('pre').textContent = passed ? 'PASS' : 'FAIL\n' + log;
+  try {top.opener.rr(passed)}catch(e){}
+}
+</script>
+<video poster=/resources/redirect.php?status=302%20Found&location=images%2Fopera.png onerror="log += 'Got error event\n'" onsuspend="gotSuspend = true"><source src=?></video>
+

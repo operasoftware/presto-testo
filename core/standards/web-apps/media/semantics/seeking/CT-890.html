@@ -1,0 +1,46 @@
+<!doctype html>
+<title>CT-890: Buffered timeranges should merge when they reach - ogg</title>
+<script src="/resources/testharness.js"></script>
+<script src="/resources/testharnessreport.js"></script>
+<script src="/core/standards/web-apps/media/support/common.js"></script>
+<p id="log">FAIL (script didn't run)</p>
+<audio preload="metadata" controls></audio>
+<video preload="metadata" controls></video>
+<script>
+var tests = init_tests("HTMLAudioElement.buffered: Buffered timeranges should merge when they reach - ogg", "HTMLVideoElement.buffered: Buffered timeranges should merge when they reach - ogg", {timeout:10000});
+tests.forEach(function(vars) {
+    var t = vars[0];
+    t.step(function() {
+    var tag_name = vars[1];
+    var buffer_start;
+    var node = document.getElementsByTagName(tag_name)[0];
+    node.addEventListener('loadedmetadata', seek1, false);
+    node.src = '/core/standards/web-apps/media/network/range-request-log/range-request.php?rate=100000&fileloc=../../support/preload.ogv&nocache=' + Math.random();
+
+    function seek1() {
+        node.addEventListener('seeked', seek2, false);
+        node.currentTime = 50;
+    }
+
+    function seek2() {
+        node.removeEventListener('seeked', seek2, false);
+        node.addEventListener('seeked', sleep, false);
+        buffer_start = node.buffered.start(1);
+        node.currentTime = buffer_start - 2;
+    }
+
+    function sleep() {
+        setTimeout(endTest, 2000);
+    }
+
+    function endTest() {
+        t.step(function() {
+        assert_equals(node.buffered.length, 2, 'The buffered timeranges should be merged');
+        assert_true(node.buffered.start(1) <= buffer_start - 2, 'The start of the merged bufferd timerange should be <= ' + (buffer_start - 2));
+        assert_true(node.buffered.end(1) >= 50,  'The end of the merged buffered timerange should be >= than 50');
+        t.done();
+        });
+    }
+    });
+});
+</script>

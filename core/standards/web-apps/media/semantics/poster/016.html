@@ -1,0 +1,18 @@
+<!doctype html>
+<title>poster and onload=""</title>
+<pre>FAIL (script didn't run)</pre>
+<script>
+var log = '';
+var gotLoad = false;
+var gotError = false;
+onload = function() {
+  if (gotLoad)
+    log += 'Got load event\n';
+  if (gotError)
+    log += 'Got error event\n';
+  var passed = log == '';
+  document.querySelector('pre').textContent = passed ? 'PASS' : 'FAIL\n' + log;
+  try {top.opener.rr(passed)}catch(e){}
+}
+</script>
+<video poster="/resources/images/opera.png" onerror="gotError = true" onload="gotLoad = true"></video>

@@ -1,0 +1,23 @@
+<!doctype html>
+<source 0><source 1>.</source><video height='0'><source 2><source 3><span><source 4><source 5> </source></span><script>
+var sources = document.getElementsByTagName('source');
+var log = '';
+if (sources.length != 6)
+  log += 'Found ' + sources.length + ' SOURCEs, expected 6. ';
+else if (sources[0].parentNode != document.body)
+  log += 'The first SOURCE didn\'t have BODY as parent. ';
+else for (var i = 0; i < sources.length; ++i) {
+  if (sources[i].getAttribute(i) == null) {
+    log += 'The order of the SOURCE elements were wrong (got SOURCE "' + sources[i].attributes[0].name + '", expected SOURCE "' + i + '"). ';
+    break;
+  }
+  if (sources[i].firstChild) {
+    log += 'SOURCE "' + i + '" had children. ';
+    break;
+  }
+}
+var passed = log == '';
+window.onload = function () {
+  document.getElementsByTagName('p')[0].firstChild.data = passed ? 'PASS' : 'FAIL: ' + log;try{top.opener.rr(passed);}catch(e){};
+}
+</script></video><p>FAIL (script didn't run)</p>

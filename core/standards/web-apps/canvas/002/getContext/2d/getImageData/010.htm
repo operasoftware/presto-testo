@@ -1,0 +1,14 @@
+<!doctype html>
+<title>getImageData(): color order part two</title>
+<p>FAIL: Script did not run.</p>
+<p><canvas>FAIL: <code>canvas</code> not supported.</canvas></p>
+<script>
+  var c = document.getElementsByTagName("canvas")[0].getContext("2d"),
+      p = document.getElementsByTagName("p")[0]
+  c.fillStyle = "rgba(10, 20, 30, 0.5)";
+  c.fillRect(0, 0, 2, 2)
+  var data = c.getImageData(1, 1, 1, 1).data
+  p.textContent = (data[0] >= 9 && data[0] <= 11) && (data[1] >= 19 && data[1] <= 21) && (data[2] >= 29 && data[2] <= 31) && (data[3] == 127 || data[3] == 128) ? "PASS" : "FAIL: got (" + data[0] + ', ' + data[1] + ', ' + data[2] + ', ' + data[3] + '), expected something closer to (10, 20, 30, 128)';
+</script>
+
+

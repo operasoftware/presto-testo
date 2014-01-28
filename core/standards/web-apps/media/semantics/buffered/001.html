@@ -1,0 +1,65 @@
+<!doctype html>
+<title>buffered IDL attribute on loadeddata and seeked - ogg</title>
+<pre>FAIL (script didn't run)</pre>
+<script>
+ var p = document.querySelector('pre');
+ p.textContent = 'Running...';
+ var v = document.createElement('video');
+ v.src = '../../network/range-request-log/range-request.php?fileloc=../../../../../../resources/media/misc/bbb_256kbps.ogg&rate=40000&nocache=' + Math.random();
+ v.autoplay = true;
+ v.controls = true;
+
+ var log = [];
+ function assertEquals(a, b) {
+   try {
+     var evaledA = eval(a);
+     if (evaledA !== b)
+       log.push(a+' was '+evaledA+', expected '+b);
+   } catch(e) {
+     log.push('Got unexpected exception for ' + a + ': ' + e.message);
+   }
+ }
+ function assertApproximate(a, b, tolerance) {
+   try {
+     var evaledA = eval(a);
+     if (Math.abs(evaledA-b) > tolerance)
+       log.push(a+' was '+evaledA+', expected '+b+'\u00B1'+tolerance);
+   } catch(e) {
+     log.push('Got unexpected exception for ' + a + ': ' + e.message);
+   }
+}
+ assertEquals('v.buffered.length', 0);
+ v.addEventListener('loadeddata', function(e) {
+   assertEquals('v.buffered.length', 2);
+   assertEquals('v.buffered.start(0)', 0);
+   assertApproximate('v.buffered.end(0)', 1, 4);
+   assertApproximate('v.buffered.start(1)', v.duration, 4);
+   assertApproximate('v.buffered.end(1)', v.duration, 4);
+   v.currentTime = 180;
+ }, false)
+ v.addEventListener('seeked', function(e) {
+   assertEquals('v.buffered.length', 3);
+   assertEquals('v.buffered.start(0)', 0);
+   assertApproximate('v.buffered.end(0)', 1, 4);
+   assertApproximate('v.buffered.start(1)', 180, 4);
+   assertApproximate('v.buffered.end(1)', 181, 4);
+   assertApproximate('v.buffered.start(2)', v.duration, 4);
+   assertApproximate('v.buffered.end(2)', v.duration, 4);
+   end();
+ }, false);
+ document.body.appendChild(v);
+
+ setTimeout(function() {
+   log.push('timed out');
+   end();
+ }, 10000);
+
+ function end() {
+   if (arguments.callee.done)
+     return;
+   arguments.callee.done = true;
+   var passed = log.length == 0;
+   p.textContent = passed ? 'PASS' : 'FAIL\n' + log.join('\n');
+   try{top.opener.rr(passed)}catch(e){}
+ }
+</script>

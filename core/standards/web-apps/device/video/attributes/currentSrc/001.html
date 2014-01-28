@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<title>reading the currentSrc of a device-associable element assigned a Stream object as a string</title>
+<p>FAIL: script did not run.</p>
+<device type="media">
+<video src="" autoplay style="visibility:hidden;"></video>
+<script type="text/javascript" src="../../../runner.js"></script>
+<script>
+navigator.getUserMedia("video", success);
+function success(stream) {
+  var videoEl = document.getElementsByTagName("video")[0];
+  videoEl.src = stream;
+  videoEl.addEventListener("playing", function() {
+
+    if (videoEl.currentSrc == "about:streamurl") {
+      document.getElementsByTagName("p")[0].innerHTML = "PASS"; 
+      runnerResult(true);
+    } else {
+      document.getElementsByTagName("p")[0].innerHTML = "FAIL"; 
+      runnerResult(false);
+    }
+  }, false);
+  videoEl.play();
+}
+</script>

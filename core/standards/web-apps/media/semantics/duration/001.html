@@ -1,0 +1,43 @@
+<!doctype html>
+<title>duration for finite video</title>
+<pre>FAIL (script didn't run)</pre>
+<script>
+ var p = document.querySelector('pre');
+ p.textContent = 'Running...';
+ var v = document.createElement('video');
+ v.src = '/resources/media/xiph/theora_testsuite/320x240.ogg?' + (new Date()-0);
+ v.autoplay = true;
+ v.controls = true;
+
+ var log = [];
+ function assertEquals(a, b) {
+   var evaledA = eval(a);
+   if (evaledA !== b)
+     log.push(a+' was '+evaledA+', expected '+b);
+ }
+ function assertApproximate(a, b, tolerance) {
+   var evaledA = eval(a);
+   if (Math.abs(evaledA-b) > tolerance)
+     log.push(a+' was '+evaledA+', expected '+b+'\u00B1'+tolerance);
+ }
+ function assertNaN(a) {
+   var evaledA = eval(a);
+   if (evaledA === evaledA)
+     log.push(a+' was '+evaledA+', expected NaN');
+ }
+ 
+ //v.addEventListener('loadstart', function(e) { // duration might be set when the event is actually fired
+   assertNaN('v.duration');
+ //}, false);
+ v.addEventListener('loadedmetadata', function(e) {
+   assertApproximate('v.duration', 3.966627132, 0.3);
+   end();
+ }, false);
+ document.body.appendChild(v);
+ 
+ function end() {
+   var passed = log.length == 0;
+   p.textContent = passed ? 'PASS' : 'FAIL\n' + log.join('\n');
+   try{top.opener.rr(passed)}catch(e){}
+ }
+</script>

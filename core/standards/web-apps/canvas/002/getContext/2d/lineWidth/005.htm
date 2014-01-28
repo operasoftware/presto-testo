@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <title>lineWidth error handling ("x")</title>
+  <style> canvas { border-bottom:4px solid black } </style>
+  <script>
+   window.onload = function(){
+    var ctx = document.getElementsByTagName('canvas')[0].getContext('2d')
+    ctx.lineWidth = 4;
+    ctx.lineWidth = "x";
+    ctx.moveTo(0,20);
+    ctx.lineTo(100,20);
+    ctx.stroke();
+   }
+  </script>
+ </head>
+ <body>
+  <p>There should be two identical lines below:</p>
+  <p><canvas height="40" width="100">FAIL</canvas></p>
+ </body>
+</html>

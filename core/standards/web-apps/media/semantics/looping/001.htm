@@ -1,0 +1,20 @@
+<!doctype html>
+<title>basic looping</title>
+<p>The video below should be looping.</p>
+<script>
+var gotSeeked = false;
+var gotEnded = false;
+function end() {
+  if (arguments.callee.done) return;
+  arguments.callee.done = true;
+  var passed = gotSeeked == true && gotEnded == false;
+  document.getElementsByTagName('p')[0].firstChild.data = passed ? 'PASS':'FAIL';
+  try{top.opener.rr(passed)}catch(e){}
+}
+setTimeout(end, 12000);
+</script>
+<p><video src=/resources/objects/video.ogg autoplay loop onseeked="gotSeeked = true" onended="gotEnded = true">FAIL</video>
+<script>
+if (document.getElementsByTagName('video')[0].play == undefined)
+  end();
+</script>

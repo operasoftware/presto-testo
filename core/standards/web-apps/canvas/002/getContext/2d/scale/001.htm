@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <title>simple scale() test</title>
+  <script>
+   window.onload = function(){
+    var c = document.getElementsByTagName('canvas')[0],
+        ctx = c.getContext('2d');
+    ctx.fillStyle = 'red';
+    ctx.fillRect(0,0,250,250);
+    ctx.scale(5,2);
+    ctx.fillStyle = 'lime';
+    ctx.fillRect(0,0,50,125);
+   }
+  </script>
+ </head>
+ <body>
+  <p>There should be a green square below:</p>
+  <p><canvas height="250" width="250"></canvas></p>
+ </body>
+</html>

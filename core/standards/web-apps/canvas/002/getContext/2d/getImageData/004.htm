@@ -1,0 +1,14 @@
+<!doctype html>
+<title>getImageData(): negative height</title>
+<p>FAIL: Script did not run.</p>
+<p><canvas>FAIL: <code>canvas</code> not supported.</canvas></p>
+<script>
+  var c = document.getElementsByTagName("canvas")[0].getContext("2d"),
+      p = document.getElementsByTagName("p")[0]
+  try {
+    c.getImageData(0, 0, 1, -100)
+    p.textContent = "PASS"
+  } catch (e) {
+    p.textContent = "FAIL"
+  }
+</script>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<title>checking that played.start(0) == 0</title>
+<p>FAIL: script did not run.</p>
+<device type="media">
+<video src="" autoplay style="visibility:hidden;"></video>
+<script type="text/javascript" src="../../../runner.js"></script>
+<script>
+document.getElementsByTagName("p")[0].innerHTML = "Running test..."
+navigator.getUserMedia("video", success);
+var videoEl = document.getElementsByTagName("video")[0];
+function success(stream) {
+  var log = "", passed = false;
+  videoEl.src = stream;
+  setTimeout(check, 1000);
+}
+
+function check() {
+  try {
+    if (videoEl.played.start(0) == 0) {
+      passed = true;
+    } else {
+      log = "Start time range incorrectly returned: " + videoEl.played.start(0);
+      passed = false;
+    }
+  } catch (e) {
+    log = "Unexpected exception thrown: " + e;
+    passed = false;
+  }
+  document.getElementsByTagName("p")[0].innerHTML = passed ? "PASS" : "FAIL: " + log;
+  runnerResult(passed, log);
+}
+</script>

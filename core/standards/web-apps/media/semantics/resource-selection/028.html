@@ -1,0 +1,34 @@
+<!doctype html>
+<title>pointer updates (control test)</title>
+<pre>FAIL (script didn't run)</pre>
+<script>
+var a = 0;
+var b = 0;
+var c = 0;
+</script>
+<video
+ ><source onerror=a++
+ ><source onerror=b++ src='/resources/file.php?file=fail.html&amp;type=video%2Fogg&amp;status=200%20OK&amp;sleep=1'
+ ><source onerror=c++
+ ></video
+>
+<script>
+document.querySelector('pre').textContent = 'Running...';
+var video = document.querySelector('video');
+var log = '';
+var gotLoad = false;
+onload = function() { gotLoad = true }
+setTimeout(function() {
+  if (a != 1)
+    log += 'got ' + a + ' error events on the first source element, expected 1\n';
+  if (b != 1)
+    log += 'got ' + b + ' error events on the second source element, expected 1\n';
+  if (c != 1)
+    log += 'got ' + c + ' error events on the third source element, expected 1\n';
+  if (!gotLoad)
+    log += 'got no load event on window\n';
+  var passed = log == '';
+  document.querySelector('pre').textContent = passed ? 'PASS' : 'FAIL\n' + log;
+  try{top.opener.rr(passed)}catch(e){}
+}, 2000);
+</script>

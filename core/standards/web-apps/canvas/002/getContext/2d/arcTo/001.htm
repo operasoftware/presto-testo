@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <title>simple arcTo test</title>
+  <style>
+   canvas { border:solid }
+  </style>
+  <script>
+   window.onload = function(){
+    with(document.getElementsByTagName('canvas')[0].getContext('2d')){
+     lineWidth = 10;
+     moveTo(50,50);
+     arcTo(50,50,250,250,1);
+     arcTo(250,250,50,50,1);
+     stroke();
+    }
+   }
+  </script>
+ </head>
+ <body>
+  <p>There should be a circle in the square box below:</p>
+  <canvas height="300">FAIL: <code>html:canvas</code> not enabled.</canvas>
+ </body>
+</html>
+

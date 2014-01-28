@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <title>clip() test</title>
+  <script>
+   window.onload = function(){
+    with(document.getElementsByTagName('canvas')[0].getContext('2d')){
+     rect(0, 0, 100, 100);
+     clip();
+     fillRect(0, 0, canvas.width, canvas.height);
+     rect(50, 50, 100, 100);
+     clip();
+     fillRect(0, 0, canvas.width, canvas.height);
+    }
+   }
+  </script>
+ </head>
+ <body>
+  <p>There should be a black <em>square</em> below:</p>
+  <canvas height="150" width="150"></canvas>
+ </body>
+</html>

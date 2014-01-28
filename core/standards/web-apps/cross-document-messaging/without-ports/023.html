@@ -1,0 +1,38 @@
+<!doctype html>
+<title>Object cloning: own properties only, don't follow prototype</title>
+<script src="/resources/jsframework.js"></script>
+<script>
+// CORE-31495: Web Worker: Objects sent with postMessage also contain prototype attributes
+
+var Parent = function()
+{
+    this.c = "xyz";
+}; 
+
+var Child = function(a, b)
+ {
+    this.a = a;
+    this.b = b;
+};
+Child.prototype = new Parent;
+
+test(function() { 
+   var obj = new Child(1, 2);
+
+   assertTrue("MessageChannel" in window, "No MessageChannel support");
+
+   var ch = new MessageChannel();
+   ch.port1.onmessage = function(event) 
+   {
+       var passed = true;
+       for (var i in event.data.obj)
+ 	    if (i == 'c')
+	        passed = false;
+       ch.port1.postMessage(passed);
+   };
+   ch.port2.start();
+   ch.port2.postMessage({obj: obj});
+   test(function(e){ assertTrue(e.data, "Cloned property of prototype object");}, ch.port2, 'message');
+});
+
+</script>

@@ -1,0 +1,33 @@
+<!doctype html>
+<title>async 'abort'</title>
+<p>FAIL (script didn't run)</p>
+<script>
+function runtest() {
+var video = document.getElementsByTagName('video')[0];
+var passed = false;
+var gotAbort = false;
+var hasrun = false;
+function end() {
+  if (hasrun)
+    return;
+  document.getElementsByTagName('p')[0].firstChild.data = passed ? 'PASS' : 'FAIL';
+  try{top.opener.rr(passed)}catch(e){}
+  hasrun = true;
+}
+if (video.networkState > 0) {
+  video.onabort = function() { gotAbort = true; };
+  video.onloadstart = function() {
+    passed = gotAbort;
+    end();
+  }
+} else {
+  end(); // fail
+}
+video.load();
+if (gotAbort) {
+  end(); // fail
+}
+}
+</script>
+<video src="/resources/media/misc/bbb_256kbps.ogg" onloadstart="this.onloadstart = null; runtest()">
+</video>

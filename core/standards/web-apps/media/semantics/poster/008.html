@@ -1,0 +1,29 @@
+<!doctype html>
+<title>wrong format in poster with 2s delay</title>
+<pre>FAIL (script didn't run)</pre>
+<script>
+var log = '';
+var gotSuspend = false;
+var gotLoadedmetadata = false;
+var timeout = setTimeout(function() {
+  log += 'Got no load event on window\n';
+  window.onload = null;
+  end();
+}, 3000);
+onload = function() {
+  clearTimeout(timeout);
+  if (getComputedStyle(document.querySelector('video'), '').width == '300px')
+    log += "video wasn't resized\n";
+  if (!gotLoadedmetadata)
+    log += 'Got no loadedmetadata event\n';
+  end();
+}
+function end() {
+  var passed = log == '';
+  document.querySelector('pre').textContent = passed ? 'PASS' : 'FAIL\n' + log;
+  try {top.opener.rr(passed)}catch(e){}
+}
+</script>
+<video src=/resources/media/xiph/theora_testsuite/320x240.ogg poster=/resources/file.php?file=fail.html&type=image%2Fpng&status=200%20OK&sleep=2 onerror="log += 'Got error event\n'" onloadedmetadata="gotLoadedmetadata = true"></video>
+
+

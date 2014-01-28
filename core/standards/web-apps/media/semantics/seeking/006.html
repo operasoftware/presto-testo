@@ -1,0 +1,53 @@
+<!doctype html>
+<title>seeked and timeupdate events when seeking</title>
+<pre>FAIL (script didn't run)</pre>
+<script>
+ var p = document.querySelector('pre');
+ p.textContent = 'Running...';
+ var v = document.createElement('video');
+ v.src = '/resources/media/xiph/theora_testsuite/320x240.ogg';
+ v.autoplay = true;
+ v.controls = true;
+
+ var log = [];
+ if(!('HTMLMediaElement' in window)) {
+   log.push('video not supported');
+   end();
+ }
+ function assertEquals(a, b) {
+   var evaledA = eval(a);
+   if (evaledA !== b)
+     log.push(a+' was '+evaledA+', expected '+b);
+ }
+ function assertApproximate(a, b, tolerance) {
+   var evaledA = eval(a);
+   if (Math.abs(evaledA-b) > tolerance)
+     log.push(a+' was '+evaledA+', expected '+b+'\u00B1'+tolerance);
+ }
+ 
+ var gotTimeupdate = false;
+ var gotSeeked = false;
+ v.addEventListener('ended', function(e) {
+   v.pause();
+   v.currentTime = 1;
+   v.addEventListener('timeupdate', function(e) {
+     gotTimeupdate = true;
+   }, false);
+   v.addEventListener('seeked', function(e) {
+     gotSeeked = true;
+   }, false);
+   setTimeout(function() {
+     assertEquals('gotTimeupdate', true);
+     assertEquals('gotSeeked', true);
+     end();
+   }, 500);
+   v.removeEventListener('ended', arguments.callee, false);
+ }, false);
+ document.body.appendChild(v);
+ 
+ function end() {
+   var passed = log.length == 0;
+   p.textContent = passed ? 'PASS' : 'FAIL\n' + log.join('\n');
+   try{top.opener.rr(passed)}catch(e){}
+ }
+</script>

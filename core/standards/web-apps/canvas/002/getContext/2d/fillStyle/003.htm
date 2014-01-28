@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <title>fillStyle has an initial value</title>
+  <link rel="help" href="http://whatwg.org/specs/web-apps/current-work/#fillstyle" title="fillStyle">
+  <style> canvas { background:red } </style>
+  <script>
+   window.onload = function(){
+    with(document.getElementsByTagName('canvas')[0].getContext('2d')){
+     fillRect(0,0,300,150);
+    }
+   }
+  </script>
+ </head>
+ <body>
+  <p>There should be a <strong>black</strong> rectangle below:</p>
+  <canvas>FAIL: <code>html:canvas</code> not enabled.</canvas>
+ </body>
+</html>

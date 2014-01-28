@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <title>simple fillRect() test</title>
+  <script>
+   window.onload = function(){
+    var ctx = document.getElementsByTagName('canvas')[0].getContext('2d');
+    ctx.fillStyle = 'red';
+    ctx.fillRect(0, 0, 150, 150);
+    ctx.fillStyle = 'lime';
+    ctx.fillRect(-150, -150, 450, 450);
+   }
+  </script>
+ </head>
+ <body>
+  <p>There should be a green square below:</p>
+  <p><canvas height="150" width="150"></canvas></p>
+ </body>
+</html>

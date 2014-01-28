@@ -1,0 +1,26 @@
+<!doctype html>
+  <title>getUserMedia 'audio' option should throw a PERMISSION_DENIED error in Phase 1 ('audio' not yet supported)</title>
+  <p>FAIL: script did not run.</p>
+  <script type="text/javascript" src="../runner.js"></script>
+  <script>
+	navigator.getUserMedia("audio", success, error);
+
+	function success() {
+		document.getElementsByTagName("p")[0].innerHTML = "FAIL";
+		runnerResult(false);
+	}
+	function error( err ) {
+		if(err && err.code === 1) {
+			document.getElementsByTagName("p")[0].innerHTML = "PASS";
+			runnerResult(true);
+		} else {
+			document.getElementsByTagName("p")[0].innerHTML = "FAIL";
+			runnerResult(false);
+		}
+	}
+
+	overrideCurrentRunner(function() {
+		document.getElementsByTagName("p")[0].innerHTML = "FAIL";
+		runnerResult(false);
+	}, 2000);
+  </script>

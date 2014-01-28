@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<title>WebVTT rendering, the subtitles is not covered by or covering the controls</title>
+<style>
+video {
+    outline: solid
+}
+::cue {
+    font-family: Ahem, sans-serif;
+    color: green
+}
+</style>
+<script src="support/refTestWait.js"></script>
+<video width="1280" height="400" autoplay controls onplaying="this.onplaying = null; this.pause(); takeScreenshot();">
+    <source src="/resources/media/webm/white.webm" type="video/webm">
+    <source src="/resources/media/h264/white.mp4" type="video/mp4">
+    <track src="support/test.vtt">
+</video>
+<script>
+document.getElementsByTagName('track')[0].track.mode = 'showing';
+</script>
+</html>

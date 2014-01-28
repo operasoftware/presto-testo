@@ -1,0 +1,18 @@
+<!doctype html>
+<title>getImageData(): outside the &lt;canvas></title>
+<p>FAIL: Script did not run.</p>
+<p><canvas>FAIL: <code>canvas</code> not supported.</canvas></p>
+<script>
+  var c = document.getElementsByTagName("canvas")[0].getContext("2d"),
+      d,
+      i = 0,
+      p = document.getElementsByTagName("p")[0]
+  c.fillStyle = "lime"
+  c.fillRect(-100, -100, 500, 500)
+  d = c.getImageData(-50, -50, 4, 4).data
+  p.textContent = "There should be a green rectangle below:"
+  for(; i < d.length; i++){
+    if(d[i] != 0)
+      p.textContent = "FAIL"
+  }
+</script>

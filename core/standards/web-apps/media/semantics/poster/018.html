@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<title>poster dimensions known on onload</title>
+<pre>FAIL (script didn't run)</pre>
+<p><video>FAIL</video></p>
+<script>
+var v = document.querySelector('video');
+window.onload = function() {
+  var log = '';
+  function assertEqual(expr, expected) {
+    var val = eval(expr);
+    if (val != expected)
+      log += expr+' was '+val+', expected '+expected+'\n';
+  }
+
+  assertEqual('v.clientWidth', 102);
+  assertEqual('v.clientHeight', 39);
+
+  var passed = log == '';
+  document.querySelector('pre').textContent = passed ? 'PASS' : 'FAIL\n' + log;
+  try {top.opener.rr(passed)}catch(e){}
+}
+v.poster="/resources/images/opera.png?nocache="+Math.random();
+</script>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <title>strokeStyle return value (opacity)</title>
+  <link rel="help" href="http://whatwg.org/specs/web-apps/current-work/#strokestyle" title="strokeStyle">
+  <style> canvas { display:none } </style>
+  <script>
+   window.onload = function(){
+    var ctx = document.getElementsByTagName('canvas')[0].getContext('2d');
+    ctx.globalAlpha = 0.1;
+    ctx.strokeStyle = 'rgba(233,233,233,0.2)';
+    ctx.strokeRect(0,0,300,150);
+    document.getElementById('result').textContent = ctx.strokeStyle;
+   }
+  </script>
+ </head>
+ <body>
+  <p>The following two lines must be identical (0.2 may also be 0.20 etc.):</p>
+  <p>rgba(233, 233, 233, 0.2)</p>
+  <p id="result">FAIL: <code>html:canvas</code> not enabled.</p>
+  <canvas>FAIL</canvas>
+ </body>
+</html>

@@ -1,0 +1,17 @@
+<!doctype html>
+<title>Scripted play/pause affects native controls</title>
+<p><noscript><b>Enable scripting.</b> Then: </noscript> Playing/pausing the video via the scripted controls should update and hide/show the native controls exactly as if the native controls were used.
+<p><video src=/resources/media/xiph/theora_testsuite/320x240.ogg controls></video>
+<script>
+var v = document.querySelector('video');
+function togglePaused(e) {
+  if (v.paused) {
+    v.play();
+    e.textContent = "pause";
+  } else {
+    v.pause();
+    e.textContent = "play";
+  }
+}
+</script>
+<p>Scripted controls: <button onclick="togglePaused(this)">play</button></p>

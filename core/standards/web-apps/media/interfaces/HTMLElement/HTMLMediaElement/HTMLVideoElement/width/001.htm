@@ -1,0 +1,20 @@
+<!doctype html>
+<title>setting HTMLVideoElement.width</title>
+<p>FAIL (script didn't run)</p>
+<video></video>
+<video></video>
+<video></video>
+<video></video>
+<script>
+var video0 = document.getElementsByTagName('video')[0];
+var video1 = document.getElementsByTagName('video')[1];
+var video2 = document.getElementsByTagName('video')[2];
+var video3 = document.getElementsByTagName('video')[3];
+video1.width = 100;
+video2.width = 0;
+video3.width = -100;
+var passed = video0.hasAttribute('width') == false && video1.getAttribute('width') == '100'
+             && video2.getAttribute('width') == '0' && video3.getAttribute('width') == String(Math.pow(2,32)-100);
+document.getElementsByTagName('p')[0].firstChild.data = passed ? 'PASS' : 'FAIL';
+try{top.opener.rr(passed)}catch(e){}
+</script>

@@ -1,0 +1,23 @@
+<!doctype html>
+<title>invoking resource selection with pause()</title>
+<p>FAIL (script didn't run)</p>
+<script>
+var passed = false;
+var v;
+try{
+  v = document.createElement('video');
+  passed = true;
+  passed &= v.networkState == 0;
+  v.pause();
+  passed &= v.networkState == 3;
+}catch(e){
+}
+onload = function() {
+  document.querySelector('p').textContent = passed ? 'PASS' : 'FAIL';
+  try{top.opener.rr(passed)}catch(e){}
+}
+</script>
+<script>
+if (v)
+  passed &= v.networkState == 0;
+</script>

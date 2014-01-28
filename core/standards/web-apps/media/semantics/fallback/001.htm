@@ -1,0 +1,18 @@
+<!doctype html>
+<title>"fallback"</title>
+<style>
+div { visibility:hidden }
+span { display:inline-block }
+</style>
+<p>It should say PASS below:
+<p><span>PASS<video>FAIL</video><video controls>FAIL</video><audio>FAIL</audio><audio controls>FAIL</audio></span>
+<div>
+<p><span>PASS<video></video><video controls></video><audio></audio><audio controls></audio></span>
+</div>
+<script>
+onload = function () {
+  var spans = document.getElementsByTagName('span');
+  var passed = getComputedStyle(spans[0], '').width == getComputedStyle(spans[1], '').width;
+  try{top.opener.rr(passed)}catch(e){};
+}
+</script>

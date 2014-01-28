@@ -1,0 +1,21 @@
+<!doctype html>
+<title>Wrong MIME type in poster</title>
+<pre>FAIL (script didn't run)</pre>
+<script>
+var log = '';
+var gotSuspend = false;
+var gotError = false;
+onload = function() {
+  if (getComputedStyle(document.querySelector('video'), '').width != '102px')
+    log += "text/html resource not used as poster image\n";
+  if (gotSuspend)
+    log += 'Got unexpected suspend event\n';
+  if (!gotError)
+    log += 'Got no error event\n';
+  var passed = log == '';
+  document.querySelector('pre').textContent = passed ? 'PASS' : 'FAIL\n' + log;
+  try {top.opener.rr(passed)}catch(e){}
+}
+</script>
+<video src=? poster=/resources/file.php?file=images%2Fopera.png&type=text%2Fhtml&status=200%20OK&sleep=0 onerror="gotError = true" onsuspend="gotSuspend = true"></video>
+

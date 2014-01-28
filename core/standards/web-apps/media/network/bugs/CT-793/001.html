@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+<head>
+<title>CT-793: suspend event not fired for non-resumable resource</title>
+<script src="/resources/testharness.js"></script>
+<script src="/resources/testharnessreport.js"></script>
+</head>
+<body>
+<div id="log"></div>
+<script>
+var t = async_test("suspend event is fired");
+t.step(function() {
+  var a = document.createElement("audio");
+  a.onsuspend = function() {
+    t.done();
+  };
+  a.src = "../../range-request-log/range-request.php?fileloc=../../../../../../resources/media/misc/2samples.wav&status=200%20OK";
+});
+</script>
+</body>
+</html>

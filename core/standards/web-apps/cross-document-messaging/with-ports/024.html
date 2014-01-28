@@ -1,0 +1,12 @@
+<!doctype html>
+<title>undefined as ports</title>
+<script src="/resources/jsframework.js"></script>
+<script>
+test(function() {
+  postMessage('', '*', undefined);
+  test(function(e) {
+    assertArrayEquals(e.ports, []);
+  }, window, 'message', 'see http://www.w3.org/Bugs/Public/show_bug.cgi?id=8513');
+});
+</script>
+

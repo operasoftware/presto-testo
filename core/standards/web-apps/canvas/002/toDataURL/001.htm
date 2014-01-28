@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <title>simple toDataURL() test</title>
+  <style>
+   canvas, object { margin:1em }
+  </style>
+  <script>
+   window.onload = function(){
+    var c = document.getElementsByTagName('canvas')[0],
+        d = document.getElementsByTagName('object')[0],
+        ctx = c.getContext('2d');
+    ctx.fillStyle = 'lime';
+    ctx.fillRect(0,0,300,150);
+    d.data = c.toDataURL();
+   }
+  </script>
+ </head>
+ <body>
+  <p>There should be two identical green rectangles below:</p>
+  <p><canvas></canvas></p>
+  <p><object data="support/fail-300x150.png"></object></p>
+ </body>
+</html>

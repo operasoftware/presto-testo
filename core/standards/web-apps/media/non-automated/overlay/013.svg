@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.2"
+     xmlns:xlink="http://www.w3.org/1999/xlink" 
+     width="800" height="600" viewBox="0 0 800 600">
+  <desc>Animated SVG &lt;video></desc>
+  <path id="path" d="M 0 0 L 100 0 L 100 100 L 0 100Z" fill="none"/>
+  <g>
+    <rect x="50" y="50" width="320" height="240" style="stroke-width:2;stroke:black;fill:none"/>
+    <video xlink:href="/resources/media/xiph/theora_testsuite/320x240.ogg" width="320" height="240" x="50" y="50"/>
+    <text x="50" y="320">The video should appear above, moving along a rectangular path forever.</text>
+    <animateMotion dur="4s" repeatCount="indefinite">
+      <mpath xlink:href="#path"/>
+    </animateMotion>
+  </g>
+</svg>

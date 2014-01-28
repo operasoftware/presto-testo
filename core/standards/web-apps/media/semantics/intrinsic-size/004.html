@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<title>removing src attribute</title>
+<pre>FAIL (script didn't run)</pre>
+<p><video style="width:320px" src="/resources/media/xiph/theora_testsuite/320x240.ogg">FAIL</video></p>
+<script>
+onload = function() {
+  var log = '';
+  function assertEqual(expr, expected) {
+    var val = eval(expr);
+    if (val != expected)
+      log += expr+' was '+val+', expected '+expected+'\n';
+  }
+
+  var v = document.querySelector('video');
+  var s = getComputedStyle(v);
+
+  assertEqual('s.width', '320px');
+  assertEqual('s.height', '240px');
+  v.removeAttribute('src');
+  v.load();
+  assertEqual('s.width', '320px');
+  assertEqual('s.height', '150px');
+
+  var passed = log == '';
+  document.querySelector('pre').textContent = passed ? 'PASS' : 'FAIL\n' + log;
+  try {top.opener.rr(passed)}catch(e){}
+}
+</script>

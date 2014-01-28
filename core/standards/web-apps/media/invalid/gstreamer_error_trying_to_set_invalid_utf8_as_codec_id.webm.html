@@ -1,0 +1,17 @@
+<!doctype html>
+<title>/resources/media/webm/gstreamer_error_trying_to_set_invalid_utf8_as_codec_id.webm</title>
+<pre>FAIL (script didn't run)</pre>
+<script src=/resources/jsframework2.js></script>
+<script>
+setTestTimeout(4000);
+var i = 0;
+function err() {
+  i++;
+  if (i == 2)
+    end();
+}
+</script>
+<video src=/resources/media/webm/gstreamer_error_trying_to_set_invalid_utf8_as_codec_id.webm onerror=err()></video>
+<video>
+ <source src=/resources/media/webm/gstreamer_error_trying_to_set_invalid_utf8_as_codec_id.webm onerror=err()>
+</video>

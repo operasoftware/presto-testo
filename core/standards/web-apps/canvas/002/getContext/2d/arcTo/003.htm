@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <title>arcTo() should throw exception for when radius is zero</title>
+  <style>
+   canvas { display:none }
+  </style>
+  <script>
+   window.onload = function(){
+    var ctx = document.getElementsByTagName('canvas')[0].getContext('2d');
+    var r = document.getElementById('result');
+    r.firstChild.data = "FAIL: something went wrong in the script.";
+    try{
+     ctx.arcTo(200,200,200,250,0);
+    }catch(e){
+     r.firstChild.data = e.code === 1 ? "PASS." : "FAIL: exception code was " + e.code + "; expected 1."  
+    }
+   }
+  </script>
+ </head>
+ <body>
+  <p id="result">FAIL: script did not run.</p>
+  <canvas></canvas>
+ </body>
+</html>

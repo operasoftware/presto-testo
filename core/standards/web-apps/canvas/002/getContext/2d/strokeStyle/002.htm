@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <title>strokeStyle with invalid hexadecimal color value</title>
+  <link rel="help" href="http://whatwg.org/specs/web-apps/current-work/#strokestyle" title="strokeStyle">
+  <script>
+   window.onload = function(){
+    with(document.getElementsByTagName('canvas')[0].getContext('2d')){
+     lineWidth = 10;
+     strokeStyle = 'lime';
+     strokeStyle = 'ff0000'; // invalid values are to be ignored (they should not throw exceptions and all that)
+     strokeRect(0,0,300,150);
+    }
+   }
+  </script>
+ </head>
+ <body>
+  <p>There should be a green bordered rectangle below:</p>
+  <p><canvas>FAIL: <code>html:canvas</code> not enabled.</canvas></p>
+ </body>
+</html>

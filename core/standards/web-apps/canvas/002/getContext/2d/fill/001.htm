@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <title>filling the path</title>
+  <script>
+   window.onload = function(){
+    with(document.getElementsByTagName('canvas')[0].getContext('2d')){
+     rect(0,0,300,300);
+     fillStyle = "red";
+     fill();
+     fillStyle = "lime";
+     fill();
+    }
+   }
+  </script>
+ </head>
+ <body>
+  <p>There should be a green square below:</p>
+  <canvas height="300">FAIL: <code>html:canvas</code> not enabled.</canvas>
+ </body>
+</html>

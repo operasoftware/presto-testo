@@ -1,0 +1,21 @@
+<!doctype html>
+<title>cross-origin test</title>
+<script src="/resources/jsframework.js"></script>
+<iframe src="http://t/core/standards/web-apps/cross-document-messaging/without-ports/020-1.html"></iframe>
+<iframe src="http://testsuites.oslo.opera.com/core/standards/web-apps/cross-document-messaging/without-ports/020-1.html"></iframe>
+<script>
+test(function() {
+  window[0].postMessage(1, 'http://t', []);
+  window[1].postMessage(2, 'http://testsuites.oslo.opera.com', []);
+  var i = 0;
+  onmessage = function(e) {
+    i++;
+    test(function() {
+      assertEquals(e.data[0], i);
+      assertEquals(e.data[1], location.protocol + '//' + location.host);
+    }, 'none');
+  }
+  test(function() { assertEquals(i, 2); }, 200);
+});
+</script>
+

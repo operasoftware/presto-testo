@@ -1,0 +1,39 @@
+<!doctype html>
+<title>CT-889: HTMLMediaElement.buffered: Buffering should not resume at the beginning of media - webm</title>
+<script src="/resources/testharness.js"></script>
+<script src="/resources/testharnessreport.js"></script>
+<script src="/core/standards/web-apps/media/support/common.js"></script>
+<p id="log">FAIL (script didn't run)</p>
+<audio preload="metadata" controls></audio>
+<video preload="metadata" controls></video>
+<script>
+var tests = init_tests("HTMLAudioElement.buffered: Buffering should not resume at the beginning of audio - webm", "HTMLVideoElement.buffered: Buffering should not resume at the beginning of video - webm", {timeout:10000});
+tests.forEach(function(vars) {
+    var t = vars[0];
+    t.step(function() {
+    var tag_name = vars[1];
+    var buffer_end;
+    var node = document.getElementsByTagName(tag_name)[0];
+    node.addEventListener('suspend', startTest, false);
+    node.src = '/core/standards/web-apps/media/network/range-request-log/range-request.php?rate=100000&fileloc=../../support/preload.webm&nocache=' + Math.random();
+
+    function startTest() {
+        node.removeEventListener('suspend', startTest, false);
+        buffer_end = node.buffered.end(0);
+        node.addEventListener('suspend', sleep, false);
+        node.currentTime = node.duration - 1;
+    }
+
+    function sleep() {
+        setTimeout(endTest, 1000);
+    }
+
+    function endTest() {
+        t.step(function() {
+        assert_equals(node.buffered.end(0), buffer_end, "Buffering should not resume at the beginning of media (buffered.end(0) should not change)");
+        t.done();
+        });
+    }
+    });
+});
+</script>

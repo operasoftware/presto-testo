@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<title>Reference for WebVTT rendering, positioning of cues in fullscreen mode</title>
+<style>
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background: #000;
+}
+img {
+    -o-object-fit: contain;
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+    vertical-align: bottom
+}
+.cue {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center
+}
+.cue > span {
+    font-family: Ahem, sans-serif;
+    vertical-align: bottom;
+    background: rgba(0,0,0,0.8);
+    color: green;
+    font-size: 16px;
+}
+#instruction { position:absolute; top:8px; left:8px; background:white; color:black; padding:1em; font-size:2em }
+</style>
+<p id=instruction>Please click somewhere.</p>
+<img id="video" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAAAXNSR0IArs4c6QAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wFBAs3H//wLPMAAAAZdEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIEdJTVBXgQ4XAAAADElEQVQI12P4//8/AAX+Av7czFnnAAAAAElFTkSuQmCC">
+<span class="cue"><span id="subs">This is a test subtitle</span></span>
+<script>
+document.onclick = function() {
+    if ('requestFullScreen' in document.body)
+        document.body.requestFullscreen();
+    document.getElementById('subs').style.fontSize = (window.innerHeight / 20) + 'px';
+    document.getElementById('instruction').style.display = 'none';
+}
+</script>

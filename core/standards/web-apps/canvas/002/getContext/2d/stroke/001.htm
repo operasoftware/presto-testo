@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html lang="en">
+ <head>
+  <title>stroke() should not affect the current path</title>
+  <script>
+   window.onload = function(){
+    var ctx1 = document.getElementsByTagName('canvas')[0].getContext('2d'),
+        ctx2 = document.getElementsByTagName('canvas')[1].getContext('2d');
+    // canvas 1
+    ctx1.moveTo(50, 50);
+    ctx1.lineTo(50, 75);
+    ctx1.stroke();
+    ctx1.lineTo(25, 25);
+    ctx1.stroke();
+    // canvas 2
+    ctx2.moveTo(50, 50);
+    ctx2.lineTo(50, 75);
+    ctx2.lineTo(25, 25);
+    ctx2.stroke();
+   }
+  </script>
+ </head>
+ <body>
+  <p>The following figures (shown below each other) should be identical:</p>
+  <p><canvas width="100" height="100">FAIL</canvas></p>
+  <p><canvas width="100" height="100">FAIL</canvas></p>
+ </body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <title>createPattern() with repetition of the wrong type; part three</title>
+  <style> canvas { display:none } </style>
+  <script>
+   window.onload = function(){
+    var i = new Image(),
+        r = document.getElementsByTagName('p')[0],
+        ctx = document.getElementsByTagName('canvas')[0].getContext('2d'),
+        p;
+    r.firstChild.data = "FAIL (Script failed.)";
+    try{
+     p = ctx.createPattern(i, " ");
+    }catch(e){
+     r.firstChild.data = e.code === 12 ? "PASS" : "FAIL";
+    }
+   }
+  </script>
+ </head>
+ <body>
+  <p>FAIL (Script did not run.) <canvas height="150" width="150"></canvas></p>
+ </body>
+</html>

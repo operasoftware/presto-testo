@@ -1,0 +1,12 @@
+<!doctype html>
+<title>Scripted mute/unmute affects native controls</title>
+<p><noscript><b>Enable scripting.</b> Then: </noscript> Muting/unmuting the video via the scripted controls should update the native controls exactly as if the native controls were used.
+<p><video src=/resources/media/xiph/theora_testsuite/320x240.ogg controls></video>
+<script>
+var v = document.querySelector('video');
+function toggleMuted(e) {
+  v.muted = !v.muted;
+  e.textContent = v.muted ? "unmute" : "mute";
+}
+</script>
+<p>Scripted controls: <button onclick="toggleMuted(this)">mute</button></p>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <title>stroke() simple test</title>
+  <style> canvas { border:solid } </style>
+  <script>
+   window.onload = function(){
+    with(document.getElementsByTagName('canvas')[0].getContext('2d')){
+     strokeStyle = 'lime';
+     moveTo(20,20);
+     lineTo(80,20);
+     lineWidth = 5;
+     stroke();
+    }
+   }
+  </script>
+ </head>
+ <body>
+  <p>There should be a green horizontal line below (in a box):</p>
+  <p><canvas height="40" width="100">FAIL</canvas></p>
+ </body>
+</html>

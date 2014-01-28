@@ -1,0 +1,16 @@
+<!doctype html>
+<title>simple radial gradient test</title>
+<style> canvas { background:red } </style>
+<script>
+ onload = function() {
+  var ctx = document.getElementsByTagName("canvas")[0].getContext("2d"),
+  gradient = ctx.createRadialGradient(192, 192, 64, 128, 128, 192);
+  gradient.addColorStop(0, "#0f0");
+  gradient.addColorStop(0.5, "#090");
+  gradient.addColorStop(1, "#030");
+  ctx.fillStyle = gradient;
+  ctx.fillRect(0, 0, 200, 200);
+ }
+</script>
+<p>Below should be a square block going from dark green (top, left) to light green (bottom, right): </p>
+<p><canvas width="200" height="200"></canvas></p>

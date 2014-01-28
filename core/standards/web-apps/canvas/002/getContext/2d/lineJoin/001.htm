@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <title>lineJoin simple test</title>
+  <style> canvas { border:solid } </style>
+  <script>
+   window.onload = function(){
+    var ctx = document.getElementsByTagName('canvas')[0].getContext('2d');
+    ctx.lineJoin = "round";
+    ctx.lineWidth = 5;
+    ctx.moveTo(10,80);
+    ctx.lineTo(30,20);
+    ctx.lineTo(50,80);
+    ctx.lineTo(10,80);
+    ctx.lineTo(20,50); // Why is this necessary?
+    ctx.stroke();
+   }
+  </script>
+ </head>
+ <body>
+  <p>The first triangle (seen from the left) should have round corners:</p>
+  <p><canvas height="100" width="60">FAIL</canvas></p>
+ </body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<!-- http://developer.mozilla.org/samples/canvas-tutorial/4_5_canvas_linewidth.html -->
+<html lang="en">
+ <head>
+  <title>lineWidth simple test</title>
+  <script>
+   window.onload = function(){
+    var ctx = document.getElementsByTagName('canvas')[0].getContext('2d')
+    for (i=0;i<10;i++){
+     ctx.lineWidth = 1+i;
+     ctx.beginPath();
+     ctx.moveTo(5+i*14,5);
+     ctx.lineTo(5+i*14,100);
+     ctx.stroke();
+    }
+   }
+  </script>
+ </head>
+ <body>
+  <p>The width of the vertical lines (10 in total) below should be increasing (from left to right):</p>
+  <p><canvas height="100" width="140">FAIL</canvas></p>
+ </body>
+</html>

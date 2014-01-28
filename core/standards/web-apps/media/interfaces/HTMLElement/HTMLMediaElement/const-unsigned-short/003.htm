@@ -1,0 +1,81 @@
+<!doctype html>
+<title>deleting constants of HTMLMediaElement</title>
+<pre>FAIL (script didn't run)</pre>
+<video><source></video><audio></audio>
+<script>
+var log = '';
+var i = 0;
+function test(test) {
+  i++;
+  try {
+    var result = eval(test);
+    if (typeof result == 'undefined')
+      throw new Error('No ' + test + ' to delete');
+    eval('delete ' + test);
+    result = eval(test);
+    if (result == undefined)
+      log += i + ': ' + test + ' was deleted\n';
+  } catch(e) {
+    log += i + ': ' + test + ' (' + e.message + ')\n';
+  }
+}
+
+test('HTMLMediaElement.NETWORK_EMPTY');
+test('HTMLMediaElement.NETWORK_IDLE');
+test('HTMLMediaElement.NETWORK_LOADING');
+test('HTMLMediaElement.NETWORK_NO_SOURCE');
+test('HTMLMediaElement.HAVE_NOTHING');
+test('HTMLMediaElement.HAVE_METADATA');
+test('HTMLMediaElement.HAVE_CURRENT_DATA');
+test('HTMLMediaElement.HAVE_FUTURE_DATA');
+test('HTMLMediaElement.HAVE_ENOUGH_DATA');
+test('document.getElementsByTagName("video")[0].NETWORK_EMPTY');
+test('document.getElementsByTagName("video")[0].NETWORK_IDLE');
+test('document.getElementsByTagName("video")[0].NETWORK_LOADING');
+test('document.getElementsByTagName("video")[0].NETWORK_NO_SOURCE');
+test('document.getElementsByTagName("video")[0].HAVE_NOTHING');
+test('document.getElementsByTagName("video")[0].HAVE_METADATA');
+test('document.getElementsByTagName("video")[0].HAVE_CURRENT_DATA');
+test('document.getElementsByTagName("video")[0].HAVE_FUTURE_DATA');
+test('document.getElementsByTagName("video")[0].HAVE_ENOUGH_DATA');
+test('document.getElementsByTagName("audio")[0].NETWORK_EMPTY');
+test('document.getElementsByTagName("audio")[0].NETWORK_IDLE');
+test('document.getElementsByTagName("audio")[0].NETWORK_LOADING');
+test('document.getElementsByTagName("audio")[0].NETWORK_NO_SOURCE');
+test('document.getElementsByTagName("audio")[0].HAVE_NOTHING');
+test('document.getElementsByTagName("audio")[0].HAVE_METADATA');
+test('document.getElementsByTagName("audio")[0].HAVE_CURRENT_DATA');
+test('document.getElementsByTagName("audio")[0].HAVE_FUTURE_DATA');
+test('document.getElementsByTagName("audio")[0].HAVE_ENOUGH_DATA');
+test('HTMLMediaElement.prototype.NETWORK_EMPTY');
+test('HTMLMediaElement.prototype.NETWORK_IDLE');
+test('HTMLMediaElement.prototype.NETWORK_LOADING');
+test('HTMLMediaElement.prototype.NETWORK_NO_SOURCE');
+test('HTMLMediaElement.prototype.HAVE_NOTHING');
+test('HTMLMediaElement.prototype.HAVE_METADATA');
+test('HTMLMediaElement.prototype.HAVE_CURRENT_DATA');
+test('HTMLMediaElement.prototype.HAVE_FUTURE_DATA');
+test('HTMLMediaElement.prototype.HAVE_ENOUGH_DATA');
+test('HTMLVideoElement.prototype.NETWORK_EMPTY');
+test('HTMLVideoElement.prototype.NETWORK_IDLE');
+test('HTMLVideoElement.prototype.NETWORK_LOADING');
+test('HTMLVideoElement.prototype.NETWORK_NO_SOURCE');
+test('HTMLVideoElement.prototype.HAVE_NOTHING');
+test('HTMLVideoElement.prototype.HAVE_METADATA');
+test('HTMLVideoElement.prototype.HAVE_CURRENT_DATA');
+test('HTMLVideoElement.prototype.HAVE_FUTURE_DATA');
+test('HTMLVideoElement.prototype.HAVE_ENOUGH_DATA');
+test('HTMLAudioElement.prototype.NETWORK_EMPTY');
+test('HTMLAudioElement.prototype.NETWORK_IDLE');
+test('HTMLAudioElement.prototype.NETWORK_LOADING');
+test('HTMLAudioElement.prototype.NETWORK_NO_SOURCE');
+test('HTMLAudioElement.prototype.HAVE_NOTHING');
+test('HTMLAudioElement.prototype.HAVE_METADATA');
+test('HTMLAudioElement.prototype.HAVE_CURRENT_DATA');
+test('HTMLAudioElement.prototype.HAVE_FUTURE_DATA');
+test('HTMLAudioElement.prototype.HAVE_ENOUGH_DATA');
+
+var passed = log == '';
+document.getElementsByTagName('pre')[0].firstChild.data = passed ? 'PASS' : 'FAIL\n' + log;
+try{top.opener.rr(passed)}catch(e){}
+</script>

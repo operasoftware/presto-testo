@@ -1,0 +1,28 @@
+<!doctype html>
+<title>getting HTMLVideoElement.width</title>
+<pre>FAIL (script didn't run)</pre>
+<span><video>0</video></span>
+<span><video width=100>100</video></span>
+<span><video width=0>0</video></span>
+<span><video width=-100>0</video></span>
+<span><video style=width:100px>0</video></span>
+<span><video style=width:100px;display:none>0</video></span>
+<span><video width=200 style=width:100px>200</video></span>
+<span><video poster=/resources/images/16x16-navy.png>0</video></span>
+<span><video poster=/resources/images/16x16-navy.png width=100>100</video></span>
+<span><video poster=/resources/images/16x16-navy.png style=width:100px>0</video></span>
+<span><video poster=/resources/images/16x16-navy.png width=200 style=width:100px>200</video></span>
+<script>
+function run() {
+  var videos = document.getElementsByTagName('video');
+  var log = '';
+  for (var i = 0; i < videos.length; ++i) {
+    if (videos[i].width != videos[i].textContent)
+      log += i + ': ' + videos[i].parentNode.innerHTML.split('>')[0] + '> (got ' + videos[i].width + ', expected ' + videos[i].textContent + ')\n';
+  }
+  var passed = log == '';
+  document.getElementsByTagName('pre')[0].firstChild.data = passed ? 'PASS' : 'FAIL\n' + log;
+  try{top.opener.rr(passed)}catch(e){}
+}
+</script>
+<img src=/resources/images/16x16-navy.png onload=run()>

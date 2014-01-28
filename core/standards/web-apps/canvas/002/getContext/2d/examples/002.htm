@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <title>Lines!</title>
+  <style> canvas { position:absolute; top:0; left:0; width:100%; height:100% } </style>
+ </head>
+ <body>
+  <p><canvas width="200" height="200"></canvas></p>
+  <script>
+   var c = document.getElementsByTagName('canvas')[0],
+       ctx = c.getContext('2d');
+   function randomNumber(number){ return Math.floor(Math.random() * number) }
+   function randomColor(){
+    var r = randomNumber(255),
+        g = randomNumber(255),
+        b = randomNumber(255),
+        a = randomNumber(10) / 10;
+    return "rgba(" + r + "," + g + "," + b + "," + a + ")";
+   }
+   function init(){
+    var x1 = randomNumber(c.width),
+        x2 = randomNumber(c.width),
+        y1 = randomNumber(c.height),
+        y2 = randomNumber(c.height),
+        w  = randomNumber(10);
+    ctx.strokeStyle = randomColor();
+    ctx.lineWidth = w;
+    ctx.beginPath();
+    ctx.moveTo(x1, y1);
+    ctx.lineTo(x2, y2);
+    ctx.stroke();
+   }
+   setInterval(init, 1);
+  </script>
+ </body>
+</html>

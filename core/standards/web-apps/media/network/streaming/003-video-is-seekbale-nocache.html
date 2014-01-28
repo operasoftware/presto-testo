@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>HTML5 Video: http with no-cache headers - video is seekable</title>
+    <link rel="stylesheet" type="text/css" href="video.css" />
+    <script type="application/ecmascript" src="http://t/resources/spartanHandler.js"></script>
+    <script type="application/ecmascript" src="http://t/resources/testharness.js"></script>
+    <script type="application/ecmascript" src="video.js"></script>
+    <script type="application/ecmascript">
+        function init()
+        {
+            var testlist =
+            {
+                0:  [
+                        {
+                            event:  "loadstart",
+                            func:   function() { this.test.setName('video is seekable'); }
+                        },
+                        {
+                            event:  "error",
+                            perm:   true,
+                            func:   function()
+                            {
+                                this.test.result(false, "Error occured in step "+this.test.state+" ("+codes.get('error', this.error.code)+")");
+                                this.test.finish();
+                            }
+                        },
+                        {
+                            event:  "suspend",
+                            func:   function()
+                            {
+                                if (this.seekable.length > 0)   { this.test.result(true);                               }
+                                else                            { this.test.result(false, 'Video is not seekable.');    }
+                                this.test.finish();
+                            }
+                        }
+                    ]
+            }
+            
+            try
+            {
+                var video       = document.querySelector('video');
+                    video.test  = new VideoTest(video, 'HTML5 Video: http with no-cache headers');
+                    video.test.init('video.php?contenttype=video/webm&nocache=1&rate=0.5', testlist, 30000);
+            } catch (e) { alert("init error: "+e); }
+        }
+        
+        window.addEventListener('load', init, false);
+    </script>
+</head>
+
+<body>
+    <video controls="controls"></video>
+    <pre id="log"></pre>
+</body>
+</html>

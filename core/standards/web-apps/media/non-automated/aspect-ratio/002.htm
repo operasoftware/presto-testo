@@ -1,0 +1,12 @@
+<!doctype html>
+<title>preserve aspect ratio</title>
+<style>
+ video { border:solid }
+ video:first-child { width:100px; height:600px; }
+ video + video { width:600px; height:100px; }
+</style>
+<p>The two videos below should have the same aspect ratio, centered in their boxes:
+<p>
+ <video src=/resources/media/xiph/theora_testsuite/320x240.ogg></video>
+ <video src=/resources/media/xiph/theora_testsuite/320x240.ogg></video>
+

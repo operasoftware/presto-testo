@@ -1,0 +1,14 @@
+<!doctype html>
+<title>NOT invoking resource selection by inserting &lt;source> in the wrong namespace</title>
+<p>FAIL (script didn't run)</p>
+<video></video><!-- invokes resource selection but sets networkState to NETWORK_EMPTY again without firing any events -->
+<script>
+var v = document.querySelector('video');
+var passed = true;
+v.onloadstart = function() { passed = false }
+v.appendChild(document.createElementNS('bogus','source'));
+onload = function() {
+  document.querySelector('p').textContent = passed ? 'PASS' : 'FAIL';
+  try{top.opener.rr(passed)}catch(e){}
+}
+</script>

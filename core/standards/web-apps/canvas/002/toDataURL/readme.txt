@@ -1,0 +1,1 @@
+Need toDataURL(type) tests.

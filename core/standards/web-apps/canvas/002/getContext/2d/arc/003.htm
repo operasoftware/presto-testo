@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <title>simple arc() test</title>
+  <style>
+   canvas, object { margin:1em }
+  </style>
+  <script>
+   window.onload = function(){
+    with(document.getElementsByTagName('canvas')[0].getContext('2d')){
+     fillStyle = 'lime';
+     translate(50,50);
+     arc(0,0,50,0,Math.PI,false);
+     arc(0,0,50,0,Math.PI,true);
+     fill();
+    }
+   }
+  </script>
+ </head>
+ <body>
+  <p>There should be green circle below:</p>
+  <canvas></canvas>
+ </body>
+</html>

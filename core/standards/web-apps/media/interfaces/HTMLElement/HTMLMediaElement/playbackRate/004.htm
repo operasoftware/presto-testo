@@ -1,0 +1,35 @@
+<!doctype html>
+<title>ratechange event</title>
+<p>FAIL (script didn't run)</p>
+<video></video><audio></audio>
+<script>
+var video = document.getElementsByTagName('video')[0];
+var audio = document.getElementsByTagName('audio')[0];
+var fired = 0;
+document.body.addEventListener('ratechange', function() { fired += 100 }, false); // ratechange doesn't bubble
+video.addEventListener('ratechange', function() { fired += 1 }, false);
+audio.addEventListener('ratechange', function() { fired += 1 }, false);
+
+video.playbackRate = 1; // no change
+video.playbackRate = 2; // 1
+video.playbackRate = 3; // 2
+video.playbackRate = 3; // no change
+video.defaultPlaybackRate = 1; // no change
+video.defaultPlaybackRate = 2; // 3
+video.defaultPlaybackRate = 3; // 4
+video.defaultPlaybackRate = 3; // no change
+audio.playbackRate = 1; // no change
+audio.playbackRate = 2; // 5
+audio.playbackRate = 3; // 6
+audio.playbackRate = 3; // no change
+audio.defaultPlaybackRate = 1; // no change
+audio.defaultPlaybackRate = 2; // 7
+audio.defaultPlaybackRate = 3; // 8
+audio.defaultPlaybackRate = 3; // no change
+
+setTimeout(function() {
+  var passed = fired == 8;
+  document.getElementsByTagName('p')[0].firstChild.data = passed ? 'PASS' : 'FAIL (got: ' + fired + ', expected 8)';
+  try{top.opener.rr(passed)}catch(e){}
+}, 100);
+</script>

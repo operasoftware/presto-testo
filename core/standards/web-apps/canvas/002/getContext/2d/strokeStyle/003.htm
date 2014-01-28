@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <title>strokeStyle has an initial value</title>
+  <link rel="help" href="http://whatwg.org/specs/web-apps/current-work/#strokestyle" title="strokeStyle">
+  <script>
+   window.onload = function(){
+    with(document.getElementsByTagName('canvas')[0].getContext('2d')){
+     lineWidth = 10;
+     strokeRect(0,0,300,150);
+    }
+   }
+  </script>
+ </head>
+ <body>
+  <p>There should be a <strong>black</strong> bordered rectangle below:</p>
+  <canvas>FAIL: <code>html:canvas</code> not enabled.</canvas>
+ </body>
+</html>

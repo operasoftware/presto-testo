@@ -1,0 +1,17 @@
+<!doctype html>
+<title>invoking resource selection by inserting parent into a document</title>
+<p>FAIL (script didn't run)</p>
+<script>
+var v = document.createElement('video');
+var div = document.createElement('div');
+div.appendChild(v);
+var passed = true;
+passed &= v.networkState == 0;
+document.body.appendChild(div);
+passed &= v.networkState == 3;
+onload = function() {
+  passed &= v.networkState == 0;
+  document.querySelector('p').textContent = passed ? 'PASS' : 'FAIL';
+  try{top.opener.rr(passed)}catch(e){}
+}
+</script>

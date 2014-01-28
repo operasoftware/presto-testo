@@ -1,0 +1,14 @@
+<!doctype html>
+<title>invoking resource selection by inserting into a document</title>
+<p>FAIL (script didn't run)</p>
+<script>
+var v = document.createElement('video');
+var passed = false;
+v.onloadstart = function() { passed = true }
+v.setAttribute('src','');
+document.body.appendChild(v);
+onload = function() {
+  document.querySelector('p').textContent = passed ? 'PASS' : 'FAIL';
+  try{top.opener.rr(passed)}catch(e){}
+}
+</script>

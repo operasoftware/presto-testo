@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <title>simple createPattern test ({toString:func})</title>
+  <style> canvas { background:url("support/circle-red-50x50.png") repeat } </style>
+  <script>
+   window.onload = function(){
+    var i = new Image(),
+        ctx = document.getElementsByTagName('canvas')[0].getContext('2d'),
+        p;
+    i.onload = function() {
+     p = ctx.createPattern(i, {toString:function(){return ""}});
+     ctx.fillStyle = p;
+     ctx.fillRect(0, 0, 150, 150);
+    }
+    i.src = "support/circle-lime-50x50.png";
+   }
+  </script>
+ </head>
+ <body>
+  <p>There should be nine identical green circles below (and no red):</p>
+  <p><canvas height="150" width="150"></canvas></p>
+ </body>
+</html>

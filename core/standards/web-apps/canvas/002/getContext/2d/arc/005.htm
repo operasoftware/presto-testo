@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <title>arc() and stroke() (part two)</title>
+  <script>
+   window.onload = function(){
+    with(document.getElementsByTagName('canvas')[0].getContext('2d')){
+     arc(50,50,50,Math.PI,0,false);
+     stroke();
+    }
+   }
+  </script>
+ </head>
+ <body>
+  <p>There should be an upward pointing half-circle below:</p>
+  <canvas width="150">FAIL: <code>html:canvas</code> not enabled.</canvas>
+ </body>
+</html>

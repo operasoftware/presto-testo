@@ -1,0 +1,13 @@
+<!doctype html>
+<title>unicode serialization of an origin, scheme/host/port</title>
+<script src="/resources/jsframework.js"></script>
+<iframe src="019-1.html"></iframe>
+<script>
+test(function() {
+  window[0].postMessage('', location.protocol.toUpperCase() + '//' + location.host.toUpperCase() + '/');
+  test(function(e) {
+    assertEquals(e.origin, location.protocol + '//' + location.host);
+  }, window[0], 'message');
+});
+</script>
+

@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>2 SVG, 1 &lt;video></title>
+<style>
+svg { vertical-align: top; border: 1px solid black}
+</style>
+<script>
+<![CDATA[
+function move() {
+  var svgs = document.querySelectorAll('svg');
+  var g = document.querySelector('g');
+  var target = g.parentNode == svgs[0] ? svgs[1] : svgs[0];
+  target.appendChild(g);
+}
+]]>
+</script>
+</head>
+<body>
+<p>Below are two SVG documents, SVG 1 and SVG 2. When clicking the "move!" link below, the video should move from one document to the other and continue to render correctly.</p>
+<p><a href="javascript:move()">move!</a></p>
+<hr/>
+SVG 1:
+<svg xmlns="http://www.w3.org/2000/svg" version="1.2"
+     xmlns:xlink="http://www.w3.org/1999/xlink" 
+     width="420" height="340" viewBox="0 0 420 340">
+  <g>
+    <rect x="50" y="50" width="320" height="240" style="stroke-width:2;stroke:black;fill:none"/>
+    <video xlink:href="/resources/media/xiph/theora_testsuite/320x240.ogg" width="320" height="240" x="50" y="50"/>
+    <text x="50" y="320">The video should appear above.</text>
+  </g>
+</svg>
+SVG 2:
+<svg xmlns="http://www.w3.org/2000/svg" version="1.2"
+     xmlns:xlink="http://www.w3.org/1999/xlink" 
+     width="420" height="340" viewBox="0 0 420 340">
+</svg>
+</body>
+</html>

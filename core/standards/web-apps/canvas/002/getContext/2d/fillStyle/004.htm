@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <title>fillStyle return value (no opacity)</title>
+  <link rel="help" href="http://whatwg.org/specs/web-apps/current-work/#fillstyle" title="fillStyle">
+  <style> canvas { display:none } </style>
+  <script>
+   window.onload = function(){
+    var ctx = document.getElementsByTagName('canvas')[0].getContext('2d');
+    ctx.globalAlpha = 0.1;
+    ctx.fillStyle = 'white';
+    ctx.fillRect(0,0,300,150);
+    document.getElementById('result').textContent = ctx.fillStyle;
+   }
+  </script>
+ </head>
+ <body>
+  <p>The following two lines must be identical:</p>
+  <p>#ffffff</p>
+  <p id="result">FAIL: <code>html:canvas</code> not enabled.</p>
+  <canvas>FAIL</canvas>
+ </body>
+</html>

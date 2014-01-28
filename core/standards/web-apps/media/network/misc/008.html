@@ -1,0 +1,31 @@
+<!doctype html>
+<title>Video file resides in ssl server </title>
+<pre>FAIL (script didn't run)</pre>
+<p><video controls></video>
+<script>
+var p = document.querySelector('pre');
+var log = [];
+
+var video = document.querySelector('video');
+
+// load video
+video.src = 'https://t/resources/media/xiph/theora_testsuite/320x240.ogg';
+
+video.addEventListener('loadedmetadata', function() {
+  end();
+}, false);
+
+setTimeout(function() {
+  log.push('timed out');
+  end();
+}, 10000);
+
+function end() {
+  if (arguments.callee.done)
+    return;
+  arguments.callee.done = true;
+  var passed = log.length == 0;
+  p.textContent = passed ? 'PASS' : 'FAIL\n' + log.join('\n');
+  try{top.opener.rr(passed)}catch(e){}
+}
+</script>

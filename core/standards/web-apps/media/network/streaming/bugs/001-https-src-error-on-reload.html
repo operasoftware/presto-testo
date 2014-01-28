@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>https video src: MEDIA_ERR_NETWORK on reload</title>
+    <script tpe="application/ecmascript">
+        function test()
+        {
+            var video = document.querySelector('video');
+            
+            video.addEventListener(
+                                    'loadedmetadata',
+                                    function()
+                                    {
+                                        if (window.location.href.indexOf("#") != -1)
+                                        {
+                                            document.querySelector('#result').innerHTML = 'PASS';
+                                        }
+                                        else
+                                        {
+                                            window.location.href = window.location.href+'#done';
+                                            window.location.reload();
+                                        }
+                                    },
+                                    false
+                                  );
+            video.addEventListener(
+                                    'error',
+                                    function()
+                                    {
+                                        document.querySelector('#result').innerHTML = 'FAIL: '+JSON.stringify(this.error);
+                                        top.opener.rr(false);
+                                    },
+                                    false
+                                  );
+            
+            video.src = "../video.php?secure=1"
+        }
+        
+        window.addEventListener('load', test, false);
+    </script>
+</head>
+
+<body>
+    <div id="result">NOT TESTED</div>
+    <video></video>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<!doctype html>
+<title>/resources/media/webm/sunflower.mkv</title>
+<pre>FAIL (script didn't run)</pre>
+<script src=/resources/jsframework2.js></script>
+<script>
+setTestTimeout(4000);
+var i = 0;
+function err() {
+  i++;
+  if (i == 2)
+    end();
+}
+</script>
+<video src=/resources/media/webm/sunflower.mkv onerror=err()></video>
+<video>
+ <source src=/resources/media/webm/sunflower.mkv onerror=err()>
+</video>

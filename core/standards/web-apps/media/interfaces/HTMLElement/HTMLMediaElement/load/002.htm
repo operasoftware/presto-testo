@@ -1,0 +1,25 @@
+<!doctype html>
+<title>inserting a video with script</title>
+<p>FAIL (script didn't run)</p>
+<script>
+// a media element whose networkState has the value NETWORK_EMPTY is
+// inserted into a document
+var video = document.createElement('video');
+video.src = '/resources/media/misc/bbb_256kbps.ogg';
+document.body.appendChild(video);
+var passed = false;
+video.addEventListener('loadstart', loadstarted, false);
+function loadstarted() {
+  passed = true;
+  end();
+}
+setTimeout(end, 100);
+var hasrun = false;
+function end() {
+  if (hasrun)
+    return;
+  document.getElementsByTagName('p')[0].firstChild.data = passed ? 'PASS' : 'FAIL';
+  try{top.opener.rr(passed)}catch(e){}
+  hasrun = true;
+}
+</script>

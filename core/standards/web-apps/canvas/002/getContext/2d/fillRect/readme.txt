@@ -1,0 +1,1 @@
+fillRect() is tested in lots of other testcases as well.

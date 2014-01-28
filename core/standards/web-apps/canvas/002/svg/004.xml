@@ -1,0 +1,24 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <title>&lt;canvas>.createPattern(SVGSVGElement, "repeat")</title>
+  <style>
+   svg { display:none }
+   canvas { background:url("../getContext/2d/createPattern/support/circle-red-50x50.png") repeat }
+  </style>
+ </head>
+ <body>
+  <p>There should be a 2x2 grid below of four green circles:</p>
+  <p>
+   <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" id="i">
+    <circle cx="25" cy="25" r="25" fill="lime"/>
+   </svg>
+   <canvas width="100" height="100" id="c">FAIL</canvas>
+  </p>
+  <script>
+   var c = document.getElementById("c").getContext("2d"),
+       i = document.getElementById("i")
+   c.fillStyle = c.createPattern(i, "repeat")
+   c.fillRect(0, 0, 100, 100)
+  </script>
+ </body>
+</html>

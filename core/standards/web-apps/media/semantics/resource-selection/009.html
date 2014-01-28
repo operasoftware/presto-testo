@@ -1,0 +1,15 @@
+<!doctype html>
+<title>NOT invoking load by setting src in the wrong namespace</title>
+<p>FAIL (script didn't run)</p>
+<video></video><!-- invokes load but sets networkState to NETWORK_EMPTY again without firing any events -->
+<script>
+var v = document.querySelector('video');
+var passed = true;
+v.onloadstart = function() { passed = false }
+v.setAttributeNS('bogus','src', '');
+onload = function() {
+  document.querySelector('p').textContent = passed ? 'PASS' : 'FAIL';
+  try{top.opener.rr(passed)}catch(e){}
+}
+</script>
+

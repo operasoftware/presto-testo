@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <title>arc() should throw exception for the radius value zero (0)</title>
+  <style>
+   canvas { display:none }
+  </style>
+  <script>
+   window.onload = function(){
+    var ctx = document.getElementsByTagName('canvas')[0].getContext('2d');
+    var r = document.getElementById('result');
+    try{
+     var thrown = false;
+     ctx.arc(50,50,0,Math.PI,0,false);
+    }catch(e){
+     thrown = true;  
+    }finally{
+     r.firstChild.data = !thrown ? 'PASS' : 'FAIL: zero should not throw';
+    }
+   }
+  </script>
+ </head>
+ <body>
+  <p id="result">FAIL: script did not run.</p>
+  <canvas></canvas>
+ </body>
+</html>

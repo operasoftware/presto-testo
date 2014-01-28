@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<title>loadeddata event</title>
+<p>FAIL: script did not run.</p>
+<script>
+var passed = false;
+var ended = false;
+function end() {
+  if (ended) return;
+  try{top.opener.rr(passed)}catch(e){}
+  ended = true;
+  document.querySelector('p').textContent = passed ? 'PASS' : 'FAIL';
+}
+function loaded() {
+  passed = true;
+  end();
+}
+setTimeout(end, 2000);
+</script>
+<video onloadeddata="loaded(this)" style="visibility:hidden;"></video>
+<script type="text/javascript">
+navigator.getUserMedia("video", function(stream) {
+  var videoEl = document.getElementsByTagName('video')[0];
+  videoEl.src = stream;
+  videoEl.play();
+});
+</script>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<title>WebVTT rendering, positioning of cues in fullscreen mode</title>
+<style>
+::cue {
+    font-family: Ahem, sans-serif;
+    color: green
+}
+#instruction { position:absolute; top:8px; left:8px; background:white; color:black; padding:1em; font-size:2em }
+</style>
+<p id=instruction>Please click somewhere.</p>
+<video id="video" width="200" height="200" autoplay onplaying="this.onplaying = null; this.pause();">
+    <source src="/resources/media/webm/white.webm" type="video/webm">
+    <source src="/resources/media/h264/white.mp4" type="video/mp4">
+    <track src="support/test.vtt">
+</video>
+<script>
+    document.addEventListener('click', function(e) {
+        if ('requestFullscreen' in document.getElementById('video'))
+            document.getElementById('video').requestFullscreen();
+        document.getElementById('instruction').style.display = 'none';
+    }, false);
+</script>
+<script>
+document.getElementsByTagName('track')[0].track.mode = 'showing';
+</script>
+</html>

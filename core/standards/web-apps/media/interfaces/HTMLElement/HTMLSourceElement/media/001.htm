@@ -1,0 +1,12 @@
+<!doctype html>
+<title>setting HTMLSourceElement.media</title>
+<p>FAIL (script didn't run)</p>
+<video><source></video><audio><source></audio>
+<script>
+var sources = document.getElementsByTagName("source");
+sources[0].media = '';
+sources[1].media = '';
+var passed = sources[0].hasAttribute("media") && sources[1].hasAttribute("media");
+document.getElementsByTagName("p")[0].firstChild.data = passed ? "PASS" : "FAIL";
+try{top.opener.rr(passed);}catch(e){}
+</script>

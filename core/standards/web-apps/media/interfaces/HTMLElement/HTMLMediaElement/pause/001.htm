@@ -1,0 +1,30 @@
+<!doctype html>
+<title>calling HTMLMediaElement.pause()</title>
+<pre>FAIL (script didn't run)</pre>
+<video></video><audio></audio>
+<script>
+var video = document.getElementsByTagName('video')[0];
+var audio = document.getElementsByTagName('audio')[0];
+var log = '';
+var events = ['error', 'emptied', 'timeupdate', 'pause'];
+function fail(e) {
+  log += e.type + ' on ' + e.target + ' was fired\n';
+}
+for (var i = 0; i < events.length; ++i) {
+  video.addEventListener(events[i], fail, false);
+  audio.addEventListener(events[i], fail, false);
+}
+try {
+  video.pause();
+  audio.pause();
+} catch(e) {
+  log += 'pause() threw an exception.\n';
+}
+
+setTimeout(function() {
+  var passed = log == '';
+  document.getElementsByTagName('pre')[0].firstChild.data = passed ? 'PASS' : 'FAIL\n' + log; try{top.opener.rr(passed)}catch(e){}}, 100);
+
+</script>
+
+

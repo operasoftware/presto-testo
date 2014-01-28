@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <title>drawing of a diagonal line</title>
+  <style>
+   canvas { border:solid }
+  </style>
+  <script>
+   window.onload = function(){
+    with(document.getElementsByTagName('canvas')[0].getContext('2d')){
+     lineWidth = 10;
+     moveTo(-5,-5);
+     lineTo(305,305);
+     moveTo(-5,305);
+     lineTo(305,-5);
+     stroke();
+    }
+   }
+  </script>
+ </head>
+ <body>
+  <p>There should be big cross in the square box below:</p>
+  <canvas height="300">FAIL: <code>html:canvas</code> not enabled.</canvas>
+ </body>
+</html>

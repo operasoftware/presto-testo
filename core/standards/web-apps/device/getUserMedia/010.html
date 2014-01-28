@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<title>getUserMedia method does not throw for null success_callback parameter</title>
+<p>FAIL: script did not run.</p>
+<script type="text/javascript" src="../runner.js"></script>
+<script>
+overrideCurrentRunner(function() {
+	document.getElementsByTagName("p")[0].innerHTML = "FAIL (timed out)";
+	runnerResult(false);
+}, 2000);
+
+try {
+	navigator.getUserMedia({ video: true }, null, error);
+	document.getElementsByTagName("p")[0].innerHTML = "PASS";
+	runnerResult(true);
+} catch(e) {
+	document.getElementsByTagName("p")[0].innerHTML = "FAIL (got exception)" + e;
+	runnerResult(false);
+}
+function error( err ) {
+	document.getElementsByTagName("p")[0].innerHTML = "FAIL (got error callback)";
+	runnerResult(false);
+}
+</script>
+

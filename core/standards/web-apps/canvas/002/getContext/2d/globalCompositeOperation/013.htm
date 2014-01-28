@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <title>globalCompositeOperation set to 'xor' (part two)</title>
+  <script>
+   window.onload = function() {
+    var ctx = document.getElementsByTagName("canvas")[0].getContext("2d"),
+        i = new Image();
+    i.onload = function() {
+     ctx.drawImage(i, 0, 0, 300, 150);
+     ctx.globalCompositeOperation = "xor";
+     ctx.fillStyle = "rgba(255, 255, 255, 1)";
+     ctx.fillRect(0, 0, 300, 150);
+    }
+    i.src = "./support/text-yellow-fail-300x150.png";
+   }
+  </script>
+ </head>
+ <body>
+  <p>Nothing should appear below.</p>
+  <canvas width="300" height="150">FAIL: <code>canvas</code> not supported.</canvas>
+ </body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html lang="en">
+ <head>
+  <title>rotate() shouldn't affect the current path</title>
+ </head>
+ <body>
+  <p>There should be a five-star below (slightly tilted):</p>
+  <p><canvas width="100" height="100">FAIL</canvas></p>
+  <script>
+   var ctx = document.getElementsByTagName('canvas')[0].getContext('2d'),
+       i,
+       r = 20;
+   ctx.translate(50,50);
+   ctx.moveTo(r,0);
+   for(i=0;i<9;i++){
+    ctx.rotate(Math.PI/5);
+    if(i%2 == 0)
+     ctx.lineTo((r/0.525731)*0.200811,0);
+    else
+     ctx.lineTo(r,0);
+   }
+   ctx.fill();
+  </script>
+ </body>
+</html>

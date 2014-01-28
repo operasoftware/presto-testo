@@ -1,0 +1,11 @@
+<!doctype html>
+<title>CSS tests</title>
+<style>
+video, audio { margin:1em; border:1em solid transparent; padding:1em }
+video *, audio * { display:none !important; visibility:hidden !important; position:absolute !important; top:-5em !important; left:-5em !important; background:white !important; color:white !important }
+video :not(*), audio :not(*) { display:none !important; visibility:hidden !important; position:absolute !important; top:-5em !important; left:-5em !important; background:white !important; color:white !important }
+</style>
+<p>All controls should be clickable and should look like normal
+<p><video src=/resources/media/xiph/theora_testsuite/320x240.ogg controls></video>
+<p><audio src=/resources/media/xiph/theora_testsuite/320x240.ogg controls></audio>
+

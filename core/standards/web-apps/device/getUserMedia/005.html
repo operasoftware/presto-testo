@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<title>getUserMedia method throws NOT_SUPPORTED_ERR for undefined option parameter</title>
+<p>FAIL: script did not run.</p>
+<script type="text/javascript" src="../runner.js"></script>
+<script>
+overrideCurrentRunner(function() {
+	document.getElementsByTagName("p")[0].innerHTML = "FAIL (timed out)";
+	runnerResult(false);
+}, 2000);
+
+try {
+	navigator.getUserMedia(undefined, success, error);
+} catch(e) {
+	if (e instanceof DOMException &&
+	    e.code == e.NOT_SUPPORTED_ERR) {
+		document.getElementsByTagName("p")[0].innerHTML = "PASS";
+		runnerResult(true);
+	} else {
+		document.getElementsByTagName("p")[0].innerHTML = "FAIL (got wrong exception)";
+		runnerResult(false);
+	}
+}
+function success() {
+	document.getElementsByTagName("p")[0].innerHTML = "FAIL (got success callback)";
+	runnerResult(false);
+}
+function error( err ) {
+	document.getElementsByTagName("p")[0].innerHTML = "FAIL (got error callback)";
+	runnerResult(false);
+}
+</script>

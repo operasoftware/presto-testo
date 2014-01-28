@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<title>calling load() fires an abort event</title>
+<p>FAIL: script did not run.</p>
+<video autoplay style="visibility:hidden;"></video>
+<script type="text/javascript" src="../../../runner.js"></script>
+<script type="text/javascript">
+
+var videoEl = document.getElementsByTagName('video')[0];
+var videoReset = false;
+
+navigator.getUserMedia("video", function(stream) {
+	videoEl.src = stream;
+});
+
+videoEl.addEventListener('playing', function() {
+	if(!videoReset) {
+		document.getElementsByTagName('p')[0].firstChild.data = 'FAIL: test should pass in one second.';
+	  setTimeout(function() {
+	    videoReset = true;
+		  videoEl.load();
+	  }, 1000);
+	  // Default to fail if abort is not received within 3 seconds
+	  overrideCurrentRunner(function() {
+		  document.getElementsByTagName('p')[0].firstChild.data = 'FAIL';
+		  runnerResult(false);
+	  }, 3000);
+	}
+}, false);
+
+videoEl.addEventListener('abort', function() {
+    document.getElementsByTagName('p')[0].firstChild.data = 'PASS';
+    runnerResult(true);
+}, false);
+</script>

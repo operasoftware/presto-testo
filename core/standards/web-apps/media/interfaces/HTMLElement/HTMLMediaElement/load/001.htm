@@ -1,0 +1,38 @@
+<!doctype html>
+<title>calling HTMLMediaElement.load(), no source</title>
+<pre>FAIL (script didn't run)</pre>
+<script>
+var video = document.createElement('video');
+var audio = document.createElement('audio');
+var log = '';
+if (video.networkState != 0)
+  log += 'video.networkState was ' + video.networkState + ', expected 0\n';
+if (audio.networkState != 0)
+  log += 'audio.networkState was ' + audio.networkState + ', expected 0\n';
+function fail(e) {
+  log += e.type + ' on ' + e.target + ' was fired\n';
+}
+var events = ['error','emptied','loadstart','progress','stalled'];
+for (var i = 0; i < events.length; ++i) {
+  video.addEventListener(events[i], fail, false);
+  audio.addEventListener(events[i], fail, false);
+}
+//document.body.appendChild(video);
+//document.body.appendChild(audio);
+try {
+  video.load();
+  audio.load();
+} catch(e) {
+  log += 'load() threw an exception.\n';
+}
+setTimeout(function() {
+  if (video.networkState != 0)
+    log += 'video.networkState was ' + video.networkState + ', expected 0\n';
+  if (audio.networkState != 0)
+    log += 'audio.networkState was ' + audio.networkState + ', expected 0\n';
+  var passed = log == '';
+  document.getElementsByTagName('pre')[0].firstChild.data = passed ? 'PASS' : 'FAIL\n' + log; try{top.opener.rr(passed)}catch(e){};
+}, 100);
+</script>
+
+

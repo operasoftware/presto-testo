@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <title>drawImage with an incorrect type for the image argument (part two)</title>
+  <style> canvas { display:none } </style>
+  <script>
+   window.onload = function(){
+    var r = document.getElementById('r');
+    ctx = document.getElementsByTagName('canvas')[0].getContext('2d');
+    var passed = false;
+    var message = "";
+    try{
+     ctx.drawImage((new Image()), 0, 0, 150, 150);
+     message = "No exception thrown"
+    }catch(e){
+      passed = e.code === e.INDEX_SIZE_ERR;
+      if (!passed) {message = "Got exception code " + e.code + " expected 1 (INDEX_SIZE_ERR)"}
+    }
+    r.textContent = passed ? "PASS" : "FAIL";
+    if (message) {r.textContent += " (" + message + ")"}
+   }
+  </script>
+ </head>
+ <body>
+  <p id="r">FAIL (Script did not run.)</p>
+  <p><canvas></canvas></p>
+ </body>
+</html>
+
+

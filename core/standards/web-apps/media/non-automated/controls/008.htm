@@ -1,0 +1,22 @@
+<!doctype html>
+<title>Events test</title>
+<style>
+ video, audio { border:1em solid }
+</style>
+<p><!--No--> events should fire when interacting with the controls for the video and audio below. Events should fire when you click on the video itself or the audio's border.
+<p><video src=/resources/media/xiph/theora_testsuite/320x240.ogg controls></video>
+<p><audio src=/resources/media/xiph/theora_testsuite/320x240.ogg controls></audio>
+<pre>event log:
+</pre>
+<script>
+var elms = document.querySelectorAll('video, audio');
+var events = ['click', 'mousedown', 'mouseup', 'dblclick', 'keypress', 'keydown', 'keyup'];
+for (var i = 0; i < events.length; ++i) {
+  elms[0].addEventListener(events[i], log, false);
+  elms[1].addEventListener(events[i], log, false);
+}
+var pre = document.getElementsByTagName('pre')[0];
+function log(e) {
+  pre.firstChild.data += e.type + ' ' + e.target.nodeName + '\n';
+}
+</script>

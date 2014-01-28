@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <title>rect() should throw exception for when width is negative</title>
+  <style>
+   canvas { display:none }
+  </style>
+  <script>
+   window.onload = function(){
+    var ctx = document.getElementsByTagName('canvas')[0].getContext('2d');
+    var r = document.getElementById('result');
+    r.firstChild.data = "FAIL: something went wrong in the script.";
+    try{
+     ctx.rect(0,0,-5,5);
+    }catch(e){
+     r.firstChild.data = e.code === 1 ? "PASS." : "FAIL: exception code was " + e.code + "; expected 1."  
+    }
+   }
+  </script>
+ </head>
+ <body>
+  <p id="result">FAIL: script did not run.</p>
+  <canvas></canvas>
+ </body>
+</html>

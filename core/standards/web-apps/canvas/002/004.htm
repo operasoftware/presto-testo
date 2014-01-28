@@ -1,0 +1,18 @@
+<!DOCTYPE HTML>
+<!-- from hixie.ch -->
+<html>
+ <head>
+  <title>Resizing a canvas</title>
+ </head>
+ <body>
+  <p>There should be no red below, just a thin black rectangular frame.</p>
+  <p><canvas width="200" height="100">FAIL</canvas></p>
+  <script>
+   var canvas = document.getElementsByTagName('canvas')[0];
+   var context = canvas.getContext('2d');
+   context.strokeStyle = 'red'; // this line gets reset to black on the next line
+   canvas.setAttribute('height', '200');
+   context.strokeRect(10, 1, 180, 180);
+  </script>
+ </body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <title>lineCap error handling ("butt ")</title>
+  <script>
+   window.onload = function(){
+    with(document.getElementsByTagName('canvas')[0].getContext('2d')){
+     lineWidth = 2;
+     moveTo(19,0);
+     lineTo(19,40);
+     moveTo(81,0);
+     lineTo(81,40);
+     stroke();
+     beginPath();
+     lineCap = "square"
+     strokeStyle = "lime";
+     moveTo(20,20);
+     lineTo(80,20);
+     lineWidth = 10;
+     lineCap = "butt ";
+     stroke();
+    }
+   }
+  </script>
+ </head>
+ <body>
+  <p>The thick green line below should overlap the black sidelines:</p>
+  <p><canvas height="40" width="100">FAIL</canvas></p>
+ </body>
+</html>

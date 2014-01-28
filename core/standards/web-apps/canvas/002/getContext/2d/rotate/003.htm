@@ -1,0 +1,19 @@
+<!DOCTYPE HTML>
+<html lang="en">
+ <head>
+  <title>rotate() and scale()</title>
+ </head>
+ <body>
+  <p>There should be a blue square below:</p>
+  <p><canvas width="300" height="300">FAIL</canvas></p>
+  <script>
+   with(document.getElementsByTagName('canvas')[0].getContext('2d')){
+    fillStyle = 'blue';
+    translate(200,50);
+    scale(1, 2);
+    rotate(Math.PI/2);
+    fillRect(0, 0, 50, 100);
+   }
+  </script>
+ </body>
+</html>

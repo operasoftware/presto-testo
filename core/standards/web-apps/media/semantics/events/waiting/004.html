@@ -1,0 +1,47 @@
+<!doctype html>
+<title>waiting event when readyState changes</title>
+<pre>FAIL (script didn't run)</pre>
+<script>
+ var p = document.querySelector('pre');
+ p.textContent = 'Running... (takes about 8 seconds)';
+ var v = document.createElement('video');
+ v.src = '001-2.php';
+ v.controls = true;
+ v.autoplay = true;
+
+ var log = [];
+ function assertEquals(a, b) {
+   var evaledA = eval(a);
+   if (evaledA !== b)
+     log.push(a+' was '+evaledA+', expected '+b);
+ }
+
+ var gotWaiting = false;
+ v.addEventListener('canplaythrough', function(e) {
+   v.addEventListener('waiting', function(e) {
+     gotWaiting = true;
+   }, false);
+   setTimeout(function() {
+     assertEquals('gotWaiting', true);
+     end();
+   }, 8000);
+ }, false);
+ document.body.appendChild(v);
+
+ var timeout = setTimeout(function(){
+   log.push('timed out');
+   end();
+ }, 13000);
+ 
+ function end() {
+   clearTimeout(timeout);
+   var passed = log.length == 0;
+   p.textContent = passed ? 'PASS' : 'FAIL\n' + log.join('\n');
+   try{top.opener.rr(passed)}catch(e){}
+ }
+ if (window.HTMLVideoElement == undefined) {
+   log.push('video not supported');
+   end();
+ }
+</script>
+

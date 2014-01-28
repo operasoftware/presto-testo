@@ -1,0 +1,36 @@
+<!doctype html>
+<title>timeupdate event</title>
+<script>
+var i=0;
+var ended = false;
+var passed = false;
+function update() {
+ if (ended) return;
+  i++;
+  if (i > 3) {
+    document.getElementsByTagName('p')[0].firstChild.data = 'PASS';
+    passed = true;
+    end();
+  } else {
+    document.getElementsByTagName('p')[0].firstChild.data = 'FAIL (haven\'t got enough timeupdate events)';
+  }
+}
+function start() {
+  clearTimeout(failtimeout);
+  setTimeout(function() {
+    if (document.getElementsByTagName('p')[0].firstChild.data != 'PASS') {
+      document.getElementsByTagName('p')[0].firstChild.data = 'FAIL';
+      passed = false;
+      end();
+    }
+  }, 1000);
+}
+function end() {
+  try{top.opener.rr(passed)}catch(e){}
+  ended = true;
+}
+
+var failtimeout = setTimeout(end, 2000);
+</script>
+<p>FAIL (script didn't run)</p>
+<video onloadedmetadata=start() ontimeupdate=update() src=/resources/objects/video.ogg autoplay></video>

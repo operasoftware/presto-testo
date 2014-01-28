@@ -1,0 +1,10 @@
+<!doctype html>
+<title>zero arguments</title>
+<script src="/resources/jsframework.js"></script>
+<script>
+test(function() {
+  assertThrows(function() {
+    postMessage();
+  }, [], DOMException, {code:9});
+});
+</script>

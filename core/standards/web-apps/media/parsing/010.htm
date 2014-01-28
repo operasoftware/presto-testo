@@ -1,0 +1,14 @@
+<!doctype html>
+<p>FAIL (script didn't run)</p>
+<video><video></video></video><script>
+var videos = document.getElementsByTagName('video');
+var log = '';
+if (videos.length != 2)
+  log += 'Found ' + videos.length + ' VIDEOs, expected 2. ';
+if (videos[0].firstChild != videos[1])
+  log += 'The second VIDEO was not a child of the first. ';
+var passed = log == '';
+window.onload = function () {
+  document.getElementsByTagName('p')[0].firstChild.data = passed ? 'PASS' : 'FAIL: ' + log;try{top.opener.rr(passed);}catch(e){};
+}
+</script>

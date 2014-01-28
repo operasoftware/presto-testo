@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<title>checking that currentTime is not settable</title>
+<p>FAIL: script did not run.</p>
+<device type="media">
+<video src="" autoplay style="visibility:hidden;"></video>
+<script type="text/javascript" src="../../../runner.js"></script>
+<script>
+document.getElementsByTagName("p")[0].innerHTML = "Running test..."
+var passed = false, time = 0;
+var videoEl = document.getElementsByTagName("video")[0];
+
+navigator.getUserMedia("video", success);
+function success(stream) {
+  videoEl.src = stream;
+  setTimeout(check, 1000);
+}
+
+function check() {
+  time = videoEl.currentTime; // Record the current time
+  try {
+    videoEl.currentTime = 0; // should not be allowed, ignored
+    passed = (videoEl.currentTime >= time); // Time should not have been changed by assignment (may still increment)
+    log = passed ? "" : "currentTime was changed";
+  } catch (e) {
+    log = "Unexpected exception thrown: " + e;
+    passed = false;
+  }
+  document.getElementsByTagName("p")[0].innerHTML = passed ? "PASS" : "FAIL - " + log;
+  runnerResult(passed, log);
+}
+</script>

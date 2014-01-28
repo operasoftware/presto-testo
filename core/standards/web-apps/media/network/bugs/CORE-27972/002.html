@@ -1,0 +1,17 @@
+<html>
+  <head>
+    <title>Video is painted outside viewport</title>
+  </head>
+  <body>
+   <p> Pass if you see a video below. No part of the video should be painted outside the viewport</p>
+   <button onclick="document.getElementById('v1').play()">Play</button>
+    <button onclick="document.getElementById('v1').pause()">Pause</button>
+    <button onclick="document.getElementById('v1').volume += 0.25">Volume Up</button>
+    <button onclick="document.getElementById('v1').volume -= 0.25">Volume Down</button>
+    <button onclick="document.getElementById('v1').muted = true;">Mute</button>
+    <button onclick="document.getElementById('v1').muted = false">Unmute</button>
+    <div>
+      <video src="../../../../../../../resources/media/xiph/theora_testsuite/sign_irene_cif-3qi-b.ogg" controls="true" >Your browser does not support video</video>
+    </div>
+   </body>
+</html>

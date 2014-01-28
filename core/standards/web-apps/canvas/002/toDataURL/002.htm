@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <title>simple toDataURL() test</title>
+  <style>
+   canvas, object { margin:1em }
+   .t { background:black }
+  </style>
+  <script>
+   window.onload = function(){
+    var c = document.getElementsByTagName('canvas')[0],
+        d = document.getElementsByTagName('object')[0],
+        ctx = c.getContext('2d');
+    ctx.fillStyle = 'rgba(0, 255, 0, .5)';
+    ctx.fillRect(0,0,300,150);
+    d.data = c.toDataURL();
+   }
+  </script>
+ </head>
+ <body>
+  <p>There should be two identical figures below (including transparancy):</p>
+  <p class="t"><canvas></canvas></p>
+  <p class="t"><object data="support/fail-300x150.png"></object></p>
+ </body>
+</html>

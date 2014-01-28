@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<title>getUserMedia method fires success callback for 'video' option</title>
+<p>FAIL: script did not run.</p>
+<script type="text/javascript" src="../runner.js"></script>
+<script>
+overrideCurrentRunner(function() {
+	document.getElementsByTagName("p")[0].innerHTML = "FAIL";
+	runnerResult(false);
+}, 2000);
+try {
+	navigator.getUserMedia("video", success, error);
+}
+catch(e) {
+	document.getElementsByTagName("p")[0].innerHTML = "FAIL (got exception)";
+	runnerResult(false);
+}
+function success() {
+	document.getElementsByTagName("p")[0].innerHTML = "PASS";
+	runnerResult(true);
+}
+function error() {
+	document.getElementsByTagName("p")[0].innerHTML = "FAIL (got error callback)";
+	runnerResult(false);
+}
+
+
+</script>

@@ -1,0 +1,53 @@
+<!doctype html>
+<title>suspending load</title>
+<pre>FAIL (script didn't run)</pre>
+<script>
+var video = document.createElement('video');
+var pre = document.querySelector('pre')
+video.src = '/resources/media/xiph/theora_testsuite/320x240.ogg?' + (0-new Date());
+document.body.appendChild(video);
+var timeout;
+var gotSuspend = false;
+var gotProgress = false;
+
+var timeout;
+
+function loadedmetadata(e) {
+  clearTimeout(timeout);
+  setTimeout(function() {
+    if (!gotSuspend) {
+      pre.textContent = 'FAIL\nExpected a suspend event';
+      try{top.opener.rr(false)}catch(e){}
+    }
+  }, 50);
+}
+
+video.addEventListener('loadedmetadata', loadedmetadata, false);
+
+timeout = setTimeout(function() {
+  pre.textContent = 'FAIL\nGot no loadedmetadata event';
+  try{top.opener.rr(false)}catch(e){}
+  video.removeEventListener('loadedmetadata', loadedmetadata, false);
+}, 1000);
+
+video.addEventListener('suspend', function(e) {
+  gotSuspend = true;
+  gotProgress = false;
+  var log = '';
+  if (video.networkState != 1)
+    log += 'video.networkState was not NETWORK_IDLE\n';
+  setTimeout(function() {
+    if (gotProgress)
+      log += 'Got progress event after suspend event\n';
+    var passed = log == '';
+    pre.textContent = passed ? 'PASS' : 'FAIL\n' + log;
+    try{top.opener.rr(passed)}catch(e){}
+  }, 600);
+}, false);
+
+video.addEventListener('progress', function(e) {
+  gotProgress = true;
+}, false);
+</script>
+
+

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <title>restore() simple test</title>
+  <style> canvas { background:red } </style>
+  <script>
+   window.onload = function(){
+    with(document.getElementsByTagName('canvas')[0].getContext('2d')){
+     fillStyle = 'lime';
+     save();
+     fillStyle = 'red';
+     restore();
+     fillRect(0,0,300,150);
+    }
+   }
+  </script>
+ </head>
+ <body>
+  <p>There should be a green rectangle below:</p>
+  <p><canvas>FAIL</canvas></p>
+ </body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <title>scale() (perf) test</title>
+  <script>
+   window.onload = function() {
+    var c = document.getElementsByTagName('canvas')[0],
+        ctx = c.getContext('2d');
+    function circle(x,y,zoom) {
+     ctx.save();
+     ctx.beginPath();
+     ctx.scale(zoom, zoom);
+     ctx.arc(x / zoom, y / zoom, 40 / zoom, 0, Math.PI * 2, true);
+     ctx.fill();
+     ctx.restore();
+    }
+    // pretty much identical to 002 except that we now use a really small value
+    // for zoom
+    circle(50, 50, 0.0000000000000001);
+   }
+  </script>
+ </head>
+ <body>
+  <p>There should be one black circle below:</p>
+  <p><canvas height="100" width="400"></canvas></p>
+ </body>
+</html>

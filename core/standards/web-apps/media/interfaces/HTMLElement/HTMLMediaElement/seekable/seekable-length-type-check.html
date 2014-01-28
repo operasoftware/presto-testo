@@ -1,0 +1,15 @@
+<!doctype html>
+<title>HTMLMediaElement.seekable.length should return a number (default=0)</title>
+<p>FAIL (script didn't run)</p>
+<audio></audio><video></video>
+<script>
+var passed = false;
+var a = document.getElementsByTagName('audio')[0];
+var v = document.getElementsByTagName('video')[0];
+try {
+    passed = a.seekable.length == 0 && v.seekable.length == 0;
+}
+catch (e) {}
+document.getElementsByTagName('p')[0].firstChild.data = passed ? 'PASS' : 'FAIL';
+try{top.opener.rr(passed)}catch(e){}
+</script>

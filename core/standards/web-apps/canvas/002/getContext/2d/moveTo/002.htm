@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <title>simple moveTo() test</title>
+  <style>
+   canvas, div { margin:1em }
+   div { border-left:150px solid transparent; border-right:150px solid #000; width:0; height:5px }
+  </style>
+  <script>
+   window.onload = function(){
+    with(document.getElementsByTagName('canvas')[0].getContext('2d')){
+     moveTo(150,0);
+     lineWidth = 10;
+     lineTo(300,0);
+     stroke();
+    }
+   }
+  </script>
+ </head>
+ <body>
+  <p>There should be two identical thick black bars below:</p>
+  <canvas height="10" width="300">FAIL: <code>html:canvas</code> not enabled.</canvas>
+  <div></div>
+ </body>
+</html>

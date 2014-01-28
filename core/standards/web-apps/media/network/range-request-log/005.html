@@ -1,0 +1,96 @@
+<!doctype html>
+<title>autoplay, byterange support, chunked transfer</title>
+<pre>FAIL (script didn't run)</pre>
+<p><video controls autoplay></video>
+<p><iframe></iframe>
+<p><iframe></iframe>
+<script>
+var p = document.querySelector('pre');
+var log = [];
+function assertEquals(a, b) {
+  try {
+    var evaledA = eval(a);
+    if (evaledA !== b)
+      log.push(a+' was '+evaledA+', expected '+b);
+  } catch(e) {
+    log.push('Got unexpected exception for ' + a + ': ' + e.message);
+  }
+}
+function assertApproximate(a, b, tolerance) {
+  try {
+    var evaledA = eval(a);
+    if (Math.abs(evaledA-b) > tolerance)
+      log.push(a+' was '+evaledA+', expected '+b+'\u00B1'+tolerance);
+  } catch(e) {
+    log.push('Got unexpected exception for ' + a + ': ' + e.message);
+  }
+}
+function assertGreaterThan(a, b) {
+  try {
+    var evaledA = eval(a);
+    if (!(evaledA > b))
+      log.push(a+' was '+evaledA+', expected something greater than '+b);
+  } catch(e) {
+    log.push('Got unexpected exception for '+a+': '+e.message);
+  }
+}
+function assertLessThan(a, b) {
+  try {
+    var evaledA = eval(a);
+    if (!(evaledA < b))
+      log.push(a+' was '+evaledA+', expected something less than '+b);
+  } catch(e) {
+    log.push('Got unexpected exception for '+a+': '+e.message);
+  }
+}
+
+var video = document.querySelector('video');
+var status = document.getElementsByTagName('iframe')[0];
+var summary = document.getElementsByTagName('iframe')[1];
+var logfile = "../logfiles/"+(Math.floor(Math.random()*Math.pow(2,32))).toString(36)+".log";
+var videoloc = "../../../../../../resources/media/xiph/theora_testsuite/sign_irene_cif-3qi-b.ogg";
+
+// reset log
+var x1=new XMLHttpRequest();
+x1.open("GET","resetlog.php?logfile="+logfile,true);
+x1.send(null);
+
+// load video
+video.src = "range-request.php?rate=10000&logfile="+logfile+"&fileloc="+videoloc+"&chunked=yes";
+
+var bytesloaded;
+var requests;
+video.addEventListener('loadedmetadata', function() {
+  assertEquals('video.duration', Infinity);
+  assertEquals('video.videoWidth', 385);
+  assertEquals('video.videoHeight', 288);
+  status.src = logfile;
+  summary.onload = function() {
+    bytesloaded = this.contentDocument.body.childNodes[2].textContent.split(': ')[1];
+    requests = this.contentDocument.body.childNodes[4].textContent.split(': ')[1];
+    assertLessThan('bytesloaded', 600000);
+    assertEquals('requests', '1');    end();
+  }
+  summary.src = "processlog.php?logfile="+logfile+"&fileloc="+videoloc;
+}, false);
+
+// delete log
+var x2=new XMLHttpRequest();
+x2.open("GET","deletelog.php?logfile="+logfile,true);
+x2.send(null);
+
+setTimeout(function() {
+  log.push('timed out');
+  end();
+}, 20000);
+
+function end() {
+  if (arguments.callee.done)
+    return;
+  arguments.callee.done = true;
+  var passed = log.length == 0;
+  p.textContent = passed ? 'PASS' : 'FAIL\n' + log.join('\n');
+  try{top.opener.rr(passed)}catch(e){}
+}
+</script>
+

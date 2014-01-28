@@ -1,0 +1,15 @@
+<!doctype html>
+<title>getting HTMLVideoElement.videoWidth</title>
+<pre>FAIL (script didn't run)</pre>
+<span><video>0</video></span>
+<script>
+var videos = document.getElementsByTagName('video');
+var log = '';
+for (var i = 0; i < videos.length; ++i) {
+  if (videos[i].videoWidth != videos[i].textContent)
+    log += i + ': ' + videos[i].parentNode.innerHTML.split('>')[0] + '> (got ' + videos[i].videoWidth + ', expected ' + videos[i].textContent + ')\n';
+}
+var passed = log == '';
+document.getElementsByTagName('pre')[0].firstChild.data = passed ? 'PASS' : 'FAIL\n' + log;
+try{top.opener.rr(passed)}catch(e){}
+</script>

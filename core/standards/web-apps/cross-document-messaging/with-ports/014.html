@@ -1,0 +1,15 @@
+<!doctype html>
+<title>structured clone vs reference</title>
+<script src="/resources/jsframework.js"></script>
+<script>
+test(function() {
+  var x = [];
+  y = [x,x];
+  postMessage(y, '*', []);
+  test(function(e) {
+    assertTrue(e.data[0] === e.data[1], 'e.data[0] === e.data[1]');
+    assertTrue(e.data[0] !== x, 'e.data[0] !== x');
+  }, window, 'message');
+});
+</script>
+

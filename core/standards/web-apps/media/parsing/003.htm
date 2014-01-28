@@ -1,0 +1,24 @@
+<!doctype html>
+<html> <video height='0' /><script>
+var video = document.getElementsByTagName('video')[0];
+var log = '';
+if (!video) {
+  log += 'VIDEO element not found. ';
+} else {
+  if (video.parentNode != document.body)
+    log += 'The parent was ' + video.parentNode.nodeName + ', expected BODY. ';
+  if (video.childNodes.length != 1)
+    log += 'The number of children (mid-parsing) was ' + video.childNodes.length + ', expected 1. ';
+  if (video.firstChild != document.getElementsByTagName('script')[0])
+    log += 'The first child was ' + video.firstChild.nodeName + ', expected SCRIPT. ';
+}
+window.onload = function() {
+  video = document.getElementsByTagName('video')[0];
+  if (video.childNodes.length != 2)
+    log += 'The number of children (onload) was ' + video.childNodes.length + ', expected 2. ';
+  if (video.lastChild.nodeType != 3)
+    log += 'The last child was a ' + video.lastChild.nodeName + ', expected #text. ';
+  var passed = log == '';
+  document.getElementsByTagName('p')[0].firstChild.data = passed ? 'PASS' : 'FAIL: ' + log;try{top.opener.rr(passed);}catch(e){};
+}
+</script> </source></video><p>FAIL (script didn't run)</p>

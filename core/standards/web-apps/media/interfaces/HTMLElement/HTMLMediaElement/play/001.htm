@@ -1,0 +1,33 @@
+<!doctype html>
+<title>calling HTMLMediaElement.play()</title>
+<pre>FAIL (script didn't run)</pre>
+<video></video><audio></audio>
+<script>
+var video = document.getElementsByTagName('video')[0];
+var audio = document.getElementsByTagName('audio')[0];
+var log = '';
+function fail(e) {
+  log += e.type + ' on ' + e.target + ' was fired\n';
+}
+var events = ['error', 'emptied', 'play', 'timeupdate', 'pause'];
+for (var i = 0; i < events.lenght; ++i) {
+  video.addEventListener('error', fail, false);
+  audio.addEventListener('error', fail, false);
+}
+try {
+  video.play();
+  audio.play();
+} catch(e) {
+  log += 'load() threw an exception.\n';
+}
+
+setTimeout(function() {
+  var passed = log == '';
+  document.getElementsByTagName('pre')[0].firstChild.data = passed ? 'PASS' : 'FAIL\n' + log; try{top.opener.rr(passed)}catch(e){};}, 100);
+
+</script>
+
+
+
+
+

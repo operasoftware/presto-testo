@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <title>fillStyle: 'currentcolor'</title>
+  <style>
+   p + p { color:lime }
+   canvas { background:red }
+  </style>
+  <script>
+   window.onload = function(){
+    with(document.getElementsByTagName('canvas')[0].getContext('2d')){
+     fillStyle = 'currentcolor';
+     fillRect(0,0,300,150);
+    }
+   }
+  </script>
+ </head>
+ <body>
+  <p>There should be a green rectangle below:</p>
+  <p><canvas>FAIL: <code>html:canvas</code> not enabled.</canvas></p>
+ </body>
+</html>
+

@@ -1,0 +1,37 @@
+<!doctype html>
+<title>Range request / Date / If-Range check fails with 200 OK</title>
+<pre>FAIL (script didn't run)</pre>
+<p><video controls></video>
+<script>
+var p = document.querySelector('pre');
+var log = [];
+
+var video = document.querySelector('video');
+
+// load video
+video.src = '../range-request-log/range-request.php?fileloc=../../../../../../resources/media/xiph/theora_testsuite/sign_irene_cif-3qi-b.ogg&date=yes&if-range=200&rate=1&rate=10000';
+
+video.addEventListener('loadedmetadata', function() {
+  end();
+}, false);
+
+video.addEventListener('error', function() {
+  log.push('got error event');
+  end();
+}, false);
+
+setTimeout(function() {
+  log.push('timed out');
+  end();
+}, 10000);
+
+function end() {
+  if (arguments.callee.done)
+    return;
+  arguments.callee.done = true;
+  var passed = log.length == 0;
+  p.textContent = passed ? 'PASS' : 'FAIL\n' + log.join('\n');
+  try{top.opener.rr(passed)}catch(e){}
+}
+</script>
+

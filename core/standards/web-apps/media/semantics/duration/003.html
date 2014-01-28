@@ -1,0 +1,45 @@
+<!doctype html>
+<title>duration for streaming video</title>
+<pre>FAIL (script didn't run)</pre>
+<script>
+ var p = document.querySelector('pre');
+ p.textContent = 'Running...';
+ var v = document.createElement('video');
+ v.src = '/core/standards/web-apps/media/network/streaming/oldstuff/streamingvideo.php';
+ v.autoplay = true;
+ v.controls = true;
+
+ var log = [];
+ function assertEquals(a, b) {
+   var evaledA = eval(a);
+   if (evaledA !== b)
+     log.push(a+' was '+evaledA+', expected '+b);
+ }
+ function assertApproximate(a, b, tolerance) {
+   var evaledA = eval(a);
+   if (Math.abs(evaledA-b) > tolerance)
+     log.push(a+' was '+evaledA+', expected '+b+'\u00B1'+tolerance);
+ }
+ function assertNaN(a) {
+   var evaledA = eval(a);
+   if (evaledA === evaledA)
+     log.push(a+' was '+evaledA+', expected NaN');
+ }
+ 
+ //v.addEventListener('loadstart', function(e) {
+   assertNaN('v.duration');
+ //}, false);
+ v.addEventListener('loadedmetadata', function(e) {
+   assertEquals('v.duration', Infinity);
+   end();
+ }, false);
+ document.body.appendChild(v);
+ 
+ function end() {
+   var passed = log.length == 0;
+   p.textContent = passed ? 'PASS' : 'FAIL\n' + log.join('\n');
+   v.removeAttribute('src');
+   v.load();
+   try{top.opener.rr(passed)}catch(e){}
+ }
+</script>

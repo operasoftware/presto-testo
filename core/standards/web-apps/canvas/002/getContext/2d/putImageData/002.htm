@@ -1,0 +1,23 @@
+<!doctype html>
+<title>putImageData(): writing data to a scaled &lt;canvas></title>
+<style> canvas { width:400px; height:400px } </style>
+<p>FAIL: Script did not run.</p>
+<script>
+  var c = document.createElement("canvas").getContext("2d"),
+      d,
+      e,
+      i = 0,
+      p = document.getElementsByTagName("p")[0]
+  c.canvas.width = 200
+  c.canvas.height = 200
+  c.fillStyle = "lime"
+  c.fillRect(0, 0, c.canvas.width, c.canvas.height)
+  d = c.getImageData(0, 0, 50, 50)
+  c.putImageData(d, -50, -50)
+  e = c.getImageData(-50, -50, 50, 50).data
+  p.textContent = "PASS"
+  for(; i < e.length; i++){
+    if(e[i] != 0)
+      p.textContent = "FAIL"
+  }
+</script>

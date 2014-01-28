@@ -1,0 +1,17 @@
+<!doctype html>
+<title>invoking resource selection with load()</title>
+<p>FAIL (script didn't run)</p>
+<script>
+var v = document.createElement('video');
+var passed = true;
+passed &= v.networkState == 0;
+v.load();
+passed &= v.networkState == 3;
+onload = function() {
+  document.querySelector('p').textContent = passed ? 'PASS' : 'FAIL';
+  try{top.opener.rr(passed)}catch(e){}
+}
+</script>
+<script>
+passed &= v.networkState == 0;
+</script>

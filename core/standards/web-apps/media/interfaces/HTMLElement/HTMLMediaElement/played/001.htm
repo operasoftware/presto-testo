@@ -1,0 +1,17 @@
+<!doctype html>
+<title>setting HTMLMediaElement.played</title>
+<p>FAIL (script didn't run)</p>
+<video></video><audio></audio>
+<script>
+var video = document.getElementsByTagName('video')[0];
+var audio = document.getElementsByTagName('audio')[0];
+var passed = false;
+try {
+  video.played = 1;
+  audio.played = 1;
+  passed = true;
+} catch(e) {
+}
+document.getElementsByTagName('p')[0].firstChild.data = passed ? 'PASS' : 'FAIL';
+try{top.opener.rr(passed)}catch(e){}
+</script>

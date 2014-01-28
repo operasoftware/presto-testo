@@ -1,0 +1,13 @@
+<!doctype html>
+<title>getting HTMLMediaElement.paused</title>
+<p>FAIL (script didn't run)</p>
+<video></video><audio></audio>
+<script>
+var video = document.getElementsByTagName('video')[0];
+var audio = document.getElementsByTagName('audio')[0];
+var passed = false;
+if (video.paused == true && audio.paused == true)
+  passed = true;
+document.getElementsByTagName('p')[0].firstChild.data = passed ? 'PASS' : 'FAIL';
+try{top.opener.rr(passed)}catch(e){}
+</script>

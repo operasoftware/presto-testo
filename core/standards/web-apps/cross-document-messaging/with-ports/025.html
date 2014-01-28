@@ -1,0 +1,12 @@
+<!doctype html>
+<title>1 as ports</title>
+<script src="/resources/jsframework.js"></script>
+<script>
+test(function() {
+  postMessage('', '*', 1);
+  test(function(e) {
+    assertArrayEquals(e.ports, []);
+  }, window, 'message');
+});
+</script>
+

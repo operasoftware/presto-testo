@@ -1,0 +1,20 @@
+<!doctype html>
+<title>CORE-35502: Don't send Accept-Encoding HTTP header for &lt;video></title>
+<script src="/resources/testharness.js"></script>
+<script src="/resources/testharnessreport.js"></script>
+<div id="log"></div>
+<script>
+var t = async_test("Accept-Encoding header not sent");
+t.step(function() {
+  var v = document.createElement("video");
+  v.onloadedmetadata = function() {
+    t.done();
+  };
+  v.onerror = function() {
+    t.step(function() {
+      assert_unreached("error event fired (code: "+v.error.code+")");
+    });
+  };
+  v.src = "001.php";
+});
+</script>

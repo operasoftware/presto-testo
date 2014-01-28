@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>HTML5 Video: http with no-cache headers - seeking after connection timeout with no-range</title>
+    <link rel="stylesheet" type="text/css" href="video.css" />
+    <script type="application/ecmascript" src="http://t/resources/spartanHandler.js"></script>
+    <script type="application/ecmascript" src="http://t/resources/testharness.js"></script>
+    <script type="application/ecmascript" src="video.js"></script>
+    <script type="application/ecmascript">
+        function init()
+        {
+            var testlist =
+            {
+                0:  [
+                        {
+                            event:  "loadstart",
+                            func:   function() { this.test.setName('seeking with no-range'); }
+                        },
+                        {
+                            event:  "error",
+                            perm:   true,
+                            func:   function()
+                            {
+                                var replacementErrorCallback = this.test.getData('replacementErrorCallback');
+                                
+                                if (replacementErrorCallback) { replacementErrorCallback(this); }
+                                else
+                                {
+                                    this.test.result(false, "Error occured in step "+this.test.state+" ("+codes.get('error', this.error.code)+")");
+                                    this.test.finish();
+                                }
+                            }
+                        },
+                        {
+                            event:  "loadedmetadata",
+                            func:   function()
+                            {
+                                logger("current buffered range: "+timeRange2String(this.buffered));
+                                
+                                if (this.seekable.length != 0)
+                                {
+                                    this.test.result(false, "video.seekable contains time ranges: "+timeRange2String(this.seekable));
+                                    this.test.finish();
+                                    return;
+                                }
+                                
+                                if (this.duration > this.buffered.end(0)) { var seekto = this.duration; }               // seek as far away from the current buffered range as possible
+                                else
+                                {
+                                    this.test.result(false, "buffered range to big, cannot seek beyond it");
+                                    this.test.finish();
+                                    return;
+                                }
+                                
+                                this.test.setData('seekto', seekto);
+                                logger("seeking to: "+seekto.toFixed(2));
+                                this.currentTime = seekto;
+                                logger("video.seeking: "+this.seeking);
+                                
+                                if (this.seeking === false) { this.test.result(true); }
+                                else                        { this.test.result(false, "seek requests are ignored but video.seeking is not set to false"); }
+                                
+                                this.test.finish();
+                            }
+                        },
+                        {
+                            event:  "seeked",
+                            func:   function()
+                            {
+                                logger("seeked to: "+this.currentTime.toFixed(2)+((this.currentTime.toFixed(2) != this.test.getData('seekto').toFixed(2))?" (expected: "+this.test.getData('seekto').toFixed(2)+")":""));
+                                logger("THIS IS UNEXPECTED!");
+                                this.test.result(false, "the seeked event should not be triggered");
+                                this.test.finish();
+                            }
+                        }
+                    ]
+            }
+            
+            try
+            {
+                var video       = document.querySelector('video');
+                    video.test  = new VideoTest(video, 'HTML5 Video: http with no-cache headers');
+                    video.test.init('video.php?contenttype=video/webm&nocache=1&norange=1&rate=0.5', testlist, 30000);
+            } catch (e) { alert("init error: "+e); }
+        }
+        
+        window.addEventListener('load', init, false);
+    </script>
+</head>
+
+<body>
+    <video controls="controls"></video>
+    <pre id="log"></pre>
+</body>
+</html>

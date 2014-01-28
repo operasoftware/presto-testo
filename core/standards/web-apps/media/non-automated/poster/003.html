@@ -1,0 +1,13 @@
+<!doctype html>
+<title>poster (PNG) behavior</title>
+<p>There should be an "Opera" image below even when the video has started to download.</p>
+<p>When you start playing the video, the "Opera" image should not be shown again even after stopping.</p>
+<p><video poster="/resources/images/opera.png"></video></p>
+<script>
+ var video = document.getElementsByTagName('video')[0];
+ video.src = '/resources/objects/video.ogg';
+ video.autobuffer = true;
+ video.preload = 'auto';
+</script>
+<p><button onclick="video.play()">play</button> <button onclick="video.pause(); video.currentTime = 0">stop</button></p>
+<noscript>FAIL (script must be enabled)</noscript>

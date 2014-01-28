@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <title>restore() simple test two</title>
+  <script>
+   window.onload = function(){
+    with(document.getElementsByTagName('canvas')[0].getContext('2d')){
+     save();
+     scale(2,2);
+     fillRect(75,0,50,50);
+     rect(0,0,50,50);
+     restore();
+     fill();
+    }
+   }
+  </script>
+ </head>
+ <body>
+  <p>There should be a two identically sized rectangles below:</p>
+  <p><canvas>FAIL: <code>html:canvas</code> not enabled.</canvas></p>
+ </body>
+</html>

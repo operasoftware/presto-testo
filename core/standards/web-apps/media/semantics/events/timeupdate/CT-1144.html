@@ -1,0 +1,42 @@
+<!doctype html>
+<title>CT-1144 : timeupdate check after playing from resource end - webm</title>
+<script src="/resources/testharness.js"></script>
+<script src="/resources/testharnessreport.js"></script>
+<script src="../../../support/common.js"></script>
+<p id="log">FAIL (script didn't run)</p>
+<audio autoplay></audio>
+<video autoplay controls></video>
+<script>
+var tests = init_tests("HTMLAudioElement: timeupdate check after playing from resource end - webm", "HTMLVideoElement: timeupdate check after playing from resource end - webm", {timeout:10000});
+tests.forEach(function(vars) {
+    var t = vars[0];
+    t.step(function() {
+    var tagName = vars[1];
+    var node = document.getElementsByTagName(tagName)[0];
+    node.addEventListener('loadedmetadata', seek_to_end, false);
+    node.src = '/resources/media/webm/big_buck_bunny_480p.webm?nocache=' + Math.random();
+
+    function seek_to_end() {
+        node.addEventListener('ended', play, true)
+        node.currentTime = node.duration - 1;
+    }
+
+    function play() {
+        node.addEventListener('progress', check_timeupdate, false);
+        node.play();
+    }
+
+    function check_timeupdate() {
+        node.addEventListener('timeupdate', endTest, false);
+    }
+
+
+    function endTest() {
+        t.step(function() {
+        assert_true(true, "Got timeupdate event.");
+        t.done();
+        });
+    }
+    });
+});
+</script>

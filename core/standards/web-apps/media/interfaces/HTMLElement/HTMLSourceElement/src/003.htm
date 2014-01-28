@@ -1,0 +1,9 @@
+<!doctype html>
+<title>getting HTMLSourceElement.src with absent src=''</title>
+<p>FAIL (script didn't run)</p>
+<video><source></video><audio><source></audio>
+<script>
+var passed = document.getElementsByTagName("source")[0].src == "" && document.getElementsByTagName("source")[1].src == "";
+document.getElementsByTagName("p")[0].firstChild.data = passed ? "PASS" : "FAIL";
+try{top.opener.rr(passed);}catch(e){}
+</script>

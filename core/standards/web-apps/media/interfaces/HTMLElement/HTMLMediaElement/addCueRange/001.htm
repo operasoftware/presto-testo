@@ -1,0 +1,35 @@
+<!doctype html>
+<title>calling HTMLMediaElement.addCueRange()</title>
+<p>FAIL (script didn't run)</p>
+<video></video><audio></audio>
+<script>
+var video = document.getElementsByTagName('video')[0];
+var audio = document.getElementsByTagName('audio')[0];
+var passed = true;
+if (typeof video.addQueRange != 'undefined' || typeof audio.addCueRange != 'undefined')
+  passed = false;
+/*
+function enter() { }
+function exit() { }
+try { video.addCueRange(); passed = false; } catch(e) { }
+try { video.addCueRange('foo'); passed = false; } catch(e) { }
+try { video.addCueRange('foo', 'bar'); passed = false; } catch(e) { }
+try { video.addCueRange('foo', 'bar', 1); passed = false; } catch(e) { }
+try { video.addCueRange('foo', 'bar', 1, 2); passed = false; } catch(e) { }
+try { video.addCueRange('foo', 'bar', 1, 2, true); passed = false; } catch(e) { }
+try { video.addCueRange('foo', 'bar', 1, 2, true, enter); passed = false; } catch(e) { }
+try { video.addCueRange('foo', 'bar', 1, 2, true, enter, exit); } catch(e) { passed = false; }
+try { video.addCueRange('foo', 'bar', 1, 2, true, enter, exit, 'bogus'); } catch(e) { passed = false; }
+try { audio.addCueRange(); passed = false; } catch(e) { }
+try { audio.addCueRange('foo'); passed = false; } catch(e) { }
+try { audio.addCueRange('foo', 'bar'); passed = false; } catch(e) { }
+try { audio.addCueRange('foo', 'bar', 1); passed = false; } catch(e) { }
+try { audio.addCueRange('foo', 'bar', 1, 2); passed = false; } catch(e) { }
+try { audio.addCueRange('foo', 'bar', 1, 2, true); passed = false; } catch(e) { }
+try { audio.addCueRange('foo', 'bar', 1, 2, true, enter); passed = false; } catch(e) { }
+try { audio.addCueRange('foo', 'bar', 1, 2, true, enter, exit); } catch(e) { passed = false; }
+try { audio.addCueRange('foo', 'bar', 1, 2, true, enter, exit, 'bogus'); } catch(e) { passed = false; }
+*/
+document.getElementsByTagName('p')[0].firstChild.data = passed ? 'PASS' : 'FAIL';
+try{top.opener.rr(passed)}catch(e){}
+</script>

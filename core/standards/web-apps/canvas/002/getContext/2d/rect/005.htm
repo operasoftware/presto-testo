@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <title>invoking rect() multiple times</title>
+  <script>
+   window.onload = function(){
+    with(document.getElementsByTagName('canvas')[0].getContext('2d')){
+     strokeStyle='lime';
+	 lineWidth = 10;
+     rect(10,10,100,100);
+     rect(160,10,100,100);
+     fill();
+     stroke();
+    }
+   }
+  </script>
+ </head>
+ <body>
+  <p>There should be two black, green outlined, squares below:</p>
+  <canvas>FAIL: <code>html:canvas</code> not enabled.</canvas>
+ </body>
+</html>

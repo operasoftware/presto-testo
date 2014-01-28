@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<title>checking that playbackRate == 1.0</title>
+<p>FAIL: script did not run.</p>
+<device type="media">
+<video src="" autoplay style="visibility:hidden;"></video>
+<script type="text/javascript" src="../../../runner.js"></script>
+<script>
+navigator.getUserMedia("video", success);
+function success(stream) {
+  var videoEl = document.getElementsByTagName("video")[0];
+  var passed = false;
+  videoEl.src = stream;
+  if(videoEl.playbackRate == 1) passed = true;
+  document.getElementsByTagName("p")[0].innerHTML = passed ? "PASS" : "FAIL"; 
+  runnerResult(passed);
+}
+</script>

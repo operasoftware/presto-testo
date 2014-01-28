@@ -1,0 +1,56 @@
+<!doctype html>
+<title>waiting event when seeking with byterange request</title>
+<pre>FAIL (script didn't run)</pre>
+<script>
+ var p = document.querySelector('pre');
+ p.textContent = 'Running...';
+ var v = document.createElement('video');
+ v.src = '../../network/range-request-log/range-request.php?fileloc=../../../../../../resources/media/misc/bbb_256kbps.ogg&rate=40000&nocache=' + Math.random();
+ v.autoplay = true;
+ v.controls = true;
+
+ var log = [];
+ function assertEquals(a, b) {
+   var evaledA = eval(a);
+   if (evaledA !== b)
+     log.push(a+' was '+evaledA+', expected '+b);
+ }
+ function assertApproximate(a, b, tolerance) {
+   var evaledA = eval(a);
+   if (Math.abs(evaledA-b) > tolerance)
+     log.push(a+' was '+evaledA+', expected '+b+'\u00B1'+tolerance);
+ }
+
+ var gotWaiting = false;
+ v.addEventListener('loadeddata', function(e) {
+   try {
+     v.currentTime = 180;
+   } catch(e) {
+     log.push('got unexpected exception when setting v.currentTime');
+   }
+   setTimeout(function() {
+     assertEquals('gotWaiting', true);
+     end();
+   }, 1000);
+ }, false);
+ v.addEventListener('waiting', function(e) {
+   gotWaiting = true;
+ }, false);
+ document.body.appendChild(v);
+
+ var timeout = setTimeout(function(){
+   log.push('timed out');
+   end();
+ }, 7000);
+
+ function end() {
+   clearTimeout(timeout);
+   var passed = log.length == 0;
+   p.textContent = passed ? 'PASS' : 'FAIL\n' + log.join('\n');
+   try{top.opener.rr(passed)}catch(e){}
+ }
+ if (window.HTMLVideoElement == undefined) {
+   log.push('video not supported');
+   end();
+ }
+</script>

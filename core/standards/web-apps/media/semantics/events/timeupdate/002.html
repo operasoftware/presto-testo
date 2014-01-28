@@ -1,0 +1,42 @@
+<!doctype html>
+<title>timeupdate event when readyState changes</title>
+<pre>FAIL (script didn't run)</pre>
+<script>
+ var p = document.querySelector('pre');
+ p.textContent = 'Running...';
+ var v = document.createElement('video');
+ v.src = '../waiting/001-1.php';
+ v.controls = true;
+ v.autoplay = true;
+
+ var log = [];
+ function assertEquals(a, b) {
+   var evaledA = eval(a);
+   if (evaledA !== b)
+     log.push(a+' was '+evaledA+', expected '+b);
+ }
+
+ var gotTimeupdate;
+ v.addEventListener('canplaythrough', function(e) {
+   v.addEventListener('waiting', function(e) {
+     gotWaiting = true;
+   }, false);
+   setTimeout(function() {
+     gotTimeupdate = false;
+   }, 34000);
+   setTimeout(function() {
+     assertEquals('gotTimeupdate', false);
+     end();
+   }, 35000);
+ }, false);
+ v.addEventListener('timeupdate', function(e) {
+   gotTimeupdate = true;
+ }, false);
+ document.body.appendChild(v);
+ 
+ function end() {
+   var passed = log.length == 0;
+   p.textContent = passed ? 'PASS' : 'FAIL\n' + log.join('\n');
+   try{top.opener.rr(passed)}catch(e){}
+ }
+</script>

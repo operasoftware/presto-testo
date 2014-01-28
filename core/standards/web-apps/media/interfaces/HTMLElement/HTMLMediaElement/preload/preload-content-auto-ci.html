@@ -1,0 +1,13 @@
+<!doctype html>
+<title>Reflection of media preload content attribute : auto - case insensitive</title>
+<p>FAIL (script didn't run)</p>
+<audio preload="Auto"></audio>
+<video preload="Auto"></video>
+<script>
+var passed = false;
+var a = document.getElementsByTagName('audio')[0];
+var v = document.getElementsByTagName('video')[0];
+var passed = a.preload == 'auto' && v.preload == 'auto';
+document.getElementsByTagName('p')[0].firstChild.data = passed ? 'PASS' : 'FAIL';
+try{top.opener.rr(passed)}catch(e){}
+</script>

@@ -1,0 +1,33 @@
+<!doctype html>
+  <title>resuming normal video playback following playback of a Stream via a device-associable element (video)</title>
+  <p>FAIL: script did not run.</p>
+  <video src=""></video>
+  <script type="text/javascript" src="../../runner.js"></script>
+  <script>
+	 navigator.getUserMedia("video", function(stream) {
+      var videoEl = document.getElementsByTagName( 'video' )[0],
+          staticVideoSrc = "../../support/video.ogg";
+      
+      videoEl.src = stream;
+      videoEl.addEventListener('playing', function() {
+	
+				if(videoEl.src.indexOf("video.ogg") != -1) {
+					document.getElementsByTagName("p")[0].innerHTML = "PASS";
+					runnerResult(true);
+					return;
+				}
+				window.setTimeout(function() {
+					// change the src to a valid static video resource
+					videoEl.src = staticVideoSrc;
+					videoEl.play();
+				}, 1000);
+				
+      }, false);
+      videoEl.play();
+
+      overrideCurrentRunner(function() {
+				document.getElementsByTagName("p")[0].innerHTML = "FAIL";
+    	  runnerResult(false);
+      }, 3000);
+   });
+  </script>

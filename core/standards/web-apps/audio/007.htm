@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <title>simple Audio() testcase; setTimeout</title>
+  <script>
+   window.onload = function(){
+    var x = new Audio("support/missile.wav");
+    x.play();
+    setTimeout(function () {
+        x.pause();
+        x.play();
+      },10);
+   }
+  </script>
+ </head>
+ <body>
+  <p>You should hear a (complete) missile sound once.</p>
+ </body>
+</html>
+

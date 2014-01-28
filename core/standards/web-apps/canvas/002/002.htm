@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <title>resizing the &lt;canvas></title>
+  <style>
+   p#t { height:300px; width:300px; background:red }
+   p#t canvas { background:lime }
+  </style>
+ </head>
+ <body>
+  <p>There should be no red below:</p>
+  <p id="t"><canvas></canvas></p>
+  <script>
+   var t = document.getElementById('t');
+   t.firstChild.width = 300;
+   t.firstChild.height = 300;
+ </script>
+ </body>
+</html>

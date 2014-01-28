@@ -1,0 +1,28 @@
+<!doctype html>
+<title>invalid URL in source element</title>
+<p>FAIL (script didn't run)</p>
+<script>
+var video = document.getElementsByTagName('video')[0];
+var passed = false;
+function video() {
+  passed = false;
+  end();
+}
+function source() {
+  passed = true;
+  end();
+}
+setTimeout(end, 1000);
+var hasrun = false;
+function end() {
+  if (hasrun)
+    return;
+  document.getElementsByTagName('p')[0].firstChild.data = passed ? 'PASS' : 'FAIL';
+  try{top.opener.rr(passed)}catch(e){}
+  hasrun = true;
+}
+</script>
+<video onerror="video();">
+<source src="hxxp://example.com/" onerror="source()">
+</video>
+

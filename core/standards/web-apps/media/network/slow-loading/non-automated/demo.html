@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<style>
+video { display:block; border:solid }
+label:after { content:'\A'; white-space:pre }
+</style>
+<title> Demo : custom bitrate/ bandwidth </title>
+<script type="text/javascript">
+var videoloc="video.ogg";
+function loadVideo(){
+document.getElementById('video').src = "../../range-request-log/range-request.php?rate="+document.getElementById('download_rate').value+"&fileloc="+document.getElementById('video_bit_rate').value;
+}
+</script>
+<body>
+<p> Demo - No pass condition </p>
+<div>
+  <video id="video" controls height="300" width="400">Your browser does not support video</video>
+</div>
+<form>
+Download Rate :
+<select id="download_rate">
+  <option value="1">1 B/s</option>
+  <option value="10">10 B/s</option>
+  <option value="50">50 B/s</option>
+  <option value="256">256 B/s</option>
+  <option value="1024">1 KB/s</option>
+  <option value="4096">4 KB/s</option>
+  <option value="65536">64 KB/s</option>
+  <option value="131072">128 KB/s</option>
+</select>
+Video bit rate :
+<select id="video_bit_rate">
+  <option value="../../../../../../resources/media/misc/bbb_16kbps.ogg">16 kbps</option>
+  <option value="../../../../../../resources/media/misc/bbb_32kbps.ogg">32 kbps</option>
+  <option value="../../../../../../resources/media/misc/bbb_128kbps.ogg">128 kbps</option>
+  <option value="../../../../../../resources/media/misc/bbb_256kbps.ogg">256 kbps</option>
+</select>
+</form>
+<input type="button" value="Load" onclick="loadVideo()" ?>
+</body>
+</html>

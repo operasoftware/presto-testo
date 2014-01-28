@@ -1,0 +1,19 @@
+<!doctype html>
+<title>getting HTMLMediaElement.loopEnd</title>
+<p>FAIL (script didn't run)</p>
+<video></video><audio></audio>
+<video end=1.5></video><audio end=1.5></audio>
+<video loopend=1.5></video><audio loopend=1.5></audio>
+<script>
+var video0 = document.getElementsByTagName('video')[0];
+var audio0 = document.getElementsByTagName('audio')[0];
+var video1 = document.getElementsByTagName('video')[1];
+var audio1 = document.getElementsByTagName('audio')[1];
+var video2 = document.getElementsByTagName('video')[2];
+var audio2 = document.getElementsByTagName('audio')[2];
+var passed = false;
+if (typeof video0.loopEnd == 'undefined' && typeof audio0.loopEnd == 'undefined' && typeof video1.loopEnd == 'undefined' && typeof audio1.loopEnd == 'undefined' && typeof video2.loopEnd == 'undefined' && typeof audio2.loopEnd == 'undefined')
+  passed = true;
+document.getElementsByTagName('p')[0].firstChild.data = passed ? 'PASS' : 'FAIL';
+try{top.opener.rr(passed)}catch(e){}
+</script>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <title>globalCompositeOperation set to 'destination-atop'</title>
+  <style> canvas { background:black } </style>
+  <script>
+   window.onload = function() {
+    var ctx = document.getElementsByTagName("canvas")[0].getContext("2d"),
+        i = new Image();
+    i.onload = function() {
+     ctx.fillStyle = "rgba(0, 255, 0, 1)";
+     ctx.fillRect(0, 0, 300, 150);
+     ctx.globalCompositeOperation = "destination-atop";
+     ctx.drawImage(i, 0, 0, 300, 150);
+    }
+    i.src = "./support/text-black-pass-300x150.png";
+   }
+  </script>
+ </head>
+ <body>
+  <p>The word "PASS" should appear in <em>green</em> on a <em>black</em> background.</p>
+  <canvas width="300" height="150">FAIL: <code>canvas</code> not supported.</canvas>
+ </body>
+</html>

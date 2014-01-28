@@ -1,0 +1,15 @@
+<!doctype html>
+<title>HTMLMediaElement.buffered.start should be a function</title>
+<p>FAIL (script didn't run)</p>
+<audio></audio><video></video>
+<script>
+var passed = false;
+var a = document.getElementsByTagName('audio')[0];
+var v = document.getElementsByTagName('video')[0];
+try {
+    passed = typeof a.buffered.start == 'function' && typeof v.buffered.start == 'function';
+}
+catch (e) {}
+document.getElementsByTagName('p')[0].firstChild.data = passed ? 'PASS' : 'FAIL';
+try{top.opener.rr(passed)}catch(e){}
+</script>

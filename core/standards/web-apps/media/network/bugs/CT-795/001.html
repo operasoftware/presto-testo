@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+<head>
+<title>CT-795: suspend event not fired for already cached resource</title>
+<script src="/resources/testharness.js"></script>
+<script src="/resources/testharnessreport.js"></script>
+</head>
+<body>
+<div id="log"></div>
+<script>
+var t = async_test("suspend event is fired");
+t.step(function() {
+  var a1 = document.createElement("audio");
+  a1.onsuspend = function() {
+    // resource is now in cache for sure
+    var a2 = document.createElement("audio");
+    a2.onsuspend = function() {
+      t.done();
+    };
+    a2.src = a1.src;
+  };
+  a1.src = "/resources/media/misc/2samples.wav";
+});
+</script>
+</body>
+</html>

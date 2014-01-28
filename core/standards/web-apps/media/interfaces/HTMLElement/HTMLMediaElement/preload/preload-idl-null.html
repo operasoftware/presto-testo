@@ -1,0 +1,14 @@
+<!doctype html>
+<title>Reflection of media preload IDL attribute : null</title>
+<p>FAIL (script didn't run)</p>
+<audio></audio><video></video>
+<script>
+var passed = false;
+var a = document.getElementsByTagName('audio')[0];
+var v = document.getElementsByTagName('video')[0];
+a.preload = null;
+v.preload = null;
+var passed = a.getAttribute('preload') == 'null' && v.getAttribute('preload') == 'null';
+document.getElementsByTagName('p')[0].firstChild.data = passed ? 'PASS' : 'FAIL';
+try{top.opener.rr(passed)}catch(e){}
+</script>

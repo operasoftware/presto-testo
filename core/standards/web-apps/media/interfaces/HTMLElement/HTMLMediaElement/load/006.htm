@@ -1,0 +1,22 @@
+<!doctype html>
+<title>missing src attribute</title>
+<p>FAIL (script didn't run)</p>
+<script>
+var video = document.getElementsByTagName('video')[0];
+var passed = true;
+function errorfunc(v) {
+  passed = false;
+  end();
+}
+setTimeout(end, 100);
+var hasrun = false;
+function end() {
+  if (hasrun)
+    return;
+  document.getElementsByTagName('p')[0].firstChild.data = passed ? 'PASS' : 'FAIL';
+  try{top.opener.rr(passed)}catch(e){}
+  hasrun = true;
+}
+</script>
+<video onerror="errorfunc(this);"></video>
+

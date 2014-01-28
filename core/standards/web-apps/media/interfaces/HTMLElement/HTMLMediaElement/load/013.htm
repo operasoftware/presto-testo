@@ -1,0 +1,33 @@
+<!doctype html>
+<title>async 'emptied'</title>
+<p>FAIL (script didn't run)</p>
+<script>
+function runtest() {
+var video = document.getElementsByTagName('video')[0];
+var passed = false;
+var gotEmptied = false;
+var hasrun = false;
+function end() {
+  if (hasrun)
+    return;
+  document.getElementsByTagName('p')[0].firstChild.data = passed ? 'PASS' : 'FAIL';
+  try{top.opener.rr(passed)}catch(e){}
+  hasrun = true;
+}
+if (video.networkState > 0) {
+  video.onemptied = function() { gotEmptied = true; };
+  video.onloadstart = function() {
+    passed = gotEmptied;
+    end();
+  }
+} else {
+  end(); // fail
+}
+video.load();
+if (gotEmptied) {
+  end(); // fail
+}
+}
+</script>
+<video src="/resources/media/misc/bbb_256kbps.ogg" onloadstart="this.onloadstart = null; runtest()">
+</video>

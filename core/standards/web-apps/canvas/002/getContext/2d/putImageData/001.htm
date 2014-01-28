@@ -1,0 +1,20 @@
+<!doctype html>
+<title>putImageData(): writing data to a scaled &lt;canvas></title>
+<style> canvas { width:400px; height:400px } </style>
+<p>FAIL: Script did not run.</p>
+<p><canvas width=200 height=200>FAIL: <code>canvas</code> not supported.</canvas></p>
+<script>
+  var c1 = document.getElementsByTagName("canvas")[0].getContext("2d"),
+      c2 = document.createElement("canvas").getContext("2d"),
+      d,
+      p = document.getElementsByTagName("p")[0]
+  c2.canvas.width = 200
+  c2.canvas.height = 200
+  c2.fillStyle = "lime"
+  c2.fillRect(0, 0, c2.canvas.width, c2.canvas.height)
+  d = c2.getImageData(0, 0, 200, 200)
+  c1.fillStyle = "red"
+  c1.fillRect(0, 0, c1.canvas.width, c1.canvas.height)
+  c1.putImageData(d, 0, 0)
+  p.textContent = "There should be a green square below:"
+</script>

@@ -1,0 +1,20 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>SVG &lt;video> inline in XHTML</title>
+</head>
+<body>
+[random content taking up space here]
+<div>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.2"
+     xmlns:xlink="http://www.w3.org/1999/xlink" 
+     width="420" height="340" viewBox="0 0 420 340">
+  <desc>SVG &lt;video></desc>
+  <rect x="50" y="50" width="320" height="240" style="stroke-width:2;stroke:black;fill:none"/>
+  <video xlink:href="/resources/media/xiph/theora_testsuite/320x240.ogg" width="320" height="240" x="50" y="50"/>
+  <text x="50" y="320">The video should appear above.</text>
+</svg>
+</div>
+</body>
+</html>

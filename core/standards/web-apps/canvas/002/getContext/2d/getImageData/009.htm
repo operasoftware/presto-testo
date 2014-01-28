@@ -1,0 +1,12 @@
+<!doctype html>
+<title>getImageData(): color order</title>
+<p>FAIL: Script did not run.</p>
+<p><canvas>FAIL: <code>canvas</code> not supported.</canvas></p>
+<script>
+  var c = document.getElementsByTagName("canvas")[0].getContext("2d"),
+      p = document.getElementsByTagName("p")[0]
+  c.fillStyle = "rgb(10, 20, 30)";
+  c.fillRect(0, 0, 2, 2)
+  var data = c.getImageData(1, 1, 1, 1).data
+  p.textContent = data[0] == 10 ? "PASS" : "FAIL (expected 10; got " + data[0] + ")"
+</script>

@@ -1,0 +1,13 @@
+<!doctype html>
+<title>getting HTMLMediaElement.bufferingRate</title>
+<p>FAIL (script didn't run)</p>
+<video></video><audio></audio>
+<script>
+var video = document.getElementsByTagName('video')[0];
+var audio = document.getElementsByTagName('audio')[0];
+var passed = false;
+if (typeof video.bufferingRate == 'undefined' && typeof audio.bufferingRate == 'undefined')
+  passed = true;
+document.getElementsByTagName('p')[0].firstChild.data = passed ? 'PASS' : 'FAIL';
+try{top.opener.rr(passed)}catch(e){}
+</script>

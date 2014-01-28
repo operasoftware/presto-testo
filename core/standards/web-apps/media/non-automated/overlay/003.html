@@ -1,0 +1,10 @@
+<!doctype html>
+<head><title>HTML &lt;video> with overflow:scroll</title></head>
+<body>
+<div style="width:400px; height:300px; overflow:scroll">
+<p>FAIL (you should not see this unless you scroll up)</p>
+<p style="margin-top:1000px">The video should appear in the black box below.</p>
+<video src="/resources/media/xiph/theora_testsuite/320x240.ogg" autoplay
+       style="border:1px solid black"></video>
+<script>document.querySelector('video').scrollIntoView()</script>
+</div>

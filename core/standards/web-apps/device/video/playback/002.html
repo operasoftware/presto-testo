@@ -1,0 +1,22 @@
+<!doctype html>
+  <title>playing a stream via a device-associable element with autoplay (video)</title>
+  <p>FAIL: script did not run.</p>
+  <video autoplay src=""></video>
+  <script type="text/javascript" src="../../runner.js"></script>
+  <script>
+	navigator.getUserMedia("video", function(stream) {
+      var videoEl = document.getElementsByTagName( 'video' )[0],
+          isplaying = false;
+      
+      videoEl.src = stream;
+      videoEl.addEventListener('playing', function() {
+				document.getElementsByTagName("p")[0].innerHTML = "PASS";
+				runnerResult(true);
+      }, false);
+
+      overrideCurrentRunner(function() {
+				document.getElementsByTagName("p")[0].innerHTML = "FAIL";
+				runnerResult(false);
+      }, 2000);
+  });
+  </script>

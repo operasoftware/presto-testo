@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <title>globalCompositeOperation set to a non-existent value</title>
+  <script>
+   window.onload = function() {
+    var ctx = document.getElementsByTagName("canvas")[0].getContext("2d"),
+        i = new Image();
+    i.onload = function() {
+     ctx.drawImage(i, 0, 0, 300, 150);
+     ctx.globalCompositeOperation = "xor";
+     ctx.globalCompositeOperation = "bogus";
+     ctx.fillStyle = "rgba(0,0,0,1)";
+     ctx.fillRect(0, 0, 300, 150);
+    }
+    i.src = "./support/text-yellow-pass-300x150.png";
+   }
+  </script>
+ </head>
+ <body>
+  <p>The word "PASS" should appear in <em>white</em> on a <em>black</em> background:</p>
+  <canvas width="300" height="150">FAIL: <code>canvas</code> not supported.</canvas>
+ </body>
+</html>

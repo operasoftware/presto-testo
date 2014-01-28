@@ -1,0 +1,20 @@
+<!doctype html>
+<title>empty poster attribute</title>
+<pre>FAIL (script didn't run)</pre>
+<script>
+var log = '';
+var gotError = false;
+var gotSuspend = false;
+onload = function() {
+  if (!gotError)
+    log += 'Got no error event\n';
+  if (gotSuspend)
+    log += 'Got unexpected suspend event\n';
+  var passed = log == '';
+  document.querySelector('pre').textContent = passed ? 'PASS' : 'FAIL\n' + log;
+  try {top.opener.rr(passed)}catch(e){}
+}
+</script>
+<video src=? poster onerror="gotError = true" onsuspend="gotSuspend = true"></video>
+
+

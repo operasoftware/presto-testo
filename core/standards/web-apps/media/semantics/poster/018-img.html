@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<title>image dimensions known on onload</title>
+<pre>FAIL (script didn't run)</pre>
+<p><img></p>
+<script>
+var img = document.querySelector('img');
+window.onload = function() {
+  var log = '';
+  function assertEqual(expr, expected) {
+    var val = eval(expr);
+    if (val != expected)
+      log += expr+' was '+val+', expected '+expected+'\n';
+  }
+
+  assertEqual('img.clientWidth', 102);
+  assertEqual('img.clientHeight', 39);
+
+  var passed = log == '';
+  document.querySelector('pre').textContent = passed ? 'PASS' : 'FAIL\n' + log;
+  try {top.opener.rr(passed)}catch(e){}
+}
+img.src="/resources/images/opera.png?nocache="+Math.random();
+</script>

@@ -1,0 +1,240 @@
+<!doctype html>
+<title>Performance of radial &lt;canvas> gradients</title>
+<p>Script not run.</p>
+<script>
+var bench = [];
+var NUM_REPETITIONS = 100;
+var progress = document.querySelector('p');
+var spartan_results = [];
+
+function Test(name, func)
+{
+  this.name = name;
+  this.run = func;
+  this.samples = [];
+}
+
+Test.prototype.computeResults = function()
+{
+    // Compute mean/deviation
+    var m = 0;
+    for (var i in this.samples)
+       m += this.samples[i];
+
+    m /= this.samples.length;
+
+    var s = 0;
+    for (var i in this.samples)
+    {
+       var d = this.samples[i] - m;
+       s += d * d;
+    }
+    s = Math.sqrt(s);
+
+    return { mean: m, dev: s };
+}
+
+function addTest(name, runfunc)
+{
+  bench.push(new Test(name, runfunc));
+}
+
+function getCanvas()
+{
+   var c = document.createElement('canvas');
+   c.width = 800;
+   c.height = 600;
+   return c.getContext('2d');
+}
+
+function runTest(test)
+{
+  var ctx = getCanvas();
+  var before = new Date();
+  test.run(ctx);
+  var after = new Date();
+  var elapsed = after - before;
+
+  test.samples.push(elapsed);
+
+}
+
+function runTests(iters)
+{
+  for (var k = 0; k < iters; ++k)
+    for (var i in bench)
+      runTest(bench[i]);
+
+  postResults();
+
+  progress.firstChild.data = 'Done.';
+}
+
+function log(msg)
+{
+  var p = document.createElement('p');
+  p.appendChild(document.createTextNode(msg));
+  document.getElementById('log').appendChild(p);
+}
+
+function postResults()
+{
+  for (var i in bench)
+  {
+    var test = bench[i];
+
+    var res = test.computeResults();
+
+    var output = test.name + ": ";
+    output += res.mean.toFixed(1) + "ms";
+    output += " (+/-" + (res.dev * 100 / res.mean).toFixed(3) + "%)";
+    output += " [" + test.samples.length + "]";
+    spartan_results.push(res.mean);
+
+    log(output);
+  }
+  try{top.opener.rr.apply(top.opener, spartan_results);}catch(e){};
+}
+
+function fillLargeClear(ctx, cw, ch)
+{
+   for (var i = 0; i < NUM_REPETITIONS; ++i)
+   {
+     ctx.clearRect(0, 0, cw, ch);
+     ctx.fillRect(0, 0, cw, ch);
+   }
+}
+
+function fillLargeNoClear(ctx, cw, ch)
+{
+   for (var i = 0; i < NUM_REPETITIONS; ++i)
+     ctx.fillRect(0, 0, cw, ch);
+}
+
+function fillGridClear(ctx, cw, ch)
+{
+   for (var i = 0; i < NUM_REPETITIONS; ++i)
+   {
+      ctx.clearRect(0, 0, cw, ch);
+      ctx.save();
+
+      for (var y = 0; y < 30; ++y)
+      {
+         ctx.save();
+
+         for (var x = 0; x < 40; ++x)
+         {
+            ctx.beginPath();
+            ctx.rect(0, 0, 20, 20);
+            ctx.fill();
+            ctx.translate(20, 0);
+         }
+
+         ctx.restore();
+         ctx.translate(0, 20);
+      }
+
+      ctx.restore();
+   }
+}
+
+function setupRadial(ctx, x0, y0, r0, x1, y1, r1)
+{
+   var rad = ctx.createRadialGradient(x0, y0, r0, x1, y1, r1);
+   rad.addColorStop(0, "lime");
+   rad.addColorStop(0.5, "red");
+   rad.addColorStop(1, "yellow");
+
+   ctx.fillStyle = rad;
+}
+
+progress.firstChild.data = 'Running...';
+
+window.onload = function()
+{
+  addTest("Large area gradient - focus (clear)", function(ctx)
+  {
+   var cw = ctx.canvas.width;
+   var ch = ctx.canvas.height;
+
+   setupRadial(ctx, cw / 2, ch / 6, 0, cw / 2, ch / 2, ch / 2);
+   fillLargeClear(ctx, cw, ch);
+  });
+
+  addTest("Large area gradient - focus (no clear)", function(ctx)
+  {
+   var cw = ctx.canvas.width;
+   var ch = ctx.canvas.height;
+
+   setupRadial(ctx, cw / 2, ch / 6, 0, cw / 2, ch / 2, ch / 2);
+   fillLargeNoClear(ctx, cw, ch);
+  });
+
+  addTest("Large area gradient - circular", function(ctx)
+  {
+   var cw = ctx.canvas.width;
+   var ch = ctx.canvas.height;
+
+   setupRadial(ctx, cw / 2, ch / 2, 0, cw / 2, ch / 2, ch / 2);
+   fillLargeClear(ctx, cw, ch);
+  });
+
+  addTest("Large area gradient - dual radii", function(ctx)
+  {
+   var cw = ctx.canvas.width;
+   var ch = ctx.canvas.height;
+
+   setupRadial(ctx, cw / 2, ch / 2, ch / 4, cw / 2, ch / 2, ch / 2);
+   fillLargeClear(ctx, cw, ch);
+  });
+
+  addTest("Large area gradient - cone", function(ctx)
+  {
+   var cw = ctx.canvas.width;
+   var ch = ctx.canvas.height;
+
+   setupRadial(ctx, cw / 4, ch / 2, ch / 8, cw * 3 / 4, ch / 2, ch / 2);
+   fillLargeClear(ctx, cw, ch);
+  });
+
+  addTest("Many small area gradients - focus", function(ctx)
+  {
+   var cw = ctx.canvas.width;
+   var ch = ctx.canvas.height;
+
+   setupRadial(ctx, 5, 5, 0, 10, 10, 10);
+   fillGridClear(ctx, cw, ch);
+  });
+
+  addTest("Many small area gradients - circular", function(ctx)
+  {
+   var cw = ctx.canvas.width;
+   var ch = ctx.canvas.height;
+
+   setupRadial(ctx, 10, 10, 0, 10, 10, 10);
+   fillGridClear(ctx, cw, ch);
+  });
+
+  addTest("Many small area gradients - dual radii", function(ctx)
+  {
+   var cw = ctx.canvas.width;
+   var ch = ctx.canvas.height;
+
+   setupRadial(ctx, 10, 10, 5, 10, 10, 10);
+   fillGridClear(ctx, cw, ch);
+  });
+
+  addTest("Many small area gradients - cone", function(ctx)
+  {
+   var cw = ctx.canvas.width;
+   var ch = ctx.canvas.height;
+
+   setupRadial(ctx, 10, 5, 2.5, 10, 20, 5);
+   fillGridClear(ctx, cw, ch);
+  });
+
+  runTests(1);
+}
+</script>
+<div id=log>
+</div>

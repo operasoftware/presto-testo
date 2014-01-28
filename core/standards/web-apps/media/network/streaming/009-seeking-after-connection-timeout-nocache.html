@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>HTML5 Video: http with no-cache headers - seeking after connection timeout</title>
+    <link rel="stylesheet" type="text/css" href="video.css" />
+    <script type="application/ecmascript" src="http://t/resources/spartanHandler.js"></script>
+    <script type="application/ecmascript" src="http://t/resources/testharness.js"></script>
+    <script type="application/ecmascript" src="video.js"></script>
+    <script type="application/ecmascript">
+        function init()
+        {
+            var testlist =
+            {
+                0:  [
+                        {
+                            event:  "loadstart",
+                            func:   function() { this.test.setName('seeking after connection timeout'); }
+                        },
+                        {
+                            event:  "error",
+                            perm:   true,
+                            func:   function()
+                            {
+                                this.test.result(false, "Error occured in step "+this.test.state+" ("+codes.get('error', this.error.code)+")");
+                                this.test.finish();
+                            }
+                        },
+                        {
+                            event:  "suspend",
+                            func:   function()
+                            {
+                                logger("current buffered range: "+timeRange2String(this.buffered));
+                                this.test.setData('lastBuf', this.buffered);
+                                this.test.updateListeners();
+                                var iframe = document.createElement('iframe');
+                                    iframe.style.visibility = "hidden";
+                                document.body.appendChild(iframe);
+                                iframe.addEventListener(
+                                                        'load',
+                                                        function()
+                                                        {
+                                                            var video = document.querySelector('video');
+                                                            
+                                                            if (video.seekable.length > 0)  { var seekto = video.seekable.end(0) / 2; } // this is preferable
+                                                            else                            { var seekto = video.buffered.end(0) * 2; } // this is a fallback
+                                                            
+                                                            video.test.setData('seekto', seekto);
+                                                            logger("seeking to: "+seekto.toFixed(2));
+                                                            video.currentTime = seekto;
+                                                        },
+                                                        false
+                                                    );
+                                
+                                logger("force timeout...");
+                                iframe.src = "video.php?forcetimeout="+this.test.getData('ID');
+                            }
+                        }
+                    ],
+                1:  [
+                        {
+                            event:  "seeked",
+                            func:   function()
+                            {
+                                logger("seeked to: "+this.currentTime.toFixed(2)+((this.currentTime.toFixed(2) != this.test.getData('seekto').toFixed(2))?" (expected: "+this.test.getData('seekto').toFixed(2)+")":""));
+                                
+                                var lastBuf = this.test.getData('lastBuf')
+                                
+                                if ((this.buffered.start(0) < lastBuf.start(0)) && (this.buffered.end(0) < lastBuf.end(0))) { this.test.result(false, "new buffered range ("+timeRange2String(this.buffered)+") is the same as or contained within the old one ("+timeRange2String(lastBuf)+")"); }
+                                else                                                                                        { this.test.result(true); }
+                                
+                                this.test.finish();
+                            }
+                        }
+                    ]
+            }
+            
+            try
+            {
+                var video       = document.querySelector('video');
+                    video.test  = new VideoTest(video, 'HTML5 Video: http with no-cache headers');
+                    video.test.setData('ID', Math.random());
+                    video.test.init('video.php?contenttype=video/webm&nocache=1&timeout=3&rate=0.5&id='+video.test.getData('ID'), testlist, 30000);
+            } catch (e) { alert("init error: "+e); }
+        }
+        
+        window.addEventListener('load', init, false);
+    </script>
+</head>
+
+<body>
+    <video controls="controls"></video>
+    <pre id="log"></pre>
+</body>
+</html>

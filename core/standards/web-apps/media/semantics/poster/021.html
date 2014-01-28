@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<title>poster reappears after load()</title>
+<pre>FAIL (script didn't run)</pre>
+<p><video src="/resources/media/xiph/theora_testsuite/320x240.ogg";
+      poster="/resources/images/opera.png"
+      style="outline:1px dotted gray">FAIL</video></p>
+<script>
+var log = '';
+
+function assertEqual(expr, expected) {
+  var val = eval(expr);
+  if (val != expected)
+    log += expr+' was '+val+', expected '+expected+'\n';
+}
+
+var v = document.querySelector('video');
+
+window.onload = function() {
+  assertEqual('v.clientWidth', 102);
+  assertEqual('v.clientHeight', 39);
+
+  v.onseeked = function() {
+    assertEqual('v.clientWidth', 320);
+    assertEqual('v.clientHeight', 240);
+
+    v.onloadedmetadata = function () {
+      assertEqual('v.clientWidth', 102);
+      assertEqual('v.clientHeight', 39);
+
+      var passed = log == '';
+      document.querySelector('pre').textContent = passed ? 'PASS' : 'FAIL\n' + log;
+      try {top.opener.rr(passed)}catch(e){}
+    }
+    v.load();
+  }
+  v.currentTime = 0;
+}
+</script>

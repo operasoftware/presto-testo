@@ -1,0 +1,25 @@
+<!doctype html>
+<title>Resizable audio controls</title>
+<p>Resize the audio element using the below 6 buttons.
+<p>(There's no pass condition.)
+<p>
+<button onclick="setWidth(-1)">width-1px</button>
+<button onclick="setWidth(1)">width+1px</button>
+<button onclick="setWidth(-10)">width-10px</button>
+<button onclick="setWidth(10)">width+10px</button>
+<p>
+<button onclick="setHeight(-1)">height-1px</button>
+<button onclick="setHeight(1)">height+1px</button>
+<button onclick="setHeight(-10)">height-10px</button>
+<button onclick="setHeight(10)">height+10px</button>
+<p><audio src="/resources/media/xiph/vorbis_listen/41_30secOgg-q0.ogg"
+      style="display:block" controls></audio>
+<script>
+var a = document.querySelector('audio');
+function setWidth(delta) {
+  a.style.width = (a.clientWidth+delta)+'px';
+}
+function setHeight(delta) {
+  a.style.height = (a.clientHeight+delta)+'px';
+}
+</script>

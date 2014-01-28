@@ -1,0 +1,14 @@
+<!doctype html>
+<title>getImageData(): height of zero</title>
+<p>FAIL: Script did not run.</p>
+<p><canvas>FAIL: <code>canvas</code> not supported.</canvas></p>
+<script>
+  var c = document.getElementsByTagName("canvas")[0].getContext("2d"),
+      p = document.getElementsByTagName("p")[0]
+  try {
+    c.getImageData(0, 0, 1, 0)
+    p.textContent = "FAIL"
+  } catch (e) {
+    p.textContent = e.code == DOMException.INDEX_SIZE_ERR ? "PASS" : "FAIL"
+  }
+</script>

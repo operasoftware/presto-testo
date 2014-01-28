@@ -1,0 +1,27 @@
+<!doctype html>
+<title>appending a source</title>
+<p>FAIL (script didn't run)</p>
+<video></video>
+<script>
+// a source element is inserted into a media element that is already in a
+// document and whose networkState is in the NETWORK_EMPTY state
+var video = document.getElementsByTagName('video')[0];
+var source = document.createElement('source');
+source.src = '/resources/media/misc/bbb_256kbps.ogg';
+video.appendChild(source);
+var passed = false;
+video.addEventListener('loadstart', loadstarted, false);
+function loadstarted() {
+  passed = true;
+  end();
+}
+setTimeout(end, 100);
+var hasrun = false;
+function end() {
+  if (hasrun)
+    return;
+  document.getElementsByTagName('p')[0].firstChild.data = passed ? 'PASS' : 'FAIL';
+  try{top.opener.rr(passed)}catch(e){}
+  hasrun = true;
+}
+</script>

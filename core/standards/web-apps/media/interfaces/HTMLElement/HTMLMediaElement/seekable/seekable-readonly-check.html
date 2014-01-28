@@ -1,0 +1,25 @@
+<!doctype html>
+<title>HTMLMediaElement.seekable should be readonly</title>
+<p>FAIL (script didn't run)</p>
+<audio></audio><video></video>
+<script>
+var passed = false;
+var a = document.getElementsByTagName('audio')[0];
+var v = document.getElementsByTagName('video')[0];
+try {
+    a.seekable = null;
+    passed = a.seekable instanceof TimeRanges;
+}
+catch (e) {}
+if (passed) {
+    try {
+    v.seekable = null;
+    passed = a.seekable instanceof TimeRanges;
+    }
+    catch (e) {
+    passed = false;
+    }
+}
+document.getElementsByTagName('p')[0].firstChild.data = passed ? 'PASS' : 'FAIL';
+try{top.opener.rr(passed)}catch(e){}
+</script>

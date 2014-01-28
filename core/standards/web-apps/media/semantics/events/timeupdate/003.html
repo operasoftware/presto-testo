@@ -1,0 +1,67 @@
+<!doctype html>
+<title>timeupdate handler taking long</title>
+<pre>FAIL (script didn't run)</pre>
+<script>
+ var p = document.querySelector('pre');
+ p.textContent = 'Running...';
+ var v = document.createElement('video');
+ v.src = '/resources/media/xiph/theora_testsuite/320x240.ogg';
+ v.controls = true;
+ v.autoplay = true;
+
+ var log = [];
+ function assertEquals(a, b) {
+   var evaledA = eval(a);
+   if (evaledA !== b)
+     log.push(a+' was '+evaledA+', expected '+b);
+ }
+function assertGreaterThan(a, b) {
+  try {
+    var evaledA = eval(a);
+    if (!(evaledA >= b))
+      log.push(a+' was '+evaledA+', expected something greater than '+b);
+  } catch(e) {
+    log.push('Got unexpected exception for '+a+': '+e.message);
+  }
+}
+
+ var timeupdates = []
+ v.addEventListener('timeupdate', function(e) {
+   var entrydate = new Date();
+   timeupdates.push(new Date());
+   if (timeupdates.length == 1) {
+     while (new Date() - entrydate < 1500) {
+       // sleep 1.5 seconds
+     }
+   }
+   if (timeupdates.length == 7) {
+     assertGreaterThan('timeupdates[6] - timeupdates[1]', 90);
+     assertGreaterThan('timeupdates[2] - timeupdates[1]', 15);
+     assertGreaterThan('timeupdates[3] - timeupdates[2]', 15);
+     assertGreaterThan('timeupdates[4] - timeupdates[3]', 15);
+     assertGreaterThan('timeupdates[5] - timeupdates[4]', 15);
+     assertGreaterThan('timeupdates[6] - timeupdates[5]', 15);
+     v.pause();
+     end();
+   }
+ }, false);
+ document.body.appendChild(v);
+ 
+ function end() {
+   if(arguments.callee.done)return;
+   arguments.callee.done=true;
+   clearTimeout(timeout);
+   var passed = log.length == 0;
+   p.textContent = passed ? 'PASS' : 'FAIL\n' + log.join('\n');
+   try{top.opener.rr(passed)}catch(e){}
+ }
+var timeout=setTimeout(function(){
+  log.push('timed out');
+  end();
+}, 4000);
+ if (window.HTMLVideoElement == undefined) {
+   log.push('video not supported');
+   end();
+ }
+</script>
+

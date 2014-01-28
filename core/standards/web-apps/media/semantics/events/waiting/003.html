@@ -1,0 +1,50 @@
+<!doctype html>
+<title>waiting event for play() when readyState is HAVE_FUTURE_DATA</title>
+<pre>FAIL (script didn't run)</pre>
+<script>
+ var p = document.querySelector('pre');
+ p.textContent = 'Running...';
+ var v = document.createElement('video');
+ v.src = '/resources/media/xiph/theora_testsuite/320x240.ogg';
+ v.controls = true;
+ v.autobuffer = true;
+ v.preload = 'auto';
+
+ var log = [];
+ function assertEquals(a, b) {
+   var evaledA = eval(a);
+   if (evaledA !== b)
+     log.push(a+' was '+evaledA+', expected '+b);
+ }
+
+ var gotWaiting = false;
+ v.addEventListener('canplay', function(e) {
+   v.play();
+   setTimeout(function() {
+     assertEquals('gotWaiting', false);
+     end();
+   }, 50)
+ }, false);
+ v.addEventListener('waiting', function(e) {
+   gotWaiting = true;
+ }, false);
+ document.body.appendChild(v);
+ 
+ function end() {
+   if(arguments.callee.done)return;
+   arguments.callee.done=true;
+   clearTimeout(timeout);
+   var passed = log.length == 0;
+   p.textContent = passed ? 'PASS' : 'FAIL\n' + log.join('\n');
+   try{top.opener.rr(passed)}catch(e){}
+ }
+var timeout=setTimeout(function(){
+  log.push('timed out');
+  end();
+},3000)
+ if (window.HTMLVideoElement == undefined) {
+   log.push('video not supported');
+   end();
+ }
+</script>
+

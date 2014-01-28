@@ -1,0 +1,109 @@
+<!doctype html>
+<title>buffered IDL attribute on loadeddata and seeked - webm</title>
+<pre>FAIL (script didn't run)</pre>
+<script>
+ var p = document.querySelector('pre');
+ p.textContent = 'Running...';
+ var v = document.createElement('video');
+ v.src = '../../network/range-request-log/range-request.php?fileloc=../../../../../../resources/media/webm/sunflower.webm&contenttype=video/webm&rate=40000&nocache=' + Math.random();
+ v.autoplay = true;
+ v.controls = true;
+
+ function log(s) {
+   if (p.textContent == 'Running...')
+     p.textContent = 'FAIL';
+   p.textContent += '\n' + s;
+   end();
+ }
+ function assertEquals(a, b) {
+   try {
+     var evaledA = eval(a);
+     if (evaledA !== b)
+       log(a+' was '+evaledA+', expected '+b);
+   } catch(e) {
+     log('Got unexpected exception for ' + a + ': ' + e.message);
+   }
+ }
+ function assertApproximate(a, b, tolerance) {
+   try {
+     var evaledA = eval(a);
+     if (Math.abs(evaledA-b) > tolerance)
+       log(a+' was '+evaledA+', expected '+b+'\u00B1'+tolerance);
+   } catch(e) {
+     log('Got unexpected exception for ' + a + ': ' + e.message);
+   }
+ }
+ function assertGreaterThan(a, b) {
+   try {
+     var evaledA = eval(a);
+     if (!(evaledA >= b))
+       log(a+' was '+evaledA+', expected something greater than '+b);
+   } catch(e) {
+     log.push('Got unexpected exception for '+a+': '+e.message);
+   }
+ }
+ function assertLessThan(a, b) {
+   try {
+     var evaledA = eval(a);
+     if (!(evaledA <= b))
+       log.push(a+' was '+evaledA+', expected something less than '+b);
+   } catch(e) {
+     log.push('Got unexpected exception for '+a+': '+e.message);
+   }
+ }
+ function checkTimeRanges(a, b) {
+   assertEquals(a+'.length', b.length);
+   for (var i = 0; i < b.length; ++i) {
+     assertApproximate(a+'.start('+i+')', b[i][0], b[i][1]);
+     if (b[i][3] == '>')
+       assertGreaterThan(a+'.end('+i+')', b[i][2]);
+     else if (b[i][3] == '<')
+       assertLessThan(a+'.end('+i+')', b[i][2]);
+     else
+       assertApproximate(a+'.end('+i+')', b[i][2], b[i][3]);
+   }
+ }
+
+ checkTimeRanges('/* test 1 */ v.buffered', []);
+ v.addEventListener('loadeddata', function(e) {
+     checkTimeRanges('/* test 2 */ v.buffered', [[0, 0, 1, 4]]);
+   v.currentTime = 18;
+ }, false);
+
+ var seekedCount = 0;
+ v.addEventListener('seeked', function(e) {
+   seekedCount++;
+   switch (seekedCount) {
+     case 1:
+       checkTimeRanges('/* test 3 */ v.buffered', [[0, 0, 1, 4], [18, 4, 19, 4]]);
+       v.currentTime = v.buffered.end(0);
+       break;
+     case 2:
+       checkTimeRanges('/* test 4 */ v.buffered', [[0, 0, 2, 4], [18, 4, 19, 4]]);
+       v.currentTime = 10;
+       break;
+     case 3:
+       checkTimeRanges('/* test 5 */ v.buffered', [[0, 0, 2, 4], [10, 4, 11, 4], [18, 4, 19, 4]]);
+       setTimeout(function() {
+           checkTimeRanges('/* test 6 */ v.buffered', [[0, 0, 2, 4], [10, 4, 11, '>']]);
+         end();
+       }, 5000);
+   }
+ }, false);
+ document.body.appendChild(v);
+
+ var timeout = setTimeout(function() {
+   log('timed out');
+ }, 30000);
+
+ function end() {
+   if (arguments.callee.done)
+     return;
+   arguments.callee.done = true;
+   clearTimeout(timeout);
+   var passed = p.textContent == 'Running...';
+   if (passed)
+     p.textContent = 'PASS';
+   try{top.opener.rr(passed)}catch(e){}
+ }
+</script>

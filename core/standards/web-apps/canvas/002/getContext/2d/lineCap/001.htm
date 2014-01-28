@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <title>lineCap simple test</title>
+  <style> canvas { border:solid } </style>
+  <script>
+   window.onload = function(){
+    with(document.getElementsByTagName('canvas')[0].getContext('2d')){
+     strokeStyle = 'lime';
+     moveTo(20,20);
+     lineTo(80,20);
+     lineWidth = 10;
+     lineCap = "square";
+     stroke();
+     moveTo(20,40)
+     lineTo(80,40)
+     lineCap = "round";
+     stroke();
+     moveTo(20,60);
+     lineTo(80,60);
+     lineCap = "butt";
+     stroke();
+    }
+   }
+  </script>
+ </head>
+ <body>
+  <p>You should see three different green horizontal lines below:</p>
+  <p><canvas height="80" width="100">FAIL</canvas></p>
+ </body>
+</html>

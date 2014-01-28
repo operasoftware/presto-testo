@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <title>Audio() without argument</title>
+  <script>
+   window.onload = function(){
+    try{
+     var x = new Audio(); // argument is optional
+    }catch(e){
+     document.body.innerHTML += ' FAIL (got exception ' + e + ')';
+    }
+   }
+  </script>
+ </head>
+ <body>
+  <p>You should hear nothing.</p>
+ </body>
+</html>

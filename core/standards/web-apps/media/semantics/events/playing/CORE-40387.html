@@ -1,0 +1,27 @@
+<!doctype html>
+<title>CORE-40387 : 'playing' should be fired when play() is called</title>
+<script src="/resources/testharness.js"></script>
+<script src="/resources/testharnessreport.js"></script>
+<script src="../../../support/common.js"></script>
+<p id="log">FAIL (script didn't run)</p>
+<audio controls></audio>
+<video controls></video>
+<script>
+var tests = init_tests("HTMLAudioElement: 'playing' should be fired when play() is called", "HTMLVideoElement: 'playing' should be fired when play() is called", {timeout:10000});
+tests.forEach(function(vars) {
+    var t = vars[0];
+    t.step(function() {
+    var tag_name = vars[1];
+    var node = document.getElementsByTagName(tag_name)[0];
+    node.addEventListener('playing', endTest, false);
+    node.src = '/core/standards/web-apps/media/network/range-request-log/range-request.php?rate=100000&fileloc=../../support/preload.ogv&nocache=' + Math.random();
+    node.play();
+
+    function endTest() {
+        t.step(function() {
+        t.done();
+        });
+    }
+    });
+});
+</script>

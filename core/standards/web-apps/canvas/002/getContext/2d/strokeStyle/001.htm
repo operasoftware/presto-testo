@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <title>strokeStyle with rgb() color value</title>
+  <script>
+   window.onload = function(){
+    with(document.getElementsByTagName('canvas')[0].getContext('2d')){
+     lineWidth = 10;
+     strokeStyle = 'rgb(0,255,0)';
+     strokeRect(0,0,300,150);
+    }
+   }
+  </script>
+ </head>
+ <body>
+  <p>There should be a green bordered rectangle below:</p>
+  <p><canvas>FAIL: <code>html:canvas</code> not enabled.</canvas></p>
+ </body>
+</html>

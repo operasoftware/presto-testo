@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <title>drawImage with a negative width</title>
+  <style> canvas { display:none } </style>
+  <script>
+   var i = new Image();
+   i.src = "support/square-50x50.png";
+   window.onload = function(){
+    var r = document.getElementById('r');
+    var ctx = document.getElementsByTagName('canvas')[0].getContext('2d');
+    r.firstChild.data = "FAIL (no exception thrown)";
+    try{
+     ctx.drawImage(i, 0, 0, -150, 150);
+    }catch(e){
+     r.firstChild.data = e.code === 1 ? "PASS" : "FAIL (wrong exception thrown)";
+    }
+   }
+  </script>
+ </head>
+ <body>
+  <p id="r">FAIL (Script did not run.)</p>
+  <p><canvas></canvas></p>
+ </body>
+</html>

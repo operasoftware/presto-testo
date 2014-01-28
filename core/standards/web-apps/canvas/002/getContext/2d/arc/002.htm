@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <title>simple clockwise arc() test</title>
+  <style>
+   canvas, object { margin:1em }
+  </style>
+  <script>
+   window.onload = function(){
+    with(document.getElementsByTagName('canvas')[0].getContext('2d')){
+     fillStyle = 'lime';
+     translate(50,0);
+     arc(0,0,50,0,Math.PI,false);
+     fill();
+    }
+   }
+  </script>
+ </head>
+ <body>
+  <p>There should be a downward pointing green half-circle below:</p>
+  <canvas></canvas>
+ </body>
+</html>

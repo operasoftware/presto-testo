@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <title>play twice</title>
+  <script>
+   window.onload = function(){
+    var x = new Audio("support/missile.wav");
+    x.play();
+    x.loop = true;
+    x.onseeked = function() { x.loop = false }
+   }
+  </script>
+ </head>
+ <body>
+  <p>You should hear a missile sound <em>twice</em>.</p>
+ </body>
+</html>

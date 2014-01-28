@@ -1,0 +1,17 @@
+<!doctype html>
+<title>getting HTMLVideoElement.width</title>
+<pre>FAIL (script didn't run)</pre>
+<video></video>
+<video poster=' ##☺ '></video>
+<a href=' ##☺ '></a>
+<script>
+var videos = document.getElementsByTagName('video');
+var log = '';
+if (videos[0].poster != '')
+  log += '<video> (got: ' + videos[0].poster + ', expected: )\n';
+if (videos[1].poster != document.links[0])
+  log += '<video poster=\' ##☺ \'> (got: ' + videos[1].poster + ', expected: ' + document.links[0] + ')\n';
+var passed = log == '';
+document.getElementsByTagName('pre')[0].firstChild.data = passed ? 'PASS' : 'FAIL\n' + log;
+try{top.opener.rr(passed)}catch(e){}
+</script>

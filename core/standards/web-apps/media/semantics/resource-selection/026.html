@@ -1,0 +1,19 @@
+<!doctype html>
+<title>invoking resource selection with implicit pause() by removing from document</title>
+<p>FAIL (script didn't run)</p>
+<video src></video><!-- invokes resource selection; networkState is 4 -->
+<script>
+var v = document.querySelector('video');
+v.removeAttribute('src'); // no side-effects
+var passed = true;
+passed &= v.networkState == 3;
+v.parentNode.removeChild(v); // implicit pause() which ... does nothing
+passed &= v.networkState == 3;
+onload = function() {
+  document.querySelector('p').textContent = passed ? 'PASS' : 'FAIL';
+  try{top.opener.rr(passed)}catch(e){}
+}
+</script>
+<script>
+passed &= v.networkState == 3;
+</script>

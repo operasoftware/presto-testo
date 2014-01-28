@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+  <head>
+    <title>loadeddata event</title>
+    <script>
+      var passed = false;
+      var ended = false;
+      function end() {
+        if (ended) return;
+        try{top.opener.rr(passed)}catch(e){}
+        ended = true;
+        document.querySelector('p').textContent = passed ? 'PASS' : 'FAIL';
+      }
+      function loaded() {
+        passed = true;
+        end();
+      }
+      setTimeout(end, 15000);
+    </script>
+  </head>
+  <body>
+    <p>FAIL (script didn't run)</p>
+    <audio onloadeddata="loaded(this);" src="http://t/resources/media/xiph/vorbis_listen/41_30secOgg-q0.ogg"></audio>
+  </body>
+</html>

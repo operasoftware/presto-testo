@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <title>fillStyle with a linear CanvasGradient</title>
+  <link rel="help" href="http://whatwg.org/specs/web-apps/current-work/#fillstyle" title="fillStyle">
+  <script>
+   window.onload = function(){
+    var ctx = document.getElementsByTagName('canvas')[0].getContext('2d'),
+        g = ctx.createLinearGradient(0, 0, 300, 300);
+    g.addColorStop(0, 'lime');
+    g.addColorStop(1, 'black');
+    ctx.fillStyle = g;
+    ctx.fillRect(0, 0, 300, 300);
+   }
+  </script>
+ </head>
+ <body>
+  <p>There should be a square below, green at the top left, black at the bottom right, smoothly going from one to the other:</p>
+  <p><canvas height="300">FAIL: <code>html:canvas</code> not enabled.</canvas></p>
+ </body>
+</html>

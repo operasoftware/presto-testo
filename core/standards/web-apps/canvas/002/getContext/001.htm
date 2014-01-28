@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <title>case-sensitive matching</title>
+  <style>
+   canvas, div { margin:1em }
+   div { width:300px; height:150px; background:lime }
+  </style>
+  <script>
+   window.onload = function(){
+    document.getElementById('result').firstChild.data = (document.getElementsByTagName('canvas')[0].getContext('2D')===null) ? "PASS" : "FAIL: getContext('2D') did not return null"
+   }
+  </script>
+ </head>
+ <body>
+  <p id="result">FAIL: Script did not run</p>
+  <canvas></canvas>
+ </body>
+</html>

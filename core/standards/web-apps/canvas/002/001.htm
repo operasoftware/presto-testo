@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <title>initial height and width</title>
+  <style>
+   canvas, div { margin:1em }
+   div { width:300px; height:150px; background:blue }
+  </style>
+  <script>
+   window.onload = function(){
+    with(document.getElementsByTagName('canvas')[0].getContext('2d')){
+     fillStyle = "blue";
+     fillRect(0,0,300,150);
+    }
+   }
+  </script>
+ </head>
+ <body>
+  <p>There should be two identical rectangles below:</p>
+  <canvas>FAIL: <code>html:canvas</code> not supported to support turned off.</canvas>
+  <div></div>
+ </body>
+</html>

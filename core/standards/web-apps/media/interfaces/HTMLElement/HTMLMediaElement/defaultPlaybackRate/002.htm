@@ -1,0 +1,18 @@
+<!doctype html>
+<title>setting HTMLMediaElement.defaultPlaybackRate</title>
+<p>FAIL (script didn't run)</p>
+<video></video><audio></audio>
+<script>
+var video = document.getElementsByTagName('video')[0];
+var audio = document.getElementsByTagName('audio')[0];
+var passed = false;
+try {
+  video.defaultPlaybackRate = 2;
+  audio.defaultPlaybackRate = 2;
+  if (video.defaultPlaybackRate == 2 && audio.defaultPlaybackRate == 2)
+    passed = true;
+} catch(e) {
+}
+document.getElementsByTagName('p')[0].firstChild.data = passed ? 'PASS' : 'FAIL';
+try{top.opener.rr(passed)}catch(e){}
+</script>

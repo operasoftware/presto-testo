@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<head>
+<title>2 &lt;video>s with different URLs, redirect to 1 URL</title>
+<script src="/resources/testharness.js"></script>
+<script src="/resources/testharnessreport.js"></script>
+</head>
+<body>
+<div id="log"></div>
+<video src="http://t/resources/media/webm/movie_5.webm"></video>
+<video src="http://t/resources/media/webm/movie_90.webm"></video>
+<script>
+var t = async_test("loadedmetadata event is fired on both videos", {timeout:5000});
+t.step(function() {
+  var v = document.querySelectorAll("video");
+  var events = 0;
+  v[0].onloadedmetadata = v[1].onloadedmetadata = function() {
+    if (++events == 2)
+      t.done();
+  };
+  v[0].src = v[1].src = "http://t/core/standards/web-apps/media/network/range-request-log/support/007-1.php?redirect=http://t/resources/media/webm/sunflower.webm";
+});
+</script>
+</body>
+</html>

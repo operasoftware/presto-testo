@@ -1,0 +1,11 @@
+<!doctype html>
+<title>special value '/'</title>
+<script src="/resources/jsframework.js"></script>
+<script>
+test(function() {
+  postMessage('', '/', []);
+  test(function(e) {
+    assertEquals(e.data, '');
+  }, window, 'message');
+});
+</script>
