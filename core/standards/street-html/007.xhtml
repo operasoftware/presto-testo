@@ -1,0 +1,23 @@
+<html xmlns='http://www.w3.org/1999/xhtml'>
+ <head>
+  <title>DOM mutations during parsing in XHTML</title>
+ </head>
+ <body>
+  <div>
+   <div>
+    <p>FAIL</p>
+    <script>
+     document.getElementsByTagName("div")[0].removeChild(document.getElementsByTagName("div")[1]);
+    </script>
+    <p>FAIL</p>
+   </div>
+   <p id="x">FAIL (script didn't run)</p>
+   <script>
+    var x = document.getElementById('x');
+    var passed = x.parentNode.nodeName == 'div';
+    x.firstChild.data = passed ? 'PASS' : 'FAIL';
+    try{top.opener.rr(passed)}catch(e){}
+   </script>
+  </div>
+ </body>
+</html>

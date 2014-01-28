@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+ <head>
+  <title>DOM mutations during parsing in HTML</title>
+ </head>
+ <body>
+  <div>
+   <div>
+    <p>FAIL</p>
+    <script>
+     document.getElementsByTagName("div")[0].removeChild(document.getElementsByTagName("div")[1]);
+    </script>
+    <p>FAIL</p>
+   </div>
+   <p id="x">FAIL (script didn't run)</p>
+   <script>
+    var x = document.getElementById('x');
+    var passed = x.parentNode.nodeName == 'DIV';
+    x.firstChild.data = passed ? 'PASS' : 'FAIL';
+    try{top.opener.rr(passed)}catch(e){}
+   </script>
+  </div>
+ </body>
+</html>
