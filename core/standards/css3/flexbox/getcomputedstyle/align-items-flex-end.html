@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<title>flexbox | computed style | align-items: flex-end</title>
+<style>
+body {
+	color: red;
+	align-items: flex-end;
+}
+.PASS {color: black;}
+</style>
+<h1>FAIL, enable javascript</h1>
+<script>
+    var body = document.body;
+
+    var passed =
+	    getComputedStyle(body).getPropertyValue("align-items") ==
+	    "flex-end";
+    body.textContent = body.className = passed ? "PASS" : "FAIL";
+    try{top.opener.rr(passed)}catch(e){}
+</script>

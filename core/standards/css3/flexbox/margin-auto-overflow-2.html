@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<title>flexbox | margin: auto in overflow</title>
+<style>
+div {
+	background: blue;
+	margin: 1em 0;
+	border: 1px solid black;
+	height: 8em;
+	width: 32em;
+	position: relative;
+
+	display: flex;
+}
+span {
+	background: white;
+	margin: 1em auto;
+	width: 12em;
+	display: inline-block;
+	flex: 0 0 auto;
+}
+span+span {
+	background: yellow;
+	width: 30em;
+}
+</style>
+
+<div>
+	<span>one</span>
+	<span>two</span>
+</div>

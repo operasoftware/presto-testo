@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<title>flexbox | computed style | flex-flow: column</title>
+<style>
+body {
+	color: red;
+	flex-flow: column;
+}
+.PASS {color: black;}
+</style>
+<h1>FAIL, enable javascript</h1>
+<script>
+    var body = document.body;
+
+    var passed =
+	    (getComputedStyle(body).getPropertyValue("flex-direction") ==
+	    "column" &&
+	    getComputedStyle(body).getPropertyValue("flex-wrap") ==
+	    "nowrap");
+    body.textContent = body.className = passed ? "PASS" : "FAIL";
+    try{top.opener.rr(passed)}catch(e){}
+</script>

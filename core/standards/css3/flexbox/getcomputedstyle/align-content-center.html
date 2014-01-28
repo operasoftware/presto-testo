@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<title>flexbox | computed style | align-content: center</title>
+<style>
+body {
+	color: red;
+	align-content: center;
+}
+.PASS {color: black;}
+</style>
+<h1>FAIL, enable javascript</h1>
+<script>
+    var body = document.body;
+
+    var passed =
+	    getComputedStyle(body).getPropertyValue("align-content") ==
+	    "center";
+    body.textContent = body.className = passed ? "PASS" : "FAIL";
+    try{top.opener.rr(passed)}catch(e){}
+</script>

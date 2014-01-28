@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<title>flexbox | cleared box</title>
+<style>
+#float {
+	background: #3366cc;
+	padding: 1em;
+	float: left;
+
+}
+#flex {
+	background: #ffcc00;
+	clear: both;
+	display: flex;
+}
+div div {
+	background: pink;
+	margin: 2em;
+	height: 4em;
+}
+</style>
+
+<div id="float">damer</div>
+
+<div id="flex">
+	<div>Yellow box should be below the blue box</div>
+</div>

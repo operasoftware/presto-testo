@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<title>flexbox | computed style | justify-content: flex-start</title>
+<style>
+body {
+	color: red;
+	justify-content: flex-start;
+}
+.PASS {color: black;}
+</style>
+<h1>FAIL, enable javascript</h1>
+<script>
+    var body = document.body;
+
+    var passed =
+	    getComputedStyle(body).getPropertyValue("justify-content") ==
+	    "flex-start";
+    body.textContent = body.className = passed ? "PASS" : "FAIL";
+    try{top.opener.rr(passed)}catch(e){}
+</script>

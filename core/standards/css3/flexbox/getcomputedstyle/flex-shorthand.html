@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<title>flexbox | computed style | flex: invalid</title>
+<style>
+body {
+	color: red;
+	flex: 666 666 666px;
+}
+.PASS {color: black;}
+</style>
+<h1>FAIL, enable javascript</h1>
+<script>
+    var body = document.body;
+
+    var passed =
+	    (getComputedStyle(body).getPropertyValue("flex-grow") ==
+	    "666" &&
+	    getComputedStyle(body).getPropertyValue("flex-shrink") ==
+	    "666" &&
+	    getComputedStyle(body).getPropertyValue("flex-basis") ==
+	    "666px");
+    body.textContent = body.className = passed ? "PASS" : "FAIL";
+    try{top.opener.rr(passed)}catch(e){}
+</script>

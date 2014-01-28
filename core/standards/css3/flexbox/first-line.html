@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<title>flexbox | first-line</title>
+<style>
+ul {
+	background: #3366cc;
+	padding: 0;
+	list-style: none;
+	width: 900px;
+
+	display: flex;
+	flex-wrap: wrap;
+}
+li {
+	background: #ffcc00;
+	margin: 2em;
+	border: 1px solid black;
+}
+ul:first-child::first-line {
+	justify-content: space-around;
+}
+</style>
+
+<ul>
+	<li>damer</li>
+	<li>Antidisestablishmentarianism</li>
+	<li>damer</li>
+	<li>Antidisestablishmentarianism</li>
+	<li>Antidisestablishmentarianism</li>
+	<li>damer</li>
+	<li>Antidisestablishmentarianism</li>
+	<li>damer</li>
+</ul>
