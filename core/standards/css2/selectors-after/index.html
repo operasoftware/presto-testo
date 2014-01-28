@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>css2.1 | selectors | ::after</title>
+<style type="text/css">
+div::after {
+	content: "FAIL";
+	background: red;
+	margin: 10px;
+	position: fixed;
+	left: -3000px;
+	top: -3000px;
+	display: block;
+}
+</style>
+</head>
+
+<body>
+
+<div>There should be no red and there should be no word FAIL anywhere</div>
+
+</body>
+</html>
+

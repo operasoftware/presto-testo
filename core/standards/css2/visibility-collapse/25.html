@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>visibility: collapse</title>
+<style type="text/css">
+table {
+	background: red;
+	border-spacing: 0; border-collapse: collapse;
+}
+table, table * {
+	font-family: ahem;
+	font-size: 1em;
+	font-weight: normal;
+	line-height: 1em;
+	padding: 0;
+	border: none;
+}
+p+table colgroup {
+	visibility: collapse;
+}
+p+table colgroup+colgroup {
+	visibility: visible;
+}
+p+table tr>*:first-child {
+	color: red;
+}
+</style>
+</head>
+
+<body>
+<p><em>Ahem font required by this test.</em></p>
+
+<table>
+<colgroup>
+	<col>
+</colgroup>
+<colgroup>
+	<col>
+</colgroup>
+<caption>xx</caption>
+<thead>
+	<tr>
+		<th>x</th>
+		<th>x</th>
+	</tr>
+</thead>
+<tfoot>
+	<tr>
+		<th>x</th>
+		<th>x</th>
+	</tr>
+</tfoot>
+<tbody>
+	<tr>
+		<td>x</td>
+		<td>x</td>
+	</tr>
+</tbody>
+<tbody>
+	<tr>
+		<td>x</td>
+		<td>x</td>
+	</tr>
+</tbody>
+</table>
+
+<h4>Patterns above and below this text should be identical, and there should be no red.</h4>
+
+<table>
+<colgroup>
+	<col>
+</colgroup>
+<colgroup>
+	<col>
+</colgroup>
+<caption>xx</caption>
+<thead>
+	<tr>
+		<th>x</th>
+	</tr>
+</thead>
+<tfoot>
+	<tr>
+		<th>x</th>
+	</tr>
+</tfoot>
+<tbody>
+	<tr>
+		<td>x</td>
+	</tr>
+</tbody>
+<tbody>
+	<tr>
+		<td>x</td>
+	</tr>
+</tbody>
+</table>
+
+</body>
+</html>

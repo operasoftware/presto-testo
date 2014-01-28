@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>visibility: collapse</title>
+<style type="text/css">
+table {
+	background: red;
+	border-spacing: 0;
+}
+p~*, p~* * {
+	font-family: ahem;
+	font-size: 1em;
+	font-weight: normal;
+	line-height: 1em;
+	padding: 0;
+	border: none;
+}
+#damer {
+	visibility: collapse;
+}
+tr>*+* {
+	color: red;
+}
+</style>
+</head>
+
+<body>
+<p><em>Ahem font required by this test.</em> You should see a black rectangle and there should be no red.</p>
+
+<table>
+<colgroup>
+	<col>
+</colgroup>
+<colgroup id="damer">
+	<col>
+</colgroup>
+<thead>
+	<tr>
+		<th colspan="2">xx</th>
+	</tr>
+</thead>
+<tfoot>
+	<tr>
+		<th>x</th>
+		<th>x</th>
+	</tr>
+</tfoot>
+<tbody>
+	<tr>
+		<td>x</td>
+		<td>x</td>
+	</tr>
+</tbody>
+<tbody>
+	<tr>
+		<td>x</td>
+		<td>x</td>
+	</tr>
+</tbody>
+</table>
+
+</body>
+</html>

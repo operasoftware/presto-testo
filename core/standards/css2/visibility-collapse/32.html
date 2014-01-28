@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>visibility: collapse</title>
+<style type="text/css">
+table {
+	background: red;
+	border-spacing: 0; border-collapse: collapse;
+}
+p~*, p~* * {
+	font-family: ahem;
+	font-size: 1em;
+	font-weight: normal;
+	line-height: 1em;
+	padding: 0;
+	border: none;
+}
+tbody+tbody {
+	visibility: collapse;
+}
+[rowspan]+* {
+	color: lime;
+}
+</style>
+</head>
+
+<body>
+<p><em>Ahem font required by this test.</em> You should see a green square inside a black square and no red.</p>
+
+<table>
+<colgroup>
+	<col>
+	<col>
+</colgroup>
+<thead>
+	<tr>
+		<th>x</th>
+		<th>x</th>
+		<th>x</th>
+	</tr>
+</thead>
+<tfoot>
+	<tr>
+		<th>x</th>
+		<th>x</th>
+		<th>x</th>
+	</tr>
+</tfoot>
+<tbody>
+	<tr>
+		<td rowspan="2">x</td>
+		<th>x</th>
+		<th>x</th>
+	</tr>
+</tbody>
+<tbody>
+	<tr>
+		<td>x</td>
+		<td>x</td>
+	</tr>
+</tbody>
+</table>
+
+</body>
+</html>

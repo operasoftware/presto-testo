@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>0 and table-layout</title>
+<style>
+table {
+	background: red;
+	table-layout: fixed;
+	border-spacing: 0;
+	width: 120px;
+}
+td {
+	padding: 0;
+	height: 40px;
+}
+#one, #three {
+	background: #3366CC;
+	width: 40px;
+}
+#two {
+	background: lime;
+}
+</style>
+</head>
+
+<body>
+<p>There should be three adjacent squares on one line. The middle square
+should be green. There should be no red..</p>
+
+<table>
+	<tr>
+		<td id="one"></td>
+		<td id="two" width="0%"></td>
+		<td id="three"></td>
+	</tr>
+</table>
+
+</body>
+</html>

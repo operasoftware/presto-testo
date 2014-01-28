@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>CSS 2.1 | position</title>
+<style type="text/css">
+p {
+	line-height: 26px;	
+	border-top: 1px solid blue;
+	width: 100px;
+	height: 38px;
+	position: relative;
+}
+p::after {
+	content:
+	url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACYAAAAmCAYAAACoPemuAAAACXBIWXMAAAsSAAALEgHS3X78AAAAFnRFWHRDcmVhdGlvbiBUaW1lADAyLzI0LzA1DIrG8QAAACV0RVh0U29mdHdhcmUATWFjcm9tZWRpYSBGaXJld29ya3MgTVggMjAwNId2rM8AAABESURBVFiF7c4xAcAgEACxL8pxThUw3NQOiYI8M%2FvMD62vAzdilVglVolVYpVYJVaJVWKVWCVWiVVilVglVolVYpVY9QJsswHLnbZTRwAAAABJRU5ErkJggg%3D%3D);
+	position: absolute;
+	bottom: 0;
+	left: 0;
+}
+p+p::after {
+	height: 38px;
+	width: 38px;
+}
+</style>
+</head>
+
+<body>
+<h4>You should see two identical patterns below</h4>
+
+<p></p>
+<p></p>
+
+</body>
+</html>
+

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>0 and table-layout</title>
+<style>
+table {
+	background: red;
+	table-layout: fixed;
+	border-spacing: 0;
+	width: 120px;
+}
+td {
+	padding: 0;
+	height: 40px;
+}
+#one, #three {
+	background: white;
+	width: 20px;
+}
+#two {
+	background: blue;
+	width: 10px;
+}
+#four, #six {
+	background: white;
+	width: 40px;
+}
+#five {
+	background: #FFCC00;
+	width: 20px;
+}
+</style>
+</head>
+
+<body>
+<p>There should be no red. There should a uniform rectangle below, with
+its top half colored blue, and its bottom half colored yellow.</p>
+
+<table>
+	<tr>
+		<td id="one"></td>
+		<td id="two"></td>
+		<td id="three"></td>
+	</tr>
+</table>
+
+<table>
+	<tr>
+		<td id="four"></td>
+		<td id="five"></td>
+		<td id="six"></td>
+	</tr>
+</table>
+
+</body>
+</html>

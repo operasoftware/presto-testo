@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>visibility: collapse</title>
+<style type="text/css">
+table {
+	border-spacing: 0;
+}
+table, table * {
+	font-family: ahem;
+	font-size: 1em;
+	font-weight: normal;
+	line-height: 1em;
+	padding: 0;
+	border: none;
+}
+#damer {
+	visibility: collapse;
+}
+</style>
+</head>
+
+<body>
+<p><em>Ahem font required by this test.</em></p>
+
+<table>
+<colgroup>
+	<col>
+	<col>
+	<col id="damer">
+</colgroup>
+<thead>
+	<tr>
+		<th>x</th>
+		<th>x</th>
+		<th>x</th>
+	</tr>
+</thead>
+<tfoot>
+	<tr>
+		<th>x</th>
+		<th>x</th>
+		<th>x</th>
+	</tr>
+</tfoot>
+<tbody>
+	<tr>
+		<td rowspan="3">x</td>
+		<td>x</td>
+		<td>x</td>
+	</tr>
+	<tr>
+		<td>x</td>
+		<td>x</td>
+	</tr>
+	<tr>
+		<td colspan="2">xx</td>
+	</tr>
+</tbody>
+</table>
+
+<h4>Patterns above and below this text should be identical, and there should be no red.</h4>
+
+<table>
+<colgroup>
+	<col>
+	<col>
+	<col>
+</colgroup>
+<thead>
+	<tr>
+		<th>x</th>
+		<th>x</th>
+	</tr>
+</thead>
+<tfoot>
+	<tr>
+		<th>x</th>
+		<th>x</th>
+	</tr>
+</tfoot>
+<tbody>
+	<tr>
+		<td rowspan="3">x</td>
+		<td>x</td>
+	</tr>
+	<tr>
+		<td>x</td>
+	</tr>
+	<tr>
+		<td>x</td>
+	</tr>
+</tbody>
+</table>
+
+
+</body>
+</html>

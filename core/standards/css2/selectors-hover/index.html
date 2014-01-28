@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>css2.1 | selectors | :hover</title>
+<style type="text/css">
+html {
+	margin: 0 auto;
+	width: 95%;
+	position: relative;
+}
+div:hover::before {
+	content: "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
+	font-family: ahem;
+	font-size: 1em;
+	line-height: 1em;
+	width: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+}
+</style>
+</head>
+
+<body>
+<p>This test requires Ahem font.</p>
+
+<div>if you hover this line, a black box should appear at the <em>top</em> of the screen, and disappear once you
+hover away from this line. This text should not move at any time.</div>
+
+</body>
+</html>
+

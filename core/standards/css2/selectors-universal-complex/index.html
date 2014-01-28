@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>css2.1 | selectors | universal (complex)</title>
+<style type="text/css">
+* * * {
+	font-size: 120%;
+}
+* * * {
+	background: red;
+}
+*>*+* * {
+	background: teal;
+}
+*>*+* *+* {
+	background: silver;
+}
+* * *+*>* {
+	background: aqua;
+}
+*>*+*>*~* {
+	background: lime;
+}
+</style>
+</head>
+
+<body>
+<div>This text should be on teal background, and there should be no red
+	<p>This text should be on teal background, and there should be no red</p>
+	<p>This text should be on gray background, and there should be no red</p>
+	This text should be on teal background, and there should be no red
+	<div>This text should be on gray background, and there should be no red
+		<p>This text should be on aqua background, and there should be no red</p>
+		<p>This text should be on light green background, and there should be no red</p>
+		This text should be on gray background, and there should be no red
+	</div>
+	This text should be on teal background, and there should be no red
+	<p>This text should be on gray background, and there should be no red</p>
+</div>
+
+</body>
+</html>
+

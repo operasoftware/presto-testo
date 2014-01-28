@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>css2.1 | selectors | lang</title>
+<style type="text/css">
+p[lang|="en"] {
+	background: lime;
+}
+div:lang(fr) {
+	background: lime;
+}
+</style>
+<meta http-equiv="content-language" content="fr">
+</head>
+
+<body>
+<p lang="en">This line should have green background</p>
+
+<div>This line should have green background</div>
+
+</body>
+</html>
+

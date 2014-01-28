@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>visibility: collapse</title>
+<style type="text/css">
+table {
+	border-spacing: 0; border-collapse: collapse;
+}
+table, table * {
+	font-family: ahem;
+	font-size: 1em;
+	font-weight: normal;
+	line-height: 1em;
+	padding: 0;
+	border: none;
+}
+p+table tbody, #damer {
+	visibility: collapse;
+}
+[colspan], [class] {
+	color: #3366CC;
+}
+</style>
+</head>
+
+<body>
+<p><em>Ahem font required by this test.</em></p>
+
+<table>
+<colgroup>
+	<col>
+<colgroup id="damer">
+	<col>
+	<col>
+</colgroup>
+	<col>
+</colgroup>
+<thead>
+	<tr>
+		<th colspan="2">xx</th>
+		<th>x</th>
+		<th>x</th>
+	</tr>
+</thead>
+<tfoot>
+	<tr>
+		<th>x</th>
+		<th>x</th>
+		<th colspan="2">xx</th>
+	</tr>
+</tfoot>
+<tbody>
+	<tr>
+		<td>x</td>
+		<td colspan="2">xx</td>
+		<td>x</td>
+	</tr>
+</tbody>
+</table>
+
+<h4>Patterns above and below this text should be identical.</h4>
+
+<table>
+	<tr>
+		<td class="samer">x</td>
+		<td>x</td>
+	</tr>
+	<tr>
+		<td>x</td>
+		<td class="samer">x</td>
+	</tr>
+</table>
+
+</body>
+</html>

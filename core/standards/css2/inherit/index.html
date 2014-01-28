@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>css2.1 | inherit | %</title>
+<style type="text/css">
+body {
+	width: 40em;
+}
+body>div {
+	padding: 0 25%;
+}
+body>div>div {
+	padding: inherit;
+}
+div div div {
+	background: lime;
+}
+</style>
+</head>
+
+<body>
+
+<div>
+	<div>
+		<div>this text should be in a green block</div>
+	</div>
+</div>
+
+</body>
+</html>
+

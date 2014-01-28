@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>0 and table-layout</title>
+<style>
+table {
+	background: red;
+	table-layout: fixed;
+	border-spacing: 0;
+	width: 120px;
+}
+td {
+	padding: 0;
+	height: 40px;
+}
+#one, #three {
+	background: white;
+	width: 40px;
+}
+#two {
+	background: lime;
+	width: 200px;
+}
+</style>
+</head>
+
+<body>
+<p>There should be a green block below.</p>
+
+<table>
+<col><col width="0"><col>
+	<tr>
+		<td id="one"></td>
+		<td id="two"></td>
+		<td id="three"></td>
+	</tr>
+</table>
+
+</body>
+</html>

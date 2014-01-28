@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>css2.1 | selectors | attribute</title>
+<style type="text/css">
+[class="["]>p, [id="a!@#$%^&*()_+]["][title="!@#$%^*()_+]"] {
+	background: lime;
+}
+[type]>p {
+	background: lime;
+}
+</style>
+</head>
+
+<body class="[">
+<h4>You should see three lines of text below</h4>
+
+<p>This line should have green background</p>
+
+<div id="a!@#$%^&*()_+][" title="!@#$%^*()_+]">This line should have green background</div>
+
+<object type="image/png" data="broken-image">
+	<p>This line should have green background</p>
+</object>
+
+</body>
+</html>
+

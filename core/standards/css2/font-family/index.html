@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>CSS 2.1 | font-family</title>
+<style type="text/css">
+div {
+	font-family: sans-serif;
+	width: 4ex;
+}
+div::first-line {
+	font-family: ahem;
+}
+</style>
+</head>
+
+<body>
+<p>This testcase requires Ahem font</p>
+<p>You should see the word PASS below</p>
+
+<div>xxxx PASS</div>
+
+</body>
+</html>
+

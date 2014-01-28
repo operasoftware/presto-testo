@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>visibility: collapse</title>
+<style type="text/css">
+table {
+	background: red;
+	border-spacing: 0;
+	border-collapse: collapse;
+}
+table, table * {
+	font-family: ahem;
+	font-size: 1em;
+	font-weight: normal;
+	line-height: 1em;
+	padding: 0;
+}
+table:first-child col:first-child+col {
+	visibility: collapse;
+}
+td {
+	border: 3em solid blue;
+}
+x {
+	color: red;
+}
+</style>
+</head>
+
+<body>
+
+<table>
+<col>
+<col>
+<col>
+<tr>
+	<td>x</td>
+	<td>x</td>
+	<td>x</td>
+</tr>
+<tr>
+	<td>x</td>
+	<td>x</td>
+	<td>x</td>
+</tr>
+<tr>
+	<td>x</td>
+	<td>x</td>
+	<td>x</td>
+</tr>
+</table>
+
+<p><em>Ahem font required by this test.</em> Patterns above and below this line should be identical.
+This text should not be overlapped by anything.</p>
+
+<table>
+<col>
+<col>
+<col>
+<tr>
+	<td>x</td>
+	<td>x</td>
+</tr>
+<tr>
+	<td>x</td>
+	<td>x</td>
+</tr>
+<tr>
+	<td>x</td>
+	<td>x</td>
+</tr>
+</table>
+
+</body>
+</html>

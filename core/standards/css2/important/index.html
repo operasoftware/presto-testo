@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>css2.1 | !important</title>
+<style type="text/css">
+p {
+	background: lime !important;
+}
+div, body>p {
+	background: red;
+}
+div {
+	background: lime;
+	padding: 0 !important !important;
+}
+</style>
+</head>
+
+<body>
+<p>This line should have a green background</p>
+
+<div>This line should have a green background</div>
+
+</body>
+</html>
+

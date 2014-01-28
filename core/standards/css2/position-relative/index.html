@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>CSS 2.1 | position | relative</title>
+<style type="text/css">
+p+div {
+	background: red;
+	display: run-in;
+	position: relative;
+	left: -1000px;
+}
+</style>
+</head>
+
+<body>
+<p>You should see nothing below, and there should be no red.</p>
+
+<div>x</div>
+<div>&nbsp;</div>
+
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>visibility: collapse</title>
+<style type="text/css">
+table {
+	background: red;
+	border-spacing: 0;
+	table-layout: fixed;
+}
+p~*, p~* * {
+	font-family: ahem;
+	font-size: 1em;
+	font-weight: normal;
+	line-height: 1em;
+	padding: 0;
+	border: none;
+}
+tr>* {
+	border: 1em solid blue;
+}
+tr>*:first-child+* {
+	border: 1em solid red;
+}
+colgroup {
+	visibility: collapse;
+}
+</style>
+</head>
+
+<body>
+<p><em>Ahem font required by this test.</em> There should be no red.</p>
+
+<table>
+<col>
+<colgroup>
+	<col>
+</colgroup>
+</col>
+<thead>
+	<tr>
+		<th>x</th>
+		<th>x</th>
+		<th>x</th>
+	</tr>
+</thead>
+<tfoot>
+	<tr>
+		<th>x</th>
+		<th>x</th>
+		<th>x</th>
+	</tr>
+</tfoot>
+<tbody>
+	<tr>
+		<td>x</td>
+		<td>x</td>
+		<td>x</td>
+	</tr>
+</tbody>
+<tbody>
+	<tr>
+		<td>x</td>
+		<td>x</td>
+		<td>x</td>
+	</tr>
+</tbody>
+</table>
+
+</body>
+</html>

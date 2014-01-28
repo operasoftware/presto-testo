@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>css2.1 | selectors | child</title>
+<style type="text/css">
+* {
+	display: block;
+}	
+*>html>* {
+	background: red;
+}
+head>style, head>title {
+	display: none;
+}
+html>head {
+	background: red;
+}
+</style>
+<object>PASS</object>
+</head>
+
+<body>
+<h4>You should see the word PASS above this line, and there should be no red</h4>
+
+</body>
+</html>
+

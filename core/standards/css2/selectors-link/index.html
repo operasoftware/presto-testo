@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>css2.1 | selectors | :link , :visited</title>
+<style type="text/css">
+h4 a:link {
+	background: lime;
+}
+p+p a:visited {
+	display: none;
+}
+</style>
+</head>
+
+<body>
+<h4><a href="nonexistent">This line should have green background after the page finishes
+		loading</a></h4>
+
+<p>You should see nothing below this line</p>
+
+<p><a href=".">test test test test</a></p>
+
+</body>
+</html>
+

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>css2.1 | selectors | ::before</title>
+<style type="text/css">
+html, body {
+	background: white;
+}
+html::after {
+	content: "This box, and nothing else, should have green background";
+	background: lime;
+	border: 1px solid black;
+	width: 300px;
+	display: block;
+}
+</style>
+</head>
+
+<body>
+
+<p>You should see a green box on this page</p>
+
+</body>
+</html>
+

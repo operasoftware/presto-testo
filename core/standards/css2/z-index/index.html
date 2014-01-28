@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>CSS 2.1 | z-index</title>
+<style type="text/css">
+body>div {
+	z-index: 1;
+	position: relative;
+	overflow: hidden;
+}
+div>div {
+	position: fixed;
+}
+</style>
+</head>
+
+<body>
+<p>You should see the word PASS below</p>
+
+<div>
+	<div>PASS</div>
+</div>
+
+</body>
+</html>

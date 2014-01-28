@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>CSS 2.1 | display | table*</title>
+<style type="text/css">
+body>div {
+	table-layout: fixed;
+	width: 200px;
+	display: table;
+}
+body>div>div {
+	margin: 0;
+	display: table-row;
+}
+div>div>div {
+	text-align: right;
+	background: #FFCC00;
+	width: 100px;
+	display: table-caption;
+}
+div>div>div+div {
+	text-align: left;
+	display: table-cell;
+}
+</style>
+</head>
+
+<body>
+<p>you should see an unbroken word PASS below in a yellow rectangle</p>
+<div>
+	<div>
+		<div>PA</div>
+		<div>SS</div>
+	</div>
+</div>
+</body>
+</html>

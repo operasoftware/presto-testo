@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>CSS 2.1 | float</title>
+<style>
+body {
+	position: relative;
+	z-index: 1;
+}
+body>div {
+	float: left;
+	overflow: auto;
+}
+div div {
+	position: absolute;
+}
+html::before {
+	content: "You should see the word PASS below";
+}
+</style>
+</head>
+
+<body>
+
+<div>
+	<div>
+		<p>PASS</p>
+	</div>
+</div>
+
+</body>
+</html>
+

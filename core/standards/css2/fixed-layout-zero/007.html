@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>0 and table-layout</title>
+<style>
+table {
+	background: red;
+	table-layout: fixed;
+	border-spacing: 0;
+	width: 120px;
+}
+td {
+	padding: 0;
+	height: 40px;
+}
+#one, #four {
+	background: white;
+	width: 40px;
+}
+#two {
+	background: black;
+}
+#three {
+	background: lime;
+}
+</style>
+</head>
+
+<body>
+
+<p>There should be two adjacent rectangles on one line, forming a
+square. The left half should be black, the right half should be
+green.</p>
+
+<table>
+	<tr>
+		<td id="one"></td>
+		<td id="two"></td>
+		<td id="three" width="0"></td>
+		<td id="four"></td>
+	</tr>
+</table>
+
+</body>
+</html>

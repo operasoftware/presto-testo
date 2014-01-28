@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>css2.1 | margin collapsing, float, clear</title>
+<style type="text/css">
+div {
+	background: #3366CC;
+}
+p+div {
+	float: left;
+	margin: 0;
+	width: 100%;
+}
+div+div {
+	clear: both;
+	margin-top: 100px;
+	height: 1em;
+}
+</style>
+</head>
+
+<body>
+<p>You should see <em>two</em> blue blocks below</p>
+
+<div>&nbsp;</div>
+<div>&nbsp;</div>
+
+</body>
+</html>
+
