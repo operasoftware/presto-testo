@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>onChange() popup</title>
+	<script type="text/javascript" src="openWin.js"></script>
+	<script type="text/javascript">var openOnUserInteraction = true</script>
+</head>
+
+<body>
+<p>The checkbox below is assigned an onChange() event, that will attempt to open a popupwindow.  In interactive mode, edit the text in the textbox and remove focus from the textbox.</p>
+<script type="text/javascript">writeExpectation()</script>
+
+<form>
+  <input id="textfield" value="default text" onChange="openWin()">
+</form>
+<script type="text/javascript">
+if (method != "interaction") {
+	document.getElementById("textfield").value="changed";
+	document.getElementById("textfield").onchange();
+}
+</script>
+</body>
+</html>
+
+
+

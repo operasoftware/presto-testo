@@ -1,0 +1,99 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+    <title>Extended cache management</title>
+<!--
+  The material, including but not limited to all software, 
+  design, drawings, technical specifications and other confidential information 
+  sent to you (Material), is the exclusive property of Opera Software 
+  ASA and its suppliers. The Material is classified as strictly confidential information 
+  and is internationally protected by copyright-, trademark- and other such laws. 
+  The Material is sent to you for internal use only and shall only be used as 
+  expressly instructed by Opera Software.
+  Any copying, reproduction, modification or distribution 
+  not in accordance with a special written license agreement with Opera Software 
+  is expressly prohibited, and may result in severe civil and criminal penalties. 
+  Opera Software actively and aggressively enforces its intellectual property 
+  rights to the fullest extent of the law.
+-->
+  </head>
+
+  <body>
+    
+<h1>Extended cache management</h1>
+<p>Edit opera.ini: Add <code>people.opera.com</code> to "trusted domains". </p>
+<p>[OEM]<br>
+  Never Flush Trusted Servers=people.opera.com</p>
+<p>&nbsp;</p>
+
+    <p>Load the <a href="http://people.opera.com/herman/Cachmgmt/"> start page</a>. 
+  This is what you do with each link on the test page: </p>
+
+    <ol>
+      <li>Click (link on start page) and remember/write the text in the image.
+      <li>Empty the cache (in the browser, do not delete the files)
+      <li>Click (link on start page) Do <em>not</em> reload, or use the history.
+      <li>Adjust the system clock two days forward.
+      <li>Click (link on start page) not history and not reload.
+      <li>Adjust the system clock back.
+    </ol>
+
+
+    
+<h2>Expected results</h2>
+
+    <p>The images have "Expire:" set 24 hours into the future. 
+      Adjusting the system clock two days forward will make all the
+      images "stale".</p>
+
+
+
+    <h3>Without never-flush</h3>
+
+    <h4>Never changing image</h4>
+
+    <p>When revisiting the link after the cache has been flushed,
+      the image is the same as last time.</p>
+
+    
+<p>When revisiting the link after adjusting the system clock, the image doesn't 
+  change. But it should be loaded from server.</p>
+
+
+    <h4>Always changing image</h4>
+
+    <p>When revisiting the link after the cache has been flushed,
+      the image changes.</p>
+
+    <p>When revisiting the link after adjusting the system clock,
+      the image changes.</p>
+
+
+    <h3>With never-flush</h3>
+
+    <h4>Never changing image</h4>
+
+    <p>When revisiting the link after the cache has been flushed,
+      the image is the same as last time.</p>
+
+    
+<p>When revisiting the link after adjusting the system clock, the image doesn't 
+  change. But it should be loaded from server.</p>
+
+
+    <h4>Always changing image</h4>
+
+    <p>When revisiting the link after the cache has been flushed,
+      the image is the same as last time.</p>
+
+    <p>When revisiting the link after adjusting the system clock,
+      the image changes.</p>
+
+    <hr>
+    <address><a href="mailto:herman@opera.com">Herman Robak</a></address>
+
+Last modified: Thu Nov 28 11:30:55 CET 2002
+
+  </body>
+</html>

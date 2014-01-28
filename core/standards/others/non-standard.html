@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Non-standard HTML</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<!--
+The material, including but not limited to all software, design, drawings, technical specifications and other confidential information sent to you ("Material"), is the exclusive property of Opera Software ASA and its suppliers. The Material is classified as strictly confidential information and is internationally protected by copyright-, trademark- and other such laws. The Material is sent to you for internal use only and shall only be used as expressly instructed by Opera Software.
+
+Any copying, reproduction, modification or distribution not in accordance with a special written license agreement with Opera Software is expressly prohibited, and may result in severe civil and criminal penalties. Opera Software actively and aggressively enforces its intellectual property rights to the fullest extent of the law.
+-->
+</head>
+
+<body>
+<h2>Non-standard HTML</h2>
+<hr />
+<h4>The &lt;embed&gt; element:</h4>
+<p>This is used to load videoclips etc. Therefore not applicable for Rubik without 
+  a plugin.<br />
+  The testcase is still included and can be viewed using Windows.<br />
+  The correct plugin for .avi files must be installed and configured.</p>
+<p> 
+  <embed src="dynsrc.avi" align="center" autostart="true" height="100" width="100" loop="true" controls="true"></embed> 
+</p>
+<p>The code for this is: &lt;embed src=&quot;dynsrc.avi&quot; align=&quot;center&quot; 
+  autostart=&quot;true&quot; height=&quot;100&quot; width=&quot;100&quot; loop=&quot;true&quot; 
+  controls=&quot;true&quot;&gt;&lt;/embed&gt;</p>
+<hr />
+<h4>The &lt;nobr&gt; element:</h4>
+<p><nobr>This is a run of nobreak text to be used as an example. This line of 
+  text should cause sideways scrolling as long as the screen is wide enough. This 
+  is somemore text... This is somemore text... This is somemore text... This is 
+  somemore text...</nobr></p>
+<hr />
+<h4>The attribute &quot;height&quot; for the &lt;table&gt; element:</h4>
+<p>This image should be of the same height as the table, that is 240 pixels:</p>
+<table>
+  <tr> 
+    <td><img src="eggplant.gif" alt="image" width="320" height="240" /></td>
+    <td><table width="50" height="240" border="1" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td>table cell</td>
+          <td>table cell</td>
+        </tr>
+        <tr> 
+          <td>table cell</td>
+          <td>table cell</td>
+        </tr>
+      </table></td>
+  </tr>
+</table>
+<hr />
+<p><strong>The UTN element</strong></p>
+<p>This test has passed if the following UserAgent string has an additional UTN 
+  attribute added to it.<br />
+  <a href="utn_string.html"  UTN="True">Click here.</a></p>
+</body>
+</html>

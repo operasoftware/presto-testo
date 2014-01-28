@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>onError() popup</title>
+	<script type="text/javascript" src="openWin.js"></script>
+	<script type="text/javascript">var openOnUserInteraction = false</script>
+</head>
+
+<body>
+<p>This page is trying to download a non-existant image. The image has been assigned an onerror event that attempts to open a popup.</p>
+<script type="text/javascript">writeExpectation()</script>
+<img src="404.jpg" onerror="openWin(true)" />
+</body>
+</html>

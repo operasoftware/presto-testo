@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>onClick() popup</title>
+	<script type="text/javascript" src="openWin.js"></script>
+	<script type="text/javascript">var openOnUserInteraction = true</script>
+</head>
+
+<body>
+<p>The link on this page attempts to open a new window when <a href="#" id="a" onclick="openWin()">clicking on it</a>.</p>
+<script type="text/javascript">writeExpectation()</script>
+
+<script type="text/javascript">
+if (method != "interaction") {
+	document.getElementById("a").click();
+}
+</script>
+</body>
+</html>
+
+

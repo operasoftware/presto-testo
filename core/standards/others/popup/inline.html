@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Inline script popup</title>
+	<script type="text/javascript" src="openWin.js"></script>
+	<script type="text/javascript">var openOnUserInteraction = false</script>
+</head>
+
+<body>
+<p>This page has an inline script, attempting to open a popup window.</p>
+<script type="text/javascript">writeExpectation()</script>
+<script type="text/javascript">
+var i;
+i=1;
+for(i=1;i<2;i++) {
+   openWin()   
+}
+</script>
+</body>
+</html>
+
+
+

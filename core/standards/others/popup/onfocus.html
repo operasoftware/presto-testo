@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>onFocus() popup</title>
+	<script type="text/javascript" src="openWin.js"></script>
+	<script type="text/javascript">var openOnUserInteraction = false</script>
+</head>
+
+<body>
+<p>The checkbox below is assigned an onFocus() event, that will attempt to open a popupwindow. Check the checkbox in interactive mode.</p>
+<script type="text/javascript">writeExpectation()</script>
+<form>
+	<input type="checkbox" id="checkbox" onFocus="openWin()">
+</form>
+<script type="text/javascript">
+if (method != "interaction") {
+	document.getElementById("checkbox").checked = true;
+	document.getElementById("checkbox").focus();
+}
+</script>
+</body>
+</html>
+
+

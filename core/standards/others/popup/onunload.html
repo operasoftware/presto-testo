@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>onUnload() popup</title>
+	<script type="text/javascript" src="openWin.js"></script>
+	<script type="text/javascript">var openOnUserInteraction = true</script>
+</head>
+
+<body>
+<p>This page has an iframe which attempts to load a popup when being unloaded. In interactive mode, <a href="" id="a" onclick="document.getElementById('iframe').src = 'about:blank';return false">click here</a> to navigate the iframe.</p>
+<script type="text/javascript">writeExpectation()</script>
+  
+<iframe id="iframe" src="onunload-001.html" onload="if(this.src!='about:blank' && method != 'interaction'){this.src='about:blank';}"></iframe>
+</body>
+</html>
+
+

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>onBlur() popup</title>
+	<script type="text/javascript" src="openWin.js"></script>
+	<script type="text/javascript">var openOnUserInteraction = false</script>
+</head>
+
+<body>
+<p>The checkbox below is assigned an onBlur() event, that will attempt to open a popupwindow. In interactive mode, check the checkbox and click somewhere else on the page.</p>
+<script type="text/javascript">writeExpectation()</script>
+
+<form>
+    <input type="checkbox" id="checkbox" onBlur="openWin(true)">
+</form>
+<script type="text/javascript">
+if (method != "interaction") {
+	document.getElementById("checkbox").select()
+	document.getElementById("checkbox").blur()
+}
+</script>
+</body>
+</html>
+
+
+

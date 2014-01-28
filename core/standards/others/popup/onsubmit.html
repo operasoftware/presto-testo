@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>onSubmit() popup</title>
+	<script type="text/javascript" src="openWin.js"></script>
+	<script type="text/javascript">var openOnUserInteraction = true</script>
+</head>
+
+<body>
+<p>The Submit button below is will attempt to open a popupwindow. In interactive mode, click the button.</p>
+<script type="text/javascript">writeExpectation()</script>
+
+<form onSubmit="openWin();return false;">
+	<input type="submit" id="submit">
+</form>
+<script type="text/javascript">
+if (method != "interaction") {
+	document.getElementById("submit").click();
+}
+</script>
+</body>
+</html>
+
+

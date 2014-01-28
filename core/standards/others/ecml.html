@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>ECML interface test</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+
+</head>
+
+<body>
+<h2>ECML interface test</h2>
+
+<h4>Desktop</h4>
+<ol>
+ <li>Fill in first name, last name, e-mail and street address in the "Wand" preferences</li>
+ <li>Reload this page</li>
+ <li>The fields below should be outlined</li>
+ <li>Activate "Wand"</li>
+ <li>The fields should be filled in according to your preferences</li>
+</ol>
+
+<h4>Other devices</h4>
+<p>When Opera encounter ECML form names it should pass the request to the UI so 
+  that the UI can decide what to do with it if implemented</p>
+
+
+<form name="form1" id="form1" method="post" action="">
+  <p> 
+    <input type="text" name="Ecom_ShipTo_Postal_Name_First" />
+    First name</p>
+  <p> 
+    <input type="text" name="Ecom_ShipTo_Postal_Name_Last" />
+    Last name</p>
+  <p>
+	<input type="text" name="Ecom_ShipTo_Online_Email" />
+    E-mail</p>
+  <input type="text" name="Ecom_ShipTo_Postal_Street_Line1" />
+    Street</p>
+		
+  <p>
+    <input type="submit" name="Submit" value="Submit" />
+    <input name="reset" type="reset" id="reset" value="Reset" />
+  </p>
+  </form>
+
+</body>
+</html>

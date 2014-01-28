@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>onReset() popup</title>
+	<script type="text/javascript" src="openWin.js"></script>
+	<script type="text/javascript">var openOnUserInteraction = false</script>
+</head>
+
+<body>
+<p>The Reset button below will attempt to open a popupwindow. Click on the Reset button in interactive mode.</p>
+<script type="text/javascript">writeExpectation()</script>
+
+<form onReset="openWin()">
+  <input type="reset" id="reset">
+</form>
+<script type="text/javascript">
+if (method != "interaction") {
+	document.getElementById("reset").click();
+}
+</script>
+</body>
+</html>
+
+
