@@ -1,0 +1,29 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+   <title>CSS 2D Transforms, display: -wap-marquee</title>
+   <style type="text/css">
+      p + div {
+         width: 100px;
+         height: 20px;
+         display: -wap-marquee;
+         -wap-marquee-loop: infinite;
+         transform: translateX(50%) scale(-1);
+      }
+      div + div {
+         border: 1px solid;
+         width: 100px;
+         height: 20px;
+         margin-left: 49px;
+         margin-top: -21px;
+      }
+   </style>
+</head>
+<body>
+   <p>The following sentence should be upside down inside the box and scroll 
+   rightwards (relative to the page).</p>
+   <div>This is a marquee with some filler text that should scroll.</div>
+   <div></div>
+</body>
+</html>

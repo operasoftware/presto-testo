@@ -1,0 +1,31 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+   <title>CSS 2D Transforms, transform-origin, matrix</title>
+   <style type="text/css">
+      div {
+         height: 100px;
+         width: 100px;
+         background: red;
+      }
+      div > div {
+         background: green;
+         width: 20px;
+         margin-left: 80px;
+         -moz-transform-origin: bottom right;
+         -webkit-transform-origin: bottom right;
+         transform-origin: bottom right;
+         -moz-transform: matrix(5, 0, 0, 1, 0, 0);
+         -webkit-transform: matrix(5, 0, 0, 1, 0, 0);
+         transform: matrix(5, 0, 0, 1, 0, 0);
+      }
+   </style>
+</head>
+<body>
+   <p>There should be a green square below and no red.</p>
+   <div>
+      <div></div>
+   </div>
+</body>
+</html>

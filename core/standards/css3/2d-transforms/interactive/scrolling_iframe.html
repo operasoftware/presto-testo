@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+<head>
+   <title>CSS 2D Transforms, scrolling skewed iframe</title>
+   <style type="text/css">
+      iframe {
+         border: solid;
+         height: 100px;
+         width: 100px;
+         margin-left: 50px;
+         -moz-transform: skew(35deg);
+         -webkit-transform: skew(35deg);
+         transform: skew(35deg);
+      }
+   </style>
+</head>
+<body>
+   <p>The iframe below should be skewed so its bottom border is further to the
+   right than its top border, and it should be possible to scroll down to the
+   end.</p>
+   <iframe src="/resources/filler.html">NOTE: TC requires iframes</iframe>
+</body>
+</html>

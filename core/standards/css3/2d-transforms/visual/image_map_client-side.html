@@ -1,0 +1,51 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+   <title>CSS 2D Transforms, client-side image map</title>
+   <style type="text/css">
+      img {
+         width: 100px;
+         height: 100px;
+         border: none;
+         vertical-align: bottom;
+         -moz-transform-origin: top left;
+         -webkit-transform-origin: top left;
+         transform-origin: top left;
+         -moz-transform: translate(100px, 0) scale(2);
+         -webkit-transform: translate(100px, 0) scale(2);
+         transform: translate(100px, 0) scale(2);
+      }
+      div + div {
+         height: 100px;
+         width: 100px;
+         margin-left: 200px;
+         background: orange;
+      }
+   </style>
+   <script type="text/javascript">
+      window.onload = function() {
+         if (opera && opera.generateMouseMove) {
+            document.getElementsByTagName('p')[0].firstChild.nodeValue='FAIL';
+            var x = 250;
+            var y = 150 + window.screenTop;
+            opera.generateMouseMove(x, y);
+            opera.generateMouseDown(x, y, 1);
+            opera.generateMouseUp(x, y, 1);
+         }
+      }
+   </script>
+</head>
+<body>
+   <div>
+      <img src="/resources/images/1x1-transparent.png" 
+      alt="NOTE: TC requires images" usemap="#test">
+      <map name="test">
+         <area coords="50, 50, 100, 100" href="/resources/pass.html" alt="">
+      </map>
+   </div>
+   <div></div>
+   <p>Automatic test could not be completed. To test manually click inside the
+   square above. A new page should open.</p>
+</body>
+</html>

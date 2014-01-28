@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+   <title>CSS 2D Transforms, iframe with frameset</title>
+   <style type="text/css">
+      iframe, div {
+         height: 100px;
+         width: 100px;
+         border: none;
+      }
+      iframe {
+         display: block;
+         -moz-transform: translate(50px, 100px);
+         -webkit-transform: translate(50px, 100px);
+         transform: translate(50px, 100px);
+      }
+      div {
+         background: red;
+         margin-left: 50px;
+      }
+   </style>
+</head>
+<body>
+   <p>There should be two green rectangles and no red.</p>
+   <iframe src="../resources/frameset.html">
+      NOTE: TC requires iframe support
+   </iframe>
+   <div></div>
+</body>
+</html>

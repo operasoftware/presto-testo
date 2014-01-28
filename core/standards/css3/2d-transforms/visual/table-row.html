@@ -1,0 +1,48 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+   <title>CSS 2D Transforms, table-row, rotate</title>
+   <style type="text/css">
+      td {
+         width: 100px;
+         height: 100px;
+         padding: 0;
+      }
+      tr:first-child > td:nth-child(2) {
+         background: red;
+      }
+      tr:nth-child(2) > td:first-child {
+         background: green;
+      }
+      tr:nth-child(2) {
+         -moz-transform: rotate(90deg);
+         -webkit-transform: rotate(90deg);
+         transform: rotate(90deg);
+      }
+      table {
+         border-spacing: 0;
+      }
+   </style>
+</head>
+<body>
+   <p>There should be a green square below, and no red.</p>
+   <table>
+      <tr>
+         <td></td>
+         <td></td>
+         <td></td>
+      </tr>
+      <tr>
+         <td></td>
+         <td></td>
+         <td></td>
+      </tr>
+      <tr>
+         <td></td>
+         <td></td>
+         <td></td>
+      </tr>
+   </table>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+   <title>CSS 2D Transforms, getComputedStyle, modified transform</title>
+   <style type="text/css">
+      div {
+         -moz-transform: scale(2, 1);
+         -webkit-transform: scale(2, 1);
+         transform: scale(2, 1);
+      }
+   </style>
+   <script type="text/javascript">
+      onload = function() {
+         var div = document.getElementsByTagName('div')[0];
+         var style = getComputedStyle(div, null);
+         var transformValue = style.transform;
+         if (!transformValue) { transformValue = style.WebkitTransform; }
+         if (!transformValue) { transformValue = style.MozTransform; }
+         var passed = (transformValue == 'matrix(2, 0, 0, 1, 0, 0)');
+         document.getElementsByTagName('p')[0].firstChild.nodeValue = 
+            (passed ? 'PASS' : 'FAIL');
+         try{top.opener.rr(passed);}catch(e){}
+      }
+   </script>
+</head>
+<body>
+   <p>NOT TESTED (JavaScript required)</p>
+   <div></div>
+</body>
+</html>

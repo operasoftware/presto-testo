@@ -1,0 +1,22 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+   <title>CSS 2D Transforms, getComputedStyle, default transform</title>
+   <script type="text/javascript">
+      onload = function() {
+         var p = document.getElementsByTagName('p')[0];
+         var style = getComputedStyle(p, null);
+         var value = style.getPropertyValue('transform');
+         if (!value) { value = style.getPropertyValue('-webkit-transform'); }
+         if (!value) { value = style.getPropertyValue('-moz-transform'); }
+         var passed = (value == 'none');
+         p.firstChild.nodeValue = (passed ? 'PASS' : 'FAIL (got '+value+')');
+         try{top.opener.rr(passed);}catch(e){}
+      }
+   </script>
+</head>
+<body>
+   <p>NOT TESTED (JavaScript required)</p>
+</body>
+</html>

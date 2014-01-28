@@ -1,0 +1,28 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+   <title>CSS 2D Transforms, inline-block, translateY</title>
+   <style type="text/css">
+      div {
+         font: 1em/1 Ahem;
+      }
+      span {
+         color: red;
+      }
+      div + div > span {
+         display: inline-block;
+         width: 4em;
+         color: green;
+         -moz-transform: translateY(-1em);
+         -webkit-transform: translateY(-1em);
+         transform: translateY(-1em);
+      }
+   </style>
+</head>
+<body>
+   <p>To be tested with the Ahem font installed. There should be no red.</p>
+   <div>Filler<span>MMMM</span>Filler</div>
+   <div>Filler<span>MMMM MMMM</span>Filler</div>
+</body>
+</html>

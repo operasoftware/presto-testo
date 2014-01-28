@@ -1,0 +1,33 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+   <title>CSS 2D Transforms, transform, skew, one value</title>
+   <style type="text/css">
+      div {
+         height: 50px;
+         width: 50px;
+         background: gray;
+      }
+      p + div + div {
+         background: blue;
+         margin-left: 25px;
+         -moz-transform: skew(45deg);
+         -webkit-transform: skew(45deg);
+         transform: skew(45deg);
+      }
+      div + div + div {
+         margin-left: 50px;
+         background: black;
+      }
+   </style>
+</head>
+<body>
+   <p>There should be a blue parallelogram below. Its top corners should touch
+   the bottom corners of the gray square, and its bottom corners should touch
+   the top corners of the black square.</p>
+   <div></div>
+   <div></div>
+   <div></div>
+</body>
+</html>

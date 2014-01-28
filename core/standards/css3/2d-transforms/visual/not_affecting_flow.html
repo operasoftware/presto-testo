@@ -1,0 +1,27 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+   <title>CSS 2D Transforms, no effect on surrounding flow (scale)</title>
+   <style type="text/css">
+      span {
+         background: red;
+         color: red;
+         font: 30px/1 "Ahem";
+      }
+      span > span {
+         background: green;
+         color: green;
+         -moz-transform: scale(3, 1);
+         -webkit-transform: scale(3, 1);
+         transform: scale(3, 1);
+      }
+   </style>
+</head>
+<body>
+   <!-- Not normative? (W3C editor's draft 6 March 2009) -->
+   <p>To be tested with the Ahem font installed. There should be a green
+   rectangle below, and no red.</p>
+   <div><span>filler<span>filler</span>filler</span></div>
+</body>
+</html>

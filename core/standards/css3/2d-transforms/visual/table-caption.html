@@ -1,0 +1,35 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+   <title>CSS 2D Transforms, table-caption, matrix</title>
+   <style type="text/css">
+      table {
+         border-spacing: 0;
+      }
+      td {
+         width: 100px;
+         height: 100px;
+         padding: 0;
+         background: red;
+      }
+      caption {
+         height: 50px;
+         margin: 10px;
+         background: green;
+         -moz-transform: matrix(1.25, 0, 0, 2, 0, 85);
+         -webkit-transform: matrix(1.25, 0, 0, 2, 0, 85);
+         transform: matrix(1.25, 0, 0, 2, 0, 85);
+      }
+   </style>
+</head>
+<body>
+   <p>There should be a green square below, and no red.</p>
+   <table>
+      <caption></caption>
+      <tr>
+         <td></td>
+      </tr>
+   </table>
+</body>
+</html>

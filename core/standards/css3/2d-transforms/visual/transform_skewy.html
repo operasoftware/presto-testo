@@ -1,0 +1,35 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+   <title>CSS 2D Transforms, transform, skewX</title>
+   <style type="text/css">
+      div {
+         height: 50px;
+         width: 50px;
+         background: gray;
+      }
+      p + div + div {
+         background: blue;
+         margin-left: 50px;
+         margin-top: -25px;
+         -moz-transform: skewY(45deg);
+         -webkit-transform: skewY(45deg);
+         transform: skewY(45deg);
+      }
+      div + div + div {
+         background: black;
+         margin-left: 100px;
+         margin-top: -25px;
+      }
+   </style>
+</head>
+<body>
+   <p>There should be a blue parallelogram below. Its left corners should touch
+   the right corners of the gray square, and its right corners should touch
+   the left corners of the black square.</p>
+   <div></div>
+   <div></div>
+   <div></div>
+</body>
+</html>

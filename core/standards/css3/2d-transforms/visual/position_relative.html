@@ -1,0 +1,28 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+   <title>CSS 2D Transforms, transform with relative positioning</title>
+   <style type="text/css">
+      div {
+         background: red;
+         height: 100px;
+         width: 100px;
+      }
+      div + div {
+         background: green;
+         position: relative;
+         left: 70px;
+         top: -100px;
+         -moz-transform: translateX(-70px);
+         -webkit-transform: translateX(-70px);
+         transform: translateX(-70px);
+      }
+   </style>
+</head>
+<body>
+   <p>There should be a green square below, and no red.</p>
+   <div></div>
+   <div></div>
+</body>
+</html>

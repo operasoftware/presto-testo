@@ -1,0 +1,27 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+   <title>CSS 2D Transforms, transform, matrix then scale</title>
+   <style type="text/css">
+      div {
+         height: 100px;
+         width: 100px;
+         background: red;
+      }
+      div + div {
+         background: green;
+         height: 50px;
+         width: 50px;
+         -moz-transform: matrix(1, 0, 0, 1, 25, -75) scale(2);
+         -webkit-transform: matrix(1, 0, 0, 1, 25, -75) scale(2);
+         transform: matrix(1, 0, 0, 1, 25, -75) scale(2);
+      }
+   </style>
+</head>
+<body>
+   <p>There should be a green square and no red.</p>
+   <div></div>
+   <div></div>
+</body>
+</html>

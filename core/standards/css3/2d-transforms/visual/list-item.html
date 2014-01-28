@@ -1,0 +1,24 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+   <title>CSS 2D Transforms, list-item, rotate</title>
+   <style type="text/css">
+      li {
+         -moz-transform: rotate(90deg);
+         -webkit-transform: rotate(90deg);
+         transform: rotate(90deg);
+         -moz-transform-origin: left bottom;
+         -webkit-transform-origin: left bottom;
+         transform-origin: left bottom;
+      }
+   </style>
+</head>
+<body>
+   <p>There should be a word below, with a disc above it and rotated so that
+   the last letter is at the bottom.</p>
+   <ul>
+      <li>Testing</li>
+   </ul>
+</body>
+</html>

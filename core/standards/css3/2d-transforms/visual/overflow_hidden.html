@@ -1,0 +1,30 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+   <title>CSS 2D Transforms, overflow:hidden (translate)</title>
+   <style type="text/css">
+      div {
+         height: 100px;
+         width: 100px;
+      }
+      body > div {
+         border: 2px solid black;
+         overflow: hidden;
+      }
+      div > div {
+         background: red;
+         -moz-transform: translate(102px, 0);
+         -webkit-transform: translate(102px, 0);
+         transform: translate(102px, 0);
+      }
+   </style>
+</head>
+<body>
+   <!-- Not normative? (W3C editor's draft 6 March 2009) -->
+   <p>There should be a white square with black border, and no red.</p>
+   <div>
+      <div></div>
+   </div>
+</body>
+</html>

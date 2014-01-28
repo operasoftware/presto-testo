@@ -1,0 +1,61 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+   <title>CSS 2D Transforms, transitions, scaleX rotate &gt; translateY skew
+   </title>
+   <style type="text/css">
+      p + div {
+         border: 3px solid gray;
+         height: 50px;
+         width: 75px;
+      }
+      div > div {
+         background: blue;
+         height: 50px;
+         width: 50px;
+         margin-left: 75px;
+         -moz-transform-origin: top left;
+         -webkit-transform-origin: top left;
+         transform-origin: top left;
+         /*
+         */
+         -moz-transform: scaleX(1.5) rotate(90deg);
+         -webkit-transform: scaleX(1.5) rotate(90deg);
+         transform: scaleX(1.5) rotate(90deg);
+         -moz-transition-duration: 1s;
+         -webkit-transition-duration: 1s;
+         transition-duration: 1s;
+      }
+      div + div {
+         height: 50px;
+         width: 100px;
+         border: 3px solid black;
+         margin-top: 44px;
+         margin-left: 75px;
+      }
+      .activated {
+         -moz-transform: translateY(100px) skew(45deg);
+         -webkit-transform: translateY(100px) skew(45deg);
+         transform: translateY(100px) skew(45deg);
+      }
+   </style>
+   <script type="text/javascript">
+      function test(button) {
+         button.value = '(Reload to test again)';
+         document.getElementsByTagName('div')[1].className = 'activated';
+      }
+   </script>
+</head>
+<body>
+   <p>Clicking the button should simultaneously scale, rotate, move and skew
+   the blue box so that it smoothly (in a 1-second animation) changes from 
+   fitting within the gray border to being contained (not fitted exactly)
+   within the black border.</p>
+   <p><input type="button" value="Run test" onclick="test(this)"></p>
+   <div>
+      <div></div>
+   </div>
+   <div></div>
+</body>
+</html>

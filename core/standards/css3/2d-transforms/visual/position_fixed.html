@@ -1,0 +1,30 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+   <title>CSS 2D Transforms, transform with fixed positioning</title>
+   <style type="text/css">
+      div {
+         height: 100px;
+         width: 100px;
+         background: red;
+         position: fixed;
+         left: 50px;
+         top: 100px;
+      }
+      div + div {
+         background: green;
+         left: 90px;
+         -moz-transform: translateX(-40px);
+         -webkit-transform: translateX(-40px);
+         transform: translateX(-40px);
+      }
+   </style>
+</head>
+<body>
+   <!-- For compatibility with Webkit/Gecko, not clear from the spec -->
+   <p>There should be a green square below, and no red.</p>
+   <div></div>
+   <div></div>
+</body>
+</html>

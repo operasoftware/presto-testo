@@ -1,0 +1,28 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+   <title>CSS 2D Transforms, transform, rotate, turn</title>
+   <style type="text/css">
+      body > div {
+         height: 100px;
+         width: 100px;
+         background: red;
+      }
+      div + div {
+         background: green;
+         -moz-transform-origin: 50% top;
+         -webkit-transform-origin: 50% top;
+         transform-origin: 50% top;
+         -moz-transform: rotate(200grad);
+         -webkit-transform: rotate(200grad);
+         transform: rotate(200grad);
+      }
+   </style>
+</head>
+<body>
+   <p>There should be a green square below, and no red.</p>
+   <div></div>
+   <div></div>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+   <title>CSS 2D Transforms, transform creates containing block for absolute positioning</title>
+   <style type="text/css">
+      div {
+         height: 100px;
+         width: 100px;
+      }
+      body > div {
+         background: red;
+         -moz-transform: scale(1);
+         -webkit-transform: scale(1);
+         transform: scale(1);
+      }
+      div > div {
+         background: green;
+         position: absolute;
+         top: 0;
+         left: 0;
+      }
+      p { 
+         padding-left: 100px;
+      }
+   </style>
+</head>
+<body>
+   <!-- Not normative? (W3C editor's draft 6 March 2009) -->
+   <p>There should be a green square below, and no red.</p>
+   <div>
+      <div></div>
+   </div>
+</body>
+</html>
+

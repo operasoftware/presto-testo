@@ -1,0 +1,19 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN"
+   "http://www.w3.org/TR/html4/frameset.dtd">
+<html>
+<head>
+   <title>CSS 2D Transforms, frame</title>
+   <style type="text/css">
+      frame:first-child {
+         -moz-transform: translate(200px, 0);
+         -webkit-transform: translate(200px, 0);
+         transform: translate(200px, 0);
+      }
+   </style>
+</head>
+<frameset cols="200, 190, *">
+   <frame frameborder="0" src="/resources/pass.html">
+   <frame frameborder="0" src="/resources/fail.html">
+   <frame frameborder="0" src="">
+</frameset>
+</html>

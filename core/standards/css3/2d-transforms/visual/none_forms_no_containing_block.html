@@ -1,0 +1,30 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+   <title>CSS 2D Transforms, transform:none creates no containing block</title>
+   <style type="text/css">
+      div {
+         height: 100px;
+         width: 100px;
+         background: green;
+         -moz-transform: none;
+         -webkit-transform: none;
+         transform: none;
+      }
+      div > div {
+         background: white;
+         position: absolute;
+         bottom: 0;
+         right: 0;
+      }
+   </style>
+</head>
+<body>
+   <!-- Not normative? (W3C editor's draft 6 March 2009) -->
+   <p>There should be a green square below.</p>
+   <div>
+      <div></div>
+   </div>
+</body>
+</html>

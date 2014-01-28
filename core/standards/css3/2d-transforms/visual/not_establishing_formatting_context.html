@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+   <title>CSS 2D Transforms, not establishing block formatting context</title>
+   <style type="text/css">
+      p + div {
+         background: red;
+         -moz-transform: rotate(0deg);
+         -webkit-transform: rotate(0deg);
+         transform: rotate(0deg);
+      }
+      div > div, div + div {
+         float: left;
+         width: 50px;
+         height: 100px;
+         background: green;
+      }
+   </style>
+</head>
+<body>
+   <p>There should be a green square below, and no red.</p>
+   <div>
+      <div></div>
+   </div>
+   <div></div>
+</body>
+</html>

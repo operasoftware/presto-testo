@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+   <title>CSS 2D Transforms, scrolling viewport</title>
+   <style type="text/css">
+      body {
+         height: 3000px;
+      }
+      p + div {
+         height: 175px;
+         width: 200px;
+         border: 3px solid black;
+         margin-top: 200px;
+      }
+      div + div {
+         height: 350px;
+         width: 400px;
+         margin-left: 3px;
+         background: url(/resources/images/opera-large.png);
+         -moz-transform-origin: top left;
+         -webkit-transform-origin: top left;
+         transform-origin: top left;
+         -moz-transform: translateY(-178px) scale(0.5);
+         -webkit-transform: translateY(-178px) scale(0.5);
+         transform: translateY(-178px) scale(0.5);
+      }
+   </style>
+</head>
+<body>
+   <p>The image below should be inside the black border at all times (shrunk
+   to fit) and both should move when scrolling the page.</p>
+   <div></div>
+   <div></div>
+</body>
+</html>

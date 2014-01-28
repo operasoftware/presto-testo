@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>CSS 2D Transforms, z-index ignored when position is static</title>
+   <style>
+      div {
+         height: 100px;
+         width: 100px;
+         background: red;
+      }
+      div + div {
+         background: green;
+         z-index: -1;
+         -moz-transform: translate(0, -100px);
+         -webkit-transform: translate(0, -100px);
+         transform: translate(0, -100px);
+      }
+   </style>
+</head>
+<body>
+   <p>There should be a green square and no red.</p>
+   <div></div>
+   <div></div>
+</body>
+</html>
+

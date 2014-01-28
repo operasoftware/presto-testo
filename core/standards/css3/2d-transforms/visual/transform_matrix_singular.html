@@ -1,0 +1,24 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+   <title>CSS 2D Transforms, transform:matrix(), singular matrix</title>
+   <style type="text/css">
+      div > div {
+         background: green;
+         height: 100px;
+         width: 100px;
+         -moz-transform: matrix(1,1,0,0,50,50);
+         -webkit-transform: matrix(1,1,0,0,50,50);
+         transform: matrix(1,1,0,0,50,50);
+      }
+   </style>
+</head>
+<body>
+   <p>There should be a green square below, or a green horizontal line, or
+   nothing.</p>
+   <div>
+      <div></div>
+   </div>
+</body>
+</html>

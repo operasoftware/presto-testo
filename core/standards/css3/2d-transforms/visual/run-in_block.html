@@ -1,0 +1,23 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+   <title>CSS 2D Transforms, run-in as block, rotate</title>
+   <style type="text/css">
+      div {
+         display: run-in;
+         -moz-transform: rotate(90deg);
+         -webkit-transform: rotate(90deg);
+         transform: rotate(90deg);
+         -moz-transform-origin: left bottom;
+         -webkit-transform-origin: left bottom;
+         transform-origin: left bottom;
+      }
+   </style>
+</head>
+<body>
+   <p>There should be a word below, rotated so that the last letter is at the
+   bottom.</p>
+   <div>Testing</div>
+</body>
+</html>

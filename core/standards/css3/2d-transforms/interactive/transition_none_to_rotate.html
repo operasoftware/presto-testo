@@ -1,0 +1,42 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+   <title>CSS 2D Transforms, transitions, none &gt; rotate</title>
+   <style type="text/css">
+      img {
+         width: 102px;
+         height: 39px;
+         margin-top: 17px;
+         margin-left: 4px;
+         border: 3px solid blue;
+         -moz-transition-duration: 1s;
+         -webkit-transition-duration: 1s;
+         transition-duration: 1s;
+      }
+      div {
+         border: 3px solid black;
+         height: 79px;
+         width: 116px;
+      }
+      .activated {
+         -moz-transform: rotate(20deg);
+         -webkit-transform: rotate(20deg);
+         transform: rotate(20deg);
+      }
+   </style>
+   <script type="text/javascript">
+      function test(button) {
+         button.value = '(Reload to test again)';
+         document.getElementsByTagName('img')[0].className = 'activated';
+      }
+   </script>
+</head>
+<body>
+   <p>Clicking the button should rotate the image clockwise (along with the 
+   blue border) in a smooth 1-second animation. When the animation finishes,
+   the corners of the blue border should touch the black border.</p>
+   <p><input type="button" value="Run test" onclick="test(this)"></p>
+   <div><img src="/resources/images/opera.png" alt="TC requires images"></div>
+</body>
+</html>

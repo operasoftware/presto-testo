@@ -1,0 +1,29 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+   <title>CSS 2D Transforms, transform:matrix()</title>
+   <style type="text/css">
+      div {
+         background: red;
+         height: 100px;
+         width: 100px;
+      }
+      div + div {
+         background: green;
+         width: 50px;
+         -moz-transform-origin: 100% 0;
+         -webkit-transform-origin: 100% 0;
+         transform-origin: 100% 0;
+         -moz-transform: matrix(0,-2,1,0,-50,-100);
+         -webkit-transform: matrix(0,-2,1,0,-50,-100);
+         transform: matrix(0,-2,1,0,-50,-100);
+      }
+   </style>
+</head>
+<body>
+   <p>There should be a green square and no red.</p>
+   <div></div>
+   <div></div>
+</body>
+</html>

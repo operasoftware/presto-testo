@@ -1,0 +1,30 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+   <title>CSS 2D Transforms, transform, scale then translate</title>
+   <style type="text/css">
+      div {
+         height: 100px;
+         width: 100px;
+         background: red;
+      }
+      div + div {
+         background: green;
+         height: 50px;
+         width: 50px;
+         -moz-transform-origin: top left;
+         -webkit-transform-origin: top left;
+         transform-origin: top left;
+         -moz-transform: scale(2) translate(0, -50px);
+         -webkit-transform: scale(2) translate(0, -50px);
+         transform: scale(2) translate(0, -50px);
+      }
+   </style>
+</head>
+<body>
+   <p>There should be a green square and no red.</p>
+   <div></div>
+   <div></div>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+   <title>CSS 2D Transforms, cumulative transforms, translate</title>
+   <style type="text/css">
+      p + div {
+         background: red;
+         height: 100px;
+         width: 100px;
+      }
+      div + div, div > div {
+         background: green;
+         height: 50px;
+         width: 100px;
+         -moz-transform: translate(0, -50px);
+         -webkit-transform: translate(0, -50px);
+         transform: translate(0, -50px);
+      }
+   </style>
+</head>
+<body>
+   <p>There should be a green square and no red.</p>
+   <div></div>
+   <div>
+      <div></div>
+   </div>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+   <title>CSS 2D Transforms, outline</title>
+   <style type="text/css">
+      div {
+         margin-left: 25px;
+         margin-right: 25px;
+         -moz-transform: skew(45deg);
+         -webkit-transform: skew(45deg);
+         transform: skew(45deg);
+         outline: solid black;
+      }
+   </style>
+</head>
+<body>
+   <p>Both the text below and the black border around it should be skewed so
+   it looks like it's slanting left (the bottom should be further to the
+   right than the top).</p>
+   <div>Skewed text</div>
+</body>
+</html>

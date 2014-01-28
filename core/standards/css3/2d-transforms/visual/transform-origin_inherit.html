@@ -1,0 +1,37 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+   <title>CSS 2D Transforms, transform-origin:inherit</title>
+   <style type="text/css">
+      div {
+         height: 100px;
+         width: 100px;
+      }
+      p + div {
+         background: red;
+      }
+      div + div {
+         -moz-transform-origin: top left;
+         -webkit-transform-origin: top left;
+         transform-origin: top left;
+      }
+      div > div {
+         background: green;
+         -moz-transform-origin: inherit;
+         -webkit-transform-origin: inherit;
+         transform-origin: inherit;
+         -moz-transform: rotate(-90deg);
+         -webkit-transform: rotate(-90deg);
+         transform: rotate(-90deg);
+      }
+   </style>
+</head>
+<body>
+   <p>There should be a green square and no red.</p>
+   <div></div>
+   <div>
+      <div></div>
+   </div>
+</body>
+</html>

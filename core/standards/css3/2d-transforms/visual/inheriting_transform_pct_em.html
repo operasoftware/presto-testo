@@ -1,0 +1,40 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+   <title>CSS 2D Transforms, inheriting transform, % and em specified</title>
+   <style type="text/css">
+      p + div {
+         background: red;
+         height: 50px;
+         width: 50px;
+         margin-left: 110px;
+      }
+      div + div {
+         height: 200px;
+         width: 500px;
+         margin-top: 70px;
+         font-size: 40px;
+         -moz-transform: translate(20%, -2em);
+         -webkit-transform: translate(20%, -2em);
+         transform: translate(20%, -2em);
+      }
+      div + div > div {
+         height: 50px;
+         width: 50px;
+         background: green;
+         font-size: 20px;
+         -moz-transform: inherit;
+         -webkit-transform: inherit;
+         transform: inherit;
+      }
+   </style>
+</head>
+<body>
+   <p>There should be a green square below, and no red.</p>
+   <div></div>
+   <div>
+      <div></div>
+   </div>
+</body>
+</html>

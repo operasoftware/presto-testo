@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+   <title>CSS 2D Transforms, HTML5 audio element with controls</title>
+   <style type="text/css">
+      audio {
+         -moz-transform-origin: bottom left;
+         -webkit-transform-origin: bottom left;
+         transform-origin: bottom left;
+         -moz-transform: rotate(20deg);
+         -webkit-transform: rotate(20deg);
+         transform: rotate(20deg);
+      }
+   </style>
+</head>
+<body>
+   <p>There should be an audio player control below, rotated so that it slants
+   down to the right. Pressing the play button should play a music clip.</p>
+   <div>
+      <audio src="/resources/media/xiph/vorbis_listen/41_30secOgg-b64M.ogg"
+             controls>
+         NOTE: TC requires &lt;audio&gt; support
+      </audio>
+   </div>
+</body>
+</html>

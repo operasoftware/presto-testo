@@ -1,0 +1,39 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+   <title>CSS 2D Transforms, transitions, none &gt; scale</title>
+   <style type="text/css">
+      body > div {
+         border: 3px solid black;
+         width: 246px;
+         height: 126px;
+      }
+      div > div {
+         border: 3px solid blue;
+         width: 200px;
+         height: 100px;
+         margin-left: 20px;
+         margin-top: 10px;
+         -moz-transition-duration: 1s;
+         -webkit-transition-duration: 1s;
+         transition-duration: 1s;
+      }
+      div > div:hover {
+         -moz-transform: scale(1.2);
+         -webkit-transform: scale(1.2);
+         transform: scale(1.2);
+      }
+   </style>
+</head>
+<body>
+   <p>When hovered, the blue rectangle and its contents should grow smoothly
+   (in a 1-second animation) until it touches the black border. When not
+   hovered it should smoothly shrink back to normal size.</p>
+   <div>
+      <div><img src="http://t.oslo.opera.com/resources/images/opera.png" alt="TC requires images">
+         Filler text filler text filler text
+      </div>
+   </div>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+   <title>CSS 2D Transforms, offsetWidth/Height after transform</title>
+   <style type="text/css">
+      div {
+         width: 50px;
+         height: 50px;
+         -webkit-transform: scale(2);
+         -moz-transform: scale(2);
+         transform: scale(2);
+      }
+   </style>
+   <script type="text/javascript">
+      onload = function() {
+         var p = document.getElementsByTagName('p')[0];
+         var tc = document.getElementsByTagName('div')[0];
+         var value = tc.offsetWidth+'px '+tc.offsetHeight+'px';
+         var passed = (value == '50px 50px');
+         p.firstChild.nodeValue = (passed ? 'PASS' : 'FAIL (got '+value+')');
+         try{top.opener.rr(passed);}catch(e){}
+      }
+   </script>
+</head>
+<body>
+   <p>NOT TESTED (JavaScript required)</p>
+   <div></div>
+</body>
+</html>

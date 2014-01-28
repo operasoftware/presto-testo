@@ -1,0 +1,50 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+   <title>CSS 2D Transforms, transitions, translate &gt; translate</title>
+   <style type="text/css">
+      div {
+         margin-bottom: 10px;
+         height: 50px;
+         width: 50px;
+      }
+      p + div {
+         border: 3px solid gray;
+      }
+      p + div + div {
+         background: blue;
+         margin-left: 3px;
+         -moz-transform: translate(0, -63px);
+         -webkit-transform: translate(0, -63px);
+         transform: translate(0, -63px);
+         -moz-transition-duration: 1s;
+         -webkit-transition-duration: 1s;
+         transition-duration: 1s;
+      }
+      .activated {
+         -moz-transform: translate(30px, 63px);
+         -webkit-transform: translate(30px, 63px);
+         transform: translate(30px, 63px);
+      }
+      div + div + div {
+         border: 3px solid black;
+         margin-left: 30px;
+      }
+   </style>
+   <script type="text/javascript">
+      function test(button) {
+         button.value = '(Reload to test again)';
+         document.getElementsByTagName('div')[1].className = 'activated';
+      }
+   </script>
+</head>
+<body>
+   <p>Clicking the button should move the blue square smoothly from inside the
+   gray border to inside the black border, in a 1-second animation.</p>
+   <p><input type="button" value="Run test" onclick="test(this)"></p>
+   <div></div>
+   <div></div>
+   <div></div>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+   <title>CSS 2D Transforms, transform, scaleY</title>
+   <style type="text/css">
+      div {
+         height: 100px;
+         width: 100px;
+         background: red;
+         float: left;
+      }
+      div > div {
+         background: green;
+         height: 50px;
+         margin-top: 25px;
+         -moz-transform: scaleY(2.0);
+         -webkit-transform: scaleY(2.0);
+         transform: scaleY(2.0);
+      }
+   </style>
+</head>
+<body>
+   <p>There should be a green square and no red.</p>
+   <div>
+      <div></div>
+   </div>
+</body>
+</html>

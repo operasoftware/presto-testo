@@ -1,0 +1,42 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+   <title>CSS 2D Transforms, inheriting transform-origin, em/% specified</title>
+   <style type="text/css">
+      div {
+         background: red;
+         height: 50px;
+         width: 50px;
+      }
+      div + div {
+         background: transparent;
+         height: 200px;
+         width: 500px;
+         font-size: 20px;
+         -moz-transform-origin: 1em 20%;
+         -webkit-transform-origin: 1em 20%;
+         transform-origin: 1em 20%;
+      }
+      div + div > div {
+         background: green;
+         font-size: 40px;
+         margin-left: 10px;
+         margin-top: -20px;
+         -moz-transform-origin: inherit;
+         -webkit-transform-origin: inherit;
+         transform-origin: inherit;
+         -moz-transform: rotate(180deg);
+         -webkit-transform: rotate(180deg);
+         transform: rotate(180deg);
+      }
+   </style>
+</head>
+<body>
+   <p>There should be a green square below, and no red.</p>
+   <div></div>
+   <div>
+      <div></div>
+   </div>
+</body>
+</html>

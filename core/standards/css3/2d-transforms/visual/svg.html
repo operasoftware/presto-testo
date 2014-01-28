@@ -1,0 +1,30 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+   <title>CSS 2D Transforms, rotating SVG</title>
+   <style type="text/css">
+      p + div {
+         margin: 40px 30px;
+      }
+      p + div > object {
+         -moz-transform: rotate(90deg) scale(2);
+         -webkit-transform: rotate(90deg) scale(2);
+         transform: rotate(90deg) scale(2);
+      }
+   </style>
+</head>
+<body>
+   <p>There should be two exactly identical images below (same sharpness, same
+   size, blue L shape on light gray background).</p>
+   <div>
+      <object data="../resources/lines.svg">
+         NOTE: TC requires SVG support
+      </object>
+   </div>
+   <div>
+      <object data="../resources/lines_reference.svg">
+      </object>
+   </div>
+</body>
+</html>

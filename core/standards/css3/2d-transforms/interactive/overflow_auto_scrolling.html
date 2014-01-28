@@ -1,0 +1,32 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+   <title>CSS 2D Transforms, overflow:auto, scrolling (translate)</title>
+   <style type="text/css">
+      body > div {
+         border: 2px solid black;
+         height: 100px;
+         width: 100px;
+         overflow: auto;
+      }
+      div > div {
+         background: blue;
+         height: 50px;
+         width: 50px;
+         -moz-transform: translate(102px, 0);
+         -webkit-transform: translate(102px, 0);
+         transform: translate(102px, 0);
+      }
+   </style>
+</head>
+<body>
+   <!-- Not normative? (W3C editor's draft 6 March 2009) -->
+   <p>The square below should initially be white with black border. It should
+   be possible to scroll it so that a blue square appears in the upper right
+   corner.</p>
+   <div>
+      <div></div>
+   </div>
+</body>
+</html>

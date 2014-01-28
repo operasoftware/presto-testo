@@ -1,0 +1,55 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+   <title>CSS 2D Transforms, transitions, rotate &gt; scale</title>
+   <style type="text/css">
+      p + div {
+         border: 3px solid black;
+         height: 100px;
+         width: 50px;
+      }
+      div > div {
+         background: blue;
+         height: 100px;
+         width: 100px;
+         -moz-transform-origin: bottom left;
+         -webkit-transform-origin: bottom left;
+         transform-origin: bottom left;
+         -moz-transform: rotate(90deg);
+         -webkit-transform: rotate(90deg);
+         transform: rotate(90deg);
+         -moz-transition-duration: 1s;
+         -webkit-transition-duration: 1s;
+         transition-duration: 1s;
+      }
+      div + div {
+         height: 100px;
+         width: 100px;
+         border: 3px solid gray;
+         margin-top: -6px;
+      }
+      .activated {
+         -moz-transform: scale(0.5, 1);
+         -webkit-transform: scale(0.5, 1);
+         transform: scale(0.5, 1);
+      }
+   </style>
+   <script type="text/javascript">
+      function test(button) {
+         button.value = '(Reload to test again)';
+         document.getElementsByTagName('div')[1].className = 'activated';
+      }
+   </script>
+</head>
+<body>
+   <p>Clicking the button should rotate the blue block counterclockwise and
+   simultaneously scale it in a smooth 1-second animation, from fitting within
+   the gray border to fitting within the black border.</p>
+   <p><input type="button" value="Run test" onclick="test(this)"></p>
+   <div>
+      <div></div>
+   </div>
+   <div></div>
+</body>
+</html>

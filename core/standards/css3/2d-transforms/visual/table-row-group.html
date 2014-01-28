@@ -1,0 +1,52 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+   <title>CSS 2D Transforms, table-row-group, scale</title>
+   <style type="text/css">
+      table {
+         border-spacing: 0;
+      }
+      td {
+         width: 50px;
+         height: 50px;
+         padding: 0;
+      }
+      thead, tfoot {
+         background: red;
+      }
+      tbody {
+         background: green;
+         -moz-transform: scale(1, 3);
+         -webkit-transform: scale(1, 3);
+         transform: scale(1, 3);
+      }
+   </style>
+</head>
+<body>
+   <p>There should be a green square below, and no red.</p>
+   <table>
+      <thead>
+         <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+         </tr>
+      </thead>
+      <tfoot>
+         <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+         </tr>
+      </tfoot>
+      <tbody>
+         <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+         </tr>
+      </tbody>
+   </table>
+</body>
+</html>

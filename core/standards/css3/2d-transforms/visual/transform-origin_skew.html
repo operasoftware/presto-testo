@@ -1,0 +1,31 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+   <title>CSS 2D Transforms, transform-origin, skew</title>
+   <style type="text/css">
+      div {
+         height: 100px;
+         width: 100px;
+         background: gray;
+         overflow: hidden;
+      }
+      div > div {
+         background: blue;
+         -moz-transform-origin: bottom left;
+         -webkit-transform-origin: bottom left;
+         transform-origin: bottom left;
+         -moz-transform: skew(45deg);
+         -webkit-transform: skew(45deg);
+         transform: skew(45deg);
+      }
+   </style>
+</head>
+<body>
+   <p>There should be a square below where the bottom left half is blue and
+   the top right half is gray.</p>
+   <div>
+      <div></div>
+   </div>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+   <title>CSS 2D Transforms, text selection</title>
+   <style type="text/css">
+      p + div + div {
+         width: 10em;
+         margin-top: 5em;
+         margin-bottom: 5em;
+         -moz-transform: rotate(-90deg);
+         -webkit-transform: rotate(-90deg);
+         transform: rotate(-90deg);
+      }
+   </style>
+</head>
+<body>
+   <p>It should be possible to select the text below by clicking and dragging,
+   and the second sentence should be rotated 90 degrees counterclockwise.</p>
+   <div>This is the first sentence.</div>
+   <div>This is the second sentence.</div>
+   <div>This is the third sentence.</div>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+   <title>CSS 2D Transforms, spatial navigation</title>
+   <style type="text/css">
+      div + div {
+         margin-top: 1em;
+      }
+      div + div > a {
+         -moz-transform: rotate(45deg);
+         -webkit-transform: rotate(45deg);
+         transform: rotate(45deg);
+      }
+   </style>
+</head>
+<body>
+   <p>It should be possible to spatnav (Shift+Down) from link 1 to link 2, and
+   link 2 should be rotated 45 degrees clockwise.</p>
+   <div><a href="data:text/plain,1">Link 1</a></div>
+   <div><a href="data:text/plain,2">Link 2</a></div>
+</body>
+</html>

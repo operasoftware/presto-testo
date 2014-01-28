@@ -1,0 +1,33 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+   <title>CSS 2D Transforms, transitions, scale and form elements</title>
+   <style type="text/css">
+      input, button, textarea, select {
+         margin-left: 20px;
+         -moz-transition-duration: 0.1s;
+         -webkit-transition-duration: 0.1s;
+         transition-duration: 0.1s;
+      }
+      input:hover, button:hover, textarea:hover, select:hover {
+         -moz-transform: scale(1.2);
+         -webkit-transform: scale(1.2);
+         transform: scale(1.2);
+      }
+   </style>
+</head>
+<body>
+   <p>Each of the form elements below should smoothly expand in size when
+   hovered (and return to normal size when not hovered).</p>
+   <div>
+      <div><input value="Text input"></div>
+      <div><input type="password" value="Password input"></div>
+      <div><input type="checkbox"></div>
+      <div><input type="radio" name="foo"><input type="radio" name="foo"></div>
+      <div><input type="file"></div>
+      <div><input type="button" value="Button input"></div>
+      <div><button>Button <em>element</em></button></div>
+      <div><textarea rows="3" cols="15">Textarea</textarea></div>
+</body>
+</html>

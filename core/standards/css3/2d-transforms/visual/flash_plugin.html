@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<head>
+   <title>CSS 2D Transforms, Flash plugin</title>
+   <style type="text/css">
+      object {
+         width: 300px;
+         height: 150px;
+         border: 1px solid black;
+         -moz-transform-origin: top right;
+         -webkit-transform-origin: top right;
+         transform-origin: top right;
+         -moz-transform: translate(34px, 103px) rotate(20deg);
+         -webkit-transform: translate(34px, 103px) rotate(20deg);
+         transform: translate(34px, 103px) rotate(20deg);
+      }
+   </style>
+</head>
+<body>
+   <p>The text "Flash content here" should be below, rotated to slant
+   downwards to the right.</p>
+   <div>
+      <object data="http://t/resources/objects/flash.swf" type="application/x-shockwave-flash">
+         FAIL, TC requires Flash support
+      </object>
+   </div>
+</body>
+</html>

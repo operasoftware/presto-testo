@@ -1,0 +1,26 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+   <title>CSS 2D Transforms, transform, translate, two values</title>
+   <style type="text/css">
+      div {
+         height: 50px;
+         width: 50px;
+         background: red;
+      }
+      div + div {
+         background: green;
+         margin-left: 75px;
+         -moz-transform: translate(-150%, -50px);
+         -webkit-transform: translate(-150%, -50px);
+         transform: translate(-150%, -50px);
+      }
+   </style>
+</head>
+<body>
+   <p>There should be a green square and no red.</p>
+   <div></div>
+   <div></div>
+</body>
+</html>

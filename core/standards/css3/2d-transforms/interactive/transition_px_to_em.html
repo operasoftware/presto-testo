@@ -1,0 +1,58 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+   <title>CSS 2D Transforms, transitions, px to em</title>
+   <style type="text/css">
+      body > div {
+         position: relative;
+      }
+      div > div {
+         height: 50px;
+         width: 50px;
+         position: absolute;
+         top: 0;
+      }
+      div:first-child {
+         border: 3px solid gray;
+         left: 30px;
+      }
+      div:first-child + div {
+         background: blue;
+         top: 3px;
+         left: 3px;
+         -moz-transform: translate(30px);
+         -webkit-transform: translate(30px);
+         transform: translate(30px);
+         -moz-transition-duration: 1s;
+         -webkit-transition-duration: 1s;
+         transition-duration: 1s;
+      }
+      div + div.activated {
+         -moz-transform: translate(8em);
+         -webkit-transform: translate(8em);
+         transform: translate(8em);
+      }
+      div + div + div {
+         border: 3px solid black;
+         left: 8em;
+      }
+   </style>
+   <script type="text/javascript">
+      function test(button) {
+         button.value = '(Reload to test again)';
+         document.getElementsByTagName('div')[2].className = 'activated';
+      }
+   </script>
+</head>
+<body>
+   <p>Clicking the button should move the blue square smoothly from inside the
+   gray border to inside the black border, in a 1-second animation.</p>
+   <p><input type="button" value="Run test" onclick="test(this)"></p>
+   <div>
+      <div></div>
+      <div></div>
+      <div></div>
+   </div>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1 plus MathML 2.0 plus SVG 1.1//EN"
+   "http://www.w3.org/2002/04/xhtml-math-svg/xhtml-math-svg.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+   <title>CSS 2D Transforms, SVG inlined in XHTML</title>
+   <style type="text/css">
+      p + div {
+         width: 100px;
+         border-top: 50px solid green;
+         border-bottom: 50px solid red;
+      }
+      svg {
+         -moz-transform: rotate(-90deg) translateX(100px);
+         -webkit-transform: rotate(-90deg) translateX(100px);
+         transform: rotate(-90deg) translateX(100px);
+      }
+   </style>
+</head>
+<body>
+   <p>There should be a green square below, and no red.</p>
+   <div></div>
+   <div>
+      <svg:svg xmlns:svg="http://www.w3.org/2000/svg" width="100" height="100">
+         <svg:rect x="0" y="0" width="50" height="100" fill="green"/>
+      </svg:svg>
+   </div>
+</body>
+</html>

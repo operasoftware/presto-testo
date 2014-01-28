@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+   <title>CSS 2D Transforms, HTML5 video element</title>
+   <style type="text/css">
+      video + video {
+         -moz-transform: scale(0.6) skewY(20deg);
+         -webkit-transform: scale(0.6) skewY(20deg);
+         transform: scale(0.6) skewY(20deg);
+      }
+   </style>
+</head>
+<body>
+   <p>There should be two video controls below, and pressing their respective
+   "play" buttons should start the corresponding video. The rightmost video
+   should be smaller and skewed downwards to the right.</p>
+   <div>
+      <video src="/resources/media/xiph/theora_testsuite/320x240.ogg" controls>
+         NOTE: TC requires &lt;video&gt; support
+      </video>
+      <video src="/resources/media/xiph/theora_testsuite/320x240.ogg" controls>
+      </video>
+   </div>
+</body>
+</html>
