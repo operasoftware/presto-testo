@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//WAPFORUM//DTD WML 2.0//EN" "http://www.wapforum.org/DTD/wml20.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:wml="http://www.wapforum.org/2001/wml">
+<head>
+<title>WML 2.0 Events: ontimer</title>
+</head>
+<body>
+<wml:onevent type="ontimer">
+<wml:go href="http://t.oslo.opera.com/core/standards/wml/post.php" method="post">
+<wml:postfield name="result" value="PASS"/>
+</wml:go>
+</wml:onevent>
+<wml:timer value="1"/>
+<div>If you see this text test failed</div>
+</body>
+</html>

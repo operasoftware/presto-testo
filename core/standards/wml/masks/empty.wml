@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE wml PUBLIC "-//WAPFORUM//DTD WML 1.3//EN" "http://www.wapforum.org/DTD/wml13.dtd">
+<wml>
+<card title="Empty input is allowed">
+<p>
+You should be able to submit form, even if input is empty.
+</p>
+<p>
+<input type="text" name="result" format="*M" value=""/>
+</p>
+<do type="accept" label="submit">
+<go href="http://t/imported/giorgic/wml-extra/hlp/any.php" method="get">
+<postfield name="result" value="$result"/>
+</go>
+</do>
+</card>
+</wml>

@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE wml PUBLIC "-//WAPFORUM//DTD WML 1.3//EN" "http://www.wapforum.org/DTD/wml13.dtd">
+<wml>
+<template><do type="accept" label="FAIL"><go href="#fail"/></do></template>
+<card title="Desk level task">
+<p>There should be no links on this page.</p>
+<do type="accept" label="OK"><noop/></do>
+</card>
+<card title="Test failed" id="fail">
+<p>FAIL</p>
+</card>
+</wml>

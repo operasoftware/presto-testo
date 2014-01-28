@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>WML Test Cases</title>
+<style type="text/css">
+html
+	{background-color:#EEEEEE;}
+a:link
+	{color:navy;}
+a:visited
+	{color:teal;}
+a.failed:visited
+	{color:maroon;}
+</style>
+</head>
+<body>
+<ol>
+<li><a href="nbsp.wml" class="failed">Entity references (nbsp)</a></li>
+<li><a href="shy.wml" class="failed">Entity references (shy)</a></li>
+<li><a href="onenterfor.wml" class="failed">Events (wml:onevent/onenterforward)</a></li>
+<li><a href="onenterfordoc.wml" class="failed">Events (wml:onevent/onenterforward/setvar)</a></li>
+<li><a href="onenterdoc.wml" class="failed">Events (wml:onenterforward on root element)</a></li>
+<li><a href="onenterforw.wml" class="failed">Events (wml:onevent/onenterforward/postfield/get)</a></li>
+<li><a href="onenterforwrd.wml" class="failed">Events (wml:onevent/onenterforward/postfield/setvar)</a></li>
+<li><a href="onenterforward.wml">Events (wml:onenterforward on body element)</a></li>
+<li><a href="cards.wml">Events (wml:onenterforward on wml:card element)</a></li>
+<li><a href="onpick.wml">Events (wml:onpick)</a></li>
+<li><a href="onpickvar.wml">Events (wml:onpick with url specified through variable)</a></li>
+<li><a href="ontimer.wml">Events (wml:ontimer on body element)</a></li>
+<li><a href="ontimer0.wml">Events (wml:ontimer on body element)</a></li>
+<li><a href="ontimerget.wml" class="failed">Events (wml:ontimer/postfield/get)</a></li>
+<li><a href="ontimerpost.wml" class="failed">Events (wml:ontimer/postfield/post)</a></li>
+<li><a href="cardtimer.wml">Events (wml:ontimer on wml:card element)</a></li>
+<li><a href="cardstimer.wml">Events (wml:ontimer and wml:onenterforward)</a></li>
+<li><a href="onenterforwards.wml">Events (wml:onenterforward on html and body elements)</a></li>
+<li><a href="onenterforwrds.wml" class="failed">Events (wml:onenterforward/wml:onevent on html and body elements)</a></li>
+<li><a href="multi.wml" class="failed">Events (wml:onenterforward/wml:ontimer on html and body elements)</a></li>
+<li><a href="multiev.wml">Events (wml:onenterforward on html and wml:card elements)</a></li>
+<li><a href="refresh.wml" class="failed">wml:refresh/wml:getvar</a></li>
+<li><a href="refreshimage.wml" class="failed">wml:refresh that defines image path</a></li>
+<li><a href="dollars.wml" class="failed">Escape sequence in #PCDATA</a></li>
+<li><a href="getanchor.wml">wml:anchor/wml:postfield/wml:setvar</a></li>
+<li><a href="getanc.wml" class="failed">wml:anchor/wml:postfield</a></li>
+<li><a href="getoption.wml" class="failed">Form controls (select/wml:postfield/get)</a></li>
+<li><a href="postoption.wml" class="failed">Form controls (select/wml:postfield/post)</a></li>
+<li><a href="getvar.wml" class="failed">wml:setvar/wml:postfield/get</a></li>
+<li><a href="postvar.wml" class="failed">wml:setvar/wml:postfield/post</a></li>
+<li><a href="get.wml" class="failed">wml:ontimer/wml:postfield/get</a></li>
+<li><a href="post.wml" class="failed">wml:postfield</a></li>
+</ol>
+</body>
+</html>

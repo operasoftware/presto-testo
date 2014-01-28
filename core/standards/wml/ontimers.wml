@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE wml PUBLIC "-//WAPFORUM//DTD WML 1.3//EN" "http://www.wapforum.org/DTD/wml13.dtd">
+<wml>
+<card title="Timers" id="first" ontimer="#second">
+<timer value="1"/>
+<p>FAIL</p>
+</card>
+<card title="Test failed" id="second" ontimer="#third">
+<timer value="1"/>
+<p>FAIL</p>
+</card>
+<card title="Test passed" id="third">
+<p>PASS</p>
+</card>
+</wml>

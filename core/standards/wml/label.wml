@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE wml PUBLIC "-//WAPFORUM//DTD WML 1.3//EN" "http://www.wapforum.org/DTD/wml13.dtd">
+<wml>
+<card title="Task Label">
+<p>You should see word PASS below</p>
+<do type="accept" label="PASS">
+<go href="http://www.opera.com"/>
+</do>
+</card>
+</wml>

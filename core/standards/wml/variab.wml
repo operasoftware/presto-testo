@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE wml PUBLIC "-//WAPFORUM//DTD WML 1.3//EN" "http://www.wapforum.org/DTD/wml13.dtd">
+<wml>
+<card title="Variables">
+<onevent type="onenterforward">
+<go href="#pass">
+<setvar name="var" value="var"/>
+<setvar name="$(var)iable" value="PASS"/>
+</go>
+</onevent>
+<p>FAIL</p>
+</card>
+<card title="You should see word pass below" id="pass">
+<p>$variable</p>
+</card>
+</wml>

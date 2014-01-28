@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE wml PUBLIC "-//WAPFORUM//DTD WML 1.3//EN" "http://www.wapforum.org/DTD/wml13.dtd">
+<wml>
+<template>
+<do type="accept" label="BOTTOM">
+<go href="get.php?result=Passed%20if%20BOTTOM%20anchor%20was%20at%20the%20bottom%20of%20page"/>
+</do>
+</template>
+<card title="Desk level task">
+<p>You should see word BOTTOM below</p>
+</card>
+</wml>

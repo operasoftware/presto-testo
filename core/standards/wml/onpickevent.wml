@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE wml PUBLIC "-//WAPFORUM//DTD WML 1.3//EN" "http://www.wapforum.org/DTD/wml13.dtd">
+<wml>
+<card title="Events (onpick)">
+<p>Select second option from the form control below, you should get new page with word pass</p>
+<p>
+<select>
+<option>
+default option
+<onevent type="onpick">
+<go href="#pass"/>
+</onevent>
+</option>
+<option>
+select this option
+<onevent type="onpick">
+<go href="#last"/>
+</onevent>
+</option>
+</select>
+</p>
+</card>
+<card title="Test passed" id="pass">
+<p>PASS</p>
+</card>
+<card title="Test passed" id="last">
+<p>PASS</p>
+</card>
+</wml>

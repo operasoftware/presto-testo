@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE wml PUBLIC "-//WAPFORUM//DTD WML 1.3//EN" "http://www.wapforum.org/DTD/wml13.dtd">
+<wml>
+<card title="Any characters are allowed">
+<p>
+Type anything in input field below. You should be able to submit form if input is not empty.
+</p>
+<p>
+<input type="text" name="result" format="M*M" value="ABC"/>
+</p>
+<do type="accept" label="submit">
+<go href="http://t/imported/giorgic/wml-extra/hlp/chars.php" method="get">
+<postfield name="result" value="$result"/>
+</go>
+</do>
+</card>
+</wml>

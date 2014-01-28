@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE wml PUBLIC "-//WAPFORUM//DTD WML 1.3//EN" "http://www.wapforum.org/DTD/wml13.dtd">
+<wml>
+<card title="Format attribute">
+<onevent type="onenterforward">
+<refresh>
+<setvar name="result" value=""/>
+</refresh>
+</onevent>
+<p>
+You should see word pass below
+</p>
+<p>
+<input type="text" name="result" format="A*A" value="PASS"/>
+</p>
+</card>
+</wml>

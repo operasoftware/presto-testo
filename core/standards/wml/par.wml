@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE wml PUBLIC "-//WAPFORUM//DTD WML 1.3//EN" "http://www.wapforum.org/DTD/wml13.dtd">
+<wml>
+<card title="Paragraphs">
+<p>There should be no line breaks in next paragraph below</p>
+<p mode="nowrap">
+WML has two line-wrapping modes for visual user agents: breaking (or wrapping) and non-breaking (or non-wrapping).  The treatment of a line too long to fit on the screen is specified by the
+current line-wrap mode.  If mode="wrap" is specified, the line is word-wrapped onto multiple
+lines. In this case, line breaks should be inserted into a text flow as appropriate for presentation on
+an individual device. If mode="nowrap" is specified, the line is not automatically wrapped. In
+this case, the user agent must provide a mechanism to view entire non-wrapped lines (e.g.,
+horizontal scrolling or some other user-agent-specific mechanism).
+</p>
+</card>
+</wml>

@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE wml PUBLIC "-//WAPFORUM//DTD WML 1.3//EN" "http://www.wapforum.org/DTD/wml13.dtd">
+<wml>
+<card title="Test failed" id="first">
+<onevent type="onenterforward">
+<go href="#second"/>
+</onevent>
+<p>FAIL</p>
+</card>
+<card title="Test passed" id="second">
+<onevent type="onenterforward">
+<go href="#third"/>
+</onevent>
+<onevent type="onenterbackward">
+<noop/>
+</onevent>
+<p>PASS</p>
+</card>
+<card title="Test failed" id="third">
+<onevent type="onenterforward">
+<prev/>
+</onevent>
+<p>FAIL</p>
+</card>
+</wml>

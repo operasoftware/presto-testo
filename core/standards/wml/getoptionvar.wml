@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE wml PUBLIC "-//WAPFORUM//DTD WML 1.3//EN" "http://www.wapforum.org/DTD/wml13.dtd">
+<wml>
+<card title="Get method">
+<p>Select last value and submit form</p>
+<p>
+<select name="result">
+<option value="FAIL">Do not select this option</option>
+<option value="PASS">Instead select this one</option>
+</select>
+</p>
+<do type="accept" label="submit">
+<go href="get.php?result=$result"/>
+</do>
+</card>
+</wml>

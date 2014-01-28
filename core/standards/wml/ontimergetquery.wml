@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE wml PUBLIC "-//WAPFORUM//DTD WML 1.1//EN" "http://www.wapforum.org/DTD/wml_1.1.xml">
+<wml>
+<card title=" " id="one">
+<onevent type="ontimer">
+<go method="get" href="http://t.oslo.opera.com/core/standards/wml/get.php?result=PASS">
+<postfield value="1" name="data"/>
+</go>
+</onevent>
+<timer value="1"/>
+<p>If you see this text test failed</p>
+</card>
+</wml>

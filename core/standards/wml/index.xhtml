@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>WML Test Cases</title>
+<style type="text/css">
+html
+	{background-color:#EEEEEE;}
+h2
+	{font-size:1.2em;}
+a:link
+	{color:navy;}
+a:visited
+	{color:teal;}
+a.failed:visited
+	{color:maroon;}
+</style>
+</head>
+<body>
+<h2>WML 1.3 TCs</h2>
+<ol>
+<li><a href="nbsp.wml" class="failed">Entity references (nbsp)</a></li>
+<li><a href="shy.wml" class="failed">Entity references (shy)</a></li>
+<li><a href="onenterfor.wml">Events (onenterforward)</a></li>
+<li><a href="onenterforw.wml">Events (onenterforward/desklevel)</a></li>
+<li><a href="onenterforward.wml">Events (onenterforward/desklevel)</a></li>
+<li><a href="onenter.wml">Events (onenterforward attr)</a></li>
+<li><a href="onenterback.wml" class="failed">Events (onenterbackward/prev)</a></li>
+<li><a href="prev.wml" class="failed">Events (onenterbackward/prev)</a></li>
+<li><a href="onpickevent.wml" class="failed">Events (onpick)</a></li>
+<li><a href="onpick.wml" class="failed">Events (onpick att)</a></li>
+<li><a href="ontimer.wml">Events (ontimer)</a></li>
+<li><a href="ontimer2.wml">Events (multiple ontimers)</a></li>
+<li><a href="ontimers.wml">Events (multiple ontimers)</a></li>
+<li><a href="ontimervar.wml">Events (ontimer value set through variable)</a></li>
+<li><a href="variable.wml" class="failed">Variables (refresh)</a></li>
+<li><a href="var.wml" class="failed">Variables (refresh/go)</a></li>
+<li><a href="varia.wml" class="failed">Variables (anchor/go)</a></li>
+<li><a href="vari.wml" class="failed">Variable set through another variable</a></li>
+<li><a href="dollar.wml">Escaped dollar signs (char)</a></li>
+<li><a href="dollars.wml">Escaped dollar signs (ref)</a></li>
+<li><a href="do.wml" class="failed">Desk level task</a></li>
+<li><a href="desk.wml" class="failed">Desk level task</a></li>
+<li><a href="accept.wml">Hyperlink (do/go)</a></li>
+<li><a href="go.wml">Hyperlink and onenterforward event</a></li>
+<li><a href="acceptvar.wml" class="failed">Hyperlink with URI set through variable</a></li>
+<li><a href="img.wml">PNG Image (img)</a></li>
+<li><a href="ontimerimage.wml" class="failed">PNG Image (source set through variable)</a></li>
+<li><a href="refreshimage.wml" class="failed">PNG Image (source set through variable)</a></li>
+<li><a href="image.wml">JPG Image (img)</a></li>
+<li><a href="alt.wml">Image (alt attr)</a></li>
+<li><a href="submit.wml">Submit query (method get)</a></li>
+<li><a href="post.wml">Submit query (method post)</a></li>
+<li><a href="getfor.wml">Submit query (method get, onenterforward)</a></li>
+<li><a href="postfor.wml">Submit query (method post, onenterforward)</a></li>
+<li><a href="gettimer.wml">Submit query (method get, ontimer)</a></li>
+<li><a href="getvar.wml">Submit query (method get, value set through variable)</a></li>
+<li><a href="postvar.wml">Submit query (method post, value set through variable)</a></li>
+<li><a href="getoption.wml">Submit query (method get, value set through select control)</a></li>
+<li><a href="getoptionvar.wml">Submit query (method get, value set through select control and submitted as variable)</a></li>
+<li><a href="postoption.wml">Submit query (method post, value set through select control)</a></li>
+<li><a href="getinput.wml" class="failed">Submit query (method get, value set through input control)</a></li>
+<li><a href="postinput.wml" class="failed">Submit query (method post, value set through input control)</a></li>
+<li><a href="getpass.wml" class="failed">Submit query (method get, value set through password control)</a></li>
+<li><a href="postpass.wml" class="failed">Submit query (method post, value set through password control)</a></li>
+<li><a href="par.wml" class="failed">Paragraphs (mode)</a></li>
+<li><a href="para.wml" class="failed">Paragraphs (mode inheritence)</a></li>
+<li><a href="parag.wml" class="failed">Paragraphs (empty/insignificant)</a></li>
+<li><a href="paragr.wml" class="failed">Paragraphs (empty/insignificant)</a></li>
+<li><a href="align.wml">Paragraphs (align)</a></li>
+<li><a href="alignment.wml">Paragraphs (align)</a></li>
+<li><a href="left.wml">Paragraphs (align)</a></li>
+<li><a href="table.wml">Table (align="L")</a></li>
+<li><a href="tables.wml">Table (align="L")</a></li>
+<li><a href="tabler.wml">Table (align="R")</a></li>
+<li><a href="tablerr.wml">Table (align="R")</a></li>
+<li><a href="tablec.wml">Table (align="C")</a></li>
+<li><a href="tablecc.wml">Table (align="C")</a></li>
+<li><a href="big.wml">Text (big)</a></li>
+<li><a href="small.wml">Text (small)</a></li>
+<li><a href="br.wml">Line breaks</a></li>
+<li><a href="pre.wml">Preformatted text</a></li>
+<li><a href="xmlspace.wml">Preformatted text (xml:space)</a></li>
+<li><a href="cdata.wml">CDATA sections</a></li>
+<li><a href="foreignns.wml">Unknown markup</a></li>
+</ol>
+<h2>WML 2.0 TCs</h2>
+<ol>
+<li><a href="wml20/nbsp.wml" class="failed">Entity references (nbsp)</a></li>
+<li><a href="wml20/shy.wml" class="failed">Entity references (shy)</a></li>
+<li><a href="wml20/onenterfor.wml" class="failed">Events (wml:onevent/onenterforward)</a></li>
+<li><a href="wml20/onenterfordoc.wml" class="failed">Events (wml:onevent/onenterforward/setvar)</a></li>
+<li><a href="wml20/onenterdoc.wml" class="failed">Events (wml:onenterforward on root element)</a></li>
+<li><a href="wml20/onenterforw.wml" class="failed">Events (wml:onevent/onenterforward/postfield/get)</a></li>
+<li><a href="wml20/onenterforwrd.wml" class="failed">Events (wml:onevent/onenterforward/postfield/setvar)</a></li>
+<li><a href="wml20/onenterforward.wml">Events (wml:onenterforward on body element)</a></li>
+<li><a href="wml20/cards.wml">Events (wml:onenterforward on wml:card element)</a></li>
+<li><a href="wml20/onpick.wml">Events (wml:onpick)</a></li>
+<li><a href="wml20/onpickvar.wml">Events (wml:onpick with url specified through variable)</a></li>
+<li><a href="wml20/ontimer.wml">Events (wml:ontimer on body element)</a></li>
+<li><a href="wml20/ontimer0.wml">Events (wml:ontimer on body element)</a></li>
+<li><a href="wml20/ontimerget.wml" class="failed">Events (wml:ontimer/postfield/get)</a></li>
+<li><a href="wml20/ontimerpost.wml" class="failed">Events (wml:ontimer/postfield/post)</a></li>
+<li><a href="wml20/cardtimer.wml">Events (wml:ontimer on wml:card element)</a></li>
+<li><a href="wml20/cardstimer.wml">Events (wml:ontimer and wml:onenterforward)</a></li>
+<li><a href="wml20/onenterforwards.wml">Events (wml:onenterforward on html and body elements)</a></li>
+<li><a href="wml20/onenterforwrds.wml" class="failed">Events (wml:onenterforward/wml:onevent on html and body elements)</a></li>
+<li><a href="wml20/multi.wml" class="failed">Events (wml:onenterforward/wml:ontimer on html and body elements)</a></li>
+<li><a href="wml20/multiev.wml">Events (wml:onenterforward on html and wml:card elements)</a></li>
+<li><a href="wml20/refresh.wml" class="failed">wml:refresh/wml:getvar</a></li>
+<li><a href="wml20/refreshimage.wml" class="failed">wml:refresh that defines image path</a></li>
+<li><a href="wml20/dollars.wml" class="failed">Escape sequence in #PCDATA</a></li>
+<li><a href="wml20/getanchor.wml">wml:anchor/wml:postfield/wml:setvar</a></li>
+<li><a href="wml20/getanc.wml" class="failed">wml:anchor/wml:postfield</a></li>
+<li><a href="wml20/getoption.wml" class="failed">Form controls (select/wml:postfield/get)</a></li>
+<li><a href="wml20/postoption.wml" class="failed">Form controls (select/wml:postfield/post)</a></li>
+<li><a href="wml20/getvar.wml" class="failed">wml:setvar/wml:postfield/get</a></li>
+<li><a href="wml20/postvar.wml" class="failed">wml:setvar/wml:postfield/post</a></li>
+<li><a href="wml20/get.wml" class="failed">wml:ontimer/wml:postfield/get</a></li>
+<li><a href="wml20/post.wml" class="failed">wml:postfield</a></li>
+</ol>
+</body>
+</html>

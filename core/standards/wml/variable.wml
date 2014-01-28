@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE wml PUBLIC "-//WAPFORUM//DTD WML 1.3//EN" "http://www.wapforum.org/DTD/wml13.dtd">
+<wml>
+<card title="You should see word PASS below">
+<onevent type="onenterforward">
+<refresh>
+<setvar name="result" value="PASS"/>
+</refresh>
+</onevent>
+<p>$result</p>
+</card>
+</wml>

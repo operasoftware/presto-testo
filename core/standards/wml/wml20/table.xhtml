@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>WML Test Cases</title>
+<style type="text/css">
+html
+	{background-color:#EEEEEE;}
+th, td
+	{padding:0.5ex;
+	text-align:left;}
+td:first-child:before
+	{content:counter(tc,decimal-leading-zero) ". ";
+	counter-increment:tc;}
+a:link
+	{color:navy;}
+a:visited
+	{color:black;}
+</style>
+</head>
+<body>
+<table>
+<tr><th>TC</th><th>Result</th><th>Media</th></tr>
+<tr><td><a href="nbsp.wml">Entity references (nbsp)</a></td><td>fail</td><td>visual</td></tr>
+<tr><td><a href="shy.wml">Entity references (shy)</a></td><td>fail</td><td>visual</td></tr>
+<tr><td><a href="onenterfor.wml">Events (wml:onevent/onenterforward)</a></td><td>fail</td><td>visual</td></tr>
+<tr><td><a href="onenterfordoc.wml">Events (wml:onevent/onenterforward/setvar)</a></td><td>fail</td><td>visual</td></tr>
+<tr><td><a href="onenterdoc.wml">Events (wml:onenterforward on root element)</a></td><td>fail</td><td>visual</td></tr>
+<tr><td><a href="onenterforw.wml">Events (wml:onevent/onenterforward/postfield/get)</a></td><td>fail</td><td>visual</td></tr>
+<tr><td><a href="onenterforwrd.wml">Events (wml:onevent/onenterforward/postfield/setvar)</a></td><td>fail</td><td>visual</td></tr>
+<tr><td><a href="onenterforward.wml">Events (wml:onenterforward on body element)</a></td><td>pass</td><td>visual</td></tr>
+<tr><td><a href="cards.wml">Events (wml:onenterforward on wml:card element)</a></td><td>pass</td><td>visual</td></tr>
+<tr><td><a href="onpick.wml">Events (wml:onpick)</a></td><td>pass</td><td>interactive</td></tr>
+<tr><td><a href="onpickvar.wml">Events (wml:onpick with url specified through variable)</a></td><td>pass</td><td>interactive</td></tr>
+<tr><td><a href="ontimer.wml">Events (wml:ontimer on body element)</a></td><td>pass</td><td>visual</td></tr>
+<tr><td><a href="ontimer0.wml">Events (wml:ontimer on body element)</a></td><td>pass</td><td>visual</td></tr>
+<tr><td><a href="ontimerget.wml">Events (wml:ontimer/postfield/get)</a></td><td>fail</td><td>visual</td></tr>
+<tr><td><a href="ontimerpost.wml">Events (wml:ontimer/postfield/post)</a></td><td>fail</td><td>visual</td></tr>
+<tr><td><a href="cardtimer.wml">Events (wml:ontimer on wml:card element)</a></td><td>pass</td><td>visual</td></tr>
+<tr><td><a href="cardstimer.wml">Events (wml:ontimer and wml:onenterforward)</a></td><td>pass</td><td>visual</td></tr>
+<tr><td><a href="onenterforwards.wml">Events (wml:onenterforward on html and body elements)</a></td><td>pass</td><td>visual</td></tr>
+<tr><td><a href="onenterforwrds.wml">Events (wml:onenterforward/wml:onevent on html and body elements)</a></td><td>fail</td><td>visual</td></tr>
+<tr><td><a href="multi.wml">Events (wml:onenterforward/wml:ontimer on html and body elements)</a></td><td>fail</td><td>visual</td></tr>
+<tr><td><a href="multiev.wml">Events (wml:onenterforward on html and wml:card elements)</a></td><td>pass</td><td>visual</td></tr>
+<tr><td><a href="refresh.wml">wml:refresh/wml:getvar</a></td><td>fail</td><td>visual</td></tr>
+<tr><td><a href="refreshimage.wml">wml:refresh that defines image path</a></td><td>fail</td><td>visual</td></tr>
+<tr><td><a href="dollars.wml">Escape sequence in #PCDATA</a></td><td>fail</td><td>visual</td></tr>
+<tr><td><a href="getanchor.wml">wml:anchor/wml:postfield/wml:setvar</a></td><td>pass</td><td>interactive</td></tr>
+<tr><td><a href="getanc.wml">wml:anchor/wml:postfield</a></td><td>fail</td><td>interactive</td></tr>
+<tr><td><a href="getoption.wml">Form controls (select/wml:postfield/get)</a></td><td>fail</td><td>interactive</td></tr>
+<tr><td><a href="postoption.wml">Form controls (select/wml:postfield/post)</a></td><td>fail</td><td>interactive</td></tr>
+<tr><td><a href="getvar.wml">wml:setvar/wml:postfield/get</a></td><td>fail</td><td>interactive</td></tr>
+<tr><td><a href="postvar.wml">wml:setvar/wml:postfield/post</a></td><td>fail</td><td>interactive</td></tr>
+<tr><td><a href="get.wml">wml:ontimer/wml:postfield/get</a></td><td>fail</td><td>visual</td></tr>
+<tr><td><a href="post.wml">wml:postfield</a></td><td>fail</td><td>interactive</td></tr>
+</table>
+</body>
+</html>

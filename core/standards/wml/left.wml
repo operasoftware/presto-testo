@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE wml PUBLIC "-//WAPFORUM//DTD WML 1.3//EN" "http://www.wapforum.org/DTD/wml13.dtd">
+<wml>
+<card title="Text alignment: left">
+<p>Charcaters below should be placed exactly under A and form one vertical column</p>
+<p>A&#xA0;&#xA0;&#xA0;</p>
+<p>B&#xA0;&#xA0;</p>
+<p>C&#xA0;</p>
+<p>D</p>
+</card>
+</wml>

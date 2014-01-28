@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE wml PUBLIC "-//WAPFORUM//DTD WML 1.3//EN" "http://www.wapforum.org/DTD/wml13.dtd">
+<wml>
+<card title="Entity reference: nbsp">
+<p>You should not see any line breaks in paragraph below</p>
+<p>There&#xA0;should&#xA0;be&#xA0;no&#xA0;line&#xA0;breaks&#xA0;in&#xA0;this&#xA0;paragraph&#xA0;There&#xA0;should&#xA0;be&#xA0;no&#xA0;line&#xA0;breaks&#xA0;in&#xA0;this&#xA0;paragraph&#xA0;There&#xA0;should&#xA0;be&#xA0;no&#xA0;line&#xA0;breaks&#xA0;in&#xA0;this&#xA0;paragraph&#xA0;There&#xA0;should&#xA0;be&#xA0;no&#xA0;line&#xA0;breaks&#xA0;in&#xA0;this&#xA0;paragraph</p>
+</card>
+</wml>

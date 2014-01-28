@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE wml PUBLIC "-//WAPFORUM//DTD WML 1.3//EN" "http://www.wapforum.org/DTD/wml13.dtd">
+<wml>
+<card title="Paragraphs">
+<p mode="nowrap">There should be no line breaks in next paragraph below</p>
+<p>
+If the line-wrap mode is not specified, it is identical
+to the line-wrap mode of the previous paragraph in the current card. Empty paragraphs (i.e., an
+empty element or an element with only insignificant white space) should be considered as
+insignificant and ignored by visual user agents.  Insignificant paragraphs do not impact line-wrap
+mode.  If the first p element in a card does not specify a line-wrap or alignment mode, that mode
+defaults to the initial mode for the card.</p>
+</card>
+</wml>

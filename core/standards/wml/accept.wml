@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE wml PUBLIC "-//WAPFORUM//DTD WML 1.3//EN" "http://www.wapforum.org/DTD/wml13.dtd">
+<wml>
+<card title="Hyperlink">
+<p>Follow hyperlink below, you should see word pass after you actuate it.</p>
+<do type="accept" label="Follow this link">
+<go href="#pass"/>
+</do>
+</card>
+<card title="Test passed" id="pass">
+<p>PASS</p>
+</card>
+</wml>

@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE wml PUBLIC "-//WAPFORUM//DTD WML 1.3//EN" "http://www.wapforum.org/DTD/wml13.dtd">
+<wml>
+<card title="Image source set through variable" id="first">
+<onevent type="ontimer">
+<go href="#second">
+<setvar name="image" value="pass.png"/>
+</go>
+</onevent>
+<timer value="1"/>
+</card>
+<card title="JPG Image" id="second">
+<p>You should see word PASS below</p>
+<p><img src="$image" alt="FAIL"/></p>
+</card>
+</wml>

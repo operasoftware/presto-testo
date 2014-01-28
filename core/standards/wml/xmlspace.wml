@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE wml PUBLIC "-//WAPFORUM//DTD WML 1.3//EN" "http://www.wapforum.org/DTD/wml13.dtd">
+<wml>
+<card title="Preformatted text">
+<p>Two paragraphs below should be formatted indentically</p>
+<pre>Just 
+text</pre>
+<pre xml:space="preserve">Just 
+text</pre>
+</card>
+</wml>

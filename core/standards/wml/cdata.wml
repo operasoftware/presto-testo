@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE wml PUBLIC "-//WAPFORUM//DTD WML 1.3//EN" "http://www.wapforum.org/DTD/wml13.dtd">
+<wml>
+<card title="CDATA section">
+<p>Two paragraphs below should be formatted identically</p>
+<p>&amp; Simple paragraph &lt;&lt;</p>
+<p><![CDATA[& Simple paragraph <<]]></p>
+</card>
+</wml>

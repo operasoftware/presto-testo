@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE wml PUBLIC "-//WAPFORUM//DTD WML 1.3//EN" "http://www.wapforum.org/DTD/wml13.dtd">
+<wml>
+<card title="Cell alignment: right">
+<p>Charcaters below should be placed exactly under A and form one vertical column</p>
+<table columns="1" align="R">
+<tr><td>&#xA0;&#xA0;&#xA0;A</td></tr>
+<tr><td>&#xA0;&#xA0;B</td></tr>
+<tr><td>&#xA0;C</td></tr>
+<tr><td>D</td></tr>
+</table>
+</card>
+</wml>
