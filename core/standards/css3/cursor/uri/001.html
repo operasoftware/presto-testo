@@ -1,0 +1,40 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>Cursor:url</title>
+		<style type="text/css">
+#jpeg { cursor: url(001-1.jpg), wait; }
+#gif { cursor: url(001-1.gif), wait; }
+#agif { cursor: url(001-2.gif), wait; }
+#png { cursor: url(001-1.png), wait; }
+#apng { cursor: url(001-2.png), wait; }
+#svg { cursor: url(001-1.svg), wait; }
+#asvg { cursor: url(001-2.svg), wait; }
+#svgc { cursor: url(001-3.svg#curs), wait; }
+#asvgc { cursor: url(001-4.svg#curs), wait; }
+#bmp { cursor: url(001-1.bmp), wait; }
+#cur { cursor: url(001-1.cur), wait; }
+#ani { cursor: url(001-1.ani), wait; }
+		</style>
+	</head>
+	<body>
+
+		<p>The cursor should display the word "PASS" over all of the following bullet point text (ignore any flicker):</p>
+
+		<ul>
+			<li id="jpeg">Hover this text (JPEG).</li>
+			<li id="gif">Hover this text (GIF).</li>
+			<li id="agif">Hover this text (Animated GIF).</li>
+			<li id="png">Hover this text (PNG).</li>
+			<li id="apng">Hover this text (APNG).</li>
+			<li id="svg">Hover this text (SVG).</li>
+			<li id="asvg">Hover this text (Animated SVG).</li>
+			<li id="svgc">Hover this text (SVG cursor [PNG]).</li>
+			<li id="asvgc">Hover this text (Animated SVG cursor [PNG]).</li>
+			<li id="bmp">Hover this text (BMP).</li>
+			<li id="cur">Hover this text (CUR).</li>
+			<li id="ani">Hover this text (ANI).</li>
+		</ul>
+
+	</body>
+</html>

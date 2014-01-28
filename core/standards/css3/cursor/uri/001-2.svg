@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="30" height="15">
+<style type="text/css">
+svg { background: white; }
+</style>
+<text fill="white" font-size="11" x="0" y="11">
+<animate attributeName="fill" from="white" to="black" begin="0" dur="0.01" fill="freeze" />
+PASS
+</text>
+</svg>
