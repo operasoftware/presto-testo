@@ -1,0 +1,81 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<HTML><HEAD>
+<TITLE>Media Types</TITLE>
+<STYLE TYPE="text/css" media="all">
+P.one	{
+	color: red;
+	background: gray;
+	}
+
+
+</STYLE>
+<STYLE TYPE="text/css" media="handheld">
+P.two	{
+	color: red;
+	background: gray;
+	}
+
+
+</STYLE>
+<STYLE TYPE="text/css" media="screen">
+P.three	{
+	color: red;
+	background: gray;
+	}
+
+
+</STYLE>
+<STYLE TYPE="text/css">
+@import url("import1.css") handheld;
+@import url("import2.css") all;
+@import url("import3.css") screen;
+
+@media handheld {
+    P.seven {
+	color: red;
+	background: gray;
+	}
+}
+@media all {
+    P.eight {
+	color: red;
+	background: gray;
+	}
+}
+@media screen {
+    P.nine {
+	color: red;
+	background: gray;
+	}
+}
+</STYLE>
+<LINK rel="stylesheet" type="text/css" media="handheld" href="link1.css">
+<LINK rel="stylesheet" type="text/css" media="all" href="link2.css">
+<LINK rel="stylesheet" type="text/css" media="screen" href="link3.css">
+
+</HEAD>
+<BODY>
+
+<P>The styles on this page are:</P>
+<PRE>
+	{
+	color: red;
+	background: gray;
+	}
+
+</PRE>
+<HR/>
+<P CLASS="one"> Style Tag with media  set to all </p>
+<P CLASS="two"> Style Tag with media  set to handheld </p>
+<P CLASS="three"> Style Tag with media  set to screen </p>
+<P CLASS="four"> @import rule for media set to handheld </p>
+<P CLASS="five"> @import rule for media set to all </p>
+<P CLASS="six"> @import rule media set to screen </p>
+<P CLASS="seven"> @media rule for handheld </p>
+<P CLASS="eight"> @media rule for all </p>
+<P CLASS="nine"> @media rule for screen </p>
+<P CLASS="ten"> Linked Style Sheet for media set to handheld </p>
+<P CLASS="eleven"> Linked Style Sheet for media set to for all </p>
+<P CLASS="twelve"> Linked Style Sheet media set to screen </p>
+
+</BODY></HTML>

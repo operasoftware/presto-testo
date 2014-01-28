@@ -1,0 +1,150 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<HTML><HEAD>
+<TITLE>Universal Selector</TITLE>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<LINK REL="copyright" HREF="http://www.people.fas.harvard.edu/~dbaron/legal.html">
+<STYLE TYPE="text/css">
+
+P.two	{
+	color: black;
+	background: white;
+	}
+
+*	{
+	color: #800 ! important;
+	background: yellow;
+	}
+
+P.three	{
+	color: green ! important;
+	}
+
+DIV.four	{
+	background: #8F8;
+	margin-top: 1em;
+	margin-bottom: 1em;
+	}
+
+DIV.five, DIV.five *	{
+	background: #BBF;
+	margin-top: 1em;
+	margin-bottom: 1em;
+	}
+
+/* For legibility */
+A:link, A:visited	{
+	color: blue ! important;
+	}
+
+*#seven	{
+	background: black;
+	color: white ! important;
+	}
+
+*.eight	{
+	background: blue;
+	color: yellow ! important;
+	}
+
+P.nine * EM	{
+	background: green;
+	color: white ! important;
+	}
+
+BLOCKQUOTE*EM {
+	color: aqua;
+	background: green;
+	}
+</STYLE>
+</HEAD>
+<BODY>
+<P>The following styles are applied here:</P>
+<PRE> 
+P.two	{
+	color: black;
+	background-color: white;
+	}
+
+*	{
+	color: #800 ! important;
+	background-color: yellow;
+	}
+
+P.three	{
+	color: green ! important;
+	}
+
+DIV.four	{
+	background-color: #8F8;
+	margin-top: 1em;
+	margin-bottom: 1em;
+	}
+
+DIV.five, DIV.five *	{
+	background-color: #BBF;
+	margin-top: 1em;
+	margin-bottom: 1em;
+	}
+
+/* For legibility */
+A:link, A:visited	{
+	color: blue ! important;
+	}
+
+*#seven	{
+	background-color: black;
+	color: white ! important;
+	}
+
+*.eight	{
+	background-color: blue;
+	color: yellow ! important;
+	}
+
+P.nine * EM	{
+	background-color: green;
+	color: white ! important;
+	}
+
+BLOCKQUOTE*EM {
+	color: aqua;
+	background-color: green;
+	}
+</PRE>
+
+<P>The background of this document should be yellow, and this paragraph
+should have dark red text.  If these are not true, then the universal
+selector is not working at all.  However, if the text is dark red but
+the background is light blue, then <code>DIV.five *</code> is being
+misinterpreted as <code>*</code>.</P>
+
+<P CLASS="two">This paragraph (two) should also have dark red text, because
+the color in the universal selector is marked as important.  However, its
+background should be white because the universal selector should be
+overridden based on specificity.</P>
+
+<P CLASS="three">This paragraph (three) should have green text on the original
+yellow background.</P>
+
+<DIV CLASS="four">This DIV (four) should have a light green background.
+<P>However, this paragraph should have a yellow background.</P>
+Now there should be a light green background again.
+</DIV>
+
+<DIV CLASS="five">This DIV (five) should have a light blue background.
+<P>This paragraph should also have a light blue background.</P>
+Here there should still be a light blue background.
+</DIV>
+
+<P ID="seven">This paragraph should have white text on a black
+background.</P>
+
+<P CLASS="eight">This paragraph should have yellow text on a blue
+background.</P>
+
+<P CLASS="nine">There should <SPAN>only be <EM>two words</EM> in this
+paragraph</SPAN> that have white text on a green background.</P>
+
+</BODY></HTML> 
+

@@ -1,0 +1,54 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<title>The visibility property</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<link rel="copyright" href="http://www.people.fas.harvard.edu/~dbaron/legal.html">
+<style type="text/css">
+.show { width: 50px; height: 40px; border:black;margin-top: 20px; margin-left: 25px;overflow: visible; }
+.hide { width: 50px; height: 40px; border:black;margin-top: 20px; margin-left: 25px; overflow: hidden; }
+.scroll { width: 50px; height: 40px; border:black;margin-top: 20px; margin-left: 25px; overflow: scroll; }
+
+div.test { border: medium solid red; background: yellow; color: black; width: 70px; height: 70px;}
+
+
+</style>
+</head>
+<body>
+
+<P>The style declarations which apply to the text below are:</P>
+<PRE>
+.show { width: 50px; height: 40px; border:black;margin-top: 20px; margin-left: 25px;overflow: visible; }
+.hide { width: 50px; height: 40px; border:black;margin-top: 20px; margin-left: 25px; overflow: hidden; }
+.scroll { width: 50px; height: 40px; border:black;margin-top: 20px; margin-left: 25px; overflow: scroll; }
+
+div.test { border: medium solid red; background: yellow; color: black; width: 70px; height: 70px;}
+</PRE>
+<hr />
+<div class="test">
+This is some text inside this box.
+<p class="show"> 
+This has overflow set to visible. Writing some more text to ensure that it overflows.
+</p>
+</div>
+
+
+<div class="test">
+This is some text inside this box.
+<p class="hide"> 
+This has overflow set to hidden. A user agent may clip this text here.
+</p>
+</div>
+
+
+<div class="test">
+This is some text inside this box.
+<p class="scroll"> 
+This has overflow set to scroll. A user agent may put scroll bars here.
+</p>
+</div>
+
+<hr/>
+
+</body></html>

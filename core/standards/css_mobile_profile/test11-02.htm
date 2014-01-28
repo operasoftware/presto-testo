@@ -1,0 +1,61 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<title>The visibility property</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<link rel="copyright" href="http://www.people.fas.harvard.edu/~dbaron/legal.html">
+<style type="text/css">
+.show1 { margin-top: 20px; margin-left: 25px;visibility: visible; }
+.hide1 { margin-top: 20px; margin-left: 25px; visibility: hidden; }
+.hide2 { margin-top: 20px; margin-left: 25px; visibility: collapse; }
+
+p.test { border: medium solid red; background: yellow; color: black; width: 80px; height: 80px;}
+
+
+</style>
+</head>
+<body>
+
+<P>The style declarations which apply to the text below are:</P>
+<PRE>
+.show1 { margin-top: 10px; margin-left: 25px;visibility: visible; }
+.hide1 { margin-top: 10px; margin-left: 25px; visibility: hidden; }
+.hide2 { margin-top: 10px; margin-left: 25px; visibility: collapse; }
+
+p { border: medium solid red; background: yellow; color: black; width: 80px; height: 80px;}
+</PRE>
+<hr />
+<p class="test">
+This is some text inside this box.
+<span class="show1"> 
+This has visibility set to visible.
+</span>
+<div class="show1"> 
+This has visibility set to visible.
+</div>
+</p>
+
+<p class="test">
+This is some text inside this box.
+<div class="hide1"> 
+This has visibility set to hidden.
+</div>
+<span class="hide1"> 
+This has visibility set to hidden.
+</span>
+</p>
+
+
+<p class="test">
+This is some text inside this box.
+<div class="hide1"> 
+This has visibility set to collapse.
+</div>
+<span class="hide1"> 
+This has visibility set to collapse.
+</span>
+</p>
+<hr/>
+
+</body></html>

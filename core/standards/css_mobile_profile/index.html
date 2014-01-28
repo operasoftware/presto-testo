@@ -1,0 +1,87 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/REC-html401-19991224/strict.dtd">
+<HTML>
+<HEAD>
+<TITLE>CSS Mobile Profile Test Suite</TITLE>
+<LINK REL="stylesheet" TYPE="text/css" MEDIA="screen" HREF="http://www.w3.org/Style/CSS/Test/current/static.css">
+<LINK rel="alternate stylesheet" type="text/css" href="http://www.w3.org/Style/CSS/Test/current/W3C-rsrc-test.css" media="screen" title="Experimental W3C Styles">
+<STYLE TYPE="text/css">
+H1 {border: solid 1px black; border-left: 3px solid black; background-color: #FFFFFF;}
+H4 {border-bottom: 1px solid black; margin-left: 2em; margin-right: 5em; font-variant: small-caps; margin-bottom: 0.5em;}
+DIV.role {margin-left: 2em; margin-right: 5em; margin-bottom: 0.5em;}
+P.intro {margin-top: 5 em; margin-left: 2em; margin-right: 5em; margin-bottom: 2em;}
+UL {list-style-type: none;}
+ .validated { text-align:right; font-size: smaller }
+.no-mobile {display: none}
+</STYLE>
+</HEAD>
+
+<BODY CLASS="navigation">
+<h1>Do not use this suite. It is deprecated by http://t/core/standards/css-baseline-mobile/</h1>
+<H1>CSS Mobile Profile Test Suite 
+</H1>
+<P class="intro">This Test Suite has been designed primarily to help implementors develop more comprehensive tests and to help authors gauge the level of
+support for the basics of the <A HREF="http://www.w3.org/TR/css-mobile">CSS Mobile Profile</A>. It  is based upon the 
+<A HREF="http://www.w3.org/Style/CSS/Test/CSS1/current/">W3C CSS1 Test Suite</A>. 
+</P>
+
+<H4>Table of Contents</H4>
+<UL>
+<LI style="font-weight: bold;">--&nbsp;<A HREF="sec00.htm">Prologue</A> </LI>
+</UL>
+<UL style="margin-top: 0;">
+<LI> 4. <A HREF="sec04.htm">CSS2 syntax and basic data types</A> </LI>
+<LI> 5. <A HREF="sec05.htm">Selectors</A> </LI>
+<LI> 6. <A HREF="sec06.htm">Assigning Property Values, Cascading and Inheritence</A> </LI>
+<LI> 7. <A HREF="sec07.htm">Media Types</A> </LI>
+<LI> 8. <A HREF="sec08.htm">Box Model</A> </LI>
+<LI> 9. <A HREF="sec09.htm">Visual Formatting Model</A> </LI>
+<LI>10. <A HREF="sec10.htm">Visual Formatting Model Details</A> </LI>
+<LI>11. <A HREF="sec11.htm">Visual Effects</A>
+<LI>12.6.2 <A HREF="sec12-06-02.htm">Lists </A> </LI>
+<LI class="no-mobile">13. <A HREF="sec13.htm">Paged media</A> </LI>
+<LI>14. <A HREF="sec14.htm">Colors and Backgrounds</A> </LI>
+<LI>15. <A HREF="sec15.htm">Fonts</A> </LI>
+<LI>16. <A HREF="sec16.htm">Text</A> </LI>
+<LI class="no-mobile">17. <A HREF="sec17.htm">Tables</A> </LI>
+<LI class="no-mobile">18. <A HREF="sec18.htm">User Interface</A> </LI>
+</UL>
+<UL style="margin-top: 0;">
+<LI>&nbsp;A. <A HREF="tsack.html">Acknowledgments</A> </LI>
+<LI class="no-mobile" >&nbsp;B. <A HREF="tserr.html">Test Suite Errata</A> </LI>
+<LI class="no-mobile" >&nbsp;C. <A HREF="tsref.html">Related Resources</A> </LI>
+
+</UL>
+<H4> Role of the Test Suite </H4>
+<div class="role">
+<p>This Test Suite is a key part of the CSS Mobile Profile exit criteria.  For this specification to exit the CR stage, the following conditions shall be met:</p>
+  <ol>
+  <li><p> There must be at least two interoperable implementations implementing 'all' the features in the Mobile Profile. An implementation can implement a superset of the features and claim conformance to the
+profile. For the purposes of this criterion, we define the following terms:</p>
+      <dl><dt>feature</dt><dd><p>a row in the tables of section 3 and section 4 that has not been marked 'No' in the CSS Mobile column.</p></dd>
+      <dt>interoperable</dt><dd><p>passing the respective test case(s) in the CSS test suite, or, if the implementation is not a web browser, an equivalent test. Every relevant test in the test suite should have an equivalent test created if such a UA is to be used to claim interoperability. In addition if such a UA is to be used to claim interoperability, then there must one or more additional UAs which can also pass those equivalent tests in the same way for the purpose of interoperability. The equivalent tests must be made publically available for the purposes of peer review. 
+</p></dd>
+      <dt>implementation</dt><dd><p>a user agent which:</p>
+     <ol>
+        <li>implements the feature.</li>
+        <li>is available (i.e. publicly downloadable or available
+           through some other public point of sale mechanism). This is
+           the "show me" requirement.</li>
+        <li>is shipping (i.e. development, private or unofficial
+           versions are insufficient).</li>
+        <li>is not experimental (i.e. is intended for a wide audience
+           and could be used on a daily basis.)</li></ol></dd></dl>
+  <li><p style="margin-top: 1em">A minimum of sixth months of the CR period must have elapsed.
+     This is to ensure that enough time is given for any remaining
+     major errors to be caught.</p>
+   </li></ol>
+</div>
+<HR>
+<P CLASS="validated">
+Last updated by <a href="mailto:tapas.roy@openwave.com">Tapas Roy<a/> 20020325. 
+<A HREF="http://validator.w3.org/check/referer"><IMG 
+SRC="http://www.w3.org/Icons/valid-xhtml10" ALT="Valid XHTML 1.0!" height="31" width="88"></A>
+<A HREF="http://jigsaw.w3.org/css-validator/check/referer"><IMG 
+SRC="http://jigsaw.w3.org/css-validator/images/vcss" height="31" width="88" ALT="Valid CSS!"></A>
+</P>
+</BODY>
+</HTML>

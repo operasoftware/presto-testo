@@ -1,0 +1,170 @@
+<!-- saved from url=(0022)http://internet.e-mail -->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<HTML><HEAD>
+<TITLE>Child Selectors</TITLE>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<LINK REL="copyright" HREF="http://www.people.fas.harvard.edu/~dbaron/legal.html">
+<STYLE TYPE="text/css">
+BODY > P	{
+	color: red;
+	background: white;
+	}
+
+BODY>BLOCKQUOTE	{
+	color: green;
+	background: white;
+	}
+
+DIV OL>LI P	{
+	color: blue;
+	background: white;
+	}
+
+HTML>BODY>DIV>UL>LI	{
+	color: purple;
+	background: white;
+	}
+
+HTML>DIV>UL>LI>EM	{ /* no BODY */
+	color: red;
+	background: white;
+	}
+
+.warn { color : black; background: white; }
+
+.warn>.rant { color: purple; background: white; }
+
+.rant >.note { color: green; background: white; }
+
+.note > .test { color: blue; background: white; }
+
+.first > .second { color: red; }
+.first .second { color: green; }
+
+body > div p.process { color: aqua; }
+</STYLE>
+</HEAD>
+<BODY>
+
+<P>The styles on this page are:</P>
+<PRE>
+BODY > P	{
+	color: red;
+	background: white;
+	}
+
+BODY>BLOCKQUOTE	{
+	color: green;
+	background: white;
+	}
+
+DIV OL>LI P	{
+	color: blue;
+	background: white;
+	}
+
+HTML>BODY>DIV>UL>LI	{
+	color: purple;
+	background: white;
+	}
+
+HTML>DIV>UL>LI>EM	{ /* no BODY */
+	color: red;
+	background: white;
+	}
+
+.warn { color : black; background: white; }
+
+.warn>.rant { color: purple; background: white; }
+
+.rant >.note { color: green; background: white; }
+
+.note > .test { color: blue; background: white; }
+
+.first > .second { color: red; }
+.first .second { color: green; }
+
+body > div p.process { color: aqua; }
+</PRE>
+
+<P>This P should be red.</P>
+
+<DIV><P>This P should not be red, since it is in a DIV.</P></DIV>
+
+<BLOCKQUOTE><P>This BLOCKQUOTE should be green.</P></BLOCKQUOTE>
+
+<DIV><BLOCKQUOTE><P>This BLOCKQUOTE should not be green, since it is in a DIV.</P></BLOCKQUOTE></DIV>
+
+<DIV>
+<OL>
+<LI>
+<P>
+This text should be blue.
+</P>
+</LI>
+</OL>
+</DIV>
+
+<DIV>
+<UL>
+<LI>
+<OL>
+<LI>
+<P>
+This text should be blue.
+</P>
+</LI>
+</OL>
+</LI>
+</UL>
+</DIV>
+
+<DIV>
+<OL>
+<LI>
+<DIV>
+<P>
+This text should be blue.
+</P>
+</DIV>
+</LI>
+</OL>
+</DIV>
+
+<DIV>
+<UL>
+<LI>
+This text should be purple, but the <EM>emphasized text</EM> should
+<STRONG>not</STRONG> be red.
+</LI>
+</UL>
+</DIV>
+
+<div class="warn">
+  This should be black.
+  <div class="rant">
+	This should be purple.
+    <div class="note">
+	  This should be green.
+	  <p class="test">
+	    This should be blue.
+	  </p>
+	</div>
+  </div>
+</div>
+
+
+<div class="first">
+	<div class="second">
+		This should be green.
+	</div>
+</div>
+
+<div>
+	<div>
+		<p class="process">This should be aqua (this test is harder than the others!).</p>
+	</div>
+</div>
+
+</BODY></HTML>
