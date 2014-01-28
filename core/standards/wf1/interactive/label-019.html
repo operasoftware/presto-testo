@@ -1,0 +1,21 @@
+<!doctype html>
+<meta charset="utf-8" />
+<title>label label containing input password</title>
+
+<p>
+	Click the label below.  The focus should shift to the textarea.  Type
+	“foobar” after clicking the label to verify that the focus did indeed shift.
+</p>
+
+<form action="../res/return_single_post.php" method="post">
+	<p>
+		<label id="l" name="label">
+			<input id="t" name="test" type="password"></input>
+      Click me
+		</label>
+	</p>
+  <p>
+    <input type="submit" name="submit" />
+  </p>
+</form>
+

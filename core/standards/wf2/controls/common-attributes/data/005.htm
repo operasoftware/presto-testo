@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <title>setting "data" to the same value through script</title>
+  <script>
+   window.onload = function(){
+    document.getElementsByTagName('select')[0].data = "support/incremental-bar.xml";
+   }
+  </script>
+ </head>
+ <body>
+  <p>There should be one word below: "FOO":</p>
+  <p><select data="support/incremental-bar.xml" size="5"><option>FOO</option></select></p>
+ </body>
+</html>

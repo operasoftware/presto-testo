@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+
+<title>label button with 'display: none' contained in a label - onclick</title>
+
+<p>Click the label below. The word 'PASS' should appear.</p>
+
+<form>
+  <p>
+    <label id="l1">
+      Click me!
+      <button style="display: none" id="b" onclick="document.getElementById('result_onclick').innerHTML = 'PASS'; return false">foobar</button>
+    </label>
+  </p>
+</form>
+
+<p id="result_onclick"></p>

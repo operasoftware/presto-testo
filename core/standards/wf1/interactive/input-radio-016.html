@@ -1,0 +1,9 @@
+<!DOCTYPE html>
+
+<title>input type=radio removing in event handlers</title>
+
+<p>Click the threee radio buttons below. When they are clicked, they should disappear.</p>
+
+<p><input id="r1" type="radio" onclick="this.parentNode.removeChild(this)" name="a"/> &larr; click this</p>
+<p><input id="r2" type="radio" onfocus="this.parentNode.removeChild(this)" name="a"/> &larr; click this</p>
+<p><input id="r3" type="radio" onchange="this.parentNode.removeChild(this)" name="a"/> &larr; click this</p>

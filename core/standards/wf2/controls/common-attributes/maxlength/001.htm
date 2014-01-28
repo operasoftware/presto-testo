@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<title>default value longer than maxlength</title>
+<style>
+ input[type=text] { background:red }
+ input[type=text]:invalid { background:lime }
+</style>
+<p>The form control with the value "123456" should have a green background. In addition, you should not be able to submit it.
+<form method="get">
+ <p><input type="text" name="test" value="123456" maxlength="5">
+ <p><input type="submit">
+</form>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+
+<title>form autocomplete=off containing input type=text</title>
+
+<ol>
+  <li>Type "foobar" into all the text inputs below.</li>
+  <li>Press the "submit" button.</li>
+  <li>Navigate back from the page that follows.</li>
+  <li>The "A:" text input should be empty. The "B:" text input should contain text "foobar". The "C:" text input should be empty.</li>
+</ol>
+
+<form action="../res/navback.html" autocomplete="off">
+  <p>A: <input id="i1" type="text"/></p>
+  <p>B: <input id="i2" type="text" autocomplete="on"/></p>
+  <p>C: <input id="i3" type="text" autocomplete="off"/></p>
+  <p><input id="s"type="submit" value="submit" /></p>
+</form>

@@ -1,0 +1,18 @@
+<!doctype html>
+<meta charset="utf-8" />
+<title>textarea onkeypress</title>
+
+<noscript>
+  <p>Note: This test requires JavaScript.</p>
+</noscript>
+
+<p>
+	Write something in the first textarea.  The value of the second textarea
+	should immediately change to “foobar”.
+</p>
+
+<form>
+	<textarea name="first_field" onkeypress="document.getElementById('test').value = 'foobar';"></textarea>
+	<textarea id="test" name="test"></textarea>
+</form>
+

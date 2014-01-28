@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+
+<title>label disabled select contained in a label - onclick, onfocus, onblur</title>
+
+<p>Click the label below. Then click the second label. Nothing should happen.</p>
+
+<form>
+  <p>
+    <label id="l1">
+      Click me!
+      <select disabled="disabled" id="b" onclick="document.getElementById('result_onclick').innerHTML = 'FAIL'; return false" onfocus="document.getElementById('result_onfocus').innerHTML = 'FAIL'" onblur="document.getElementById('result_onblur').innerHTML = 'FAIL'">
+        <option value ="a">aaa</option>
+        <option value ="b">bbb</option>
+        <option value ="c">ccc</option>
+        <option value ="d">ddd</option>
+      </select>
+    </label>
+    <label id="l2">
+      Then click me!
+    </label>
+  </p>
+</form>
+
+<p id="result_onclick"></p>
+<p id="result_onfocus"></p>
+<p id="result_onblur"></p>

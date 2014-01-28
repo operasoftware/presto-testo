@@ -1,0 +1,37 @@
+<!doctype html>
+<meta charset="utf-8" />
+<title>input type=submit Adding invalid attribute size through DOM</title>
+
+<p>
+	Click the submit button below.  Nothing should happen.  (In particular, the
+	submit button's width should not change.)
+</p>
+
+<form>
+	<p>
+		<input id="test" name="test" type="submit" onclick="action_click(); return false;" />
+	</p>
+</form>
+
+<p id="result"></p>
+
+<script>
+
+	function action_click() {
+
+		var test   = document.getElementById("test");
+		var result = document.getElementById("result");
+
+		test.setAttribute("size", 260);
+
+		if (test.clientWidth >= 58
+				&& test.clientWidth <= 62) {
+			result.innerHTML = "PASS";
+		} else {
+			result.innerHTML = "FAIL";
+		}
+
+	}
+
+</script>
+

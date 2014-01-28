@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<title>datetime control basic test (part two)</title>
+<link rel="help" href="http://whatwg.org/specs/web-forms/current-work/#datetime">
+<style>
+ span { display:block; height:2em; width:2em; background:red }
+ input { display:none }
+ input:invalid + span { background:lime }
+</style>
+<p>There should be a green square below: <input type="datetime" value="1996-01-01T00:00" required><span></span>
+<!-- the Z is mandatory (and a value is required) -->

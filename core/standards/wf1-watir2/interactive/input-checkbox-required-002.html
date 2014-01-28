@@ -1,0 +1,16 @@
+<!doctype html>
+<meta charset="utf-8" />
+<title>input type=checkbox required, variant</title>
+
+<p>
+	You should see an unchecked checkbox.  Click the submit button below.
+  A message should appear indicating that the checkbox must be checked.
+  Check it, and then again click the submit button. The following page
+  should include "on".
+</p>
+
+<form action="../res/return_single_post.php" method="post">
+	<p><input name="test" type="checkbox" required="required" /></p>
+	<p><input type="submit" name="submit" /></p>
+</form>
+

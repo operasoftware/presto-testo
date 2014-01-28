@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+
+<title>input type=file POST small file</title>
+
+<p>Select the local/opera.png file. Press submit. A page containing the word 'PASS' should appear.</p>
+
+<form action="../res/check_md5.php" method="POST" enctype="multipart/form-data">
+  <p><input id="f" type="file" name="test_file" /></p>
+  <p><input id="s" type="submit" /></p>
+  <input type="hidden" name="md5" value="00426e6c51cbf9b5283edc666185df94" />
+</form>

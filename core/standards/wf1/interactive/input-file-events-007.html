@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+
+<title>input type=file onmouseup</title>
+
+<p>Press mouse button on the file input below. Nothing should happen. Release mouse button. The word "PASS" should appear.</p>
+
+<form action="#">
+  <p><input id="f" type="file" onmouseup="document.getElementById('result').innerHTML = 'PASS'" onclick="return false"/></p>
+</form>
+
+<p id="result"></p>

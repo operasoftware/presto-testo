@@ -1,0 +1,45 @@
+/*
+ * test.css -- Testing framework for WF1 test suite.
+ */
+
+#testcase .test,
+#testcase .reference {
+	float: left;
+	width: 45%;
+	padding: 1em;
+}
+
+#testcase .test {
+	margin-right: 1%;
+}
+
+#testcase .test .inner,
+#testcase .reference .inner {
+	margin: 0 -1em;
+	padding: 1em;
+}
+
+#testcase .test .inner {
+	border: 2px solid rgb(120,120,120);
+}
+
+#testcase .reference .inner {
+	border: 2px solid green;
+}
+
+#testcase .reference h2 {
+	color: green;
+}
+
+button.no-border {
+	border: 0;
+	padding: 0;
+	height: 64px;
+	width: 168px;
+}
+
+p#result {
+	color: green;
+	font-weight: bold;
+}
+

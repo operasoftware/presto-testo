@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+
+<title>form input type=reset, 'form' attribute</title>
+
+<p>There should be the word "PASS" below.</p>
+
+<form id="test form">
+  <p><input id="test element" type="reset"/></p>
+</form>
+
+<p id="result">BLOCKED</p>
+
+<script type="text/javascript">
+  var element = document.getElementById("test element");
+  var result = document.getElementById("result");
+
+  if(element) {
+    result.innerHTML = "FAIL";
+    result.style.color = "red";
+    
+    if(element.form && (element.form.id == "test form")) {
+      result.innerHTML = "PASS";
+      result.style.color = "green";
+    }
+  }
+</script>

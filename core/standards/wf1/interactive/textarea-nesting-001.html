@@ -1,0 +1,19 @@
+<!doctype html>
+<meta charset="utf-8" />
+<title>textarea input outside a form</title>
+
+<p>
+	Click the submit button below.  You should see the word “PASS” on the
+	following page.
+</p>
+
+<p>
+	<textarea name="test">foobar</textarea>
+</p>
+
+<form action="../res/null_post.php" method="post">
+	<p>
+		<input type="submit" name="submit" />
+	</p>
+</form>
+

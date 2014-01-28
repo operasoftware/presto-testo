@@ -1,0 +1,19 @@
+<!doctype html>
+<meta charset="utf-8" />
+<title>input type=radio Multiple duplicate radios</title>
+
+<p>
+	Click the two radio buttons below in order.  After doing so, only one of them
+	should appear checked.  Click submit.  The word ”bar” should be returned.
+</p>
+
+<form action="../res/return_multiple_post.php" method="post">
+	<p>
+		<input name="test" type="radio" value="foo" />
+		<input name="test" type="radio" value="bar" />
+	</p>
+	<p>
+		<input type="submit" name="submit" />
+	</p>
+</form>
+

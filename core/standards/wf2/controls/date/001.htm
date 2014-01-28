@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<title>date control basic test</title>
+<link rel="help" href="http://whatwg.org/specs/web-forms/current-work/#date">
+<style>
+ span { display:block; height:2em; width:2em; background:red }
+ input { display:none }
+ input:invalid + span { background:lime }
+</style>
+<p>There should be a green square below: <input type="date" value="1996-01-01T00:00" required><span></span>
+<!-- date does not have time informatition (and a value is required) -->

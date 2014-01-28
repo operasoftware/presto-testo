@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+
+<title>form Form-associated elements in both nested forms with POST</title>
+
+<p>Type "foo" in the first text field, "bar" in the second text field and "abc" in the third text field. Click the "submit" button. A page saying "You typed: [foo] [bar]" should appear.</p>
+
+<form method="post" action="../res/return_multiple_post.php">
+  <p><input type="text" name="i1" id="i1"/></p>
+  <form action="../fail.php">
+    <p><input type="text" name="i2" id="i2"/></p>
+    <p><input type="submit" value="submit" id="s"/></p>
+  </form>
+  <p><input type="text" name="i3" id="i3"/></p>
+</form>
+

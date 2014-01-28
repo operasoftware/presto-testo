@@ -1,0 +1,9 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <title>datetime control and milliseconds</title>
+ <link rel="help" href="http://whatwg.org/specs/web-forms/current-work/#datetime"/>
+ <style> input { display:none } </style>
+ <script> window.onload = function(){ document.getElementsByTagName('p')[2].textContent = document.getElementsByTagName('input')[0].value } </script>
+ <p><input type="datetime" value="1995-12-31T23:59:59.999999Z"/>The following two lines must be identical:</p>
+ <p>1995-12-31T23:59:59.999999Z</p>
+ <p>FAIL (Script did not run.)</p>
+</html>

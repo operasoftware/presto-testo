@@ -1,0 +1,27 @@
+<!doctype html>
+<meta charset="utf-8" />
+<title>select invalid disabled value optgroup cannot be selected</title>
+
+<p>
+	Below you should see a drop down list with 3 option groups with
+  3 options in each group. Every option should be selectable except
+  members of the second group as this group has been disabled.
+</p>
+
+<p>
+  <select name="test">
+    <optgroup label="1">
+      <option>foobar1-1</option>
+      <option>foobar1-2</option>
+      <option>foobar1-3</option>
+    <optgroup label="2" disabled="asd">
+      <option>foobar2-1</option>
+      <option>foobar2-2</option>
+      <option>foobar2-3</option>
+    <optgroup label="3">
+      <option>foobar3-1</option>
+      <option>foobar3-2</option>
+      <option>foobar3-3</option>
+  </select>
+</p>
+

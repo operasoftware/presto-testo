@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+
+<title>form Multiple JS events</title>
+
+<p>Click the text below. The word "PASS" should appear.</p>
+
+<form onmouseover="over = true" onclick="if(over) {document.getElementById('result').innerHTML = 'PASS'}">
+  <p id="p">Click me!</p>
+</form>
+
+<p id="result"></p>

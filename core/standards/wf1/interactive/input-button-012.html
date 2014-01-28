@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<title>input type=button Invalid size attribute</title>
+
+<p>Below you should see two buttons containing the word "foobar". They should be identical in size.  If they are identical, you should see the word "PASS" below them.</p>
+
+<form>
+	<p>
+		<input type="button" id="test1" name="test1" value="foobar" />
+		<input type="button" id="test2" name="test2" size="500" value="foobar" />
+	</p>
+</form>
+
+<p id="result"></p>
+
+<script>
+
+	var test1  = document.getElementById("test1");
+	var test2  = document.getElementById("test2");
+	var result = document.getElementById("result");
+
+	if (test1.clientWidth == test2.clientWidth) {
+		result.innerHTML = "PASS";
+	} else {
+		result.innerHTML = "FAIL";
+	}
+
+</script>
+

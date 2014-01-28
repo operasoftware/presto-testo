@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<title>the list DOM attribute</title>
+<style> input, select { display:none } </style>
+<p>FAIL (Script did not run.)</p>
+<p><input><select id="data"><option>FAIL</select></p>
+<script>
+ var i = document.getElementsByTagName('input')[0];
+ i.setAttribute("LIST","data");
+ var s = document.getElementsByTagName('select')[0];
+ document.getElementsByTagName('p')[0].textContent = (i.list == s) ? "PASS" : "FAIL (list DOM attribute contains/returns value: '"+i.list+"')";
+</script>

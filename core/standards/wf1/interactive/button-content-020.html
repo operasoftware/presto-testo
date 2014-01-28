@@ -1,0 +1,19 @@
+<!doctype html>
+<meta charset="utf-8" />
+<title>button Label element in caption</title>
+
+<p>
+	Clicking the label “Click me!” inside the button below should not change
+	focus to the input field above.  Try type “foobar” to be sure.  The word
+	“foobar” should not be entered in to the text field.
+</p>
+
+<form>
+	<p>
+		<input id="test2" name="test2" />
+	</p>
+	<p>
+		<button name="test" type="button"><label for="test2">Click me!</label></button>
+	</p>
+</form>
+

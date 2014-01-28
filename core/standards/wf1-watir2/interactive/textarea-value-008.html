@@ -1,0 +1,14 @@
+<!doctype html>
+<meta charset="utf-8" />
+<title>textarea carriage return inside value</title>
+
+<p>
+	Click submit.  You should see the word “PASS” on the following page.
+</p>
+
+<form action="../res/new_line_textarea.php" method="post">
+	<p>
+		<textarea name="test">foo&#xD;bar</textarea>
+		<input type="submit" name="submit" />
+	</p>
+</form>

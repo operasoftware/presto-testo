@@ -1,0 +1,1178 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>List of WebForms 1 tests</title>
+	<link href="res/document.css" rel="stylesheet" />
+</head>
+<body>
+
+	<h1>List of WebForms 1 tests</h1>
+
+	<dl>
+		<dt>Last updated</dt>
+		<dd>$LastChangedDate: 2010-09-08 08:57:14 -0700 (Wed, 08 Sep 2010) $</dd>
+
+		<dt>Revision</dt>
+		<dd>$Revision: 77991 $</dd>
+	</dl>
+
+
+	<h2 id="form">form</h2>
+
+	<ul>
+                <!-- form-enctype-xxx.html -->
+                
+                <li><a href="interactive/form-enctype-001.html">form enctype application/x-www-form-urlencoded</a></li> <!-- DONE -->
+                <li><a href="interactive/form-enctype-002.html">form enctype multipart/form-data</a></li> <!-- DONE -->
+                
+                <!-- form-nonvalidate-xxx.html -->
+                
+                <li><a href="interactive/form-novalidate-001.html">form validate input text</a></li> <!-- DONE -->
+
+		<!-- form-owner-xxx.html -->
+		<li><a href="interactive/form-owner-001.html">form Single form-associated element</a></li>                                      <!-- DONE -->
+		<li><a href="interactive/form-owner-002.html">form Multiple form-associated elements</a></li>                                   <!-- DONE -->
+		<li><a href="interactive/form-owner-003.html">form Single form-associated elements in multiple forms</a></li>                   <!-- DONE -->
+		<li><a href="interactive/form-owner-004.html">form Single form-associated elements in multiple forms, variant</a></li>          <!-- DONE -->
+		<li><a href="interactive/form-owner-005.html">form Single form-associated element in unclosed form</a></li>                     <!-- DONE -->
+		<li><a href="interactive/form-owner-006.html">form Multiple form-associated elements in unclosed form</a></li>                  <!-- DONE -->
+		<li><a href="interactive/form-owner-007.html">form Form-associated element in second nested form</a></li>                       <!-- DONE -->
+		<li><a href="interactive/form-owner-008.html">form Form-associated elements in both nested forms</a></li>                       <!-- DONE -->
+		<li><a href="interactive/form-owner-009.html">form Multiple form-associated elements in nested forms</a></li>                   <!-- DONE -->
+		<li><a href="interactive/form-owner-010.html">form Form-associated elements in unclosed nested forms</a></li>                   <!-- DONE -->
+		<li><a href="interactive/form-owner-011.html">form Single form-associated element with GET</a></li>                             <!-- DONE -->
+		<li><a href="interactive/form-owner-012.html">form Multiple form-associated elements with GET</a></li>                          <!-- DONE -->
+		<li><a href="interactive/form-owner-013.html">form Single form-associated elements in multiple forms with GET</a></li>          <!-- TODO We can't send multiple forms using GET, and variants where there are two forms are already there. -->
+		<li><a href="interactive/form-owner-014.html">form Multiple form-associated elements in multiple forms with GET</a></li>        <!-- TODO We can't send multiple forms using GET, and variants where there are two forms are already there -->
+		<li><a href="interactive/form-owner-015.html">form Single form-associated element in unclosed form with GET</a></li>            <!-- DONE -->
+		<li><a href="interactive/form-owner-016.html">form Multiple form-associated elements in unclosed form with GET</a></li>         <!-- DONE -->
+		<li><a href="interactive/form-owner-017.html">form Form-associated element in second nested form with GET</a></li>              <!-- DONE -->
+		<li><a href="interactive/form-owner-018.html">form Form-associated elements in both nested forms with GET</a></li>              <!-- DONE -->
+		<li><a href="interactive/form-owner-019.html">form Multiple form-associated elements in nested forms with GET</a></li>          <!-- TODO Same as: 'interactive/form-owner-018.html' -->
+		<li><a href="interactive/form-owner-020.html">form Form-associated elements in unclosed nested forms with GET</a></li>          <!-- DONE -->
+		<li><a href="interactive/form-owner-021.html">form Single form-associated element with POST</a></li>                            <!-- DONE -->
+		<li><a href="interactive/form-owner-022.html">form Multiple form-associated elements with POST</a></li>                         <!-- DONE -->
+		<li><a href="interactive/form-owner-023.html">form Single form-associated elements in multiple forms with POST</a></li>         <!-- TODO We can't send multiple forms using POST, and variants where there are two forms are already there-->
+		<li><a href="interactive/form-owner-024.html">form Multiple form-associated elements in multiple forms with POST</a></li>       <!-- TODO We can't send multiple forms using POST, and variants where there are two forms are already there -->
+		<li><a href="interactive/form-owner-025.html">form Single form-associated element in unclosed form with POST</a></li>           <!-- DONE -->
+		<li><a href="interactive/form-owner-026.html">form Multiple form-associated elements in unclosed form with POST</a></li>        <!-- DONE -->
+		<li><a href="interactive/form-owner-027.html">form Form-associated element in second nested form with POST</a></li>             <!-- DONE -->
+		<li><a href="interactive/form-owner-028.html">form Form-associated elements in both nested forms with POST</a></li>             <!-- DONE -->
+		<li><a href="interactive/form-owner-029.html">form Multiple form-associated elements in nested forms with POST</a></li>                                         <!-- TODO Same as: 'interactive/form-owner-028.html' -->
+		<li><a href="interactive/form-owner-030.html">form Form-associated elements in unclosed nested forms with POST</a></li>                                         <!-- DONE -->
+		<li><a href="interactive/form-owner-031.html">form Overriding form-association on element</a></li>                                                              <!-- DONE -->
+		<li><a href="interactive/form-owner-032.html">form Overriding form-association on multiple elements</a></li>                                                    <!-- DONE -->
+		<li><a href="interactive/form-owner-036.html">form Overriding form-association on element in second nested form</a></li>                                        <!-- DONE -->
+		<li><a href="interactive/form-owner-037.html">form Overriding form-association on elements in second nested form</a></li>                                       <!-- DONE -->
+		<li><a href="interactive/form-owner-038.html">form Overriding form-association on elements in both nested forms</a></li>                                        <!-- DONE -->
+		<li><a href="interactive/form-owner-039.html">form Overriding form-association on multiple elements in nested forms</a></li>                                    <!-- DONE -->
+		<li><a href="interactive/form-owner-040.html">form Overriding form-association on elements in unclosed nested forms</a></li>                                    <!-- DONE -->
+		<li><a href="interactive/form-owner-041.html">form Combining element and element overriding form-association</a></li>                                           <!-- DONE -->
+		<li><a href="interactive/form-owner-042.html">form Combining elements and elements overriding form-association</a></li>                                         <!-- TODO -->
+		<li><a href="interactive/form-owner-043.html">form Combining elements and elements overriding form-association in multiple forms</a></li>                       <!-- TODO -->
+		<li><a href="interactive/form-owner-044.html">form Combining elements and elements overriding form-association in unclosed form</a></li>                        <!-- TODO -->
+		<li><a href="interactive/form-owner-045.html">form Combining element and element overriding form-association in second nested form</a></li>                     <!-- TODO -->
+		<li><a href="interactive/form-owner-046.html">form Combining elements and elements overriding form-association in second nested form</a></li>                   <!-- TODO -->
+		<li><a href="interactive/form-owner-047.html">form Combining elements and elements overriding form-association in both nested forms</a></li>                    <!-- TODO -->
+		<li><a href="interactive/form-owner-048.html">form Combining elements and elements overriding form-association in nested forms</a></li>                         <!-- TODO -->
+		<li><a href="interactive/form-owner-049.html">form Combining elements and elements overriding form-association in unclosed nested forms</a></li>                <!-- TODO -->
+		<li><a href="interactive/form-owner-050.html">form Dynamically injecting a nested form with element in DOM</a></li>                                             <!-- DONE -->
+		<li><a href="interactive/form-owner-051.html">form Dynamically injecting a nested form with multiple elements in DOM</a></li>                                   <!-- TODO -->
+		<li><a href="interactive/form-owner-052.html">form Dynamically injecting a nested form with element and element overriding form-association in DOM</a></li>     <!-- TODO -->
+		<li><a href="interactive/form-owner-053.html">form Dynamically injecting a nested form with elements and elements overriding form-association in DOM</a></li>   <!-- TODO -->
+
+		<!-- action -->
+		<li><a href="form-action-001.php">Unset action on form with POST</a></li>
+		<li><a href="form-action-002.php">Unset action on form with GET</a></li>
+		<li><a href="form-action-003.html">Action to another file with POST</a></li>
+		<li><a href="form-action-004.html">Action to another file with GET</a></li>
+		<li><a href="form-action-005.html">Action on submit, but not form</a></li>
+		<li><a href="form-action-006.html">Same action on submit and form</a></li>
+		<li><a href="form-action-007.html">Different actions on submit and form</a></li>
+
+
+
+		<!-- method -->
+
+
+		<!-- name -->
+
+
+		<!-- enctype -->
+		<li><a href="form-enctype-001.html">enctype application/x-www-form-urlencoded POST</a></li>
+		<li><a href="form-enctype-002.html">enctype application/x-www-form-urlencoded GET</a></li>
+		<li><a href="form-enctype-003.html">enctype application/x-www-form-urlencoded with one field</a></li>
+		<li><a href="form-enctype-004.html">enctype application/x-www-form-urlencoded with multiple fields</a></li>
+		<li><a href="form-enctype-005.html">enctype application/x-www-form-urlencoded with file field</a></li>
+		<li><a href="form-enctype-006.html">enctype multipart/form-data POST</a></li>
+		<li><a href="form-enctype-007.html">enctype multipart/form-data GET</a></li>
+		<li><a href="form-enctype-008.html">enctype multipart/form-data with one field</a></li>
+		<li><a href="form-enctype-009.html">enctype multipart/form-data with multiple fields</a></li>
+		<li><a href="form-enctype-010.html">enctype multipart/form-data with file field</a></li>
+
+	</ul>
+
+
+	<h2 id="text">input type="text"</h2>
+
+	<ul>
+
+		<!-- input-text-xxx.html -->
+		<li><a href="interactive/input-text-001.html">input type="text" Empty GET input</a></li>
+		<li><a href="interactive/input-text-002.html">input type="text" Empty POST input</a></li>
+		<li><a href="interactive/input-text-003.html">input type="text" GET input</a></li>
+		<li><a href="interactive/input-text-004.html">input type="text" POST input</a></li>
+		<li><a href="interactive/input-text-005.html">input type="text" Long GET input</a></li>
+		<li><a href="interactive/input-text-006.html">input type="text" Long POST input</a></li>
+		<li><a href="interactive/input-text-007.html">input type="text" Clearing text field</a></li>
+		<li><a href="interactive/input-text-008.html">input type="text" Appending to text field</a></li>
+		<li><a href="interactive/input-text-009.html">input type="text" Invalid type</a></li>
+		<li><a href="interactive/input-text-010.html">input type="text" Missing type</a></li>
+		<li><a href="interactive/input-text-011.html">input type="text" Multiple unique inputs</a></li>
+		<li><a href="interactive/input-text-012.html">input type="text" Insane number of unique inputs</a></li>
+		<li><a href="interactive/input-text-013.html">input type="text" Multiple duplicate inputs</a></li>
+		<li><a href="interactive/input-text-014.html">input type="text" Moving to the beginning of the field</a></li>
+		<li><a href="interactive/input-text-015.html">input type="text" Value available in DOM</a></li>
+		<li><a href="interactive/input-text-016.html">input type="text" Undo buffer emptied</a></li>
+		<li><a href="interactive/input-text-017.html">input type="text" Undo buffer with script</a></li>
+		<li><a href="interactive/input-text-018.html">input type="text" Undo buffer injected and emptied by script</a></li>
+		
+		<!-- input-text-autofocus.html -->
+		<li><a href="interactive/input-text-autofocus-001.html">input type="text" autofocus input</a></li>
+		<li><a href="interactive/input-text-autofocus-002.html">input type="password" autofocus input, variation</a></li>
+		<li><a href="interactive/input-text-autofocus-003.html">input type="text" invalid value autofocus input</a></li>
+
+		<!-- input-text-i18n-xxx.html -->
+		<li><a href="interactive/input-text-i18n-001.html">input type="text" Chinese input</a></li>
+		<li><a href="interactive/input-text-i18n-002.html">input type="text" Japanese input</a></li> <!-- ロンドン-->
+		<li><a href="interactive/input-text-i18n-003.html">input type="text" Hindi input</a></li>
+		<li><a href="interactive/input-text-i18n-004.html">input type="text" Norwegian input</a></li>
+		<li><a href="interactive/input-text-i18n-005.html">input type="text" Thai input</a></li>
+		<li><a href="interactive/input-text-i18n-006.html">input type="text" Russian input</a></li>
+		<li><a href="interactive/input-text-i18n-007.html">input type="text" Arabic input</a></li> <!-- rtl -->
+		<li><a href="interactive/input-text-i18n-008.html">input type="text" Greek input</a></li>
+		<li><a href="interactive/input-text-i18n-009.html">input type="text" Korean input</a></li>
+		<li><a href="interactive/input-text-i18n-010.html">input type="text" Vietnamese input</a></li>
+		<li><a href="interactive/input-text-i18n-011.html">input type="text" Combining English and Chinese input</a></li>
+		<li><a href="interactive/input-text-i18n-012.html">input type="text" Combining Chinese and Japanese input</a></li>
+		<li><a href="interactive/input-text-i18n-013.html">input type="text" Combining Norwegian and Russian input</a></li>
+
+		<!-- input-text-value-xxx.html -->
+		<li><a href="interactive/input-text-value-001.html">input type="text" Special characters input</a></li> <!-- <, > & -->
+		<li><a href="interactive/input-text-value-002.html">input type="text" Append input to special characters value</a></li>
+		<li><a href="interactive/input-text-value-003.html">input type="text" Clearing input of special characters value</a></li>
+		<li><a href="interactive/input-text-value-004.html">input type="text" Prefilled entity input</a></li> <!-- prefilled &amp; -->
+		<li><a href="interactive/input-text-value-005.html">input type="text" Append to entity value</a></li>
+		<li><a href="interactive/input-text-value-006.html">input type="text" Clearing input of entity value</a></li>
+		<li><a href="interactive/input-text-value-007.html">input type="text" Another element inside value</a></li>
+		<li><a href="interactive/input-text-value-008.html">input type="text" Carriage return inside value</a></li>
+		<li><a href="interactive/input-text-value-009.html">input type="text" New line inside value</a></li>
+		<li><a href="interactive/input-text-value-010.html">input type="text" Concatenation of two values</a></li> <!-- JS -->
+
+		<!-- input-text-maxlength-xxx.html -->
+		<li><a href="interactive/input-text-maxlength-001.html">input type="text" Regular maxlength</a></li>
+		<li><a href="interactive/input-text-maxlength-002.html">input type="text" High maxlength</a></li>
+		<li><a href="interactive/input-text-maxlength-003.html">input type="text" Empty maxlength variable</a></li>
+		<li><a href="interactive/input-text-maxlength-004.html">input type="text" Invalid maxlength</a></li>
+		<li><a href="interactive/input-text-maxlength-005.html">input type="text" Value of maxlength field available in DOM</a></li>
+		<li><a href="interactive/input-text-maxlength-006.html">input type="text" Dynamic maxlength change</a></li>
+
+		<!-- input-text-readonly-xxx.html -->
+		<li><a href="interactive/input-text-readonly-001.html">input type="text" readonly</a></li> <!-- readonly, returns nothing, check that it is clickable -->
+		<li><a href="interactive/input-text-readonly-002.html">input type="text" readonly variable variation</a></li> <!-- readonly="readonly", returns nothing, check clickable -->
+		<li><a href="interactive/input-text-readonly-003.html">input type="text" Invalid readonly</a></li> <!-- readonly="foobar", -"-, check clickable -->
+		<li><a href="interactive/input-text-readonly-004.html">input type="text" Empty readonly</a></li> <!-- readonly="" -->
+		<li><a href="interactive/input-text-readonly-005.html">input type="text" Value of readonly field available in DOM</a></li>
+		
+		<!-- input-text-required-xxx.html -->
+		<li><a href="interactive/input-text-required-001.html">input type="text" required</a></li>
+		<li><a href="interactive/input-text-required-002.html">input type="text" required, variant</a></li>
+		<li><a href="interactive/input-text-required-003.html">input type='text' required, invalid value</a>
+
+		<!-- input-text-disabled-xxx.html -->
+		<li><a href="interactive/input-text-disabled-001.html">input type="text" disabled</a></li> <!-- check that it is clickable -->
+		<li><a href="interactive/input-text-disabled-002.html">input type="text" disabled variable variation</a></li>
+		<li><a href="interactive/input-text-disabled-003.html">input type="text" disabled variable variation 2</a></li>
+		<li><a href="interactive/input-text-disabled-004.html">input type="text" Invalid disabled</a></li> <!-- -"- -->
+		<li><a href="interactive/input-text-disabled-005.html">input type="text" Value of disabled field available in DOM</a></li>
+
+		<!-- input-text-size-xxx.html -->
+		<li><a href="interactive/input-text-size-001.html">input type="text" size</a></li> <!-- can be checked with JS -->
+		<li><a href="interactive/input-text-size-002.html">input type="text" size</a></li>
+		<li><a href="interactive/input-text-size-003.html">input type="text" Invalid size</a></li>
+		<li><a href="interactive/input-text-size-004.html">input type="text" No size</a></li>
+		<li><a href="interactive/input-text-size-005.html">input type="text" High size</a></li>
+
+		<!-- input-text-keys-xxx.html -->
+		<li><a href="interactive/input-text-keys-001.html">input type="text" tabindex</a></li>
+		<li><a href="interactive/input-text-keys-002.html">input type="text" accesskey</a></li>
+
+		<!-- input-text-nesting-xxx.html -->
+		<li><a href="interactive/input-text-nesting-001.html">input type="text" input outside a form</a></li>
+		<li><a href="interactive/input-text-nesting-002.html">input type="text" Two nested forms with an input</a></li>
+		<li><a href="interactive/input-text-nesting-003.html">input type="text" Two nested forms each with inputs</a></li>
+		<li><a href="interactive/input-text-nesting-004.html">input type="text" Two nested forms each with inputs, variation</a></li>
+
+		<!-- input-text-events-xxx.html -->
+		<li><a href="interactive/input-text-events-001.html">input type="text" onfocus</a></li>
+		<li><a href="interactive/input-text-events-002.html">input type="text" onblur</a></li>
+		<li><a href="interactive/input-text-events-003.html">input type="text" onselect</a></li>
+		<li><a href="interactive/input-text-events-004.html">input type="text" onchange</a></li>
+		<li><a href="interactive/input-text-events-005.html">input type="text" onclick</a></li>
+		<li><a href="interactive/input-text-events-006.html">input type="text" ondblclick</a></li>
+		<li><a href="interactive/input-text-events-007.html">input type="text" onmousedown</a></li>
+		<li><a href="interactive/input-text-events-008.html">input type="text" onmouseup</a></li>
+		<li><a href="interactive/input-text-events-009.html">input type="text" onmouseover</a></li>
+		<li><a href="interactive/input-text-events-010.html">input type="text" onmousemove</a></li>
+		<li><a href="interactive/input-text-events-011.html">input type="text" onmouseout</a></li>
+		<li><a href="interactive/input-text-events-012.html">input type="text" onkeypress</a></li>
+		<li><a href="interactive/input-text-events-013.html">input type="text" onkeydown</a></li>
+		<li><a href="interactive/input-text-events-014.html">input type="text" onkeyup</a></li>
+		<li><a href="interactive/input-text-events-015.html">input type="text" Multiple JS events</a></li>
+		<li><a href="interactive/input-text-events-016.html">input type="text" Empty JS event</a></li>
+
+	</ul>
+
+
+	<h2 id="password">input type="password"</h2>
+
+	<ul>
+
+		<!-- input-password-xxx.html -->
+		<li><a href="interactive/input-password-001.html">input type="password" Empty GET input</a></li>
+		<li><a href="interactive/input-password-002.html">input type="password" Empty POST input</a></li>
+		<li><a href="interactive/input-password-003.html">input type="password" GET input</a></li>
+		<li><a href="interactive/input-password-004.html">input type="password" POST input</a></li>
+		<li><a href="interactive/input-password-005.html">input type="password" Long GET input</a></li>
+		<li><a href="interactive/input-password-006.html">input type="password" Long POST input</a></li>
+		<li><a href="interactive/input-password-007.html">input type="password" Clearing password field</a></li>
+		<li><a href="interactive/input-password-008.html">input type="password" Append to password field</a></li>
+		<li><a href="interactive/input-password-009.html">input type="password" Multiple unique inputs</a></li>
+		<li><a href="interactive/input-password-010.html">input type="password" Insane number of unique inputs</a></li>
+		<li><a href="interactive/input-password-011.html">input type="password" Multiple duplicate password fields</a></li>
+		<li><a href="interactive/input-password-012.html">input type="password" Moving to the beginning of the field</a></li>
+		<li><a href="interactive/input-password-013.html">input type="password" Undo buffer emptied</a></li>
+		<li><a href="interactive/input-password-014.html">input type="password" Undo buffer with script</a></li>
+		<li><a href="interactive/input-password-015.html">input type="password" Undo buffer injected and emptied by script</a></li>
+
+		<!-- input-password-maxlength-xxx.html -->
+		<li><a href="interactive/input-password-maxlength-001.html">input type="password" Regular maxlength</a></li>
+		<li><a href="interactive/input-password-maxlength-002.html">input type="password" High maxlength</a></li>
+		<li><a href="interactive/input-password-maxlength-003.html">input type="password" Empty maxlength variable</a></li>
+		<li><a href="interactive/input-password-maxlength-004.html">input type="password" Invalid maxlength</a></li>
+		<li><a href="interactive/input-password-maxlength-005.html">input type="password" Value of maxlength field available in DOM</a></li>
+		<li><a href="interactive/input-password-maxlength-006.html">input type="password" Dynamic maxlength change</a></li>
+
+		<!-- input-password-readonly-xxx.html -->
+		<li><a href="interactive/input-password-readonly-001.html">input type="password" readonly</a></li> <!-- readonly, returns nothing, check that it is clickable -->
+		<li><a href="interactive/input-password-readonly-002.html">input type="password" readonly variable variation</a></li> <!-- readonly="readonly", returns nothing, check clickable -->
+		<li><a href="interactive/input-password-readonly-003.html">input type="password" Invalid readonly</a></li> <!-- readonly="foobar", -"-, check clickable -->
+		<li><a href="interactive/input-password-readonly-004.html">input type="password" Empty readonly</a></li> <!-- readonly="" -->
+		<li><a href="interactive/input-password-readonly-005.html">input type="password" Value of readonly field available in DOM</a></li>
+
+		<!-- input-password-disabled-xxx.html -->
+		<li><a href="interactive/input-password-disabled-001.html">input type="password" disabled</a></li> <!-- check that it is clickable -->
+		<li><a href="interactive/input-password-disabled-002.html">input type="password" disabled variable variation</a></li>
+		<li><a href="interactive/input-password-disabled-003.html">input type="password" disabled variable variation 2</a></li>
+		<li><a href="interactive/input-password-disabled-004.html">input type="password" Invalid disabled</a></li> <!-- -"- -->
+		<li><a href="interactive/input-password-disabled-005.html">input type="password" Value of disabled field available in DOM</a></li>
+
+		<!-- input-password-size-xxx.html -->
+		<li><a href="interactive/input-password-size-001.html">input type="password" size</a></li> <!-- can be checked with JS -->
+		<li><a href="interactive/input-password-size-002.html">input type="password" size</a></li>
+		<li><a href="interactive/input-password-size-003.html">input type="password" Invalid size</a></li>
+		<li><a href="interactive/input-password-size-004.html">input type="password" No size</a></li>
+		<li><a href="interactive/input-password-size-005.html">input type="password" High size</a></li>
+
+		<!-- input-password-events-xxx.html -->
+		<li><a href="interactive/input-password-events-001.html">input type="password" onfocus</a></li>
+		<li><a href="interactive/input-password-events-002.html">input type="password" onblur</a></li>
+		<li><a href="interactive/input-password-events-003.html">input type="password" onselect</a></li>
+		<li><a href="interactive/input-password-events-004.html">input type="password" onchange</a></li>
+		<li><a href="interactive/input-password-events-005.html">input type="password" onclick</a></li>
+		<li><a href="interactive/input-password-events-006.html">input type="password" ondblclick</a></li>
+		<li><a href="interactive/input-password-events-007.html">input type="password" onmousedown</a></li>
+		<li><a href="interactive/input-password-events-008.html">input type="password" onmouseup</a></li>
+		<li><a href="interactive/input-password-events-009.html">input type="password" onmouseover</a></li>
+		<li><a href="interactive/input-password-events-010.html">input type="password" onmousemove</a></li>
+		<li><a href="interactive/input-password-events-011.html">input type="password" onmouseout</a></li>
+		<li><a href="interactive/input-password-events-012.html">input type="password" onkeypress</a></li>
+		<li><a href="interactive/input-password-events-013.html">input type="password" onkeydown</a></li>
+		<li><a href="interactive/input-password-events-014.html">input type="password" onkeyup</a></li>
+		<li><a href="interactive/input-password-events-015.html">input type="password" Multiple JS events</a></li>
+		<li><a href="interactive/input-password-events-016.html">input type="password" Empty JS event</a></li>
+
+                <!-- input-password-autofocus-xxx.html -->
+                <li><a href="interactive/input-password-autofocus-001.html">input type="password" autofocus input</a></li>
+                <li><a href="interactive/input-password-autofocus-002.html">input type="password" autofocus input, variation</a></li>
+                <li><a href="interactive/input-password-autofocus-003.html">input type="password" invalid value autofocus input</a></li>
+
+                <!-- input-password-required-xxx.html -->
+                <li><a href="interactive/input-password-required-001.html">input type="password" required</a></li>
+                <li><a href="interactive/input-password-required-002.html">input type="password" required, variant</a></li>
+                <li><a href="interactive/input-password-required-003.html">input type='password' required, invalid value</a></li>
+	</ul>
+
+
+	<h2 id="checkbox">input type="checkbox"</h2>
+
+	<ul>
+
+		<!-- input-checkbox-xxx.html -->
+		<li><a href="interactive/input-checkbox-001.html">input type="checkbox" Unchecked, without value</a></li>
+		<li><a href="interactive/input-checkbox-002.html">input type="checkbox" Checked, without value</a></li>
+		<li><a href="interactive/input-checkbox-003.html">input type="checkbox" Unchecked, with value</a></li>
+		<li><a href="interactive/input-checkbox-004.html">input type="checkbox" Checked, with value</a></li>
+		<li><a href="interactive/input-checkbox-005.html">input type="checkbox" Invalid variable for checked attribute</a></li>
+		<li><a href="interactive/input-checkbox-006.html">input type="checkbox" Empty variable for checked attribute</a></li>
+		<li><a href="interactive/input-checkbox-007.html">input type="checkbox" Invalid type</a></li> <!-- with checked -->
+		<li><a href="interactive/input-checkbox-008.html">input type="checkbox" Missing type</a></li> <!-- with checked -->
+		<li><a href="interactive/input-checkbox-009.html">input type="checkbox" Multiple unique checkboxes</a></li>
+		<li><a href="interactive/input-checkbox-010.html">input type="checkbox" Insane number of unique checkboxes</a></li>
+		<li><a href="interactive/input-checkbox-011.html">input type="checkbox" Multiple duplicate checkboxes</a></li>
+
+		<!-- input-checkbox-disabled-xxx.html -->
+		<li><a href="interactive/input-checkbox-disabled-001.html">input type="checkbox" disabled, checked</a></li> <!-- check that it is clickable -->
+		<li><a href="interactive/input-checkbox-disabled-002.html">input type="checkbox" disabled, unchecked</a></li>
+		<li><a href="interactive/input-checkbox-disabled-003.html">input type="checkbox" disabled variable variation</a></li>
+		<li><a href="interactive/input-checkbox-disabled-004.html">input type="checkbox" disabled variable variation 2</a></li>
+		<li><a href="interactive/input-checkbox-disabled-005.html">input type="checkbox" Invalid disabled</a></li> <!-- -"- -->
+		<li><a href="interactive/input-checkbox-disabled-006.html">input type="checkbox" Value of disabled field available in DOM</a></li>
+
+		<!-- input-checkbox-events-xxx.html -->
+		<li><a href="interactive/input-checkbox-events-001.html">input type="checkbox" onfocus</a></li>
+		<li><a href="interactive/input-checkbox-events-002.html">input type="checkbox" onblur</a></li>
+		<li><a href="interactive/input-checkbox-events-003.html">input type="checkbox" onchange</a></li>
+		<li><a href="interactive/input-checkbox-events-004.html">input type="checkbox" onclick</a></li>
+		<li><a href="interactive/input-checkbox-events-005.html">input type="checkbox" ondblclick</a></li>
+		<li><a href="interactive/input-checkbox-events-006.html">input type="checkbox" onmousedown</a></li>
+		<li><a href="interactive/input-checkbox-events-007.html">input type="checkbox" onmouseup</a></li>
+		<li><a href="interactive/input-checkbox-events-008.html">input type="checkbox" onmouseover</a></li>
+		<li><a href="interactive/input-checkbox-events-009.html">input type="checkbox" onmousemove</a></li>
+		<li><a href="interactive/input-checkbox-events-010.html">input type="checkbox" onmouseout</a></li>
+		<li><a href="interactive/input-checkbox-events-011.html">input type="checkbox" Multiple JS events</a></li>
+		<li><a href="interactive/input-checkbox-events-012.html">input type="checkbox" Empty JS event</a></li>
+		
+		<!-- input-checkbox-required-xxx.html -->
+		
+		<li><a href="interactive/input-checkbox-required-001.html">input type='checkbox' required</a></li>
+		<li><a href="interactive/input-checkbox-required-002.html">input type='checkbox' required, variant</a></li>
+		<li><a href="interactive/input-checkbox-required-003.html">input type='checkbox' required, invalid value</a></li>
+		
+		<!-- input-checkbox-autofocus-xxx.html -->
+		<li><a href="interactive/input-checkbox-autofocus-001.html">input type='checkbox', autofocus checkbox</a></li>
+                <li><a href="interactive/input-checkbox-autofocus-002.html">input type='checkbox', autofocus checkbox, variation</a></li>
+                <li><a href="interactive/input-checkbox-autofocus-003.html">input type='checkbox', invalid value autofocus checkbox</a></li>
+
+
+	</ul>
+
+
+  <h2 id="radio">input type="radio"</h2>
+
+  <ul>
+    <!-- input-radio-autofocus-xxx.html -->
+    <li><a href="interactive/input-radio-autofocus-001.html">input type='radio', autofocus radio field</a></li>
+    <li><a href="interactive/input-radio-autofocus-002.html">input type='radio', autofocus radio field, variation</a></li>
+    <li><a href="interactive/input-radio-autofocus-003.html">input type='radio', invalid value autofocus radio field</a></li>
+
+    <!-- input-radio-required-xxx.html -->
+    <li><a href="interactive/input-radio-required-001.html">input type='radio' required</a></li>
+    <li><a href="interactive/input-radio-required-002.html">input type='radio' required, variant</a></li>
+    <li><a href="interactive/input-radio-required-003.html">input type='radio' required, invalid value</a></li>
+
+    <!-- input-radio-xxx.html -->
+    <li><a href="interactive/input-radio-001.html">input type='radio', Unchecked, without value</a></li>
+    <li><a href="interactive/input-radio-002.html">input type='radio', Checked, without value</a></li>
+    <li><a href="interactive/input-radio-003.html">input type='radio', Unchecked, with value</a></li>
+    <li><a href="interactive/input-radio-004.html">input type='radio', Checked, with value</a></li>
+    <li><a href="interactive/input-radio-005.html">input type='radio', Invalid variable for checked attribute</a></li>
+    <li><a href="interactive/input-radio-006.html">input type='radio', Empty variable for checked attribute</a></li>
+    <li><a href="interactive/input-radio-007.html">input type='radio', Multiple unique radios</a></li>
+    <li><a href="interactive/input-radio-008.html">input type='radio', Insane number of unique radios (F: WTR-163)</a></li>
+    <li><a href="interactive/input-radio-009.html">input type='radio', Multiple duplicate radios</a></li>  <!-- Different baviour than checkboxes -->
+    <li><a href="interactive/input-radio-010.html">input type='radio', Two radio groups</a></li>
+    <li><a href="interactive/input-radio-011.html">input type='radio', Two radio groups with the same name</a></li>
+
+    <!-- input-text-disabled-xxx.html -->
+    <li><a href="interactive/input-radio-disabled-001.html">input type='radio', disabled, checked</a></li> <!-- check that it is clickable -->
+    <li><a href="interactive/input-radio-disabled-002.html">input type='radio', disabled, unchecked</a></li>
+    <li><a href="interactive/input-radio-disabled-003.html">input type='radio', disabled variable variation</a></li>  <!-- same as above -->
+    <li><a href="interactive/input-radio-disabled-004.html">input type='radio', disabled variable variation 2</a></li>
+    <li><a href="interactive/input-radio-disabled-005.html">input type='radio', Invalid disabled</a></li> <!-- -"- -->
+    <li><a href="interactive/input-radio-disabled-006.html">input type='radio', Value of disabled field available in DOM</a></li>
+    <li><a href="interactive/input-radio-disabled-007.html">input type='radio', Setting state checked on same radio group through DOM</a></li>
+
+    <!-- input-radio-events-xxx.html -->
+    <li><a href="interactive/input-radio-events-001.html">input type='radio', onfocus</a></li>
+    <li><a href="interactive/input-radio-events-002.html">input type='radio', onblur</a></li>
+    <li><a href="interactive/input-radio-events-003.html">input type='radio', onchange</a></li>
+    <li><a href="interactive/input-radio-events-004.html">input type='radio', onclick</a></li>
+    <li><a href="interactive/input-radio-events-005.html">input type='radio', ondblclick</a></li>
+    <li><a href="interactive/input-radio-events-006.html">input type='radio', onmousedown</a></li>
+    <li><a href="interactive/input-radio-events-007.html">input type='radio', onmouseup</a></li>
+    <li><a href="interactive/input-radio-events-008.html">input type='radio', onmouseover</a></li>
+    <li><a href="interactive/input-radio-events-009.html">input type='radio', onmousemove</a></li>
+    <li><a href="interactive/input-radio-events-010.html">input type='radio', onmouseout</a></li>
+    <li><a href="interactive/input-radio-events-011.html">input type='radio', Multiple JS events</a></li>
+    <li><a href="interactive/input-radio-events-012.html">input type='radio', Empty JS event</a></li>
+
+    <!-- input-radio-keys-xxx.html -->
+    <li><a href="interactive/input-radio-keys-001.html">input radio, accesskey</a></li>
+    <li><a href="interactive/input-radio-keys-002.html">multiple input radio's with the same accesskey</a> <span class="todo">FIXME: What should be the correct behavior here?</span></li>
+
+    <!-- input-radio-others-xxx.html -->
+    <li><a href="interactive/input-radio-others-001.html">input radio, same name across forms</a></li>
+    <li><a href="interactive/input-radio-others-002.html">input radio, 'form' attribute</a></li>
+    <li><a href="interactive/input-radio-others-003.html">input radio, no parent form</a></li>
+    <li><a href="interactive/input-radio-others-004.html">input radio, sharing name across frames</a></li>
+    <li><a href="interactive/input-radio-others-005.html">input radio, reset</a></li>
+    
+    <li><a href="interactive/input-radio-others-006.html">input radio, accesskey, onclick</a></li>
+    <li><a href="interactive/input-radio-others-007.html">input radio, accesskey, onfocus</a></li>
+    <li><a href="interactive/input-radio-others-008.html">input radio, accesskey, onchange</a></li>
+    
+    <li><a href="interactive/input-radio-others-009.html">input radio, autofocus, onfocus</a></li>
+    <li><a href="interactive/input-radio-others-010.html">input radio, arrow navigation, onclick, onfocus, onchange, onblur</a></li>
+    
+    <li><a href="interactive/input-radio-others-011.html">input radio, deeply nested radio buttons</a></li>
+    <li><a href="interactive/input-radio-others-012.html">input radio, modifying 'name' in 'onclick' handler</a></li>
+    <li><a href="interactive/input-radio-others-013.html">input radio, modifying 'name' in 'onfocus' handler</a></li>
+    <li><a href="interactive/input-radio-others-014.html">input radio, modifying 'name' in 'onmouseover' handler</a></li>
+    <li><a href="interactive/input-radio-others-015.html">input radio, tabindex</a></li>
+    
+    <li><a href="interactive/input-radio-012.html">input radio, changing name in an onchange handler</a></li>
+    <li><a href="interactive/input-radio-013.html">input radio, checking two connected input radios from JavaScript</a></li>
+    <li><a href="interactive/input-radio-014.html">checked radio with 'display: none'</a></li>
+    <li><a href="interactive/input-radio-015.html">Checked radio with 'display: none' and other visible radio.</a></li>
+    <li><a href="interactive/input-radio-016.html">input radio, removing in event handlers</a></li>
+    
+  </ul>
+
+
+	<h2 id="submit">input type="submit"</h2>
+
+	<ul>
+		<!-- input-submit-xxx.html -->
+		<li><a href="interactive/input-submit-001.html">input type="submit" Click submit</a></li>
+		<li><a href="interactive/input-submit-002.html">input type="submit" Multiple unique submit buttons in the same form</a></li>
+		<li><a href="interactive/input-submit-003.html">input type="submit" Multiple unique submit buttons in separate forms</a></li>
+		<li><a href="interactive/input-submit-004.html">input type="submit" Multiple duplicate submit buttons in the same form</a></li>
+		<li><a href="interactive/input-submit-005.html">input type="submit" Multiple duplicate submit buttons in separate forms</a></li>
+		<li><a href="interactive/input-submit-006.html">input type="submit" Invalid size attribute</a></li>
+		<li><a href="interactive/input-submit-007.html">input type="submit" Invalid src attribute</a></li>
+		<li><a href="interactive/input-submit-008.html">input type="submit" Invalid readonly attribute</a></li>
+		<li><a href="interactive/input-submit-009.html">input type="submit" Value of submit button available in DOM</a></li>
+		
+		<!-- input-submit-autofocus.html -->
+		<li><a href="interactive/input-submit-autofocus-001.html">input type='submit', autofocus submit button</a></li>
+		<li><a href="interactive/input-submit-autofocus-002.html">input type='submit', autofocus submit button, variation</a></li>
+		<li><a href="interactive/input-submit-autofocus-003.html">input type='submit', invalid value autofocus submit button</a></li>
+
+		<!-- input-submit-value-xxx.html -->
+		<li><a href="interactive/input-submit-value-001.html">input type="submit" Standard value through GET</a></li>
+		<li><a href="interactive/input-submit-value-002.html">input type="submit" Standard value through POST</a></li>
+		<li><a href="interactive/input-submit-value-003.html">input type="submit" Alternate value through GET</a></li>
+		<li><a href="interactive/input-submit-value-004.html">input type="submit" Alternate value through POST</a></li>
+		<li><a href="interactive/input-submit-value-005.html">input type="submit" Another element inside value</a></li>
+		<li><a href="interactive/input-submit-value-006.html">input type="submit" Empty value through GET</a></li>
+		<li><a href="interactive/input-submit-value-007.html">input type="submit" Empty value through POST</a></li>
+		<li><a href="interactive/input-submit-value-008.html">input type="submit" i18n support in value</a></li>
+
+		<!-- input-submit-disabled-xxx.html -->
+		<li><a href="interactive/input-submit-disabled-001.html">input type="submit" disabled</a></li> <!-- check that it is clickable -->
+		<li><a href="interactive/input-submit-disabled-002.html">input type="submit" disabled variable variation</a></li>  <!-- same as above -->
+		<li><a href="interactive/input-submit-disabled-003.html">input type="submit" disabled variable variation 2</a></li>
+		<li><a href="interactive/input-submit-disabled-004.html">input type="submit" Invalid disabled</a></li> <!-- -"- -->
+		<li><a href="interactive/input-submit-disabled-005.html">input type="submit" Value of disabled field available in DOM</a></li>
+
+		<!-- input-submit-keys-xxx.html -->
+		<li><a href="interactive/input-submit-keys-001.html">input type="submit" accesskey</a></li>
+		<li><a href="interactive/input-submit-keys-002.html">input type="submit" tabindex</a></li>
+		<li><a href="interactive/input-submit-keys-003.html">input type="submit" Trigger action with enter</a></li>
+		<li><a href="interactive/input-submit-keys-004.html">input type="submit" Trigger action with space</a></li>
+
+		<!-- input-submit-events-xxx.html -->
+		<li><a href="interactive/input-submit-events-001.html">input type="submit" Cancelling action request</a></li> <!-- return false; -->
+		<li><a href="interactive/input-submit-events-002.html">input type="submit" onfocus</a></li>
+		<li><a href="interactive/input-submit-events-003.html">input type="submit" onblur</a></li>
+		<li><a href="interactive/input-submit-events-004.html">input type="submit" onclick</a></li>
+		<li><a href="interactive/input-submit-events-005.html">input type="submit" ondblclick</a></li>
+		<li><a href="interactive/input-submit-events-006.html">input type="submit" onmousedown</a></li>
+		<li><a href="interactive/input-submit-events-007.html">input type="submit" onmouseup</a></li>
+		<li><a href="interactive/input-submit-events-008.html">input type="submit" onmouseover</a></li>
+		<li><a href="interactive/input-submit-events-009.html">input type="submit" onmousemove</a></li>
+		<li><a href="interactive/input-submit-events-010.html">input type="submit" onmouseout</a></li>
+		<li><a href="interactive/input-submit-events-011.html">input type="submit" Multiple JS events</a></li>
+		<li><a href="interactive/input-submit-events-012.html">input type="submit" Empty JS event</a></li>
+		<li><a href="interactive/input-submit-events-013.html">input type="submit" Adding invalid attribute size through DOM</a></li>
+
+	</ul>
+
+
+	<h2 id="reset">input type="reset"</h2>
+
+	<ul>
+
+		<!-- input-reset-xxx.html -->
+		<li><a href="interactive/input-reset-001.html">input type="reset" Reset field</a></li>
+		<li><a href="interactive/input-reset-002.html">input type="reset" Reset field, variation</a></li>
+		<li><a href="interactive/input-reset-003.html">input type="reset" Reset prefilled field</a></li>
+		<li><a href="interactive/input-reset-004.html">input type="reset" Reset multiple fields</a></li>
+		<li><a href="interactive/input-reset-005.html">input type="reset" Reset multiple prefilled fields</a></li>
+		<li><a href="interactive/input-reset-006.html">input type="reset" Reset password field</a></li>
+		<li><a href="interactive/input-reset-007.html">input type="reset" Reset checkbox field</a></li>
+		<li><a href="interactive/input-reset-008.html">input type="reset" Reset radio buttons</a></li>
+		<li><a href="interactive/input-reset-009.html">input type="reset" Reset textarea field</a></li>
+		<li><a href="interactive/input-reset-010.html">input type="reset" Reset file field</a></li>
+		<li><a href="interactive/input-reset-011.html">input type="reset" Reset select field</a></li>
+		<li><a href="interactive/input-reset-012.html">input type="reset" Reset select multiple field</a></li>
+		<li><a href="interactive/input-reset-013.html">input type="reset" Reset select multiple field, variation</a></li>
+		<li><a href="interactive/input-reset-014.html">input type="reset" Reset combinations of fields</a></li>
+		<li><a href="interactive/input-reset-015.html">input type="reset" Reset value</a></li>
+		<li><a href="interactive/input-reset-016.html">input type="reset" Invalid element in value</a></li>
+			<!-- (button type="reset" is dealt with under the button element) -->
+
+		<!-- input-reset-disabled-xxx.html -->
+		<li><a href="interactive/input-reset-disabled-001.html">input type="reset" disabled</a></li> <!-- check that it is clickable -->
+		<li><a href="interactive/input-reset-disabled-002.html">input type="reset" disabled variable variation</a></li>  <!-- same as above -->
+		<li><a href="interactive/input-reset-disabled-003.html">input type="reset" disabled variable variation 2</a></li>
+		<li><a href="interactive/input-reset-disabled-004.html">input type="reset" Invalid disabled</a></li> <!-- -"- -->
+		<li><a href="interactive/input-reset-disabled-005.html">input type="reset" Value of disabled field available in DOM</a></li>
+
+		<!-- input-reset-keys-xxx.html -->
+		<li><a href="interactive/input-reset-keys-001.html">input type="reset" accesskey</a></li>
+		<li><a href="interactive/input-reset-keys-002.html">input type="reset" tabindex</a></li>
+		<li><a href="interactive/input-reset-keys-003.html">input type="reset" Trigger action with enter</a></li>
+		<li><a href="interactive/input-reset-keys-004.html">input type="reset" Trigger action with space</a></li>
+
+		<!-- input-reset-events-xxx.html -->
+		<li><a href="interactive/input-reset-events-001.html">input type="reset" Cancelling action request</a></li> <!-- return false; -->
+		<li><a href="interactive/input-reset-events-002.html">input type="reset" onfocus</a></li>
+		<li><a href="interactive/input-reset-events-003.html">input type="reset" onblur</a></li>
+		<li><a href="interactive/input-reset-events-004.html">input type="reset" onclick</a></li>
+		<li><a href="interactive/input-reset-events-005.html">input type="reset" ondblclick</a></li>
+		<li><a href="interactive/input-reset-events-006.html">input type="reset" onmousedown</a></li>
+		<li><a href="interactive/input-reset-events-007.html">input type="reset" onmouseup</a></li>
+		<li><a href="interactive/input-reset-events-008.html">input type="reset" onmouseover</a></li>
+		<li><a href="interactive/input-reset-events-009.html">input type="reset" onmousemove</a></li>
+		<li><a href="interactive/input-reset-events-010.html">input type="reset" onmouseout</a></li>
+		<li><a href="interactive/input-reset-events-011.html">input type="reset" Multiple JS events</a></li>
+		<li><a href="interactive/input-reset-events-012.html">input type="reset" Empty JS event</a></li>
+		<li><a href="interactive/input-reset-events-013.html">input type="reset" Adding invalid attribute size through DOM</a></li>
+
+	</ul>
+
+
+	<h2 id="file">input type="file"</h2>
+	
+	<ul>
+          <li><a href="interactive/input-file-001.html">input type=file, POST small file</a></li>
+          <li><a href="interactive/input-file-005.html">input type=file, POST small empty file</a></li>
+          <li><a href="interactive/input-file-006.html">input type=file, accessing value through DOM, fakepath</a></li>
+          <li><a href="interactive/input-file-007.html">input type=file, exception thrown on accessing 'value' through DOM</a></li>
+          <li><a href="interactive/input-file-008.html">input type=file, POST, file name</a></li>
+          <li><a href="interactive/input-file-009.html">input type=file, POST, file MIME type</a></li>
+          <li><a href="interactive/input-file-010.html">input type=file, invalid 'value' attribute</a></li>
+          <li><a href="interactive/input-file-011.html">input type=file, invalid 'size' attribute</a></li>
+          <li><a href="interactive/input-file-012.html">input type=file, invalid 'src' attribute</a></li>
+          <li><a href="interactive/input-file-013.html">input type=file, invalid 'max' attribute</a></li>
+          <li><a href="interactive/input-file-014.html">input type=file, invalid 'readonly' attribute</a></li>
+          <li><a href="interactive/input-file-015.html">input type=file, multiple inputs, same name, same form</a></li>
+          <li><a href="interactive/input-file-016.html">input type=file, multiple inputs, same name, different forms</a></li>
+          <li><a href="interactive/input-file-017.html">input type=file, POST multiple files</a></li>
+          <li><a href="interactive/input-file-018.html">input type=file, POST disabled file input</a></li>
+          <li><a href="interactive/input-file-019.html">input type=file, required</a></li>
+          <li><a href="interactive/input-file-020.html">input type=file, 'files' IDL attribute, variation</a></li>
+          <li><a href="interactive/input-file-021.html">input type=file, 'files' IDL attribute</a></li>
+          <li><a href="interactive/input-file-autofocus-001.html">input type=file, autofocus</a></li>
+          <li><a href="interactive/input-file-autofocus-002.html">input type=file, autofocus, variation</a></li>
+          <li><a href="interactive/input-file-autofocus-003.html">input type=file, autofocus, variation 2</a></li>
+          <li><a href="interactive/input-file-autofocus-004.html">input type=file, invalid autofocus</a></li>
+          <li><a href="interactive/input-file-disabled-001.html">input type=file, disabled</a></li>
+          <li><a href="interactive/input-file-disabled-002.html">input type=file, disabled, variation</a></li>
+          <li><a href="interactive/input-file-disabled-003.html">input type=file, disabled, variation 2</a></li>
+          <li><a href="interactive/input-file-disabled-004.html">input type=file, invalid disabled</a></li>
+          <li><a href="interactive/input-file-disabled-005.html">input type=file, value of disabled field accessible through DOM</a></li>
+          <li><a href="interactive/input-file-events-001.html">input type=file, onclick returns false</a></li>
+          <li><a href="interactive/input-file-events-002.html">input type=file, onfocus</a></li>
+          <li><a href="interactive/input-file-events-003.html">input type=file, onblur</a></li>
+          <li><a href="interactive/input-file-events-004.html">input type=file, onclick</a></li>
+          <li><a href="interactive/input-file-events-005.html">input type=file, ondblclick</a></li>
+          <li><a href="interactive/input-file-events-006.html">input type=file, onmousedown</a></li>
+          <li><a href="interactive/input-file-events-007.html">input type=file, onmouseup</a></li>
+          <li><a href="interactive/input-file-events-008.html">input type=file, onmouseover</a></li>
+          <li><a href="interactive/input-file-events-009.html">input type=file, onmousemove</a></li>
+          <li><a href="interactive/input-file-events-010.html">input type=file, onmouseout</a></li>
+          <li><a href="interactive/input-file-events-011.html">input type=file, Multiple JS events</a></li>
+          <li><a href="interactive/input-file-events-012.html">input type=file, Empty JS event</a></li>
+          <li><a href="interactive/input-file-keys-001.html">input type=file, accesskey</a></li>
+          <li><a href="interactive/input-file-keys-002.html">input type=file, tabindex</a></li>
+          <li><a href="interactive/input-file-keys-003.html">input type=file, Trigger action with enter</a></li>
+          <li><a href="interactive/input-file-keys-004.html">input type=file, Trigger action with space</a></li>
+        </ul>
+
+	<p class="todo">TODO: Add more.</p>
+
+
+	<h2 id="hidden">input type="hidden"</h2>
+
+	<ul>
+
+		<!-- input-hidden-xxx.html -->
+		<li><a href="interactive/input-hidden-001.html">input type="hidden" Visibility</a></li>
+		<li><a href="interactive/input-hidden-002.html">input type="hidden" Empty GET input</a></li>
+		<li><a href="interactive/input-hidden-003.html">input type="hidden" Empty POST input</a></li>
+		<li><a href="interactive/input-hidden-004.html">input type="hidden" GET input</a></li>
+		<li><a href="interactive/input-hidden-005.html">input type="hidden" POST input</a></li>
+		<li><a href="interactive/input-hidden-006.html">input type="hidden" Long GET input</a></li>
+		<li><a href="interactive/input-hidden-007.html">input type="hidden" Long POST input</a></li>
+		<li><a href="interactive/input-hidden-008.html">input type="hidden" Multiple unique hidden fields</a></li>
+		<li><a href="interactive/input-hidden-009.html">input type="hidden" Insane number of unique hidden fields</a></li>
+		<li><a href="interactive/input-hidden-010.html">input type="hidden" Multiple duplicate hidden fields</a></li>
+		<li><a href="interactive/input-hidden-011.html">input type="hidden" Value available in DOM</a></li>
+
+		<!-- input-hidden-i18n-xxx.html -->
+		<li><a href="interactive/input-hidden-i18n-001.html">input type="hidden" Chinese input</a></li>
+		<li><a href="interactive/input-hidden-i18n-002.html">input type="hidden" Japanese input</a></li> <!-- ロンドン-->
+		<li><a href="interactive/input-hidden-i18n-003.html">input type="hidden" Hindi input</a></li>
+		<li><a href="interactive/input-hidden-i18n-004.html">input type="hidden" Norwegian input</a></li>
+		<li><a href="interactive/input-hidden-i18n-005.html">input type="hidden" Thai input</a></li>
+		<li><a href="interactive/input-hidden-i18n-006.html">input type="hidden" Russian input</a></li>
+		<li><a href="interactive/input-hidden-i18n-007.html">input type="hidden" Arabic input</a></li> <!-- rtl -->
+		<li><a href="interactive/input-hidden-i18n-008.html">input type="hidden" Greek input</a></li>
+		<li><a href="interactive/input-hidden-i18n-009.html">input type="hidden" Korean input</a></li>
+		<li><a href="interactive/input-hidden-i18n-010.html">input type="hidden" Vietnamese input</a></li>
+		<li><a href="interactive/input-hidden-i18n-011.html">input type="hidden" Combining English and Chinese input</a></li>
+		<li><a href="interactive/input-hidden-i18n-012.html">input type="hidden" Combining Chinese and Japanese input</a></li>
+		<li><a href="interactive/input-hidden-i18n-013.html">input type="hidden" Combining Norwegian and Russian input</a></li>
+
+		<!-- input-hidden-value-xxx.html -->
+		<li><a href="interactive/input-hidden-value-001.html">input type="hidden" Special characters input</a></li> <!-- <, > & -->
+		<li><a href="interactive/input-hidden-value-002.html">input type="hidden" Another element inside value</a></li>
+		<li><a href="interactive/input-hidden-value-003.html">input type="hidden" Carriage return inside value</a></li>
+		<li><a href="interactive/input-hidden-value-004.html">input type="hidden" New line inside value</a></li>
+
+	</ul>
+
+
+	<h2 id="image">input type="image"</h2>
+
+	<ul>
+
+		<!-- input-image-xxx.html -->
+		<li><a href="interactive/input-image-001.html">input type="image" Click image button, with image</a></li>
+		<li><a href="interactive/input-image-002.html">input type="image" Click image button, without image</a></li>
+		<li><a href="interactive/input-image-003.html">input type="image" Image type, image/jpeg</a></li>
+		<li><a href="interactive/input-image-004.html">input type="image" Image type, image/svg+xml</a></li>
+		<li><a href="interactive/input-image-005.html">input type="image" Image type, image/x-icon</a></li>
+		<li><a href="interactive/input-image-006.html">input type="image" Image type, image/gif</a></li>
+		<li><a href="interactive/input-image-007.html">input type="image" Image type, image/png</a></li>
+		<li><a href="interactive/input-image-008.html">input type="image" Image type, image/bmp</a></li>
+		<li><a href="interactive/input-image-009.html">input type="image" Different image sizes</a></li>
+		<li><a href="interactive/input-image-010.html">Multiple unique image buttons in the same form</a></li>
+		<li><a href="interactive/input-image-011.html">input type="image" Multiple unique image buttons in separate forms</a></li>
+		<li><a href="interactive/input-image-012.html">input type="image" Multiple duplicate image buttons in the same form</a></li>
+		<li><a href="interactive/input-image-013.html">input type="image" Multiple duplicate image buttons in separate forms</a></li>
+		<li><a href="interactive/input-image-014.html">input type="image" Invalid size attribute</a></li>
+		<li><a href="interactive/input-image-015.html">input type="image" Invalid readonly attribute</a></li>
+		<li><a href="interactive/input-image-016.html">input type="image" Value of image button available in DOM</a></li>
+
+		<!-- input-image-value-xxx.html -->
+		<li><a href="interactive/input-image-value-001.html">input type="image" Standard value through GET</a></li>
+		<li><a href="interactive/input-image-value-002.html">input type="image" Standard value through POST</a></li>
+		<li><a href="interactive/input-image-value-003.html">input type="image" Alternate value through GET</a></li>
+		<li><a href="interactive/input-image-value-004.html">input type="image" Alternate value through POST</a></li>
+		<li><a href="interactive/input-image-value-005.html">input type="image" Another element inside value</a></li>
+		<li><a href="interactive/input-image-value-006.html">input type="image" Empty value</a></li>
+		<li><a href="interactive/input-image-value-007.html">input type="image" i18n support in value</a></li>
+
+		<!-- input-image-disabled-xxx.html -->
+		<li><a href="interactive/input-image-disabled-001.html">input type="image" disabled</a></li> <!-- check that it is clickable -->
+		<li><a href="interactive/input-image-disabled-002.html">input type="image" disabled variable variation</a></li>
+		<li><a href="interactive/input-image-disabled-003.html">input type="image" disabled variable variation 2</a></li>
+		<li><a href="interactive/input-image-disabled-004.html">input type="image" Invalid disabled</a></li> <!-- -"- -->
+		<li><a href="interactive/input-image-disabled-005.html">input type="image" Value of disabled field available in DOM</a></li>
+
+		<!-- input-image-keys-xxx.html -->
+		<li><a href="interactive/input-image-keys-001.html">input type="image" accesskey</a></li>
+		<li><a href="interactive/input-image-keys-002.html">input type="image" tabindex</a></li>
+		<li><a href="interactive/input-image-keys-003.html">input type="image" Trigger action with enter</a></li>
+		<li><a href="interactive/input-image-keys-004.html">input type="image" Trigger action with space</a></li>
+
+		<!-- input-image-events-xxx.html -->
+		<li><a href="interactive/input-image-events-001.html">input type="image" Cancelling action request</a></li> <!-- return false; -->
+		<li><a href="interactive/input-image-events-002.html">input type="image" onfocus</a></li>
+		<li><a href="interactive/input-image-events-003.html">input type="image" onblur</a></li>
+		<li><a href="interactive/input-image-events-004.html">input type="image" onclick</a></li>
+		<li><a href="interactive/input-image-events-005.html">input type="image" ondblclick</a></li>
+		<li><a href="interactive/input-image-events-006.html">input type="image" onmousedown</a></li>
+		<li><a href="interactive/input-image-events-007.html">input type="image" onmouseup</a></li>
+		<li><a href="interactive/input-image-events-008.html">input type="image" onmouseover</a></li>
+		<li><a href="interactive/input-image-events-009.html">input type="image" onmousemove</a></li>
+		<li><a href="interactive/input-image-events-010.html">input type="image" onmouseout</a></li>
+		<li><a href="interactive/input-image-events-011.html">input type="image" Multiple JS events</a></li>
+		<li><a href="interactive/input-image-events-012.html">input type="image" Empty JS event</a></li>
+		<li><a href="interactive/input-image-events-013.html">input type="image" Adding invalid attribute size through DOM</a></li>
+
+	</ul>
+
+
+	<h2 id="button">input type="button"</h2>
+
+	<ul>
+
+		<!-- button-xxx.html -->
+		<li><a href="interactive/button-001.html">button Empty button</a></li>
+		<li><a href="interactive/button-002.html">button Empty button, without closing tag</a></li>
+		<li><a href="interactive/button-003.html">button Empty button, with self-closing tag</a></li>
+		<li><a href="interactive/button-004.html">button Type</a></li>
+		<li><a href="interactive/button-005.html">button Invalid type</a></li>
+		<li><a href="interactive/button-006.html">button Invalid type, checkbox</a></li>
+		<li><a href="interactive/button-007.html">button Invalid type, hidden</a></li>
+		<li><a href="interactive/button-008.html">button Invalid type, image</a></li>
+		<li><a href="interactive/button-009.html">button Invalid type, password</a></li>
+		<li><a href="interactive/button-010.html">button Invalid type, radio</a></li>
+		<li><a href="interactive/button-011.html">button Invalid type, text</a></li>
+		<li><a href="interactive/button-012.html">button Invalid size attribute</a></li>
+		<li><a href="interactive/button-013.html">button Invalid src attribute</a></li>
+		<li><a href="interactive/button-014.html">button Invalid readonly attribute</a></li>
+
+		<!-- button-content-xxx.html -->
+		<li><a href="interactive/button-content-001.html">button Caption</a></li>
+		<li><a href="interactive/button-content-002.html">button i18n support in caption</a></li>
+		<li><a href="interactive/button-content-003.html">button Entities support in caption, variation 1</a></li>
+		<li><a href="interactive/button-content-004.html">button Entities support in caption, variation 2</a></li>
+		<li><a href="interactive/button-content-005.html">button HTML support in caption</a></li>
+		<li><a href="interactive/button-content-006.html">button Image support in caption, image/jpeg</a></li>
+		<li><a href="interactive/button-content-007.html">button Image support in caption, image/png</a></li>
+		<li><a href="interactive/button-content-008.html">button Image support in caption, image/svg+xml</a></li>
+		<li><a href="interactive/button-content-009.html">button Image support in caption, image/gif</a></li> <!-- animated gif -->
+		<li><a href="interactive/button-content-010.html">button iframe support in caption</a></li>
+		<li><a href="interactive/button-content-011.html">button Input checkbox element in caption</a></li>
+		<li><a href="interactive/button-content-012.html">button Input hidden element in caption</a></li>
+		<li><a href="interactive/button-content-013.html">button Input image element in caption</a></li>
+		<li><a href="interactive/button-content-014.html">button Input password element in caption</a></li>
+		<li><a href="interactive/button-content-015.html">button Input radio element in caption</a></li>
+		<li><a href="interactive/button-content-016.html">button Input reset element in caption</a></li>
+		<li><a href="interactive/button-content-017.html">button Input submit element in caption</a></li>
+		<li><a href="interactive/button-content-018.html">button Input text element in caption</a></li>
+		<li><a href="interactive/button-content-019.html">button Textarea element in caption</a></li>
+		<li><a href="interactive/button-content-020.html">button Label element in caption</a></li>
+		<li><a href="interactive/button-content-021.html">button Select element in caption</a></li>
+
+		<!-- button-value-xxx.html -->
+		<li><a href="interactive/button-value-001.html">button Standard value through GET</a></li>
+		<li><a href="interactive/button-value-002.html">button Standard value through POST</a></li>
+		<li><a href="interactive/button-value-003.html">button Alternate value through GET</a></li>
+		<li><a href="interactive/button-value-004.html">button Alternate value through POST</a></li>
+		<li><a href="interactive/button-value-005.html">button Entities in value through GET</a></li>
+		<li><a href="interactive/button-value-006.html">button Entities in value through POST</a></li>
+		<li><a href="interactive/button-value-007.html">button HTML in value through GET</a></li>
+		<li><a href="interactive/button-value-008.html">button HTML in value through POST</a></li>
+		<li><a href="interactive/button-value-009.html">button i18n support in value</a></li>
+		<li><a href="interactive/button-value-010.html">button Invalid type with GET</a></li>
+		<li><a href="interactive/button-value-011.html">button Invalid type with POST</a></li>
+		<li><a href="interactive/button-value-012.html">button Value of button available in DOM</a></li>
+		<li><a href="interactive/button-value-013.html">button Empty value through GET</a></li>
+		<li><a href="interactive/button-value-014.html">button Empty value through POST</a></li>
+
+		<!-- button-type-submit-xxx.html -->
+		<li><a href="interactive/button-type-submit-001.html">button type="submit" Standard submit button</a></li>
+		<li><a href="interactive/button-type-submit-002.html">button type="submit" Alternate submit button</a></li>
+		<li><a href="interactive/button-type-submit-003.html">button type="submit" Submit button in combination with other fields</a></li>
+		<li><a href="interactive/button-type-submit-004.html">button type="submit" Multiple unique submit buttons in the same form</a></li>
+		<li><a href="interactive/button-type-submit-005.html">button type="submit" Multiple unique submit buttons in separate forms</a></li>
+		<li><a href="interactive/button-type-submit-006.html">button type="submit" Multiple duplicate submit buttons in the same form</a></li>
+		<li><a href="interactive/button-type-submit-007.html">button type="submit" Multiple duplicate submit buttons in separate forms</a></li>
+
+		<!-- button-type-reset-xxx.html -->
+		<li><a href="interactive/button-type-reset-001.html">button type="reset" Reset field</a></li>
+		<li><a href="interactive/button-type-reset-002.html">button type="reset" Reset field, variation</a></li>
+		<li><a href="interactive/button-type-reset-003.html">button type="reset" Reset prefilled field</a></li>
+		<li><a href="interactive/button-type-reset-004.html">button type="reset" Reset multiple fields</a></li>
+		<li><a href="interactive/button-type-reset-005.html">button type="reset" Reset multiple prefilled fields</a></li>
+		<li><a href="interactive/button-type-reset-006.html">button type="reset" Reset password field</a></li>
+		<li><a href="interactive/button-type-reset-007.html">button type="reset" Reset checkbox field</a></li>
+		<li><a href="interactive/button-type-reset-008.html">button type="reset" Reset radio buttons</a></li>
+		<li><a href="interactive/button-type-reset-009.html">button type="reset" Reset textarea field</a></li>
+		<li><a href="interactive/button-type-reset-010.html">button type="reset" Reset file field</a></li>
+		<li><a href="interactive/button-type-reset-011.html">button type="reset" Reset select field</a></li>
+		<li><a href="interactive/button-type-reset-012.html">button type="reset" Reset select multiple field</a></li>
+		<li><a href="interactive/button-type-reset-013.html">button type="reset" Reset select multiple field, variation</a></li>
+		<li><a href="interactive/button-type-reset-014.html">button type="reset" Reset combinations of fields</a></li>
+		<li><a href="interactive/button-type-reset-015.html">button type="reset" Reset value</a></li>
+
+		<!-- button-type-combinations-xxx.html -->
+		<li><a href="interactive/button-type-combinations-001.html">button Submit button in combination with regular button</a></li>
+		<li><a href="interactive/button-type-combinations-002.html">button Submit button in combination with reset button</a></li>
+		<li><a href="interactive/button-type-combinations-003.html">button Submit button in combination with submit input</a></li>
+		<li><a href="interactive/button-type-combinations-004.html">button Reset button in combination with reset input</a></li>
+		<li><a href="interactive/button-type-combinations-005.html">button Submit, reset and regular button in combination</a></li>
+
+		<!-- button-disabled-xxx.html -->
+		<li><a href="interactive/button-disabled-001.html">button disabled</a></li>
+		<li><a href="interactive/button-disabled-002.html">button disabled variable variation</a></li>
+		<li><a href="interactive/button-disabled-003.html">button disabled variable variation 2</a></li>
+		<li><a href="interactive/button-disabled-004.html">button Invalid disabled</a></li>
+		<li><a href="interactive/button-disabled-005.html">button Value of disabled field available in DOM</a></li>
+
+		<!-- button-keys-xxx.html -->
+		<li><a href="interactive/button-keys-001.html">button accesskey</a></li>
+		<li><a href="interactive/button-keys-002.html">button tabindex</a></li>
+		<li><a href="interactive/button-keys-003.html">button Trigger action with enter</a></li>
+		<li><a href="interactive/button-keys-004.html">button Trigger action with space</a></li>
+
+		<!-- button-events-xxx.html -->
+		<li><a href="interactive/button-events-001.html">button Cancelling action request</a></li>
+		<li><a href="interactive/button-events-002.html">button onfocus</a></li>
+		<li><a href="interactive/button-events-003.html">button onblur</a></li>
+		<li><a href="interactive/button-events-004.html">button onclick</a></li>
+		<li><a href="interactive/button-events-005.html">button ondblclick</a></li>
+		<li><a href="interactive/button-events-006.html">button onmousedown</a></li>
+		<li><a href="interactive/button-events-007.html">button onmouseup</a></li>
+		<li><a href="interactive/button-events-008.html">button onmouseover</a></li>
+		<li><a href="interactive/button-events-009.html">button onmousemove</a></li>
+		<li><a href="interactive/button-events-010.html">button onmouseout</a></li>
+		<li><a href="interactive/button-events-011.html">button Multiple JS events</a></li>
+		<li><a href="interactive/button-events-012.html">button Empty JS event</a></li>
+		<li><a href="interactive/button-events-013.html">button Adding invalid attribute size through DOM</a></li>
+		
+		<!-- button-autofocus-xxx.html -->
+		<li><a href="interactive/button-autofocus-001.html">button autofocus button</a></li>
+                <li><a href="interactive/button-autofocus-002.html">button autofocus button, variation</a></li>
+                <li><a href="interactive/button-autofocus-003.html">button autofocus button, variation</a></li>
+	</ul>
+
+
+    <h2 id="label">label</h2>
+
+    <ul>
+      <!-- label-xxx.html -->
+      <li><a href="interactive/label-001.html">label, click label</a></li>
+      <li><a href="interactive/label-002.html">label, label containing HTML</a></li>
+      <li><a href="interactive/label-for-017.html">clicking image contained in label for</a></li>
+    </ul>
+
+    <h3>Activation behavior - clicking label containing labelable element.</h3>
+
+    <ul>
+      <li><a href="interactive/label-003.html">label, label containing button</a></li>
+      <li><a href="interactive/label-004.html">label, label containing input submit</a></li>
+      <li><a href="interactive/label-005.html">label, label containing input text</a></li>
+      <li><a href="interactive/label-006.html">label, label containing input checkbox</a></li>
+      <li><a href="interactive/label-007.html">label, label containing input radio</a></li>
+      <li><a href="interactive/label-008.html">label, label containing select (F: CORE-31299)</a></li>
+      <li><a href="interactive/label-009.html">label, label containing textarea</a></li>
+      <li><a href="interactive/label-019.html">label, label containing input password</a></li>
+      <li><a href="interactive/label-025.html">label, label containing input submit with 'display: none'</a></li>
+      <li><a href="interactive/label-026.html">label containing input reset</a></li>
+    </ul>
+
+    <h3>Activation behavior - clicking label for, containing labelable element and referring to it.</h3>
+
+    <ul>
+      <li><a href="interactive/label-for-002.html">label for, containing button</a></li>
+      <li><a href="interactive/label-for-003.html">label for, containing input submit</a></li>
+      <li><a href="interactive/label-for-004.html">label for, containing input text</a></li>
+      <li><a href="interactive/label-for-005.html">label for, containing input checkbox</a></li>
+      <li><a href="interactive/label-for-006.html">label for, containing input radio</a></li>
+      <li><a href="interactive/label-for-007.html">label for, containing select (F: CORE-31299)</a></li>
+      <li><a href="interactive/label-for-008.html">label for, containing textarea</a></li>
+      <li><a href="interactive/label-for-022.html">label for, containing input password</a></li>
+      <li><a href="interactive/label-for-023.html">clicking label for, referring to input checkbox with 'display: none' (CORE-983)</a></li>
+      <li><a href="interactive/label-for-024.html">clicking label for, referring to input radio with 'display: none' (CORE-983)</a></li>
+    </ul>
+    
+    <h3>Activation behavior - clicking label containing disabled labelable element.</h3>
+    <ul>
+      <li><a href="interactive/label-014.html">label, containing disabled checkbox (unchecked)</a></li>
+      <li><a href="interactive/label-015.html">label, containing disabled checkbox (checked)</a></li>
+      <li><a href="interactive/label-016.html">label, containing disabled submit input</a></li>
+    </ul>
+    
+    <h3>Label and labeled control attributes accessible from JavaScript.</h3>
+    <ul>
+      <li><a href="interactive/label-other-001.html">label, attribute 'for' accessible through DOM</a></li>
+      <li><a href="interactive/label-other-002.html">label, attribute 'for' accessible through 'htmlFor' IDL attribute</a></li>
+      <li><a href="interactive/label-other-003.html">label for, 'labels' IDL attribute</a></li>
+      <li><a href="interactive/label-other-004.html">label for, 'control' IDL attribute</a></li>
+      <li><a href="interactive/label-other-005.html">label for, 'form' IDL attribute, nonexistent form</a></li>
+      <li><a href="interactive/label-other-007.html">label, 'form' IDL attribute</a></li>
+      <li><a href="interactive/label-other-010.html">label, 'form' IDL attribute, variation 2</a></li>
+    </ul>
+    
+    <h3>JavaScript events triggered by mouse clicks.</h3>
+    <ul>
+      <li><a href="interactive/label-events-020.html">input checkbox contained in a label - onclick, onfocus, onblur, onchange</a></li>
+      <li><a href="interactive/label-events-021.html">input radio contained in a label - onclick, onfocus, onblur, onchange</a></li>
+      <li><a href="interactive/label-events-022.html">input text contained in a label - onclick, onfocus, onblur</a></li>
+      <li><a href="interactive/label-events-023.html">textarea contained in a label - onclick, onfocus, onblur (F: CORE-31765)</a></li>
+      <li><a href="interactive/label-events-024.html">select contained in a label - onclick, onfocus, onblur (F: CORE-31299)</a></li>
+      <li><a href="interactive/label-events-025.html">input button contained in a label - onclick, onfocus, onblur</a></li>
+      <li><a href="interactive/label-events-032.html">button contained in a label - onclick, onfocus, onblur (F: ????)</a></li>
+      
+      <li><a href="interactive/label-events-026.html">disabled input checkbox contained in a label - onclick, onfocus, onblur, onchange</a></li>
+      <li><a href="interactive/label-events-027.html">disabled input radio contained in a label - onclick, onfocus, onblur, onchange</a></li>
+      <li><a href="interactive/label-events-028.html">disabled input text contained in a label - onclick, onfocus, onblur</a></li>
+      <li><a href="interactive/label-events-029.html">disabled textarea contained in a label - onclick, onfocus, onblur</a></li>
+      <li><a href="interactive/label-events-030.html">disabled select contained in a label - onclick, onfocus, onblur</a></li>
+      <li><a href="interactive/label-events-031.html">disabled input button contained in a label - onclick, onfocus, onblur</a></li>
+      <li><a href="interactive/label-events-033.html">disabled button contained in a label - onclick, onfocus, onblur</a></li>
+      
+      <li><a href="interactive/label-events-035.html">checkbox with 'display: none' contained in a label - onclick, onchange</a></li>
+      <li><a href="interactive/label-events-036.html">input radio with 'display: none' contained in a label - onclick, onchange</a></li>
+      <li><a href="interactive/label-events-037.html">input text with 'display: none' contained in a label - onclick</a></li>
+      <li><a href="interactive/label-events-038.html">textarea with 'display: none' contained in a label - onclick</a></li>
+      <li><a href="interactive/label-events-039.html">select with 'display: none' contained in a label - onclick</a></li>
+      <li><a href="interactive/label-events-040.html">input button with 'display: none' contained in a label - onclick</a></li>
+      <li><a href="interactive/label-events-041.html">button with 'display: none' contained in a label - onclick</a></li>
+    </ul>
+    
+    <h3>Label combinations</h3>
+    <ul>
+      <li><a href="interactive/label-010.html">label, label containing another label</a></li>
+      <li><a href="interactive/label-012.html">label, label containing another label for (F: ????)</a></li>
+      <li><a href="interactive/label-for-009.html">label for, containing another label (F: ????)</a></li>
+      <li><a href="interactive/label-for-011.html">label for, containing another label for, referring to the same element (F: Watir click problem)</a></li>
+      <li><a href="interactive/label-for-012.html">label for, containing another label for, referring to another element (F: ????)</a></li>
+      <li><a href="interactive/label-combinations-001.html">label, two labels referring to single element</a></li>
+      <li><a href="interactive/label-combinations-002.html">label for and label, referring to the same element</a></li>
+    </ul>
+    
+    <h3>Others</h3>
+    
+    <ul>
+      
+      <li><a href="interactive/label-011.html">label, label containing input, but referring to another element</a></li>
+      
+      <li><a href="interactive/label-013.html">label, containing two descendants</a></li>
+      
+      
+      <li><a href="interactive/label-017.html">label, tabindex</a></li>
+      <li><a href="interactive/label-018.html">CORE-23548 (F: CORE-23548)</a></li>
+
+      <!-- label-for-xxx.html -->
+      <li><a href="interactive/label-for-001.html">label for, containing HTML</a></li>
+      
+      
+      <li><a href="interactive/label-for-010.html">label for, containing input text, but referring to another input text (F: Watir click problem)</a></li>
+      
+      <li><a href="interactive/label-for-014.html">label for, two descendants</a></li>
+      <li><a href="interactive/label-for-015.html">label for, referring to nonexistent element</a></li>
+      <li><a href="interactive/label-for-016.html">label for, tabindex</a></li>
+      <li><a href="interactive/label-for-018.html">cross-form label for (F: CORE-31690)</a></li>
+      <li><a href="interactive/label-for-019.html">cross-form label for, opposite order</a></li>
+      <li><a href="interactive/label-for-020.html">outside label for, referring to form element</a></li>
+      <li><a href="interactive/label-for-021.html">outside label for, referring to form element, opposite order</a></li>
+
+      <!-- label-other-xxx.html -->
+      <li><a href="interactive/label-other-011.html">iframe label, referring to element in same window</a></li>
+      <li><a href="interactive/label-other-012.html">iframe label for, referring to element in same window</a></li>
+      <li><a href="interactive/label-other-013.html">iframe label for, referring to element in another window</a></li>
+      <li><a href="interactive/label-other-014.html">CORE-27397 (F: CORE-27397)</a></li>
+      <li><a href="interactive/label-other-015.html">label with negative text-indent, containing input text (CORE-18768)</a></li>
+      <li><a href="interactive/label-other-016.html">clicking a visible label should fire onclick on invisible input (CORE-31585) (F: CORE-31585)</a></li>
+      <li><a href="interactive/label-other-017.html">absolute position incorrectly calculated (CORE-13283)</a></li>
+      
+      <li><a href="interactive/label-other-018.html">CORE-14897</a></li>
+      <li><a href="interactive/label-other-019.html">CORE-15792</a></li>
+
+      <!-- label-keys-xxx.html -->
+      <li><a href="interactive/label-keys-001.html">label, accesskey</a> <span class="todo">FIXME: Automate this test.</span></li>
+      <li><a href="interactive/label-keys-002.html">label for, accesskey</a> <span class="todo">FIXME: Automate this test.</span></li>
+
+      <!-- label-events-xxx.html -->
+      <li><a href="interactive/label-events-001.html">label, label onclick</a></li>
+      <li><a href="interactive/label-events-002.html">label, label ondblclick</a></li>
+      <li><a href="interactive/label-events-003.html">label, label onmousedown</a></li>
+      <li><a href="interactive/label-events-004.html">label, label onmouseup</a></li>
+      <li><a href="interactive/label-events-005.html">label, label onmouseover</a></li>
+      <li><a href="interactive/label-events-006.html">label, label onmousemove</a></li>
+      <li><a href="interactive/label-events-007.html">label, label onmouseout</a></li>
+      <li><a href="interactive/label-events-010.html">label, label Multiple JS events</a></li>
+      <li><a href="interactive/label-events-011.html">Empty JS event</a></li>
+      <li><a href="interactive/label-events-012.html">label, label Adding valid attribute for through DOM</a></li>
+      <li><a href="interactive/label-events-013.html">Adding invalid attribute size through DOM</a></li>
+      <li><a href="interactive/label-events-034.html">changing 'id' attributes of labeled controls</a></li>
+      <li><a href="interactive/label-events-014.html">label, onclick returns false</a></li>
+      <li><a href="interactive/label-events-015.html">label for, 'onclick' for several elements</a></li>
+      <li><a href="interactive/label-events-016.html">label for, 'onfocus' for several elements (F: CORE-31299)</a></li>
+      <li><a href="interactive/label-events-017.html">label for, 'onclick' for several disabled elements (F: CORE-31556)</a></li>
+      <li><a href="interactive/label-events-018.html">label for, 'onfocus' for several disabled elements</a></li>
+      
+      
+      <li><a href="interactive/label-028.html">label, 'onclick' event on a disabled button (CORE-31556) (F: CORE-31556)</a></li>
+      <li><a href="interactive/label-events-xxx.html">onfocus</a> <span class="todo">FIXME</span></li>
+      <li><a href="interactive/label-events-xxx.html">onblur</a> <span class="todo">FIXME</span></li>
+    </ul>
+
+    <h2 id="select">select</h2>
+    <ul>
+      <li><a href="interactive/select-001.html">select GET input</a></li>
+      <li><a href="interactive/select-002.html">select POST input</a></li>
+      <li><a href="interactive/select-003.html">select Long GET input</a></li>
+      <li><a href="interactive/select-004.html">select Long POST input</a></li>
+      <li><a href="interactive/select-005.html">select Multiple unique inputs</a></li>
+      <li><a href="interactive/select-006.html">select Insane number of unique selects</a></li>
+      <li><a href="interactive/select-007.html">select Multiple duplicate inputs</a></li>
+      <li><a href="interactive/select-008.html">select Value available in DOM</a></li>
+      <li><a href="interactive/select-009.html">select Increasing option value length</a></li>
+      <li><a href="interactive/select-autofocus-001.html">select, autofocus</a></li>
+      <li><a href="interactive/select-autofocus-002.html">select, multiple autofocus</a></li>
+      <li><a href="interactive/select-autofocus-003.html">select, empty autofocus variable</a></li>
+      <li><a href="interactive/select-autofocus-004.html">select, invalid autofocus variable</a></li>
+      <li><a href="interactive/select-disabled-001.html">select disabled</a></li>
+      <li><a href="interactive/select-disabled-002.html">select disabled variable variation</a></li>
+      <li><a href="interactive/select-disabled-003.html">select disabled variable variation 2</a></li>
+      <li><a href="interactive/select-disabled-004.html">select Invalid disabled</a></li>
+      <li><a href="interactive/select-disabled-005.html">select Value of disabled field available in DOM</a></li>
+      <li><a href="interactive/select-events-001.html">select onfocus</a></li>
+      <li><a href="interactive/select-events-002.html">select onblur</a></li>
+      <li><a href="interactive/select-events-003.html">select onchange</a></li>
+      <li><a href="interactive/select-events-004.html">select onclick</a></li>
+      <li><a href="interactive/select-events-005.html">select ondblclick</a></li>
+      <li><a href="interactive/select-events-006.html">select onmousedown</a></li>
+      <li><a href="interactive/select-events-007.html">select onmouseup</a></li>
+      <li><a href="interactive/select-events-008.html">select onmouseover</a></li>
+      <li><a href="interactive/select-events-009.html">select onmousemove</a></li>
+      <li><a href="interactive/select-events-010.html">select onmouseout</a></li>
+      <li><a href="interactive/select-events-011.html">select onkeypress</a></li>
+      <li><a href="interactive/select-events-012.html">select onkeydown</a></li>
+      <li><a href="interactive/select-events-013.html">select onkeyup</a></li>
+      <li><a href="interactive/select-events-014.html">select Multiple JS events</a></li>
+      <li><a href="interactive/select-events-015.html">select Empty JS event</a></li>
+      <li><a href="interactive/select-i18n-001.html">select Chinese input</a></li>
+      <li><a href="interactive/select-i18n-002.html">select Japanese input</a></li>
+      <li><a href="interactive/select-i18n-003.html">select Hindi input</a></li>
+      <li><a href="interactive/select-i18n-004.html">select Norwegian input</a></li>
+      <li><a href="interactive/select-i18n-005.html">select Thai input</a></li>
+      <li><a href="interactive/select-i18n-006.html">select Russian input</a></li>
+      <li><a href="interactive/select-i18n-007.html">select Arabic input</a></li>
+      <li><a href="interactive/select-i18n-008.html">select Greek input</a></li>
+      <li><a href="interactive/select-i18n-009.html">select Korean input</a></li>
+      <li><a href="interactive/select-i18n-010.html">select Vietnamese input</a></li>
+      <li><a href="interactive/select-i18n-011.html">select Combining English and Chinese input</a></li>
+      <li><a href="interactive/select-i18n-012.html">select Combining Chinese and Japanese input</a></li>
+      <li><a href="interactive/select-i18n-013.html">select Combining Combining Norwegian and Russian input</a></li>
+      <li><a href="interactive/select-keys-001.html">select tabindex</a></li>
+      <li><a href="interactive/select-nesting-001.html">select select outside a form</a></li>
+      <li><a href="interactive/select-nesting-002.html">select Two nested forms with a select</a></li>
+      <li><a href="interactive/select-nesting-003.html">select Two nested forms each with select</a></li>
+      <li><a href="interactive/select-nesting-004.html">select Two nested forms each with selects, variation</a></li>
+      <li><a href="interactive/select-optgroup-001.html">select, all options can be selected</a></li>
+      <li><a href="interactive/select-optgroup-002.html">select, Disabled optgroup cannot be selected</a></li>
+      <li><a href="interactive/select-optgroup-003.html">select, Empty disabled optgroup cannot be selected</a></li>
+      <li><a href="interactive/select-optgroup-004.html">select, Empty disabled optgroup cannot be selected</a></li>
+      <li><a href="interactive/select-optgroup-005.html">select invalid disabled value optgroup cannot be selected</a></li>
+      <li><a href="interactive/select-options-001.html">select disabled option cannot be selected</a></li>
+      <li><a href="interactive/select-options-002.html">select disabled option cannot be selected, variation</a></li>
+      <li><a href="interactive/select-options-003.html">select multiple option</a></li>
+      <li><a href="interactive/select-options-004.html">select multiple option, variation</a></li>
+      <li><a href="interactive/select-options-005.html">select support javascript add option</a></li>
+      <li><a href="interactive/select-options-006.html">select support javascript remove option</a></li>
+      <li><a href="interactive/select-size-001.html">select increasing size</a></li>
+      <li><a href="interactive/select-size-002.html">select default size accessible in DOM</a></li>
+      <li><a href="interactive/select-size-003.html">select invalid size accessible in DOM</a></li>
+      <li><a href="interactive/select-size-004.html">select size accessible in DOM</a></li>
+      <li><a href="interactive/select-value-001.html">select Special characters input</a></li>
+      <li><a href="interactive/select-value-002.html">select Prefilled entity input</a></li>
+    </ul>
+
+    <h2 id="textarea">textarea</h2>
+    <ul>
+      <li><a href="interactive/textarea-001.html">textarea, GET empty content</a></li>
+      <li><a href="interactive/textarea-002.html">textarea, POST empty content</a></li>
+      <li><a href="interactive/textarea-003.html">textarea, GET content</a></li>
+      <li><a href="interactive/textarea-004.html">textarea, POST content</a></li>
+      <li><a href="interactive/textarea-005.html">textarea, long GET content</a></li>
+      <li><a href="interactive/textarea-006.html">textarea, long POST content</a></li>
+      <li><a href="interactive/textarea-007.html">textarea, clearing textarea</a></li>
+      <li><a href="interactive/textarea-008.html">textarea, appending to textarea</a></li>
+      <li><a href="interactive/textarea-009.html">textarea, multiple unique inputs</a></li>
+      <li><a href="interactive/textarea-010.html">textarea, insane number of unique textareas</a></li>
+      <li><a href="interactive/textarea-011.html">textarea, multiple duplicate textareas</a></li>
+      <li><a href="interactive/textarea-012.html">textarea, moving to the beginning of the line</a></li>
+      <li><a href="interactive/textarea-013.html">textarea, value available in DOM</a></li>
+      <li><a href="interactive/textarea-014.html">textarea, clientHeight equals scrollHeight</a></li>
+      <li><a href="interactive/textarea-015.html">textarea, clientWidth equals scrollWidth</a></li>
+      <li><a href="interactive/textarea-autofocus-001.html">textarea, autofocus</a></li>
+      <li><a href="interactive/textarea-autofocus-002.html">textarea, multiple autofocus</a></li>
+      <li><a href="interactive/textarea-autofocus-003.html">textarea, empty 'autofocus' attribute</a></li>
+      <li><a href="interactive/textarea-autofocus-004.html">textarea, invalid 'autofocus' attribute</a></li>
+      <li><a href="interactive/textarea-cols-001.html">textarea, cols comparison</a></li>
+      <li><a href="interactive/textarea-cols-002.html">textarea, invalid cols</a></li>
+      <li><a href="interactive/textarea-cols-003.html">textarea, 'cols' attribute available in DOM</a></li>
+      <li><a href="interactive/textarea-cols-004.html">textarea, default 'cols' value available in DOM</a></li>
+      <li><a href="interactive/textarea-disabled-001.html">textarea, disabled</a></li>
+      <li><a href="interactive/textarea-disabled-002.html">textarea, 'disabled' attribute, variation</a></li>
+      <li><a href="interactive/textarea-disabled-003.html">textarea, 'disabled' attribute, variation 2</a></li>
+      <li><a href="interactive/textarea-disabled-004.html">textarea, invalid 'disabled' attribute</a></li>
+      <li><a href="interactive/textarea-disabled-005.html">textarea, value of disabled textarea available in DOM</a></li>
+      <li><a href="interactive/textarea-events-001.html">textarea, onfocus</a></li>
+      <li><a href="interactive/textarea-events-002.html">textarea, onblur</a></li>
+      <li><a href="interactive/textarea-events-003.html">textarea, onselect</a></li>
+      <li><a href="interactive/textarea-events-004.html">textarea, onchange</a></li>
+      <li><a href="interactive/textarea-events-005.html">textarea, onclick</a></li>
+      <li><a href="interactive/textarea-events-006.html">textarea, ondblclick</a></li>
+      <li><a href="interactive/textarea-events-007.html">textarea, onmousedown</a></li>
+      <li><a href="interactive/textarea-events-008.html">textarea, onmouseup</a></li>
+      <li><a href="interactive/textarea-events-009.html">textarea, onmouseover</a></li>
+      <li><a href="interactive/textarea-events-010.html">textarea, onmousemove</a></li>
+      <li><a href="interactive/textarea-events-011.html">textarea, onmouseout</a></li>
+      <li><a href="interactive/textarea-events-012.html">textarea, onkeypress</a></li>
+      <li><a href="interactive/textarea-events-013.html">textarea, onkeydown</a></li>
+      <li><a href="interactive/textarea-events-014.html">textarea, onkeyup</a></li>
+      <li><a href="interactive/textarea-events-015.html">textarea, multiple JS events</a></li>
+      <li><a href="interactive/textarea-events-016.html">textarea, empty JS event</a></li>
+      <li><a href="interactive/textarea-i18n-001.html">textarea, Chinese input</a></li>
+      <li><a href="interactive/textarea-i18n-002.html">textarea, Japanese input</a></li>
+      <li><a href="interactive/textarea-i18n-003.html">textarea, Hindi input</a></li>
+      <li><a href="interactive/textarea-i18n-004.html">textarea, Norwegian input</a></li>
+      <li><a href="interactive/textarea-i18n-005.html">textarea, Thai input</a></li>
+      <li><a href="interactive/textarea-i18n-006.html">textarea, Russian input</a></li>
+      <li><a href="interactive/textarea-i18n-007.html">textarea, Arabic input</a></li>
+      <li><a href="interactive/textarea-i18n-008.html">textarea, Greek input</a></li>
+      <li><a href="interactive/textarea-i18n-009.html">textarea, Korean input</a></li>
+      <li><a href="interactive/textarea-i18n-010.html">textarea, Vietnamese input</a></li>
+      <li><a href="interactive/textarea-i18n-011.html">textarea, combining English and Chinese input</a></li>
+      <li><a href="interactive/textarea-i18n-012.html">textarea, combining Chinese and Japanese input</a></li>
+      <li><a href="interactive/textarea-i18n-013.html">textarea, combining Norwegian and Russian input</a></li>
+      <li><a href="interactive/textarea-keys-001.html">textarea, tabindex</a></li>
+      <li><a href="interactive/textarea-maxlength-001.html">textarea, regular maxlength</a></li>
+      <li><a href="interactive/textarea-maxlength-002.html">textarea, high maxlength</a></li>
+      <li><a href="interactive/textarea-maxlength-003.html">textarea, empty 'maxlength' attribute</a></li>
+      <li><a href="interactive/textarea-maxlength-004.html">textarea, invalid 'maxlength' attribute</a></li>
+      <li><a href="interactive/textarea-maxlength-005.html">textarea, value of 'maxlength' attribute available in DOM</a></li>
+      <li><a href="interactive/textarea-maxlength-006.html">textarea, dynamic maxlength change</a></li>
+      <li><a href="interactive/textarea-nesting-001.html">textarea, input outside a form</a></li>
+      <li><a href="interactive/textarea-nesting-002.html">textarea, two nested forms with a textarea</a></li>
+      <li><a href="interactive/textarea-nesting-003.html">textarea, two nested forms each with textareas</a></li>
+      <li><a href="interactive/textarea-nesting-004.html">textarea, two nested forms each with textareas, variation</a></li>
+      <li><a href="interactive/textarea-readonly-001.html">textarea, 'readonly' attribute</a></li>
+      <li><a href="interactive/textarea-readonly-002.html">textarea, 'readonly' attribute, variation</a></li>
+      <li><a href="interactive/textarea-readonly-003.html">textarea, invalid 'readonly' attribute</a></li>
+      <li><a href="interactive/textarea-readonly-004.html">textarea, empty 'readonly' attribute</a></li>
+      <li><a href="interactive/textarea-readonly-005.html">textarea, value of readonly textarea available in DOM</a></li>
+      <li><a href="interactive/textarea-required-001.html">textarea required</a></li>
+      <li><a href="interactive/textarea-required-002.html">textarea required, variant</a></li>
+      <li><a href="interactive/textarea-required-003.html">textarea required, invalid value</a></li>
+      <li><a href="interactive/textarea-rows-001.html">textarea, rows comparison</a></li>
+      <li><a href="interactive/textarea-rows-002.html">textarea, invalid rows</a></li>
+      <li><a href="interactive/textarea-rows-003.html">textarea, rows value available in DOM</a></li>
+      <li><a href="interactive/textarea-rows-004.html">textarea, default rows value available in DOM</a></li>
+      <li><a href="interactive/textarea-value-001.html">textarea, special characters input</a></li>
+      <li><a href="interactive/textarea-value-002.html">textarea, append input to special characters value</a></li>
+      <li><a href="interactive/textarea-value-003.html">textarea, clearing input of special characters value</a></li>
+      <li><a href="interactive/textarea-value-004.html">textarea, prefilled entity input</a></li>
+      <li><a href="interactive/textarea-value-005.html">textarea, append to entity value</a></li>
+      <li><a href="interactive/textarea-value-006.html">textarea, clearing input of entity value</a></li>
+      <li><a href="interactive/textarea-value-007.html">textarea, another element inside value</a></li>
+      <li><a href="interactive/textarea-value-008.html">textarea, carriage return inside value</a></li>
+      <li><a href="interactive/textarea-value-009.html">textarea, new line inside value</a></li>
+      <li><a href="interactive/textarea-value-010.html">textarea, concatenation of two values</a></li>
+    </ul>
+
+</body>
+</html>

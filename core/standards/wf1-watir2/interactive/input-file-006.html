@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+
+<title>input type=file accessing value through DOM, fakepath</title>
+
+<p>Select local/empty.txt file. Click the "Check" button. The text "C:\fakepath\empty.txt" should appear.</p>
+
+<form action="#">
+  <p><input id="f" type="file" /></p>
+  <p><button id="b" type="button" onclick="document.getElementById('result').innerHTML = document.getElementById('f').value">Check</button></p>
+</form>
+
+<p id="result"></p>

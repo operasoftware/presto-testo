@@ -1,0 +1,23 @@
+<!doctype html>
+<meta charset="utf-8" />
+<title>textarea onblur</title>
+
+<noscript>
+  <p>Note: This test requires JavaScript.</p>
+</noscript>
+
+<p>
+	Click on the textarea below.  Then click on the submit button.  The text in
+	the area should change to ”foobar”.
+</p>
+
+<form>
+	<p>
+		<textarea name="test" onblur="this.value = 'foobar';">This should change when you select something else!</textarea>
+	</p>
+</form>
+
+<p>
+	<input type="submit" name="submit" />
+</p>
+

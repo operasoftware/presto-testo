@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+
+<title>input type=radio tabindex</title>
+
+<p>Click the radio button pointed by the arrow. Then press 'Tab' twice. You should see the text "123" below.</p>
+
+<p>A: <input id="r1" type="radio" name="n1" tabindex="1" onfocus="document.getElementById('result').innerHTML += '1'"/> &larr; click this</p>
+<p>B: <input type="radio" name="n1" tabindex="3" onfocus="document.getElementById('result').innerHTML += '3'"/></p>
+<p>C: <input type="radio" name="n1" tabindex="2" onfocus="document.getElementById('result').innerHTML += '2'"/></p>
+
+<p id="result"></p>

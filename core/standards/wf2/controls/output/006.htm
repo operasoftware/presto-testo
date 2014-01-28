@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <title>&lt;output&gt; and the validity DOM attribute</title>
+  <style> #t { display:none } </style>
+  <script>
+   window.onload = function(){
+    var r = document.getElementById('r');
+    var t = document.getElementsByTagName('output')[0].validity;
+    r.firstChild.data = "FAILED (Script failed)";
+    r.firstChild.data = (
+     t.typeMismatch === false &&
+     t.rangeUnderflow === false &&
+     t.rangeOverflow === false &&
+     t.stepMismatch === false &&
+     t.tooLong === false &&
+     t.patternMismatch === false &&
+     t.valueMissing === false &&
+     t.customError === false &&
+     t.valid === true
+    ) ? "PASSED" : "FAILED";
+   }
+  </script>
+ </head>
+ <body>
+  <p>This test has: <span id="r">FAILED (Script did not run)</span></p>
+  <p id="t"><output>TEST</output></p>
+ </body>
+</html>

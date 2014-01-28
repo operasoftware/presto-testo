@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<title>&lt;input type="checkbox"&gt; and :default, :checked</title>
+<style>
+ span { color:red; background:red }
+ input { display:none }
+ #i1:default + span { background:lime }
+ #i1:checked + span { color:lime }
+ #i2 + span { color:lime; background:lime }
+ #i2:default + span { background:red }
+ #i2:checked + span { background:red }
+ #i3 + span { color:lime; background:lime }
+ #i3:default + span { background:red }
+ #i3:checked + span { color:red }
+ #i4:default + span { background:lime }
+ #i4:checked + span { color:lime }
+ #i5 + span { background:lime }
+ #i5:default + span { background:red }
+ #i5:checked + span { color:lime }
+ #i6 + span { color:lime; background:lime }
+ #i6:default + span { background:red }
+ #i6:checked + span { color:red }
+</style>
+<script>
+ window.onload = function(){
+  document.getElementById('i3').removeAttribute('checked');
+  document.getElementById('i4').defaultChecked = true;
+  document.getElementById('i5').checked = true;
+  document.getElementById('i6').defaultChecked = false;
+ }
+</script>
+<p>There should be no red:
+<p><input type="checkbox" id="i1" checked="checked"><span>FAIL</span>
+<p><input type="checkbox" id="i2"><span>FAIL</span>
+<p><input type="checkbox" id="i3" checked="checked"><span>FAIL</span>
+<p><input type="checkbox" id="i4"><span>FAIL</span>
+<p><input type="checkbox" id="i5"><span>FAIL</span>
+<p><input type="checkbox" id="i6" checked="checked"><span>FAIL</span>

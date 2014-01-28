@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<meta charset="utf-8" />
+<title>label tabindex</title>
+
+<p>Press 'tab' three times. The word '321' should appear below.</p>
+
+<p id="result"></p>
+
+<form>
+  <button tabindex="3" onfocus="document.getElementById('result').innerHTML += '1'">foo</button>
+  <label id="l" tabindex="2" onfocus="document.getElementById('result').innerHTML += '2'">Test</label>
+  <button tabindex="1" onfocus="document.getElementById('result').innerHTML += '3'">bar</button>
+</form>

@@ -1,0 +1,4 @@
+<!DOCTYPE html>
+<title>form DOM attribute of &lt;legend&gt; element</title>
+<form><fieldset><legend>FAIL (Script did not run.)</legend></fieldset></form>
+<script> document.documentElement.textContent = (document.getElementsByTagName('legend')[0].form == document.getElementsByTagName('form')[0]) ? "PASS" : "FAIL" </script>

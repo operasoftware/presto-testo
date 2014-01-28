@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<meta charset="utf-8" />
+<title>textarea another element inside value</title>
+
+<p>
+	The textarea below should contain "&lt;div id='test2'&gt;foobar&lt;/div&gt;".
+	Make sure this is a string, and not an HTML element.  Click submit.  The same
+	string should be shown on the following page.
+</p>
+
+<form action="../res/return_single_post.php" method="post">
+	<p>
+		<textarea name="test"><div id='test2'>foobar</div></textarea>
+		<input type="submit" name="submit" />
+	</p>
+</form>

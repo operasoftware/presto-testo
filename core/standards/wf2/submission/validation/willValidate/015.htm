@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <title>willValidate and the &lt;button&gt; element</title>
+  <style> #t { display:none } </style>
+  <script>
+   window.onload = function(){
+    var r = document.getElementById('r');
+    r.firstChild.data = "FAIL (Script failed)";
+    r.firstChild.data = document.getElementsByTagName('button')[0].willValidate ? "FAIL" : "PASS";
+   }
+  </script>
+ </head>
+ <body>
+  <form>
+    <p>It should say "PASS" below:</p>
+    <p id="r">FAIL (Script did not run.)</p>
+    <p id="t"><button>FAIL</button></p>
+   </form>
+ </body>
+</html>

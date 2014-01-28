@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <title>dynamically changing the size DOM attribute</title>
+  <script>
+   window.onload = function(){
+    document.getElementById('t1').size = -1;
+    document.getElementById('t2').size = 0;
+    document.getElementById('t3').size = 1;
+   }
+  </script>
+ </head>
+ <body>
+  <p>The following four controls should be identical:</p>
+  <p><select size="2" id="t1"><option>TEST</option></select></p>
+  <p><select size="2" id="t2"><option>TEST</option></select></p>
+  <p><select size="2" id="t3"><option>TEST</option></select></p>
+  <p><select><option>TEST</option></select></p>
+  <!-- In theory size="-1" and size="0" are undefined, but they should just be treated like size="1" -->
+ </body>
+</html>

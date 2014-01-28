@@ -1,0 +1,4 @@
+<!DOCTYPE html>
+<title>"step" and the stepMismatch flag</title>
+<p>FAIL (Script did not run.) <input type="number" step="5" value="4"></p>
+<script> document.getElementsByTagName('p')[0].textContent = (document.getElementsByTagName('input')[0].validity.stepMismatch) ? "PASS" : "FAIL" </script>

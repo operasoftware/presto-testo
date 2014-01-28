@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<title>output control processing</title>
+<link rel="help" href="http://whatwg.org/specs/web-forms/current-work/#output0">
+<style>
+ output#t1 > span, output#t2 { background:lime }
+ output#t2 > span, output#t1 { background:red }
+</style>
+<p><output id="t1"><span>This line should have a green background.</span></output>
+<form><p><output id="t2"><span>This line should have a green background.</span></output></form>
+<script> document.getElementsByTagName('form')[0].reset() </script>

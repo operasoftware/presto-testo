@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<meta charset="utf-8" />
+<title>label for, containing another label for, referring to the same element (F: Watir click problem)</title>
+<style>
+  #l { background: #cfc; }
+  #i { background: #fcc; }
+</style>
+
+<p>Click the "Click me!" label below. The focus should shift to the text field.  Type “foobar” after clicking the label to verify that the focus did indeed shift.</p>
+
+<form action="../res/return_single_post.php" method="post">
+  <p>
+    <label id="i" for="t">
+      Do not click me.
+      <label id="l" for="t">
+        Click me!
+        <input id="t" name="test" type="text" />
+      </label>
+    </label>
+  </p>
+</form>
+

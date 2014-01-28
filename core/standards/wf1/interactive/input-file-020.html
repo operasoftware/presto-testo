@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<script type="text/javascript">
+  function show_files() {
+    var files = document.getElementById('f').files;
+
+    if(files) {
+      if(files.length > 0) {
+        var file = files.item(0);
+        var reader = new FileReader();
+        
+        reader.onload = function(e) {
+          document.getElementById('result').innerHTML = e.target.result;
+        }
+        reader.readAsText(file);
+      } else {
+        document.getElementById('result').innerHTML = 'FAIL';
+      }
+    } else {
+      document.getElementById('result').innerHTML = 'FAIL';
+    }
+  }
+</script>
+
+<title>input type=file 'files' IDL attribute, variation</title>
+
+<p>Select the local/pass.txt file. Press the 'check' button. The word 'PASS' should appear below.</p>
+
+<p><input id="f" type="file" /></p>
+<p><button id="b" type="button" onclick="show_files()">check</button></p>
+
+<p id="result"></p>

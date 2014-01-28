@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <title>size DOM attribute</title>
+  <script>
+   window.onload = function(){
+    var r = document.getElementById('r'),
+        t1 = document.getElementById('t1'),
+        t2 = document.getElementById('t2');
+    r.firstChild.data = (t1.size == 2 && t2.size == 0) ? "PASS" : "FAIL";
+   }
+  </script>
+ </head>
+ <body>
+  <p id="r">FAIL (Script did not run)</p>
+  <p>Ignore everything below:</p>
+  <hr>
+  <p><select size="2" id="t1"></select></p>
+  <p><select id="t2"></select></p>
+ </body>
+</html>

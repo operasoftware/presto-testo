@@ -1,0 +1,7 @@
+<!DOCTYPE html>
+<title>'forminput' event  basic test (part two)</title>
+<script> function fail(e) { e.target.form.test.value = "FAIL" } </script>
+<form>
+ <p>While entering text in this control it should say "PASS" below: <input oninput="fail(event)">
+ <p><output onforminput="this.value='PASS'" name="test">TEST</output>
+</form>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<title>stepUp() and stepDown() methods and the zero argument</title>
+<script>
+ window.onload = function(){
+  var r = document.getElementsByTagName('p')[0],
+      i = document.getElementsByTagName('input')[0],
+      p1 = false,
+      p2 = false;
+  r.textContent = "FAIL: Script failed.";
+  try{
+   i.stepUp(0);
+  }catch(e){
+   p1 = e.code === 1 ? true : false;
+   // INDEX_SIZE_ERR
+  }
+  try{
+   i.stepDown(0);
+  }catch(e){
+   p2 = e.code === 1 ? true : false;
+   // INDEX_SIZE_ERR
+  }
+  r.textContent = (p1 && p2) ? "PASS" : "FAIL";
+ }
+</script>
+<p>FAIL: Script did not run. <input type="number" value="0" step="10"></p>

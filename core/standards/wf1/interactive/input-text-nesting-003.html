@@ -1,0 +1,22 @@
+<!doctype html>
+<meta charset="utf-8" />
+<title>input type=text Two nested forms each with inputs</title>
+
+<p>
+	Click the submit button below.  Nothing should happen.
+</p>
+
+<form action="../res/null_post.php" method="post">
+	<p>
+		<input name="test" type="text" value="foo" />
+	</p>
+	<form action="../res/return_multiple_post.php" method="post">
+		<p>
+			<input name="test2" type="text" value="bar" />
+		</p>
+	</form>
+	<p>
+		<input type="submit" name="submit" />
+	</p>
+</form>
+

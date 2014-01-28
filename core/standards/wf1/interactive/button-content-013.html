@@ -1,0 +1,36 @@
+<!doctype html>
+<meta charset="utf-8" />
+<title>button Input image element in caption</title>
+<link href="../res/test.css" rel="stylesheet" />
+
+<p>
+	You should see a button below containing the word “foobar”, but no input
+	image element.  The button on the left should match the reference box on the
+	right.
+</p>
+
+<div id="testcase">
+	<div class="test">
+
+		<h2>Test</h2>
+
+		<form>
+			<p>
+				<button name="test"><input name="test2" type="image" src="http://t/resources/images/fail.png" value="FAIL" /> foobar</button>
+			</p>
+		</form>
+
+	</div>
+	<div class="reference">
+
+		<h2>Reference</h2>
+
+		<form>
+			<p>
+				<button name="reference">foobar</button>
+			</p>
+		</form>
+
+	</div>
+</div>
+

@@ -1,0 +1,19 @@
+<!doctype html>
+<meta charset="utf-8" />
+<title>textarea tabindex</title>
+
+<p>
+	Use the <kbd>TAB</kbd> key to switch between the textareas.  The <em>third
+	area</em> should be selected first.  Type ”bar” in this, ”ooo” in the middle
+	one, and ”foo” in the first.
+</p>
+
+<form action="../res/return_multiple_post.php" method="post">
+	<p>
+		<textarea name="first" tabindex="3"></textarea>
+		<textarea name="second" tabindex="2"></textarea>
+		<textarea name="third" tabindex="1"></textarea>
+		<input type="submit" name="submit" />
+	</p>
+</form>
+

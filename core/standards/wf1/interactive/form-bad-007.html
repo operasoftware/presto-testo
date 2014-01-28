@@ -1,0 +1,9 @@
+<!DOCTYPE html>
+
+<title>form containing element with 'form' referring to nonexistent form</title>
+
+<p>Type "foobar" in the text input below. Press "Enter". You should see web page saying "You typed: [foobar]".</p>
+
+<form action="../res/return_single_post.php" method="post"/>
+  <input type="text" name="test" id="i1" form="nonexistent"/>
+</form>

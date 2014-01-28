@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+
+<title>form onsubmit</title>
+
+<p>Press the submit button below. The word 'PASS' should appear.</p>
+
+<form action="../res/fail.php" onsubmit="document.getElementById('result').innerHTML = 'PASS'; return false">
+  <input id="s" type="submit" value="submit"/>
+</form>
+
+<p id="result"></p>

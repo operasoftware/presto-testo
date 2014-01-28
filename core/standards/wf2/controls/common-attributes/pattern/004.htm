@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<title>"pattern" set to '.{5,}'</title>
+<style>
+ input.ok, input:valid { background:red }
+ input, input.ok:valid { background:lime }
+</style>
+<p>All form controls should have a green background (ignore the values):
+<p><input value="" pattern=".{5,}" class="ok"> <!-- not required -->
+<p><input value="1" pattern=".{5,}">
+<p><input value="1234" pattern=".{5,}">
+<p><input value="12345" pattern=".{5,}" class="ok">
+<p><input value="123456" pattern=".{5,}" class="ok">
+<p><input value="A" pattern=".{5,}">
+<p><input value="AbCd" pattern=".{5,}">
+<p><input value="AbCdE" pattern=".{5,}" class="ok">
+<p><input value="AbCdEf" pattern=".{5,}" class="ok">
+<p><input value="*" pattern=".{5,}">
+<p><input value="*(@$" pattern=".{5,}">
+<p><input value="*(@$!" pattern=".{5,}" class="ok">
+<p><input value="*(@ $!" pattern=".{5,}" class="ok">

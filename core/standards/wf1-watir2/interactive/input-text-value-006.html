@@ -1,0 +1,16 @@
+<!doctype html>
+<meta charset="utf-8" />
+<title>input type=text Clearing input of entity value</title>
+
+<p>
+	Clear the text field below.  Click submit.  You should see the word “PASS” on
+	the following page.
+</p>
+
+<form action="../res/empty_post.php" method="post">
+	<p>
+		<input name="test" value="&amp; &aelig; &ETH;" />
+		<input type="submit" name="submit" />
+	</p>
+</form>
+

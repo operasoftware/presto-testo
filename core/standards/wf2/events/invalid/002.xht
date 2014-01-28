@@ -1,0 +1,18 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <title>'invalid' event basic test</title>
+ <style> label { display:block } </style>
+ <script>
+  function failed(e) {
+   e.target.form.error.value = 'PASS';
+   e.preventDefault();
+  }
+ </script>
+ <p>When submitting this form it should say PASS below:</p>
+ <form>
+  <fieldset>
+   <p><input name="byte" type="number" min="0" max="255" required="required" oninvalid="failed(event)"/></p>
+   <p><output name="error"/></p>
+   <p><input type="submit"/></p>
+  </fieldset>
+ </form>
+</html>

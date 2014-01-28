@@ -1,0 +1,50 @@
+<!doctype html>
+<meta charset="utf-8" />
+<title>input type=image Click image button, with image</title>
+<link href="../res/test.css" rel="stylesheet" />
+<style>
+
+	input,
+	img {
+		height: 100px;
+		width: 100px;
+	}
+
+</style>
+
+<p>
+	The button below should contain a navy blue image.  Click it.  You should see
+	the word “PASS” on the following page.
+</p>
+
+<div id="testcase">
+	<div class="test">
+
+		<h2>Test</h2>
+
+		<div class="inner">
+
+			<form action="../res/null_post.php" method="post">
+				<p>
+					<input id="test" type="image" src="../res/images/100x100-navy.png" />
+				</p>
+			</form>
+
+		</div>
+	</div>
+	<div class="reference">
+
+		<h2>Reference</h2>
+
+		<div class="inner">
+
+			<form action="../res/null_post.php" method="post">
+				<p>
+					<img id="reference" src="../res/images/100x100-navy.png" alt="" />
+				</p>
+			</form>
+
+		</div>
+	</div>
+</div>
+

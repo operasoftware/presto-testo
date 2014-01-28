@@ -1,0 +1,9 @@
+<!DOCTYPE html>
+<title>file controls and implicit "max"</title>
+<style>
+ span { display:block; height:2em; width:2em; background:red }
+ input { display:none }
+ input:invalid + span { background:lime }
+</style>
+<p>There should be no red:
+<p><input type="file" min="2" required><span></span>

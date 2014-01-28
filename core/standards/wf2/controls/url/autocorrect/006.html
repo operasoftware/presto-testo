@@ -1,0 +1,39 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>//foo auto-correcting URL input</title>
+		<style type="text/css">
+input[type="url"] { width: 250px; }
+input[type="url"]:valid { background: lime; }
+input[type="url"]:invalid { background: red; }
+		</style>
+	</head>
+	<body>
+
+		<noscript><p>Enable JavaScript and reload</p></noscript>
+		<ol>
+			<li>Click the first input below.</li>
+			<li>Type //foo/</li>
+			<li>Click this text.</li>
+			<li>FAIL if the input is not green.</li>
+			<li>FAIL if the input does not contain http://foo/</li>
+			<li>Click the button. FAIL if nothing happens, or if an error message is displayed.</li>
+		</ol>
+		<form action="data:text/plain,PASS">
+			<p><input type="url" name="url"></p>
+			<p><input type="submit" value="Button"></p>
+		</form>
+		<script type="text/javascript">
+document.getElementsByTagName('input')[0].addEventListener('invalid',function () {
+	location.href = 'data:text/plain,FAIL%20(oninvalid%20fired)';
+},false);
+document.getElementsByTagName('input')[1].addEventListener('click',function () {
+	if( !document.getElementsByTagName('input')[0].validity.valid ) {
+		location.href = 'data:text/plain,FAIL%20(.valid%20was%20false)';
+		return false;
+	}
+},false);
+		</script>
+
+	</body>
+</html>

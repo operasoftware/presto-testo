@@ -1,0 +1,21 @@
+<!doctype html>
+<meta charset="utf-8" />
+<title>select tabindex</title>
+
+<p>
+	Use the <kbd>TAB</kbd> key to switch between the drop down lists.  The 
+	<em>third area</em> should be selected first.  Select ”bar” in this, ”ooo” 
+	in the middle one, and ”foo” in the first.
+</p>
+
+<form action="../res/return_multiple_post.php" method="post">
+	<p>
+		<select name="first" tabindex="3"><option></option><option>foo</option></select>
+		<select name="second" tabindex="2"><option></option><option>ooo</option></select>
+		<select name="third" tabindex="1"><option></option><option>bar</option></select>
+	</p>
+	<p>
+		<input type="submit" name="submit" />
+	</p>
+</form>
+

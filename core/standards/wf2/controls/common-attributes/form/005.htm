@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<title>"form" and disassociating with ancestor forms (part two)</title>
+<style> form { display:none } </style>
+<p>FAIL (Script did not run.)</p>
+<form id="test"></form>
+<form> <fieldset> <input> </fieldset> </form>
+<script>
+ document.getElementsByTagName('fieldset')[0].setAttribute('form','test');
+ document.getElementsByTagName('p')[0].textContent = (document.getElementsByTagName('form')[0].elements.length != 2) ? "FAIL" : "PASS";
+</script>

@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+
+<title>input type=file POST disabled file input</title>
+
+<p>Select local/empty.txt file. Click 'disable'. Click 'submit'. A page containing the word 'PASS' should appear.</p>
+
+<form action="../res/file_null.php" method="POST" enctype="multipart/form-data">
+  <p><input id="f" type="file" name="test_file" /></p>
+  <p><button id="b" type="button" onclick="document.getElementById('f').disabled = true">disable</button></p>
+  <p><input id="s" type="submit" value="submit" /></p>
+  <input type="hidden" name="md5" value="00426e6c51cbf9b5283edc666185df94" />
+</form>

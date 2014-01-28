@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<title>"maxlength" and textarea control newlines</title>
+<!--
+ "A newline in a textarea submission must be delimited by the two characters 
+ U+000D U+000A (CRLF), in that order, and count as two characters for 
+ maxlength processing."
+ http://whatwg.org/specs/web-forms/current-work/#textarea-newline-submit
+-->
+<style>
+ textarea.ok, textarea:valid { background:red }
+ textarea, textarea.ok:valid { background:lime }
+ textarea { resize: none; }
+</style>
+<p>All textarea controls should have a green background (ignore the values):</p>
+<p><textarea rows="2" cols="20" maxlength="4" class="ok">XXXX</textarea>
+<p><textarea rows="2" cols="20" maxlength="4">XX XX</textarea>
+<p><textarea rows="2" cols="20" maxlength="5">XX
+XX</textarea>
+<p><textarea rows="2" cols="20" maxlength="6" class="ok">XX
+XX</textarea>
+<p><textarea rows="2" cols="20" maxlength="7" class="ok">XX
+XX</textarea>

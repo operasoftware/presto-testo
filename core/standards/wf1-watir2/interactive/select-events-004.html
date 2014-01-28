@@ -1,0 +1,19 @@
+<!doctype html>
+<meta charset="utf-8" />
+<title>select onclick</title>
+
+<noscript>
+  <p>Note: This test requires JavaScript.</p>
+</noscript>
+
+<p>
+	Click the select below twice (open the menu and close it without
+	selecting a new value).  Its value should change to “foobar”.
+</p>
+
+<form>
+	<p>
+		<select name="test" onclick="this.value = 'foobar';"><option></option><option>foobar</option></select>
+	</p>
+</form>
+

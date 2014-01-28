@@ -1,0 +1,42 @@
+<!doctype html>
+<meta charset="utf-8" />
+<title>label label Multiple JS events</title>
+
+<p>
+	Move your mouse over the label below.  Click it.  The word “PASS” should
+	appear on this page.
+</p>
+
+<form>
+	<p>
+		<label id="test" onclick="action_click();" onmouseover="action_hover();">Move mouse over me, then click me</label>
+	</p>
+</form>
+
+<p id="result"></p>
+
+<script>
+
+	var test    = document.getElementById("test");
+	var result  = document.getElementById("result");
+	var clicked = false;
+	var hovered = false;
+
+	function action_click() {
+		clicked = true;
+		evaluate_pass();
+	}
+
+	function action_hover() {
+		hovered = true;
+		evaluate_pass();
+	}
+
+	function evaluate_pass() {
+		if (clicked && hovered) {
+			result.innerHTML = "PASS";
+		}
+	}
+
+</script>
+

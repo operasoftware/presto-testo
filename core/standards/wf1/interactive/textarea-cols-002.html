@@ -1,0 +1,32 @@
+<!doctype html>
+<meta charset="utf-8" />
+<title>textarea invalid cols</title>
+
+<noscript>
+  <p>Note: This test requires JavaScript.</p>
+</noscript>
+
+<p>
+	Below you should see two textareas. They should be of equal
+	width, and the bottom one should contain “PASS”.
+</p>
+
+<form>
+	<p>
+		<textarea id="reference" name="reference"></textarea>
+	</p>
+	<p>
+		<textarea id="test" name="test" cols="asd"></textarea>
+	</p>
+</form>
+
+<script>
+	var reference = document.getElementById("reference");
+	var test = document.getElementById("test");
+	if (test.clientWidth == reference.clientWidth) {
+		test.value = "PASS";
+	} else {
+		test.value = "FAIL";
+	}
+</script>
+

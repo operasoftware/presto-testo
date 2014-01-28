@@ -1,0 +1,21 @@
+<!doctype html>
+<meta charset="utf-8" />
+<title>textarea onchange</title>
+
+<noscript>
+  <p>Note: This test requires JavaScript.</p>
+</noscript>
+
+<p>
+	Below you should see two textareas.  Type something in the first area, and
+	click on the second area.  The second one should have its value changed to
+	“foobar”.
+</p>
+
+<form>
+	<p>
+		<textarea name="first_field" onchange="document.getElementById('test').value = 'foobar';"></textarea>
+		<textarea id="test" name="test"></textarea>
+	</p>
+</form>
+

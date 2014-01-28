@@ -1,0 +1,29 @@
+<!doctype html>
+<meta charset="utf-8" />
+<title>input type=image Value of disabled field available in DOM</title>
+
+<p>
+	You should see a disabled image button below.  You should see the word
+	“PASS” on this page.
+</p>
+
+<form>
+	<p>
+		<input id="test" name="test" type="image" value="foobar" disabled />
+	</p>
+</form>
+
+<p id="result"></p>
+
+<script>
+
+	var test   = document.getElementById("test");
+	var result = document.getElementById("result");
+
+	if (test.value == "foobar") {
+		result.innerHTML = "PASS";
+	} else {
+		result.innerHTML = "FAIL";
+	}
+
+</script>

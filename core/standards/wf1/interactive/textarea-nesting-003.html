@@ -1,0 +1,22 @@
+<!doctype html>
+<meta charset="utf-8" />
+<title>textarea two nested forms each with textareas</title>
+
+<p>
+	Click the submit button below.  Nothing should happen.
+</p>
+
+<form action="../res/null_post.php" method="post">
+	<p>
+		<textarea name="test">foo</textarea>
+	</p>
+	<form action="../res/return_multiple_post.php" method="post">
+		<p>
+			<textarea name="test2">bar</textarea>
+		</p>
+	</form>
+	<p>
+		<input type="submit" name="submit" />
+	</p>
+</form>
+

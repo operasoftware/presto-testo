@@ -1,0 +1,20 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:xht="http://www.w3.org/1999/xhtml">
+ <title>datalist and getting all the options</title>
+ <p>The following values should be selectable: "PASS1", "PASS2", "PASS3", "PASS4" and "PASS5":</p>
+ <p>
+  <input type="text" list="data"/>
+  <datalist id="data">
+   <option>PASS1</option>
+   <option xmlns="tag:testsuite.org,2005:/webforms2"> FAIL <option xmlns="http://www.w3.org/1999/xhtml">PASS2</option> FAIL </option>
+   <input type="text"> FAIL <option>PASS3</option> FAIL </input>
+   <foo xmlns="tag:testsuite.org,2005:/webforms2"> FAIL
+    <foo> FAIL
+     <foo> FAIL
+      <xht:option>PASS4</xht:option>
+     </foo>
+     <option xmlns="http://www.w3.org/1999/xhtml">PASS5</option>
+    </foo>
+   </foo>
+  </datalist>
+ </p>
+</html>

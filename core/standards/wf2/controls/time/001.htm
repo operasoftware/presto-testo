@@ -1,0 +1,9 @@
+<!DOCTYPE html>
+<title>time control basic test</title>
+<link rel="help" href="http://whatwg.org/specs/web-forms/current-work/#time">
+<style>
+ span { display:block; height:2em; width:2em; background:red }
+ input { display:none }
+ input:valid + span { background:lime }
+</style>
+<p>There should be a green square below: <input type="time" value="00:00"><span></span>

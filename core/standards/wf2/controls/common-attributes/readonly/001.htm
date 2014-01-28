@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<title>&lt;input type="checkbox"&gt; and "readonly"</title>
+<link rel="help" href="http://whatwg.org/specs/web-forms/current-work/#readonly">
+<link rel="help" href="http://whatwg.org/specs/web-forms/current-work/#relation">
+<style>
+ span { display:block; height:2em; width:2em; background:lime }
+ input:read-only + span { background:red }
+ input { display:none }
+</style>
+<p>There should be a green square below:
+<p><input type="checkbox" readonly><span></span>

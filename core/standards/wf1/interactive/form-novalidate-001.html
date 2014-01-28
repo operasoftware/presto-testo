@@ -1,0 +1,31 @@
+<!doctype html>
+<meta charset="utf-8" />
+<title>form validate input text</title>
+
+<p>
+	Below there should be an empty text field. Click the 
+  submit button. You should see the word "PASS" on the 
+  following page.
+</p>
+
+<form action="../res/null_post.php" method="post" novalidate>
+  <p>	
+    <input name="test1" type="checkbox" required />
+  </p>
+  <p>	
+    <input name="test2" type="password" required />
+  </p>
+  <p>	
+    <input name="test3" type="radio" required />
+  </p>
+  <p>	
+    <input name="test4" type="text" required />
+  </p>
+  <p>	
+    <textarea name="test5" required></textarea>
+  </p>
+  <p>	
+    <input id="submit" type="submit" />
+  </p>	
+</form>
+

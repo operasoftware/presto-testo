@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<title>stepUp() method and no "value" attribute</title>
+<script>
+ window.onload = function(){
+  var r = document.getElementsByTagName('p')[0];
+  var i = document.getElementsByTagName('input')[0];
+  try{
+   i.stepUp(1);
+   r.textContent = "FAIL: Script failed.";
+  }catch(e){
+   r.textContent = e.code === 11 ? "PASS" : "FAIL";
+   // INVALID_STATE_ERR
+  }
+ }
+</script>
+<p>FAIL: Script did not run. <input type="number" step="10"></p>

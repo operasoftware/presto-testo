@@ -1,0 +1,17 @@
+<!doctype html>
+<meta charset="utf-8" />
+<title>input type=image onmouseout</title>
+
+<p>
+	Move your mouse over the image button below, and then away from it.  The
+	word “PASS” should appear on this page.
+</p>
+
+<form>
+	<p>
+		<input name="test" type="image" onmouseout="document.getElementById('result').innerHTML = 'PASS';" />
+	</p>
+</form>
+
+<p id="result"></p>
+

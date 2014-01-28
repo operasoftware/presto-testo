@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+
+<title>input type=radio accesskey, onclick</title>
+
+<p>Enter access key mode (Shift+Esc). Press 1. The word 'PASS' should appear below.</p>
+
+<form>
+  <p><input type="radio" onclick="document.getElementById('result').innerHTML = 'PASS'" accesskey="1" /></p>
+</form>
+
+<p><span id="result"></span></p>

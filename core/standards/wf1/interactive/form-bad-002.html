@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+
+<title>form Overriding form-association on multiple elements in unclosed form, variant 2</title>
+
+<p>Type "foo" in the first text input. Type "bar" in the second text input. Yuo should see web page saying "You typed: [foo] [bar]".</p>
+
+<form id="f1" action="../res/fail.php">
+  <input id="i1" name="i1" type="text" form="f2"/>
+  <input id="i2" name="i2" type="text" form="f2"/>
+  <input id="s" type="submit" value="submit" form="f2"/>
+</form>
+
+<form id="f2" action="../res/return_multiple_post.php" method="post">
+

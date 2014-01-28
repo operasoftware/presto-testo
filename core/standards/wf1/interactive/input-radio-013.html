@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+
+<title>input type=radio checking two connected input radios from JavaScript</title>
+
+<p>Press 'check' button. Only one radio button should be checked.</p>
+
+<p>A: <input id="r1" type="radio" name="a" /></p>
+<p>B: <input id="r2" type="radio" name="a" /></p>
+
+<p><button id="b" onclick="check()">check</button></p>
+
+<script type="text/javascript">
+  function check() {
+    document.getElementById('r1').checked = true
+    document.getElementById('r2').checked = true
+  }
+</script>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<title>form dynamically injecting, multiple elements, post</title>
+
+<p>You should see two text fields and a submit button below. Type "foo" in the first text field. Type "bar" in the second text field. Press "submit". You should see page saying "You typed: [foo] [bar]".</p>
+
+<div id="div"></div>
+
+<script type="text/javascript">
+  var f = document.createElement('form');
+  f.setAttribute('action', '../res/return_multiple_post.php');
+  f.setAttribute('method', 'post');
+  
+  var i1 = document.createElement('input');
+  i1.setAttribute('type', 'text');
+  i1.setAttribute('name', 't1');
+  i1.setAttribute('id', 'i1');
+
+  var i2 = document.createElement('input');
+  i2.setAttribute('type', 'text');
+  i2.setAttribute('name', 't2');
+  i2.setAttribute('id', 'i2');
+
+  var s = document.createElement('input');
+  s.setAttribute('type', 'submit');
+  s.setAttribute('value', 'submit');
+  s.setAttribute('id', 's');
+  
+  f.appendChild(i1); f.appendChild(i2); f.appendChild(s);
+  document.getElementById('div').appendChild(f);
+</script>

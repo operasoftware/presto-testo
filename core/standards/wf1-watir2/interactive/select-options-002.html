@@ -1,0 +1,20 @@
+<!doctype html>
+<meta charset="utf-8" />
+<title>select disabled option cannot be selected, variation</title>
+
+<p>
+	Below you should see a drop down list with option "foobar2" disabled.
+	Push <em>TAB</em> followed by the down arrow key. "foobar1" should
+	be selected.
+	Again push the down arrow key. "foobar2" should be skipped and 
+	"foobar3" should be selected.
+</p>
+
+<p>
+	<select id="test" name="test" size=3>
+		<option>foobar1</option>
+		<option disabled>foobar2</option>
+		<option>foobar3</option>
+	</select>
+</p>
+

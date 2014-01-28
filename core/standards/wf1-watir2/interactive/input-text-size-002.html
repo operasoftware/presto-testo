@@ -1,0 +1,25 @@
+<!doctype html>
+<meta charset="utf-8" />
+<title>input type=text size</title>
+
+<p>
+	Below you should see an empty field that is 360 px in width.  The field
+	should contain “PASS”.
+</p>
+
+<form>
+	<p>
+		<input id="test" name="test" type="text" size="50" />
+	</p>
+</form>
+
+<script>
+	var test = document.getElementById("test");
+	if (test.clientWidth <= 350
+			|| test.clientWidth >= 370) {
+		test.value = "PASS";
+	} else {
+		test.value = "FAIL";
+	}
+</script>
+

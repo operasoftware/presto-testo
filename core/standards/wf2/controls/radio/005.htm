@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <title>:indeterminate radio control simple test</title>
+  <style>
+   input + span { display:inline-block; height:1em; width:1em; background:red }
+   input:indeterminate + span { background:lime }
+  </style>
+ </head>
+ <body>
+  <p>There should be two green blocks below and no radio button should be checked:</p>
+  <p><input type="radio" name="t"><span></span></p>
+  <div>
+   <p><input type="radio" name="t"><span></span></p>
+  </div>
+ </body>
+</html>

@@ -1,0 +1,46 @@
+<!doctype html>
+<meta charset="utf-8" />
+<title>textarea cols comparison</title>
+
+<noscript>
+  <p>Note: This test requires JavaScript.</p>
+</noscript>
+
+<p>
+	There should be seven textareas below.  Each one slightly larger than the
+	previous one.  The seventh and last field should contain the word “PASS”.
+</p>
+
+<form>
+	<p><textarea id="test_1" name="test_1" cols="1"></textarea></p>
+	<p><textarea id="test_2" name="test_2" cols="2"></textarea></p>
+	<p><textarea id="test_3" name="test_3" cols="3"></textarea></p>
+	<p><textarea id="test_4" name="test_4" cols="4"></textarea></p>
+	<p><textarea id="test_5" name="test_5" cols="5"></textarea></p>
+	<p><textarea id="test_6" name="test_6" cols="6"></textarea></p>
+	<p><textarea id="result" name="result" cols="7"></textarea></p>
+</form>
+
+<script>
+
+	var test_1 = document.getElementById("test_1");
+	var test_2 = document.getElementById("test_2");
+	var test_3 = document.getElementById("test_3");
+	var test_4 = document.getElementById("test_4");
+	var test_5 = document.getElementById("test_5");
+	var test_6 = document.getElementById("test_6");
+	var result = document.getElementById("result");
+
+	if (test_1.clientWidth < test_2.clientWidth
+			&& test_2.clientWidth < test_3.clientWidth
+			&& test_3.clientWidth < test_4.clientWidth
+			&& test_4.clientWidth < test_5.clientWidth
+			&& test_5.clientWidth < test_6.clientWidth
+			&& test_6.clientWidth < result.clientWidth) {
+		result.value = "PASS";
+	} else {
+		result.value = "FAIL";
+	}
+
+</script>
+

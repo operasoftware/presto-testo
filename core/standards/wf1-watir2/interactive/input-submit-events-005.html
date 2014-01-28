@@ -1,0 +1,17 @@
+<!doctype html>
+<meta charset="utf-8" />
+<title>input type=submit ondblclick</title>
+
+<p>
+	Double-click the submit button below.  The word “PASS” should appear on this
+	page.
+</p>
+
+<form>
+	<p>
+		<input name="test" type="submit" ondblclick="document.getElementById('result').innerHTML = 'PASS';" onclick="return false;" />
+	</p>
+</form>
+
+<p id="result"></p>
+

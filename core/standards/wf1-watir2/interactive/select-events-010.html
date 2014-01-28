@@ -1,0 +1,19 @@
+<!doctype html>
+<meta charset="utf-8" />
+<title>select onmouseout</title>
+
+<noscript>
+  <p>Note: This test requires JavaScript.</p>
+</noscript>
+
+<p>
+	Move your mouse over the select below, then move it away from it.
+	When you move it away, the value should change to “foobar”.
+</p>
+
+<form>
+	<p>
+		<select name="test" onmouseout="this.value = 'foobar';"><option>Move mouse over me, and away!</option><option>foobar</option></select>
+	</p>
+</form>
+

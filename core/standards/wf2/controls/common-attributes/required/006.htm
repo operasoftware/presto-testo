@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <title>"required" and &lt;output&gt;</title>
+  <link rel="help" href="http://whatwg.org/specs/web-forms/current-work/#required">
+  <link rel="help" href="http://whatwg.org/specs/web-forms/current-work/#relation">
+  <style>
+   output { padding:.5em; background:lime }
+   output:required { background:red }
+   output:optional { background:red }
+  </style>
+ <body>
+  <p>The word "TEST" should have a green background:</p>
+  <p><output required>TEST</output></p>
+ </body>
+</html>

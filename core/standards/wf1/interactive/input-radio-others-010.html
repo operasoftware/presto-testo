@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+
+<title>input type=radio arrow navigation, onclick, onfocus, onchange, onblur</title>
+
+<script type="text/javascript">
+
+var result = "";
+
+function ev(a) {
+  result += '[' + a + ']';
+  if(result == "[i1 focus][i1 click][i1 change][i1 40][i1 blur][i2 focus][i2 click][i2 change][i2 39][i2 blur][i3 focus][i3 click][i3 change][i3 38][i3 blur][i2 focus][i2 click][i2 change][i2 37][i2 blur][i1 focus][i1 click][i1 change]") {
+    document.getElementById('result').innerHTML = 'PASS';
+  }
+}
+
+</script>
+
+<p>Click the first radio button. Press down arrow. Press right arrow. Press up arrow. Press left arrow. The word 'PASS' should appear.</p>
+
+<p><input id="i1" type="radio" onkeydown="ev('i1 ' + event.keyCode)" onclick="ev('i1 click')" onfocus="ev('i1 focus')" onchange="ev('i1 change')" onblur="ev('i1 blur')" name="a"/> first</p>
+<p><input id="i2" type="radio" onkeydown="ev('i2 ' + event.keyCode)" onclick="ev('i2 click')" onfocus="ev('i2 focus')" onchange="ev('i2 change')" onblur="ev('i2 blur')" name="a"/> second</p>
+<p><input id="i3" type="radio" onkeydown="ev('i3 ' + event.keyCode)" onclick="ev('i3 click')" onfocus="ev('i3 focus')" onchange="ev('i3 change')" onblur="ev('i3 blur')" name="a"/> third</p>
+
+<p id="result"></p>

@@ -1,0 +1,31 @@
+<!doctype html>
+<meta charset="utf-8" />
+<title>textarea value of readonly textarea available in DOM</title>
+
+<noscript>
+  <p>Note: This test requires JavaScript.</p>
+</noscript>
+
+<p>
+	Below you should see two textareas.  Both textareas should contain the
+	word “foobar”.  Click submit.  The word “foobar” should appear on the following
+	page.
+</p>
+
+<form action="../res/return_single_post.php" method="post">
+	<p>
+		<textarea id="first_field" name="first_field" readonly>foobar</textarea>
+		<textarea id="test" name="test" readonly></textarea>
+		<input type="submit" name="submit" />
+	</p>
+</form>
+
+<script>
+
+	var first_field = document.getElementById("first_field");
+	var test        = document.getElementById("test");
+
+	test.value = first_field.value;
+	
+</script>
+

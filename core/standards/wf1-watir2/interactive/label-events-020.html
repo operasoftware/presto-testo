@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+
+<title>label input checkbox contained in a label - onclick, onfocus, onblur, onchange</title>
+
+<p>Click the label below. Then click the second label. You should see the word 'PASS' below, repeated 4 times.</p>
+
+<form>
+  <p>
+    <label id="l1">
+      Click me!
+      <input type="checkbox" id="b" onchange="document.getElementById('result_onchange').innerHTML = 'PASS'" onclick="document.getElementById('result_onclick').innerHTML = 'PASS'" onfocus="document.getElementById('result_onfocus').innerHTML = 'PASS'" onblur="document.getElementById('result_onblur').innerHTML = 'PASS'" />
+    </label>
+    <label id="l2">
+      Then click me!
+    </label>
+  </p>
+</form>
+
+<p id="result_onclick"></p>
+<p id="result_onfocus"></p>
+<p id="result_onblur"></p>
+<p id="result_onchange"></p>

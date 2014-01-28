@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+
+<title>input type=radio modifying 'name' in 'onclick' handler</title>
+
+<p>Click the radio button pointed by the arrow. Now only radio button 'B:' should be checked.</p>
+
+<p>A: <input id="r1" type="radio" name="c1" checked="checked"/></p>
+
+<p>B: <input id="r2" type="radio" name="c1" onclick="this.name = 'c2'"/> &larr; click this</p>
+
+<p>C: <input id="r3" type="radio" name="c2" checked="checked"/></p>

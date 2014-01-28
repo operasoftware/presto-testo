@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<title>:disabled and :enabled (dynamic, &lt;fieldset&gt;)</title>
+<style>
+ span { display:block; height:1em; width:1em; background:red }
+ fieldset { margin:.5em; padding:0; border:0 }
+ input { display:none }
+ #f1 input:enabled + span { background:lime }
+ #f2 input:disabled + span { background:lime }
+ #f3 input:enabled + span { background:lime }
+ #f4 input:disabled + span { background:lime }
+ #f5 input:disabled + span { background:lime }
+ #f6 input:enabled + span { background:lime }
+</style>
+<script>
+ window.onload = function(){
+  document.getElementById('f3').removeAttribute('disabled');
+  document.getElementById('f4').disabled = true;
+  document.getElementById('f5').setAttribute('disabled','disabled');
+  document.getElementById('f6').disabled = false;
+ }
+</script>
+<p>There should be no red:
+<fieldset id="f1">
+ <input><span></span>
+</fieldset>
+<fieldset disabled="disabled" id="f2">
+ <input><span></span>
+</fieldset>
+<fieldset disabled="disabled" id="f3">
+ <input><span></span>
+</fieldset>
+<fieldset id="f4">
+ <input><span></span>
+</fieldset>
+<fieldset id="f5">
+ <input><span></span>
+</fieldset>
+<fieldset disabled="disabled" id="f6">
+ <input><span></span>
+</fieldset>

@@ -1,0 +1,9 @@
+<!DOCTYPE html>
+<title>"max" and dynamic updates</title>
+<style>
+ span { display:block; height:2em; width:2em; background:red }
+ input { display:none }
+ input:in-range + span { background:lime }
+</style>
+<p>There should be a green square below: <input type="time" max="00:00" value="01:00"><span></span></p>
+<script> document.getElementsByTagName('input')[0].max = "02:00" </script>

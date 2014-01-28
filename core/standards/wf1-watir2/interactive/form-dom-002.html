@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+
+<title>form setting 'action' attribute, variation</title>
+
+<p>Click the submit button below. You should see page saying "Result: PASS".<p>
+
+<form id="f1">
+  <input id="s" type="submit" value="submit" />
+</form>
+
+<script type="text/javascript">
+  document.getElementById('f1').setAttribute('action', '../res/pass.php');
+</script>

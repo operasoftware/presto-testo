@@ -1,0 +1,39 @@
+<!doctype html>
+<meta charset="utf-8" />
+<title>textarea value of 'maxlength' attribute available in DOM</title>
+
+<noscript>
+  <p>Note: This test requires JavaScript.</p>
+</noscript>
+
+<p>
+	Below you should see two textareas.  The first should be empty.  The second
+	should contain the value of the <var>maxlength</var> attribute of the first,
+	143.
+</p>
+
+<p>
+	Click submit.  You should see the word ”PASS” on the following page.
+</p>
+
+<form action="../res/number_check.php?number=143" method="post">
+	<p>
+		<textarea id="first_field" name="first_field" maxlength="143"></textarea>
+	</p>
+	<p>
+		<textarea id="test" name="test"></textarea>
+	</p>
+	<p>
+		<input type="submit" name="submit" />
+	</p>
+</form>
+
+<script>
+
+	var first_field = document.getElementById("first_field");
+	var test        = document.getElementById("test");
+
+	test.value      = first_field.getAttribute("maxlength");
+
+</script>
+

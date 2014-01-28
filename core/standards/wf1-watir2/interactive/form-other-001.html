@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+
+<title>form Pressing Enter in &lt;input type="number"&gt; doesn't submit form (CORE-27624)</title>
+
+<p>Focus the input field below. Press Enter. The word "PASS" should appear.</p>
+
+<form action="javascript:pass()">
+ <input type="number"/>
+</form>
+
+<p id="result"></p>
+
+<script type="text/javascript">
+  function pass() {
+    document.getElementById("result").innerHTML = "PASS";
+  }
+</script>

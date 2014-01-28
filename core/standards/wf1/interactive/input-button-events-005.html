@@ -1,0 +1,15 @@
+<!doctype html>
+<meta charset="utf-8" />
+<title>input type=button ondblclick</title>
+
+<p>
+	Double-click the button below.  The word “PASS” should appear on this page.
+</p>
+
+<form>
+	<p>
+		<input type="button" name="test" ondblclick="document.getElementById('result').innerHTML = 'PASS';" onclick="return false;" value="Double-click me" />
+	</p>
+</form>
+
+<p id="result"></p>

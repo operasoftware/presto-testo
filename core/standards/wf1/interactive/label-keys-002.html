@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<meta charset="utf-8" />
+<title>label for, accesskey</title>
+
+<p>Enter access-key mode (Shift+Esc), and press 'u'. The word 'PASS' should appear below.</p>
+
+<form>
+  <p>
+    <button id="button" onclick="document.getElementById('result').innerHTML = 'PASS'; return false">foobar</button>
+
+    <label for="button" accesskey="u">
+      Click me!
+    </label>
+  </p>
+</form>
+
+<p id="result"></p>

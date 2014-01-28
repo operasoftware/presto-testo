@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+
+<title>form missing autocomplete containing input type=text</title>
+
+<ol>
+  <li>Type "foobar" into all the text inputs below.</li>
+  <li>Press the "submit" button.</li>
+  <li>Navigate back from the page that follows.</li>
+  <li>The "C:" input field should be empty. All the other text inputs should contain the text "foobar".</li>
+</ol>
+
+<form action="../res/navback.html">
+  <p>A: <input id="i1" type="text"/></p>
+  <p>B: <input id="i2" type="text" autocomplete="on"/></p>
+  <p>C: <input id="i3" type="text" autocomplete="off"/></p>
+  <p><input id="s" type="submit" value="submit" /></p>
+</form>

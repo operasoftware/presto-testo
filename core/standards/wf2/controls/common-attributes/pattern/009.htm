@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<title>"pattern" and url controls</title>
+<style>
+ input.ok, input:valid { background:red }
+ input, input.ok:valid { background:lime }
+</style>
+<p>All form controls should have a green background (ignore the values):
+<p><input type="url" value="0" pattern="\w">
+<p><input type="url" value="a" pattern="\w+">
+<p><input type="url" value="http://www.example.com/" pattern="http://\w+\.\w+\.\w+/" class="ok">
+<p><input type="url" value="http://www.example.com" pattern="http://\w+\.\w+\.\w+/">
+<p><input type="url" value="http://www.example.foobar.com/" pattern="http://\w+\.\w+\.\w+/">

@@ -1,0 +1,19 @@
+<!doctype html>
+<meta charset="utf-8" />
+<title>textarea multiple duplicate textareas</title>
+
+<p>
+	You should see two textareas below with different values.  Click submit.
+	The word “bar” should be returned.
+</p>
+
+<form action="../res/return_multiple_post.php" method="post">
+	<p>
+		<textarea name="test">foo</textarea>
+		<textarea name="test">bar</textarea>
+	</p>
+	<p>
+		<input name="submit" type="submit" />
+	</p>
+</form>
+

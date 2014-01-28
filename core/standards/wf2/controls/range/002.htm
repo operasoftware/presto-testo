@@ -1,0 +1,7 @@
+<!DOCTYPE html>
+<title>using the range control</title>
+<p>You should be able to change the value from -200 to 200. It should take steps from 5:
+<form>
+ <p><input type="range" min="-200" max="200" step="5" name="test">
+ <p><output onformchange="this.value = form.test.value">FAIL (You did not do anything.)</output>
+</form>

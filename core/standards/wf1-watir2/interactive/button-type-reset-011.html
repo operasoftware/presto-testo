@@ -1,0 +1,20 @@
+<!doctype html>
+<meta charset="utf-8" />
+<title>button type="reset" Reset select field</title>
+
+<p>
+	You should see a drop-down field (select field) wtih the option ”bar”
+	selected and a reset button below.  Change the select field's option to “foo”.
+	Click the reset button.  The select field's value should revert back to “bar”.
+</p>
+
+<form>
+	<p>
+		<select name="test">
+			<option value="foo">foo</option>
+			<option value="bar" selected>bar</option>
+		<select>
+		<button name="reset" type="reset">Click me!</button>
+	</p>
+</form>
+

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+
+<title>form Overriding form-association on multiple elements in nested forms</title>
+
+<p>Type "foo" in the first text input. Type "bar" in the second text input. Type "abc" in the third text input. Type "def" in the fourth text input. Click the submit button. You should see page saying "You typed: [foo] [bar] [abc] [def]".</p>
+
+<form id="outer" action="../res/fail.php">
+  <input type="text" id="i1" name="i1" form="other"/>
+  <input type="text" id="i2" name="i2" form="other"/>
+  <form id="inner" action="../res/fail.php">
+    <input type="text" id="i3" name="i3" form="other"/>
+    <input type="text" id="i4" name="i4" form="other"/>
+    <input id="s" type="submit" value="submit" form="other"/>
+  </form>
+</form>
+
+<form id="other" method="post" action="../res/return_multiple_post.php"></form>

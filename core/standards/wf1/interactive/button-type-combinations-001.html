@@ -1,0 +1,19 @@
+<!doctype html>
+<meta charset="utf-8" />
+<title>button Submit button in combination with regular button</title>
+
+<p>
+	Click the first button.  It should not send any requests to the server.
+	Click the second button.  On the following page you should see the word
+	“PASS”.
+</p>
+
+<form action="../res/return_multiple_get.php" method="get">
+	<p>
+		<button name="test" type="button" value="FAIL">Click me first</button>
+	</p>
+	<p>
+		<button name="submit" type="submit" value="PASS">Click me second</button>
+	</p>
+</form>
+

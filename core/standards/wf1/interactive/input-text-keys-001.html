@@ -1,0 +1,19 @@
+<!doctype html>
+<meta charset="utf-8" />
+<title>input type=text tabindex</title>
+
+<p>
+	Use the <kbd>TAB</kbd> key to switch between the text fields.  The <em>third
+	field</em> should be selected first.  Type ”bar” in this, ”ooo” in the middle
+	one, and ”foo” in the first.
+</p>
+
+<form action="../res/return_multiple_post.php" method="post">
+	<p>
+		<input name="first" type="text" tabindex="3" />
+		<input name="second" type="text" tabindex="2" />
+		<input name="third" type="text" tabindex="1" />
+		<input type="submit" name="submit" />
+	</p>
+</form>
+

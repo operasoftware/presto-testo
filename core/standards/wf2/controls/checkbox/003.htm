@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<title>testing :checked</title>
+<style>
+ span { display:block; height:1em; width:1em; background:red }
+ input:checked + span { background:lime }
+ input { display:none }
+</style>
+<script>
+ window.onload = function(){
+  var c = document.getElementsByTagName('input')[1];
+  c.type = "checkbox";
+  c.checked = true;
+ }
+</script>
+<p>There should be two green squares below:
+<p><input type="checkbox" checked="checked"><span></span>
+<p><input><span></span>

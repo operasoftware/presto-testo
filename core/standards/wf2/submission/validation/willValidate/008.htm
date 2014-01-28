@@ -1,0 +1,8 @@
+<!DOCTYPE html>
+<title>willValidate and form association (part two)</title>
+<form id="test"></form>
+<p><input value="FAIL (Script did not run.)" name="test" form="test"></p>
+<script>
+ var i = document.getElementsByTagName('input')[0];
+ i.value = (i.willValidate) ? "PASS" : "FAIL";
+</script>

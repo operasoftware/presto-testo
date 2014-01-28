@@ -1,0 +1,34 @@
+<!doctype html>
+<meta charset="utf-8" />
+<title>textarea multiple JS events</title>
+
+<noscript>
+  <p>Note: This test requires JavaScript.</p>
+</noscript>
+
+<p>
+	Below you should see two lines of textareas: The first one should have one
+	area, and the second two areas.
+</p>
+
+<p>
+	Click the first textarea.  The second textarea (first on second line)
+	should have its value changed to “foobar”.
+</p>
+
+<p>
+	Type something in the first textarea.  The third textarea (second on
+	second line) should have its value changed to “foobar”.
+</p>
+
+
+<form>
+	<p>
+		<textarea name="first_field" onclick="document.getElementById('test1').value = 'foobar';" onkeypress="document.getElementById('test2').value = 'foobar';"></textarea>
+	</p>
+	<p>
+		<textarea id="test1" name="test1"></textarea>
+		<textarea id="test2" name="test2"></textarea>
+	</p>
+</form>
+

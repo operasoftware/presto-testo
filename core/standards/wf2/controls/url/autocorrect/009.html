@@ -1,0 +1,26 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>Auto-correcting URL default text</title>
+		<style type="text/css">
+input[type="url"] { width: 250px; }
+input[type="url"]:valid { background: red; }
+input[type="url"]:invalid { background: lime; }
+input[type="submit"]:focus + span { content: " (focused)"; }
+		</style>
+	</head>
+	<body>
+
+		<noscript><p>Enable JavaScript and reload</p></noscript>
+		<ol>
+			<li>Press the TAB key until the button is focused.</li>
+			<li>FAIL if the first input is not green.</li>
+			<li>FAIL if the first input contains anything more than foo</li>
+		</ol>
+		<form action="data:text/plain,USER%20FAIL.%20DO%20NOT%20SUBMIT%20THE%20FORM.">
+			<p><input type="url" name="url" value="foo"></p>
+			<p><input type="submit" value="Button"><span></span></p>
+		</form>
+
+	</body>
+</html>

@@ -1,0 +1,9 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <title>"required" and the required DOM attribute</title>
+ <style>
+  input { background:red }
+  input:optional { background:lime }
+ </style>
+ <p>The form control should have a green background: <input required="required"/></p>
+ <script> window.onload = function(){ document.getElementsByTagName('input')[0].required = false } </script>
+</html>

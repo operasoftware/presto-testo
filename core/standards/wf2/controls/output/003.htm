@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <title>&lt;output&gt; and setCustomValidity()</title>
+  <style> #t { display:none } </style>
+  <script>
+   window.onload = function(){
+    var r = document.getElementById('r');
+    r.firstChild.data = "FAILED (Script failed)";
+    try{
+     document.getElementsByTagName('output')[0].setCustomValidity(null);
+    }catch(e){
+     r.firstChild.data = e.code === 9 ? "PASSED" : "FAILED";
+    }
+   }
+  </script>
+ </head>
+ <body>
+  <p>This test has: <span id="r">FAILED (Script did not run)</span></p>
+  <p id="t"><output>TEST</output></p>
+ </body>
+</html>

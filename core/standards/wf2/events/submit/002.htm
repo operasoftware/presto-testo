@@ -1,0 +1,8 @@
+<!DOCTYPE html>
+<title>basic 'submit' event test (part two)</title>
+<script> document.addEventListener('submit',function(e) { document.getElementsByTagName('p')[0].textContent = "PASS"; e.preventDefault() },false) </script>
+<p>TEST
+<p>When you submit the form it should say PASS above:
+<form>
+ <p><input type="submit">
+</form>

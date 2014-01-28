@@ -1,0 +1,7 @@
+<!DOCTYPE html>
+<title>willValidate and the output element</title>
+<form><p><output name="test">FAIL (Script did not run.)</output></p></form>
+<script>
+ var i = document.getElementsByTagName('output')[0];
+ i.textContent = (i.willValidate) ? "FAIL" : "PASS";
+</script>

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<title>"disabled" and &lt;option&gt; elements</title>
+<style>
+ option { background:red }
+ option:disabled { background:lime }
+ option:disabled + option { background:lime }
+</style>
+<p>Both "TEST" below should have a green background:
+<p>
+ <select size="2">
+  <option>TEST
+  <option>TEST
+ </select>
+</p>
+<script> document.getElementsByTagName('option')[0].setAttribute('disabled','disabled') </script>

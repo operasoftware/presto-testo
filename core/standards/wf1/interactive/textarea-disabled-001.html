@@ -1,0 +1,18 @@
+<!doctype html>
+<meta charset="utf-8" />
+<title>textarea disabled</title>
+
+<p>
+	Click the textarea below; nothing should happen.  Try to append ”bar” to the
+	contents in the field.  You should not be able to, as it is set to
+	<var>disabled</var>.  Click the submit button.  You should see “PASS” on the
+	following page.
+</p>
+
+<form action="../res/null_post.php" method="post">
+	<p>
+		<textarea name="test" disabled>foo</textarea>
+		<input type="submit" name="submit" />
+	</p>
+</form>
+

@@ -1,0 +1,26 @@
+<!doctype html>
+<meta charset="utf-8" />
+<title>input type=reset Reset select multiple field</title>
+
+<p>
+	Below you should see a multiple-select list with the option “cat“ selected.
+	Select something else and click the button below.  The selection should be
+	reset to “cat” only.
+</p>
+
+<form>
+	<p>
+		<select name="test" multiple>
+			<option>bird</option>
+			<option selected>cat</option>
+			<option>dog</option>
+			<option>fish</option>
+			<option>horse</option>
+			<option>rabit</option>
+		</select>
+	</p>
+	<p>
+		<input name="reset" type="reset" />
+	</p>
+</form>
+

@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<title>"min" and dynamic updates (part two)</title>
+<style>
+ span { display:block; height:2em; width:2em; background:red }
+ input { display:none }
+ input:in-range + span { background:lime }
+</style>
+<p>There should be a green square below: <input type="time" min="00:00" value="01:00"><span></span></p>
+<script> 
+ var i = document.getElementsByTagName('input')[0];
+ i.min = "+02:00"; // not a valid format
+</script>

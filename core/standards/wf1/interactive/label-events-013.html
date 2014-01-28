@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<meta charset="utf-8" />
+<title>label Adding invalid attribute size through DOM</title>
+
+<p>Click the label below. The label's width should not change.</p>
+
+<form>
+  <p>
+    <label id="l" style="background: #eee" onclick="action_click(); return false;">Click me</label>
+  </p>
+</form>
+
+<p id="result"></p>
+
+<script type="text/javascript">
+  function action_click() {
+    var test   = document.getElementById("l");
+    var result = document.getElementById("result");
+    var width  = test.clientWidth;
+    
+    
+
+    test.setAttribute("size", 260);
+
+    if (test.clientWidth == width) {
+            result.innerHTML = "PASS";
+    } else {
+            result.innerHTML = "FAIL";
+    }
+  }
+</script>

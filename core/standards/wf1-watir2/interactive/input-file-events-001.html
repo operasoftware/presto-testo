@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+
+<title>input type=file onclick returns false</title>
+
+<p>Click the button below. Nothing should happen.</p>
+
+<form action="#">
+  <p><input id="f" type="file" onclick="return false"/></p>
+  <input type="button" onclick="document.getElementById('result').innerHTML = 'FAIL'"/>
+  <input type="button" onclick="document.getElementById('result').innerHTML = 'PASS'"/>
+</form>
+
+<p id="result"></p>

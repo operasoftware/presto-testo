@@ -1,0 +1,29 @@
+<!doctype html>
+<meta charset="utf-8" />
+<title>input type=submit Value of submit button available in DOM</title>
+
+<p>
+	Below you should see a submit button.  You should also see the word “PASS”.
+</p>
+
+<form>
+	<p>
+		<input id="test" name="test" type="submit" value="foobar" />
+	</p>
+</form>
+
+<p id="result"></p>
+
+<script>
+
+	var test   = document.getElementById("test");
+	var result = document.getElementById("result");
+
+	if (test.value == "foobar") {
+		result.innerHTML = "PASS";
+	} else {
+		result.innerHTML = "FAIL";
+	}
+
+</script>
+

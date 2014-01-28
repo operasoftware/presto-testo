@@ -1,0 +1,30 @@
+<!doctype html>
+<meta charset="utf-8" />
+<title>input type=text Multiple JS events</title>
+
+<p>
+	Below you should see two lines of text fields: The first one should have one
+	field, and the second two.
+</p>
+
+<p>
+	Click the first text field.  The second text field (first on second line)
+	should have its value changed to “foobar”.
+</p>
+
+<p>
+	Type something in the first text field.  The third text field (second on
+	second line) should have its value changed to “foobar”.
+</p>
+
+
+<form>
+	<p>
+		<input name="first_field" type="text" onclick="document.getElementById('test1').value = 'foobar';" onkeypress="document.getElementById('test2').value = 'foobar';" />
+	</p>
+	<p>
+		<input id="test1" name="test1" type="text" />
+		<input id="test2" name="test2" type="text" />
+	</p>
+</form>
+

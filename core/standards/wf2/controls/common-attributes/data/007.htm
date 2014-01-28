@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <title>removing "data" should have no effect</title>
+  <script>
+   window.onload = function(){
+    document.getElementsByTagName('select')[0].removeAttribute("data");
+   }
+  </script>
+ </head>
+ <body>
+  <p>The box should say "PASS":</p>
+  <p><select data="support/pass.xml" size="2"><option>PASS</option></select></p>
+ </body>
+</html>

@@ -1,0 +1,17 @@
+<!doctype html>
+<meta charset="utf-8" />
+<title>input type=hidden Another element inside value</title>
+
+<p>
+	There should not be div element <em>#test</em> with the text “foobar” on this
+	page.  Click submit.  You should see the text “&lt;div
+	id=\'test\'&gt;foobar&lt;/div&gt;“.
+</p>
+
+<form action="../res/return_single_post.php" method="post">
+	<p>
+		<input name="test" type="hidden" value="<div id='test'>foobar</div>" />
+		<input type="submit" name="submit" />
+	</p>
+</form>
+

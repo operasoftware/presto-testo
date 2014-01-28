@@ -1,0 +1,17 @@
+<!doctype html>
+<meta charset="utf-8" />
+<title>input type=text Invalid readonly</title>
+
+<p>
+	Click the text field below.  Try clear the contents in the field.  You should
+	not be able to, as they field is set to <var>readonly</var>.  Click the submit
+	button.  You should see the word “foobar” on the following page.
+</p>
+
+<form action="../res/return_single_post.php" method="post">
+	<p>
+		<input name="test" type="text" value="foobar" readonly="erranous" />
+		<input type="submit" name="submit" />
+	</p>
+</form>
+

@@ -1,0 +1,34 @@
+<!doctype html>
+<meta charset="utf-8" />
+<title>textarea concatenation of two values</title>
+
+<noscript>
+  <p>Note: This test requires JavaScript.</p>
+</noscript>
+
+<p>
+	There should be three textareas on this page.  The first should contain
+	“foo”, the second “bar”.  Upon page load, the third should automatically be
+	filled with the word “foobar”.
+</p>
+
+<p>
+	Click submit.  The word “foobar” should appear on the following page.
+</p>
+
+<form action="../res/return_single_post.php" method="post">
+	<p>
+		<textarea id="first_field" name="first_field">foo</textarea>
+		<textarea id="second_field" name="second_field">bar</textarea>
+		<textarea id="third_field" name="test"></textarea>
+		<input type="submit" name="submit" />
+	</p>
+</form>
+
+<script>
+	var first_field   = document.getElementById("first_field");
+	var second_field  = document.getElementById("second_field");
+	var third_field   = document.getElementById("third_field");
+	third_field.value = first_field.value + second_field.value;
+</script>
+

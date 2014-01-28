@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<title>"pattern" and word character ('\w')</title>
+<style>
+ input.ok, input:valid { background:red }
+ input, input.ok:valid { background:lime }
+</style>
+<p>All form controls should have a green background (ignore the values):
+<p><input value="0" pattern="\w" class="ok">
+<p><input value="9" pattern="\w" class="ok">
+<p><input value="a" pattern="\w" class="ok">
+<p><input value="A" pattern="\w" class="ok">
+<p><input value="*" pattern="\w">
+<p><input value="9a" pattern="\w">
+<p><input value=" " pattern="\w">
+<p><input pattern="\w" class="ok"> <!-- not required -->

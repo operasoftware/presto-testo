@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<title>"readonly" and &lt;textarea&gt;</title>
+<link rel="help" href="http://whatwg.org/specs/web-forms/current-work/#readonly">
+<link rel="help" href="http://whatwg.org/specs/web-forms/current-work/#relation">
+<style>
+ textarea { background:red; resize: none; }
+ textarea:read-only { background:lime }
+</style>
+<p>The following control should have a green background:
+<p><textarea readonly>TEST</textarea>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+
+<script type="text/javascript">
+  function show_files() {
+    var files = document.getElementById('f').files;
+
+    if(files) {
+      document.getElementById('result').innerHTML = 'PASS';
+    } else {
+      document.getElementById('result').innerHTML = 'FAIL';
+    }
+  }
+</script>
+
+<title>input type=file 'files' IDL attribute</title>
+
+<p>Press the 'check' button. The word 'PASS' should appear below.</p>
+
+<p><input id="f" type="file" /></p>
+<p><button id="b" type="button" onclick="show_files()">check</button></p>
+
+<p id="result"></p>

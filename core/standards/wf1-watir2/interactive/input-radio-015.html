@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+
+<title>input type=radio checked radio with 'display: none' and other visible radio</title>
+
+<p>Click the radio button. Then click the 'verify' button. The word 'PASS' should appear.</p>
+
+<p><input id="ir_" type="radio" name="a_" style="display: none" checked="checked"/></p>
+<p><input id="r2" type="radio" name="a_" /></p>
+
+<p><button id="b" onclick="verify()">verify</button></p>
+
+<p id="result_i_"></p>
+
+<script type="text/javascript">
+  function verify() {
+    if(document.getElementById('ir_').checked) {
+      document.getElementById('result_i_').innerHTML = "FAIL";
+    } else {
+      document.getElementById('result_i_').innerHTML = "PASS";
+    }
+  }
+</script>

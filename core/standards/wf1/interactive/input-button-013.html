@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<title>input type=button Invalid src attribute</title>
+<link href="../res/test.css" rel="stylesheet" />
+
+<p>Below you should see a button containing the word "foobar". It <em>should not</em> have an image saying "FAIL".</p>
+
+<div id="testcase">
+  <div class="test">
+
+    <h2>Test</h2>
+
+    <form>
+      <p>
+        <input type="button" name="test" src="http://t/resources/images/fail.png" value="foobar" />
+      </p>
+    </form>
+
+  </div>
+  <div class="reference">
+
+    <h2>Reference</h2>
+
+    <form>
+      <p>
+        <input type="button" name="reference" value="foobar" />
+      </p>
+    </form>
+
+  </div>
+</div>
+

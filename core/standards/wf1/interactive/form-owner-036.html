@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+
+<title>form Overriding form-association on element in second nested form</title>
+
+<p>Type "foobar" in the text input below. Press "Enter". You should see page saying "You typed: [foobar]".</p>
+
+<form id="outer" action="../res/fail.php">
+  <form id="inner" action="../res/fail.php">
+    <input type="text" id="i1" name="test" form="other"/>
+  </form>
+</form>
+
+<form id="other" method="post" action="../res/return_single_post.php"></form>

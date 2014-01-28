@@ -1,0 +1,7 @@
+<!DOCTYPE html>
+<title>'formchange' event  basic test</title>
+<script> function fail(e) { e.target.form.test.value = "FAIL" } </script>
+<form>
+ <p>When you check this checkbox it should say "PASS" below: <input type="checkbox" onchange="fail(event)">
+ <p><output onformchange="this.value='PASS'" name="test">TEST</output>
+</form>

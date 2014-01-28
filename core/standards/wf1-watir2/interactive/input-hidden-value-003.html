@@ -1,0 +1,15 @@
+<!doctype html>
+<meta charset="utf-8" />
+<title>input type=hidden Carriage return inside value</title>
+
+<p>
+	Click submit.  You should see the word “PASS” on the following page.
+</p>
+
+<form action="../res/carriage_return.php" method="post">
+	<p>
+		<input name="test" type="hidden" value="&#13;" />
+		<input type="submit" name="submit" />
+	</p>
+</form>
+

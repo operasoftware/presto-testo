@@ -1,0 +1,8 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <title>datalist and option elements not in the XHTML namespace</title>
+ <p>There should be no "FAIL" visible after the form field (nor should it be selectable):</p>
+ <p>
+  <input type="text" list="data"/>
+  <datalist xml:id="data"><option xmlns="tag:testsuite.org,2005:/webforms2">FAIL</option></datalist>
+ </p>
+</html>

@@ -1,0 +1,9 @@
+<!DOCTYPE html>
+<title>"disabled" on hidden control</title>
+<link rel="help" href="http://whatwg.org/specs/web-forms/current-work/#disabled">
+<style>
+ span { display:block; height:2em; width:2em; background:red }
+ input:disabled + span { background:lime }
+</style>
+<p>You should see a green square:
+<p><input disabled type="hidden"><span></span>

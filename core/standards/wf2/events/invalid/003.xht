@@ -1,0 +1,12 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <title>'invalid' event basic test</title>
+ <style> #test { display:none } </style>
+ <script> document.documentElement.addEventListener('invalid',function(e){ e.preventDefault() },false) </script>
+ <p>You should not be able to submit this form nor should yout get any messages from the browser:</p>
+ <form action="support/fail.txt">
+  <fieldset>
+   <p id="test"><input type="number" value="test" required="required" name="t"/></p>
+   <p><input type="submit"/></p>
+  </fieldset>
+ </form>
+</html>

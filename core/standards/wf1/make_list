@@ -1,0 +1,166 @@
+#! /usr/bin/env python
+# -*- coding: utf-8 -*-
+
+import re
+import os
+import glob
+import time
+import sys
+import cgi
+
+from pygments import highlight
+from pygments.lexers import RubyLexer
+from pygments.formatters import HtmlFormatter
+
+pre_id = 0
+
+def extract_html_title(path):
+  title = re.search('<title>(.*)</title>', open(path).read())
+  if title:
+    return title.group(1)
+  else:
+    return ""
+    
+def extract_code(path, tc_file_name):
+  names = glob.glob(path)
+  
+  for name in names:
+    matches = re.findall('  it[^"]*"[^"]*" do(?:(?:    .*\n)|\n)*  end', open(name).read())
+    for match in matches:
+      res = re.search('browser.goto[^"]*"' + tc_file_name, match)
+      if res:
+        return match, name
+  return "", ""
+
+def li(path, prefix):
+  global pre_id
+  
+  code, ruby_path = extract_code("elements/*.rb", os.path.basename(path))
+  
+  button = ""
+  if code:
+    button = '<button onclick="toggle(\'pre_' + str(pre_id) + '\')" type="button" />code</button>'
+  else:
+    button = '<span class="nocode">nocode</span>'
+    
+  title = extract_html_title(path)
+  if title[:len(prefix)] == prefix:
+    title = title[len(prefix):]
+  else:
+    prefix = ""
+  
+  print '  <li><span class="prefix">%s</span><a href="%s">%s</a> %s</li>' % (prefix, path, title, button)
+  
+  if code != "":
+    pre = ""
+    pre += '<div style="display: none" id="pre_%s">' % pre_id
+    pre += '<p><strong>%s:</strong></p>' % ruby_path
+    
+    html_formatter = HtmlFormatter(encoding='utf-8')
+    html_formatter.nowrap = True
+    
+    pre += '<pre>'
+    pre += cgi.escape(code) #highlight(code, RubyLexer(encoding='utf-8'), html_formatter)
+    pre += '</pre>'
+    pre += '</div>'
+    
+    print pre
+    
+  pre_id += 1
+
+def ul(path, prefix = ""):
+  file_names = glob.glob(path)
+  file_names.sort()
+  
+  print '<ul>'
+  
+  for name in file_names:
+    li(name, prefix)
+    
+  print '</ul>'
+
+print '''<!DOCTYPE html>
+
+<meta charset="utf-8">
+
+
+
+<script type="text/javascript">
+  function toggle(elid) {
+    var el = document.getElementById(elid);
+    if ( el.style.display != 'none' ) {
+      el.style.display = 'none';
+    }
+    else {
+      el.style.display = '';
+    }
+  }
+</script>
+'''
+
+print '<style type="text/css">' + HtmlFormatter().get_style_defs('pre')
+
+#print 'a {text-decoration: none;}'
+
+print '.prefix { color: gray; }'
+
+print '.nocode { color: red; }'
+
+print '</style>'
+
+print '''<title>List of WebForms 1 tests</title>
+
+<h1>List of WebForms 1 tests</h1>'''
+
+print '<p>Generated:'
+
+print time.strftime("%Y-%m-%dT%H:%M:%S%z")
+
+print '</p>'
+
+print "<h2 id=\"form\">form</h2>"
+ul('interactive/form*[0-9][0-9][0-9].html', "form ")
+
+print "<h2 id=\"text\">input type=text</h2>"
+ul('interactive/input-text*[0-9][0-9][0-9].html', "input type=text ")
+
+print "<h2 id=\"password\">input type=password</h2>"
+ul('interactive/input-password*[0-9][0-9][0-9].html', "input type=password ")
+
+print "<h2 id=\"checkbox\">input type=checkbox</h2>"
+ul('interactive/input-checkbox*[0-9][0-9][0-9].html', "input type=checkbox ")
+
+print "<h2  id=\"radio\">input type=radio</h2>"
+ul('interactive/input-radio*[0-9][0-9][0-9].html', "input type=radio ")
+
+print "<h2 id=\"submit\">input type=submit</h2>"
+ul('interactive/input-submit*[0-9][0-9][0-9].html', "input type=submit ")
+
+print "<h2 id=\"reset\">input type=reset</h2>"
+ul('interactive/input-reset*[0-9][0-9][0-9].html', "input type=reset ")
+
+print "<h2 id=\"file\">input type=file</h2>"
+ul('interactive/input-file*[0-9][0-9][0-9].html', "input type=file ")
+
+print "<h2 id=\"hidden\">input type=hidden</h2>"
+ul('interactive/input-hidden*[0-9][0-9][0-9].html', "input type=hidden ")
+
+print "<h2 id=\"image\">input type=image</h2>"
+ul('interactive/input-image*[0-9][0-9][0-9].html', "input type=image ")
+
+print "<h2 id=\"input-button\">input type=button</h2>"
+ul('interactive/input-button*[0-9][0-9][0-9].html', "input type=button ")
+
+print "<h2 id=\"button\">button</h2>"
+ul('interactive/button*[0-9][0-9][0-9].html', "button ")
+
+print "<h2 id=\"label\">label</h2>"
+ul('interactive/label*[0-9][0-9][0-9].html', "label ")
+
+print "<h2 id=\"select\">select</h2>"
+ul('interactive/select*[0-9][0-9][0-9].html', "select ")
+
+print "<h2 id=\"textarea\">textarea</h2>"
+ul('interactive/textarea*[0-9][0-9][0-9].html', "textarea ")
+
+

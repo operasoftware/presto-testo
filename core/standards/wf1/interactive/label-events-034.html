@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+
+<title>label changing 'id' attributes of labeled controls</title>
+
+<p>Click the label below. The first checkbox should get checked. Press the button and click the label below. The second checkbox should get checked.</p>
+
+<form>
+  <p>
+    <input id="t" name="cb1" type="checkbox" />
+    <input id="f" name="cb2" type="checkbox" />
+  </p>
+
+  <p>
+    <label id="l" for="t">Click me!</label>
+  </p>
+
+  <p>
+    <button id="b" onclick="swap_ids(); return false">swap</button>
+  </p>
+</form>
+
+<script type="text/javascript">
+  function swap_ids() {
+    document.getElementsByName("cb1")[0].setAttribute("id", "f");
+    document.getElementsByName("cb2")[0].setAttribute("id", "t");
+  }
+</script>

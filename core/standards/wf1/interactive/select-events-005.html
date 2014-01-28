@@ -1,0 +1,22 @@
+<!doctype html>
+<meta charset="utf-8" />
+<title>select ondblclick</title>
+
+<noscript>
+  <p>Note: This test requires JavaScript.</p>
+</noscript>
+
+<p>
+	Double-click the select below.  Its value should change to “foobar”.
+</p>
+
+<form>
+	<p>
+		<select name="test" size=4 ondblclick="this.value = 'foobar';">
+			<option>Double click me!</option>
+			<option></option>
+			<option></option>
+			<option>foobar</option>
+		</select>
+	</p>
+</form>

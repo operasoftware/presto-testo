@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<title>label for, 'onfocus' for several elements (F: CORE-31299)</title>
+
+<p>Click each of the labels below. They should get replaced by the word 'PASS'.</p>
+
+<form>
+  <p>
+    <label id="l1" for="radio">click me</label>
+    <input type="radio" id="radio" onfocus="l1.innerHTML = 'PASS'" onclick="return false">
+  </p>
+
+  <p>
+    <label id="l2" for="checkbox">click me</label>
+    <input type="checkbox" id="checkbox" onfocus="l2.innerHTML = 'PASS'" onclick="return false">
+  </p>
+
+  <p>
+    <label id="l3" for="reset">click me</label>
+    <input type="reset" id="reset" onfocus="l3.innerHTML = 'PASS'" onclick="return false">
+  </p>
+
+  <p>
+    <label id="l4" for="text">click me</label>
+    <input type="text" id="text" onfocus="l4.innerHTML = 'PASS'" onclick="return false">
+  </p>
+
+  <p>
+    <label id="l5" for="submit">click me</label>
+    <input type="submit" id="submit" onfocus="l5.innerHTML = 'PASS'" onclick="return false"><br>
+  </p>
+
+  <p>
+    <label id="l6" for="textarea">click me</label>
+    <textarea id="textarea" onfocus="l6.innerHTML = 'PASS'" onclick="return false"></textarea>
+  </p>
+
+  <p>
+    <label id="l7" for="select">click me</label>
+    <select id="select" onfocus="l7.innerHTML = 'PASS'">
+      <option>foobar</option>
+    </select>
+  </p>
+
+</form>

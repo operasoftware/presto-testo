@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<meta charset="utf-8" />
+<title>label for, containing another label (F: ????)</title>
+<style>
+  #l { background: #cfc; }
+  #i { background: #fcc; }
+</style>
+
+<p>Click the "Click me!" label below.  The focus should shift to the first text field. Type "foobar" after clicking the label to verify that the focus did indeed shift.</p>
+
+<form action="../res/return_single_post.php" method="post">
+  <p>
+    <label id="i" for="f">
+      Do not click me.
+      <label id="l">
+        Click me!
+        <input id="t" name="test" type="text" />
+      </label>
+    </label>
+  </p>
+  <p><input id="f" type="text" /></p>
+  <p>
+    <input type="submit" id="f" />
+  </p>
+</form>
+

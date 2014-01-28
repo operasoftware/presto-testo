@@ -1,0 +1,41 @@
+<!doctype html>
+<meta charset="utf-8" />
+<title>form Single form-associated elements in multiple forms</title>
+
+<form id="owner_1">
+	<input id="associated_1" />
+</form>
+
+<form id="owner_2">
+	<input id="associated_2" />
+</form>
+
+<p id="result"></p>
+
+<script>
+
+	var firstOwner       = document.getElementById("owner_1");
+	var secondOwner      = document.getElementById("owner_2");
+
+	var firstAssociated  = document.getElementById("associated_1");
+	var secondAssociated = document.getElementById("associated_2");
+
+	var result           = document.getElementById("result");
+
+	if (isParentOwner(firstAssociated, firstOwner)
+			&& isParentOwner(secondAssociated, secondOwner)) {
+		result.innerHTML = "PASS";
+	} else {
+		result.innerHTML = "FAIL";
+	}
+
+	function isParentOwner(node, assumedParent) {
+		if (node.parentNode.getAttribute("id") == assumedParent.getAttribute("id")) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+
+</script>
+

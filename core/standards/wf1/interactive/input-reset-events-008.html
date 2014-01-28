@@ -1,0 +1,17 @@
+<!doctype html>
+<meta charset="utf-8" />
+<title>input type=reset onmouseover</title>
+
+<p>
+	Move your mouse over the reset button below.  The word “PASS” should appear
+	on this page.
+</p>
+
+<form>
+	<p>
+		<input name="test" type="reset" onmouseover="document.getElementById('result').innerHTML = 'PASS';" />
+	</p>
+</form>
+
+<p id="result"></p>
+

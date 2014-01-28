@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<title>'invalid' event and checkValidity</title>
+<style>
+ input { background:red }
+</style>
+<form>
+ <p>It should say PASS below:
+ <p><input type="url" name="test" required oninvalid="this.value='PASS';this.style.background='lime'" value="FAIL">
+</form>
+<script> document.forms[0].checkValidity() </script>
+<!--
+ This is a testcase. When authoring documents developers should
+ use the :invalid pseudo-class instead for setting style.
+-->

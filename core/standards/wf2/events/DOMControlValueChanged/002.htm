@@ -1,0 +1,8 @@
+<!DOCTYPE html>
+<title>DOMControlValueChanged basic test (user input required)</title>
+<p>When you enter some text here, it should not say "FAIL" below. <input></p>
+<p>...</p>
+<script>
+ var p = document.getElementsByTagName('p')[1];
+ document.addEventListener("DOMControlValueChanged",function(){ p.textContent = "FAIL" },false)
+</script>

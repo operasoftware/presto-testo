@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<title>input type=button Empty button, with self-closing tag</title>
+
+<p>You should see a button below. Click it. The word "PASS" should appear.</p>
+
+<form action="../res/pass.php" method="post">
+  <p>
+    <input type="button" name="test" onclick="document.getElementById('result').innerHTML = 'PASS'"/>
+  </p>
+</form>
+
+<p id="result"></p>

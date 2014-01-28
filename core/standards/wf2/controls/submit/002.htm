@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<title>submit control and dynamic updates for :default matching</title>
+<link rel="help" href="http://whatwg.org/specs/web-forms/current-work/#relation">
+<link rel="help" href="http://whatwg.org/specs/web-forms/current-work/#enter-submit">
+<style>
+ .s1{ background:red }
+ :default{ background:lime }
+ .s2 { background:lime }
+ .s2:default{ background:red }
+</style>
+<script>
+ window.onload = function(){
+  document.getElementsByTagName('input')[0].focus();
+  var newInput = document.createElement('input');
+  newInput.className = "s1";
+  newInput.type = "submit";
+  beforeInput = document.getElementsByTagName('input')[2];
+  document.getElementsByTagName('p')[3].insertBefore(newInput,beforeInput);
+ }
+</script>
+<p>Both buttons should have a green background:
+<form method="get">
+ <p><input name="t1">
+ <p><input name="t2">
+ <p><input type="submit" class="s2" name="s2">
+</form>

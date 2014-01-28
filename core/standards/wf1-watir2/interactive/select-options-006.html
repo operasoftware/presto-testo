@@ -1,0 +1,37 @@
+<!doctype html>
+<meta charset="utf-8" />
+<title>select support javascript remove option</title>
+
+<noscript>
+  <p>Note: This test requires JavaScript.</p>
+</noscript>
+
+<p>
+	Below you should see a drop down list with options "foobar1", 
+	"foobar2" and "foobar3". Underneath you should find the word 
+	"PASS".
+</p>
+
+<form>
+<p>
+	<select id="test" name="test[]" multiple>
+		<option>foobar1</option>
+		<option>foobar2</option>
+		<option>foobar3</option>
+		<option>foobar4</option>
+	</select>
+</p>
+<p id="result">FAIL</p>
+</form>
+
+<script>
+	var test = document.getElementById("test");
+	var result = document.getElementById("result");
+	
+	var removeOption = test.options[3];
+	test.remove(removeOption);
+
+	if (test.length == 3) {
+		result.innerHTML = "PASS";
+	}
+</script>

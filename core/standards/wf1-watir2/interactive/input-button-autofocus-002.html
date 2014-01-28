@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<title>input type=button autofocus button, variation</title>
+
+<p>There should be a tiny button below. Push the "Enter" key on your keyboard. You should see the word "PASS" below.</p>
+
+<form action="../res/pass.php" method="post">
+  <p>
+    <input type="button" name="test" autofocus="autofocus" onclick="document.getElementById('result').innerHTML = 'PASS'"/>
+  </p>
+</form>
+
+<p id="result"></p>

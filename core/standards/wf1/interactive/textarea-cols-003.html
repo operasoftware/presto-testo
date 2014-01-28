@@ -1,0 +1,23 @@
+<!doctype html>
+<meta charset="utf-8" />
+<title>textarea 'cols' attribute available in DOM</title>
+
+<noscript>
+  <p>Note: This test requires JavaScript.</p>
+</noscript>
+
+<p>
+	Below you should see a textarea. It should contain "10".
+</p>
+
+<form>
+	<p>
+		<textarea id="test" name="test" cols="10"></textarea>
+	</p>
+</form>
+
+<script>
+	var test = document.getElementById("test");
+	test.value = test.cols;
+</script>
+

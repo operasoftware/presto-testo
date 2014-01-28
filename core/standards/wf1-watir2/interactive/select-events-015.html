@@ -1,0 +1,21 @@
+<!doctype html>
+<meta charset="utf-8" />
+<title>select Empty JS event</title>
+
+<noscript>
+  <p>Note: This test requires JavaScript.</p>
+</noscript>
+
+<p>
+	Below you should see a select.  It should be empty.  Click the select; 
+	nothing should happen.  Click the submit button.  On the following page
+	you should see the word “PASS”.
+</p>
+
+<form action="../res/empty_post.php" method="post">
+	<p>
+		<select name="test" onclick=""><option></option><option>foobar</option></select>
+		<input type="submit" name="submit" />
+	</p>
+</form>
+

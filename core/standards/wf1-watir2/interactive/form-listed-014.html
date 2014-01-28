@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<title>form input type=button listed in form.elements</title>
+
+<p>There should be the word "PASS" below.</p>
+
+<form>
+  <input type="button" id="test element"/>
+</form>
+
+<p id="result">BLOCKED</p>
+
+<script type="text/javascript">
+  var result = document.getElementById('result');
+  
+  if(result) {
+    result.innerHTML = "FAIL";
+    result.style.color = "red";
+    
+    if(document.forms && document.forms[0]) {
+      var f = document.forms[0];
+      if(f.elements && f.elements[0]) {
+        if(f.elements[0].id == "test element") {
+          result.innerHTML = "PASS";
+          result.style.color = "green";
+        }
+      }
+    }
+  }
+</script>

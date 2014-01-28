@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<title>input type=file Multiple JS events</title>
+
+<p>Move mouse pointer over the file input below. Click it. The word "PASS" should appear.</p>
+
+<form action="#">
+  <p><input id="f" type="file" onclick="action_click(); return false" onmouseover="action_hover()" /></p>
+</form>
+
+<p id="result"></p>
+
+<script>
+
+        var test    = document.getElementById("test");
+        var clicked = false;
+        var hovered = false;
+
+        function action_click() {
+                clicked = true;
+                evaluate_pass();
+        }
+
+        function action_hover() {
+                hovered = true;
+                evaluate_pass();
+        }
+
+        function evaluate_pass() {
+                if (clicked && hovered) {
+                        document.getElementById("result").innerHTML = "PASS";
+                }
+        }
+
+</script>

@@ -1,0 +1,56 @@
+<!doctype html>
+<meta charset="utf-8" />
+<title>select increasing size</title>
+
+<noscript>
+  <p>Note: This test requires JavaScript.</p>
+</noscript>
+
+<p>
+	Below you should see six select boxes of increasing height. Below should contain “PASS”.
+</p>
+
+<form>
+	<p>
+		<select id="test1" name="test1" size=1></select>
+	</p>
+	<p>
+		<select id="test2" name="test2" size=2></select>
+	</p>
+	<p>
+		<select id="test3" name="test3" size=3></select>
+	</p>
+	<p>
+		<select id="test4" name="test4" size=4></select>
+	</p>
+	<p>
+		<select id="test5" name="test5" size=5></select>
+	</p>
+	<p>
+		<select id="test6" name="test6" size=6></select>
+	</p>
+</form>
+
+<p id="result"></p>
+
+<script>
+	var test1 = document.getElementById("test1");
+	var test2 = document.getElementById("test2");
+	var test3 = document.getElementById("test3");
+	var test4 = document.getElementById("test4");
+	var test5 = document.getElementById("test5");
+	var test6 = document.getElementById("test6");
+	var result = document.getElementById("result");		
+	
+    	if(test1.clientHeight < test2.clientHeight 
+		&& test2.clientHeight < test3.clientHeight
+		&& test3.clientHeight < test4.clientHeight
+		&& test4.clientHeight < test5.clientHeight
+		&& test5.clientHeight < test6.clientHeight
+		) {
+        	result.innerHTML = "PASS";
+    	} else {
+        	result.innerHTML = "FAIL";
+    	}
+</script>
+

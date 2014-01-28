@@ -1,0 +1,42 @@
+<!doctype html>
+<meta charset="utf-8" />
+<title>input type=button Multiple JS events</title>
+
+<p>
+	Move your mouse over the button below.  Click it.  The word “PASS” should
+	appear on this page.
+</p>
+
+<form>
+	<p>
+		<input type="button" name="test" onclick="action_click(); return false;" onmouseover="action_hover();" value="Move mouse over me, then click me"/>
+	</p>
+</form>
+
+<p id="result"></p>
+
+<div id="log"></div>
+
+<script>
+
+	var clicked = false;
+	var hovered = false;
+
+	function action_click() {
+		clicked = true;
+		evaluate_pass();
+	}
+
+	function action_hover() {
+		hovered = true;
+		evaluate_pass();
+	}
+
+	function evaluate_pass() {
+		if (clicked && hovered) {
+      document.getElementById("result").innerHTML = "PASS";
+    }
+	}
+
+</script>
+

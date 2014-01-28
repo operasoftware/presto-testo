@@ -1,0 +1,17 @@
+<!doctype html>
+<meta charset="utf-8" />
+<title>select Arabic input</title>
+
+<p>
+	There should be a drop down list with the words “<span class="rtl">موسكو لندن</span>”
+	(<em>Moscow London</em>) below.  Click submit.  The same words should appear on the 
+	following page.
+</p>
+
+<form action="../res/return_single_post.php" method="post">
+	<p>
+		<select name="test"><option>موسكو لندن</option></select>
+		<input type="submit" name="submit" />
+	</p>
+</form>
+

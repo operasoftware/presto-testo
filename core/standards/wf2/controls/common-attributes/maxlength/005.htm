@@ -1,0 +1,9 @@
+<!DOCTYPE html>
+<title>"maxlength" and tooLong flag on the ValidityState object (part two)</title>
+<p>The form control should have a green background: <input maxlength="3"></p>
+<script>
+ var i = document.getElementsByTagName('input')[0];
+ i.value = "TEST";
+ i.maxLength = 4;
+ i.style.background = (!i.validity.tooLong) ? "lime" : "red";
+</script>

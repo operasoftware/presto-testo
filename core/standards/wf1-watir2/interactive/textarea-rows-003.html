@@ -1,0 +1,24 @@
+<!doctype html>
+<meta charset="utf-8" />
+<title>textarea rows value available in DOM</title>
+
+<noscript>
+  <p>Note: This test requires JavaScript.</p>
+</noscript>
+
+<p>
+	Below you should see a textarea. It should contain "1",
+	and be one line tall.
+</p>
+
+<form>
+	<p>
+		<textarea id="test" name="test" rows="1"></textarea>
+	</p>
+</form>
+
+<script>
+	var test = document.getElementById("test");
+	test.value = test.rows;
+</script>
+

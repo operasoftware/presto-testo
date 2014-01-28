@@ -1,0 +1,9 @@
+<!DOCTYPE html>
+<title>number control and "step" (part three)</title>
+<style>
+ span { display:block; height:2em; width:2em; background:red }
+ input { display:none }
+ input:invalid + span { background:lime }
+</style>
+<p>There should be a green square below:
+<p><input type=number value="5" step="10"><span></span>

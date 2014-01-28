@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <title>willValidate and the &lt;fieldset&gt; element</title>
+  <script>
+   window.onload = function(){
+    var r = document.getElementById('r');
+    r.firstChild.data = "FAIL (Script failed)";
+    r.firstChild.data = document.getElementsByTagName('fieldset')[0].willValidate ? "FAIL" : "PASS";
+   }
+  </script>
+ </head>
+ <body>
+  <form>
+   <fieldset>
+    <p>It should say "PASS" below:</p>
+    <p id="r">FAIL (Script did not run.)</p>
+   </fieldset>
+  </form>
+ </body>
+</html>

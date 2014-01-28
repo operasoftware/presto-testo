@@ -1,0 +1,6 @@
+<!DOCTYPE html>
+<title>dynamically removing "list"</title>
+<style> select { display:none } </style>
+<p>You should not be able to select "FAIL" in the control below:
+<p><input list="data"><select id="data"><option>FAIL</select></p>
+<script> document.getElementsByTagName('input')[0].removeAttribute("list") </script>

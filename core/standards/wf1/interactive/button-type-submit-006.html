@@ -1,0 +1,18 @@
+<!doctype html>
+<meta charset="utf-8" />
+<title>button type="submit" Multiple duplicate submit buttons in the same form</title>
+
+<p>
+	You should see two buttons below.  Click the first of them.  The word “PASS”
+	should appear on the following page.
+</p>
+
+<form action="../res/null_post.php" method="post">
+	<p>
+		<button id="test" name="submit" type="submit">Click me!</button>
+	</p>
+	<p>
+		<button name="submit" type="submit">Ignore me</button>
+	</p>
+</form>
+

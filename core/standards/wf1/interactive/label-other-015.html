@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+
+<title>label label with negative text-indent, containing input text (CORE-18768)</title>
+
+<style type="text/css">
+  #l { text-indent: -1000px; }
+</style>
+
+<p>You should see two text input controls looking the same.</p>
+
+<form>
+  <p>
+    <label id="l"><input id="i1" type="text" value="foobar"></label>
+  </p>
+
+  <p>
+    <label><input id="i2" type="text" value="foobar"></label>
+  </p>
+</form>

@@ -1,0 +1,17 @@
+<!doctype html>
+<meta charset="utf-8" />
+<title>textarea 'readonly' attribute, variation</title>
+
+<p>
+	Click the textarea below.  Try clear the contents in the area.  You should
+	not be able to, as it is set to <var>readonly</var>.  Click the submit button.
+	You should see “foobar” on the following page.
+</p>
+
+<form action="../res/return_single_post.php" method="post">
+	<p>
+		<textarea name="test" readonly="readonly">foobar</textarea>
+		<input type="submit" name="submit" />
+	</p>
+</form>
+

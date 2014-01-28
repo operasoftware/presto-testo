@@ -1,0 +1,42 @@
+<!doctype html>
+<meta charset="utf-8" />
+<title>input type=submit Multiple JS events</title>
+
+<p>
+	Move your mouse over the submit button below.  Click it.  The word “PASS”
+	should appear on this page.
+</p>
+
+<form>
+	<p>
+		<input name="test" type="submit" onclick="action_click(); return false;" onmouseover="action_hover();" />
+	</p>
+</form>
+
+<p id="result"></p>
+
+<script>
+
+	var test    = document.getElementById("test");
+	var result  = document.getElementById("result");
+	var clicked = false;
+	var hovered = false;
+
+	function action_click() {
+		clicked = true;
+		evaluate_pass();
+	}
+
+	function action_hover() {
+		hovered = true;
+		evaluate_pass();
+	}
+
+	function evaluate_pass() {
+		if (clicked && hovered) {
+			result.innerHTML = "PASS";
+		}
+	}
+
+</script>
+

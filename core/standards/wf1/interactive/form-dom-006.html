@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+
+<title>form setting 'enctype' attribute, variation</title>
+
+<p>Click the button below. You should see page saying "Result: PASS".<p>
+
+<form id="f1" action="../res/enctype-multipart-form-data.php" method="post">
+  <input id="s" type="submit" value="" />
+  <input type="hidden" value="abc" name="test"/>
+</form>
+
+<script type="text/javascript">
+  document.getElementById('f1').setAttribute("enctype", "multipart/form-data");
+</script>

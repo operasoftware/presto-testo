@@ -1,0 +1,11 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <title>willValidate and form association (part four)</title>
+ <script>
+  window.onload = function(){
+   var i = document.getElementsByTagName('input')[0];
+   i.value = (i.willValidate) ? "FAIL" : "PASS";
+  }
+ </script>
+ <form xml:id="test" xmlns=""></form>
+ <p><input value="FAIL (Script did not run.)" name="test" form="test"/></p>
+</html>

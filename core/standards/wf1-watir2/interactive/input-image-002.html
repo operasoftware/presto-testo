@@ -1,0 +1,84 @@
+<!doctype html>
+<meta charset="utf-8" />
+<title>input type=image Click image button, without image</title>
+<link href="../res/test.css" rel="stylesheet" />
+<style>
+
+	.reference p {
+		height: 29px;
+	}
+
+	#reference a {
+		color: black;
+		text-decoration: none;
+	}
+
+	#reference {
+		border-top: 1px solid rgb(100,100,100);
+		border-left: 1px solid rgb(100,100,100);
+		border-right: 1px solid rgb(228,228,228);
+		border-bottom: 1px solid rgb(228,228,228);
+		position: relative;
+		padding-bottom: 3px;
+		cursor: pointer;
+	}
+
+	#reference::before {
+		background-color: rgb(228,228,228);
+		bottom: -1px;
+		content: "";
+		display: block;
+		height: 1px;
+		position: absolute;
+		width: 1px;
+	}
+
+	#reference::after {
+		background-color: rgb(228,228,228);
+		right: -2px;
+		top: -1px;
+		content: "";
+		display: block;
+		height: 1px;
+		position: absolute;
+		width: 1px;
+	}
+
+</style>
+
+<p>
+	There should be a button without any images below.  Click it.  You should see
+	the word “PASS” on the following page.
+</p>
+
+<div id="testcase">
+	<div class="test">
+
+		<h2>Test</h2>
+
+		<div class="inner">
+
+			<form action="../res/null_post.php" method="post">
+				<p>
+					<input id="test" type="image" />
+				</p>
+			</form>
+
+		</div>
+	</div>
+	<div class="reference">
+
+		<h2>Reference</h2>
+
+		<div class="inner">
+
+			<form>
+				<p>
+					<span id="reference"><a href="../res/null_post.php">Image</a></span>
+				</p>
+			</form>
+
+		</div>
+	</div>
+</div>
+

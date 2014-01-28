@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<title>test with multiple controls having "autofocus" set</title>
+<style>
+ input, input#test:focus { background:lime }
+ input:focus, input#test { background:red }
+</style>
+<p>All form controls below should have a green background:
+<p><input autofocus>
+<p><input autofocus>
+<p><input autofocus>
+<p><input>
+<p><input autofocus id="test">
+<p><input>

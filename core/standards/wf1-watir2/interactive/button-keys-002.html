@@ -1,0 +1,18 @@
+<!doctype html>
+<meta charset="utf-8" />
+<title>button tabindex</title>
+
+<p>
+	Press <kbd>Tab</kbd> three times to focus the submit button.  Press
+	<kbd>Enter</kbd> or <kbd>Space</kbd>.  You should see the word “PASS” on the
+	following page.
+</p>
+
+<form action="../res/pass.php" method="post">
+	<p>
+		<button name="test" type="submit" tabindex="3">Select me using <kbd>Tab</kbd></button>
+		<button name="random_field_1" type="button" tabindex="2">random button</button>
+		<button name="random_field_2" type="button" tabindex="1">random button</button>
+	</p>
+</form>
+

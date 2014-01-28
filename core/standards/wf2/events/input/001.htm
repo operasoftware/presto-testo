@@ -1,0 +1,7 @@
+<!DOCTYPE html>
+<title>'input' event  basic test</title>
+<script> function pass(e) { e.target.form.test.value = "PASS" } </script>
+<form>
+ <p>While entering text in this control it should say "PASS" below: <input oninput="pass(event)">
+ <p><output name="test">TEST (Event not yet fired.)</output>
+</form>

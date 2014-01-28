@@ -1,0 +1,21 @@
+<!doctype html>
+<meta charset="utf-8" />
+<title>textarea high maxlength</title>
+
+<p>Copy the text from the first textarea and paste it in to the second one.
+As the textarea has a <var>maxlength</var> of 300 characters, only the
+first 300 characters should be pasted.  Click submit, and you should see the
+word ”PASS” on the following page.</p>
+
+<form action="../res/character_count.php?max=300" method="post">
+	<p>
+		<textarea name="text" rows=15 cols=40 readonly>Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</textarea>
+	</p>
+	<p>
+		<textarea name="test" maxlength="300" rows=15 cols=40></textarea>
+	</p>
+	<p>
+		<input type="submit" name="submit" />
+	</p>
+</form>
+

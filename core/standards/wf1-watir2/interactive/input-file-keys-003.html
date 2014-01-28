@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+
+<title>input type=file Trigger action with enter</title>
+
+<p>Press enter. File selection dialog should open.</p>
+
+<form action="#">
+  <p><input id="f" type="file" name="test_file" /></p>
+  <input type="button" onclick="document.getElementById('result').innerHTML = 'PASS'"/>
+  <input type="button" onclick="document.getElementById('result').innerHTML = 'FAIL'"/>
+  <input type="button" onclick="document.getElementById('result').innerHTML = 'FAIL'"/>
+</form>
+
+<script type="text/javascript">
+  document.getElementById('f').focus();
+</script>
+
+<p id="result"></p>

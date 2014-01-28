@@ -1,0 +1,14 @@
+<!doctype html>
+<meta charset="utf-8" />
+<title>button Cancelling action request</title>
+
+<p>
+	Click the submit button.  Nothing should happen.
+</p>
+
+<form action="../res/fail.php" method="post">
+	<p>
+		<button name="test" type="submit" onclick="return false;">Click me; nothing should happen</button>
+	</p>
+</form>
+

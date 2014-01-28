@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<title>input type=button Value of button available in DOM</title>
+
+<p>You should see the word "PASS" on this page.</p>
+
+<form>
+  <p>
+    <input type="button" id="test" name="test" value="foobar"/>
+  </p>
+</form>
+
+<p id="result"></p>
+
+<script>
+
+	var test   = document.getElementById("test");
+	var result = document.getElementById("result");
+
+	if (test.value == "foobar") {
+		result.innerHTML = "PASS";
+	} else {
+		result.innerHTML = "FAIL";
+	}
+
+</script>
+

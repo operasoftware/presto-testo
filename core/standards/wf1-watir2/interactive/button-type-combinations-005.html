@@ -1,0 +1,26 @@
+<!doctype html>
+<meta charset="utf-8" />
+<title>button Submit, reset and regular button in combination</title>
+
+<p>
+	Remove the text from the text field below.  Click the first button; nothing
+	should happen.  Click the second button; the text in the text field should be
+	reset to “foobar”.  Click the third button; you should see the word “foobar”
+	on the following page.
+</p>
+
+<form action="../res/return_single_post.php" method="post">
+	<p>
+		<input name="test" type="text" value="foobar" />
+	</p>
+	<p>
+		<button name="button" type="button">First</button>
+	</p>
+	<p>
+		<button name="reset" type="reset">Reset</button>
+	</p>
+	<p>
+		<button name="submit" type="submit">Submit</button>
+	</p>
+</form>
+

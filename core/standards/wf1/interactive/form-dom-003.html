@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+
+<title>form setting 'method' attribute</title>
+
+<p>Click the button below. You should see page saying "Result: PASS".<p>
+
+<form id="f1" action="../res/empty_get.php" method="post">
+  <input id="s" type="submit" value="" name="test"/>
+</form>
+
+<script type="text/javascript">
+  document.getElementById('f1').method = 'get';
+</script>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<title>label containing select - onclick, onfocus, onblur (F: CORE-31299)</title>
+
+<p>Click the label below. Then click the second label. You should see the word 'PASS' below, repeated 3 times.</p>
+
+<form>
+  <p>
+    <label id="l1">
+      Click me!
+      <select id="b" onclick="document.getElementById('result_onclick').innerHTML = 'PASS'; return false" onfocus="document.getElementById('result_onfocus').innerHTML = 'PASS'" onblur="document.getElementById('result_onblur').innerHTML = 'PASS'">
+        <option value ="a">aaa</option>
+        <option value ="b">bbb</option>
+        <option value ="c">ccc</option>
+        <option value ="d">ddd</option>
+      </select>
+    </label>
+    <label id="l2">
+      Then click me!
+    </label>
+  </p>
+</form>
+
+<p id="result_onclick"></p>
+<p id="result_onfocus"></p>
+<p id="result_onblur"></p>
+
+
+
+
+
+

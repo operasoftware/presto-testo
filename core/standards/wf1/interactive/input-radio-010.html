@@ -1,0 +1,24 @@
+<!doctype html>
+<meta charset="utf-8" />
+<title>input type=radio Two radio groups</title>
+
+<p>
+	Below you should see four radio buttons divided into two groups.  Check the
+	second in each group.  Click submit.  You should see the words ”foo” and ”bar”
+	on the following page.
+</p>
+
+<form action="../res/return_multiple_post.php" method="post">
+	<p>
+		<input name="test1" type="radio" />
+		<input name="test1" type="radio" value="foo" />
+	</p>
+	<p>
+		<input name="test2" type="radio" />
+		<input name="test2" type="radio" value="bar" />
+	</p>
+	<p>
+		<input name="submit" type="submit" />
+	</p>
+</form>
+

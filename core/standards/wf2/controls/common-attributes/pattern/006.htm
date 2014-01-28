@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<title>"pattern" and beginning match ('^(foo).*')</title>
+<style>
+ input.ok, input:valid { background:red }
+ input, input.ok:valid { background:lime }
+</style>
+<p>All form controls should have a green background (ignore the values):
+<p><input pattern="^(foo).*" class="ok"> <!-- not required -->
+<p><input value="fo" pattern="^(foo).*">
+<p><input value="foo" pattern="^(foo).*" class="ok">
+<p><input value="ffoo" pattern="^(foo).*">
+<p><input value="fooo" pattern="^(foo).*" class="ok">

@@ -1,0 +1,28 @@
+<!doctype html>
+<meta charset="utf-8" />
+<title>select Value of disabled field available in DOM</title>
+
+<noscript>
+  <p>Note: This test requires JavaScript.</p>
+</noscript>
+
+<p>
+	Below you should see a drop down list that is disabled, and below
+	that again should be the word "foobar".
+</p>
+
+<p>
+	<select id="test" name="test" disabled>
+			<option>foobar</option>
+		</select>
+</p>
+<p id="result" name="result"></p>
+
+<script>
+
+	var test = document.getElementById("test");
+
+	result.innerHTML = test.value;
+	
+</script>
+

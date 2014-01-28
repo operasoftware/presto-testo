@@ -1,0 +1,23 @@
+<!doctype html>
+<meta charset="utf-8" />
+<title>select Invalid disabled</title>
+
+<p>
+	Click the drop down list below; nothing should happen.  Try to select the
+	option labelled "foobar".  You should not be able to, as it is set to
+	<var>disabled</var>.  Click the submit button.  You should see “PASS” on the
+	following page.
+</p>
+
+<form action="../res/null_post.php" method="post">
+	<p>
+		<select name="test" disabled="foobar">
+			<option></option>
+			<option>foobar</option>
+		</select>
+	</p>
+	<p>
+		<input type="submit" name="submit" />
+	</p>
+</form>
+

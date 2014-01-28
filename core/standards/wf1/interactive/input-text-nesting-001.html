@@ -1,0 +1,19 @@
+<!doctype html>
+<meta charset="utf-8" />
+<title>input type=text input outside a form</title>
+
+<p>
+	Click the submit button below.  You should see the word “PASS” on the
+	following page.
+</p>
+
+<p>
+	<input name="test" type="text" value="foobar" />
+</p>
+
+<form action="../res/null_post.php" method="post">
+	<p>
+		<input type="submit" name="submit" />
+	</p>
+</form>
+

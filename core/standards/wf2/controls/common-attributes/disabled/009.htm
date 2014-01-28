@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<title>"disabled" and &lt;output&gt;</title>
+<link rel="help" href="http://whatwg.org/specs/web-forms/current-work/#disabled">
+<style>
+ output { padding:.5em; background:lime }
+ output:disabled { background:red }
+ output:enabled { background:red }
+</style>
+<p>The word "TEST" below should have a green background:
+<p><output disabled>TEST</output>

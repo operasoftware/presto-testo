@@ -1,0 +1,64 @@
+<!doctype html>
+<meta charset="utf-8" />
+<title>input type=image Different image sizes</title>
+
+<p>
+	Below you should see three different image buttons.  The first should be
+	16×16 px.  The second 100×100 px.  The third 1000×1000 px.  The word “PASS”
+	should appear on this page.
+</p>
+
+<!--
+	The colours and images of these buttons are irrelevant to this test, so we
+	will not run this as a reftest.
+-->
+
+<p id="result"></p>
+
+<form>
+	<p>
+		<input id="image1" type="image" src="../res/images/16x16-navy.ico" />
+	</p>
+	<p>
+		<input id="image2" type="image" src="../res/images/100x100-navy.jpg" />
+	</p>
+	<p>
+		<input id="image3" type="image" src="../res/images/1000x1000-navy.png" />
+	</p>
+</form>
+
+<script>
+  function do_test() {
+    var image1 = document.getElementById("image1");
+    var image2 = document.getElementById("image2");
+    var image3 = document.getElementById("image3");
+
+    var image1_passed = false;
+    var image2_passed = false;
+    var image3_passed = false;
+
+    var result = document.getElementById("result");
+
+    if (image1.clientWidth === 16 && image1.clientHeight === 16) {
+            image1_passed = true;
+    }
+
+    if (image2.clientWidth === 100 && image2.clientHeight === 100) {
+            image2_passed = true;
+    }
+
+    if (image3.clientWidth === 1000 && image3.clientHeight === 1000) {
+            image3_passed = true;
+    }
+
+    if (image1_passed && image2_passed & image3_passed) {
+            result.innerHTML = "PASS";
+    } else {
+            result.innerHTML = "FAIL";
+    }
+  }
+
+  window.onload = do_test;
+
+</script>
+

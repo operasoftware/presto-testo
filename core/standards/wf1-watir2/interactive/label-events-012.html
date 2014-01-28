@@ -1,0 +1,31 @@
+<!doctype html>
+<meta charset="utf-8" />
+<title>label label Adding valid attribute for through DOM</title>
+
+<p>
+	Click the button below.  Then click the label.  The focus should shift to the
+	text field below.  Type “foobar” to verify that the focus did indeed shift.
+</p>
+
+<form action="../res/return_single_post.php" method="post">
+	<p>
+		<button id="button" onclick="set_attribute(); return false;">Click me first</button>
+	</p>
+	<p>
+		<label id="label" for="label">Click me second</label>
+		<input name="test" id="test" type="text" />
+	</p>
+  <p>
+    <input type="submit" name="submit" />
+  </p>
+</form>
+
+<script>
+
+	function set_attribute() {
+		var test = document.getElementById("label");
+		test.setAttribute("for", "test");
+	}
+
+</script>
+

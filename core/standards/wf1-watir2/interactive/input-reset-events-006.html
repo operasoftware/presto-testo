@@ -1,0 +1,16 @@
+<!doctype html>
+<meta charset="utf-8" />
+<title>input type=reset onmousedown</title>
+
+<p>
+	Click the reset button below.  The word “PASS” should appear on this page.
+</p>
+
+<form>
+	<p>
+		<input name="reset" type="reset" onmousedown="document.getElementById('result').innerHTML = 'PASS';" />
+	</p>
+</form>
+
+<p id="result"></p>
+

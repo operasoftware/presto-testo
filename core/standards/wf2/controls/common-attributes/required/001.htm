@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<title>"required" basic test</title>
+<style>
+ input.ok, input:valid { background:red }
+ input, input.ok:valid { background:lime }
+</style>
+<p>All form controls should have a green background (ignore the values):
+<p><input required>
+<p><input required value=" " class="ok">
+<p><input required value="a" class="ok">

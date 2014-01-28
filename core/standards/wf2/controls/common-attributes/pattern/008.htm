@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<title>"pattern" and textarea controls</title>
+<style>
+ textarea.ok, textarea:valid { background:red }
+ textarea, textarea.ok:valid { background:lime }
+ textarea { resize: none; }
+</style>
+<p>All textarea controls should have a green background (ignore the values):
+<p><textarea rows="1" cols="20" pattern="\w" class="ok">0</textarea>
+<p><textarea rows="1" cols="20" pattern="\w">ab</textarea>
+<p><textarea rows="1" cols="20" pattern="\w+" class="ok">ab</textarea>
+<p><textarea rows="1" cols="20" pattern="\w+\s\w+">abcd</textarea>
+<p><textarea rows="1" cols="20" pattern="\w+\s\w+" class="ok">ab cd</textarea>
+<p><textarea rows="2" cols="20" pattern="\w+\s\w+" class="ok">ab
+cd</textarea>
+<p><textarea rows="2" cols="20" pattern="\w+\s\w+">ab 
+cd</textarea>
+<p><textarea rows="2" cols="20" pattern="\w+\s+\w+" class="ok">ab
+cd</textarea>
+<p><textarea rows="2" cols="20" pattern="\w+\s+\w+" class="ok">ab 
+        cd</textarea>
+<p><textarea rows="2" cols="20" pattern="\w+\n\w+" class="ok">ab
+cd</textarea>

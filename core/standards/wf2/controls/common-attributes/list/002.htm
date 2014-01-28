@@ -1,0 +1,6 @@
+<!DOCTYPE html>
+<title>dynamically setting "list"</title>
+<style> select { display:none } </style>
+<p>You should be able to select "PASS" in the control below:
+<p><input><select id="data"><option>PASS</select></p>
+<script> document.getElementsByTagName('input')[0].setAttribute("list","data") </script>

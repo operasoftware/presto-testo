@@ -1,0 +1,16 @@
+<!doctype html>
+<meta charset="utf-8" />
+<title>input type=reset Cancelling action request</title>
+
+<p>
+	Clear the contents of the text field.  Click the reset button.  Nothing
+	should happen.
+</p>
+
+<form>
+	<p>
+		<input name="test" type="text" value="foobar" />
+		<input name="reset" type="reset" onclick="return false;" />
+	</p>
+</form>
+

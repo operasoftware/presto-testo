@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+
+<title>form Overriding form-association on element</title>
+
+<p>Type "foobar" in the text input below. Press "Enter". You should be presented a web page saying "You typed: [foobar]".</p>
+
+<form id="f1" action="../res/fail.php">
+  <p><input id="i1" type="text" form="f2" name="test"/></p>
+</form>
+
+<form id="f2" action="../res/return_single_post.php" method="post">
+</form>

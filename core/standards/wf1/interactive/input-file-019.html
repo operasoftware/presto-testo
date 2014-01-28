@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+
+<title>input type=file required</title>
+
+<p>Click the 'submit' button. The form should not be submitted. Select the local/empty.txt file. Click submit. A page containing the word 'PASS' should appear.</p>
+
+<form action="../res/check_md5.php" method="POST" enctype="multipart/form-data">
+  <p><input id="f" type="file" name="test_file" required/></p>
+  <p><input id="s" type="submit" /></p>
+  <input type="hidden" name="md5" value="d41d8cd98f00b204e9800998ecf8427e" />
+</form>

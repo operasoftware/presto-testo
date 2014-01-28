@@ -1,0 +1,34 @@
+<!doctype html>
+<meta charset="utf-8" />
+<title>form Multiple form-associated elements in unclosed form</title>
+
+<p id="result"></p>
+
+<form id="owner">
+	<input id="associated_1" />
+	<input id="associated_2" />
+
+<script>
+
+	var owner            = document.getElementById("owner");
+	var firstAssociated  = document.getElementById("associated_1");
+	var secondAssociated = document.getElementById("associated_2");
+	var result           = document.getElementById("result");
+
+	if (isParentOwner(firstAssociated)
+		  && isParentOwner(secondAssociated)) {
+		result.innerHTML = "PASS";
+	} else {
+		result.innerHTML = "FAIL";
+	}
+
+	function isParentOwner(node) {
+		if (node.parentNode.getAttribute("id") == owner.getAttribute("id")) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+
+</script>
+

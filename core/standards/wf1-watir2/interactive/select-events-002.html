@@ -1,0 +1,20 @@
+<!doctype html>
+<meta charset="utf-8" />
+<title>select onblur</title>
+
+<noscript>
+  <p>Note: This test requires JavaScript.</p>
+</noscript>
+
+<p>
+	Click on the select below.  Then click on the submit button.  The text in
+	the select should change to ”foobar”.
+</p>
+
+<form>
+	<p>
+		<select name="test" onblur="this.value = 'foobar';"><option></option><option>foobar</option></select>
+		<input type="submit" name="submit" />
+	</p>
+</form>
+

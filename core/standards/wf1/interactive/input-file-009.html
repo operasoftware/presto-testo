@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+
+<title>input type=file POST, file MIME type</title>
+
+<p>Choose the local/opera.png file. Press the "submit" button. The page which follows should say "file type : [image/png]".</p>
+
+<form action="../res/file_type.php" method="POST" enctype="multipart/form-data">
+  <p><input id="f" type="file" name="test_file" /></p>
+  <p><input id="s" type="submit" value="submit" /></p>
+</form>

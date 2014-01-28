@@ -1,0 +1,37 @@
+<!doctype html>
+<meta charset="utf-8" />
+<title>input type=reset Adding invalid attribute size through DOM</title>
+
+<p>
+	Click the reset button below.  Nothing should happen.  (In particular, the
+	reset button's width should not change.)
+</p>
+
+<form>
+	<p>
+		<input id="test" name="test" type="reset" onclick="action_click();" />
+	</p>
+</form>
+
+<p id="result"></p>
+
+<script>
+
+	function action_click() {
+
+		var test   = document.getElementById("test");
+		var result = document.getElementById("result");
+
+		test.setAttribute("size", 260);
+
+		if (test.clientWidth >= 49
+				&& test.clientWidth <= 57) {
+			result.innerHTML = "PASS";
+		} else {
+			result.innerHTML = "FAIL";
+		}
+
+	}
+
+</script>
+

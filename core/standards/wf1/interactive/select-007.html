@@ -1,0 +1,19 @@
+<!doctype html>
+<meta charset="utf-8" />
+<title>select Multiple duplicate inputs</title>
+
+<p>
+	You should see two drop down lists below with different values.  Click submit.
+	The word "bar" should be returned.
+</p>
+
+<form action="../res/return_multiple_post.php" method="post">
+	<p>
+		<select name="test"><option>foo</option></select>
+		<select name="test"><option>bar</option></select>
+	</p>
+	<p>
+		<input name="submit" type="submit" />
+	</p>
+</form>
+

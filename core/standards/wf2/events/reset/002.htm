@@ -1,0 +1,9 @@
+<!DOCTYPE html>
+<title>basic 'reset' event test (part two)</title>
+<script>
+ document.addEventListener('reset',function(e){ document.getElementsByTagName('input')[0].value = "PASS"; e.preventDefault() },false);
+ window.onload = function(){ document.getElementsByTagName('form')[0].reset() }
+</script>
+<form>
+ <p><input value="FAIL">
+</form>

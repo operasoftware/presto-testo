@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<meta charset="utf-8" />
+<title>label 'onclick' event on a disabled button (CORE-31556) (F: CORE-31556)</title>
+
+<p>Click the label below. Nothing should happen.</p>
+
+<form>
+  <label name="l">Click me!
+    <button disabled="disabled" onclick="document.getElementById('result').innerHTML = 'FAIL'; return false;">foo</button>
+  </label>
+</form>
+
+<p id="result"></p>

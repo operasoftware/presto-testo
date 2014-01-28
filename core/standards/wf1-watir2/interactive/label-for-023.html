@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+
+<title>label for, clicking label for referring to input checkbox with 'display: none' (CORE-983)</title>
+
+<script type="text/javascript">
+  function verify() {
+    var checkbox = document.getElementById("cb");
+
+    if(checkbox && checkbox.checked) {
+      document.getElementById("result").innerHTML = "PASS";
+    } else {
+      document.getElementById("result").innerHTML = "FAIL";
+    }
+  }
+</script>
+
+<p>Click the label. Then press the button. The text 'PASS' should appear below.</p>
+
+<form>
+  <p>
+    <input style="display: none" type="checkbox" id="cb">
+    <label id="l"  for="cb">Click this label!</label>
+  </p>
+
+  <p><button onclick="verify(); return false">Then press this button!</button></p>
+</form>
+
+<p id="result"></p>

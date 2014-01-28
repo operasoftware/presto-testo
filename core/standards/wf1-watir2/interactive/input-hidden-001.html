@@ -1,0 +1,17 @@
+<!doctype html>
+<meta charset="utf-8" />
+<title>input type=hidden Visibility</title>
+
+<p>
+	You should not see any fields on this page.  To test this, press
+	<kbd>Tab</kbd> and try type “foobar”.  Click the submit button.  You should
+	see the word “PASS” on the following page.
+</p>
+
+<form action="../res/empty_post.php" method="post">
+	<p>
+		<input name="test" type="hidden" />
+		<input name="submit" type="submit" />
+	</p>
+</form>
+

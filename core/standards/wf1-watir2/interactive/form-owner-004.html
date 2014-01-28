@@ -1,0 +1,53 @@
+<!doctype html>
+<meta charset="utf-8" />
+<title>form Single form-associated elements in multiple forms, variant</title>
+
+<form id="owner_1">
+	<input id="associated_1" />
+	<input id="associated_2" />
+	<input id="associated_3" />
+</form>
+
+<form id="owner_2">
+	<input id="associated_4" />
+	<input id="associated_5" />
+	<input id="associated_6" />
+</form>
+
+<p id="result"></p>
+
+<script>
+
+	var firstOwner       = document.getElementById("owner_1");
+	var secondOwner      = document.getElementById("owner_2");
+
+	var firstAssociated  = document.getElementById("associated_1");
+	var secondAssociated = document.getElementById("associated_2");
+	var thirdAssociated  = document.getElementById("associated_3");
+	var fourthAssociated = document.getElementById("associated_4");
+	var fifthAssociated  = document.getElementById("associated_5");
+	var sixthAssociated  = document.getElementById("associated_6");
+
+	var result           = document.getElementById("result");
+
+	if (isParentOwner(firstAssociated, firstOwner)
+			&& isParentOwner(secondAssociated, firstOwner)
+			&& isParentOwner(thirdAssociated, firstOwner)
+		  && isParentOwner(fourthAssociated, secondOwner)
+		  && isParentOwner(fifthAssociated, secondOwner)
+		  && isParentOwner(sixthAssociated, secondOwner)) {
+		result.innerHTML = "PASS";
+	} else {
+		result.innerHTML = "FAIL";
+	}
+
+	function isParentOwner(node, assumedParent) {
+		if (node.parentNode.getAttribute("id") == assumedParent.getAttribute("id")) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+
+</script>
+

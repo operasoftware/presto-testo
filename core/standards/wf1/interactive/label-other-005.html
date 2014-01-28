@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<meta charset="utf-8" />
+<title>label for, 'form' IDL attribute, nonexistent form</title>
+
+<p>The word 'PASS' should appear below.</p>
+
+<p id="result"></p>
+
+<form id="f">
+  <p><label id="l" for="t">Label</label></p>
+</form>
+
+<script type="text/javascript">
+  var label = document.getElementById("l");
+
+  if(label && label.form && label.form.id == "f") {
+    document.getElementById("result").innerHTML = "PASS";
+  } else {
+    document.getElementById("result").innerHTML = "FAIL";
+  }
+</script>

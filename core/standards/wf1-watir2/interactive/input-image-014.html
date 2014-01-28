@@ -1,0 +1,31 @@
+<!doctype html>
+<meta charset="utf-8" />
+<title>input type=image Invalid size attribute</title>
+
+<p>
+	You should see an image button below.  The word “PASS” should also be seen on
+	this page.
+</p>
+
+<form>
+	<p>
+		<input id="test" name="test" type="image" size="130" />
+	</p>
+</form>
+
+<p id="result"></p>
+
+<script>
+
+	var test   = document.getElementById("test");
+	var result = document.getElementById("result");
+
+	if (test.clientWidth >= 52
+			&& test.clientWidth <= 56) {
+		result.innerHTML = "PASS";
+	} else {
+		result.innerHTML = "FAIL";
+	}
+
+</script>
+

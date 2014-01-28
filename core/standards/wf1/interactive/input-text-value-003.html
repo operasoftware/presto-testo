@@ -1,0 +1,16 @@
+<!doctype html>
+<meta charset="utf-8" />
+<title>input type=text Clearing input of special characters value</title>
+
+<p>
+	Clear the text field below, and click submit.  You should see the word “PASS”
+	on the following page.
+</p>
+
+<form action="../res/empty_post.php" method="post">
+	<p>
+		<input name="test" value="&gt; &lt; &amp;" />
+		<input type="submit" name="submit" />
+	</p>
+</form>
+

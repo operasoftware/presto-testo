@@ -1,0 +1,31 @@
+<!doctype html>
+<meta charset="utf-8" />
+<title>input type=submit Invalid size attribute</title>
+
+<p>
+	You should see a submit button below.  The word “PASS” should also be seen on
+	this page.
+</p>
+
+<form>
+	<p>
+		<input id="test" name="test" type="submit" size="130" />
+	</p>
+</form>
+
+<p id="result"></p>
+
+<script>
+
+	var test   = document.getElementById("test");
+	var result = document.getElementById("result");
+
+	if (test.clientWidth >= 58
+			&& test.clientWidth <= 62) {
+		result.innerHTML = "PASS";
+	} else {
+		result.innerHTML = "FAIL";
+	}
+
+</script>
+

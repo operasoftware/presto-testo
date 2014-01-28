@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <title>"required" and the valueMissing flag</title>
+  <link rel="help" href="http://whatwg.org/specs/web-forms/current-work/#required">
+  <style> input { background:red } </style>
+  <script>
+   window.onload = function(){
+    var i = document.getElementsByTagName('input')[0];
+    i.value = "TEST";
+    i.style.background = (i.validity.valueMissing) ? "red" : "lime";
+   }
+  </script>
+ </head>
+ <body>
+  <p>The form control should have a green background: <input required></p>
+ </body>
+</html>

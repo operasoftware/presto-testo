@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<title>label for, 'onclick' for several elements</title>
+
+<p>Click each of the labels below. They should get replaced by the word 'PASS'.</p>
+
+<form>
+  <p>
+    <label id="l1" for="radio">click me</label>
+    <input type="radio" id="radio" onclick="l1.innerHTML = 'PASS'; return false">
+  </p>
+
+  <p>
+    <label id="l2" for="checkbox">click me</label>
+    <input type="checkbox" id="checkbox" onclick="l2.innerHTML = 'PASS'; return false">
+  </p>
+
+  <p>
+    <label id="l3" for="reset">click me</label>
+    <input type="reset" id="reset" onclick="l3.innerHTML = 'PASS'; return false">
+  </p>
+
+  <p>
+    <label id="l4" for="text">click me</label>
+    <input type="text" id="text" onclick="l4.innerHTML = 'PASS'; return false">
+  </p>
+
+  <p>
+    <label id="l5" for="submit">click me</label>
+    <input type="submit" id="submit" onclick="l5.innerHTML = 'PASS'; return false"><br>
+  </p>
+
+  <p>
+    <label id="l6" for="textarea">click me</label>
+    <textarea id="textarea" onclick="l6.innerHTML = 'PASS'; return false"></textarea>
+  </p>
+
+</form>

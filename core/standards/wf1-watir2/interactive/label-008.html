@@ -1,0 +1,20 @@
+<!doctype html>
+<meta charset="utf-8" />
+<title>label label containing select (F: CORE-31299)</title>
+
+<p>
+	Click the label below.  The focus should shift to the select list.
+</p>
+
+<form>
+	<p>
+		<label name="label">
+      Click me
+			<select name="test">
+				<option>foo</option>
+				<option>bar</option>
+			</select>
+		</label>
+	</p>
+</form>
+

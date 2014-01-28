@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<title>"pattern" and email controls</title>
+<style>
+ input.ok, input:valid { background:red }
+ input, input.ok:valid { background:lime }
+</style>
+<p>All form controls should have a green background (ignore the values):
+<p><input type="email" value="0@1.3" pattern="\w@\w\.\w" class="ok">
+<p><input type="email" value="9" pattern="\w">
+<p><input type="email" value="a@b.c" pattern="\w@\w\.\w" class="ok">
+<p><input type="email" value="a@b.c" pattern="\w+@\w+\.\w+" class="ok">
+<p><input type="email" value="test@example.com" pattern="\w+@\w+\.\w+" class="ok">
+<p><input type="email" value="test*test@foobar.com" pattern="\w+@\w+\.\w+">
+<p><input type="email" value="" pattern="\w+@\w+\.\w+" class="ok">

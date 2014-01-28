@@ -1,0 +1,18 @@
+<!doctype html>
+<meta charset="utf-8" />
+<title>button onblur</title>
+
+<p>
+	Click on the first button.  Then on the other.  The word “PASS” should appear
+	on this page.
+</p>
+
+<form>
+	<p>
+		<button name="test" onblur="document.getElementById('result').innerHTML = 'PASS';" onclick="return false;">Click me first</button>
+		<button name="random_field" onclick="return false;">Click me afterwards</button>
+	</p>
+</form>
+
+<p id="result"></p>
+

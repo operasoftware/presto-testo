@@ -1,0 +1,28 @@
+<!doctype html>
+<meta charset="utf-8" />
+<title>select default size accessible in DOM</title>
+
+<p>
+	Below you should see drop down list containing "foobar". 
+	It has no size set. The page should contain “PASS”.
+</p>
+
+<form>
+	<p>
+		<select id="test" name="test"><option>foobar</option></select>
+	</p>
+</form>
+
+<p id="result"></p>
+
+<script>
+	var test = document.getElementById("test");
+	var result = document.getElementById("result");
+
+	if (test.size == 1) {
+		result.innerHTML = "PASS";
+	} else {
+		result.innerHTML = "FAIL";
+	}
+</script>
+

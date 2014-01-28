@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+
+<title>input type=file POST multiple files</title>
+
+<p>Select the local/opera.png file in the first file input. Select the local/empty.txt file in the second file input. Press submit. A page containing the word 'PASS' should appear.</p>
+
+<form action="../res/file_multi.php" method="POST" enctype="multipart/form-data">
+  <p><input id="f1" type="file" name="test_file_a" readonly /></p>
+  <p><input id="f2" type="file" name="test_file_b" readonly /></p>
+  <p><input id="s" type="submit" /></p>
+  <input type="hidden" name="md5_test_file_a" value="00426e6c51cbf9b5283edc666185df94" />
+  <input type="hidden" name="md5_test_file_b" value="d41d8cd98f00b204e9800998ecf8427e" />
+</form>

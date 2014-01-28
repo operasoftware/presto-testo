@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<meta charset="utf-8" />
+<title>label attribute 'for' accessible through 'htmlFor' IDL attribute</title>
+
+<p>The word 'PASS' should appear below.</p>
+
+<p id="result"></p>
+
+<form>
+  <label id="dl2" for="dom2_input">
+    <input id="dom2_input" type="checkbox" />
+  </label>
+
+  <script type="text/javascript">
+    if(document.getElementById("dl2").htmlFor == "dom2_input") {
+      document.getElementById("result").innerHTML = "PASS";
+    }
+  </script>
+</form>

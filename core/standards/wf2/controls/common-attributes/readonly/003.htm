@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<title>"readonly" and elements it does not apply to</title>
+<link rel="help" href="http://whatwg.org/specs/web-forms/current-work/#readonly">
+<link rel="help" href="http://whatwg.org/specs/web-forms/current-work/#relation">
+<style>
+ span { margin:.5em; display:block; float:left; height:2em; width:2em; background:lime }
+ input:read-only + span { background:red }
+ select:read-only + span { background:red }
+ input, select, button { display:none }
+</style>
+<p>There should only be green squares below:
+<p><input type="radio" readonly><span></span>
+<p><input type="file" readonly><span></span>
+<p><input type="range" readonly disabled><span></span>
+<p><input type="button" readonly><span></span>
+<p><input type="submit" readonly><span></span>
+<p><input type="reset" readonly><span></span>
+<!-- Below two types removed from specification -->
+<!-- <p><input type="add" readonly disabled><span></span>
+<p><input type="move-down" readonly><span></span> -->
+<p><select readonly></select><span></span>
+<p><button readonly></button><span></span>
+<p><button readonly type="reset"></button><span></span>
+<p><button readonly type="submit"></button><span></span>
+<p><button readonly type="add"></button><span></span>

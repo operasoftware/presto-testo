@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <title>"small" numbers</title>
+  <script>
+   window.onload = function(){
+    document.getElementsByTagName('input')[0].stepUp(1)
+   }
+  </script>
+ </head>
+ <body>
+  <p>The following controls should be identical (containing the value "0.01"):</p>
+  <p><input type="number" value="0.00" step="0.01"></p>
+  <p><input type="number" value="0.01"></p>
+ </body>
+</html>

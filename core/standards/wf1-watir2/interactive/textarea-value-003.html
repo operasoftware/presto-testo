@@ -1,0 +1,15 @@
+<!doctype html>
+<meta charset="utf-8" />
+<title>textarea clearing input of special characters value</title>
+
+<p>
+	Clear the textarea below, and click submit.  You should see the word “PASS”
+	on the following page.
+</p>
+
+<form action="../res/empty_post.php" method="post">
+	<p>
+		<textarea name="test">&gt; &lt; &amp;</textarea>
+		<input type="submit" name="submit" />
+	</p>
+</form>

@@ -1,0 +1,12 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:xht="http://www.w3.org/1999/xhtml">
+ <title>willValidate and the datalist element</title>
+ <script>
+  window.onload = function(){
+   document.getElementById('result').textContent = (document.getElementsByTagName('input')[0].willValidate) ? "FAIL" : "PASS";
+  }
+ </script>
+ <form>
+  <datalist><p><input value="FAIL (datalist element not supported.)" name="test"/></p></datalist>
+  <p id="result">FAIL (Script did not run.)</p>
+ </form>
+</html>

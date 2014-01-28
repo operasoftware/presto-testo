@@ -1,0 +1,5 @@
+<!DOCTYPE html>
+<title>first non disabled option should be initially selected (part two)</title>
+<p><select><option>PASS<option>FAIL</select></p>
+<script> document.getElementsByTagName('option')[0].disabled = true </script>
+<!-- loading the document is "initially" here, WF2 section 2.3 is not clear about this -->

@@ -1,0 +1,20 @@
+body {
+	margin: 2em auto 4em auto;
+	padding: 0 2em;
+}
+
+dl dt {
+	font-weight: bold;
+}
+
+code,
+span.file {
+	font-family: monospace;
+	font-size: 90%;
+}
+
+p.todo,
+span.todo {
+	background-color: yellow;
+}
+

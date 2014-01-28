@@ -1,0 +1,9 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <title>datalist and not in a namespace option elements</title>
+ <style> datalist{ display:none } </style>
+ <p>The form field should allow you to select the pre-entered value "PASS" (not "FAIL"):</p>
+ <p>
+  <input type="text" list="data"/>
+  <datalist xml:id="data"><option>PASS</option><option xmlns="">FAIL</option></datalist>
+ </p>
+</html>

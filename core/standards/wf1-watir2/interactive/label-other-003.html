@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<meta charset="utf-8" />
+<title>label for, 'labels' IDL attribute</title>
+
+<p>The word 'PASS' should appear below.</p>
+
+<p id="result"></p>
+
+<form>
+  <p><label id="l1" for="t">Label 1</label></p>
+  <p><label id="l2" for="t">Label 2</label></p>
+
+  <p><input id="t" type="checkbox" /></p>
+</form>
+
+<script type="text/javascript">
+  var t_labels = document.getElementById("t").labels;
+
+  if(t_labels) {
+    if(t_labels[0].innerText == "Label 1" && t_labels[1].innerText == "Label 2") {
+      document.getElementById("result").innerHTML = "PASS";
+    } else {
+      document.getElementById("result").innerHTML = "FAIL";
+    }
+  } else {
+    document.getElementById("result").innerHTML = "FAIL";
+  }
+</script>

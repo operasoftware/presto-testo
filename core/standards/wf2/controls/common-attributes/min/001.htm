@@ -1,0 +1,4 @@
+<!DOCTYPE html>
+<title>"min" and the rangeUnderflow flag</title>
+<p>FAIL (Script did not run.) <input type="number" min="0" value="-1"></p>
+<script> document.getElementsByTagName('p')[0].textContent = (document.getElementsByTagName('input')[0].validity.rangeUnderflow) ? "PASS" : "FAIL" </script>

@@ -1,0 +1,9 @@
+<!DOCTYPE html>
+
+<title>input type=radio changing name in an onchange handler</title>
+
+<p>Click on the radio button pointed by the arrow. Only the 'B:' radio button should be checked.</p>
+
+<p>A: <input id="r1" type="radio" name="b" checked="checked"/></p>
+<p>B: <input id="r2" type="radio" name="b" onchange="this.name = 'c'"/> &larr; click this</p>
+<p>C: <input id="r3" type="radio" name="c" checked="checked"/></p>

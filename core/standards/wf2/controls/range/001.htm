@@ -1,0 +1,8 @@
+<!DOCTYPE html>
+<title>default value of range control</title>
+<p><input type="range">
+<p>FAIL (script didn't run)</p>
+<script>
+ var passed = document.getElementsByTagName('input')[0].value != '';
+ document.getElementsByTagName('p')[1].textContent = passed ? 'PASS' : 'FAIL';
+</script>

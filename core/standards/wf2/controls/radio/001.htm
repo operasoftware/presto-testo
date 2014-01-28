@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<title>last radio control should be checked when defaultChecked is set to true for the whole group</title>
+<style>
+ span { display:block; height:2em; width:2em; background:red }
+ input { display:none }
+ input:default + span { background:lime }
+ input:checked + span { background:red }
+ input#i3:default + span { background:red }
+ input#i3:default:checked + span { background:lime }
+</style>
+<script>
+ window.onload = function(){
+  document.getElementById('i1').defaultChecked = true;
+  document.getElementById('i2').defaultChecked = true;
+  document.getElementById('i3').defaultChecked = true;
+ }
+</script>
+<p>There should be three green squares below:
+<p><input type="radio" name="test" id="i1"><span></span>
+<p><input type="radio" name="test" id="i2"><span></span>
+<p><input type="radio" name="test" id="i3"><span></span>

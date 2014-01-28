@@ -1,0 +1,32 @@
+<!doctype html>
+<meta charset="utf-8" />
+<title>button Image support in caption, image/png</title>
+<link href="../res/test.css" rel="stylesheet" />
+
+<p>
+	There should be a button below containing an image with the word “PASS”.
+</p>
+
+<div id="testcase">
+	<div class="test">
+
+		<h2>Test</h2>
+
+		<form>
+			<p>
+				<button name="test" class="no-border"><img src="http://t/resources/images/pass.png" alt="FAIL" /></button>
+			</p>
+		</form>
+
+	</div>
+	<div class="reference">
+
+		<form>
+			<p>
+				<img id="reference" src="http://t/resources/images/pass.png" alt="FAIL" />
+			</p>
+		</form>
+		
+	</div>
+</div>
+

@@ -1,0 +1,17 @@
+<!doctype html>
+<meta charset="utf-8" />
+<title>label label onmouseout</title>
+
+<p>
+	Move your mouse over the label below, and then away from it.  The word
+	“PASS” should appear on this page.
+</p>
+
+<form>
+	<p>
+		<label name="label" onmouseout="document.getElementById('result').innerHTML = 'PASS';">Move mouse over me, then away from me</label>
+	</p>
+</form>
+
+<p id="result"></p>
+

@@ -1,0 +1,1 @@
+Make testcases testing RFC 2822 (<http://ietf.org/rfc/rfc2822>).

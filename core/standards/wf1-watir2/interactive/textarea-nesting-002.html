@@ -1,0 +1,18 @@
+<!doctype html>
+<meta charset="utf-8" />
+<title>textarea two nested forms with a textarea</title>
+
+<p>
+	Click the submit button below.  You should see the word ”foobar” on the
+	following page.
+</p>
+
+<form action="../res/return_single_post.php" method="post"> <!-- If this is triggered, it will show “foobar” -->
+	<form action="../res/null_post.php" method="post"> <!-- If this is triggered, it will show “FAIL” -->
+		<p>
+			<textarea name="test">foobar</textarea>
+			<input type="submit" name="submit" />
+		</p>
+	</form>
+</form>
+

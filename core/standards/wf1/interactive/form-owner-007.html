@@ -1,0 +1,47 @@
+<!doctype html>
+<meta charset="utf-8" />
+<title>form Form-associated element in second nested form</title>
+
+<form id="owner_1">
+	<form id="owner_2">
+		<input id="associated" />
+	</form>
+</form>
+
+<p id="result"></p>
+
+<script>
+
+	/*
+	 * owner_2 should not exists according to HTML 5 standard.  Therefore, we
+	 * check if associated belongs to owner_1 and that owner_2 does not exist.
+	 */
+
+	var associated = document.getElementById("associated");
+	var result     = document.getElementById("result");
+
+	if (!objectExists("owner_2")
+		 && isParentOwner(associated, document.getElementById("owner_1"))) {
+		result.innerHTML = "PASS";
+	} else {
+		result.innerHTML = "FAIL";
+	}
+
+	function objectExists(obj) {
+		if (document.getElementById(obj) != null) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+
+	function isParentOwner(node, assumedParent) {
+		if (node.parentNode.getAttribute("id") == assumedParent.getAttribute("id")) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+
+</script>
+

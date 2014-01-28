@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+
+<title>form JavaScript action</title>
+
+<script type="text/javascript">
+  function pass() {
+    document.getElementById('result').innerHTML = 'PASS'
+  }
+</script>
+
+<p>Click the submit button below. The word "PASS" should appear.</p>
+
+<form action="javascript:pass()">
+  <input type="submit" value="submit" id="s"/>
+</form>
+
+<p id="result"></p>

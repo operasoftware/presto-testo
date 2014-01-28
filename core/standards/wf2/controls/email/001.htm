@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<title>basic email control test</title>
+<style>
+ input { background:red }
+ input:valid { background:lime }
+</style>
+<p>The following email controls should have a green background:</p>
+<p><input type="email" value="a@b">
+<p><input type="email" value="aa@bb.cc.dd">
+<!--
+  <input type="email" value="   test@example.org      
+  ">
+
+ May the "value" attribute contain whitespace for email controls? This test assumes that is ok.
+-->

@@ -1,0 +1,9 @@
+<!DOCTYPE html>
+<title>date control and invalid values</title>
+<link rel="help" href="http://whatwg.org/specs/web-forms/current-work/#date">
+<p>FAIL (Script did not run.) <input type="date" value="1996-01-01T00:00"></p>
+<script>
+ var i = document.getElementsByTagName('input')[0];
+ var p = document.getElementsByTagName('p')[0];
+ p.textContent = (i.value != "1996-01-01T00:00" && i.defaultValue == "1996-01-01T00:00") ? "PASS" : "FAIL";
+</script>

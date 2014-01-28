@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+
+<title>input type=file autofocus, variation 2</title>
+
+<p>Press enter. File selection dialog should open.</p>
+
+<form action="#">
+  <p><input id="f" type="file" name="test_file" autofocus=autofocus /></p>
+  <button type="button" onclick="document.getElementById('result').innerHTML = 'PASS'">A</button>
+  <button type="button" onclick="document.getElementById('result').innerHTML = 'FAIL'">B</button>
+  <button type="button" onclick="document.getElementById('result').innerHTML = 'FAIL'">C</button>
+</form>
+
+<p id="result"></p>

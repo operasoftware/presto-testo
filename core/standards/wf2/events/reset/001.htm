@@ -1,0 +1,9 @@
+<!DOCTYPE html>
+<title>basic 'reset' event test</title>
+<form onreset="return false">
+ <p><input value="FAIL">
+</form>
+<script>
+ document.getElementsByTagName('input')[0].value = "PASS";
+ document.getElementsByTagName('form')[0].reset();
+</script>

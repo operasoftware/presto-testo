@@ -1,0 +1,17 @@
+<!doctype html>
+<meta charset="utf-8" />
+<title>textarea append to entity value</title>
+
+<p>
+	Append the characters “&copy; &euro; &para; &thorn;“ to the value in the 
+	textarea below.  The combined value of the text field should appear on the
+	following page.
+</p>
+
+<form action="../res/return_single_post.php" method="post">
+	<p>
+		<textarea name="test">&amp; &aelig; &ETH; </textarea>
+		<input type="submit" name="submit" />
+	</p>
+</form>
+

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<title>label CORE-14897</title>
+
+<p>The words 'first row' should be above the words 'second row', and the word 'PASS' should appear below them.</p>
+ 
+<table>
+<p><label
+<tr>
+  <td id="td1">first row</font></td>
+</tr>
+</label>
+<label
+<tr>
+  <td id="td2">second row</td>
+</tr>
+</table>
+
+<p id="result"></p>
+
+<script type="text/javascript">
+  var td1 = document.getElementById("td1");
+  var td2 = document.getElementById("td2");
+
+  if(td1 && td2 && td1.clientTop == td2.clientTop) {
+    document.getElementById("result").innerHTML = "PASS";
+  } else {
+    document.getElementById("result").innerHTML = "FAIL";
+  }
+</script>

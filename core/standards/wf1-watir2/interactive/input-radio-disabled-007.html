@@ -1,0 +1,21 @@
+<!doctype html>
+<meta charset="utf-8" />
+<title>input type=radio Setting state checked on same radio group through DOM</title>
+
+<p>
+	Below you should see two radio button.  Only the second radio button should
+	be checked.
+</p>
+
+<form>
+	<p><input id="first_field" name="test" type="radio" /></p>
+	<p><input id="second_field" name="test" type="radio" /></p>
+</form>
+
+<script>
+
+	var test        = document.getElementById("second_field");
+	test.checked = true;
+	
+</script>
+

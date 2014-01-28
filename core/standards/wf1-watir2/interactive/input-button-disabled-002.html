@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<meta charset="utf-8" />
+<title>input type=button disabled variable variation</title>
+
+<p>
+	You should see a disabled button below.  Try click it.  Nothing should happen.
+</p>
+
+<form action="../res/fail.php" method="post">
+	<p>
+		<input type="button" name="test" disabled="disabled" value="Click me" onclick="document.getElementById('result').innerHTML = 'FAIL'"/>
+	</p>
+</form>
+
+<p id="result"></p>

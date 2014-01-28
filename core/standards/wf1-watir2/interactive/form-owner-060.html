@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<title>form multiple elements, overriding form association, post, variation</title>
+
+<p>Click the submit button. A page saying "You typed: [_b1] [ab] [_b2] [bb] [b_] [_b3]" should appear.</p>
+
+<input type="text" name="__1" value="__1"/>
+<input type="text" name="_a1" value="_a1" form="form_a"/>
+<input type="text" name="_b1" value="_b1" form="form_b"/>
+
+<form id="form_a" method="get" action="../res/return_multiple_get.php">
+        <input type="text" name="aa" value="aa" form="form_a"/>
+        <input type="text" name="ab" value="ab" form="form_b"/>
+        <input type="text" name="a_" value="a_"/>
+</form>
+
+<input type="text" name="__2" value="__2"/>
+<input type="text" name="_a2" value="_a2" form="form_a"/>
+<input type="text" name="_b2" value="_b2" form="form_b"/>
+
+<form id="form_b" method="get" action="../res/return_multiple_get.php">
+        <input type="text" name="bb" value="bb" form="form_b"/>
+        <input type="text" name="ba" value="ba" form="form_a"/>
+        <input type="text" name="b_" value="b_"/>
+        <input id="s" type="submit" value="Click me!"/>
+</form>
+
+<input type="text" name="__3" value="__3"/>
+<input type="text" name="_a3" value="_a3" form="form_a"/>
+<input type="text" name="_b3" value="_b3" form="form_b"/>

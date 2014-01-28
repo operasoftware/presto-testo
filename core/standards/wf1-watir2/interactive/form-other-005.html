@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+
+<meta charset="iso-8859-1">
+
+<title>form _charset_, post, overriding charset</title>
+
+<p>Click the "submit" button. The page, which follows, should read "utf-8" or "UTF-8".</p>
+
+<form method="POST" action="../res/charset_post.php" accept-charset="UTF-8">
+  <input type="hidden" name="_charset_" />
+  <p><input id="s" type="submit"/></p>
+</form>

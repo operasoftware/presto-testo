@@ -1,0 +1,41 @@
+<!doctype html>
+<meta charset="utf-8" />
+<title>input type=image Multiple JS events</title>
+
+<p>
+	Move your mouse over the image button below.  Click it.  The word “PASS”
+	should appear on this page.
+</p>
+
+<form>
+	<p>
+		<input name="test" type="image" onclick="action_click(); return false;" onmouseover="action_hover();" />
+	</p>
+</form>
+
+<p id="result"></p>
+
+<script>
+
+	var test    = document.getElementById("test");
+	var clicked = false;
+	var hovered = false;
+
+	function action_click() {
+		clicked = true;
+		evaluate_pass();
+	}
+
+	function action_hover() {
+		hovered = true;
+		evaluate_pass();
+	}
+
+	function evaluate_pass() {
+		if (clicked && hovered) {
+			document.getElementById("result").innerHTML = "PASS";
+		}
+	}
+
+</script>
+

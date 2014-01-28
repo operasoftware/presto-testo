@@ -1,0 +1,29 @@
+<!doctype html>
+<meta charset="utf-8" />
+<title>textarea default rows value available in DOM</title>
+
+<noscript>
+  <p>Note: This test requires JavaScript.</p>
+</noscript>
+
+<p>
+	Below you should see a textarea of default size. It should 
+	contain "PASS".
+</p>
+
+<form>
+	<p>
+		<textarea id="test" name="test"></textarea>
+	</p>
+</form>
+
+<script>
+	var test = document.getElementById("test");
+	if(test.rows > 0) {
+		test.value = "PASS";
+	} else {
+		test.value = "FAIL";
+	}
+
+</script>
+

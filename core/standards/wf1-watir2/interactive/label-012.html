@@ -1,0 +1,51 @@
+<!doctype html>
+<meta charset="utf-8" />
+<title>label label containing another label for (F: ????)</title>
+<style>
+
+	input {
+		margin: 1em;
+		padding: .5em;
+	}
+
+	label {
+		display: block;
+		margin: 1em;
+		padding: 2em;
+		width: 40%;
+	}
+
+	#label-invalid {
+		border-style:solid;
+    border-color:#000000;
+	}
+
+	#label {
+    border-style:solid;
+    border-color:#000000;
+	}
+
+</style>
+
+<p>
+	Click the text reading “Click me!” below.  The focus should be shifted to the
+	first text field (not the second).  Type “foobar” after clicking the label to 
+  verify that the focus did indeed shift to the correct field.
+</p>
+
+<form action="../res/return_single_post.php" method="post">
+	<p>
+		<input id="test" name="test" type="text" />
+		<label id="label-invalid">
+			parent label
+			<input id="label-invalid-text" type="text" />
+			<label id="label" name="label" for="test">
+				Click me!
+			</label>
+		</label>
+	</p>
+  <p>
+    <input type="submit" name="submit" />
+  </p>
+</form>
+

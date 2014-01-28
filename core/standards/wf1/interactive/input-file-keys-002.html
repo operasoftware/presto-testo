@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+
+<title>input type=file tabindex</title>
+
+<p>Press TAB 3 times. The word 'PASS' should appear.</p>
+
+<form action="#">
+  <p><input tabindex="3" type="file" onfocus="document.getElementById('result').innerHTML += 'SS'"/></p>
+  <p><input tabindex="2" type="file" onfocus="document.getElementById('result').innerHTML += 'A'"/></p>
+  <p><input tabindex="1" type="file" onfocus="document.getElementById('result').innerHTML += 'P'"/></p>
+</form>
+
+<p id="result"></p>

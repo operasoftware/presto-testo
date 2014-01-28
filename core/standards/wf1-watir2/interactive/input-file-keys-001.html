@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+
+<title>input type=file accesskey</title>
+
+<p>Enter access key mode (Shift + Esc). Press 'u'. File selection dialog should appear.</p>
+
+<form action="#">
+  <p><input id="f" type="file" accesskey="u" /></p>
+  <button type="button" onclick="document.getElementById('result').innerHTML = 'PASS'">A</button>
+  <button type="button" onclick="document.getElementById('result').innerHTML = 'FAIL'">B</button>
+  <button type="button" onclick="document.getElementById('result').innerHTML = 'FAIL'">C</button>
+  <button type="button" onclick="document.getElementById('result').innerHTML = 'FAIL'">D</button>
+  <button type="button" onclick="document.getElementById('result').innerHTML = 'FAIL'">E</button>
+</form>
+
+<p id="result"></p>

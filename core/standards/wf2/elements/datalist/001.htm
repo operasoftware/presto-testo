@@ -1,0 +1,5 @@
+<!DOCTYPE html>
+<title>datalist and invalid values</title>
+<p>There should be no "FAIL" below (nor should it be selectable):
+<p><input type="url" list="data"><datalist id="data"><option>FAIL</datalist>
+<!-- FAIL is an invalid value for type=url and must therefore be ignored. -->

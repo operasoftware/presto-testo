@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<title>month control basic test</title>
+<link rel="help" href="http://whatwg.org/specs/web-forms/current-work/#month">
+<style>
+ span { display:block; height:2em; width:2em; background:red }
+ input { display:none }
+ input:valid + span { background:lime }
+</style>
+<p>There should be a green square below: <input type="month" value="1996-01-01"><span></span>
+<!-- Even though the value is invalid, it will have no value selected and
+     therefore it's valid as no value is required. -->

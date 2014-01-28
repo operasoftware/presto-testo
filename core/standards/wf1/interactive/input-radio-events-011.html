@@ -1,0 +1,51 @@
+<!doctype html>
+<meta charset="utf-8" />
+<title>input type=radio Multiple JS events</title>
+
+<p>
+	Below you should see a radio button.  There are two things you must do to
+	pass this test:
+</p>
+
+<ol>
+	<li>Move your cursor over the radio button.</li>
+	<li>Click (check) the radio button.</li>
+</ol>
+
+<p>
+	Once you have completed all of the above, the word “PASS” should appear on
+	this page.
+</p>
+
+<form>
+	<p>
+		<input id="test" name="test" type="radio" onmouseover="action_mouseover();" onclick="action_click();" />
+	</p>
+</form>
+
+<p id="result"></p>
+
+<script>
+
+	var test    = document.getElementById("test");
+	var clicked = false;
+	var hovered = false;
+
+	function action_mouseover () {
+		hovered = true;
+		passed();
+	}
+
+	function action_click () {
+		clicked = true;
+		passed();
+	}
+
+	function passed () {
+		if (hovered && clicked) {
+			document.getElementById("result").innerHTML = "PASS";
+		}
+	}
+
+</script>
+

@@ -1,0 +1,224 @@
+<!doctype html>
+<meta charset="utf-8" />
+<link href="res/document.css" rel="stylesheet" />
+
+<h1>WebForms 1</h1>
+
+<dl>
+	<dt>Last updated</dt>
+	<dd>$LastChangedDate: 2010-09-27 05:10:19 -0700 (Mon, 27 Sep 2010) $</dd>
+	
+	<dt>Revision</dt>
+	<dd>$Revision: 79284 $</dd>
+
+	<dt>Contact</dt>
+	<dd><a href="mailto:andreastt@opera.com">Andreas Tolf Tolfsen</a></dd>
+</dl>
+
+<p>
+	This is an automated test suite for web forms with the feature set
+	defined in <a href="http://www.w3.org/TR/html4/">HTML 4</a>.
+</p>
+
+<p>
+	As the HTML 4 spec is somewhat lacking in its specification of form
+	elements, the expected results of the tests are based upon <a
+	href="http://www.whatwg.org/specs/web-apps/current-work/multipage/">HTML
+	5</a>.  However, features <em>added</em> in HTML 5 (WebForms 2) are not
+	covered in this test suite.
+</p>
+
+
+<h2>How it works</h2>
+
+<p>
+	The scripts ending with <span class="file">*.rb</span> automatically runs
+	through the tests in the <span class="file">/interactive</span> directory.
+	The <span class="file">/res</span> directory contains some helper files, and
+	the <span class="file">/elements</span> contains all the scripts for the
+	various form elements.  The tests themselves are categorized in groups based
+	on their function, followed by a number indicating the test's successive
+	order.  An example:
+</p>
+
+<ul>
+	<li>input-text:
+	<ul>
+		<li><span class="file">input-text-001.html</span></li>
+		<li><span class="file">input-text-002.html</span></li>
+	</ul></li>
+	<li>input-text-i18n:
+	<ul>
+		<li><span class="file">input-text-i18n-001.html</span></li>
+	</ul></li>
+	<li>input-text-value:
+	<ul>
+		<li><span class="file">input-text-value-001.html</span></li>
+	</ul></li>
+	<li>input-password:
+	<ul>
+		<li><span class="file">input-password-001.html</span></li>
+	</ul></li>
+</ul>
+
+<p>
+	There is also <a href="list.html">a listing of all the tests</a>.
+</p>
+
+<p>
+	There are two types of tests in this test suite.  There is the
+	traditional interactive test; where you point and click at elements,
+	enter data, and so forth; and there are (semi-)reference tests,
+	involving the comparison of results.  There are a few things
+	interactive tests are unable to test for, such as the correct
+	rendering of a button, that an image of a certain type is displayed,
+	or that animated GIFs are indeed displayed correctly.  In these cases
+	we use reference tests.
+</p>
+
+<p>
+	This means that the Web Forms 1 test suite is not a traditional test
+	suite focusing on only one types of tests.  It is designed to cover
+	all aspects of form elements, as specified int he HTML 4
+	specification.  Although the tests are designed to be performed
+	automatically, it is fully possible to run this test suite manually.
+</p>
+
+<p>
+	In some cases the individual tests will use other client- and server
+	side languages to facilitate testing.  Specifically, we are using
+	JavaScript to interact with the <abbr title="Document Object
+	Model">DOM</abbr> and to simulate and test certain behaviour.  Many of
+	the tests also test communication with the server, for instance that an
+	input text element is able to send <em>x</em> characters to the server
+	through POST or GET).  This is accomodated using PHP and a web server.
+</p>
+
+
+<h2>Running the test suite</h2>
+
+<p>
+	The test suite can be run using Opera 10.5 (or later) or an internal
+	Opera core build (latest is always recommended).  You must have JRuby
+	1.4 and RSpec installed.  For some of the tests you will need
+	ECMAScript enabled.  Some of the tests rely on HTTP server
+	communication and PHP.
+</p>
+
+<p>
+	To run all tests:
+</p>
+
+<code><pre>
+  % jruby -S spec wf1.rb
+</pre></code>
+
+<p>
+	You can also run a subset of the tests:
+</p>
+
+<code><pre>
+  % jruby -S spec elements/input-checkbox.rb
+</pre></code>
+
+
+<h2>OperaWatir specifics</h2>
+
+<p>
+	This suite is written with Opera's implementation of <a
+		href="http://watir.com/">Watir</a> in mind, called
+	<em>OperaWatir</em>.  Although it should be possible to run the suite
+	on any Watir implementation, it makes use of some Opera-specific
+	functionality.  Specifically, this extra functionality is found in the
+	<code>get_hash()</code>, <code>take_screenshot()</code> and
+	<code>compare_hash()</code> methods.  This will allow automated
+	reference testing by transfering a screenshot's hash over the Opera
+	interface protocol, dubbed <a
+	href="http://dragonfly.opera.com/app/scope-interface/">SCOPE</a>.
+</p>
+
+<p>
+	This hash comparison technique allows us not only to compare
+	screenshots of two separate pages, but also of independent elements
+	<em>within</em> the same page.  For instance, it will cut both time
+	and load if we are (1) not needed to load a second reference page, and
+	(2) not required to take screenshots of the entire screen.  This is
+	how reference-like tests are implemented in this test suite:
+</p>
+
+<code><pre>
+  it "reference test" do
+    browser.goto "http://example.com/sometest.html"
+    browser.div(:id, "test").compare_hash(browser.div(:id, "reference")).should == true
+  end
+</pre></code>
+
+<p>
+	For some tests, such as when comparing images or static content (not
+	including system fonts or other dynamic elements), it is possible to
+	use one or several predefined hash values to cut the expens of
+	reference tests further.  An example of this:
+</p>
+
+<code><pre>
+  # Specify all hashes for valid images here.
+  pass_images = ["0x774a611291fb86b6b11a2b089fa531e7"]
+
+  it "reference test" do
+    browser.goto "http://example.com/sometest.html"
+    browser.button(:name, "test").take_screenshot("", pass_images, 0)
+  end
+</pre></code>
+
+<p>
+	This method is however not used in this test suite.  References are
+	always given, so that the tests can be run manually.
+</p>
+
+
+<h2>Covered areas</h2>
+
+<p>
+	The following elements are finished and is covered by this test suite:
+</p>
+
+<ul>
+	<li>input
+	<ul>
+		<li>text</li>
+		<li>password</li>
+		<li>checkbox</li>
+		<li>radio</li>
+		<li>submit</li>
+		<li>reset</li>
+		<li>hidden</li>
+		<li>image</li>
+	</ul></li>
+	<li>button</li>
+</ul>
+
+<p>
+	The following is either incomplete or have not been started
+	altogether:
+</p>
+
+<ul>
+	<li>input
+	<ul>
+		<li>file</li>
+	</ul></li>
+	<li>label</li>
+	<li>select</li>
+	<li>textarea</li>
+</ul>
+
+
+<h2>Further work</h2>
+
+<p>
+	<em>All</em> the tests requires reviewing.  There are most certainly
+	bugs in the current code, some things may have been covered in
+	inaccurate ways, and some features may not have made it in to the
+	tests.
+</p>
+

@@ -1,0 +1,15 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <title>last radio control should be checked when "checked" attribute is set for the whole group</title>
+ <style>
+  span { display:block; height:2em; width:2em; background:red }
+  input { display:none }
+  input:default + span { background:lime }
+  input:checked + span { background:red }
+  input#i3:default + span { background:red }
+  input#i3:default:checked + span { background:lime }
+ </style>
+ <p>There should be three green squares below:</p>
+ <p><input type="radio" name="test" checked="checked"/><span/></p>
+ <p><input type="radio" name="test" checked="checked"/><span/></p>
+ <p><input type="radio" name="test" checked="checked" id="i3"/><span/></p>
+</html>

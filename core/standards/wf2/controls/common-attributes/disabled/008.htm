@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<title>:disabled and :enabled (dynamic, &lt;input type="button"&gt;)</title>
+<style>
+ input{ background:red }
+ #i1:enabled { background:lime }
+ #i2:disabled { background:lime }
+ #i3:enabled { background:lime }
+ #i4:disabled { background:lime }
+ #i5:disabled { background:lime }
+ #i6:enabled { background:lime }
+</style>
+<script>
+ window.onload = function(){
+  document.getElementById('i3').removeAttribute('disabled');
+  document.getElementById('i4').disabled = true;
+  document.getElementById('i5').setAttribute('disabled','disabled');
+  document.getElementById('i6').disabled = false;
+ }
+</script>
+<p>There should be no red:
+<p><input id="i1" type="button" value="This button should have a green background.">
+<p><input disabled="disabled" id="i2" type="button" value="This button should have a green background.">
+<p><input disabled="disabled" id="i3" type="button" value="This button should have a green background.">
+<p><input id="i4" type="button" value="This button should have a green background.">
+<p><input id="i5" type="button" value="This button should have a green background.">
+<p><input disabled="disabled" id="i6" type="button" value="This button should have a green background.">

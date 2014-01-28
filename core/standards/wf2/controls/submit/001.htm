@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<title>submit control and default submit button</title>
+<style>
+ input { background:red }
+ input[autofocus]:focus { background:lime }
+ input[type="submit"]:default { background:lime }
+</style>
+<p>Both form controls should have a green background:
+<form>
+ <p><input autofocus>
+ <p><input type="submit">
+</form>

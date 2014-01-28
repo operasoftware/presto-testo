@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+
+<script type="text/javascript">
+function check() {
+  document.getElementById('f').disabled = true;
+  document.getElementById('result').innerHTML = document.getElementById('f').value;
+}
+</script>
+
+<title>input type=file value of disabled field accessible through DOM</title>
+
+<p>Choose the local/empty.txt file. Click the "Check" button. The text "C:\fakepath\empty.txt" should appear.</p>
+
+<form action="#">
+  <p><input id="f" type="file" name="test_file" /></p>
+  <p><button id="b" type="button" onclick="check()">Check</button></p>
+</form>
+
+<p id="result"></p>

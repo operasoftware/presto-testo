@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <title>&lt;label&gt; element form and forms DOM attribute</title>
+  <style> form { display:none } </style>
+  <script>
+   window.onload = function(){
+    var r = document.getElementById('r'), t = document.getElementsByTagName("label")[0].form;
+    r.firstChild.data = "FAIL (Script failed)";
+    r.firstChild.data = (t === document.getElementsByTagName("form")[0] && t === document.getElementsByTagName("label")[0].forms[0]) ? "PASS" : "FAIL";
+   }
+  </script>
+ </head>
+ <body>
+  <p id="r">FAIL (Script did not run)</p>
+  <form><p><label>FAIL<input></label></p></form>
+ </body>
+</html>

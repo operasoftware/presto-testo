@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<title>disabled default submit control</title>
+<link rel="help" href="http://whatwg.org/specs/web-forms/current-work/#relation">
+<link rel="help" href="http://whatwg.org/specs/web-forms/current-work/#enter-submit">
+<style>
+ .s1{ background:red }
+ :disabled:default{ background:lime }
+</style>
+<script>
+ window.onload = function(){
+  document.getElementsByTagName('input')[0].focus();
+ }
+</script>
+<p>There should be no red:
+<form method="get">
+ <p><input name="t1">
+ <p><input type="submit" class="s1" name="s1" disabled="disabled">
+</form>

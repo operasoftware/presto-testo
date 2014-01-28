@@ -1,0 +1,17 @@
+<!doctype html>
+<meta charset="utf-8" />
+<title>input type=button onmouseout</title>
+
+<p>
+	Move your mouse over the button below, and then away from it.  The word
+	“PASS” should appear on this page.
+</p>
+
+<form>
+	<p>
+		<input type="button" name="test" onmouseout="document.getElementById('result').innerHTML = 'PASS';" value="Move mouse over me, then away from me" />
+	</p>
+</form>
+
+<p id="result"></p>
+

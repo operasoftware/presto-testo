@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+
+<title>input type=file disabled</title>
+
+<p>Click the file input below. Nothing should happen.</p>
+
+<form action="#">
+  <p><input id="f" type="file" name="test_file" disabled /></p>
+  <input type="button" onclick="document.getElementById('result').innerHTML = 'FAIL'"/>
+  <input type="button" onclick="document.getElementById('result').innerHTML = 'PASS'"/>
+</form>
+
+<p id="result"></p>

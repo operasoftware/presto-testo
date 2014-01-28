@@ -1,0 +1,61 @@
+<!doctype html>
+<meta charset="utf-8" />
+<title>form Form-associated elements in unclosed nested forms</title>
+
+<p id="result"></p>
+
+<form id="owner_1">
+	<input id="associated_1" />
+	<form id="owner_2">
+		<input id="associated_2" />
+
+<script>
+
+	/*
+	 * owner_2 should not exists according to HTML 5 standard.  Therefore, we
+	 * check if associated_* belongs to owner_1 and that owner_2 does not exist.
+	 */
+
+	var pass   = false;
+	var result = document.getElementById("result");
+
+	if (objectExists("owner_1")
+			&& !objectExists("owner_2")
+			&& objectExists("associated_1")
+			&& objectExists("associated_2")) {
+
+			var firstOwner       = document.getElementById("owner_1");
+			var firstAssociated  = document.getElementById("associated_1");
+			var secondAssociated = document.getElementById("associated_2");
+
+			if (isParentOwner(firstAssociated, firstOwner)
+					&& isParentOwner(secondAssociated, firstOwner)) {
+				pass = true;
+			}
+
+	}
+
+	if (pass) {
+		result.innerHTML = "PASS";
+	} else {
+		result.innerHTML = "FAIL";
+	}
+
+	function objectExists(obj) {
+		if (document.getElementById(obj) != null) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+
+	function isParentOwner(node, assumedParent) {
+		if (node.parentNode.getAttribute("id") == assumedParent.getAttribute("id")) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+
+</script>
+

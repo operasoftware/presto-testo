@@ -1,0 +1,46 @@
+<!doctype html>
+<meta charset="utf-8" />
+<title>textarea rows comparison</title>
+
+<noscript>
+  <p>Note: This test requires JavaScript.</p>
+</noscript>
+
+<p>
+	There should be seven textareas below.  Each one slightly taller than the
+	previous one.  The seventh and last field should contain the word “PASS”.
+</p>
+
+<form>
+	<p><textarea id="test_1" name="test_1" rows="1"></textarea></p>
+	<p><textarea id="test_2" name="test_2" rows="2"></textarea></p>
+	<p><textarea id="test_3" name="test_3" rows="3"></textarea></p>
+	<p><textarea id="test_4" name="test_4" rows="4"></textarea></p>
+	<p><textarea id="test_5" name="test_5" rows="5"></textarea></p>
+	<p><textarea id="test_6" name="test_6" rows="6"></textarea></p>
+	<p><textarea id="result" name="result" rows="7"></textarea></p>
+</form>
+
+<script>
+
+	var test_1 = document.getElementById("test_1");
+	var test_2 = document.getElementById("test_2");
+	var test_3 = document.getElementById("test_3");
+	var test_4 = document.getElementById("test_4");
+	var test_5 = document.getElementById("test_5");
+	var test_6 = document.getElementById("test_6");
+	var result = document.getElementById("result");
+
+	if (test_1.clientHeight < test_2.clientHeight
+			&& test_2.clientHeight < test_3.clientHeight
+			&& test_3.clientHeight < test_4.clientHeight
+			&& test_4.clientHeight < test_5.clientHeight
+			&& test_5.clientHeight < test_6.clientHeight
+			&& test_6.clientHeight < result.clientHeight) {
+		result.value = "PASS";
+	} else {
+		result.value = "FAIL";
+	}
+
+</script>
+

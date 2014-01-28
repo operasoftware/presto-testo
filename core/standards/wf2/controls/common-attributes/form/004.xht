@@ -1,0 +1,13 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <title>"form" and disassociating with ancestor forms</title>
+ <style> form { display:none } </style>
+ <script>
+  // both 'fieldset' and 'input' are part of the elements DOM attribute
+  window.onload = function(){
+   document.getElementsByTagName('p')[0].textContent = (document.getElementsByTagName('form')[0].elements.length != 2) ? "FAIL" : "PASS";
+  }
+ </script>
+ <p>FAIL (Script did not run.)</p>
+ <form xml:id="test"/>
+ <form> <fieldset form="test"> <input/> </fieldset> </form>
+</html>

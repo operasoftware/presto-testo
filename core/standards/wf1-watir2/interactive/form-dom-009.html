@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+
+<title>form 'elements' field</title>
+
+<p>Click the button below. The word "PASS" should appear.<p>
+
+<form id="f1" action="../res/fail.php">
+  <input type="hidden" value="PASS" />
+  <button id="b" type="button" onclick="document.getElementById('result').innerHTML = forms[0].elements[0].value">Click me!</button>
+</form>
+
+<p id="result"></p>

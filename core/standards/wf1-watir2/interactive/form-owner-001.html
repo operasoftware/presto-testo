@@ -1,0 +1,32 @@
+<!doctype html>
+<meta charset="utf-8" />
+<title>form Single form-associated element</title>
+
+<form id="owner">
+	<input id="associated" />
+</form>
+
+<p id="result"></p>
+
+<script>
+
+	var owner      = document.getElementById("owner");
+	var associated = document.getElementById("associated");
+	var result     = document.getElementById("result");
+
+	if (isParentOwner(associated)) {
+		result.innerHTML = "PASS";
+	} else {
+		result.innerHTML = "FAIL";
+	}
+
+	function isParentOwner(node) {
+		if (node.parentNode.getAttribute("id") == owner.getAttribute("id")) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+
+</script>
+

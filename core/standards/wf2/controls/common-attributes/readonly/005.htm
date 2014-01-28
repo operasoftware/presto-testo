@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<title>"readonly", :read-only and :read-write</title>
+<style>
+ input { display:none }
+ input + span { display:block; height:1em; width:1em; background:red }
+ #i1:read-write + span { background:lime }
+ #i2 + span { background:lime }
+ #i2:read-only + span { background:red }
+ #i3:read-write + span { background:lime }
+ #i4:read-only + span { background:lime }
+ #i5:read-only + span { background:lime }
+ #i6:read-write + span { background:lime }
+</style>
+<script>
+ window.onload = function(){
+  document.getElementById('i3').removeAttribute('readonly');
+  document.getElementById('i4').readOnly = true;
+  document.getElementById('i5').setAttribute('readonly','readonly');
+  document.getElementById('i6').readOnly = false;
+ }
+</script>
+<p>There should be no red:
+<p><input id="i1"><span></span>
+<p><input type="radio" readonly="readonly" id="i2"><span></span> <!-- does not match radio buttons -->
+<p><input readonly="readonly" id="i3"><span></span>
+<p><input id="i4"><span></span>
+<p><input id="i5"><span></span>
+<p><input readonly="readonly" id="i6"><span></span>

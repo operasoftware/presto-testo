@@ -1,0 +1,26 @@
+<!doctype html>
+<meta charset="utf-8" />
+<title>button type="reset" Reset select multiple field, variation</title>
+
+<p>
+	Below you should see a multiple-select list with the options “cat“ and “dog”
+	selected.  Select something else and click the button below.  The selection
+	should be reset to “cat” and “dog” only.
+</p>
+
+<form>
+	<p>
+		<select name="test" multiple>
+			<option>bird</option>
+			<option selected>cat</option>
+			<option selected>dog</option>
+			<option>fish</option>
+			<option>horse</option>
+			<option>rabit</option>
+		</select>
+	</p>
+	<p>
+		<button name="reset" type="reset">Click me!</button>
+	</p>
+</form>
+

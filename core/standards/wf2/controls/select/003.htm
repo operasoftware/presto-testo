@@ -1,0 +1,8 @@
+<!DOCTYPE html>
+<title>selectedIndex DOM attribute and select control</title>
+<p>Nothing should be submitted and you should see no FAIL below:
+<form method="get">
+ <p><select name="test"><option selected="selected">FAIL</select>
+ <p><button type="submit">Submit</button>
+</form>
+<script> document.getElementsByTagName('select')[0].selectedIndex = -1 </script>

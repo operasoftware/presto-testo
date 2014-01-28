@@ -1,0 +1,15 @@
+<!doctype html>
+<meta charset="utf-8" />
+<title>textarea clearing input of entity value</title>
+
+<p>
+	Clear the textarea below.  Click submit.  You should see the word “PASS” on
+	the following page.
+</p>
+
+<form action="../res/empty_post.php" method="post">
+	<p>
+		<textarea name="test">&amp; &aelig; &ETH;</textarea>
+		<input type="submit" name="submit" />
+	</p>
+</form>

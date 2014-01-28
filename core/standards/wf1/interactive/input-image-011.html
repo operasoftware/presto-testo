@@ -1,0 +1,21 @@
+<!doctype html>
+<meta charset="utf-8" />
+<title>input type=image Multiple unique image buttons in separate forms</title>
+
+<p>
+	Click the second image button.  You should see the word ”PASS” on the
+	following page.
+</p>
+
+<form action="../res/fail.php" method="post">
+	<p>
+		<input name="image1" type="image" src="../res/images/100x100-navy.jpg" />
+	</p>
+</form>
+
+<form action="../res/pass.php" method="post">
+	<p>
+		<input name="image2" type="image" src="../res/images/100x100-navy.jpg" />
+	</p>
+</form>
+

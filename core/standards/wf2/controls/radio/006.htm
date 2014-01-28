@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <title>:indeterminate radio control dynamic test</title>
+  <style>
+   input + span { display:inline-block; height:1em; width:1em; background:lime }
+   input:indeterminate + span { background:red }
+  </style>
+ </head>
+ <body>
+  <p>There should be two green blocks below and the third radio button should be checked:</p>
+  <p><input type="radio" name="t"><span></span></p>
+  <div>
+   <p><input type="radio" name="t"><span></span></p>
+   <p></p>
+  </div>
+  <script>
+   var t = document.createElement('input');
+   t.type = "radio";
+   t.name = "t";
+   t.checked = true;
+   document.getElementsByTagName('p')[3].appendChild(t);
+  </script>
+ </body>
+</html>

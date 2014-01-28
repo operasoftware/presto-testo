@@ -1,0 +1,28 @@
+<!doctype html>
+<meta charset="utf-8" />
+<title>input type=reset tabindex</title>
+
+<p>
+	Clear the content from the text field.  Make sure you are positioned in the
+	first text field.
+</p>
+
+<p>
+	Press <kbd>Tab</kbd> two times.  The reset button should now be focused.
+	Press <kbd>Enter</kbd> or <kbd>Space</kbd> to activate it.
+</p>
+
+<p>
+	The word “foobar” should appear in the first text field.
+</p>
+
+<form>
+	<p>
+		<input name="test" type="text" value="foobar" tabindex="1" />
+	</p>
+	<p>
+		<input name="reset" type="reset" tabindex="3" />
+		<input name="test" type="text" tabindex="2" />
+	</p>
+</form>
+

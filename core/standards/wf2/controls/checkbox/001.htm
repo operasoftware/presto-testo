@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<title>checkbox control and the checked DOM attribute</title>
+<style>
+ span { display:block; height:2em; width:2em; background:red }
+ input { display:none }
+ input:checked + span { background:lime }
+</style>
+<script>
+ window.onload = function(){
+  document.getElementsByTagName('input')[0].checked = true;
+ }
+</script>
+<p>There should be a green square below:
+<p><input type="checkbox"><span></span>

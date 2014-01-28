@@ -1,0 +1,15 @@
+<!doctype html>
+<meta charset="utf-8" />
+<title>textarea prefilled entity input</title>
+
+<p>
+	There should be an “&amp;” in the textarea below.  Click submit.  You
+	should see the same character on the following page.
+</p>
+
+<form action="../res/return_single_post.php" method="post">
+	<p>
+		<textarea name="test">&amp;</textarea>
+		<input type="submit" name="submit" />
+	</p>
+</form>

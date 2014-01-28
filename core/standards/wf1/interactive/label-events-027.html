@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+
+<title>label disabled input radio contained in a label - onclick, onfocus, onblur, onchange</title>
+
+<p>Click the label below. Then click the second label. Nothing should happen.</p>
+
+<form>
+  <p>
+    <label id="l1">
+      Click me!
+      <input disabled="disabled" type="radio" id="b" onchange="document.getElementById('result_onchange').innerHTML = 'FAIL'" onclick="document.getElementById('result_onclick').innerHTML = 'FAIL'" onfocus="document.getElementById('result_onfocus').innerHTML = 'FAIL'" onblur="document.getElementById('result_onblur').innerHTML = 'FAIL'" />
+    </label>
+    <label id="l2">
+      Then click me!
+    </label>
+  </p>
+</form>
+
+<p id="result_onclick"></p>
+<p id="result_onfocus"></p>
+<p id="result_onblur"></p>
+<p id="result_onchange"></p>

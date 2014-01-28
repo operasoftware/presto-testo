@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<meta charset="utf-8" />
+<title>label 'form' IDL attribute</title>
+
+<p>The word 'PASS' should appear below.</p>
+
+<p id="result"></p>
+
+<form id="fo">
+</form>
+
+<form id="fi">
+  <p><label id="l" form="fo">Label</label></p>
+</form>
+
+
+<script type="text/javascript">
+  var label = document.getElementById("l");
+
+  if(label && label.form && label.form.id == "fo") {
+    document.getElementById("result").innerHTML = "PASS";
+  } else {
+    document.getElementById("result").innerHTML = "FAIL"
+  }
+</script>

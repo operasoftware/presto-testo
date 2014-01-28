@@ -1,0 +1,17 @@
+<!doctype html>
+<meta charset="utf-8" />
+<title>input type=checkbox ondblclick</title>
+
+<p>
+	Double-click the checkbox below (check and uncheck quickly).  The word
+	“PASS” should appear on this page.
+</p>
+
+<form>
+	<p>
+		<input id="i" name="test" type="checkbox" ondblclick="document.getElementById('result').innerHTML = 'PASS';" />
+	</p>
+</form>
+
+<p id="result"></p>
+

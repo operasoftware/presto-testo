@@ -1,0 +1,42 @@
+<!doctype html>
+<meta charset="utf-8" />
+<title>button type="reset" Reset combinations of fields</title>
+
+<p>
+	Below you should see a variety of different types of fields.  They should all
+	be set to checked or have the value “foo”, apart for the file select element
+	for which you should select a file on your computer.  Click the reset button.
+	All fields should return to their previous states.
+</p>
+
+<form>
+	<p>
+		<input name="test1" type="text" value="foo" />
+	</p>
+	<p>
+		<input name="test2" type="password" value="foo" />
+	</p>
+	<p>
+		<input name="test3" type="checkbox" value="foo" checked />
+	</p>
+	<p>
+		<input name="test4" type="radio" value="foo" checked />
+		<input name="test4" type="radio" value="bar" />
+	</p>
+	<p>
+		<textarea name="test5">foo</textarea>
+	</p>
+	<p>
+		<input name="test6" type="file" />
+	</p>
+	<p>
+		<select name="test7">
+			<option value="foo" selected>foo</option>
+			<option value="bar">bar</option>
+		</select>
+	</p>
+	<p>
+		<button name="reset" type="reset">Click me!</button>
+	</p>
+</form>
+

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+
+<title>form dynamically injecting, single element, post</title>
+
+<p>You should see a single text input below. Type "foobar" in it. Press "enter". You should see page saying "You typed: [foobar]".</p>
+
+<div id="div"></div>
+
+<script type="text/javascript">
+  var f = document.createElement('form');
+  f.setAttribute('action', '../res/return_single_post.php');
+  f.setAttribute('method', 'post');
+  
+  var i = document.createElement('input');
+  i.setAttribute('type', 'text');
+  i.setAttribute('name', 'test');
+  i.setAttribute('id', 'i1');
+  
+  f.appendChild(i); document.getElementById('div').appendChild(f);
+</script>

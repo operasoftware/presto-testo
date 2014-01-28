@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<title>label for, 'onfocus' for several disabled elements</title>
+
+<p>Click each of the labels below. Nothing should happen.</p>
+
+<form>
+  <p>
+    <label id="l1" for="radio">click me</label>
+    <input type="radio" id="radio" disabled="disabled" onfocus="l1.innerHTML = 'FAIL'" onclick="return false">
+  </p>
+
+  <p>
+    <label id="l2" for="checkbox">click me</label>
+    <input type="checkbox" id="checkbox" disabled="disabled" onfocus="l2.innerHTML = 'FAIL'" onclick="return false">
+  </p>
+
+  <p>
+    <label id="l3" for="reset">click me</label>
+    <input type="reset" id="reset" disabled="disabled" onfocus="l3.innerHTML = 'FAIL'" onclick="return false">
+  </p>
+
+  <p>
+    <label id="l4" for="text">click me</label>
+    <input type="text" id="text" disabled="disabled" onfocus="l4.innerHTML = 'FAIL'" onclick="return false">
+  </p>
+
+  <p>
+    <label id="l5" for="submit">click me</label>
+    <input type="submit" id="submit" disabled="disabled" onfocus="l5.innerHTML = 'FAIL'" onclick="return false"><br>
+  </p>
+
+  <p>
+    <label id="l6" for="textarea">click me</label>
+    <textarea id="textarea" disabled="disabled" onfocus="l6.innerHTML = 'FAIL'" onclick="return false"></textarea>
+  </p>
+
+  <p>
+    <label id="l7" for="select">click me</label>
+    <select id="select" disabled="disabled" onfocus="l7.innerHTML = 'FAIL'">
+      <option>foobar</option>
+    </select>
+  </p>
+
+  <p>
+    <label id="l8" for="button">click me</label>
+    <button id="button" disabled="disabled" onfocus="l8.innerHTML = 'FAIL'" onclick="return false">button</button>
+  </p>
+
+</form>

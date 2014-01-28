@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+
+<title>form setCustomValidity</title>
+
+<p>Type "foobar" in the text input below. Press "Enter". The input should not be submitted. A message that the value "foobar" is not allowed for this field should be issued.</p>
+
+<form action="../res/fail.html">
+  <input name="i" type="text" oninput="check(this)"/>
+</form>
+
+<script type="text/javascript">
+ function check(input) {
+   if (input.value == "foobar") {
+     input.setCustomValidity('The value "' + input.value + '" is not allowed for this field.');
+   } else {
+     input.setCustomValidity('');
+   }
+ }
+</script>

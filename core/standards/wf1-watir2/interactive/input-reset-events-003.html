@@ -1,0 +1,18 @@
+<!doctype html>
+<meta charset="utf-8" />
+<title>input type=reset onblur</title>
+
+<p>
+	Click the reset button.  Then click the text field.  The word “PASS” should
+	appear on this page.
+</p>
+
+<form>
+	<p>
+		<input name="reset" type="reset" onblur="document.getElementById('result').innerHTML = 'PASS';" />
+		<input name="random_field" type="text" />
+	</p>
+</form>
+
+<p id="result"></p>
+

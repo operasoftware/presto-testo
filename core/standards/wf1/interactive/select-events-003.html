@@ -1,0 +1,22 @@
+<!doctype html>
+<meta charset="utf-8" />
+<title>select onchange</title>
+
+<noscript>
+  <p>Note: This test requires JavaScript.</p>
+</noscript>
+
+<p>
+	Below you should see two selects.  Select foo in the first one.  
+	The second one should have its value changed to "foobar”.
+</p>
+
+<form>
+	<p>
+		<select name="first_field" onchange="document.getElementById('test').value = 'foobar';"><option></option><option>foo</option></select>
+	</p>
+	<p>
+		<select id="test" name="test"><option></option><option>foobar</option></select>
+	</p>
+</form>
+

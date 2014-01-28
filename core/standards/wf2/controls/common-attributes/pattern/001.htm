@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<title>"pattern" and text &amp; password controls</title>
+<style>
+ input { background:red }
+ input:invalid { background:lime }
+</style>
+<p>All form controls should have a green background:
+<table>
+ <tr>
+  <th><code>type=text</code>
+  <th><code>type=password</code>
+ <tr>
+  <td><input type="text" value="*" pattern="\w">
+  <td><input type="password" value="*" pattern="\w">
+  <tr>
+  <td><input type="text" value="9a" pattern="\w">
+  <td><input type="password" value="9a" pattern="\w">
+ <tr>
+  <td><input type="text" value=" " pattern="\w">
+  <td><input type="password" value=" " pattern="\w">
+</table>

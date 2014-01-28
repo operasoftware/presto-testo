@@ -1,0 +1,8 @@
+<!DOCTYPE html>
+<title>initial value for "min" in range controls</title>
+<style>
+ span { display:block; height:2em; width:2em; background:red }
+ input { display:none }
+ input:out-of-range + span { background:lime }
+</style>
+<p>There should be a green square below: <input type="range" value="-1"><span></span>

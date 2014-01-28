@@ -1,0 +1,22 @@
+<!doctype html>
+<meta charset="utf-8" />
+<title>select onkeypress</title>
+
+<noscript>
+  <p>Note: This test requires JavaScript.</p>
+</noscript>
+
+<p>
+	Click or focus the select box and type something on the keyboard. 
+	Its value should immediately change to “foobar”.
+</p>
+
+<form>
+	<select name="test" onkeypress="this.value = 'foobar';">
+		<option>Type anything when focused!</option>
+		<option></option>
+		<option></option>
+		<option>foobar</option>
+	</select>
+</form>
+

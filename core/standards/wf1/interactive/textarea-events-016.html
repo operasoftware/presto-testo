@@ -1,0 +1,21 @@
+<!doctype html>
+<meta charset="utf-8" />
+<title>textarea empty JS event</title>
+
+<noscript>
+  <p>Note: This test requires JavaScript.</p>
+</noscript>
+
+<p>
+	Below you should see a textarea.  It should be empty.  Click the text area; 
+	nothing should happen.  Click the submit button.  On the following page
+	you should see the word “PASS”.
+</p>
+
+<form action="../res/empty_post.php" method="post">
+	<p>
+		<textarea name="test" onclick=""></textarea>
+		<input type="submit" name="submit" />
+	</p>
+</form>
+

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<title>"pattern" and pipe alternative match ('|')</title>
+<style>
+ input.ok, input:valid { background:red }
+ input, input.ok:valid { background:lime }
+</style>
+<p>All form controls should have a green background (ignore the values):
+<p><input value="3" pattern="0|1|2|3|4|5|6|7|8|9" class="ok">
+<p><input value="a" pattern="0|1|2|3|4|5|6|7|8|9">
+<p><input value="A" pattern="0|1|2|3|4|5|6|7|8|9">
+<p><input value="*" pattern="0|1|2|3|4|5|6|7|8|9">
+<p><input value="99" pattern="0|1|2|3|4|5|6|7|8|9">
+<p><input value=" " pattern="0|1|2|3|4|5|6|7|8|9">
+<p><input pattern="0|1|2|3|4|5|6|7|8|9" class="ok"> <!-- not required -->

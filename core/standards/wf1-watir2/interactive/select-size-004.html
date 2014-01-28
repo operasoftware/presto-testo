@@ -1,0 +1,32 @@
+<!doctype html>
+<meta charset="utf-8" />
+<title>select size accessible in DOM</title>
+
+<p>
+	Below you should see drop down list containing "foobar1" 
+	and "foobar2". It should be two lines tall. 
+	The page should contain “PASS”.
+</p>
+
+<form>
+	<p>
+		<select id="test" name="test" size="2">
+			<option>foobar1</option>
+			<option>foobar2</option>
+		</select>
+	</p>
+</form>
+
+<p id="result"></p>
+
+<script>
+	var test = document.getElementById("test");
+	var result = document.getElementById("result");
+
+	if (test.size == 2) {
+		result.innerHTML = "PASS";
+	} else {
+		result.innerHTML = "FAIL";
+	}
+</script>
+

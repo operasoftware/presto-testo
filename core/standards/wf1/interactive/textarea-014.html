@@ -1,0 +1,54 @@
+<!doctype html>
+<meta charset="utf-8" />
+<title>textarea clientHeight equals scrollHeight</title>
+
+<noscript>
+  <p>Note: This test requires JavaScript.</p>
+</noscript>
+
+<p>
+	Below you should see six textareas of increasing height. Last one should contain “PASS”.
+</p>
+
+<form>
+	<p>
+		<textarea id="test1" name="test1" rows=1></textarea>
+	</p>
+	<p>
+		<textarea id="test2" name="test2" rows=2></textarea>
+	</p>
+	<p>
+		<textarea id="test3" name="test3" rows=3></textarea>
+	</p>
+	<p>
+		<textarea id="test4" name="test4" rows=4></textarea>
+	</p>
+	<p>
+		<textarea id="test5" name="test5" rows=5></textarea>
+	</p>
+	<p>
+		<textarea id="result" name="result" rows=6></textarea>
+	</p>
+</form>
+
+<script>
+	var test1 = document.getElementById("test1");
+	var test2 = document.getElementById("test2");
+	var test3 = document.getElementById("test3");
+	var test4 = document.getElementById("test4");
+	var test5 = document.getElementById("test5");
+	var result = document.getElementById("result");
+
+    	if(test1.clientHeight == test1.scrollHeight
+		&& test2.clientHeight == test2.scrollHeight
+		&& test3.clientHeight == test3.scrollHeight
+		&& test4.clientHeight == test4.scrollHeight
+		&& test5.clientHeight == test5.scrollHeight
+		&& result.clientHeight == result.scrollHeight
+		) {
+        	result.value = "PASS";
+    	} else {
+        	result.value = "FAIL";
+    	}
+</script>
+

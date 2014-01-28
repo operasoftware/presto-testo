@@ -1,0 +1,5 @@
+<!DOCTYPE html>
+<title>output control "onchange" attribute</title>
+<p><output onchange="this.value='PASS'">FAIL (Script did not run.)</output></p>
+<script> document.getElementsByTagName('output')[0].textContent = "FAIL" </script>
+<!-- this should also come back in the events section -->

@@ -1,0 +1,52 @@
+<!doctype html>
+<meta charset="utf-8" />
+<title>input type=checkbox Multiple JS events</title>
+
+<p>
+	Below you should see a checkbox.  There are two things you must do to pass
+	this test:
+</p>
+
+<ol>
+	<li>Move your cursor over the checkbox.</li>
+	<li>Click (check) the checkbox.</li>
+</ol>
+
+<p>
+	Once you have completed all of the above, the word “PASS” should appear on
+	this page.
+</p>
+
+<form>
+	<p>
+		<input id="test" name="test" type="checkbox" onmouseover="action_mouseover();" onclick="action_click();" />
+	</p>
+</form>
+
+<p id="result"></p>
+
+<script>
+
+	var test    = document.getElementById("test");
+	var result  = document.getElementById("result");
+	var clicked = false;
+	var hovered = false;
+
+	function action_mouseover () {
+		hovered = true;
+		passed();
+	}
+
+	function action_click () {
+		clicked = true;
+		passed();
+	}
+
+	function passed () {
+		if (hovered && clicked) {
+			result.innerHTML = "PASS";
+		}
+	}
+
+</script>
+

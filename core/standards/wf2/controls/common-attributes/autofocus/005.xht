@@ -1,0 +1,17 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <title>testing "autofocus" in XHTML with dynamic changes (part two)</title>
+ <style>
+  input { background:red }
+  input:focus { background:lime }
+ </style>
+ <script>
+  window.onload = function(){
+   var input = document.getElementsByTagName('input')[0];
+   var p = document.getElementsByTagName('p')[0];
+   var input = p.removeChild(input);
+   input.autofocus = true;
+   p.appendChild(input);
+  }
+ </script>
+ <p>The form control should have a green background: <input/></p>
+</html>

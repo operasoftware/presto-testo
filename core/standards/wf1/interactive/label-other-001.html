@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<meta charset="utf-8" />
+<title>label attribute 'for' accessible through DOM</title>
+
+<p>The word 'PASS' should appear below.</p>
+
+<p id="result"></p>
+
+<form>
+  <label id="dl" for="dom_input">
+    <input id="dom_input" type="checkbox" />
+  </label>
+
+  <script type="text/javascript">
+    var element = document.getElementById("dl");
+    var attrib_value = element.getAttribute("for");
+
+    if(attrib_value == "dom_input") {
+      document.getElementById("result").innerHTML = "PASS";
+    }
+  </script>
+</form>

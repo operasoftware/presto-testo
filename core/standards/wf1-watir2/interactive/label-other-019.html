@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+
+<title>label CORE-15792</title>
+
+<link type="text/css" href="../res/test.css" rel="stylesheet" />
+
+<style type="text/css">
+  #f1 {overflow:hidden;}
+  #l1, #l2 { display : block; }
+</style>
+
+<body>
+  <p>Test and reference should look the same.</p>
+
+  <div id="testcase">
+    <div class="test">
+      <h2>Test</h2>
+      <div class="inner">
+        <form id="f1" action="#">
+          <label id="l1">foobar</label>
+        </form>
+      </div>
+    </div>
+
+    <div class="reference">
+      <h2>Reference</h2>
+      <div class="inner">
+        <form id="f2" action="#">
+          <label id="l2">foobar</label>
+        </form>
+      </div>
+    </div>
+  </div>
+</body>

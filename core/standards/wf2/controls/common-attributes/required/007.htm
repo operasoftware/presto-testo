@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <title>"required" and elements to which it does not apply</title>
+  <link rel="help" href="http://whatwg.org/specs/web-forms/current-work/#required">
+  <link rel="help" href="http://whatwg.org/specs/web-forms/current-work/#relation">
+  <style>
+   span { display:block; height:1em; width:1em; background:lime }
+   output, select, input, button { display:none }
+   output:required + span, output:optional + span { background:red }
+   select:required + span, select:optional + span { background:red }
+   input:required + span, input:optional + span { background:red }
+   button:required + span, button:optional + span { background:red }
+  </style>
+ <body>
+  <p>You should see only green squares below:</p>
+  <p><output required></output><span></span></p>
+  <p><select required></select><span></span></p>
+  <p><input type="image"><span></span></p>
+  <p><input type="button"><span></span></p>
+  <!--<p><input type="move-up"><span></span></p>-->
+  <!--<p><input type="remove"><span></span></p>-->
+  <!--<p><button type="remove"></button><span></span></p>-->
+ </body>
+</html>

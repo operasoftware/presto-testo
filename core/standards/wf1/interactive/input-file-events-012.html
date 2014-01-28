@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+
+<title>input type=file Empty JS event</title>
+
+<p>Press the button below. File selection dialog should open.</p>
+
+<form action="#">
+  <p><input id="f" type="file" onclick="" /></p>
+  <input type="button" onclick="document.getElementById('result').innerHTML = 'PASS'"/>
+  <input type="button" onclick="document.getElementById('result').innerHTML = 'FAIL'"/>
+  <input type="button" onclick="document.getElementById('result').innerHTML = 'FAIL'"/>
+</form>
+
+<p id="result"></p>

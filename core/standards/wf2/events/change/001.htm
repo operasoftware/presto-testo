@@ -1,0 +1,9 @@
+<!DOCTYPE html>
+<title>'change' event basic test</title>
+<p><input type="text" onchange="this.value='PASS'" value="FAIL (Script did not run.)"></p>
+<script>
+ var i = document.getElementsByTagName('input')[0];
+ i.focus();
+ i.value = "FAIL";
+ i.blur();
+</script>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<meta charset="utf-8" />
+<title>input type=button Value of disabled field available in DOM</title>
+
+<p>
+	You should see a disabled button below.  You should see the word “PASS” on
+	this page.
+</p>
+
+<form>
+	<p>
+		<input type="button" id="test" name="test" value="foobar" disabled value="I should be disabled"/>
+	</p>
+</form>
+
+<p id="result"></p>
+
+<script>
+
+	var test   = document.getElementById("test");
+	var result = document.getElementById("result");
+
+	if (test.value == "foobar") {
+		result.innerHTML = "PASS";
+	} else {
+		result.innerHTML = "FAIL";
+	}
+
+</script>

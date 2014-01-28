@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<title>label absolute position incorrectly calculated (CORE-13283)</title>
+
+<style type="text/css">
+  label {
+    position: relative;
+    width:440px;
+    height:24px;
+    display:block;
+  }
+
+  input, select {
+    position:absolute;
+    width:120px;
+    right:0px;
+  }
+</style>
+
+<p>You should see word 'PASS' below.</p>
+
+<p id="result"></p>
+
+<form>
+  <label>test input<input type="text"></label>
+  <label>test select
+    <select id="t">
+      <option>foobar</option>
+    </select>
+  </label>
+</form>
+
+<script type="text/javascript">
+  if(document.getElementById("t").offsetLeft == 320) {
+    document.getElementById("result").innerHTML = "PASS";
+  } else {
+    document.getElementById("result").innerHTML = "FAIL";
+  }
+</script>

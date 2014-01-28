@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<title>input type=button Invalid readonly attribute</title>
+<link href="../res/test.css" rel="stylesheet" />
+
+<p>Below you should see a regular button containing the word "foobar".  The text should be black, and not grayed out.</p>
+
+<div id="testcase">
+  <div class="test">
+
+    <h2>Test</h2>
+
+    <form>
+      <p>
+        <input type="button" name="test" readonly value="foobar"/>
+      </p>
+    </form>
+
+  </div>
+  <div class="reference">
+
+    <h2>Reference</h2>
+
+    <form>
+      <p>
+        <input type="button" name="reference" value="foobar"/>
+      </p>
+    </form>
+
+  </div>
+</div>
+

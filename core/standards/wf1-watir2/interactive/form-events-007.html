@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+
+<title>form onmouseout</title>
+
+<p>Move mouse pointer over the text below. Nothing should happen. Move mouse pointer away. The word "PASS" should appear.</p>
+
+<form onmouseout="document.getElementById('result').innerHTML = 'PASS'">
+  <p id="p">Move mouse pointer over me! Then move it away!</p>
+</form>
+
+<p id="result"></p>

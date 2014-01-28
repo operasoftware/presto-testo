@@ -1,0 +1,23 @@
+<!doctype html>
+<meta charset="utf-8" />
+<title>select Two nested forms each with selects, variation</title>
+
+<p>
+	Click the submit button below.  You should see the words “foo” and ”bar” on
+	the following page.
+</p>
+
+<form action="../res/return_multiple_post.php" method="post">
+	<p>
+		<select name="test1"><option>foo</option></select>
+	</p>
+	<p>
+		<input type="submit" name="submit" />
+	</p>
+	<form action="../res/return_multiple_post.php" method="post">
+		<p>
+			<select name="test2"><option>bar</option></select>
+		</p>
+	</form>
+</form>
+

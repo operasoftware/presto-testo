@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<meta charset="utf-8" />
+<title>label for, 'control' IDL attribute</title>
+
+<p>The word 'PASS' should appear below.</p>
+
+<p id="result"></p>
+
+<form>
+  <p><label id="l" for="t">Label</label><input id="t" type="text" value="foobar" /></p>
+</form>
+
+<script type="text/javascript">
+  var t_control = document.getElementById("l").control;
+
+  if(t_control && t_control.value == "foobar") {
+      document.getElementById("result").innerHTML = "PASS";
+  } else {
+    document.getElementById("result").innerHTML = "FAIL";
+  }
+</script>

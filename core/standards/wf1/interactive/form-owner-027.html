@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+
+<title>form element in second nested form, post</title>
+
+<p>Type "foobar" in the text input below. Press "Enter". You should see a page saying "You typed: [foobar]".</p>
+
+<form action="../res/return_single_post.php" method="post">
+  <form action="../res/fail.php">
+    <input id="i1" name="test" type="text"/>
+  </form>
+</form>

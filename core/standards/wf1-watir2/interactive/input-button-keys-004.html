@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<title>input type=button Trigger action with space</title>
+
+<p>Press <kbd>Tab</kbd> to focus the submit button below.  Press <kbd>Space</kbd> to activate the action. You should see the word "PASS" below.</p>
+
+<form action="../res/pass.php" method="post">
+  <p>
+    <input type="button" name="test" type="submit" value="Select me using 'Tab'" onclick="document.getElementById('result').innerHTML = 'PASS'"/>
+  </p>
+</form>
+
+<p id="result"></p>

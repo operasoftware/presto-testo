@@ -1,0 +1,18 @@
+<!doctype html>
+<meta charset="utf-8" />
+<title>input type=submit onblur</title>
+
+<p>
+	Click on the first submit button.  Then on the other.  The word “PASS”
+	should appear on this page.
+</p>
+
+<form>
+	<p>
+		<input name="test" type="submit" onblur="document.getElementById('result').innerHTML = 'PASS';" onclick="return false;" />
+		<input name="random_field" type="submit" onclick="return false;" />
+	</p>
+</form>
+
+<p id="result"></p>
+

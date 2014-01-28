@@ -1,0 +1,27 @@
+<!doctype html>
+<meta charset="utf-8" />
+<title>select multiple option, variation</title>
+
+<p>
+	Below you should see a drop down list with options "foobar1"
+	till "foobar6". Select option "foobar1" and "foobar6",
+	but not "foobar2" till "foobar5" (hold down the ctrl key to 
+	perform multiple selections). Click submit. The following page 
+	should list the selected options.
+</p>
+
+<form action="../res/return_multiple_option_post.php" method="post">
+<p>
+	<select id="test" name="test[]" multiple>
+		<option>foobar1</option>
+		<option>foobar2</option>
+		<option>foobar3</option>
+		<option>foobar4</option>
+		<option>foobar5</option>
+		<option>foobar6</option>
+	</select>
+</p>
+<p>
+	<input type="submit" name="submit" />
+</p>
+</form>

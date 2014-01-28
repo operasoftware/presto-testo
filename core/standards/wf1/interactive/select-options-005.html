@@ -1,0 +1,37 @@
+<!doctype html>
+<meta charset="utf-8" />
+<title>select support javascript add option</title>
+
+<noscript>
+  <p>Note: This test requires JavaScript.</p>
+</noscript>
+
+<p>
+	Below you should see a drop down list with options "foobar1", 
+	"foobar2", "foobar3" and "foobar4".
+	Underneath you should find the word "PASS".
+</p>
+
+<form>
+<p>
+	<select id="test" name="test[]" multiple>
+		<option>foobar1</option>
+		<option>foobar2</option>
+		<option>foobar3</option>
+	</select>
+</p>
+<p id="result">FAIL</p>
+</form>
+
+<script>
+	var test = document.getElementById("test");
+	var result = document.getElementById("result");
+	
+	var newOption = document.createElement("option");
+	newOption.text = "foobar4";
+	test.add(newOption, null);
+
+	if (test.length == 4) {
+		result.innerHTML = "PASS";
+	}
+</script>

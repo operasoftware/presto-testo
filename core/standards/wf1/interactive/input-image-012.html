@@ -1,0 +1,16 @@
+<!doctype html>
+<meta charset="utf-8" />
+<title>input type=image Multiple duplicate image buttons in the same form</title>
+
+<p>
+	You should see two image buttons below.  Click the first of them.  The word
+	“PASS” should appear on the following page.
+</p>
+
+<form action="../res/null_post.php" method="post">
+	<p>
+		<input name="image" type="image" src="../res/images/100x100-navy.jpg" />
+		<input name="image" type="image" src="../res/images/100x100-navy.jpg" />
+	</p>
+</form>
+

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+
+<title>form button value not reset</title>
+
+<p>Click the "1" button, then the "2" button, and then the "3" button. A page containing the word "PASS" should open.</p>
+
+<form action="../res/return_single_get.php" method="get">
+  
+  <button id="1" type="button" onclick="change()">1</button>
+  <input id="2" value="2" type="reset"/>
+  <button id="3" name="test" type="submit" value="FAIL">3</button>
+  
+</form>
+
+<script type="text/javascript">
+  function change() {
+    document.forms[0][2].value = "PASS";
+  }
+</script>

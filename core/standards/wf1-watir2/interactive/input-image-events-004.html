@@ -1,0 +1,17 @@
+<!doctype html>
+<meta charset="utf-8" />
+<title>input type=image onclick</title>
+
+<p>
+	Click on the image button below.  The word “PASS” should appear on this
+	page.
+</p>
+
+<form>
+	<p>
+		<input name="test" type="image" onclick="document.getElementById('result').innerHTML = 'PASS'; return false;" />
+	</p>
+</form>
+
+<p id="result"></p>
+

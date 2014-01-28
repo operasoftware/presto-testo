@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <title>&lt;button&gt; and validationMessage</title>
+  <style> #t { display:none } </style>
+  <script>
+   window.onload = function(){
+    var r = document.getElementById('r');
+    r.firstChild.data = "FAILED (Script failed)";
+    r.firstChild.data = document.getElementsByTagName('button')[0].validationMessage === "" ? "PASSED" : "FAILED";
+   }
+  </script>
+ </head>
+ <body>
+  <p>This test has: <span id="r">FAILED (Script did not run)</span></p>
+  <p id="t"><button>TEST</button></p>
+ </body>
+</html>

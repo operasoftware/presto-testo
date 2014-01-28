@@ -1,0 +1,17 @@
+<!doctype html>
+<meta charset="utf-8" />
+<title>input type=button onmouseover</title>
+
+<p>
+	Move your mouse over the button below.  The word “PASS” should appear on this
+	page.
+</p>
+
+<form>
+	<p>
+		<input type="button" name="test" onmouseover="document.getElementById('result').innerHTML = 'PASS';" value="Move mouse over me"/>
+	</p>
+</form>
+
+<p id="result"></p>
+

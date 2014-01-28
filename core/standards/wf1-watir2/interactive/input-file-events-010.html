@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+
+<title>input type=file onmouseout</title>
+
+<p>Move mouse pointer over the file input below. Nothing should happen. Move it away from the file input below. The word "PASS" should appear.</p>
+
+<form action="#">
+  <p><input id="f" type="file" onmouseout="document.getElementById('result').innerHTML = 'PASS'" onclick="return false"/></p>
+</form>
+
+<p id="result"></p>

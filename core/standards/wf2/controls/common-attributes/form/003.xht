@@ -1,0 +1,11 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <title>"form" and the empty string and nested forms</title>
+ <style> form { display:none } </style>
+ <script>
+  window.onload = function(){
+   document.getElementsByTagName('p')[0].textContent = (document.getElementsByTagName('form')[1].elements.length != 1) ? "FAIL" : "PASS";
+  }
+ </script>
+ <p>FAIL (Script did not run.)</p>
+ <form> <fieldset form=""> <form> <input/> </form> </fieldset> </form>
+</html>

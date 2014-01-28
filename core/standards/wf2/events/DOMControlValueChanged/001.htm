@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<title>DOMControlValueChanged basic test</title>
+<p>FAIL (Script did not run.) <input></p>
+<script>
+ var p = document.getElementsByTagName('p')[0];
+ document.addEventListener("DOMControlValueChanged",function(){ p.textContent = "FAIL" },false)
+ document.getElementsByTagName('input')[0].value = "TEST"
+setTimeout(function(){if(document.getElementsByTagName('p')[0].textContent!='FAIL')document.getElementsByTagName('p')[0].textContent='PASS'}, 15)
+</script>
+

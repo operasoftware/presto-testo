@@ -1,0 +1,18 @@
+<!doctype html>
+<meta charset="utf-8" />
+<title>select Two nested forms with a select</title>
+
+<p>
+	Click the submit button below.  You should see the word ”foobar” on the
+	following page.
+</p>
+
+<form action="../res/return_single_post.php" method="post"> <!-- If this is triggered, it will show “foobar” -->
+	<form method="../res/null_post.php" method="post"> <!-- If this is triggered, it will show “FAIL” -->
+		<p>
+			<select name="test"><option>foobar</option></select>
+			<input type="submit" name="submit" />
+		</p>
+	</form>
+</form>
+

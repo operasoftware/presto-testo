@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<title>Accessible Color Picker</title>
+<style>
+ fieldset { max-width:30em }
+ #result { height:10em; width:10em; float:right; background:black }
+</style>
+<script>
+ document.addEventListener('change',calculate,false);
+ function calculate(){
+  var red = document.getElementById('red').value;
+  var green = document.getElementById('green').value;
+  var blue = document.getElementById('blue').value;
+  var color = 'rgb('+red+','+green+','+blue+')';
+  var result = document.getElementById('result');
+  result.style.background = color;
+  document.getElementsByTagName('output')[0].textContent = result.style.backgroundColor;
+ }
+</script>
+<p>A simple color picker test.
+<form>
+ <fieldset>
+  <legend>Color Picker</legend>
+  <div id="result"></div>
+  <p><label>Red: <input type="range" max="255" id="red"></label>
+  <p><label>Green: <input type="range" max="255" id="green"></label>
+  <p><label>Blue: <input type="range" max="255" id="blue"></label>
+  <p><label>Color: <output>#000000</output></label>
+ </fieldset>
+</form>

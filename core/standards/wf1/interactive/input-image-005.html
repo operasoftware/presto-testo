@@ -1,0 +1,48 @@
+<!doctype html>
+<meta charset="utf-8" />
+<title>input type=image Image type, image/x-icon</title>
+<link href="../res/test.css" rel="stylesheet" />
+<style>
+
+	input,
+	img {
+		height: 100px;
+		width: 100px;
+	}
+
+</style>
+
+<p>
+	You should see an image button with a navy blue image of 16×16 px below.
+</p>
+
+<div id="testcase">
+  <div class="test">
+
+    <h2>Test</h2>
+
+    <div class="inner">
+
+      <form>
+              <p>
+                      <input id="test" type="image" src="../res/images/16x16-navy.ico" />
+              </p>
+      </form>
+
+    </div>
+  </div>
+
+  <div class="reference">
+    
+    <h2>Reference</h2>
+    
+    <div class="inner">
+      <form>
+        <p>
+          <img id="reference" src="../res/images/16x16-navy.ico" alt="" />
+        </p>
+      </form>
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+
+<title>input type=file onfocus</title>
+
+<p>Click the file input below. The word "PASS" should appear.</p>
+
+<form action="#">
+  <p><input id="f" type="file" onclick="return false" onfocus="document.getElementById('result').innerHTML = 'PASS'"/></p>
+</form>
+
+<p id="result"></p>
