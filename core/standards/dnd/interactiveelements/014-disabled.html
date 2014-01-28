@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Draggable isindex</title>
+		<style type="text/css">
+isindex { border: 1px solid orange; border-top-width: 20px; }
+		</style>
+		<script type="text/javascript">
+window.onload = function () {
+	document.getElementsByTagName('isindex')[0].ondragstart = function (e) {
+		e.dataTransfer.effectAllowed = 'copy';
+    e.dataTransfer.setData('Text', 'dummy text');
+	};
+};
+		</script>
+	</head>
+	<body>
+
+		<p>Ignore this test. Browsers convert the element into a regular input in the DOM.</p>
+		<p>Press your your mouse button down on the orange block and drag downwards. It should focus the dummy text. Use your mouse to select part of the dummy text. It should <strong>not</strong> drag the block or text in either case.</p>
+		<div>
+			<isindex prompt="Dummy text" draggable="true">
+		</div>
+
+	</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+<head>
+<title>Appending unknown media types</title>
+<style type="text/css" media="screen,projection">
+html * { color: inherit; }
+</style>
+<script type="text/javascript">
+window.onload = function () {
+	try {
+		document.styleSheets.item(0).media.appendMedium('damer');
+		document.getElementsByTagName('p')[0].firstChild.nodeValue =  'PASS';
+	} catch(e) {
+		document.getElementsByTagName('p')[0].firstChild.nodeValue =  'FAIL';
+	}
+};
+</script>
+</head>
+<body>
+
+<p>FAIL (script not run)</p>
+
+</body>
+</html>

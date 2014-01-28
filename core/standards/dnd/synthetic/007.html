@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Using synthetic dataTransfer in new thread</title>
+		<script type="text/javascript" src="/resources/testharness.js"></script>
+		<script type="text/javascript" src="/resources/testharnessreport.js"></script>
+	</head>
+	<body>
+		<div id="log"></div>
+		<script type="text/javascript">
+setup(function () {},{explicit_done:true});
+var div = document.createElement('div');
+div.ondragstart = function (e) {
+	e.dataTransfer.effectAllowed = 'copy';
+	e.dataTransfer.setData('text','dragstart real data');
+	var dataTransfer = e.dataTransfer;
+	setTimeout(function () {
+		test(function () {
+			assert_equals( dataTransfer.getData('text'), '', 'step 1' );
+			dataTransfer.setData('text','new thread after dragstart');
+			assert_equals( dataTransfer.getData('text'), '', 'step 2' );
+		},'drag data store should be protected after new thread starts');
+	},0);
+	var evt = document.createEvent('DragEvent');
+	evt.initDragEvent('drop', true, true, window, 1, 0, 0, 0, 0, false, false, false, false, 1, document.body, e.dataTransfer);
+	div.dispatchEvent(evt);
+};
+div.ondrop = function (e) {
+	e.preventDefault();
+	var dataTransfer = e.dataTransfer;
+	setTimeout(function () {
+		test(function () {
+			assert_equals( dataTransfer.getData('text'), '', 'step 1' );
+			dataTransfer.setData('text','new thread after dragstart');
+			assert_equals( dataTransfer.getData('text'), '', 'step 2' );
+		},'drop data store should be protected after new thread starts');
+		done();
+	},0);
+};
+var evt = document.createEvent('DragEvent');
+evt.initDragEvent('dragstart', true, true, window, 1, 0, 0, 0, 0, false, false, false, false, 1, document.body, {});
+div.dispatchEvent(evt);
+		</script>
+		<noscript><p>Enable JavaScript and reload</p></noscript>
+	</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<title>Database Storage - Error in callback without statements</title>
+<pre id="result">FAIL - Script did not execute</pre>
+
+<script>
+//Database openDatabase(in DOMString name, in DOMString version, in DOMString displayName, in unsigned long estimatedSize);
+var result = document.getElementById("result");
+result.innerHTML = "";
+
+function record(pass, msg) {
+	result.innerHTML += (pass ? "PASS" : "FAIL") + (msg ? " - " + msg : "") + "\n";
+	try{top.opener.rr(pass);}catch(e){}
+}
+
+function error() {
+	e = arguments.length == 1 ? arguments[0] : arguments[1];
+	record(false, "Error " + e.code + ": " + e.message);
+}
+
+try {
+	opera.deleteDatabase("test108");
+	var db = window.openDatabase("test108", "", "Test DB", "100000");
+
+	db.transaction(function (transaction) { throw "die!"; },
+	               function (e) { record(true); },
+	               function () { record(false, "sanity check: success callback shouldn't have run"); });
+
+} catch (e) {
+	record(false, "Couldn't create database or complete transaction: " + e);
+}
+</script>

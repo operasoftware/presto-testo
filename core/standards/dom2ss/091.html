@@ -1,0 +1,23 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+<head>
+<title>Changing rule cssText</title>
+<style type="text/css">
+p { color: #0d0; }
+p { color: red; }
+</style>
+<script type="text/javascript">
+window.onload = function () {
+	document.styleSheets.item(0).cssRules.item(1).cssText = 'p.damer { color: #0d0; }';
+	document.getElementsByTagName('p')[0].firstChild.nodeValue = 'Both of these lines of text should be green.';
+};
+</script>
+</head>
+<body>
+
+<p>FAIL (script not run or produced an error)</p>
+
+<p class="damer">Both of these lines of text should be green.</p>
+
+</body>
+</html>

@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<meta charset='utf-8'>
+<title>Tabindex on the &lt;summary&gt; of a closed &lt;details&gt;</title>
+<style>details p { color: blue; }</style>
+
+<details>
+ <summary tabindex='1'>Press <kbd>Tab</kbd>. Press <kbd>Enter</kbd>.
+ The word “FOOBAR” should <em>appear</em> below.</summary>
+ <p>FOOBAR</p>
+</details>

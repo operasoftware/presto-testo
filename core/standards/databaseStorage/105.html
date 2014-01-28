@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<title>Database Storage - Transaction object used after transaction callback finished</title>
+<pre id="result">FAIL - Script did not execute</pre>
+
+<script>
+//Database openDatabase(in DOMString name, in DOMString version, in DOMString displayName, in unsigned long estimatedSize);
+var result = document.getElementById("result");
+result.innerHTML = "";
+
+function record(pass, msg) {
+	result.innerHTML += (pass ? "PASS" : "FAIL") + (msg ? " - " + msg : "") + "\n";
+	try{top.opener.rr(pass);}catch(e){}
+}
+
+function error() {
+	e = arguments.length == 1 ? arguments[0] : arguments[1];
+	record(false, "Error " + e.code + ": " + e.message);
+}
+
+var saved_transaction = null;
+
+function createTable(transaction) {
+	//void executeSql(sqlStatement, [arguments], callback, errorCallback);
+	transaction.executeSql("DROP TABLE IF EXISTS t;", [], null, error);
+	transaction.executeSql("CREATE TABLE t(id INTEGER, label TEXT);", [], null, error);
+	saved_transaction = transaction;
+}
+
+function useSavedTransaction() {
+	try {
+		saved_transaction.executeSql("INSERT INTO t VALUES (1, 'one')");
+		record(false, "Should've raised INVALID_STATE_ERR exception");
+	} catch (e) {
+		if (e.code == DOMException.INVALID_STATE_ERR) {
+			record(true);
+		} else {
+			record(false, "Exception should be INVALID_STATE_ERR");
+		}
+	}
+}
+
+
+try {
+	opera.deleteDatabase("test105");
+	var db = window.openDatabase("test105", "", "Test DB", "100000");
+	db.transaction(createTable, error, useSavedTransaction);
+} catch (e) {
+	record(false, "Couldn't create database or complete transaction: " + e);
+}
+</script>

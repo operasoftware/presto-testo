@@ -1,0 +1,24 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+<head>
+<title>Deleting media types</title>
+<style type="text/css">
+p { color: #0d0; }
+</style>
+<style type="text/css" media="print,screen,projection">
+p { color: red; }
+</style>
+<script type="text/javascript">
+window.onload = function () {
+	document.getElementsByTagName('p')[0].firstChild.nodeValue =  'This text should be green.';
+	document.styleSheets.item(1).media.deleteMedium('screen');
+	document.styleSheets.item(1).media.deleteMedium('projection');
+};
+</script>
+</head>
+<body>
+
+<p>FAIL (script not run)</p>
+
+</body>
+</html>

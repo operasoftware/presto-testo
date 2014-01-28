@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Link text selection: right to left mouse drag</title>
+<style type="text/css">
+a
+	{border:solid 2px #D2B48C;}
+span
+	{margin:0 -1px;}
+</style>
+</head>
+<body onmouseup="if(window.getSelection().toString() == 'Select me'){document.querySelector('a').setAttribute('style','border:solid 4px #228B22')}">
+<p><a href="data:text/plain,1"><span>Select me</span></a></p>
+<p>You should be able to select text above by dragging mouse over it from right to left. Selection border should turn green once you release mouse.</p>
+</body>
+</html>

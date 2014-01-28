@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<title>Database Storage - Using control characters as a database name</title>
+<div id="result">FAIL - Script did not execute</div>
+<script>
+var ul = document.createElement("ul");
+var result = document.getElementById("result");
+result.innerHTML = "";
+result.appendChild(ul);
+
+function record(pass, msg) {
+	var li = document.createElement("li");
+	li.innerHTML = (pass ? "PASS" : "FAIL") + (msg ? " - " + msg : "");
+	ul.appendChild(li);
+}
+
+try {
+	
+	for (var i = 0; i < 0x20; i++) {
+		var name = "test_char_" + String.fromCharCode(i);
+		var displayName = "U+" + i.toString(16).toUpperCase();
+		var db = window.openDatabase(name, "1", displayName, "10");
+		record((db) ? true : false, displayName + " : " + name);
+		opera.deleteDatabase(name);
+	}
+
+} catch (e) {
+	record(false, "Couldn't create database: " + e);
+}
+
+
+
+</script>

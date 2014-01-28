@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Ugly dragging demo</title>
+		<style type="text/css">
+div {
+	border: 10px solid red;
+	width: 100px;
+	margin: 100px;
+	padding: 100px;
+	outline: 10px solid orange;
+	text-shadow: 115px 115px 30px blue, 115px 115px 30px blue, 115px 115px 30px blue, 115px 115px 30px blue, 115px 115px 30px blue;
+	box-shadow: 115px 115px 30px lime, 115px 115px 30px inset fuchsia;
+	opacity: 0.1;
+	border-radius: 20px;
+	-moz-border-radius: 20px;
+	transform: rotate(-5deg) scale(1.1) skew(-5deg);
+	-o-transform: rotate(-5deg) scale(1.1) skew(-5deg);
+	-moz-transform: rotate(-5deg) scale(1.1) skew(-5deg);
+	-webkit-transform: rotate(-5deg) scale(1.1) skew(-5deg);
+	-ms-transform: rotate(-5deg) scale(1.1) skew(-5deg);
+}
+p:first-child {
+	position: absolute;
+	top: 150px;
+	left: -50px;
+	border: 10px solid red;
+	width: 100px;
+	margin: 100px;
+	padding: 100px;
+	outline: 10px solid orange;
+	text-shadow: 115px 115px 30px blue, 115px 115px 30px blue, 115px 115px 30px blue, 115px 115px 30px blue, 115px 115px 30px blue;
+	box-shadow: 115px 115px 30px lime, 115px 115px 30px inset fuchsia;
+	opacity: 0.7;
+}
+		</style>
+	</head>
+	<body>
+
+		<p>This is not the draggable element</p>
+		<div draggable="true">This is the draggable element</div>
+		<script type="text/javascript">
+document.getElementsByTagName('div')[0].ondragstart = function(event) { event.dataTransfer.setData('Text', 'foo'); };
+		</script>
+
+	</body>
+</html>

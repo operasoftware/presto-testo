@@ -1,0 +1,21 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+<head>
+<title>Setting rule properties</title>
+<style type="text/css">
+* { color: red; }
+html * { }
+</style>
+<script type="text/javascript">
+window.onload = function () {
+	document.getElementsByTagName('p')[0].firstChild.nodeValue = 'This text should be green.';
+	document.styleSheets.item(0).cssRules.item(1).style.setProperty('color','#0d0',null);
+};
+</script>
+</head>
+<body>
+
+<p>FAIL (script not run)</p>
+
+</body>
+</html>

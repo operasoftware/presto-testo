@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<title>DeviceMotion-003-001-Enumerablity check: DeviceMotion.acceleration</title>
+<link rel="stylesheet" href="resources/style.css"/>
+<script src="resources/lib.js"></script>
+<script>
+onload = function() {
+    try {
+        window.addEventListener("devicemotion", function dmhndlr(dmevt) {
+            window.removeEventListener("devicemotion", dmhndlr, false);
+            var found = false;
+            for (var x in dmevt) {
+                if (x === "acceleration") {
+                    found = true;
+                    break;
+                }
+            };
+            if (found) {
+                setResult(1, "DeviceMotion.acceleration is enumerable.");
+            } else {
+                setResult(0, "DeviceMotion.acceleration is not enumerable.");
+            }
+        },
+        false);
+    } catch(e) {
+        setResult(0, "Threw: " + e);
+    }
+}
+</script>
+<body>
+
+</body>

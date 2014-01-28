@@ -1,0 +1,20 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+<head>
+<title>Lang selector seen through DOM</title>
+<style type="text/css">
+html:lang(en) { color: inherit; }
+</style>
+</head>
+<body>
+
+<script type="text/javascript">
+document.write('<p>'+(
+(document.styleSheets && document.styleSheets[0].cssRules[0].selectorText.match(/html:lang\(en\)/i))?
+'PASS':'FAIL'
+)+'<\/p>');
+</script>
+<noscript><p>Enable script and reload</p></noscript>
+
+</body>
+</html>

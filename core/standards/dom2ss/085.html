@@ -1,0 +1,22 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+<head>
+<title>Cross domain security for cssRules</title>
+<link rel="stylesheet" type="text/css" href="http://www.opera.com/css/handheld.css" media="handheld">
+<script type="text/javascript">
+window.onload = function () {
+	try {
+		var whocares = document.styleSheets.item(0).cssRules.item(0).cssText;
+		document.getElementsByTagName('p')[0].firstChild.nodeValue = 'FAIL';
+	} catch(e) {
+		document.getElementsByTagName('p')[0].firstChild.nodeValue = 'PASS';
+	}
+};
+</script>
+</head>
+<body>
+
+<p>FAIL (script not run or produced an error)</p>
+
+</body>
+</html>

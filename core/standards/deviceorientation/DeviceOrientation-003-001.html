@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<title>DeviceOrientation-003-001-Enumerablity check: DeviceOrientation.alpha</title>
+<link rel="stylesheet" href="resources/style.css"/>
+<script src="resources/lib.js"></script>
+<script>
+onload = function() {
+    try {
+        window.addEventListener("deviceorientation", function dohndlr(doevt) {
+            window.removeEventListener("deviceorientation", dohndlr, false);
+            var found = false;
+            for (var x in doevt) {
+                if (x === "alpha") {
+                    found = true;
+                    break;
+                }
+            };
+            if (found) {
+                setResult(1, "DeviceOrientation.alpha is enumerable.");
+            } else {
+                setResult(0, "DeviceOrientation.alpha is not enumerable.");
+            }
+        },
+        false);
+    } catch(e) {
+        setResult(0, "Threw: " + e);
+    }
+}
+</script>
+<body>
+
+</body>

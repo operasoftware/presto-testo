@@ -1,0 +1,17 @@
+<?xml-stylesheet type="text/css" title="yellow" href="imported.css" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<title>XML stylesheets</title>
+<script type="text/javascript">
+window.onload = function () {
+	document.getElementsByTagName('p')[0].firstChild.nodeValue = ( document.styleSheets.item(0).ownerNode == document.childNodes[0] ) ? 'PASS' : 'FAIL';
+};
+</script>
+</head>
+<body>
+
+<p>FAIL (script not run or produced an error)</p>
+
+</body>
+</html>

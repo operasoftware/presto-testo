@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<title>DeviceMotion-001-001-Type check: DeviceMotion.acceleration is of type object</title>
+<link rel="stylesheet" href="resources/style.css"/>
+<script src="resources/lib.js"></script>
+<script>
+onload = function() {
+    try {
+        window.addEventListener("devicemotion", function dmhndlr(dmevt) {
+            window.removeEventListener("devicemotion", dmhndlr, false);
+            if ((dmevt.acceleration !== null && typeof dmevt.acceleration === "object") || dmevt.acceleration === null) {
+                setResult(1, "typeof:  DeviceMotion.acceleration ,  property can be of type object or null (object) ; got : " + dmevt.acceleration);
+            } else {
+                setResult(0, "typeof:  DeviceMotion.acceleration got:" + typeof dmevt.acceleration + ",expected:object or null, toString: " + dmevt.acceleration);
+            }
+        },
+        false);
+    } catch(e) {
+        setResult(0, "Threw: " + e);
+    }
+}
+</script>
+<body>
+
+</body>

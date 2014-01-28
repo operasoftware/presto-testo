@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<title>DeviceOrientation-001-001-Type check: DeviceOrientation.alpha is of type number</title>
+<link rel="stylesheet" href="resources/style.css"/>
+<script src="resources/lib.js"></script>
+<script>
+onload = function() {
+    try {
+        window.addEventListener("deviceorientation", function dohndlr(doevt) {
+            window.removeEventListener("deviceorientation", dohndlr, false);
+            if ((doevt.alpha !== null && typeof doevt.alpha === "number") || doevt.alpha === null) {
+                setResult(1, "typeof:  DeviceOrientation.alpha ,  property can be of type number or null (object) ; got : " + doevt.alpha);
+            } else {
+                setResult(0, "typeof:  DeviceOrientation.alpha got:" + typeof doevt.alpha + ",expected:number or null, toString: " + doevt.alpha);
+            }
+        },
+        false);
+    } catch(e) {
+        setResult(0, "Threw: " + e);
+    }
+}
+</script>
+<body>
+
+</body>

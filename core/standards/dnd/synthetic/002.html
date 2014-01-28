@@ -1,0 +1,196 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Synthetic events must not share data with real events</title>
+		<style type="text/css">
+blockquote { height: 100px; width: 100px; background: orange; margin: 0; padding: 0; float: left; }
+blockquote + blockquote { background: blue; }
+blockquote + blockquote + blockquote { background: fuchsia; }
+blockquote + div { clear: left; }
+		</style>
+		<script type="text/javascript" src="/resources/testharness.js"></script>
+		<script type="text/javascript">
+setup(function () {},{explicit_done:true,timeout:30000});
+window.onload = function () {
+
+	var orange  = document.getElementsByTagName('blockquote')[0],
+	    blue    = document.getElementsByTagName('blockquote')[1],
+	    fuchsia = document.getElementsByTagName('blockquote')[2],
+	    evtdone = {};
+
+	(function () {
+		var t = async_test('it should be possible to create a synthetic event');
+		blue.ondragstart = function (e) {
+			t.step(function() {
+				e.dataTransfer.setData('text','synthetic data');
+				assert_equals( e.dataTransfer.getData('text'), 'synthetic data' );
+			});
+		};
+		t.step(function() {
+			var evt = document.createEvent('DragEvent');
+			evt.initDragEvent('dragstart', true, true, window, 1, 0, 0, 0, 0, false, false, false, false, 1, document.body, {});
+			blue.dispatchEvent(evt);
+		});
+		t.done();
+	})();
+
+	orange.ondragstart = function (e) {
+		evtdone[e.type] = true;
+		test(function() {
+			assert_equals( e.dataTransfer.getData('text'), '' );
+		}, e.type+' should not see the data from the initial synthetic event' );
+		e.dataTransfer.effectAllowed = 'copy';
+		e.dataTransfer.setData('text','real data');
+		var t = async_test(e.type+' should not share its data with the synthetic event');
+		blue.ondragstart = function (e) {
+			t.step(function() {
+				try {
+					assert_equals( e.dataTransfer.getData('text'), '' );
+				} finally {
+					e.dataTransfer.setData('text','synthetic data');
+				}
+			});
+		};
+		t.step(function() {
+			var evt = document.createEvent('DragEvent');
+			evt.initDragEvent('dragstart', true, true, window, 1, 0, 0, 0, 0, false, false, false, false, 1, document.body, {});
+			blue.dispatchEvent(evt);
+		});
+		t.done();
+		test(function() {
+			assert_equals( e.dataTransfer.getData('text'), 'real data' );
+		}, e.type+' should not see the data from the synthetic event' );
+	};
+	blue.ondragenter = blue.ondragover = function (e) {
+		e.preventDefault();
+	};
+	orange.ondrag = blue.ondragleave = function (e) {
+		if( evtdone[e.type] ) { return; }
+		evtdone[e.type] = true;
+		test(function() {
+			assert_equals( e.dataTransfer.getData('text'), '' );
+		}, e.type+' should not see leftover data from synthetic event' );
+		var t = async_test(e.type+' should not share its data with the synthetic event');
+		blue.ondragstart = function (e) {
+			t.step(function() {
+				try {
+					assert_equals( e.dataTransfer.getData('text'), '' );
+				} finally {
+					e.dataTransfer.setData('text','synthetic data');
+				}
+			});
+		};
+		t.step(function() {
+			var evt = document.createEvent('DragEvent');
+			evt.initDragEvent('dragstart', true, true, window, 1, 0, 0, 0, 0, false, false, false, false, 1, document.body, {});
+			blue.dispatchEvent(evt);
+		});
+		t.done();
+		test(function() {
+			assert_equals( e.dataTransfer.getData('text'), '' );
+		}, e.type+' should not see the data from the synthetic event' );
+	};
+	fuchsia.ondragenter = fuchsia.ondragover = function (e) {
+		e.preventDefault();
+		if( evtdone[e.type] ) { return; }
+		evtdone[e.type] = true;
+		test(function() {
+			assert_equals( e.dataTransfer.getData('text'), '' );
+		}, e.type+' should not see leftover data from synthetic event' );
+		var t = async_test(e.type+' should not share its data with the synthetic event');
+		blue.ondragstart = function (e) {
+			t.step(function() {
+				try {
+					assert_equals( e.dataTransfer.getData('text'), '' );
+				} finally {
+					e.dataTransfer.setData('text','synthetic data');
+				}
+			});
+		};
+		t.step(function() {
+			var evt = document.createEvent('DragEvent');
+			evt.initDragEvent('dragstart', true, true, window, 1, 0, 0, 0, 0, false, false, false, false, 1, document.body, {});
+			blue.dispatchEvent(evt);
+		});
+		t.done();
+		test(function() {
+			assert_equals( e.dataTransfer.getData('text'), '' );
+		}, e.type+' should not see the data from the synthetic event' );
+	};
+	fuchsia.ondrop = function (e) {
+		e.preventDefault();
+		if( evtdone[e.type] ) { return; }
+		evtdone[e.type] = true;
+		test(function() {
+			assert_equals( e.dataTransfer.getData('text'), 'real data' );
+		}, e.type+' should not see leftover data from synthetic event' );
+		var t = async_test(e.type+' should not share its data with the synthetic event');
+		blue.ondragstart = function (e) {
+			t.step(function() {
+				try {
+					assert_equals( e.dataTransfer.getData('text'), '' );
+				} finally {
+					e.dataTransfer.setData('text','synthetic data');
+				}
+			});
+		};
+		t.step(function() {
+			var evt = document.createEvent('DragEvent');
+			evt.initDragEvent('dragstart', true, true, window, 1, 0, 0, 0, 0, false, false, false, false, 1, document.body, {});
+			blue.dispatchEvent(evt);
+		});
+		t.done();
+		test(function() {
+			assert_equals( e.dataTransfer.getData('text'), 'real data' );
+		}, e.type+' should not see the data from the synthetic event' );
+	};
+	orange.ondragend = function (e) {
+		if( evtdone[e.type] ) { return; }
+		evtdone[e.type] = true;
+		test(function() {
+			assert_equals( e.dataTransfer.getData('text'), '' );
+		}, e.type+' should not see leftover data from synthetic event' );
+		var t = async_test(e.type+' should not share its data with the synthetic event');
+		blue.ondragstart = function (e) {
+			t.step(function() {
+				try {
+					assert_equals( e.dataTransfer.getData('text'), '' );
+				} finally {
+					e.dataTransfer.setData('text','synthetic data');
+				}
+			});
+		};
+		t.step(function() {
+			var evt = document.createEvent('DragEvent');
+			evt.initDragEvent('dragstart', true, true, window, 1, 0, 0, 0, 0, false, false, false, false, 1, document.body, {});
+			blue.dispatchEvent(evt);
+		});
+		t.done();
+		test(function() {
+			assert_equals( e.dataTransfer.getData('text'), '' );
+		}, e.type+' should not see the data from the synthetic event' );
+		test(function() {
+			var failtxt = '- Reload and try again';
+			assert_true( evtdone.dragstart, 'dragstart event was not tested'+failtxt );
+			assert_true( evtdone.drag, 'drag event was not tested'+failtxt );
+			assert_true( evtdone.dragenter, 'dragenter event was not tested'+failtxt );
+			assert_true( evtdone.dragleave, 'dragleave event was not tested'+failtxt );
+			assert_true( evtdone.dragover, 'dragover event was not tested'+failtxt );
+			assert_true( evtdone.drop, 'drop event was not tested'+failtxt );
+			assert_true( evtdone.dragend, 'dragend event was not tested'+failtxt );
+		}, 'all event types must now have been tested' );
+		done();
+	};
+
+};
+		</script>
+	</head>
+	<body>
+		<p>Drag the orange square over the blue square then the fuchsia square, then release it.</p>
+		<blockquote draggable="true"></blockquote>
+		<blockquote></blockquote>
+		<blockquote></blockquote>
+		<div id="log"></div>
+		<noscript><p>Enable JavaScript and reload</p></noscript>
+	</body>
+</html>

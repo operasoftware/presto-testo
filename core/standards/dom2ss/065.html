@@ -1,0 +1,21 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+<head>
+<title>Removing rule properties</title>
+<style type="text/css">
+* { color: #0d0; }
+html * { color: red; }
+</style>
+<script type="text/javascript">
+window.onload = function () {
+	document.getElementsByTagName('p')[0].firstChild.nodeValue = 'This text should be green.';
+	document.styleSheets.item(0).cssRules.item(1).style.removeProperty('color');
+};
+</script>
+</head>
+<body>
+
+<p>FAIL (script not run)</p>
+
+</body>
+</html>

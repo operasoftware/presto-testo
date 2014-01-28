@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<title>Database Storage - Read only transaction should fail if it attemps to write</title>
+
+<pre id="result">FAIL - Script did not execute</pre>
+
+<script>
+//Database openDatabase(in DOMString name, in DOMString version, in DOMString displayName, in unsigned long estimatedSize);
+var result = document.getElementById("result");
+result.innerHTML = "";
+
+function record(pass, msg) {
+	result.innerHTML += (pass ? "PASS" : "FAIL") + (msg ? " - " + msg : "") + "\n";
+	try{top.opener.rr(pass);}catch(e){}
+}
+
+function createTable(transaction) {
+	//void executeSql(sqlStatement, [arguments], callback, errorCallback);
+	transaction.executeSql("DROP TABLE IF EXISTS t;");
+	transaction.executeSql("CREATE TABLE t(id INTEGER, label TEXT);");
+}
+
+function attemptWrite(transaction) {
+	transaction.executeSql("INSERT INTO t values (1, 'one');");
+}
+
+function error(e) {
+	record(false, "Error " + e.code + ": " + e.message);
+}
+
+function success(e) {
+	record(true, "Correctly failed to write to db (error code: " + e.code + ", message: " + e.message + ")");
+}
+
+try {
+	opera.deleteDatabase("test102");
+	var db = window.openDatabase("test102", "", "Test DB", "100000");
+	db.transaction(createTable, error, function () { db.readTransaction(attemptWrite, success); });
+} catch (e) {
+	record(false, "Couldn't create database or complete transaction: " + e);
+}
+</script>

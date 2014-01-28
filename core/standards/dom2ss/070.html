@@ -1,0 +1,20 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+<head>
+<title>hasFeature</title>
+<script type="text/javascript">
+window.onload = function () {
+	document.getElementsByTagName('p')[0].firstChild.nodeValue =
+		document.implementation.hasFeature('StyleSheets','2.0') &&
+		document.implementation.hasFeature('CSS','2.0') &&
+		document.implementation.hasFeature('CSS2','2.0')
+		? 'PASS' : 'FAIL';
+};
+</script>
+</head>
+<body>
+
+<p>FAIL (script not run or produced an error)</p>
+
+</body>
+</html>

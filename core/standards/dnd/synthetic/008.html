@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Data persistence over multiple pages</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+var div = document.createElement('div');
+div.ondragstart = function (e) {
+	e.dataTransfer.effectAllowed = 'copy';
+	e.dataTransfer.setData('text','data from previous page');
+};
+var evt = document.createEvent('DragEvent');
+evt.initDragEvent('dragstart', true, true, window, 1, 0, 0, 0, 0, false, false, false, false, 1, document.body, {});
+div.dispatchEvent(evt);
+location.href = '008-1.html';
+		</script>
+		<noscript><p>Enable JavaScript and reload</p></noscript>
+	</body>
+</html>

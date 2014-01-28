@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" onload="checkStyleSheet();">
+<title>cssRules length for SVG</title>
+<style type="text/css">
+circle { fill: green; stroke: yellow; visibility: hidden; }
+rect { fill: lightblue; stroke: darkblue; visibility: hidden; }
+</style>
+<script type="text/ecmascript"><![CDATA[
+function checkStyleSheet () {
+  document.getElementById('text1').firstChild.data = ( document.styleSheets.item(0).cssRules.length == 2 ) ? 'PASS' : 'FAIL';
+}
+]]></script>
+
+<text id="text1" x="10" y="25">FAIL (script not run or produced an error)</text>
+
+<circle cx="30" cy="50" r="10" />
+<rect x="60" y="60" width="30" height="30" />
+
+</svg>

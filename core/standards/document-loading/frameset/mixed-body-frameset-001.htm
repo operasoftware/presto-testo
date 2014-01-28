@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<style>
+body {height:50px; background-color:lightblue; margin:0; padding:0;} html {margin:0; padding:0}</style>
+<script>
+onload = function() {
+var body = document.createElement("body");
+document.body.parentNode.insertBefore(body, document.body)
+body.textContent = "Pass if this page has a region with a blue background above a region with an orange background";
+};
+</script>
+<frameset cols="*"><frame src="data:text/html,<style>html {background-color:orange}</style>Pass if this page has a region with a blue background above a region with an orange background"></frame></frameset>

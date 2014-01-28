@@ -1,0 +1,632 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Synthetic drag events</title>
+		<script type="text/javascript" src="/resources/testharness.js"></script>
+		<script type="text/javascript" src="/resources/testharnessreport.js"></script>
+	</head>
+	<body>
+		<div id="log"></div>
+		<script type="text/javascript">
+test(function() {
+	assert_own_property(window,'DragEvent');
+}, 'window.DragEvent should be exposed' );
+test(function() {
+	var evt = document.createEvent('DragEvent');
+	assert_true( evt instanceof DragEvent, 'instanceof check' );
+}, 'createEvent should be able to create a DragEvent' );
+test(function() {
+	var evt = document.createEvent('DragEvent');
+	assert_true( !!evt.initDragEvent, 'initDragEvent' );
+	assert_true( !!evt.initMouseEvent, 'initMouseEvent' );
+	assert_true( !!evt.initUIEvent, 'initUIEvent' );
+	assert_true( !!evt.initEvent, 'initEvent' );
+}, 'DragEvent should have all of the inherited init*Event methods' );
+
+//cannot test non-synthetic dataTransfer objects as the param here because that needs a real DragEvent to create a proper one with global storage
+//will be tested in another file
+test(function() {
+	//unspecified - based on Gecko's response
+	var evt = document.createEvent('DragEvent');
+	var threwErr = false;
+	try {
+		evt.initDragEvent('dragstart', true, true, window, 1, 0, 0, 0, 0, false, false, false, false, 1, document.body, 5);
+	} catch(e) {
+		//each browser throws a custom error - no standard error type - as long as it throws something, it will pass...
+		threwErr = true;
+	}
+	assert_true( threwErr );
+}, 'initDragEvent should throw when given a number as the dataTransfer parameter' );
+test(function() {
+	//unspecified - based on Gecko's response
+	var evt = document.createEvent('DragEvent');
+	try {
+		evt.initDragEvent('dragstart', true, true, window, 1, 0, 0, 0, 0, false, false, false, false, 1, document.body, 'dummy text');
+	} catch(e) {
+		//each browser throws a custom error - no standard error type - as long as it throws something, it will pass...
+		threwErr = true;
+	}
+	assert_true( threwErr );
+}, 'initDragEvent should throw when given a string as the dataTransfer parameter' );
+test(function() {
+	//unspecified - based on Gecko's response
+	var evt = document.createEvent('DragEvent');
+	evt.initDragEvent('dragstart', true, true, window, 1, 0, 0, 0, 0, false, false, false, false, 1, document.body, null);
+}, 'initDragEvent should not throw when given null as the dataTransfer parameter' );
+test(function() {
+	//unspecified - based on Gecko's response
+	var evt = document.createEvent('DragEvent');
+	evt.initDragEvent('dragstart', true, true, window, 1, 0, 0, 0, 0, false, false, false, false, 1, document.body, undefined);
+}, 'initDragEvent should not throw when given undefined as the dataTransfer parameter' );
+test(function() {
+	//unspecified - based on Gecko's response
+	var evt = document.createEvent('DragEvent');
+	evt.initDragEvent('dragstart', true, true, window, 1, 0, 0, 0, 0, false, false, false, false, 1, document.body, {});
+}, 'initDragEvent should not throw when given a custom object as the dataTransfer parameter' );
+test(function() {
+	//unspecified - based on Gecko's response
+	var evt = document.createEvent('DragEvent');
+	evt.initMouseEvent('dragstart', true, true, window, 1, 0, 0, 0, 0, false, false, false, false, 1, document.body);
+}, 'initMouseEvent should not throw' );
+test(function() {
+	//unspecified - based on Gecko's response
+	var evt = document.createEvent('DragEvent');
+	evt.initUIEvent('dragstart', true, true, window, 1);
+}, 'initUIEvent should not throw' );
+test(function() {
+	//unspecified - based on Gecko's response
+	var evt = document.createEvent('DragEvent');
+	evt.initEvent('dragstart', true, true);
+}, 'initEvent should not throw' );
+
+test(function() {
+	//unspecified - based on Gecko's response
+	var evt = document.createEvent('DragEvent'), div = document.createElement('div'), ranlistener = false;
+	div.ondragstart = function () { ranlistener = true; };
+	evt.initDragEvent('dragstart', true, true, window, 1, 0, 0, 0, 0, false, false, false, false, 1, document.body, null);
+	div.dispatchEvent(evt);
+	assert_true(ranlistener);
+}, 'initDragEvent with null as the dataTransfer parameter should be able to fire the event' );
+test(function() {
+	//unspecified - based on Gecko's response
+	var evt = document.createEvent('DragEvent'), div = document.createElement('div'), ranlistener = false;
+	div.ondragstart = function () { ranlistener = true; };
+	evt.initDragEvent('dragstart', true, true, window, 1, 0, 0, 0, 0, false, false, false, false, 1, document.body, undefined);
+	div.dispatchEvent(evt);
+	assert_true(ranlistener);
+}, 'initDragEvent with undefined as the dataTransfer parameter should be able to fire the event' );
+test(function() {
+	//unspecified - based on Gecko's response
+	var evt = document.createEvent('DragEvent'), div = document.createElement('div'), ranlistener = false;
+	div.ondragstart = function () { ranlistener = true; };
+	evt.initDragEvent('dragstart', true, true, window, 1, 0, 0, 0, 0, false, false, false, false, 1, document.body, {});
+	div.dispatchEvent(evt);
+	assert_true(ranlistener);
+}, 'initDragEvent with custom object as the dataTransfer parameter should be able to fire the event' );
+test(function() {
+	//unspecified - based on Gecko's response
+	var evt = document.createEvent('DragEvent'), div = document.createElement('div'), ranlistener = false;
+	div.ondragstart = function () { ranlistener = true; };
+	evt.initMouseEvent('dragstart', true, true, window, 1, 0, 0, 0, 0, false, false, false, false, 1, document.body);
+	div.dispatchEvent(evt);
+	assert_true(ranlistener);
+}, 'initMouseEvent should be able to fire the event' );
+test(function() {
+	//unspecified - based on Gecko's response
+	var evt = document.createEvent('DragEvent'), div = document.createElement('div'), ranlistener = false;
+	div.ondragstart = function () { ranlistener = true; };
+	evt.initUIEvent('dragstart', true, true, window, 1);
+	div.dispatchEvent(evt);
+	assert_true(ranlistener);
+}, 'initUIEvent should be able to fire the event' );
+test(function() {
+	//unspecified - based on Gecko's response
+	var evt = document.createEvent('DragEvent'), div = document.createElement('div'), ranlistener = false;
+	div.ondragstart = function () { ranlistener = true; };
+	evt.initEvent('dragstart', true, true);
+	div.dispatchEvent(evt);
+	assert_true(ranlistener);
+}, 'initEvent should be able to fire the event' );
+
+test(function() {
+	//unspecified - based on Gecko's response
+	var evt = document.createEvent('DragEvent'), div = document.createElement('div'), dTrans = 'fail';
+	div.ondragstart = function (e) { dTrans = e.dataTransfer };
+	evt.initDragEvent('dragstart', true, true, window, 1, 0, 0, 0, 0, false, false, false, false, 1, document.body, null);
+	div.dispatchEvent(evt);
+	assert_equals(dTrans,null);
+}, 'initDragEvent with null as the dataTransfer parameter should give null as the dataTransfer' );
+test(function() {
+	//unspecified - based on Gecko's response
+	var evt = document.createEvent('DragEvent'), div = document.createElement('div'), dTrans = 'fail';
+	div.ondragstart = function (e) { dTrans = e.dataTransfer };
+	evt.initDragEvent('dragstart', true, true, window, 1, 0, 0, 0, 0, false, false, false, false, 1, document.body, undefined);
+	div.dispatchEvent(evt);
+	assert_equals(dTrans,null);
+}, 'initDragEvent with undefined as the dataTransfer parameter should give null as the dataTransfer' );
+(function () {
+	//unspecified - based on Gecko's response, but Gecko uses the wrong object type
+	var t = async_test('initDragEvent with custom object as the dataTransfer parameter should create a dataTransfer object'), evt, div = document.createElement('div'), ranlistener = false;
+	div.ondragstart = function (e) {
+		ranlistener = true;
+		t.step(function () {
+			assert_true( !!e.dataTransfer, 'object existence' );
+			assert_true( e.dataTransfer instanceof DataTransfer, 'instanceof' );
+			assert_equals( typeof e.dataTransfer.dropEffect, 'string', 'dropEffect' );
+			assert_equals( typeof e.dataTransfer.effectAllowed, 'string', 'effectAllowed' );
+			assert_true( e.dataTransfer.types instanceof DOMStringList, 'types' );
+			assert_equals( e.dataTransfer.types.length, 0, 'types.length' );
+			assert_true( !!e.dataTransfer.clearData, 'clearData' );
+			assert_true( !!e.dataTransfer.setData, 'setData' );
+			assert_true( !!e.dataTransfer.getData, 'getData' );
+			assert_true( !!e.dataTransfer.setDragImage, 'setDragImage' );
+			assert_true( !!e.dataTransfer.addElement, 'addElement' );
+			assert_true( e.dataTransfer.files instanceof FileList, 'files' );
+		});
+	};
+	t.step(function() {
+		evt = document.createEvent('DragEvent');
+		evt.initDragEvent('dragstart', true, true, window, 1, 0, 0, 0, 0, false, false, false, false, 1, document.body, {});
+		div.dispatchEvent(evt);
+		assert_true(ranlistener,'listener');
+	});
+	t.done();
+})();
+test(function() {
+	//unspecified - based on Gecko's response
+	var evt = document.createEvent('DragEvent'), div = document.createElement('div'), dTrans = 'fail';
+	div.ondragstart = function (e) { dTrans = e.dataTransfer };
+	evt.initMouseEvent('dragstart', true, true, window, 1, 0, 0, 0, 0, false, false, false, false, 1, document.body);
+	div.dispatchEvent(evt);
+	assert_equals(dTrans,null);
+}, 'initMouseEvent should give null as the dataTransfer' );
+test(function() {
+	//unspecified - based on Gecko's response
+	var evt = document.createEvent('DragEvent'), div = document.createElement('div'), dTrans = 'fail';
+	div.ondragstart = function (e) { dTrans = e.dataTransfer };
+	evt.initUIEvent('dragstart', true, true, window, 1);
+	div.dispatchEvent(evt);
+	assert_equals(dTrans,null);
+}, 'initUIEvent should give null as the dataTransfer' );
+test(function() {
+	//unspecified - based on Gecko's response
+	var evt = document.createEvent('DragEvent'), div = document.createElement('div'), dTrans = 'fail';
+	div.ondragstart = function (e) { dTrans = e.dataTransfer };
+	evt.initEvent('dragstart', true, true);
+	div.dispatchEvent(evt);
+	assert_equals(dTrans,null);
+}, 'initEvent should give null as the dataTransfer' );
+
+(function () {
+	//assumes earlier test passed - creating dataTransfer when passed object
+	var t = async_test('initDragEvent with null as the dataTransfer parameter should create a dataTransfer object'), evt, div = document.createElement('div'), ranlistener = false;
+	div.ondragstart = function (e) {
+		//no need to step the object creation this time, it has to work for it to get here at all
+		var evt = document.createEvent('DragEvent'), div = document.createElement('div');
+		div.ondragstart = function (e) {
+			ranlistener = true;
+			t.step(function() {
+				assert_true( !!e.dataTransfer, 'object existence' );
+				assert_true( e.dataTransfer instanceof DataTransfer, 'instanceof' );
+				assert_equals( typeof e.dataTransfer.dropEffect, 'string', 'dropEffect' );
+				assert_equals( typeof e.dataTransfer.effectAllowed, 'string', 'effectAllowed' );
+				assert_true( e.dataTransfer.types instanceof DOMStringList, 'types' );
+				assert_equals( e.dataTransfer.types.length, 0, 'types.length' );
+				assert_true( !!e.dataTransfer.clearData, 'clearData' );
+				assert_true( !!e.dataTransfer.setData, 'setData' );
+				assert_true( !!e.dataTransfer.getData, 'getData' );
+				assert_true( !!e.dataTransfer.setDragImage, 'setDragImage' );
+				assert_true( !!e.dataTransfer.addElement, 'addElement' );
+				assert_true( e.dataTransfer.files instanceof FileList, 'files' );
+			});
+		};
+		evt.initDragEvent('dragstart', true, true, window, 1, 0, 0, 0, 0, false, false, false, false, 1, document.body, e.dataTransfer);
+		div.dispatchEvent(evt);
+	};
+	t.step(function() {
+		evt = document.createEvent('DragEvent');
+		evt.initDragEvent('dragstart', true, true, window, 1, 0, 0, 0, 0, false, false, false, false, 1, document.body, {});
+		div.dispatchEvent(evt);
+		assert_true(ranlistener,'listener');
+	});
+	t.done();
+})();
+
+(function () {
+	//unspecified - based on Gecko's response
+	var t = async_test('initDragEvent with custom object as the dataTransfer parameter should inherit dropEffect and effectAllowed'), evt, div = document.createElement('div'), ranlistener = false;
+	div.ondragstart = function (e) {
+		ranlistener = true;
+		t.step(function() {
+			assert_equals( e.dataTransfer.bar, undefined, 'bar' );
+			assert_equals( e.dataTransfer.dropEffect, 'link', 'dropEffect' );
+			assert_equals( e.dataTransfer.effectAllowed, 'linkMove', 'effectAllowed' );
+			assert_true( e.dataTransfer.types instanceof DOMStringList, 'types' );
+			assert_true( e.dataTransfer.files instanceof FileList, 'files' );
+		});
+	};
+	t.step(function() {
+		evt = document.createEvent('DragEvent');
+		evt.initDragEvent('dragstart', true, true, window, 1, 0, 0, 0, 0, false, false, false, false, 1, document.body, { bar: true, dropEffect: 'link', effectAllowed: 'linkMove', items: 'copiedItems', files: 'dd' });
+		div.dispatchEvent(evt);
+		assert_true(ranlistener,'listener');
+	});
+	t.done();
+})();
+
+//cannot test that synthetic event does not use the same data store as non-synthetic event because that needs a real DragEvent to create a proper one with global storage
+//will be tested in another file
+(function () {
+	//unspecified - based on Opera's response
+	var t = async_test('synthetic dragstart should have data store in read/write mode'), evt, div = document.createElement('div'), ranlistener = false;
+	div.ondragstart = function (e) {
+		ranlistener = true;
+		t.step(function() {
+			e.dataTransfer.setData('text','pass');
+			assert_equals( e.dataTransfer.getData('text'), 'pass' );
+		});
+	};
+	t.step(function() {
+		evt = document.createEvent('DragEvent');
+		evt.initDragEvent('dragstart', true, true, window, 1, 0, 0, 0, 0, false, false, false, false, 1, document.body, {});
+		div.dispatchEvent(evt);
+		assert_true(ranlistener,'listener');
+	});
+	t.done();
+})();
+(function () {
+	//unspecified - based on Opera's response
+	var t = async_test('synthetic drag should have data store in protected mode'), evt, div = document.createElement('div'), ranlistener = false;
+	div.ondrag = function (e) {
+		ranlistener = true;
+		t.step(function() {
+			e.dataTransfer.setData('text','fail');
+			assert_equals( e.dataTransfer.getData('text'), '' );
+		});
+	};
+	t.step(function() {
+		evt = document.createEvent('DragEvent');
+		evt.initDragEvent('drag', true, true, window, 1, 0, 0, 0, 0, false, false, false, false, 1, document.body, {});
+		div.dispatchEvent(evt);
+		assert_true(ranlistener,'listener');
+	});
+	t.done();
+})();
+(function () {
+	//unspecified - based on Opera's response
+	var t = async_test('synthetic dragenter should have data store in protected mode'), evt, div = document.createElement('div'), ranlistener = false;
+	div.ondragenter = function (e) {
+		ranlistener = true;
+		t.step(function() {
+			e.dataTransfer.setData('text','fail');
+			assert_equals( e.dataTransfer.getData('text'), '' );
+		});
+	};
+	t.step(function() {
+		evt = document.createEvent('DragEvent');
+		evt.initDragEvent('dragenter', true, true, window, 1, 0, 0, 0, 0, false, false, false, false, 1, document.body, {});
+		div.dispatchEvent(evt);
+		assert_true(ranlistener,'listener');
+	});
+	t.done();
+})();
+(function () {
+	//unspecified - based on Opera's response
+	var t = async_test('synthetic dragleave should have data store in protected mode'), evt, div = document.createElement('div'), ranlistener = false;
+	div.ondragleave = function (e) {
+		ranlistener = true;
+		t.step(function() {
+			e.dataTransfer.setData('text','fail');
+			assert_equals( e.dataTransfer.getData('text'), '' );
+		});
+	};
+	t.step(function() {
+		evt = document.createEvent('DragEvent');
+		evt.initDragEvent('dragleave', true, true, window, 1, 0, 0, 0, 0, false, false, false, false, 1, document.body, {});
+		div.dispatchEvent(evt);
+		assert_true(ranlistener,'listener');
+	});
+	t.done();
+})();
+(function () {
+	//unspecified - based on Opera's response
+	var t = async_test('synthetic dragover should have data store in protected mode'), evt, div = document.createElement('div'), ranlistener = false;
+	div.ondrag = function (e) {
+		ranlistener = true;
+		t.step(function() {
+			e.dataTransfer.setData('text','fail');
+			assert_equals( e.dataTransfer.getData('text'), '' );
+		});
+	};
+	t.step(function() {
+		evt = document.createEvent('DragEvent');
+		evt.initDragEvent('drag', true, true, window, 1, 0, 0, 0, 0, false, false, false, false, 1, document.body, {});
+		div.dispatchEvent(evt);
+		assert_true(ranlistener,'listener');
+	});
+	t.done();
+})();
+(function () {
+	//unspecified - based on Opera's response
+	var t = async_test('synthetic dragend should have data store in protected mode'), evt, div = document.createElement('div'), ranlistener = false;
+	div.ondrag = function (e) {
+		ranlistener = true;
+		t.step(function() {
+			e.dataTransfer.setData('text','fail');
+			assert_equals( e.dataTransfer.getData('text'), '' );
+		});
+	};
+	t.step(function() {
+		evt = document.createEvent('DragEvent');
+		evt.initDragEvent('drag', true, true, window, 1, 0, 0, 0, 0, false, false, false, false, 1, document.body, {});
+		div.dispatchEvent(evt);
+		assert_true(ranlistener,'listener');
+	});
+	t.done();
+})();
+(function () {
+	//unspecified - based on Opera's response
+	var t = async_test('synthetic drop should have data store in read-only mode'), evt, div = document.createElement('div'), ranlistener = false;
+	div.ondrop = function (e) {
+		ranlistener = true;
+		t.step(function() {
+			e.dataTransfer.setData('text','fail');
+			assert_equals( e.dataTransfer.getData('text'), '' );
+		});
+	};
+	t.step(function() {
+		evt = document.createEvent('DragEvent');
+		evt.initDragEvent('drop', true, true, window, 1, 0, 0, 0, 0, false, false, false, false, 1, document.body, {});
+		div.dispatchEvent(evt);
+		assert_true(ranlistener,'listener');
+	});
+	t.done();
+})();
+(function () {
+	//essential for security
+	var t = async_test('synthetic events with custom object must not share data stores with previous events'), evt, div = document.createElement('div'), ranlistener = [false,false];
+	div.ondragstart = function (e) {
+		ranlistener[0] = true;
+		t.step(function() {
+			e.dataTransfer.setData('text','fail');
+		});
+	};
+	div.ondrop = function (e) {
+		ranlistener[1] = true;
+		t.step(function() {
+			assert_equals( e.dataTransfer.getData('text'), '' );
+		});
+	};
+	t.step(function() {
+		evt = document.createEvent('DragEvent');
+		evt.initDragEvent('dragstart', true, true, window, 1, 0, 0, 0, 0, false, false, false, false, 1, document.body, {});
+		div.dispatchEvent(evt);
+		evt = document.createEvent('DragEvent');
+		evt.initDragEvent('drop', true, true, window, 1, 0, 0, 0, 0, false, false, false, false, 1, document.body, {});
+		div.dispatchEvent(evt);
+		assert_true(ranlistener[0],'dragstart listener');
+		assert_true(ranlistener[1],'drop listener');
+	});
+	t.done();
+})();
+(function () {
+	//assumes earlier test passed - creating dataTransfer when passed object
+	var t = async_test('reusing synthetic dataTransfer objects'), evt, div = document.createElement('div'), ranlistener = false;
+	div.ondragstart = function (e) {
+		var evt = document.createEvent('DragEvent'), div = document.createElement('div');
+		div.ondragstart = function (e) {
+			ranlistener = true;
+			t.step(function() {
+				assert_equals( e.dataTransfer.getData('text'), 'pass', 'stored text data' );
+				assert_equals( e.dataTransfer.items.length, 1, 'items.length' );
+				e.dataTransfer.setData('text','pass2');
+			});
+		};
+		t.step(function() {
+			e.dataTransfer.setData('text','pass');
+			evt.initDragEvent('dragstart', true, true, window, 1, 0, 0, 0, 0, false, false, false, false, 1, document.body, e.dataTransfer);
+			div.dispatchEvent(evt);
+			assert_equals( e.dataTransfer.getData('text'), 'pass2', 'stored text data after dispatch' );
+		});
+	};
+	t.step(function() {
+		evt = document.createEvent('DragEvent');
+		evt.initDragEvent('dragstart', true, true, window, 1, 0, 0, 0, 0, false, false, false, false, 1, document.body, {});
+		div.dispatchEvent(evt);
+		assert_true(ranlistener,'listener');
+	});
+	t.done();
+})();
+
+//modifying state - assume earlier test passed - creating dataTransfer when passed object
+//unspecified - based on Opera's response
+(function () {
+	var t = async_test('dragstart reusing synthetic dataTransfer objects should set protection status'), evt, div = document.createElement('div'), ranlistener = false;
+	div.ondragenter = function (e) {
+		var evt = document.createEvent('DragEvent'), div = document.createElement('div');
+		div.ondragstart = function (e) {
+			ranlistener = true;
+			t.step(function() {
+				e.dataTransfer.setData('text','pass');
+				assert_equals( e.dataTransfer.getData('text'), 'pass' );
+			});
+		};
+		t.step(function() {
+			evt.initDragEvent('dragstart', true, true, window, 1, 0, 0, 0, 0, false, false, false, false, 1, document.body, e.dataTransfer);
+			div.dispatchEvent(evt);
+			e.dataTransfer.setData('text','fail');
+			assert_equals( e.dataTransfer.getData('text'), '', 'reverting protection state after nested dispatch' );
+		});
+	};
+	t.step(function() {
+		evt = document.createEvent('DragEvent');
+		evt.initDragEvent('dragenter', true, true, window, 1, 0, 0, 0, 0, false, false, false, false, 1, document.body, {});
+		div.dispatchEvent(evt);
+		assert_true(ranlistener,'listener');
+	});
+	t.done();
+})();
+(function () {
+	var t = async_test('drag reusing synthetic dataTransfer objects should set protection status'), evt, div = document.createElement('div'), ranlistener = false;
+	div.ondragstart = function (e) {
+		var evt = document.createEvent('DragEvent'), div = document.createElement('div');
+		div.ondrag = function (e) {
+			ranlistener = true;
+			t.step(function() {
+				e.dataTransfer.setData('text','fail');
+				assert_equals( e.dataTransfer.getData('text'), '' );
+			});
+		};
+		t.step(function() {
+			evt.initDragEvent('drag', true, true, window, 1, 0, 0, 0, 0, false, false, false, false, 1, document.body, e.dataTransfer);
+			div.dispatchEvent(evt);
+			e.dataTransfer.setData('text','pass');
+			assert_equals( e.dataTransfer.getData('text'), 'pass', 'reverting protection state after nested dispatch' );
+		});
+	};
+	t.step(function() {
+		evt = document.createEvent('DragEvent');
+		evt.initDragEvent('dragstart', true, true, window, 1, 0, 0, 0, 0, false, false, false, false, 1, document.body, {});
+		div.dispatchEvent(evt);
+		assert_true(ranlistener,'listener');
+	});
+	t.done();
+})();
+(function () {
+	var t = async_test('dragenter reusing synthetic dataTransfer objects should set protection status'), evt, div = document.createElement('div'), ranlistener = false;
+	div.ondragstart = function (e) {
+		var evt = document.createEvent('DragEvent'), div = document.createElement('div');
+		div.ondragenter = function (e) {
+			ranlistener = true;
+			t.step(function() {
+				e.dataTransfer.setData('text','fail');
+				assert_equals( e.dataTransfer.getData('text'), '' );
+			});
+		};
+		t.step(function() {
+			evt.initDragEvent('dragenter', true, true, window, 1, 0, 0, 0, 0, false, false, false, false, 1, document.body, e.dataTransfer);
+			div.dispatchEvent(evt);
+			e.dataTransfer.setData('text','pass');
+			assert_equals( e.dataTransfer.getData('text'), 'pass', 'reverting protection state after nested dispatch' );
+		});
+	};
+	t.step(function() {
+		evt = document.createEvent('DragEvent');
+		evt.initDragEvent('dragstart', true, true, window, 1, 0, 0, 0, 0, false, false, false, false, 1, document.body, {});
+		div.dispatchEvent(evt);
+		assert_true(ranlistener,'listener');
+	});
+	t.done();
+})();
+(function () {
+	var t = async_test('dragleave reusing synthetic dataTransfer objects should set protection status'), evt, div = document.createElement('div'), ranlistener = false;
+	div.ondragstart = function (e) {
+		var evt = document.createEvent('DragEvent'), div = document.createElement('div');
+		div.ondragleave = function (e) {
+			ranlistener = true;
+			t.step(function() {
+				e.dataTransfer.setData('text','fail');
+				assert_equals( e.dataTransfer.getData('text'), '' );
+			});
+		};
+		t.step(function() {
+			evt.initDragEvent('dragleave', true, true, window, 1, 0, 0, 0, 0, false, false, false, false, 1, document.body, e.dataTransfer);
+			div.dispatchEvent(evt);
+			e.dataTransfer.setData('text','pass');
+			assert_equals( e.dataTransfer.getData('text'), 'pass', 'reverting protection state after nested dispatch' );
+		});
+	};
+	t.step(function() {
+		evt = document.createEvent('DragEvent');
+		evt.initDragEvent('dragstart', true, true, window, 1, 0, 0, 0, 0, false, false, false, false, 1, document.body, {});
+		div.dispatchEvent(evt);
+		assert_true(ranlistener,'listener');
+	});
+	t.done();
+})();
+(function () {
+	var t = async_test('dragover reusing synthetic dataTransfer objects should set protection status'), evt, div = document.createElement('div'), ranlistener = false;
+	div.ondragstart = function (e) {
+		var evt = document.createEvent('DragEvent'), div = document.createElement('div');
+		div.ondragover = function (e) {
+			ranlistener = true;
+			t.step(function() {
+				e.dataTransfer.setData('text','fail');
+				assert_equals( e.dataTransfer.getData('text'), '' );
+			});
+		};
+		t.step(function() {
+			evt.initDragEvent('dragover', true, true, window, 1, 0, 0, 0, 0, false, false, false, false, 1, document.body, e.dataTransfer);
+			div.dispatchEvent(evt);
+			e.dataTransfer.setData('text','pass');
+			assert_equals( e.dataTransfer.getData('text'), 'pass', 'reverting protection state after nested dispatch' );
+		});
+	};
+	t.step(function() {
+		evt = document.createEvent('DragEvent');
+		evt.initDragEvent('dragstart', true, true, window, 1, 0, 0, 0, 0, false, false, false, false, 1, document.body, {});
+		div.dispatchEvent(evt);
+		assert_true(ranlistener,'listener');
+	});
+	t.done();
+})();
+(function () {
+	var t = async_test('dragend reusing synthetic dataTransfer objects should set protection status'), evt, div = document.createElement('div'), ranlistener = false;
+	div.ondragstart = function (e) {
+		var evt = document.createEvent('DragEvent'), div = document.createElement('div');
+		div.ondragend = function (e) {
+			ranlistener = true;
+			t.step(function() {
+				e.dataTransfer.setData('text','fail');
+				assert_equals( e.dataTransfer.getData('text'), '' );
+			});
+		};
+		t.step(function() {
+			evt.initDragEvent('dragend', true, true, window, 1, 0, 0, 0, 0, false, false, false, false, 1, document.body, e.dataTransfer);
+			div.dispatchEvent(evt);
+			e.dataTransfer.setData('text','pass');
+			assert_equals( e.dataTransfer.getData('text'), 'pass', 'reverting protection state after nested dispatch' );
+		});
+	};
+	t.step(function() {
+		evt = document.createEvent('DragEvent');
+		evt.initDragEvent('dragstart', true, true, window, 1, 0, 0, 0, 0, false, false, false, false, 1, document.body, {});
+		div.dispatchEvent(evt);
+		assert_true(ranlistener,'listener');
+	});
+	t.done();
+})();
+(function () {
+	var t = async_test('drop reusing synthetic dataTransfer objects should set protection status'), evt, div = document.createElement('div'), ranlistener = false;
+	div.ondragstart = function (e) {
+		var evt = document.createEvent('DragEvent'), div = document.createElement('div');
+		div.ondrop = function (e) {
+			ranlistener = true;
+			t.step(function() {
+				assert_equals( e.dataTransfer.getData('text'), 'pass', 'step1' );
+				e.dataTransfer.setData('text','fail');
+				assert_equals( e.dataTransfer.getData('text'), 'pass', 'step2' );
+			});
+		};
+		t.step(function() {
+			e.dataTransfer.setData('text','fail');
+			evt.initDragEvent('drop', true, true, window, 1, 0, 0, 0, 0, false, false, false, false, 1, document.body, e.dataTransfer);
+			e.dataTransfer.setData('text','pass'); //changing in between steps, just to make sure it uses the underlying data store, not a temporary clone
+			div.dispatchEvent(evt);
+			e.dataTransfer.setData('text','pass2');
+			assert_equals( e.dataTransfer.getData('text'), 'pass2', 'reverting protection state after nested dispatch' );
+		});
+	};
+	t.step(function() {
+		evt = document.createEvent('DragEvent');
+		evt.initDragEvent('dragstart', true, true, window, 1, 0, 0, 0, 0, false, false, false, false, 1, document.body, {});
+		div.dispatchEvent(evt);
+		assert_true(ranlistener,'listener');
+	});
+	t.done();
+})();
+
+		</script>
+		<noscript><p>Enable JavaScript and reload</p></noscript>
+	</body>
+</html>

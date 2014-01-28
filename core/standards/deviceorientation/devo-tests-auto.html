@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<title>deviceorientation;devicemotion;compassneedscalibrationevent API tests</title>
+<link rel="stylesheet" href="/resources/testharness.css"/>
+<script src="/resources/testharness.js"></script>
+<script src="/resources/testharnessreport.js"></script>
+<script>
+test (function ()
+      {
+	  assert_true("ondeviceorientation" in window, "attribute ondeviceorientation in window");
+      }, "attribute ondeviceorientation in window");
+test (function ()
+      {
+	  assert_true("ondevicemotion" in window, "attribute ondevicemotion in window");
+      }, "attribute ondevicemotion in window");
+test (function ()
+      {
+	  assert_true("DeviceOrientationEvent" in window, "DeviceOrientationEvent in window");
+      }, "DeviceOrientationEvent in window");
+test (function ()
+      {
+	  assert_true("DeviceMotionEvent" in window, "DeviceMotionEvent in window");
+      }, "DeviceMotionEvent in window");
+test (function ()
+      {
+	  assert_false("CompassNeedsCalibrationEvent" in window, "CompassNeedsCalibrationEvent not in window");
+      }, "CompassNeedsCalibrationEvent not in window");
+test (function ()
+      {
+	  assert_true("oncompassneedscalibration" in window, "attribute oncompassneedscalibration in window");
+      }, "attribute oncompassneedscalibration in window");
+test (function ()
+      {
+	  assert_equals( typeof opera.requestCompassCalibration, "function");
+      }, "opera.requestCompassCalibration method is available or not.");
+
+window.ww = new Worker("resources/ww.js");
+(function ()
+ {
+     var at = async_test ("DeviceOrientationEvent not in web worker.");
+     ww.addEventListener('message', function mh1 (r)
+			 {
+			     at.step(function ()
+				     {
+					 if (typeof r.data.global_do !== "undefined")
+					 {
+					     assert_equals(r.data.global_do, false);
+					     at.done();
+					 }
+				     });
+			 },false);
+ })();
+(function ()
+ {
+     var at = async_test ("DeviceMotionEvent not in web worker.");
+     ww.addEventListener('message', function mh2 (r)
+			 {
+			     at.step(function ()
+				     {
+					 if (typeof r.data.global_dm !== "undefined")
+					 {
+					     assert_equals(r.data.global_dm, false);
+					     at.done();
+					 }
+				     });
+			     at.done();
+			 }, false);
+ })();
+
+(function ()
+ {
+     var at = async_test ("ondeviceorientation callback.");
+     window.ondeviceorientation = function dohndlr3 (doevt)
+     {
+	 window.ondeviceorientation = null;
+	 var r = this;
+	 at.step(function ()
+		 {
+		     assert_equals(r, window, "this object in callback.");
+		     assert_equals(typeof doevt, "object", "is object");
+		     assert_equals( doevt.toString(), "[object DeviceOrientationEvent]", "stringifies to [object DeviceOrientationEvent]");
+		     assert_equals(doevt.type, "deviceorientation", "type is deviceorientation");
+		     assert_equals(doevt.srcElement, window, "srcElement is window"); // Opera quirk
+		     assert_equals(doevt.target, window, "target is window");
+		     assert_equals(doevt.currentTarget, window, "currentTarget is window");
+		     assert_equals(doevt.bubbles, false, "bubbles attribute on event object");
+		     assert_equals(doevt.defaultPrevented, false, "defaultPrevented attribute on the event object");
+		     assert_equals(typeof doevt.stopPropagation, "function", "stopPropagation method is available");
+		     assert_equals(typeof doevt.preventDefault, "function", "preventDefault method is available");
+		     assert_equals(typeof doevt.initEvent, "function", "initEvent method is available");
+		     assert_equals(doevt.eventPhase, Event.AT_TARGET);
+
+		     assert_true(typeof doevt.alpha === "number" || doevt.alpha === null, "DeviceOrientation.alpha can be of type number or null (object)");
+		     assert_readonly(doevt, "alpha");
+		     assert_true(typeof doevt.beta === "number" || doevt.beta === null, "DeviceOrientation.beta can be of type number or null (object)");
+		     assert_readonly(doevt, "beta");
+		     assert_true( typeof doevt.gamma === "number" || doevt.alpha === null, "DeviceOrientation.gamma can be of type number or null (object)");
+		     assert_readonly(doevt, "gamma");
+		     assert_equals(typeof doevt.absolute, "boolean", "DeviceOrientation.absolute is of type boolean");
+		     assert_true(doevt.absolute === true || doevt.absolute === false, "DeviceOrientation.absolute is either true or false.");
+		     assert_readonly(doevt, "absolute");
+		     assert_equals(typeof doevt.initDeviceOrientationEvent, "function", "DeviceOrientation.initDeviceOrientationEvent is of type function");
+		     at.done();
+		 });
+	 at.done();
+     };
+ })();
+
+(function ()
+ {
+     var at = async_test("DeviceOrientation event object properties.");
+     window.addEventListener("deviceorientation", function dohndlr1 (doevt)
+			     {
+				 window.removeEventListener("deviceorientation", dohndlr1, false);
+				 var r = this;
+				 at.step(function ()
+					 {
+					     assert_equals(r, window, "this object in callback.");
+					     assert_equals(typeof doevt, "object", "is object");
+					     assert_equals( doevt.toString(), "[object DeviceOrientationEvent]", "stringifies to [object DeviceOrientationEvent]");
+					     assert_equals(doevt.type, "deviceorientation", "type is devicemotion");
+					     assert_equals(doevt.srcElement, window, "srcElement is window"); // Opera quirk
+					     assert_equals(doevt.target, window, "target is window");
+					     assert_equals(doevt.currentTarget, window, "currentTarget is window");
+					     assert_equals(doevt.bubbles, false, "bubbles attribute on event object");
+					     assert_equals(doevt.defaultPrevented, false, "defaultPrevented attribute on the event object");
+					     assert_equals(typeof doevt.stopPropagation, "function", "stopPropagation method is available");
+					     assert_equals(typeof doevt.preventDefault, "function", "preventDefault method is available");
+					     assert_equals(typeof doevt.initEvent, "function", "initEvent method is available");
+					     assert_equals(doevt.eventPhase, Event.AT_TARGET);
+					     doevt.preventDefault();
+					     assert_equals(doevt.defaultPrevented, true, "defaultPrevented should be true after default action is prevented.");
+
+					     assert_true(typeof doevt.alpha === "number" || doevt.alpha === null, "DeviceOrientation.alpha can be of type number or null (object)");
+					     assert_readonly(doevt, "alpha");
+					     assert_true( typeof doevt.beta === "number" || doevt.beta === null, "DeviceOrientation.beta can be of type number or null (object)");
+					     assert_readonly(doevt, "beta");
+					     assert_true( typeof doevt.gamma === "number" || doevt.alpha === null, "DeviceOrientation.gamma can be of type number or null (object)");
+					     assert_readonly(doevt, "gamma");
+					     assert_equals(typeof doevt.absolute, "boolean", "DeviceOrientation.absolute is of type boolean");
+					     assert_true(doevt.absolute === true || doevt.absolute === false, "DeviceOrientation.absolute is either true or false.");
+					     assert_readonly(doevt, "absolute");
+					     assert_equals(typeof doevt.initDeviceOrientationEvent, "function", "DeviceOrientation.initDeviceOrientationEvent is of type function");
+					     at.done();
+					 });
+			     }, false);
+ })();
+(function ()
+ {
+     var at = async_test("ondevicemotion callback and event properties");
+     window.ondevicemotion = function dmhndlr2(dmevt)
+     {
+	 window.ondevicemotion = null;
+	 var r = this;
+	 at.step(function ()
+		 {
+		     assert_equals(r, window, "this object in callback.");
+		     assert_equals(typeof dmevt, "object", "is object");
+		     assert_equals( dmevt.toString(), "[object DeviceMotionEvent]", "stringifies to [object DeviceMotionEvent]");
+		     assert_equals(dmevt.type, "devicemotion", "type is devicemotion");
+		     assert_equals(dmevt.srcElement, window, "srcElement is window"); //Opera quirk
+		     assert_equals(dmevt.target, window, "target is window");
+		     assert_equals(dmevt.currentTarget, window, "currentTarget is window");
+		     assert_equals(dmevt.bubbles, false, "bubbles attribute on event object");
+		     assert_equals(dmevt.defaultPrevented, false, "defaultPrevented attribute on the event object");
+		     assert_equals(typeof dmevt.stopPropagation, "function", "stopPropagation method is available");
+		     assert_equals(typeof dmevt.preventDefault, "function", "preventDefault method is available");
+		     assert_equals(typeof dmevt.initEvent, "function", "initEvent method is available");
+		     assert_equals(dmevt.eventPhase, Event.AT_TARGET);
+		     assert_readonly(dmevt, "acceleration");
+		     assert_readonly(dmevt, "accelerationIncludingGravity");
+		     assert_readonly(dmevt, "rotationRate");
+		     assert_true(typeof dmevt.interval === "number" || dmevt.interval === null, "DeviceMotion.interval can be a number or null.");
+		     assert_readonly(dmevt, "interval");
+		     assert_equals(typeof dmevt.initAccelerometerEvent, "function", "DeviceOrientation.initAccelerometerEvent is of type function");
+		     assert_true(dmevt.acceleration === null || (typeof dmevt.acceleration.x === "number" || dmevt.acceleration.x === null), "DeviceMotion.acceleration.x can be null or a number");
+		     assert_readonly(dmevt.acceleration, "x");
+		     assert_true( dmevt.acceleration === null || (typeof dmevt.acceleration.y === "number" || dmevt.acceleration.y === null), "DeviceMotion.acceleration.y can be null or a number");
+		     assert_readonly(dmevt.acceleration, "y");
+		     assert_true(dmevt.acceleration === null || (typeof dmevt.acceleration.z === "number" || dmevt.acceleration.z === null), "DeviceMotion.acceleration.z can be null or a number");
+		     assert_readonly(dmevt.acceleration, "z");
+		     assert_true(dmevt.accelerationIncludingGravity === null || (typeof dmevt.accelerationIncludingGravity.x === "number" || dmevt.accelerationIncludingGravity.x === null), "DeviceMotion.accelerationIncludingGravity.x can be null or a number");
+		     assert_readonly(dmevt.accelerationIncludingGravity, "x");
+		     assert_true(dmevt.accelerationIncludingGravity === null || (typeof dmevt.accelerationIncludingGravity.y === "number" || dmevt.accelerationIncludingGravity.y === null), "DeviceMotion.accelerationIncludingGravity.y can be null or a number");
+		     assert_readonly(dmevt.accelerationIncludingGravity, "y");
+		     assert_true(dmevt.accelerationIncludingGravity === null || (typeof dmevt.accelerationIncludingGravity.z === "number" || dmevt.accelerationIncludingGravity.z === null), "DeviceMotion.accelerationIncludingGravity.z can be null or a number");
+		     assert_readonly(dmevt.accelerationIncludingGravity, "z");
+		     assert_true(dmevt.rotationRate === null || (typeof dmevt.rotationRate.alpha === "number" || dmevt.rotationRate.gamma === null), "DeviceMotion.rotationRate.alpha can be null or a number");
+		     assert_readonly(dmevt.rotationRate, "alpha");
+		     assert_true(dmevt.rotationRate === null || (typeof dmevt.rotationRate.beta === "number" || dmevt.rotationRate.gamma === null), "DeviceMotion.rotationRate.beta can be null or a number");
+		     assert_readonly(dmevt.rotationRate, "beta");
+		     assert_true( dmevt.rotationRate === null || (typeof dmevt.rotationRate.gamma === "number" || dmevt.rotationRate.gamma === null), "DeviceMotion.rotationRate.gamma can be null or a number");
+		     assert_readonly(dmevt.rotationRate, "gamma");
+		     at.done();
+		 });
+     };
+ })();
+(function ()
+ {
+     var at = async_test("DeviceMotion event listener and event object properties.");
+     window.addEventListener("devicemotion", function dmhndlr1(dmevt)
+                             {
+                                     var r = this;
+                                     window.removeEventListener("devicemotion", dmhndlr1, false);
+                                     at.step(function ()
+                                             {
+                                                     assert_equals(r, window, "this object in callback.");
+                                                     assert_equals(typeof dmevt, "object", "is object");
+                                                     assert_equals( dmevt.toString(), "[object DeviceMotionEvent]", "stringifies to [object DeviceMotionEvent]");
+                                                     assert_equals(dmevt.type, "devicemotion", "type is devicemotion");
+                                                     assert_equals(dmevt.srcElement, window, "srcElement is window"); //Opera quirk
+                                                     assert_equals(dmevt.target, window, "target is window");
+                                                     assert_equals(dmevt.currentTarget, window, "currentTarget is window");
+                                                     assert_equals(dmevt.bubbles, false, "bubbles attribute on event object");
+                                                     assert_equals(dmevt.defaultPrevented, false, "defaultPrevented attribute on the event object");
+                                                     assert_equals(typeof dmevt.stopPropagation, "function", "stopPropagation method is available");
+                                                     assert_equals(typeof dmevt.preventDefault, "function", "preventDefault method is available");
+                                                     dmevt.preventDefault();
+                                                     assert_equals(dmevt.defaultPrevented, true, "defaultPrevented attribute on the event object should be true after preventDefault is called.");
+                                                     assert_equals(typeof dmevt.initEvent, "function", "initEvent method is available");
+                                                     assert_equals(dmevt.eventPhase, Event.AT_TARGET);
+                                                     assert_readonly(dmevt, "acceleration");
+                                                     assert_readonly(dmevt, "accelerationIncludingGravity");
+                                                     assert_readonly(dmevt, "rotationRate");
+                                                     assert_true(typeof dmevt.interval=== "number" || dmevt.interval === null, "DeviceMotion.interval can be a number or null.");
+                                                     assert_readonly(dmevt, "interval");
+                                                     assert_equals(typeof dmevt.initAccelerometerEvent, "function", "DeviceOrientation.initAccelerometerEvent is of type function");
+                                                     assert_true(dmevt.acceleration === null || (typeof dmevt.acceleration.x === "number" || dmevt.acceleration.x === null), "DeviceMotion.acceleration.x can be null or a number");
+                                                     assert_readonly(dmevt.acceleration, "x");
+                                                     assert_true( dmevt.acceleration === null || (typeof dmevt.acceleration.y === "number" || dmevt.acceleration.y === null), "DeviceMotion.acceleration.y can be null or a number");
+                                                     assert_readonly(dmevt.acceleration, "y");
+                                                     assert_true(dmevt.acceleration === null || (typeof dmevt.acceleration.z === "number" || dmevt.acceleration.z === null), "DeviceMotion.acceleration.z can be null or a number");
+                                                     assert_readonly(dmevt.acceleration, "z");
+                                                     assert_true(dmevt.accelerationIncludingGravity === null || (typeof dmevt.accelerationIncludingGravity.x === "number" || dmevt.accelerationIncludingGravity.x === null), "DeviceMotion.accelerationIncludingGravity.x can be null or a number");
+                                                     assert_readonly(dmevt.accelerationIncludingGravity, "x");
+                                                     assert_true(dmevt.accelerationIncludingGravity === null || (typeof dmevt.accelerationIncludingGravity.y === "number" || dmevt.accelerationIncludingGravity.y === null), "DeviceMotion.accelerationIncludingGravity.y can be null or a number");
+                                                     assert_readonly(dmevt.accelerationIncludingGravity, "y");
+                                                     assert_true(dmevt.accelerationIncludingGravity === null || (typeof dmevt.accelerationIncludingGravity.z === "number" || dmevt.accelerationIncludingGravity.z === null), "DeviceMotion.accelerationIncludingGravity.z can be null or a number");
+                                                     assert_readonly(dmevt.accelerationIncludingGravity, "z");
+                                                     assert_true(dmevt.rotationRate === null || (typeof dmevt.rotationRate.alpha === "number" || dmevt.rotationRate.gamma === null), "DeviceMotion.rotationRate.alpha can be null or a number");
+                                                     assert_readonly(dmevt.rotationRate, "alpha");
+                                                     assert_true(dmevt.rotationRate === null || (typeof dmevt.rotationRate.beta === "number" || dmevt.rotationRate.gamma === null), "DeviceMotion.rotationRate.beta can be null or a number");
+                                                     assert_readonly(dmevt.rotationRate, "beta");
+                                                     assert_true( dmevt.rotationRate === null || (typeof dmevt.rotationRate.gamma === "number" || dmevt.rotationRate.gamma === null), "DeviceMotion.rotationRate.gamma can be null or a number");
+                                                     assert_readonly(dmevt.rotationRate, "gamma");
+                                                     at.done();
+                                             });
+                             }, false);
+ })();
+
+window.addEventListener("deviceorientation", function dh()
+			{ /*
+			     dummy callback in order to use opera.requestCompassCalibration
+			   */
+			}, false);
+
+(function ()
+ {
+     var at = async_test("compassneedscalibration event object properties");
+     window.addEventListener("compassneedscalibration", function cchndlr1 (coevt)
+			     {
+				 window.removeEventListener("compassneedscalibration", cchndlr1, false);
+				 var r = this;
+				 at.step(function ()
+					 {
+					     assert_equals(r, window, "this object");
+					     assert_equals(typeof coevt, "object", "is object");
+					     assert_equals( coevt.toString(), "[object Event]", "stringifies to [object Event]");
+					     assert_equals(coevt.type, "compassneedscalibration", "type is devicemotion");
+					     assert_equals(coevt.srcElement, window, "srcElement is window"); // Opera quirk
+					     assert_equals(coevt.target, window, "target is window");
+					     assert_equals(coevt.currentTarget, window, "currentTarget is window");
+					     assert_equals(coevt.bubbles, false, "bubbles attribute on event object");
+					     assert_equals(coevt.defaultPrevented, false, "defaultPrevented attribute on the event object");
+					     assert_equals(typeof coevt.stopPropagation, "function", "stopPropagation method is available");
+					     assert_equals(typeof coevt.preventDefault, "function", "preventDefault method is available");
+					     assert_equals(typeof coevt.initEvent, "function", "initEvent method is available");
+					     assert_equals(coevt.eventPhase, Event.AT_TARGET);
+					     at.done();
+					 });
+			     }, false);
+     opera.requestCompassCalibration();
+ })();
+(function ()
+ {
+     var at = async_test("oncompassneedscalibration event attribute callback and event properties.");
+     window.oncompassneedscalibration = function (coevt)
+     {
+         window.oncompassneedscalibration = null;
+	 var r = this;
+	 at.step(function ()
+		 {
+		     assert_equals(r, window, "this object");
+		     assert_equals(typeof coevt, "object", "is object");
+		     assert_equals( coevt.toString(), "[object Event]", "stringifies to [object Event]");
+		     assert_equals(coevt.type, "compassneedscalibration", "type is devicemotion");
+			 assert_equals(coevt.srcElement, window, "srcElement is window"); // Opera quirk
+		     assert_equals(coevt.target, window, "target is window");
+		     assert_equals(coevt.currentTarget, window, "currentTarget is window");
+		     assert_equals(coevt.bubbles, false, "bubbles attribute on event object");
+		     assert_equals(coevt.defaultPrevented, false, "defaultPrevented attribute on the event object");
+		     assert_equals(typeof coevt.stopPropagation, "function", "stopPropagation method is available");
+		     assert_equals(typeof coevt.preventDefault, "function", "preventDefault method is available");
+		     assert_equals(typeof coevt.initEvent, "function", "initEvent method is available");
+		     assert_equals(coevt.eventPhase, Event.AT_TARGET);
+		     coevt.preventDefault();
+		     assert_equals(coevt.defaultPrevented, true);
+		     at.done();
+		 });
+     };
+ })();
+(function ()
+ {
+     var at = async_test("initDeviceOrienationEvent method generates the expected event with the correct values.");
+     window.addEventListener("deviceorientation", function dohndlr2(evt)
+			     {
+				 window.removeEventListener("deviceorientation", dohndlr2, false);
+				 at.step(function ()
+					 {
+					     assert_equals(evt.toString(), "[object DeviceOrientationEvent]", "event object stringifies to expected value");
+					     assert_true(evt.alpha === 120 && evt.beta === 78 && evt.gamma === 34, "alpha, beta, gamma values are correct");
+					     at.done();
+					 });
+			     }, false);
+     var doevt = document.createEvent("DeviceOrientationEvent");
+     doevt.initDeviceOrientationEvent("deviceorientation", false, false, 120, 78, 34, true);
+     window.dispatchEvent(doevt);
+ })();
+(function ()
+ {
+     var at = async_test("initAccelerometerEvent method generates the expected event with the correct values.");
+     window.addEventListener("devicemotion", function dmhndlr3 (evt)
+			     {
+				 window.removeEventListener("devicemotion", dmhndlr3, false);
+				 at.step(function ()
+					 {
+					     assert_equals(evt.toString(), "[object DeviceMotionEvent]", "event object stringifies to expected value");
+					     assert_true(evt.rotationRate.alpha === 120 && evt.rotationRate.beta === 78 && evt.rotationRate.gamma === 34, "alpha, beta, gamma values on DeviceMotionEvent.rotationRate property are correct");
+					     assert_true(evt.rotationRate.alpha === 120 && evt.rotationRate.beta === 78 && evt.rotationRate.gamma === 34, "alpha, beta, gamma values on DeviceMotionEvent.rotationRate property are correct");
+					     assert_true(evt.accelerationIncludingGravity.x === 1 && evt.accelerationIncludingGravity.y === 2 && evt.accelerationIncludingGravity.z === 3, "x, y, and z values on DeviceMotionEvent.accelerationIncludingGravity property are correct");
+					     at.done();
+					 });
+			     }, false);
+     var doevt = document.createEvent("DeviceMotionEvent");
+     doevt.initAccelerometerEvent("devicemotion", false, false, {x:10, y:23, z:8}, {x:1, y:2, z:3}, {alpha:120, beta:78, gamma: 34}, true);
+     window.dispatchEvent(doevt);
+ })();
+(function ()
+ {
+     var at = async_test("initEvent method generates the expected event with the correct values.");
+     window.addEventListener("compassneedscalibration", function cchndlr(evt)
+			     {
+				 window.removeEventListener("compassneedscalibration", cchndlr, false);
+				 at.step(function ()
+					 {
+					     assert_equals(evt.toString(), "[object Event]", "event object stringifies to expected value");
+					     at.done();
+					 });
+			     }, false);
+     var doevt = document.createEvent("Event");
+     doevt.initEvent("compassneedscalibration", false, false);
+     window.dispatchEvent(doevt);
+ })();
+</script>
+<div id="log"></div>

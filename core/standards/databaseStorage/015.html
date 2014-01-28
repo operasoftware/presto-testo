@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<title>Database Storage - Error Callback Codes</title>
+<h2>Please reject the quota increase request if you see it.</h2>
+<p>Please wait for all 6 tests to complete...</p>
+<div id="result">FAIL - Script did not execute</div>
+<p id="status"></p>
+<script>
+var ul = document.createElement("ul");
+var result = document.getElementById("result");
+var status = document.getElementById("status");
+var timeoutID = null;
+
+status.innerHTML = "test"
+result.innerHTML = "";
+result.appendChild(ul);
+
+function record(testRef, pass, msg) {
+	var li = document.createElement("li");
+	li.innerHTML = testRef + " - " + (pass ? "PASS" : "FAIL") + (msg ? " - " + msg : "");
+	ul.appendChild(li);
+}
+
+function updateStatus(testRef, done) {
+	if (done) {
+		if (testRef == "006") {
+			status.innerHTML = "All tests complete";			
+		} else {
+			status.innerHTML = "Test " + testRef + " done, waiting for test " + (Number(testRef) + 1)
+			timeoutID = window.setTimeout(function() {
+				status.innerHTML = "FAIL - did not run next test"
+			}, 1000);
+		}
+	} else {
+		clearTimeout(timeoutID);
+		status.innerHTML = "Running test " + testRef;
+	}
+}
+
+function transactionSuccessCallback(testRef, pass, msg) {
+	return function() {
+		record(testRef, pass, msg)
+	}
+}
+
+function transactionErrorCallback(testRef, pass, msg, expectedCode) {
+	msg = msg || "";
+	return (pass) ? function(error) {
+		// If there is no expected code, assume whatever was received is fine
+		expectedCode = expectedCode !== undefined ? expectedCode : error.code;
+
+		if (expectedCode == error.code) {
+
+			record(testRef, true, msg + " - " + error.code + " : " + error.message)
+		} else {
+			record(testRef, false, "(" + msg + ") - Incorrect error code. Expected " + expectedCode + ", Got " + error.code + " : " + error.message)
+		}
+		updateStatus(testRef, true);
+		return true;
+	} : function(error){ 
+		record(testRef, false, msg + " - " + error.code + " : " + error.message)
+		updateStatus(testRef, true);
+		return true;
+	}
+}
+
+function statementErrorCallback(testRef, pass, msg, expectedCode) {
+	msg = msg || "";
+	return (pass) ? function(transaction, error) {
+		// If there is no expected code, assume whatever was received is fine
+		expectedCode = expectedCode !== undefined ? expectedCode : error.code;
+
+		if (expectedCode == error.code) {
+
+			record(testRef, true, msg + " - " + error.code + " : " + error.message)
+		} else {
+			record(testRef, false, "(" + msg + ") - Incorrect error code. Expected " + expectedCode + ", Got " + error.code + " : " + error.message)
+		}
+		return false;
+	} : function(transaction, error){ 
+		record(testRef, false, msg + " - " + error.code + " : " + error.message)
+		return false;
+	}
+}
+
+var transactionCallback = [
+	{
+		// SQLError: 0 - UNKNOWN_ERR
+		testRef: "001",
+		errorCode: 0,
+		errorName: "UNKNOWN_ERR",
+		f: function(t) {
+			updateStatus("001", false);
+			t.executeSql("CREATE TABLE a(id INTEGER, label TEXT);", [],
+			             function() { throw 'die'; },
+			             statementErrorCallback("002", false, "UNKNOWN_ERR", 0));
+		}
+	},
+	{
+		// SQLError: 0 - UNKNOWN_ERR
+		testRef: "002",
+		errorCode: 0,
+		errorName: "UNKNOWN_ERR",
+		f: function(t) {
+			updateStatus("002", false);
+			t.executeSql("CREATE TABLE b(id INTEGER, label TEXT);", [], function() { throw 'die'; });
+		}
+	},
+	{
+		// SQLError: 3 - TOO_LARGE_ERR
+		testRef: "003",
+		errorCode: 3,
+		errorName: "TOO_LARGE_ERR",
+		f: function(t) {
+			updateStatus("003", false);
+			t.executeSql("CREATE TABLE t(string TEXT);");
+
+			var sql = "select a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v from " +
+				"(select 'ifnda' a union all select 'njkne'), (select 'rt283' b union all select 'iown3')," +
+				"(select 'fdkaj' c union all select 'fdsae'), (select 'te0h3' d union all select 't8243')," +
+				"(select 'd34bd' e union all select 'evsed'), (select 'fdsf3' f union all select 'bvh89')," +
+				"(select '4ves3' g union all select 'fdr4w'), (select 'lu89n' h union all select '83fdr')," +
+				"(select 'ifnda' i union all select 'njkne'), (select 'rt283' j union all select 'iown3')," +
+				"(select 'fdkaj' k union all select 'fdsae'), (select 'te0h3' l union all select 't8243')," +
+				"(select 'd34bd' m union all select 'evsed'), (select 'fdsf3' n union all select 'bvh89')," +
+				"(select '4ves3' o union all select 'fdr4w'), (select 'lu89n' p union all select '83fdr')," +
+				"(select 'ifnda' q union all select 'njkne'), (select 'rt283' r union all select 'iown3')," +
+				"(select 'fdkaj' s union all select 'fdsae'), (select 'te0h3' t union all select 't8243')," +
+				"(select '4grsg' u union all select 'fg4er'), (select '8hjds' v union all select 'n8io3');"
+			t.executeSql(sql, null, function(transaction, resultSet) { record("xxx", true, "Test: " + resultSet.rows.length) });
+		}
+	},
+	{
+		testRef: "004",
+		errorCode: 4,
+		errorName: "QUOTA_ERR",
+		f: function(t) {
+			updateStatus("004", false);
+			t.executeSql("CREATE TABLE t(string TEXT);");
+			var sql = "insert into t select random() from " +
+				"(select 'ifnda' union all select 'njkne'), (select 'rt283' union all select 'iown3')," +
+				"(select '4ves3' union all select 'fdr4w'), (select 'lu89n' union all select '83fdr')," +
+				"(select 'ifnda' union all select 'njkne'), (select 'rt283' union all select 'iown3')," +
+				"(select 'fdkaj' union all select 'fdsae'), (select 'te0h3' union all select 't8243')," +
+				"(select 'd34bd' union all select 'evsed'), (select 'fdsf3' union all select 'bvh89')," +
+				"(select '4ves3' union all select 'fdr4w'), (select 'lu89n' union all select '83fdr')," +
+				"(select 'ifnda' union all select 'njkne'), (select 'rt283' union all select 'iown3')," +
+				"(select 'fdkaj' union all select 'fdsae'), (select 'te0h3' union all select 't8243')," +
+				"(select '4grsg' union all select 'fg4er'), (select '8hjds' union all select 'n8io3');"
+			t.executeSql(sql);
+			t.executeSql("DROP TABLE t")
+		}
+	},
+	{
+		testRef: "005",
+		errorCode: 6,
+		errorName: "CONSTRAINT_ERR",
+		f: function(t) {
+			updateStatus("005", false);
+			t.executeSql("CREATE TABLE t(id INTEGER PRIMARY KEY);");
+			t.executeSql("INSERT INTO t VALUES(1)");
+			t.executeSql("INSERT INTO t VALUES(1)");
+		}
+	},
+	{
+		testRef: "006",
+		errorCode: 7,
+		errorName: "TIMEOUT_ERR",
+		f: function(t) {
+			updateStatus("006", false);
+			t.executeSql("CREATE TABLE t(string TEXT);");
+			var sql = "insert into t select random() from " +
+				"(select 'ifnda' union all select 'njkne'), (select 'rt283' union all select 'iown3')," +
+				"(select '4ves3' union all select 'fdr4w'), (select 'lu89n' union all select '83fdr')," +
+				"(select 'ifnda' union all select 'njkne'), (select 'rt283' union all select 'iown3')," +
+				"(select 'ifnda' union all select 'njkne'), (select 'rt283' union all select 'iown3')," +
+				"(select 'fdkaj' union all select 'fdsae'), (select 'te0h3' union all select 't8243')," +
+				"(select '4grsg' union all select 'fg4er'), (select '8hjds' union all select 'n8io3');"
+			t.executeSql(sql);
+			t.executeSql("SELECT random() from t, t, t ORDER BY 1")
+		}
+	}
+];
+
+
+function successCallback() {
+	record("003", false, "Transaction succeeded, despite expected version mismatch");
+}
+
+var db = window.openDatabase("test015", "", "Test DB", "1000");
+
+for (var i = 0, callback = null; callback = transactionCallback[i]; i++) {
+	db.transaction(callback.f, transactionErrorCallback(callback.testRef, true, callback.errorName, callback.errorCode),
+	                           transactionSuccessCallback(callback.testRef, false, "Success callback incorrectly invoked."));
+}
+
+function nothing(){}
+db.transaction(nothing, nothing, function() { opera.deleteDatabase("test015"); })
+</script>

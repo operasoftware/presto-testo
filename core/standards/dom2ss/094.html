@@ -1,0 +1,23 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+<head>
+<title>Changing mediaText 2</title>
+<style type="text/css">
+p { color: red; }
+</style>
+<style type="text/css" media="print">
+p { color: #0d0; }
+</style>
+<script type="text/javascript">
+window.onload = function () {
+	document.styleSheets.item(1).media.mediaText = '';
+	document.getElementsByTagName('p')[0].firstChild.nodeValue = 'This text should be green.';
+};
+</script>
+</head>
+<body>
+
+<p>FAIL (script not run or produced an error)</p>
+
+</body>
+</html>

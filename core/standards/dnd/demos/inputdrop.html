@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Dragging into text based inputs</title>
+	</head>
+	<body>
+
+<p draggable="true">Drag me</p>
+<div><input type="text"></div>
+<div><input type="search"></div>
+<div><input type="tel"></div>
+<div><input type="url"></div>
+<div><input type="email"></div>
+<div><input type="password"></div>
+<div><input type="datetime"></div>
+<div><input type="date"></div>
+<div><input type="month"></div>
+<div><input type="week"></div>
+<div><input type="time"></div>
+<div><input type="datetime-local"></div>
+<div><input type="number"></div>
+<div><input type="range"></div>
+<div><input type="color"></div>
+<script type="text/javascript">
+document.getElementsByTagName('p')[0].ondragstart = function (e) {
+	e.dataTransfer.effectAllowed = 'copy';
+	e.dataTransfer.setData('text','Dropped!');
+};
+document.body.ondragenter = document.body.ondragover = function (e) { e.preventDefault(); };
+for( var i = 0, inp = document.getElementsByTagName('input'), j; j = inp[i]; i++ ) {
+	j.parentNode.appendChild(document.createTextNode(' '+j.type));
+}
+</script>
+
+	</body>
+</html>

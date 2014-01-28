@@ -1,0 +1,20 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+<head>
+<title>Namespace selector text</title>
+<style type="text/css">
+@namespace foo url(http://www.opera.com/2003/omf);
+foo|a { color: inherit; }
+</style>
+<script type="text/javascript">
+window.onload = function () {
+	document.getElementsByTagName('p')[0].firstChild.nodeValue = ( document.styleSheets.item(0).cssRules.item(0).selectorText == 'foo|a' || ( document.styleSheets.item(0).cssRules.length > 1 && document.styleSheets.item(0).cssRules.item(1).selectorText == 'foo|a' ) ) ? 'PASS' : 'FAIL';
+};
+</script>
+</head>
+<body>
+
+<p>FAIL (script not run or produced an error)</p>
+
+</body>
+</html>

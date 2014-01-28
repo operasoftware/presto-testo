@@ -1,0 +1,22 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+<head>
+<title>Too much security for data URI stylesheets</title>
+<link rel="stylesheet" type="text/css" href="data:text/css;charset=utf-8,html%20*%20%7B%20color%3A%20inherit%3B%20%7D%0D%0A">
+<script type="text/javascript">
+window.onload = function () {
+	try {
+		var whocares = document.styleSheets.item(0).cssRules.item(0).cssText;
+		document.getElementsByTagName('p')[0].firstChild.nodeValue = 'PASS';
+	} catch(e) {
+		document.getElementsByTagName('p')[0].firstChild.nodeValue = 'FAIL';
+	}
+};
+</script>
+</head>
+<body>
+
+<p>FAIL (script not run or produced an error)</p>
+
+</body>
+</html>

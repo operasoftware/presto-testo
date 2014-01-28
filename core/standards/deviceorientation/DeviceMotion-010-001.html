@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<title>DeviceMotion-010-001-Type check: DeviceMotion.interval is of type number</title>
+<link rel="stylesheet" href="resources/style.css"/>
+<script src="resources/lib.js"></script>
+<script>
+onload = function() {
+    try {
+        window.addEventListener("devicemotion", function dmhndlr(dmevt) {
+            window.removeEventListener("devicemotion", dmhndlr, false);
+            if ((dmevt.interval !== null && typeof dmevt.interval === "number") || dmevt.interval === null) {
+                setResult(1, "typeof:  DeviceMotion.interval ,  property can be of type number or null (object) ; got : " + dmevt.interval);
+            } else {
+                setResult(0, "typeof:  DeviceMotion.interval got:" + typeof dmevt.interval + ",expected:number or null, toString: " + dmevt.interval);
+            }
+        },
+        false);
+    } catch(e) {
+        setResult(0, "Threw: " + e);
+    }
+}
+</script>
+<body>
+
+</body>

@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <title>URL with port missing trailing slash before hash</title>
+  <script type="text/javascript">
+  	window.onload = function () {
+      if ("http://www.example.org:443/#foo" == document.getElementById('test1').href) {
+        document.getElementById('result1').innerHTML = 'PASS';
+      }
+      else {
+        document.getElementById('result1').innerHTML = 'FAIL';
+      }
+    }
+  </script>
+</head>
+<body>
+
+  <noscript>
+    <p>Note: This test requires JavaScript.</p>
+  </noscript>
+
+  <p>The word PASS should appear below.</p>
+
+  <div id="result1">ERROR</div>
+
+  <p><a href="http://www.example.org:443#foo" id="test1"></a></p>
+
+</body>
+</html>

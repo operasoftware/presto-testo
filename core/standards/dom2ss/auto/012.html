@@ -1,0 +1,24 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+<head>
+<title>Dynamic cssRules length</title>
+<link rel="stylesheet" type="text/css" href="imported.css">
+<script type="text/javascript">
+window.onload = function () {
+	var oLnk = document.createElement('link');
+	oLnk.setAttribute('rel','stylesheet');
+	oLnk.setAttribute('type','text/css');
+	oLnk.setAttribute('href','imported.css');
+	document.getElementsByTagName('head')[0].appendChild(oLnk);
+	setTimeout(function () { //give it time to load (even though it is already cached)
+		document.getElementsByTagName('p')[0].firstChild.nodeValue = ( document.styleSheets.item(1).cssRules.length == 1 ) ? 'PASS' : 'FAIL';
+	},10)
+};
+</script>
+</head>
+<body>
+
+<p>FAIL (script not run or produced an error)</p>
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Selection drag and drop from blurred text input to block element</title>
+<style type="text/css">
+div
+	{width:300px;
+	height:100px;
+	margin-top:20px;
+	padding:10px;
+	color:white;
+	background-color:navy;}
+</style>
+<script type="application/ecmascript">
+function start()
+	{document.querySelector('input').select();
+	var t = window.setTimeout(blurIt,100);}
+function blurIt()
+	{opera.generateMouseMove(90,90);
+	opera.generateMouseDown(90,90,1);
+	opera.generateMouseUp(90,90,1);}
+</script>
+</head>
+<body onload="start()">
+<p>Select and drag text from input to navy box below. You should see word PASS once you drop it.</p>
+<p><input value="Select and drag me"/></p>
+<div dropzone="move string:text/plain" ondrop="document.querySelector('div').appendChild(document.createTextNode((event.dataTransfer.getData('text/plain') == 'Select and drag me')?'PASS':'FAIL'))"/>
+</body>
+</html>

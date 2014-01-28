@@ -1,0 +1,23 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+<head>
+<title>Creating new stylesheets</title>
+<script type="text/javascript">
+window.onload = function () {
+	document.getElementsByTagName('p')[0].firstChild.nodeValue = 'This text should be green.';
+	try {
+		var foo = document.implementation.createCSSStyleSheet('Damer','screen,projection');
+		foo.appendRule('p { color: #0d0; }');
+		document.getElementsByTagName('p')[0].firstChild.nodeValue = 'PASS';
+	} catch(e) {
+		document.getElementsByTagName('p')[0].firstChild.nodeValue = 'FAIL';
+	}
+};
+</script>
+</head>
+<body>
+
+<p>FAIL (script not run)</p>
+
+</body>
+</html>

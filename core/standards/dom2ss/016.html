@@ -1,0 +1,19 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+<head>
+<title>Rule style cssText</title>
+<style type="text/css">
+html *, body * { color: inherit; }
+</style>
+<script type="text/javascript">
+window.onload = function () {
+	document.getElementsByTagName('p')[0].firstChild.nodeValue = document.styleSheets.item(0).cssRules.item(0).style.cssText.match(/^\s*color:\s*inherit;?\s*$/) ? 'PASS' : 'FAIL';
+};
+</script>
+</head>
+<body>
+
+<p>FAIL (script not run or produced an error)</p>
+
+</body>
+</html>

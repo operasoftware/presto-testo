@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<title>Database Storage - Bogus SQL Statements</title>
+<div id="result">FAIL - Script did not execute</div>
+<script>
+var passed = false, timeoutID;
+var result = document.getElementById("result");
+result.innerHTML = "Please wait...";
+
+function record(pass, msg) {
+	result.innerHTML = (pass ? "PASS" : "FAIL") + (msg ? " - " + msg : "");
+	try{top.opener.rr(pass);}catch(e){}
+}
+
+// executeSql Callbacks
+
+/**
+ * Create a closure and return callback functions
+ * @param testRef - The name or index of the test
+ * @param pass - boolean - true means the test passes if invoked
+ *               false means the test fails if invoked.
+ */
+function statementCallback(pass, msg) {
+	msg = msg || "";
+	return function(transaction, resultSet) {
+		clearTimeout(timeoutID);
+		record(pass, msg)
+	};
+}
+
+function statementErrorCallback(pass, msg, expectedCode) {
+	msg = msg || "";
+	return (pass) ? function(transaction, error) {
+		clearTimeout(timeoutID);
+
+		// If there is no expected code, assume whatever was received is fine
+		expectedCode = expectedCode || error.code;
+
+		if (expectedCode == error.code) {
+			record(true, msg + " - " + error.code + " : " + error.message)
+		} else {
+			record(false, "(" + msg + ") - Incorrect error code. Expected " + expectedCode + ", Got " + error.code + " : " + error.message)
+		}
+	} : function(transaction, error) {
+		record(false, msg + " - " + error.code + " : " + error.message)
+	}
+}
+
+// Transaction Tests
+
+function transactionCallback(t) {
+	timeoutID = setTimeout(record, 500, false, "Failed to invoke callback");
+	t.executeSql("BOGUS", [],
+	             statementCallback(false, "Invoked success callback for bogus SQL statement"),
+                 statementErrorCallback(true, "Invoked error callback for bogus SQL statement", 5));
+}
+
+try {
+	opera.deleteDatabase("test009");
+	var db = window.openDatabase("test009", "", "Test DB", "10");
+	db.transaction(transactionCallback, function(){}, function(){});
+} catch (e) {
+	record(false, "Couldn't create database: " + e);
+}
+
+</script>

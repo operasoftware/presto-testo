@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<title>Database Storage - Handling error callbacks</title>
+<p>All 5 tests must have results reported to PASS (test 004 fails if it is not reported)</p>
+<div id="result">FAIL - Script did not execute</div>
+<script>
+var ul = document.createElement("ul");
+var result = document.getElementById("result");
+result.innerHTML = "";
+result.appendChild(ul);
+
+function record(testRef, pass, msg) {
+	var li = document.createElement("li");
+	li.innerHTML = "Test: " + testRef + " - " + (pass ? "PASS" : "FAIL") + (msg ? " - " + msg : "");
+	ul.appendChild(li);
+}
+
+// executeSql Callbacks
+
+/**
+ * Create a closure and return callback functions
+ * @param testRef - The name or index of the test
+ * @param pass - boolean - true means the test passes if invoked
+ *               false means the test fails if invoked.
+ */
+function statementCallback(testRef, pass, msg) {
+	msg = msg || "";
+	return function(transaction, resultSet){ 
+		record(testRef, pass, msg)
+	};
+}
+
+function statementErrorCallback(testRef, pass, msg, expectedCode) {
+	msg = msg || "";
+	return (pass) ? function(transaction, error) {
+		// If there is no expected code, assume whatever was received is fine
+		expectedCode = expectedCode || error.code;
+
+		if (expectedCode == error.code) {
+			record(testRef, true, msg + " - " + error.code + " : " + error.message);
+		} else {
+			record(testRef, false, "(" + msg + ") - Incorrect error code. Expected " + expectedCode + ", Got " + error.code + " : " + error.message);
+		}
+		return false;
+	} : function(transaction, error){ 
+		record(testRef, false, msg + " - " + error.code + " : " + error.message);
+		return false;
+	}
+}
+
+// Transaction Tests
+
+// Test Set 1
+function test1(transaction) {
+	//void executeSql(sqlStatement, [arguments], callback, errorCallback);
+	transaction.executeSql("DROP TABLE IF EXISTS t;");
+	transaction.executeSql("CREATE TABLE t(id INTEGER, label TEXT);");
+
+	transaction.executeSql("INSERT INTO t(id, label) VALUES (?, ?)", null,
+	                       statementCallback("002", false, "Expected error callback to be invoked due to too few items in arguments array"),
+	                       statementErrorCallback("002", true, "Invoked error callback", 5));
+
+	transaction.executeSql("INSERT INTO xxx(id, label) VALUES (?, ?)", [1, "One"],
+	                       statementCallback("003", false, "Invoked success callback after attempting to insert row into non-existent table"),
+	                       statementErrorCallback("003", true, "Correctly invoked error callback", 5));
+
+	transaction.executeSql("INSERT INTO t(id, label) VALUES (?, ?)", [1, "One"],
+	                       statementCallback("004", true, "Invoked success callback"),
+	                       statementErrorCallback("004", false, "Invoked error callback"));
+}
+
+function test1ErrorCallback(error) {
+	record("005", false, "Error: code: " + error.code + ", message: " + error.message);
+	opera.deleteDatabase("test010");
+}
+
+function test1SuccessCallback() {
+	record("005", true, "Success callback invoked");
+	opera.deleteDatabase("test010");
+}
+
+
+// Run Tests
+try {
+	var db = window.openDatabase("test010", "", "Test DB", "1024");
+	record("001", true, "Successfully created database");
+
+	db.transaction(test1, test1ErrorCallback, test1SuccessCallback);
+} catch (e) {
+	record("001", false, "Failed to create database: " + e);
+}
+
+</script>

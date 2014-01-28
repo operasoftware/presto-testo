@@ -1,0 +1,99 @@
+<!doctype html>
+<html>
+	<!--
+Opera uses text/x-opera-files to store the list of files when leaving the browser,
+and then uses that list to determine what files the OS has passed to the browser.
+This allows other apps to spoof it (known limitation), but must not allow Web pages
+within Opera to set it. Setting should have no effect. Getting it should return the
+empty string.
+	-->
+	<head>
+		<title>text/x-opera-files from Opera to Opera via OS</title>
+		<style type="text/css">
+div {
+	display: inline-block;
+	height: 100px;
+	width: 100px;
+	background: orange;
+}
+div + div {
+	background: blue;
+}
+		</style>
+		<script type="text/javascript">
+window.onload = function () {
+	var orange = document.getElementsByTagName('div')[0], blue = document.getElementsByTagName('div')[1], fails = [];
+	orange.ondragstart = function (e) {
+		e.dataTransfer.effectAllowed = 'all';
+		e.dataTransfer.setData('text','dummy text');
+		if( e.dataTransfer.getData('text/x-opera-files') ) {
+			fails[fails.length] = 'text/x-opera-files was '+e.dataTransfer.getData('text/x-opera-files')+' before setting';
+		}
+		e.dataTransfer.setData('text/x-opera-files',document.getElementsByTagName('input')[0].value);
+		if( e.dataTransfer.getData('text/x-opera-files') ) {
+			fails[fails.length] = 'text/x-opera-files was '+e.dataTransfer.getData('text/x-opera-files')+' after setData';
+		}
+		for( var i = 0; i < e.dataTransfer.items.length; i++ ) {
+			if( e.dataTransfer.items[i].type == 'text/x-opera-files' ) {
+				e.dataTransfer.items[i].getAsString(function (d) {
+					if( d ) {
+						fails[fails.length] = '.items can see that text/x-opera-files is '+d+' after setData';
+					}
+				});
+				break;
+			}
+		}
+		try {
+			e.dataTransfer.items.add(document.getElementsByTagName('input')[0].value,'text/x-opera-files');
+		} catch(e) {}
+		if( e.dataTransfer.getData('text/x-opera-files') ) {
+			fails[fails.length] = 'text/x-opera-files was '+e.dataTransfer.getData('text/x-opera-files')+' after items.add';
+		}
+		for( var i = 0; i < e.dataTransfer.items.length; i++ ) {
+			if( e.dataTransfer.items[i].type == 'text/x-opera-files' ) {
+				e.dataTransfer.items[i].getAsString(function (d) {
+					if( d ) {
+						fails[fails.length] = '.items can see that text/x-opera-files is '+d+' after items.add';
+					}
+				});
+				break;
+			}
+		}
+	};
+	blue.ondragenter = blue.ondragover = function (e) {
+		e.preventDefault();
+	};
+	blue.ondrop = function (e) {
+		e.preventDefault();
+		if( e.dataTransfer.getData('text/x-opera-files') ) {
+			fails[fails.length] = 'text/x-opera-files was '+e.dataTransfer.getData('text/x-opera-files')+' after drop';
+		}
+		for( var i = 0; i < e.dataTransfer.items.length; i++ ) {
+			if( e.dataTransfer.items[i].type == 'text/x-opera-files' ) {
+				e.dataTransfer.items[i].getAsString(function (d) {
+					if( d ) {
+						fails[fails.length] = '.items can see that text/x-opera-files is '+d+' after drop';
+					}
+				});
+				break;
+			}
+		}
+		if( e.dataTransfer.files.length ) {
+			fails[fails.length] = 'Real file data was added to the data store';
+		}
+	};
+	orange.ondragend = function (e) {
+		document.getElementsByTagName('p')[0].innerHTML = fails.length ? ( 'FAIL:<br>' + fails.join('<br>') ) : 'PASS';
+	};
+};
+		</script>
+	</head>
+	<body>
+
+		<p>Write the full path to a file (which you must have read/write access to) on your computer, in the following box: <input type="text" value="c:\windows\win.ini"><br>
+		Ensure the browser window is not maximised. Drag the orange box out of the browser window, then back onto the blue box, and release it. If a prompt appears, accept it.</p>
+		<div draggable="true"></div>
+		<div></div>
+
+	</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <title>URL with explicit pathname and hash</title>
+  <script type="text/javascript">
+  	window.onload = function () {
+      if ("/foo.html" == document.getElementById('test1').pathname) {
+        document.getElementById('result1').innerHTML = 'PASS';
+      }
+      else {
+        document.getElementById('result1').innerHTML = 'FAIL';
+      }
+     	elm = document.createElement('p');
+      txt = document.createTextNode("Expected: /foo.html");
+      elm.appendChild(txt);
+      document.getElementsByTagName('body')[0].appendChild(elm);
+
+     	elm = document.createElement('p');
+      txt = document.createTextNode("Actual: " + document.getElementById('test1').pathname);
+      elm.appendChild(txt);
+      document.getElementsByTagName('body')[0].appendChild(elm);
+    }
+  </script>
+</head>
+<body>
+
+  <noscript>
+    <p>Note: This test requires JavaScript.</p>
+  </noscript>
+
+  <p>The word PASS should appear below.</p>
+
+  <div id="result1">ERROR</div>
+
+  <p><a href="http://www.example.org/foo.html#bar" id="test1"></a></p>
+
+</body>
+</html>

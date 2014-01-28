@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <title></title>
+  <style type="text/css">
+  	.debug {
+  	  color: #CCCCCC;
+  	}
+  </style>
+  <script type="text/javascript">
+  	window.onload = function () {
+  		var test = 'http://www.example.org%20';
+  		var expected = 'http://www.example.org/';
+      var title = 'URL with default port';
+      
+  		document.title = title;
+      document.getElementById('test').setAttribute('href', test);
+
+      var result = document.getElementById('result');
+      result.firstChild.data = ("http://www.example.org/" == document.getElementById('test').href) ? 'PASS' : 'FAIL';
+      
+      // Debug output
+      var elm = document.createElement('p');
+      txt = document.createTextNode("Expected result: " + expected);
+      elm.appendChild(txt);
+      elm.className = 'debug';
+      document.getElementsByTagName('body')[0].appendChild(elm);
+
+      var elm = document.createElement('p');
+      txt = document.createTextNode("Actual result: " + document.getElementById('test').href);
+      elm.appendChild(txt);
+      elm.className = 'debug';
+      document.getElementsByTagName('body')[0].appendChild(elm);
+    }
+  </script>
+</head>
+<body>
+
+  <div id="result">FAIL: Script did not run.</div>
+
+  <p><a href="" id="test"></a></p>
+
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+	<!--
+Opera uses text/x-opera-files to store the list of files when leaving the browser,
+and then uses that list to determine what files the OS has passed to the browser.
+This allows other apps to spoof it (known limitation), but must not allow Web pages
+within Opera to set it. Setting should have no effect. Getting it should return the
+empty string.
+	-->
+	<head>
+		<title>text/x-opera-files from Opera to OS</title>
+		<style type="text/css">
+div {
+	display: inline-block;
+	height: 100px;
+	width: 100px;
+	background: orange;
+}
+		</style>
+		<script type="text/javascript">
+window.onload = function () {
+	var orange = document.getElementsByTagName('div')[0], fails = [];
+	orange.ondragstart = function (e) {
+		e.dataTransfer.effectAllowed = 'all';
+		e.dataTransfer.setData('text','dummy text');
+		e.dataTransfer.setData('text/x-opera-files',document.getElementsByTagName('input')[0].value);
+		try {
+			e.dataTransfer.items.add(document.getElementsByTagName('input')[0].value,'text/x-opera-files');
+		} catch(e) {}
+	};
+};
+		</script>
+	</head>
+	<body>
+
+		<p>Write the full path to a file (which you must have read/write access to) on your computer, in the following box: <input type="text" value="c:\windows\win.ini"><br>
+		Drag the orange box to a folder in your system's file manager, and release it. Fail if the file is copied or moved to that location.</p>
+		<div draggable="true"></div>
+
+	</body>
+</html>

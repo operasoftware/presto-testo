@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<title>deviceorientation events should fire only for windows with focus</title>
+<script>
+	var count = 0;
+	function dohndlr(evt) 
+	{
+		document.getElementById('log').textContent = count++;
+	}
+
+	function test(q) 
+	{
+		if (!q)
+		{
+			window.removeEventListener("deviceorientation", dohndlr, false);
+			window.removeEventListener("devicemotion", dohndlr, false);
+			document.getElementById('t').onclick = "test(1)";
+		}
+		else
+		{
+			setTimeout(function ()
+			{
+				window.open("data:text/html,<script>setTimeout(function () { window.close();}, 5000);<\/script>When this window closes and you return to the test-case you should see counter increment from/near where you left.");
+				}, 900);
+			window.addEventListener("deviceorientation", dohndlr, false);
+			window.addEventListener("devicemotion", dohndlr, false);
+			document.getElementById('t').onclick = "test(0)";
+		}
+	}
+</script>
+<body>
+<p>Need device orientation sensor implementation to do this test.</p>
+<button id = "t" onclick="test(1);">click and note the value of counter as it increments</button>
+<p>A large variation in the counter when this window does not have focus indicates that device orientation data is accessible to a background page.</p>
+<p id="log"></p>
+</body>

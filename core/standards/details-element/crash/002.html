@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<meta charset='utf-8'>
+<title>::before and ::after on &lt;details&gt;</title>
+<style>
+details::before, details::after {
+  content: "boom!";
+}
+</style>
+
+
+<p>Test passes if this page does not crash your browser.</p>
+
+<details>
+<summary>test</summary>
+</details>

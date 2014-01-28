@@ -1,0 +1,37 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+<head>
+<title>Valid to invalid rules</title>
+<style type="text/css">
+a {
+	padding-top: 4px;
+	padding-right: 4px;
+	padding-bottom: 4px;
+	padding-left: 4px;
+}
+div {  }
+</style>
+<script type="text/javascript">
+window.onload = function () {
+	for( var i = 0, s = ''; i < document.styleSheets.item(0).cssRules.item(0).style.length; i++ ) {
+		s += '<li>'+document.styleSheets.item(0).cssRules.item(0).style.item(i)+': '+document.styleSheets.item(0).cssRules.item(0).style.getPropertyValue(document.styleSheets.item(0).cssRules.item(0).style.item(i))+';</li>';
+	}
+	document.getElementsByTagName('ul')[1].innerHTML = s;
+};
+</script>
+</head>
+<body>
+
+<ul>
+	<li>padding-top: 4px;</li>
+	<li>padding-right: 4px;</li>
+	<li>padding-bottom: 4px;</li>
+	<li>padding-left: 4px;</li>
+</ul>
+
+<p>The four bullet points shown above should be repeated below, in any order:</p>
+
+<ul><li>FAIL (script not run or produced an error)</li></ul>
+
+</body>
+</html>

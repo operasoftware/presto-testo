@@ -1,0 +1,135 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Synthetic events with detatched data store must not inherit protection status from real events</title>
+		<style type="text/css">
+blockquote { height: 100px; width: 100px; background: orange; margin: 0; padding: 0; float: left; }
+blockquote + blockquote { background: blue; }
+blockquote + blockquote + blockquote { background: fuchsia; }
+blockquote + div { clear: left; }
+		</style>
+		<script type="text/javascript" src="/resources/testharness.js"></script>
+		<script type="text/javascript">
+setup(function () {},{explicit_done:true,timeout:30000});
+window.onload = function () {
+
+	var orange  = document.getElementsByTagName('blockquote')[0],
+	    blue    = document.getElementsByTagName('blockquote')[1],
+	    fuchsia = document.getElementsByTagName('blockquote')[2],
+	    evtdone = {};
+
+	orange.ondragstart = function (e) {
+		evtdone[e.type] = true;
+		e.dataTransfer.effectAllowed = 'copy';
+		e.dataTransfer.setData('text','dummy text');
+		var t = async_test(e.type+' should not share its protection status with the synthetic event');
+		blue.ondrop = function (e) {
+			t.step(function() {
+				e.dataTransfer.setData('text','fail');
+				assert_equals( e.dataTransfer.getData('text'), '' );
+			});
+		};
+		t.step(function() {
+			var evt = document.createEvent('DragEvent');
+			evt.initDragEvent('drop', true, true, window, 1, 0, 0, 0, 0, false, false, false, false, 1, document.body, {});
+			blue.dispatchEvent(evt);
+		});
+		t.done();
+	};
+	blue.ondragenter = blue.ondragover = function (e) {
+		e.preventDefault();
+	};
+	orange.ondrag = blue.ondragleave = function (e) {
+		if( evtdone[e.type] ) { return; }
+		evtdone[e.type] = true;
+		var t = async_test(e.type+' should not share its protection status with the synthetic event');
+		blue.ondragstart = function (e) {
+			t.step(function() {
+				e.dataTransfer.setData('text','pass');
+				assert_equals( e.dataTransfer.getData('text'), 'pass' );
+			});
+		};
+		t.step(function() {
+			var evt = document.createEvent('DragEvent');
+			evt.initDragEvent('dragstart', true, true, window, 1, 0, 0, 0, 0, false, false, false, false, 1, document.body, {});
+			blue.dispatchEvent(evt);
+		});
+		t.done();
+	};
+	fuchsia.ondragenter = fuchsia.ondragover = function (e) {
+		e.preventDefault();
+		if( evtdone[e.type] ) { return; }
+		evtdone[e.type] = true;
+		var t = async_test(e.type+' should not share its protection status with the synthetic event');
+		blue.ondragstart = function (e) {
+			t.step(function() {
+				e.dataTransfer.setData('text','pass');
+				assert_equals( e.dataTransfer.getData('text'), 'pass' );
+			});
+		};
+		t.step(function() {
+			var evt = document.createEvent('DragEvent');
+			evt.initDragEvent('dragstart', true, true, window, 1, 0, 0, 0, 0, false, false, false, false, 1, document.body, {});
+			blue.dispatchEvent(evt);
+		});
+		t.done();
+	};
+	fuchsia.ondrop = function (e) {
+		e.preventDefault();
+		if( evtdone[e.type] ) { return; }
+		evtdone[e.type] = true;
+		var t = async_test(e.type+' should not share its protection status with the synthetic event');
+		blue.ondragstart = function (e) {
+			t.step(function() {
+				e.dataTransfer.setData('text','pass');
+				assert_equals( e.dataTransfer.getData('text'), 'pass' );
+			});
+		};
+		t.step(function() {
+			var evt = document.createEvent('DragEvent');
+			evt.initDragEvent('dragstart', true, true, window, 1, 0, 0, 0, 0, false, false, false, false, 1, document.body, {});
+			blue.dispatchEvent(evt);
+		});
+		t.done();
+	};
+	orange.ondragend = function (e) {
+		if( evtdone[e.type] ) { return; }
+		evtdone[e.type] = true;
+		var t = async_test(e.type+' should not share its protection status with the synthetic event');
+		blue.ondragstart = function (e) {
+			t.step(function() {
+				e.dataTransfer.setData('text','pass');
+				assert_equals( e.dataTransfer.getData('text'), 'pass' );
+			});
+		};
+		t.step(function() {
+			var evt = document.createEvent('DragEvent');
+			evt.initDragEvent('dragstart', true, true, window, 1, 0, 0, 0, 0, false, false, false, false, 1, document.body, {});
+			blue.dispatchEvent(evt);
+		});
+		t.done();
+		test(function() {
+			var failtxt = '- Reload and try again';
+			assert_true( evtdone.dragstart, 'dragstart event was not tested'+failtxt );
+			assert_true( evtdone.drag, 'drag event was not tested'+failtxt );
+			assert_true( evtdone.dragenter, 'dragenter event was not tested'+failtxt );
+			assert_true( evtdone.dragleave, 'dragleave event was not tested'+failtxt );
+			assert_true( evtdone.dragover, 'dragover event was not tested'+failtxt );
+			assert_true( evtdone.drop, 'drop event was not tested'+failtxt );
+			assert_true( evtdone.dragend, 'dragend event was not tested'+failtxt );
+		}, 'all event types must now have been tested' );
+		done();
+	};
+
+};
+		</script>
+	</head>
+	<body>
+		<p>Drag the orange square over the blue square then the fuchsia square, then release it.</p>
+		<blockquote draggable="true"></blockquote>
+		<blockquote></blockquote>
+		<blockquote></blockquote>
+		<div id="log"></div>
+		<noscript><p>Enable JavaScript and reload</p></noscript>
+	</body>
+</html>
