@@ -1,0 +1,727 @@
+<html lang=ja>
+ <head>
+  <meta http-equiv="Content-Type" content="text/html;charset=shift_jis">
+  <title>Shift-JIS</title>
+  <style>.unused { background: #ccc; } table { float: left; }</style>
+ </head>
+ <body>  <table><caption>ASCII/JIS-Roman + half-width katakana</caption>
+   <tr><th>  <th>0<th>1<th>2<th>3<th>4<th>5<th>6<th>7<th>8<th>9<th>A<th>B<th>C<th>D<th>E<th>F
+   <tr><th>20<td> <td>!<td>"<td>#<td>$<td>%<td>&<td>'<td>(<td>)<td>*<td>+<td>,<td>-<td>.<td>/
+   <tr><th>30<td>0<td>1<td>2<td>3<td>4<td>5<td>6<td>7<td>8<td>9<td>:<td>;<td><<td>=<td>><td>?
+   <tr><th>40<td>@<td>A<td>B<td>C<td>D<td>E<td>F<td>G<td>H<td>I<td>J<td>K<td>L<td>M<td>N<td>O
+   <tr><th>50<td>P<td>Q<td>R<td>S<td>T<td>U<td>V<td>W<td>X<td>Y<td>Z<td>[<td>\<td>]<td>^<td>_
+   <tr><th>60<td>`<td>a<td>b<td>c<td>d<td>e<td>f<td>g<td>h<td>i<td>j<td>k<td>l<td>m<td>n<td>o
+   <tr><th>70<td>p<td>q<td>r<td>s<td>t<td>u<td>v<td>w<td>x<td>y<td>z<td>{<td>|<td>}<td>~<td class=unused>
+   <tr><th>A0<td class=unused> <td>¡<td>¢<td>£<td>¤<td>¥<td>¦<td>§<td>¨<td>©<td>ª<td>«<td>¬<td>­<td>®<td>¯
+   <tr><th>B0<td>°<td>±<td>²<td>³<td>´<td>µ<td>¶<td>·<td>¸<td>¹<td>º<td>»<td>¼<td>½<td>¾<td>¿
+   <tr><th>C0<td>À<td>Á<td>Â<td>Ã<td>Ä<td>Å<td>Æ<td>Ç<td>È<td>É<td>Ê<td>Ë<td>Ì<td>Í<td>Î<td>Ï
+   <tr><th>D0<td>Ð<td>Ñ<td>Ò<td>Ó<td>Ô<td>Õ<td>Ö<td>×<td>Ø<td>Ù<td>Ú<td>Û<td>Ü<td>Ý<td>Þ<td>ß
+  </table>
+  <table><caption>Multibyte lead 81 (JIS X 0208:1997 rows 1&ndash;2)</caption>
+   <tr><th> <th>0<th>1<th>2<th>3<th>4<th>5<th>6<th>7<th>8<th>9<th>A<th>B<th>C<th>D<th>E<th>F
+   <tr><th>40<td>@<td>A<td>B<td>C<td>D<td>E<td>F<td>G<td>H<td>I<td>J<td>K<td>L<td>M<td>N<td>O
+   <tr><th>50<td>P<td>Q<td>R<td>S<td>T<td>U<td>V<td>W<td>X<td>Y<td>Z<td>[<td>\<td>]<td>^<td>_
+   <tr><th>60<td>`<td>a<td>b<td>c<td>d<td>e<td>f<td>g<td>h<td>i<td>j<td>k<td>l<td>m<td>n<td>o
+   <tr><th>70<td>p<td>q<td>r<td>s<td>t<td>u<td>v<td>w<td>x<td>y<td>z<td>{<td>|<td>}<td>~<td class=unused>&nbsp;
+   <tr><th>80<td>€<td><td>‚<td>ƒ<td>„<td>…<td>†<td>‡<td>ˆ<td>‰<td>Š<td>‹<td>Œ<td><td>Ž<td>
+   <tr><th>90<td><td>‘<td>’<td>“<td>”<td>•<td>–<td>—<td>˜<td>™<td>š<td>›<td>œ<td><td>ž<td>Ÿ
+   <tr><th>A0<td> <td>¡<td>¢<td>£<td>¤<td>¥<td>¦<td>§<td>¨<td>©<td>ª<td>«<td>¬<td>­<td>®<td>¯
+   <tr><th>B0<td>°<td>±<td>²<td>³<td>´<td>µ<td>¶<td>·<td>¸<td>¹<td>º<td>»<td>¼<td>½<td>¾<td>¿
+   <tr><th>C0<td>À<td>Á<td>Â<td>Ã<td>Ä<td>Å<td>Æ<td>Ç<td>È<td>É<td>Ê<td>Ë<td>Ì<td>Í<td>Î<td>Ï
+   <tr><th>D0<td>Ð<td>Ñ<td>Ò<td>Ó<td>Ô<td>Õ<td>Ö<td>×<td>Ø<td>Ù<td>Ú<td>Û<td>Ü<td>Ý<td>Þ<td>ß
+   <tr><th>E0<td>à<td>á<td>â<td>ã<td>ä<td>å<td>æ<td>ç<td>è<td>é<td>ê<td>ë<td>ì<td>í<td>î<td>ï
+   <tr><th>F0<td>ð<td>ñ<td>ò<td>ó<td>ô<td>õ<td>ö<td>÷<td>ø<td>ù<td>ú<td>û<td>ü<td class=unused>&nbsp;<td class=unused>&nbsp;<td class=unused>&nbsp;
+  </table>
+  <table><caption>Multibyte lead 82 (JIS X 0208:1997 rows 3&ndash;4)</caption>
+   <tr><th> <th>0<th>1<th>2<th>3<th>4<th>5<th>6<th>7<th>8<th>9<th>A<th>B<th>C<th>D<th>E<th>F
+   <tr><th>40<td>‚@<td>‚A<td>‚B<td>‚C<td>‚D<td>‚E<td>‚F<td>‚G<td>‚H<td>‚I<td>‚J<td>‚K<td>‚L<td>‚M<td>‚N<td>‚O
+   <tr><th>50<td>‚P<td>‚Q<td>‚R<td>‚S<td>‚T<td>‚U<td>‚V<td>‚W<td>‚X<td>‚Y<td>‚Z<td>‚[<td>‚\<td>‚]<td>‚^<td>‚_
+   <tr><th>60<td>‚`<td>‚a<td>‚b<td>‚c<td>‚d<td>‚e<td>‚f<td>‚g<td>‚h<td>‚i<td>‚j<td>‚k<td>‚l<td>‚m<td>‚n<td>‚o
+   <tr><th>70<td>‚p<td>‚q<td>‚r<td>‚s<td>‚t<td>‚u<td>‚v<td>‚w<td>‚x<td>‚y<td>‚z<td>‚{<td>‚|<td>‚}<td>‚~<td class=unused>&nbsp;
+   <tr><th>80<td>‚€<td>‚<td>‚‚<td>‚ƒ<td>‚„<td>‚…<td>‚†<td>‚‡<td>‚ˆ<td>‚‰<td>‚Š<td>‚‹<td>‚Œ<td>‚<td>‚Ž<td>‚
+   <tr><th>90<td>‚<td>‚‘<td>‚’<td>‚“<td>‚”<td>‚•<td>‚–<td>‚—<td>‚˜<td>‚™<td>‚š<td>‚›<td>‚œ<td>‚<td>‚ž<td>‚Ÿ
+   <tr><th>A0<td>‚ <td>‚¡<td>‚¢<td>‚£<td>‚¤<td>‚¥<td>‚¦<td>‚§<td>‚¨<td>‚©<td>‚ª<td>‚«<td>‚¬<td>‚­<td>‚®<td>‚¯
+   <tr><th>B0<td>‚°<td>‚±<td>‚²<td>‚³<td>‚´<td>‚µ<td>‚¶<td>‚·<td>‚¸<td>‚¹<td>‚º<td>‚»<td>‚¼<td>‚½<td>‚¾<td>‚¿
+   <tr><th>C0<td>‚À<td>‚Á<td>‚Â<td>‚Ã<td>‚Ä<td>‚Å<td>‚Æ<td>‚Ç<td>‚È<td>‚É<td>‚Ê<td>‚Ë<td>‚Ì<td>‚Í<td>‚Î<td>‚Ï
+   <tr><th>D0<td>‚Ð<td>‚Ñ<td>‚Ò<td>‚Ó<td>‚Ô<td>‚Õ<td>‚Ö<td>‚×<td>‚Ø<td>‚Ù<td>‚Ú<td>‚Û<td>‚Ü<td>‚Ý<td>‚Þ<td>‚ß
+   <tr><th>E0<td>‚à<td>‚á<td>‚â<td>‚ã<td>‚ä<td>‚å<td>‚æ<td>‚ç<td>‚è<td>‚é<td>‚ê<td>‚ë<td>‚ì<td>‚í<td>‚î<td>‚ï
+   <tr><th>F0<td>‚ð<td>‚ñ<td>‚ò<td>‚ó<td>‚ô<td>‚õ<td>‚ö<td>‚÷<td>‚ø<td>‚ù<td>‚ú<td>‚û<td>‚ü<td class=unused>&nbsp;<td class=unused>&nbsp;<td class=unused>&nbsp;
+  </table>
+  <table><caption>Multibyte lead 83 (JIS X 0208:1997 rows 5&ndash;6)</caption>
+   <tr><th> <th>0<th>1<th>2<th>3<th>4<th>5<th>6<th>7<th>8<th>9<th>A<th>B<th>C<th>D<th>E<th>F
+   <tr><th>40<td>ƒ@<td>ƒA<td>ƒB<td>ƒC<td>ƒD<td>ƒE<td>ƒF<td>ƒG<td>ƒH<td>ƒI<td>ƒJ<td>ƒK<td>ƒL<td>ƒM<td>ƒN<td>ƒO
+   <tr><th>50<td>ƒP<td>ƒQ<td>ƒR<td>ƒS<td>ƒT<td>ƒU<td>ƒV<td>ƒW<td>ƒX<td>ƒY<td>ƒZ<td>ƒ[<td>ƒ\<td>ƒ]<td>ƒ^<td>ƒ_
+   <tr><th>60<td>ƒ`<td>ƒa<td>ƒb<td>ƒc<td>ƒd<td>ƒe<td>ƒf<td>ƒg<td>ƒh<td>ƒi<td>ƒj<td>ƒk<td>ƒl<td>ƒm<td>ƒn<td>ƒo
+   <tr><th>70<td>ƒp<td>ƒq<td>ƒr<td>ƒs<td>ƒt<td>ƒu<td>ƒv<td>ƒw<td>ƒx<td>ƒy<td>ƒz<td>ƒ{<td>ƒ|<td>ƒ}<td>ƒ~<td class=unused>&nbsp;
+   <tr><th>80<td>ƒ€<td>ƒ<td>ƒ‚<td>ƒƒ<td>ƒ„<td>ƒ…<td>ƒ†<td>ƒ‡<td>ƒˆ<td>ƒ‰<td>ƒŠ<td>ƒ‹<td>ƒŒ<td>ƒ<td>ƒŽ<td>ƒ
+   <tr><th>90<td>ƒ<td>ƒ‘<td>ƒ’<td>ƒ“<td>ƒ”<td>ƒ•<td>ƒ–<td>ƒ—<td>ƒ˜<td>ƒ™<td>ƒš<td>ƒ›<td>ƒœ<td>ƒ<td>ƒž<td>ƒŸ
+   <tr><th>A0<td>ƒ <td>ƒ¡<td>ƒ¢<td>ƒ£<td>ƒ¤<td>ƒ¥<td>ƒ¦<td>ƒ§<td>ƒ¨<td>ƒ©<td>ƒª<td>ƒ«<td>ƒ¬<td>ƒ­<td>ƒ®<td>ƒ¯
+   <tr><th>B0<td>ƒ°<td>ƒ±<td>ƒ²<td>ƒ³<td>ƒ´<td>ƒµ<td>ƒ¶<td>ƒ·<td>ƒ¸<td>ƒ¹<td>ƒº<td>ƒ»<td>ƒ¼<td>ƒ½<td>ƒ¾<td>ƒ¿
+   <tr><th>C0<td>ƒÀ<td>ƒÁ<td>ƒÂ<td>ƒÃ<td>ƒÄ<td>ƒÅ<td>ƒÆ<td>ƒÇ<td>ƒÈ<td>ƒÉ<td>ƒÊ<td>ƒË<td>ƒÌ<td>ƒÍ<td>ƒÎ<td>ƒÏ
+   <tr><th>D0<td>ƒÐ<td>ƒÑ<td>ƒÒ<td>ƒÓ<td>ƒÔ<td>ƒÕ<td>ƒÖ<td>ƒ×<td>ƒØ<td>ƒÙ<td>ƒÚ<td>ƒÛ<td>ƒÜ<td>ƒÝ<td>ƒÞ<td>ƒß
+   <tr><th>E0<td>ƒà<td>ƒá<td>ƒâ<td>ƒã<td>ƒä<td>ƒå<td>ƒæ<td>ƒç<td>ƒè<td>ƒé<td>ƒê<td>ƒë<td>ƒì<td>ƒí<td>ƒî<td>ƒï
+   <tr><th>F0<td>ƒð<td>ƒñ<td>ƒò<td>ƒó<td>ƒô<td>ƒõ<td>ƒö<td>ƒ÷<td>ƒø<td>ƒù<td>ƒú<td>ƒû<td>ƒü<td class=unused>&nbsp;<td class=unused>&nbsp;<td class=unused>&nbsp;
+  </table>
+  <table><caption>Multibyte lead 84 (JIS X 0208:1997 rows 7&ndash;8)</caption>
+   <tr><th> <th>0<th>1<th>2<th>3<th>4<th>5<th>6<th>7<th>8<th>9<th>A<th>B<th>C<th>D<th>E<th>F
+   <tr><th>40<td>„@<td>„A<td>„B<td>„C<td>„D<td>„E<td>„F<td>„G<td>„H<td>„I<td>„J<td>„K<td>„L<td>„M<td>„N<td>„O
+   <tr><th>50<td>„P<td>„Q<td>„R<td>„S<td>„T<td>„U<td>„V<td>„W<td>„X<td>„Y<td>„Z<td>„[<td>„\<td>„]<td>„^<td>„_
+   <tr><th>60<td>„`<td>„a<td>„b<td>„c<td>„d<td>„e<td>„f<td>„g<td>„h<td>„i<td>„j<td>„k<td>„l<td>„m<td>„n<td>„o
+   <tr><th>70<td>„p<td>„q<td>„r<td>„s<td>„t<td>„u<td>„v<td>„w<td>„x<td>„y<td>„z<td>„{<td>„|<td>„}<td>„~<td class=unused>&nbsp;
+   <tr><th>80<td>„€<td>„<td>„‚<td>„ƒ<td>„„<td>„…<td>„†<td>„‡<td>„ˆ<td>„‰<td>„Š<td>„‹<td>„Œ<td>„<td>„Ž<td>„
+   <tr><th>90<td>„<td>„‘<td>„’<td>„“<td>„”<td>„•<td>„–<td>„—<td>„˜<td>„™<td>„š<td>„›<td>„œ<td>„<td>„ž<td>„Ÿ
+   <tr><th>A0<td>„ <td>„¡<td>„¢<td>„£<td>„¤<td>„¥<td>„¦<td>„§<td>„¨<td>„©<td>„ª<td>„«<td>„¬<td>„­<td>„®<td>„¯
+   <tr><th>B0<td>„°<td>„±<td>„²<td>„³<td>„´<td>„µ<td>„¶<td>„·<td>„¸<td>„¹<td>„º<td>„»<td>„¼<td>„½<td>„¾<td>„¿
+   <tr><th>C0<td>„À<td>„Á<td>„Â<td>„Ã<td>„Ä<td>„Å<td>„Æ<td>„Ç<td>„È<td>„É<td>„Ê<td>„Ë<td>„Ì<td>„Í<td>„Î<td>„Ï
+   <tr><th>D0<td>„Ð<td>„Ñ<td>„Ò<td>„Ó<td>„Ô<td>„Õ<td>„Ö<td>„×<td>„Ø<td>„Ù<td>„Ú<td>„Û<td>„Ü<td>„Ý<td>„Þ<td>„ß
+   <tr><th>E0<td>„à<td>„á<td>„â<td>„ã<td>„ä<td>„å<td>„æ<td>„ç<td>„è<td>„é<td>„ê<td>„ë<td>„ì<td>„í<td>„î<td>„ï
+   <tr><th>F0<td>„ð<td>„ñ<td>„ò<td>„ó<td>„ô<td>„õ<td>„ö<td>„÷<td>„ø<td>„ù<td>„ú<td>„û<td>„ü<td class=unused>&nbsp;<td class=unused>&nbsp;<td class=unused>&nbsp;
+  </table>
+  <table><caption>Multibyte lead 85 (JIS X 0208:1997 rows 9&ndash;10)</caption>
+   <tr><th> <th>0<th>1<th>2<th>3<th>4<th>5<th>6<th>7<th>8<th>9<th>A<th>B<th>C<th>D<th>E<th>F
+   <tr><th>40<td>…@<td>…A<td>…B<td>…C<td>…D<td>…E<td>…F<td>…G<td>…H<td>…I<td>…J<td>…K<td>…L<td>…M<td>…N<td>…O
+   <tr><th>50<td>…P<td>…Q<td>…R<td>…S<td>…T<td>…U<td>…V<td>…W<td>…X<td>…Y<td>…Z<td>…[<td>…\<td>…]<td>…^<td>…_
+   <tr><th>60<td>…`<td>…a<td>…b<td>…c<td>…d<td>…e<td>…f<td>…g<td>…h<td>…i<td>…j<td>…k<td>…l<td>…m<td>…n<td>…o
+   <tr><th>70<td>…p<td>…q<td>…r<td>…s<td>…t<td>…u<td>…v<td>…w<td>…x<td>…y<td>…z<td>…{<td>…|<td>…}<td>…~<td class=unused>&nbsp;
+   <tr><th>80<td>…€<td>…<td>…‚<td>…ƒ<td>…„<td>……<td>…†<td>…‡<td>…ˆ<td>…‰<td>…Š<td>…‹<td>…Œ<td>…<td>…Ž<td>…
+   <tr><th>90<td>…<td>…‘<td>…’<td>…“<td>…”<td>…•<td>…–<td>…—<td>…˜<td>…™<td>…š<td>…›<td>…œ<td>…<td>…ž<td>…Ÿ
+   <tr><th>A0<td>… <td>…¡<td>…¢<td>…£<td>…¤<td>…¥<td>…¦<td>…§<td>…¨<td>…©<td>…ª<td>…«<td>…¬<td>…­<td>…®<td>…¯
+   <tr><th>B0<td>…°<td>…±<td>…²<td>…³<td>…´<td>…µ<td>…¶<td>…·<td>…¸<td>…¹<td>…º<td>…»<td>…¼<td>…½<td>…¾<td>…¿
+   <tr><th>C0<td>…À<td>…Á<td>…Â<td>…Ã<td>…Ä<td>…Å<td>…Æ<td>…Ç<td>…È<td>…É<td>…Ê<td>…Ë<td>…Ì<td>…Í<td>…Î<td>…Ï
+   <tr><th>D0<td>…Ð<td>…Ñ<td>…Ò<td>…Ó<td>…Ô<td>…Õ<td>…Ö<td>…×<td>…Ø<td>…Ù<td>…Ú<td>…Û<td>…Ü<td>…Ý<td>…Þ<td>…ß
+   <tr><th>E0<td>…à<td>…á<td>…â<td>…ã<td>…ä<td>…å<td>…æ<td>…ç<td>…è<td>…é<td>…ê<td>…ë<td>…ì<td>…í<td>…î<td>…ï
+   <tr><th>F0<td>…ð<td>…ñ<td>…ò<td>…ó<td>…ô<td>…õ<td>…ö<td>…÷<td>…ø<td>…ù<td>…ú<td>…û<td>…ü<td class=unused>&nbsp;<td class=unused>&nbsp;<td class=unused>&nbsp;
+  </table>
+  <table><caption>Multibyte lead 86 (JIS X 0208:1997 rows 11&ndash;12)</caption>
+   <tr><th> <th>0<th>1<th>2<th>3<th>4<th>5<th>6<th>7<th>8<th>9<th>A<th>B<th>C<th>D<th>E<th>F
+   <tr><th>40<td>†@<td>†A<td>†B<td>†C<td>†D<td>†E<td>†F<td>†G<td>†H<td>†I<td>†J<td>†K<td>†L<td>†M<td>†N<td>†O
+   <tr><th>50<td>†P<td>†Q<td>†R<td>†S<td>†T<td>†U<td>†V<td>†W<td>†X<td>†Y<td>†Z<td>†[<td>†\<td>†]<td>†^<td>†_
+   <tr><th>60<td>†`<td>†a<td>†b<td>†c<td>†d<td>†e<td>†f<td>†g<td>†h<td>†i<td>†j<td>†k<td>†l<td>†m<td>†n<td>†o
+   <tr><th>70<td>†p<td>†q<td>†r<td>†s<td>†t<td>†u<td>†v<td>†w<td>†x<td>†y<td>†z<td>†{<td>†|<td>†}<td>†~<td class=unused>&nbsp;
+   <tr><th>80<td>†€<td>†<td>†‚<td>†ƒ<td>†„<td>†…<td>††<td>†‡<td>†ˆ<td>†‰<td>†Š<td>†‹<td>†Œ<td>†<td>†Ž<td>†
+   <tr><th>90<td>†<td>†‘<td>†’<td>†“<td>†”<td>†•<td>†–<td>†—<td>†˜<td>†™<td>†š<td>†›<td>†œ<td>†<td>†ž<td>†Ÿ
+   <tr><th>A0<td>† <td>†¡<td>†¢<td>†£<td>†¤<td>†¥<td>†¦<td>†§<td>†¨<td>†©<td>†ª<td>†«<td>†¬<td>†­<td>†®<td>†¯
+   <tr><th>B0<td>†°<td>†±<td>†²<td>†³<td>†´<td>†µ<td>†¶<td>†·<td>†¸<td>†¹<td>†º<td>†»<td>†¼<td>†½<td>†¾<td>†¿
+   <tr><th>C0<td>†À<td>†Á<td>†Â<td>†Ã<td>†Ä<td>†Å<td>†Æ<td>†Ç<td>†È<td>†É<td>†Ê<td>†Ë<td>†Ì<td>†Í<td>†Î<td>†Ï
+   <tr><th>D0<td>†Ð<td>†Ñ<td>†Ò<td>†Ó<td>†Ô<td>†Õ<td>†Ö<td>†×<td>†Ø<td>†Ù<td>†Ú<td>†Û<td>†Ü<td>†Ý<td>†Þ<td>†ß
+   <tr><th>E0<td>†à<td>†á<td>†â<td>†ã<td>†ä<td>†å<td>†æ<td>†ç<td>†è<td>†é<td>†ê<td>†ë<td>†ì<td>†í<td>†î<td>†ï
+   <tr><th>F0<td>†ð<td>†ñ<td>†ò<td>†ó<td>†ô<td>†õ<td>†ö<td>†÷<td>†ø<td>†ù<td>†ú<td>†û<td>†ü<td class=unused>&nbsp;<td class=unused>&nbsp;<td class=unused>&nbsp;
+  </table>
+  <table><caption>Multibyte lead 87 (JIS X 0208:1997 rows 13&ndash;14)</caption>
+   <tr><th> <th>0<th>1<th>2<th>3<th>4<th>5<th>6<th>7<th>8<th>9<th>A<th>B<th>C<th>D<th>E<th>F
+   <tr><th>40<td>‡@<td>‡A<td>‡B<td>‡C<td>‡D<td>‡E<td>‡F<td>‡G<td>‡H<td>‡I<td>‡J<td>‡K<td>‡L<td>‡M<td>‡N<td>‡O
+   <tr><th>50<td>‡P<td>‡Q<td>‡R<td>‡S<td>‡T<td>‡U<td>‡V<td>‡W<td>‡X<td>‡Y<td>‡Z<td>‡[<td>‡\<td>‡]<td>‡^<td>‡_
+   <tr><th>60<td>‡`<td>‡a<td>‡b<td>‡c<td>‡d<td>‡e<td>‡f<td>‡g<td>‡h<td>‡i<td>‡j<td>‡k<td>‡l<td>‡m<td>‡n<td>‡o
+   <tr><th>70<td>‡p<td>‡q<td>‡r<td>‡s<td>‡t<td>‡u<td>‡v<td>‡w<td>‡x<td>‡y<td>‡z<td>‡{<td>‡|<td>‡}<td>‡~<td class=unused>&nbsp;
+   <tr><th>80<td>‡€<td>‡<td>‡‚<td>‡ƒ<td>‡„<td>‡…<td>‡†<td>‡‡<td>‡ˆ<td>‡‰<td>‡Š<td>‡‹<td>‡Œ<td>‡<td>‡Ž<td>‡
+   <tr><th>90<td>‡<td>‡‘<td>‡’<td>‡“<td>‡”<td>‡•<td>‡–<td>‡—<td>‡˜<td>‡™<td>‡š<td>‡›<td>‡œ<td>‡<td>‡ž<td>‡Ÿ
+   <tr><th>A0<td>‡ <td>‡¡<td>‡¢<td>‡£<td>‡¤<td>‡¥<td>‡¦<td>‡§<td>‡¨<td>‡©<td>‡ª<td>‡«<td>‡¬<td>‡­<td>‡®<td>‡¯
+   <tr><th>B0<td>‡°<td>‡±<td>‡²<td>‡³<td>‡´<td>‡µ<td>‡¶<td>‡·<td>‡¸<td>‡¹<td>‡º<td>‡»<td>‡¼<td>‡½<td>‡¾<td>‡¿
+   <tr><th>C0<td>‡À<td>‡Á<td>‡Â<td>‡Ã<td>‡Ä<td>‡Å<td>‡Æ<td>‡Ç<td>‡È<td>‡É<td>‡Ê<td>‡Ë<td>‡Ì<td>‡Í<td>‡Î<td>‡Ï
+   <tr><th>D0<td>‡Ð<td>‡Ñ<td>‡Ò<td>‡Ó<td>‡Ô<td>‡Õ<td>‡Ö<td>‡×<td>‡Ø<td>‡Ù<td>‡Ú<td>‡Û<td>‡Ü<td>‡Ý<td>‡Þ<td>‡ß
+   <tr><th>E0<td>‡à<td>‡á<td>‡â<td>‡ã<td>‡ä<td>‡å<td>‡æ<td>‡ç<td>‡è<td>‡é<td>‡ê<td>‡ë<td>‡ì<td>‡í<td>‡î<td>‡ï
+   <tr><th>F0<td>‡ð<td>‡ñ<td>‡ò<td>‡ó<td>‡ô<td>‡õ<td>‡ö<td>‡÷<td>‡ø<td>‡ù<td>‡ú<td>‡û<td>‡ü<td class=unused>&nbsp;<td class=unused>&nbsp;<td class=unused>&nbsp;
+  </table>
+  <table><caption>Multibyte lead 88 (JIS X 0208:1997 rows 15&ndash;16)</caption>
+   <tr><th> <th>0<th>1<th>2<th>3<th>4<th>5<th>6<th>7<th>8<th>9<th>A<th>B<th>C<th>D<th>E<th>F
+   <tr><th>40<td>ˆ@<td>ˆA<td>ˆB<td>ˆC<td>ˆD<td>ˆE<td>ˆF<td>ˆG<td>ˆH<td>ˆI<td>ˆJ<td>ˆK<td>ˆL<td>ˆM<td>ˆN<td>ˆO
+   <tr><th>50<td>ˆP<td>ˆQ<td>ˆR<td>ˆS<td>ˆT<td>ˆU<td>ˆV<td>ˆW<td>ˆX<td>ˆY<td>ˆZ<td>ˆ[<td>ˆ\<td>ˆ]<td>ˆ^<td>ˆ_
+   <tr><th>60<td>ˆ`<td>ˆa<td>ˆb<td>ˆc<td>ˆd<td>ˆe<td>ˆf<td>ˆg<td>ˆh<td>ˆi<td>ˆj<td>ˆk<td>ˆl<td>ˆm<td>ˆn<td>ˆo
+   <tr><th>70<td>ˆp<td>ˆq<td>ˆr<td>ˆs<td>ˆt<td>ˆu<td>ˆv<td>ˆw<td>ˆx<td>ˆy<td>ˆz<td>ˆ{<td>ˆ|<td>ˆ}<td>ˆ~<td class=unused>&nbsp;
+   <tr><th>80<td>ˆ€<td>ˆ<td>ˆ‚<td>ˆƒ<td>ˆ„<td>ˆ…<td>ˆ†<td>ˆ‡<td>ˆˆ<td>ˆ‰<td>ˆŠ<td>ˆ‹<td>ˆŒ<td>ˆ<td>ˆŽ<td>ˆ
+   <tr><th>90<td>ˆ<td>ˆ‘<td>ˆ’<td>ˆ“<td>ˆ”<td>ˆ•<td>ˆ–<td>ˆ—<td>ˆ˜<td>ˆ™<td>ˆš<td>ˆ›<td>ˆœ<td>ˆ<td>ˆž<td>ˆŸ
+   <tr><th>A0<td>ˆ <td>ˆ¡<td>ˆ¢<td>ˆ£<td>ˆ¤<td>ˆ¥<td>ˆ¦<td>ˆ§<td>ˆ¨<td>ˆ©<td>ˆª<td>ˆ«<td>ˆ¬<td>ˆ­<td>ˆ®<td>ˆ¯
+   <tr><th>B0<td>ˆ°<td>ˆ±<td>ˆ²<td>ˆ³<td>ˆ´<td>ˆµ<td>ˆ¶<td>ˆ·<td>ˆ¸<td>ˆ¹<td>ˆº<td>ˆ»<td>ˆ¼<td>ˆ½<td>ˆ¾<td>ˆ¿
+   <tr><th>C0<td>ˆÀ<td>ˆÁ<td>ˆÂ<td>ˆÃ<td>ˆÄ<td>ˆÅ<td>ˆÆ<td>ˆÇ<td>ˆÈ<td>ˆÉ<td>ˆÊ<td>ˆË<td>ˆÌ<td>ˆÍ<td>ˆÎ<td>ˆÏ
+   <tr><th>D0<td>ˆÐ<td>ˆÑ<td>ˆÒ<td>ˆÓ<td>ˆÔ<td>ˆÕ<td>ˆÖ<td>ˆ×<td>ˆØ<td>ˆÙ<td>ˆÚ<td>ˆÛ<td>ˆÜ<td>ˆÝ<td>ˆÞ<td>ˆß
+   <tr><th>E0<td>ˆà<td>ˆá<td>ˆâ<td>ˆã<td>ˆä<td>ˆå<td>ˆæ<td>ˆç<td>ˆè<td>ˆé<td>ˆê<td>ˆë<td>ˆì<td>ˆí<td>ˆî<td>ˆï
+   <tr><th>F0<td>ˆð<td>ˆñ<td>ˆò<td>ˆó<td>ˆô<td>ˆõ<td>ˆö<td>ˆ÷<td>ˆø<td>ˆù<td>ˆú<td>ˆû<td>ˆü<td class=unused>&nbsp;<td class=unused>&nbsp;<td class=unused>&nbsp;
+  </table>
+  <table><caption>Multibyte lead 89 (JIS X 0208:1997 rows 17&ndash;18)</caption>
+   <tr><th> <th>0<th>1<th>2<th>3<th>4<th>5<th>6<th>7<th>8<th>9<th>A<th>B<th>C<th>D<th>E<th>F
+   <tr><th>40<td>‰@<td>‰A<td>‰B<td>‰C<td>‰D<td>‰E<td>‰F<td>‰G<td>‰H<td>‰I<td>‰J<td>‰K<td>‰L<td>‰M<td>‰N<td>‰O
+   <tr><th>50<td>‰P<td>‰Q<td>‰R<td>‰S<td>‰T<td>‰U<td>‰V<td>‰W<td>‰X<td>‰Y<td>‰Z<td>‰[<td>‰\<td>‰]<td>‰^<td>‰_
+   <tr><th>60<td>‰`<td>‰a<td>‰b<td>‰c<td>‰d<td>‰e<td>‰f<td>‰g<td>‰h<td>‰i<td>‰j<td>‰k<td>‰l<td>‰m<td>‰n<td>‰o
+   <tr><th>70<td>‰p<td>‰q<td>‰r<td>‰s<td>‰t<td>‰u<td>‰v<td>‰w<td>‰x<td>‰y<td>‰z<td>‰{<td>‰|<td>‰}<td>‰~<td class=unused>&nbsp;
+   <tr><th>80<td>‰€<td>‰<td>‰‚<td>‰ƒ<td>‰„<td>‰…<td>‰†<td>‰‡<td>‰ˆ<td>‰‰<td>‰Š<td>‰‹<td>‰Œ<td>‰<td>‰Ž<td>‰
+   <tr><th>90<td>‰<td>‰‘<td>‰’<td>‰“<td>‰”<td>‰•<td>‰–<td>‰—<td>‰˜<td>‰™<td>‰š<td>‰›<td>‰œ<td>‰<td>‰ž<td>‰Ÿ
+   <tr><th>A0<td>‰ <td>‰¡<td>‰¢<td>‰£<td>‰¤<td>‰¥<td>‰¦<td>‰§<td>‰¨<td>‰©<td>‰ª<td>‰«<td>‰¬<td>‰­<td>‰®<td>‰¯
+   <tr><th>B0<td>‰°<td>‰±<td>‰²<td>‰³<td>‰´<td>‰µ<td>‰¶<td>‰·<td>‰¸<td>‰¹<td>‰º<td>‰»<td>‰¼<td>‰½<td>‰¾<td>‰¿
+   <tr><th>C0<td>‰À<td>‰Á<td>‰Â<td>‰Ã<td>‰Ä<td>‰Å<td>‰Æ<td>‰Ç<td>‰È<td>‰É<td>‰Ê<td>‰Ë<td>‰Ì<td>‰Í<td>‰Î<td>‰Ï
+   <tr><th>D0<td>‰Ð<td>‰Ñ<td>‰Ò<td>‰Ó<td>‰Ô<td>‰Õ<td>‰Ö<td>‰×<td>‰Ø<td>‰Ù<td>‰Ú<td>‰Û<td>‰Ü<td>‰Ý<td>‰Þ<td>‰ß
+   <tr><th>E0<td>‰à<td>‰á<td>‰â<td>‰ã<td>‰ä<td>‰å<td>‰æ<td>‰ç<td>‰è<td>‰é<td>‰ê<td>‰ë<td>‰ì<td>‰í<td>‰î<td>‰ï
+   <tr><th>F0<td>‰ð<td>‰ñ<td>‰ò<td>‰ó<td>‰ô<td>‰õ<td>‰ö<td>‰÷<td>‰ø<td>‰ù<td>‰ú<td>‰û<td>‰ü<td class=unused>&nbsp;<td class=unused>&nbsp;<td class=unused>&nbsp;
+  </table>
+  <table><caption>Multibyte lead 8A (JIS X 0208:1997 rows 19&ndash;20)</caption>
+   <tr><th> <th>0<th>1<th>2<th>3<th>4<th>5<th>6<th>7<th>8<th>9<th>A<th>B<th>C<th>D<th>E<th>F
+   <tr><th>40<td>Š@<td>ŠA<td>ŠB<td>ŠC<td>ŠD<td>ŠE<td>ŠF<td>ŠG<td>ŠH<td>ŠI<td>ŠJ<td>ŠK<td>ŠL<td>ŠM<td>ŠN<td>ŠO
+   <tr><th>50<td>ŠP<td>ŠQ<td>ŠR<td>ŠS<td>ŠT<td>ŠU<td>ŠV<td>ŠW<td>ŠX<td>ŠY<td>ŠZ<td>Š[<td>Š\<td>Š]<td>Š^<td>Š_
+   <tr><th>60<td>Š`<td>Ša<td>Šb<td>Šc<td>Šd<td>Še<td>Šf<td>Šg<td>Šh<td>Ši<td>Šj<td>Šk<td>Šl<td>Šm<td>Šn<td>Šo
+   <tr><th>70<td>Šp<td>Šq<td>Šr<td>Šs<td>Št<td>Šu<td>Šv<td>Šw<td>Šx<td>Šy<td>Šz<td>Š{<td>Š|<td>Š}<td>Š~<td class=unused>&nbsp;
+   <tr><th>80<td>Š€<td>Š<td>Š‚<td>Šƒ<td>Š„<td>Š…<td>Š†<td>Š‡<td>Šˆ<td>Š‰<td>ŠŠ<td>Š‹<td>ŠŒ<td>Š<td>ŠŽ<td>Š
+   <tr><th>90<td>Š<td>Š‘<td>Š’<td>Š“<td>Š”<td>Š•<td>Š–<td>Š—<td>Š˜<td>Š™<td>Šš<td>Š›<td>Šœ<td>Š<td>Šž<td>ŠŸ
+   <tr><th>A0<td>Š <td>Š¡<td>Š¢<td>Š£<td>Š¤<td>Š¥<td>Š¦<td>Š§<td>Š¨<td>Š©<td>Šª<td>Š«<td>Š¬<td>Š­<td>Š®<td>Š¯
+   <tr><th>B0<td>Š°<td>Š±<td>Š²<td>Š³<td>Š´<td>Šµ<td>Š¶<td>Š·<td>Š¸<td>Š¹<td>Šº<td>Š»<td>Š¼<td>Š½<td>Š¾<td>Š¿
+   <tr><th>C0<td>ŠÀ<td>ŠÁ<td>ŠÂ<td>ŠÃ<td>ŠÄ<td>ŠÅ<td>ŠÆ<td>ŠÇ<td>ŠÈ<td>ŠÉ<td>ŠÊ<td>ŠË<td>ŠÌ<td>ŠÍ<td>ŠÎ<td>ŠÏ
+   <tr><th>D0<td>ŠÐ<td>ŠÑ<td>ŠÒ<td>ŠÓ<td>ŠÔ<td>ŠÕ<td>ŠÖ<td>Š×<td>ŠØ<td>ŠÙ<td>ŠÚ<td>ŠÛ<td>ŠÜ<td>ŠÝ<td>ŠÞ<td>Šß
+   <tr><th>E0<td>Šà<td>Šá<td>Šâ<td>Šã<td>Šä<td>Šå<td>Šæ<td>Šç<td>Šè<td>Šé<td>Šê<td>Šë<td>Šì<td>Ší<td>Šî<td>Šï
+   <tr><th>F0<td>Šð<td>Šñ<td>Šò<td>Šó<td>Šô<td>Šõ<td>Šö<td>Š÷<td>Šø<td>Šù<td>Šú<td>Šû<td>Šü<td class=unused>&nbsp;<td class=unused>&nbsp;<td class=unused>&nbsp;
+  </table>
+  <table><caption>Multibyte lead 8B (JIS X 0208:1997 rows 21&ndash;22)</caption>
+   <tr><th> <th>0<th>1<th>2<th>3<th>4<th>5<th>6<th>7<th>8<th>9<th>A<th>B<th>C<th>D<th>E<th>F
+   <tr><th>40<td>‹@<td>‹A<td>‹B<td>‹C<td>‹D<td>‹E<td>‹F<td>‹G<td>‹H<td>‹I<td>‹J<td>‹K<td>‹L<td>‹M<td>‹N<td>‹O
+   <tr><th>50<td>‹P<td>‹Q<td>‹R<td>‹S<td>‹T<td>‹U<td>‹V<td>‹W<td>‹X<td>‹Y<td>‹Z<td>‹[<td>‹\<td>‹]<td>‹^<td>‹_
+   <tr><th>60<td>‹`<td>‹a<td>‹b<td>‹c<td>‹d<td>‹e<td>‹f<td>‹g<td>‹h<td>‹i<td>‹j<td>‹k<td>‹l<td>‹m<td>‹n<td>‹o
+   <tr><th>70<td>‹p<td>‹q<td>‹r<td>‹s<td>‹t<td>‹u<td>‹v<td>‹w<td>‹x<td>‹y<td>‹z<td>‹{<td>‹|<td>‹}<td>‹~<td class=unused>&nbsp;
+   <tr><th>80<td>‹€<td>‹<td>‹‚<td>‹ƒ<td>‹„<td>‹…<td>‹†<td>‹‡<td>‹ˆ<td>‹‰<td>‹Š<td>‹‹<td>‹Œ<td>‹<td>‹Ž<td>‹
+   <tr><th>90<td>‹<td>‹‘<td>‹’<td>‹“<td>‹”<td>‹•<td>‹–<td>‹—<td>‹˜<td>‹™<td>‹š<td>‹›<td>‹œ<td>‹<td>‹ž<td>‹Ÿ
+   <tr><th>A0<td>‹ <td>‹¡<td>‹¢<td>‹£<td>‹¤<td>‹¥<td>‹¦<td>‹§<td>‹¨<td>‹©<td>‹ª<td>‹«<td>‹¬<td>‹­<td>‹®<td>‹¯
+   <tr><th>B0<td>‹°<td>‹±<td>‹²<td>‹³<td>‹´<td>‹µ<td>‹¶<td>‹·<td>‹¸<td>‹¹<td>‹º<td>‹»<td>‹¼<td>‹½<td>‹¾<td>‹¿
+   <tr><th>C0<td>‹À<td>‹Á<td>‹Â<td>‹Ã<td>‹Ä<td>‹Å<td>‹Æ<td>‹Ç<td>‹È<td>‹É<td>‹Ê<td>‹Ë<td>‹Ì<td>‹Í<td>‹Î<td>‹Ï
+   <tr><th>D0<td>‹Ð<td>‹Ñ<td>‹Ò<td>‹Ó<td>‹Ô<td>‹Õ<td>‹Ö<td>‹×<td>‹Ø<td>‹Ù<td>‹Ú<td>‹Û<td>‹Ü<td>‹Ý<td>‹Þ<td>‹ß
+   <tr><th>E0<td>‹à<td>‹á<td>‹â<td>‹ã<td>‹ä<td>‹å<td>‹æ<td>‹ç<td>‹è<td>‹é<td>‹ê<td>‹ë<td>‹ì<td>‹í<td>‹î<td>‹ï
+   <tr><th>F0<td>‹ð<td>‹ñ<td>‹ò<td>‹ó<td>‹ô<td>‹õ<td>‹ö<td>‹÷<td>‹ø<td>‹ù<td>‹ú<td>‹û<td>‹ü<td class=unused>&nbsp;<td class=unused>&nbsp;<td class=unused>&nbsp;
+  </table>
+  <table><caption>Multibyte lead 8C (JIS X 0208:1997 rows 23&ndash;24)</caption>
+   <tr><th> <th>0<th>1<th>2<th>3<th>4<th>5<th>6<th>7<th>8<th>9<th>A<th>B<th>C<th>D<th>E<th>F
+   <tr><th>40<td>Œ@<td>ŒA<td>ŒB<td>ŒC<td>ŒD<td>ŒE<td>ŒF<td>ŒG<td>ŒH<td>ŒI<td>ŒJ<td>ŒK<td>ŒL<td>ŒM<td>ŒN<td>ŒO
+   <tr><th>50<td>ŒP<td>ŒQ<td>ŒR<td>ŒS<td>ŒT<td>ŒU<td>ŒV<td>ŒW<td>ŒX<td>ŒY<td>ŒZ<td>Œ[<td>Œ\<td>Œ]<td>Œ^<td>Œ_
+   <tr><th>60<td>Œ`<td>Œa<td>Œb<td>Œc<td>Œd<td>Œe<td>Œf<td>Œg<td>Œh<td>Œi<td>Œj<td>Œk<td>Œl<td>Œm<td>Œn<td>Œo
+   <tr><th>70<td>Œp<td>Œq<td>Œr<td>Œs<td>Œt<td>Œu<td>Œv<td>Œw<td>Œx<td>Œy<td>Œz<td>Œ{<td>Œ|<td>Œ}<td>Œ~<td class=unused>&nbsp;
+   <tr><th>80<td>Œ€<td>Œ<td>Œ‚<td>Œƒ<td>Œ„<td>Œ…<td>Œ†<td>Œ‡<td>Œˆ<td>Œ‰<td>ŒŠ<td>Œ‹<td>ŒŒ<td>Œ<td>ŒŽ<td>Œ
+   <tr><th>90<td>Œ<td>Œ‘<td>Œ’<td>Œ“<td>Œ”<td>Œ•<td>Œ–<td>Œ—<td>Œ˜<td>Œ™<td>Œš<td>Œ›<td>Œœ<td>Œ<td>Œž<td>ŒŸ
+   <tr><th>A0<td>Œ <td>Œ¡<td>Œ¢<td>Œ£<td>Œ¤<td>Œ¥<td>Œ¦<td>Œ§<td>Œ¨<td>Œ©<td>Œª<td>Œ«<td>Œ¬<td>Œ­<td>Œ®<td>Œ¯
+   <tr><th>B0<td>Œ°<td>Œ±<td>Œ²<td>Œ³<td>Œ´<td>Œµ<td>Œ¶<td>Œ·<td>Œ¸<td>Œ¹<td>Œº<td>Œ»<td>Œ¼<td>Œ½<td>Œ¾<td>Œ¿
+   <tr><th>C0<td>ŒÀ<td>ŒÁ<td>ŒÂ<td>ŒÃ<td>ŒÄ<td>ŒÅ<td>ŒÆ<td>ŒÇ<td>ŒÈ<td>ŒÉ<td>ŒÊ<td>ŒË<td>ŒÌ<td>ŒÍ<td>ŒÎ<td>ŒÏ
+   <tr><th>D0<td>ŒÐ<td>ŒÑ<td>ŒÒ<td>ŒÓ<td>ŒÔ<td>ŒÕ<td>ŒÖ<td>Œ×<td>ŒØ<td>ŒÙ<td>ŒÚ<td>ŒÛ<td>ŒÜ<td>ŒÝ<td>ŒÞ<td>Œß
+   <tr><th>E0<td>Œà<td>Œá<td>Œâ<td>Œã<td>Œä<td>Œå<td>Œæ<td>Œç<td>Œè<td>Œé<td>Œê<td>Œë<td>Œì<td>Œí<td>Œî<td>Œï
+   <tr><th>F0<td>Œð<td>Œñ<td>Œò<td>Œó<td>Œô<td>Œõ<td>Œö<td>Œ÷<td>Œø<td>Œù<td>Œú<td>Œû<td>Œü<td class=unused>&nbsp;<td class=unused>&nbsp;<td class=unused>&nbsp;
+  </table>
+  <table><caption>Multibyte lead 8D (JIS X 0208:1997 rows 25&ndash;26)</caption>
+   <tr><th> <th>0<th>1<th>2<th>3<th>4<th>5<th>6<th>7<th>8<th>9<th>A<th>B<th>C<th>D<th>E<th>F
+   <tr><th>40<td>@<td>A<td>B<td>C<td>D<td>E<td>F<td>G<td>H<td>I<td>J<td>K<td>L<td>M<td>N<td>O
+   <tr><th>50<td>P<td>Q<td>R<td>S<td>T<td>U<td>V<td>W<td>X<td>Y<td>Z<td>[<td>\<td>]<td>^<td>_
+   <tr><th>60<td>`<td>a<td>b<td>c<td>d<td>e<td>f<td>g<td>h<td>i<td>j<td>k<td>l<td>m<td>n<td>o
+   <tr><th>70<td>p<td>q<td>r<td>s<td>t<td>u<td>v<td>w<td>x<td>y<td>z<td>{<td>|<td>}<td>~<td class=unused>&nbsp;
+   <tr><th>80<td>€<td><td>‚<td>ƒ<td>„<td>…<td>†<td>‡<td>ˆ<td>‰<td>Š<td>‹<td>Œ<td><td>Ž<td>
+   <tr><th>90<td><td>‘<td>’<td>“<td>”<td>•<td>–<td>—<td>˜<td>™<td>š<td>›<td>œ<td><td>ž<td>Ÿ
+   <tr><th>A0<td> <td>¡<td>¢<td>£<td>¤<td>¥<td>¦<td>§<td>¨<td>©<td>ª<td>«<td>¬<td>­<td>®<td>¯
+   <tr><th>B0<td>°<td>±<td>²<td>³<td>´<td>µ<td>¶<td>·<td>¸<td>¹<td>º<td>»<td>¼<td>½<td>¾<td>¿
+   <tr><th>C0<td>À<td>Á<td>Â<td>Ã<td>Ä<td>Å<td>Æ<td>Ç<td>È<td>É<td>Ê<td>Ë<td>Ì<td>Í<td>Î<td>Ï
+   <tr><th>D0<td>Ð<td>Ñ<td>Ò<td>Ó<td>Ô<td>Õ<td>Ö<td>×<td>Ø<td>Ù<td>Ú<td>Û<td>Ü<td>Ý<td>Þ<td>ß
+   <tr><th>E0<td>à<td>á<td>â<td>ã<td>ä<td>å<td>æ<td>ç<td>è<td>é<td>ê<td>ë<td>ì<td>í<td>î<td>ï
+   <tr><th>F0<td>ð<td>ñ<td>ò<td>ó<td>ô<td>õ<td>ö<td>÷<td>ø<td>ù<td>ú<td>û<td>ü<td class=unused>&nbsp;<td class=unused>&nbsp;<td class=unused>&nbsp;
+  </table>
+  <table><caption>Multibyte lead 8E (JIS X 0208:1997 rows 27&ndash;28)</caption>
+   <tr><th> <th>0<th>1<th>2<th>3<th>4<th>5<th>6<th>7<th>8<th>9<th>A<th>B<th>C<th>D<th>E<th>F
+   <tr><th>40<td>Ž@<td>ŽA<td>ŽB<td>ŽC<td>ŽD<td>ŽE<td>ŽF<td>ŽG<td>ŽH<td>ŽI<td>ŽJ<td>ŽK<td>ŽL<td>ŽM<td>ŽN<td>ŽO
+   <tr><th>50<td>ŽP<td>ŽQ<td>ŽR<td>ŽS<td>ŽT<td>ŽU<td>ŽV<td>ŽW<td>ŽX<td>ŽY<td>ŽZ<td>Ž[<td>Ž\<td>Ž]<td>Ž^<td>Ž_
+   <tr><th>60<td>Ž`<td>Ža<td>Žb<td>Žc<td>Žd<td>Že<td>Žf<td>Žg<td>Žh<td>Ži<td>Žj<td>Žk<td>Žl<td>Žm<td>Žn<td>Žo
+   <tr><th>70<td>Žp<td>Žq<td>Žr<td>Žs<td>Žt<td>Žu<td>Žv<td>Žw<td>Žx<td>Žy<td>Žz<td>Ž{<td>Ž|<td>Ž}<td>Ž~<td class=unused>&nbsp;
+   <tr><th>80<td>Ž€<td>Ž<td>Ž‚<td>Žƒ<td>Ž„<td>Ž…<td>Ž†<td>Ž‡<td>Žˆ<td>Ž‰<td>ŽŠ<td>Ž‹<td>ŽŒ<td>Ž<td>ŽŽ<td>Ž
+   <tr><th>90<td>Ž<td>Ž‘<td>Ž’<td>Ž“<td>Ž”<td>Ž•<td>Ž–<td>Ž—<td>Ž˜<td>Ž™<td>Žš<td>Ž›<td>Žœ<td>Ž<td>Žž<td>ŽŸ
+   <tr><th>A0<td>Ž <td>Ž¡<td>Ž¢<td>Ž£<td>Ž¤<td>Ž¥<td>Ž¦<td>Ž§<td>Ž¨<td>Ž©<td>Žª<td>Ž«<td>Ž¬<td>Ž­<td>Ž®<td>Ž¯
+   <tr><th>B0<td>Ž°<td>Ž±<td>Ž²<td>Ž³<td>Ž´<td>Žµ<td>Ž¶<td>Ž·<td>Ž¸<td>Ž¹<td>Žº<td>Ž»<td>Ž¼<td>Ž½<td>Ž¾<td>Ž¿
+   <tr><th>C0<td>ŽÀ<td>ŽÁ<td>ŽÂ<td>ŽÃ<td>ŽÄ<td>ŽÅ<td>ŽÆ<td>ŽÇ<td>ŽÈ<td>ŽÉ<td>ŽÊ<td>ŽË<td>ŽÌ<td>ŽÍ<td>ŽÎ<td>ŽÏ
+   <tr><th>D0<td>ŽÐ<td>ŽÑ<td>ŽÒ<td>ŽÓ<td>ŽÔ<td>ŽÕ<td>ŽÖ<td>Ž×<td>ŽØ<td>ŽÙ<td>ŽÚ<td>ŽÛ<td>ŽÜ<td>ŽÝ<td>ŽÞ<td>Žß
+   <tr><th>E0<td>Žà<td>Žá<td>Žâ<td>Žã<td>Žä<td>Žå<td>Žæ<td>Žç<td>Žè<td>Žé<td>Žê<td>Žë<td>Žì<td>Ží<td>Žî<td>Žï
+   <tr><th>F0<td>Žð<td>Žñ<td>Žò<td>Žó<td>Žô<td>Žõ<td>Žö<td>Ž÷<td>Žø<td>Žù<td>Žú<td>Žû<td>Žü<td class=unused>&nbsp;<td class=unused>&nbsp;<td class=unused>&nbsp;
+  </table>
+  <table><caption>Multibyte lead 8F (JIS X 0208:1997 rows 29&ndash;30)</caption>
+   <tr><th> <th>0<th>1<th>2<th>3<th>4<th>5<th>6<th>7<th>8<th>9<th>A<th>B<th>C<th>D<th>E<th>F
+   <tr><th>40<td>@<td>A<td>B<td>C<td>D<td>E<td>F<td>G<td>H<td>I<td>J<td>K<td>L<td>M<td>N<td>O
+   <tr><th>50<td>P<td>Q<td>R<td>S<td>T<td>U<td>V<td>W<td>X<td>Y<td>Z<td>[<td>\<td>]<td>^<td>_
+   <tr><th>60<td>`<td>a<td>b<td>c<td>d<td>e<td>f<td>g<td>h<td>i<td>j<td>k<td>l<td>m<td>n<td>o
+   <tr><th>70<td>p<td>q<td>r<td>s<td>t<td>u<td>v<td>w<td>x<td>y<td>z<td>{<td>|<td>}<td>~<td class=unused>&nbsp;
+   <tr><th>80<td>€<td><td>‚<td>ƒ<td>„<td>…<td>†<td>‡<td>ˆ<td>‰<td>Š<td>‹<td>Œ<td><td>Ž<td>
+   <tr><th>90<td><td>‘<td>’<td>“<td>”<td>•<td>–<td>—<td>˜<td>™<td>š<td>›<td>œ<td><td>ž<td>Ÿ
+   <tr><th>A0<td> <td>¡<td>¢<td>£<td>¤<td>¥<td>¦<td>§<td>¨<td>©<td>ª<td>«<td>¬<td>­<td>®<td>¯
+   <tr><th>B0<td>°<td>±<td>²<td>³<td>´<td>µ<td>¶<td>·<td>¸<td>¹<td>º<td>»<td>¼<td>½<td>¾<td>¿
+   <tr><th>C0<td>À<td>Á<td>Â<td>Ã<td>Ä<td>Å<td>Æ<td>Ç<td>È<td>É<td>Ê<td>Ë<td>Ì<td>Í<td>Î<td>Ï
+   <tr><th>D0<td>Ð<td>Ñ<td>Ò<td>Ó<td>Ô<td>Õ<td>Ö<td>×<td>Ø<td>Ù<td>Ú<td>Û<td>Ü<td>Ý<td>Þ<td>ß
+   <tr><th>E0<td>à<td>á<td>â<td>ã<td>ä<td>å<td>æ<td>ç<td>è<td>é<td>ê<td>ë<td>ì<td>í<td>î<td>ï
+   <tr><th>F0<td>ð<td>ñ<td>ò<td>ó<td>ô<td>õ<td>ö<td>÷<td>ø<td>ù<td>ú<td>û<td>ü<td class=unused>&nbsp;<td class=unused>&nbsp;<td class=unused>&nbsp;
+  </table>
+  <table><caption>Multibyte lead 90 (JIS X 0208:1997 rows 31&ndash;32)</caption>
+   <tr><th> <th>0<th>1<th>2<th>3<th>4<th>5<th>6<th>7<th>8<th>9<th>A<th>B<th>C<th>D<th>E<th>F
+   <tr><th>40<td>@<td>A<td>B<td>C<td>D<td>E<td>F<td>G<td>H<td>I<td>J<td>K<td>L<td>M<td>N<td>O
+   <tr><th>50<td>P<td>Q<td>R<td>S<td>T<td>U<td>V<td>W<td>X<td>Y<td>Z<td>[<td>\<td>]<td>^<td>_
+   <tr><th>60<td>`<td>a<td>b<td>c<td>d<td>e<td>f<td>g<td>h<td>i<td>j<td>k<td>l<td>m<td>n<td>o
+   <tr><th>70<td>p<td>q<td>r<td>s<td>t<td>u<td>v<td>w<td>x<td>y<td>z<td>{<td>|<td>}<td>~<td class=unused>&nbsp;
+   <tr><th>80<td>€<td><td>‚<td>ƒ<td>„<td>…<td>†<td>‡<td>ˆ<td>‰<td>Š<td>‹<td>Œ<td><td>Ž<td>
+   <tr><th>90<td><td>‘<td>’<td>“<td>”<td>•<td>–<td>—<td>˜<td>™<td>š<td>›<td>œ<td><td>ž<td>Ÿ
+   <tr><th>A0<td> <td>¡<td>¢<td>£<td>¤<td>¥<td>¦<td>§<td>¨<td>©<td>ª<td>«<td>¬<td>­<td>®<td>¯
+   <tr><th>B0<td>°<td>±<td>²<td>³<td>´<td>µ<td>¶<td>·<td>¸<td>¹<td>º<td>»<td>¼<td>½<td>¾<td>¿
+   <tr><th>C0<td>À<td>Á<td>Â<td>Ã<td>Ä<td>Å<td>Æ<td>Ç<td>È<td>É<td>Ê<td>Ë<td>Ì<td>Í<td>Î<td>Ï
+   <tr><th>D0<td>Ð<td>Ñ<td>Ò<td>Ó<td>Ô<td>Õ<td>Ö<td>×<td>Ø<td>Ù<td>Ú<td>Û<td>Ü<td>Ý<td>Þ<td>ß
+   <tr><th>E0<td>à<td>á<td>â<td>ã<td>ä<td>å<td>æ<td>ç<td>è<td>é<td>ê<td>ë<td>ì<td>í<td>î<td>ï
+   <tr><th>F0<td>ð<td>ñ<td>ò<td>ó<td>ô<td>õ<td>ö<td>÷<td>ø<td>ù<td>ú<td>û<td>ü<td class=unused>&nbsp;<td class=unused>&nbsp;<td class=unused>&nbsp;
+  </table>
+  <table><caption>Multibyte lead 91 (JIS X 0208:1997 rows 33&ndash;34)</caption>
+   <tr><th> <th>0<th>1<th>2<th>3<th>4<th>5<th>6<th>7<th>8<th>9<th>A<th>B<th>C<th>D<th>E<th>F
+   <tr><th>40<td>‘@<td>‘A<td>‘B<td>‘C<td>‘D<td>‘E<td>‘F<td>‘G<td>‘H<td>‘I<td>‘J<td>‘K<td>‘L<td>‘M<td>‘N<td>‘O
+   <tr><th>50<td>‘P<td>‘Q<td>‘R<td>‘S<td>‘T<td>‘U<td>‘V<td>‘W<td>‘X<td>‘Y<td>‘Z<td>‘[<td>‘\<td>‘]<td>‘^<td>‘_
+   <tr><th>60<td>‘`<td>‘a<td>‘b<td>‘c<td>‘d<td>‘e<td>‘f<td>‘g<td>‘h<td>‘i<td>‘j<td>‘k<td>‘l<td>‘m<td>‘n<td>‘o
+   <tr><th>70<td>‘p<td>‘q<td>‘r<td>‘s<td>‘t<td>‘u<td>‘v<td>‘w<td>‘x<td>‘y<td>‘z<td>‘{<td>‘|<td>‘}<td>‘~<td class=unused>&nbsp;
+   <tr><th>80<td>‘€<td>‘<td>‘‚<td>‘ƒ<td>‘„<td>‘…<td>‘†<td>‘‡<td>‘ˆ<td>‘‰<td>‘Š<td>‘‹<td>‘Œ<td>‘<td>‘Ž<td>‘
+   <tr><th>90<td>‘<td>‘‘<td>‘’<td>‘“<td>‘”<td>‘•<td>‘–<td>‘—<td>‘˜<td>‘™<td>‘š<td>‘›<td>‘œ<td>‘<td>‘ž<td>‘Ÿ
+   <tr><th>A0<td>‘ <td>‘¡<td>‘¢<td>‘£<td>‘¤<td>‘¥<td>‘¦<td>‘§<td>‘¨<td>‘©<td>‘ª<td>‘«<td>‘¬<td>‘­<td>‘®<td>‘¯
+   <tr><th>B0<td>‘°<td>‘±<td>‘²<td>‘³<td>‘´<td>‘µ<td>‘¶<td>‘·<td>‘¸<td>‘¹<td>‘º<td>‘»<td>‘¼<td>‘½<td>‘¾<td>‘¿
+   <tr><th>C0<td>‘À<td>‘Á<td>‘Â<td>‘Ã<td>‘Ä<td>‘Å<td>‘Æ<td>‘Ç<td>‘È<td>‘É<td>‘Ê<td>‘Ë<td>‘Ì<td>‘Í<td>‘Î<td>‘Ï
+   <tr><th>D0<td>‘Ð<td>‘Ñ<td>‘Ò<td>‘Ó<td>‘Ô<td>‘Õ<td>‘Ö<td>‘×<td>‘Ø<td>‘Ù<td>‘Ú<td>‘Û<td>‘Ü<td>‘Ý<td>‘Þ<td>‘ß
+   <tr><th>E0<td>‘à<td>‘á<td>‘â<td>‘ã<td>‘ä<td>‘å<td>‘æ<td>‘ç<td>‘è<td>‘é<td>‘ê<td>‘ë<td>‘ì<td>‘í<td>‘î<td>‘ï
+   <tr><th>F0<td>‘ð<td>‘ñ<td>‘ò<td>‘ó<td>‘ô<td>‘õ<td>‘ö<td>‘÷<td>‘ø<td>‘ù<td>‘ú<td>‘û<td>‘ü<td class=unused>&nbsp;<td class=unused>&nbsp;<td class=unused>&nbsp;
+  </table>
+  <table><caption>Multibyte lead 92 (JIS X 0208:1997 rows 35&ndash;36)</caption>
+   <tr><th> <th>0<th>1<th>2<th>3<th>4<th>5<th>6<th>7<th>8<th>9<th>A<th>B<th>C<th>D<th>E<th>F
+   <tr><th>40<td>’@<td>’A<td>’B<td>’C<td>’D<td>’E<td>’F<td>’G<td>’H<td>’I<td>’J<td>’K<td>’L<td>’M<td>’N<td>’O
+   <tr><th>50<td>’P<td>’Q<td>’R<td>’S<td>’T<td>’U<td>’V<td>’W<td>’X<td>’Y<td>’Z<td>’[<td>’\<td>’]<td>’^<td>’_
+   <tr><th>60<td>’`<td>’a<td>’b<td>’c<td>’d<td>’e<td>’f<td>’g<td>’h<td>’i<td>’j<td>’k<td>’l<td>’m<td>’n<td>’o
+   <tr><th>70<td>’p<td>’q<td>’r<td>’s<td>’t<td>’u<td>’v<td>’w<td>’x<td>’y<td>’z<td>’{<td>’|<td>’}<td>’~<td class=unused>&nbsp;
+   <tr><th>80<td>’€<td>’<td>’‚<td>’ƒ<td>’„<td>’…<td>’†<td>’‡<td>’ˆ<td>’‰<td>’Š<td>’‹<td>’Œ<td>’<td>’Ž<td>’
+   <tr><th>90<td>’<td>’‘<td>’’<td>’“<td>’”<td>’•<td>’–<td>’—<td>’˜<td>’™<td>’š<td>’›<td>’œ<td>’<td>’ž<td>’Ÿ
+   <tr><th>A0<td>’ <td>’¡<td>’¢<td>’£<td>’¤<td>’¥<td>’¦<td>’§<td>’¨<td>’©<td>’ª<td>’«<td>’¬<td>’­<td>’®<td>’¯
+   <tr><th>B0<td>’°<td>’±<td>’²<td>’³<td>’´<td>’µ<td>’¶<td>’·<td>’¸<td>’¹<td>’º<td>’»<td>’¼<td>’½<td>’¾<td>’¿
+   <tr><th>C0<td>’À<td>’Á<td>’Â<td>’Ã<td>’Ä<td>’Å<td>’Æ<td>’Ç<td>’È<td>’É<td>’Ê<td>’Ë<td>’Ì<td>’Í<td>’Î<td>’Ï
+   <tr><th>D0<td>’Ð<td>’Ñ<td>’Ò<td>’Ó<td>’Ô<td>’Õ<td>’Ö<td>’×<td>’Ø<td>’Ù<td>’Ú<td>’Û<td>’Ü<td>’Ý<td>’Þ<td>’ß
+   <tr><th>E0<td>’à<td>’á<td>’â<td>’ã<td>’ä<td>’å<td>’æ<td>’ç<td>’è<td>’é<td>’ê<td>’ë<td>’ì<td>’í<td>’î<td>’ï
+   <tr><th>F0<td>’ð<td>’ñ<td>’ò<td>’ó<td>’ô<td>’õ<td>’ö<td>’÷<td>’ø<td>’ù<td>’ú<td>’û<td>’ü<td class=unused>&nbsp;<td class=unused>&nbsp;<td class=unused>&nbsp;
+  </table>
+  <table><caption>Multibyte lead 93 (JIS X 0208:1997 rows 37&ndash;38)</caption>
+   <tr><th> <th>0<th>1<th>2<th>3<th>4<th>5<th>6<th>7<th>8<th>9<th>A<th>B<th>C<th>D<th>E<th>F
+   <tr><th>40<td>“@<td>“A<td>“B<td>“C<td>“D<td>“E<td>“F<td>“G<td>“H<td>“I<td>“J<td>“K<td>“L<td>“M<td>“N<td>“O
+   <tr><th>50<td>“P<td>“Q<td>“R<td>“S<td>“T<td>“U<td>“V<td>“W<td>“X<td>“Y<td>“Z<td>“[<td>“\<td>“]<td>“^<td>“_
+   <tr><th>60<td>“`<td>“a<td>“b<td>“c<td>“d<td>“e<td>“f<td>“g<td>“h<td>“i<td>“j<td>“k<td>“l<td>“m<td>“n<td>“o
+   <tr><th>70<td>“p<td>“q<td>“r<td>“s<td>“t<td>“u<td>“v<td>“w<td>“x<td>“y<td>“z<td>“{<td>“|<td>“}<td>“~<td class=unused>&nbsp;
+   <tr><th>80<td>“€<td>“<td>“‚<td>“ƒ<td>“„<td>“…<td>“†<td>“‡<td>“ˆ<td>“‰<td>“Š<td>“‹<td>“Œ<td>“<td>“Ž<td>“
+   <tr><th>90<td>“<td>“‘<td>“’<td>““<td>“”<td>“•<td>“–<td>“—<td>“˜<td>“™<td>“š<td>“›<td>“œ<td>“<td>“ž<td>“Ÿ
+   <tr><th>A0<td>“ <td>“¡<td>“¢<td>“£<td>“¤<td>“¥<td>“¦<td>“§<td>“¨<td>“©<td>“ª<td>“«<td>“¬<td>“­<td>“®<td>“¯
+   <tr><th>B0<td>“°<td>“±<td>“²<td>“³<td>“´<td>“µ<td>“¶<td>“·<td>“¸<td>“¹<td>“º<td>“»<td>“¼<td>“½<td>“¾<td>“¿
+   <tr><th>C0<td>“À<td>“Á<td>“Â<td>“Ã<td>“Ä<td>“Å<td>“Æ<td>“Ç<td>“È<td>“É<td>“Ê<td>“Ë<td>“Ì<td>“Í<td>“Î<td>“Ï
+   <tr><th>D0<td>“Ð<td>“Ñ<td>“Ò<td>“Ó<td>“Ô<td>“Õ<td>“Ö<td>“×<td>“Ø<td>“Ù<td>“Ú<td>“Û<td>“Ü<td>“Ý<td>“Þ<td>“ß
+   <tr><th>E0<td>“à<td>“á<td>“â<td>“ã<td>“ä<td>“å<td>“æ<td>“ç<td>“è<td>“é<td>“ê<td>“ë<td>“ì<td>“í<td>“î<td>“ï
+   <tr><th>F0<td>“ð<td>“ñ<td>“ò<td>“ó<td>“ô<td>“õ<td>“ö<td>“÷<td>“ø<td>“ù<td>“ú<td>“û<td>“ü<td class=unused>&nbsp;<td class=unused>&nbsp;<td class=unused>&nbsp;
+  </table>
+  <table><caption>Multibyte lead 94 (JIS X 0208:1997 rows 39&ndash;40)</caption>
+   <tr><th> <th>0<th>1<th>2<th>3<th>4<th>5<th>6<th>7<th>8<th>9<th>A<th>B<th>C<th>D<th>E<th>F
+   <tr><th>40<td>”@<td>”A<td>”B<td>”C<td>”D<td>”E<td>”F<td>”G<td>”H<td>”I<td>”J<td>”K<td>”L<td>”M<td>”N<td>”O
+   <tr><th>50<td>”P<td>”Q<td>”R<td>”S<td>”T<td>”U<td>”V<td>”W<td>”X<td>”Y<td>”Z<td>”[<td>”\<td>”]<td>”^<td>”_
+   <tr><th>60<td>”`<td>”a<td>”b<td>”c<td>”d<td>”e<td>”f<td>”g<td>”h<td>”i<td>”j<td>”k<td>”l<td>”m<td>”n<td>”o
+   <tr><th>70<td>”p<td>”q<td>”r<td>”s<td>”t<td>”u<td>”v<td>”w<td>”x<td>”y<td>”z<td>”{<td>”|<td>”}<td>”~<td class=unused>&nbsp;
+   <tr><th>80<td>”€<td>”<td>”‚<td>”ƒ<td>”„<td>”…<td>”†<td>”‡<td>”ˆ<td>”‰<td>”Š<td>”‹<td>”Œ<td>”<td>”Ž<td>”
+   <tr><th>90<td>”<td>”‘<td>”’<td>”“<td>””<td>”•<td>”–<td>”—<td>”˜<td>”™<td>”š<td>”›<td>”œ<td>”<td>”ž<td>”Ÿ
+   <tr><th>A0<td>” <td>”¡<td>”¢<td>”£<td>”¤<td>”¥<td>”¦<td>”§<td>”¨<td>”©<td>”ª<td>”«<td>”¬<td>”­<td>”®<td>”¯
+   <tr><th>B0<td>”°<td>”±<td>”²<td>”³<td>”´<td>”µ<td>”¶<td>”·<td>”¸<td>”¹<td>”º<td>”»<td>”¼<td>”½<td>”¾<td>”¿
+   <tr><th>C0<td>”À<td>”Á<td>”Â<td>”Ã<td>”Ä<td>”Å<td>”Æ<td>”Ç<td>”È<td>”É<td>”Ê<td>”Ë<td>”Ì<td>”Í<td>”Î<td>”Ï
+   <tr><th>D0<td>”Ð<td>”Ñ<td>”Ò<td>”Ó<td>”Ô<td>”Õ<td>”Ö<td>”×<td>”Ø<td>”Ù<td>”Ú<td>”Û<td>”Ü<td>”Ý<td>”Þ<td>”ß
+   <tr><th>E0<td>”à<td>”á<td>”â<td>”ã<td>”ä<td>”å<td>”æ<td>”ç<td>”è<td>”é<td>”ê<td>”ë<td>”ì<td>”í<td>”î<td>”ï
+   <tr><th>F0<td>”ð<td>”ñ<td>”ò<td>”ó<td>”ô<td>”õ<td>”ö<td>”÷<td>”ø<td>”ù<td>”ú<td>”û<td>”ü<td class=unused>&nbsp;<td class=unused>&nbsp;<td class=unused>&nbsp;
+  </table>
+  <table><caption>Multibyte lead 95 (JIS X 0208:1997 rows 41&ndash;42)</caption>
+   <tr><th> <th>0<th>1<th>2<th>3<th>4<th>5<th>6<th>7<th>8<th>9<th>A<th>B<th>C<th>D<th>E<th>F
+   <tr><th>40<td>•@<td>•A<td>•B<td>•C<td>•D<td>•E<td>•F<td>•G<td>•H<td>•I<td>•J<td>•K<td>•L<td>•M<td>•N<td>•O
+   <tr><th>50<td>•P<td>•Q<td>•R<td>•S<td>•T<td>•U<td>•V<td>•W<td>•X<td>•Y<td>•Z<td>•[<td>•\<td>•]<td>•^<td>•_
+   <tr><th>60<td>•`<td>•a<td>•b<td>•c<td>•d<td>•e<td>•f<td>•g<td>•h<td>•i<td>•j<td>•k<td>•l<td>•m<td>•n<td>•o
+   <tr><th>70<td>•p<td>•q<td>•r<td>•s<td>•t<td>•u<td>•v<td>•w<td>•x<td>•y<td>•z<td>•{<td>•|<td>•}<td>•~<td class=unused>&nbsp;
+   <tr><th>80<td>•€<td>•<td>•‚<td>•ƒ<td>•„<td>•…<td>•†<td>•‡<td>•ˆ<td>•‰<td>•Š<td>•‹<td>•Œ<td>•<td>•Ž<td>•
+   <tr><th>90<td>•<td>•‘<td>•’<td>•“<td>•”<td>••<td>•–<td>•—<td>•˜<td>•™<td>•š<td>•›<td>•œ<td>•<td>•ž<td>•Ÿ
+   <tr><th>A0<td>• <td>•¡<td>•¢<td>•£<td>•¤<td>•¥<td>•¦<td>•§<td>•¨<td>•©<td>•ª<td>•«<td>•¬<td>•­<td>•®<td>•¯
+   <tr><th>B0<td>•°<td>•±<td>•²<td>•³<td>•´<td>•µ<td>•¶<td>•·<td>•¸<td>•¹<td>•º<td>•»<td>•¼<td>•½<td>•¾<td>•¿
+   <tr><th>C0<td>•À<td>•Á<td>•Â<td>•Ã<td>•Ä<td>•Å<td>•Æ<td>•Ç<td>•È<td>•É<td>•Ê<td>•Ë<td>•Ì<td>•Í<td>•Î<td>•Ï
+   <tr><th>D0<td>•Ð<td>•Ñ<td>•Ò<td>•Ó<td>•Ô<td>•Õ<td>•Ö<td>•×<td>•Ø<td>•Ù<td>•Ú<td>•Û<td>•Ü<td>•Ý<td>•Þ<td>•ß
+   <tr><th>E0<td>•à<td>•á<td>•â<td>•ã<td>•ä<td>•å<td>•æ<td>•ç<td>•è<td>•é<td>•ê<td>•ë<td>•ì<td>•í<td>•î<td>•ï
+   <tr><th>F0<td>•ð<td>•ñ<td>•ò<td>•ó<td>•ô<td>•õ<td>•ö<td>•÷<td>•ø<td>•ù<td>•ú<td>•û<td>•ü<td class=unused>&nbsp;<td class=unused>&nbsp;<td class=unused>&nbsp;
+  </table>
+  <table><caption>Multibyte lead 96 (JIS X 0208:1997 rows 43&ndash;44)</caption>
+   <tr><th> <th>0<th>1<th>2<th>3<th>4<th>5<th>6<th>7<th>8<th>9<th>A<th>B<th>C<th>D<th>E<th>F
+   <tr><th>40<td>–@<td>–A<td>–B<td>–C<td>–D<td>–E<td>–F<td>–G<td>–H<td>–I<td>–J<td>–K<td>–L<td>–M<td>–N<td>–O
+   <tr><th>50<td>–P<td>–Q<td>–R<td>–S<td>–T<td>–U<td>–V<td>–W<td>–X<td>–Y<td>–Z<td>–[<td>–\<td>–]<td>–^<td>–_
+   <tr><th>60<td>–`<td>–a<td>–b<td>–c<td>–d<td>–e<td>–f<td>–g<td>–h<td>–i<td>–j<td>–k<td>–l<td>–m<td>–n<td>–o
+   <tr><th>70<td>–p<td>–q<td>–r<td>–s<td>–t<td>–u<td>–v<td>–w<td>–x<td>–y<td>–z<td>–{<td>–|<td>–}<td>–~<td class=unused>&nbsp;
+   <tr><th>80<td>–€<td>–<td>–‚<td>–ƒ<td>–„<td>–…<td>–†<td>–‡<td>–ˆ<td>–‰<td>–Š<td>–‹<td>–Œ<td>–<td>–Ž<td>–
+   <tr><th>90<td>–<td>–‘<td>–’<td>–“<td>–”<td>–•<td>––<td>–—<td>–˜<td>–™<td>–š<td>–›<td>–œ<td>–<td>–ž<td>–Ÿ
+   <tr><th>A0<td>– <td>–¡<td>–¢<td>–£<td>–¤<td>–¥<td>–¦<td>–§<td>–¨<td>–©<td>–ª<td>–«<td>–¬<td>–­<td>–®<td>–¯
+   <tr><th>B0<td>–°<td>–±<td>–²<td>–³<td>–´<td>–µ<td>–¶<td>–·<td>–¸<td>–¹<td>–º<td>–»<td>–¼<td>–½<td>–¾<td>–¿
+   <tr><th>C0<td>–À<td>–Á<td>–Â<td>–Ã<td>–Ä<td>–Å<td>–Æ<td>–Ç<td>–È<td>–É<td>–Ê<td>–Ë<td>–Ì<td>–Í<td>–Î<td>–Ï
+   <tr><th>D0<td>–Ð<td>–Ñ<td>–Ò<td>–Ó<td>–Ô<td>–Õ<td>–Ö<td>–×<td>–Ø<td>–Ù<td>–Ú<td>–Û<td>–Ü<td>–Ý<td>–Þ<td>–ß
+   <tr><th>E0<td>–à<td>–á<td>–â<td>–ã<td>–ä<td>–å<td>–æ<td>–ç<td>–è<td>–é<td>–ê<td>–ë<td>–ì<td>–í<td>–î<td>–ï
+   <tr><th>F0<td>–ð<td>–ñ<td>–ò<td>–ó<td>–ô<td>–õ<td>–ö<td>–÷<td>–ø<td>–ù<td>–ú<td>–û<td>–ü<td class=unused>&nbsp;<td class=unused>&nbsp;<td class=unused>&nbsp;
+  </table>
+  <table><caption>Multibyte lead 97 (JIS X 0208:1997 rows 45&ndash;46)</caption>
+   <tr><th> <th>0<th>1<th>2<th>3<th>4<th>5<th>6<th>7<th>8<th>9<th>A<th>B<th>C<th>D<th>E<th>F
+   <tr><th>40<td>—@<td>—A<td>—B<td>—C<td>—D<td>—E<td>—F<td>—G<td>—H<td>—I<td>—J<td>—K<td>—L<td>—M<td>—N<td>—O
+   <tr><th>50<td>—P<td>—Q<td>—R<td>—S<td>—T<td>—U<td>—V<td>—W<td>—X<td>—Y<td>—Z<td>—[<td>—\<td>—]<td>—^<td>—_
+   <tr><th>60<td>—`<td>—a<td>—b<td>—c<td>—d<td>—e<td>—f<td>—g<td>—h<td>—i<td>—j<td>—k<td>—l<td>—m<td>—n<td>—o
+   <tr><th>70<td>—p<td>—q<td>—r<td>—s<td>—t<td>—u<td>—v<td>—w<td>—x<td>—y<td>—z<td>—{<td>—|<td>—}<td>—~<td class=unused>&nbsp;
+   <tr><th>80<td>—€<td>—<td>—‚<td>—ƒ<td>—„<td>—…<td>—†<td>—‡<td>—ˆ<td>—‰<td>—Š<td>—‹<td>—Œ<td>—<td>—Ž<td>—
+   <tr><th>90<td>—<td>—‘<td>—’<td>—“<td>—”<td>—•<td>—–<td>——<td>—˜<td>—™<td>—š<td>—›<td>—œ<td>—<td>—ž<td>—Ÿ
+   <tr><th>A0<td>— <td>—¡<td>—¢<td>—£<td>—¤<td>—¥<td>—¦<td>—§<td>—¨<td>—©<td>—ª<td>—«<td>—¬<td>—­<td>—®<td>—¯
+   <tr><th>B0<td>—°<td>—±<td>—²<td>—³<td>—´<td>—µ<td>—¶<td>—·<td>—¸<td>—¹<td>—º<td>—»<td>—¼<td>—½<td>—¾<td>—¿
+   <tr><th>C0<td>—À<td>—Á<td>—Â<td>—Ã<td>—Ä<td>—Å<td>—Æ<td>—Ç<td>—È<td>—É<td>—Ê<td>—Ë<td>—Ì<td>—Í<td>—Î<td>—Ï
+   <tr><th>D0<td>—Ð<td>—Ñ<td>—Ò<td>—Ó<td>—Ô<td>—Õ<td>—Ö<td>—×<td>—Ø<td>—Ù<td>—Ú<td>—Û<td>—Ü<td>—Ý<td>—Þ<td>—ß
+   <tr><th>E0<td>—à<td>—á<td>—â<td>—ã<td>—ä<td>—å<td>—æ<td>—ç<td>—è<td>—é<td>—ê<td>—ë<td>—ì<td>—í<td>—î<td>—ï
+   <tr><th>F0<td>—ð<td>—ñ<td>—ò<td>—ó<td>—ô<td>—õ<td>—ö<td>—÷<td>—ø<td>—ù<td>—ú<td>—û<td>—ü<td class=unused>&nbsp;<td class=unused>&nbsp;<td class=unused>&nbsp;
+  </table>
+  <table><caption>Multibyte lead 98 (JIS X 0208:1997 rows 47&ndash;48)</caption>
+   <tr><th> <th>0<th>1<th>2<th>3<th>4<th>5<th>6<th>7<th>8<th>9<th>A<th>B<th>C<th>D<th>E<th>F
+   <tr><th>40<td>˜@<td>˜A<td>˜B<td>˜C<td>˜D<td>˜E<td>˜F<td>˜G<td>˜H<td>˜I<td>˜J<td>˜K<td>˜L<td>˜M<td>˜N<td>˜O
+   <tr><th>50<td>˜P<td>˜Q<td>˜R<td>˜S<td>˜T<td>˜U<td>˜V<td>˜W<td>˜X<td>˜Y<td>˜Z<td>˜[<td>˜\<td>˜]<td>˜^<td>˜_
+   <tr><th>60<td>˜`<td>˜a<td>˜b<td>˜c<td>˜d<td>˜e<td>˜f<td>˜g<td>˜h<td>˜i<td>˜j<td>˜k<td>˜l<td>˜m<td>˜n<td>˜o
+   <tr><th>70<td>˜p<td>˜q<td>˜r<td>˜s<td>˜t<td>˜u<td>˜v<td>˜w<td>˜x<td>˜y<td>˜z<td>˜{<td>˜|<td>˜}<td>˜~<td class=unused>&nbsp;
+   <tr><th>80<td>˜€<td>˜<td>˜‚<td>˜ƒ<td>˜„<td>˜…<td>˜†<td>˜‡<td>˜ˆ<td>˜‰<td>˜Š<td>˜‹<td>˜Œ<td>˜<td>˜Ž<td>˜
+   <tr><th>90<td>˜<td>˜‘<td>˜’<td>˜“<td>˜”<td>˜•<td>˜–<td>˜—<td>˜˜<td>˜™<td>˜š<td>˜›<td>˜œ<td>˜<td>˜ž<td>˜Ÿ
+   <tr><th>A0<td>˜ <td>˜¡<td>˜¢<td>˜£<td>˜¤<td>˜¥<td>˜¦<td>˜§<td>˜¨<td>˜©<td>˜ª<td>˜«<td>˜¬<td>˜­<td>˜®<td>˜¯
+   <tr><th>B0<td>˜°<td>˜±<td>˜²<td>˜³<td>˜´<td>˜µ<td>˜¶<td>˜·<td>˜¸<td>˜¹<td>˜º<td>˜»<td>˜¼<td>˜½<td>˜¾<td>˜¿
+   <tr><th>C0<td>˜À<td>˜Á<td>˜Â<td>˜Ã<td>˜Ä<td>˜Å<td>˜Æ<td>˜Ç<td>˜È<td>˜É<td>˜Ê<td>˜Ë<td>˜Ì<td>˜Í<td>˜Î<td>˜Ï
+   <tr><th>D0<td>˜Ð<td>˜Ñ<td>˜Ò<td>˜Ó<td>˜Ô<td>˜Õ<td>˜Ö<td>˜×<td>˜Ø<td>˜Ù<td>˜Ú<td>˜Û<td>˜Ü<td>˜Ý<td>˜Þ<td>˜ß
+   <tr><th>E0<td>˜à<td>˜á<td>˜â<td>˜ã<td>˜ä<td>˜å<td>˜æ<td>˜ç<td>˜è<td>˜é<td>˜ê<td>˜ë<td>˜ì<td>˜í<td>˜î<td>˜ï
+   <tr><th>F0<td>˜ð<td>˜ñ<td>˜ò<td>˜ó<td>˜ô<td>˜õ<td>˜ö<td>˜÷<td>˜ø<td>˜ù<td>˜ú<td>˜û<td>˜ü<td class=unused>&nbsp;<td class=unused>&nbsp;<td class=unused>&nbsp;
+  </table>
+  <table><caption>Multibyte lead 99 (JIS X 0208:1997 rows 49&ndash;50)</caption>
+   <tr><th> <th>0<th>1<th>2<th>3<th>4<th>5<th>6<th>7<th>8<th>9<th>A<th>B<th>C<th>D<th>E<th>F
+   <tr><th>40<td>™@<td>™A<td>™B<td>™C<td>™D<td>™E<td>™F<td>™G<td>™H<td>™I<td>™J<td>™K<td>™L<td>™M<td>™N<td>™O
+   <tr><th>50<td>™P<td>™Q<td>™R<td>™S<td>™T<td>™U<td>™V<td>™W<td>™X<td>™Y<td>™Z<td>™[<td>™\<td>™]<td>™^<td>™_
+   <tr><th>60<td>™`<td>™a<td>™b<td>™c<td>™d<td>™e<td>™f<td>™g<td>™h<td>™i<td>™j<td>™k<td>™l<td>™m<td>™n<td>™o
+   <tr><th>70<td>™p<td>™q<td>™r<td>™s<td>™t<td>™u<td>™v<td>™w<td>™x<td>™y<td>™z<td>™{<td>™|<td>™}<td>™~<td class=unused>&nbsp;
+   <tr><th>80<td>™€<td>™<td>™‚<td>™ƒ<td>™„<td>™…<td>™†<td>™‡<td>™ˆ<td>™‰<td>™Š<td>™‹<td>™Œ<td>™<td>™Ž<td>™
+   <tr><th>90<td>™<td>™‘<td>™’<td>™“<td>™”<td>™•<td>™–<td>™—<td>™˜<td>™™<td>™š<td>™›<td>™œ<td>™<td>™ž<td>™Ÿ
+   <tr><th>A0<td>™ <td>™¡<td>™¢<td>™£<td>™¤<td>™¥<td>™¦<td>™§<td>™¨<td>™©<td>™ª<td>™«<td>™¬<td>™­<td>™®<td>™¯
+   <tr><th>B0<td>™°<td>™±<td>™²<td>™³<td>™´<td>™µ<td>™¶<td>™·<td>™¸<td>™¹<td>™º<td>™»<td>™¼<td>™½<td>™¾<td>™¿
+   <tr><th>C0<td>™À<td>™Á<td>™Â<td>™Ã<td>™Ä<td>™Å<td>™Æ<td>™Ç<td>™È<td>™É<td>™Ê<td>™Ë<td>™Ì<td>™Í<td>™Î<td>™Ï
+   <tr><th>D0<td>™Ð<td>™Ñ<td>™Ò<td>™Ó<td>™Ô<td>™Õ<td>™Ö<td>™×<td>™Ø<td>™Ù<td>™Ú<td>™Û<td>™Ü<td>™Ý<td>™Þ<td>™ß
+   <tr><th>E0<td>™à<td>™á<td>™â<td>™ã<td>™ä<td>™å<td>™æ<td>™ç<td>™è<td>™é<td>™ê<td>™ë<td>™ì<td>™í<td>™î<td>™ï
+   <tr><th>F0<td>™ð<td>™ñ<td>™ò<td>™ó<td>™ô<td>™õ<td>™ö<td>™÷<td>™ø<td>™ù<td>™ú<td>™û<td>™ü<td class=unused>&nbsp;<td class=unused>&nbsp;<td class=unused>&nbsp;
+  </table>
+  <table><caption>Multibyte lead 9A (JIS X 0208:1997 rows 51&ndash;52)</caption>
+   <tr><th> <th>0<th>1<th>2<th>3<th>4<th>5<th>6<th>7<th>8<th>9<th>A<th>B<th>C<th>D<th>E<th>F
+   <tr><th>40<td>š@<td>šA<td>šB<td>šC<td>šD<td>šE<td>šF<td>šG<td>šH<td>šI<td>šJ<td>šK<td>šL<td>šM<td>šN<td>šO
+   <tr><th>50<td>šP<td>šQ<td>šR<td>šS<td>šT<td>šU<td>šV<td>šW<td>šX<td>šY<td>šZ<td>š[<td>š\<td>š]<td>š^<td>š_
+   <tr><th>60<td>š`<td>ša<td>šb<td>šc<td>šd<td>še<td>šf<td>šg<td>šh<td>ši<td>šj<td>šk<td>šl<td>šm<td>šn<td>šo
+   <tr><th>70<td>šp<td>šq<td>šr<td>šs<td>št<td>šu<td>šv<td>šw<td>šx<td>šy<td>šz<td>š{<td>š|<td>š}<td>š~<td class=unused>&nbsp;
+   <tr><th>80<td>š€<td>š<td>š‚<td>šƒ<td>š„<td>š…<td>š†<td>š‡<td>šˆ<td>š‰<td>šŠ<td>š‹<td>šŒ<td>š<td>šŽ<td>š
+   <tr><th>90<td>š<td>š‘<td>š’<td>š“<td>š”<td>š•<td>š–<td>š—<td>š˜<td>š™<td>šš<td>š›<td>šœ<td>š<td>šž<td>šŸ
+   <tr><th>A0<td>š <td>š¡<td>š¢<td>š£<td>š¤<td>š¥<td>š¦<td>š§<td>š¨<td>š©<td>šª<td>š«<td>š¬<td>š­<td>š®<td>š¯
+   <tr><th>B0<td>š°<td>š±<td>š²<td>š³<td>š´<td>šµ<td>š¶<td>š·<td>š¸<td>š¹<td>šº<td>š»<td>š¼<td>š½<td>š¾<td>š¿
+   <tr><th>C0<td>šÀ<td>šÁ<td>šÂ<td>šÃ<td>šÄ<td>šÅ<td>šÆ<td>šÇ<td>šÈ<td>šÉ<td>šÊ<td>šË<td>šÌ<td>šÍ<td>šÎ<td>šÏ
+   <tr><th>D0<td>šÐ<td>šÑ<td>šÒ<td>šÓ<td>šÔ<td>šÕ<td>šÖ<td>š×<td>šØ<td>šÙ<td>šÚ<td>šÛ<td>šÜ<td>šÝ<td>šÞ<td>šß
+   <tr><th>E0<td>šà<td>šá<td>šâ<td>šã<td>šä<td>šå<td>šæ<td>šç<td>šè<td>šé<td>šê<td>šë<td>šì<td>ší<td>šî<td>šï
+   <tr><th>F0<td>šð<td>šñ<td>šò<td>šó<td>šô<td>šõ<td>šö<td>š÷<td>šø<td>šù<td>šú<td>šû<td>šü<td class=unused>&nbsp;<td class=unused>&nbsp;<td class=unused>&nbsp;
+  </table>
+  <table><caption>Multibyte lead 9B (JIS X 0208:1997 rows 53&ndash;54)</caption>
+   <tr><th> <th>0<th>1<th>2<th>3<th>4<th>5<th>6<th>7<th>8<th>9<th>A<th>B<th>C<th>D<th>E<th>F
+   <tr><th>40<td>›@<td>›A<td>›B<td>›C<td>›D<td>›E<td>›F<td>›G<td>›H<td>›I<td>›J<td>›K<td>›L<td>›M<td>›N<td>›O
+   <tr><th>50<td>›P<td>›Q<td>›R<td>›S<td>›T<td>›U<td>›V<td>›W<td>›X<td>›Y<td>›Z<td>›[<td>›\<td>›]<td>›^<td>›_
+   <tr><th>60<td>›`<td>›a<td>›b<td>›c<td>›d<td>›e<td>›f<td>›g<td>›h<td>›i<td>›j<td>›k<td>›l<td>›m<td>›n<td>›o
+   <tr><th>70<td>›p<td>›q<td>›r<td>›s<td>›t<td>›u<td>›v<td>›w<td>›x<td>›y<td>›z<td>›{<td>›|<td>›}<td>›~<td class=unused>&nbsp;
+   <tr><th>80<td>›€<td>›<td>›‚<td>›ƒ<td>›„<td>›…<td>›†<td>›‡<td>›ˆ<td>›‰<td>›Š<td>›‹<td>›Œ<td>›<td>›Ž<td>›
+   <tr><th>90<td>›<td>›‘<td>›’<td>›“<td>›”<td>›•<td>›–<td>›—<td>›˜<td>›™<td>›š<td>››<td>›œ<td>›<td>›ž<td>›Ÿ
+   <tr><th>A0<td>› <td>›¡<td>›¢<td>›£<td>›¤<td>›¥<td>›¦<td>›§<td>›¨<td>›©<td>›ª<td>›«<td>›¬<td>›­<td>›®<td>›¯
+   <tr><th>B0<td>›°<td>›±<td>›²<td>›³<td>›´<td>›µ<td>›¶<td>›·<td>›¸<td>›¹<td>›º<td>›»<td>›¼<td>›½<td>›¾<td>›¿
+   <tr><th>C0<td>›À<td>›Á<td>›Â<td>›Ã<td>›Ä<td>›Å<td>›Æ<td>›Ç<td>›È<td>›É<td>›Ê<td>›Ë<td>›Ì<td>›Í<td>›Î<td>›Ï
+   <tr><th>D0<td>›Ð<td>›Ñ<td>›Ò<td>›Ó<td>›Ô<td>›Õ<td>›Ö<td>›×<td>›Ø<td>›Ù<td>›Ú<td>›Û<td>›Ü<td>›Ý<td>›Þ<td>›ß
+   <tr><th>E0<td>›à<td>›á<td>›â<td>›ã<td>›ä<td>›å<td>›æ<td>›ç<td>›è<td>›é<td>›ê<td>›ë<td>›ì<td>›í<td>›î<td>›ï
+   <tr><th>F0<td>›ð<td>›ñ<td>›ò<td>›ó<td>›ô<td>›õ<td>›ö<td>›÷<td>›ø<td>›ù<td>›ú<td>›û<td>›ü<td class=unused>&nbsp;<td class=unused>&nbsp;<td class=unused>&nbsp;
+  </table>
+  <table><caption>Multibyte lead 9C (JIS X 0208:1997 rows 55&ndash;56)</caption>
+   <tr><th> <th>0<th>1<th>2<th>3<th>4<th>5<th>6<th>7<th>8<th>9<th>A<th>B<th>C<th>D<th>E<th>F
+   <tr><th>40<td>œ@<td>œA<td>œB<td>œC<td>œD<td>œE<td>œF<td>œG<td>œH<td>œI<td>œJ<td>œK<td>œL<td>œM<td>œN<td>œO
+   <tr><th>50<td>œP<td>œQ<td>œR<td>œS<td>œT<td>œU<td>œV<td>œW<td>œX<td>œY<td>œZ<td>œ[<td>œ\<td>œ]<td>œ^<td>œ_
+   <tr><th>60<td>œ`<td>œa<td>œb<td>œc<td>œd<td>œe<td>œf<td>œg<td>œh<td>œi<td>œj<td>œk<td>œl<td>œm<td>œn<td>œo
+   <tr><th>70<td>œp<td>œq<td>œr<td>œs<td>œt<td>œu<td>œv<td>œw<td>œx<td>œy<td>œz<td>œ{<td>œ|<td>œ}<td>œ~<td class=unused>&nbsp;
+   <tr><th>80<td>œ€<td>œ<td>œ‚<td>œƒ<td>œ„<td>œ…<td>œ†<td>œ‡<td>œˆ<td>œ‰<td>œŠ<td>œ‹<td>œŒ<td>œ<td>œŽ<td>œ
+   <tr><th>90<td>œ<td>œ‘<td>œ’<td>œ“<td>œ”<td>œ•<td>œ–<td>œ—<td>œ˜<td>œ™<td>œš<td>œ›<td>œœ<td>œ<td>œž<td>œŸ
+   <tr><th>A0<td>œ <td>œ¡<td>œ¢<td>œ£<td>œ¤<td>œ¥<td>œ¦<td>œ§<td>œ¨<td>œ©<td>œª<td>œ«<td>œ¬<td>œ­<td>œ®<td>œ¯
+   <tr><th>B0<td>œ°<td>œ±<td>œ²<td>œ³<td>œ´<td>œµ<td>œ¶<td>œ·<td>œ¸<td>œ¹<td>œº<td>œ»<td>œ¼<td>œ½<td>œ¾<td>œ¿
+   <tr><th>C0<td>œÀ<td>œÁ<td>œÂ<td>œÃ<td>œÄ<td>œÅ<td>œÆ<td>œÇ<td>œÈ<td>œÉ<td>œÊ<td>œË<td>œÌ<td>œÍ<td>œÎ<td>œÏ
+   <tr><th>D0<td>œÐ<td>œÑ<td>œÒ<td>œÓ<td>œÔ<td>œÕ<td>œÖ<td>œ×<td>œØ<td>œÙ<td>œÚ<td>œÛ<td>œÜ<td>œÝ<td>œÞ<td>œß
+   <tr><th>E0<td>œà<td>œá<td>œâ<td>œã<td>œä<td>œå<td>œæ<td>œç<td>œè<td>œé<td>œê<td>œë<td>œì<td>œí<td>œî<td>œï
+   <tr><th>F0<td>œð<td>œñ<td>œò<td>œó<td>œô<td>œõ<td>œö<td>œ÷<td>œø<td>œù<td>œú<td>œû<td>œü<td class=unused>&nbsp;<td class=unused>&nbsp;<td class=unused>&nbsp;
+  </table>
+  <table><caption>Multibyte lead 9D (JIS X 0208:1997 rows 57&ndash;58)</caption>
+   <tr><th> <th>0<th>1<th>2<th>3<th>4<th>5<th>6<th>7<th>8<th>9<th>A<th>B<th>C<th>D<th>E<th>F
+   <tr><th>40<td>@<td>A<td>B<td>C<td>D<td>E<td>F<td>G<td>H<td>I<td>J<td>K<td>L<td>M<td>N<td>O
+   <tr><th>50<td>P<td>Q<td>R<td>S<td>T<td>U<td>V<td>W<td>X<td>Y<td>Z<td>[<td>\<td>]<td>^<td>_
+   <tr><th>60<td>`<td>a<td>b<td>c<td>d<td>e<td>f<td>g<td>h<td>i<td>j<td>k<td>l<td>m<td>n<td>o
+   <tr><th>70<td>p<td>q<td>r<td>s<td>t<td>u<td>v<td>w<td>x<td>y<td>z<td>{<td>|<td>}<td>~<td class=unused>&nbsp;
+   <tr><th>80<td>€<td><td>‚<td>ƒ<td>„<td>…<td>†<td>‡<td>ˆ<td>‰<td>Š<td>‹<td>Œ<td><td>Ž<td>
+   <tr><th>90<td><td>‘<td>’<td>“<td>”<td>•<td>–<td>—<td>˜<td>™<td>š<td>›<td>œ<td><td>ž<td>Ÿ
+   <tr><th>A0<td> <td>¡<td>¢<td>£<td>¤<td>¥<td>¦<td>§<td>¨<td>©<td>ª<td>«<td>¬<td>­<td>®<td>¯
+   <tr><th>B0<td>°<td>±<td>²<td>³<td>´<td>µ<td>¶<td>·<td>¸<td>¹<td>º<td>»<td>¼<td>½<td>¾<td>¿
+   <tr><th>C0<td>À<td>Á<td>Â<td>Ã<td>Ä<td>Å<td>Æ<td>Ç<td>È<td>É<td>Ê<td>Ë<td>Ì<td>Í<td>Î<td>Ï
+   <tr><th>D0<td>Ð<td>Ñ<td>Ò<td>Ó<td>Ô<td>Õ<td>Ö<td>×<td>Ø<td>Ù<td>Ú<td>Û<td>Ü<td>Ý<td>Þ<td>ß
+   <tr><th>E0<td>à<td>á<td>â<td>ã<td>ä<td>å<td>æ<td>ç<td>è<td>é<td>ê<td>ë<td>ì<td>í<td>î<td>ï
+   <tr><th>F0<td>ð<td>ñ<td>ò<td>ó<td>ô<td>õ<td>ö<td>÷<td>ø<td>ù<td>ú<td>û<td>ü<td class=unused>&nbsp;<td class=unused>&nbsp;<td class=unused>&nbsp;
+  </table>
+  <table><caption>Multibyte lead 9E (JIS X 0208:1997 rows 59&ndash;60)</caption>
+   <tr><th> <th>0<th>1<th>2<th>3<th>4<th>5<th>6<th>7<th>8<th>9<th>A<th>B<th>C<th>D<th>E<th>F
+   <tr><th>40<td>ž@<td>žA<td>žB<td>žC<td>žD<td>žE<td>žF<td>žG<td>žH<td>žI<td>žJ<td>žK<td>žL<td>žM<td>žN<td>žO
+   <tr><th>50<td>žP<td>žQ<td>žR<td>žS<td>žT<td>žU<td>žV<td>žW<td>žX<td>žY<td>žZ<td>ž[<td>ž\<td>ž]<td>ž^<td>ž_
+   <tr><th>60<td>ž`<td>ža<td>žb<td>žc<td>žd<td>že<td>žf<td>žg<td>žh<td>ži<td>žj<td>žk<td>žl<td>žm<td>žn<td>žo
+   <tr><th>70<td>žp<td>žq<td>žr<td>žs<td>žt<td>žu<td>žv<td>žw<td>žx<td>žy<td>žz<td>ž{<td>ž|<td>ž}<td>ž~<td class=unused>&nbsp;
+   <tr><th>80<td>ž€<td>ž<td>ž‚<td>žƒ<td>ž„<td>ž…<td>ž†<td>ž‡<td>žˆ<td>ž‰<td>žŠ<td>ž‹<td>žŒ<td>ž<td>žŽ<td>ž
+   <tr><th>90<td>ž<td>ž‘<td>ž’<td>ž“<td>ž”<td>ž•<td>ž–<td>ž—<td>ž˜<td>ž™<td>žš<td>ž›<td>žœ<td>ž<td>žž<td>žŸ
+   <tr><th>A0<td>ž <td>ž¡<td>ž¢<td>ž£<td>ž¤<td>ž¥<td>ž¦<td>ž§<td>ž¨<td>ž©<td>žª<td>ž«<td>ž¬<td>ž­<td>ž®<td>ž¯
+   <tr><th>B0<td>ž°<td>ž±<td>ž²<td>ž³<td>ž´<td>žµ<td>ž¶<td>ž·<td>ž¸<td>ž¹<td>žº<td>ž»<td>ž¼<td>ž½<td>ž¾<td>ž¿
+   <tr><th>C0<td>žÀ<td>žÁ<td>žÂ<td>žÃ<td>žÄ<td>žÅ<td>žÆ<td>žÇ<td>žÈ<td>žÉ<td>žÊ<td>žË<td>žÌ<td>žÍ<td>žÎ<td>žÏ
+   <tr><th>D0<td>žÐ<td>žÑ<td>žÒ<td>žÓ<td>žÔ<td>žÕ<td>žÖ<td>ž×<td>žØ<td>žÙ<td>žÚ<td>žÛ<td>žÜ<td>žÝ<td>žÞ<td>žß
+   <tr><th>E0<td>žà<td>žá<td>žâ<td>žã<td>žä<td>žå<td>žæ<td>žç<td>žè<td>žé<td>žê<td>žë<td>žì<td>ží<td>žî<td>žï
+   <tr><th>F0<td>žð<td>žñ<td>žò<td>žó<td>žô<td>žõ<td>žö<td>ž÷<td>žø<td>žù<td>žú<td>žû<td>žü<td class=unused>&nbsp;<td class=unused>&nbsp;<td class=unused>&nbsp;
+  </table>
+  <table><caption>Multibyte lead 9F (JIS X 0208:1997 rows 61&ndash;62)</caption>
+   <tr><th> <th>0<th>1<th>2<th>3<th>4<th>5<th>6<th>7<th>8<th>9<th>A<th>B<th>C<th>D<th>E<th>F
+   <tr><th>40<td>Ÿ@<td>ŸA<td>ŸB<td>ŸC<td>ŸD<td>ŸE<td>ŸF<td>ŸG<td>ŸH<td>ŸI<td>ŸJ<td>ŸK<td>ŸL<td>ŸM<td>ŸN<td>ŸO
+   <tr><th>50<td>ŸP<td>ŸQ<td>ŸR<td>ŸS<td>ŸT<td>ŸU<td>ŸV<td>ŸW<td>ŸX<td>ŸY<td>ŸZ<td>Ÿ[<td>Ÿ\<td>Ÿ]<td>Ÿ^<td>Ÿ_
+   <tr><th>60<td>Ÿ`<td>Ÿa<td>Ÿb<td>Ÿc<td>Ÿd<td>Ÿe<td>Ÿf<td>Ÿg<td>Ÿh<td>Ÿi<td>Ÿj<td>Ÿk<td>Ÿl<td>Ÿm<td>Ÿn<td>Ÿo
+   <tr><th>70<td>Ÿp<td>Ÿq<td>Ÿr<td>Ÿs<td>Ÿt<td>Ÿu<td>Ÿv<td>Ÿw<td>Ÿx<td>Ÿy<td>Ÿz<td>Ÿ{<td>Ÿ|<td>Ÿ}<td>Ÿ~<td class=unused>&nbsp;
+   <tr><th>80<td>Ÿ€<td>Ÿ<td>Ÿ‚<td>Ÿƒ<td>Ÿ„<td>Ÿ…<td>Ÿ†<td>Ÿ‡<td>Ÿˆ<td>Ÿ‰<td>ŸŠ<td>Ÿ‹<td>ŸŒ<td>Ÿ<td>ŸŽ<td>Ÿ
+   <tr><th>90<td>Ÿ<td>Ÿ‘<td>Ÿ’<td>Ÿ“<td>Ÿ”<td>Ÿ•<td>Ÿ–<td>Ÿ—<td>Ÿ˜<td>Ÿ™<td>Ÿš<td>Ÿ›<td>Ÿœ<td>Ÿ<td>Ÿž<td>ŸŸ
+   <tr><th>A0<td>Ÿ <td>Ÿ¡<td>Ÿ¢<td>Ÿ£<td>Ÿ¤<td>Ÿ¥<td>Ÿ¦<td>Ÿ§<td>Ÿ¨<td>Ÿ©<td>Ÿª<td>Ÿ«<td>Ÿ¬<td>Ÿ­<td>Ÿ®<td>Ÿ¯
+   <tr><th>B0<td>Ÿ°<td>Ÿ±<td>Ÿ²<td>Ÿ³<td>Ÿ´<td>Ÿµ<td>Ÿ¶<td>Ÿ·<td>Ÿ¸<td>Ÿ¹<td>Ÿº<td>Ÿ»<td>Ÿ¼<td>Ÿ½<td>Ÿ¾<td>Ÿ¿
+   <tr><th>C0<td>ŸÀ<td>ŸÁ<td>ŸÂ<td>ŸÃ<td>ŸÄ<td>ŸÅ<td>ŸÆ<td>ŸÇ<td>ŸÈ<td>ŸÉ<td>ŸÊ<td>ŸË<td>ŸÌ<td>ŸÍ<td>ŸÎ<td>ŸÏ
+   <tr><th>D0<td>ŸÐ<td>ŸÑ<td>ŸÒ<td>ŸÓ<td>ŸÔ<td>ŸÕ<td>ŸÖ<td>Ÿ×<td>ŸØ<td>ŸÙ<td>ŸÚ<td>ŸÛ<td>ŸÜ<td>ŸÝ<td>ŸÞ<td>Ÿß
+   <tr><th>E0<td>Ÿà<td>Ÿá<td>Ÿâ<td>Ÿã<td>Ÿä<td>Ÿå<td>Ÿæ<td>Ÿç<td>Ÿè<td>Ÿé<td>Ÿê<td>Ÿë<td>Ÿì<td>Ÿí<td>Ÿî<td>Ÿï
+   <tr><th>F0<td>Ÿð<td>Ÿñ<td>Ÿò<td>Ÿó<td>Ÿô<td>Ÿõ<td>Ÿö<td>Ÿ÷<td>Ÿø<td>Ÿù<td>Ÿú<td>Ÿû<td>Ÿü<td class=unused>&nbsp;<td class=unused>&nbsp;<td class=unused>&nbsp;
+  </table>
+  <table><caption>Multibyte lead E0 (JIS X 0208:1997 rows 63&ndash;64)</caption>
+   <tr><th> <th>0<th>1<th>2<th>3<th>4<th>5<th>6<th>7<th>8<th>9<th>A<th>B<th>C<th>D<th>E<th>F
+   <tr><th>40<td>à@<td>àA<td>àB<td>àC<td>àD<td>àE<td>àF<td>àG<td>àH<td>àI<td>àJ<td>àK<td>àL<td>àM<td>àN<td>àO
+   <tr><th>50<td>àP<td>àQ<td>àR<td>àS<td>àT<td>àU<td>àV<td>àW<td>àX<td>àY<td>àZ<td>à[<td>à\<td>à]<td>à^<td>à_
+   <tr><th>60<td>à`<td>àa<td>àb<td>àc<td>àd<td>àe<td>àf<td>àg<td>àh<td>ài<td>àj<td>àk<td>àl<td>àm<td>àn<td>ào
+   <tr><th>70<td>àp<td>àq<td>àr<td>às<td>àt<td>àu<td>àv<td>àw<td>àx<td>ày<td>àz<td>à{<td>à|<td>à}<td>à~<td class=unused>&nbsp;
+   <tr><th>80<td>à€<td>à<td>à‚<td>àƒ<td>à„<td>à…<td>à†<td>à‡<td>àˆ<td>à‰<td>àŠ<td>à‹<td>àŒ<td>à<td>àŽ<td>à
+   <tr><th>90<td>à<td>à‘<td>à’<td>à“<td>à”<td>à•<td>à–<td>à—<td>à˜<td>à™<td>àš<td>à›<td>àœ<td>à<td>àž<td>àŸ
+   <tr><th>A0<td>à <td>à¡<td>à¢<td>à£<td>à¤<td>à¥<td>à¦<td>à§<td>à¨<td>à©<td>àª<td>à«<td>à¬<td>à­<td>à®<td>à¯
+   <tr><th>B0<td>à°<td>à±<td>à²<td>à³<td>à´<td>àµ<td>à¶<td>à·<td>à¸<td>à¹<td>àº<td>à»<td>à¼<td>à½<td>à¾<td>à¿
+   <tr><th>C0<td>àÀ<td>àÁ<td>àÂ<td>àÃ<td>àÄ<td>àÅ<td>àÆ<td>àÇ<td>àÈ<td>àÉ<td>àÊ<td>àË<td>àÌ<td>àÍ<td>àÎ<td>àÏ
+   <tr><th>D0<td>àÐ<td>àÑ<td>àÒ<td>àÓ<td>àÔ<td>àÕ<td>àÖ<td>à×<td>àØ<td>àÙ<td>àÚ<td>àÛ<td>àÜ<td>àÝ<td>àÞ<td>àß
+   <tr><th>E0<td>àà<td>àá<td>àâ<td>àã<td>àä<td>àå<td>àæ<td>àç<td>àè<td>àé<td>àê<td>àë<td>àì<td>àí<td>àî<td>àï
+   <tr><th>F0<td>àð<td>àñ<td>àò<td>àó<td>àô<td>àõ<td>àö<td>à÷<td>àø<td>àù<td>àú<td>àû<td>àü<td class=unused>&nbsp;<td class=unused>&nbsp;<td class=unused>&nbsp;
+  </table>
+  <table><caption>Multibyte lead E1 (JIS X 0208:1997 rows 65&ndash;66)</caption>
+   <tr><th> <th>0<th>1<th>2<th>3<th>4<th>5<th>6<th>7<th>8<th>9<th>A<th>B<th>C<th>D<th>E<th>F
+   <tr><th>40<td>á@<td>áA<td>áB<td>áC<td>áD<td>áE<td>áF<td>áG<td>áH<td>áI<td>áJ<td>áK<td>áL<td>áM<td>áN<td>áO
+   <tr><th>50<td>áP<td>áQ<td>áR<td>áS<td>áT<td>áU<td>áV<td>áW<td>áX<td>áY<td>áZ<td>á[<td>á\<td>á]<td>á^<td>á_
+   <tr><th>60<td>á`<td>áa<td>áb<td>ác<td>ád<td>áe<td>áf<td>ág<td>áh<td>ái<td>áj<td>ák<td>ál<td>ám<td>án<td>áo
+   <tr><th>70<td>áp<td>áq<td>ár<td>ás<td>át<td>áu<td>áv<td>áw<td>áx<td>áy<td>áz<td>á{<td>á|<td>á}<td>á~<td class=unused>&nbsp;
+   <tr><th>80<td>á€<td>á<td>á‚<td>áƒ<td>á„<td>á…<td>á†<td>á‡<td>áˆ<td>á‰<td>áŠ<td>á‹<td>áŒ<td>á<td>áŽ<td>á
+   <tr><th>90<td>á<td>á‘<td>á’<td>á“<td>á”<td>á•<td>á–<td>á—<td>á˜<td>á™<td>áš<td>á›<td>áœ<td>á<td>áž<td>áŸ
+   <tr><th>A0<td>á <td>á¡<td>á¢<td>á£<td>á¤<td>á¥<td>á¦<td>á§<td>á¨<td>á©<td>áª<td>á«<td>á¬<td>á­<td>á®<td>á¯
+   <tr><th>B0<td>á°<td>á±<td>á²<td>á³<td>á´<td>áµ<td>á¶<td>á·<td>á¸<td>á¹<td>áº<td>á»<td>á¼<td>á½<td>á¾<td>á¿
+   <tr><th>C0<td>áÀ<td>áÁ<td>áÂ<td>áÃ<td>áÄ<td>áÅ<td>áÆ<td>áÇ<td>áÈ<td>áÉ<td>áÊ<td>áË<td>áÌ<td>áÍ<td>áÎ<td>áÏ
+   <tr><th>D0<td>áÐ<td>áÑ<td>áÒ<td>áÓ<td>áÔ<td>áÕ<td>áÖ<td>á×<td>áØ<td>áÙ<td>áÚ<td>áÛ<td>áÜ<td>áÝ<td>áÞ<td>áß
+   <tr><th>E0<td>áà<td>áá<td>áâ<td>áã<td>áä<td>áå<td>áæ<td>áç<td>áè<td>áé<td>áê<td>áë<td>áì<td>áí<td>áî<td>áï
+   <tr><th>F0<td>áð<td>áñ<td>áò<td>áó<td>áô<td>áõ<td>áö<td>á÷<td>áø<td>áù<td>áú<td>áû<td>áü<td class=unused>&nbsp;<td class=unused>&nbsp;<td class=unused>&nbsp;
+  </table>
+  <table><caption>Multibyte lead E2 (JIS X 0208:1997 rows 67&ndash;68)</caption>
+   <tr><th> <th>0<th>1<th>2<th>3<th>4<th>5<th>6<th>7<th>8<th>9<th>A<th>B<th>C<th>D<th>E<th>F
+   <tr><th>40<td>â@<td>âA<td>âB<td>âC<td>âD<td>âE<td>âF<td>âG<td>âH<td>âI<td>âJ<td>âK<td>âL<td>âM<td>âN<td>âO
+   <tr><th>50<td>âP<td>âQ<td>âR<td>âS<td>âT<td>âU<td>âV<td>âW<td>âX<td>âY<td>âZ<td>â[<td>â\<td>â]<td>â^<td>â_
+   <tr><th>60<td>â`<td>âa<td>âb<td>âc<td>âd<td>âe<td>âf<td>âg<td>âh<td>âi<td>âj<td>âk<td>âl<td>âm<td>ân<td>âo
+   <tr><th>70<td>âp<td>âq<td>âr<td>âs<td>ât<td>âu<td>âv<td>âw<td>âx<td>ây<td>âz<td>â{<td>â|<td>â}<td>â~<td class=unused>&nbsp;
+   <tr><th>80<td>â€<td>â<td>â‚<td>âƒ<td>â„<td>â…<td>â†<td>â‡<td>âˆ<td>â‰<td>âŠ<td>â‹<td>âŒ<td>â<td>âŽ<td>â
+   <tr><th>90<td>â<td>â‘<td>â’<td>â“<td>â”<td>â•<td>â–<td>â—<td>â˜<td>â™<td>âš<td>â›<td>âœ<td>â<td>âž<td>âŸ
+   <tr><th>A0<td>â <td>â¡<td>â¢<td>â£<td>â¤<td>â¥<td>â¦<td>â§<td>â¨<td>â©<td>âª<td>â«<td>â¬<td>â­<td>â®<td>â¯
+   <tr><th>B0<td>â°<td>â±<td>â²<td>â³<td>â´<td>âµ<td>â¶<td>â·<td>â¸<td>â¹<td>âº<td>â»<td>â¼<td>â½<td>â¾<td>â¿
+   <tr><th>C0<td>âÀ<td>âÁ<td>âÂ<td>âÃ<td>âÄ<td>âÅ<td>âÆ<td>âÇ<td>âÈ<td>âÉ<td>âÊ<td>âË<td>âÌ<td>âÍ<td>âÎ<td>âÏ
+   <tr><th>D0<td>âÐ<td>âÑ<td>âÒ<td>âÓ<td>âÔ<td>âÕ<td>âÖ<td>â×<td>âØ<td>âÙ<td>âÚ<td>âÛ<td>âÜ<td>âÝ<td>âÞ<td>âß
+   <tr><th>E0<td>âà<td>âá<td>ââ<td>âã<td>âä<td>âå<td>âæ<td>âç<td>âè<td>âé<td>âê<td>âë<td>âì<td>âí<td>âî<td>âï
+   <tr><th>F0<td>âð<td>âñ<td>âò<td>âó<td>âô<td>âõ<td>âö<td>â÷<td>âø<td>âù<td>âú<td>âû<td>âü<td class=unused>&nbsp;<td class=unused>&nbsp;<td class=unused>&nbsp;
+  </table>
+  <table><caption>Multibyte lead E3 (JIS X 0208:1997 rows 69&ndash;70)</caption>
+   <tr><th> <th>0<th>1<th>2<th>3<th>4<th>5<th>6<th>7<th>8<th>9<th>A<th>B<th>C<th>D<th>E<th>F
+   <tr><th>40<td>ã@<td>ãA<td>ãB<td>ãC<td>ãD<td>ãE<td>ãF<td>ãG<td>ãH<td>ãI<td>ãJ<td>ãK<td>ãL<td>ãM<td>ãN<td>ãO
+   <tr><th>50<td>ãP<td>ãQ<td>ãR<td>ãS<td>ãT<td>ãU<td>ãV<td>ãW<td>ãX<td>ãY<td>ãZ<td>ã[<td>ã\<td>ã]<td>ã^<td>ã_
+   <tr><th>60<td>ã`<td>ãa<td>ãb<td>ãc<td>ãd<td>ãe<td>ãf<td>ãg<td>ãh<td>ãi<td>ãj<td>ãk<td>ãl<td>ãm<td>ãn<td>ão
+   <tr><th>70<td>ãp<td>ãq<td>ãr<td>ãs<td>ãt<td>ãu<td>ãv<td>ãw<td>ãx<td>ãy<td>ãz<td>ã{<td>ã|<td>ã}<td>ã~<td class=unused>&nbsp;
+   <tr><th>80<td>ã€<td>ã<td>ã‚<td>ãƒ<td>ã„<td>ã…<td>ã†<td>ã‡<td>ãˆ<td>ã‰<td>ãŠ<td>ã‹<td>ãŒ<td>ã<td>ãŽ<td>ã
+   <tr><th>90<td>ã<td>ã‘<td>ã’<td>ã“<td>ã”<td>ã•<td>ã–<td>ã—<td>ã˜<td>ã™<td>ãš<td>ã›<td>ãœ<td>ã<td>ãž<td>ãŸ
+   <tr><th>A0<td>ã <td>ã¡<td>ã¢<td>ã£<td>ã¤<td>ã¥<td>ã¦<td>ã§<td>ã¨<td>ã©<td>ãª<td>ã«<td>ã¬<td>ã­<td>ã®<td>ã¯
+   <tr><th>B0<td>ã°<td>ã±<td>ã²<td>ã³<td>ã´<td>ãµ<td>ã¶<td>ã·<td>ã¸<td>ã¹<td>ãº<td>ã»<td>ã¼<td>ã½<td>ã¾<td>ã¿
+   <tr><th>C0<td>ãÀ<td>ãÁ<td>ãÂ<td>ãÃ<td>ãÄ<td>ãÅ<td>ãÆ<td>ãÇ<td>ãÈ<td>ãÉ<td>ãÊ<td>ãË<td>ãÌ<td>ãÍ<td>ãÎ<td>ãÏ
+   <tr><th>D0<td>ãÐ<td>ãÑ<td>ãÒ<td>ãÓ<td>ãÔ<td>ãÕ<td>ãÖ<td>ã×<td>ãØ<td>ãÙ<td>ãÚ<td>ãÛ<td>ãÜ<td>ãÝ<td>ãÞ<td>ãß
+   <tr><th>E0<td>ãà<td>ãá<td>ãâ<td>ãã<td>ãä<td>ãå<td>ãæ<td>ãç<td>ãè<td>ãé<td>ãê<td>ãë<td>ãì<td>ãí<td>ãî<td>ãï
+   <tr><th>F0<td>ãð<td>ãñ<td>ãò<td>ãó<td>ãô<td>ãõ<td>ãö<td>ã÷<td>ãø<td>ãù<td>ãú<td>ãû<td>ãü<td class=unused>&nbsp;<td class=unused>&nbsp;<td class=unused>&nbsp;
+  </table>
+  <table><caption>Multibyte lead E4 (JIS X 0208:1997 rows 71&ndash;72)</caption>
+   <tr><th> <th>0<th>1<th>2<th>3<th>4<th>5<th>6<th>7<th>8<th>9<th>A<th>B<th>C<th>D<th>E<th>F
+   <tr><th>40<td>ä@<td>äA<td>äB<td>äC<td>äD<td>äE<td>äF<td>äG<td>äH<td>äI<td>äJ<td>äK<td>äL<td>äM<td>äN<td>äO
+   <tr><th>50<td>äP<td>äQ<td>äR<td>äS<td>äT<td>äU<td>äV<td>äW<td>äX<td>äY<td>äZ<td>ä[<td>ä\<td>ä]<td>ä^<td>ä_
+   <tr><th>60<td>ä`<td>äa<td>äb<td>äc<td>äd<td>äe<td>äf<td>äg<td>äh<td>äi<td>äj<td>äk<td>äl<td>äm<td>än<td>äo
+   <tr><th>70<td>äp<td>äq<td>är<td>äs<td>ät<td>äu<td>äv<td>äw<td>äx<td>äy<td>äz<td>ä{<td>ä|<td>ä}<td>ä~<td class=unused>&nbsp;
+   <tr><th>80<td>ä€<td>ä<td>ä‚<td>äƒ<td>ä„<td>ä…<td>ä†<td>ä‡<td>äˆ<td>ä‰<td>äŠ<td>ä‹<td>äŒ<td>ä<td>äŽ<td>ä
+   <tr><th>90<td>ä<td>ä‘<td>ä’<td>ä“<td>ä”<td>ä•<td>ä–<td>ä—<td>ä˜<td>ä™<td>äš<td>ä›<td>äœ<td>ä<td>äž<td>äŸ
+   <tr><th>A0<td>ä <td>ä¡<td>ä¢<td>ä£<td>ä¤<td>ä¥<td>ä¦<td>ä§<td>ä¨<td>ä©<td>äª<td>ä«<td>ä¬<td>ä­<td>ä®<td>ä¯
+   <tr><th>B0<td>ä°<td>ä±<td>ä²<td>ä³<td>ä´<td>äµ<td>ä¶<td>ä·<td>ä¸<td>ä¹<td>äº<td>ä»<td>ä¼<td>ä½<td>ä¾<td>ä¿
+   <tr><th>C0<td>äÀ<td>äÁ<td>äÂ<td>äÃ<td>äÄ<td>äÅ<td>äÆ<td>äÇ<td>äÈ<td>äÉ<td>äÊ<td>äË<td>äÌ<td>äÍ<td>äÎ<td>äÏ
+   <tr><th>D0<td>äÐ<td>äÑ<td>äÒ<td>äÓ<td>äÔ<td>äÕ<td>äÖ<td>ä×<td>äØ<td>äÙ<td>äÚ<td>äÛ<td>äÜ<td>äÝ<td>äÞ<td>äß
+   <tr><th>E0<td>äà<td>äá<td>äâ<td>äã<td>ää<td>äå<td>äæ<td>äç<td>äè<td>äé<td>äê<td>äë<td>äì<td>äí<td>äî<td>äï
+   <tr><th>F0<td>äð<td>äñ<td>äò<td>äó<td>äô<td>äõ<td>äö<td>ä÷<td>äø<td>äù<td>äú<td>äû<td>äü<td class=unused>&nbsp;<td class=unused>&nbsp;<td class=unused>&nbsp;
+  </table>
+  <table><caption>Multibyte lead E5 (JIS X 0208:1997 rows 73&ndash;74)</caption>
+   <tr><th> <th>0<th>1<th>2<th>3<th>4<th>5<th>6<th>7<th>8<th>9<th>A<th>B<th>C<th>D<th>E<th>F
+   <tr><th>40<td>å@<td>åA<td>åB<td>åC<td>åD<td>åE<td>åF<td>åG<td>åH<td>åI<td>åJ<td>åK<td>åL<td>åM<td>åN<td>åO
+   <tr><th>50<td>åP<td>åQ<td>åR<td>åS<td>åT<td>åU<td>åV<td>åW<td>åX<td>åY<td>åZ<td>å[<td>å\<td>å]<td>å^<td>å_
+   <tr><th>60<td>å`<td>åa<td>åb<td>åc<td>åd<td>åe<td>åf<td>åg<td>åh<td>åi<td>åj<td>åk<td>ål<td>åm<td>ån<td>åo
+   <tr><th>70<td>åp<td>åq<td>år<td>ås<td>åt<td>åu<td>åv<td>åw<td>åx<td>åy<td>åz<td>å{<td>å|<td>å}<td>å~<td class=unused>&nbsp;
+   <tr><th>80<td>å€<td>å<td>å‚<td>åƒ<td>å„<td>å…<td>å†<td>å‡<td>åˆ<td>å‰<td>åŠ<td>å‹<td>åŒ<td>å<td>åŽ<td>å
+   <tr><th>90<td>å<td>å‘<td>å’<td>å“<td>å”<td>å•<td>å–<td>å—<td>å˜<td>å™<td>åš<td>å›<td>åœ<td>å<td>åž<td>åŸ
+   <tr><th>A0<td>å <td>å¡<td>å¢<td>å£<td>å¤<td>å¥<td>å¦<td>å§<td>å¨<td>å©<td>åª<td>å«<td>å¬<td>å­<td>å®<td>å¯
+   <tr><th>B0<td>å°<td>å±<td>å²<td>å³<td>å´<td>åµ<td>å¶<td>å·<td>å¸<td>å¹<td>åº<td>å»<td>å¼<td>å½<td>å¾<td>å¿
+   <tr><th>C0<td>åÀ<td>åÁ<td>åÂ<td>åÃ<td>åÄ<td>åÅ<td>åÆ<td>åÇ<td>åÈ<td>åÉ<td>åÊ<td>åË<td>åÌ<td>åÍ<td>åÎ<td>åÏ
+   <tr><th>D0<td>åÐ<td>åÑ<td>åÒ<td>åÓ<td>åÔ<td>åÕ<td>åÖ<td>å×<td>åØ<td>åÙ<td>åÚ<td>åÛ<td>åÜ<td>åÝ<td>åÞ<td>åß
+   <tr><th>E0<td>åà<td>åá<td>åâ<td>åã<td>åä<td>åå<td>åæ<td>åç<td>åè<td>åé<td>åê<td>åë<td>åì<td>åí<td>åî<td>åï
+   <tr><th>F0<td>åð<td>åñ<td>åò<td>åó<td>åô<td>åõ<td>åö<td>å÷<td>åø<td>åù<td>åú<td>åû<td>åü<td class=unused>&nbsp;<td class=unused>&nbsp;<td class=unused>&nbsp;
+  </table>
+  <table><caption>Multibyte lead E6 (JIS X 0208:1997 rows 75&ndash;76)</caption>
+   <tr><th> <th>0<th>1<th>2<th>3<th>4<th>5<th>6<th>7<th>8<th>9<th>A<th>B<th>C<th>D<th>E<th>F
+   <tr><th>40<td>æ@<td>æA<td>æB<td>æC<td>æD<td>æE<td>æF<td>æG<td>æH<td>æI<td>æJ<td>æK<td>æL<td>æM<td>æN<td>æO
+   <tr><th>50<td>æP<td>æQ<td>æR<td>æS<td>æT<td>æU<td>æV<td>æW<td>æX<td>æY<td>æZ<td>æ[<td>æ\<td>æ]<td>æ^<td>æ_
+   <tr><th>60<td>æ`<td>æa<td>æb<td>æc<td>æd<td>æe<td>æf<td>æg<td>æh<td>æi<td>æj<td>æk<td>æl<td>æm<td>æn<td>æo
+   <tr><th>70<td>æp<td>æq<td>ær<td>æs<td>æt<td>æu<td>æv<td>æw<td>æx<td>æy<td>æz<td>æ{<td>æ|<td>æ}<td>æ~<td class=unused>&nbsp;
+   <tr><th>80<td>æ€<td>æ<td>æ‚<td>æƒ<td>æ„<td>æ…<td>æ†<td>æ‡<td>æˆ<td>æ‰<td>æŠ<td>æ‹<td>æŒ<td>æ<td>æŽ<td>æ
+   <tr><th>90<td>æ<td>æ‘<td>æ’<td>æ“<td>æ”<td>æ•<td>æ–<td>æ—<td>æ˜<td>æ™<td>æš<td>æ›<td>æœ<td>æ<td>æž<td>æŸ
+   <tr><th>A0<td>æ <td>æ¡<td>æ¢<td>æ£<td>æ¤<td>æ¥<td>æ¦<td>æ§<td>æ¨<td>æ©<td>æª<td>æ«<td>æ¬<td>æ­<td>æ®<td>æ¯
+   <tr><th>B0<td>æ°<td>æ±<td>æ²<td>æ³<td>æ´<td>æµ<td>æ¶<td>æ·<td>æ¸<td>æ¹<td>æº<td>æ»<td>æ¼<td>æ½<td>æ¾<td>æ¿
+   <tr><th>C0<td>æÀ<td>æÁ<td>æÂ<td>æÃ<td>æÄ<td>æÅ<td>æÆ<td>æÇ<td>æÈ<td>æÉ<td>æÊ<td>æË<td>æÌ<td>æÍ<td>æÎ<td>æÏ
+   <tr><th>D0<td>æÐ<td>æÑ<td>æÒ<td>æÓ<td>æÔ<td>æÕ<td>æÖ<td>æ×<td>æØ<td>æÙ<td>æÚ<td>æÛ<td>æÜ<td>æÝ<td>æÞ<td>æß
+   <tr><th>E0<td>æà<td>æá<td>æâ<td>æã<td>æä<td>æå<td>ææ<td>æç<td>æè<td>æé<td>æê<td>æë<td>æì<td>æí<td>æî<td>æï
+   <tr><th>F0<td>æð<td>æñ<td>æò<td>æó<td>æô<td>æõ<td>æö<td>æ÷<td>æø<td>æù<td>æú<td>æû<td>æü<td class=unused>&nbsp;<td class=unused>&nbsp;<td class=unused>&nbsp;
+  </table>
+  <table><caption>Multibyte lead E7 (JIS X 0208:1997 rows 77&ndash;78)</caption>
+   <tr><th> <th>0<th>1<th>2<th>3<th>4<th>5<th>6<th>7<th>8<th>9<th>A<th>B<th>C<th>D<th>E<th>F
+   <tr><th>40<td>ç@<td>çA<td>çB<td>çC<td>çD<td>çE<td>çF<td>çG<td>çH<td>çI<td>çJ<td>çK<td>çL<td>çM<td>çN<td>çO
+   <tr><th>50<td>çP<td>çQ<td>çR<td>çS<td>çT<td>çU<td>çV<td>çW<td>çX<td>çY<td>çZ<td>ç[<td>ç\<td>ç]<td>ç^<td>ç_
+   <tr><th>60<td>ç`<td>ça<td>çb<td>çc<td>çd<td>çe<td>çf<td>çg<td>çh<td>çi<td>çj<td>çk<td>çl<td>çm<td>çn<td>ço
+   <tr><th>70<td>çp<td>çq<td>çr<td>çs<td>çt<td>çu<td>çv<td>çw<td>çx<td>çy<td>çz<td>ç{<td>ç|<td>ç}<td>ç~<td class=unused>&nbsp;
+   <tr><th>80<td>ç€<td>ç<td>ç‚<td>çƒ<td>ç„<td>ç…<td>ç†<td>ç‡<td>çˆ<td>ç‰<td>çŠ<td>ç‹<td>çŒ<td>ç<td>çŽ<td>ç
+   <tr><th>90<td>ç<td>ç‘<td>ç’<td>ç“<td>ç”<td>ç•<td>ç–<td>ç—<td>ç˜<td>ç™<td>çš<td>ç›<td>çœ<td>ç<td>çž<td>çŸ
+   <tr><th>A0<td>ç <td>ç¡<td>ç¢<td>ç£<td>ç¤<td>ç¥<td>ç¦<td>ç§<td>ç¨<td>ç©<td>çª<td>ç«<td>ç¬<td>ç­<td>ç®<td>ç¯
+   <tr><th>B0<td>ç°<td>ç±<td>ç²<td>ç³<td>ç´<td>çµ<td>ç¶<td>ç·<td>ç¸<td>ç¹<td>çº<td>ç»<td>ç¼<td>ç½<td>ç¾<td>ç¿
+   <tr><th>C0<td>çÀ<td>çÁ<td>çÂ<td>çÃ<td>çÄ<td>çÅ<td>çÆ<td>çÇ<td>çÈ<td>çÉ<td>çÊ<td>çË<td>çÌ<td>çÍ<td>çÎ<td>çÏ
+   <tr><th>D0<td>çÐ<td>çÑ<td>çÒ<td>çÓ<td>çÔ<td>çÕ<td>çÖ<td>ç×<td>çØ<td>çÙ<td>çÚ<td>çÛ<td>çÜ<td>çÝ<td>çÞ<td>çß
+   <tr><th>E0<td>çà<td>çá<td>çâ<td>çã<td>çä<td>çå<td>çæ<td>çç<td>çè<td>çé<td>çê<td>çë<td>çì<td>çí<td>çî<td>çï
+   <tr><th>F0<td>çð<td>çñ<td>çò<td>çó<td>çô<td>çõ<td>çö<td>ç÷<td>çø<td>çù<td>çú<td>çû<td>çü<td class=unused>&nbsp;<td class=unused>&nbsp;<td class=unused>&nbsp;
+  </table>
+  <table><caption>Multibyte lead E8 (JIS X 0208:1997 rows 79&ndash;80)</caption>
+   <tr><th> <th>0<th>1<th>2<th>3<th>4<th>5<th>6<th>7<th>8<th>9<th>A<th>B<th>C<th>D<th>E<th>F
+   <tr><th>40<td>è@<td>èA<td>èB<td>èC<td>èD<td>èE<td>èF<td>èG<td>èH<td>èI<td>èJ<td>èK<td>èL<td>èM<td>èN<td>èO
+   <tr><th>50<td>èP<td>èQ<td>èR<td>èS<td>èT<td>èU<td>èV<td>èW<td>èX<td>èY<td>èZ<td>è[<td>è\<td>è]<td>è^<td>è_
+   <tr><th>60<td>è`<td>èa<td>èb<td>èc<td>èd<td>èe<td>èf<td>èg<td>èh<td>èi<td>èj<td>èk<td>èl<td>èm<td>èn<td>èo
+   <tr><th>70<td>èp<td>èq<td>èr<td>ès<td>èt<td>èu<td>èv<td>èw<td>èx<td>èy<td>èz<td>è{<td>è|<td>è}<td>è~<td class=unused>&nbsp;
+   <tr><th>80<td>è€<td>è<td>è‚<td>èƒ<td>è„<td>è…<td>è†<td>è‡<td>èˆ<td>è‰<td>èŠ<td>è‹<td>èŒ<td>è<td>èŽ<td>è
+   <tr><th>90<td>è<td>è‘<td>è’<td>è“<td>è”<td>è•<td>è–<td>è—<td>è˜<td>è™<td>èš<td>è›<td>èœ<td>è<td>èž<td>èŸ
+   <tr><th>A0<td>è <td>è¡<td>è¢<td>è£<td>è¤<td>è¥<td>è¦<td>è§<td>è¨<td>è©<td>èª<td>è«<td>è¬<td>è­<td>è®<td>è¯
+   <tr><th>B0<td>è°<td>è±<td>è²<td>è³<td>è´<td>èµ<td>è¶<td>è·<td>è¸<td>è¹<td>èº<td>è»<td>è¼<td>è½<td>è¾<td>è¿
+   <tr><th>C0<td>èÀ<td>èÁ<td>èÂ<td>èÃ<td>èÄ<td>èÅ<td>èÆ<td>èÇ<td>èÈ<td>èÉ<td>èÊ<td>èË<td>èÌ<td>èÍ<td>èÎ<td>èÏ
+   <tr><th>D0<td>èÐ<td>èÑ<td>èÒ<td>èÓ<td>èÔ<td>èÕ<td>èÖ<td>è×<td>èØ<td>èÙ<td>èÚ<td>èÛ<td>èÜ<td>èÝ<td>èÞ<td>èß
+   <tr><th>E0<td>èà<td>èá<td>èâ<td>èã<td>èä<td>èå<td>èæ<td>èç<td>èè<td>èé<td>èê<td>èë<td>èì<td>èí<td>èî<td>èï
+   <tr><th>F0<td>èð<td>èñ<td>èò<td>èó<td>èô<td>èõ<td>èö<td>è÷<td>èø<td>èù<td>èú<td>èû<td>èü<td class=unused>&nbsp;<td class=unused>&nbsp;<td class=unused>&nbsp;
+  </table>
+  <table><caption>Multibyte lead E9 (JIS X 0208:1997 rows 81&ndash;82)</caption>
+   <tr><th> <th>0<th>1<th>2<th>3<th>4<th>5<th>6<th>7<th>8<th>9<th>A<th>B<th>C<th>D<th>E<th>F
+   <tr><th>40<td>é@<td>éA<td>éB<td>éC<td>éD<td>éE<td>éF<td>éG<td>éH<td>éI<td>éJ<td>éK<td>éL<td>éM<td>éN<td>éO
+   <tr><th>50<td>éP<td>éQ<td>éR<td>éS<td>éT<td>éU<td>éV<td>éW<td>éX<td>éY<td>éZ<td>é[<td>é\<td>é]<td>é^<td>é_
+   <tr><th>60<td>é`<td>éa<td>éb<td>éc<td>éd<td>ée<td>éf<td>ég<td>éh<td>éi<td>éj<td>ék<td>él<td>ém<td>én<td>éo
+   <tr><th>70<td>ép<td>éq<td>ér<td>és<td>ét<td>éu<td>év<td>éw<td>éx<td>éy<td>éz<td>é{<td>é|<td>é}<td>é~<td class=unused>&nbsp;
+   <tr><th>80<td>é€<td>é<td>é‚<td>éƒ<td>é„<td>é…<td>é†<td>é‡<td>éˆ<td>é‰<td>éŠ<td>é‹<td>éŒ<td>é<td>éŽ<td>é
+   <tr><th>90<td>é<td>é‘<td>é’<td>é“<td>é”<td>é•<td>é–<td>é—<td>é˜<td>é™<td>éš<td>é›<td>éœ<td>é<td>éž<td>éŸ
+   <tr><th>A0<td>é <td>é¡<td>é¢<td>é£<td>é¤<td>é¥<td>é¦<td>é§<td>é¨<td>é©<td>éª<td>é«<td>é¬<td>é­<td>é®<td>é¯
+   <tr><th>B0<td>é°<td>é±<td>é²<td>é³<td>é´<td>éµ<td>é¶<td>é·<td>é¸<td>é¹<td>éº<td>é»<td>é¼<td>é½<td>é¾<td>é¿
+   <tr><th>C0<td>éÀ<td>éÁ<td>éÂ<td>éÃ<td>éÄ<td>éÅ<td>éÆ<td>éÇ<td>éÈ<td>éÉ<td>éÊ<td>éË<td>éÌ<td>éÍ<td>éÎ<td>éÏ
+   <tr><th>D0<td>éÐ<td>éÑ<td>éÒ<td>éÓ<td>éÔ<td>éÕ<td>éÖ<td>é×<td>éØ<td>éÙ<td>éÚ<td>éÛ<td>éÜ<td>éÝ<td>éÞ<td>éß
+   <tr><th>E0<td>éà<td>éá<td>éâ<td>éã<td>éä<td>éå<td>éæ<td>éç<td>éè<td>éé<td>éê<td>éë<td>éì<td>éí<td>éî<td>éï
+   <tr><th>F0<td>éð<td>éñ<td>éò<td>éó<td>éô<td>éõ<td>éö<td>é÷<td>éø<td>éù<td>éú<td>éû<td>éü<td class=unused>&nbsp;<td class=unused>&nbsp;<td class=unused>&nbsp;
+  </table>
+  <table><caption>Multibyte lead EA (JIS X 0208:1997 rows 83&ndash;84)</caption>
+   <tr><th> <th>0<th>1<th>2<th>3<th>4<th>5<th>6<th>7<th>8<th>9<th>A<th>B<th>C<th>D<th>E<th>F
+   <tr><th>40<td>ê@<td>êA<td>êB<td>êC<td>êD<td>êE<td>êF<td>êG<td>êH<td>êI<td>êJ<td>êK<td>êL<td>êM<td>êN<td>êO
+   <tr><th>50<td>êP<td>êQ<td>êR<td>êS<td>êT<td>êU<td>êV<td>êW<td>êX<td>êY<td>êZ<td>ê[<td>ê\<td>ê]<td>ê^<td>ê_
+   <tr><th>60<td>ê`<td>êa<td>êb<td>êc<td>êd<td>êe<td>êf<td>êg<td>êh<td>êi<td>êj<td>êk<td>êl<td>êm<td>ên<td>êo
+   <tr><th>70<td>êp<td>êq<td>êr<td>ês<td>êt<td>êu<td>êv<td>êw<td>êx<td>êy<td>êz<td>ê{<td>ê|<td>ê}<td>ê~<td class=unused>&nbsp;
+   <tr><th>80<td>ê€<td>ê<td>ê‚<td>êƒ<td>ê„<td>ê…<td>ê†<td>ê‡<td>êˆ<td>ê‰<td>êŠ<td>ê‹<td>êŒ<td>ê<td>êŽ<td>ê
+   <tr><th>90<td>ê<td>ê‘<td>ê’<td>ê“<td>ê”<td>ê•<td>ê–<td>ê—<td>ê˜<td>ê™<td>êš<td>ê›<td>êœ<td>ê<td>êž<td>êŸ
+   <tr><th>A0<td>ê <td>ê¡<td>ê¢<td>ê£<td>ê¤<td>ê¥<td>ê¦<td>ê§<td>ê¨<td>ê©<td>êª<td>ê«<td>ê¬<td>ê­<td>ê®<td>ê¯
+   <tr><th>B0<td>ê°<td>ê±<td>ê²<td>ê³<td>ê´<td>êµ<td>ê¶<td>ê·<td>ê¸<td>ê¹<td>êº<td>ê»<td>ê¼<td>ê½<td>ê¾<td>ê¿
+   <tr><th>C0<td>êÀ<td>êÁ<td>êÂ<td>êÃ<td>êÄ<td>êÅ<td>êÆ<td>êÇ<td>êÈ<td>êÉ<td>êÊ<td>êË<td>êÌ<td>êÍ<td>êÎ<td>êÏ
+   <tr><th>D0<td>êÐ<td>êÑ<td>êÒ<td>êÓ<td>êÔ<td>êÕ<td>êÖ<td>ê×<td>êØ<td>êÙ<td>êÚ<td>êÛ<td>êÜ<td>êÝ<td>êÞ<td>êß
+   <tr><th>E0<td>êà<td>êá<td>êâ<td>êã<td>êä<td>êå<td>êæ<td>êç<td>êè<td>êé<td>êê<td>êë<td>êì<td>êí<td>êî<td>êï
+   <tr><th>F0<td>êð<td>êñ<td>êò<td>êó<td>êô<td>êõ<td>êö<td>ê÷<td>êø<td>êù<td>êú<td>êû<td>êü<td class=unused>&nbsp;<td class=unused>&nbsp;<td class=unused>&nbsp;
+  </table>
+  <table><caption>Multibyte lead EB (JIS X 0208:1997 rows 85&ndash;86)</caption>
+   <tr><th> <th>0<th>1<th>2<th>3<th>4<th>5<th>6<th>7<th>8<th>9<th>A<th>B<th>C<th>D<th>E<th>F
+   <tr><th>40<td>ë@<td>ëA<td>ëB<td>ëC<td>ëD<td>ëE<td>ëF<td>ëG<td>ëH<td>ëI<td>ëJ<td>ëK<td>ëL<td>ëM<td>ëN<td>ëO
+   <tr><th>50<td>ëP<td>ëQ<td>ëR<td>ëS<td>ëT<td>ëU<td>ëV<td>ëW<td>ëX<td>ëY<td>ëZ<td>ë[<td>ë\<td>ë]<td>ë^<td>ë_
+   <tr><th>60<td>ë`<td>ëa<td>ëb<td>ëc<td>ëd<td>ëe<td>ëf<td>ëg<td>ëh<td>ëi<td>ëj<td>ëk<td>ël<td>ëm<td>ën<td>ëo
+   <tr><th>70<td>ëp<td>ëq<td>ër<td>ës<td>ët<td>ëu<td>ëv<td>ëw<td>ëx<td>ëy<td>ëz<td>ë{<td>ë|<td>ë}<td>ë~<td class=unused>&nbsp;
+   <tr><th>80<td>ë€<td>ë<td>ë‚<td>ëƒ<td>ë„<td>ë…<td>ë†<td>ë‡<td>ëˆ<td>ë‰<td>ëŠ<td>ë‹<td>ëŒ<td>ë<td>ëŽ<td>ë
+   <tr><th>90<td>ë<td>ë‘<td>ë’<td>ë“<td>ë”<td>ë•<td>ë–<td>ë—<td>ë˜<td>ë™<td>ëš<td>ë›<td>ëœ<td>ë<td>ëž<td>ëŸ
+   <tr><th>A0<td>ë <td>ë¡<td>ë¢<td>ë£<td>ë¤<td>ë¥<td>ë¦<td>ë§<td>ë¨<td>ë©<td>ëª<td>ë«<td>ë¬<td>ë­<td>ë®<td>ë¯
+   <tr><th>B0<td>ë°<td>ë±<td>ë²<td>ë³<td>ë´<td>ëµ<td>ë¶<td>ë·<td>ë¸<td>ë¹<td>ëº<td>ë»<td>ë¼<td>ë½<td>ë¾<td>ë¿
+   <tr><th>C0<td>ëÀ<td>ëÁ<td>ëÂ<td>ëÃ<td>ëÄ<td>ëÅ<td>ëÆ<td>ëÇ<td>ëÈ<td>ëÉ<td>ëÊ<td>ëË<td>ëÌ<td>ëÍ<td>ëÎ<td>ëÏ
+   <tr><th>D0<td>ëÐ<td>ëÑ<td>ëÒ<td>ëÓ<td>ëÔ<td>ëÕ<td>ëÖ<td>ë×<td>ëØ<td>ëÙ<td>ëÚ<td>ëÛ<td>ëÜ<td>ëÝ<td>ëÞ<td>ëß
+   <tr><th>E0<td>ëà<td>ëá<td>ëâ<td>ëã<td>ëä<td>ëå<td>ëæ<td>ëç<td>ëè<td>ëé<td>ëê<td>ëë<td>ëì<td>ëí<td>ëî<td>ëï
+   <tr><th>F0<td>ëð<td>ëñ<td>ëò<td>ëó<td>ëô<td>ëõ<td>ëö<td>ë÷<td>ëø<td>ëù<td>ëú<td>ëû<td>ëü<td class=unused>&nbsp;<td class=unused>&nbsp;<td class=unused>&nbsp;
+  </table>
+  <table><caption>Multibyte lead EC (JIS X 0208:1997 rows 87&ndash;88)</caption>
+   <tr><th> <th>0<th>1<th>2<th>3<th>4<th>5<th>6<th>7<th>8<th>9<th>A<th>B<th>C<th>D<th>E<th>F
+   <tr><th>40<td>ì@<td>ìA<td>ìB<td>ìC<td>ìD<td>ìE<td>ìF<td>ìG<td>ìH<td>ìI<td>ìJ<td>ìK<td>ìL<td>ìM<td>ìN<td>ìO
+   <tr><th>50<td>ìP<td>ìQ<td>ìR<td>ìS<td>ìT<td>ìU<td>ìV<td>ìW<td>ìX<td>ìY<td>ìZ<td>ì[<td>ì\<td>ì]<td>ì^<td>ì_
+   <tr><th>60<td>ì`<td>ìa<td>ìb<td>ìc<td>ìd<td>ìe<td>ìf<td>ìg<td>ìh<td>ìi<td>ìj<td>ìk<td>ìl<td>ìm<td>ìn<td>ìo
+   <tr><th>70<td>ìp<td>ìq<td>ìr<td>ìs<td>ìt<td>ìu<td>ìv<td>ìw<td>ìx<td>ìy<td>ìz<td>ì{<td>ì|<td>ì}<td>ì~<td class=unused>&nbsp;
+   <tr><th>80<td>ì€<td>ì<td>ì‚<td>ìƒ<td>ì„<td>ì…<td>ì†<td>ì‡<td>ìˆ<td>ì‰<td>ìŠ<td>ì‹<td>ìŒ<td>ì<td>ìŽ<td>ì
+   <tr><th>90<td>ì<td>ì‘<td>ì’<td>ì“<td>ì”<td>ì•<td>ì–<td>ì—<td>ì˜<td>ì™<td>ìš<td>ì›<td>ìœ<td>ì<td>ìž<td>ìŸ
+   <tr><th>A0<td>ì <td>ì¡<td>ì¢<td>ì£<td>ì¤<td>ì¥<td>ì¦<td>ì§<td>ì¨<td>ì©<td>ìª<td>ì«<td>ì¬<td>ì­<td>ì®<td>ì¯
+   <tr><th>B0<td>ì°<td>ì±<td>ì²<td>ì³<td>ì´<td>ìµ<td>ì¶<td>ì·<td>ì¸<td>ì¹<td>ìº<td>ì»<td>ì¼<td>ì½<td>ì¾<td>ì¿
+   <tr><th>C0<td>ìÀ<td>ìÁ<td>ìÂ<td>ìÃ<td>ìÄ<td>ìÅ<td>ìÆ<td>ìÇ<td>ìÈ<td>ìÉ<td>ìÊ<td>ìË<td>ìÌ<td>ìÍ<td>ìÎ<td>ìÏ
+   <tr><th>D0<td>ìÐ<td>ìÑ<td>ìÒ<td>ìÓ<td>ìÔ<td>ìÕ<td>ìÖ<td>ì×<td>ìØ<td>ìÙ<td>ìÚ<td>ìÛ<td>ìÜ<td>ìÝ<td>ìÞ<td>ìß
+   <tr><th>E0<td>ìà<td>ìá<td>ìâ<td>ìã<td>ìä<td>ìå<td>ìæ<td>ìç<td>ìè<td>ìé<td>ìê<td>ìë<td>ìì<td>ìí<td>ìî<td>ìï
+   <tr><th>F0<td>ìð<td>ìñ<td>ìò<td>ìó<td>ìô<td>ìõ<td>ìö<td>ì÷<td>ìø<td>ìù<td>ìú<td>ìû<td>ìü<td class=unused>&nbsp;<td class=unused>&nbsp;<td class=unused>&nbsp;
+  </table>
+  <table><caption>Multibyte lead ED (JIS X 0208:1997 rows 89&ndash;90)</caption>
+   <tr><th> <th>0<th>1<th>2<th>3<th>4<th>5<th>6<th>7<th>8<th>9<th>A<th>B<th>C<th>D<th>E<th>F
+   <tr><th>40<td>í@<td>íA<td>íB<td>íC<td>íD<td>íE<td>íF<td>íG<td>íH<td>íI<td>íJ<td>íK<td>íL<td>íM<td>íN<td>íO
+   <tr><th>50<td>íP<td>íQ<td>íR<td>íS<td>íT<td>íU<td>íV<td>íW<td>íX<td>íY<td>íZ<td>í[<td>í\<td>í]<td>í^<td>í_
+   <tr><th>60<td>í`<td>ía<td>íb<td>íc<td>íd<td>íe<td>íf<td>íg<td>íh<td>íi<td>íj<td>ík<td>íl<td>ím<td>ín<td>ío
+   <tr><th>70<td>íp<td>íq<td>ír<td>ís<td>ít<td>íu<td>ív<td>íw<td>íx<td>íy<td>íz<td>í{<td>í|<td>í}<td>í~<td class=unused>&nbsp;
+   <tr><th>80<td>í€<td>í<td>í‚<td>íƒ<td>í„<td>í…<td>í†<td>í‡<td>íˆ<td>í‰<td>íŠ<td>í‹<td>íŒ<td>í<td>íŽ<td>í
+   <tr><th>90<td>í<td>í‘<td>í’<td>í“<td>í”<td>í•<td>í–<td>í—<td>í˜<td>í™<td>íš<td>í›<td>íœ<td>í<td>íž<td>íŸ
+   <tr><th>A0<td>í <td>í¡<td>í¢<td>í£<td>í¤<td>í¥<td>í¦<td>í§<td>í¨<td>í©<td>íª<td>í«<td>í¬<td>í­<td>í®<td>í¯
+   <tr><th>B0<td>í°<td>í±<td>í²<td>í³<td>í´<td>íµ<td>í¶<td>í·<td>í¸<td>í¹<td>íº<td>í»<td>í¼<td>í½<td>í¾<td>í¿
+   <tr><th>C0<td>íÀ<td>íÁ<td>íÂ<td>íÃ<td>íÄ<td>íÅ<td>íÆ<td>íÇ<td>íÈ<td>íÉ<td>íÊ<td>íË<td>íÌ<td>íÍ<td>íÎ<td>íÏ
+   <tr><th>D0<td>íÐ<td>íÑ<td>íÒ<td>íÓ<td>íÔ<td>íÕ<td>íÖ<td>í×<td>íØ<td>íÙ<td>íÚ<td>íÛ<td>íÜ<td>íÝ<td>íÞ<td>íß
+   <tr><th>E0<td>íà<td>íá<td>íâ<td>íã<td>íä<td>íå<td>íæ<td>íç<td>íè<td>íé<td>íê<td>íë<td>íì<td>íí<td>íî<td>íï
+   <tr><th>F0<td>íð<td>íñ<td>íò<td>íó<td>íô<td>íõ<td>íö<td>í÷<td>íø<td>íù<td>íú<td>íû<td>íü<td class=unused>&nbsp;<td class=unused>&nbsp;<td class=unused>&nbsp;
+  </table>
+  <table><caption>Multibyte lead EE (JIS X 0208:1997 rows 91&ndash;92)</caption>
+   <tr><th> <th>0<th>1<th>2<th>3<th>4<th>5<th>6<th>7<th>8<th>9<th>A<th>B<th>C<th>D<th>E<th>F
+   <tr><th>40<td>î@<td>îA<td>îB<td>îC<td>îD<td>îE<td>îF<td>îG<td>îH<td>îI<td>îJ<td>îK<td>îL<td>îM<td>îN<td>îO
+   <tr><th>50<td>îP<td>îQ<td>îR<td>îS<td>îT<td>îU<td>îV<td>îW<td>îX<td>îY<td>îZ<td>î[<td>î\<td>î]<td>î^<td>î_
+   <tr><th>60<td>î`<td>îa<td>îb<td>îc<td>îd<td>îe<td>îf<td>îg<td>îh<td>îi<td>îj<td>îk<td>îl<td>îm<td>în<td>îo
+   <tr><th>70<td>îp<td>îq<td>îr<td>îs<td>ît<td>îu<td>îv<td>îw<td>îx<td>îy<td>îz<td>î{<td>î|<td>î}<td>î~<td class=unused>&nbsp;
+   <tr><th>80<td>î€<td>î<td>î‚<td>îƒ<td>î„<td>î…<td>î†<td>î‡<td>îˆ<td>î‰<td>îŠ<td>î‹<td>îŒ<td>î<td>îŽ<td>î
+   <tr><th>90<td>î<td>î‘<td>î’<td>î“<td>î”<td>î•<td>î–<td>î—<td>î˜<td>î™<td>îš<td>î›<td>îœ<td>î<td>îž<td>îŸ
+   <tr><th>A0<td>î <td>î¡<td>î¢<td>î£<td>î¤<td>î¥<td>î¦<td>î§<td>î¨<td>î©<td>îª<td>î«<td>î¬<td>î­<td>î®<td>î¯
+   <tr><th>B0<td>î°<td>î±<td>î²<td>î³<td>î´<td>îµ<td>î¶<td>î·<td>î¸<td>î¹<td>îº<td>î»<td>î¼<td>î½<td>î¾<td>î¿
+   <tr><th>C0<td>îÀ<td>îÁ<td>îÂ<td>îÃ<td>îÄ<td>îÅ<td>îÆ<td>îÇ<td>îÈ<td>îÉ<td>îÊ<td>îË<td>îÌ<td>îÍ<td>îÎ<td>îÏ
+   <tr><th>D0<td>îÐ<td>îÑ<td>îÒ<td>îÓ<td>îÔ<td>îÕ<td>îÖ<td>î×<td>îØ<td>îÙ<td>îÚ<td>îÛ<td>îÜ<td>îÝ<td>îÞ<td>îß
+   <tr><th>E0<td>îà<td>îá<td>îâ<td>îã<td>îä<td>îå<td>îæ<td>îç<td>îè<td>îé<td>îê<td>îë<td>îì<td>îí<td>îî<td>îï
+   <tr><th>F0<td>îð<td>îñ<td>îò<td>îó<td>îô<td>îõ<td>îö<td>î÷<td>îø<td>îù<td>îú<td>îû<td>îü<td class=unused>&nbsp;<td class=unused>&nbsp;<td class=unused>&nbsp;
+  </table>
+  <table><caption>Multibyte lead EF (JIS X 0208:1997 rows 93&ndash;94)</caption>
+   <tr><th> <th>0<th>1<th>2<th>3<th>4<th>5<th>6<th>7<th>8<th>9<th>A<th>B<th>C<th>D<th>E<th>F
+   <tr><th>40<td>ï@<td>ïA<td>ïB<td>ïC<td>ïD<td>ïE<td>ïF<td>ïG<td>ïH<td>ïI<td>ïJ<td>ïK<td>ïL<td>ïM<td>ïN<td>ïO
+   <tr><th>50<td>ïP<td>ïQ<td>ïR<td>ïS<td>ïT<td>ïU<td>ïV<td>ïW<td>ïX<td>ïY<td>ïZ<td>ï[<td>ï\<td>ï]<td>ï^<td>ï_
+   <tr><th>60<td>ï`<td>ïa<td>ïb<td>ïc<td>ïd<td>ïe<td>ïf<td>ïg<td>ïh<td>ïi<td>ïj<td>ïk<td>ïl<td>ïm<td>ïn<td>ïo
+   <tr><th>70<td>ïp<td>ïq<td>ïr<td>ïs<td>ït<td>ïu<td>ïv<td>ïw<td>ïx<td>ïy<td>ïz<td>ï{<td>ï|<td>ï}<td>ï~<td class=unused>&nbsp;
+   <tr><th>80<td>ï€<td>ï<td>ï‚<td>ïƒ<td>ï„<td>ï…<td>ï†<td>ï‡<td>ïˆ<td>ï‰<td>ïŠ<td>ï‹<td>ïŒ<td>ï<td>ïŽ<td>ï
+   <tr><th>90<td>ï<td>ï‘<td>ï’<td>ï“<td>ï”<td>ï•<td>ï–<td>ï—<td>ï˜<td>ï™<td>ïš<td>ï›<td>ïœ<td>ï<td>ïž<td>ïŸ
+   <tr><th>A0<td>ï <td>ï¡<td>ï¢<td>ï£<td>ï¤<td>ï¥<td>ï¦<td>ï§<td>ï¨<td>ï©<td>ïª<td>ï«<td>ï¬<td>ï­<td>ï®<td>ï¯
+   <tr><th>B0<td>ï°<td>ï±<td>ï²<td>ï³<td>ï´<td>ïµ<td>ï¶<td>ï·<td>ï¸<td>ï¹<td>ïº<td>ï»<td>ï¼<td>ï½<td>ï¾<td>ï¿
+   <tr><th>C0<td>ïÀ<td>ïÁ<td>ïÂ<td>ïÃ<td>ïÄ<td>ïÅ<td>ïÆ<td>ïÇ<td>ïÈ<td>ïÉ<td>ïÊ<td>ïË<td>ïÌ<td>ïÍ<td>ïÎ<td>ïÏ
+   <tr><th>D0<td>ïÐ<td>ïÑ<td>ïÒ<td>ïÓ<td>ïÔ<td>ïÕ<td>ïÖ<td>ï×<td>ïØ<td>ïÙ<td>ïÚ<td>ïÛ<td>ïÜ<td>ïÝ<td>ïÞ<td>ïß
+   <tr><th>E0<td>ïà<td>ïá<td>ïâ<td>ïã<td>ïä<td>ïå<td>ïæ<td>ïç<td>ïè<td>ïé<td>ïê<td>ïë<td>ïì<td>ïí<td>ïî<td>ïï
+   <tr><th>F0<td>ïð<td>ïñ<td>ïò<td>ïó<td>ïô<td>ïõ<td>ïö<td>ï÷<td>ïø<td>ïù<td>ïú<td>ïû<td>ïü<td class=unused>&nbsp;<td class=unused>&nbsp;<td class=unused>&nbsp;
+  </table>
+
+ </body>
+</html>

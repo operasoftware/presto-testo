@@ -1,0 +1,31 @@
+# <H2>3. Explicit embedding rules (X1 - X10)</H2>
+# 3.1 Embedding
+# 3.1.1
+<AB<BC<CD<DE^EF^FG^GH^HI
+<ab<bc<cd<de^ef^fg^gh^hi
+<12<23<34<43^32^21^10^01
+<56<89<67<95^67^78^89^56
+>AB>BC>CD>DE^EF^FG^GH^HI
+>ab>bc>cd>de^ef^fg^gh^hi
+>12>23>34>43^32^21^10^01
+>56>89>67>95^67^78^89^56
+# 3.2 Overrides
+]this is written backwards^now it is normal
+[ABCDE^ABCDE
+# 3.3 Mixed
+<AB<cd[ef>GH]IJ^kl^MN^OP^qr^st
+# 3.4 Explicit and neutrals
+<""$AB!#<!#ST"^#!cd#^#EF!
+>""$AB!#>!#ST"^#!cd#^#EF!
+]""$AB!#]!#ST"^#!cd#^#EF!
+]""$AB!#]!#ST"^#!cd#^#EF!
+# 3.5 Explicit and weak types
+# 3.5.1 Explicit and W2
+# 3.5.2 Explicit and W4
+# 3.5.3 Explicit and W5
+# 3.5.4 Explicit and W7
+
+
+
+
+

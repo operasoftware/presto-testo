@@ -1,0 +1,180 @@
+<html>
+
+<head>
+<title>Unicode tests</title>
+</head>
+
+<body>
+
+<h1 style="text-decoration: underline">Unicode tests</h1>
+
+<p>
+If you have you have any questions or suggestions regarding these
+test pages, please contact
+<a href="mailto:peter@opera.com">peter@opera.com</a>.
+
+<h2>Character tables</h2>
+
+<dl>
+ <dt>Unicode
+  <dd>
+   <a href="tables/utf8-list.html">UTF-8</a>;
+   <a href="tables/utf8/">UTF-8 split in blocks</a>;
+   <a href="tables/utf16be-list.html">UTF-16 big endian</a>;
+   <a href="tables/utf16le-list.html">UTF-16 little endian</a>;
+   <a href="tables/names-pre.html">Entities, in &lt;pre&gt;</a>;
+   <a href="tables/names-list.html">Entities, in &lt;table&gt;</a>;
+   <a href="tables/utf8-casing.html">UTF-8 toupper/tolower test</a>
+ <dt>ISO 8859
+  <dd>
+   <a href="tables/8859-1.html">1</a>;
+   <a href="tables/8859-2.html">2</a>;
+   <a href="tables/8859-3.html">3</a>;
+   <a href="tables/8859-4.html">4</a>;
+   <a href="tables/8859-5.html">5</a>;
+   <a href="tables/8859-6.html">6</a>;
+   <a href="tables/8859-7.html">7</a>;
+   <a href="tables/8859-8.html">8</a>;
+   <a href="tables/8859-9.html">9</a>;
+   <a href="tables/8859-10.html">10</a>;
+   <a href="tables/8859-11.html">11</a>;
+   <a href="tables/8859-13.html">13</a>;
+   <a href="tables/8859-14.html">14</a>;
+   <a href="tables/8859-15.html">15</a>;
+   <a href="tables/8859-16.html">16</a>
+ <dt>Windows codepage
+  <dd>
+   <a href="tables/1250.html">1250</a>;
+   <a href="tables/1251.html">1251</a>;
+   <a href="tables/1252.html">1252</a>;
+   <a href="tables/1253.html">1253</a>;
+   <a href="tables/1254.html">1254</a>;
+   <a href="tables/1255.html">1255</a>;
+   <a href="tables/1256.html">1256</a>;
+   <a href="tables/1257.html">1257</a>;
+   <a href="tables/1258.html">1258</a>
+ <dt>EUC
+  <dd>
+   <a href="tables/euc-cn.html">EUC-CN</a> (AKA GB2312);
+   <a href="tables/euc-jp.html">EUC-JP</a>;
+   <a href="tables/euc-kr.html">EUC-KR</a>;
+   <a href="tables/euc-tw.html">EUC-TW</a>
+ <dt>Chinese
+  <dd>
+   <a href="tables/euc-cn.html">EUC-CN</a> (AKA GB2312);
+   <a href="tables/hz-gb2312.html">HZ</a> (AKA HZ-GB2312);
+   <a href="tables/big5-table.html">Big5</a>;
+   <a href="tables/gbk-table.html">GBK</a>
+ <dt>Japanese
+  <dd>
+   <a href="tables/euc-jp.html">EUC-JP</a>;
+   <a href="tables/iso-2022-jp.html">ISO 2022-JP</a>;
+   <a href="tables/shift-jis.html">Shi(f)t-JIS</a>
+ <dt>Vietnamese
+  <dd>
+   <a href="tables/viscii.html">VISCII</a>
+ <dt>Cyrillic
+  <dd>
+   <a href="tables/8859-5.html">ISO 8859-5</a>;
+   <a href="tables/1251.html">Windows-1251</a>;
+   <a href="tables/koi8-r.html">KOI8-R</a>;
+   <a href="tables/koi8-u.html">KOI8-U</a>;
+   <a href="tables/866.html">CP 866</a>
+</dl>
+
+<h2>Comparative tables</h2>
+
+<p>
+ <a href="comparative/">Index of comparative tables</a> for each encoding,
+ displaying legacy and Unicode codepoints side-by-side.
+</p>
+
+<h2>Autodetection tests</h2>
+
+<ul>
+ <li><a href="html/excess2022.html">Detecting ISO-2022-JP in a huge
+     document</a>
+ <li><a href="autodetect/utf8/">UTF-8 autodetection tests</a>
+</ul>
+
+<p>Note: These require that you set View|Encoding|Japanese|Autodect,
+View|Encoding|Chinese|Autodetect and View|Encoding|Cyrillic|Autodetect,
+respectively.
+
+<ul>
+ <li><a href="autodetect/ja/">Japanese</a>
+ <li><a href="autodetect/zh/">Chinese</a>
+ <li><a href="autodetect/ru/">Cyrillic</a>
+</ul>
+
+<h2>Linebreaking tests</h2>
+
+<ul>
+ <li><a href="linebreaking/narrow-column.html">Text in narrow column</a>
+ <li><a href="linebreaking/chinese.html">Chinese linebreaking</a>
+ <li><a href="linebreaking/paren.html">Parenthesis</a>
+</ul>
+
+<h2>URL tests</h2>
+
+<dl>
+ <dt>Links
+  <dd>
+   <a href="url/japanlink.html">Japanese characters in link</a>;
+   <a href="url/utf8link.html">Other link tests</a>
+</dl>
+
+<h2>HTML tests</h2>
+
+<dl>
+ <dt>&lt;meta&gt; tests (content-type recognition):
+  <dd>
+   <a href="html/excess15.html">ISO 8859-15</a>;
+   <a href="html/excessbig5.html">Big5</a>;
+   <a href="html/excessviscii.html">VISCII</a>;
+   <a href="html/excessbogus.html">Bogus</a>;
+   <a href="html/double.html">Two &lt;meta&gt; tags</a>
+ <dt>&amp;entities;
+  <dd>
+   <a href="html/ent.html">Standard entities</a>;
+   <a href="tables/names-pre.html">Numeric entities, in &lt;pre&gt;</a>;
+   <a href="tables/names-list.html">Numeric entities, in &lt;table&gt;</a>
+ <dt>Linked resources
+  <dd>
+   <a href="html/skript.html">Linked JavaScript</a>
+ <dt>JavaScript
+  <dd>
+   <a href="html/prompt.html">Non-latin1 JavaScript prompt</a>
+</dl>
+
+<h2>CSS tests</h2>
+
+<dl>
+ <dt>The <code>@charset</code> rule
+  <dd><a href="css/lowercase.html"><code>@charset</code></a>;
+      <a href="css/mixedcase.html"><code>@CharSet</code></a>;
+      <a href="css/uppercase.html"><code>@CHARSET</code></a>;
+</dl>
+
+<h2>Broken pages</h2>
+
+<dl>
+ <dt>UTF-8 decoder
+  <dd><a href="broken/utf8-broken.html">Broken UTF-8 sequences</a>;
+      <a href="broken/overlong.html">Over-long sequences</a>
+ <dt>ISO 2022-JP decoder
+  <dd><a href="broken/saito.txt">Forgets to switch back to ASCII</a>
+ <dt>ISO 2022-CN decoder
+  <dd><a href="broken/iso-2022-cn.html">Forgets to switch back to ASCII</a>
+ <dt>HZ decoder
+  <dd><a href="broken/hz.html">Forgets to switch back to ASCII</a>
+</dl>
+
+<h2>Documents</h2>
+
+<p>
+<a href="documents/">Various documents used for testing</a>.
+
+</body>
+
+</html>

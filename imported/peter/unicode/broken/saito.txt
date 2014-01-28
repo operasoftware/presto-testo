@@ -1,0 +1,51 @@
+Path: news.opera.no!not-for-mail
+From: SAITO <saito@operamail.com>
+Newsgroups: opera.general
+Subject: Re: Opera 7 Tips
+Date: Wed, 12 Mar 2003 09:39:44 +0900
+Organization: Opera Software Netnews Server
+Lines: 30
+Message-ID: <20030312093944#$VNDabznW2@news.opera.com>
+References: <Xns933BBE165AC93vsettenatxs4allnl@193.69.113.75>
+	<oprlvuqfpkmfpsob@news.opera.com>
+NNTP-Posting-Host: ppp406.saitama-ip.dti.ne.jp
+Mime-Version: 1.0
+Content-Type: text/plain; charset=ISO-2022-JP
+Content-Transfer-Encoding: 7bit
+X-Trace: mail.opera.no 1047429586 23296 211.132.69.156 (12 Mar 2003 00:39:46 GMT)
+X-Complaints-To: usenet@opera.no
+NNTP-Posting-Date: 12 Mar 2003 00:39:46 GMT
+X-Newsreader: EdMax Ver2.85.3F
+In-Reply-To: <oprlvuqfpkmfpsob@news.opera.com>
+Xref: news.opera.no opera.general:72011
+
+Jarek Pi$B
+
+> On 11 Mar 2003 17:41:09 GMT, Henk <vsetten@COMMENTxs4all.nl> wrote:
+
+> Next, create the button. I have decided to put it on the beginning of the 
+> status bar. Close Opera, as usual, open toolbar.ini and look for [Status 
+> Toolbar] section. After the Button style, Large Images and Wrapping lines, 
+> add the line:
+> 
+> Button0, "Menu"="Show popup menu, "Browser Menu Bar", "", , "Show popup 
+> menu""
+
+Rather you add the above line at the [Customize Toolbar small] in 
+the toolbar.ini And the last part of your line, "Show popup", I 
+like "Show newsgroups" more.
+
+Then you can find "Main menu" when you open Customize toolbar,
+among the small buttons. So you can drug and drop anywhere you
+want. This is a smart way of customizing Opera.
+
+Likewise you can add any optional buttons in "Customize toolbars".
+
+Here I say that I got to know this method from Mr. wireself.
+http://d.hatena.ne.jp/wireself/
+A kind of weblog site written in Japanese.
+
+---
+SAITO an Opera user in Japan
+Tips for Opera7 ( in Japanese )
+http://www.onyx.dti.ne.jp/~saitone/today/opera7.htm

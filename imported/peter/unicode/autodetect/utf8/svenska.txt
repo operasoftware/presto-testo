@@ -1,0 +1,27 @@
+LICENS
+
+Denna programvara distribueras i enlighet med GNU General Public License
+version 2 (GNU GPL), vilken finns i den bifogade filen COPYING, med följande
+tillägg:
+
+Detta program kan länkas mot källkod eller binära bibliotek för att komma åt
+Fidonetmeddelandebaser vilka inte är förenliga med GNU GPL, så länge som
+inkluderingen av denna inte förhindrar den fria distributionen av
+huvudkällkoden. Det måste också vara möjligt att kompilera huvudkällkoden utan
+att använda denna kod eller binära bibliotek (t.ex med villkorliga
+preprocessordirektiv) och fortfarande få en användbar binär.
+
+Binärer som skapas genom att länka mot dylik meddelandebaskod måste vara fritt
+distribuerbara och användbara av vem som helst (dvs. det är inte nog att
+tillåta "enbart ickekommersiell användning"). Om detta inte kan göras får inga
+sådana binärer spridas.
+
+Även med dessa undantag förespråkas licensiering av ny meddelandebaskod under
+GNU GPL.
+
+Detta program får även länkas mot alla GUI-bibliotek som möter kriteriet för
+Open Source, inklusive, men inte begränsat till, Troll Techs Q Public License.
+Dessutom bygger filen mytime.cpp på EMX-biblioteket, vars licens är som följer
+(översatt, se den engelska dokumentationen för originalordalydelsen): Du har
+rätt att ändra och kopiera emx-biblioteket om du behåller upphovsrättstexten
+intakt.

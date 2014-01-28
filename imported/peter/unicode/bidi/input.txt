@@ -1,0 +1,129 @@
+# <H2>1. Implicit levels (I1 & I2 and also accompanying weak rules W2 & W7)</H2>
+# 1.1 Ordinary left to right text
+abcdef
+# 1.2 Left to right with european numbers (also W7)
+abcdef123ghi234jkl
+# 1.3 Left to right text with arabic indic numbers
+abcdef678ghijk789lmno
+# 1.4 Left to right text and right to left text mixed
+abcdefABCDEFghijNOPGHIJklm
+# 1.5 Arabic Right to left
+ABCDEF
+# 1.6 Right to left
+NOPQRST
+# 1.7 Arabic Right to left text with european numbers (also W2)
+ABCDEF123GHIJ234KL
+# 1.8 Right to left text with european numbers
+NOPQRST123UVX234YZ
+# 1.9 Arabic Right to left text with arabic-indic digits
+ABCDEF5678GHIJ6789KL
+# 1.10 Right to left text with arabic indic digits
+NOPQRST5678UVX6789YZ
+# 1.11 European numbers
+1234
+# 1.12 Arabic indic numbers
+6789
+# 1.13 European and arabic indic numbers (and initial R sign to cancel W7 and no W2)
+N123567234678
+# 1.14 left to right mark
+# 1.15 right to left mark
+
+# <H2>2. Neutral types (rules N1 - N2)</H2>
+# 2.1 Neutral types with ltr chars
+hej hopp din banan
+# 2.2 Neutral types with arabic rtl chars
+ABCDE FGH "&  ABC
+# 2.3 Neutral types with hebrew rtl chars
+QPR "& XYZ
+# 2.4 Neutral types with various directions
+QPR "& abc "& ABC "& abc
+# 2.5 Neutrals with numbers
+N 123 "& abcd "& 765 "& ABC 123 "& QPR 123 "& 576 abcd "& 123
+
+# <H2>3. Explicit embedding rules (X1 - X10)</H2>
+# 3.1 Embedding
+# 3.2 Overrides
+# 3.3 Mixed
+
+# <H2>4. Weak type rules (W1 - W7)</H2>
+# <H3>4.1 W1</H3>
+# see chapter 6.<br>
+# <H3>4.2 W2</H3>
+# see chapter 1.<br>
+# <H3>4.3 W3 (make sure to cancel W7 here!)</H3>
+# 4.3.1 AL should cancel W7
+abcdeN123 234
+abcde123 234
+# <H3>4.4 W4</H3>
+# 4.4.1 ES between EN
+N123.234/012
+# 4.4.2 EN ES AN
+N123.678/234
+# 4.4.3 EN CS AN
+N123,678:234
+# 4.4.4 AN CS EN
+N678,123:789
+# 4.4.5 AN CS AN
+N678:789,567
+# 4.4.6 AN CS CS AN
+N678,,789::678
+# 4.4.7 EN ES ES EN
+N123..234//123
+# 4.4.8 W2 and W4 combination (tricky!)
+A123,789
+# <H3>4.5 W5</H3>
+# 4.5.1 First case below should follow W5, second case not
+N123$$$++ABC
+N789$$$++ABC
+# 4.5.2 First case below should follow W5, second case not
+N789$$$++123
+N789$$$++789
+# 4.5.3 W7 does not cancel W5, so these two cases should have the same order between the $'s and the numbers (but 'a' should be replaced with aleph)
+a++$$$123
+N++$$$123
+# <H3>4.6 W6</H3>
+# <H3>4.7 W7</H3>
+# see chapter 1.<br>
+
+# <H2>5. Mirroring</H2>
+
+# <H2>6. Diacriticals</H2>
+
+# <H2>7. Arabic joining </H2>
+
+# <H2>8. Reordering rules (L1 - L4)</H2>
+
+# <H2>9. Inline objects.</H2>
+
+# <H2>10. Lists. </H2>
+# 10.1 UL with direction:rtl
+# <UL style = "direction:rtl">
+# <LI>abcde
+# <LI>bcdef
+# <LI>cdefg
+# </UL>
+# 10.2 DL with direction:rtl
+# <DL style = "direction:rtl">
+# <DT>number one
+# <DD>this is number one
+# <DT>number two
+# <DD>this is number two
+# </DL>
+# 10.3 OL with direction:rtl
+# <OL style = "direction:rtl">
+# <LI>abcde
+# <LI>bcdef
+# <LI>ghijk
+# </OL>
+# <H2>11. Tables </H2>
+# 11.1 This table should be read from left to right
+# <table>
+# <tr><td>1.1</td><td>1.2</td><td>1.3</td></tr>
+# <tr><td>2.1</td><td>2.2</td><td>2.3</td></tr>
+# <tr><td>3.1</td><td>3.2</td><td>3.3</td></tr>
+# </table>
+# 11.2 This table should be read from right to left
+# <table style = "direction:rtl"><tr><td>1.1</td><td>1.2</td><td>1.3</td></tr>
+# <tr><td>2.1</td><td>2.2</td><td>2.3</td></tr>
+# <tr><td>3.1</td><td>3.2</td><td>3.3</td></tr>
+# </table>

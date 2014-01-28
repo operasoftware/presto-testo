@@ -1,0 +1,42 @@
+# <H2>4. Weak type rules (W1 - W7)</H2>
+# <H3>4.1 W1</H3>
+# see chapter 6.<br>
+# <H3>4.2 W2</H3>
+# 4.2.1 W2 and W4 combination (tricky!)
+A123,789
+# <H3>4.3 W3 (make sure to cancel W7 here!)</H3>
+# 4.3.1 AL should cancel W7
+abcdeN123 234
+abcde123 234
+# <H3>4.4 W4</H3>
+# 4.4.1 ES between EN
+N123.234/012
+# 4.4.2 EN ES AN
+N123.678/234
+# 4.4.3 EN CS AN
+N123,678:234
+# 4.4.4 AN CS EN
+N678,123:789
+# 4.4.5 AN CS AN
+N678:789,567
+# 4.4.6 AN CS CS AN
+N678,,789::678
+# 4.4.7 EN ES ES EN
+N123..234//123
+# <H3>4.5 W5</H3>
+# 4.5.1 First case below should follow W5, second case not
+N123$$$++ABC
+N789$$$++ABC
+# 4.5.2 First case below should follow W5, second case not
+N789$$$++123
+N789$$$++789
+# 4.5.3 W7 does not cancel W5, so these two cases should have the same order between the $'s and the numbers (but 'a' should be replaced with aleph)
+a++$$$123
+N++$$$123
+# <H3>4.6 W6</H3>
+# N/A
+# <H3>4.7 W7</H3>
+# 4.7.1 W5 & W7 (W5 should be in effect before W7)
+Aa$$$$123
+# 4.7.2 W4 & W7 (W4 should be in effect before W7)
+Aa123.234

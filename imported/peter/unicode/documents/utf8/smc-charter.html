@@ -1,0 +1,447 @@
+﻿<HTML><!-- -*- coding: utf-8; -*- -->
+
+<HEAD>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+ <TITLE>Society for Maltese Computing</TITLE>
+</HEAD>
+
+<BODY BGCOLOR=WHITE BACKGROUND="bg.gif">
+   Note: This document is in utf-8 (Unicode). 
+   You can try another encoding: <A HREF="c0utf8.htm">utf-8</A> | <A HREF="charter0.htm">iso-8859-3</A> | <A HREF="char0t.htm">raw text</A>
+
+<UL> <!-- just an indent -->
+
+<I> Steven R. Loomis, version 0.00004, 18 Jul 2000</I> - <TT><B>http://www.quadrantFive.com/SMC/</B></TT><P>
+<HR>
+<IMG SRC="smclogo.jpg" WIDTH=100 HEIGHT=100 ALT="``+'' [SMC Logo]">
+ <H2>Society for Maltese Computing</H2>
+   <CENTER><I>An organization dedicated to the Maltese Language in
+   electronic form</I></CENTER><P>
+   
+
+   ċ=c with dot,Ċ=C with dot,ġ=g with dot,Ġ=G with dot,ħ=h with slash,Ħ=H with slash,ż=z with dot,Ż=Z with dot. <P>
+ <OL>
+   <LI> <H3>Status</H3>
+
+      <OL>
+           <LI> The SMC exists only as a figment of this author's
+           imagination, and perhaps that of a few interested parties
+           [grazzi ħafna!]
+           <LI> While I (Steven) feel that this work is probably too
+           preliminary for public consumption, please pass it along to
+           anyone you think might be interested.
+      <P></OL>
+
+   <LI> <H3>Purpose</H3> - Overview
+
+      <OL>
+           <LI> To identify, collect, and publish standards pertaining
+           to Maltese in electronic form.
+           
+           <LI> To actively promote and encourage the use of Maltese
+           in business, education, government, and personal computer
+           use.
+
+      <P></OL>
+
+   <LI> <H3> Standards </H3>
+
+      <OL>
+          <LI> <H4>Reasoning</H4>
+          <OL>
+             <LI> Having a standard would encourage use, by adding
+             `weight' to the idea of Maltese text processing.
+
+             <LI> Standards allow data interchange between
+             organizations.
+             
+             <LI> Standards allow compliance and consistency testing.  
+             
+             <LI> Once accepted in the minds of relevant parties,
+             standards provide easy labelling of a set of features.
+
+             <LI> <B>Examples</B>
+               <OL>
+                  <LI> ASCII [ISO-646] - has served the world well
+               since the 1960's or so, allowing disparate computers to
+               communicate -- in English and English-like languages.
+               <P></OL>
+
+            <LI> <FONT SIZE=-2>It's true that the industry, and common usage may
+               take some time to catch up to 'ideal' Maltese usage -
+               short term and phase-in plans may need to be
+               considered.  However, we should design for the ideal
+               that's best for the language and the people first, and
+               only secondarily consider technical aspects.  Maltese
+               is not a difficult language for the computer to
+               support!  Consider Japanese, with it's two alphabets
+               and tens of thousands of symbols.  </FONT>
+
+          <P></OL>
+
+
+          <LI> <H4>Principles</H4>
+          <OL>
+              <LI> Draw upon common practice in Malta
+
+              <LI> Make use of existing global Industry standards
+               as much as possible, i.e. ISO
+
+              <LI> Tight integration with official bodies such as MSA
+          <P></OL>
+
+
+          <LI> <H4>Methods</H4>
+          
+          <OL>
+             <LI> How members are added?
+             <LI> Voting?
+             <LI> Adoption of standards?
+             <LI> Should the organization be formalized or just left
+             informal?  [For now it should probably just stay informal.]
+          <P></OL>
+
+
+          <LI> <H4>Dissemination</H4>
+          <OL>
+              <LI> These standards should be made freely available to
+              the public, to encourage adoption.
+             
+          <P></OL>
+
+          <LI> <H4>External ties (wanted!)</H4>
+          <OL>
+            <LI> <I>Please note, these are all <B>wishful</B>.. no endorsement
+                     is implied!!</I>
+            <LI> See about l-Akkademja ta' Malti - writers' org.
+            
+            <LI> <A HREF="http://www.mitts.net/">MITTS</A> - MALTA INFORMATION TECHNOLOGY AND TRAINING SERVICES LTD.
+            
+            <LI> MSA - Maltese Standards Authority. Legislation is
+            currently pending.
+            
+            <LI> Finance? In Ireland the Finance Dept. specifies the
+                    currency formatting.  Bank standards assn?
+
+            <LI> Business associations
+            
+            <LI> Uni or other schools
+              <UL>
+                <LI> Language - Maltese dept'
+                <LI> Computer Science Dept.
+              <P></UL>
+          
+            <LI> ISO - for text [latin3/unicode] and possibly standardized date/time?
+
+            <LI> Unicode - for text processing
+            
+            <LI> Maltese Internet Society - <A
+          HREF="http://www.isoc.org.mt/"><TT>http://www.isoc.org.mt/</TT></A>
+          
+            <LI> ISV's might have layouts or other technology
+          
+          <P></OL>
+                   
+          
+      <P></OL>
+
+      
+      <LI> <H3> Domain </H3>
+
+      <OL>
+          <LI> <B>Text encoding</B>
+            <OL>
+               <LI> Today, most software is oriented towards English
+               and its 26 letter alphabet, with a fair amount of
+               support for 'Western European' characters (i.e. ISO
+               8859-1, Latin-1). 
+
+                <A NAME="alphabet"></A>
+               <LI> The Maltese alphabet requires the characters:
+               <U>ċ</U> (C Dot), <U>ġ</U> (G Dot), <U>ħ</U> (H Cross),
+               and <U>ż</U> (Z Dot).   All of these have upper and
+               lowercase variations. - 8 characters in total. In
+               addition, <U>għ</U> and <U>ie</U> are digraphs which
+               are probably best encoded as a combination of 'g' and
+               'ħ', etc.  In keyboard input and in sorting, they need
+               to be treaded as single characters.
+                 <UL>
+                    <LI> <I>Q: What other languages use these
+                        characters, for reference? According to
+                        Unicode 3.0:</I><UL>
+                        ċ,ġ are used in old Irish Gaelic orthography<BR>
+                        ħ is <I>similar</I> to Cyrillic small letter 'tshe'.<BR>
+                        ż is used in polish<BR>
+                        </UL>
+                 <P></UL>
+               
+               <LI> Two encodings (both ISO) which support these
+               letters are  ISO-10646-1 (Unicode) and ISO-8859-3 (Latin-3). 
+               
+               <UL>
+                  <LI> ISO-10646-1 is a character set more commonly
+                   referred to as 'Unicode'. ( <A
+               HREF="http://www.unicode.org/">
+               <TT>http://www.unicode.org</TT></A>)  Unicode encodes
+               these eight characters in the Latin block. It is 
+               quite widespread in it's adoption.  There is a simple 8-bit
+               encoding for Unicode called UTF-8, recognized by almost all
+               browsers.
+
+               <LI> ISO-8859-3, or UTF-8, seems much less well
+               known. It does contain all eight needed characters.  Since
+               this is a simple 8-bit encoding, ISO-8859-3 could be used
+               as an interchange format to pass text through
+               non-compliant software which expects Latin-1. 
+               In addition, it may be easier to make keyboard layouts
+               for windows 9x and the Macintosh using latin-3, as these
+               systems do not support Unicode as their underlying format.
+               See: <A HREF="http://czyborra.com/charsets/iso8859.html#ISO-8859-3">http://czyborra.com/charsets/iso8859.html</A>
+
+               <LI> A variety of ad-hoc encodings have been developed,
+               some around using the letters <UL>[]{};':</UL>, for
+               instance, for easy keyboard entry.  Two of the
+               best-known encodings seem to be for the fonts Tornado,
+               and MalteseTimes, respectively.
+               <P></UL>  <!-- end list of encodings -->
+                
+            <P></OL> <!-- end text proc -->
+
+            <LI> Sorting of text
+
+              <OL>
+                 <LI> Besides the <A HREF="#alphabet">additional
+              single characters</A>, the two digraphs (<U>ie</U> and
+              <U>għ</U>) need to be sorted in their proper order.
+
+                 <LI> a b ċ [c] d e f ġ g għ h ħ i ie j k l m n o p q
+                 r s t u v w x [y] ż z
+                 <LI> a b c. [c] d e f g. g gh/ h h/ i ie j k l m n o p q
+                 r s t u v w x [y] ż z <I>(if your browser cannot read Maltese text at present)</I>
+                 <LI> Note: 'c'/'y' are not used in Maltese, however it is
+                 included here for completeness when foreign words are included,
+                 especially Maltese names which do not use the same orthography.
+              
+              <P></OL>
+              
+            <LI> <I>For a snapshot of Maltese data, see </I><TT><A
+            HREF="http://oss.software.ibm.com/developerworks/opensource/icu/localeexplorer/?_=mt_MT">ICU's Maltese Data</A></TT>.  Comments, corrections, etc. are encouraged.
+            
+            <LI> Transliteration
+              <OL>
+                 <LI> Latinize - one-way.  wiċċ -&gt; wicc
+                 <LI> c. gh &lt;-&gt; ċ għ  (A way of typing in
+                 Maltese?) (This would be useful if Maltese needs to
+                 be converted into pure 'English' letters, with the
+                 ability to convert it back again.)
+                 <LI> Importing of existing documents (Tornado, etc..)?
+                 <LI> Għarbi &lt;-&gt; Maltese ? Unknown
+                 usefulness.. Perhaps converting place-names into Maltese.
+                 <LI> Other languages?
+              <P></OL>
+
+            <LI> Spell checking
+               <UL>
+                 <LI> Need to find a provider of source
+                 data.. dictionary.?
+                 <LI> Needs linguistic analysis - word endings, vowel
+                 placement, silent letter [Gh] placement. 
+                 <LI> GNU ISPELL might be a good interchange format?
+                 [www.gnu.org]
+                 <LI> OCR - optical character recognition 
+               <P></UL>
+
+            <LI> Hyphenation <I>This and Punctuation probably want a style book..</I>
+              <UL>
+                <LI> Need list of words which can and cannot be broken
+                <LI> Look into Arabic usage
+                <LI> Todo: lookup "Thesis it-tagħrif" by Carmel Azzopardi [ask for it at um library]
+                <LI> Examples:
+                   <PRE>
+                     destina<U>zz</U>|joni
+                     nirk|bu
+                     mir|kbu
+                     ..z|zjoni &lt; maybe break it this way
+                     ipar|ttu
+                   </PRE>
+                   <P>
+              <P></UL>
+            
+            <LI> Punctuation
+              <UL>
+                <LI> For grammar checkers?
+                <LI> (I'm told: put the period outside the quotation -
+                British style.).
+              <P></UL>
+
+           <LI> Keyboard Layout
+              <UL>
+                 <LI> Need to place the extra letters
+                 <LI> Use unneeded 'y' for 'ħ'?
+                 <LI> Make c always be ċ
+                 <LI> Need variations for US, UK, probably FR-CA keyboards.
+                 <LI> English is used often - must not make English letters inaccessible.  
+                 <LI> It's probably good to just have a 'switch' key for switching between English and Maltese layouts.
+                 <LI> Could have self-adhesive stickers for denoting
+                 the Maltese keys.
+                 <LI> Should the Għajn (Gh) be a single key?  Should IE? It's
+                 popular, BUT... these really are two latin letters.
+                 How should the user enter the three capitalisation
+                 combinations: gh, Gh, GH?  People are used to 
+              <P></UL>
+
+            <LI> Date and Time formatting
+
+               <OL>
+                  <LI> Days of the week:  il-Ħadd, it-Tnejn,
+               it-Tlieta,...
+                  <LI> Months:  Jannar, Frar,.. 
+               <P></OL>
+
+            <LI> Number Handling
+              <UL>
+                 <LI> Decimal separator - '.'
+                 <LI> Thousands separator - ','
+                 <LI> Number spellout? [need RBNSF] "wieħed u għoxrin"
+              <P></UL>
+            
+            <LI> Currenc handling
+              <UL>
+                 <LI>"Lm1,000.45"?
+                 <LI>How about handling of foreign formats,
+                     Eur, FF, USD, etc.. 
+              <P></UL>
+
+      <P></OL> <!-- end domain -->
+
+ <LI> <H3>Promotion</H3>
+    <OL>
+      <LI> <H4>Scope - geographic</H4>
+        <OL>
+          <LI> Malta
+          <LI> NYC?
+          <LI> Toronto?
+          <LI> Awstralja?
+          <LI> ?
+
+        <P></OL> <!-- scope -->
+      <LI> <H4>Users</H4>
+      <OL>
+
+          <LI> Business
+
+              <UL>
+                 <LI> Customer and place names..
+                 <LI> Bills
+                 <LI> Advertising
+
+                 <LI> Other businesses that use a lot of Maltese..
+                   <OL>
+                      <LI> Legal profession
+                      <LI> Insurance
+                   <P></OL> <!-- end 'other bus..' -->
+
+                 <LI> Publications [non-web]
+                   <UL>
+                     <LI> Newspapers
+                     <LI> Magazines
+                     <LI> Books
+                   <P></UL>
+                 <LI> Web sites, email, chat..
+                    <UL>
+                      <LI>Especially need to standardize on encodings
+                   for delivery and input.
+                   <P></UL>
+              <P></UL> <!-- end business -->
+
+          <LI> Home
+              <UL>
+                 <LI> Web sites and email
+                 <LI> Personal [written] correspondance 
+                 <LI> personal records/finance
+                 <LI> <I>Home user especially want spell checking..</I>
+              <P></UL> <!-- end home -->
+
+          <LI> Gvern (Government)
+            <OL>
+              <LI> Standardisation authority
+              <LI> ID card records
+              <LI> DMV records
+              <LI> Kunsilli Lokali (pubs, ..)
+              <LI> Elections
+              <LI> Courts? see Legal..
+            <P></OL> <!-- end guvni -->
+
+          <LI> Education (skola)
+            <OL>
+              <LI> Textbooks
+              <LI> Records
+              <LI> Library system
+              <LI> Distance instruction
+            <P></OL>
+
+      <P></OL> <!-- end users -->
+
+
+      <LI> <H4>Solution providers</H4>
+        <OL>
+          <LI> Computer related
+            <UL>
+              <LI> OS/Environment vendors - Windows, MacOS, Linux, Java
+                <UL>
+                   <LI> Inclusion of data (locales, fonts, ..)
+                   <LI> Input method/keyboard support
+                   <LI> <I>When there is an agreed-upon standard that
+                         has backing from the sectors that this
+                         document hopes for, OS vendors should 
+                          listen.. </I>
+                    <LI>Specific Vendors:
+                       <UL>
+                         <LI><I>MacOS</I> - has <TT>verMalta</TT> which is 22, for the country code. should be smRoman because it's a roman based script. See <A HREF="http://developer.apple.com/techpubs/carbon/text/ScriptManager/Script_Manager/Enumerations/Region_Codes.html">Region Codes</A>.
+                         <LI><I>Windows</I> - LocaleID??
+                       <P></UL>
+                 <P></UL> <!-- END os vendors -->
+
+              <LI> Software companies/consultants
+                 <UL>
+                   <LI> Maltese (and generically, multilingual) enablement
+                   <LI> Use of available packages for custom work
+                 <P></UL> <!-- END soft -->
+
+              <LI> ISV/VAR/resellers/retailers
+                 <UL>
+                   <LI> Bundling of appropriate software - and key stickers
+                 <P></UL> <!-- END resellers -->
+
+            <P></UL> <!-- end computer related -->
+            
+           <LI> Other
+             <OL>
+                <LI> Typesetting/stationery companies
+                <LI> rent-a-computer?
+                <LI> Wireless computing
+             <P></OL>
+
+        <P></OL> <!-- end solution providers -->
+
+
+    <P></OL> <!-- end promotion -->
+
+<P></OL> <!-- end top level list -->
+
+<HR>
+ <A HREF="mailto:srl@monkey.sbay.org"><TT>srl@monkey.sbay.org</TT></A>  -- <A HREF="http://www.quadrantfive.com/SMC"><TT><B>http://www.geocities.com/sirlemonstove/SMC</B></TT></A>
+
+
+</UL>
+
+<UL>
+<HR>
+<B><I>Note:</I></B> Although I, Steven, do work for IBM, all opinions here are strictly my own, unless otherwise noted.  Maltese support is included in the ICU open-source project [http://oss.software.ibm.com/icu/], and I do make use of Maltese in my day-to-day work.  However, IBM should not be considered in any way to be supporting or endorsing the SMC or other Maltese projects of mine. If you have any questions, please feel free to contact me, <B>srl@monkey.sbay.org</B>.
+</UL>
+ <a href="http://www.quadrantfive.com"><img align=RIGHT src="q5ad.gif" width="90" height="33" border="0" alt="Another project by Quadrant Five"></a>
+
+</BODY>
+</HTML>

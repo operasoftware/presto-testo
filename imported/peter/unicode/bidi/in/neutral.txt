@@ -1,0 +1,11 @@
+# <H2>2. Neutral types (rules N1 - N2)</H2>
+# 2.1 Neutral types with ltr chars
+hej hopp din banan
+# 2.2 Neutral types with arabic rtl chars
+ABCDE FGH "&  ABC
+# 2.3 Neutral types with hebrew rtl chars
+QPR "& XYZ
+# 2.4 Neutral types with various directions
+QPR "& abc "& ABC "& abc
+# 2.5 Neutrals with numbers
+N 123 "& abcd "& 765 "& ABC 123 "& QPR 123 "& 576 abcd "& 123

@@ -1,0 +1,28 @@
+TABLE {
+  color: black;
+  background: white;
+  border-collapse: collapse;
+  empty-cells: show;
+  border: 1px solid black;
+  font-size: 12pt;
+}
+
+TH, TD {
+  vertical-align: bottom;
+  text-align: left;
+  border: 1px solid black;
+  font-weight: bold;
+}
+
+TH {
+  background: #eee;
+  color: #044;
+}
+
+TD {
+  font-size: 18pt;
+}
+
+TD.u {
+  font-size: 12pt;
+}

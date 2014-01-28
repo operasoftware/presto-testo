@@ -1,0 +1,30 @@
+<html>
+ <head>
+  <title>Test av radbrytning</title>
+ </head>
+ <body>
+  <table border=1 align=left>
+   <caption>Test</caption>
+   <tr>
+    <td width="2">
+     <p>http://www.någonstans.se/mycket/lång/adress/med/flera/snedstreck.html
+     <p>Oslo-Lillestrøm-Kongsvinger-Charlottenberg-Arvika-Kil-Karlstad-Kristinehamn-Degerfors-Hallsberg-Kumla-Örebro&nbsp;S-Örebro&nbsp;C-Frövi
+     <p>Oslo&#x2014;Lillestrøm&#x2014;Kongsvinger&#x2014;Charlottenberg&#x2014;Arvika&#x2014;Kil&#x2014;Karlstad&#x2014;Kristinehamn&#x2014;Degerfors&#x2014;Hallsberg&#x2014;Kumla&#x2014;Örebro&nbsp;S&#x2014;Örebro&nbsp;C&#x2014;Frövi
+     <p>Oslo&#x2013;Lillestrøm&#x2013;Kongsvinger&#x2013;Charlottenberg&#x2013;Arvika&#x2013;Kil&#x2013;Karlstad&#x2013;Kristinehamn&#x2013;Degerfors&#x2013;Hallsberg&#x2013;Kumla&#x2013;Örebro&nbsp;S&#x2013;Örebro&nbsp;C&#x2013;Frövi
+<!--
+     <p>Oslo&#x2192;Lillestrøm&#x2192;Kongsvinger&#x2192;Charlottenberg&#x2192;Arvika&#x2192;Kil&#x2192;Karlstad&#x2192;Kristinehamn&#x2192;Degerfors&#x2192;Hallsberg&#x2192;Kumla&#x2192;Örebro&nbsp;S&#x2192;Örebro&nbsp;C&#x2192;Frövi
+-->
+  </table>
+
+  <table>
+   <caption>Egenskaper</caption>
+   <tr><th>/<td>SY &#x2192; tillåt radbrytning efter
+   <tr><th>-<td>HY &#x2192; tillåt radbrytning efter
+   <tr><th>&#x2014;<td>B2 &#x2192; tillåt radbrytning före &amp; efter
+   <tr><th>&#x2013;<td>BA &#x2192; tillåt radbrytning efter
+<!--
+   <tr><th>&#x2192;<td>AI &#x2192; neutral
+-->
+  </table>
+ </body>
+</html>

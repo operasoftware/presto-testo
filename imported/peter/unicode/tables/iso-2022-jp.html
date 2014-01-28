@@ -1,0 +1,874 @@
+<html lang=ko>
+ <head>
+  <meta http-equiv="Content-Type" content="text/html;charset=iso-2022-jp">
+  <title>ISO-2022-JP</title>
+  <style>.unused { background: #ccc; } table { float: left; }</style>
+ </head>
+ <body>
+  <table><caption>ASCII/JIS-Roman + half-width katakana</caption>
+   <tr><th>  <th>0<th>1<th>2<th>3<th>4<th>5<th>6<th>7<th>8<th>9<th>A<th>B<th>C<th>D<th>E<th>F
+   <tr><th>20<td> <td>!<td>"<td>#<td>$<td>%<td>&<td>'<td>(<td>)<td>*<td>+<td>,<td>-<td>.<td>/
+   <tr><th>30<td>0<td>1<td>2<td>3<td>4<td>5<td>6<td>7<td>8<td>9<td>:<td>;<td><<td>=<td>><td>?
+   <tr><th>40<td>@<td>A<td>B<td>C<td>D<td>E<td>F<td>G<td>H<td>I<td>J<td>K<td>L<td>M<td>N<td>O
+   <tr><th>50<td>P<td>Q<td>R<td>S<td>T<td>U<td>V<td>W<td>X<td>Y<td>Z<td>[<td>\<td>]<td>^<td>_
+   <tr><th>60<td>`<td>a<td>b<td>c<td>d<td>e<td>f<td>g<td>h<td>i<td>j<td>k<td>l<td>m<td>n<td>o
+   <tr><th>70<td>p<td>q<td>r<td>s<td>t<td>u<td>v<td>w<td>x<td>y<td>z<td>{<td>|<td>}<td>~<td class=unused>
+  </table>
+  <table><caption>JIS-Roman</caption>
+   <tr><th> <th>0<th>1<th>2<th>3<th>4<th>5<th>6<th>7<th>8<th>9<th>A<th>B<th>C<th>D<th>E<th>F
+(J   <tr><th>20<td> <td>!<td>"<td>#<td>$<td>%<td>&<td>'<td>(<td>)<td>*<td>+<td>,<td>-<td>.<td>/(B
+(J   <tr><th>30<td>0<td>1<td>2<td>3<td>4<td>5<td>6<td>7<td>8<td>9<td>:<td>;<td><<td>=<td>><td>?(B
+(J   <tr><th>40<td>@<td>A<td>B<td>C<td>D<td>E<td>F<td>G<td>H<td>I<td>J<td>K<td>L<td>M<td>N<td>O(B
+(J   <tr><th>50<td>P<td>Q<td>R<td>S<td>T<td>U<td>V<td>W<td>X<td>Y<td>Z<td>[<td>\<td>]<td>^<td>_(B
+(J   <tr><th>60<td>`<td>a<td>b<td>c<td>d<td>e<td>f<td>g<td>h<td>i<td>j<td>k<td>l<td>m<td>n<td>o(B
+(J   <tr><th>70<td>p<td>q<td>r<td>s<td>t<td>u<td>v<td>w<td>x<td>y<td>z<td>{<td>|<td>}<td>~<td class=unused>(B
+  </table>
+  <table><caption>Multibyte: JIS X 0208:1983 (Row 21)</caption>
+   <tr><th> <th>0<th>1<th>2<th>3<th>4<th>5<th>6<th>7<th>8<th>9<th>A<th>B<th>C<th>D<th>E<th>F
+   <tr><th>20<td class=unused>&nbsp;<td>$B!!(B<td>$B!"(B<td>$B!#(B<td>$B!$(B<td>$B!%(B<td>$B!&(B<td>$B!'(B<td>$B!((B<td>$B!)(B<td>$B!*(B<td>$B!+(B<td>$B!,(B<td>$B!-(B<td>$B!.(B<td>$B!/(B
+   <tr><th>30<td>$B!0(B<td>$B!1(B<td>$B!2(B<td>$B!3(B<td>$B!4(B<td>$B!5(B<td>$B!6(B<td>$B!7(B<td>$B!8(B<td>$B!9(B<td>$B!:(B<td>$B!;(B<td>$B!<(B<td>$B!=(B<td>$B!>(B<td>$B!?(B
+   <tr><th>40<td>$B!@(B<td>$B!A(B<td>$B!B(B<td>$B!C(B<td>$B!D(B<td>$B!E(B<td>$B!F(B<td>$B!G(B<td>$B!H(B<td>$B!I(B<td>$B!J(B<td>$B!K(B<td>$B!L(B<td>$B!M(B<td>$B!N(B<td>$B!O(B
+   <tr><th>50<td>$B!P(B<td>$B!Q(B<td>$B!R(B<td>$B!S(B<td>$B!T(B<td>$B!U(B<td>$B!V(B<td>$B!W(B<td>$B!X(B<td>$B!Y(B<td>$B!Z(B<td>$B![(B<td>$B!\(B<td>$B!](B<td>$B!^(B<td>$B!_(B
+   <tr><th>60<td>$B!`(B<td>$B!a(B<td>$B!b(B<td>$B!c(B<td>$B!d(B<td>$B!e(B<td>$B!f(B<td>$B!g(B<td>$B!h(B<td>$B!i(B<td>$B!j(B<td>$B!k(B<td>$B!l(B<td>$B!m(B<td>$B!n(B<td>$B!o(B
+   <tr><th>70<td>$B!p(B<td>$B!q(B<td>$B!r(B<td>$B!s(B<td>$B!t(B<td>$B!u(B<td>$B!v(B<td>$B!w(B<td>$B!x(B<td>$B!y(B<td>$B!z(B<td>$B!{(B<td>$B!|(B<td>$B!}(B<td>$B!~(B<td class=unused>&nbsp;
+  </table>
+  <table><caption>Multibyte: JIS X 0208:1983 (Row 22)</caption>
+   <tr><th> <th>0<th>1<th>2<th>3<th>4<th>5<th>6<th>7<th>8<th>9<th>A<th>B<th>C<th>D<th>E<th>F
+   <tr><th>20<td class=unused>&nbsp;<td>$B"!(B<td>$B""(B<td>$B"#(B<td>$B"$(B<td>$B"%(B<td>$B"&(B<td>$B"'(B<td>$B"((B<td>$B")(B<td>$B"*(B<td>$B"+(B<td>$B",(B<td>$B"-(B<td>$B".(B<td>$B"/(B
+   <tr><th>30<td>$B"0(B<td>$B"1(B<td>$B"2(B<td>$B"3(B<td>$B"4(B<td>$B"5(B<td>$B"6(B<td>$B"7(B<td>$B"8(B<td>$B"9(B<td>$B":(B<td>$B";(B<td>$B"<(B<td>$B"=(B<td>$B">(B<td>$B"?(B
+   <tr><th>40<td>$B"@(B<td>$B"A(B<td>$B"B(B<td>$B"C(B<td>$B"D(B<td>$B"E(B<td>$B"F(B<td>$B"G(B<td>$B"H(B<td>$B"I(B<td>$B"J(B<td>$B"K(B<td>$B"L(B<td>$B"M(B<td>$B"N(B<td>$B"O(B
+   <tr><th>50<td>$B"P(B<td>$B"Q(B<td>$B"R(B<td>$B"S(B<td>$B"T(B<td>$B"U(B<td>$B"V(B<td>$B"W(B<td>$B"X(B<td>$B"Y(B<td>$B"Z(B<td>$B"[(B<td>$B"\(B<td>$B"](B<td>$B"^(B<td>$B"_(B
+   <tr><th>60<td>$B"`(B<td>$B"a(B<td>$B"b(B<td>$B"c(B<td>$B"d(B<td>$B"e(B<td>$B"f(B<td>$B"g(B<td>$B"h(B<td>$B"i(B<td>$B"j(B<td>$B"k(B<td>$B"l(B<td>$B"m(B<td>$B"n(B<td>$B"o(B
+   <tr><th>70<td>$B"p(B<td>$B"q(B<td>$B"r(B<td>$B"s(B<td>$B"t(B<td>$B"u(B<td>$B"v(B<td>$B"w(B<td>$B"x(B<td>$B"y(B<td>$B"z(B<td>$B"{(B<td>$B"|(B<td>$B"}(B<td>$B"~(B<td class=unused>&nbsp;
+  </table>
+  <table><caption>Multibyte: JIS X 0208:1983 (Row 23)</caption>
+   <tr><th> <th>0<th>1<th>2<th>3<th>4<th>5<th>6<th>7<th>8<th>9<th>A<th>B<th>C<th>D<th>E<th>F
+   <tr><th>20<td class=unused>&nbsp;<td>$B#!(B<td>$B#"(B<td>$B##(B<td>$B#$(B<td>$B#%(B<td>$B#&(B<td>$B#'(B<td>$B#((B<td>$B#)(B<td>$B#*(B<td>$B#+(B<td>$B#,(B<td>$B#-(B<td>$B#.(B<td>$B#/(B
+   <tr><th>30<td>$B#0(B<td>$B#1(B<td>$B#2(B<td>$B#3(B<td>$B#4(B<td>$B#5(B<td>$B#6(B<td>$B#7(B<td>$B#8(B<td>$B#9(B<td>$B#:(B<td>$B#;(B<td>$B#<(B<td>$B#=(B<td>$B#>(B<td>$B#?(B
+   <tr><th>40<td>$B#@(B<td>$B#A(B<td>$B#B(B<td>$B#C(B<td>$B#D(B<td>$B#E(B<td>$B#F(B<td>$B#G(B<td>$B#H(B<td>$B#I(B<td>$B#J(B<td>$B#K(B<td>$B#L(B<td>$B#M(B<td>$B#N(B<td>$B#O(B
+   <tr><th>50<td>$B#P(B<td>$B#Q(B<td>$B#R(B<td>$B#S(B<td>$B#T(B<td>$B#U(B<td>$B#V(B<td>$B#W(B<td>$B#X(B<td>$B#Y(B<td>$B#Z(B<td>$B#[(B<td>$B#\(B<td>$B#](B<td>$B#^(B<td>$B#_(B
+   <tr><th>60<td>$B#`(B<td>$B#a(B<td>$B#b(B<td>$B#c(B<td>$B#d(B<td>$B#e(B<td>$B#f(B<td>$B#g(B<td>$B#h(B<td>$B#i(B<td>$B#j(B<td>$B#k(B<td>$B#l(B<td>$B#m(B<td>$B#n(B<td>$B#o(B
+   <tr><th>70<td>$B#p(B<td>$B#q(B<td>$B#r(B<td>$B#s(B<td>$B#t(B<td>$B#u(B<td>$B#v(B<td>$B#w(B<td>$B#x(B<td>$B#y(B<td>$B#z(B<td>$B#{(B<td>$B#|(B<td>$B#}(B<td>$B#~(B<td class=unused>&nbsp;
+  </table>
+  <table><caption>Multibyte: JIS X 0208:1983 (Row 24)</caption>
+   <tr><th> <th>0<th>1<th>2<th>3<th>4<th>5<th>6<th>7<th>8<th>9<th>A<th>B<th>C<th>D<th>E<th>F
+   <tr><th>20<td class=unused>&nbsp;<td>$B$!(B<td>$B$"(B<td>$B$#(B<td>$B$$(B<td>$B$%(B<td>$B$&(B<td>$B$'(B<td>$B$((B<td>$B$)(B<td>$B$*(B<td>$B$+(B<td>$B$,(B<td>$B$-(B<td>$B$.(B<td>$B$/(B
+   <tr><th>30<td>$B$0(B<td>$B$1(B<td>$B$2(B<td>$B$3(B<td>$B$4(B<td>$B$5(B<td>$B$6(B<td>$B$7(B<td>$B$8(B<td>$B$9(B<td>$B$:(B<td>$B$;(B<td>$B$<(B<td>$B$=(B<td>$B$>(B<td>$B$?(B
+   <tr><th>40<td>$B$@(B<td>$B$A(B<td>$B$B(B<td>$B$C(B<td>$B$D(B<td>$B$E(B<td>$B$F(B<td>$B$G(B<td>$B$H(B<td>$B$I(B<td>$B$J(B<td>$B$K(B<td>$B$L(B<td>$B$M(B<td>$B$N(B<td>$B$O(B
+   <tr><th>50<td>$B$P(B<td>$B$Q(B<td>$B$R(B<td>$B$S(B<td>$B$T(B<td>$B$U(B<td>$B$V(B<td>$B$W(B<td>$B$X(B<td>$B$Y(B<td>$B$Z(B<td>$B$[(B<td>$B$\(B<td>$B$](B<td>$B$^(B<td>$B$_(B
+   <tr><th>60<td>$B$`(B<td>$B$a(B<td>$B$b(B<td>$B$c(B<td>$B$d(B<td>$B$e(B<td>$B$f(B<td>$B$g(B<td>$B$h(B<td>$B$i(B<td>$B$j(B<td>$B$k(B<td>$B$l(B<td>$B$m(B<td>$B$n(B<td>$B$o(B
+   <tr><th>70<td>$B$p(B<td>$B$q(B<td>$B$r(B<td>$B$s(B<td>$B$t(B<td>$B$u(B<td>$B$v(B<td>$B$w(B<td>$B$x(B<td>$B$y(B<td>$B$z(B<td>$B${(B<td>$B$|(B<td>$B$}(B<td>$B$~(B<td class=unused>&nbsp;
+  </table>
+  <table><caption>Multibyte: JIS X 0208:1983 (Row 25)</caption>
+   <tr><th> <th>0<th>1<th>2<th>3<th>4<th>5<th>6<th>7<th>8<th>9<th>A<th>B<th>C<th>D<th>E<th>F
+   <tr><th>20<td class=unused>&nbsp;<td>$B%!(B<td>$B%"(B<td>$B%#(B<td>$B%$(B<td>$B%%(B<td>$B%&(B<td>$B%'(B<td>$B%((B<td>$B%)(B<td>$B%*(B<td>$B%+(B<td>$B%,(B<td>$B%-(B<td>$B%.(B<td>$B%/(B
+   <tr><th>30<td>$B%0(B<td>$B%1(B<td>$B%2(B<td>$B%3(B<td>$B%4(B<td>$B%5(B<td>$B%6(B<td>$B%7(B<td>$B%8(B<td>$B%9(B<td>$B%:(B<td>$B%;(B<td>$B%<(B<td>$B%=(B<td>$B%>(B<td>$B%?(B
+   <tr><th>40<td>$B%@(B<td>$B%A(B<td>$B%B(B<td>$B%C(B<td>$B%D(B<td>$B%E(B<td>$B%F(B<td>$B%G(B<td>$B%H(B<td>$B%I(B<td>$B%J(B<td>$B%K(B<td>$B%L(B<td>$B%M(B<td>$B%N(B<td>$B%O(B
+   <tr><th>50<td>$B%P(B<td>$B%Q(B<td>$B%R(B<td>$B%S(B<td>$B%T(B<td>$B%U(B<td>$B%V(B<td>$B%W(B<td>$B%X(B<td>$B%Y(B<td>$B%Z(B<td>$B%[(B<td>$B%\(B<td>$B%](B<td>$B%^(B<td>$B%_(B
+   <tr><th>60<td>$B%`(B<td>$B%a(B<td>$B%b(B<td>$B%c(B<td>$B%d(B<td>$B%e(B<td>$B%f(B<td>$B%g(B<td>$B%h(B<td>$B%i(B<td>$B%j(B<td>$B%k(B<td>$B%l(B<td>$B%m(B<td>$B%n(B<td>$B%o(B
+   <tr><th>70<td>$B%p(B<td>$B%q(B<td>$B%r(B<td>$B%s(B<td>$B%t(B<td>$B%u(B<td>$B%v(B<td>$B%w(B<td>$B%x(B<td>$B%y(B<td>$B%z(B<td>$B%{(B<td>$B%|(B<td>$B%}(B<td>$B%~(B<td class=unused>&nbsp;
+  </table>
+  <table><caption>Multibyte: JIS X 0208:1983 (Row 26)</caption>
+   <tr><th> <th>0<th>1<th>2<th>3<th>4<th>5<th>6<th>7<th>8<th>9<th>A<th>B<th>C<th>D<th>E<th>F
+   <tr><th>20<td class=unused>&nbsp;<td>$B&!(B<td>$B&"(B<td>$B&#(B<td>$B&$(B<td>$B&%(B<td>$B&&(B<td>$B&'(B<td>$B&((B<td>$B&)(B<td>$B&*(B<td>$B&+(B<td>$B&,(B<td>$B&-(B<td>$B&.(B<td>$B&/(B
+   <tr><th>30<td>$B&0(B<td>$B&1(B<td>$B&2(B<td>$B&3(B<td>$B&4(B<td>$B&5(B<td>$B&6(B<td>$B&7(B<td>$B&8(B<td>$B&9(B<td>$B&:(B<td>$B&;(B<td>$B&<(B<td>$B&=(B<td>$B&>(B<td>$B&?(B
+   <tr><th>40<td>$B&@(B<td>$B&A(B<td>$B&B(B<td>$B&C(B<td>$B&D(B<td>$B&E(B<td>$B&F(B<td>$B&G(B<td>$B&H(B<td>$B&I(B<td>$B&J(B<td>$B&K(B<td>$B&L(B<td>$B&M(B<td>$B&N(B<td>$B&O(B
+   <tr><th>50<td>$B&P(B<td>$B&Q(B<td>$B&R(B<td>$B&S(B<td>$B&T(B<td>$B&U(B<td>$B&V(B<td>$B&W(B<td>$B&X(B<td>$B&Y(B<td>$B&Z(B<td>$B&[(B<td>$B&\(B<td>$B&](B<td>$B&^(B<td>$B&_(B
+   <tr><th>60<td>$B&`(B<td>$B&a(B<td>$B&b(B<td>$B&c(B<td>$B&d(B<td>$B&e(B<td>$B&f(B<td>$B&g(B<td>$B&h(B<td>$B&i(B<td>$B&j(B<td>$B&k(B<td>$B&l(B<td>$B&m(B<td>$B&n(B<td>$B&o(B
+   <tr><th>70<td>$B&p(B<td>$B&q(B<td>$B&r(B<td>$B&s(B<td>$B&t(B<td>$B&u(B<td>$B&v(B<td>$B&w(B<td>$B&x(B<td>$B&y(B<td>$B&z(B<td>$B&{(B<td>$B&|(B<td>$B&}(B<td>$B&~(B<td class=unused>&nbsp;
+  </table>
+  <table><caption>Multibyte: JIS X 0208:1983 (Row 27)</caption>
+   <tr><th> <th>0<th>1<th>2<th>3<th>4<th>5<th>6<th>7<th>8<th>9<th>A<th>B<th>C<th>D<th>E<th>F
+   <tr><th>20<td class=unused>&nbsp;<td>$B'!(B<td>$B'"(B<td>$B'#(B<td>$B'$(B<td>$B'%(B<td>$B'&(B<td>$B''(B<td>$B'((B<td>$B')(B<td>$B'*(B<td>$B'+(B<td>$B',(B<td>$B'-(B<td>$B'.(B<td>$B'/(B
+   <tr><th>30<td>$B'0(B<td>$B'1(B<td>$B'2(B<td>$B'3(B<td>$B'4(B<td>$B'5(B<td>$B'6(B<td>$B'7(B<td>$B'8(B<td>$B'9(B<td>$B':(B<td>$B';(B<td>$B'<(B<td>$B'=(B<td>$B'>(B<td>$B'?(B
+   <tr><th>40<td>$B'@(B<td>$B'A(B<td>$B'B(B<td>$B'C(B<td>$B'D(B<td>$B'E(B<td>$B'F(B<td>$B'G(B<td>$B'H(B<td>$B'I(B<td>$B'J(B<td>$B'K(B<td>$B'L(B<td>$B'M(B<td>$B'N(B<td>$B'O(B
+   <tr><th>50<td>$B'P(B<td>$B'Q(B<td>$B'R(B<td>$B'S(B<td>$B'T(B<td>$B'U(B<td>$B'V(B<td>$B'W(B<td>$B'X(B<td>$B'Y(B<td>$B'Z(B<td>$B'[(B<td>$B'\(B<td>$B'](B<td>$B'^(B<td>$B'_(B
+   <tr><th>60<td>$B'`(B<td>$B'a(B<td>$B'b(B<td>$B'c(B<td>$B'd(B<td>$B'e(B<td>$B'f(B<td>$B'g(B<td>$B'h(B<td>$B'i(B<td>$B'j(B<td>$B'k(B<td>$B'l(B<td>$B'm(B<td>$B'n(B<td>$B'o(B
+   <tr><th>70<td>$B'p(B<td>$B'q(B<td>$B'r(B<td>$B's(B<td>$B't(B<td>$B'u(B<td>$B'v(B<td>$B'w(B<td>$B'x(B<td>$B'y(B<td>$B'z(B<td>$B'{(B<td>$B'|(B<td>$B'}(B<td>$B'~(B<td class=unused>&nbsp;
+  </table>
+  <table><caption>Multibyte: JIS X 0208:1983 (Row 28)</caption>
+   <tr><th> <th>0<th>1<th>2<th>3<th>4<th>5<th>6<th>7<th>8<th>9<th>A<th>B<th>C<th>D<th>E<th>F
+   <tr><th>20<td class=unused>&nbsp;<td>$B(!(B<td>$B("(B<td>$B(#(B<td>$B($(B<td>$B(%(B<td>$B(&(B<td>$B('(B<td>$B(((B<td>$B()(B<td>$B(*(B<td>$B(+(B<td>$B(,(B<td>$B(-(B<td>$B(.(B<td>$B(/(B
+   <tr><th>30<td>$B(0(B<td>$B(1(B<td>$B(2(B<td>$B(3(B<td>$B(4(B<td>$B(5(B<td>$B(6(B<td>$B(7(B<td>$B(8(B<td>$B(9(B<td>$B(:(B<td>$B(;(B<td>$B(<(B<td>$B(=(B<td>$B(>(B<td>$B(?(B
+   <tr><th>40<td>$B(@(B<td>$B(A(B<td>$B(B(B<td>$B(C(B<td>$B(D(B<td>$B(E(B<td>$B(F(B<td>$B(G(B<td>$B(H(B<td>$B(I(B<td>$B(J(B<td>$B(K(B<td>$B(L(B<td>$B(M(B<td>$B(N(B<td>$B(O(B
+   <tr><th>50<td>$B(P(B<td>$B(Q(B<td>$B(R(B<td>$B(S(B<td>$B(T(B<td>$B(U(B<td>$B(V(B<td>$B(W(B<td>$B(X(B<td>$B(Y(B<td>$B(Z(B<td>$B([(B<td>$B(\(B<td>$B(](B<td>$B(^(B<td>$B(_(B
+   <tr><th>60<td>$B(`(B<td>$B(a(B<td>$B(b(B<td>$B(c(B<td>$B(d(B<td>$B(e(B<td>$B(f(B<td>$B(g(B<td>$B(h(B<td>$B(i(B<td>$B(j(B<td>$B(k(B<td>$B(l(B<td>$B(m(B<td>$B(n(B<td>$B(o(B
+   <tr><th>70<td>$B(p(B<td>$B(q(B<td>$B(r(B<td>$B(s(B<td>$B(t(B<td>$B(u(B<td>$B(v(B<td>$B(w(B<td>$B(x(B<td>$B(y(B<td>$B(z(B<td>$B({(B<td>$B(|(B<td>$B(}(B<td>$B(~(B<td class=unused>&nbsp;
+  </table>
+  <table><caption>Multibyte: JIS X 0208:1983 (Row 29)</caption>
+   <tr><th> <th>0<th>1<th>2<th>3<th>4<th>5<th>6<th>7<th>8<th>9<th>A<th>B<th>C<th>D<th>E<th>F
+   <tr><th>20<td class=unused>&nbsp;<td>$B)!(B<td>$B)"(B<td>$B)#(B<td>$B)$(B<td>$B)%(B<td>$B)&(B<td>$B)'(B<td>$B)((B<td>$B))(B<td>$B)*(B<td>$B)+(B<td>$B),(B<td>$B)-(B<td>$B).(B<td>$B)/(B
+   <tr><th>30<td>$B)0(B<td>$B)1(B<td>$B)2(B<td>$B)3(B<td>$B)4(B<td>$B)5(B<td>$B)6(B<td>$B)7(B<td>$B)8(B<td>$B)9(B<td>$B):(B<td>$B);(B<td>$B)<(B<td>$B)=(B<td>$B)>(B<td>$B)?(B
+   <tr><th>40<td>$B)@(B<td>$B)A(B<td>$B)B(B<td>$B)C(B<td>$B)D(B<td>$B)E(B<td>$B)F(B<td>$B)G(B<td>$B)H(B<td>$B)I(B<td>$B)J(B<td>$B)K(B<td>$B)L(B<td>$B)M(B<td>$B)N(B<td>$B)O(B
+   <tr><th>50<td>$B)P(B<td>$B)Q(B<td>$B)R(B<td>$B)S(B<td>$B)T(B<td>$B)U(B<td>$B)V(B<td>$B)W(B<td>$B)X(B<td>$B)Y(B<td>$B)Z(B<td>$B)[(B<td>$B)\(B<td>$B)](B<td>$B)^(B<td>$B)_(B
+   <tr><th>60<td>$B)`(B<td>$B)a(B<td>$B)b(B<td>$B)c(B<td>$B)d(B<td>$B)e(B<td>$B)f(B<td>$B)g(B<td>$B)h(B<td>$B)i(B<td>$B)j(B<td>$B)k(B<td>$B)l(B<td>$B)m(B<td>$B)n(B<td>$B)o(B
+   <tr><th>70<td>$B)p(B<td>$B)q(B<td>$B)r(B<td>$B)s(B<td>$B)t(B<td>$B)u(B<td>$B)v(B<td>$B)w(B<td>$B)x(B<td>$B)y(B<td>$B)z(B<td>$B){(B<td>$B)|(B<td>$B)}(B<td>$B)~(B<td class=unused>&nbsp;
+  </table>
+  <table><caption>Multibyte: JIS X 0208:1983 (Row 2A)</caption>
+   <tr><th> <th>0<th>1<th>2<th>3<th>4<th>5<th>6<th>7<th>8<th>9<th>A<th>B<th>C<th>D<th>E<th>F
+   <tr><th>20<td class=unused>&nbsp;<td>$B*!(B<td>$B*"(B<td>$B*#(B<td>$B*$(B<td>$B*%(B<td>$B*&(B<td>$B*'(B<td>$B*((B<td>$B*)(B<td>$B**(B<td>$B*+(B<td>$B*,(B<td>$B*-(B<td>$B*.(B<td>$B*/(B
+   <tr><th>30<td>$B*0(B<td>$B*1(B<td>$B*2(B<td>$B*3(B<td>$B*4(B<td>$B*5(B<td>$B*6(B<td>$B*7(B<td>$B*8(B<td>$B*9(B<td>$B*:(B<td>$B*;(B<td>$B*<(B<td>$B*=(B<td>$B*>(B<td>$B*?(B
+   <tr><th>40<td>$B*@(B<td>$B*A(B<td>$B*B(B<td>$B*C(B<td>$B*D(B<td>$B*E(B<td>$B*F(B<td>$B*G(B<td>$B*H(B<td>$B*I(B<td>$B*J(B<td>$B*K(B<td>$B*L(B<td>$B*M(B<td>$B*N(B<td>$B*O(B
+   <tr><th>50<td>$B*P(B<td>$B*Q(B<td>$B*R(B<td>$B*S(B<td>$B*T(B<td>$B*U(B<td>$B*V(B<td>$B*W(B<td>$B*X(B<td>$B*Y(B<td>$B*Z(B<td>$B*[(B<td>$B*\(B<td>$B*](B<td>$B*^(B<td>$B*_(B
+   <tr><th>60<td>$B*`(B<td>$B*a(B<td>$B*b(B<td>$B*c(B<td>$B*d(B<td>$B*e(B<td>$B*f(B<td>$B*g(B<td>$B*h(B<td>$B*i(B<td>$B*j(B<td>$B*k(B<td>$B*l(B<td>$B*m(B<td>$B*n(B<td>$B*o(B
+   <tr><th>70<td>$B*p(B<td>$B*q(B<td>$B*r(B<td>$B*s(B<td>$B*t(B<td>$B*u(B<td>$B*v(B<td>$B*w(B<td>$B*x(B<td>$B*y(B<td>$B*z(B<td>$B*{(B<td>$B*|(B<td>$B*}(B<td>$B*~(B<td class=unused>&nbsp;
+  </table>
+  <table><caption>Multibyte: JIS X 0208:1983 (Row 2B)</caption>
+   <tr><th> <th>0<th>1<th>2<th>3<th>4<th>5<th>6<th>7<th>8<th>9<th>A<th>B<th>C<th>D<th>E<th>F
+   <tr><th>20<td class=unused>&nbsp;<td>$B+!(B<td>$B+"(B<td>$B+#(B<td>$B+$(B<td>$B+%(B<td>$B+&(B<td>$B+'(B<td>$B+((B<td>$B+)(B<td>$B+*(B<td>$B++(B<td>$B+,(B<td>$B+-(B<td>$B+.(B<td>$B+/(B
+   <tr><th>30<td>$B+0(B<td>$B+1(B<td>$B+2(B<td>$B+3(B<td>$B+4(B<td>$B+5(B<td>$B+6(B<td>$B+7(B<td>$B+8(B<td>$B+9(B<td>$B+:(B<td>$B+;(B<td>$B+<(B<td>$B+=(B<td>$B+>(B<td>$B+?(B
+   <tr><th>40<td>$B+@(B<td>$B+A(B<td>$B+B(B<td>$B+C(B<td>$B+D(B<td>$B+E(B<td>$B+F(B<td>$B+G(B<td>$B+H(B<td>$B+I(B<td>$B+J(B<td>$B+K(B<td>$B+L(B<td>$B+M(B<td>$B+N(B<td>$B+O(B
+   <tr><th>50<td>$B+P(B<td>$B+Q(B<td>$B+R(B<td>$B+S(B<td>$B+T(B<td>$B+U(B<td>$B+V(B<td>$B+W(B<td>$B+X(B<td>$B+Y(B<td>$B+Z(B<td>$B+[(B<td>$B+\(B<td>$B+](B<td>$B+^(B<td>$B+_(B
+   <tr><th>60<td>$B+`(B<td>$B+a(B<td>$B+b(B<td>$B+c(B<td>$B+d(B<td>$B+e(B<td>$B+f(B<td>$B+g(B<td>$B+h(B<td>$B+i(B<td>$B+j(B<td>$B+k(B<td>$B+l(B<td>$B+m(B<td>$B+n(B<td>$B+o(B
+   <tr><th>70<td>$B+p(B<td>$B+q(B<td>$B+r(B<td>$B+s(B<td>$B+t(B<td>$B+u(B<td>$B+v(B<td>$B+w(B<td>$B+x(B<td>$B+y(B<td>$B+z(B<td>$B+{(B<td>$B+|(B<td>$B+}(B<td>$B+~(B<td class=unused>&nbsp;
+  </table>
+  <table><caption>Multibyte: JIS X 0208:1983 (Row 2C)</caption>
+   <tr><th> <th>0<th>1<th>2<th>3<th>4<th>5<th>6<th>7<th>8<th>9<th>A<th>B<th>C<th>D<th>E<th>F
+   <tr><th>20<td class=unused>&nbsp;<td>$B,!(B<td>$B,"(B<td>$B,#(B<td>$B,$(B<td>$B,%(B<td>$B,&(B<td>$B,'(B<td>$B,((B<td>$B,)(B<td>$B,*(B<td>$B,+(B<td>$B,,(B<td>$B,-(B<td>$B,.(B<td>$B,/(B
+   <tr><th>30<td>$B,0(B<td>$B,1(B<td>$B,2(B<td>$B,3(B<td>$B,4(B<td>$B,5(B<td>$B,6(B<td>$B,7(B<td>$B,8(B<td>$B,9(B<td>$B,:(B<td>$B,;(B<td>$B,<(B<td>$B,=(B<td>$B,>(B<td>$B,?(B
+   <tr><th>40<td>$B,@(B<td>$B,A(B<td>$B,B(B<td>$B,C(B<td>$B,D(B<td>$B,E(B<td>$B,F(B<td>$B,G(B<td>$B,H(B<td>$B,I(B<td>$B,J(B<td>$B,K(B<td>$B,L(B<td>$B,M(B<td>$B,N(B<td>$B,O(B
+   <tr><th>50<td>$B,P(B<td>$B,Q(B<td>$B,R(B<td>$B,S(B<td>$B,T(B<td>$B,U(B<td>$B,V(B<td>$B,W(B<td>$B,X(B<td>$B,Y(B<td>$B,Z(B<td>$B,[(B<td>$B,\(B<td>$B,](B<td>$B,^(B<td>$B,_(B
+   <tr><th>60<td>$B,`(B<td>$B,a(B<td>$B,b(B<td>$B,c(B<td>$B,d(B<td>$B,e(B<td>$B,f(B<td>$B,g(B<td>$B,h(B<td>$B,i(B<td>$B,j(B<td>$B,k(B<td>$B,l(B<td>$B,m(B<td>$B,n(B<td>$B,o(B
+   <tr><th>70<td>$B,p(B<td>$B,q(B<td>$B,r(B<td>$B,s(B<td>$B,t(B<td>$B,u(B<td>$B,v(B<td>$B,w(B<td>$B,x(B<td>$B,y(B<td>$B,z(B<td>$B,{(B<td>$B,|(B<td>$B,}(B<td>$B,~(B<td class=unused>&nbsp;
+  </table>
+  <table><caption>Multibyte: JIS X 0208:1983 (Row 2D)</caption>
+   <tr><th> <th>0<th>1<th>2<th>3<th>4<th>5<th>6<th>7<th>8<th>9<th>A<th>B<th>C<th>D<th>E<th>F
+   <tr><th>20<td class=unused>&nbsp;<td>$B-!(B<td>$B-"(B<td>$B-#(B<td>$B-$(B<td>$B-%(B<td>$B-&(B<td>$B-'(B<td>$B-((B<td>$B-)(B<td>$B-*(B<td>$B-+(B<td>$B-,(B<td>$B--(B<td>$B-.(B<td>$B-/(B
+   <tr><th>30<td>$B-0(B<td>$B-1(B<td>$B-2(B<td>$B-3(B<td>$B-4(B<td>$B-5(B<td>$B-6(B<td>$B-7(B<td>$B-8(B<td>$B-9(B<td>$B-:(B<td>$B-;(B<td>$B-<(B<td>$B-=(B<td>$B->(B<td>$B-?(B
+   <tr><th>40<td>$B-@(B<td>$B-A(B<td>$B-B(B<td>$B-C(B<td>$B-D(B<td>$B-E(B<td>$B-F(B<td>$B-G(B<td>$B-H(B<td>$B-I(B<td>$B-J(B<td>$B-K(B<td>$B-L(B<td>$B-M(B<td>$B-N(B<td>$B-O(B
+   <tr><th>50<td>$B-P(B<td>$B-Q(B<td>$B-R(B<td>$B-S(B<td>$B-T(B<td>$B-U(B<td>$B-V(B<td>$B-W(B<td>$B-X(B<td>$B-Y(B<td>$B-Z(B<td>$B-[(B<td>$B-\(B<td>$B-](B<td>$B-^(B<td>$B-_(B
+   <tr><th>60<td>$B-`(B<td>$B-a(B<td>$B-b(B<td>$B-c(B<td>$B-d(B<td>$B-e(B<td>$B-f(B<td>$B-g(B<td>$B-h(B<td>$B-i(B<td>$B-j(B<td>$B-k(B<td>$B-l(B<td>$B-m(B<td>$B-n(B<td>$B-o(B
+   <tr><th>70<td>$B-p(B<td>$B-q(B<td>$B-r(B<td>$B-s(B<td>$B-t(B<td>$B-u(B<td>$B-v(B<td>$B-w(B<td>$B-x(B<td>$B-y(B<td>$B-z(B<td>$B-{(B<td>$B-|(B<td>$B-}(B<td>$B-~(B<td class=unused>&nbsp;
+  </table>
+  <table><caption>Multibyte: JIS X 0208:1983 (Row 2E)</caption>
+   <tr><th> <th>0<th>1<th>2<th>3<th>4<th>5<th>6<th>7<th>8<th>9<th>A<th>B<th>C<th>D<th>E<th>F
+   <tr><th>20<td class=unused>&nbsp;<td>$B.!(B<td>$B."(B<td>$B.#(B<td>$B.$(B<td>$B.%(B<td>$B.&(B<td>$B.'(B<td>$B.((B<td>$B.)(B<td>$B.*(B<td>$B.+(B<td>$B.,(B<td>$B.-(B<td>$B..(B<td>$B./(B
+   <tr><th>30<td>$B.0(B<td>$B.1(B<td>$B.2(B<td>$B.3(B<td>$B.4(B<td>$B.5(B<td>$B.6(B<td>$B.7(B<td>$B.8(B<td>$B.9(B<td>$B.:(B<td>$B.;(B<td>$B.<(B<td>$B.=(B<td>$B.>(B<td>$B.?(B
+   <tr><th>40<td>$B.@(B<td>$B.A(B<td>$B.B(B<td>$B.C(B<td>$B.D(B<td>$B.E(B<td>$B.F(B<td>$B.G(B<td>$B.H(B<td>$B.I(B<td>$B.J(B<td>$B.K(B<td>$B.L(B<td>$B.M(B<td>$B.N(B<td>$B.O(B
+   <tr><th>50<td>$B.P(B<td>$B.Q(B<td>$B.R(B<td>$B.S(B<td>$B.T(B<td>$B.U(B<td>$B.V(B<td>$B.W(B<td>$B.X(B<td>$B.Y(B<td>$B.Z(B<td>$B.[(B<td>$B.\(B<td>$B.](B<td>$B.^(B<td>$B._(B
+   <tr><th>60<td>$B.`(B<td>$B.a(B<td>$B.b(B<td>$B.c(B<td>$B.d(B<td>$B.e(B<td>$B.f(B<td>$B.g(B<td>$B.h(B<td>$B.i(B<td>$B.j(B<td>$B.k(B<td>$B.l(B<td>$B.m(B<td>$B.n(B<td>$B.o(B
+   <tr><th>70<td>$B.p(B<td>$B.q(B<td>$B.r(B<td>$B.s(B<td>$B.t(B<td>$B.u(B<td>$B.v(B<td>$B.w(B<td>$B.x(B<td>$B.y(B<td>$B.z(B<td>$B.{(B<td>$B.|(B<td>$B.}(B<td>$B.~(B<td class=unused>&nbsp;
+  </table>
+  <table><caption>Multibyte: JIS X 0208:1983 (Row 2F)</caption>
+   <tr><th> <th>0<th>1<th>2<th>3<th>4<th>5<th>6<th>7<th>8<th>9<th>A<th>B<th>C<th>D<th>E<th>F
+   <tr><th>20<td class=unused>&nbsp;<td>$B/!(B<td>$B/"(B<td>$B/#(B<td>$B/$(B<td>$B/%(B<td>$B/&(B<td>$B/'(B<td>$B/((B<td>$B/)(B<td>$B/*(B<td>$B/+(B<td>$B/,(B<td>$B/-(B<td>$B/.(B<td>$B//(B
+   <tr><th>30<td>$B/0(B<td>$B/1(B<td>$B/2(B<td>$B/3(B<td>$B/4(B<td>$B/5(B<td>$B/6(B<td>$B/7(B<td>$B/8(B<td>$B/9(B<td>$B/:(B<td>$B/;(B<td>$B/<(B<td>$B/=(B<td>$B/>(B<td>$B/?(B
+   <tr><th>40<td>$B/@(B<td>$B/A(B<td>$B/B(B<td>$B/C(B<td>$B/D(B<td>$B/E(B<td>$B/F(B<td>$B/G(B<td>$B/H(B<td>$B/I(B<td>$B/J(B<td>$B/K(B<td>$B/L(B<td>$B/M(B<td>$B/N(B<td>$B/O(B
+   <tr><th>50<td>$B/P(B<td>$B/Q(B<td>$B/R(B<td>$B/S(B<td>$B/T(B<td>$B/U(B<td>$B/V(B<td>$B/W(B<td>$B/X(B<td>$B/Y(B<td>$B/Z(B<td>$B/[(B<td>$B/\(B<td>$B/](B<td>$B/^(B<td>$B/_(B
+   <tr><th>60<td>$B/`(B<td>$B/a(B<td>$B/b(B<td>$B/c(B<td>$B/d(B<td>$B/e(B<td>$B/f(B<td>$B/g(B<td>$B/h(B<td>$B/i(B<td>$B/j(B<td>$B/k(B<td>$B/l(B<td>$B/m(B<td>$B/n(B<td>$B/o(B
+   <tr><th>70<td>$B/p(B<td>$B/q(B<td>$B/r(B<td>$B/s(B<td>$B/t(B<td>$B/u(B<td>$B/v(B<td>$B/w(B<td>$B/x(B<td>$B/y(B<td>$B/z(B<td>$B/{(B<td>$B/|(B<td>$B/}(B<td>$B/~(B<td class=unused>&nbsp;
+  </table>
+  <table><caption>Multibyte: JIS X 0208:1983 (Row 30)</caption>
+   <tr><th> <th>0<th>1<th>2<th>3<th>4<th>5<th>6<th>7<th>8<th>9<th>A<th>B<th>C<th>D<th>E<th>F
+   <tr><th>20<td class=unused>&nbsp;<td>$B0!(B<td>$B0"(B<td>$B0#(B<td>$B0$(B<td>$B0%(B<td>$B0&(B<td>$B0'(B<td>$B0((B<td>$B0)(B<td>$B0*(B<td>$B0+(B<td>$B0,(B<td>$B0-(B<td>$B0.(B<td>$B0/(B
+   <tr><th>30<td>$B00(B<td>$B01(B<td>$B02(B<td>$B03(B<td>$B04(B<td>$B05(B<td>$B06(B<td>$B07(B<td>$B08(B<td>$B09(B<td>$B0:(B<td>$B0;(B<td>$B0<(B<td>$B0=(B<td>$B0>(B<td>$B0?(B
+   <tr><th>40<td>$B0@(B<td>$B0A(B<td>$B0B(B<td>$B0C(B<td>$B0D(B<td>$B0E(B<td>$B0F(B<td>$B0G(B<td>$B0H(B<td>$B0I(B<td>$B0J(B<td>$B0K(B<td>$B0L(B<td>$B0M(B<td>$B0N(B<td>$B0O(B
+   <tr><th>50<td>$B0P(B<td>$B0Q(B<td>$B0R(B<td>$B0S(B<td>$B0T(B<td>$B0U(B<td>$B0V(B<td>$B0W(B<td>$B0X(B<td>$B0Y(B<td>$B0Z(B<td>$B0[(B<td>$B0\(B<td>$B0](B<td>$B0^(B<td>$B0_(B
+   <tr><th>60<td>$B0`(B<td>$B0a(B<td>$B0b(B<td>$B0c(B<td>$B0d(B<td>$B0e(B<td>$B0f(B<td>$B0g(B<td>$B0h(B<td>$B0i(B<td>$B0j(B<td>$B0k(B<td>$B0l(B<td>$B0m(B<td>$B0n(B<td>$B0o(B
+   <tr><th>70<td>$B0p(B<td>$B0q(B<td>$B0r(B<td>$B0s(B<td>$B0t(B<td>$B0u(B<td>$B0v(B<td>$B0w(B<td>$B0x(B<td>$B0y(B<td>$B0z(B<td>$B0{(B<td>$B0|(B<td>$B0}(B<td>$B0~(B<td class=unused>&nbsp;
+  </table>
+  <table><caption>Multibyte: JIS X 0208:1983 (Row 31)</caption>
+   <tr><th> <th>0<th>1<th>2<th>3<th>4<th>5<th>6<th>7<th>8<th>9<th>A<th>B<th>C<th>D<th>E<th>F
+   <tr><th>20<td class=unused>&nbsp;<td>$B1!(B<td>$B1"(B<td>$B1#(B<td>$B1$(B<td>$B1%(B<td>$B1&(B<td>$B1'(B<td>$B1((B<td>$B1)(B<td>$B1*(B<td>$B1+(B<td>$B1,(B<td>$B1-(B<td>$B1.(B<td>$B1/(B
+   <tr><th>30<td>$B10(B<td>$B11(B<td>$B12(B<td>$B13(B<td>$B14(B<td>$B15(B<td>$B16(B<td>$B17(B<td>$B18(B<td>$B19(B<td>$B1:(B<td>$B1;(B<td>$B1<(B<td>$B1=(B<td>$B1>(B<td>$B1?(B
+   <tr><th>40<td>$B1@(B<td>$B1A(B<td>$B1B(B<td>$B1C(B<td>$B1D(B<td>$B1E(B<td>$B1F(B<td>$B1G(B<td>$B1H(B<td>$B1I(B<td>$B1J(B<td>$B1K(B<td>$B1L(B<td>$B1M(B<td>$B1N(B<td>$B1O(B
+   <tr><th>50<td>$B1P(B<td>$B1Q(B<td>$B1R(B<td>$B1S(B<td>$B1T(B<td>$B1U(B<td>$B1V(B<td>$B1W(B<td>$B1X(B<td>$B1Y(B<td>$B1Z(B<td>$B1[(B<td>$B1\(B<td>$B1](B<td>$B1^(B<td>$B1_(B
+   <tr><th>60<td>$B1`(B<td>$B1a(B<td>$B1b(B<td>$B1c(B<td>$B1d(B<td>$B1e(B<td>$B1f(B<td>$B1g(B<td>$B1h(B<td>$B1i(B<td>$B1j(B<td>$B1k(B<td>$B1l(B<td>$B1m(B<td>$B1n(B<td>$B1o(B
+   <tr><th>70<td>$B1p(B<td>$B1q(B<td>$B1r(B<td>$B1s(B<td>$B1t(B<td>$B1u(B<td>$B1v(B<td>$B1w(B<td>$B1x(B<td>$B1y(B<td>$B1z(B<td>$B1{(B<td>$B1|(B<td>$B1}(B<td>$B1~(B<td class=unused>&nbsp;
+  </table>
+  <table><caption>Multibyte: JIS X 0208:1983 (Row 32)</caption>
+   <tr><th> <th>0<th>1<th>2<th>3<th>4<th>5<th>6<th>7<th>8<th>9<th>A<th>B<th>C<th>D<th>E<th>F
+   <tr><th>20<td class=unused>&nbsp;<td>$B2!(B<td>$B2"(B<td>$B2#(B<td>$B2$(B<td>$B2%(B<td>$B2&(B<td>$B2'(B<td>$B2((B<td>$B2)(B<td>$B2*(B<td>$B2+(B<td>$B2,(B<td>$B2-(B<td>$B2.(B<td>$B2/(B
+   <tr><th>30<td>$B20(B<td>$B21(B<td>$B22(B<td>$B23(B<td>$B24(B<td>$B25(B<td>$B26(B<td>$B27(B<td>$B28(B<td>$B29(B<td>$B2:(B<td>$B2;(B<td>$B2<(B<td>$B2=(B<td>$B2>(B<td>$B2?(B
+   <tr><th>40<td>$B2@(B<td>$B2A(B<td>$B2B(B<td>$B2C(B<td>$B2D(B<td>$B2E(B<td>$B2F(B<td>$B2G(B<td>$B2H(B<td>$B2I(B<td>$B2J(B<td>$B2K(B<td>$B2L(B<td>$B2M(B<td>$B2N(B<td>$B2O(B
+   <tr><th>50<td>$B2P(B<td>$B2Q(B<td>$B2R(B<td>$B2S(B<td>$B2T(B<td>$B2U(B<td>$B2V(B<td>$B2W(B<td>$B2X(B<td>$B2Y(B<td>$B2Z(B<td>$B2[(B<td>$B2\(B<td>$B2](B<td>$B2^(B<td>$B2_(B
+   <tr><th>60<td>$B2`(B<td>$B2a(B<td>$B2b(B<td>$B2c(B<td>$B2d(B<td>$B2e(B<td>$B2f(B<td>$B2g(B<td>$B2h(B<td>$B2i(B<td>$B2j(B<td>$B2k(B<td>$B2l(B<td>$B2m(B<td>$B2n(B<td>$B2o(B
+   <tr><th>70<td>$B2p(B<td>$B2q(B<td>$B2r(B<td>$B2s(B<td>$B2t(B<td>$B2u(B<td>$B2v(B<td>$B2w(B<td>$B2x(B<td>$B2y(B<td>$B2z(B<td>$B2{(B<td>$B2|(B<td>$B2}(B<td>$B2~(B<td class=unused>&nbsp;
+  </table>
+  <table><caption>Multibyte: JIS X 0208:1983 (Row 33)</caption>
+   <tr><th> <th>0<th>1<th>2<th>3<th>4<th>5<th>6<th>7<th>8<th>9<th>A<th>B<th>C<th>D<th>E<th>F
+   <tr><th>20<td class=unused>&nbsp;<td>$B3!(B<td>$B3"(B<td>$B3#(B<td>$B3$(B<td>$B3%(B<td>$B3&(B<td>$B3'(B<td>$B3((B<td>$B3)(B<td>$B3*(B<td>$B3+(B<td>$B3,(B<td>$B3-(B<td>$B3.(B<td>$B3/(B
+   <tr><th>30<td>$B30(B<td>$B31(B<td>$B32(B<td>$B33(B<td>$B34(B<td>$B35(B<td>$B36(B<td>$B37(B<td>$B38(B<td>$B39(B<td>$B3:(B<td>$B3;(B<td>$B3<(B<td>$B3=(B<td>$B3>(B<td>$B3?(B
+   <tr><th>40<td>$B3@(B<td>$B3A(B<td>$B3B(B<td>$B3C(B<td>$B3D(B<td>$B3E(B<td>$B3F(B<td>$B3G(B<td>$B3H(B<td>$B3I(B<td>$B3J(B<td>$B3K(B<td>$B3L(B<td>$B3M(B<td>$B3N(B<td>$B3O(B
+   <tr><th>50<td>$B3P(B<td>$B3Q(B<td>$B3R(B<td>$B3S(B<td>$B3T(B<td>$B3U(B<td>$B3V(B<td>$B3W(B<td>$B3X(B<td>$B3Y(B<td>$B3Z(B<td>$B3[(B<td>$B3\(B<td>$B3](B<td>$B3^(B<td>$B3_(B
+   <tr><th>60<td>$B3`(B<td>$B3a(B<td>$B3b(B<td>$B3c(B<td>$B3d(B<td>$B3e(B<td>$B3f(B<td>$B3g(B<td>$B3h(B<td>$B3i(B<td>$B3j(B<td>$B3k(B<td>$B3l(B<td>$B3m(B<td>$B3n(B<td>$B3o(B
+   <tr><th>70<td>$B3p(B<td>$B3q(B<td>$B3r(B<td>$B3s(B<td>$B3t(B<td>$B3u(B<td>$B3v(B<td>$B3w(B<td>$B3x(B<td>$B3y(B<td>$B3z(B<td>$B3{(B<td>$B3|(B<td>$B3}(B<td>$B3~(B<td class=unused>&nbsp;
+  </table>
+  <table><caption>Multibyte: JIS X 0208:1983 (Row 34)</caption>
+   <tr><th> <th>0<th>1<th>2<th>3<th>4<th>5<th>6<th>7<th>8<th>9<th>A<th>B<th>C<th>D<th>E<th>F
+   <tr><th>20<td class=unused>&nbsp;<td>$B4!(B<td>$B4"(B<td>$B4#(B<td>$B4$(B<td>$B4%(B<td>$B4&(B<td>$B4'(B<td>$B4((B<td>$B4)(B<td>$B4*(B<td>$B4+(B<td>$B4,(B<td>$B4-(B<td>$B4.(B<td>$B4/(B
+   <tr><th>30<td>$B40(B<td>$B41(B<td>$B42(B<td>$B43(B<td>$B44(B<td>$B45(B<td>$B46(B<td>$B47(B<td>$B48(B<td>$B49(B<td>$B4:(B<td>$B4;(B<td>$B4<(B<td>$B4=(B<td>$B4>(B<td>$B4?(B
+   <tr><th>40<td>$B4@(B<td>$B4A(B<td>$B4B(B<td>$B4C(B<td>$B4D(B<td>$B4E(B<td>$B4F(B<td>$B4G(B<td>$B4H(B<td>$B4I(B<td>$B4J(B<td>$B4K(B<td>$B4L(B<td>$B4M(B<td>$B4N(B<td>$B4O(B
+   <tr><th>50<td>$B4P(B<td>$B4Q(B<td>$B4R(B<td>$B4S(B<td>$B4T(B<td>$B4U(B<td>$B4V(B<td>$B4W(B<td>$B4X(B<td>$B4Y(B<td>$B4Z(B<td>$B4[(B<td>$B4\(B<td>$B4](B<td>$B4^(B<td>$B4_(B
+   <tr><th>60<td>$B4`(B<td>$B4a(B<td>$B4b(B<td>$B4c(B<td>$B4d(B<td>$B4e(B<td>$B4f(B<td>$B4g(B<td>$B4h(B<td>$B4i(B<td>$B4j(B<td>$B4k(B<td>$B4l(B<td>$B4m(B<td>$B4n(B<td>$B4o(B
+   <tr><th>70<td>$B4p(B<td>$B4q(B<td>$B4r(B<td>$B4s(B<td>$B4t(B<td>$B4u(B<td>$B4v(B<td>$B4w(B<td>$B4x(B<td>$B4y(B<td>$B4z(B<td>$B4{(B<td>$B4|(B<td>$B4}(B<td>$B4~(B<td class=unused>&nbsp;
+  </table>
+  <table><caption>Multibyte: JIS X 0208:1983 (Row 35)</caption>
+   <tr><th> <th>0<th>1<th>2<th>3<th>4<th>5<th>6<th>7<th>8<th>9<th>A<th>B<th>C<th>D<th>E<th>F
+   <tr><th>20<td class=unused>&nbsp;<td>$B5!(B<td>$B5"(B<td>$B5#(B<td>$B5$(B<td>$B5%(B<td>$B5&(B<td>$B5'(B<td>$B5((B<td>$B5)(B<td>$B5*(B<td>$B5+(B<td>$B5,(B<td>$B5-(B<td>$B5.(B<td>$B5/(B
+   <tr><th>30<td>$B50(B<td>$B51(B<td>$B52(B<td>$B53(B<td>$B54(B<td>$B55(B<td>$B56(B<td>$B57(B<td>$B58(B<td>$B59(B<td>$B5:(B<td>$B5;(B<td>$B5<(B<td>$B5=(B<td>$B5>(B<td>$B5?(B
+   <tr><th>40<td>$B5@(B<td>$B5A(B<td>$B5B(B<td>$B5C(B<td>$B5D(B<td>$B5E(B<td>$B5F(B<td>$B5G(B<td>$B5H(B<td>$B5I(B<td>$B5J(B<td>$B5K(B<td>$B5L(B<td>$B5M(B<td>$B5N(B<td>$B5O(B
+   <tr><th>50<td>$B5P(B<td>$B5Q(B<td>$B5R(B<td>$B5S(B<td>$B5T(B<td>$B5U(B<td>$B5V(B<td>$B5W(B<td>$B5X(B<td>$B5Y(B<td>$B5Z(B<td>$B5[(B<td>$B5\(B<td>$B5](B<td>$B5^(B<td>$B5_(B
+   <tr><th>60<td>$B5`(B<td>$B5a(B<td>$B5b(B<td>$B5c(B<td>$B5d(B<td>$B5e(B<td>$B5f(B<td>$B5g(B<td>$B5h(B<td>$B5i(B<td>$B5j(B<td>$B5k(B<td>$B5l(B<td>$B5m(B<td>$B5n(B<td>$B5o(B
+   <tr><th>70<td>$B5p(B<td>$B5q(B<td>$B5r(B<td>$B5s(B<td>$B5t(B<td>$B5u(B<td>$B5v(B<td>$B5w(B<td>$B5x(B<td>$B5y(B<td>$B5z(B<td>$B5{(B<td>$B5|(B<td>$B5}(B<td>$B5~(B<td class=unused>&nbsp;
+  </table>
+  <table><caption>Multibyte: JIS X 0208:1983 (Row 36)</caption>
+   <tr><th> <th>0<th>1<th>2<th>3<th>4<th>5<th>6<th>7<th>8<th>9<th>A<th>B<th>C<th>D<th>E<th>F
+   <tr><th>20<td class=unused>&nbsp;<td>$B6!(B<td>$B6"(B<td>$B6#(B<td>$B6$(B<td>$B6%(B<td>$B6&(B<td>$B6'(B<td>$B6((B<td>$B6)(B<td>$B6*(B<td>$B6+(B<td>$B6,(B<td>$B6-(B<td>$B6.(B<td>$B6/(B
+   <tr><th>30<td>$B60(B<td>$B61(B<td>$B62(B<td>$B63(B<td>$B64(B<td>$B65(B<td>$B66(B<td>$B67(B<td>$B68(B<td>$B69(B<td>$B6:(B<td>$B6;(B<td>$B6<(B<td>$B6=(B<td>$B6>(B<td>$B6?(B
+   <tr><th>40<td>$B6@(B<td>$B6A(B<td>$B6B(B<td>$B6C(B<td>$B6D(B<td>$B6E(B<td>$B6F(B<td>$B6G(B<td>$B6H(B<td>$B6I(B<td>$B6J(B<td>$B6K(B<td>$B6L(B<td>$B6M(B<td>$B6N(B<td>$B6O(B
+   <tr><th>50<td>$B6P(B<td>$B6Q(B<td>$B6R(B<td>$B6S(B<td>$B6T(B<td>$B6U(B<td>$B6V(B<td>$B6W(B<td>$B6X(B<td>$B6Y(B<td>$B6Z(B<td>$B6[(B<td>$B6\(B<td>$B6](B<td>$B6^(B<td>$B6_(B
+   <tr><th>60<td>$B6`(B<td>$B6a(B<td>$B6b(B<td>$B6c(B<td>$B6d(B<td>$B6e(B<td>$B6f(B<td>$B6g(B<td>$B6h(B<td>$B6i(B<td>$B6j(B<td>$B6k(B<td>$B6l(B<td>$B6m(B<td>$B6n(B<td>$B6o(B
+   <tr><th>70<td>$B6p(B<td>$B6q(B<td>$B6r(B<td>$B6s(B<td>$B6t(B<td>$B6u(B<td>$B6v(B<td>$B6w(B<td>$B6x(B<td>$B6y(B<td>$B6z(B<td>$B6{(B<td>$B6|(B<td>$B6}(B<td>$B6~(B<td class=unused>&nbsp;
+  </table>
+  <table><caption>Multibyte: JIS X 0208:1983 (Row 37)</caption>
+   <tr><th> <th>0<th>1<th>2<th>3<th>4<th>5<th>6<th>7<th>8<th>9<th>A<th>B<th>C<th>D<th>E<th>F
+   <tr><th>20<td class=unused>&nbsp;<td>$B7!(B<td>$B7"(B<td>$B7#(B<td>$B7$(B<td>$B7%(B<td>$B7&(B<td>$B7'(B<td>$B7((B<td>$B7)(B<td>$B7*(B<td>$B7+(B<td>$B7,(B<td>$B7-(B<td>$B7.(B<td>$B7/(B
+   <tr><th>30<td>$B70(B<td>$B71(B<td>$B72(B<td>$B73(B<td>$B74(B<td>$B75(B<td>$B76(B<td>$B77(B<td>$B78(B<td>$B79(B<td>$B7:(B<td>$B7;(B<td>$B7<(B<td>$B7=(B<td>$B7>(B<td>$B7?(B
+   <tr><th>40<td>$B7@(B<td>$B7A(B<td>$B7B(B<td>$B7C(B<td>$B7D(B<td>$B7E(B<td>$B7F(B<td>$B7G(B<td>$B7H(B<td>$B7I(B<td>$B7J(B<td>$B7K(B<td>$B7L(B<td>$B7M(B<td>$B7N(B<td>$B7O(B
+   <tr><th>50<td>$B7P(B<td>$B7Q(B<td>$B7R(B<td>$B7S(B<td>$B7T(B<td>$B7U(B<td>$B7V(B<td>$B7W(B<td>$B7X(B<td>$B7Y(B<td>$B7Z(B<td>$B7[(B<td>$B7\(B<td>$B7](B<td>$B7^(B<td>$B7_(B
+   <tr><th>60<td>$B7`(B<td>$B7a(B<td>$B7b(B<td>$B7c(B<td>$B7d(B<td>$B7e(B<td>$B7f(B<td>$B7g(B<td>$B7h(B<td>$B7i(B<td>$B7j(B<td>$B7k(B<td>$B7l(B<td>$B7m(B<td>$B7n(B<td>$B7o(B
+   <tr><th>70<td>$B7p(B<td>$B7q(B<td>$B7r(B<td>$B7s(B<td>$B7t(B<td>$B7u(B<td>$B7v(B<td>$B7w(B<td>$B7x(B<td>$B7y(B<td>$B7z(B<td>$B7{(B<td>$B7|(B<td>$B7}(B<td>$B7~(B<td class=unused>&nbsp;
+  </table>
+  <table><caption>Multibyte: JIS X 0208:1983 (Row 38)</caption>
+   <tr><th> <th>0<th>1<th>2<th>3<th>4<th>5<th>6<th>7<th>8<th>9<th>A<th>B<th>C<th>D<th>E<th>F
+   <tr><th>20<td class=unused>&nbsp;<td>$B8!(B<td>$B8"(B<td>$B8#(B<td>$B8$(B<td>$B8%(B<td>$B8&(B<td>$B8'(B<td>$B8((B<td>$B8)(B<td>$B8*(B<td>$B8+(B<td>$B8,(B<td>$B8-(B<td>$B8.(B<td>$B8/(B
+   <tr><th>30<td>$B80(B<td>$B81(B<td>$B82(B<td>$B83(B<td>$B84(B<td>$B85(B<td>$B86(B<td>$B87(B<td>$B88(B<td>$B89(B<td>$B8:(B<td>$B8;(B<td>$B8<(B<td>$B8=(B<td>$B8>(B<td>$B8?(B
+   <tr><th>40<td>$B8@(B<td>$B8A(B<td>$B8B(B<td>$B8C(B<td>$B8D(B<td>$B8E(B<td>$B8F(B<td>$B8G(B<td>$B8H(B<td>$B8I(B<td>$B8J(B<td>$B8K(B<td>$B8L(B<td>$B8M(B<td>$B8N(B<td>$B8O(B
+   <tr><th>50<td>$B8P(B<td>$B8Q(B<td>$B8R(B<td>$B8S(B<td>$B8T(B<td>$B8U(B<td>$B8V(B<td>$B8W(B<td>$B8X(B<td>$B8Y(B<td>$B8Z(B<td>$B8[(B<td>$B8\(B<td>$B8](B<td>$B8^(B<td>$B8_(B
+   <tr><th>60<td>$B8`(B<td>$B8a(B<td>$B8b(B<td>$B8c(B<td>$B8d(B<td>$B8e(B<td>$B8f(B<td>$B8g(B<td>$B8h(B<td>$B8i(B<td>$B8j(B<td>$B8k(B<td>$B8l(B<td>$B8m(B<td>$B8n(B<td>$B8o(B
+   <tr><th>70<td>$B8p(B<td>$B8q(B<td>$B8r(B<td>$B8s(B<td>$B8t(B<td>$B8u(B<td>$B8v(B<td>$B8w(B<td>$B8x(B<td>$B8y(B<td>$B8z(B<td>$B8{(B<td>$B8|(B<td>$B8}(B<td>$B8~(B<td class=unused>&nbsp;
+  </table>
+  <table><caption>Multibyte: JIS X 0208:1983 (Row 39)</caption>
+   <tr><th> <th>0<th>1<th>2<th>3<th>4<th>5<th>6<th>7<th>8<th>9<th>A<th>B<th>C<th>D<th>E<th>F
+   <tr><th>20<td class=unused>&nbsp;<td>$B9!(B<td>$B9"(B<td>$B9#(B<td>$B9$(B<td>$B9%(B<td>$B9&(B<td>$B9'(B<td>$B9((B<td>$B9)(B<td>$B9*(B<td>$B9+(B<td>$B9,(B<td>$B9-(B<td>$B9.(B<td>$B9/(B
+   <tr><th>30<td>$B90(B<td>$B91(B<td>$B92(B<td>$B93(B<td>$B94(B<td>$B95(B<td>$B96(B<td>$B97(B<td>$B98(B<td>$B99(B<td>$B9:(B<td>$B9;(B<td>$B9<(B<td>$B9=(B<td>$B9>(B<td>$B9?(B
+   <tr><th>40<td>$B9@(B<td>$B9A(B<td>$B9B(B<td>$B9C(B<td>$B9D(B<td>$B9E(B<td>$B9F(B<td>$B9G(B<td>$B9H(B<td>$B9I(B<td>$B9J(B<td>$B9K(B<td>$B9L(B<td>$B9M(B<td>$B9N(B<td>$B9O(B
+   <tr><th>50<td>$B9P(B<td>$B9Q(B<td>$B9R(B<td>$B9S(B<td>$B9T(B<td>$B9U(B<td>$B9V(B<td>$B9W(B<td>$B9X(B<td>$B9Y(B<td>$B9Z(B<td>$B9[(B<td>$B9\(B<td>$B9](B<td>$B9^(B<td>$B9_(B
+   <tr><th>60<td>$B9`(B<td>$B9a(B<td>$B9b(B<td>$B9c(B<td>$B9d(B<td>$B9e(B<td>$B9f(B<td>$B9g(B<td>$B9h(B<td>$B9i(B<td>$B9j(B<td>$B9k(B<td>$B9l(B<td>$B9m(B<td>$B9n(B<td>$B9o(B
+   <tr><th>70<td>$B9p(B<td>$B9q(B<td>$B9r(B<td>$B9s(B<td>$B9t(B<td>$B9u(B<td>$B9v(B<td>$B9w(B<td>$B9x(B<td>$B9y(B<td>$B9z(B<td>$B9{(B<td>$B9|(B<td>$B9}(B<td>$B9~(B<td class=unused>&nbsp;
+  </table>
+  <table><caption>Multibyte: JIS X 0208:1983 (Row 3A)</caption>
+   <tr><th> <th>0<th>1<th>2<th>3<th>4<th>5<th>6<th>7<th>8<th>9<th>A<th>B<th>C<th>D<th>E<th>F
+   <tr><th>20<td class=unused>&nbsp;<td>$B:!(B<td>$B:"(B<td>$B:#(B<td>$B:$(B<td>$B:%(B<td>$B:&(B<td>$B:'(B<td>$B:((B<td>$B:)(B<td>$B:*(B<td>$B:+(B<td>$B:,(B<td>$B:-(B<td>$B:.(B<td>$B:/(B
+   <tr><th>30<td>$B:0(B<td>$B:1(B<td>$B:2(B<td>$B:3(B<td>$B:4(B<td>$B:5(B<td>$B:6(B<td>$B:7(B<td>$B:8(B<td>$B:9(B<td>$B::(B<td>$B:;(B<td>$B:<(B<td>$B:=(B<td>$B:>(B<td>$B:?(B
+   <tr><th>40<td>$B:@(B<td>$B:A(B<td>$B:B(B<td>$B:C(B<td>$B:D(B<td>$B:E(B<td>$B:F(B<td>$B:G(B<td>$B:H(B<td>$B:I(B<td>$B:J(B<td>$B:K(B<td>$B:L(B<td>$B:M(B<td>$B:N(B<td>$B:O(B
+   <tr><th>50<td>$B:P(B<td>$B:Q(B<td>$B:R(B<td>$B:S(B<td>$B:T(B<td>$B:U(B<td>$B:V(B<td>$B:W(B<td>$B:X(B<td>$B:Y(B<td>$B:Z(B<td>$B:[(B<td>$B:\(B<td>$B:](B<td>$B:^(B<td>$B:_(B
+   <tr><th>60<td>$B:`(B<td>$B:a(B<td>$B:b(B<td>$B:c(B<td>$B:d(B<td>$B:e(B<td>$B:f(B<td>$B:g(B<td>$B:h(B<td>$B:i(B<td>$B:j(B<td>$B:k(B<td>$B:l(B<td>$B:m(B<td>$B:n(B<td>$B:o(B
+   <tr><th>70<td>$B:p(B<td>$B:q(B<td>$B:r(B<td>$B:s(B<td>$B:t(B<td>$B:u(B<td>$B:v(B<td>$B:w(B<td>$B:x(B<td>$B:y(B<td>$B:z(B<td>$B:{(B<td>$B:|(B<td>$B:}(B<td>$B:~(B<td class=unused>&nbsp;
+  </table>
+  <table><caption>Multibyte: JIS X 0208:1983 (Row 3B)</caption>
+   <tr><th> <th>0<th>1<th>2<th>3<th>4<th>5<th>6<th>7<th>8<th>9<th>A<th>B<th>C<th>D<th>E<th>F
+   <tr><th>20<td class=unused>&nbsp;<td>$B;!(B<td>$B;"(B<td>$B;#(B<td>$B;$(B<td>$B;%(B<td>$B;&(B<td>$B;'(B<td>$B;((B<td>$B;)(B<td>$B;*(B<td>$B;+(B<td>$B;,(B<td>$B;-(B<td>$B;.(B<td>$B;/(B
+   <tr><th>30<td>$B;0(B<td>$B;1(B<td>$B;2(B<td>$B;3(B<td>$B;4(B<td>$B;5(B<td>$B;6(B<td>$B;7(B<td>$B;8(B<td>$B;9(B<td>$B;:(B<td>$B;;(B<td>$B;<(B<td>$B;=(B<td>$B;>(B<td>$B;?(B
+   <tr><th>40<td>$B;@(B<td>$B;A(B<td>$B;B(B<td>$B;C(B<td>$B;D(B<td>$B;E(B<td>$B;F(B<td>$B;G(B<td>$B;H(B<td>$B;I(B<td>$B;J(B<td>$B;K(B<td>$B;L(B<td>$B;M(B<td>$B;N(B<td>$B;O(B
+   <tr><th>50<td>$B;P(B<td>$B;Q(B<td>$B;R(B<td>$B;S(B<td>$B;T(B<td>$B;U(B<td>$B;V(B<td>$B;W(B<td>$B;X(B<td>$B;Y(B<td>$B;Z(B<td>$B;[(B<td>$B;\(B<td>$B;](B<td>$B;^(B<td>$B;_(B
+   <tr><th>60<td>$B;`(B<td>$B;a(B<td>$B;b(B<td>$B;c(B<td>$B;d(B<td>$B;e(B<td>$B;f(B<td>$B;g(B<td>$B;h(B<td>$B;i(B<td>$B;j(B<td>$B;k(B<td>$B;l(B<td>$B;m(B<td>$B;n(B<td>$B;o(B
+   <tr><th>70<td>$B;p(B<td>$B;q(B<td>$B;r(B<td>$B;s(B<td>$B;t(B<td>$B;u(B<td>$B;v(B<td>$B;w(B<td>$B;x(B<td>$B;y(B<td>$B;z(B<td>$B;{(B<td>$B;|(B<td>$B;}(B<td>$B;~(B<td class=unused>&nbsp;
+  </table>
+  <table><caption>Multibyte: JIS X 0208:1983 (Row 3C)</caption>
+   <tr><th> <th>0<th>1<th>2<th>3<th>4<th>5<th>6<th>7<th>8<th>9<th>A<th>B<th>C<th>D<th>E<th>F
+   <tr><th>20<td class=unused>&nbsp;<td>$B<!(B<td>$B<"(B<td>$B<#(B<td>$B<$(B<td>$B<%(B<td>$B<&(B<td>$B<'(B<td>$B<((B<td>$B<)(B<td>$B<*(B<td>$B<+(B<td>$B<,(B<td>$B<-(B<td>$B<.(B<td>$B</(B
+   <tr><th>30<td>$B<0(B<td>$B<1(B<td>$B<2(B<td>$B<3(B<td>$B<4(B<td>$B<5(B<td>$B<6(B<td>$B<7(B<td>$B<8(B<td>$B<9(B<td>$B<:(B<td>$B<;(B<td>$B<<(B<td>$B<=(B<td>$B<>(B<td>$B<?(B
+   <tr><th>40<td>$B<@(B<td>$B<A(B<td>$B<B(B<td>$B<C(B<td>$B<D(B<td>$B<E(B<td>$B<F(B<td>$B<G(B<td>$B<H(B<td>$B<I(B<td>$B<J(B<td>$B<K(B<td>$B<L(B<td>$B<M(B<td>$B<N(B<td>$B<O(B
+   <tr><th>50<td>$B<P(B<td>$B<Q(B<td>$B<R(B<td>$B<S(B<td>$B<T(B<td>$B<U(B<td>$B<V(B<td>$B<W(B<td>$B<X(B<td>$B<Y(B<td>$B<Z(B<td>$B<[(B<td>$B<\(B<td>$B<](B<td>$B<^(B<td>$B<_(B
+   <tr><th>60<td>$B<`(B<td>$B<a(B<td>$B<b(B<td>$B<c(B<td>$B<d(B<td>$B<e(B<td>$B<f(B<td>$B<g(B<td>$B<h(B<td>$B<i(B<td>$B<j(B<td>$B<k(B<td>$B<l(B<td>$B<m(B<td>$B<n(B<td>$B<o(B
+   <tr><th>70<td>$B<p(B<td>$B<q(B<td>$B<r(B<td>$B<s(B<td>$B<t(B<td>$B<u(B<td>$B<v(B<td>$B<w(B<td>$B<x(B<td>$B<y(B<td>$B<z(B<td>$B<{(B<td>$B<|(B<td>$B<}(B<td>$B<~(B<td class=unused>&nbsp;
+  </table>
+  <table><caption>Multibyte: JIS X 0208:1983 (Row 3D)</caption>
+   <tr><th> <th>0<th>1<th>2<th>3<th>4<th>5<th>6<th>7<th>8<th>9<th>A<th>B<th>C<th>D<th>E<th>F
+   <tr><th>20<td class=unused>&nbsp;<td>$B=!(B<td>$B="(B<td>$B=#(B<td>$B=$(B<td>$B=%(B<td>$B=&(B<td>$B='(B<td>$B=((B<td>$B=)(B<td>$B=*(B<td>$B=+(B<td>$B=,(B<td>$B=-(B<td>$B=.(B<td>$B=/(B
+   <tr><th>30<td>$B=0(B<td>$B=1(B<td>$B=2(B<td>$B=3(B<td>$B=4(B<td>$B=5(B<td>$B=6(B<td>$B=7(B<td>$B=8(B<td>$B=9(B<td>$B=:(B<td>$B=;(B<td>$B=<(B<td>$B==(B<td>$B=>(B<td>$B=?(B
+   <tr><th>40<td>$B=@(B<td>$B=A(B<td>$B=B(B<td>$B=C(B<td>$B=D(B<td>$B=E(B<td>$B=F(B<td>$B=G(B<td>$B=H(B<td>$B=I(B<td>$B=J(B<td>$B=K(B<td>$B=L(B<td>$B=M(B<td>$B=N(B<td>$B=O(B
+   <tr><th>50<td>$B=P(B<td>$B=Q(B<td>$B=R(B<td>$B=S(B<td>$B=T(B<td>$B=U(B<td>$B=V(B<td>$B=W(B<td>$B=X(B<td>$B=Y(B<td>$B=Z(B<td>$B=[(B<td>$B=\(B<td>$B=](B<td>$B=^(B<td>$B=_(B
+   <tr><th>60<td>$B=`(B<td>$B=a(B<td>$B=b(B<td>$B=c(B<td>$B=d(B<td>$B=e(B<td>$B=f(B<td>$B=g(B<td>$B=h(B<td>$B=i(B<td>$B=j(B<td>$B=k(B<td>$B=l(B<td>$B=m(B<td>$B=n(B<td>$B=o(B
+   <tr><th>70<td>$B=p(B<td>$B=q(B<td>$B=r(B<td>$B=s(B<td>$B=t(B<td>$B=u(B<td>$B=v(B<td>$B=w(B<td>$B=x(B<td>$B=y(B<td>$B=z(B<td>$B={(B<td>$B=|(B<td>$B=}(B<td>$B=~(B<td class=unused>&nbsp;
+  </table>
+  <table><caption>Multibyte: JIS X 0208:1983 (Row 3E)</caption>
+   <tr><th> <th>0<th>1<th>2<th>3<th>4<th>5<th>6<th>7<th>8<th>9<th>A<th>B<th>C<th>D<th>E<th>F
+   <tr><th>20<td class=unused>&nbsp;<td>$B>!(B<td>$B>"(B<td>$B>#(B<td>$B>$(B<td>$B>%(B<td>$B>&(B<td>$B>'(B<td>$B>((B<td>$B>)(B<td>$B>*(B<td>$B>+(B<td>$B>,(B<td>$B>-(B<td>$B>.(B<td>$B>/(B
+   <tr><th>30<td>$B>0(B<td>$B>1(B<td>$B>2(B<td>$B>3(B<td>$B>4(B<td>$B>5(B<td>$B>6(B<td>$B>7(B<td>$B>8(B<td>$B>9(B<td>$B>:(B<td>$B>;(B<td>$B><(B<td>$B>=(B<td>$B>>(B<td>$B>?(B
+   <tr><th>40<td>$B>@(B<td>$B>A(B<td>$B>B(B<td>$B>C(B<td>$B>D(B<td>$B>E(B<td>$B>F(B<td>$B>G(B<td>$B>H(B<td>$B>I(B<td>$B>J(B<td>$B>K(B<td>$B>L(B<td>$B>M(B<td>$B>N(B<td>$B>O(B
+   <tr><th>50<td>$B>P(B<td>$B>Q(B<td>$B>R(B<td>$B>S(B<td>$B>T(B<td>$B>U(B<td>$B>V(B<td>$B>W(B<td>$B>X(B<td>$B>Y(B<td>$B>Z(B<td>$B>[(B<td>$B>\(B<td>$B>](B<td>$B>^(B<td>$B>_(B
+   <tr><th>60<td>$B>`(B<td>$B>a(B<td>$B>b(B<td>$B>c(B<td>$B>d(B<td>$B>e(B<td>$B>f(B<td>$B>g(B<td>$B>h(B<td>$B>i(B<td>$B>j(B<td>$B>k(B<td>$B>l(B<td>$B>m(B<td>$B>n(B<td>$B>o(B
+   <tr><th>70<td>$B>p(B<td>$B>q(B<td>$B>r(B<td>$B>s(B<td>$B>t(B<td>$B>u(B<td>$B>v(B<td>$B>w(B<td>$B>x(B<td>$B>y(B<td>$B>z(B<td>$B>{(B<td>$B>|(B<td>$B>}(B<td>$B>~(B<td class=unused>&nbsp;
+  </table>
+  <table><caption>Multibyte: JIS X 0208:1983 (Row 3F)</caption>
+   <tr><th> <th>0<th>1<th>2<th>3<th>4<th>5<th>6<th>7<th>8<th>9<th>A<th>B<th>C<th>D<th>E<th>F
+   <tr><th>20<td class=unused>&nbsp;<td>$B?!(B<td>$B?"(B<td>$B?#(B<td>$B?$(B<td>$B?%(B<td>$B?&(B<td>$B?'(B<td>$B?((B<td>$B?)(B<td>$B?*(B<td>$B?+(B<td>$B?,(B<td>$B?-(B<td>$B?.(B<td>$B?/(B
+   <tr><th>30<td>$B?0(B<td>$B?1(B<td>$B?2(B<td>$B?3(B<td>$B?4(B<td>$B?5(B<td>$B?6(B<td>$B?7(B<td>$B?8(B<td>$B?9(B<td>$B?:(B<td>$B?;(B<td>$B?<(B<td>$B?=(B<td>$B?>(B<td>$B??(B
+   <tr><th>40<td>$B?@(B<td>$B?A(B<td>$B?B(B<td>$B?C(B<td>$B?D(B<td>$B?E(B<td>$B?F(B<td>$B?G(B<td>$B?H(B<td>$B?I(B<td>$B?J(B<td>$B?K(B<td>$B?L(B<td>$B?M(B<td>$B?N(B<td>$B?O(B
+   <tr><th>50<td>$B?P(B<td>$B?Q(B<td>$B?R(B<td>$B?S(B<td>$B?T(B<td>$B?U(B<td>$B?V(B<td>$B?W(B<td>$B?X(B<td>$B?Y(B<td>$B?Z(B<td>$B?[(B<td>$B?\(B<td>$B?](B<td>$B?^(B<td>$B?_(B
+   <tr><th>60<td>$B?`(B<td>$B?a(B<td>$B?b(B<td>$B?c(B<td>$B?d(B<td>$B?e(B<td>$B?f(B<td>$B?g(B<td>$B?h(B<td>$B?i(B<td>$B?j(B<td>$B?k(B<td>$B?l(B<td>$B?m(B<td>$B?n(B<td>$B?o(B
+   <tr><th>70<td>$B?p(B<td>$B?q(B<td>$B?r(B<td>$B?s(B<td>$B?t(B<td>$B?u(B<td>$B?v(B<td>$B?w(B<td>$B?x(B<td>$B?y(B<td>$B?z(B<td>$B?{(B<td>$B?|(B<td>$B?}(B<td>$B?~(B<td class=unused>&nbsp;
+  </table>
+  <table><caption>Multibyte: JIS X 0208:1983 (Row 40)</caption>
+   <tr><th> <th>0<th>1<th>2<th>3<th>4<th>5<th>6<th>7<th>8<th>9<th>A<th>B<th>C<th>D<th>E<th>F
+   <tr><th>20<td class=unused>&nbsp;<td>$B@!(B<td>$B@"(B<td>$B@#(B<td>$B@$(B<td>$B@%(B<td>$B@&(B<td>$B@'(B<td>$B@((B<td>$B@)(B<td>$B@*(B<td>$B@+(B<td>$B@,(B<td>$B@-(B<td>$B@.(B<td>$B@/(B
+   <tr><th>30<td>$B@0(B<td>$B@1(B<td>$B@2(B<td>$B@3(B<td>$B@4(B<td>$B@5(B<td>$B@6(B<td>$B@7(B<td>$B@8(B<td>$B@9(B<td>$B@:(B<td>$B@;(B<td>$B@<(B<td>$B@=(B<td>$B@>(B<td>$B@?(B
+   <tr><th>40<td>$B@@(B<td>$B@A(B<td>$B@B(B<td>$B@C(B<td>$B@D(B<td>$B@E(B<td>$B@F(B<td>$B@G(B<td>$B@H(B<td>$B@I(B<td>$B@J(B<td>$B@K(B<td>$B@L(B<td>$B@M(B<td>$B@N(B<td>$B@O(B
+   <tr><th>50<td>$B@P(B<td>$B@Q(B<td>$B@R(B<td>$B@S(B<td>$B@T(B<td>$B@U(B<td>$B@V(B<td>$B@W(B<td>$B@X(B<td>$B@Y(B<td>$B@Z(B<td>$B@[(B<td>$B@\(B<td>$B@](B<td>$B@^(B<td>$B@_(B
+   <tr><th>60<td>$B@`(B<td>$B@a(B<td>$B@b(B<td>$B@c(B<td>$B@d(B<td>$B@e(B<td>$B@f(B<td>$B@g(B<td>$B@h(B<td>$B@i(B<td>$B@j(B<td>$B@k(B<td>$B@l(B<td>$B@m(B<td>$B@n(B<td>$B@o(B
+   <tr><th>70<td>$B@p(B<td>$B@q(B<td>$B@r(B<td>$B@s(B<td>$B@t(B<td>$B@u(B<td>$B@v(B<td>$B@w(B<td>$B@x(B<td>$B@y(B<td>$B@z(B<td>$B@{(B<td>$B@|(B<td>$B@}(B<td>$B@~(B<td class=unused>&nbsp;
+  </table>
+  <table><caption>Multibyte: JIS X 0208:1983 (Row 41)</caption>
+   <tr><th> <th>0<th>1<th>2<th>3<th>4<th>5<th>6<th>7<th>8<th>9<th>A<th>B<th>C<th>D<th>E<th>F
+   <tr><th>20<td class=unused>&nbsp;<td>$BA!(B<td>$BA"(B<td>$BA#(B<td>$BA$(B<td>$BA%(B<td>$BA&(B<td>$BA'(B<td>$BA((B<td>$BA)(B<td>$BA*(B<td>$BA+(B<td>$BA,(B<td>$BA-(B<td>$BA.(B<td>$BA/(B
+   <tr><th>30<td>$BA0(B<td>$BA1(B<td>$BA2(B<td>$BA3(B<td>$BA4(B<td>$BA5(B<td>$BA6(B<td>$BA7(B<td>$BA8(B<td>$BA9(B<td>$BA:(B<td>$BA;(B<td>$BA<(B<td>$BA=(B<td>$BA>(B<td>$BA?(B
+   <tr><th>40<td>$BA@(B<td>$BAA(B<td>$BAB(B<td>$BAC(B<td>$BAD(B<td>$BAE(B<td>$BAF(B<td>$BAG(B<td>$BAH(B<td>$BAI(B<td>$BAJ(B<td>$BAK(B<td>$BAL(B<td>$BAM(B<td>$BAN(B<td>$BAO(B
+   <tr><th>50<td>$BAP(B<td>$BAQ(B<td>$BAR(B<td>$BAS(B<td>$BAT(B<td>$BAU(B<td>$BAV(B<td>$BAW(B<td>$BAX(B<td>$BAY(B<td>$BAZ(B<td>$BA[(B<td>$BA\(B<td>$BA](B<td>$BA^(B<td>$BA_(B
+   <tr><th>60<td>$BA`(B<td>$BAa(B<td>$BAb(B<td>$BAc(B<td>$BAd(B<td>$BAe(B<td>$BAf(B<td>$BAg(B<td>$BAh(B<td>$BAi(B<td>$BAj(B<td>$BAk(B<td>$BAl(B<td>$BAm(B<td>$BAn(B<td>$BAo(B
+   <tr><th>70<td>$BAp(B<td>$BAq(B<td>$BAr(B<td>$BAs(B<td>$BAt(B<td>$BAu(B<td>$BAv(B<td>$BAw(B<td>$BAx(B<td>$BAy(B<td>$BAz(B<td>$BA{(B<td>$BA|(B<td>$BA}(B<td>$BA~(B<td class=unused>&nbsp;
+  </table>
+  <table><caption>Multibyte: JIS X 0208:1983 (Row 42)</caption>
+   <tr><th> <th>0<th>1<th>2<th>3<th>4<th>5<th>6<th>7<th>8<th>9<th>A<th>B<th>C<th>D<th>E<th>F
+   <tr><th>20<td class=unused>&nbsp;<td>$BB!(B<td>$BB"(B<td>$BB#(B<td>$BB$(B<td>$BB%(B<td>$BB&(B<td>$BB'(B<td>$BB((B<td>$BB)(B<td>$BB*(B<td>$BB+(B<td>$BB,(B<td>$BB-(B<td>$BB.(B<td>$BB/(B
+   <tr><th>30<td>$BB0(B<td>$BB1(B<td>$BB2(B<td>$BB3(B<td>$BB4(B<td>$BB5(B<td>$BB6(B<td>$BB7(B<td>$BB8(B<td>$BB9(B<td>$BB:(B<td>$BB;(B<td>$BB<(B<td>$BB=(B<td>$BB>(B<td>$BB?(B
+   <tr><th>40<td>$BB@(B<td>$BBA(B<td>$BBB(B<td>$BBC(B<td>$BBD(B<td>$BBE(B<td>$BBF(B<td>$BBG(B<td>$BBH(B<td>$BBI(B<td>$BBJ(B<td>$BBK(B<td>$BBL(B<td>$BBM(B<td>$BBN(B<td>$BBO(B
+   <tr><th>50<td>$BBP(B<td>$BBQ(B<td>$BBR(B<td>$BBS(B<td>$BBT(B<td>$BBU(B<td>$BBV(B<td>$BBW(B<td>$BBX(B<td>$BBY(B<td>$BBZ(B<td>$BB[(B<td>$BB\(B<td>$BB](B<td>$BB^(B<td>$BB_(B
+   <tr><th>60<td>$BB`(B<td>$BBa(B<td>$BBb(B<td>$BBc(B<td>$BBd(B<td>$BBe(B<td>$BBf(B<td>$BBg(B<td>$BBh(B<td>$BBi(B<td>$BBj(B<td>$BBk(B<td>$BBl(B<td>$BBm(B<td>$BBn(B<td>$BBo(B
+   <tr><th>70<td>$BBp(B<td>$BBq(B<td>$BBr(B<td>$BBs(B<td>$BBt(B<td>$BBu(B<td>$BBv(B<td>$BBw(B<td>$BBx(B<td>$BBy(B<td>$BBz(B<td>$BB{(B<td>$BB|(B<td>$BB}(B<td>$BB~(B<td class=unused>&nbsp;
+  </table>
+  <table><caption>Multibyte: JIS X 0208:1983 (Row 43)</caption>
+   <tr><th> <th>0<th>1<th>2<th>3<th>4<th>5<th>6<th>7<th>8<th>9<th>A<th>B<th>C<th>D<th>E<th>F
+   <tr><th>20<td class=unused>&nbsp;<td>$BC!(B<td>$BC"(B<td>$BC#(B<td>$BC$(B<td>$BC%(B<td>$BC&(B<td>$BC'(B<td>$BC((B<td>$BC)(B<td>$BC*(B<td>$BC+(B<td>$BC,(B<td>$BC-(B<td>$BC.(B<td>$BC/(B
+   <tr><th>30<td>$BC0(B<td>$BC1(B<td>$BC2(B<td>$BC3(B<td>$BC4(B<td>$BC5(B<td>$BC6(B<td>$BC7(B<td>$BC8(B<td>$BC9(B<td>$BC:(B<td>$BC;(B<td>$BC<(B<td>$BC=(B<td>$BC>(B<td>$BC?(B
+   <tr><th>40<td>$BC@(B<td>$BCA(B<td>$BCB(B<td>$BCC(B<td>$BCD(B<td>$BCE(B<td>$BCF(B<td>$BCG(B<td>$BCH(B<td>$BCI(B<td>$BCJ(B<td>$BCK(B<td>$BCL(B<td>$BCM(B<td>$BCN(B<td>$BCO(B
+   <tr><th>50<td>$BCP(B<td>$BCQ(B<td>$BCR(B<td>$BCS(B<td>$BCT(B<td>$BCU(B<td>$BCV(B<td>$BCW(B<td>$BCX(B<td>$BCY(B<td>$BCZ(B<td>$BC[(B<td>$BC\(B<td>$BC](B<td>$BC^(B<td>$BC_(B
+   <tr><th>60<td>$BC`(B<td>$BCa(B<td>$BCb(B<td>$BCc(B<td>$BCd(B<td>$BCe(B<td>$BCf(B<td>$BCg(B<td>$BCh(B<td>$BCi(B<td>$BCj(B<td>$BCk(B<td>$BCl(B<td>$BCm(B<td>$BCn(B<td>$BCo(B
+   <tr><th>70<td>$BCp(B<td>$BCq(B<td>$BCr(B<td>$BCs(B<td>$BCt(B<td>$BCu(B<td>$BCv(B<td>$BCw(B<td>$BCx(B<td>$BCy(B<td>$BCz(B<td>$BC{(B<td>$BC|(B<td>$BC}(B<td>$BC~(B<td class=unused>&nbsp;
+  </table>
+  <table><caption>Multibyte: JIS X 0208:1983 (Row 44)</caption>
+   <tr><th> <th>0<th>1<th>2<th>3<th>4<th>5<th>6<th>7<th>8<th>9<th>A<th>B<th>C<th>D<th>E<th>F
+   <tr><th>20<td class=unused>&nbsp;<td>$BD!(B<td>$BD"(B<td>$BD#(B<td>$BD$(B<td>$BD%(B<td>$BD&(B<td>$BD'(B<td>$BD((B<td>$BD)(B<td>$BD*(B<td>$BD+(B<td>$BD,(B<td>$BD-(B<td>$BD.(B<td>$BD/(B
+   <tr><th>30<td>$BD0(B<td>$BD1(B<td>$BD2(B<td>$BD3(B<td>$BD4(B<td>$BD5(B<td>$BD6(B<td>$BD7(B<td>$BD8(B<td>$BD9(B<td>$BD:(B<td>$BD;(B<td>$BD<(B<td>$BD=(B<td>$BD>(B<td>$BD?(B
+   <tr><th>40<td>$BD@(B<td>$BDA(B<td>$BDB(B<td>$BDC(B<td>$BDD(B<td>$BDE(B<td>$BDF(B<td>$BDG(B<td>$BDH(B<td>$BDI(B<td>$BDJ(B<td>$BDK(B<td>$BDL(B<td>$BDM(B<td>$BDN(B<td>$BDO(B
+   <tr><th>50<td>$BDP(B<td>$BDQ(B<td>$BDR(B<td>$BDS(B<td>$BDT(B<td>$BDU(B<td>$BDV(B<td>$BDW(B<td>$BDX(B<td>$BDY(B<td>$BDZ(B<td>$BD[(B<td>$BD\(B<td>$BD](B<td>$BD^(B<td>$BD_(B
+   <tr><th>60<td>$BD`(B<td>$BDa(B<td>$BDb(B<td>$BDc(B<td>$BDd(B<td>$BDe(B<td>$BDf(B<td>$BDg(B<td>$BDh(B<td>$BDi(B<td>$BDj(B<td>$BDk(B<td>$BDl(B<td>$BDm(B<td>$BDn(B<td>$BDo(B
+   <tr><th>70<td>$BDp(B<td>$BDq(B<td>$BDr(B<td>$BDs(B<td>$BDt(B<td>$BDu(B<td>$BDv(B<td>$BDw(B<td>$BDx(B<td>$BDy(B<td>$BDz(B<td>$BD{(B<td>$BD|(B<td>$BD}(B<td>$BD~(B<td class=unused>&nbsp;
+  </table>
+  <table><caption>Multibyte: JIS X 0208:1983 (Row 45)</caption>
+   <tr><th> <th>0<th>1<th>2<th>3<th>4<th>5<th>6<th>7<th>8<th>9<th>A<th>B<th>C<th>D<th>E<th>F
+   <tr><th>20<td class=unused>&nbsp;<td>$BE!(B<td>$BE"(B<td>$BE#(B<td>$BE$(B<td>$BE%(B<td>$BE&(B<td>$BE'(B<td>$BE((B<td>$BE)(B<td>$BE*(B<td>$BE+(B<td>$BE,(B<td>$BE-(B<td>$BE.(B<td>$BE/(B
+   <tr><th>30<td>$BE0(B<td>$BE1(B<td>$BE2(B<td>$BE3(B<td>$BE4(B<td>$BE5(B<td>$BE6(B<td>$BE7(B<td>$BE8(B<td>$BE9(B<td>$BE:(B<td>$BE;(B<td>$BE<(B<td>$BE=(B<td>$BE>(B<td>$BE?(B
+   <tr><th>40<td>$BE@(B<td>$BEA(B<td>$BEB(B<td>$BEC(B<td>$BED(B<td>$BEE(B<td>$BEF(B<td>$BEG(B<td>$BEH(B<td>$BEI(B<td>$BEJ(B<td>$BEK(B<td>$BEL(B<td>$BEM(B<td>$BEN(B<td>$BEO(B
+   <tr><th>50<td>$BEP(B<td>$BEQ(B<td>$BER(B<td>$BES(B<td>$BET(B<td>$BEU(B<td>$BEV(B<td>$BEW(B<td>$BEX(B<td>$BEY(B<td>$BEZ(B<td>$BE[(B<td>$BE\(B<td>$BE](B<td>$BE^(B<td>$BE_(B
+   <tr><th>60<td>$BE`(B<td>$BEa(B<td>$BEb(B<td>$BEc(B<td>$BEd(B<td>$BEe(B<td>$BEf(B<td>$BEg(B<td>$BEh(B<td>$BEi(B<td>$BEj(B<td>$BEk(B<td>$BEl(B<td>$BEm(B<td>$BEn(B<td>$BEo(B
+   <tr><th>70<td>$BEp(B<td>$BEq(B<td>$BEr(B<td>$BEs(B<td>$BEt(B<td>$BEu(B<td>$BEv(B<td>$BEw(B<td>$BEx(B<td>$BEy(B<td>$BEz(B<td>$BE{(B<td>$BE|(B<td>$BE}(B<td>$BE~(B<td class=unused>&nbsp;
+  </table>
+  <table><caption>Multibyte: JIS X 0208:1983 (Row 46)</caption>
+   <tr><th> <th>0<th>1<th>2<th>3<th>4<th>5<th>6<th>7<th>8<th>9<th>A<th>B<th>C<th>D<th>E<th>F
+   <tr><th>20<td class=unused>&nbsp;<td>$BF!(B<td>$BF"(B<td>$BF#(B<td>$BF$(B<td>$BF%(B<td>$BF&(B<td>$BF'(B<td>$BF((B<td>$BF)(B<td>$BF*(B<td>$BF+(B<td>$BF,(B<td>$BF-(B<td>$BF.(B<td>$BF/(B
+   <tr><th>30<td>$BF0(B<td>$BF1(B<td>$BF2(B<td>$BF3(B<td>$BF4(B<td>$BF5(B<td>$BF6(B<td>$BF7(B<td>$BF8(B<td>$BF9(B<td>$BF:(B<td>$BF;(B<td>$BF<(B<td>$BF=(B<td>$BF>(B<td>$BF?(B
+   <tr><th>40<td>$BF@(B<td>$BFA(B<td>$BFB(B<td>$BFC(B<td>$BFD(B<td>$BFE(B<td>$BFF(B<td>$BFG(B<td>$BFH(B<td>$BFI(B<td>$BFJ(B<td>$BFK(B<td>$BFL(B<td>$BFM(B<td>$BFN(B<td>$BFO(B
+   <tr><th>50<td>$BFP(B<td>$BFQ(B<td>$BFR(B<td>$BFS(B<td>$BFT(B<td>$BFU(B<td>$BFV(B<td>$BFW(B<td>$BFX(B<td>$BFY(B<td>$BFZ(B<td>$BF[(B<td>$BF\(B<td>$BF](B<td>$BF^(B<td>$BF_(B
+   <tr><th>60<td>$BF`(B<td>$BFa(B<td>$BFb(B<td>$BFc(B<td>$BFd(B<td>$BFe(B<td>$BFf(B<td>$BFg(B<td>$BFh(B<td>$BFi(B<td>$BFj(B<td>$BFk(B<td>$BFl(B<td>$BFm(B<td>$BFn(B<td>$BFo(B
+   <tr><th>70<td>$BFp(B<td>$BFq(B<td>$BFr(B<td>$BFs(B<td>$BFt(B<td>$BFu(B<td>$BFv(B<td>$BFw(B<td>$BFx(B<td>$BFy(B<td>$BFz(B<td>$BF{(B<td>$BF|(B<td>$BF}(B<td>$BF~(B<td class=unused>&nbsp;
+  </table>
+  <table><caption>Multibyte: JIS X 0208:1983 (Row 47)</caption>
+   <tr><th> <th>0<th>1<th>2<th>3<th>4<th>5<th>6<th>7<th>8<th>9<th>A<th>B<th>C<th>D<th>E<th>F
+   <tr><th>20<td class=unused>&nbsp;<td>$BG!(B<td>$BG"(B<td>$BG#(B<td>$BG$(B<td>$BG%(B<td>$BG&(B<td>$BG'(B<td>$BG((B<td>$BG)(B<td>$BG*(B<td>$BG+(B<td>$BG,(B<td>$BG-(B<td>$BG.(B<td>$BG/(B
+   <tr><th>30<td>$BG0(B<td>$BG1(B<td>$BG2(B<td>$BG3(B<td>$BG4(B<td>$BG5(B<td>$BG6(B<td>$BG7(B<td>$BG8(B<td>$BG9(B<td>$BG:(B<td>$BG;(B<td>$BG<(B<td>$BG=(B<td>$BG>(B<td>$BG?(B
+   <tr><th>40<td>$BG@(B<td>$BGA(B<td>$BGB(B<td>$BGC(B<td>$BGD(B<td>$BGE(B<td>$BGF(B<td>$BGG(B<td>$BGH(B<td>$BGI(B<td>$BGJ(B<td>$BGK(B<td>$BGL(B<td>$BGM(B<td>$BGN(B<td>$BGO(B
+   <tr><th>50<td>$BGP(B<td>$BGQ(B<td>$BGR(B<td>$BGS(B<td>$BGT(B<td>$BGU(B<td>$BGV(B<td>$BGW(B<td>$BGX(B<td>$BGY(B<td>$BGZ(B<td>$BG[(B<td>$BG\(B<td>$BG](B<td>$BG^(B<td>$BG_(B
+   <tr><th>60<td>$BG`(B<td>$BGa(B<td>$BGb(B<td>$BGc(B<td>$BGd(B<td>$BGe(B<td>$BGf(B<td>$BGg(B<td>$BGh(B<td>$BGi(B<td>$BGj(B<td>$BGk(B<td>$BGl(B<td>$BGm(B<td>$BGn(B<td>$BGo(B
+   <tr><th>70<td>$BGp(B<td>$BGq(B<td>$BGr(B<td>$BGs(B<td>$BGt(B<td>$BGu(B<td>$BGv(B<td>$BGw(B<td>$BGx(B<td>$BGy(B<td>$BGz(B<td>$BG{(B<td>$BG|(B<td>$BG}(B<td>$BG~(B<td class=unused>&nbsp;
+  </table>
+  <table><caption>Multibyte: JIS X 0208:1983 (Row 48)</caption>
+   <tr><th> <th>0<th>1<th>2<th>3<th>4<th>5<th>6<th>7<th>8<th>9<th>A<th>B<th>C<th>D<th>E<th>F
+   <tr><th>20<td class=unused>&nbsp;<td>$BH!(B<td>$BH"(B<td>$BH#(B<td>$BH$(B<td>$BH%(B<td>$BH&(B<td>$BH'(B<td>$BH((B<td>$BH)(B<td>$BH*(B<td>$BH+(B<td>$BH,(B<td>$BH-(B<td>$BH.(B<td>$BH/(B
+   <tr><th>30<td>$BH0(B<td>$BH1(B<td>$BH2(B<td>$BH3(B<td>$BH4(B<td>$BH5(B<td>$BH6(B<td>$BH7(B<td>$BH8(B<td>$BH9(B<td>$BH:(B<td>$BH;(B<td>$BH<(B<td>$BH=(B<td>$BH>(B<td>$BH?(B
+   <tr><th>40<td>$BH@(B<td>$BHA(B<td>$BHB(B<td>$BHC(B<td>$BHD(B<td>$BHE(B<td>$BHF(B<td>$BHG(B<td>$BHH(B<td>$BHI(B<td>$BHJ(B<td>$BHK(B<td>$BHL(B<td>$BHM(B<td>$BHN(B<td>$BHO(B
+   <tr><th>50<td>$BHP(B<td>$BHQ(B<td>$BHR(B<td>$BHS(B<td>$BHT(B<td>$BHU(B<td>$BHV(B<td>$BHW(B<td>$BHX(B<td>$BHY(B<td>$BHZ(B<td>$BH[(B<td>$BH\(B<td>$BH](B<td>$BH^(B<td>$BH_(B
+   <tr><th>60<td>$BH`(B<td>$BHa(B<td>$BHb(B<td>$BHc(B<td>$BHd(B<td>$BHe(B<td>$BHf(B<td>$BHg(B<td>$BHh(B<td>$BHi(B<td>$BHj(B<td>$BHk(B<td>$BHl(B<td>$BHm(B<td>$BHn(B<td>$BHo(B
+   <tr><th>70<td>$BHp(B<td>$BHq(B<td>$BHr(B<td>$BHs(B<td>$BHt(B<td>$BHu(B<td>$BHv(B<td>$BHw(B<td>$BHx(B<td>$BHy(B<td>$BHz(B<td>$BH{(B<td>$BH|(B<td>$BH}(B<td>$BH~(B<td class=unused>&nbsp;
+  </table>
+  <table><caption>Multibyte: JIS X 0208:1983 (Row 49)</caption>
+   <tr><th> <th>0<th>1<th>2<th>3<th>4<th>5<th>6<th>7<th>8<th>9<th>A<th>B<th>C<th>D<th>E<th>F
+   <tr><th>20<td class=unused>&nbsp;<td>$BI!(B<td>$BI"(B<td>$BI#(B<td>$BI$(B<td>$BI%(B<td>$BI&(B<td>$BI'(B<td>$BI((B<td>$BI)(B<td>$BI*(B<td>$BI+(B<td>$BI,(B<td>$BI-(B<td>$BI.(B<td>$BI/(B
+   <tr><th>30<td>$BI0(B<td>$BI1(B<td>$BI2(B<td>$BI3(B<td>$BI4(B<td>$BI5(B<td>$BI6(B<td>$BI7(B<td>$BI8(B<td>$BI9(B<td>$BI:(B<td>$BI;(B<td>$BI<(B<td>$BI=(B<td>$BI>(B<td>$BI?(B
+   <tr><th>40<td>$BI@(B<td>$BIA(B<td>$BIB(B<td>$BIC(B<td>$BID(B<td>$BIE(B<td>$BIF(B<td>$BIG(B<td>$BIH(B<td>$BII(B<td>$BIJ(B<td>$BIK(B<td>$BIL(B<td>$BIM(B<td>$BIN(B<td>$BIO(B
+   <tr><th>50<td>$BIP(B<td>$BIQ(B<td>$BIR(B<td>$BIS(B<td>$BIT(B<td>$BIU(B<td>$BIV(B<td>$BIW(B<td>$BIX(B<td>$BIY(B<td>$BIZ(B<td>$BI[(B<td>$BI\(B<td>$BI](B<td>$BI^(B<td>$BI_(B
+   <tr><th>60<td>$BI`(B<td>$BIa(B<td>$BIb(B<td>$BIc(B<td>$BId(B<td>$BIe(B<td>$BIf(B<td>$BIg(B<td>$BIh(B<td>$BIi(B<td>$BIj(B<td>$BIk(B<td>$BIl(B<td>$BIm(B<td>$BIn(B<td>$BIo(B
+   <tr><th>70<td>$BIp(B<td>$BIq(B<td>$BIr(B<td>$BIs(B<td>$BIt(B<td>$BIu(B<td>$BIv(B<td>$BIw(B<td>$BIx(B<td>$BIy(B<td>$BIz(B<td>$BI{(B<td>$BI|(B<td>$BI}(B<td>$BI~(B<td class=unused>&nbsp;
+  </table>
+  <table><caption>Multibyte: JIS X 0208:1983 (Row 4A)</caption>
+   <tr><th> <th>0<th>1<th>2<th>3<th>4<th>5<th>6<th>7<th>8<th>9<th>A<th>B<th>C<th>D<th>E<th>F
+   <tr><th>20<td class=unused>&nbsp;<td>$BJ!(B<td>$BJ"(B<td>$BJ#(B<td>$BJ$(B<td>$BJ%(B<td>$BJ&(B<td>$BJ'(B<td>$BJ((B<td>$BJ)(B<td>$BJ*(B<td>$BJ+(B<td>$BJ,(B<td>$BJ-(B<td>$BJ.(B<td>$BJ/(B
+   <tr><th>30<td>$BJ0(B<td>$BJ1(B<td>$BJ2(B<td>$BJ3(B<td>$BJ4(B<td>$BJ5(B<td>$BJ6(B<td>$BJ7(B<td>$BJ8(B<td>$BJ9(B<td>$BJ:(B<td>$BJ;(B<td>$BJ<(B<td>$BJ=(B<td>$BJ>(B<td>$BJ?(B
+   <tr><th>40<td>$BJ@(B<td>$BJA(B<td>$BJB(B<td>$BJC(B<td>$BJD(B<td>$BJE(B<td>$BJF(B<td>$BJG(B<td>$BJH(B<td>$BJI(B<td>$BJJ(B<td>$BJK(B<td>$BJL(B<td>$BJM(B<td>$BJN(B<td>$BJO(B
+   <tr><th>50<td>$BJP(B<td>$BJQ(B<td>$BJR(B<td>$BJS(B<td>$BJT(B<td>$BJU(B<td>$BJV(B<td>$BJW(B<td>$BJX(B<td>$BJY(B<td>$BJZ(B<td>$BJ[(B<td>$BJ\(B<td>$BJ](B<td>$BJ^(B<td>$BJ_(B
+   <tr><th>60<td>$BJ`(B<td>$BJa(B<td>$BJb(B<td>$BJc(B<td>$BJd(B<td>$BJe(B<td>$BJf(B<td>$BJg(B<td>$BJh(B<td>$BJi(B<td>$BJj(B<td>$BJk(B<td>$BJl(B<td>$BJm(B<td>$BJn(B<td>$BJo(B
+   <tr><th>70<td>$BJp(B<td>$BJq(B<td>$BJr(B<td>$BJs(B<td>$BJt(B<td>$BJu(B<td>$BJv(B<td>$BJw(B<td>$BJx(B<td>$BJy(B<td>$BJz(B<td>$BJ{(B<td>$BJ|(B<td>$BJ}(B<td>$BJ~(B<td class=unused>&nbsp;
+  </table>
+  <table><caption>Multibyte: JIS X 0208:1983 (Row 4B)</caption>
+   <tr><th> <th>0<th>1<th>2<th>3<th>4<th>5<th>6<th>7<th>8<th>9<th>A<th>B<th>C<th>D<th>E<th>F
+   <tr><th>20<td class=unused>&nbsp;<td>$BK!(B<td>$BK"(B<td>$BK#(B<td>$BK$(B<td>$BK%(B<td>$BK&(B<td>$BK'(B<td>$BK((B<td>$BK)(B<td>$BK*(B<td>$BK+(B<td>$BK,(B<td>$BK-(B<td>$BK.(B<td>$BK/(B
+   <tr><th>30<td>$BK0(B<td>$BK1(B<td>$BK2(B<td>$BK3(B<td>$BK4(B<td>$BK5(B<td>$BK6(B<td>$BK7(B<td>$BK8(B<td>$BK9(B<td>$BK:(B<td>$BK;(B<td>$BK<(B<td>$BK=(B<td>$BK>(B<td>$BK?(B
+   <tr><th>40<td>$BK@(B<td>$BKA(B<td>$BKB(B<td>$BKC(B<td>$BKD(B<td>$BKE(B<td>$BKF(B<td>$BKG(B<td>$BKH(B<td>$BKI(B<td>$BKJ(B<td>$BKK(B<td>$BKL(B<td>$BKM(B<td>$BKN(B<td>$BKO(B
+   <tr><th>50<td>$BKP(B<td>$BKQ(B<td>$BKR(B<td>$BKS(B<td>$BKT(B<td>$BKU(B<td>$BKV(B<td>$BKW(B<td>$BKX(B<td>$BKY(B<td>$BKZ(B<td>$BK[(B<td>$BK\(B<td>$BK](B<td>$BK^(B<td>$BK_(B
+   <tr><th>60<td>$BK`(B<td>$BKa(B<td>$BKb(B<td>$BKc(B<td>$BKd(B<td>$BKe(B<td>$BKf(B<td>$BKg(B<td>$BKh(B<td>$BKi(B<td>$BKj(B<td>$BKk(B<td>$BKl(B<td>$BKm(B<td>$BKn(B<td>$BKo(B
+   <tr><th>70<td>$BKp(B<td>$BKq(B<td>$BKr(B<td>$BKs(B<td>$BKt(B<td>$BKu(B<td>$BKv(B<td>$BKw(B<td>$BKx(B<td>$BKy(B<td>$BKz(B<td>$BK{(B<td>$BK|(B<td>$BK}(B<td>$BK~(B<td class=unused>&nbsp;
+  </table>
+  <table><caption>Multibyte: JIS X 0208:1983 (Row 4C)</caption>
+   <tr><th> <th>0<th>1<th>2<th>3<th>4<th>5<th>6<th>7<th>8<th>9<th>A<th>B<th>C<th>D<th>E<th>F
+   <tr><th>20<td class=unused>&nbsp;<td>$BL!(B<td>$BL"(B<td>$BL#(B<td>$BL$(B<td>$BL%(B<td>$BL&(B<td>$BL'(B<td>$BL((B<td>$BL)(B<td>$BL*(B<td>$BL+(B<td>$BL,(B<td>$BL-(B<td>$BL.(B<td>$BL/(B
+   <tr><th>30<td>$BL0(B<td>$BL1(B<td>$BL2(B<td>$BL3(B<td>$BL4(B<td>$BL5(B<td>$BL6(B<td>$BL7(B<td>$BL8(B<td>$BL9(B<td>$BL:(B<td>$BL;(B<td>$BL<(B<td>$BL=(B<td>$BL>(B<td>$BL?(B
+   <tr><th>40<td>$BL@(B<td>$BLA(B<td>$BLB(B<td>$BLC(B<td>$BLD(B<td>$BLE(B<td>$BLF(B<td>$BLG(B<td>$BLH(B<td>$BLI(B<td>$BLJ(B<td>$BLK(B<td>$BLL(B<td>$BLM(B<td>$BLN(B<td>$BLO(B
+   <tr><th>50<td>$BLP(B<td>$BLQ(B<td>$BLR(B<td>$BLS(B<td>$BLT(B<td>$BLU(B<td>$BLV(B<td>$BLW(B<td>$BLX(B<td>$BLY(B<td>$BLZ(B<td>$BL[(B<td>$BL\(B<td>$BL](B<td>$BL^(B<td>$BL_(B
+   <tr><th>60<td>$BL`(B<td>$BLa(B<td>$BLb(B<td>$BLc(B<td>$BLd(B<td>$BLe(B<td>$BLf(B<td>$BLg(B<td>$BLh(B<td>$BLi(B<td>$BLj(B<td>$BLk(B<td>$BLl(B<td>$BLm(B<td>$BLn(B<td>$BLo(B
+   <tr><th>70<td>$BLp(B<td>$BLq(B<td>$BLr(B<td>$BLs(B<td>$BLt(B<td>$BLu(B<td>$BLv(B<td>$BLw(B<td>$BLx(B<td>$BLy(B<td>$BLz(B<td>$BL{(B<td>$BL|(B<td>$BL}(B<td>$BL~(B<td class=unused>&nbsp;
+  </table>
+  <table><caption>Multibyte: JIS X 0208:1983 (Row 4D)</caption>
+   <tr><th> <th>0<th>1<th>2<th>3<th>4<th>5<th>6<th>7<th>8<th>9<th>A<th>B<th>C<th>D<th>E<th>F
+   <tr><th>20<td class=unused>&nbsp;<td>$BM!(B<td>$BM"(B<td>$BM#(B<td>$BM$(B<td>$BM%(B<td>$BM&(B<td>$BM'(B<td>$BM((B<td>$BM)(B<td>$BM*(B<td>$BM+(B<td>$BM,(B<td>$BM-(B<td>$BM.(B<td>$BM/(B
+   <tr><th>30<td>$BM0(B<td>$BM1(B<td>$BM2(B<td>$BM3(B<td>$BM4(B<td>$BM5(B<td>$BM6(B<td>$BM7(B<td>$BM8(B<td>$BM9(B<td>$BM:(B<td>$BM;(B<td>$BM<(B<td>$BM=(B<td>$BM>(B<td>$BM?(B
+   <tr><th>40<td>$BM@(B<td>$BMA(B<td>$BMB(B<td>$BMC(B<td>$BMD(B<td>$BME(B<td>$BMF(B<td>$BMG(B<td>$BMH(B<td>$BMI(B<td>$BMJ(B<td>$BMK(B<td>$BML(B<td>$BMM(B<td>$BMN(B<td>$BMO(B
+   <tr><th>50<td>$BMP(B<td>$BMQ(B<td>$BMR(B<td>$BMS(B<td>$BMT(B<td>$BMU(B<td>$BMV(B<td>$BMW(B<td>$BMX(B<td>$BMY(B<td>$BMZ(B<td>$BM[(B<td>$BM\(B<td>$BM](B<td>$BM^(B<td>$BM_(B
+   <tr><th>60<td>$BM`(B<td>$BMa(B<td>$BMb(B<td>$BMc(B<td>$BMd(B<td>$BMe(B<td>$BMf(B<td>$BMg(B<td>$BMh(B<td>$BMi(B<td>$BMj(B<td>$BMk(B<td>$BMl(B<td>$BMm(B<td>$BMn(B<td>$BMo(B
+   <tr><th>70<td>$BMp(B<td>$BMq(B<td>$BMr(B<td>$BMs(B<td>$BMt(B<td>$BMu(B<td>$BMv(B<td>$BMw(B<td>$BMx(B<td>$BMy(B<td>$BMz(B<td>$BM{(B<td>$BM|(B<td>$BM}(B<td>$BM~(B<td class=unused>&nbsp;
+  </table>
+  <table><caption>Multibyte: JIS X 0208:1983 (Row 4E)</caption>
+   <tr><th> <th>0<th>1<th>2<th>3<th>4<th>5<th>6<th>7<th>8<th>9<th>A<th>B<th>C<th>D<th>E<th>F
+   <tr><th>20<td class=unused>&nbsp;<td>$BN!(B<td>$BN"(B<td>$BN#(B<td>$BN$(B<td>$BN%(B<td>$BN&(B<td>$BN'(B<td>$BN((B<td>$BN)(B<td>$BN*(B<td>$BN+(B<td>$BN,(B<td>$BN-(B<td>$BN.(B<td>$BN/(B
+   <tr><th>30<td>$BN0(B<td>$BN1(B<td>$BN2(B<td>$BN3(B<td>$BN4(B<td>$BN5(B<td>$BN6(B<td>$BN7(B<td>$BN8(B<td>$BN9(B<td>$BN:(B<td>$BN;(B<td>$BN<(B<td>$BN=(B<td>$BN>(B<td>$BN?(B
+   <tr><th>40<td>$BN@(B<td>$BNA(B<td>$BNB(B<td>$BNC(B<td>$BND(B<td>$BNE(B<td>$BNF(B<td>$BNG(B<td>$BNH(B<td>$BNI(B<td>$BNJ(B<td>$BNK(B<td>$BNL(B<td>$BNM(B<td>$BNN(B<td>$BNO(B
+   <tr><th>50<td>$BNP(B<td>$BNQ(B<td>$BNR(B<td>$BNS(B<td>$BNT(B<td>$BNU(B<td>$BNV(B<td>$BNW(B<td>$BNX(B<td>$BNY(B<td>$BNZ(B<td>$BN[(B<td>$BN\(B<td>$BN](B<td>$BN^(B<td>$BN_(B
+   <tr><th>60<td>$BN`(B<td>$BNa(B<td>$BNb(B<td>$BNc(B<td>$BNd(B<td>$BNe(B<td>$BNf(B<td>$BNg(B<td>$BNh(B<td>$BNi(B<td>$BNj(B<td>$BNk(B<td>$BNl(B<td>$BNm(B<td>$BNn(B<td>$BNo(B
+   <tr><th>70<td>$BNp(B<td>$BNq(B<td>$BNr(B<td>$BNs(B<td>$BNt(B<td>$BNu(B<td>$BNv(B<td>$BNw(B<td>$BNx(B<td>$BNy(B<td>$BNz(B<td>$BN{(B<td>$BN|(B<td>$BN}(B<td>$BN~(B<td class=unused>&nbsp;
+  </table>
+  <table><caption>Multibyte: JIS X 0208:1983 (Row 4F)</caption>
+   <tr><th> <th>0<th>1<th>2<th>3<th>4<th>5<th>6<th>7<th>8<th>9<th>A<th>B<th>C<th>D<th>E<th>F
+   <tr><th>20<td class=unused>&nbsp;<td>$BO!(B<td>$BO"(B<td>$BO#(B<td>$BO$(B<td>$BO%(B<td>$BO&(B<td>$BO'(B<td>$BO((B<td>$BO)(B<td>$BO*(B<td>$BO+(B<td>$BO,(B<td>$BO-(B<td>$BO.(B<td>$BO/(B
+   <tr><th>30<td>$BO0(B<td>$BO1(B<td>$BO2(B<td>$BO3(B<td>$BO4(B<td>$BO5(B<td>$BO6(B<td>$BO7(B<td>$BO8(B<td>$BO9(B<td>$BO:(B<td>$BO;(B<td>$BO<(B<td>$BO=(B<td>$BO>(B<td>$BO?(B
+   <tr><th>40<td>$BO@(B<td>$BOA(B<td>$BOB(B<td>$BOC(B<td>$BOD(B<td>$BOE(B<td>$BOF(B<td>$BOG(B<td>$BOH(B<td>$BOI(B<td>$BOJ(B<td>$BOK(B<td>$BOL(B<td>$BOM(B<td>$BON(B<td>$BOO(B
+   <tr><th>50<td>$BOP(B<td>$BOQ(B<td>$BOR(B<td>$BOS(B<td>$BOT(B<td>$BOU(B<td>$BOV(B<td>$BOW(B<td>$BOX(B<td>$BOY(B<td>$BOZ(B<td>$BO[(B<td>$BO\(B<td>$BO](B<td>$BO^(B<td>$BO_(B
+   <tr><th>60<td>$BO`(B<td>$BOa(B<td>$BOb(B<td>$BOc(B<td>$BOd(B<td>$BOe(B<td>$BOf(B<td>$BOg(B<td>$BOh(B<td>$BOi(B<td>$BOj(B<td>$BOk(B<td>$BOl(B<td>$BOm(B<td>$BOn(B<td>$BOo(B
+   <tr><th>70<td>$BOp(B<td>$BOq(B<td>$BOr(B<td>$BOs(B<td>$BOt(B<td>$BOu(B<td>$BOv(B<td>$BOw(B<td>$BOx(B<td>$BOy(B<td>$BOz(B<td>$BO{(B<td>$BO|(B<td>$BO}(B<td>$BO~(B<td class=unused>&nbsp;
+  </table>
+  <table><caption>Multibyte: JIS X 0208:1983 (Row 50)</caption>
+   <tr><th> <th>0<th>1<th>2<th>3<th>4<th>5<th>6<th>7<th>8<th>9<th>A<th>B<th>C<th>D<th>E<th>F
+   <tr><th>20<td class=unused>&nbsp;<td>$BP!(B<td>$BP"(B<td>$BP#(B<td>$BP$(B<td>$BP%(B<td>$BP&(B<td>$BP'(B<td>$BP((B<td>$BP)(B<td>$BP*(B<td>$BP+(B<td>$BP,(B<td>$BP-(B<td>$BP.(B<td>$BP/(B
+   <tr><th>30<td>$BP0(B<td>$BP1(B<td>$BP2(B<td>$BP3(B<td>$BP4(B<td>$BP5(B<td>$BP6(B<td>$BP7(B<td>$BP8(B<td>$BP9(B<td>$BP:(B<td>$BP;(B<td>$BP<(B<td>$BP=(B<td>$BP>(B<td>$BP?(B
+   <tr><th>40<td>$BP@(B<td>$BPA(B<td>$BPB(B<td>$BPC(B<td>$BPD(B<td>$BPE(B<td>$BPF(B<td>$BPG(B<td>$BPH(B<td>$BPI(B<td>$BPJ(B<td>$BPK(B<td>$BPL(B<td>$BPM(B<td>$BPN(B<td>$BPO(B
+   <tr><th>50<td>$BPP(B<td>$BPQ(B<td>$BPR(B<td>$BPS(B<td>$BPT(B<td>$BPU(B<td>$BPV(B<td>$BPW(B<td>$BPX(B<td>$BPY(B<td>$BPZ(B<td>$BP[(B<td>$BP\(B<td>$BP](B<td>$BP^(B<td>$BP_(B
+   <tr><th>60<td>$BP`(B<td>$BPa(B<td>$BPb(B<td>$BPc(B<td>$BPd(B<td>$BPe(B<td>$BPf(B<td>$BPg(B<td>$BPh(B<td>$BPi(B<td>$BPj(B<td>$BPk(B<td>$BPl(B<td>$BPm(B<td>$BPn(B<td>$BPo(B
+   <tr><th>70<td>$BPp(B<td>$BPq(B<td>$BPr(B<td>$BPs(B<td>$BPt(B<td>$BPu(B<td>$BPv(B<td>$BPw(B<td>$BPx(B<td>$BPy(B<td>$BPz(B<td>$BP{(B<td>$BP|(B<td>$BP}(B<td>$BP~(B<td class=unused>&nbsp;
+  </table>
+  <table><caption>Multibyte: JIS X 0208:1983 (Row 51)</caption>
+   <tr><th> <th>0<th>1<th>2<th>3<th>4<th>5<th>6<th>7<th>8<th>9<th>A<th>B<th>C<th>D<th>E<th>F
+   <tr><th>20<td class=unused>&nbsp;<td>$BQ!(B<td>$BQ"(B<td>$BQ#(B<td>$BQ$(B<td>$BQ%(B<td>$BQ&(B<td>$BQ'(B<td>$BQ((B<td>$BQ)(B<td>$BQ*(B<td>$BQ+(B<td>$BQ,(B<td>$BQ-(B<td>$BQ.(B<td>$BQ/(B
+   <tr><th>30<td>$BQ0(B<td>$BQ1(B<td>$BQ2(B<td>$BQ3(B<td>$BQ4(B<td>$BQ5(B<td>$BQ6(B<td>$BQ7(B<td>$BQ8(B<td>$BQ9(B<td>$BQ:(B<td>$BQ;(B<td>$BQ<(B<td>$BQ=(B<td>$BQ>(B<td>$BQ?(B
+   <tr><th>40<td>$BQ@(B<td>$BQA(B<td>$BQB(B<td>$BQC(B<td>$BQD(B<td>$BQE(B<td>$BQF(B<td>$BQG(B<td>$BQH(B<td>$BQI(B<td>$BQJ(B<td>$BQK(B<td>$BQL(B<td>$BQM(B<td>$BQN(B<td>$BQO(B
+   <tr><th>50<td>$BQP(B<td>$BQQ(B<td>$BQR(B<td>$BQS(B<td>$BQT(B<td>$BQU(B<td>$BQV(B<td>$BQW(B<td>$BQX(B<td>$BQY(B<td>$BQZ(B<td>$BQ[(B<td>$BQ\(B<td>$BQ](B<td>$BQ^(B<td>$BQ_(B
+   <tr><th>60<td>$BQ`(B<td>$BQa(B<td>$BQb(B<td>$BQc(B<td>$BQd(B<td>$BQe(B<td>$BQf(B<td>$BQg(B<td>$BQh(B<td>$BQi(B<td>$BQj(B<td>$BQk(B<td>$BQl(B<td>$BQm(B<td>$BQn(B<td>$BQo(B
+   <tr><th>70<td>$BQp(B<td>$BQq(B<td>$BQr(B<td>$BQs(B<td>$BQt(B<td>$BQu(B<td>$BQv(B<td>$BQw(B<td>$BQx(B<td>$BQy(B<td>$BQz(B<td>$BQ{(B<td>$BQ|(B<td>$BQ}(B<td>$BQ~(B<td class=unused>&nbsp;
+  </table>
+  <table><caption>Multibyte: JIS X 0208:1983 (Row 52)</caption>
+   <tr><th> <th>0<th>1<th>2<th>3<th>4<th>5<th>6<th>7<th>8<th>9<th>A<th>B<th>C<th>D<th>E<th>F
+   <tr><th>20<td class=unused>&nbsp;<td>$BR!(B<td>$BR"(B<td>$BR#(B<td>$BR$(B<td>$BR%(B<td>$BR&(B<td>$BR'(B<td>$BR((B<td>$BR)(B<td>$BR*(B<td>$BR+(B<td>$BR,(B<td>$BR-(B<td>$BR.(B<td>$BR/(B
+   <tr><th>30<td>$BR0(B<td>$BR1(B<td>$BR2(B<td>$BR3(B<td>$BR4(B<td>$BR5(B<td>$BR6(B<td>$BR7(B<td>$BR8(B<td>$BR9(B<td>$BR:(B<td>$BR;(B<td>$BR<(B<td>$BR=(B<td>$BR>(B<td>$BR?(B
+   <tr><th>40<td>$BR@(B<td>$BRA(B<td>$BRB(B<td>$BRC(B<td>$BRD(B<td>$BRE(B<td>$BRF(B<td>$BRG(B<td>$BRH(B<td>$BRI(B<td>$BRJ(B<td>$BRK(B<td>$BRL(B<td>$BRM(B<td>$BRN(B<td>$BRO(B
+   <tr><th>50<td>$BRP(B<td>$BRQ(B<td>$BRR(B<td>$BRS(B<td>$BRT(B<td>$BRU(B<td>$BRV(B<td>$BRW(B<td>$BRX(B<td>$BRY(B<td>$BRZ(B<td>$BR[(B<td>$BR\(B<td>$BR](B<td>$BR^(B<td>$BR_(B
+   <tr><th>60<td>$BR`(B<td>$BRa(B<td>$BRb(B<td>$BRc(B<td>$BRd(B<td>$BRe(B<td>$BRf(B<td>$BRg(B<td>$BRh(B<td>$BRi(B<td>$BRj(B<td>$BRk(B<td>$BRl(B<td>$BRm(B<td>$BRn(B<td>$BRo(B
+   <tr><th>70<td>$BRp(B<td>$BRq(B<td>$BRr(B<td>$BRs(B<td>$BRt(B<td>$BRu(B<td>$BRv(B<td>$BRw(B<td>$BRx(B<td>$BRy(B<td>$BRz(B<td>$BR{(B<td>$BR|(B<td>$BR}(B<td>$BR~(B<td class=unused>&nbsp;
+  </table>
+  <table><caption>Multibyte: JIS X 0208:1983 (Row 53)</caption>
+   <tr><th> <th>0<th>1<th>2<th>3<th>4<th>5<th>6<th>7<th>8<th>9<th>A<th>B<th>C<th>D<th>E<th>F
+   <tr><th>20<td class=unused>&nbsp;<td>$BS!(B<td>$BS"(B<td>$BS#(B<td>$BS$(B<td>$BS%(B<td>$BS&(B<td>$BS'(B<td>$BS((B<td>$BS)(B<td>$BS*(B<td>$BS+(B<td>$BS,(B<td>$BS-(B<td>$BS.(B<td>$BS/(B
+   <tr><th>30<td>$BS0(B<td>$BS1(B<td>$BS2(B<td>$BS3(B<td>$BS4(B<td>$BS5(B<td>$BS6(B<td>$BS7(B<td>$BS8(B<td>$BS9(B<td>$BS:(B<td>$BS;(B<td>$BS<(B<td>$BS=(B<td>$BS>(B<td>$BS?(B
+   <tr><th>40<td>$BS@(B<td>$BSA(B<td>$BSB(B<td>$BSC(B<td>$BSD(B<td>$BSE(B<td>$BSF(B<td>$BSG(B<td>$BSH(B<td>$BSI(B<td>$BSJ(B<td>$BSK(B<td>$BSL(B<td>$BSM(B<td>$BSN(B<td>$BSO(B
+   <tr><th>50<td>$BSP(B<td>$BSQ(B<td>$BSR(B<td>$BSS(B<td>$BST(B<td>$BSU(B<td>$BSV(B<td>$BSW(B<td>$BSX(B<td>$BSY(B<td>$BSZ(B<td>$BS[(B<td>$BS\(B<td>$BS](B<td>$BS^(B<td>$BS_(B
+   <tr><th>60<td>$BS`(B<td>$BSa(B<td>$BSb(B<td>$BSc(B<td>$BSd(B<td>$BSe(B<td>$BSf(B<td>$BSg(B<td>$BSh(B<td>$BSi(B<td>$BSj(B<td>$BSk(B<td>$BSl(B<td>$BSm(B<td>$BSn(B<td>$BSo(B
+   <tr><th>70<td>$BSp(B<td>$BSq(B<td>$BSr(B<td>$BSs(B<td>$BSt(B<td>$BSu(B<td>$BSv(B<td>$BSw(B<td>$BSx(B<td>$BSy(B<td>$BSz(B<td>$BS{(B<td>$BS|(B<td>$BS}(B<td>$BS~(B<td class=unused>&nbsp;
+  </table>
+  <table><caption>Multibyte: JIS X 0208:1983 (Row 54)</caption>
+   <tr><th> <th>0<th>1<th>2<th>3<th>4<th>5<th>6<th>7<th>8<th>9<th>A<th>B<th>C<th>D<th>E<th>F
+   <tr><th>20<td class=unused>&nbsp;<td>$BT!(B<td>$BT"(B<td>$BT#(B<td>$BT$(B<td>$BT%(B<td>$BT&(B<td>$BT'(B<td>$BT((B<td>$BT)(B<td>$BT*(B<td>$BT+(B<td>$BT,(B<td>$BT-(B<td>$BT.(B<td>$BT/(B
+   <tr><th>30<td>$BT0(B<td>$BT1(B<td>$BT2(B<td>$BT3(B<td>$BT4(B<td>$BT5(B<td>$BT6(B<td>$BT7(B<td>$BT8(B<td>$BT9(B<td>$BT:(B<td>$BT;(B<td>$BT<(B<td>$BT=(B<td>$BT>(B<td>$BT?(B
+   <tr><th>40<td>$BT@(B<td>$BTA(B<td>$BTB(B<td>$BTC(B<td>$BTD(B<td>$BTE(B<td>$BTF(B<td>$BTG(B<td>$BTH(B<td>$BTI(B<td>$BTJ(B<td>$BTK(B<td>$BTL(B<td>$BTM(B<td>$BTN(B<td>$BTO(B
+   <tr><th>50<td>$BTP(B<td>$BTQ(B<td>$BTR(B<td>$BTS(B<td>$BTT(B<td>$BTU(B<td>$BTV(B<td>$BTW(B<td>$BTX(B<td>$BTY(B<td>$BTZ(B<td>$BT[(B<td>$BT\(B<td>$BT](B<td>$BT^(B<td>$BT_(B
+   <tr><th>60<td>$BT`(B<td>$BTa(B<td>$BTb(B<td>$BTc(B<td>$BTd(B<td>$BTe(B<td>$BTf(B<td>$BTg(B<td>$BTh(B<td>$BTi(B<td>$BTj(B<td>$BTk(B<td>$BTl(B<td>$BTm(B<td>$BTn(B<td>$BTo(B
+   <tr><th>70<td>$BTp(B<td>$BTq(B<td>$BTr(B<td>$BTs(B<td>$BTt(B<td>$BTu(B<td>$BTv(B<td>$BTw(B<td>$BTx(B<td>$BTy(B<td>$BTz(B<td>$BT{(B<td>$BT|(B<td>$BT}(B<td>$BT~(B<td class=unused>&nbsp;
+  </table>
+  <table><caption>Multibyte: JIS X 0208:1983 (Row 55)</caption>
+   <tr><th> <th>0<th>1<th>2<th>3<th>4<th>5<th>6<th>7<th>8<th>9<th>A<th>B<th>C<th>D<th>E<th>F
+   <tr><th>20<td class=unused>&nbsp;<td>$BU!(B<td>$BU"(B<td>$BU#(B<td>$BU$(B<td>$BU%(B<td>$BU&(B<td>$BU'(B<td>$BU((B<td>$BU)(B<td>$BU*(B<td>$BU+(B<td>$BU,(B<td>$BU-(B<td>$BU.(B<td>$BU/(B
+   <tr><th>30<td>$BU0(B<td>$BU1(B<td>$BU2(B<td>$BU3(B<td>$BU4(B<td>$BU5(B<td>$BU6(B<td>$BU7(B<td>$BU8(B<td>$BU9(B<td>$BU:(B<td>$BU;(B<td>$BU<(B<td>$BU=(B<td>$BU>(B<td>$BU?(B
+   <tr><th>40<td>$BU@(B<td>$BUA(B<td>$BUB(B<td>$BUC(B<td>$BUD(B<td>$BUE(B<td>$BUF(B<td>$BUG(B<td>$BUH(B<td>$BUI(B<td>$BUJ(B<td>$BUK(B<td>$BUL(B<td>$BUM(B<td>$BUN(B<td>$BUO(B
+   <tr><th>50<td>$BUP(B<td>$BUQ(B<td>$BUR(B<td>$BUS(B<td>$BUT(B<td>$BUU(B<td>$BUV(B<td>$BUW(B<td>$BUX(B<td>$BUY(B<td>$BUZ(B<td>$BU[(B<td>$BU\(B<td>$BU](B<td>$BU^(B<td>$BU_(B
+   <tr><th>60<td>$BU`(B<td>$BUa(B<td>$BUb(B<td>$BUc(B<td>$BUd(B<td>$BUe(B<td>$BUf(B<td>$BUg(B<td>$BUh(B<td>$BUi(B<td>$BUj(B<td>$BUk(B<td>$BUl(B<td>$BUm(B<td>$BUn(B<td>$BUo(B
+   <tr><th>70<td>$BUp(B<td>$BUq(B<td>$BUr(B<td>$BUs(B<td>$BUt(B<td>$BUu(B<td>$BUv(B<td>$BUw(B<td>$BUx(B<td>$BUy(B<td>$BUz(B<td>$BU{(B<td>$BU|(B<td>$BU}(B<td>$BU~(B<td class=unused>&nbsp;
+  </table>
+  <table><caption>Multibyte: JIS X 0208:1983 (Row 56)</caption>
+   <tr><th> <th>0<th>1<th>2<th>3<th>4<th>5<th>6<th>7<th>8<th>9<th>A<th>B<th>C<th>D<th>E<th>F
+   <tr><th>20<td class=unused>&nbsp;<td>$BV!(B<td>$BV"(B<td>$BV#(B<td>$BV$(B<td>$BV%(B<td>$BV&(B<td>$BV'(B<td>$BV((B<td>$BV)(B<td>$BV*(B<td>$BV+(B<td>$BV,(B<td>$BV-(B<td>$BV.(B<td>$BV/(B
+   <tr><th>30<td>$BV0(B<td>$BV1(B<td>$BV2(B<td>$BV3(B<td>$BV4(B<td>$BV5(B<td>$BV6(B<td>$BV7(B<td>$BV8(B<td>$BV9(B<td>$BV:(B<td>$BV;(B<td>$BV<(B<td>$BV=(B<td>$BV>(B<td>$BV?(B
+   <tr><th>40<td>$BV@(B<td>$BVA(B<td>$BVB(B<td>$BVC(B<td>$BVD(B<td>$BVE(B<td>$BVF(B<td>$BVG(B<td>$BVH(B<td>$BVI(B<td>$BVJ(B<td>$BVK(B<td>$BVL(B<td>$BVM(B<td>$BVN(B<td>$BVO(B
+   <tr><th>50<td>$BVP(B<td>$BVQ(B<td>$BVR(B<td>$BVS(B<td>$BVT(B<td>$BVU(B<td>$BVV(B<td>$BVW(B<td>$BVX(B<td>$BVY(B<td>$BVZ(B<td>$BV[(B<td>$BV\(B<td>$BV](B<td>$BV^(B<td>$BV_(B
+   <tr><th>60<td>$BV`(B<td>$BVa(B<td>$BVb(B<td>$BVc(B<td>$BVd(B<td>$BVe(B<td>$BVf(B<td>$BVg(B<td>$BVh(B<td>$BVi(B<td>$BVj(B<td>$BVk(B<td>$BVl(B<td>$BVm(B<td>$BVn(B<td>$BVo(B
+   <tr><th>70<td>$BVp(B<td>$BVq(B<td>$BVr(B<td>$BVs(B<td>$BVt(B<td>$BVu(B<td>$BVv(B<td>$BVw(B<td>$BVx(B<td>$BVy(B<td>$BVz(B<td>$BV{(B<td>$BV|(B<td>$BV}(B<td>$BV~(B<td class=unused>&nbsp;
+  </table>
+  <table><caption>Multibyte: JIS X 0208:1983 (Row 57)</caption>
+   <tr><th> <th>0<th>1<th>2<th>3<th>4<th>5<th>6<th>7<th>8<th>9<th>A<th>B<th>C<th>D<th>E<th>F
+   <tr><th>20<td class=unused>&nbsp;<td>$BW!(B<td>$BW"(B<td>$BW#(B<td>$BW$(B<td>$BW%(B<td>$BW&(B<td>$BW'(B<td>$BW((B<td>$BW)(B<td>$BW*(B<td>$BW+(B<td>$BW,(B<td>$BW-(B<td>$BW.(B<td>$BW/(B
+   <tr><th>30<td>$BW0(B<td>$BW1(B<td>$BW2(B<td>$BW3(B<td>$BW4(B<td>$BW5(B<td>$BW6(B<td>$BW7(B<td>$BW8(B<td>$BW9(B<td>$BW:(B<td>$BW;(B<td>$BW<(B<td>$BW=(B<td>$BW>(B<td>$BW?(B
+   <tr><th>40<td>$BW@(B<td>$BWA(B<td>$BWB(B<td>$BWC(B<td>$BWD(B<td>$BWE(B<td>$BWF(B<td>$BWG(B<td>$BWH(B<td>$BWI(B<td>$BWJ(B<td>$BWK(B<td>$BWL(B<td>$BWM(B<td>$BWN(B<td>$BWO(B
+   <tr><th>50<td>$BWP(B<td>$BWQ(B<td>$BWR(B<td>$BWS(B<td>$BWT(B<td>$BWU(B<td>$BWV(B<td>$BWW(B<td>$BWX(B<td>$BWY(B<td>$BWZ(B<td>$BW[(B<td>$BW\(B<td>$BW](B<td>$BW^(B<td>$BW_(B
+   <tr><th>60<td>$BW`(B<td>$BWa(B<td>$BWb(B<td>$BWc(B<td>$BWd(B<td>$BWe(B<td>$BWf(B<td>$BWg(B<td>$BWh(B<td>$BWi(B<td>$BWj(B<td>$BWk(B<td>$BWl(B<td>$BWm(B<td>$BWn(B<td>$BWo(B
+   <tr><th>70<td>$BWp(B<td>$BWq(B<td>$BWr(B<td>$BWs(B<td>$BWt(B<td>$BWu(B<td>$BWv(B<td>$BWw(B<td>$BWx(B<td>$BWy(B<td>$BWz(B<td>$BW{(B<td>$BW|(B<td>$BW}(B<td>$BW~(B<td class=unused>&nbsp;
+  </table>
+  <table><caption>Multibyte: JIS X 0208:1983 (Row 58)</caption>
+   <tr><th> <th>0<th>1<th>2<th>3<th>4<th>5<th>6<th>7<th>8<th>9<th>A<th>B<th>C<th>D<th>E<th>F
+   <tr><th>20<td class=unused>&nbsp;<td>$BX!(B<td>$BX"(B<td>$BX#(B<td>$BX$(B<td>$BX%(B<td>$BX&(B<td>$BX'(B<td>$BX((B<td>$BX)(B<td>$BX*(B<td>$BX+(B<td>$BX,(B<td>$BX-(B<td>$BX.(B<td>$BX/(B
+   <tr><th>30<td>$BX0(B<td>$BX1(B<td>$BX2(B<td>$BX3(B<td>$BX4(B<td>$BX5(B<td>$BX6(B<td>$BX7(B<td>$BX8(B<td>$BX9(B<td>$BX:(B<td>$BX;(B<td>$BX<(B<td>$BX=(B<td>$BX>(B<td>$BX?(B
+   <tr><th>40<td>$BX@(B<td>$BXA(B<td>$BXB(B<td>$BXC(B<td>$BXD(B<td>$BXE(B<td>$BXF(B<td>$BXG(B<td>$BXH(B<td>$BXI(B<td>$BXJ(B<td>$BXK(B<td>$BXL(B<td>$BXM(B<td>$BXN(B<td>$BXO(B
+   <tr><th>50<td>$BXP(B<td>$BXQ(B<td>$BXR(B<td>$BXS(B<td>$BXT(B<td>$BXU(B<td>$BXV(B<td>$BXW(B<td>$BXX(B<td>$BXY(B<td>$BXZ(B<td>$BX[(B<td>$BX\(B<td>$BX](B<td>$BX^(B<td>$BX_(B
+   <tr><th>60<td>$BX`(B<td>$BXa(B<td>$BXb(B<td>$BXc(B<td>$BXd(B<td>$BXe(B<td>$BXf(B<td>$BXg(B<td>$BXh(B<td>$BXi(B<td>$BXj(B<td>$BXk(B<td>$BXl(B<td>$BXm(B<td>$BXn(B<td>$BXo(B
+   <tr><th>70<td>$BXp(B<td>$BXq(B<td>$BXr(B<td>$BXs(B<td>$BXt(B<td>$BXu(B<td>$BXv(B<td>$BXw(B<td>$BXx(B<td>$BXy(B<td>$BXz(B<td>$BX{(B<td>$BX|(B<td>$BX}(B<td>$BX~(B<td class=unused>&nbsp;
+  </table>
+  <table><caption>Multibyte: JIS X 0208:1983 (Row 59)</caption>
+   <tr><th> <th>0<th>1<th>2<th>3<th>4<th>5<th>6<th>7<th>8<th>9<th>A<th>B<th>C<th>D<th>E<th>F
+   <tr><th>20<td class=unused>&nbsp;<td>$BY!(B<td>$BY"(B<td>$BY#(B<td>$BY$(B<td>$BY%(B<td>$BY&(B<td>$BY'(B<td>$BY((B<td>$BY)(B<td>$BY*(B<td>$BY+(B<td>$BY,(B<td>$BY-(B<td>$BY.(B<td>$BY/(B
+   <tr><th>30<td>$BY0(B<td>$BY1(B<td>$BY2(B<td>$BY3(B<td>$BY4(B<td>$BY5(B<td>$BY6(B<td>$BY7(B<td>$BY8(B<td>$BY9(B<td>$BY:(B<td>$BY;(B<td>$BY<(B<td>$BY=(B<td>$BY>(B<td>$BY?(B
+   <tr><th>40<td>$BY@(B<td>$BYA(B<td>$BYB(B<td>$BYC(B<td>$BYD(B<td>$BYE(B<td>$BYF(B<td>$BYG(B<td>$BYH(B<td>$BYI(B<td>$BYJ(B<td>$BYK(B<td>$BYL(B<td>$BYM(B<td>$BYN(B<td>$BYO(B
+   <tr><th>50<td>$BYP(B<td>$BYQ(B<td>$BYR(B<td>$BYS(B<td>$BYT(B<td>$BYU(B<td>$BYV(B<td>$BYW(B<td>$BYX(B<td>$BYY(B<td>$BYZ(B<td>$BY[(B<td>$BY\(B<td>$BY](B<td>$BY^(B<td>$BY_(B
+   <tr><th>60<td>$BY`(B<td>$BYa(B<td>$BYb(B<td>$BYc(B<td>$BYd(B<td>$BYe(B<td>$BYf(B<td>$BYg(B<td>$BYh(B<td>$BYi(B<td>$BYj(B<td>$BYk(B<td>$BYl(B<td>$BYm(B<td>$BYn(B<td>$BYo(B
+   <tr><th>70<td>$BYp(B<td>$BYq(B<td>$BYr(B<td>$BYs(B<td>$BYt(B<td>$BYu(B<td>$BYv(B<td>$BYw(B<td>$BYx(B<td>$BYy(B<td>$BYz(B<td>$BY{(B<td>$BY|(B<td>$BY}(B<td>$BY~(B<td class=unused>&nbsp;
+  </table>
+  <table><caption>Multibyte: JIS X 0208:1983 (Row 5A)</caption>
+   <tr><th> <th>0<th>1<th>2<th>3<th>4<th>5<th>6<th>7<th>8<th>9<th>A<th>B<th>C<th>D<th>E<th>F
+   <tr><th>20<td class=unused>&nbsp;<td>$BZ!(B<td>$BZ"(B<td>$BZ#(B<td>$BZ$(B<td>$BZ%(B<td>$BZ&(B<td>$BZ'(B<td>$BZ((B<td>$BZ)(B<td>$BZ*(B<td>$BZ+(B<td>$BZ,(B<td>$BZ-(B<td>$BZ.(B<td>$BZ/(B
+   <tr><th>30<td>$BZ0(B<td>$BZ1(B<td>$BZ2(B<td>$BZ3(B<td>$BZ4(B<td>$BZ5(B<td>$BZ6(B<td>$BZ7(B<td>$BZ8(B<td>$BZ9(B<td>$BZ:(B<td>$BZ;(B<td>$BZ<(B<td>$BZ=(B<td>$BZ>(B<td>$BZ?(B
+   <tr><th>40<td>$BZ@(B<td>$BZA(B<td>$BZB(B<td>$BZC(B<td>$BZD(B<td>$BZE(B<td>$BZF(B<td>$BZG(B<td>$BZH(B<td>$BZI(B<td>$BZJ(B<td>$BZK(B<td>$BZL(B<td>$BZM(B<td>$BZN(B<td>$BZO(B
+   <tr><th>50<td>$BZP(B<td>$BZQ(B<td>$BZR(B<td>$BZS(B<td>$BZT(B<td>$BZU(B<td>$BZV(B<td>$BZW(B<td>$BZX(B<td>$BZY(B<td>$BZZ(B<td>$BZ[(B<td>$BZ\(B<td>$BZ](B<td>$BZ^(B<td>$BZ_(B
+   <tr><th>60<td>$BZ`(B<td>$BZa(B<td>$BZb(B<td>$BZc(B<td>$BZd(B<td>$BZe(B<td>$BZf(B<td>$BZg(B<td>$BZh(B<td>$BZi(B<td>$BZj(B<td>$BZk(B<td>$BZl(B<td>$BZm(B<td>$BZn(B<td>$BZo(B
+   <tr><th>70<td>$BZp(B<td>$BZq(B<td>$BZr(B<td>$BZs(B<td>$BZt(B<td>$BZu(B<td>$BZv(B<td>$BZw(B<td>$BZx(B<td>$BZy(B<td>$BZz(B<td>$BZ{(B<td>$BZ|(B<td>$BZ}(B<td>$BZ~(B<td class=unused>&nbsp;
+  </table>
+  <table><caption>Multibyte: JIS X 0208:1983 (Row 5B)</caption>
+   <tr><th> <th>0<th>1<th>2<th>3<th>4<th>5<th>6<th>7<th>8<th>9<th>A<th>B<th>C<th>D<th>E<th>F
+   <tr><th>20<td class=unused>&nbsp;<td>$B[!(B<td>$B["(B<td>$B[#(B<td>$B[$(B<td>$B[%(B<td>$B[&(B<td>$B['(B<td>$B[((B<td>$B[)(B<td>$B[*(B<td>$B[+(B<td>$B[,(B<td>$B[-(B<td>$B[.(B<td>$B[/(B
+   <tr><th>30<td>$B[0(B<td>$B[1(B<td>$B[2(B<td>$B[3(B<td>$B[4(B<td>$B[5(B<td>$B[6(B<td>$B[7(B<td>$B[8(B<td>$B[9(B<td>$B[:(B<td>$B[;(B<td>$B[<(B<td>$B[=(B<td>$B[>(B<td>$B[?(B
+   <tr><th>40<td>$B[@(B<td>$B[A(B<td>$B[B(B<td>$B[C(B<td>$B[D(B<td>$B[E(B<td>$B[F(B<td>$B[G(B<td>$B[H(B<td>$B[I(B<td>$B[J(B<td>$B[K(B<td>$B[L(B<td>$B[M(B<td>$B[N(B<td>$B[O(B
+   <tr><th>50<td>$B[P(B<td>$B[Q(B<td>$B[R(B<td>$B[S(B<td>$B[T(B<td>$B[U(B<td>$B[V(B<td>$B[W(B<td>$B[X(B<td>$B[Y(B<td>$B[Z(B<td>$B[[(B<td>$B[\(B<td>$B[](B<td>$B[^(B<td>$B[_(B
+   <tr><th>60<td>$B[`(B<td>$B[a(B<td>$B[b(B<td>$B[c(B<td>$B[d(B<td>$B[e(B<td>$B[f(B<td>$B[g(B<td>$B[h(B<td>$B[i(B<td>$B[j(B<td>$B[k(B<td>$B[l(B<td>$B[m(B<td>$B[n(B<td>$B[o(B
+   <tr><th>70<td>$B[p(B<td>$B[q(B<td>$B[r(B<td>$B[s(B<td>$B[t(B<td>$B[u(B<td>$B[v(B<td>$B[w(B<td>$B[x(B<td>$B[y(B<td>$B[z(B<td>$B[{(B<td>$B[|(B<td>$B[}(B<td>$B[~(B<td class=unused>&nbsp;
+  </table>
+  <table><caption>Multibyte: JIS X 0208:1983 (Row 5C)</caption>
+   <tr><th> <th>0<th>1<th>2<th>3<th>4<th>5<th>6<th>7<th>8<th>9<th>A<th>B<th>C<th>D<th>E<th>F
+   <tr><th>20<td class=unused>&nbsp;<td>$B\!(B<td>$B\"(B<td>$B\#(B<td>$B\$(B<td>$B\%(B<td>$B\&(B<td>$B\'(B<td>$B\((B<td>$B\)(B<td>$B\*(B<td>$B\+(B<td>$B\,(B<td>$B\-(B<td>$B\.(B<td>$B\/(B
+   <tr><th>30<td>$B\0(B<td>$B\1(B<td>$B\2(B<td>$B\3(B<td>$B\4(B<td>$B\5(B<td>$B\6(B<td>$B\7(B<td>$B\8(B<td>$B\9(B<td>$B\:(B<td>$B\;(B<td>$B\<(B<td>$B\=(B<td>$B\>(B<td>$B\?(B
+   <tr><th>40<td>$B\@(B<td>$B\A(B<td>$B\B(B<td>$B\C(B<td>$B\D(B<td>$B\E(B<td>$B\F(B<td>$B\G(B<td>$B\H(B<td>$B\I(B<td>$B\J(B<td>$B\K(B<td>$B\L(B<td>$B\M(B<td>$B\N(B<td>$B\O(B
+   <tr><th>50<td>$B\P(B<td>$B\Q(B<td>$B\R(B<td>$B\S(B<td>$B\T(B<td>$B\U(B<td>$B\V(B<td>$B\W(B<td>$B\X(B<td>$B\Y(B<td>$B\Z(B<td>$B\[(B<td>$B\\(B<td>$B\](B<td>$B\^(B<td>$B\_(B
+   <tr><th>60<td>$B\`(B<td>$B\a(B<td>$B\b(B<td>$B\c(B<td>$B\d(B<td>$B\e(B<td>$B\f(B<td>$B\g(B<td>$B\h(B<td>$B\i(B<td>$B\j(B<td>$B\k(B<td>$B\l(B<td>$B\m(B<td>$B\n(B<td>$B\o(B
+   <tr><th>70<td>$B\p(B<td>$B\q(B<td>$B\r(B<td>$B\s(B<td>$B\t(B<td>$B\u(B<td>$B\v(B<td>$B\w(B<td>$B\x(B<td>$B\y(B<td>$B\z(B<td>$B\{(B<td>$B\|(B<td>$B\}(B<td>$B\~(B<td class=unused>&nbsp;
+  </table>
+  <table><caption>Multibyte: JIS X 0208:1983 (Row 5D)</caption>
+   <tr><th> <th>0<th>1<th>2<th>3<th>4<th>5<th>6<th>7<th>8<th>9<th>A<th>B<th>C<th>D<th>E<th>F
+   <tr><th>20<td class=unused>&nbsp;<td>$B]!(B<td>$B]"(B<td>$B]#(B<td>$B]$(B<td>$B]%(B<td>$B]&(B<td>$B]'(B<td>$B]((B<td>$B])(B<td>$B]*(B<td>$B]+(B<td>$B],(B<td>$B]-(B<td>$B].(B<td>$B]/(B
+   <tr><th>30<td>$B]0(B<td>$B]1(B<td>$B]2(B<td>$B]3(B<td>$B]4(B<td>$B]5(B<td>$B]6(B<td>$B]7(B<td>$B]8(B<td>$B]9(B<td>$B]:(B<td>$B];(B<td>$B]<(B<td>$B]=(B<td>$B]>(B<td>$B]?(B
+   <tr><th>40<td>$B]@(B<td>$B]A(B<td>$B]B(B<td>$B]C(B<td>$B]D(B<td>$B]E(B<td>$B]F(B<td>$B]G(B<td>$B]H(B<td>$B]I(B<td>$B]J(B<td>$B]K(B<td>$B]L(B<td>$B]M(B<td>$B]N(B<td>$B]O(B
+   <tr><th>50<td>$B]P(B<td>$B]Q(B<td>$B]R(B<td>$B]S(B<td>$B]T(B<td>$B]U(B<td>$B]V(B<td>$B]W(B<td>$B]X(B<td>$B]Y(B<td>$B]Z(B<td>$B][(B<td>$B]\(B<td>$B]](B<td>$B]^(B<td>$B]_(B
+   <tr><th>60<td>$B]`(B<td>$B]a(B<td>$B]b(B<td>$B]c(B<td>$B]d(B<td>$B]e(B<td>$B]f(B<td>$B]g(B<td>$B]h(B<td>$B]i(B<td>$B]j(B<td>$B]k(B<td>$B]l(B<td>$B]m(B<td>$B]n(B<td>$B]o(B
+   <tr><th>70<td>$B]p(B<td>$B]q(B<td>$B]r(B<td>$B]s(B<td>$B]t(B<td>$B]u(B<td>$B]v(B<td>$B]w(B<td>$B]x(B<td>$B]y(B<td>$B]z(B<td>$B]{(B<td>$B]|(B<td>$B]}(B<td>$B]~(B<td class=unused>&nbsp;
+  </table>
+  <table><caption>Multibyte: JIS X 0208:1983 (Row 5E)</caption>
+   <tr><th> <th>0<th>1<th>2<th>3<th>4<th>5<th>6<th>7<th>8<th>9<th>A<th>B<th>C<th>D<th>E<th>F
+   <tr><th>20<td class=unused>&nbsp;<td>$B^!(B<td>$B^"(B<td>$B^#(B<td>$B^$(B<td>$B^%(B<td>$B^&(B<td>$B^'(B<td>$B^((B<td>$B^)(B<td>$B^*(B<td>$B^+(B<td>$B^,(B<td>$B^-(B<td>$B^.(B<td>$B^/(B
+   <tr><th>30<td>$B^0(B<td>$B^1(B<td>$B^2(B<td>$B^3(B<td>$B^4(B<td>$B^5(B<td>$B^6(B<td>$B^7(B<td>$B^8(B<td>$B^9(B<td>$B^:(B<td>$B^;(B<td>$B^<(B<td>$B^=(B<td>$B^>(B<td>$B^?(B
+   <tr><th>40<td>$B^@(B<td>$B^A(B<td>$B^B(B<td>$B^C(B<td>$B^D(B<td>$B^E(B<td>$B^F(B<td>$B^G(B<td>$B^H(B<td>$B^I(B<td>$B^J(B<td>$B^K(B<td>$B^L(B<td>$B^M(B<td>$B^N(B<td>$B^O(B
+   <tr><th>50<td>$B^P(B<td>$B^Q(B<td>$B^R(B<td>$B^S(B<td>$B^T(B<td>$B^U(B<td>$B^V(B<td>$B^W(B<td>$B^X(B<td>$B^Y(B<td>$B^Z(B<td>$B^[(B<td>$B^\(B<td>$B^](B<td>$B^^(B<td>$B^_(B
+   <tr><th>60<td>$B^`(B<td>$B^a(B<td>$B^b(B<td>$B^c(B<td>$B^d(B<td>$B^e(B<td>$B^f(B<td>$B^g(B<td>$B^h(B<td>$B^i(B<td>$B^j(B<td>$B^k(B<td>$B^l(B<td>$B^m(B<td>$B^n(B<td>$B^o(B
+   <tr><th>70<td>$B^p(B<td>$B^q(B<td>$B^r(B<td>$B^s(B<td>$B^t(B<td>$B^u(B<td>$B^v(B<td>$B^w(B<td>$B^x(B<td>$B^y(B<td>$B^z(B<td>$B^{(B<td>$B^|(B<td>$B^}(B<td>$B^~(B<td class=unused>&nbsp;
+  </table>
+  <table><caption>Multibyte: JIS X 0208:1983 (Row 5F)</caption>
+   <tr><th> <th>0<th>1<th>2<th>3<th>4<th>5<th>6<th>7<th>8<th>9<th>A<th>B<th>C<th>D<th>E<th>F
+   <tr><th>20<td class=unused>&nbsp;<td>$B_!(B<td>$B_"(B<td>$B_#(B<td>$B_$(B<td>$B_%(B<td>$B_&(B<td>$B_'(B<td>$B_((B<td>$B_)(B<td>$B_*(B<td>$B_+(B<td>$B_,(B<td>$B_-(B<td>$B_.(B<td>$B_/(B
+   <tr><th>30<td>$B_0(B<td>$B_1(B<td>$B_2(B<td>$B_3(B<td>$B_4(B<td>$B_5(B<td>$B_6(B<td>$B_7(B<td>$B_8(B<td>$B_9(B<td>$B_:(B<td>$B_;(B<td>$B_<(B<td>$B_=(B<td>$B_>(B<td>$B_?(B
+   <tr><th>40<td>$B_@(B<td>$B_A(B<td>$B_B(B<td>$B_C(B<td>$B_D(B<td>$B_E(B<td>$B_F(B<td>$B_G(B<td>$B_H(B<td>$B_I(B<td>$B_J(B<td>$B_K(B<td>$B_L(B<td>$B_M(B<td>$B_N(B<td>$B_O(B
+   <tr><th>50<td>$B_P(B<td>$B_Q(B<td>$B_R(B<td>$B_S(B<td>$B_T(B<td>$B_U(B<td>$B_V(B<td>$B_W(B<td>$B_X(B<td>$B_Y(B<td>$B_Z(B<td>$B_[(B<td>$B_\(B<td>$B_](B<td>$B_^(B<td>$B__(B
+   <tr><th>60<td>$B_`(B<td>$B_a(B<td>$B_b(B<td>$B_c(B<td>$B_d(B<td>$B_e(B<td>$B_f(B<td>$B_g(B<td>$B_h(B<td>$B_i(B<td>$B_j(B<td>$B_k(B<td>$B_l(B<td>$B_m(B<td>$B_n(B<td>$B_o(B
+   <tr><th>70<td>$B_p(B<td>$B_q(B<td>$B_r(B<td>$B_s(B<td>$B_t(B<td>$B_u(B<td>$B_v(B<td>$B_w(B<td>$B_x(B<td>$B_y(B<td>$B_z(B<td>$B_{(B<td>$B_|(B<td>$B_}(B<td>$B_~(B<td class=unused>&nbsp;
+  </table>
+  <table><caption>Multibyte: JIS X 0208:1983 (Row 60)</caption>
+   <tr><th> <th>0<th>1<th>2<th>3<th>4<th>5<th>6<th>7<th>8<th>9<th>A<th>B<th>C<th>D<th>E<th>F
+   <tr><th>20<td class=unused>&nbsp;<td>$B`!(B<td>$B`"(B<td>$B`#(B<td>$B`$(B<td>$B`%(B<td>$B`&(B<td>$B`'(B<td>$B`((B<td>$B`)(B<td>$B`*(B<td>$B`+(B<td>$B`,(B<td>$B`-(B<td>$B`.(B<td>$B`/(B
+   <tr><th>30<td>$B`0(B<td>$B`1(B<td>$B`2(B<td>$B`3(B<td>$B`4(B<td>$B`5(B<td>$B`6(B<td>$B`7(B<td>$B`8(B<td>$B`9(B<td>$B`:(B<td>$B`;(B<td>$B`<(B<td>$B`=(B<td>$B`>(B<td>$B`?(B
+   <tr><th>40<td>$B`@(B<td>$B`A(B<td>$B`B(B<td>$B`C(B<td>$B`D(B<td>$B`E(B<td>$B`F(B<td>$B`G(B<td>$B`H(B<td>$B`I(B<td>$B`J(B<td>$B`K(B<td>$B`L(B<td>$B`M(B<td>$B`N(B<td>$B`O(B
+   <tr><th>50<td>$B`P(B<td>$B`Q(B<td>$B`R(B<td>$B`S(B<td>$B`T(B<td>$B`U(B<td>$B`V(B<td>$B`W(B<td>$B`X(B<td>$B`Y(B<td>$B`Z(B<td>$B`[(B<td>$B`\(B<td>$B`](B<td>$B`^(B<td>$B`_(B
+   <tr><th>60<td>$B``(B<td>$B`a(B<td>$B`b(B<td>$B`c(B<td>$B`d(B<td>$B`e(B<td>$B`f(B<td>$B`g(B<td>$B`h(B<td>$B`i(B<td>$B`j(B<td>$B`k(B<td>$B`l(B<td>$B`m(B<td>$B`n(B<td>$B`o(B
+   <tr><th>70<td>$B`p(B<td>$B`q(B<td>$B`r(B<td>$B`s(B<td>$B`t(B<td>$B`u(B<td>$B`v(B<td>$B`w(B<td>$B`x(B<td>$B`y(B<td>$B`z(B<td>$B`{(B<td>$B`|(B<td>$B`}(B<td>$B`~(B<td class=unused>&nbsp;
+  </table>
+  <table><caption>Multibyte: JIS X 0208:1983 (Row 61)</caption>
+   <tr><th> <th>0<th>1<th>2<th>3<th>4<th>5<th>6<th>7<th>8<th>9<th>A<th>B<th>C<th>D<th>E<th>F
+   <tr><th>20<td class=unused>&nbsp;<td>$Ba!(B<td>$Ba"(B<td>$Ba#(B<td>$Ba$(B<td>$Ba%(B<td>$Ba&(B<td>$Ba'(B<td>$Ba((B<td>$Ba)(B<td>$Ba*(B<td>$Ba+(B<td>$Ba,(B<td>$Ba-(B<td>$Ba.(B<td>$Ba/(B
+   <tr><th>30<td>$Ba0(B<td>$Ba1(B<td>$Ba2(B<td>$Ba3(B<td>$Ba4(B<td>$Ba5(B<td>$Ba6(B<td>$Ba7(B<td>$Ba8(B<td>$Ba9(B<td>$Ba:(B<td>$Ba;(B<td>$Ba<(B<td>$Ba=(B<td>$Ba>(B<td>$Ba?(B
+   <tr><th>40<td>$Ba@(B<td>$BaA(B<td>$BaB(B<td>$BaC(B<td>$BaD(B<td>$BaE(B<td>$BaF(B<td>$BaG(B<td>$BaH(B<td>$BaI(B<td>$BaJ(B<td>$BaK(B<td>$BaL(B<td>$BaM(B<td>$BaN(B<td>$BaO(B
+   <tr><th>50<td>$BaP(B<td>$BaQ(B<td>$BaR(B<td>$BaS(B<td>$BaT(B<td>$BaU(B<td>$BaV(B<td>$BaW(B<td>$BaX(B<td>$BaY(B<td>$BaZ(B<td>$Ba[(B<td>$Ba\(B<td>$Ba](B<td>$Ba^(B<td>$Ba_(B
+   <tr><th>60<td>$Ba`(B<td>$Baa(B<td>$Bab(B<td>$Bac(B<td>$Bad(B<td>$Bae(B<td>$Baf(B<td>$Bag(B<td>$Bah(B<td>$Bai(B<td>$Baj(B<td>$Bak(B<td>$Bal(B<td>$Bam(B<td>$Ban(B<td>$Bao(B
+   <tr><th>70<td>$Bap(B<td>$Baq(B<td>$Bar(B<td>$Bas(B<td>$Bat(B<td>$Bau(B<td>$Bav(B<td>$Baw(B<td>$Bax(B<td>$Bay(B<td>$Baz(B<td>$Ba{(B<td>$Ba|(B<td>$Ba}(B<td>$Ba~(B<td class=unused>&nbsp;
+  </table>
+  <table><caption>Multibyte: JIS X 0208:1983 (Row 62)</caption>
+   <tr><th> <th>0<th>1<th>2<th>3<th>4<th>5<th>6<th>7<th>8<th>9<th>A<th>B<th>C<th>D<th>E<th>F
+   <tr><th>20<td class=unused>&nbsp;<td>$Bb!(B<td>$Bb"(B<td>$Bb#(B<td>$Bb$(B<td>$Bb%(B<td>$Bb&(B<td>$Bb'(B<td>$Bb((B<td>$Bb)(B<td>$Bb*(B<td>$Bb+(B<td>$Bb,(B<td>$Bb-(B<td>$Bb.(B<td>$Bb/(B
+   <tr><th>30<td>$Bb0(B<td>$Bb1(B<td>$Bb2(B<td>$Bb3(B<td>$Bb4(B<td>$Bb5(B<td>$Bb6(B<td>$Bb7(B<td>$Bb8(B<td>$Bb9(B<td>$Bb:(B<td>$Bb;(B<td>$Bb<(B<td>$Bb=(B<td>$Bb>(B<td>$Bb?(B
+   <tr><th>40<td>$Bb@(B<td>$BbA(B<td>$BbB(B<td>$BbC(B<td>$BbD(B<td>$BbE(B<td>$BbF(B<td>$BbG(B<td>$BbH(B<td>$BbI(B<td>$BbJ(B<td>$BbK(B<td>$BbL(B<td>$BbM(B<td>$BbN(B<td>$BbO(B
+   <tr><th>50<td>$BbP(B<td>$BbQ(B<td>$BbR(B<td>$BbS(B<td>$BbT(B<td>$BbU(B<td>$BbV(B<td>$BbW(B<td>$BbX(B<td>$BbY(B<td>$BbZ(B<td>$Bb[(B<td>$Bb\(B<td>$Bb](B<td>$Bb^(B<td>$Bb_(B
+   <tr><th>60<td>$Bb`(B<td>$Bba(B<td>$Bbb(B<td>$Bbc(B<td>$Bbd(B<td>$Bbe(B<td>$Bbf(B<td>$Bbg(B<td>$Bbh(B<td>$Bbi(B<td>$Bbj(B<td>$Bbk(B<td>$Bbl(B<td>$Bbm(B<td>$Bbn(B<td>$Bbo(B
+   <tr><th>70<td>$Bbp(B<td>$Bbq(B<td>$Bbr(B<td>$Bbs(B<td>$Bbt(B<td>$Bbu(B<td>$Bbv(B<td>$Bbw(B<td>$Bbx(B<td>$Bby(B<td>$Bbz(B<td>$Bb{(B<td>$Bb|(B<td>$Bb}(B<td>$Bb~(B<td class=unused>&nbsp;
+  </table>
+  <table><caption>Multibyte: JIS X 0208:1983 (Row 63)</caption>
+   <tr><th> <th>0<th>1<th>2<th>3<th>4<th>5<th>6<th>7<th>8<th>9<th>A<th>B<th>C<th>D<th>E<th>F
+   <tr><th>20<td class=unused>&nbsp;<td>$Bc!(B<td>$Bc"(B<td>$Bc#(B<td>$Bc$(B<td>$Bc%(B<td>$Bc&(B<td>$Bc'(B<td>$Bc((B<td>$Bc)(B<td>$Bc*(B<td>$Bc+(B<td>$Bc,(B<td>$Bc-(B<td>$Bc.(B<td>$Bc/(B
+   <tr><th>30<td>$Bc0(B<td>$Bc1(B<td>$Bc2(B<td>$Bc3(B<td>$Bc4(B<td>$Bc5(B<td>$Bc6(B<td>$Bc7(B<td>$Bc8(B<td>$Bc9(B<td>$Bc:(B<td>$Bc;(B<td>$Bc<(B<td>$Bc=(B<td>$Bc>(B<td>$Bc?(B
+   <tr><th>40<td>$Bc@(B<td>$BcA(B<td>$BcB(B<td>$BcC(B<td>$BcD(B<td>$BcE(B<td>$BcF(B<td>$BcG(B<td>$BcH(B<td>$BcI(B<td>$BcJ(B<td>$BcK(B<td>$BcL(B<td>$BcM(B<td>$BcN(B<td>$BcO(B
+   <tr><th>50<td>$BcP(B<td>$BcQ(B<td>$BcR(B<td>$BcS(B<td>$BcT(B<td>$BcU(B<td>$BcV(B<td>$BcW(B<td>$BcX(B<td>$BcY(B<td>$BcZ(B<td>$Bc[(B<td>$Bc\(B<td>$Bc](B<td>$Bc^(B<td>$Bc_(B
+   <tr><th>60<td>$Bc`(B<td>$Bca(B<td>$Bcb(B<td>$Bcc(B<td>$Bcd(B<td>$Bce(B<td>$Bcf(B<td>$Bcg(B<td>$Bch(B<td>$Bci(B<td>$Bcj(B<td>$Bck(B<td>$Bcl(B<td>$Bcm(B<td>$Bcn(B<td>$Bco(B
+   <tr><th>70<td>$Bcp(B<td>$Bcq(B<td>$Bcr(B<td>$Bcs(B<td>$Bct(B<td>$Bcu(B<td>$Bcv(B<td>$Bcw(B<td>$Bcx(B<td>$Bcy(B<td>$Bcz(B<td>$Bc{(B<td>$Bc|(B<td>$Bc}(B<td>$Bc~(B<td class=unused>&nbsp;
+  </table>
+  <table><caption>Multibyte: JIS X 0208:1983 (Row 64)</caption>
+   <tr><th> <th>0<th>1<th>2<th>3<th>4<th>5<th>6<th>7<th>8<th>9<th>A<th>B<th>C<th>D<th>E<th>F
+   <tr><th>20<td class=unused>&nbsp;<td>$Bd!(B<td>$Bd"(B<td>$Bd#(B<td>$Bd$(B<td>$Bd%(B<td>$Bd&(B<td>$Bd'(B<td>$Bd((B<td>$Bd)(B<td>$Bd*(B<td>$Bd+(B<td>$Bd,(B<td>$Bd-(B<td>$Bd.(B<td>$Bd/(B
+   <tr><th>30<td>$Bd0(B<td>$Bd1(B<td>$Bd2(B<td>$Bd3(B<td>$Bd4(B<td>$Bd5(B<td>$Bd6(B<td>$Bd7(B<td>$Bd8(B<td>$Bd9(B<td>$Bd:(B<td>$Bd;(B<td>$Bd<(B<td>$Bd=(B<td>$Bd>(B<td>$Bd?(B
+   <tr><th>40<td>$Bd@(B<td>$BdA(B<td>$BdB(B<td>$BdC(B<td>$BdD(B<td>$BdE(B<td>$BdF(B<td>$BdG(B<td>$BdH(B<td>$BdI(B<td>$BdJ(B<td>$BdK(B<td>$BdL(B<td>$BdM(B<td>$BdN(B<td>$BdO(B
+   <tr><th>50<td>$BdP(B<td>$BdQ(B<td>$BdR(B<td>$BdS(B<td>$BdT(B<td>$BdU(B<td>$BdV(B<td>$BdW(B<td>$BdX(B<td>$BdY(B<td>$BdZ(B<td>$Bd[(B<td>$Bd\(B<td>$Bd](B<td>$Bd^(B<td>$Bd_(B
+   <tr><th>60<td>$Bd`(B<td>$Bda(B<td>$Bdb(B<td>$Bdc(B<td>$Bdd(B<td>$Bde(B<td>$Bdf(B<td>$Bdg(B<td>$Bdh(B<td>$Bdi(B<td>$Bdj(B<td>$Bdk(B<td>$Bdl(B<td>$Bdm(B<td>$Bdn(B<td>$Bdo(B
+   <tr><th>70<td>$Bdp(B<td>$Bdq(B<td>$Bdr(B<td>$Bds(B<td>$Bdt(B<td>$Bdu(B<td>$Bdv(B<td>$Bdw(B<td>$Bdx(B<td>$Bdy(B<td>$Bdz(B<td>$Bd{(B<td>$Bd|(B<td>$Bd}(B<td>$Bd~(B<td class=unused>&nbsp;
+  </table>
+  <table><caption>Multibyte: JIS X 0208:1983 (Row 65)</caption>
+   <tr><th> <th>0<th>1<th>2<th>3<th>4<th>5<th>6<th>7<th>8<th>9<th>A<th>B<th>C<th>D<th>E<th>F
+   <tr><th>20<td class=unused>&nbsp;<td>$Be!(B<td>$Be"(B<td>$Be#(B<td>$Be$(B<td>$Be%(B<td>$Be&(B<td>$Be'(B<td>$Be((B<td>$Be)(B<td>$Be*(B<td>$Be+(B<td>$Be,(B<td>$Be-(B<td>$Be.(B<td>$Be/(B
+   <tr><th>30<td>$Be0(B<td>$Be1(B<td>$Be2(B<td>$Be3(B<td>$Be4(B<td>$Be5(B<td>$Be6(B<td>$Be7(B<td>$Be8(B<td>$Be9(B<td>$Be:(B<td>$Be;(B<td>$Be<(B<td>$Be=(B<td>$Be>(B<td>$Be?(B
+   <tr><th>40<td>$Be@(B<td>$BeA(B<td>$BeB(B<td>$BeC(B<td>$BeD(B<td>$BeE(B<td>$BeF(B<td>$BeG(B<td>$BeH(B<td>$BeI(B<td>$BeJ(B<td>$BeK(B<td>$BeL(B<td>$BeM(B<td>$BeN(B<td>$BeO(B
+   <tr><th>50<td>$BeP(B<td>$BeQ(B<td>$BeR(B<td>$BeS(B<td>$BeT(B<td>$BeU(B<td>$BeV(B<td>$BeW(B<td>$BeX(B<td>$BeY(B<td>$BeZ(B<td>$Be[(B<td>$Be\(B<td>$Be](B<td>$Be^(B<td>$Be_(B
+   <tr><th>60<td>$Be`(B<td>$Bea(B<td>$Beb(B<td>$Bec(B<td>$Bed(B<td>$Bee(B<td>$Bef(B<td>$Beg(B<td>$Beh(B<td>$Bei(B<td>$Bej(B<td>$Bek(B<td>$Bel(B<td>$Bem(B<td>$Ben(B<td>$Beo(B
+   <tr><th>70<td>$Bep(B<td>$Beq(B<td>$Ber(B<td>$Bes(B<td>$Bet(B<td>$Beu(B<td>$Bev(B<td>$Bew(B<td>$Bex(B<td>$Bey(B<td>$Bez(B<td>$Be{(B<td>$Be|(B<td>$Be}(B<td>$Be~(B<td class=unused>&nbsp;
+  </table>
+  <table><caption>Multibyte: JIS X 0208:1983 (Row 66)</caption>
+   <tr><th> <th>0<th>1<th>2<th>3<th>4<th>5<th>6<th>7<th>8<th>9<th>A<th>B<th>C<th>D<th>E<th>F
+   <tr><th>20<td class=unused>&nbsp;<td>$Bf!(B<td>$Bf"(B<td>$Bf#(B<td>$Bf$(B<td>$Bf%(B<td>$Bf&(B<td>$Bf'(B<td>$Bf((B<td>$Bf)(B<td>$Bf*(B<td>$Bf+(B<td>$Bf,(B<td>$Bf-(B<td>$Bf.(B<td>$Bf/(B
+   <tr><th>30<td>$Bf0(B<td>$Bf1(B<td>$Bf2(B<td>$Bf3(B<td>$Bf4(B<td>$Bf5(B<td>$Bf6(B<td>$Bf7(B<td>$Bf8(B<td>$Bf9(B<td>$Bf:(B<td>$Bf;(B<td>$Bf<(B<td>$Bf=(B<td>$Bf>(B<td>$Bf?(B
+   <tr><th>40<td>$Bf@(B<td>$BfA(B<td>$BfB(B<td>$BfC(B<td>$BfD(B<td>$BfE(B<td>$BfF(B<td>$BfG(B<td>$BfH(B<td>$BfI(B<td>$BfJ(B<td>$BfK(B<td>$BfL(B<td>$BfM(B<td>$BfN(B<td>$BfO(B
+   <tr><th>50<td>$BfP(B<td>$BfQ(B<td>$BfR(B<td>$BfS(B<td>$BfT(B<td>$BfU(B<td>$BfV(B<td>$BfW(B<td>$BfX(B<td>$BfY(B<td>$BfZ(B<td>$Bf[(B<td>$Bf\(B<td>$Bf](B<td>$Bf^(B<td>$Bf_(B
+   <tr><th>60<td>$Bf`(B<td>$Bfa(B<td>$Bfb(B<td>$Bfc(B<td>$Bfd(B<td>$Bfe(B<td>$Bff(B<td>$Bfg(B<td>$Bfh(B<td>$Bfi(B<td>$Bfj(B<td>$Bfk(B<td>$Bfl(B<td>$Bfm(B<td>$Bfn(B<td>$Bfo(B
+   <tr><th>70<td>$Bfp(B<td>$Bfq(B<td>$Bfr(B<td>$Bfs(B<td>$Bft(B<td>$Bfu(B<td>$Bfv(B<td>$Bfw(B<td>$Bfx(B<td>$Bfy(B<td>$Bfz(B<td>$Bf{(B<td>$Bf|(B<td>$Bf}(B<td>$Bf~(B<td class=unused>&nbsp;
+  </table>
+  <table><caption>Multibyte: JIS X 0208:1983 (Row 67)</caption>
+   <tr><th> <th>0<th>1<th>2<th>3<th>4<th>5<th>6<th>7<th>8<th>9<th>A<th>B<th>C<th>D<th>E<th>F
+   <tr><th>20<td class=unused>&nbsp;<td>$Bg!(B<td>$Bg"(B<td>$Bg#(B<td>$Bg$(B<td>$Bg%(B<td>$Bg&(B<td>$Bg'(B<td>$Bg((B<td>$Bg)(B<td>$Bg*(B<td>$Bg+(B<td>$Bg,(B<td>$Bg-(B<td>$Bg.(B<td>$Bg/(B
+   <tr><th>30<td>$Bg0(B<td>$Bg1(B<td>$Bg2(B<td>$Bg3(B<td>$Bg4(B<td>$Bg5(B<td>$Bg6(B<td>$Bg7(B<td>$Bg8(B<td>$Bg9(B<td>$Bg:(B<td>$Bg;(B<td>$Bg<(B<td>$Bg=(B<td>$Bg>(B<td>$Bg?(B
+   <tr><th>40<td>$Bg@(B<td>$BgA(B<td>$BgB(B<td>$BgC(B<td>$BgD(B<td>$BgE(B<td>$BgF(B<td>$BgG(B<td>$BgH(B<td>$BgI(B<td>$BgJ(B<td>$BgK(B<td>$BgL(B<td>$BgM(B<td>$BgN(B<td>$BgO(B
+   <tr><th>50<td>$BgP(B<td>$BgQ(B<td>$BgR(B<td>$BgS(B<td>$BgT(B<td>$BgU(B<td>$BgV(B<td>$BgW(B<td>$BgX(B<td>$BgY(B<td>$BgZ(B<td>$Bg[(B<td>$Bg\(B<td>$Bg](B<td>$Bg^(B<td>$Bg_(B
+   <tr><th>60<td>$Bg`(B<td>$Bga(B<td>$Bgb(B<td>$Bgc(B<td>$Bgd(B<td>$Bge(B<td>$Bgf(B<td>$Bgg(B<td>$Bgh(B<td>$Bgi(B<td>$Bgj(B<td>$Bgk(B<td>$Bgl(B<td>$Bgm(B<td>$Bgn(B<td>$Bgo(B
+   <tr><th>70<td>$Bgp(B<td>$Bgq(B<td>$Bgr(B<td>$Bgs(B<td>$Bgt(B<td>$Bgu(B<td>$Bgv(B<td>$Bgw(B<td>$Bgx(B<td>$Bgy(B<td>$Bgz(B<td>$Bg{(B<td>$Bg|(B<td>$Bg}(B<td>$Bg~(B<td class=unused>&nbsp;
+  </table>
+  <table><caption>Multibyte: JIS X 0208:1983 (Row 68)</caption>
+   <tr><th> <th>0<th>1<th>2<th>3<th>4<th>5<th>6<th>7<th>8<th>9<th>A<th>B<th>C<th>D<th>E<th>F
+   <tr><th>20<td class=unused>&nbsp;<td>$Bh!(B<td>$Bh"(B<td>$Bh#(B<td>$Bh$(B<td>$Bh%(B<td>$Bh&(B<td>$Bh'(B<td>$Bh((B<td>$Bh)(B<td>$Bh*(B<td>$Bh+(B<td>$Bh,(B<td>$Bh-(B<td>$Bh.(B<td>$Bh/(B
+   <tr><th>30<td>$Bh0(B<td>$Bh1(B<td>$Bh2(B<td>$Bh3(B<td>$Bh4(B<td>$Bh5(B<td>$Bh6(B<td>$Bh7(B<td>$Bh8(B<td>$Bh9(B<td>$Bh:(B<td>$Bh;(B<td>$Bh<(B<td>$Bh=(B<td>$Bh>(B<td>$Bh?(B
+   <tr><th>40<td>$Bh@(B<td>$BhA(B<td>$BhB(B<td>$BhC(B<td>$BhD(B<td>$BhE(B<td>$BhF(B<td>$BhG(B<td>$BhH(B<td>$BhI(B<td>$BhJ(B<td>$BhK(B<td>$BhL(B<td>$BhM(B<td>$BhN(B<td>$BhO(B
+   <tr><th>50<td>$BhP(B<td>$BhQ(B<td>$BhR(B<td>$BhS(B<td>$BhT(B<td>$BhU(B<td>$BhV(B<td>$BhW(B<td>$BhX(B<td>$BhY(B<td>$BhZ(B<td>$Bh[(B<td>$Bh\(B<td>$Bh](B<td>$Bh^(B<td>$Bh_(B
+   <tr><th>60<td>$Bh`(B<td>$Bha(B<td>$Bhb(B<td>$Bhc(B<td>$Bhd(B<td>$Bhe(B<td>$Bhf(B<td>$Bhg(B<td>$Bhh(B<td>$Bhi(B<td>$Bhj(B<td>$Bhk(B<td>$Bhl(B<td>$Bhm(B<td>$Bhn(B<td>$Bho(B
+   <tr><th>70<td>$Bhp(B<td>$Bhq(B<td>$Bhr(B<td>$Bhs(B<td>$Bht(B<td>$Bhu(B<td>$Bhv(B<td>$Bhw(B<td>$Bhx(B<td>$Bhy(B<td>$Bhz(B<td>$Bh{(B<td>$Bh|(B<td>$Bh}(B<td>$Bh~(B<td class=unused>&nbsp;
+  </table>
+  <table><caption>Multibyte: JIS X 0208:1983 (Row 69)</caption>
+   <tr><th> <th>0<th>1<th>2<th>3<th>4<th>5<th>6<th>7<th>8<th>9<th>A<th>B<th>C<th>D<th>E<th>F
+   <tr><th>20<td class=unused>&nbsp;<td>$Bi!(B<td>$Bi"(B<td>$Bi#(B<td>$Bi$(B<td>$Bi%(B<td>$Bi&(B<td>$Bi'(B<td>$Bi((B<td>$Bi)(B<td>$Bi*(B<td>$Bi+(B<td>$Bi,(B<td>$Bi-(B<td>$Bi.(B<td>$Bi/(B
+   <tr><th>30<td>$Bi0(B<td>$Bi1(B<td>$Bi2(B<td>$Bi3(B<td>$Bi4(B<td>$Bi5(B<td>$Bi6(B<td>$Bi7(B<td>$Bi8(B<td>$Bi9(B<td>$Bi:(B<td>$Bi;(B<td>$Bi<(B<td>$Bi=(B<td>$Bi>(B<td>$Bi?(B
+   <tr><th>40<td>$Bi@(B<td>$BiA(B<td>$BiB(B<td>$BiC(B<td>$BiD(B<td>$BiE(B<td>$BiF(B<td>$BiG(B<td>$BiH(B<td>$BiI(B<td>$BiJ(B<td>$BiK(B<td>$BiL(B<td>$BiM(B<td>$BiN(B<td>$BiO(B
+   <tr><th>50<td>$BiP(B<td>$BiQ(B<td>$BiR(B<td>$BiS(B<td>$BiT(B<td>$BiU(B<td>$BiV(B<td>$BiW(B<td>$BiX(B<td>$BiY(B<td>$BiZ(B<td>$Bi[(B<td>$Bi\(B<td>$Bi](B<td>$Bi^(B<td>$Bi_(B
+   <tr><th>60<td>$Bi`(B<td>$Bia(B<td>$Bib(B<td>$Bic(B<td>$Bid(B<td>$Bie(B<td>$Bif(B<td>$Big(B<td>$Bih(B<td>$Bii(B<td>$Bij(B<td>$Bik(B<td>$Bil(B<td>$Bim(B<td>$Bin(B<td>$Bio(B
+   <tr><th>70<td>$Bip(B<td>$Biq(B<td>$Bir(B<td>$Bis(B<td>$Bit(B<td>$Biu(B<td>$Biv(B<td>$Biw(B<td>$Bix(B<td>$Biy(B<td>$Biz(B<td>$Bi{(B<td>$Bi|(B<td>$Bi}(B<td>$Bi~(B<td class=unused>&nbsp;
+  </table>
+  <table><caption>Multibyte: JIS X 0208:1983 (Row 6A)</caption>
+   <tr><th> <th>0<th>1<th>2<th>3<th>4<th>5<th>6<th>7<th>8<th>9<th>A<th>B<th>C<th>D<th>E<th>F
+   <tr><th>20<td class=unused>&nbsp;<td>$Bj!(B<td>$Bj"(B<td>$Bj#(B<td>$Bj$(B<td>$Bj%(B<td>$Bj&(B<td>$Bj'(B<td>$Bj((B<td>$Bj)(B<td>$Bj*(B<td>$Bj+(B<td>$Bj,(B<td>$Bj-(B<td>$Bj.(B<td>$Bj/(B
+   <tr><th>30<td>$Bj0(B<td>$Bj1(B<td>$Bj2(B<td>$Bj3(B<td>$Bj4(B<td>$Bj5(B<td>$Bj6(B<td>$Bj7(B<td>$Bj8(B<td>$Bj9(B<td>$Bj:(B<td>$Bj;(B<td>$Bj<(B<td>$Bj=(B<td>$Bj>(B<td>$Bj?(B
+   <tr><th>40<td>$Bj@(B<td>$BjA(B<td>$BjB(B<td>$BjC(B<td>$BjD(B<td>$BjE(B<td>$BjF(B<td>$BjG(B<td>$BjH(B<td>$BjI(B<td>$BjJ(B<td>$BjK(B<td>$BjL(B<td>$BjM(B<td>$BjN(B<td>$BjO(B
+   <tr><th>50<td>$BjP(B<td>$BjQ(B<td>$BjR(B<td>$BjS(B<td>$BjT(B<td>$BjU(B<td>$BjV(B<td>$BjW(B<td>$BjX(B<td>$BjY(B<td>$BjZ(B<td>$Bj[(B<td>$Bj\(B<td>$Bj](B<td>$Bj^(B<td>$Bj_(B
+   <tr><th>60<td>$Bj`(B<td>$Bja(B<td>$Bjb(B<td>$Bjc(B<td>$Bjd(B<td>$Bje(B<td>$Bjf(B<td>$Bjg(B<td>$Bjh(B<td>$Bji(B<td>$Bjj(B<td>$Bjk(B<td>$Bjl(B<td>$Bjm(B<td>$Bjn(B<td>$Bjo(B
+   <tr><th>70<td>$Bjp(B<td>$Bjq(B<td>$Bjr(B<td>$Bjs(B<td>$Bjt(B<td>$Bju(B<td>$Bjv(B<td>$Bjw(B<td>$Bjx(B<td>$Bjy(B<td>$Bjz(B<td>$Bj{(B<td>$Bj|(B<td>$Bj}(B<td>$Bj~(B<td class=unused>&nbsp;
+  </table>
+  <table><caption>Multibyte: JIS X 0208:1983 (Row 6B)</caption>
+   <tr><th> <th>0<th>1<th>2<th>3<th>4<th>5<th>6<th>7<th>8<th>9<th>A<th>B<th>C<th>D<th>E<th>F
+   <tr><th>20<td class=unused>&nbsp;<td>$Bk!(B<td>$Bk"(B<td>$Bk#(B<td>$Bk$(B<td>$Bk%(B<td>$Bk&(B<td>$Bk'(B<td>$Bk((B<td>$Bk)(B<td>$Bk*(B<td>$Bk+(B<td>$Bk,(B<td>$Bk-(B<td>$Bk.(B<td>$Bk/(B
+   <tr><th>30<td>$Bk0(B<td>$Bk1(B<td>$Bk2(B<td>$Bk3(B<td>$Bk4(B<td>$Bk5(B<td>$Bk6(B<td>$Bk7(B<td>$Bk8(B<td>$Bk9(B<td>$Bk:(B<td>$Bk;(B<td>$Bk<(B<td>$Bk=(B<td>$Bk>(B<td>$Bk?(B
+   <tr><th>40<td>$Bk@(B<td>$BkA(B<td>$BkB(B<td>$BkC(B<td>$BkD(B<td>$BkE(B<td>$BkF(B<td>$BkG(B<td>$BkH(B<td>$BkI(B<td>$BkJ(B<td>$BkK(B<td>$BkL(B<td>$BkM(B<td>$BkN(B<td>$BkO(B
+   <tr><th>50<td>$BkP(B<td>$BkQ(B<td>$BkR(B<td>$BkS(B<td>$BkT(B<td>$BkU(B<td>$BkV(B<td>$BkW(B<td>$BkX(B<td>$BkY(B<td>$BkZ(B<td>$Bk[(B<td>$Bk\(B<td>$Bk](B<td>$Bk^(B<td>$Bk_(B
+   <tr><th>60<td>$Bk`(B<td>$Bka(B<td>$Bkb(B<td>$Bkc(B<td>$Bkd(B<td>$Bke(B<td>$Bkf(B<td>$Bkg(B<td>$Bkh(B<td>$Bki(B<td>$Bkj(B<td>$Bkk(B<td>$Bkl(B<td>$Bkm(B<td>$Bkn(B<td>$Bko(B
+   <tr><th>70<td>$Bkp(B<td>$Bkq(B<td>$Bkr(B<td>$Bks(B<td>$Bkt(B<td>$Bku(B<td>$Bkv(B<td>$Bkw(B<td>$Bkx(B<td>$Bky(B<td>$Bkz(B<td>$Bk{(B<td>$Bk|(B<td>$Bk}(B<td>$Bk~(B<td class=unused>&nbsp;
+  </table>
+  <table><caption>Multibyte: JIS X 0208:1983 (Row 6C)</caption>
+   <tr><th> <th>0<th>1<th>2<th>3<th>4<th>5<th>6<th>7<th>8<th>9<th>A<th>B<th>C<th>D<th>E<th>F
+   <tr><th>20<td class=unused>&nbsp;<td>$Bl!(B<td>$Bl"(B<td>$Bl#(B<td>$Bl$(B<td>$Bl%(B<td>$Bl&(B<td>$Bl'(B<td>$Bl((B<td>$Bl)(B<td>$Bl*(B<td>$Bl+(B<td>$Bl,(B<td>$Bl-(B<td>$Bl.(B<td>$Bl/(B
+   <tr><th>30<td>$Bl0(B<td>$Bl1(B<td>$Bl2(B<td>$Bl3(B<td>$Bl4(B<td>$Bl5(B<td>$Bl6(B<td>$Bl7(B<td>$Bl8(B<td>$Bl9(B<td>$Bl:(B<td>$Bl;(B<td>$Bl<(B<td>$Bl=(B<td>$Bl>(B<td>$Bl?(B
+   <tr><th>40<td>$Bl@(B<td>$BlA(B<td>$BlB(B<td>$BlC(B<td>$BlD(B<td>$BlE(B<td>$BlF(B<td>$BlG(B<td>$BlH(B<td>$BlI(B<td>$BlJ(B<td>$BlK(B<td>$BlL(B<td>$BlM(B<td>$BlN(B<td>$BlO(B
+   <tr><th>50<td>$BlP(B<td>$BlQ(B<td>$BlR(B<td>$BlS(B<td>$BlT(B<td>$BlU(B<td>$BlV(B<td>$BlW(B<td>$BlX(B<td>$BlY(B<td>$BlZ(B<td>$Bl[(B<td>$Bl\(B<td>$Bl](B<td>$Bl^(B<td>$Bl_(B
+   <tr><th>60<td>$Bl`(B<td>$Bla(B<td>$Blb(B<td>$Blc(B<td>$Bld(B<td>$Ble(B<td>$Blf(B<td>$Blg(B<td>$Blh(B<td>$Bli(B<td>$Blj(B<td>$Blk(B<td>$Bll(B<td>$Blm(B<td>$Bln(B<td>$Blo(B
+   <tr><th>70<td>$Blp(B<td>$Blq(B<td>$Blr(B<td>$Bls(B<td>$Blt(B<td>$Blu(B<td>$Blv(B<td>$Blw(B<td>$Blx(B<td>$Bly(B<td>$Blz(B<td>$Bl{(B<td>$Bl|(B<td>$Bl}(B<td>$Bl~(B<td class=unused>&nbsp;
+  </table>
+  <table><caption>Multibyte: JIS X 0208:1983 (Row 6D)</caption>
+   <tr><th> <th>0<th>1<th>2<th>3<th>4<th>5<th>6<th>7<th>8<th>9<th>A<th>B<th>C<th>D<th>E<th>F
+   <tr><th>20<td class=unused>&nbsp;<td>$Bm!(B<td>$Bm"(B<td>$Bm#(B<td>$Bm$(B<td>$Bm%(B<td>$Bm&(B<td>$Bm'(B<td>$Bm((B<td>$Bm)(B<td>$Bm*(B<td>$Bm+(B<td>$Bm,(B<td>$Bm-(B<td>$Bm.(B<td>$Bm/(B
+   <tr><th>30<td>$Bm0(B<td>$Bm1(B<td>$Bm2(B<td>$Bm3(B<td>$Bm4(B<td>$Bm5(B<td>$Bm6(B<td>$Bm7(B<td>$Bm8(B<td>$Bm9(B<td>$Bm:(B<td>$Bm;(B<td>$Bm<(B<td>$Bm=(B<td>$Bm>(B<td>$Bm?(B
+   <tr><th>40<td>$Bm@(B<td>$BmA(B<td>$BmB(B<td>$BmC(B<td>$BmD(B<td>$BmE(B<td>$BmF(B<td>$BmG(B<td>$BmH(B<td>$BmI(B<td>$BmJ(B<td>$BmK(B<td>$BmL(B<td>$BmM(B<td>$BmN(B<td>$BmO(B
+   <tr><th>50<td>$BmP(B<td>$BmQ(B<td>$BmR(B<td>$BmS(B<td>$BmT(B<td>$BmU(B<td>$BmV(B<td>$BmW(B<td>$BmX(B<td>$BmY(B<td>$BmZ(B<td>$Bm[(B<td>$Bm\(B<td>$Bm](B<td>$Bm^(B<td>$Bm_(B
+   <tr><th>60<td>$Bm`(B<td>$Bma(B<td>$Bmb(B<td>$Bmc(B<td>$Bmd(B<td>$Bme(B<td>$Bmf(B<td>$Bmg(B<td>$Bmh(B<td>$Bmi(B<td>$Bmj(B<td>$Bmk(B<td>$Bml(B<td>$Bmm(B<td>$Bmn(B<td>$Bmo(B
+   <tr><th>70<td>$Bmp(B<td>$Bmq(B<td>$Bmr(B<td>$Bms(B<td>$Bmt(B<td>$Bmu(B<td>$Bmv(B<td>$Bmw(B<td>$Bmx(B<td>$Bmy(B<td>$Bmz(B<td>$Bm{(B<td>$Bm|(B<td>$Bm}(B<td>$Bm~(B<td class=unused>&nbsp;
+  </table>
+  <table><caption>Multibyte: JIS X 0208:1983 (Row 6E)</caption>
+   <tr><th> <th>0<th>1<th>2<th>3<th>4<th>5<th>6<th>7<th>8<th>9<th>A<th>B<th>C<th>D<th>E<th>F
+   <tr><th>20<td class=unused>&nbsp;<td>$Bn!(B<td>$Bn"(B<td>$Bn#(B<td>$Bn$(B<td>$Bn%(B<td>$Bn&(B<td>$Bn'(B<td>$Bn((B<td>$Bn)(B<td>$Bn*(B<td>$Bn+(B<td>$Bn,(B<td>$Bn-(B<td>$Bn.(B<td>$Bn/(B
+   <tr><th>30<td>$Bn0(B<td>$Bn1(B<td>$Bn2(B<td>$Bn3(B<td>$Bn4(B<td>$Bn5(B<td>$Bn6(B<td>$Bn7(B<td>$Bn8(B<td>$Bn9(B<td>$Bn:(B<td>$Bn;(B<td>$Bn<(B<td>$Bn=(B<td>$Bn>(B<td>$Bn?(B
+   <tr><th>40<td>$Bn@(B<td>$BnA(B<td>$BnB(B<td>$BnC(B<td>$BnD(B<td>$BnE(B<td>$BnF(B<td>$BnG(B<td>$BnH(B<td>$BnI(B<td>$BnJ(B<td>$BnK(B<td>$BnL(B<td>$BnM(B<td>$BnN(B<td>$BnO(B
+   <tr><th>50<td>$BnP(B<td>$BnQ(B<td>$BnR(B<td>$BnS(B<td>$BnT(B<td>$BnU(B<td>$BnV(B<td>$BnW(B<td>$BnX(B<td>$BnY(B<td>$BnZ(B<td>$Bn[(B<td>$Bn\(B<td>$Bn](B<td>$Bn^(B<td>$Bn_(B
+   <tr><th>60<td>$Bn`(B<td>$Bna(B<td>$Bnb(B<td>$Bnc(B<td>$Bnd(B<td>$Bne(B<td>$Bnf(B<td>$Bng(B<td>$Bnh(B<td>$Bni(B<td>$Bnj(B<td>$Bnk(B<td>$Bnl(B<td>$Bnm(B<td>$Bnn(B<td>$Bno(B
+   <tr><th>70<td>$Bnp(B<td>$Bnq(B<td>$Bnr(B<td>$Bns(B<td>$Bnt(B<td>$Bnu(B<td>$Bnv(B<td>$Bnw(B<td>$Bnx(B<td>$Bny(B<td>$Bnz(B<td>$Bn{(B<td>$Bn|(B<td>$Bn}(B<td>$Bn~(B<td class=unused>&nbsp;
+  </table>
+  <table><caption>Multibyte: JIS X 0208:1983 (Row 6F)</caption>
+   <tr><th> <th>0<th>1<th>2<th>3<th>4<th>5<th>6<th>7<th>8<th>9<th>A<th>B<th>C<th>D<th>E<th>F
+   <tr><th>20<td class=unused>&nbsp;<td>$Bo!(B<td>$Bo"(B<td>$Bo#(B<td>$Bo$(B<td>$Bo%(B<td>$Bo&(B<td>$Bo'(B<td>$Bo((B<td>$Bo)(B<td>$Bo*(B<td>$Bo+(B<td>$Bo,(B<td>$Bo-(B<td>$Bo.(B<td>$Bo/(B
+   <tr><th>30<td>$Bo0(B<td>$Bo1(B<td>$Bo2(B<td>$Bo3(B<td>$Bo4(B<td>$Bo5(B<td>$Bo6(B<td>$Bo7(B<td>$Bo8(B<td>$Bo9(B<td>$Bo:(B<td>$Bo;(B<td>$Bo<(B<td>$Bo=(B<td>$Bo>(B<td>$Bo?(B
+   <tr><th>40<td>$Bo@(B<td>$BoA(B<td>$BoB(B<td>$BoC(B<td>$BoD(B<td>$BoE(B<td>$BoF(B<td>$BoG(B<td>$BoH(B<td>$BoI(B<td>$BoJ(B<td>$BoK(B<td>$BoL(B<td>$BoM(B<td>$BoN(B<td>$BoO(B
+   <tr><th>50<td>$BoP(B<td>$BoQ(B<td>$BoR(B<td>$BoS(B<td>$BoT(B<td>$BoU(B<td>$BoV(B<td>$BoW(B<td>$BoX(B<td>$BoY(B<td>$BoZ(B<td>$Bo[(B<td>$Bo\(B<td>$Bo](B<td>$Bo^(B<td>$Bo_(B
+   <tr><th>60<td>$Bo`(B<td>$Boa(B<td>$Bob(B<td>$Boc(B<td>$Bod(B<td>$Boe(B<td>$Bof(B<td>$Bog(B<td>$Boh(B<td>$Boi(B<td>$Boj(B<td>$Bok(B<td>$Bol(B<td>$Bom(B<td>$Bon(B<td>$Boo(B
+   <tr><th>70<td>$Bop(B<td>$Boq(B<td>$Bor(B<td>$Bos(B<td>$Bot(B<td>$Bou(B<td>$Bov(B<td>$Bow(B<td>$Box(B<td>$Boy(B<td>$Boz(B<td>$Bo{(B<td>$Bo|(B<td>$Bo}(B<td>$Bo~(B<td class=unused>&nbsp;
+  </table>
+  <table><caption>Multibyte: JIS X 0208:1983 (Row 70)</caption>
+   <tr><th> <th>0<th>1<th>2<th>3<th>4<th>5<th>6<th>7<th>8<th>9<th>A<th>B<th>C<th>D<th>E<th>F
+   <tr><th>20<td class=unused>&nbsp;<td>$Bp!(B<td>$Bp"(B<td>$Bp#(B<td>$Bp$(B<td>$Bp%(B<td>$Bp&(B<td>$Bp'(B<td>$Bp((B<td>$Bp)(B<td>$Bp*(B<td>$Bp+(B<td>$Bp,(B<td>$Bp-(B<td>$Bp.(B<td>$Bp/(B
+   <tr><th>30<td>$Bp0(B<td>$Bp1(B<td>$Bp2(B<td>$Bp3(B<td>$Bp4(B<td>$Bp5(B<td>$Bp6(B<td>$Bp7(B<td>$Bp8(B<td>$Bp9(B<td>$Bp:(B<td>$Bp;(B<td>$Bp<(B<td>$Bp=(B<td>$Bp>(B<td>$Bp?(B
+   <tr><th>40<td>$Bp@(B<td>$BpA(B<td>$BpB(B<td>$BpC(B<td>$BpD(B<td>$BpE(B<td>$BpF(B<td>$BpG(B<td>$BpH(B<td>$BpI(B<td>$BpJ(B<td>$BpK(B<td>$BpL(B<td>$BpM(B<td>$BpN(B<td>$BpO(B
+   <tr><th>50<td>$BpP(B<td>$BpQ(B<td>$BpR(B<td>$BpS(B<td>$BpT(B<td>$BpU(B<td>$BpV(B<td>$BpW(B<td>$BpX(B<td>$BpY(B<td>$BpZ(B<td>$Bp[(B<td>$Bp\(B<td>$Bp](B<td>$Bp^(B<td>$Bp_(B
+   <tr><th>60<td>$Bp`(B<td>$Bpa(B<td>$Bpb(B<td>$Bpc(B<td>$Bpd(B<td>$Bpe(B<td>$Bpf(B<td>$Bpg(B<td>$Bph(B<td>$Bpi(B<td>$Bpj(B<td>$Bpk(B<td>$Bpl(B<td>$Bpm(B<td>$Bpn(B<td>$Bpo(B
+   <tr><th>70<td>$Bpp(B<td>$Bpq(B<td>$Bpr(B<td>$Bps(B<td>$Bpt(B<td>$Bpu(B<td>$Bpv(B<td>$Bpw(B<td>$Bpx(B<td>$Bpy(B<td>$Bpz(B<td>$Bp{(B<td>$Bp|(B<td>$Bp}(B<td>$Bp~(B<td class=unused>&nbsp;
+  </table>
+  <table><caption>Multibyte: JIS X 0208:1983 (Row 71)</caption>
+   <tr><th> <th>0<th>1<th>2<th>3<th>4<th>5<th>6<th>7<th>8<th>9<th>A<th>B<th>C<th>D<th>E<th>F
+   <tr><th>20<td class=unused>&nbsp;<td>$Bq!(B<td>$Bq"(B<td>$Bq#(B<td>$Bq$(B<td>$Bq%(B<td>$Bq&(B<td>$Bq'(B<td>$Bq((B<td>$Bq)(B<td>$Bq*(B<td>$Bq+(B<td>$Bq,(B<td>$Bq-(B<td>$Bq.(B<td>$Bq/(B
+   <tr><th>30<td>$Bq0(B<td>$Bq1(B<td>$Bq2(B<td>$Bq3(B<td>$Bq4(B<td>$Bq5(B<td>$Bq6(B<td>$Bq7(B<td>$Bq8(B<td>$Bq9(B<td>$Bq:(B<td>$Bq;(B<td>$Bq<(B<td>$Bq=(B<td>$Bq>(B<td>$Bq?(B
+   <tr><th>40<td>$Bq@(B<td>$BqA(B<td>$BqB(B<td>$BqC(B<td>$BqD(B<td>$BqE(B<td>$BqF(B<td>$BqG(B<td>$BqH(B<td>$BqI(B<td>$BqJ(B<td>$BqK(B<td>$BqL(B<td>$BqM(B<td>$BqN(B<td>$BqO(B
+   <tr><th>50<td>$BqP(B<td>$BqQ(B<td>$BqR(B<td>$BqS(B<td>$BqT(B<td>$BqU(B<td>$BqV(B<td>$BqW(B<td>$BqX(B<td>$BqY(B<td>$BqZ(B<td>$Bq[(B<td>$Bq\(B<td>$Bq](B<td>$Bq^(B<td>$Bq_(B
+   <tr><th>60<td>$Bq`(B<td>$Bqa(B<td>$Bqb(B<td>$Bqc(B<td>$Bqd(B<td>$Bqe(B<td>$Bqf(B<td>$Bqg(B<td>$Bqh(B<td>$Bqi(B<td>$Bqj(B<td>$Bqk(B<td>$Bql(B<td>$Bqm(B<td>$Bqn(B<td>$Bqo(B
+   <tr><th>70<td>$Bqp(B<td>$Bqq(B<td>$Bqr(B<td>$Bqs(B<td>$Bqt(B<td>$Bqu(B<td>$Bqv(B<td>$Bqw(B<td>$Bqx(B<td>$Bqy(B<td>$Bqz(B<td>$Bq{(B<td>$Bq|(B<td>$Bq}(B<td>$Bq~(B<td class=unused>&nbsp;
+  </table>
+  <table><caption>Multibyte: JIS X 0208:1983 (Row 72)</caption>
+   <tr><th> <th>0<th>1<th>2<th>3<th>4<th>5<th>6<th>7<th>8<th>9<th>A<th>B<th>C<th>D<th>E<th>F
+   <tr><th>20<td class=unused>&nbsp;<td>$Br!(B<td>$Br"(B<td>$Br#(B<td>$Br$(B<td>$Br%(B<td>$Br&(B<td>$Br'(B<td>$Br((B<td>$Br)(B<td>$Br*(B<td>$Br+(B<td>$Br,(B<td>$Br-(B<td>$Br.(B<td>$Br/(B
+   <tr><th>30<td>$Br0(B<td>$Br1(B<td>$Br2(B<td>$Br3(B<td>$Br4(B<td>$Br5(B<td>$Br6(B<td>$Br7(B<td>$Br8(B<td>$Br9(B<td>$Br:(B<td>$Br;(B<td>$Br<(B<td>$Br=(B<td>$Br>(B<td>$Br?(B
+   <tr><th>40<td>$Br@(B<td>$BrA(B<td>$BrB(B<td>$BrC(B<td>$BrD(B<td>$BrE(B<td>$BrF(B<td>$BrG(B<td>$BrH(B<td>$BrI(B<td>$BrJ(B<td>$BrK(B<td>$BrL(B<td>$BrM(B<td>$BrN(B<td>$BrO(B
+   <tr><th>50<td>$BrP(B<td>$BrQ(B<td>$BrR(B<td>$BrS(B<td>$BrT(B<td>$BrU(B<td>$BrV(B<td>$BrW(B<td>$BrX(B<td>$BrY(B<td>$BrZ(B<td>$Br[(B<td>$Br\(B<td>$Br](B<td>$Br^(B<td>$Br_(B
+   <tr><th>60<td>$Br`(B<td>$Bra(B<td>$Brb(B<td>$Brc(B<td>$Brd(B<td>$Bre(B<td>$Brf(B<td>$Brg(B<td>$Brh(B<td>$Bri(B<td>$Brj(B<td>$Brk(B<td>$Brl(B<td>$Brm(B<td>$Brn(B<td>$Bro(B
+   <tr><th>70<td>$Brp(B<td>$Brq(B<td>$Brr(B<td>$Brs(B<td>$Brt(B<td>$Bru(B<td>$Brv(B<td>$Brw(B<td>$Brx(B<td>$Bry(B<td>$Brz(B<td>$Br{(B<td>$Br|(B<td>$Br}(B<td>$Br~(B<td class=unused>&nbsp;
+  </table>
+  <table><caption>Multibyte: JIS X 0208:1983 (Row 73)</caption>
+   <tr><th> <th>0<th>1<th>2<th>3<th>4<th>5<th>6<th>7<th>8<th>9<th>A<th>B<th>C<th>D<th>E<th>F
+   <tr><th>20<td class=unused>&nbsp;<td>$Bs!(B<td>$Bs"(B<td>$Bs#(B<td>$Bs$(B<td>$Bs%(B<td>$Bs&(B<td>$Bs'(B<td>$Bs((B<td>$Bs)(B<td>$Bs*(B<td>$Bs+(B<td>$Bs,(B<td>$Bs-(B<td>$Bs.(B<td>$Bs/(B
+   <tr><th>30<td>$Bs0(B<td>$Bs1(B<td>$Bs2(B<td>$Bs3(B<td>$Bs4(B<td>$Bs5(B<td>$Bs6(B<td>$Bs7(B<td>$Bs8(B<td>$Bs9(B<td>$Bs:(B<td>$Bs;(B<td>$Bs<(B<td>$Bs=(B<td>$Bs>(B<td>$Bs?(B
+   <tr><th>40<td>$Bs@(B<td>$BsA(B<td>$BsB(B<td>$BsC(B<td>$BsD(B<td>$BsE(B<td>$BsF(B<td>$BsG(B<td>$BsH(B<td>$BsI(B<td>$BsJ(B<td>$BsK(B<td>$BsL(B<td>$BsM(B<td>$BsN(B<td>$BsO(B
+   <tr><th>50<td>$BsP(B<td>$BsQ(B<td>$BsR(B<td>$BsS(B<td>$BsT(B<td>$BsU(B<td>$BsV(B<td>$BsW(B<td>$BsX(B<td>$BsY(B<td>$BsZ(B<td>$Bs[(B<td>$Bs\(B<td>$Bs](B<td>$Bs^(B<td>$Bs_(B
+   <tr><th>60<td>$Bs`(B<td>$Bsa(B<td>$Bsb(B<td>$Bsc(B<td>$Bsd(B<td>$Bse(B<td>$Bsf(B<td>$Bsg(B<td>$Bsh(B<td>$Bsi(B<td>$Bsj(B<td>$Bsk(B<td>$Bsl(B<td>$Bsm(B<td>$Bsn(B<td>$Bso(B
+   <tr><th>70<td>$Bsp(B<td>$Bsq(B<td>$Bsr(B<td>$Bss(B<td>$Bst(B<td>$Bsu(B<td>$Bsv(B<td>$Bsw(B<td>$Bsx(B<td>$Bsy(B<td>$Bsz(B<td>$Bs{(B<td>$Bs|(B<td>$Bs}(B<td>$Bs~(B<td class=unused>&nbsp;
+  </table>
+  <table><caption>Multibyte: JIS X 0208:1983 (Row 74)</caption>
+   <tr><th> <th>0<th>1<th>2<th>3<th>4<th>5<th>6<th>7<th>8<th>9<th>A<th>B<th>C<th>D<th>E<th>F
+   <tr><th>20<td class=unused>&nbsp;<td>$Bt!(B<td>$Bt"(B<td>$Bt#(B<td>$Bt$(B<td>$Bt%(B<td>$Bt&(B<td>$Bt'(B<td>$Bt((B<td>$Bt)(B<td>$Bt*(B<td>$Bt+(B<td>$Bt,(B<td>$Bt-(B<td>$Bt.(B<td>$Bt/(B
+   <tr><th>30<td>$Bt0(B<td>$Bt1(B<td>$Bt2(B<td>$Bt3(B<td>$Bt4(B<td>$Bt5(B<td>$Bt6(B<td>$Bt7(B<td>$Bt8(B<td>$Bt9(B<td>$Bt:(B<td>$Bt;(B<td>$Bt<(B<td>$Bt=(B<td>$Bt>(B<td>$Bt?(B
+   <tr><th>40<td>$Bt@(B<td>$BtA(B<td>$BtB(B<td>$BtC(B<td>$BtD(B<td>$BtE(B<td>$BtF(B<td>$BtG(B<td>$BtH(B<td>$BtI(B<td>$BtJ(B<td>$BtK(B<td>$BtL(B<td>$BtM(B<td>$BtN(B<td>$BtO(B
+   <tr><th>50<td>$BtP(B<td>$BtQ(B<td>$BtR(B<td>$BtS(B<td>$BtT(B<td>$BtU(B<td>$BtV(B<td>$BtW(B<td>$BtX(B<td>$BtY(B<td>$BtZ(B<td>$Bt[(B<td>$Bt\(B<td>$Bt](B<td>$Bt^(B<td>$Bt_(B
+   <tr><th>60<td>$Bt`(B<td>$Bta(B<td>$Btb(B<td>$Btc(B<td>$Btd(B<td>$Bte(B<td>$Btf(B<td>$Btg(B<td>$Bth(B<td>$Bti(B<td>$Btj(B<td>$Btk(B<td>$Btl(B<td>$Btm(B<td>$Btn(B<td>$Bto(B
+   <tr><th>70<td>$Btp(B<td>$Btq(B<td>$Btr(B<td>$Bts(B<td>$Btt(B<td>$Btu(B<td>$Btv(B<td>$Btw(B<td>$Btx(B<td>$Bty(B<td>$Btz(B<td>$Bt{(B<td>$Bt|(B<td>$Bt}(B<td>$Bt~(B<td class=unused>&nbsp;
+  </table>
+  <table><caption>Multibyte: JIS X 0208:1983 (Row 75)</caption>
+   <tr><th> <th>0<th>1<th>2<th>3<th>4<th>5<th>6<th>7<th>8<th>9<th>A<th>B<th>C<th>D<th>E<th>F
+   <tr><th>20<td class=unused>&nbsp;<td>$Bu!(B<td>$Bu"(B<td>$Bu#(B<td>$Bu$(B<td>$Bu%(B<td>$Bu&(B<td>$Bu'(B<td>$Bu((B<td>$Bu)(B<td>$Bu*(B<td>$Bu+(B<td>$Bu,(B<td>$Bu-(B<td>$Bu.(B<td>$Bu/(B
+   <tr><th>30<td>$Bu0(B<td>$Bu1(B<td>$Bu2(B<td>$Bu3(B<td>$Bu4(B<td>$Bu5(B<td>$Bu6(B<td>$Bu7(B<td>$Bu8(B<td>$Bu9(B<td>$Bu:(B<td>$Bu;(B<td>$Bu<(B<td>$Bu=(B<td>$Bu>(B<td>$Bu?(B
+   <tr><th>40<td>$Bu@(B<td>$BuA(B<td>$BuB(B<td>$BuC(B<td>$BuD(B<td>$BuE(B<td>$BuF(B<td>$BuG(B<td>$BuH(B<td>$BuI(B<td>$BuJ(B<td>$BuK(B<td>$BuL(B<td>$BuM(B<td>$BuN(B<td>$BuO(B
+   <tr><th>50<td>$BuP(B<td>$BuQ(B<td>$BuR(B<td>$BuS(B<td>$BuT(B<td>$BuU(B<td>$BuV(B<td>$BuW(B<td>$BuX(B<td>$BuY(B<td>$BuZ(B<td>$Bu[(B<td>$Bu\(B<td>$Bu](B<td>$Bu^(B<td>$Bu_(B
+   <tr><th>60<td>$Bu`(B<td>$Bua(B<td>$Bub(B<td>$Buc(B<td>$Bud(B<td>$Bue(B<td>$Buf(B<td>$Bug(B<td>$Buh(B<td>$Bui(B<td>$Buj(B<td>$Buk(B<td>$Bul(B<td>$Bum(B<td>$Bun(B<td>$Buo(B
+   <tr><th>70<td>$Bup(B<td>$Buq(B<td>$Bur(B<td>$Bus(B<td>$But(B<td>$Buu(B<td>$Buv(B<td>$Buw(B<td>$Bux(B<td>$Buy(B<td>$Buz(B<td>$Bu{(B<td>$Bu|(B<td>$Bu}(B<td>$Bu~(B<td class=unused>&nbsp;
+  </table>
+  <table><caption>Multibyte: JIS X 0208:1983 (Row 76)</caption>
+   <tr><th> <th>0<th>1<th>2<th>3<th>4<th>5<th>6<th>7<th>8<th>9<th>A<th>B<th>C<th>D<th>E<th>F
+   <tr><th>20<td class=unused>&nbsp;<td>$Bv!(B<td>$Bv"(B<td>$Bv#(B<td>$Bv$(B<td>$Bv%(B<td>$Bv&(B<td>$Bv'(B<td>$Bv((B<td>$Bv)(B<td>$Bv*(B<td>$Bv+(B<td>$Bv,(B<td>$Bv-(B<td>$Bv.(B<td>$Bv/(B
+   <tr><th>30<td>$Bv0(B<td>$Bv1(B<td>$Bv2(B<td>$Bv3(B<td>$Bv4(B<td>$Bv5(B<td>$Bv6(B<td>$Bv7(B<td>$Bv8(B<td>$Bv9(B<td>$Bv:(B<td>$Bv;(B<td>$Bv<(B<td>$Bv=(B<td>$Bv>(B<td>$Bv?(B
+   <tr><th>40<td>$Bv@(B<td>$BvA(B<td>$BvB(B<td>$BvC(B<td>$BvD(B<td>$BvE(B<td>$BvF(B<td>$BvG(B<td>$BvH(B<td>$BvI(B<td>$BvJ(B<td>$BvK(B<td>$BvL(B<td>$BvM(B<td>$BvN(B<td>$BvO(B
+   <tr><th>50<td>$BvP(B<td>$BvQ(B<td>$BvR(B<td>$BvS(B<td>$BvT(B<td>$BvU(B<td>$BvV(B<td>$BvW(B<td>$BvX(B<td>$BvY(B<td>$BvZ(B<td>$Bv[(B<td>$Bv\(B<td>$Bv](B<td>$Bv^(B<td>$Bv_(B
+   <tr><th>60<td>$Bv`(B<td>$Bva(B<td>$Bvb(B<td>$Bvc(B<td>$Bvd(B<td>$Bve(B<td>$Bvf(B<td>$Bvg(B<td>$Bvh(B<td>$Bvi(B<td>$Bvj(B<td>$Bvk(B<td>$Bvl(B<td>$Bvm(B<td>$Bvn(B<td>$Bvo(B
+   <tr><th>70<td>$Bvp(B<td>$Bvq(B<td>$Bvr(B<td>$Bvs(B<td>$Bvt(B<td>$Bvu(B<td>$Bvv(B<td>$Bvw(B<td>$Bvx(B<td>$Bvy(B<td>$Bvz(B<td>$Bv{(B<td>$Bv|(B<td>$Bv}(B<td>$Bv~(B<td class=unused>&nbsp;
+  </table>
+  <table><caption>Multibyte: JIS X 0208:1983 (Row 77)</caption>
+   <tr><th> <th>0<th>1<th>2<th>3<th>4<th>5<th>6<th>7<th>8<th>9<th>A<th>B<th>C<th>D<th>E<th>F
+   <tr><th>20<td class=unused>&nbsp;<td>$Bw!(B<td>$Bw"(B<td>$Bw#(B<td>$Bw$(B<td>$Bw%(B<td>$Bw&(B<td>$Bw'(B<td>$Bw((B<td>$Bw)(B<td>$Bw*(B<td>$Bw+(B<td>$Bw,(B<td>$Bw-(B<td>$Bw.(B<td>$Bw/(B
+   <tr><th>30<td>$Bw0(B<td>$Bw1(B<td>$Bw2(B<td>$Bw3(B<td>$Bw4(B<td>$Bw5(B<td>$Bw6(B<td>$Bw7(B<td>$Bw8(B<td>$Bw9(B<td>$Bw:(B<td>$Bw;(B<td>$Bw<(B<td>$Bw=(B<td>$Bw>(B<td>$Bw?(B
+   <tr><th>40<td>$Bw@(B<td>$BwA(B<td>$BwB(B<td>$BwC(B<td>$BwD(B<td>$BwE(B<td>$BwF(B<td>$BwG(B<td>$BwH(B<td>$BwI(B<td>$BwJ(B<td>$BwK(B<td>$BwL(B<td>$BwM(B<td>$BwN(B<td>$BwO(B
+   <tr><th>50<td>$BwP(B<td>$BwQ(B<td>$BwR(B<td>$BwS(B<td>$BwT(B<td>$BwU(B<td>$BwV(B<td>$BwW(B<td>$BwX(B<td>$BwY(B<td>$BwZ(B<td>$Bw[(B<td>$Bw\(B<td>$Bw](B<td>$Bw^(B<td>$Bw_(B
+   <tr><th>60<td>$Bw`(B<td>$Bwa(B<td>$Bwb(B<td>$Bwc(B<td>$Bwd(B<td>$Bwe(B<td>$Bwf(B<td>$Bwg(B<td>$Bwh(B<td>$Bwi(B<td>$Bwj(B<td>$Bwk(B<td>$Bwl(B<td>$Bwm(B<td>$Bwn(B<td>$Bwo(B
+   <tr><th>70<td>$Bwp(B<td>$Bwq(B<td>$Bwr(B<td>$Bws(B<td>$Bwt(B<td>$Bwu(B<td>$Bwv(B<td>$Bww(B<td>$Bwx(B<td>$Bwy(B<td>$Bwz(B<td>$Bw{(B<td>$Bw|(B<td>$Bw}(B<td>$Bw~(B<td class=unused>&nbsp;
+  </table>
+  <table><caption>Multibyte: JIS X 0208:1983 (Row 78)</caption>
+   <tr><th> <th>0<th>1<th>2<th>3<th>4<th>5<th>6<th>7<th>8<th>9<th>A<th>B<th>C<th>D<th>E<th>F
+   <tr><th>20<td class=unused>&nbsp;<td>$Bx!(B<td>$Bx"(B<td>$Bx#(B<td>$Bx$(B<td>$Bx%(B<td>$Bx&(B<td>$Bx'(B<td>$Bx((B<td>$Bx)(B<td>$Bx*(B<td>$Bx+(B<td>$Bx,(B<td>$Bx-(B<td>$Bx.(B<td>$Bx/(B
+   <tr><th>30<td>$Bx0(B<td>$Bx1(B<td>$Bx2(B<td>$Bx3(B<td>$Bx4(B<td>$Bx5(B<td>$Bx6(B<td>$Bx7(B<td>$Bx8(B<td>$Bx9(B<td>$Bx:(B<td>$Bx;(B<td>$Bx<(B<td>$Bx=(B<td>$Bx>(B<td>$Bx?(B
+   <tr><th>40<td>$Bx@(B<td>$BxA(B<td>$BxB(B<td>$BxC(B<td>$BxD(B<td>$BxE(B<td>$BxF(B<td>$BxG(B<td>$BxH(B<td>$BxI(B<td>$BxJ(B<td>$BxK(B<td>$BxL(B<td>$BxM(B<td>$BxN(B<td>$BxO(B
+   <tr><th>50<td>$BxP(B<td>$BxQ(B<td>$BxR(B<td>$BxS(B<td>$BxT(B<td>$BxU(B<td>$BxV(B<td>$BxW(B<td>$BxX(B<td>$BxY(B<td>$BxZ(B<td>$Bx[(B<td>$Bx\(B<td>$Bx](B<td>$Bx^(B<td>$Bx_(B
+   <tr><th>60<td>$Bx`(B<td>$Bxa(B<td>$Bxb(B<td>$Bxc(B<td>$Bxd(B<td>$Bxe(B<td>$Bxf(B<td>$Bxg(B<td>$Bxh(B<td>$Bxi(B<td>$Bxj(B<td>$Bxk(B<td>$Bxl(B<td>$Bxm(B<td>$Bxn(B<td>$Bxo(B
+   <tr><th>70<td>$Bxp(B<td>$Bxq(B<td>$Bxr(B<td>$Bxs(B<td>$Bxt(B<td>$Bxu(B<td>$Bxv(B<td>$Bxw(B<td>$Bxx(B<td>$Bxy(B<td>$Bxz(B<td>$Bx{(B<td>$Bx|(B<td>$Bx}(B<td>$Bx~(B<td class=unused>&nbsp;
+  </table>
+  <table><caption>Multibyte: JIS X 0208:1983 (Row 79)</caption>
+   <tr><th> <th>0<th>1<th>2<th>3<th>4<th>5<th>6<th>7<th>8<th>9<th>A<th>B<th>C<th>D<th>E<th>F
+   <tr><th>20<td class=unused>&nbsp;<td>$By!(B<td>$By"(B<td>$By#(B<td>$By$(B<td>$By%(B<td>$By&(B<td>$By'(B<td>$By((B<td>$By)(B<td>$By*(B<td>$By+(B<td>$By,(B<td>$By-(B<td>$By.(B<td>$By/(B
+   <tr><th>30<td>$By0(B<td>$By1(B<td>$By2(B<td>$By3(B<td>$By4(B<td>$By5(B<td>$By6(B<td>$By7(B<td>$By8(B<td>$By9(B<td>$By:(B<td>$By;(B<td>$By<(B<td>$By=(B<td>$By>(B<td>$By?(B
+   <tr><th>40<td>$By@(B<td>$ByA(B<td>$ByB(B<td>$ByC(B<td>$ByD(B<td>$ByE(B<td>$ByF(B<td>$ByG(B<td>$ByH(B<td>$ByI(B<td>$ByJ(B<td>$ByK(B<td>$ByL(B<td>$ByM(B<td>$ByN(B<td>$ByO(B
+   <tr><th>50<td>$ByP(B<td>$ByQ(B<td>$ByR(B<td>$ByS(B<td>$ByT(B<td>$ByU(B<td>$ByV(B<td>$ByW(B<td>$ByX(B<td>$ByY(B<td>$ByZ(B<td>$By[(B<td>$By\(B<td>$By](B<td>$By^(B<td>$By_(B
+   <tr><th>60<td>$By`(B<td>$Bya(B<td>$Byb(B<td>$Byc(B<td>$Byd(B<td>$Bye(B<td>$Byf(B<td>$Byg(B<td>$Byh(B<td>$Byi(B<td>$Byj(B<td>$Byk(B<td>$Byl(B<td>$Bym(B<td>$Byn(B<td>$Byo(B
+   <tr><th>70<td>$Byp(B<td>$Byq(B<td>$Byr(B<td>$Bys(B<td>$Byt(B<td>$Byu(B<td>$Byv(B<td>$Byw(B<td>$Byx(B<td>$Byy(B<td>$Byz(B<td>$By{(B<td>$By|(B<td>$By}(B<td>$By~(B<td class=unused>&nbsp;
+  </table>
+  <table><caption>Multibyte: JIS X 0208:1983 (Row 7A)</caption>
+   <tr><th> <th>0<th>1<th>2<th>3<th>4<th>5<th>6<th>7<th>8<th>9<th>A<th>B<th>C<th>D<th>E<th>F
+   <tr><th>20<td class=unused>&nbsp;<td>$Bz!(B<td>$Bz"(B<td>$Bz#(B<td>$Bz$(B<td>$Bz%(B<td>$Bz&(B<td>$Bz'(B<td>$Bz((B<td>$Bz)(B<td>$Bz*(B<td>$Bz+(B<td>$Bz,(B<td>$Bz-(B<td>$Bz.(B<td>$Bz/(B
+   <tr><th>30<td>$Bz0(B<td>$Bz1(B<td>$Bz2(B<td>$Bz3(B<td>$Bz4(B<td>$Bz5(B<td>$Bz6(B<td>$Bz7(B<td>$Bz8(B<td>$Bz9(B<td>$Bz:(B<td>$Bz;(B<td>$Bz<(B<td>$Bz=(B<td>$Bz>(B<td>$Bz?(B
+   <tr><th>40<td>$Bz@(B<td>$BzA(B<td>$BzB(B<td>$BzC(B<td>$BzD(B<td>$BzE(B<td>$BzF(B<td>$BzG(B<td>$BzH(B<td>$BzI(B<td>$BzJ(B<td>$BzK(B<td>$BzL(B<td>$BzM(B<td>$BzN(B<td>$BzO(B
+   <tr><th>50<td>$BzP(B<td>$BzQ(B<td>$BzR(B<td>$BzS(B<td>$BzT(B<td>$BzU(B<td>$BzV(B<td>$BzW(B<td>$BzX(B<td>$BzY(B<td>$BzZ(B<td>$Bz[(B<td>$Bz\(B<td>$Bz](B<td>$Bz^(B<td>$Bz_(B
+   <tr><th>60<td>$Bz`(B<td>$Bza(B<td>$Bzb(B<td>$Bzc(B<td>$Bzd(B<td>$Bze(B<td>$Bzf(B<td>$Bzg(B<td>$Bzh(B<td>$Bzi(B<td>$Bzj(B<td>$Bzk(B<td>$Bzl(B<td>$Bzm(B<td>$Bzn(B<td>$Bzo(B
+   <tr><th>70<td>$Bzp(B<td>$Bzq(B<td>$Bzr(B<td>$Bzs(B<td>$Bzt(B<td>$Bzu(B<td>$Bzv(B<td>$Bzw(B<td>$Bzx(B<td>$Bzy(B<td>$Bzz(B<td>$Bz{(B<td>$Bz|(B<td>$Bz}(B<td>$Bz~(B<td class=unused>&nbsp;
+  </table>
+  <table><caption>Multibyte: JIS X 0208:1983 (Row 7B)</caption>
+   <tr><th> <th>0<th>1<th>2<th>3<th>4<th>5<th>6<th>7<th>8<th>9<th>A<th>B<th>C<th>D<th>E<th>F
+   <tr><th>20<td class=unused>&nbsp;<td>$B{!(B<td>$B{"(B<td>$B{#(B<td>$B{$(B<td>$B{%(B<td>$B{&(B<td>$B{'(B<td>$B{((B<td>$B{)(B<td>$B{*(B<td>$B{+(B<td>$B{,(B<td>$B{-(B<td>$B{.(B<td>$B{/(B
+   <tr><th>30<td>$B{0(B<td>$B{1(B<td>$B{2(B<td>$B{3(B<td>$B{4(B<td>$B{5(B<td>$B{6(B<td>$B{7(B<td>$B{8(B<td>$B{9(B<td>$B{:(B<td>$B{;(B<td>$B{<(B<td>$B{=(B<td>$B{>(B<td>$B{?(B
+   <tr><th>40<td>$B{@(B<td>$B{A(B<td>$B{B(B<td>$B{C(B<td>$B{D(B<td>$B{E(B<td>$B{F(B<td>$B{G(B<td>$B{H(B<td>$B{I(B<td>$B{J(B<td>$B{K(B<td>$B{L(B<td>$B{M(B<td>$B{N(B<td>$B{O(B
+   <tr><th>50<td>$B{P(B<td>$B{Q(B<td>$B{R(B<td>$B{S(B<td>$B{T(B<td>$B{U(B<td>$B{V(B<td>$B{W(B<td>$B{X(B<td>$B{Y(B<td>$B{Z(B<td>$B{[(B<td>$B{\(B<td>$B{](B<td>$B{^(B<td>$B{_(B
+   <tr><th>60<td>$B{`(B<td>$B{a(B<td>$B{b(B<td>$B{c(B<td>$B{d(B<td>$B{e(B<td>$B{f(B<td>$B{g(B<td>$B{h(B<td>$B{i(B<td>$B{j(B<td>$B{k(B<td>$B{l(B<td>$B{m(B<td>$B{n(B<td>$B{o(B
+   <tr><th>70<td>$B{p(B<td>$B{q(B<td>$B{r(B<td>$B{s(B<td>$B{t(B<td>$B{u(B<td>$B{v(B<td>$B{w(B<td>$B{x(B<td>$B{y(B<td>$B{z(B<td>$B{{(B<td>$B{|(B<td>$B{}(B<td>$B{~(B<td class=unused>&nbsp;
+  </table>
+  <table><caption>Multibyte: JIS X 0208:1983 (Row 7C)</caption>
+   <tr><th> <th>0<th>1<th>2<th>3<th>4<th>5<th>6<th>7<th>8<th>9<th>A<th>B<th>C<th>D<th>E<th>F
+   <tr><th>20<td class=unused>&nbsp;<td>$B|!(B<td>$B|"(B<td>$B|#(B<td>$B|$(B<td>$B|%(B<td>$B|&(B<td>$B|'(B<td>$B|((B<td>$B|)(B<td>$B|*(B<td>$B|+(B<td>$B|,(B<td>$B|-(B<td>$B|.(B<td>$B|/(B
+   <tr><th>30<td>$B|0(B<td>$B|1(B<td>$B|2(B<td>$B|3(B<td>$B|4(B<td>$B|5(B<td>$B|6(B<td>$B|7(B<td>$B|8(B<td>$B|9(B<td>$B|:(B<td>$B|;(B<td>$B|<(B<td>$B|=(B<td>$B|>(B<td>$B|?(B
+   <tr><th>40<td>$B|@(B<td>$B|A(B<td>$B|B(B<td>$B|C(B<td>$B|D(B<td>$B|E(B<td>$B|F(B<td>$B|G(B<td>$B|H(B<td>$B|I(B<td>$B|J(B<td>$B|K(B<td>$B|L(B<td>$B|M(B<td>$B|N(B<td>$B|O(B
+   <tr><th>50<td>$B|P(B<td>$B|Q(B<td>$B|R(B<td>$B|S(B<td>$B|T(B<td>$B|U(B<td>$B|V(B<td>$B|W(B<td>$B|X(B<td>$B|Y(B<td>$B|Z(B<td>$B|[(B<td>$B|\(B<td>$B|](B<td>$B|^(B<td>$B|_(B
+   <tr><th>60<td>$B|`(B<td>$B|a(B<td>$B|b(B<td>$B|c(B<td>$B|d(B<td>$B|e(B<td>$B|f(B<td>$B|g(B<td>$B|h(B<td>$B|i(B<td>$B|j(B<td>$B|k(B<td>$B|l(B<td>$B|m(B<td>$B|n(B<td>$B|o(B
+   <tr><th>70<td>$B|p(B<td>$B|q(B<td>$B|r(B<td>$B|s(B<td>$B|t(B<td>$B|u(B<td>$B|v(B<td>$B|w(B<td>$B|x(B<td>$B|y(B<td>$B|z(B<td>$B|{(B<td>$B||(B<td>$B|}(B<td>$B|~(B<td class=unused>&nbsp;
+  </table>
+  <table><caption>Multibyte: JIS X 0208:1983 (Row 7D)</caption>
+   <tr><th> <th>0<th>1<th>2<th>3<th>4<th>5<th>6<th>7<th>8<th>9<th>A<th>B<th>C<th>D<th>E<th>F
+   <tr><th>20<td class=unused>&nbsp;<td>$B}!(B<td>$B}"(B<td>$B}#(B<td>$B}$(B<td>$B}%(B<td>$B}&(B<td>$B}'(B<td>$B}((B<td>$B})(B<td>$B}*(B<td>$B}+(B<td>$B},(B<td>$B}-(B<td>$B}.(B<td>$B}/(B
+   <tr><th>30<td>$B}0(B<td>$B}1(B<td>$B}2(B<td>$B}3(B<td>$B}4(B<td>$B}5(B<td>$B}6(B<td>$B}7(B<td>$B}8(B<td>$B}9(B<td>$B}:(B<td>$B};(B<td>$B}<(B<td>$B}=(B<td>$B}>(B<td>$B}?(B
+   <tr><th>40<td>$B}@(B<td>$B}A(B<td>$B}B(B<td>$B}C(B<td>$B}D(B<td>$B}E(B<td>$B}F(B<td>$B}G(B<td>$B}H(B<td>$B}I(B<td>$B}J(B<td>$B}K(B<td>$B}L(B<td>$B}M(B<td>$B}N(B<td>$B}O(B
+   <tr><th>50<td>$B}P(B<td>$B}Q(B<td>$B}R(B<td>$B}S(B<td>$B}T(B<td>$B}U(B<td>$B}V(B<td>$B}W(B<td>$B}X(B<td>$B}Y(B<td>$B}Z(B<td>$B}[(B<td>$B}\(B<td>$B}](B<td>$B}^(B<td>$B}_(B
+   <tr><th>60<td>$B}`(B<td>$B}a(B<td>$B}b(B<td>$B}c(B<td>$B}d(B<td>$B}e(B<td>$B}f(B<td>$B}g(B<td>$B}h(B<td>$B}i(B<td>$B}j(B<td>$B}k(B<td>$B}l(B<td>$B}m(B<td>$B}n(B<td>$B}o(B
+   <tr><th>70<td>$B}p(B<td>$B}q(B<td>$B}r(B<td>$B}s(B<td>$B}t(B<td>$B}u(B<td>$B}v(B<td>$B}w(B<td>$B}x(B<td>$B}y(B<td>$B}z(B<td>$B}{(B<td>$B}|(B<td>$B}}(B<td>$B}~(B<td class=unused>&nbsp;
+  </table>
+  <table><caption>Multibyte: JIS X 0208:1983 (Row 7E)</caption>
+   <tr><th> <th>0<th>1<th>2<th>3<th>4<th>5<th>6<th>7<th>8<th>9<th>A<th>B<th>C<th>D<th>E<th>F
+   <tr><th>20<td class=unused>&nbsp;<td>$B~!(B<td>$B~"(B<td>$B~#(B<td>$B~$(B<td>$B~%(B<td>$B~&(B<td>$B~'(B<td>$B~((B<td>$B~)(B<td>$B~*(B<td>$B~+(B<td>$B~,(B<td>$B~-(B<td>$B~.(B<td>$B~/(B
+   <tr><th>30<td>$B~0(B<td>$B~1(B<td>$B~2(B<td>$B~3(B<td>$B~4(B<td>$B~5(B<td>$B~6(B<td>$B~7(B<td>$B~8(B<td>$B~9(B<td>$B~:(B<td>$B~;(B<td>$B~<(B<td>$B~=(B<td>$B~>(B<td>$B~?(B
+   <tr><th>40<td>$B~@(B<td>$B~A(B<td>$B~B(B<td>$B~C(B<td>$B~D(B<td>$B~E(B<td>$B~F(B<td>$B~G(B<td>$B~H(B<td>$B~I(B<td>$B~J(B<td>$B~K(B<td>$B~L(B<td>$B~M(B<td>$B~N(B<td>$B~O(B
+   <tr><th>50<td>$B~P(B<td>$B~Q(B<td>$B~R(B<td>$B~S(B<td>$B~T(B<td>$B~U(B<td>$B~V(B<td>$B~W(B<td>$B~X(B<td>$B~Y(B<td>$B~Z(B<td>$B~[(B<td>$B~\(B<td>$B~](B<td>$B~^(B<td>$B~_(B
+   <tr><th>60<td>$B~`(B<td>$B~a(B<td>$B~b(B<td>$B~c(B<td>$B~d(B<td>$B~e(B<td>$B~f(B<td>$B~g(B<td>$B~h(B<td>$B~i(B<td>$B~j(B<td>$B~k(B<td>$B~l(B<td>$B~m(B<td>$B~n(B<td>$B~o(B
+   <tr><th>70<td>$B~p(B<td>$B~q(B<td>$B~r(B<td>$B~s(B<td>$B~t(B<td>$B~u(B<td>$B~v(B<td>$B~w(B<td>$B~x(B<td>$B~y(B<td>$B~z(B<td>$B~{(B<td>$B~|(B<td>$B~}(B<td>$B~~(B<td class=unused>&nbsp;
+  </table>
+
+ </body>
+</html>

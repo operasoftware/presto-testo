@@ -1,0 +1,6531 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+	<head>
+		<META NAME="Generator" CONTENT="Several">
+		<META HTTP-EQUIV="Fiskepudding" CONTENT="Fiskeboller">
+		<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+		<title>XML Japanese Profile</title>
+		<link rel="stylesheet" type="text/css" href="http://www.w3.org/StyleSheets/TR/W3C-NOTE">
+	</head>
+	<body lang="en">
+		<div class="head">
+			<img src="http://www.w3.org/Icons/w3c_home" alt="W3C Logo" border="0">
+			<h1>XML Japanese Profile</h1>
+			<h2>W3C Note 14 April 2000</h2>
+			<dl>
+				<dt>This version:</dt>
+				<dd>
+					<a class="loc" href="http://www.w3.org/TR/2000/NOTE-japanese-xml-20000414">http://www.w3.org/TR/2000/NOTE-japanese-xml-20000414</a>
+					<br></dd>
+				<dt>Latest version:</dt>
+				<dd>
+					<a class="loc" href="http://www.w3.org/TR/japanese-xml">http://www.w3.org/TR/japanese-xml</a>
+					<br></dd>
+				<dt>Editor:</dt>
+				<dd><span class="author">
+						<span class="name">MURATA Makoto</span> (Fuji Xerox Information Systems Co.,Ltd)<a href="mailto:muraw3c@attglobal.net">
+&lt;<span class="email">muraw3c@attglobal.net</span>&gt;</a>
+					</span>
+					<br>
+				</dd>
+				<dt>INSTAC XML S-WG:</dt>
+				<dd><span class="author">
+						<span class="name">MURATA Makoto</span> (<em>Fuji Xerox Information Systems)</em></span>
+					<br>
+					<span class="author">
+						<span class="name">KOMACHI Yushi</span> (<em>Panasonic)</em></span>
+					<br>
+					<span class="author">
+						<span class="name">KAWAMATA Akira</span> (<em>Piedey)</em></span>
+					<br>
+					<span class="author">
+						<span class="name">HIYAMA Masayuki</span> (<em>Hiyama Office)</em></span>
+					<br>
+					<span class="author">
+						<span class="name">UCHIYAMA Mitsukazu</span> (<em>Toshiba)</em></span>
+					<br>
+					<span class="author">
+						<span class="name">KAMIMURA Keisuke</span> (<em>GLOCOM)</em></span>
+					<br>
+					<span class="author">
+						<span class="name">OKUI Yasuhiro</span> (<em>Unitec Corporation)</em></span>
+					<br>
+					<span class="author">
+						<span class="name">IMAGO Satosi</span> (<em>RICOH)</em></span>
+					<br>
+				</dd>
+				<dt>Contributors:</dt>
+				<dd><span class="author">
+						<span class="name">HANADA Takako [Translator]</span></span>
+					<br>
+					<span class="author">
+						<span class="name">Rick JELLIFFE</span> (<em>Academia Sinica)</em></span>
+					<br>
+					<span class="author">
+						<span class="name">François YERGEAU</span> (<em>Alis Technologies)</em></span>
+					<br>
+				</dd>
+			</dl>
+			<p class="copyright">Copyright c1999-2000 Japanese Standards Association.  Distribution policies are governed by the W3C intellectual
+property <a class="loc" href="http://www.w3.org/Consortium/Legal/ipr-notice.html#Copyright">terms</a>
+.
+</p>
+		</div>
+		<hr>
+		<h2 class="abstract">Abstract</h2>
+		<p>XML Japanese Profile addresses the issues of using Japanese
+characters in XML documents.  In particular, ambiguities in converting
+existing Japanese charsets to Unicode are clearly pointed out.</p>
+		<h2 class="status">Status of this document</h2>
+		<p>This document is a submission to the World Wide Web
+      Consortium from Xerox, Panasonic, Toshiba, GLOCOM, 
+Academia Sinica, Alis Technologies, Sun Microsystems (see
+      <a class="loc" href="http://www.w3.org/Submission/2000/03/">Submission Request</a>
+, 
+<a class="loc" href="http://www.w3.org/Submission/2000/03/Comment">W3C Staff Comment</a>
+). </p>
+		<p>This document is a NOTE made available by W3C for discussion
+      only.  Publication of this Note by W3C indicates no endorsement
+      by W3C, the W3C Team, or any W3C Members. W3C has had no
+      editorial control over the preparation of this Note. The
+      acknowledgment of a Submission request does not imply that any
+      action will be taken by W3C. It merely records publicly that the
+      Submission request has been made by the submitting Member. This
+      document may not be referred to as "work in progress" of the
+      W3C.  No W3C resources were, are, or will be allocated to the
+      issues addressed by the NOTE.</p>
+		<p>A list of current W3C technical documents can be found at the <a class="loc" href="http://www.w3.org/TR/">Technical Reports</a>
+ page.</p>
+		<p>Comments on this document should be sent to <a class="loc" href="mailto:muraw3c@attglobal.net">muraw3c@attglobal.net</a>
+.</p>
+		<p>XML Japanese Profile <a href="#XMLJPROTR">[JIS TR X 0015]</a> was originally
+published by <a class="loc" href="http://www.jsa.or.jp">Japanese Standards
+Association (JSA)</a>
+ in the Japanese language.  It is not a
+standard but rather a technical report, which is intended to encourage
+public discussion, promote consensus among relevant parties, and
+eventually become a Japanese Industrial Standard (JIS), if
+appropriate.  <a href="#XMLJPROTR">[JIS TR X 0015]</a> was developed by the XML
+special working group (XML SWG) of <a class="loc" href="http://www.jsa.or.jp/INSTAC/english/index.htm">Information Technology Research and Standardization
+Center (INSTAC), JSA</a>
+.</p>
+		<p>This specification was created by first translating <a href="#XMLJPROTR">[JIS TR X 0015]</a> and then revising it on the basis of
+comments from some I18N experts.
+The original specification, <a href="#XMLJPROTR">[JIS TR X 0015]</a>, will be
+accordingly revised and republished by JSA in the near future.  The
+XML SWG intends to keep this document and <a href="#XMLJPROTR">[JIS TR X 0015]</a>
+in sync.
+</p>
+		<h2 class="table-of-contents">Table of Contents</h2>
+		<dl class="table-of-contents">
+			<dt>
+1.
+<a href="#AEN34479616">Scope
+</a>
+			</dt>
+			<dt>
+2.
+<a href="#AEN34498304">Normative References
+</a>
+			</dt>
+			<dt>
+3.
+<a href="#AEN34504000">Definitions
+</a>
+			</dt>
+			<dd><dl><dt>
+3.1
+<a href="#AEN34504064">Japanese Characters
+</a>
+					</dt>
+					<dt>
+3.2
+<a href="#AEN34504608">Coded Character Sets
+</a>
+					</dt>
+					<dt>
+3.3
+<a href="#AEN34505664">Character Encoding Schemes
+</a>
+					</dt>
+					<dt>
+3.4
+<a href="#AEN34506688">Charsets
+</a>
+					</dt>
+					<dt>
+3.5
+<a href="#AEN34507552">XML Constituents
+</a>
+					</dt>
+				</dl></dd>
+			<dt>
+4.
+<a href="#AEN34508256">Coded Character Set
+</a>
+			</dt>
+			<dd><dl><dt>
+4.1
+<a href="#AEN34508320">JIS X 0208:1978
+</a>
+					</dt>
+					<dt>
+4.2
+<a href="#AEN34509152">Compatibility Characters
+</a>
+					</dt>
+				</dl></dd>
+			<dt>
+5.
+<a href="#CES-kitei">Character Encoding Schemes
+</a>
+			</dt>
+			<dd><dl><dt>
+5.1
+<a href="#utf-16-kitei">UTF-16
+</a>
+					</dt>
+					<dt>
+5.2
+<a href="#utf-8-kitei">UTF-8
+</a>
+					</dt>
+					<dt>
+5.3
+<a href="#sjis">Shift-JIS
+</a>
+					</dt>
+					<dt>
+5.4
+<a href="#jeuc">Japanese EUC (Compressed)
+</a>
+					</dt>
+					<dt>
+5.5
+<a href="#AEN34518592">ISO-2022-JP
+</a>
+					</dt>
+				</dl></dd>
+			<dt>
+6.
+<a href="#AEN34523424">Charset Names
+</a>
+			</dt>
+			<dd><dl><dt>
+6.1
+<a href="#AEN34523488">Charsets for an XML document containing Japanese characters
+</a>
+					</dt>
+					<dt>
+6.2
+<a href="#AEN34527296">Code Conversion during Transmission
+</a>
+					</dt>
+					<dt>
+6.3
+<a href="#AEN34527648">Storing transmitted XML constituents to files for information interchange
+</a>
+					</dt>
+				</dl></dd>
+			<dt>
+7.
+<a href="#AEN34528256">XML Constituents in Files for Information Interchange
+</a>
+			</dt>
+			<dt>
+8.
+<a href="#AEN34529824">Delivering XML Constituents by HTTP 1.1
+</a>
+			</dt>
+			<dt>
+9.
+<a href="#AEN34531584">Delivering XML Constituents via EMAIL or NEWS
+</a>
+			</dt>
+			<dt>
+10.
+<a href="#AEN34532800">Avoiding Conversion Ambiguities
+</a>
+			</dt>
+			<dt>
+11.
+<a href="#AEN34534752">The xml:lang Attribute
+</a>
+			</dt>
+		</dl>
+		<h3 class="table-of-contents">Appendices</h3>
+		<dl>
+			<dt>A
+<a href="#AEN34535424">Name Characters
+</a> (Non-Normative)
+                </dt>
+			<dt>B
+<a href="#AEN35655520">Needs for Japanese XML profile
+</a> (Non-Normative)
+                </dt>
+			<dt>C
+<a href="#ambiguity_of_yen">Ambiguities in conversion from Shift-JIS to Unicode
+</a> (Non-Normative)
+                </dt>
+			<dt>D
+<a href="#AEN35660320">Conversion tables for Shift-JIS and Japanese EUC
+</a> (Non-Normative)
+                </dt>
+			<dt>E
+<a href="#AEN35663200">Ambiguities in conversion from Japanese EUC to Unicode
+</a> (Non-Normative)
+                </dt>
+			<dt>F
+<a href="#AEN35672128">Charset parameters in HTTP1.1
+</a> (Non-Normative)
+                </dt>
+			<dt>G
+<a href="#AEN35672352">Non-normative references
+</a> (Non-Normative)
+                </dt>
+		</dl>
+		<div class="div1">
+			<h2>1.
+<a name="AEN34479616">Scope
+</a>
+			</h2>
+			<p>This technical report addresses the issue of Japanese characters in XML
+documents thereby complementing <a href="#XMLTR">[XML]</a>.</p>
+			<div class="note">
+				<blockquote>
+					<b>NOTE:</b>
+In this technical report, the phrase 
+"Japanese characters" is used to refer to the graphic characters 
+specified in <a href="#JISX0208">[JIS X 0208]</a> and <a href="#JISX0212">[JIS X 0212]</a>
+as well as Halfwidth Katakana, the yen 
+sign, and the overline specified in <a href="#JISX0201">[JIS X 0201]</a>.
+</blockquote>
+			</div>
+			<p>For high interoperability of XML documents containing
+Japanese characters, this technical report studies character encoding schemes
+(CESs) for Japanese characters.  CESs for files for information
+interchange and CESs for each protocol (SMTP, HTTP/1.1 and others) are
+specified separately.  Furthermore, this technical report lists conversion tables
+for converting these CESs to <a href="#JISX0221">[JIS X 0221]</a>/<a href="#Unicode">[Unicode 3.0]</a>, and provides names for use in encoding declarations
+and MIME headers.</p>
+			<div class="note">
+				<blockquote>
+					<b>NOTE:</b>
+Refer to <a href="#RFC2130">[IETF RFC 2130]</a> for the source  definition of the terms "Coded Character Set" and "Character Encoding Scheme" in this technical report.</blockquote>
+			</div>
+			<div class="note">
+				<blockquote>
+					<b>NOTE:</b>
+This technical report may be ignored if full
+interoperability for Japanese XML documents is not required.</blockquote>
+			</div>
+			<p>Most parts of this technical report are mere adaptations of IETF RFCs and W3C recommendations for Japanese characters.</p>
+			<div class="note">
+				<blockquote>
+					<b>NOTE:</b>
+For example, <a href="#XMLTR">[XML]</a> discourages the use of compatibility 
+characters, defined in clause 6.8 of <a href="#Unicode">[Unicode 3.0]</a>.
+Accordingly, this technical report discourages the use of Halfwidth Katakana characters 
+defined in <a href="#JISX0201">[JIS X 0201]</a>, which are compatibility characters.</blockquote>
+			</div>
+			<p>When some part of this technical report is adopted from <a href="#XMLTR">[XML]</a> and other IETF RFCs or W3C recommendations, the source
+reference is indicated in a subsequent note or appendice.</p>
+		</div>
+		<div class="div1">
+			<h2>2.
+<a name="AEN34498304">Normative References
+</a>
+			</h2>
+			<p>Any of the following JISs refers to its latest version.  If
+an RFC or I-D is superseded by another RFC, the new RFC is referenced.</p>
+			<dl>
+				<dt><a name="UTR22">
+Character Mapping Tables</a></dt>
+				<dd>
+The Unicode Consortium.
+<i>
+Character Mapping Tables 1.0,
+Proposed Draft Unicode Technical Report 22.</i><a class="loc" href="http://www.unicode.org/unicode/reports/tr22/tr22-1">http://www.unicode.org/unicode/reports/tr22/tr22-1</a>
+, 1999.
+</dd>
+				<dt><a name="IANA">
+IANA</a></dt>
+				<dd>
+IANA (Internet Assigned Numbers Authority). <i>
+Official Names for
+Character Sets</i>, ed. Keld Simonsen et al. <a class="loc" href="ftp://ftp.isi.edu/in-notes/iana/assignments/character-sets">ftp://ftp.isi.edu/in-notes/iana/assignments/character-sets</a>
+				</dd>
+				<dt><a name="RFC1468">
+IETF RFC 1468</a></dt>
+				<dd>
+IETF (Internet Engineering Task Force). <i>
+RFC 1468: Japanese
+character encoding for Internet messages</i>,  ed. J. Murai, M.
+Crispin, and E. van der Poel. 1993.
+</dd>
+				<dt><a name="RFC1766">
+IETF RFC 1766</a></dt>
+				<dd>
+IETF (Internet Engineering Task Force). <i>
+RFC 1766:  Tags for the
+Identification of Languages</i>, ed. H. Alvestrand. 1995.
+</dd>
+				<dt><a name="RFC2045">
+IETF RFC 2045</a></dt>
+				<dd>
+IETF (Internet Engineering Task Force). <i>
+RFC 2045: Multipurpose
+Internet Mail Extensions (MIME) Part One: Format of Internet Message
+Bodies</i>,  ed. N. Freed and N. Borenstein. 1996.
+</dd>
+				<dt><a name="RFC2046">
+IETF RFC 2046</a></dt>
+				<dd>
+IETF (Internet Engineering Task Force). <i>
+RFC 2046: Multipurpose
+Internet Mail Extensions (MIME) Part Two: Media Types</i>,  ed. N.
+Freed and N. Borenstein. 1996.
+</dd>
+				<dt><a name="RFC2130">
+IETF RFC 2130</a></dt>
+				<dd>
+IETF (Internet Engineering Task Force). <i>
+RFC 2130: The Report of 
+the IAB Character Set Workshop held 29 February - 1 March, 1996</i>, 
+C. Weider, C. Preston, K. Simonsen, H. Alvestrand, R. Atkinson, 
+M. Crispin, P. Svanberg. 1997.
+</dd>
+				<dt><a name="RFC2277">
+IETF RFC 2277</a></dt>
+				<dd>
+IETF (Internet Engineering Task Force). <i>
+RFC 2277: IETF policy on
+character sets and languages</i>, ed. H. Alvestrand. 1998.
+</dd>
+				<dt><a name="RFC2278">
+IETF RFC 2278</a></dt>
+				<dd>
+IETF (Internet Engineering Task Force). <i>
+RFC 2278: IANA Charset 
+Registration Procedures</i>, ed. N. Freed and J. Postel. 1998.
+</dd>
+				<dt><a name="RFC2279">
+IETF RFC 2279</a></dt>
+				<dd>
+IETF (Internet Engineering Task Force). <i>
+RFC 2279: UTF-8, a
+transformation format of ISO 10646</i>,  ed. F. Yergeau. 1998.
+</dd>
+				<dt><a name="RFC2376">
+IETF RFC 2376</a></dt>
+				<dd>
+IETF (Internet Engineering Task Force). <i>
+RFC 2376: XML media
+types</i>,  ed. E. Whitehead and M. Murata. 1998.
+</dd>
+				<dt><a name="RFC2396">
+IETF RFC 2396</a></dt>
+				<dd>
+IETF (Internet Engineering Task Force). <i>
+RFC 2396: Uniform 
+Resource Identifiers (URI): Generic Syntax</i>, 
+ed. T. Berners-Lee, R. Fielding, and L. Masinter. 1998.
+</dd>
+				<dt><a name="RFC2616">
+IETF RFC 2616</a></dt>
+				<dd>
+IETF (Internet Engineering Task Force). <i>
+RFC2616: Hypertext
+Transfer Protocol --- HTTP/1.1</i>, ed. R. Fielding, J. Gettys, J.
+Mogul, H. Frystyk, and T. Berners-Lee. 1999.
+</dd>
+				<dt><a name="RFC2781">
+IETF RFC 2781</a></dt>
+				<dd>
+IETF (Internet Engineering Task Force). <i>
+RFC 2781: UTF-16, an encoding
+of ISO 10646</i>, ed. P. Hoffman. and F. Yergeau. 2000.
+</dd>
+				<dt><a name="ISO646">
+ISO/IEC 646</a></dt>
+				<dd>
+International Organization for Standardization. <i>
+Information 
+technology ? ISO 7-bit coded character set for information 
+interchange</i>, ISO/IEC 646:1991,
+International Organization for Standardization, 1991.
+</dd>
+				<dt><a name="ISO10646">
+ISO/IEC10646</a></dt>
+				<dd>
+International Organization for Standardization. <i>
+Information
+technology ? Universal Multiple-Octet Coded Character Set (UCS)
+? Part 1: Architecture and Basic Multilingual Plane</i>,
+ISO/IEC 10646:1993 (E),
+International Organization for Standardization, 1993.  
+</dd>
+				<dt><a name="XMLJPROTR">
+JIS TR X 0015</a></dt>
+				<dd>
+Japanese Industrial Standards Committee. <i>
+XML Japanese Profile</i>, 
+JIS TR 0015:1999,  Japanese Standards Association, May 1999.
+</dd>
+				<dt><a name="JISX0201">
+JIS X 0201</a></dt>
+				<dd>
+Japanese Industrial Standards Committee. <i>
+7-bit and 8-bit
+coded character sets for information interchange</i>, JIS X 0201:1997,
+Japanese Standards Association, 1997.
+</dd>
+				<dt><a name="JISX0208">
+JIS X 0208</a></dt>
+				<dd>
+Japanese Industrial Standards Committee. <i>
+7-bit and 8-bit
+double byte coded KANJI sets for information interchange</i>, JIS X
+0208:1997, Japanese Standards Association, 1997.
+</dd>
+				<dt><a name="JISX0212">
+JIS X 0212</a></dt>
+				<dd>
+Japanese Industrial Standards Committee. <i>
+Code of the 
+supplementary Japanese graphic character set for information 
+interchange</i>, JIS X0212:1990, 
+Japanese Standards Association, 1990.
+</dd>
+				<dt><a name="JISX0221">
+JIS X 0221</a></dt>
+				<dd>
+Japanese Industrial Standards Committee. <i>
+Universal 
+Multiple-Octet Coded Character Set (UCS) -- Part 1: 
+Architecture and Basic Multilingual Plane</i>, JIS X0221:1995,
+Japanese Standards Association, 1995.
+</dd>
+				<dt><a name="Unicode">
+Unicode 3.0</a></dt>
+				<dd>
+The Unicode Consortium. 
+<i>
+The Unicode Standard, Version 3.0.</i>
+Reading, MA, Addison-Wesley Developers Press, 2000. ISBN 0-201-61633-5.</dd>
+				<dt><a name="US-ASCII">
+US-ASCII</a></dt>
+				<dd>
+American National Standards Institute, <i>
+Coded character set
+? 7-bit American National Standard Code for Information 
+Interchange</i>, ANSI X3.4-1986.</dd>
+				<dt><a name="XMLTR">
+XML</a></dt>
+				<dd>
+W3C (Worlde Wide Web Consortium). <i>
+XML (Extensible Markup Language)
+Recommendation</i>, 
+<a class="loc" href="http://www.w3.org/TR/REC-xml">http://www.w3.org/TR/REC-xml</a>
+, 
+1998.
+</dd>
+			</dl>
+			<div class="note">
+				<blockquote>
+					<b>NOTE:</b>
+					<a href="#JISX0221">[JIS X 0221]</a> corresponds to 
+<a href="#ISO10646">[ISO/IEC10646]</a>.
+</blockquote>
+			</div>
+		</div>
+		<div class="div1">
+			<h2>3.
+<a name="AEN34504000">Definitions
+</a>
+			</h2>
+			<div class="div2">
+				<h3>3.1
+<a name="AEN34504064">Japanese Characters
+</a>
+				</h3>
+				<p><span class="termdef">
+						<a name="nihongomoji">[Definition: ] </a>
+						<b class="term">
+Japanese characters</b> mean graphic characters
+defined by <a href="#JISX0208">[JIS X 0208]</a> or <a href="#JISX0212">[JIS X 0212]</a> as
+well as Katakana, the yen sign, and the overline defined by <a href="#JISX0201">[JIS X 0201]</a>.</span></p>
+			</div>
+			<div class="div2">
+				<h3>3.2
+<a name="AEN34504608">Coded Character Sets
+</a>
+				</h3>
+				<p><span class="termdef">
+						<a name="CCS">[Definition: ] </a>
+A <b class="term">
+Coded 
+Character Set (CCS)</b> is a mapping from a set of characters to a set 
+of integers.</span></p>
+				<div class="note">
+					<blockquote>
+						<b>NOTE:</b>
+The term "
+<a href="#CCS">Coded
+	Character Set</a>" is adopted from <a href="#RFC2277">[IETF RFC 2277]</a> and <a href="#RFC2130">[IETF RFC 2130]</a>.</blockquote>
+				</div>
+				<div class="note">
+					<blockquote>
+						<b>NOTE:</b>
+Note that <a href="#JISX0208">[JIS X 0208]</a>
+defines <i>
+Coded Character Sets</i> as correspondences between
+characters and bit combination, which differs from this
+definition.</blockquote>
+				</div>
+			</div>
+			<div class="div2">
+				<h3>3.3
+<a name="AEN34505664">Character Encoding Schemes
+</a>
+				</h3>
+				<p><span class="termdef">
+						<a name="CES">[Definition: ] </a>
+A <b class="term">
+
+Character Encoding Scheme (CES)</b> is a mapping from a CCS or several 
+CCSs to a set of octets.</span></p>
+				<div class="note">
+					<blockquote>
+						<b>NOTE:</b>
+A <i>
+Character Encoding
+Scheme</i> is identical to that described in <a href="#RFC2277">[IETF RFC 2277]</a> and <a href="#RFC2130">[IETF RFC 2130]</a>.</blockquote>
+				</div>
+				<div class="note">
+					<blockquote>
+						<b>NOTE:</b>
+						<a href="#XMLTR">[XML]</a> uses the terms "Encoding" and "Encoding Method" 
+identically to CESs of <a href="#RFC2277">[IETF RFC 2277]</a> and <a href="#RFC2130">[IETF RFC 2130]</a>.</blockquote>
+				</div>
+			</div>
+			<div class="div2">
+				<h3>3.4
+<a name="AEN34506688">Charsets
+</a>
+				</h3>
+				<p><span class="termdef">
+						<a name="charset">[Definition: ] </a>
+A <b class="term">
+charset</b> is
+a set of rules for mapping from a sequence of octets to a sequence of 
+characters.</span></p>
+				<div class="note">
+					<blockquote>
+						<b>NOTE:</b>
+This definition is identical to those in <a href="#RFC2130">[IETF RFC 2130]</a>, <a href="#RFC2277">[IETF RFC 2277]</a>, and <a href="#RFC2278">[IETF RFC 2278]</a>.</blockquote>
+				</div>
+				<div class="note">
+					<blockquote>
+						<b>NOTE:</b>
+A list of the charsets registered for Internet messages is available at 
+<a href="#IANA">[IANA]</a>.</blockquote>
+				</div>
+			</div>
+			<div class="div2">
+				<h3>3.5
+<a name="AEN34507552">XML Constituents
+</a>
+				</h3>
+				<p><span class="termdef">
+						<a name="xml-constituent">[Definition: ] </a>
+In
+this technical report, the phrase <b class="term">
+XML constituents</b> is used to mean
+document entities, external parsed entities, external DTD subsets, and
+external parameter entities.</span></p>
+				<div class="note">
+					<blockquote>
+						<b>NOTE:</b>
+In the XML terminology, the word
+"entity" refers to document entities, internal parsed entities,
+external parsed entities, external unparsed entities, external DTD
+subsets, internal parameter entities, and external parameter entities.
+Among them, internal parsed entities, internal parameter entities, and
+external unparsed entities need not specify CESs.</blockquote>
+				</div>
+				<div class="note">
+					<blockquote>
+						<b>NOTE:</b>
+Each XML constituent is usually stored 
+in a file or distributed as a MIME entity via some protocol.
+</blockquote>
+				</div>
+			</div>
+		</div>
+		<div class="div1">
+			<h2>4.
+<a name="AEN34508256">Coded Character Set
+</a>
+			</h2>
+			<div class="div2">
+				<h3>4.1
+<a name="AEN34508320">JIS X 0208:1978
+</a>
+				</h3>
+				<p>The use of <a href="#JISX0208">[JIS X 0208]</a>:1978
+(the first version of JIS X 0208) is an error; results are undefined.</p>
+				<div class="note">
+					<blockquote>
+						<b>NOTE:</b>
+						<a href="#JISX0208">[JIS X 0208]</a>:1978 is not a source standard of 
+<a href="#Unicode">[Unicode 3.0]</a>, which <a href="#XMLTR">[XML]</a> employs as the coded 
+character set, and therefore, the relationship between these <a href="#JISX0208">[JIS X 0208]</a> and <a href="#Unicode">[Unicode 3.0]</a> is not clear.
+</blockquote>
+				</div>
+			</div>
+			<div class="div2">
+				<h3>4.2
+<a name="AEN34509152">Compatibility Characters
+</a>
+				</h3>
+				<p>Those digits, Latin characters, and special
+characters of <a href="#JISX0208">[JIS X 0208]</a> which are also specified by
+<a href="#JISX0201">[JIS X 0201]</a> are deprecated.  Likewise, Halfwidth Katakana of
+<a href="#JISX0201">[JIS X 0201]</a> are deprecated.</p>
+				<div class="note">
+					<blockquote>
+						<b>NOTE:</b>
+						<a href="#XMLTR">[XML]</a> discourages the use of compatibility characters described in <a href="#Unicode">[Unicode 3.0]</a>.</blockquote>
+				</div>
+			</div>
+		</div>
+		<div class="div1">
+			<h2>5.
+<a name="CES-kitei">Character Encoding Schemes
+</a>
+			</h2>
+			<div class="div2">
+				<h3>5.1
+<a name="utf-16-kitei">UTF-16
+</a>
+				</h3>
+				<p>This technical report recommends the use of UTF-16 (or UTF-8, as written in 
+<a href="#utf-8-kitei"><b>UTF-8</b></a>).</p>
+				<div class="note">
+					<blockquote>
+						<b>NOTE:</b>
+UTF-16 is a CES that represents all characters contained in
+the first 17 planes specified by <a href="#Unicode">[Unicode 3.0]</a> or <a href="#ISO10646">[ISO/IEC10646]</a>.  UTF-16 is specified by Amendment 1 of ISO/IEC
+10646 and by <a href="#Unicode">[Unicode 3.0]</a>.  Also refer to <a href="#RFC2781">[IETF RFC 2781]</a> for an explanation of UTF-16.</blockquote>
+				</div>
+				<div class="note">
+					<blockquote>
+						<b>NOTE:</b>
+						<a href="#XMLTR">[XML]</a> requires any XML
+processor to read entities in UTF-16 (or UTF-8, as  described in <a href="#utf-8-kitei"><b>UTF-8</b></a>).</blockquote>
+				</div>
+				<p>The charset name for UTF-16 is "utf-16".</p>
+				<div class="note">
+					<blockquote>
+						<b>NOTE:</b>
+In <a href="#RFC2781">[IETF RFC 2781]</a>, "utf-16be" and 
+"utf-16le" represents Big Endian UTF-16 and Little Endian UTF-16, 
+respectively.
+</blockquote>
+				</div>
+			</div>
+			<div class="div2">
+				<h3>5.2
+<a name="utf-8-kitei">UTF-8
+</a>
+				</h3>
+				<p>This technical report recommends the use of UTF-8 (or UTF-16, as <a href="#utf-16-kitei"><b>UTF-16</b></a> describes).</p>
+				<div class="note">
+					<blockquote>
+						<b>NOTE:</b>
+UTF-8 is a CES which covers all of the 
+characters specified by <a href="#ISO10646">[ISO/IEC10646]</a> and <a href="#Unicode">[Unicode 3.0]</a>.
+UTF-8 is specified by <a href="#Unicode">[Unicode 3.0]</a> and Amendment 2 of 
+<a href="#ISO10646">[ISO/IEC10646]</a>.
+See also <a href="#RFC2279">[IETF RFC 2279]</a> for another explanation of UTF-8.</blockquote>
+				</div>
+				<div class="note">
+					<blockquote>
+						<b>NOTE:</b>
+						<a href="#XMLTR">[XML]</a> requires any XML processor to read entities in 
+UTF-8.</blockquote>
+				</div>
+				<p>The charset name for UTF-8 is utf-8.</p>
+				<div class="note">
+					<blockquote>
+						<b>NOTE:</b>
+Charset name "utf-8" is registered at <a href="#IANA">[IANA]</a>.</blockquote>
+				</div>
+			</div>
+			<div class="div2">
+				<h3>5.3
+<a name="sjis">Shift-JIS
+</a>
+				</h3>
+				<p>This technical report and <a href="#XMLTR">[XML]</a> treat Shift-JIS, 
+an ordinary Japanese charset in Japan, as a CES
+that represents Japanese characters and <a href="#US-ASCII">[US-ASCII]</a> 
+characters in <a href="#ISO10646">[ISO/IEC10646]</a> or <a href="#Unicode">[Unicode 3.0]</a>.  For full interoperability in the Internet, migration from Shift-JIS to UTF-8/UTF-16 is highly recommended.
+</p>
+				<div class="note">
+					<blockquote>
+						<b>NOTE:</b>
+Note that 
+<a href="#nihongomoji">Japanese characters
+</a> here include Halfwidth Katakana, the yen sign and the overline 
+described by <a href="#JISX0201">[JIS X 0201]</a>.</blockquote>
+				</div>
+				<p>There are four major conversion tables from Shift-JIS to 
+<a href="#ISO10646">[ISO/IEC10646]</a> or <a href="#Unicode">[Unicode 3.0]</a>.  This technical report names them 
+x-sjis-unicode-0.9, x-sjis-jisx0221-1995, x-sjis-cp932, and x-sjis-jdk1.1.7, respectively.  These conversion tables are not identical to each other.</p>
+				<div class="note">
+					<blockquote>
+						<b>NOTE:</b>
+Other conversion tables are also in use.</blockquote>
+				</div>
+				<p>X-sjis-unicode-0.9 is published by Unicode Consortium as the
+conversion table for Shift-JIS (version 0.9).  X-sjis-jisx0221-1995 is a
+conversion table derived from the conversion table in <a href="#JISX0221">[JIS X 0221]</a> Appendix 3 for the shift encoding which is specified
+in <a href="#JISX0208">[JIS X 0208]</a> Appendix 1.  X-sjis-cp932 is published by
+Unicode Consortium as the conversion table for Microsoft CP932.
+X-sjis-jdk1.1.7 is the conversion table used for the encoding named SJIS in
+JDK 1.1.7.</p>
+				<div class="note">
+					<blockquote>
+						<b>NOTE:</b>
+Conversion tables from Unicode Consortium are available at 
+          <a class="loc" href="ftp://ftp.unicode.org/Public/MAPPINGS/">ftp://ftp.unicode.org/Public/MAPPINGS/</a>
+.</blockquote>
+				</div>
+				<div class="note">
+					<blockquote>
+						<b>NOTE:</b>
+Use of Shift-JIS cannot provide 
+interoperability in information interchange, since any of the above-mentioned 
+conversion tables or some other conversion tables might be used.</blockquote>
+				</div>
+				<div class="note">
+					<blockquote>
+						<b>NOTE:</b>
+It is generally assumed that Shift-JIS 
+uses <a href="#JISX0201">[JIS X 0201]</a> rather than <a href="#US-ASCII">[US-ASCII]</a>.  This
+assumption applies to all of these conversion tables except for x-sjis-jdk1.1.7.
+<a href="#RFC2046">[IETF RFC 2046]</a> deprecates the use of any national
+or application-oriented version of <a href="#ISO646">[ISO/IEC 646]</a> in
+Internet mail, except when it is completely identical to US-ASCII.</blockquote>
+				</div>
+				<div class="note">
+					<blockquote>
+						<b>NOTE:</b>
+Although the definition of Windows Standard Character Set is 
+based on <a href="#JISX0201">[JIS X 0201]</a>, the conversion table maps 0x5C to U+005C (REVERSE SOLIDUS).</blockquote>
+				</div>
+				<div class="note">
+					<blockquote>
+						<b>NOTE:</b>
+						<a href="#ambiguity_of_yen"><b>Ambiguities in conversion from Shift-JIS to Unicode</b></a> provides 
+further information on the yen sign.</blockquote>
+				</div>
+			</div>
+			<div class="div2">
+				<h3>5.4
+<a name="jeuc">Japanese EUC (Compressed)
+</a>
+				</h3>
+				<p>This technical report and <a href="#XMLTR">[XML]</a> treat Japanese EUC (Compressed)
+<a href="#euc-jp">[UNIX International]</a>, an ordinary Japanese charset in Japan, as a 
+CES that represents Japanese characters and <a href="#US-ASCII">[US-ASCII]</a> characters in <a href="#ISO10646">[ISO/IEC10646]</a> or <a href="#Unicode">[Unicode 3.0]</a>.  For full interoperability in the Internet, migration from Japanese EUC (Compressed) to UTF-8/UTF-16 is highly recommended.
+</p>
+				<p>There are five major conversion tables from Japanese EUC
+(Compressed) to <a href="#ISO10646">[ISO/IEC10646]</a> or <a href="#Unicode">[Unicode 3.0]</a>.  
+This technical report names them x-eucjp-unicode-0.9, x-eucjp-jisx0221-1995, x-eucjp-open-19970715-ms, x-eucjp-open-19970715-0201 and x-eucjp-open-19970715-ascii,
+respectively.  These conversion tables are not identical to each
+other.</p>
+				<p>X-eucjp-unicode-0.9 is derived from the conversion table published by Unicode
+Consortium for conversion from <a href="#JISX0208">[JIS X 0208]</a> to <a href="#ISO10646">[ISO/IEC10646]</a> or <a href="#Unicode">[Unicode 3.0]</a>.  X-eucjp-jisx0221-1995 is derived
+from the one in Appendix 3 of <a href="#JISX0221">[JIS X 0221]</a>.  X-eucjp-open-19970715-ms,
+x-eucjp-open-19970715-0201 and x-eucjp-open-19970715-ascii are conversion tables defined by OSF Japanese
+Vendors Council (OSF/JVC) and they are named eucJP-ms, eucJP-0201 and
+eucJP-ascii by Appendix of <a href="#open-group">[TOG/JVC CDE/Motif TOG/JVC CDE/Motif Technical WG]</a>.</p>
+				<div class="note">
+					<blockquote>
+						<b>NOTE:</b>
+Use of Japanese EUC cannot provide interoperability in information interchange, since any of these conversion tables or some other conversion table might be used.</blockquote>
+				</div>
+				<div class="note">
+					<blockquote>
+						<b>NOTE:</b>
+X-eucjp-open-19970715-ms, x-eucjp-open-19970715-0201 and x-eucjp-open-19970715-ascii contain NEC special characters,
+NEC-selected IBM extended characters, IBM extension characters, and
+user-defined characters.</blockquote>
+				</div>
+			</div>
+			<div class="div2">
+				<h3>5.5
+<a name="AEN34518592">ISO-2022-JP
+</a>
+				</h3>
+				<p>This technical report and <a href="#XMLTR">[XML]</a> assume ISO-2022-JP<a href="#RFC1468">[IETF RFC 1468]</a>, an ordinary Japanese charset in Japan, as a CES that
+represents Japanese characters and <a href="#US-ASCII">[US-ASCII]</a> characters
+in <a href="#ISO10646">[ISO/IEC10646]</a> or <a href="#Unicode">[Unicode 3.0]</a>.  For full 
+interoperability in the Internet, migration from ISO-2022-JP to 
+UTF-8/UTF-16 is highly recommended.
+</p>
+				<p>This technical report defines conversion from ISO-2022-JP to <a href="#ISO10646">[ISO/IEC10646]</a> or <a href="#Unicode">[Unicode 3.0]</a> via Shift-JIS or Japanese
+EUC; that is, ISO-2022-JP is first converted to Shift-JIS or Japanese
+EUC and then converted by one of the tables shown in <a href="#sjis"><b>Shift-JIS</b></a> or <a href="#jeuc"><b>Japanese EUC (Compressed)</b></a>.  Therefore, for each 
+conversion table from Japanese EUC or Shift-JIS, one conversion table
+from ISO-2022-JP is constructed.</p>
+				<div class="note">
+					<blockquote>
+						<b>NOTE:</b>
+ISO-2022-JP is a charset designed for message
+transmission such as EMAIL.  One can thus safely assume that
+information in ISO-2022-JP was temporarilly converted from Shift-JIS or Japanese EUC
+for message transmission.  Therefore, it is very reasonable to convert
+ISO-2022-JP to <a href="#ISO10646">[ISO/IEC10646]</a> or <a href="#Unicode">[Unicode 3.0]</a> via
+Shift-JIS or Japanese EUC.</blockquote>
+				</div>
+				<div class="note">
+					<blockquote>
+						<b>NOTE:</b>
+Note that conversion via Shift-JIS or Japanese EUC
+provides only the characters allowed by <a href="#RFC1468">[IETF RFC 1468]</a>.  For
+example, x-iso2022jp-cp932 cannot represent those characters in x-sjis-cp932 not 
+contained by <a href="#US-ASCII">[US-ASCII]</a>, <a href="#JISX0201">[JIS X 0201]</a> or <a href="#JISX0208">[JIS X 0208]</a>.</blockquote>
+				</div>
+				<p>After omitting identical conversion tables, 
+five conversion tables are obtained.  This technical report names them
+x-iso2022jp-unicode-0.9, x-iso2022jp-jisx0221-1995, x-iso2022jp-cp932, x-iso2022jp-jdk1.1.7, and x-iso2022jp-19970715-ascii. These 
+conversion tables are not identical to each other.</p>
+				<table border="1" width="80%">
+					<caption>Correspondences between ISO-2022-JP and Shift-JIS or Japanese EUC
+	  </caption>
+					<tbody><tr>
+							<th rowspan="1" colspan="1">
+							</th>
+							<th rowspan="1" colspan="1">
+Conversion from Shift-JIS or Japanese EUC</th>
+							<th rowspan="1" colspan="1">
+Conversion from ISO-2022-JP</th>
+						</tr>
+						<tr>
+							<td rowspan="4" colspan="1">
+Shift-JIS</td>
+							<td rowspan="1" colspan="1">
+x-sjis-jdk1.1.7</td>
+							<td rowspan="1" colspan="1">
+x-iso2022jp-jdk1.1.7</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+x-sjis-unicode-0.9</td>
+							<td rowspan="1" colspan="1">
+x-iso2022jp-unicode-0.9</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+x-sjis-jisx0221-1995</td>
+							<td rowspan="1" colspan="1">
+x-iso2022jp-jisx0221-1995</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+x-sjis-cp932</td>
+							<td rowspan="1" colspan="1">
+x-iso2022jp-cp932</td>
+						</tr>
+						<tr>
+							<td rowspan="4" colspan="1">
+Japanese EUC</td>
+							<td rowspan="1" colspan="1">
+x-eucjp-open-19970715-ms</td>
+							<td rowspan="1" colspan="1">
+x-iso2022jp-cp932</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+x-eucjp-open-19970715-0201</td>
+							<td rowspan="1" colspan="1">
+x-iso2022jp-jisx0221-1995</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+x-eucjp-open-19970715-ascii</td>
+							<td rowspan="1" colspan="1">
+x-iso2022jp-19970715-ascii</td>
+						</tr>
+					</tbody>
+				</table>
+				<p>An escape sequence of <a href="#RFC1468">[IETF RFC 1468]</a> 
+(1B 24 42, 1B 24 4A, 1B 28 42, or 1B 28 4A)
+is an error if it occurs before the end of an encoding declaration in
+an ISO-2022-JP XML constituent.  Results are undefined.</p>
+				<div class="note">
+					<blockquote>
+						<b>NOTE:</b>
+						<a href="#XMLTR">[XML]</a> specifies that an XML processor must report
+an error and stop normal processing when it is unable to process the
+employed CES.  Most XML processors cannot handle occurrences of bit
+combination 1B before the end of an encoding declaration.  
+Such an occurrence is defined as an error (whose results are
+undefined) rather than a fatal error (which requires suspension) in
+order not to void XML processors based on an existing code conversion
+library.  If it is defined as a fatal error, such XML processors might
+become non-conformant.</blockquote>
+				</div>
+				<div class="note">
+					<blockquote>
+						<b>NOTE:</b>
+Use of ISO-2022-JP cannot provide interoperability in information interchange, since any of these conversion tables or some other conversion tables might be used.</blockquote>
+				</div>
+			</div>
+		</div>
+		<div class="div1">
+			<h2>6.
+<a name="AEN34523424">Charset Names
+</a>
+			</h2>
+			<div class="div2">
+				<h3>6.1
+<a name="AEN34523488">Charsets for an XML document containing Japanese characters
+</a>
+				</h3>
+				<p>The conversion tables shown in <a href="#CES-kitei"><b>Character Encoding Schemes</b></a> are assumed to be independent and non-identical 
+<a href="#charset">charsets</a>, as listed below:</p>
+				<table border="1" width="80%">
+					<tbody><tr>
+							<td rowspan="2" colspan="1">
+Unicode</td>
+							<td rowspan="1" colspan="1">
+utf-16</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+utf-8</td>
+						</tr>
+						<tr>
+							<td rowspan="4" colspan="1">
+Shift-JIS</td>
+							<td rowspan="1" colspan="1">
+x-sjis-unicode-0.9</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+x-sjis-jisx0221-1995</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+x-sjis-cp932</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+x-sjis-jdk1.1.7</td>
+						</tr>
+						<tr>
+							<td rowspan="5" colspan="1">
+Japanese EUC (Compressed)</td>
+							<td rowspan="1" colspan="1">
+x-eucjp-unicode-0.9</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+x-eucjp-jisx0221-1995</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+x-eucjp-open-19970715-ms</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+x-eucjp-open-19970715-0201</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+x-eucjp-open-19970715-ascii</td>
+						</tr>
+						<tr>
+							<td rowspan="5" colspan="1">
+ISO-2022-JP</td>
+							<td rowspan="1" colspan="1">
+x-iso2022jp-unicode-0.9</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+x-iso2022jp-jisx0221-1995</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+x-iso2022jp-cp932</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+x-iso2022jp-jdk1.1.7</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+x-iso2022jp-19970715-ascii</td>
+						</tr>
+					</tbody>
+				</table>
+				<div class="note">
+					<blockquote>
+						<b>NOTE:</b>
+Among these charset names, this technical report recommends only utf-16 and utf-8.</blockquote>
+				</div>
+				<p>Charset names can be used to specify charsets by the charset parameter of 
+the media types "text/xml" and "application/xml" or the encoding declaration.
+</p>
+				<div class="note">
+					<blockquote>
+						<b>NOTE:</b>
+The charset parameter is a parameter whose value is a charset name.  In the following example, the charset name <code>
+utf-8</code> is specified by the charset 
+parameter of the media type "text/xml".</blockquote>
+				</div>
+				<div class="eg">
+					<table cellpadding="5" border="1" bgcolor="#80ffff" width="100%">
+						<tr>
+							<td>
+								<pre>Content-Type: text/xml; charset=utf-8</pre>
+							</td>
+						</tr>
+					</table>
+				</div>
+				<div class="note">
+					<blockquote>
+						<b>NOTE:</b>
+						<a href="#RFC2376">[IETF RFC 2376]</a> STRONGLY RECOMMENDS appropriate charset names 
+for the charset parameter of the media type 
+"text/xml" or "application/xml".  <a href="#XMLTR">[XML]</a> requires them in encoding declarations.</blockquote>
+				</div>
+				<p>Charset names are case-insensitive.</p>
+				<div class="note">
+					<blockquote>
+						<b>NOTE:</b>
+						<a href="#IANA">[IANA]</a> specifies that charset names are case-insensitive.</blockquote>
+				</div>
+				<div class="note">
+					<blockquote>
+						<b>NOTE:</b>
+It remains unclear which of the conversion tables in this technical report  
+will be used for charsets Shift_JIS, EUC-JP, and ISO-2022-JP,
+which are registered at <a href="#IANA">[IANA]</a>.
+However, users may use these 
+charsets provided that they do not require full interoperability.
+</blockquote>
+				</div>
+			</div>
+			<div class="div2">
+				<h3>6.2
+<a name="AEN34527296">Code Conversion during Transmission
+</a>
+				</h3>
+				<p>
+In the case the CES is altered during transmission, the charset
+indicating the new CES must be specified by the charset parameter of
+"text/xml" or "application/xml".  XML processors correctly recognize
+the CES even if encoding declarations are not rewritten.
+</p>
+				<div class="note">
+					<blockquote>
+						<b>NOTE:</b>
+						<a href="#RFC2376">[IETF RFC 2376]</a> specifies that the charset parameter is 
+authoritative and takes precedence over the BOM or encoding declaration.</blockquote>
+				</div>
+			</div>
+			<div class="div2">
+				<h3>6.3
+<a name="AEN34527648">Storing transmitted XML constituents to files for information interchange
+</a>
+				</h3>
+				<p>When WWW clients, EMAIL readers, or NEWS readers 
+save the transmitted XML constituents as files, charset names should be 
+specified in encoding declarations or the BOM must be embedded in the 
+beginning of the file, unless the XML constituents are encoded in UTF-8.  
+Code conversion can be applied to the XML constituents before they are stored 
+to files.
+</p>
+				<div class="note">
+					<blockquote>
+						<b>NOTE:</b>
+Refer to <a href="#RFC2376">[IETF RFC 2376]</a> for the above specification.</blockquote>
+				</div>
+			</div>
+		</div>
+		<div class="div1">
+			<h2>7.
+<a name="AEN34528256">XML Constituents in Files for Information Interchange
+</a>
+			</h2>
+			<p>To store XML constituents in files for information interchange, 
+they should be encoded in either UTF-16 or UTF-8.</p>
+			<div class="note">
+				<blockquote>
+					<b>NOTE:</b>
+The initial plan was to allow Shift-JIS and Japanese EUC (Compressed) 
+as well, but they are not allowed at present.  In the future, 
+they may be allowed after authorizing one and only one conversion 
+table for the conversion to <a href="#ISO10646">[ISO/IEC10646]</a> or <a href="#Unicode">[Unicode 3.0]</a>.  Alternatively, all conversion tables for Shift-JIS 
+and Japanese EUC in this technical report may be registered (with different charset 
+names) and allowed.
+</blockquote>
+			</div>
+			<div class="note">
+				<blockquote>
+					<b>NOTE:</b>
+The conversion tables from Shift-JIS and
+Japanese EUC (Compressed) to <a href="#Unicode">[Unicode 3.0]</a> or <a href="#ISO10646">[ISO/IEC10646]</a> are still ambiguous, but users may use these charsets
+provided that they do not require full interoperability.
+</blockquote>
+			</div>
+			<p>In storing XML constituents to files, a BOM or 
+encoding declaration must announce the CES, unless they are encoded in the 
+default CES, i.e., UTF-8.</p>
+			<div class="note">
+				<blockquote>
+					<b>NOTE:</b>
+4.3.3 of 
+<a href="#XMLTR">[XML]</a> requires a BOM or an encoding declaration.</blockquote>
+			</div>
+			<p>When encoded in UTF-16, no charset names need to be explicitly 
+specified since the BOM announces UTF-16 as the CES.</p>
+			<p>Without any external information available for the CES, 
+an XML processor determines the CES from the BOM or encoding declaration. 
+This auto-detection of CESs is described in Appendix F of <a href="#XMLTR">[XML]</a>.
+</p>
+			<p>When octet streams representing XML constituents 
+serve as input/output of application programs, such streams should also follow 
+the rules for information interchange files.
+</p>
+		</div>
+		<div class="div1">
+			<h2>8.
+<a name="AEN34529824">Delivering XML Constituents by HTTP 1.1
+</a>
+			</h2>
+			<p>XML servers should use UTF-16 or UTF-8 in delivering XML constituents.</p>
+			<div class="note">
+				<blockquote>
+					<b>NOTE:</b>
+The initial plan was to allow Shift-JIS and Japanese EUC (Compressed) as well, but 
+they are not allowed at present.  In the future, 
+they may be allowed after authorizing one and only one conversion 
+table for the conversion to <a href="#ISO10646">[ISO/IEC10646]</a> or <a href="#Unicode">[Unicode 3.0]</a>.  Alternatively, all conversion tables for Shift-JIS and Japanese EUC in this technical report may be registered (with different charset names) and allowed.</blockquote>
+			</div>
+			<div class="note">
+				<blockquote>
+					<b>NOTE:</b>
+The conversion tables from 
+ISO-2022-JP and Japanese EUC (Compressed) to <a href="#Unicode">[Unicode 3.0]</a> or 
+<a href="#ISO10646">[ISO/IEC10646]</a> are 
+still ambiguous, but users may use these charsets provided that they do not 
+require full interoperability.</blockquote>
+			</div>
+			<p>XML documents delivered via HTTP 1.1 (<a href="#RFC2616">[IETF RFC 2616]</a>) with the media type "text/xml" or "application/xml"
+should have the correct charset parameter.  In the case of "application/xml",
+the charset parameter may be omitted if the CES is indicated by the BOM or 
+encoding declaration.</p>
+			<div class="note">
+				<blockquote>
+					<b>NOTE:</b>
+					<a href="#RFC2376">[IETF RFC 2376]</a> STRONGLY RECOMMENDS the use of the charset
+parameter.  The charset parameter takes precedence over the charset
+specified by the BOM or encoding declaration. </blockquote>
+			</div>
+			<div class="note">
+				<blockquote>
+					<b>NOTE:</b>
+If an XML document is encoded in US-ASCII and labelled as
+"text/xml", the charset parameter may be omitted.  Such an XML document, 
+however, is outside the scope of this technical report, since it cannot contain any 
+Japanese characters.
+</blockquote>
+			</div>
+			<div class="note">
+				<blockquote>
+					<b>NOTE:</b>
+In configuring WWW servers, the correct charset should be attached 
+to each file containing an XML constituent 
+of the media type "text/xml" or "appllication/xml".
+</blockquote>
+			</div>
+			<p>The client determines the CES from the charset parameter.  
+The default of the charset parameter for "text/xml" is US-ASCII.  
+When the charset parameter of the media type "application/xml" is omitted, 
+the auto-detection procedure for information interchange files is 
+applied.  
+</p>
+			<div class="note">
+				<blockquote>
+					<b>NOTE:</b>
+					<a href="#RFC2376">[IETF RFC 2376]</a> is the source standard of the above specification.
+</blockquote>
+			</div>
+		</div>
+		<div class="div1">
+			<h2>9.
+<a name="AEN34531584">Delivering XML Constituents via EMAIL or NEWS
+</a>
+			</h2>
+			<p>To deliver an XML constituent as the EMAIL body, they should be encoded in UTF-16 or UTF-8.</p>
+			<div class="note">
+				<blockquote>
+					<b>NOTE:</b>
+The initial plan was to allow
+ISO-2022-JP as well, but it is not allowed at present.  In the future,
+it may be allowed after authorizing one and only one conversion table
+for the conversion to <a href="#ISO10646">[ISO/IEC10646]</a> or <a href="#Unicode">[Unicode 3.0]</a>.  Alternatively, all conversion tables for ISO-2022-JP in
+this technical report may be registered (with different charset names) and allowed.
+</blockquote>
+			</div>
+			<div class="note">
+				<blockquote>
+					<b>NOTE:</b>
+The conversion table from ISO-2022-JP to
+<a href="#Unicode">[Unicode 3.0]</a> or <a href="#ISO10646">[ISO/IEC10646]</a> is still ambiguous,
+but users may use this charset provided that they do not require
+full interoperability.</blockquote>
+			</div>
+			<div class="note">
+				<blockquote>
+					<b>NOTE:</b>
+There was no plan to allow Japanese EUC (Compressed), because Japanese 
+EUC has been rarely used for EMAIL or NEWS.</blockquote>
+			</div>
+			<p>If the charset is UTF-16, use "application/xml" as 
+the media type; otherwise, use "text/xml".  In both cases, the charset 
+parameter is STRONGLY RECOMMENDED.
+</p>
+			<p>Apply a content transfer encoding (Base64 etc.), 
+if required.</p>
+			<div class="note">
+				<blockquote>
+					<b>NOTE:</b>
+Details of content transfer encodings are specified by 
+<a href="#RFC2045">[IETF RFC 2045]</a>.</blockquote>
+			</div>
+		</div>
+		<div class="div1">
+			<h2>10.
+<a name="AEN34532800">Avoiding Conversion Ambiguities
+</a>
+			</h2>
+			<p>As an example of ambiguous conversion, consider a 
+      "Shift_JIS" XML document as below:</p>
+			<div class="eg">
+				<table cellpadding="5" border="1" bgcolor="#80ffff" width="100%">
+					<tr>
+						<td>
+							<pre>
+&lt;?xml version="1.0" encoding="shift_jis"?&gt;
+&lt;doc&gt;{1}{2}{3}{4}{5}
+{6}{7}{8}{9}{10}&lt;/doc&gt;</pre>
+						</td>
+					</tr>
+				</table>
+			</div>
+			<p>where {1} through {10} are used to represent octets as below:</p>
+			<ol>
+				<li>0x5C(YEN SIGN),</li>
+				<li>0x7E(OVERLINE),</li>
+				<li>0x815C(FULLWIDTH EM DASH),</li>
+				<li>0x815F(REVERSE SOLIDUS),</li>
+				<li>0x8160(WAVE DASH),</li>
+				<li>0x8161(DOUBLEVERTICAL LINE),</li>
+				<li>0x817C(MINUS SIGN),</li>
+				<li>0x8191(CENT SIGN),</li>
+				<li>0x8192(POUND SIGN), and</li>
+				<li>0x81CA(NOT SIGN).</li>
+			</ol>
+			<p>Different conversion tables interpret this document differently.</p>
+			<p>Case 1: x-sjis-jdk1.1.7</p>
+			<div class="eg">
+				<table cellpadding="5" border="1" bgcolor="#80ffff" width="100%">
+					<tr>
+						<td>
+							<img class="eg" src="case1.gif
+" alt="0x5C(YEN SIGN), 0x7E(OVERLINE), 0x815C(FULLWIDTH EM DASH), 0x815F(REVERSE SOLIDUS), 0x8160(WAVE DASH), 0x8161(DOUBLEVERTICAL LINE), 0x817C(MINUS SIGN), 0x8191(CENT SIGN), 0x8192(POUND SIGN), and 0x81CA(NOT SIGN).
+">
+						</td>
+					</tr>
+				</table>
+			</div>
+			<p>Case 2: x-sjis-unicode-0.9 (the third character is HORIZONTAL BAR)</p>
+			<div class="eg">
+				<table cellpadding="5" border="1" bgcolor="#80ffff" width="100%">
+					<tr>
+						<td>
+							<img class="eg" src="case2.gif
+" alt="0x5C(YEN SIGN), 0x7E(OVERLINE), 0x815C(FULLWIDTH EM DASH), 0x815F(REVERSE SOLIDUS), 0x8160(WAVE DASH), 0x8161(DOUBLEVERTICAL LINE), 0x817C(MINUS SIGN), 0x8191(CENT SIGN), 0x8192(POUND SIGN), and 0x81CA(NOT SIGN).
+">
+						</td>
+					</tr>
+				</table>
+			</div>
+			<p>Case 3: x-sjis-jisx0221-1995 (the third character is EM DASH)</p>
+			<div class="eg">
+				<table cellpadding="5" border="1" bgcolor="#80ffff" width="100%">
+					<tr>
+						<td>
+							<img class="eg" src="case3.gif
+" alt="0x5C(YEN SIGN), 0x7E(OVERLINE), 0x815C(FULLWIDTH EM DASH), 0x815F(REVERSE SOLIDUS), 0x8160(WAVE DASH), 0x8161(DOUBLEVERTICAL LINE), 0x817C(MINUS SIGN), 0x8191(CENT SIGN), 0x8192(POUND SIGN), and 0x81CA(NOT SIGN).
+">
+						</td>
+					</tr>
+				</table>
+			</div>
+			<p>Case 4: x-sjis-cp932</p>
+			<div class="eg">
+				<table cellpadding="5" border="1" bgcolor="#80ffff" width="100%">
+					<tr>
+						<td>
+							<img class="eg" src="case4.gif
+" alt="0x5C(YEN SIGN), 0x7E(OVERLINE), 0x815C(FULLWIDTH EM DASH), 0x815F(REVERSE SOLIDUS), 0x8160(WAVE DASH), 0x8161(DOUBLEVERTICAL LINE), 0x817C(MINUS SIGN), 0x8191(CENT SIGN), 0x8192(POUND SIGN), and 0x81CA(NOT SIGN).
+">
+						</td>
+					</tr>
+				</table>
+			</div>
+			<p>We can avoid this ambiguity by using character refererences.  For example, the document after normalization in case 3 can be explicitly specified as below:
+
+</p>
+			<div class="eg">
+				<table cellpadding="5" border="1" bgcolor="#80ffff" width="100%">
+					<tr>
+						<td>
+							<pre>
+&lt;?xml version="1.0" encoding="shift_jis"?&gt;
+&lt;doc&gt;&amp;#x005C;&amp;#x007E;&amp;#x2015;&amp;#x005C;&amp;#x301C;
+&amp;#x2016;&amp;#x2212;&amp;#x00A2;&amp;#x00A3;&amp;#x00AC;&lt;/doc&gt;</pre>
+						</td>
+					</tr>
+				</table>
+			</div>
+			<p>Alternatively, one can declare and use parsed entities for these character references.  The following document captures all Unicode characters ambiguously represented by Shift_JIS.
+</p>
+			<div class="eg">
+				<table cellpadding="5" border="1" bgcolor="#80ffff" width="100%">
+					<tr>
+						<td>
+							<pre>
+&lt;?xml version="1.0?&gt;
+&lt;!DOCTYPE doc [
+  &lt;!ENTITY revsol  "&amp;#x5C;"&gt;
+  &lt;!ENTITY tilde   "&amp;#x7E;"&gt;
+  &lt;!ENTITY cent    "&amp;#xA2;"&gt;
+  &lt;!ENTITY pound   "&amp;#xA3;"&gt;
+  &lt;!ENTITY yen     "&amp;#xA5;"&gt;
+  &lt;!ENTITY not     "&amp;#xAC;"&gt;
+  &lt;!ENTITY mdash   "&amp;#x2014;"&gt;
+  &lt;!ENTITY horbar  "&amp;#x2015;"&gt;
+  &lt;!ENTITY dvline  "&amp;#x2016;"&gt;
+  &lt;!ENTITY fparato "&amp;#x2225;"&gt;
+  &lt;!ENTITY wdash   "&amp;#x301C;"&gt;
+  &lt;!ENTITY fminus  "&amp;#xFF0D;"&gt;
+  &lt;!ENTITY fbsol   "&amp;#xFF3C;"&gt;
+  &lt;!ENTITY ftilde  "&amp;#xFF5E;"&gt;
+  &lt;!ENTITY fcent   "&amp;#xFFE0;"&gt;
+  &lt;!ENTITY fpoun   "&amp;#xFFE1;"&gt;
+  &lt;!ENTITY fnot    "&amp;#xFFE2;"&gt;
+  &lt;!ENTITY fmacron "&amp;#xFFE3;"&gt;
+  &lt;!ENTITY fbrvbar "&amp;#xFFE4;"&gt;
+  &lt;!ENTITY fyen    "&amp;#xFFE5;"&gt;
+]&gt;
+&lt;doc&gt;&amp;revsol;
+&amp;tilde;
+&amp;cent;
+&amp;pound;
+&amp;yen;
+&amp;not;
+&amp;mdash;
+&amp;horbar;
+&amp;dvline;
+&amp;fparato;
+&amp;wdash;
+&amp;fminus;
+&amp;fbsol;
+&amp;ftild;
+&amp;fcent;
+&amp;fpoun;
+&amp;fnot;
+&amp;fmacron;
+&amp;fbrvbar;
+&amp;fyen;&lt;/doc&gt;</pre>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+		<div class="div1">
+			<h2>11.
+<a name="AEN34534752">The xml:lang Attribute
+</a>
+			</h2>
+			<p>Use the xml:lang attribute to indicate the use of the
+Japanese language for an XML document in whole or in part.</p>
+			<div class="note">
+				<blockquote>
+					<b>NOTE:</b>
+The xml:lang attribute is specified in <a href="#XMLTR">[XML]</a>.</blockquote>
+			</div>
+			<p>Specify a language code for Japanese (<code>
+ja</code>, for example) as the 
+value of this attribute.  Values of this attribute are case-insensitive.
+</p>
+			<div class="note">
+				<blockquote>
+					<b>NOTE:</b>
+Details of language codes are specified in <a href="#RFC1766">[IETF RFC 1766]</a>.
+</blockquote>
+			</div>
+			<p>An XML document containing a Japanese paragraph and an English 
+paragraph is shown below:</p>
+			<div class="eg">
+				<table cellpadding="5" border="1" bgcolor="#80ffff" width="100%">
+					<tr>
+						<td>
+							<pre>
+&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;document&gt;
+  &lt;para xml:lang="ja"&gt;これは段落です。&lt;/para&gt;
+  &lt;para xml:lang="en"&gt;This is a paragraph.&lt;/para&gt;
+&lt;/document&gt;
+</pre>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+		<hr>
+		<div class="appendices">
+			<h1>Appendices</h1>
+			<div class="inform-div1">
+				<h2>A
+<a name="AEN34535424">Name Characters (Non-Normative)
+        </a>
+				</h2>
+				<p>All graphic characters contained in 10th
+area and later of <a href="#JISX0208">[JIS X 0208]</a> and 5th area and later of
+<a href="#JISX0212">[JIS X 0212]</a> are name start characters.</p>
+				<p>Table 1 lists name start characters in 1st
+through 9th areas of <a href="#JISX0208">[JIS X 0208]</a>.  Table 2 and 3 list
+other name characters in these areas and name characters in 1st
+through 4th areas, respectively.  All name characters in <a href="#JISX0212">[JIS X 0212]</a> are name start characters.</p>
+				<div class="note">
+					<blockquote>
+						<b>NOTE:</b>
+In <a href="#XMLTR">[XML]</a>, <i>
+name
+characters</i> are characters which can be used as part of
+element and attribute names, and <i>
+name start characters</i> are
+those name characters with which names may begin.</blockquote>
+				</div>
+				<div class="note">
+					<blockquote>
+						<b>NOTE:</b>
+This chapter merely adapts 
+<a href="#XMLTR">[XML]</a> name characters 
+to <a href="#JISX0208">[JIS X 0208]</a> and <a href="#JISX0212">[JIS X 0212]</a>.
+</blockquote>
+				</div>
+				<table border="1" width="60%">
+					<caption>Name start characters: 1st through 9th areas of <a href="#JISX0208">[JIS X 0208]</a></caption>
+					<tbody><tr>
+							<th rowspan="1" colspan="1">
+							</th>
+							<th rowspan="1" colspan="1">
+KUTEN code</th>
+							<th rowspan="1" colspan="1">
+UCS code points</th>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+仝</td>
+							<td rowspan="1" colspan="1">
+01-24</td>
+							<td rowspan="1" colspan="1">
+U+4edd</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+〇</td>
+							<td rowspan="1" colspan="1">
+01-27</td>
+							<td rowspan="1" colspan="1">
+U+3007</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+Å</td>
+							<td rowspan="1" colspan="1">
+02-82</td>
+							<td rowspan="1" colspan="1">
+U+212b</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ぁ</td>
+							<td rowspan="1" colspan="1">
+04-01</td>
+							<td rowspan="1" colspan="1">
+U+3041</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+あ</td>
+							<td rowspan="1" colspan="1">
+04-02</td>
+							<td rowspan="1" colspan="1">
+U+3042</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ぃ</td>
+							<td rowspan="1" colspan="1">
+04-03</td>
+							<td rowspan="1" colspan="1">
+U+3043</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+い</td>
+							<td rowspan="1" colspan="1">
+04-04</td>
+							<td rowspan="1" colspan="1">
+U+3044</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ぅ</td>
+							<td rowspan="1" colspan="1">
+04-05</td>
+							<td rowspan="1" colspan="1">
+U+3045</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+う</td>
+							<td rowspan="1" colspan="1">
+04-06</td>
+							<td rowspan="1" colspan="1">
+U+3046</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ぇ</td>
+							<td rowspan="1" colspan="1">
+04-07</td>
+							<td rowspan="1" colspan="1">
+U+3047</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+え</td>
+							<td rowspan="1" colspan="1">
+04-08</td>
+							<td rowspan="1" colspan="1">
+U+3048</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ぉ</td>
+							<td rowspan="1" colspan="1">
+04-09</td>
+							<td rowspan="1" colspan="1">
+U+3049</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+お</td>
+							<td rowspan="1" colspan="1">
+04-10</td>
+							<td rowspan="1" colspan="1">
+U+304a</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+か</td>
+							<td rowspan="1" colspan="1">
+04-11</td>
+							<td rowspan="1" colspan="1">
+U+304b</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+が</td>
+							<td rowspan="1" colspan="1">
+04-12</td>
+							<td rowspan="1" colspan="1">
+U+304c</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+き</td>
+							<td rowspan="1" colspan="1">
+04-13</td>
+							<td rowspan="1" colspan="1">
+U+304d</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ぎ</td>
+							<td rowspan="1" colspan="1">
+04-14</td>
+							<td rowspan="1" colspan="1">
+U+304e</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+く</td>
+							<td rowspan="1" colspan="1">
+04-15</td>
+							<td rowspan="1" colspan="1">
+U+304f</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ぐ</td>
+							<td rowspan="1" colspan="1">
+04-16</td>
+							<td rowspan="1" colspan="1">
+U+3050</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+け</td>
+							<td rowspan="1" colspan="1">
+04-17</td>
+							<td rowspan="1" colspan="1">
+U+3051</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+げ</td>
+							<td rowspan="1" colspan="1">
+04-18</td>
+							<td rowspan="1" colspan="1">
+U+3052</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+こ</td>
+							<td rowspan="1" colspan="1">
+04-19</td>
+							<td rowspan="1" colspan="1">
+U+3053</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ご</td>
+							<td rowspan="1" colspan="1">
+04-20</td>
+							<td rowspan="1" colspan="1">
+U+3054</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+さ</td>
+							<td rowspan="1" colspan="1">
+04-21</td>
+							<td rowspan="1" colspan="1">
+U+3055</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ざ</td>
+							<td rowspan="1" colspan="1">
+04-22</td>
+							<td rowspan="1" colspan="1">
+U+3056</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+し</td>
+							<td rowspan="1" colspan="1">
+04-23</td>
+							<td rowspan="1" colspan="1">
+U+3057</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+じ</td>
+							<td rowspan="1" colspan="1">
+04-24</td>
+							<td rowspan="1" colspan="1">
+U+3058</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+す</td>
+							<td rowspan="1" colspan="1">
+04-25</td>
+							<td rowspan="1" colspan="1">
+U+3059</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ず</td>
+							<td rowspan="1" colspan="1">
+04-26</td>
+							<td rowspan="1" colspan="1">
+U+305a</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+せ</td>
+							<td rowspan="1" colspan="1">
+04-27</td>
+							<td rowspan="1" colspan="1">
+U+305b</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ぜ</td>
+							<td rowspan="1" colspan="1">
+04-28</td>
+							<td rowspan="1" colspan="1">
+U+305c</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+そ</td>
+							<td rowspan="1" colspan="1">
+04-29</td>
+							<td rowspan="1" colspan="1">
+U+305d</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ぞ</td>
+							<td rowspan="1" colspan="1">
+04-30</td>
+							<td rowspan="1" colspan="1">
+U+305e</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+た</td>
+							<td rowspan="1" colspan="1">
+04-31</td>
+							<td rowspan="1" colspan="1">
+U+305f</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+だ</td>
+							<td rowspan="1" colspan="1">
+04-32</td>
+							<td rowspan="1" colspan="1">
+U+3060</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ち</td>
+							<td rowspan="1" colspan="1">
+04-33</td>
+							<td rowspan="1" colspan="1">
+U+3061</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ぢ</td>
+							<td rowspan="1" colspan="1">
+04-34</td>
+							<td rowspan="1" colspan="1">
+U+3062</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+っ</td>
+							<td rowspan="1" colspan="1">
+04-35</td>
+							<td rowspan="1" colspan="1">
+U+3063</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+つ</td>
+							<td rowspan="1" colspan="1">
+04-36</td>
+							<td rowspan="1" colspan="1">
+U+3064</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+づ</td>
+							<td rowspan="1" colspan="1">
+04-37</td>
+							<td rowspan="1" colspan="1">
+U+3065</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+て</td>
+							<td rowspan="1" colspan="1">
+04-38</td>
+							<td rowspan="1" colspan="1">
+U+3066</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+で</td>
+							<td rowspan="1" colspan="1">
+04-39</td>
+							<td rowspan="1" colspan="1">
+U+3067</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+と</td>
+							<td rowspan="1" colspan="1">
+04-40</td>
+							<td rowspan="1" colspan="1">
+U+3068</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ど</td>
+							<td rowspan="1" colspan="1">
+04-41</td>
+							<td rowspan="1" colspan="1">
+U+3069</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+な</td>
+							<td rowspan="1" colspan="1">
+04-42</td>
+							<td rowspan="1" colspan="1">
+U+306a</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+に</td>
+							<td rowspan="1" colspan="1">
+04-43</td>
+							<td rowspan="1" colspan="1">
+U+306b</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ぬ</td>
+							<td rowspan="1" colspan="1">
+04-44</td>
+							<td rowspan="1" colspan="1">
+U+306c</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ね</td>
+							<td rowspan="1" colspan="1">
+04-45</td>
+							<td rowspan="1" colspan="1">
+U+306d</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+の</td>
+							<td rowspan="1" colspan="1">
+04-46</td>
+							<td rowspan="1" colspan="1">
+U+306e</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+は</td>
+							<td rowspan="1" colspan="1">
+04-47</td>
+							<td rowspan="1" colspan="1">
+U+306f</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ば</td>
+							<td rowspan="1" colspan="1">
+04-48</td>
+							<td rowspan="1" colspan="1">
+U+3070</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ぱ</td>
+							<td rowspan="1" colspan="1">
+04-49</td>
+							<td rowspan="1" colspan="1">
+U+3071</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ひ</td>
+							<td rowspan="1" colspan="1">
+04-50</td>
+							<td rowspan="1" colspan="1">
+U+3072</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+び</td>
+							<td rowspan="1" colspan="1">
+04-51</td>
+							<td rowspan="1" colspan="1">
+U+3073</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ぴ</td>
+							<td rowspan="1" colspan="1">
+04-52</td>
+							<td rowspan="1" colspan="1">
+U+3074</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ふ</td>
+							<td rowspan="1" colspan="1">
+04-53</td>
+							<td rowspan="1" colspan="1">
+U+3075</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ぶ</td>
+							<td rowspan="1" colspan="1">
+04-54</td>
+							<td rowspan="1" colspan="1">
+U+3076</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ぷ</td>
+							<td rowspan="1" colspan="1">
+04-55</td>
+							<td rowspan="1" colspan="1">
+U+3077</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+へ</td>
+							<td rowspan="1" colspan="1">
+04-56</td>
+							<td rowspan="1" colspan="1">
+U+3078</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+べ</td>
+							<td rowspan="1" colspan="1">
+04-57</td>
+							<td rowspan="1" colspan="1">
+U+3079</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ぺ</td>
+							<td rowspan="1" colspan="1">
+04-58</td>
+							<td rowspan="1" colspan="1">
+U+307a</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ほ</td>
+							<td rowspan="1" colspan="1">
+04-59</td>
+							<td rowspan="1" colspan="1">
+U+307b</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ぼ</td>
+							<td rowspan="1" colspan="1">
+04-60</td>
+							<td rowspan="1" colspan="1">
+U+307c</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ぽ</td>
+							<td rowspan="1" colspan="1">
+04-61</td>
+							<td rowspan="1" colspan="1">
+U+307d</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ま</td>
+							<td rowspan="1" colspan="1">
+04-62</td>
+							<td rowspan="1" colspan="1">
+U+307e</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+み</td>
+							<td rowspan="1" colspan="1">
+04-63</td>
+							<td rowspan="1" colspan="1">
+U+307f</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+む</td>
+							<td rowspan="1" colspan="1">
+04-64</td>
+							<td rowspan="1" colspan="1">
+U+3080</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+め</td>
+							<td rowspan="1" colspan="1">
+04-65</td>
+							<td rowspan="1" colspan="1">
+U+3081</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+も</td>
+							<td rowspan="1" colspan="1">
+04-66</td>
+							<td rowspan="1" colspan="1">
+U+3082</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ゃ</td>
+							<td rowspan="1" colspan="1">
+04-67</td>
+							<td rowspan="1" colspan="1">
+U+3083</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+や</td>
+							<td rowspan="1" colspan="1">
+04-68</td>
+							<td rowspan="1" colspan="1">
+U+3084</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ゅ</td>
+							<td rowspan="1" colspan="1">
+04-69</td>
+							<td rowspan="1" colspan="1">
+U+3085</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ゆ</td>
+							<td rowspan="1" colspan="1">
+04-70</td>
+							<td rowspan="1" colspan="1">
+U+3086</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ょ</td>
+							<td rowspan="1" colspan="1">
+04-71</td>
+							<td rowspan="1" colspan="1">
+U+3087</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+よ</td>
+							<td rowspan="1" colspan="1">
+04-72</td>
+							<td rowspan="1" colspan="1">
+U+3088</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ら</td>
+							<td rowspan="1" colspan="1">
+04-73</td>
+							<td rowspan="1" colspan="1">
+U+3089</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+り</td>
+							<td rowspan="1" colspan="1">
+04-74</td>
+							<td rowspan="1" colspan="1">
+U+308a</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+る</td>
+							<td rowspan="1" colspan="1">
+04-75</td>
+							<td rowspan="1" colspan="1">
+U+308b</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+れ</td>
+							<td rowspan="1" colspan="1">
+04-76</td>
+							<td rowspan="1" colspan="1">
+U+308c</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ろ</td>
+							<td rowspan="1" colspan="1">
+04-77</td>
+							<td rowspan="1" colspan="1">
+U+308d</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ゎ</td>
+							<td rowspan="1" colspan="1">
+04-78</td>
+							<td rowspan="1" colspan="1">
+U+308e</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+わ</td>
+							<td rowspan="1" colspan="1">
+04-79</td>
+							<td rowspan="1" colspan="1">
+U+308f</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ゐ</td>
+							<td rowspan="1" colspan="1">
+04-80</td>
+							<td rowspan="1" colspan="1">
+U+3090</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ゑ</td>
+							<td rowspan="1" colspan="1">
+04-81</td>
+							<td rowspan="1" colspan="1">
+U+3091</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+を</td>
+							<td rowspan="1" colspan="1">
+04-82</td>
+							<td rowspan="1" colspan="1">
+U+3092</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ん</td>
+							<td rowspan="1" colspan="1">
+04-83</td>
+							<td rowspan="1" colspan="1">
+U+3093</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ァ</td>
+							<td rowspan="1" colspan="1">
+05-01</td>
+							<td rowspan="1" colspan="1">
+U+30a1</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ア</td>
+							<td rowspan="1" colspan="1">
+05-02</td>
+							<td rowspan="1" colspan="1">
+U+30a2</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ィ</td>
+							<td rowspan="1" colspan="1">
+05-03</td>
+							<td rowspan="1" colspan="1">
+U+30a3</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+イ</td>
+							<td rowspan="1" colspan="1">
+05-04</td>
+							<td rowspan="1" colspan="1">
+U+30a4</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ゥ</td>
+							<td rowspan="1" colspan="1">
+05-05</td>
+							<td rowspan="1" colspan="1">
+U+30a5</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ウ</td>
+							<td rowspan="1" colspan="1">
+05-06</td>
+							<td rowspan="1" colspan="1">
+U+30a6</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ェ</td>
+							<td rowspan="1" colspan="1">
+05-07</td>
+							<td rowspan="1" colspan="1">
+U+30a7</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+エ</td>
+							<td rowspan="1" colspan="1">
+05-08</td>
+							<td rowspan="1" colspan="1">
+U+30a8</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ォ</td>
+							<td rowspan="1" colspan="1">
+05-09</td>
+							<td rowspan="1" colspan="1">
+U+30a9</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+オ</td>
+							<td rowspan="1" colspan="1">
+05-10</td>
+							<td rowspan="1" colspan="1">
+U+30aa</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+カ</td>
+							<td rowspan="1" colspan="1">
+05-11</td>
+							<td rowspan="1" colspan="1">
+U+30ab</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ガ</td>
+							<td rowspan="1" colspan="1">
+05-12</td>
+							<td rowspan="1" colspan="1">
+U+30ac</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+キ</td>
+							<td rowspan="1" colspan="1">
+05-13</td>
+							<td rowspan="1" colspan="1">
+U+30ad</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ギ</td>
+							<td rowspan="1" colspan="1">
+05-14</td>
+							<td rowspan="1" colspan="1">
+U+30ae</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ク</td>
+							<td rowspan="1" colspan="1">
+05-15</td>
+							<td rowspan="1" colspan="1">
+U+30af</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+グ</td>
+							<td rowspan="1" colspan="1">
+05-16</td>
+							<td rowspan="1" colspan="1">
+U+30b0</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ケ</td>
+							<td rowspan="1" colspan="1">
+05-17</td>
+							<td rowspan="1" colspan="1">
+U+30b1</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ゲ</td>
+							<td rowspan="1" colspan="1">
+05-18</td>
+							<td rowspan="1" colspan="1">
+U+30b2</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+コ</td>
+							<td rowspan="1" colspan="1">
+05-19</td>
+							<td rowspan="1" colspan="1">
+U+30b3</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ゴ</td>
+							<td rowspan="1" colspan="1">
+05-20</td>
+							<td rowspan="1" colspan="1">
+U+30b4</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+サ</td>
+							<td rowspan="1" colspan="1">
+05-21</td>
+							<td rowspan="1" colspan="1">
+U+30b5</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ザ</td>
+							<td rowspan="1" colspan="1">
+05-22</td>
+							<td rowspan="1" colspan="1">
+U+30b6</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+シ</td>
+							<td rowspan="1" colspan="1">
+05-23</td>
+							<td rowspan="1" colspan="1">
+U+30b7</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ジ</td>
+							<td rowspan="1" colspan="1">
+05-24</td>
+							<td rowspan="1" colspan="1">
+U+30b8</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ス</td>
+							<td rowspan="1" colspan="1">
+05-25</td>
+							<td rowspan="1" colspan="1">
+U+30b9</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ズ</td>
+							<td rowspan="1" colspan="1">
+05-26</td>
+							<td rowspan="1" colspan="1">
+U+30ba</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+セ</td>
+							<td rowspan="1" colspan="1">
+05-27</td>
+							<td rowspan="1" colspan="1">
+U+30bb</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ゼ</td>
+							<td rowspan="1" colspan="1">
+05-28</td>
+							<td rowspan="1" colspan="1">
+U+30bc</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ソ</td>
+							<td rowspan="1" colspan="1">
+05-29</td>
+							<td rowspan="1" colspan="1">
+U+30bd</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ゾ</td>
+							<td rowspan="1" colspan="1">
+05-30</td>
+							<td rowspan="1" colspan="1">
+U+30be</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+タ</td>
+							<td rowspan="1" colspan="1">
+05-31</td>
+							<td rowspan="1" colspan="1">
+U+30bf</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ダ</td>
+							<td rowspan="1" colspan="1">
+05-32</td>
+							<td rowspan="1" colspan="1">
+U+30c0</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+チ</td>
+							<td rowspan="1" colspan="1">
+05-33</td>
+							<td rowspan="1" colspan="1">
+U+30c1</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ヂ</td>
+							<td rowspan="1" colspan="1">
+05-34</td>
+							<td rowspan="1" colspan="1">
+U+30c2</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ッ</td>
+							<td rowspan="1" colspan="1">
+05-35</td>
+							<td rowspan="1" colspan="1">
+U+30c3</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ツ</td>
+							<td rowspan="1" colspan="1">
+05-36</td>
+							<td rowspan="1" colspan="1">
+U+30c4</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ヅ</td>
+							<td rowspan="1" colspan="1">
+05-37</td>
+							<td rowspan="1" colspan="1">
+U+30c5</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+テ</td>
+							<td rowspan="1" colspan="1">
+05-38</td>
+							<td rowspan="1" colspan="1">
+U+30c6</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+デ</td>
+							<td rowspan="1" colspan="1">
+05-39</td>
+							<td rowspan="1" colspan="1">
+U+30c7</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ト</td>
+							<td rowspan="1" colspan="1">
+05-40</td>
+							<td rowspan="1" colspan="1">
+U+30c8</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ド</td>
+							<td rowspan="1" colspan="1">
+05-41</td>
+							<td rowspan="1" colspan="1">
+U+30c9</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ナ</td>
+							<td rowspan="1" colspan="1">
+05-42</td>
+							<td rowspan="1" colspan="1">
+U+30ca</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ニ</td>
+							<td rowspan="1" colspan="1">
+05-43</td>
+							<td rowspan="1" colspan="1">
+U+30cb</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ヌ</td>
+							<td rowspan="1" colspan="1">
+05-44</td>
+							<td rowspan="1" colspan="1">
+U+30cc</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ネ</td>
+							<td rowspan="1" colspan="1">
+05-45</td>
+							<td rowspan="1" colspan="1">
+U+30cd</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ノ</td>
+							<td rowspan="1" colspan="1">
+05-46</td>
+							<td rowspan="1" colspan="1">
+U+30ce</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ハ</td>
+							<td rowspan="1" colspan="1">
+05-47</td>
+							<td rowspan="1" colspan="1">
+U+30cf</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+バ</td>
+							<td rowspan="1" colspan="1">
+05-48</td>
+							<td rowspan="1" colspan="1">
+U+30d0</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+パ</td>
+							<td rowspan="1" colspan="1">
+05-49</td>
+							<td rowspan="1" colspan="1">
+U+30d1</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ヒ</td>
+							<td rowspan="1" colspan="1">
+05-50</td>
+							<td rowspan="1" colspan="1">
+U+30d2</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ビ</td>
+							<td rowspan="1" colspan="1">
+05-51</td>
+							<td rowspan="1" colspan="1">
+U+30d3</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ピ</td>
+							<td rowspan="1" colspan="1">
+05-52</td>
+							<td rowspan="1" colspan="1">
+U+30d4</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+フ</td>
+							<td rowspan="1" colspan="1">
+05-53</td>
+							<td rowspan="1" colspan="1">
+U+30d5</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ブ</td>
+							<td rowspan="1" colspan="1">
+05-54</td>
+							<td rowspan="1" colspan="1">
+U+30d6</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+プ</td>
+							<td rowspan="1" colspan="1">
+05-55</td>
+							<td rowspan="1" colspan="1">
+U+30d7</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ヘ</td>
+							<td rowspan="1" colspan="1">
+05-56</td>
+							<td rowspan="1" colspan="1">
+U+30d8</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ベ</td>
+							<td rowspan="1" colspan="1">
+05-57</td>
+							<td rowspan="1" colspan="1">
+U+30d9</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ペ</td>
+							<td rowspan="1" colspan="1">
+05-58</td>
+							<td rowspan="1" colspan="1">
+U+30da</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ホ</td>
+							<td rowspan="1" colspan="1">
+05-59</td>
+							<td rowspan="1" colspan="1">
+U+30db</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ボ</td>
+							<td rowspan="1" colspan="1">
+05-60</td>
+							<td rowspan="1" colspan="1">
+U+30dc</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ポ</td>
+							<td rowspan="1" colspan="1">
+05-61</td>
+							<td rowspan="1" colspan="1">
+U+30dd</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+マ</td>
+							<td rowspan="1" colspan="1">
+05-62</td>
+							<td rowspan="1" colspan="1">
+U+30de</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ミ</td>
+							<td rowspan="1" colspan="1">
+05-63</td>
+							<td rowspan="1" colspan="1">
+U+30df</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ム</td>
+							<td rowspan="1" colspan="1">
+05-64</td>
+							<td rowspan="1" colspan="1">
+U+30e0</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+メ</td>
+							<td rowspan="1" colspan="1">
+05-65</td>
+							<td rowspan="1" colspan="1">
+U+30e1</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+モ</td>
+							<td rowspan="1" colspan="1">
+05-66</td>
+							<td rowspan="1" colspan="1">
+U+30e2</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ャ</td>
+							<td rowspan="1" colspan="1">
+05-67</td>
+							<td rowspan="1" colspan="1">
+U+30e3</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ヤ</td>
+							<td rowspan="1" colspan="1">
+05-68</td>
+							<td rowspan="1" colspan="1">
+U+30e4</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ュ</td>
+							<td rowspan="1" colspan="1">
+05-69</td>
+							<td rowspan="1" colspan="1">
+U+30e5</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ユ</td>
+							<td rowspan="1" colspan="1">
+05-70</td>
+							<td rowspan="1" colspan="1">
+U+30e6</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ョ</td>
+							<td rowspan="1" colspan="1">
+05-71</td>
+							<td rowspan="1" colspan="1">
+U+30e7</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ヨ</td>
+							<td rowspan="1" colspan="1">
+05-72</td>
+							<td rowspan="1" colspan="1">
+U+30e8</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ラ</td>
+							<td rowspan="1" colspan="1">
+05-73</td>
+							<td rowspan="1" colspan="1">
+U+30e9</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+リ</td>
+							<td rowspan="1" colspan="1">
+05-74</td>
+							<td rowspan="1" colspan="1">
+U+30ea</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ル</td>
+							<td rowspan="1" colspan="1">
+05-75</td>
+							<td rowspan="1" colspan="1">
+U+30eb</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+レ</td>
+							<td rowspan="1" colspan="1">
+05-76</td>
+							<td rowspan="1" colspan="1">
+U+30ec</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ロ</td>
+							<td rowspan="1" colspan="1">
+05-77</td>
+							<td rowspan="1" colspan="1">
+U+30ed</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ヮ</td>
+							<td rowspan="1" colspan="1">
+05-78</td>
+							<td rowspan="1" colspan="1">
+U+30ee</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ワ</td>
+							<td rowspan="1" colspan="1">
+05-79</td>
+							<td rowspan="1" colspan="1">
+U+30ef</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ヰ</td>
+							<td rowspan="1" colspan="1">
+05-80</td>
+							<td rowspan="1" colspan="1">
+U+30f0</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ヱ</td>
+							<td rowspan="1" colspan="1">
+05-81</td>
+							<td rowspan="1" colspan="1">
+U+30f1</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ヲ</td>
+							<td rowspan="1" colspan="1">
+05-82</td>
+							<td rowspan="1" colspan="1">
+U+30f2</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ン</td>
+							<td rowspan="1" colspan="1">
+05-83</td>
+							<td rowspan="1" colspan="1">
+U+30f3</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ヴ</td>
+							<td rowspan="1" colspan="1">
+05-84</td>
+							<td rowspan="1" colspan="1">
+U+30f4</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ヵ</td>
+							<td rowspan="1" colspan="1">
+05-85</td>
+							<td rowspan="1" colspan="1">
+U+30f5</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ヶ</td>
+							<td rowspan="1" colspan="1">
+05-86</td>
+							<td rowspan="1" colspan="1">
+U+30f6</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+Α</td>
+							<td rowspan="1" colspan="1">
+06-01</td>
+							<td rowspan="1" colspan="1">
+U+0391</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+Β</td>
+							<td rowspan="1" colspan="1">
+06-02</td>
+							<td rowspan="1" colspan="1">
+U+0392</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+Γ</td>
+							<td rowspan="1" colspan="1">
+06-03</td>
+							<td rowspan="1" colspan="1">
+U+0393</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+Δ</td>
+							<td rowspan="1" colspan="1">
+06-04</td>
+							<td rowspan="1" colspan="1">
+U+0394</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+Ε</td>
+							<td rowspan="1" colspan="1">
+06-05</td>
+							<td rowspan="1" colspan="1">
+U+0395</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+Ζ</td>
+							<td rowspan="1" colspan="1">
+06-06</td>
+							<td rowspan="1" colspan="1">
+U+0396</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+Η</td>
+							<td rowspan="1" colspan="1">
+06-07</td>
+							<td rowspan="1" colspan="1">
+U+0397</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+Θ</td>
+							<td rowspan="1" colspan="1">
+06-08</td>
+							<td rowspan="1" colspan="1">
+U+0398</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+Ι</td>
+							<td rowspan="1" colspan="1">
+06-09</td>
+							<td rowspan="1" colspan="1">
+U+0399</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+Κ</td>
+							<td rowspan="1" colspan="1">
+06-10</td>
+							<td rowspan="1" colspan="1">
+U+039a</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+Λ</td>
+							<td rowspan="1" colspan="1">
+06-11</td>
+							<td rowspan="1" colspan="1">
+U+039b</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+Μ</td>
+							<td rowspan="1" colspan="1">
+06-12</td>
+							<td rowspan="1" colspan="1">
+U+039c</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+Ν</td>
+							<td rowspan="1" colspan="1">
+06-13</td>
+							<td rowspan="1" colspan="1">
+U+039d</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+Ξ</td>
+							<td rowspan="1" colspan="1">
+06-14</td>
+							<td rowspan="1" colspan="1">
+U+039e</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+Ο</td>
+							<td rowspan="1" colspan="1">
+06-15</td>
+							<td rowspan="1" colspan="1">
+U+039f</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+Π</td>
+							<td rowspan="1" colspan="1">
+06-16</td>
+							<td rowspan="1" colspan="1">
+U+03a0</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+Ρ</td>
+							<td rowspan="1" colspan="1">
+06-17</td>
+							<td rowspan="1" colspan="1">
+U+03a1</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+Σ</td>
+							<td rowspan="1" colspan="1">
+06-18</td>
+							<td rowspan="1" colspan="1">
+U+03a3</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+Τ</td>
+							<td rowspan="1" colspan="1">
+06-19</td>
+							<td rowspan="1" colspan="1">
+U+03a4</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+Υ</td>
+							<td rowspan="1" colspan="1">
+06-20</td>
+							<td rowspan="1" colspan="1">
+U+03a5</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+Φ</td>
+							<td rowspan="1" colspan="1">
+06-21</td>
+							<td rowspan="1" colspan="1">
+U+03a6</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+Χ</td>
+							<td rowspan="1" colspan="1">
+06-22</td>
+							<td rowspan="1" colspan="1">
+U+03a7</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+Ψ</td>
+							<td rowspan="1" colspan="1">
+06-23</td>
+							<td rowspan="1" colspan="1">
+U+03a8</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+Ω</td>
+							<td rowspan="1" colspan="1">
+06-24</td>
+							<td rowspan="1" colspan="1">
+U+03a9</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+α</td>
+							<td rowspan="1" colspan="1">
+06-33</td>
+							<td rowspan="1" colspan="1">
+U+03b1</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+β</td>
+							<td rowspan="1" colspan="1">
+06-34</td>
+							<td rowspan="1" colspan="1">
+U+03b2</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+γ</td>
+							<td rowspan="1" colspan="1">
+06-35</td>
+							<td rowspan="1" colspan="1">
+U+03b3</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+δ</td>
+							<td rowspan="1" colspan="1">
+06-36</td>
+							<td rowspan="1" colspan="1">
+U+03b4</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ε</td>
+							<td rowspan="1" colspan="1">
+06-37</td>
+							<td rowspan="1" colspan="1">
+U+03b5</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ζ</td>
+							<td rowspan="1" colspan="1">
+06-38</td>
+							<td rowspan="1" colspan="1">
+U+03b6</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+η</td>
+							<td rowspan="1" colspan="1">
+06-39</td>
+							<td rowspan="1" colspan="1">
+U+03b7</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+θ</td>
+							<td rowspan="1" colspan="1">
+06-40</td>
+							<td rowspan="1" colspan="1">
+U+03b8</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ι</td>
+							<td rowspan="1" colspan="1">
+06-41</td>
+							<td rowspan="1" colspan="1">
+U+03b9</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+κ</td>
+							<td rowspan="1" colspan="1">
+06-42</td>
+							<td rowspan="1" colspan="1">
+U+03ba</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+λ</td>
+							<td rowspan="1" colspan="1">
+06-43</td>
+							<td rowspan="1" colspan="1">
+U+03bb</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+μ</td>
+							<td rowspan="1" colspan="1">
+06-44</td>
+							<td rowspan="1" colspan="1">
+U+03bc</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ν</td>
+							<td rowspan="1" colspan="1">
+06-45</td>
+							<td rowspan="1" colspan="1">
+U+03bd</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ξ</td>
+							<td rowspan="1" colspan="1">
+06-46</td>
+							<td rowspan="1" colspan="1">
+U+03be</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ο</td>
+							<td rowspan="1" colspan="1">
+06-47</td>
+							<td rowspan="1" colspan="1">
+U+03bf</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+π</td>
+							<td rowspan="1" colspan="1">
+06-48</td>
+							<td rowspan="1" colspan="1">
+U+03c0</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ρ</td>
+							<td rowspan="1" colspan="1">
+06-49</td>
+							<td rowspan="1" colspan="1">
+U+03c1</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+σ</td>
+							<td rowspan="1" colspan="1">
+06-50</td>
+							<td rowspan="1" colspan="1">
+U+03c3</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+τ</td>
+							<td rowspan="1" colspan="1">
+06-51</td>
+							<td rowspan="1" colspan="1">
+U+03c4</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+υ</td>
+							<td rowspan="1" colspan="1">
+06-52</td>
+							<td rowspan="1" colspan="1">
+U+03c5</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+φ</td>
+							<td rowspan="1" colspan="1">
+06-53</td>
+							<td rowspan="1" colspan="1">
+U+03c6</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+χ</td>
+							<td rowspan="1" colspan="1">
+06-54</td>
+							<td rowspan="1" colspan="1">
+U+03c7</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ψ</td>
+							<td rowspan="1" colspan="1">
+06-55</td>
+							<td rowspan="1" colspan="1">
+U+03c8</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ω</td>
+							<td rowspan="1" colspan="1">
+06-56</td>
+							<td rowspan="1" colspan="1">
+U+03c9</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+А</td>
+							<td rowspan="1" colspan="1">
+07-01</td>
+							<td rowspan="1" colspan="1">
+U+0410</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+Б</td>
+							<td rowspan="1" colspan="1">
+07-02</td>
+							<td rowspan="1" colspan="1">
+U+0411</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+В</td>
+							<td rowspan="1" colspan="1">
+07-03</td>
+							<td rowspan="1" colspan="1">
+U+0412</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+Г</td>
+							<td rowspan="1" colspan="1">
+07-04</td>
+							<td rowspan="1" colspan="1">
+U+0413</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+Д</td>
+							<td rowspan="1" colspan="1">
+07-05</td>
+							<td rowspan="1" colspan="1">
+U+0414</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+Е</td>
+							<td rowspan="1" colspan="1">
+07-06</td>
+							<td rowspan="1" colspan="1">
+U+0415</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+Ё</td>
+							<td rowspan="1" colspan="1">
+07-07</td>
+							<td rowspan="1" colspan="1">
+U+0401</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+Ж</td>
+							<td rowspan="1" colspan="1">
+07-08</td>
+							<td rowspan="1" colspan="1">
+U+0416</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+З</td>
+							<td rowspan="1" colspan="1">
+07-09</td>
+							<td rowspan="1" colspan="1">
+U+0417</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+И</td>
+							<td rowspan="1" colspan="1">
+07-10</td>
+							<td rowspan="1" colspan="1">
+U+0418</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+Й</td>
+							<td rowspan="1" colspan="1">
+07-11</td>
+							<td rowspan="1" colspan="1">
+U+0419</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+К</td>
+							<td rowspan="1" colspan="1">
+07-12</td>
+							<td rowspan="1" colspan="1">
+U+041a</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+Л</td>
+							<td rowspan="1" colspan="1">
+07-13</td>
+							<td rowspan="1" colspan="1">
+U+041b</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+М</td>
+							<td rowspan="1" colspan="1">
+07-14</td>
+							<td rowspan="1" colspan="1">
+U+041c</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+Н</td>
+							<td rowspan="1" colspan="1">
+07-15</td>
+							<td rowspan="1" colspan="1">
+U+041d</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+О</td>
+							<td rowspan="1" colspan="1">
+07-16</td>
+							<td rowspan="1" colspan="1">
+U+041e</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+П</td>
+							<td rowspan="1" colspan="1">
+07-17</td>
+							<td rowspan="1" colspan="1">
+U+041f</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+Р</td>
+							<td rowspan="1" colspan="1">
+07-18</td>
+							<td rowspan="1" colspan="1">
+U+0420</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+С</td>
+							<td rowspan="1" colspan="1">
+07-19</td>
+							<td rowspan="1" colspan="1">
+U+0421</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+Т</td>
+							<td rowspan="1" colspan="1">
+07-20</td>
+							<td rowspan="1" colspan="1">
+U+0422</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+У</td>
+							<td rowspan="1" colspan="1">
+07-21</td>
+							<td rowspan="1" colspan="1">
+U+0423</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+Ф</td>
+							<td rowspan="1" colspan="1">
+07-22</td>
+							<td rowspan="1" colspan="1">
+U+0424</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+Х</td>
+							<td rowspan="1" colspan="1">
+07-23</td>
+							<td rowspan="1" colspan="1">
+U+0425</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+Ц</td>
+							<td rowspan="1" colspan="1">
+07-24</td>
+							<td rowspan="1" colspan="1">
+U+0426</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+Ч</td>
+							<td rowspan="1" colspan="1">
+07-25</td>
+							<td rowspan="1" colspan="1">
+U+0427</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+Ш</td>
+							<td rowspan="1" colspan="1">
+07-26</td>
+							<td rowspan="1" colspan="1">
+U+0428</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+Щ</td>
+							<td rowspan="1" colspan="1">
+07-27</td>
+							<td rowspan="1" colspan="1">
+U+0429</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+Ъ</td>
+							<td rowspan="1" colspan="1">
+07-28</td>
+							<td rowspan="1" colspan="1">
+U+042a</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+Ы</td>
+							<td rowspan="1" colspan="1">
+07-29</td>
+							<td rowspan="1" colspan="1">
+U+042b</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+Ь</td>
+							<td rowspan="1" colspan="1">
+07-30</td>
+							<td rowspan="1" colspan="1">
+U+042c</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+Э</td>
+							<td rowspan="1" colspan="1">
+07-31</td>
+							<td rowspan="1" colspan="1">
+U+042d</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+Ю</td>
+							<td rowspan="1" colspan="1">
+07-32</td>
+							<td rowspan="1" colspan="1">
+U+042e</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+Я</td>
+							<td rowspan="1" colspan="1">
+07-33</td>
+							<td rowspan="1" colspan="1">
+U+042f</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+а</td>
+							<td rowspan="1" colspan="1">
+07-49</td>
+							<td rowspan="1" colspan="1">
+U+0430</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+б</td>
+							<td rowspan="1" colspan="1">
+07-50</td>
+							<td rowspan="1" colspan="1">
+U+0431</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+в</td>
+							<td rowspan="1" colspan="1">
+07-51</td>
+							<td rowspan="1" colspan="1">
+U+0432</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+г</td>
+							<td rowspan="1" colspan="1">
+07-52</td>
+							<td rowspan="1" colspan="1">
+U+0433</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+д</td>
+							<td rowspan="1" colspan="1">
+07-53</td>
+							<td rowspan="1" colspan="1">
+U+0434</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+е</td>
+							<td rowspan="1" colspan="1">
+07-54</td>
+							<td rowspan="1" colspan="1">
+U+0435</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ё</td>
+							<td rowspan="1" colspan="1">
+07-55</td>
+							<td rowspan="1" colspan="1">
+U+0451</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ж</td>
+							<td rowspan="1" colspan="1">
+07-56</td>
+							<td rowspan="1" colspan="1">
+U+0436</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+з</td>
+							<td rowspan="1" colspan="1">
+07-57</td>
+							<td rowspan="1" colspan="1">
+U+0437</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+и</td>
+							<td rowspan="1" colspan="1">
+07-58</td>
+							<td rowspan="1" colspan="1">
+U+0438</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+й</td>
+							<td rowspan="1" colspan="1">
+07-59</td>
+							<td rowspan="1" colspan="1">
+U+0439</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+к</td>
+							<td rowspan="1" colspan="1">
+07-60</td>
+							<td rowspan="1" colspan="1">
+U+043a</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+л</td>
+							<td rowspan="1" colspan="1">
+07-61</td>
+							<td rowspan="1" colspan="1">
+U+043b</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+м</td>
+							<td rowspan="1" colspan="1">
+07-62</td>
+							<td rowspan="1" colspan="1">
+U+043c</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+н</td>
+							<td rowspan="1" colspan="1">
+07-63</td>
+							<td rowspan="1" colspan="1">
+U+043d</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+о</td>
+							<td rowspan="1" colspan="1">
+07-64</td>
+							<td rowspan="1" colspan="1">
+U+043e</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+п</td>
+							<td rowspan="1" colspan="1">
+07-65</td>
+							<td rowspan="1" colspan="1">
+U+043f</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+р</td>
+							<td rowspan="1" colspan="1">
+07-66</td>
+							<td rowspan="1" colspan="1">
+U+0440</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+с</td>
+							<td rowspan="1" colspan="1">
+07-67</td>
+							<td rowspan="1" colspan="1">
+U+0441</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+т</td>
+							<td rowspan="1" colspan="1">
+07-68</td>
+							<td rowspan="1" colspan="1">
+U+0442</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+у</td>
+							<td rowspan="1" colspan="1">
+07-69</td>
+							<td rowspan="1" colspan="1">
+U+0443</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ф</td>
+							<td rowspan="1" colspan="1">
+07-70</td>
+							<td rowspan="1" colspan="1">
+U+0444</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+х</td>
+							<td rowspan="1" colspan="1">
+07-71</td>
+							<td rowspan="1" colspan="1">
+U+0445</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ц</td>
+							<td rowspan="1" colspan="1">
+07-72</td>
+							<td rowspan="1" colspan="1">
+U+0446</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ч</td>
+							<td rowspan="1" colspan="1">
+07-73</td>
+							<td rowspan="1" colspan="1">
+U+0447</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ш</td>
+							<td rowspan="1" colspan="1">
+07-74</td>
+							<td rowspan="1" colspan="1">
+U+0448</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+щ</td>
+							<td rowspan="1" colspan="1">
+07-75</td>
+							<td rowspan="1" colspan="1">
+U+0449</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ъ</td>
+							<td rowspan="1" colspan="1">
+07-76</td>
+							<td rowspan="1" colspan="1">
+U+044a</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ы</td>
+							<td rowspan="1" colspan="1">
+07-77</td>
+							<td rowspan="1" colspan="1">
+U+044b</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ь</td>
+							<td rowspan="1" colspan="1">
+07-78</td>
+							<td rowspan="1" colspan="1">
+U+044c</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+э</td>
+							<td rowspan="1" colspan="1">
+07-79</td>
+							<td rowspan="1" colspan="1">
+U+044d</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ю</td>
+							<td rowspan="1" colspan="1">
+07-80</td>
+							<td rowspan="1" colspan="1">
+U+044e</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+я</td>
+							<td rowspan="1" colspan="1">
+07-81</td>
+							<td rowspan="1" colspan="1">
+U+044f</td>
+						</tr>
+					</tbody>
+				</table>
+				<table border="1" width="60%">
+					<caption>Name characters other than name start characters: 1st through 9th 
+areas of <a href="#JISX0208">[JIS X 0208]</a></caption>
+					<tbody><tr>
+							<th rowspan="1" colspan="1">
+							</th>
+							<th rowspan="1" colspan="1">
+KUTEN code</th>
+							<th rowspan="1" colspan="1">
+UCS code points</th>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ヽ</td>
+							<td rowspan="1" colspan="1">
+01-19</td>
+							<td rowspan="1" colspan="1">
+U+30fd</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ヾ</td>
+							<td rowspan="1" colspan="1">
+01-20</td>
+							<td rowspan="1" colspan="1">
+U+30fe</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ゝ</td>
+							<td rowspan="1" colspan="1">
+01-21</td>
+							<td rowspan="1" colspan="1">
+U+309d</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ゞ</td>
+							<td rowspan="1" colspan="1">
+01-22</td>
+							<td rowspan="1" colspan="1">
+U+309e</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+々</td>
+							<td rowspan="1" colspan="1">
+01-25</td>
+							<td rowspan="1" colspan="1">
+U+3005</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ー</td>
+							<td rowspan="1" colspan="1">
+01-28</td>
+							<td rowspan="1" colspan="1">
+U+30fc</td>
+						</tr>
+					</tbody>
+				</table>
+				<table border="1" width="60%">
+					<caption>Name start characters: 1st through 4th ares of <a href="#JISX0212">[JIS X 0212]</a></caption>
+					<tbody><tr>
+							<th rowspan="1" colspan="1">
+							</th>
+							<th rowspan="1" colspan="1">
+KUTEN code</th>
+							<th rowspan="1" colspan="1">
+UCS code points</th>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+Ά</td>
+							<td rowspan="1" colspan="1">
+06-65</td>
+							<td rowspan="1" colspan="1">
+U+0386</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+Έ</td>
+							<td rowspan="1" colspan="1">
+06-66</td>
+							<td rowspan="1" colspan="1">
+U+0388</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+Ή</td>
+							<td rowspan="1" colspan="1">
+06-67</td>
+							<td rowspan="1" colspan="1">
+U+0389</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+Ί</td>
+							<td rowspan="1" colspan="1">
+06-68</td>
+							<td rowspan="1" colspan="1">
+U+038a</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+Ϊ</td>
+							<td rowspan="1" colspan="1">
+06-69</td>
+							<td rowspan="1" colspan="1">
+U+03aa</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+Ό</td>
+							<td rowspan="1" colspan="1">
+06-71</td>
+							<td rowspan="1" colspan="1">
+U+038c</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+Ύ</td>
+							<td rowspan="1" colspan="1">
+06-73</td>
+							<td rowspan="1" colspan="1">
+U+038e</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+Ϋ</td>
+							<td rowspan="1" colspan="1">
+06-74</td>
+							<td rowspan="1" colspan="1">
+U+03ab</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+Ώ</td>
+							<td rowspan="1" colspan="1">
+06-76</td>
+							<td rowspan="1" colspan="1">
+U+038f</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ά</td>
+							<td rowspan="1" colspan="1">
+06-81</td>
+							<td rowspan="1" colspan="1">
+U+03ac</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+έ</td>
+							<td rowspan="1" colspan="1">
+06-82</td>
+							<td rowspan="1" colspan="1">
+U+03ad</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ή</td>
+							<td rowspan="1" colspan="1">
+06-83</td>
+							<td rowspan="1" colspan="1">
+U+03ae</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ί</td>
+							<td rowspan="1" colspan="1">
+06-84</td>
+							<td rowspan="1" colspan="1">
+U+03af</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ϊ</td>
+							<td rowspan="1" colspan="1">
+06-85</td>
+							<td rowspan="1" colspan="1">
+U+03ca</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ΐ</td>
+							<td rowspan="1" colspan="1">
+06-86</td>
+							<td rowspan="1" colspan="1">
+U+0390</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ό</td>
+							<td rowspan="1" colspan="1">
+06-87</td>
+							<td rowspan="1" colspan="1">
+U+03cc</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ς</td>
+							<td rowspan="1" colspan="1">
+06-88</td>
+							<td rowspan="1" colspan="1">
+U+03c2</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ύ</td>
+							<td rowspan="1" colspan="1">
+06-89</td>
+							<td rowspan="1" colspan="1">
+U+03cd</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ϋ</td>
+							<td rowspan="1" colspan="1">
+06-90</td>
+							<td rowspan="1" colspan="1">
+U+03cb</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ΰ</td>
+							<td rowspan="1" colspan="1">
+06-91</td>
+							<td rowspan="1" colspan="1">
+U+03b0</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ώ</td>
+							<td rowspan="1" colspan="1">
+06-92</td>
+							<td rowspan="1" colspan="1">
+U+03ce</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+Ђ</td>
+							<td rowspan="1" colspan="1">
+07-34</td>
+							<td rowspan="1" colspan="1">
+U+0402</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+Ѓ</td>
+							<td rowspan="1" colspan="1">
+07-35</td>
+							<td rowspan="1" colspan="1">
+U+0403</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+Є</td>
+							<td rowspan="1" colspan="1">
+07-36</td>
+							<td rowspan="1" colspan="1">
+U+0404</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+Ѕ</td>
+							<td rowspan="1" colspan="1">
+07-37</td>
+							<td rowspan="1" colspan="1">
+U+0405</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+І</td>
+							<td rowspan="1" colspan="1">
+07-38</td>
+							<td rowspan="1" colspan="1">
+U+0406</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+Ї</td>
+							<td rowspan="1" colspan="1">
+07-39</td>
+							<td rowspan="1" colspan="1">
+U+0407</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+Ј</td>
+							<td rowspan="1" colspan="1">
+07-40</td>
+							<td rowspan="1" colspan="1">
+U+0408</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+Љ</td>
+							<td rowspan="1" colspan="1">
+07-41</td>
+							<td rowspan="1" colspan="1">
+U+0409</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+Њ</td>
+							<td rowspan="1" colspan="1">
+07-42</td>
+							<td rowspan="1" colspan="1">
+U+040a</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+Ћ</td>
+							<td rowspan="1" colspan="1">
+07-43</td>
+							<td rowspan="1" colspan="1">
+U+040b</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+Ќ</td>
+							<td rowspan="1" colspan="1">
+07-44</td>
+							<td rowspan="1" colspan="1">
+U+040c</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+Ў</td>
+							<td rowspan="1" colspan="1">
+07-45</td>
+							<td rowspan="1" colspan="1">
+U+040e</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+Џ</td>
+							<td rowspan="1" colspan="1">
+07-46</td>
+							<td rowspan="1" colspan="1">
+U+040f</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ђ</td>
+							<td rowspan="1" colspan="1">
+07-82</td>
+							<td rowspan="1" colspan="1">
+U+0452</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ѓ</td>
+							<td rowspan="1" colspan="1">
+07-83</td>
+							<td rowspan="1" colspan="1">
+U+0453</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+є</td>
+							<td rowspan="1" colspan="1">
+07-84</td>
+							<td rowspan="1" colspan="1">
+U+0454</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ѕ</td>
+							<td rowspan="1" colspan="1">
+07-85</td>
+							<td rowspan="1" colspan="1">
+U+0455</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+і</td>
+							<td rowspan="1" colspan="1">
+07-86</td>
+							<td rowspan="1" colspan="1">
+U+0456</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ї</td>
+							<td rowspan="1" colspan="1">
+07-87</td>
+							<td rowspan="1" colspan="1">
+U+0457</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ј</td>
+							<td rowspan="1" colspan="1">
+07-88</td>
+							<td rowspan="1" colspan="1">
+U+0458</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+љ</td>
+							<td rowspan="1" colspan="1">
+07-89</td>
+							<td rowspan="1" colspan="1">
+U+0459</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+њ</td>
+							<td rowspan="1" colspan="1">
+07-90</td>
+							<td rowspan="1" colspan="1">
+U+045a</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ћ</td>
+							<td rowspan="1" colspan="1">
+07-91</td>
+							<td rowspan="1" colspan="1">
+U+045b</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ќ</td>
+							<td rowspan="1" colspan="1">
+07-92</td>
+							<td rowspan="1" colspan="1">
+U+045c</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ў</td>
+							<td rowspan="1" colspan="1">
+07-93</td>
+							<td rowspan="1" colspan="1">
+U+045e</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+џ</td>
+							<td rowspan="1" colspan="1">
+07-94</td>
+							<td rowspan="1" colspan="1">
+U+045f</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+Æ</td>
+							<td rowspan="1" colspan="1">
+09-01</td>
+							<td rowspan="1" colspan="1">
+U+00c6</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+Đ</td>
+							<td rowspan="1" colspan="1">
+09-02</td>
+							<td rowspan="1" colspan="1">
+U+0110</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+Ħ</td>
+							<td rowspan="1" colspan="1">
+09-04</td>
+							<td rowspan="1" colspan="1">
+U+0126</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+Ł</td>
+							<td rowspan="1" colspan="1">
+09-08</td>
+							<td rowspan="1" colspan="1">
+U+0141</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+Ŋ</td>
+							<td rowspan="1" colspan="1">
+09-11</td>
+							<td rowspan="1" colspan="1">
+U+014a</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+Ø</td>
+							<td rowspan="1" colspan="1">
+09-12</td>
+							<td rowspan="1" colspan="1">
+U+00d8</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+Œ</td>
+							<td rowspan="1" colspan="1">
+09-13</td>
+							<td rowspan="1" colspan="1">
+U+0152</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+Ŧ</td>
+							<td rowspan="1" colspan="1">
+09-15</td>
+							<td rowspan="1" colspan="1">
+U+0166</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+Þ</td>
+							<td rowspan="1" colspan="1">
+09-16</td>
+							<td rowspan="1" colspan="1">
+U+00de</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+æ</td>
+							<td rowspan="1" colspan="1">
+09-33</td>
+							<td rowspan="1" colspan="1">
+U+00e6</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+đ</td>
+							<td rowspan="1" colspan="1">
+09-34</td>
+							<td rowspan="1" colspan="1">
+U+0111</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ð</td>
+							<td rowspan="1" colspan="1">
+09-35</td>
+							<td rowspan="1" colspan="1">
+U+00f0</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ħ</td>
+							<td rowspan="1" colspan="1">
+09-36</td>
+							<td rowspan="1" colspan="1">
+U+0127</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ı</td>
+							<td rowspan="1" colspan="1">
+09-37</td>
+							<td rowspan="1" colspan="1">
+U+0131</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ĸ</td>
+							<td rowspan="1" colspan="1">
+09-39</td>
+							<td rowspan="1" colspan="1">
+U+0138</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ł</td>
+							<td rowspan="1" colspan="1">
+09-40</td>
+							<td rowspan="1" colspan="1">
+U+0142</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ŋ</td>
+							<td rowspan="1" colspan="1">
+09-43</td>
+							<td rowspan="1" colspan="1">
+U+014b</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ø</td>
+							<td rowspan="1" colspan="1">
+09-44</td>
+							<td rowspan="1" colspan="1">
+U+00f8</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+œ</td>
+							<td rowspan="1" colspan="1">
+09-45</td>
+							<td rowspan="1" colspan="1">
+U+0153</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ß</td>
+							<td rowspan="1" colspan="1">
+09-46</td>
+							<td rowspan="1" colspan="1">
+U+00df</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ŧ</td>
+							<td rowspan="1" colspan="1">
+09-47</td>
+							<td rowspan="1" colspan="1">
+U+0167</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+þ</td>
+							<td rowspan="1" colspan="1">
+09-48</td>
+							<td rowspan="1" colspan="1">
+U+00fe</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+Á</td>
+							<td rowspan="1" colspan="1">
+10-01</td>
+							<td rowspan="1" colspan="1">
+U+00c1</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+À</td>
+							<td rowspan="1" colspan="1">
+10-02</td>
+							<td rowspan="1" colspan="1">
+U+00c0</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+Ä</td>
+							<td rowspan="1" colspan="1">
+10-03</td>
+							<td rowspan="1" colspan="1">
+U+00c4</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+Â</td>
+							<td rowspan="1" colspan="1">
+10-04</td>
+							<td rowspan="1" colspan="1">
+U+00c2</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+Ă</td>
+							<td rowspan="1" colspan="1">
+10-05</td>
+							<td rowspan="1" colspan="1">
+U+0102</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+Ǎ</td>
+							<td rowspan="1" colspan="1">
+10-06</td>
+							<td rowspan="1" colspan="1">
+U+01cd</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+Ā</td>
+							<td rowspan="1" colspan="1">
+10-07</td>
+							<td rowspan="1" colspan="1">
+U+0100</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+Ą</td>
+							<td rowspan="1" colspan="1">
+10-08</td>
+							<td rowspan="1" colspan="1">
+U+0104</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+Å</td>
+							<td rowspan="1" colspan="1">
+10-09</td>
+							<td rowspan="1" colspan="1">
+U+00c5</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+Ã</td>
+							<td rowspan="1" colspan="1">
+10-10</td>
+							<td rowspan="1" colspan="1">
+U+00c3</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+Ć</td>
+							<td rowspan="1" colspan="1">
+10-11</td>
+							<td rowspan="1" colspan="1">
+U+0106</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+Ĉ</td>
+							<td rowspan="1" colspan="1">
+10-12</td>
+							<td rowspan="1" colspan="1">
+U+0108</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+Č</td>
+							<td rowspan="1" colspan="1">
+10-13</td>
+							<td rowspan="1" colspan="1">
+U+010c</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+Ç</td>
+							<td rowspan="1" colspan="1">
+10-14</td>
+							<td rowspan="1" colspan="1">
+U+00c7</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+Ċ</td>
+							<td rowspan="1" colspan="1">
+10-15</td>
+							<td rowspan="1" colspan="1">
+U+010a</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+Ď</td>
+							<td rowspan="1" colspan="1">
+10-16</td>
+							<td rowspan="1" colspan="1">
+U+010e</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+É</td>
+							<td rowspan="1" colspan="1">
+10-17</td>
+							<td rowspan="1" colspan="1">
+U+00c9</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+È</td>
+							<td rowspan="1" colspan="1">
+10-18</td>
+							<td rowspan="1" colspan="1">
+U+00c8</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+Ë</td>
+							<td rowspan="1" colspan="1">
+10-19</td>
+							<td rowspan="1" colspan="1">
+U+00cb</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+Ê</td>
+							<td rowspan="1" colspan="1">
+10-20</td>
+							<td rowspan="1" colspan="1">
+U+00ca</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+Ě</td>
+							<td rowspan="1" colspan="1">
+10-21</td>
+							<td rowspan="1" colspan="1">
+U+011a</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+Ė</td>
+							<td rowspan="1" colspan="1">
+10-22</td>
+							<td rowspan="1" colspan="1">
+U+0116</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+Ē</td>
+							<td rowspan="1" colspan="1">
+10-23</td>
+							<td rowspan="1" colspan="1">
+U+0112</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+Ę</td>
+							<td rowspan="1" colspan="1">
+10-24</td>
+							<td rowspan="1" colspan="1">
+U+0118</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+Ĝ</td>
+							<td rowspan="1" colspan="1">
+10-26</td>
+							<td rowspan="1" colspan="1">
+U+011c</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+Ğ</td>
+							<td rowspan="1" colspan="1">
+10-27</td>
+							<td rowspan="1" colspan="1">
+U+011e</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+Ģ</td>
+							<td rowspan="1" colspan="1">
+10-28</td>
+							<td rowspan="1" colspan="1">
+U+0122</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+Ġ</td>
+							<td rowspan="1" colspan="1">
+10-29</td>
+							<td rowspan="1" colspan="1">
+U+0120</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+Ĥ</td>
+							<td rowspan="1" colspan="1">
+10-30</td>
+							<td rowspan="1" colspan="1">
+U+0124</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+Í</td>
+							<td rowspan="1" colspan="1">
+10-31</td>
+							<td rowspan="1" colspan="1">
+U+00cd</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+Ì</td>
+							<td rowspan="1" colspan="1">
+10-32</td>
+							<td rowspan="1" colspan="1">
+U+00cc</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+Ï</td>
+							<td rowspan="1" colspan="1">
+10-33</td>
+							<td rowspan="1" colspan="1">
+U+00cf</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+Î</td>
+							<td rowspan="1" colspan="1">
+10-34</td>
+							<td rowspan="1" colspan="1">
+U+00ce</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+Ǐ</td>
+							<td rowspan="1" colspan="1">
+10-35</td>
+							<td rowspan="1" colspan="1">
+U+01cf</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+İ</td>
+							<td rowspan="1" colspan="1">
+10-36</td>
+							<td rowspan="1" colspan="1">
+U+0130</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+Ī</td>
+							<td rowspan="1" colspan="1">
+10-37</td>
+							<td rowspan="1" colspan="1">
+U+012a</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+Į</td>
+							<td rowspan="1" colspan="1">
+10-38</td>
+							<td rowspan="1" colspan="1">
+U+012e</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+Ĩ</td>
+							<td rowspan="1" colspan="1">
+10-39</td>
+							<td rowspan="1" colspan="1">
+U+0128</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+Ĵ</td>
+							<td rowspan="1" colspan="1">
+10-40</td>
+							<td rowspan="1" colspan="1">
+U+0134</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+Ķ</td>
+							<td rowspan="1" colspan="1">
+10-41</td>
+							<td rowspan="1" colspan="1">
+U+0136</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+Ĺ</td>
+							<td rowspan="1" colspan="1">
+10-42</td>
+							<td rowspan="1" colspan="1">
+U+0139</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+Ľ</td>
+							<td rowspan="1" colspan="1">
+10-43</td>
+							<td rowspan="1" colspan="1">
+U+013d</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+Ļ</td>
+							<td rowspan="1" colspan="1">
+10-44</td>
+							<td rowspan="1" colspan="1">
+U+013b</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+Ń</td>
+							<td rowspan="1" colspan="1">
+10-45</td>
+							<td rowspan="1" colspan="1">
+U+0143</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+Ň</td>
+							<td rowspan="1" colspan="1">
+10-46</td>
+							<td rowspan="1" colspan="1">
+U+0147</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+Ņ</td>
+							<td rowspan="1" colspan="1">
+10-47</td>
+							<td rowspan="1" colspan="1">
+U+0145</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+Ñ</td>
+							<td rowspan="1" colspan="1">
+10-48</td>
+							<td rowspan="1" colspan="1">
+U+00d1</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+Ó</td>
+							<td rowspan="1" colspan="1">
+10-49</td>
+							<td rowspan="1" colspan="1">
+U+00d3</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+Ò</td>
+							<td rowspan="1" colspan="1">
+10-50</td>
+							<td rowspan="1" colspan="1">
+U+00d2</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+Ö</td>
+							<td rowspan="1" colspan="1">
+10-51</td>
+							<td rowspan="1" colspan="1">
+U+00d6</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+Ô</td>
+							<td rowspan="1" colspan="1">
+10-52</td>
+							<td rowspan="1" colspan="1">
+U+00d4</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+Ǒ</td>
+							<td rowspan="1" colspan="1">
+10-53</td>
+							<td rowspan="1" colspan="1">
+U+01d1</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+Ő</td>
+							<td rowspan="1" colspan="1">
+10-54</td>
+							<td rowspan="1" colspan="1">
+U+0150</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+Ō</td>
+							<td rowspan="1" colspan="1">
+10-55</td>
+							<td rowspan="1" colspan="1">
+U+014c</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+Õ</td>
+							<td rowspan="1" colspan="1">
+10-56</td>
+							<td rowspan="1" colspan="1">
+U+00d5</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+Ŕ</td>
+							<td rowspan="1" colspan="1">
+10-57</td>
+							<td rowspan="1" colspan="1">
+U+0154</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+Ř</td>
+							<td rowspan="1" colspan="1">
+10-58</td>
+							<td rowspan="1" colspan="1">
+U+0158</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+Ŗ</td>
+							<td rowspan="1" colspan="1">
+10-59</td>
+							<td rowspan="1" colspan="1">
+U+0156</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+Ś</td>
+							<td rowspan="1" colspan="1">
+10-60</td>
+							<td rowspan="1" colspan="1">
+U+015a</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+Ŝ</td>
+							<td rowspan="1" colspan="1">
+10-61</td>
+							<td rowspan="1" colspan="1">
+U+015c</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+Š</td>
+							<td rowspan="1" colspan="1">
+10-62</td>
+							<td rowspan="1" colspan="1">
+U+0160</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+Ş</td>
+							<td rowspan="1" colspan="1">
+10-63</td>
+							<td rowspan="1" colspan="1">
+U+015e</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+Ť</td>
+							<td rowspan="1" colspan="1">
+10-64</td>
+							<td rowspan="1" colspan="1">
+U+0164</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+Ţ</td>
+							<td rowspan="1" colspan="1">
+10-65</td>
+							<td rowspan="1" colspan="1">
+U+0162</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+Ú</td>
+							<td rowspan="1" colspan="1">
+10-66</td>
+							<td rowspan="1" colspan="1">
+U+00da</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+Ù</td>
+							<td rowspan="1" colspan="1">
+10-67</td>
+							<td rowspan="1" colspan="1">
+U+00d9</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+Ü</td>
+							<td rowspan="1" colspan="1">
+10-68</td>
+							<td rowspan="1" colspan="1">
+U+00dc</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+Û</td>
+							<td rowspan="1" colspan="1">
+10-69</td>
+							<td rowspan="1" colspan="1">
+U+00db</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+Ŭ</td>
+							<td rowspan="1" colspan="1">
+10-70</td>
+							<td rowspan="1" colspan="1">
+U+016c</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+Ǔ</td>
+							<td rowspan="1" colspan="1">
+10-71</td>
+							<td rowspan="1" colspan="1">
+U+01d3</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+Ű</td>
+							<td rowspan="1" colspan="1">
+10-72</td>
+							<td rowspan="1" colspan="1">
+U+0170</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+Ū</td>
+							<td rowspan="1" colspan="1">
+10-73</td>
+							<td rowspan="1" colspan="1">
+U+016a</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+Ų</td>
+							<td rowspan="1" colspan="1">
+10-74</td>
+							<td rowspan="1" colspan="1">
+U+0172</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+Ů</td>
+							<td rowspan="1" colspan="1">
+10-75</td>
+							<td rowspan="1" colspan="1">
+U+016e</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+Ũ</td>
+							<td rowspan="1" colspan="1">
+10-76</td>
+							<td rowspan="1" colspan="1">
+U+0168</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+Ǘ</td>
+							<td rowspan="1" colspan="1">
+10-77</td>
+							<td rowspan="1" colspan="1">
+U+01d7</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+Ǜ</td>
+							<td rowspan="1" colspan="1">
+10-78</td>
+							<td rowspan="1" colspan="1">
+U+01db</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+Ǚ</td>
+							<td rowspan="1" colspan="1">
+10-79</td>
+							<td rowspan="1" colspan="1">
+U+01d9</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+Ǖ</td>
+							<td rowspan="1" colspan="1">
+10-80</td>
+							<td rowspan="1" colspan="1">
+U+01d5</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+Ŵ</td>
+							<td rowspan="1" colspan="1">
+10-81</td>
+							<td rowspan="1" colspan="1">
+U+0174</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+Ý</td>
+							<td rowspan="1" colspan="1">
+10-82</td>
+							<td rowspan="1" colspan="1">
+U+00dd</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+Ÿ</td>
+							<td rowspan="1" colspan="1">
+10-83</td>
+							<td rowspan="1" colspan="1">
+U+0178</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+Ŷ</td>
+							<td rowspan="1" colspan="1">
+10-84</td>
+							<td rowspan="1" colspan="1">
+U+0176</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+Ź</td>
+							<td rowspan="1" colspan="1">
+10-85</td>
+							<td rowspan="1" colspan="1">
+U+0179</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+Ž</td>
+							<td rowspan="1" colspan="1">
+10-86</td>
+							<td rowspan="1" colspan="1">
+U+017d</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+Ż</td>
+							<td rowspan="1" colspan="1">
+10-87</td>
+							<td rowspan="1" colspan="1">
+U+017b</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+á</td>
+							<td rowspan="1" colspan="1">
+11-01</td>
+							<td rowspan="1" colspan="1">
+U+00e1</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+à</td>
+							<td rowspan="1" colspan="1">
+11-02</td>
+							<td rowspan="1" colspan="1">
+U+00e0</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ä</td>
+							<td rowspan="1" colspan="1">
+11-03</td>
+							<td rowspan="1" colspan="1">
+U+00e4</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+â</td>
+							<td rowspan="1" colspan="1">
+11-04</td>
+							<td rowspan="1" colspan="1">
+U+00e2</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ă</td>
+							<td rowspan="1" colspan="1">
+11-05</td>
+							<td rowspan="1" colspan="1">
+U+0103</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ǎ</td>
+							<td rowspan="1" colspan="1">
+11-06</td>
+							<td rowspan="1" colspan="1">
+U+01ce</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ā</td>
+							<td rowspan="1" colspan="1">
+11-07</td>
+							<td rowspan="1" colspan="1">
+U+0101</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ą</td>
+							<td rowspan="1" colspan="1">
+11-08</td>
+							<td rowspan="1" colspan="1">
+U+0105</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+å</td>
+							<td rowspan="1" colspan="1">
+11-09</td>
+							<td rowspan="1" colspan="1">
+U+00e5</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ã</td>
+							<td rowspan="1" colspan="1">
+11-10</td>
+							<td rowspan="1" colspan="1">
+U+00e3</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ć</td>
+							<td rowspan="1" colspan="1">
+11-11</td>
+							<td rowspan="1" colspan="1">
+U+0107</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ĉ</td>
+							<td rowspan="1" colspan="1">
+11-12</td>
+							<td rowspan="1" colspan="1">
+U+0109</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+č</td>
+							<td rowspan="1" colspan="1">
+11-13</td>
+							<td rowspan="1" colspan="1">
+U+010d</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ç</td>
+							<td rowspan="1" colspan="1">
+11-14</td>
+							<td rowspan="1" colspan="1">
+U+00e7</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ċ</td>
+							<td rowspan="1" colspan="1">
+11-15</td>
+							<td rowspan="1" colspan="1">
+U+010b</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ď</td>
+							<td rowspan="1" colspan="1">
+11-16</td>
+							<td rowspan="1" colspan="1">
+U+010f</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+é</td>
+							<td rowspan="1" colspan="1">
+11-17</td>
+							<td rowspan="1" colspan="1">
+U+00e9</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+è</td>
+							<td rowspan="1" colspan="1">
+11-18</td>
+							<td rowspan="1" colspan="1">
+U+00e8</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ë</td>
+							<td rowspan="1" colspan="1">
+11-19</td>
+							<td rowspan="1" colspan="1">
+U+00eb</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ê</td>
+							<td rowspan="1" colspan="1">
+11-20</td>
+							<td rowspan="1" colspan="1">
+U+00ea</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ě</td>
+							<td rowspan="1" colspan="1">
+11-21</td>
+							<td rowspan="1" colspan="1">
+U+011b</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ė</td>
+							<td rowspan="1" colspan="1">
+11-22</td>
+							<td rowspan="1" colspan="1">
+U+0117</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ē</td>
+							<td rowspan="1" colspan="1">
+11-23</td>
+							<td rowspan="1" colspan="1">
+U+0113</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ę</td>
+							<td rowspan="1" colspan="1">
+11-24</td>
+							<td rowspan="1" colspan="1">
+U+0119</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ǵ</td>
+							<td rowspan="1" colspan="1">
+11-25</td>
+							<td rowspan="1" colspan="1">
+U+01f5</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ĝ</td>
+							<td rowspan="1" colspan="1">
+11-26</td>
+							<td rowspan="1" colspan="1">
+U+011d</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ğ</td>
+							<td rowspan="1" colspan="1">
+11-27</td>
+							<td rowspan="1" colspan="1">
+U+011f</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ġ</td>
+							<td rowspan="1" colspan="1">
+11-29</td>
+							<td rowspan="1" colspan="1">
+U+0121</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ĥ</td>
+							<td rowspan="1" colspan="1">
+11-30</td>
+							<td rowspan="1" colspan="1">
+U+0125</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+í</td>
+							<td rowspan="1" colspan="1">
+11-31</td>
+							<td rowspan="1" colspan="1">
+U+00ed</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ì</td>
+							<td rowspan="1" colspan="1">
+11-32</td>
+							<td rowspan="1" colspan="1">
+U+00ec</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ï</td>
+							<td rowspan="1" colspan="1">
+11-33</td>
+							<td rowspan="1" colspan="1">
+U+00ef</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+î</td>
+							<td rowspan="1" colspan="1">
+11-34</td>
+							<td rowspan="1" colspan="1">
+U+00ee</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ǐ</td>
+							<td rowspan="1" colspan="1">
+11-35</td>
+							<td rowspan="1" colspan="1">
+U+01d0</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ī</td>
+							<td rowspan="1" colspan="1">
+11-37</td>
+							<td rowspan="1" colspan="1">
+U+012b</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+į</td>
+							<td rowspan="1" colspan="1">
+11-38</td>
+							<td rowspan="1" colspan="1">
+U+012f</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ĩ</td>
+							<td rowspan="1" colspan="1">
+11-39</td>
+							<td rowspan="1" colspan="1">
+U+0129</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ĵ</td>
+							<td rowspan="1" colspan="1">
+11-40</td>
+							<td rowspan="1" colspan="1">
+U+0135</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ķ</td>
+							<td rowspan="1" colspan="1">
+11-41</td>
+							<td rowspan="1" colspan="1">
+U+0137</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ĺ</td>
+							<td rowspan="1" colspan="1">
+11-42</td>
+							<td rowspan="1" colspan="1">
+U+013a</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ľ</td>
+							<td rowspan="1" colspan="1">
+11-43</td>
+							<td rowspan="1" colspan="1">
+U+013e</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ļ</td>
+							<td rowspan="1" colspan="1">
+11-44</td>
+							<td rowspan="1" colspan="1">
+U+013c</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ń</td>
+							<td rowspan="1" colspan="1">
+11-45</td>
+							<td rowspan="1" colspan="1">
+U+0144</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ň</td>
+							<td rowspan="1" colspan="1">
+11-46</td>
+							<td rowspan="1" colspan="1">
+U+0148</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ņ</td>
+							<td rowspan="1" colspan="1">
+11-47</td>
+							<td rowspan="1" colspan="1">
+U+0146</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ñ</td>
+							<td rowspan="1" colspan="1">
+11-48</td>
+							<td rowspan="1" colspan="1">
+U+00f1</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ó</td>
+							<td rowspan="1" colspan="1">
+11-49</td>
+							<td rowspan="1" colspan="1">
+U+00f3</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ò</td>
+							<td rowspan="1" colspan="1">
+11-50</td>
+							<td rowspan="1" colspan="1">
+U+00f2</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ö</td>
+							<td rowspan="1" colspan="1">
+11-51</td>
+							<td rowspan="1" colspan="1">
+U+00f6</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ô</td>
+							<td rowspan="1" colspan="1">
+11-52</td>
+							<td rowspan="1" colspan="1">
+U+00f4</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ǒ</td>
+							<td rowspan="1" colspan="1">
+11-53</td>
+							<td rowspan="1" colspan="1">
+U+01d2</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ő</td>
+							<td rowspan="1" colspan="1">
+11-54</td>
+							<td rowspan="1" colspan="1">
+U+0151</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ō</td>
+							<td rowspan="1" colspan="1">
+11-55</td>
+							<td rowspan="1" colspan="1">
+U+014d</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+õ</td>
+							<td rowspan="1" colspan="1">
+11-56</td>
+							<td rowspan="1" colspan="1">
+U+00f5</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ŕ</td>
+							<td rowspan="1" colspan="1">
+11-57</td>
+							<td rowspan="1" colspan="1">
+U+0155</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ř</td>
+							<td rowspan="1" colspan="1">
+11-58</td>
+							<td rowspan="1" colspan="1">
+U+0159</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ŗ</td>
+							<td rowspan="1" colspan="1">
+11-59</td>
+							<td rowspan="1" colspan="1">
+U+0157</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ś</td>
+							<td rowspan="1" colspan="1">
+11-60</td>
+							<td rowspan="1" colspan="1">
+U+015b</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ŝ</td>
+							<td rowspan="1" colspan="1">
+11-61</td>
+							<td rowspan="1" colspan="1">
+U+015d</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+š</td>
+							<td rowspan="1" colspan="1">
+11-62</td>
+							<td rowspan="1" colspan="1">
+U+0161</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ş</td>
+							<td rowspan="1" colspan="1">
+11-63</td>
+							<td rowspan="1" colspan="1">
+U+015f</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ť</td>
+							<td rowspan="1" colspan="1">
+11-64</td>
+							<td rowspan="1" colspan="1">
+U+0165</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ţ</td>
+							<td rowspan="1" colspan="1">
+11-65</td>
+							<td rowspan="1" colspan="1">
+U+0163</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ú</td>
+							<td rowspan="1" colspan="1">
+11-66</td>
+							<td rowspan="1" colspan="1">
+U+00fa</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ù</td>
+							<td rowspan="1" colspan="1">
+11-67</td>
+							<td rowspan="1" colspan="1">
+U+00f9</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ü</td>
+							<td rowspan="1" colspan="1">
+11-68</td>
+							<td rowspan="1" colspan="1">
+U+00fc</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+û</td>
+							<td rowspan="1" colspan="1">
+11-69</td>
+							<td rowspan="1" colspan="1">
+U+00fb</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ŭ</td>
+							<td rowspan="1" colspan="1">
+11-70</td>
+							<td rowspan="1" colspan="1">
+U+016d</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ǔ</td>
+							<td rowspan="1" colspan="1">
+11-71</td>
+							<td rowspan="1" colspan="1">
+U+01d4</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ű</td>
+							<td rowspan="1" colspan="1">
+11-72</td>
+							<td rowspan="1" colspan="1">
+U+0171</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ū</td>
+							<td rowspan="1" colspan="1">
+11-73</td>
+							<td rowspan="1" colspan="1">
+U+016b</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ų</td>
+							<td rowspan="1" colspan="1">
+11-74</td>
+							<td rowspan="1" colspan="1">
+U+0173</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ů</td>
+							<td rowspan="1" colspan="1">
+11-75</td>
+							<td rowspan="1" colspan="1">
+U+016f</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ũ</td>
+							<td rowspan="1" colspan="1">
+11-76</td>
+							<td rowspan="1" colspan="1">
+U+0169</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ǘ</td>
+							<td rowspan="1" colspan="1">
+11-77</td>
+							<td rowspan="1" colspan="1">
+U+01d8</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ǜ</td>
+							<td rowspan="1" colspan="1">
+11-78</td>
+							<td rowspan="1" colspan="1">
+U+01dc</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ǚ</td>
+							<td rowspan="1" colspan="1">
+11-79</td>
+							<td rowspan="1" colspan="1">
+U+01da</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ǖ</td>
+							<td rowspan="1" colspan="1">
+11-80</td>
+							<td rowspan="1" colspan="1">
+U+01d6</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ŵ</td>
+							<td rowspan="1" colspan="1">
+11-81</td>
+							<td rowspan="1" colspan="1">
+U+0175</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ý</td>
+							<td rowspan="1" colspan="1">
+11-82</td>
+							<td rowspan="1" colspan="1">
+U+00fd</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ÿ</td>
+							<td rowspan="1" colspan="1">
+11-83</td>
+							<td rowspan="1" colspan="1">
+U+00ff</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ŷ</td>
+							<td rowspan="1" colspan="1">
+11-84</td>
+							<td rowspan="1" colspan="1">
+U+0177</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ź</td>
+							<td rowspan="1" colspan="1">
+11-85</td>
+							<td rowspan="1" colspan="1">
+U+017a</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ž</td>
+							<td rowspan="1" colspan="1">
+11-86</td>
+							<td rowspan="1" colspan="1">
+U+017e</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+ż</td>
+							<td rowspan="1" colspan="1">
+11-87</td>
+							<td rowspan="1" colspan="1">
+U+017c</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="inform-div1">
+				<h2>B
+<a name="AEN35655520">Needs for Japanese XML profile (Non-Normative)
+        </a>
+				</h2>
+				<p><a href="#XMLTR">[XML]</a> adopts <a href="#ISO10646">[ISO/IEC10646]</a> or <a href="#Unicode">[Unicode 3.0]</a> as the CCS, which contains all Japanese characters.
+UTF-8 and UTF-16 are the recommended CESs, and implementations are
+required to support them.  Other existing CESs are optionally 
+allowed, as long as they represent characters in <a href="#Unicode">[Unicode 3.0]</a> only.
+</p>
+				<p><a href="#XMLTR">[XML]</a>, however, provides little information on existing 
+CESs already in use for the interchange of Japanese characters.  Such CESs are 
+allowed as mere options among many others.  Furthermore, <a href="#XMLTR">[XML]</a> 
+says nothing about the appropriate CESs for each protocol (e.g. SMTP or HTTP) 
+and those for information exchange files.
+</p>
+				<p>The mapping between such existing CESs and <a href="#ISO10646">[ISO/IEC10646]</a>/<a href="#Unicode">[Unicode 3.0]</a> is not specified either.
+Some mutually different conversions are in use, and thus different XML
+processors may emit different outputs.
+</p>
+				<p>This technical report addresses existing CESs and clarifies open
+issues.  Although problems with the use of such CESs are not solved, the
+nature of these problems has become clear.
+</p>
+			</div>
+			<div class="inform-div1">
+				<h2>C
+<a name="ambiguity_of_yen">Ambiguities in conversion from Shift-JIS to Unicode (Non-Normative)
+        </a>
+				</h2>
+				<p>There are four main ambiguities in conversion from Shift-JIS to <a href="#ISO10646">[ISO/IEC10646]</a> and <a href="#Unicode">[Unicode 3.0]</a>.</p>
+				<p>First, 0x5C and 0x7E are respectively converted to the yen sign and the overline by x-sjis-unicode-0.9 and x-sjis-jisx0221-1995, but respectively converted to backslash and tilde by x-sjis-cp932 and x-sjis-jdk1.1.7.</p>
+				<p>Second, x-sjis-cp932 is the only conversion table which provides peculiar 
+mapping of 0x8160(WAVE DASH), 0x8161(DOUBLE VERTICAL LINE), 
+0x817C(MINUS SIGN), 0x8191(CENT SIGN), 0x8192(POUND SIGN) and 
+0x081CA(NOT SIGN).</p>
+				<p>Third, x-sjis-jisx0221-1995 is the only conversion table which maps 
+0x815C(FULLWIDTH EM DASH) to U+2014(EM DASH); the other conversion tables map 
+it to U+2015(HORIZONTAL BAR).</p>
+				<p>Fourth, x-sjis-cp932 is the only conversion table 
+which contains NEC special characters, NEC-selected IBM extended characters, 
+IBM extended characters, and user-defined characters.</p>
+				<table border="1" width="95%">
+					<caption>Ambiguities in conversion from Shift-JIS to <a href="#Unicode">[Unicode 3.0]</a>/<a href="#ISO10646">[ISO/IEC10646]</a></caption>
+					<tbody><tr>
+							<th rowspan="1" colspan="1">
+Octets in Shift-JIS</th>
+							<th rowspan="1" colspan="1">
+x-sjis-jdk1.1.7</th>
+							<th rowspan="1" colspan="1">
+x-sjis-unicode-0.9</th>
+							<th rowspan="1" colspan="1">
+x-sjis-jisx0221-1995</th>
+							<th rowspan="1" colspan="1">
+x-sjis-cp932</th>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+0x5C(YEN SIGN)</td>
+							<td rowspan="1" colspan="1">
+U+005C(REVERSE SOLIDUS)</td>
+							<td rowspan="1" colspan="1">
+U+00A5(YEN SIGN)</td>
+							<td rowspan="1" colspan="1">
+U+00A5(YEN SIGN)</td>
+							<td rowspan="1" colspan="1">
+U+005C(REVERSE SOLIDUS)</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+0x7E(OVERLINE)</td>
+							<td rowspan="1" colspan="1">
+U+007E(TILDE)</td>
+							<td rowspan="1" colspan="1">
+U+203E(OVERLINE)</td>
+							<td rowspan="1" colspan="1">
+U+203E(OVERLINE)</td>
+							<td rowspan="1" colspan="1">
+U+007E(TILDE)</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+0x815C(FULLWIDTH EM DASH)</td>
+							<td rowspan="1" colspan="1">
+U+2015(HORIZONTAL BAR)</td>
+							<td rowspan="1" colspan="1">
+U+2015(HORIZONTAL BAR)</td>
+							<td rowspan="1" colspan="1">
+U+2014(EM DASH)</td>
+							<td rowspan="1" colspan="1">
+U+2015(HORIZONTAL BAR)</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+0x815F(REVERSE SOLIDUS)</td>
+							<td rowspan="1" colspan="1">
+U+005C(REVERSE SOLIDUS)</td>
+							<td rowspan="1" colspan="1">
+U+005C(REVERSE SOLIDUS)</td>
+							<td rowspan="1" colspan="1">
+U+005C(REVERSE SOLIDUS)</td>
+							<td rowspan="1" colspan="1">
+U+FF3C(FULLWIDTH REVERSE SOLIDUS)</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+0x8160(WAVE DASH)</td>
+							<td rowspan="1" colspan="1">
+U+301C(WAVE DASH)</td>
+							<td rowspan="1" colspan="1">
+U+301C(WAVE DASH)</td>
+							<td rowspan="1" colspan="1">
+U+301C(WAVE DASH)</td>
+							<td rowspan="1" colspan="1">
+U+FF5E(FULLWIDTH TILDE)</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+0x8161(DOUBLEVERTICAL LINE)</td>
+							<td rowspan="1" colspan="1">
+U+2016(DOUBLEVERTICAL LINE)</td>
+							<td rowspan="1" colspan="1">
+U+2016(DOUBLEVERTICAL LINE)</td>
+							<td rowspan="1" colspan="1">
+U+2016(DOUBLEVERTICAL LINE)</td>
+							<td rowspan="1" colspan="1">
+U+2225(PARALLEL TO)</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+0x817C(MINUS SIGN)</td>
+							<td rowspan="1" colspan="1">
+U+2212(MINUS SIGN)</td>
+							<td rowspan="1" colspan="1">
+U+2212(MINUS SIGN)</td>
+							<td rowspan="1" colspan="1">
+U+2212(MINUS SIGN)</td>
+							<td rowspan="1" colspan="1">
+U+FF0D(FULLWIDTH HYPHEN-MINUS)</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+0x8191(CENT SIGN)</td>
+							<td rowspan="1" colspan="1">
+U+00A2(CENT SIGN)</td>
+							<td rowspan="1" colspan="1">
+U+00A2(CENT SIGN)</td>
+							<td rowspan="1" colspan="1">
+U+00A2(CENT SIGN)</td>
+							<td rowspan="1" colspan="1">
+U+FFE0(FULLWIDTH CENT SIGN)</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+0x8192(POUND SIGN)</td>
+							<td rowspan="1" colspan="1">
+U+00A3(POUND SIGN)</td>
+							<td rowspan="1" colspan="1">
+U+00A3(POUND SIGN)</td>
+							<td rowspan="1" colspan="1">
+U+00A3(POUND SIGN)</td>
+							<td rowspan="1" colspan="1">
+U+FFE1(FULLWIDTH POUND SIGN)</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+0x81CA(NOT SIGN)</td>
+							<td rowspan="1" colspan="1">
+U+00AC(NOT SIGN)</td>
+							<td rowspan="1" colspan="1">
+U+00AC(NOT SIGN)</td>
+							<td rowspan="1" colspan="1">
+U+00AC(NOT SIGN)</td>
+							<td rowspan="1" colspan="1">
+U+FFE2(FULLWIDTH NOT SIGN)</td>
+						</tr>
+						<tr>
+							<td rowspan="1" colspan="1">
+Extended characters in 13th, 89th-92th, 
+and 115th-119th rows</td>
+							<td rowspan="1" colspan="1">
+None</td>
+							<td rowspan="1" colspan="1">
+None</td>
+							<td rowspan="1" colspan="1">
+None</td>
+							<td rowspan="1" colspan="1">
+Included</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="inform-div1">
+				<h2>D
+<a name="AEN35660320">Conversion tables for Shift-JIS and Japanese EUC (Non-Normative)
+        </a>
+				</h2>
+				<p>Conversion tables represented in the
+format of <a href="#UTR22">[Character Mapping Tables]</a> are referenced from this appendix.</p>
+				<div class="div2">
+					<h3>D.1
+<a name="AEN35660512">Shift-JIS
+</a>
+					</h3>
+					<div class="div3">
+						<h4>D.1.1
+<a name="AEN35660576">Conversion table fragments
+</a>
+						</h4>
+						<ul class="slist">
+							<li><a class="loc" href="commonSjis.xml">commonSjis.xml</a>
+							</li>
+							<li><a class="loc" href="cp932-13th.ent">cp932-13th.ent</a>
+							</li>
+							<li><a class="loc" href="cp932-89thru92.ent">cp932-89thru92.ent</a>
+							</li>
+							<li><a class="loc" href="cp932-ibmext.ent">cp932-ibmext.ent</a>
+							</li>
+						</ul>
+					</div>
+					<div class="div3">
+						<h4>D.1.2
+<a name="AEN35661184">Conversion tables for Shift-JIS
+</a>
+						</h4>
+						<ul class="slist">
+							<li><a class="loc" href="x-sjis-cp932.xml">x-sjis-cp932.xml</a>
+							</li>
+							<li><a class="loc" href="x-sjis-jdk117.xml">x-sjis-jdk117.xml</a>
+							</li>
+							<li><a class="loc" href="x-sjis-jisx0221-1995.xml">x-sjis-jisx0221-1995.xml</a>
+							</li>
+							<li><a class="loc" href="x-sjis-unicode-09.xml">x-sjis-unicode-09.xml</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="div2">
+					<h3>D.2
+<a name="AEN35661792">EUC-JP
+</a>
+					</h3>
+					<div class="div3">
+						<h4>D.2.1
+<a name="AEN35661856">Conversion table fragments
+</a>
+						</h4>
+						<ul class="slist">
+							<li><a class="loc" href="commonEuc.xml">commonEuc.xml</a>
+							</li>
+							<li><a class="loc" href="eucJP-13th.ent">eucJP-13th.ent</a>
+							</li>
+							<li><a class="loc" href="eucJP-ibmext.ent">eucJP-ibmext.ent</a>
+							</li>
+							<li><a class="loc" href="eucJP-udc.ent">eucJP-udc.ent</a>
+							</li>
+						</ul>
+					</div>
+					<div class="div3">
+						<h4>D.2.2
+<a name="AEN35662464">Conversion tables for Japanese EUC
+</a>
+						</h4>
+						<ul class="slist">
+							<li><a class="loc" href="x-eucjp-jisx0221-1995.xml">x-eucjp-jisx0221-1995.xml</a>
+							</li>
+							<li><a class="loc" href="x-eucjp-open-19970715-0201.xml">x-eucjp-open-19970715-0201.xml</a>
+							</li>
+							<li><a class="loc" href="x-eucjp-open-19970715-ascii.xml">x-eucjp-open-19970715-ascii.xml</a>
+							</li>
+							<li><a class="loc" href="x-eucjp-open-19970715-ms.xml">x-eucjp-open-19970715-ms.xml</a>
+							</li>
+							<li><a class="loc" href="x-eucjp-unicode-09.xml">x-eucjp-unicode-09.xml</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="inform-div1">
+				<h2>E
+<a name="AEN35663200">Ambiguities in conversion from Japanese EUC to Unicode (Non-Normative)
+        </a>
+				</h2>
+				<p>X-eucjp-unicode-0.9 and x-eucjp-jisx0221-1995 cover only the characters defined by
+<a href="#US-ASCII">[US-ASCII]</a>, <a href="#JISX0208">[JIS X 0208]</a>, and <a href="#JISX0212">[JIS X 0212]</a> and Halfwidth Katakana defined by <a href="#JISX0201">[JIS X 0201]</a>.  In addition to these characters, conversion tables
+defined by OSF Japanese Vendors Council (OSF/JVC) <a href="#open-group">[TOG/JVC CDE/Motif TOG/JVC CDE/Motif Technical WG]</a>, namely x-eucjp-open-19970715-ms, x-eucjp-open-19970715-0201, and x-eucjp-open-19970715-ascii, cover 
+IBM extension
+characters(0x8FF3F3-0x8FF4FE), NEC special characters (0xADA1-0xADFC), 
+user-defined characters(0xF5A1-0xFEFE, and 0x8FF5A1-0x8FFEFE).</p>
+				<div class="div2">
+					<h3>E.1
+<a name="AEN35664096">Range 0x20-0x7E ([US-ASCII] or [JIS X 0201])
+</a>
+					</h3>
+					<p>As defined in the original specification of the Japanese EUC, 
+the range 0x20-0x7E of x-eucjp-unicode-0.9, x-eucjp-jisx0221-1995, x-eucjp-open-19970715-ms, and x-eucjp-open-19970715-ascii 
+is assumed to be <a href="#US-ASCII">[US-ASCII]</a>.  Charset x-eucjp-open-19970715-0201 is an exception, 
+since this range is assumed to be [JIS X 0201] and converted as below:
+</p>
+					<table border="1">
+						<caption>Conversion in x-eucjp-open-19970715-0201</caption>
+						<tbody><tr>
+								<th rowspan="1" colspan="1">
+Octets in EUC</th>
+								<th rowspan="1" colspan="1">
+UCS code point</th>
+							</tr>
+							<tr>
+								<td rowspan="1" colspan="1">
+0x5C(REVERSE SOLIDUS)</td>
+								<td rowspan="1" colspan="1">
+U+00A5(YEN SIGN)</td>
+							</tr>
+							<tr>
+								<td rowspan="1" colspan="1">
+0x7E(TILDE)</td>
+								<td rowspan="1" colspan="1">
+U+203E(OVERLINE)</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="div2">
+					<h3>E.2
+<a name="AEN35665280">Range 0x8EA1-0x8EDF(Halfwidth Katakana)
+</a>
+					</h3>
+					<p>Halfwidth Katakana in <a href="#JISX0201">[JIS X 0201]</a> are allocated to 
+the range 0x8EA1-0x8EDF.  These code points are converted to the range 
+U+xFF61-U+xFF9F in the compatilibity area of <a href="#ISO10646">[ISO/IEC10646]</a> and 
+<a href="#Unicode">[Unicode 3.0]</a> by any of the conversion tables.
+</p>
+				</div>
+				<div class="div2">
+					<h3>E.3
+<a name="AEN35665664">Ambiguities in encoding the characters of [JIS X 0208] and [JISX 0212]
+</a>
+					</h3>
+					<p>As for those characters specified by <a href="#JISX0208">[JIS X 0208]</a> and 
+<a href="#JISX0212">[JIS X 0212]</a>, charsets x-eucjp-jisx0221-1995 and x-eucjp-open-19970715-0201 provide an identical  mapping.
+</p>
+					<p>X-eucjp-unicode-0.9 is different from these two charsets only in the mapping of 0xA1BD
+(EM DASH/ DASH(FULLWIDTH)).</p>
+					<p>Charset x-eucjp-open-19970715-ascii is different in the mapping of four code points, namely 
+0xA1B1(OVERLINE/NEGATION SIGN),0xA1C0(REVERSE SOLIDUS), 0xA1EF(YEN SIGN), and 
+0x8FA2B7(TILDE).
+</p>
+					<p>Charset x-eucjp-open-19970715-ms is different in the mapping of 
+0xA1BD(FULLWIDTH EM DASH), 
+0xA1C0(REVERSE SOLIDUS), 
+0xA1C1(WAVE DASH), 
+0xA1C2(DOUBLE VERTICAL LINE), 
+0xA1DD(MINUS SIGN), 
+0xA1F1(CENT SIGN), 
+0xA1F2(POUND SIGN), 
+0xA2CC(NOT SIGN), 
+0x8FA2B7(TILDE), and 
+0x8FA2C3(BROKEN BAR).</p>
+				</div>
+				<div class="div2">
+					<h3>E.4
+<a name="AEN35666368">Ambiguities in IBM Extended Characters, 
+NEC Special Characters, and User-defined Characters
+</a>
+					</h3>
+					<p>Charsets x-eucjp-open-19970715-ms, x-eucjp-open-19970715-0201, x-eucjp-open-19970715-ascii contain IBM extended 
+characters, NEC special characters, and (the area of) user-defined characters. 
+These charsets provide an identical mapping of these characters.  Charsets 
+x-eucjp-unicode-0.9 and x-eucjp-jisx0221-1995, on the other hand, do not contain these characters.
+</p>
+					<table border="1" width="95%">
+						<caption>Ambiguities in conversion from Japanese EUC to 
+<a href="#Unicode">[Unicode 3.0]</a>/<a href="#ISO10646">[ISO/IEC10646]</a>(1)</caption>
+						<tbody><tr>
+								<th rowspan="1" colspan="1">
+Octets in Japanese EUC</th>
+								<th rowspan="1" colspan="1">
+x-eucjp-unicode-0.9</th>
+								<th rowspan="1" colspan="1">
+x-eucjp-jisx0221-1995</th>
+								<th rowspan="1" colspan="1">
+x-eucjp-open-19970715-ms</th>
+							</tr>
+							<tr>
+								<td rowspan="1" colspan="1">
+0x5C(REVERSE SOLIDUS)</td>
+								<td rowspan="1" colspan="1">
+U+005C(REVERSE SOLIDUS)</td>
+								<td rowspan="1" colspan="1">
+U+005C(REVERSE SOLIDUS)</td>
+								<td rowspan="1" colspan="1">
+U+005C(REVERSE SOLIDUS)</td>
+							</tr>
+							<tr>
+								<td rowspan="1" colspan="1">
+0x7E(TILDE)</td>
+								<td rowspan="1" colspan="1">
+U+007E(TILDE)</td>
+								<td rowspan="1" colspan="1">
+U+007E(TILDE)</td>
+								<td rowspan="1" colspan="1">
+U+007E(TILDE)</td>
+							</tr>
+							<tr>
+								<td rowspan="1" colspan="1">
+0xA1B1(OVERLINE/NEGATION SIGN)</td>
+								<td rowspan="1" colspan="1">
+U+FFE3(FULLWIDTH MACRON)</td>
+								<td rowspan="1" colspan="1">
+U+FFE3(FULLWIDTH MACRON)</td>
+								<td rowspan="1" colspan="1">
+U+FFE3(FULLWIDTH MACRON)</td>
+							</tr>
+							<tr>
+								<td rowspan="1" colspan="1">
+0xA1BD(FULLWIDTH EM DASH)</td>
+								<td rowspan="1" colspan="1">
+U+2015(HORIZONTAL BAR)</td>
+								<td rowspan="1" colspan="1">
+U+2014(EM DASH)</td>
+								<td rowspan="1" colspan="1">
+U+2015(HORIZONTAL BAR)</td>
+							</tr>
+							<tr>
+								<td rowspan="1" colspan="1">
+0xA1C0(REVERSE SOLIDUS)</td>
+								<td rowspan="1" colspan="1">
+U+005C(REVERSE SOLIDUS)</td>
+								<td rowspan="1" colspan="1">
+U+005C(REVERSE SOLIDUS)</td>
+								<td rowspan="1" colspan="1">
+U+FF3C(FULLWIDTH REVERSE SOLIDUS)</td>
+							</tr>
+							<tr>
+								<td rowspan="1" colspan="1">
+0xA1C1(WAVE DASH)</td>
+								<td rowspan="1" colspan="1">
+U+301C(WAVE DASH)</td>
+								<td rowspan="1" colspan="1">
+U+301C(WAVE DASH)</td>
+								<td rowspan="1" colspan="1">
+U+FF5E(FULLWIDTH TILDE)</td>
+							</tr>
+							<tr>
+								<td rowspan="1" colspan="1">
+0xA1C2(DOUBLE VERTICAL LINE)</td>
+								<td rowspan="1" colspan="1">
+U+2016(DOUBLE VERTICAL LINE)</td>
+								<td rowspan="1" colspan="1">
+U+2016(DOUBLE VERTICAL LINE)</td>
+								<td rowspan="1" colspan="1">
+U+2225(PARALLEL TO)</td>
+							</tr>
+							<tr>
+								<td rowspan="1" colspan="1">
+0xA1DD(MINUS SIGN)</td>
+								<td rowspan="1" colspan="1">
+U+2212(MINUS SIGN)</td>
+								<td rowspan="1" colspan="1">
+U+2212(MINUS SIGN)</td>
+								<td rowspan="1" colspan="1">
+U+FF0D(FULLWIDTH HYPHEN-MINUS)</td>
+							</tr>
+							<tr>
+								<td rowspan="1" colspan="1">
+0xA1EF(YEN SIGN)</td>
+								<td rowspan="1" colspan="1">
+U+FFE5(FULLWIDTH YEN SIGN)</td>
+								<td rowspan="1" colspan="1">
+U+FFE5(FULLWIDTH YEN SIGN)</td>
+								<td rowspan="1" colspan="1">
+U+FFE5(FULLWIDTH YEN SIGN)</td>
+							</tr>
+							<tr>
+								<td rowspan="1" colspan="1">
+0xA1F1(CENT SIGN)</td>
+								<td rowspan="1" colspan="1">
+U+00A2(CENT SIGN)</td>
+								<td rowspan="1" colspan="1">
+U+00A2(CENT SIGN)</td>
+								<td rowspan="1" colspan="1">
+U+FFE0(FULLWIDTH CENT SIGN)</td>
+							</tr>
+							<tr>
+								<td rowspan="1" colspan="1">
+0xA1F2(POUND SIGN)</td>
+								<td rowspan="1" colspan="1">
+U+00A3(POUND SIGN)</td>
+								<td rowspan="1" colspan="1">
+U+00A3(POUND SIGN)</td>
+								<td rowspan="1" colspan="1">
+U+FFE1(FULLWIDTH POUND SIGN)</td>
+							</tr>
+							<tr>
+								<td rowspan="1" colspan="1">
+0xA2CC(NOT SIGN)</td>
+								<td rowspan="1" colspan="1">
+U+00AC(NOT SIGN)</td>
+								<td rowspan="1" colspan="1">
+U+00AC(NOT SIGN)</td>
+								<td rowspan="1" colspan="1">
+U+FFE2(FULLWIDTH NOT SIGN)</td>
+							</tr>
+							<tr>
+								<td rowspan="1" colspan="1">
+0x8FA2B7(TILDE)</td>
+								<td rowspan="1" colspan="1">
+U+007E(TILDE)</td>
+								<td rowspan="1" colspan="1">
+U+007E(TILDE)</td>
+								<td rowspan="1" colspan="1">
+U+FF5E(FULLWIDTH TILDE)</td>
+							</tr>
+							<tr>
+								<td rowspan="1" colspan="1">
+0x8FA2C3(BROKEN BAR)</td>
+								<td rowspan="1" colspan="1">
+U+00A6(BROKEN BAR)</td>
+								<td rowspan="1" colspan="1">
+U+00A6(BROKEN BAR)</td>
+								<td rowspan="1" colspan="1">
+U+FFE4(FULLWIDTH BROKEN BAR)</td>
+							</tr>
+						</tbody>
+					</table>
+					<table border="1" width="95%">
+						<caption>Ambiguities in conversion from Japanese EUC to 
+<a href="#Unicode">[Unicode 3.0]</a>/<a href="#ISO10646">[ISO/IEC10646]</a>(2)</caption>
+						<tbody><tr>
+								<th rowspan="1" colspan="1">
+Octets in Japanese EUC</th>
+								<th rowspan="1" colspan="1">
+x-eucjp-open-19970715-0201</th>
+								<th rowspan="1" colspan="1">
+x-eucjp-open-19970715-ascii</th>
+							</tr>
+							<tr>
+								<td rowspan="1" colspan="1">
+0x5C(REVERSE SOLIDUS)</td>
+								<td rowspan="1" colspan="1">
+U+00A5(YEN SIGN)</td>
+								<td rowspan="1" colspan="1">
+U+005C(REVERSE SOLIDUS)</td>
+							</tr>
+							<tr>
+								<td rowspan="1" colspan="1">
+0x7E(TILDE)</td>
+								<td rowspan="1" colspan="1">
+U+203E(OVERLINE)</td>
+								<td rowspan="1" colspan="1">
+U+007E(TILDE)</td>
+							</tr>
+							<tr>
+								<td rowspan="1" colspan="1">
+0xA1B1(OVERLINE/NEGATION SIGN)</td>
+								<td rowspan="1" colspan="1">
+U+FFE3(FULLWIDTH MACRON)</td>
+								<td rowspan="1" colspan="1">
+U+203E(OVERLINE)</td>
+							</tr>
+							<tr>
+								<td rowspan="1" colspan="1">
+0xA1BD(FULLWIDTH EM DASH)</td>
+								<td rowspan="1" colspan="1">
+U+2014(EM DASH)</td>
+								<td rowspan="1" colspan="1">
+U+2014(EM DASH)</td>
+							</tr>
+							<tr>
+								<td rowspan="1" colspan="1">
+0xA1C0(REVERSE SOLIDUS)</td>
+								<td rowspan="1" colspan="1">
+U+005C(REVERSE SOLIDUS)</td>
+								<td rowspan="1" colspan="1">
+U+FF3C(FULLWIDTH REVERSE SOLIDUS)</td>
+							</tr>
+							<tr>
+								<td rowspan="1" colspan="1">
+0xA1C1(WAVE DASH)</td>
+								<td rowspan="1" colspan="1">
+U+301C(WAVE DASH)</td>
+								<td rowspan="1" colspan="1">
+U+301C(WAVE DASH)</td>
+							</tr>
+							<tr>
+								<td rowspan="1" colspan="1">
+0xA1C2(DOUBLE VERTICAL LINE)</td>
+								<td rowspan="1" colspan="1">
+U+2016(DOUBLE VERTICAL LINE)</td>
+								<td rowspan="1" colspan="1">
+U+2016(DOUBLE VERTICAL LINE)</td>
+							</tr>
+							<tr>
+								<td rowspan="1" colspan="1">
+0xA1DD(MINUS SIGN)</td>
+								<td rowspan="1" colspan="1">
+U+2212(MINUS SIGN)</td>
+								<td rowspan="1" colspan="1">
+U+2212(MINUS SIGN)</td>
+							</tr>
+							<tr>
+								<td rowspan="1" colspan="1">
+0xA1EF(YEN SIGN)</td>
+								<td rowspan="1" colspan="1">
+U+FFE5(FULLWIDTH YEN SIGN)</td>
+								<td rowspan="1" colspan="1">
+U+00A5(YEN SIGN)</td>
+							</tr>
+							<tr>
+								<td rowspan="1" colspan="1">
+0xA1F1(CENT SIGN)</td>
+								<td rowspan="1" colspan="1">
+U+00A2(CENT SIGN)</td>
+								<td rowspan="1" colspan="1">
+U+00A2(CENT SIGN)</td>
+							</tr>
+							<tr>
+								<td rowspan="1" colspan="1">
+0xA1F2(POUND SIGN)</td>
+								<td rowspan="1" colspan="1">
+U+00A3(POUND SIGN)</td>
+								<td rowspan="1" colspan="1">
+U+00A3(POUND SIGN)</td>
+							</tr>
+							<tr>
+								<td rowspan="1" colspan="1">
+0xA2CC(NOT SIGN)</td>
+								<td rowspan="1" colspan="1">
+U+00AC(NOT SIGN)</td>
+								<td rowspan="1" colspan="1">
+U+00AC(NOT SIGN)</td>
+							</tr>
+							<tr>
+								<td rowspan="1" colspan="1">
+0x8FA2B7(TILDE)</td>
+								<td rowspan="1" colspan="1">
+U+007E(TILDE)</td>
+								<td rowspan="1" colspan="1">
+U+FF5E(FULLWIDTH TILDE)</td>
+							</tr>
+							<tr>
+								<td rowspan="1" colspan="1">
+0x8FA2C3(BROKEN BAR)</td>
+								<td rowspan="1" colspan="1">
+U+00A6(BROKEN BAR)</td>
+								<td rowspan="1" colspan="1">
+U+00A6(BROKEN BAR)</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<div class="inform-div1">
+				<h2>F
+<a name="AEN35672128">Charset parameters in HTTP1.1 (Non-Normative)
+        </a>
+				</h2>
+				<p>Japanese HTML documents, as widely known, are often misdecoded, 
+because almost all of them lack the correct charset parameter of the media 
+type "text/html".  Refer to <a href="#MDN">[Murata et al.]</a> for further information.</p>
+				<p>To avoid misdecoding, specify the correct charset parameter.  
+Do not use those servers which do not provide the charset parameter.</p>
+			</div>
+			<div class="inform-div1">
+				<h2>G
+<a name="AEN35672352">Non-normative references (Non-Normative)
+        </a>
+				</h2>
+				<dl>
+					<dt><a name="MDN">
+Murata et al.</a></dt>
+					<dd>
+Murata, Dürst, Nicol.
+<i>
+Recommendation for the charset parameter: a mechanism for specifying character encoding schemes</i>, 
+<a class="loc" href="http://www.fxis.co.jp/DMS/sgml/html_correct_charset.html">http://www.fxis.co.jp/DMS/sgml/html_correct_charset.html</a>
+, 
+1998
+</dd>
+					<dt><a name="open-group">
+TOG/JVC CDE/Motif TOG/JVC CDE/Motif Technical WG</a></dt>
+					<dd>
+TOG/JVC CDE/Motif TOG/JVC CDE/Motif Technical WG. <i>
+Problems and Solutions for Unicode and User/Vendor Defined Characters</i>, 
+OSF Japanese Vendors Council (OSF/JVC), <a class="loc" href="http://www.opengroup.or.jp/jvc/cde/ucs-conv-e.html">http://www.opengroup.or.jp/jvc/cde/ucs-conv-e.html</a>
+, 1996.</dd>
+					<dt><a name="euc-jp">
+UNIX International</a></dt>
+					<dd>
+UNIX International. <i>
+UNIX SYSTEM V Release 4 Nihongo Kankyou Kyoutuu Kiyaku (Common specifications for the Japanese computing environement)</i>, 
+Toppan, 1992.</dd>
+				</dl>
+			</div>
+		</div>
+		<div class="issues">
+		</div>
+	</body>
+</html>
