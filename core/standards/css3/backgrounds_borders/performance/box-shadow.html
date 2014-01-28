@@ -1,0 +1,364 @@
+<!doctype html>
+<html>
+<head>
+<title>Box-shadow scrolling performance</title>
+<style>
+body {
+	margin: 0;
+	font: normal 0.75em sans-serif;
+}
+form {
+	background: rgba(192, 192, 192, 0.75);
+	margin: 0;
+	padding: 4px;
+	width: 100%;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+	fieldset {
+		float: left;
+		padding: 0.25em 0.5em 0.5em;
+		margin-bottom: 0.5em;
+	}
+		fieldset fieldset {
+			border: 0;
+			padding: 0.5em 1em 0;
+			margin: 0.5em 0 0;
+		}
+			fieldset fieldset > legend {
+				margin: 0 -1em;
+				padding: 0;
+			}
+
+	label {
+		display: inline-block;
+		min-width: 16em;
+	}
+		br + label {
+			padding-top: 0.5em;
+		}
+	input[type=number] {
+		max-width: 5em;
+	}
+	
+	button {
+		clear: left;
+		display: block;
+	}
+
+#shadowed > div {
+	margin: auto;
+	vertical-align: top;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+	.transformed > div {
+		-webkit-transform: rotate(1deg);
+		-moz-transform: rotate(1deg);
+		-o-transform: rotate(1deg);
+		transform: rotate(1deg);
+	}
+	.rounded.same > div {
+		border-radius: 50px;
+	}
+	.rounded.different > div {
+		border-radius: 0 50px 100px 30px / 0 30px 100px 50px;
+	}
+
+	.bordered > div {
+		border: 10px solid navy;
+	}
+
+.fixed {
+	position: fixed;
+	top: 0;
+	z-index: 1;
+}
+</style>
+</head>
+
+<body>
+<form>
+	<fieldset>
+		<legend>Test settings</legend>
+
+		<label><input type="number" name="height" min="10000" max="100000" step="2000" value="10000"> Height of page to scroll (px)</label><br>
+		<label><input type="checkbox" name="autoscroll"> Stop scrolling after <input type="number" name="timeout" min="500" max="2000" step="250" value="1000"> ms.<br><small>(Reports scroll offset, not time scrolled.)</small></label><br>
+		<label><input type="number" name="step" min="100" max="2000" step="100" value="500"> Scroll step size (px)</label><br>
+		<label><input type="number" name="n" min="1" max="5000" value="1"> Number of shadowed boxes</label>
+	</fieldset>
+	
+	<fieldset>
+		<legend>Box-shadow properties</legend>
+
+		<label><input type="number" name="x" value="0"> Horizontal offset (px)</label>
+		<label><input type="number" name="y" value="0"> Vertical offset (px)</label><br>
+
+		<label><input type="number" name="blur" min="0" max="500" value="0"> Blur radius (px)</label>
+		<label><input type="number" name="spread" min="-1000" max="1000" value="0"> Spread radius (px)</label><br>
+
+		<label>Color <input type="text" name="color" value="black"></label>
+		<label><input type="checkbox" name="inset"> Inset</label>
+	</fieldset>
+
+	<fieldset>
+		<legend>Complicating factors</legend>
+
+		<label><input type="checkbox" name="fixed"> Make this form fixed and semi-transparent</label><br>
+		<label><input type="checkbox" name="transform"> Use CSS transforms</label><br>
+		<label><input type="checkbox" name="border"> Add a border</label><br>
+		<fieldset>
+			<legend><input type="checkbox" name="round" onchange="toggle_rounding"> Add rounded corners</legend>
+
+			<label><input type="radio" name="rounded" value="same" checked> using the same radius for all corners</label><br>
+			<label><input type="radio" name="rounded" value="different"> using different radii</label>
+		</fieldset>
+	</fieldset>
+
+	<button>Start testing!</button>
+
+	<p id="result">Testing...</p>
+</form>
+
+<div id="shadowed"></div>
+
+<script>
+var form = document.querySelector('form');
+var wrapper = document.getElementById('shadowed');
+
+// Returns value of input element as number (because Firefox doesn't implement
+// .valueAsNumber yet).
+function num_val(element) {
+	if (typeof element.valueAsNumber != 'undefined') {
+		return element.valueAsNumber;
+	}
+	else {
+		return parseInt(element.value, 10);
+	}
+}
+
+// Returns an object of all key/value pairs in the URL query string.
+// Duplicate keys are discarded; only the last is kept.
+function tokenize_query() {
+	var properties = {};
+	var pairs = location.search.substr(1).split('&');
+
+	for (var i = 0; i < pairs.length; i++) {
+		var pair = pairs[i].split('=');
+
+		properties[decodeURIComponent(pair[0])] = decodeURIComponent(pair[1]);
+	}
+	return properties;
+}
+
+// Sets the values of the input controls in the <form> to the values in the
+// GET parameters. Clips out-of-range numbers to the input's min/max range, and
+// uses the default value for other invalid values.
+function set_query_values() {
+	var properties = tokenize_query();
+
+	for (var p in properties) {
+		if (properties.hasOwnProperty(p) && form[p]) {
+			// Until RadioNodeList is implemented...
+			if (typeof form[p].length != "undefined") {
+				for (var i = 0; i < form[p].length; i++) {
+					form[p][i].checked = (properties[p] == form[p][i].value);
+				}
+			}
+			else if (form[p].type == 'checkbox') {
+				form[p].checked = !!properties[p];
+			}
+			else if (form[p].type == 'number') {
+				form[p].value = parseInt(properties[p], 10);
+
+				if (form[p].validity.rangeUnderflow) {
+					form[p].value = form[p].min;
+				}
+				else if (form[p].validity.rangeOverflow) {
+					form[p].value = form[p].max;
+				}
+				else if (!form[p].validity.valid) {
+					form[p].value = form[p].defaultValue;
+				}
+			}
+			else {
+				form[p].value = properties[p];
+
+				if (!form[p].validity.valid) {
+					form[p].value = form[p].defaultValue;
+				}
+			}
+		}
+	}
+	toggle_rounding();
+	toggle_autoscroll();
+}
+
+// Adds a #shadowed > div { box-shadow: ... } CSS rule with a box-shadow as
+// specified in the input form.
+function add_shadow_css() {
+	var rule = '#shadowed div { box-shadow: '
+		+ num_val(form.x) + 'px ' + num_val(form.y) + 'px '
+		+ num_val(form.blur) + 'px ' + num_val(form.spread) + 'px '
+		+ form.color.value
+		+ (form.inset.checked ? ' inset' : '') + '; }';
+
+	var css = document.styleSheets[document.styleSheets.length - 1];
+	css.insertRule(rule, css.cssRules.length);
+}
+
+// Creates shadowed divs fitting inside #shadowed using settings as specified
+// in the input form.
+// If there are so many boxes that they need to become less than 50 pixels high
+// to fit inside the specified page height, they'll be spread across multiple
+// columns.
+function create_boxes() {
+	var n = num_val(form.n);
+	var spacing = 0;
+
+	add_shadow_css();
+
+	// Keep the blurs apart.
+	if (!form.inset.checked) {
+		spacing = Math.max(0, num_val(form.blur) + num_val(form.spread));
+	}
+
+	wrapper.style.height = form.height.value + 'px';
+
+	var height = (wrapper.clientHeight / n) - spacing;
+	var width = wrapper.clientWidth - 2 * spacing;
+
+	var columns = 1;
+	while (height < 50 && width > 25) {
+		if (columns == 1) {
+			spacing = 2 * Math.ceil(spacing / 2);
+		}
+
+		columns++;
+
+		width = Math.floor((wrapper.clientWidth - spacing) / columns) - spacing;
+		height = Math.floor(wrapper.clientHeight / (n / columns)) - spacing;
+		
+		if (height >= 50 || width <= 25) {
+			wrapper.style.width = (width + spacing) * columns + 'px';
+			wrapper.style.height = (height + spacing) * Math.ceil(n / columns) + 'px';
+			spacing /= 2;
+		}
+	}
+
+	if (form.transform.checked) {
+		wrapper.classList.add('transformed');
+	}
+
+	if (form.border.checked) {
+		wrapper.classList.add('bordered');
+	}
+
+	if (form.round.checked) {
+		wrapper.classList.add('rounded');
+
+		// Until RadioNodeList is implemented...
+		for (var i = 0; i < form.rounded.length; i++) {
+			if (form.rounded[i].checked) {
+				wrapper.classList.add(form.rounded[i].value);
+				break;
+			}
+		}
+	}
+
+	for (var i = 0; i < n; i++) {
+		var div = document.createElement('div');
+
+		div.style.width = width + 'px';
+		div.style.height = height + 'px';
+
+		if (columns > 1) {
+			div.style.margin = spacing + 'px';
+			wrapper.style.margin = spacing + 'px auto';
+			div.style.display = 'inline-block';
+		}
+		else {
+			div.style.margin = spacing + 'px auto';
+		}
+
+		wrapper.appendChild(div);
+	}
+}
+
+function toggle_rounding() {
+	for (var i in form.rounded) {
+		form.rounded[i].disabled = !form.round.checked;
+	}
+}
+
+function toggle_autoscroll(e) {
+	var autoscroll = form.autoscroll.checked;
+
+	if (autoscroll) {
+		// Try to make sure we don't run out of page before we run out of time.
+		form.height.value = form.height.getAttribute('max');
+	}
+	else {
+		form.height.value = form.height.defaultValue;
+	}
+
+	form.height.disabled = autoscroll;
+	form.timeout.disabled = !autoscroll;
+}
+
+form.autoscroll.onchange = toggle_autoscroll;
+form.round.onchange = toggle_rounding;
+
+window.onload = function() {
+	var start, stop_scrolling = false;
+
+	set_query_values();
+	create_boxes();
+
+	if (form.fixed.checked) {
+		form.classList.add('fixed');
+	}
+	
+	// Scroll to the bottom
+	window.scrollTo(0, document.body.clientHeight);
+
+	if (form.autoscroll.checked) {
+		setTimeout(function() {
+			stop_scrolling = true;
+		}, num_val(form.timeout));
+	}
+
+	// Scroll back up progressively
+	window.onscroll = function() {
+		if (window.scrollY <= wrapper.offsetTop || stop_scrolling) {
+			var result, message;
+
+			if (form.autoscroll.checked) {
+				result = window.scrollY - wrapper.offsetTop;	
+				message = "Scrolled up " + Math.round(100 * (1 - result / wrapper.clientHeight)) + "% in " + form.timeout.value + "ms.";
+			}
+			else {
+				result = Date.now() - start;
+				message = "Scrolling took " + result + "ms.";
+			}
+			window.onscroll = null;
+			window.scrollTo(0, 0);
+
+			document.getElementById("result").textContent = "Test complete. " + message;
+			try{top.opener.rr(result)}catch(e){}
+		}
+		else {
+			setTimeout(function(){
+				window.scrollBy(0, -form.step.value);
+			});
+		}
+	};
+
+	start = Date.now();
+
+	// Wiggle to trigger scrolling.
+	window.scrollBy(0, window.scrollY ? -1 : 1);
+}
+</script>
+</body>
+</html>

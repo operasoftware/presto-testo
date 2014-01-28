@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>background shorthand</title>
+<script>
+  onload = function() {
+    document.body.style.background = "url('http://foo') space, url('http://goo')";
+    passed = document.body.style.background.match("foo.*space.*goo");
+    document.body.innerHTML = passed ? "PASS" : "FAIL";
+  }
+</script>
+</head>
+
+<body>
+<noscript>This test requires javascript</noscript>
+</body>
+</html>

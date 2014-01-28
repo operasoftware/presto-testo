@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>CSS3 | backgrounds and borders</title>
+<style type="text/css">
+html {
+	background-color: hsl(0,0%,100%);
+}
+div {
+	background-color: yellow;
+	background-image: url(blue.png);
+	background-repeat: no-repeat space;
+	width: 120px;
+	height: 60px;
+	border: 1px solid black;
+}
+p+div {
+	background-repeat: no-repeat;
+}
+</style>
+</head>
+
+<body>
+
+<div></div>
+
+<p>Patterns above and below should be identical</p>
+
+<div></div>
+
+</body>
+</html>

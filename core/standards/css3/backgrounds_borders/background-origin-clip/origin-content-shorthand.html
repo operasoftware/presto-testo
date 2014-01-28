@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>CSS3 | backgrounds and borders</title>
+<style type="text/css">
+html {
+	background-color: hsl(0,0%,100%);
+}
+.test {
+	background: yellow url(blue.png) no-repeat content-box;
+	padding: 20px;
+	width: 120px;
+	height: 60px;
+	outline: 1px solid black;
+}
+.test+.test {
+	background-color: yellow;
+	background-image: url(blue.png);
+	background-repeat: no-repeat;
+	background-origin: content-box;
+	background-clip: content-box;
+}
+#damer {
+	background-color: yellow;
+	background-image: url(blue.png);
+	background-repeat: no-repeat;
+	width: 120px;
+	height: 60px;
+	border: 20px solid white;
+	outline: 1px solid black;
+}
+</style>
+</head>
+
+<body>
+
+<p>All three patterns below this text should be identical</p>
+
+<div class="test"></div>
+<div class="test"></div>
+<div id="damer"></div>
+
+</body>
+</html>

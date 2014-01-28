@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>CSS3 | backgrounds and borders</title>
+<style>
+body {
+	font-family: ahem;
+	font-size: 1em;
+	line-height: 1;
+	color: red;
+	width: 7em;
+}
+body:first-line {
+	color: white;
+}
+html:after {
+	content: "There should be no red";
+}
+</style>
+<script>
+onload = function () {
+	document.body.innerHTML = 
+		document.getElementsByTagName('div')[0].style.background;
+	}
+</script>
+</head>
+
+<body>
+<div style="background:inherit"></div>
+</body>
+</html>

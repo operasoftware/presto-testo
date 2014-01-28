@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>CSS3 | backgrounds and borders</title>
+<style type="text/css">
+html {
+	background-color: hsl(0,0%,100%);
+}
+div {
+	background-color: #FFCC00;
+	background-image: url(blue.png), url(black.png);
+	background-repeat: repeat-x, no-repeat;
+	background-repeat: repeat-x repeat-x, no-repeat;
+	background-position: left top, bottom right;
+	border: 1px solid black;
+	width: 100px;
+	height: 100px;
+	margin: 0 0 20px;
+}
+div+div {
+	background-repeat: repeat-x, no-repeat;
+	background-repeat: one ring to rule them all;
+}
+div+div+div {
+	background-color: #3366CC;
+	background-image: none;
+	position: relative;
+}
+span {
+	position: absolute;
+	width: 50px;
+	height: 50px;
+	bottom: 0;
+}
+span:first-child {
+	right: 0;
+	background: url(black.png);
+}
+span+span {
+	left: 0;
+	background: url(yellow.png);
+}
+</style>
+</head>
+
+<body>
+
+<p>All three patterns should be identical</p>
+
+<div></div>
+<div></div>
+<div>
+	<span></span>
+	<span></span>
+</div>
+
+</body>
+</html>
