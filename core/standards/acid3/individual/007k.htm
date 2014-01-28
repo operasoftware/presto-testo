@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>[Acid3 - Test 007k] "Range properties after comment insertion"</title>
+ <script type="text/javascript" src="support/framework.js"></script>
+ <script type="text/javascript">
+ <!-- Could split this into more tests but it's not clear how useful that would be-->
+ function test() {
+   var r = document.createRange();
+   assert(r, "range not created");
+   r.collapse(true); // no effect
+   r.deleteContents(); // no effect
+   var endOffset = r.endOffset;
+   r.insertNode(document.createComment("commented inserted to test ranges"));
+   r.setEnd(r.endContainer, endOffset + 1); // added to work around spec bug that smaug is blocking the errata for
+   try {
+     assert(!r.collapsed, "range with inserted comment is collapsed");
+     assertEquals(r.commonAncestorContainer, document, "range with inserted comment has common ancestor that isn't the document");
+     assertEquals(r.startContainer, document, "range with inserted comment has start container that isn't the document");
+     assertEquals(r.startOffset, 0, "range with inserted comment has start offset that isn't zero");
+     assertEquals(r.endContainer, document, "range with inserted comment has end container that isn't the document");
+     assertEquals(r.endOffset, 1, "range with inserted comment has end offset that isn't after the comment");
+   } finally {
+     document.removeChild(document.firstChild);
+   }
+   return 1;
+ }
+ </script>
+</head>
+<body><p id=result>FAIL (script did not execute)</p>
+</body>
+</html>

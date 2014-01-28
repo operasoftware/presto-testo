@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>[Acid3 - Test 090d] Null in regexp argument</title>
+ <script type="text/javascript" src="support/framework.js"></script>
+ <script type="text/javascript">
+ </script>
+ <script type="text/javascript">
+ var nullInRegexpArgumentResult = 0 < /script/.test('\0script') ? "passed" : "failed";
+ </script>
+ <script type="text/javascript">
+ function test() {
+   // test 90: Regular Expressions and backreferences
+   // not back references.
+   assertEquals(nullInRegexpArgumentResult, "passed", "failed //.test() check"); // nothing to see here, move along now
+   return true;
+ }
+ </script>
+</head>
+<body>
+ <p id=result>FAIL (script did not execute)</p>
+</body>
+</html>

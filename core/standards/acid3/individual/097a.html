@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>[Acid3 - Test 097a] Escaped Data URI</title>
+ <script type="text/javascript" src="support/framework.js"></script>
+ <script type="text/javascript">
+ var d1 = "fail";
+
+ // XHTML
+ function test() {
+   // test 97: data: URI parsing
+   assertEquals(d1, "one", "data: failed as escaped");
+   return true;
+ }
+
+ </script>
+ <script type="text/javascript" src="data:text/javascript,d1%20%3D%20'one'%3B"></script>
+</head>
+<body>
+ <p id=result>FAIL (script did not execute)</p>
+</body>
+</html>

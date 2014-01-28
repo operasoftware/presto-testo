@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>[Acid3 - Test 007c] "New Range should have zero endOffset"</title>
+ <script type="text/javascript" src="support/framework.js"></script>
+ <script type="text/javascript">
+ function test() {
+   var r = document.createRange();
+   assert(r, "range not created");
+   assertEquals(r.endOffset, 0, "new range's end offset wasn't zero");
+   return 1;
+ }
+ </script>
+</head>
+<body><p id=result>FAIL (script did not execute)</p>
+</body>
+</html>

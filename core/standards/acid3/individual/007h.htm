@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>[Acid3 - Test 007h] "Empty Range cloned should have empty string representaton"</title>
+ <script type="text/javascript" src="support/framework.js"></script>
+ <script type="text/javascript">
+ function test() {
+   var r = document.createRange();
+   assert(r, "range not created");
+   assertEquals(r.cloneRange().toString(), "", "nothing cloned stringifed to more than nothing");
+   return 1;
+ }
+ </script>
+</head>
+<body><p id=result>FAIL (script did not execute)</p>
+</body>
+</html>

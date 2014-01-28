@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>[Acid3 - Test 053f] Getting input .value property</title>
+ <script type="text/javascript" src="support/framework.js"></script>
+ <script type="text/javascript">
+ function test() {
+   // test 53: changing an <input> dynamically
+   var f = document.createElement('form');
+   var i = document.createElement('input');
+   i.name = 'first';
+   i.type = 'text';
+   i.value = 'test';
+   f.appendChild(i);
+   assertEquals(i.value, 'test', "value property wrong");
+   return true;
+ }
+ </script>
+</head>
+<body>
+ <p id=result>FAIL (script did not execute)</p>
+</body>
+</html>

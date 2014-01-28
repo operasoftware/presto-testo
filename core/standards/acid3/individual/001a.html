@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>[Acid3 - Test 001a] ToNumber(true) => 1</title>
+ <script type="text/javascript" src="support/framework.js"></script>
+ <script type="text/javascript">
+ function test() {
+   // test 1: NodeFilters and Exceptions
+   // not exceptions.
+   var foo = function(node) {
+     return true; // ToNumber(true) => 1
+   }
+   var i = document.createNodeIterator(document.documentElement, 0xFFFFFFFF, foo, true);
+   assertEquals(i.nextNode(), document.documentElement, "i.nextNode() didn't return the right node");
+   return true;
+ }
+ </script>
+</head>
+<body>
+ <p id=result>FAIL (script did not execute)</p>
+</body>
+</html>

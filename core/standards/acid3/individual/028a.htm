@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>[Acid3 - Test 028a] getElementByID does not match name</title>
+ <script type="text/javascript" src="support/framework.js"></script>
+ <script type="text/javascript">
+   function test() {
+     // test 28: getElementById()
+     // ...and name=""
+     assert(document.getElementById('form') !== document.getElementsByTagName('form')[0], "getElementById() searched on 'name'");
+     return 2;
+   }
+ </script>
+</head>
+<body>
+<p id=result>FAIL (script did not execute)</p>
+<form name="form"></form>
+</body>

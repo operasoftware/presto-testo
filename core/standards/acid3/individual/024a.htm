@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>[Acid3 - Test 024a] Event Handler Attributes</title>
+ <script type="text/javascript" src="support/framework.js"></script>
+ <script type="text/javascript">
+   //Not sure if the test needs something specific in the update function or not
+   function update() {};
+   function test() {
+     assertEquals(document.body.getAttribute('onload'), "update()  /* this attribute's value is tested in one of the tests */ ", "onload value wrong");
+     return 2;
+   }
+ </script>
+</head>
+<body onload="update()  /* this attribute's value is tested in one of the tests */ "><p id=result>FAIL (script did not execute)</p>
+</body>

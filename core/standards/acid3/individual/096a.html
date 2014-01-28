@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>[Acid3 - Test 096a] encodeURIComponent() and null bytes</title>
+ <script type="text/javascript" src="support/framework.js"></script>
+ <script type="text/javascript">
+ // XHTML
+ function test() {
+   // test 96: encodeURI() and encodeURIComponent() and null bytes
+   assertEquals(encodeURIComponent(String.fromCharCode(0)), '%00', "encodeURIComponent failed to encode U+0000");
+   return true;
+ }
+ </script>
+</head>
+<body>
+ <p id=result>FAIL (script did not execute)</p>
+</body>
+</html>

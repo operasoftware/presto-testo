@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>[Acid3 - Test 053n] Getting input .type property after change</title>
+ <script type="text/javascript" src="support/framework.js"></script>
+ <script type="text/javascript">
+ function test() {
+   // test 53: changing an <input> dynamically
+   var f = document.createElement('form');
+   var i = document.createElement('input');
+   i.name = 'first';
+   i.type = 'text';
+   i.value = 'test';
+   f.appendChild(i);
+   i.name = 'second';
+   i.type = 'password';
+   i.value = 'TEST';
+   assertEquals(i.type, 'password', "type property wrong after change");
+   return true;
+ }
+ </script>
+</head>
+<body>
+ <p id=result>FAIL (script did not execute)</p>
+</body>
+</html>

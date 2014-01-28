@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>[Acid3 - Test 006a] Walking Outside a Tree</title>
+ <script type="text/javascript" src="support/framework.js"></script>
+ <script type="text/javascript">
+  function test() {
+      var doc = document.getElementsByTagName("iframe")[0].contentDocument;
+      var b = doc.body;
+      var p = doc.createElement('p');
+      b.appendChild(p);
+      var w = document.createTreeWalker(b, 0xFFFFFFFF, null, true);
+      assertEquals(w.currentNode, b, "basic use of TreeWalker failed: currentNode");
+      assertEquals(w.lastChild(), p, "basic use of TreeWalker failed: lastChild()");
+      assertEquals(w.previousNode(), b, "basic use of TreeWalker failed: previousNode()");
+      doc.documentElement.removeChild(b);
+      assertEquals(w.lastChild(), p, "TreeWalker failed after removing the current node from the tree");
+      assertEquals(w.nextNode(), null, "failed to walk into the end of a subtree");
+      doc.documentElement.appendChild(p);
+      assertEquals(w.previousNode(), doc.getElementsByTagName('title')[0], "failed to handle regrafting correctly");
+      p.appendChild(b);
+      assertEquals(w.nextNode(), p, "couldn't retrace steps");
+      assertEquals(w.nextNode(), b, "couldn't step back into root");
+      assertEquals(w.previousNode(), null, "root didn't retake its rootish position");
+      return 1;
+  }
+</script>
+</head>
+<body><p id=result>FAIL (script did not execute)</p>
+  <iframe src="data:text/html,<head><title></title><body>"></iframe>
+</body>
+</html>

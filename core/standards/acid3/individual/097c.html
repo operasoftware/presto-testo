@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>[Acid3 - Test 097c] Escaped Base64 Data URI</title>
+ <script type="text/javascript" src="support/framework.js"></script>
+ <script type="text/javascript">
+ var d3 = "fail";
+
+ // XHTML
+ function test() {
+   // test 97: data: URI parsing
+   assertEquals(d3, "three", "data: failed as base64 escaped");
+   return true;
+ }
+
+ </script>
+ <script type="text/javascript" src="data:text/javascript;base64,%5a%44%4d%67%50%53%41%6e%64%47%68%79%5a%57%55%6e%4f%77%3D%3D"></script>
+</head>
+<body>
+ <p id=result>FAIL (script did not execute)</p>
+</body>
+</html>

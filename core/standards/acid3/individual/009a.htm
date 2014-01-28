@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>[Acid3 - Test 009] Range.extractContents</title>
+ <script type="text/javascript" src="support/framework.js"></script>
+ <script type="text/javascript">
+ function test() {
+   doc = document.getElementsByTagName("iframe")[0].contentDocument;
+   var h1 = doc.createElement('h1');
+   var t1 = doc.createTextNode('Hello ');
+   h1.appendChild(t1);
+   var em = doc.createElement('em');
+   var t2 = doc.createTextNode('Wonderful');
+   em.appendChild(t2);
+   h1.appendChild(em);
+   var t3 = doc.createTextNode(' Kitty');
+   h1.appendChild(t3);
+   doc.body.appendChild(h1);
+   var p = doc.createElement('p');
+   var t4 = doc.createTextNode('How are you?');
+   p.appendChild(t4);
+   doc.body.appendChild(p);
+   var r = doc.createRange();
+   r.selectNodeContents(doc);
+   assertEquals(r.toString(), "Hello Wonderful KittyHow are you?", "toString() on range selecting Document gave wrong output");
+   r.setStart(t2, 6);
+   r.setEnd(p, 0);
+   // <body><h1>Hello <em>Wonder ful<\em> Kitty<\h1><p> How are you?<\p><\body>    assertEquals(r.toString(), "ful Kitty", "toString() on range crossing text nodes gave wrong output");
+    var f = r.extractContents();
+    // <h1><em>ful<\em> Kitty<\h1><p><\p>
+    // ccccccccccccccccMMMMMMcccccccccccc
+    assertEquals(f.nodeType, 11, "failure 1");
+    assert(f.childNodes.length == 2, "expected two children in the result, got " + f.childNodes.length);
+    assertEquals(f.childNodes[0].tagName, "H1", "failure 3");
+    assert(f.childNodes[0] != h1, "failure 4");
+    assertEquals(f.childNodes[0].childNodes.length, 2, "failure 5");
+    assertEquals(f.childNodes[0].childNodes[0].tagName, "EM", "failure 6");
+    assert(f.childNodes[0].childNodes[0] != em, "failure 7");
+    assertEquals(f.childNodes[0].childNodes[0].childNodes.length, 1, "failure 8");
+    assertEquals(f.childNodes[0].childNodes[0].childNodes[0].data, "ful", "failure 9");
+    assert(f.childNodes[0].childNodes[0].childNodes[0] != t2, "failure 10");
+    assertEquals(f.childNodes[0].childNodes[1], t3, "failure 11");
+    assert(f.childNodes[0].childNodes[1] != em, "failure 12");
+    assertEquals(f.childNodes[1].tagName, "P", "failure 13");
+    assertEquals(f.childNodes[1].childNodes.length, 0, "failure 14");
+    assert(f.childNodes[1] != p, "failure 15");
+    return 1;
+  }
+</script>
+</head>
+<body><p id=result>FAIL (script did not execute)</p>
+  <iframe src="data:text/html,<head><title></title></head><body>" style="display:none"></iframe>
+</body>
+</html>

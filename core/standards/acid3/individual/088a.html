@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>[Acid3 - Test 088a] Unicode escapes in identifiers</title>
+ <script type="text/javascript" src="support/framework.js"></script>
+ <script type="text/javascript">
+ function test() {
+   // test 88: ES3 section 7.6:3 (unicode escapes can't be used to put non-identifier characters into identifiers)
+   // and there's no other place for them in the syntax (other than strings, of course)
+   var ok = false;
+   try {
+     eval("var test = { };\ntest.i= 0;\ntest.i\\u002b= 1;\ntest.i;\n");
+   } catch (e) {
+     ok = true;
+   }
+   assert(ok, "\\u002b was not considered a parse error in script");
+   return true;
+ }
+ </script>
+</head>
+<body>
+ <p id=result>FAIL (script did not execute)</p>
+</body>
+</html>

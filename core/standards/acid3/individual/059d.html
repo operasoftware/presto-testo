@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>[Acid3 - Test 059d] Button attributes: value</title>
+ <script type="text/javascript" src="support/framework.js"></script>
+ <script type="text/javascript">
+ function test() {
+   // test 59: attributes of <button> elements
+   var button = document.createElement('button');
+   button.setAttribute("type", "button");
+   button.removeAttribute("type");
+   button.setAttribute('value', 'apple');
+   button.appendChild(document.createTextNode('banana'));
+   assertEquals(button.value, 'apple', "wrong button value");
+   return true;
+ }
+ </script>
+</head>
+<body>
+ <p id=result>FAIL (script did not execute)</p>
+</body>
+</html>

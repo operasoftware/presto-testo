@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>[Acid3 - Test 090o] Regexp negative lookahead</title>
+ <script type="text/javascript" src="support/framework.js"></script>
+ <script type="text/javascript">
+ // XHTML
+ function test() {
+   // test 90: Regular Expressions and backreferences
+   // backreferences to non-existent capture
+   var ok = true;
+   try {
+     eval("/(1)(2)(3)\\6(4)(5)/");
+     ok = false;
+   } catch (e) { }
+   assert(ok, "should have raised syntax error for a backreference to a non-existent capture");
+   return true;
+ }
+ </script>
+</head>
+<body>
+ <p id=result>FAIL (script did not execute)</p>
+</body>
+</html>

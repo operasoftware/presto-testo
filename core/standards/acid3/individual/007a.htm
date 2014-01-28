@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>[Acid3 - Test 007a] "Range Should be collapsed"</title>
+ <script type="text/javascript" src="support/framework.js"></script>
+ <script type="text/javascript">
+   function test() {
+      var r = document.createRange();
+      assert(r, "range not created");
+      assert(r.collapsed, "new range wasn't collapsed");
+      return 1;
+   }
+ </script>
+</head>
+<body><p id=result>FAIL (script did not execute)</p>
+  <div id="b"></div>
+</body>
+</html>

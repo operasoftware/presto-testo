@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>[Acid3 - Test 025a] createDocumentType Namespace Checking</title>
+ <script type="text/javascript" src="support/framework.js"></script>
+ <script type="text/javascript">
+   function test() {
+      // test 25: test namespace checking in createDocumentType, and
+      // check that exceptions that are thrown are DOMException objects
+      var message = "";
+      try {
+        document.implementation.createDocumentType('a:', '', ''); /* doesn't contain an illegal character; is malformed */
+        message = "failed to raise exception";
+      } catch (e) {
+      }
+      if (message)
+        fail(message);
+      return 2;
+   }
+ </script>
+</head>
+<body>
+<p id=result>FAIL (script did not execute)</p>
+</body>

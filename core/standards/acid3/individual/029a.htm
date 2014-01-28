@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>[Acid3 - Test 029a] Whitespace in cloneNode</title>
+ <script type="text/javascript" src="support/framework.js"></script>
+ <script type="text/javascript">
+function test() {
+   // test 29: check that whitespace survives cloning
+   var t1 = document.getElementsByTagName('table')[0];
+   var t2 = t1.cloneNode(true);
+   assertEquals(t2.tBodies[0].rows[0].cells[0].firstChild.tagName, 'P', "<p> didn't clone right");
+   assertEquals(t2.tBodies[0].rows[0].cells[0].firstChild.childNodes.length, 0, "<p> got child nodes after cloning");
+   assertEquals(t2.childNodes.length, 2, "cloned table had wrong number of children");
+   assertEquals(t2.lastChild.data, " ", "cloned table lost whitespace text node");
+   return 2;
+ }
+ </script>
+</head>
+<body>
+<p id=result>FAIL (script did not execute)</p>
+<table><tr><td><p></tbody> </table>
+</body>

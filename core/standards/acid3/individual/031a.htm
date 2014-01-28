@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>[Acid3 - Test 029a] Whitespace in cloneNode</title>
+ <style>
+ #\ { color: transparent; color: hsla(0, 0, 0, 1); position: fixed; top: 10px; left: 10px; font: 40px Arial, sans-serif; }
+ </style>
+ <script type="text/javascript" src="support/framework.js"></script>
+ <script type="text/javascript">
+function test() {
+     // test 31: event.stopPropagation() and capture
+     // we're going to use an input element because we can cause events to bubble from it
+      var input = document.createElement('input');
+      var div = document.createElement('div');
+      div.appendChild(input);
+      document.body.appendChild(div);
+      // the test will consist of two event handlers:
+      var ok = true;
+      var captureCount = 0;
+      var testCapture = function (event) {
+        ok = ok &&
+             (event.type == 'click') &&
+             (event.target == input) &&
+             (event.currentTarget == div) &&
+             (event.eventPhase == 1) &&
+             (event.bubbles) &&
+             (event.cancelable);
+        captureCount++;
+        event.stopPropagation(); // this shouldn't stop it from firing both times on the div element
+      };
+      var testBubble = function (event) {
+        ok = false;
+      };
+      // one of which is added twice:
+      div.addEventListener('click', function (event) { testCapture(event) }, true);
+      div.addEventListener('click', function (event) { testCapture(event) }, true);
+      div.addEventListener('click', testBubble, false);
+      // we cause an event to bubble like this:
+      input.type = 'reset';
+      input.click();
+      // cleanup afterwards
+      document.body.removeChild(div);
+      // capture handler should have been called twice
+      assertEquals(captureCount, 2, "capture handler called the wrong number of times");
+      assert(ok, "capture handler called incorrectly");
+      return 2;
+ }
+ </script>
+</head>
+<body>
+<p id=result>FAIL (script did not execute)</p>
+</body>

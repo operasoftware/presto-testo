@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>[Acid3 - Test 090f] Regexp back reference to future capture length</title>
+ <script type="text/javascript" src="support/framework.js"></script>
+ <script type="text/javascript">
+ // XHTML
+ function test() {
+   // test 90: Regular Expressions and backreferences
+   // back reference to future capture
+   var x = /(\3)(\1)(a)/.exec('cat'); // the \3 matches the empty string, qv. ES3:15.10.2.9
+   assertEquals(x.length, 4, "/(\\3)(\\1)(a)/ failed to return four components");
+   return true;
+ }
+ </script>
+</head>
+<body>
+ <p id=result>FAIL (script did not execute)</p>
+</body>
+</html>

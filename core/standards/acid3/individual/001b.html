@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>[Acid3 - Test 001a] Nodefilter throws exception</title>
+ <script type="text/javascript" src="support/framework.js"></script>
+ <script type="text/javascript">
+ function test() {
+   // test 1: NodeFilters and Exceptions
+   // exceptions
+   var exception = "Roses";
+   var iteration = 0;
+   var check = function(o, method) {
+     var ok = false;
+     try {
+       o[method]();
+     } catch (e) {
+       if (e === exception)
+         ok = true;
+     }
+     assert(ok, "method " + o + "." + method + "() didn't forward exception");
+   };
+
+   var foo = function(node) {
+      iteration += 1;
+      if (iteration == 2) {
+        return 1;
+      } else {
+        throw exception; 
+      };
+   }
+
+   var i = document.createNodeIterator(document.documentElement, 0xFFFFFFFF, foo, true);
+   check(i, "nextNode");
+   //Need to do this to get the right exception next time
+   i.nextNode();
+   check(i, "previousNode");
+   return 1;
+ }
+ </script>
+</head>
+<body>
+ <p id=result>FAIL (script did not execute)</p>
+</body>
+</html>

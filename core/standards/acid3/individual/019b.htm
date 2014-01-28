@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>[Acid3 - Test 019a] Exception in appendChild</title>
+ <script type="text/javascript" src="support/framework.js"></script>
+ <script type="text/javascript">
+   function test() {
+      //Values of some constants
+      var e = null;
+      try {
+        document.body.appendChild(document.documentElement);
+         // raises a HIERARCHY_REQUEST_ERR
+      } catch (err) {
+        e = err;
+      }
+      assertEquals(e.code, 3, "incorrect exception raised from appendChild()");
+      return 2;
+   }
+ </script>
+</head>
+<body><p id=result>FAIL (script did not execute)</p>
+</body>

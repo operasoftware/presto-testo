@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>[Acid3 - Test 005a] Ignoring Whitespace Text Nodes With Treewalkers</title>
+<!-- Probably want a cleaner test for this -->
+ <script type="text/javascript" src="support/framework.js"></script>
+ <script type="text/javascript">
+      // test 5: ignoring whitespace text nodes with tree walkers
+  function test() {
+      var container = document.getElementById("b");
+      var count = 0;
+      var expect = function(node1, node2) {
+        count += 1;
+        assertEquals(node1, node2, "expectation " + count + " failed");
+      };
+      var allButWS = function (node) {
+        if (node.nodeType == 3 && node.data.match(/^\s*$/))
+          return 3;
+        return 1;
+      };
+      var w = document.createTreeWalker(container, 0x01 | 0x04 | 0x08 | 0x10 | 0x20, allButWS, true);
+      expect(w.currentNode, container);
+      expect(w.parentNode(), null);
+      expect(w.currentNode, container);
+      expect(w.firstChild(), document.getElementsByTagName('h1')[0]);
+      expect(w.firstChild().nodeType, 3);
+      expect(w.parentNode(), document.getElementsByTagName('h1')[0]);
+      expect(w.nextSibling().previousSibling.nodeType, 3);
+      expect(w.nextSibling(), document.getElementsByTagName('p')[7]);
+      expect(w.nextSibling(), document.getElementsByTagName('map')[0]);
+      expect(w.lastChild(), document.getElementsByTagName('table')[0]);
+      expect(w.lastChild(), document.getElementsByTagName('tbody')[0]);
+      expect(w.nextNode(), document.getElementsByTagName('tr')[0]);
+      expect(w.nextNode(), document.getElementsByTagName('td')[0]);
+      expect(w.nextNode(), document.getElementsByTagName('p')[8]);
+      expect(w.nextNode(), document.getElementsByTagName('p')[9]); // instructions.inc paragraph
+      expect(w.previousSibling(), document.getElementsByTagName('map')[0]);
+      expect(w.previousNode().data, "100");
+      expect(w.parentNode().tagName, "SPAN");
+      expect(w.parentNode(), document.getElementById('result2'));
+      expect(w.parentNode(), container);
+      expect(w.lastChild().id, "instructions");
+      expect(w.lastChild().data.substr(0,1), ".");
+      expect(w.previousNode(), document.links[1].firstChild);
+      return 1;
+  }
+ </script>
+</head>
+<body>
+<p id=result>FAIL (script did not execute)</p>
+ <div id="b" style="display:none;">
+  <h1 onclick="report(event)">Acid3</h1>
+  <div class="buckets"
+   ><p id="bucket1" class="z"></p
+   ><p id="bucket2" class="z"></p
+   ><p id="bucket3" class="z"></p
+   ><p id="bucket4" class="z"></p
+   ><p id="bucket5" class="z"></p
+   ><p id="bucket6" class="z"></p>
+  </div>
+  <p id="result2"><span id="score">JS</span><span id="slash" class="hidden">/</span><span>100</span></p>
+  <!-- The following line is used in a number of the tests. It is done using document.write() to sidestep complaints of validity. -->
+  <map name=""><area href="" shape="rect" coords="2,2,4,4" alt="<\'>"><iframe src="empty.png">FAIL</iframe><iframe src="empty.txt">FAIL</iframe><iframe src="empty.html" id="selectors"></iframe><form action="" name="form"><input type=HIDDEN></form><table><tr><td><p></tbody> </table></map>
+  <p id="instructions">To pass the test,<span></span> a browser must use its default settings, the animation has to be smooth, the score has to end on 100/100, and the final page has to look exactly, pixel for pixel, like <a href="reference.html">this reference rendering</a>.</p>
+ </div>
+</body>
+</html>

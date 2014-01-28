@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>[Acid3 - Test 007j] "No change after delectContents"</title>
+ <script type="text/javascript" src="support/framework.js"></script>
+ <script type="text/javascript">
+ function test() {
+   var r = document.createRange();
+   assert(r, "range not created");
+   r.collapse(true); // no effect
+   r.deleteContents(); // no effect
+   assertEquals(r.extractContents().childNodes.length, 0, "nothing removed was more than nothing");
+   return 1;
+ }
+ </script>
+</head>
+<body><p id=result>FAIL (script did not execute)</p>
+</body>
+</html>

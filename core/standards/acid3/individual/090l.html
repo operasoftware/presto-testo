@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>[Acid3 - Test 090l] Negative lookahead - match string</title>
+ <script type="text/javascript" src="support/framework.js"></script>
+ <script type="text/javascript">
+ // XHTML
+ function test() {
+   // test 90: Regular Expressions and backreferences
+   // negative lookahead
+   var x = /(?!(text))(te.t)/.exec("text testing");
+   assertEquals(x[0], "test", "negative lookahead test failed to find the right text");
+   return true;
+ }
+ </script>
+</head>
+<body>
+ <p id=result>FAIL (script did not execute)</p>
+</body>
+</html>

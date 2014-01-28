@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>[Acid3 - Test 087a] Description</title>
+ <script type="text/javascript" src="support/framework.js"></script>
+ <script type="text/javascript">
+ function test() {
+   // test 87: Date tests -- years
+   var d1 = new Date(Date.UTC(99.9, 6));
+   assertEquals(d1.getUTCFullYear(), 1999, "Date.UTC() didn't do proper 1900 year offsetting");
+   return true;
+ }
+ </script>
+</head>
+<body>
+ <p id=result>FAIL (script did not execute)</p>
+</body>
+</html>

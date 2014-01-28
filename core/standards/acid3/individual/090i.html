@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>[Acid3 - Test 090i] Regexp back reference to future capture - match empty string 2</title>
+ <script type="text/javascript" src="support/framework.js"></script>
+ <script type="text/javascript">
+ // XHTML
+ function test() {
+   // test 90: Regular Expressions and backreferences
+   // back reference to future capture
+   var x = /(\3)(\1)(a)/.exec('cat'); // the \3 matches the empty string, qv. ES3:15.10.2.9
+   assert(x[2] === "", "/(\\3)(\\1)(a)/ failed to find '' in 'cat' as second part");
+   return true;
+ }
+ </script>
+</head>
+<body>
+ <p id=result>FAIL (script did not execute)</p>
+</body>
+</html>

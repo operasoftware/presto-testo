@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>[Acid3 - Test 007g] "Empty Range should have no children in cloneContents"</title>
+ <script type="text/javascript" src="support/framework.js"></script>
+ <script type="text/javascript">
+ function test() {
+   var r = document.createRange();
+   assert(r, "range not created");
+   assertEquals(r.cloneContents().childNodes.length, 0, "nothing cloned was more than nothing");
+   return 1;
+ }
+ </script>
+</head>
+<body><p id=result>FAIL (script did not execute)</p>
+</body>
+</html>

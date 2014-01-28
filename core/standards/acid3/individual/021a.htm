@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>[Acid3 - Test 021a] createElementNS</title>
+ <script type="text/javascript" src="support/framework.js"></script>
+ <script type="text/javascript">
+   function test() {
+      var element = document.createElementNS('http://ns.example.com/', 'prefix:localname');
+      assertEquals(element.tagName, 'prefix:localname', "wrong tagName");
+      assertEquals(element.nodeName, 'prefix:localname', "wrong nodeName");
+      assertEquals(element.prefix, 'prefix', "wrong prefix");
+      assertEquals(element.localName, 'localname', "wrong localName");
+      assertEquals(element.namespaceURI, 'http://ns.example.com/', "wrong namespaceURI");
+      return 2;
+   }
+ </script>
+</head>
+<body><p id=result>FAIL (script did not execute)</p>
+</body>

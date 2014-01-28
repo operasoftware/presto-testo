@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>[Acid3 - Test 008a] "Range properties with moving boundaries"</title>
+ <!--This test has a lot of state so it is probably not worth splitting up further-->
+ <script type="text/javascript" src="support/framework.js"></script>
+ <script type="text/javascript">
+    function test() {
+      // test 8: moving boundary points
+      var doc = document.implementation.createDocument(null, null, null);
+      var root = doc.createElement("root");
+      doc.appendChild(root);
+      var e1 = doc.createElement("e");
+      root.appendChild(e1);
+      var e2 = doc.createElement("e");
+      root.appendChild(e2);
+      var e3 = doc.createElement("e");
+      root.appendChild(e3);
+      var r = doc.createRange();
+      r.setStart(e2, 0);
+      r.setEnd(e3, 0);
+      assert(!r.collapsed, "non-empty range claims to be collapsed");
+      r.setEnd(e1, 0);
+      assert(r.collapsed, "setEnd() didn't collapse the range");
+      assertEquals(r.startContainer, e1, "startContainer is wrong after setEnd()");
+      assertEquals(r.startOffset, 0, "startOffset is wrong after setEnd()");
+      assertEquals(r.endContainer, e1, "endContainer is wrong after setEnd()");
+      assertEquals(r.endOffset, 0, "endOffset is wrong after setEnd()");
+      r.setStartBefore(e3);
+      assert(r.collapsed, "setStartBefore() didn't collapse the range");
+      assertEquals(r.startContainer, root, "startContainer is wrong after setStartBefore()");
+      assertEquals(r.startOffset, 2, "startOffset is wrong after setStartBefore()");
+      assertEquals(r.endContainer, root, "endContainer is wrong after setStartBefore()");
+      assertEquals(r.endOffset, 2, "endOffset is wrong after setStartBefore()");
+      r.setEndAfter(root);
+      assert(!r.collapsed, "setEndAfter() didn't uncollapse the range");
+      assertEquals(r.startContainer, root, "startContainer is wrong after setEndAfter()");
+      assertEquals(r.startOffset, 2, "startOffset is wrong after setEndAfter()");
+      assertEquals(r.endContainer, doc, "endContainer is wrong after setEndAfter()");
+      assertEquals(r.endOffset, 1, "endOffset is wrong after setEndAfter()");
+      r.setStartAfter(e2);
+      assert(!r.collapsed, "setStartAfter() collapsed the range");
+      assertEquals(r.startContainer, root, "startContainer is wrong after setStartAfter()");
+      assertEquals(r.startOffset, 2, "startOffset is wrong after setStartAfter()");
+      assertEquals(r.endContainer, doc, "endContainer is wrong after setStartAfter()");
+      assertEquals(r.endOffset, 1, "endOffset is wrong after setStartAfter()");
+      var msg = '';
+      try {
+        r.setEndBefore(doc);
+        msg = "no exception thrown for setEndBefore() the document itself";
+      } catch (e) {
+        if (e.BAD_BOUNDARYPOINTS_ERR != 1)
+          msg = 'not a RangeException';
+        else if (e.INVALID_NODE_TYPE_ERR != 2)
+          msg = 'RangeException has no INVALID_NODE_TYPE_ERR';
+        else if ("INVALID_ACCESS_ERR" in e)
+          msg = 'RangeException has DOMException constants';
+        else if (e.code != e.INVALID_NODE_TYPE_ERR)
+          msg = 'wrong exception raised from setEndBefore()';
+      }
+      assert(msg == "", msg);
+      assert(!r.collapsed, "setEndBefore() collapsed the range");
+      assertEquals(r.startContainer, root, "startContainer is wrong after setEndBefore()");
+      assertEquals(r.startOffset, 2, "startOffset is wrong after setEndBefore()");
+      assertEquals(r.endContainer, doc, "endContainer is wrong after setEndBefore()");
+      assertEquals(r.endOffset, 1, "endOffset is wrong after setEndBefore()");
+      r.collapse(false);
+      assert(r.collapsed, "collapse() collapsed the range");
+      assertEquals(r.startContainer, doc, "startContainer is wrong after collapse()");
+      assertEquals(r.startOffset, 1, "startOffset is wrong after collapse()");
+      assertEquals(r.endContainer, doc, "endContainer is wrong after collapse()");
+      assertEquals(r.endOffset, 1, "endOffset is wrong after collapse()");
+      r.selectNodeContents(root);
+      assert(!r.collapsed, "collapsed is wrong after selectNodeContents()");
+      assertEquals(r.startContainer, root, "startContainer is wrong after selectNodeContents()");
+      assertEquals(r.startOffset, 0, "startOffset is wrong after selectNodeContents()");
+      assertEquals(r.endContainer, root, "endContainer is wrong after selectNodeContents()");
+      assertEquals(r.endOffset, 3, "endOffset is wrong after selectNodeContents()");
+      r.selectNode(e2);
+      assert(!r.collapsed, "collapsed is wrong after selectNode()");
+      assertEquals(r.startContainer, root, "startContainer is wrong after selectNode()");
+      assertEquals(r.startOffset, 1, "startOffset is wrong after selectNode()");
+      assertEquals(r.endContainer, root, "endContainer is wrong after selectNode()");
+      assertEquals(r.endOffset, 2, "endOffset is wrong after selectNode()");
+      return 1;
+    }
+ </script>
+</head>
+<body><p id=result>FAIL (script did not execute)</p>
+</body>
+</html>

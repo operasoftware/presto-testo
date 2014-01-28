@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>[Acid3 - Test 007i] "Boundary points of range and clone"</title>
+ <script type="text/javascript" src="support/framework.js"></script>
+ <script type="text/javascript">
+ function test() {
+   var r = document.createRange();
+   assert(r, "range not created");
+   r.collapse(true); // no effect
+   assertEquals(r.compareBoundaryPoints(r.START_TO_END, r.cloneRange()), 0, "starting boundary point of range wasn't the same as the end boundary point of the clone range");
+   return 1;
+ }
+ </script>
+</head>
+<body><p id=result>FAIL (script did not execute)</p>
+</body>
+</html>

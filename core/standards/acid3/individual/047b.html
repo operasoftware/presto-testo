@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>[Acid3 - Test 047b] 'cursor' and CSS3 values: 'bogus'</title>
+ <script type="text/javascript" src="support/framework.js"></script>
+ <script type="text/javascript">
+ function getTestDocument() {
+   var iframe = document.getElementById("selectors");
+   var doc = iframe.contentDocument;
+   for (var i = doc.documentElement.childNodes.length-1; i >= 0; i -= 1)
+     doc.documentElement.removeChild(doc.documentElement.childNodes[i]);
+   doc.documentElement.appendChild(doc.createElement('head'));
+   doc.documentElement.firstChild.appendChild(doc.createElement('title'));
+   doc.documentElement.appendChild(doc.createElement('body'));
+   return doc;
+ }
+
+ function test() {
+   // test 47: 'cursor' and CSS3 values
+   var doc = getTestDocument();
+   var style = doc.createElement('style');
+   style.setAttribute('type', 'text/css');
+
+   style.appendChild(doc.createTextNode('#bogus { cursor: bogus; }'));
+   doc.body.previousSibling.appendChild(style);
+   doc.body.id = "bogus";
+
+   assertEquals(doc.defaultView.getComputedStyle(doc.body, '').cursor, "auto", "control failed");
+
+   return true;
+ }
+ </script>
+</head>
+<body>
+ <p id=result>FAIL (script did not execute)</p>
+ <iframe src="support/empty.html" id="selectors"></iframe>
+</body>
+</html>

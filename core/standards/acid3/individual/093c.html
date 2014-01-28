@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>[Acid3 - Test 093c] ECMAScript Property in step 4 of FunctionExpression: function Identifier leaked to parent scope</title>
+ <script type="text/javascript" src="support/framework.js"></script>
+ <script type="text/javascript">
+ // XHTML
+ function test() {
+   // test 93: FunctionExpression semantics
+   var functest;
+   var vartest = 0;
+   var value = (function functest(arg) {
+     if (arg)
+       return 1;
+     vartest = 1;
+     functest = function (arg) { return 2; }; // this line does nothing as 'functest' is ReadOnly here
+     return functest(true); // this is therefore tail recursion and returns 1
+   })(false);
+   assert(!functest, "Property in step 4 of FunctionExpression: function Identifier ... leaked to parent scope");
+   return 6;
+   return true;
+ }
+ </script>
+</head>
+<body>
+ <p id=result>FAIL (script did not execute)</p>
+</body>
+</html>

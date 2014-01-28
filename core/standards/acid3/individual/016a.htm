@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>[Acid3 - Test 016] Object handling</title>
+ <script type="text/javascript" src="support/framework.js"></script>
+ <script type="text/javascript">
+   //This is not right
+   function test() {
+   // test 16: <object> handling and HTTP status codes
+     var oC = document.createElement('object');
+     oC.appendChild(document.createTextNode("FAIL"));
+     var oB = document.createElement('object');
+     var oA = document.createElement('object');
+     oA.data = "support/support-a.png";
+     oB.data = "support/support-b.png";
+     oB.appendChild(oC);
+     oC.data = "support/support-c.png";
+     oA.appendChild(oB);
+     document.getElementsByTagName("map")[0].appendChild(oA);
+     // assuming the above didn't raise any exceptions, this test has passed
+     // (the real test is whether the rendering is correct)
+     return 1;
+   }
+ </script>
+</head>
+<body><p id=result>FAIL (script did not execute)</p>
+<map></map>
+</body>

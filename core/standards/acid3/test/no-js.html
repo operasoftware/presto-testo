@@ -1,0 +1,59 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+ <title>The Acid3 Test</title>
+ <style type="text/css">
+  /* set some basic styles so that we can get reliably exact results */
+  * { margin: 0; border: 1px blue; padding: 0; border-spacing: 0; font: inherit; line-height: 1.2; color: inherit; background: transparent; }
+  :link, :visited { color: blue; }
+
+  /* header and general layout */
+  html { font: 20px Arial, sans-serif; border: 2cm solid gray; width: 32em; margin: 1em; }
+  :root { background: silver; color: black; border-width: 0 0.2em 0.2em 0; } /* left and top content edges: 1*20px = 20px */
+  body { padding: 2em 2em 0; background: url(data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAIAAAAC64paAAAABGdBTUEAAK%2FINwWK6QAAAAlwSFlzAAAASAAAAEgARslrPgAAABtJREFUOMtj%2FM9APmCiQO%2Bo5lHNo5pHNVNBMwAinAEnIWw89gAAACJ6VFh0U29mdHdhcmUAAHjac0zJT0pV8MxNTE8NSk1MqQQAL5wF1K4MqU0AAAAASUVORK5CYII%3D) no-repeat 99.8392283% 1px white; border: solid 1px black; margin: -0.2em 0 0 -0.2em; } /* left and top content edges: 20px-0.2*20px+1px+2*20px = 57px */
+  h1:first-child { cursor: help; font-size: 5em; font-weight: bolder; margin-bottom: -0.4em; text-shadow: rgba(192, 192, 192, 1.0) 3px 3px; } /* (left:57px, top:57px) */
+  #result { font-weight: bolder; width: 5.68em; text-align: right; }
+  #result { font-size: 5em; margin: -2.19em 0 0; } /* (right:57px+5.2*5*20px = 577px, top:57px+1.2*5*20px-0.4*5*20px+1px+1*40px+1*40px+1px+2*40px+150px-2.19*5*20px = 230px) */
+  .hidden { visibility: hidden; }
+  #slash { color: red; color: hsla(0, 0%, 0%, 1.0); }
+  #instructions { margin-top: 0; font-size: 0.8em; color: gray; color: -acid3-bogus; height: 6.125em; } /* (left:57px, top:230px+1.2*5*20+0 = 350px) */
+  #instructions { margin-right: -20px; padding-right: 20px; background: url(data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAIAAAAC64paAAAABGdBTUEAAK%2FINwWK6QAAAAlwSFlzAAAASAAAAEgARslrPgAAABtJREFUOMtj%2FM9APmCiQO%2Bo5lHNo5pHNVNBMwAinAEnIWw89gAAACJ6VFh0U29mdHdhcmUAAHjac0zJT0pV8MxNTE8NSk1MqQQAL5wF1K4MqU0AAAAASUVORK5CYII%3D) no-repeat top right; }
+  #instructions span { float: right; width: 20px; margin-right: -20px; background: white; height: 20px; }
+  @font-face { font-family: "AcidAhemTest"; src: url(font.ttf); }
+  map::after { position: absolute; top: 18px; left: 638px; content: "X"; background: fuchsia; color: white; font: 20px/1 AcidAhemTest; }
+  iframe { float: left; height: 0; width: 0; } /* hide iframes but don't make them display: none */
+  object { position: fixed; left: 130.5px; top: 84.3px; background: transparent; } /* show objects if they have content */
+  .removed { position: absolute; top: 80px; left: 380px; height: 100px; width: 100px; opacity: 0; }
+
+  /* set the line height of the line of coloured boxes so we can add them without the layout changing height */
+  .buckets { font: 0/0 Arial, sans-serif; }
+  .buckets { padding: 0 0 150px 3px; }
+
+  /* the next two rules give the six coloured blocks their default styles (they match the same elements); the third hides them */
+  :first-child + * .buckets p { display: inline-block; vertical-align: 2em; border: 2em dotted red; padding: 1.0em 0 1.0em 2em; }
+  * + * > * > p { margin: 0; border: 1px solid ! important; }
+
+  /* sizes for the six buckets */
+  #bucket1 { background: red; font-size: 20px; margin-left: 0.2em; padding-left: 1.3em; padding-right: 1.3em; margin-right: 0.0001px; }
+  #bucket2 { background: orange; font-size: 24px; margin-left: 0.375em; padding-left: 30px; padding-right: 32px; margin-right: 2px; }
+  #bucket3 { background: yellow; font-size: 28px; margin-left: 8.9999px; padding-left: 17px; padding-right: 55px; margin-right: 12px; }
+  #bucket4 { background: lime; font-size: 32px; margin-left: 0; padding-left: 84px; padding-right: 0; margin-right: 0; }
+  #bucket5 { background: blue; font-size: 36px; margin-left: 13px; padding-left: 0; padding-right: 94px; margin-right: 25px; }
+  #bucket6 { background: purple; font-size: 40px; margin-left: -10px; padding-left: 104px; padding-right: -10px; }
+ </style>
+
+ <body>
+  <h1 onclick="report(event)">Acid3</h1>
+  <div class="buckets"
+   ><p id="bucket1" class="z"></p
+   ><p id="bucket2" class="z"></p
+   ><p id="bucket3" class="z"></p
+   ><p id="bucket4" class="z"></p
+   ><p id="bucket5" class="z"></p
+   ><p id="bucket6" class="z"></p>
+  </div>
+  <p id="result"><span id="score">100</span><span id="slash">/</span><span>100</span></p>
+  <map></map>
+  <p id="instructions">To pass the test,<span></span> a browser must use its default settings, the animation has to be smooth, the score has to end on 100/100, and the final page has to look exactly, pixel for pixel, like <a href="reference.html">this reference rendering</a>.</p>
+  <div></div>
+ </body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>[Acid3 - Test 059b] Button attributes: type button</title>
+ <script type="text/javascript" src="support/framework.js"></script>
+ <script type="text/javascript">
+ function test() {
+   // test 59: attributes of <button> elements
+   var button = document.createElement('button');
+   button.setAttribute("type", "button");
+   assertEquals(button.type, "button", "<button type=button> doesn't have type=button");
+   return true;
+ }
+ </script>
+</head>
+<body>
+ <p id=result>FAIL (script did not execute)</p>
+</body>
+</html>

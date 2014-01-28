@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>[Acid3 - Test 003a] "The Infinite Iterator"</title>
+ <script type="text/javascript" src="support/framework.js"></script>
+ <script type="text/javascript">
+  var test = function() {
+    var doc = document;
+    var container = doc.getElementById("b");
+    for (var i = 0; i < 5; i += 1) {
+       container.appendChild(doc.createElement('section'));
+       container.lastChild.title = i;
+    }
+    var count = 0;
+    var test = function() {
+      if (count > 3 && count < 12) {
+        container.appendChild(container.firstChild);
+      }
+      count += 1;
+      return (count % 2 == 0) ? 1 : 2;
+    };
+    var i = doc.createNodeIterator(container, 0xFFFFFFFF, test, true);
+    // * b 0 1 2 3 4			       
+    assertEquals(i.nextNode().title, "0", "failure 1"); // b * [0] 1 2 3 4
+    assertEquals(i.nextNode().title, "2", "failure 2"); // b 1 * [2] 3 4 0
+    assertEquals(i.nextNode().title, "4", "failure 3"); // b 3 * [4] 0 1 2
+    assertEquals(i.nextNode().title, "1", "failure 4"); // b 4 0 * [1] 2 3
+    assertEquals(i.nextNode().title, "3", "failure 5"); // b 1 2 * [3] 4 0
+    assertEquals(i.nextNode().title, "0", "failure 6"); // b 3 4 * [0] 1 2
+    assertEquals(i.nextNode().title, "2", "failure 7"); // b 3 4 0 1 * [2]
+    assertEquals(i.nextNode(), null, "failure 8"); // b 3 4 0 1 2 *
+    return 1;
+  }
+ </script>
+</head>
+<body><p id=result>FAIL (script did not execute)</p>
+  <div id="b"></div>
+</body>
+</html>

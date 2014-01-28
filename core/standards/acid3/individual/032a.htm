@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>[Acid3 - Test 029a] Whitespace in cloneNode</title>
+ <style>
+ #\ { color: transparent; color: hsla(0, 0, 0, 1); position: fixed; top: 10px; left: 10px; font: 40px Arial, sans-serif; }
+ </style>
+ <script type="text/javascript" src="support/framework.js"></script>
+ <script type="text/javascript">
+   function test() {
+      // test 32: events bubbling through Document node
+      // event handler:
+      var ok = true;
+      var count = 0;
+      var test = function (event) {
+        count += 1;
+        if (event.eventPhase != 3)
+          ok = false;
+      }
+      // register event handler
+      document.body.addEventListener('click', test, false);
+      // create an element that bubbles an event, and bubble it
+      var input = document.createElement('input');
+      var div = document.createElement('div');
+      div.appendChild(input);
+      document.body.appendChild(div);
+      input.type = 'reset';
+      input.click();
+      // unregister event handler
+      document.body.removeEventListener('click', test, false);
+      // check that it's removed for good
+      input.click();
+      // remove the newly added elements
+      document.body.removeChild(div);
+      assertEquals(count, 1, "capture handler called the wrong number of times");
+      assert(ok, "capture handler called incorrectly");
+      return 2;
+ }
+ </script>
+</head>
+<body>
+<p id=result>FAIL (script did not execute)</p>
+</body>

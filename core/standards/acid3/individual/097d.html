@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>[Acid3 - Test 097d] Base64 Encoded Data URI with Spaces</title>
+ <script type="text/javascript" src="support/framework.js"></script>
+ <script type="text/javascript">
+ var d4 = "fail";
+
+ // XHTML
+ function test() {
+   // test 97: data: URI parsing
+   assertEquals(d4, "four", "data: failed as base64 with spaces");
+   return true;
+ }
+
+ </script>
+ <script type="text/javascript" src="data:text/javascript;base64,%20ZD%20Qg%0D%0APS%20An%20Zm91cic%0D%0A%207%20"></script>
+</head>
+<body>
+ <p id=result>FAIL (script did not execute)</p>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>[Acid3 - Test 098c] document.forms.length for XHTML Documents created via DOM</title>
+ <script type="text/javascript" src="support/framework.js"></script>
+ <script type="text/javascript">
+ // XHTML
+ function test() {
+   // test 98: XHTML and the DOM
+   // (special test)
+   var doctype = document.implementation.createDocumentType("html", "-//W3C//DTD XHTML 1.0 Strict//EN", "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd");
+   var doc = document.implementation.createDocument("http://www.w3.org/1999/xhtml", "html", doctype);
+   doc.documentElement.appendChild(doc.createElementNS("http://www.w3.org/1999/xhtml", "head"));
+   doc.documentElement.appendChild(doc.createElementNS("http://www.w3.org/1999/xhtml", "body"));
+   var t = doc.createElementNS("http://www.w3.org/1999/xhtml", "title");
+   doc.documentElement.firstChild.appendChild(t);
+   // ok we have a conforming XHTML1 doc in |doc| now.
+
+   doc.body.appendChild(doc.createElementNS("http://www.w3.org/1999/xhtml", "form"));
+   assertEquals(doc.forms.length, 1, "document.forms not updated after inserting a form");
+   return true;
+ }
+ </script>
+</head>
+<body>
+ <p id=result>FAIL (script did not execute)</p>
+</body>
+</html>

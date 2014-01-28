@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>[Acid3 - Test 006a] walking outside a tree</title>
+ <script type="text/javascript" src="support/framework.js"></script>
+ <script type="text/javascript">
+  function getTestDocument() {
+    var iframe = document.getElementById("selectors");
+    var doc = iframe.contentDocument;
+    for (var i = doc.documentElement.childNodes.length-1; i >= 0; i -= 1)
+      doc.documentElement.removeChild(doc.documentElement.childNodes[i]);
+    doc.documentElement.appendChild(doc.createElement('head'));
+    doc.documentElement.firstChild.appendChild(doc.createElement('title'));
+    doc.documentElement.appendChild(doc.createElement('body'));
+    return doc;
+  }
+  function test() {
+    // test 6: walking outside a tree
+    var doc = getTestDocument();
+    var p = doc.createElement('p');
+    doc.body.appendChild(p);
+    var b = doc.body;
+    var w = document.createTreeWalker(b, 0xFFFFFFFF, null, true);
+    doc.documentElement.removeChild(b);
+    assertEquals(w.lastChild(), p, "TreeWalker failed after removing the current node from the tree");
+    doc.documentElement.appendChild(p);
+    assertEquals(w.previousNode(), doc.getElementsByTagName('title')[0], "failed to handle regrafting correctly");
+    p.appendChild(b);
+
+    // this is where we fail:
+    assertEquals(w.nextNode(), p, "couldn't retrace steps");
+    
+    assertEquals(w.nextNode(), b, "couldn't step back into root");
+    assertEquals(w.previousNode(), null, "root didn't retake its rootish position");
+    return true;
+  }
+ </script>
+</head>
+<body onload="">
+ <p id=result>FAIL (script did not execute)</p>
+ <iframe onload=runTest() style="visibility:hidden" id="selectors" src="javascript:'<!doctype html><html><head><title></title></head><body></body></html>'"></iframe>
+</body>
+</html>
+

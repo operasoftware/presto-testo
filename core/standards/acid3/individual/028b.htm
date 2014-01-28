@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>[Acid3 - Test 028b] Space character in ID</title>
+ <script type="text/javascript" src="support/framework.js"></script>
+ <script type="text/javascript">
+   function test() {
+      // ...and a space character as the ID
+      var div = document.createElement('div');
+      div.appendChild(document.createTextNode('FAIL'));
+      div.id = " ";
+      document.body.appendChild(div);
+      assert(div === document.getElementById(" "), "getElementById() didn't return the right element");
+      document.body.removeChild(div);
+      return 2;
+   }
+ </script>
+</head>
+<body>
+<p id=result>FAIL (script did not execute)</p>
+</body>
