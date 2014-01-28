@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+	<title>MathML msqrt element</title>
+	</head>
+<body>
+<p>Radicals below might have different shapes, but their content must share the same baseline</p>
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+<msqrt>
+<mi>content</mi>
+</msqrt>
+<mo>=</mo>
+<msqrt>
+<munder>
+<mi>content</mi>
+<mphantom><mi>fail</mi></mphantom>
+</munder>
+</msqrt>
+<mo>=</mo>
+<msqrt>
+<mover>
+<mi>content</mi>
+<mphantom><mi>fail</mi></mphantom>
+</mover>
+</msqrt>
+</math>
+</body>
+</html>

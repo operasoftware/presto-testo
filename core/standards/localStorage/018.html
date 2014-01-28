@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<title>localStorage storage event not fired for this window</title>
+<body>
+<div id="result">FAIL - Script did not execute.</div>
+<script>
+var result = document.getElementById("result");
+var passed = true;
+var timeout = setTimeout(function(){
+	result.innerHTML = "PASS";
+	end();
+}, 200);
+
+function callback(evt) {
+	clearTimeout(timeout);
+	passed = false;
+	result.innerHTML = "FAIL - storage event was fired on this window";
+	end();
+}
+
+function end() {
+	if (end.done) {
+		return;
+	}
+	end.done = true;
+	try{top.opener.rr(passed)}catch(e){}
+}
+
+localStorage.clear();
+window.addEventListener("storage", callback, false);
+result.innerHTML = "Running...";
+localStorage.setItem("test", "value");
+
+</script>

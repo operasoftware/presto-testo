@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+	<title>MathML maction element</title>
+	<script type="application/ecmascript">
+	function start()
+		{var s = document.defaultView.getComputedStyle(document.getElementsByTagName('maction')[0],null);
+		opera.generateMouseMove(10 + parseInt(s.getPropertyValue('left')),10 + parseInt(s.getPropertyValue('top')));}
+	</script>
+</head>
+<body onload="start()">
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+<maction actiontype="tooltip">
+	<mrow>
+	<menclose notation="box">
+		<mtext>You should see tooltip with word PASS in it</mtext>
+	</menclose>
+	</mrow>
+	<mtext>PASS</mtext>
+</maction>
+</math>
+</body>
+</html>

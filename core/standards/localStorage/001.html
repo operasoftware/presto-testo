@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<title>localStorage</title>
+<p id="result">FAIL - Script did not execute.</p>
+
+<script>
+var result = document.getElementById("result");
+var passed = (window.localStorage != undefined);
+result.innerHTML = passed ? "PASS" : "FAIL - window.localStorage is not defined."
+try{top.opener.rr(passed)}catch(e){}
+</script>

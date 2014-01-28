@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/css" href="math.css"?>
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+<mi>G</mi><mo fence="true">(</mo><mi>x</mi><mo fence="true">)</mo><mo> = </mo>
+<mrow><mfenced open="{" close="">
+<mrow><mtable>
+<mtr><mtd><mn>1</mn><mo> + </mo><mrow><msup><mi>x</mi><mn>2</mn></msup></mrow></mtd>
+<mtd><mtext>if </mtext><mi>x</mi><mo> > </mo><mn>1</mn></mtd></mtr>
+<mtr><mtd><mn>1</mn><mo> + </mo><mrow><msup><mi>x</mi><mn>4</mn></msup></mrow></mtd>
+<mtd><mtext>if </mtext><mi>x</mi><mo> &lt; </mo><mn>1</mn></mtd></mtr>
+<mtr><mtd><mn>1</mn><mo> + </mo><mrow><msup><mi>x</mi><mn>3</mn></msup></mrow></mtd><mtd><mtext>otherwise</mtext></mtd></mtr>
+</mtable></mrow>
+</mfenced></mrow>
+</math>

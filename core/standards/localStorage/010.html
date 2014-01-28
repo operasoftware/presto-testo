@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<head>
+	<title>Local Storage - Events - Event attributes (setItem)</title>
+	<script>
+		function run() {
+			var result = document.getElementById("result");
+			result.innerHTML = "";
+
+			window.record=function(pass, msg) {
+				result.innerHTML += (pass ? "PASS" : "FAIL") + (msg ? " - " + msg : "") + "\n";
+				try{top.opener.rr(pass);}catch(e){}
+			}
+
+			function verify(v, msg) {
+				if (!v) {
+					record(false, msg);
+					throw "";
+				}
+			}
+
+			if (!window.localStorage) {
+				record(false, "No localStorage support");
+				return;
+			}
+
+			try {
+				localStorage.clear();
+				localStorage.setItem("a", "A");
+
+				var timeoutId = setTimeout(function() { record(false, "StorageEvent didn't fire"); }, 1000);
+
+				window.onstorage = function (e) {
+					clearTimeout(timeoutId);
+					try {
+						verify(e, "Null event");
+						verify(e.key == "a", "key != 'a'");
+						verify(e.oldValue == "A", "oldValue != 'A'");
+						verify(e.newValue == "AA", "newValue != 'AA'");
+						verify(e.storageArea == localStorage, "storageArea != localStorage");
+						verify(e.url == frames[0].location.href, "url != location.href");
+						record(true);
+					} catch (ex) {}
+				}
+
+				frames[0].testme();
+			} catch (e) {
+				record(false, e);
+			}
+		}
+	</script>
+</head>
+<html>
+<body onload="run()">
+	<pre id="result">FAIL - Script did not execute</pre>
+	<iframe src="010-1.html" width="0" height="0"></iframe>
+</body>
+</html>
+
+

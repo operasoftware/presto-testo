@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<title>localStorage - null and undefined keys</title>
+<div id="result">FAIL - Script did not execute.</div>
+
+<script>
+localStorage.clear();
+var result = document.getElementById("result");
+result.innerHTML = "";
+var passed = true;
+var message = "";
+try {
+localStorage.setItem(null, "null key");
+localStorage.setItem(undefined, "undefined key");
+
+if (localStorage.getItem(null) != "null key") {
+	passed = false;
+	message += " - null key failed"
+}
+
+if (localStorage.getItem(undefined) != "undefined key") {
+	passed = false;
+	message += " - undefined key failed"
+}
+
+localStorage.removeItem(null);
+if (localStorage.getItem('null') == 'null key') {
+	passed = false;
+	message += ' - removing null failed';
+}
+
+localStorage.removeItem(undefined);
+if (localStorage.getItem('undefined') == 'undefined key') {
+	passed = false;
+	message += ' - removing undefined failed';
+}
+} catch(e) {
+	passed = false;
+	message += ' - ' + e;
+}
+result.innerHTML = (passed ? "PASS" : "FAIL") + message;
+try{top.opener.rr(passed)}catch(e){}
+</script>

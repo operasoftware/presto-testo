@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<title>localStorage</title>
+<div id="result">FAIL - Script did not execute.</div>
+
+<script>
+var result = document.getElementById("result");
+result.innerHTML = "";
+
+var ul = document.createElement("ul");
+var li = document.createElement("li");
+result.appendChild(ul);
+
+function testFeature(feature) {
+	var item = li.cloneNode(false);
+	var passed = (eval(feature) !== undefined);
+	item.innerHTML = passed ? "PASS - " + feature : "FAIL - " + feature + " is not defined."
+	ul.appendChild(item);
+}
+
+testFeature("localStorage.key");
+testFeature("localStorage.getItem");
+testFeature("localStorage.setItem");
+testFeature("localStorage.removeItem");
+testFeature("localStorage.clear");
+var passed = ul.innerHTML.indexOf('FAIL') == -1;
+try{top.opener.rr(passed)}catch(e){}
+</script>

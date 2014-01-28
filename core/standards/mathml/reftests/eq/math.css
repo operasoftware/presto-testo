@@ -1,0 +1,10 @@
+﻿math[display="block"]
+	{font-family:"Palatino Linotype", serif;
+	display:block;
+	font-size:2em;
+	line-height:1.3em;
+	white-space:nowrap;
+	text-align:left;
+	margin:1ex 1em 1ex 3em;}
+munder, munderover, mover
+	{margin:0;}

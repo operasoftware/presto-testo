@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<title>localStorage storage event for setItem()</title>
+<body>
+<div id="result">FAIL - Script did not execute.</div>
+
+<script>
+localStorage.clear();
+window.addEventListener("storage", callback, false);
+var ul = document.createElement("ul");
+var li = document.createElement("li");
+result.innerHTML = "";
+result.appendChild(ul);
+
+function callback(evt) {
+  li.innerHTML = localStorage["foo"] + ", " + evt.oldValue + ", " + evt.newValue;
+  ul.appendChild(li.cloneNode(true));
+}
+</script>
+<iframe src="007-1.html" width="0" height="0"></iframe>

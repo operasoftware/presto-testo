@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/css" href="math.css"?>
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+<mfenced open="(" close=")"><mrow><mtable>
+<mtr>
+<mtd><msub><mi>A</mi><mn>11</mn></msub></mtd>
+<mtd><msub><mi>A</mi><mn>12</mn></msub></mtd>
+<mtd><msub><mi>A</mi><mn>13</mn></msub></mtd>
+<mtd><msub><mi>A</mi><mn>14</mn></msub></mtd>
+</mtr>
+<mtr>
+<mtd><msub><mi>A</mi><mn>21</mn></msub></mtd>
+<mtd><msub><mi>A</mi><mn>22</mn></msub></mtd>
+<mtd><msub><mi>A</mi><mn>23</mn></msub></mtd>
+<mtd><msub><mi>A</mi><mn>24</mn></msub></mtd>
+</mtr>
+<mtr>
+<mtd><msub><mi>A</mi><mn>31</mn></msub></mtd>
+<mtd><msub><mi>A</mi><mn>32</mn></msub></mtd>
+<mtd><msub><mi>A</mi><mn>33</mn></msub></mtd>
+<mtd><msub><mi>A</mi><mn>34</mn></msub></mtd>
+</mtr>
+<mtr>
+<mtd><msub><mi>A</mi><mn>41</mn></msub></mtd>
+<mtd><msub><mi>A</mi><mn>42</mn></msub></mtd>
+<mtd><msub><mi>A</mi><mn>43</mn></msub></mtd>
+<mtd><msub><mi>A</mi><mn>44</mn></msub></mtd>
+</mtr>
+</mtable></mrow></mfenced>
+<mfenced open="(" close=")"><mrow><mtable>
+<mtr><mtd><msub><mi>X</mi><mn>1</mn></msub></mtd></mtr>
+<mtr><mtd><msub><mi>X</mi><mn>2</mn></msub></mtd></mtr>
+<mtr><mtd><msub><mi>X</mi><mn>3</mn></msub></mtd></mtr>
+<mtr><mtd><msub><mi>X</mi><mn>4</mn></msub></mtd></mtr>
+</mtable></mrow></mfenced>
+<mo> = </mo>
+<mfenced open="(" close=")"><mrow><mtable>
+<mtr><mtd><msub><mi>B</mi><mn>1</mn></msub></mtd></mtr>
+<mtr><mtd><msub><mi>B</mi><mn>2</mn></msub></mtd></mtr>
+<mtr><mtd><msub><mi>B</mi><mn>3</mn></msub></mtd></mtr>
+<mtr><mtd><msub><mi>B</mi><mn>4</mn></msub></mtd></mtr>
+</mtable></mrow></mfenced>
+</math>

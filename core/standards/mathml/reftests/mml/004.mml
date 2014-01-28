@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/css" href="math.css"?>
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+<mtext>Base</mtext><mo>, </mo> 
+<munder><mtext>Base</mtext><mtext>under</mtext></munder><mo>, </mo> 
+<mover><mtext>Base</mtext><mtext>over</mtext></mover><mo>, </mo> 
+<munder><mrow><munder><mtext>Base</mtext><mtext>under I</mtext></munder></mrow><mtext>under II</mtext></munder><mo>, </mo> 
+<munder><mrow><munder><mrow><munder><mtext>Base</mtext><mtext>under I</mtext></munder></mrow><mtext>under II</mtext></munder></mrow><mtext>under III</mtext></munder><mo>, </mo> 
+<munderover><mtext>Base</mtext><mtext>under</mtext><mtext>over</mtext></munderover> 
+</math>

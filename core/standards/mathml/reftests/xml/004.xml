@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html [<!ATTLIST math xmlns CDATA #FIXED "http://www.w3.org/1998/Math/MathML" display CDATA "block">]>
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+	<title>MathML: Under and Over Scripts</title>
+	<link rel="stylesheet" type="text/css" href="math.css"/>
+	</head>
+<body>
+<div>
+<math>
+<mo largeop="true">⋃</mo><mo>, </mo>
+<munder><mo largeop="true">⋃</mo><mrow><mi>n</mi><mo> > </mo><mi>m</mi><mo> > </mo><mi>k</mi><mo> > </mo><mn>0</mn></mrow></munder><mo>, </mo>
+<munder><mrow><munder><mo largeop="true">⋃</mo><mrow><mi>n</mi><mo> > </mo><mi>m</mi><mo> > </mo><mi>k</mi></mrow></munder></mrow><mrow><mi>k</mi><mo> > </mo><mn>0</mn></mrow></munder><mo>, </mo>
+<munder><mrow><munder><mrow><munder><mo largeop="true">⋃</mo><mrow><mi>n</mi><mo> > </mo><mi>m</mi></mrow></munder></mrow><mrow><mi>m</mi><mo> > </mo><mi>k</mi></mrow></munder></mrow><mrow><mi>k</mi><mo> > </mo><mn>0</mn></mrow></munder><mo>, </mo>
+<munder><mrow><munder><mrow><munder><mrow><munder><mo largeop="true">⋃</mo><mrow><mi>n</mi><mo> > </mo><mi>m</mi></mrow></munder></mrow><mrow><mi>m</mi><mo> > </mo><mi>k</mi></mrow></munder></mrow><mrow><mi>k</mi><mo> > </mo><mn>0</mn></mrow></munder></mrow><mrow><mi>n</mi><mo>, </mo><mi>m</mi><mo>, </mo><mi>k</mi></mrow></munder>
+</math>
+<math>
+<mo largeop="true">⋃</mo><mo>, </mo>
+<munderover><mo largeop="true">⋃</mo><mrow><mi>k</mi><mo> = </mo><mn>1</mn></mrow><mrow><mn>2</mn><mi>s</mi></mrow></munderover><mo>, </mo>
+<munderover><mo largeop="true">⋃</mo><mrow><mi>m</mi><mo>, </mo><mi>n</mi><mo> = </mo><mn>1</mn></mrow><mrow><mn>2</mn><mi>s</mi></mrow></munderover><mo>, </mo>
+<munderover><mrow><munder><mo largeop="true">⋃</mo><mrow><mi>m</mi><mo> = </mo><mn>1</mn></mrow></munder></mrow><mrow><mi>n</mi><mo> = </mo><mn>1</mn></mrow><mrow><mn>2</mn><mi>s</mi></mrow></munderover><mo>, </mo>
+<munderover><mrow><munder><mrow><munder><mo largeop="true">⋃</mo><mrow><mi>k</mi><mo> = </mo><mn>1</mn></mrow></munder></mrow><mrow><mi>m</mi><mo> = </mo><mn>1</mn></mrow></munder></mrow><mrow><mi>n</mi><mo> = </mo><mn>1</mn></mrow><mrow><mn>2</mn><mi>s</mi></mrow></munderover><mo>, </mo>
+<munderover><mrow><munder><mrow><munder><mrow><munder><mo largeop="true">⋃</mo><mrow><mi>k</mi><mo> = </mo><mn>1</mn></mrow></munder></mrow><mrow><mi>m</mi><mo> = </mo><mn>1</mn></mrow></munder></mrow><mrow><mi>n</mi><mo> = </mo><mn>1</mn></mrow></munder></mrow><mtext>enough</mtext><mrow><mn>2</mn><mi>s</mi></mrow></munderover>
+</math>
+<math>
+<mtext>Base</mtext><mo>, </mo> 
+<munder><mtext>Base</mtext><mtext>under</mtext></munder><mo>, </mo> 
+<mover><mtext>Base</mtext><mtext>over</mtext></mover><mo>, </mo> 
+<munder><mrow><munder><mtext>Base</mtext><mtext>under I</mtext></munder></mrow><mtext>under II</mtext></munder><mo>, </mo> 
+<munder><mrow><munder><mrow><munder><mtext>Base</mtext><mtext>under I</mtext></munder></mrow><mtext>under II</mtext></munder></mrow><mtext>under III</mtext></munder><mo>, </mo> 
+<munderover><mtext>Base</mtext><mtext>under</mtext><mtext>over</mtext></munderover> 
+</math>
+<math>
+<mover><mrow><mover>
+<mrow><mtext>Expression</mtext></mrow>
+<mo fence="true">⎴</mo>
+</mover></mrow><mtext>over brace</mtext></mover>
+<munder><mrow><munder>
+<mrow><mtext>Expression</mtext></mrow>
+<mo fence="true">⎵</mo>
+</munder></mrow><mtext>under brace</mtext></munder>
+</math>
+<math>
+<munder>
+<mrow>
+<munder>
+<mrow>
+	<mover>
+	<mrow>
+	<mover>
+	<mtext>Expression</mtext>
+	<mo fence="true">⎴</mo>
+	</mover>
+	</mrow>
+	<mtext>over brace</mtext>
+	</mover>
+	<mover>
+	<mrow>
+	<mover>
+	<mtext>Expression</mtext>
+	<mo fence="true">⎴</mo>
+	</mover>
+	</mrow>
+	<mtext>over brace</mtext>
+	</mover>
+</mrow>
+<mo fence="true">⎵</mo>
+</munder>
+</mrow>
+<mtext>under brace</mtext>
+</munder>
+</math>
+</div>
+</body>
+</html>

@@ -1,0 +1,172 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html [<!ATTLIST math xmlns CDATA #FIXED "http://www.w3.org/1998/Math/MathML" display CDATA "block">]>
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+	<title>MathML: Fences and Matrices</title>
+	<link rel="stylesheet" type="text/css" href="math.css"/>
+	</head>
+<body>
+<div>
+<math>
+<mi>F</mi><mo fence="true">(</mo><mi>x</mi><mo fence="true">)</mo><mo> = </mo>
+<mfenced open="{" close="">
+<mrow><mtable>
+<mtr><mtd><msup><mi>sin</mi><mn>4</mn></msup><mo fence="true">(</mo><mn>12</mn><msup><mi>x</mi><mn>2</mn></msup><mo fence="true">)</mo></mtd>
+<mtd><mtext>if </mtext><mi>x</mi><mo> > </mo><mn>0</mn></mtd></mtr>
+<mtr><mtd><msup><mi>sin</mi><mn>3</mn></msup><mo fence="true">(</mo><mi>x</mi><mo fence="true">)</mo></mtd><mtd><mtext>otherwise</mtext></mtd></mtr>
+</mtable></mrow>
+</mfenced>
+</math>
+
+<math>
+<mi>G</mi><mo fence="true">(</mo><mi>x</mi><mo fence="true">)</mo><mo> = </mo>
+<mrow><mfenced open="{" close="">
+<mrow><mtable>
+<mtr><mtd><mn>1</mn><mo> + </mo><mrow><msup><mi>x</mi><mn>2</mn></msup></mrow></mtd>
+<mtd><mtext>if </mtext><mi>x</mi><mo> > </mo><mn>1</mn></mtd></mtr>
+<mtr><mtd><mn>1</mn><mo> + </mo><mrow><msup><mi>x</mi><mn>4</mn></msup></mrow></mtd>
+<mtd><mtext>if </mtext><mi>x</mi><mo> &lt; </mo><mn>1</mn></mtd></mtr>
+<mtr><mtd><mn>1</mn><mo> + </mo><mrow><msup><mi>x</mi><mn>3</mn></msup></mrow></mtd><mtd><mtext>otherwise</mtext></mtd></mtr>
+</mtable></mrow>
+</mfenced></mrow>
+</math>
+</div>
+
+<div>
+<math>
+<mfenced open="(" close=")"><mrow><mtable>
+<mtr>
+<mtd><msub><mi>A</mi><mn>11</mn></msub></mtd>
+<mtd><msub><mi>A</mi><mn>12</mn></msub></mtd>
+<mtd><msub><mi>A</mi><mn>13</mn></msub></mtd>
+<mtd><msub><mi>A</mi><mn>14</mn></msub></mtd>
+</mtr>
+<mtr>
+<mtd><msub><mi>A</mi><mn>21</mn></msub></mtd>
+<mtd><msub><mi>A</mi><mn>22</mn></msub></mtd>
+<mtd><msub><mi>A</mi><mn>23</mn></msub></mtd>
+<mtd><msub><mi>A</mi><mn>24</mn></msub></mtd>
+</mtr>
+<mtr>
+<mtd><msub><mi>A</mi><mn>31</mn></msub></mtd>
+<mtd><msub><mi>A</mi><mn>32</mn></msub></mtd>
+<mtd><msub><mi>A</mi><mn>33</mn></msub></mtd>
+<mtd><msub><mi>A</mi><mn>34</mn></msub></mtd>
+</mtr>
+<mtr>
+<mtd><msub><mi>A</mi><mn>41</mn></msub></mtd>
+<mtd><msub><mi>A</mi><mn>42</mn></msub></mtd>
+<mtd><msub><mi>A</mi><mn>43</mn></msub></mtd>
+<mtd><msub><mi>A</mi><mn>44</mn></msub></mtd>
+</mtr>
+</mtable></mrow></mfenced>
+<mfenced open="(" close=")"><mrow><mtable>
+<mtr><mtd><msub><mi>X</mi><mn>1</mn></msub></mtd></mtr>
+<mtr><mtd><msub><mi>X</mi><mn>2</mn></msub></mtd></mtr>
+<mtr><mtd><msub><mi>X</mi><mn>3</mn></msub></mtd></mtr>
+<mtr><mtd><msub><mi>X</mi><mn>4</mn></msub></mtd></mtr>
+</mtable></mrow></mfenced>
+<mo> = </mo>
+<mfenced open="(" close=")"><mrow><mtable>
+<mtr><mtd><msub><mi>B</mi><mn>1</mn></msub></mtd></mtr>
+<mtr><mtd><msub><mi>B</mi><mn>2</mn></msub></mtd></mtr>
+<mtr><mtd><msub><mi>B</mi><mn>3</mn></msub></mtd></mtr>
+<mtr><mtd><msub><mi>B</mi><mn>4</mn></msub></mtd></mtr>
+</mtable></mrow></mfenced>
+</math>
+
+<math>
+<mo>det </mo>
+<mfenced open="|" close="|"><mrow><mtable>
+<mtr>
+<mtd><mi>A</mi><mo> + </mo><mi>B</mi></mtd>
+<mtd><mi>C</mi><mo> + </mo><mi>D</mi><mo> + </mo><mi>E</mi></mtd>
+<mtd><mi>F</mi></mtd>
+</mtr>
+<mtr>
+<mtd><mi>G</mi></mtd>
+<mtd><mi>H</mi><mo> + </mo><mi>I</mi></mtd>
+<mtd><mi>J</mi><mo> + </mo><mi>K</mi></mtd>
+</mtr>
+<mtr>
+<mtd><mi>L</mi><mo> + </mo><mi>M</mi><mo> + </mo><mi>N</mi></mtd>
+<mtd><mi>O</mi><mo> + </mo><mi>P</mi></mtd>
+<mtd><mi>Q</mi></mtd>
+</mtr>
+</mtable></mrow></mfenced>
+</math>
+<math>
+<mfenced open="(" close=")"><mrow><mtable>
+<mtr>
+<mtd>
+<mfenced open="(" close=")"><mrow><mtable>
+<mtr>
+<mtd><mi>A</mi></mtd>
+<mtd><mi>B</mi></mtd>
+</mtr>
+<mtr>
+<mtd><mi>C</mi></mtd>
+<mtd><mi>D</mi></mtd>
+</mtr>
+</mtable></mrow></mfenced>
+</mtd>
+<mtd><mn>0</mn></mtd>
+</mtr>
+<mtr>
+<mtd><mfenced open="(" close=")"><mrow><mtable>
+<mtr>
+<mtd><mi>E</mi></mtd>
+<mtd><mn>0</mn></mtd>
+</mtr>
+<mtr>
+<mtd><mn>0</mn></mtd>
+<mtd><mi>F</mi></mtd>
+</mtr>
+<mtr>
+<mtd><mi>G</mi></mtd>
+<mtd><mn>0</mn></mtd>
+</mtr>
+<mtr>
+<mtd><mn>0</mn></mtd>
+<mtd><mi>H</mi></mtd>
+</mtr>
+</mtable></mrow></mfenced>
+</mtd>
+<mtd>
+<mfenced open="(" close=")"><mrow><mtable>
+<mtr>
+<mtd><mn>0</mn></mtd>
+<mtd><mfenced open="(" close=")"><mrow><mtable>
+<mtr>
+<mtd><mi>K</mi></mtd>
+<mtd><mi>L</mi></mtd>
+</mtr>
+<mtr>
+<mtd><mi>M</mi></mtd>
+<mtd><mi>N</mi></mtd>
+</mtr>
+</mtable></mrow></mfenced>
+</mtd>
+</mtr>
+<mtr>
+<mtd><mfenced open="(" close=")"><mrow><mtable>
+<mtr>
+<mtd><mi>P</mi></mtd>
+<mtd><mi>Q</mi></mtd>
+</mtr>
+<mtr>
+<mtd><mi>R</mi></mtd>
+<mtd><mi>S</mi></mtd>
+</mtr>
+</mtable></mrow></mfenced>
+</mtd>
+<mtd><mn>0</mn></mtd>
+</mtr>
+</mtable></mrow></mfenced>
+</mtd>
+</mtr>
+</mtable></mrow></mfenced>
+</math>
+</div>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<head>
+	<title>Local Storage - Read value set in another frame</title>
+	<script>
+		function run() {
+			var result = document.getElementById("result");
+			result.innerHTML = "";
+
+			function record(pass, msg) {
+				result.innerHTML += (pass ? "PASS" : "FAIL") + (msg ? " - " + msg : "") + "\n";
+				try{top.opener.rr(pass);}catch(e){}
+			}
+
+			if (!window.localStorage) {
+				record(false, "No localStorage support");
+				return;
+			}
+
+			try {
+				if (localStorage['parent'] !== 'A') {
+					record(false);
+					return;
+				}
+			} catch (e) {
+				record(false, e);
+			}
+			record(true);
+		}
+	</script>
+</head>
+<html>
+<body onload="run()">
+	<pre id="result">FAIL - Script did not execute</pre>
+</body>
+</html>
+

@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/css" href="math.css"?>
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+<mi>A</mi><mo> + </mo>
+<mfrac>
+<mi>B</mi>
+<mi>C</mi>
+</mfrac><mo> + </mo>
+<mfrac>
+<mi>B</mi>
+<mrow><mi>C</mi><mo> + </mo>
+<mfrac>
+<mi>D</mi>
+<mi>E</mi>
+</mfrac>
+</mrow>
+</mfrac><mo> + </mo>
+<mfrac>
+<mi>B</mi>
+<mrow><mi>C</mi><mo> + </mo>
+<mfrac>
+<mi>D</mi>
+<mrow><mi>E</mi><mo> + </mo>
+<mfrac>
+<mi>F</mi>
+<mi>G</mi>
+</mfrac></mrow>
+</mfrac></mrow>
+</mfrac>
+</math>

@@ -1,0 +1,47 @@
+Content-Type: multipart/related; boundary=--boundary
+MIME-Version: 1.0
+
+----boundary
+Content-Disposition: inline; filename=image.html
+Content-Type: text/html
+Content-Location: image.html
+Content-Transfer-Encoding: 8bit
+
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<title>HTML document with PNG image</title>
+<link rel="stylesheet" type="text/css" href="pass.css">
+</head>
+<body>
+<p>FAIL</p>
+</body>
+</html>
+
+----boundary
+Content-Disposition: inline; filename=pass.css
+Content-Type: text/css
+Content-Location: pass.css
+Content-Transfer-Encoding: 8bit
+
+p
+	{display:none}
+body
+	{background-image:url('pass.png');
+	background-repeat:no-repeat;
+	height:50px;}
+
+----boundary
+Content-Disposition: inline; filename=pass.png
+Content-Type: image/png
+Content-Location: pass.png
+Content-Transfer-Encoding: Base64
+
+iVBORw0KGgoAAAANSUhEUgAAAC0AAAAUCAYAAAAZb7T/AAAA5UlEQVR42u2W0Q3D
+IAxEmS4DeYLOwS6MwigVSatEtejZHCFSlYoPPiAX++GcrYRSSrjbuh3whP4ZdHiE
+tK0nWIsZ4KMRRxNBzHhaB6CzEchLkuv3QCFEnUkdk9VR0DogOM/7s4i+yGtvXfi4
+dI+uF/oLSiUSK2kLpld3BXTU1bcsctinCULqeqAz8PrbGsB/tUWkbi4DmtKxjeg1
+iIBqJaeaiZlKLR018oygdMOO2AHpKBhnNltLiBhsrjQMbXkXWWTXylW6EWhXoy2i
+LpgMGy49ulPQzDytNWrf6hNKN//yJvQ/Qq9x6xgS6y4vnwAAAABJRU5ErkJggg==
+
+----boundary--

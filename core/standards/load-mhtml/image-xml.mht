@@ -1,0 +1,34 @@
+Content-Type: multipart/related; boundary=--boundary
+MIME-Version: 1.0
+
+----boundary
+Content-Disposition: inline; filename=image.xml
+Content-Type: application/xml
+Content-Location: image.xml
+Content-Transfer-Encoding: 8bit
+
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>XHTML document with PNG image</title>
+</head>
+<body>
+<p><img alt="FAIL" src="pass.png"/></p>
+</body>
+</html>
+
+----boundary
+Content-Disposition: inline; filename=pass.png
+Content-Type: image/png
+Content-Location: pass.png
+Content-Transfer-Encoding: Base64
+
+iVBORw0KGgoAAAANSUhEUgAAAC0AAAAUCAYAAAAZb7T/AAAA5UlEQVR42u2W0Q3D
+IAxEmS4DeYLOwS6MwigVSatEtejZHCFSlYoPPiAX++GcrYRSSrjbuh3whP4ZdHiE
+tK0nWIsZ4KMRRxNBzHhaB6CzEchLkuv3QCFEnUkdk9VR0DogOM/7s4i+yGtvXfi4
+dI+uF/oLSiUSK2kLpld3BXTU1bcsctinCULqeqAz8PrbGsB/tUWkbi4DmtKxjeg1
+iIBqJaeaiZlKLR018oygdMOO2AHpKBhnNltLiBhsrjQMbXkXWWTXylW6EWhXoy2i
+LpgMGy49ulPQzDytNWrf6hNKN//yJvQ/Qq9x6xgS6y4vnwAAAABJRU5ErkJggg==
+
+----boundary--

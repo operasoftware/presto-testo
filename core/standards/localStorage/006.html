@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<title>localStorage storage event for setItem()</title>
+<body>
+<div id="result">FAIL - Script did not execute.</div>
+
+<script>
+var result = document.getElementById("result");
+var passed = false;
+var timeout;
+
+function callback(evt) {
+/*
+	interface StorageEvent : Event {
+	  readonly attribute DOMString key;
+	  readonly attribute DOMString oldValue;
+	  readonly attribute DOMString newValue;
+	  readonly attribute DOMString url;
+	  readonly attribute WindowProxy source;
+	  readonly attribute Storage storageArea;
+	};
+*/
+	
+	var test = {};
+	test["key"] = (evt.key == "test");
+	test["oldValue"] = (evt.oldValue == null);
+	test["newValue"] = (evt.newValue == "value");
+	test["url"] = (evt.url == window.frames[0].location.href);
+	test["source"] = (evt.source == window.frames[0]);
+	test["storageArea"] = (evt.storageArea.getItem("test") == "value");
+
+	var ul = document.createElement("ul");
+	var li = document.createElement("li");
+
+	for (key in test) {
+		li.innerHTML = key + ": " + (test["key"] ? "PASS" : "FAIL")
+		ul.appendChild(li.cloneNode(true));
+	}
+
+	result.innerHTML = "";
+	result.appendChild(ul);
+	passed = result.innerHTML.indexOf('FAIL') == -1;
+	clearTimeout(timeout);
+	end();
+}
+
+function end() {
+	if (end.done) {
+		return;
+	}
+	end.done = true;
+	try{top.opener.rr(passed)}catch(e){}
+}
+
+localStorage.clear();
+window.addEventListener("storage", callback, false);
+result.innerHTML = "FAIL - storage event was not fired";
+</script>
+<iframe src="006-1.html" onload="timeout = setTimeout(function() { end() }, 200);"></iframe>

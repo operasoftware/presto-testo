@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+	<title>MathML maction element</title>
+	<script type="application/ecmascript">
+	function start()
+		{var s = document.defaultView.getComputedStyle(document.getElementsByTagName('maction')[0],null);
+		opera.generateMouseMove(10 + parseInt(s.getPropertyValue('left')),10 + parseInt(s.getPropertyValue('top')));}
+	</script>
+</head>
+<body onload="start()">
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+<mfrac>
+<mrow>
+	<maction actiontype="tooltip">
+		<mn>43867</mn>
+		<mtext>Mouse pointer is over numerator</mtext>
+	</maction>
+</mrow>
+<mrow>
+	<maction actiontype="tooltip">
+		<mn>798</mn>
+		<mtext>Mouse pointer is over denominator</mtext>
+	</maction>
+</mrow>
+</mfrac>
+</math>
+<p>Above you should see fraction and tooltip reflecting position of pointer.</p>
+</body>
+</html>

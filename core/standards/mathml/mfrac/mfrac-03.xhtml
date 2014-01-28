@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+	<title>MathML mfrac element</title>
+	</head>
+<body>
+<p>Formatting of right hand side of equation should be identical to formatting of left hand side</p>
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+<mfrac>
+	<mi>A</mi>
+	<mrow>
+		<mi>B</mi>
+		<mo>+</mo>
+		<mfrac>
+			<mi>C</mi>
+			<mrow>
+				<mi>D</mi>
+				<mo>+</mo>
+				<mfrac>
+					<mi>E</mi>
+					<mi>F</mi>
+				</mfrac>
+			</mrow>
+		</mfrac>
+	</mrow>
+</mfrac>
+<mo>=</mo>
+<mfrac>
+	<mrow><mover><mi>A</mi><mphantom><mn>0</mn></mphantom></mover></mrow>
+	<mrow>
+		<mi>B</mi>
+		<mo>+</mo>
+		<mfrac>
+			<mi>C</mi>
+			<mrow>
+				<mi>D</mi>
+				<mo>+</mo>
+				<mfrac>
+					<mi>E</mi>
+					<mrow><munder><mi>F</mi><mphantom><mn>0</mn></mphantom></munder></mrow>
+				</mfrac>
+			</mrow>
+		</mfrac>
+	</mrow>
+</mfrac>
+</math>
+</body>
+</html>

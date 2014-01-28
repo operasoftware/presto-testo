@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+	<title>MathML munder element</title>
+	</head>
+<body>
+<p>Formatting of right hand side of equation should be identical to formatting of left hand side</p>
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+<munder>
+<mi mathvariant="normal">BASE</mi>
+<mi mathvariant="normal">under script</mi>
+</munder>
+<mo>=</mo>
+<munder>
+<mrow>
+<munder>
+<mrow>
+<munder>
+<mi mathvariant="normal">BASE</mi>
+<mi mathvariant="normal">under script</mi>
+</munder>
+</mrow>
+<mphantom><mi mathvariant="normal">fail</mi></mphantom>
+</munder>
+</mrow>
+<mphantom><mi mathvariant="normal">fail</mi></mphantom>
+</munder>
+</math>
+</body>
+</html>

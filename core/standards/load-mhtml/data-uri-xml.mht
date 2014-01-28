@@ -1,0 +1,30 @@
+Content-Type: multipart/related; boundary=--boundary
+MIME-Version: 1.0
+
+----boundary
+Content-Disposition: inline; filename=data.xml
+Content-Type: application/xml
+Content-Location: data.xml
+Content-Transfer-Encoding: 8bit
+
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/css" href="pass.css"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>XHTML document with data URI image in external stylesheet</title>
+</head>
+<body>
+<p>FAIL</p>
+</body>
+</html>
+
+----boundary
+Content-Disposition: inline; filename=pass.css
+Content-Type: text/css
+Content-Location: pass.css
+Content-Transfer-Encoding: 8bit
+
+p {content:url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC0AAAAUCAYAAAAZb7T%2FAAAA5UlEQVR42u2W0Q3DIAxEmS4DeYLOwS6MwigVSatEtejZHCFSlYoPPiAX%2B%2BGcrYRSSrjbuh3whP4ZdHiEtK0nWIsZ4KMRRxNBzHhaB6CzEchLkuv3QCFEnUkdk9VR0DogOM%2F7s4i%2ByGtvXfi4dI%2BuF%2FoLSiUSK2kLpld3BXTU1bcsctinCULqeqAz8PrbGsB%2FtUWkbi4DmtKxjeg1iIBqJaeaiZlKLR018oygdMOO2AHpKBhnNltLiBhsrjQMbXkXWWTXylW6EWhXoy2iLpgMGy49ulPQzDytNWrf6hNKN%2F%2FyJvQ%2FQq9x6xgS6y4vnwAAAABJRU5ErkJggg%3D%3D');}
+
+----boundary--

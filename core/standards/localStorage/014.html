@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<head>
+	<title>Local Storage - Read value in iframe</title>
+	<script>
+		function run() {
+			var result = document.getElementById("result");
+			result.innerHTML = "";
+
+			function record(pass, msg) {
+				result.innerHTML += (pass ? "PASS" : "FAIL") + (msg ? " - " + msg : "") + "\n";
+				try{top.opener.rr(pass);}catch(e){}
+			}
+
+			if (!window.localStorage) {
+				record(false, "No localStorage support");
+				return;
+			}
+
+			try {
+				localStorage.clear();
+				localStorage['parent'] = 'A';
+			} catch (e) {
+				record(false, e);
+			}
+		}
+	</script>
+</head>
+<html>
+<body>
+	<pre id="result">FAIL - Script did not execute</pre>
+	<script>run()</script>
+	<iframe src="014b.html"></iframe>
+</body>
+</html>

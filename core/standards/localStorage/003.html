@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<title>localStorage - NUL Character in key</title>
+<div id="result">FAIL - Script did not execute.</div>
+
+<script>
+localStorage.clear();
+var result = document.getElementById("result");
+result.innerHTML = "";
+
+var keys = {
+"x\u0000y": "a",
+"x": "b",
+};
+
+for (key in keys) {
+	localStorage.setItem(key, keys[key]);
+}
+
+var passed = true;
+for (key in keys) {
+	var value = localStorage.getItem(key);
+	if (value != keys[key]) {
+		passed = false;
+	}
+}
+
+result.innerHTML = passed ? "PASS" : "FAIL";
+try{top.opener.rr(passed)}catch(e){}
+</script>

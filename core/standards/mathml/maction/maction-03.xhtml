@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+	<title>MathML maction element</title>
+	<script type="application/ecmascript">
+	function start()
+		{var s = document.defaultView.getComputedStyle(document.getElementsByTagName('maction')[0],null);
+		opera.generateMouseMove(10 + parseInt(s.getPropertyValue('left')),10 + parseInt(s.getPropertyValue('top')));}
+	</script>
+</head>
+<body onload="start()">
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+<maction actiontype="tooltip">
+	<mrow>
+		<msup>
+			<mrow>
+				<mfenced>
+					<mrow>
+						<mtable>
+							<mtr><mtd><mn>0</mn></mtd><mtd><mn>1</mn></mtd></mtr>
+							<mtr><mtd><mn>2</mn></mtd><mtd><mn>3</mn></mtd></mtr>
+						</mtable>
+					</mrow>
+				</mfenced>
+			</mrow>
+			<mo>T</mo>
+		</msup>
+	</mrow>
+	<mrow>
+		<mfenced>
+			<mrow>
+				<mtable>
+					<mtr><mtd><mn>0</mn></mtd><mtd><mn>2</mn></mtd></mtr>
+					<mtr><mtd><mn>1</mn></mtd><mtd><mn>3</mn></mtd></mtr>
+				</mtable>
+			</mrow>
+		</mfenced>
+	</mrow>
+</maction>
+</math>
+<p>Above you should see matrix and tooltip with the same matrix being transposed explicitly</p>
+
+</body>
+</html>

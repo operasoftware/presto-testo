@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/css" href="math.css"?>
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+<munder>
+<mrow>
+<munder>
+<mrow>
+	<mover>
+	<mrow>
+	<mover>
+	<mtext>Expression</mtext>
+	<mo fence="true">⎴</mo>
+	</mover>
+	</mrow>
+	<mtext>over brace</mtext>
+	</mover>
+	<mover>
+	<mrow>
+	<mover>
+	<mtext>Expression</mtext>
+	<mo fence="true">⎴</mo>
+	</mover>
+	</mrow>
+	<mtext>over brace</mtext>
+	</mover>
+</mrow>
+<mo fence="true">⎵</mo>
+</munder>
+</mrow>
+<mtext>under brace</mtext>
+</munder>
+</math>

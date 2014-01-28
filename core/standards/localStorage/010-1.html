@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<title>localStorage storage event for setItem()</title>
+<body>
+<script>
+function testme(){
+	if(localStorage['a'] == 'A'){
+		localStorage.setItem("a", "AA");
+	}else{
+		parent.record( false, 'localStorage does not contain the expected key' );
+	}
+}
+</script>

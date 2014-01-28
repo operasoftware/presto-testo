@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<title>localStorage - Disk Quota</title>
+<p id="result">FAIL - Script did not execute</p>
+<script>
+document.getElementById("result");
+result.innerHTML = "Please wait, this could take a while... "
+var lineCount = document.createTextNode("0");
+result.appendChild(lineCount);
+var err = "";
+try {
+	var mbString;
+	var kbString = "A really long string just to take up a lot of space with some random junk at the end 90l2nfoioenrfw3hf9shkjsh OSu3902rfjlewhac98seaortw4nhrsa9fdsiohl3nfdsh90joijw890injdshfldshaioya894ihforav89rhoihziugy89woinhzodsadshdsofod90l2nfoioenrfw3hf9shkjsh OSu3902rfjlewhac98seaortw4nhrsa9fdsiohl3nfdsh90joijw890injdshfldshaioya894ihforav89rhoihziugy89woinhzodsadshdsofod90l2nfoioenrfw3hf9shkjsh OSu3902rfjlewhac98seaortw4nhrsa9fdsiohl3nfdsh90joijw890injdshfldshaioya894ihforav89rhoihziugy89woinhzodsadshdsofod90l2nfoioenrfw3hf9shkjsh OSu3902rfjlewhac98seaortw4nhrsa9fdsiohl3nfdsh90joijw890injdshfldshaioya894ihforav89rhoihziugy89woinhzodsadshdsofod90l2nfoioenrfw3hf9shkjsh OSu3902rfjlewhac98seaortw4nhrsa9fdsiohl3nfdsh90joijw890injdshfldshaioya894ihforav89rhoihziugy89woinhzodsadshdsofod90l2nfoioenrfw3hf9shkjsh OSu3902rfjlewhac98seaortw4nhrsa9fdsiohl3nfdsh90joijw890injdshfldshaioya894ihforav89rhoihziugy89woinhzodsadshdsofod90l2nfoioenrfw3hf9shkjshfdslafoaf,dshalds alfafdlskafdklsjfdlksjidajfeorks dsjafaf8923fhsouf98023dsffj329";
+	var i = 0;
+
+	while (i++ <= 1024) {
+		mbString += kbString;
+	}
+
+	i = 0
+	// Keep storing data until the quota is full, but don't let it go on forever
+	while (++i < 10) {
+		lineCount.data = "(" + i + "MiB)";
+		localStorage["Item " + i] = mbString;
+	}
+	err = "No Exception thrown"
+	passed = false;
+} catch (e) {
+	passed = (e.code == DOMException.QUOTA_EXCEEDED_ERR)
+	err = e.toString()
+}
+localStorage.clear();
+result.innerHTML = passed ? "PASS" : "FAIL - Expected QUOTA_EXCEEDED_ERR, got: " + err
+try{top.opener.rr(passed)}catch(e){}
+</script>

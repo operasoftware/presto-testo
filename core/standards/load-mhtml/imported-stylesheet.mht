@@ -1,0 +1,42 @@
+Content-Type: multipart/related; boundary=--boundary
+MIME-Version: 1.0
+
+----boundary
+Content-Disposition: inline; filename=imported-stylesheet.html
+Content-Type: text/html
+Content-Location: imported-stylesheet.html
+Content-Transfer-Encoding: 8bit
+
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<title>HTML document with external stylesheet</title>
+<link rel="stylesheet" type="text/css" href="import.css">
+<style type="text/css">
+.pass {display:none}
+</style>
+</head>
+<body>
+<p class="pass">PASS</p>
+<p class="fail">FAIL</p>
+</body>
+</html>
+
+----boundary
+Content-Disposition: inline; filename=pass.css
+Content-Type: text/css;
+Content-Location: pass.css
+Content-Transfer-Encoding: 8bit
+
+p.pass {display:block}
+p.fail {display:none}
+
+----boundary
+Content-Disposition: inline;
+Content-Type: text/css
+Content-Location: import.css
+Content-Transfer-Encoding: 8bit
+
+@import url('pass.css');
+
+----boundary--
