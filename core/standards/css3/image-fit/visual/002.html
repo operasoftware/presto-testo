@@ -1,0 +1,13 @@
+<!doctype html>
+<title>object-fit:contain (PNG)</title>
+<style>
+img, embed, input, object, video { border:thin solid; width:39px; height:39px; -o-object-position:50% 50% }
+img, embed, input, object { -o-object-fit:contain }
+</style>
+<p>There should be 5 identical images below:
+<p><img src="../support/opera.png"> (img)
+<p><embed src="../support/opera.png"> (embed)
+<p><input type="image" src="../support/opera.png"> (input type=image)
+<p><object data="../support/opera.png">FAIL: object not supported</object> (object)
+<p><video poster="../support/opera.png">FAIL: video not supported</video> (video poster)
+

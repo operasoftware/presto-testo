@@ -1,0 +1,6 @@
+
+Automatically generated tests in this testsuite are based on the output created by Allpairs.
+
+Allpairs (http://www.satisfice.com/tools/pairs.zip) is a tool written by James Bach and distributed under GNU General Public License that creates tests that pair each value of each of the variables with each value of each other variable at least once. As a result, it will find a reasonably small set of test cases to satisfy that coverage standard.
+
+'datafile' contains the variables that were input to Allpairs and the output can be found in 'gen_tests.txt'. For video tests overflow:visible is not currently supported, hence 'datafile_v' is used to create 'gen_tests_v.txt'. The source code of Allpairs is included in 'pairs.zip'.

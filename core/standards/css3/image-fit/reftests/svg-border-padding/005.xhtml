@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>border and padding on &lt;svg> no viewbox</title>
+<link rel="stylesheet" href="../../support/reftests.css"/>
+<style>
+ #test > svg {
+	border: 20px dashed maroon;
+	height: 150px;
+	overflow: visible;
+	padding: 30px;
+	width: 200px;
+	box-sizing: border-box;
+ }
+</style>
+</head>
+<body>
+<div id="test">
+ <svg xmlns="http://www.w3.org/2000/svg" width="200" height="200">
+  <circle r="100" cy="100" cx="100"/>
+ </svg>
+</div>
+</body>
+</html>

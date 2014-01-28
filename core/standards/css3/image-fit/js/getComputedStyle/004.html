@@ -1,0 +1,17 @@
+<!doctype html>
+<title>getComputedStyle, video playing</title>
+<script src="/resources/testharness.js"></script>
+<script src="/resources/testharnessreport.js"></script>
+<video poster=../../support/opera.png src=../../support/240x160.ogv></video>
+<script>
+var e = document.body.firstChild;
+test(function() {
+  e.play();
+  var vals = ['none', 'fill', 'cover', 'contain', 'auto'];
+  var expected = ['none', 'fill', 'cover', 'contain', 'auto'];
+  for (var i = 0; i < vals.length; ++i) {
+    e.style.OObjectFit = vals[i];
+    assert_equals(getComputedStyle(e, '').OObjectFit, expected[i], vals[i]);
+  }
+}, e, 'canplay', 3000);
+</script>

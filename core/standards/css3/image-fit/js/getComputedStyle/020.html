@@ -1,0 +1,11 @@
+<!doctype html>
+<title>getComputedStyle, img SVG with synthesized viewbox</title>
+<script src="/resources/testharness.js"></script>
+<script src="/resources/testharnessreport.js"></script>
+<img style='-o-object-fit: auto' src=../../support/circle-viewbox-meet.svg>
+<script>
+test(function() {
+  var e = document.body.firstChild;
+  assert_equals(getComputedStyle(e, '').OObjectFit, 'auto');
+});
+</script>

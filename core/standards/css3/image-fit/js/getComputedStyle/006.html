@@ -1,0 +1,16 @@
+<!doctype html>
+<title>getComputedStyle, embed SVG</title>
+<script src="/resources/testharness.js"></script>
+<script src="/resources/testharnessreport.js"></script>
+<embed src=../../support/circle--.svg>
+<script>
+test(function() {
+  var e = document.body.firstChild;
+  var vals = ['none', 'fill', 'cover', 'contain', 'auto'];
+  var expected = ['none', 'fill', 'cover', 'contain', 'auto'];
+  for (var i = 0; i < vals.length; ++i) {
+    e.style.OObjectFit = vals[i];
+    assert_equals(getComputedStyle(e, '').OObjectFit, expected[i], vals[i]);
+  }
+}, window, 'load', 1000);
+</script>

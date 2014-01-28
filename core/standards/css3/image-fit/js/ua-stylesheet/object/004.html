@@ -1,0 +1,17 @@
+<!doctype html>
+<title>object default style, video</title>
+<script src="/resources/testharness.js"></script>
+<script src="/resources/testharnessreport.js"></script>
+<object data=../../support/240x160.ogv></object>
+<script>
+var t = async_test('load', {timeout:2000});
+on_event(window, 'load', function(){ t.step(function() {
+  var e = document.body.firstChild;
+  assert_equals(getComputedStyle(e, '').OObjectFit, 'auto'); // initial value is auto but will be contain when we implement video in object
+  assert_equals(getComputedStyle(e, '').OObjectPosition, '50% 50%');
+  t.done();
+}); });
+</script>
+
+
+

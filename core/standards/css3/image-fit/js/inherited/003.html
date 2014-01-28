@@ -1,0 +1,12 @@
+<!doctype html>
+<title>'inherit' keyword for object-fit</title>
+<script src="/resources/testharness.js"></script>
+<script src="/resources/testharnessreport.js"></script>
+<div style='-o-object-fit:contain'><div style='-o-object-fit:inherit'></div></div>
+<script>
+test(function() {
+  var e = document.body.firstChild.firstChild;
+  assert_equals(getComputedStyle(e, '').OObjectFit, 'contain');
+  assert_equals(getComputedStyle(e, '').OObjectPosition, '50% 50%');
+});
+</script>

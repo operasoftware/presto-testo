@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>-o-object-fit:none; pAR:slice</title>
+<link rel="stylesheet" href="../../support/reftests.css"/>
+<style>
+ #test > * { -o-object-fit:none; overflow:hidden; height:100px }
+</style>
+</head>
+<body>
+<div id="test">
+ <svg xmlns="http://www.w3.org/2000/svg" width="220" height="220" preserveAspectRatio="xMidYMid slice">
+  <polygon points="65,1 155,1 219,65 219,155 155,219 65,219 1,155 1,65" fill="#d9bb7a" stroke="black"/>
+ </svg>
+</div>
+</body>
+</html>

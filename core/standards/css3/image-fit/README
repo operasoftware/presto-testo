@@ -1,0 +1,53 @@
+These tests test the -o-object-fit and -o-object-position properties as implemented in Opera.
+
+Opera supports these properties for bitmaps, SVG and video in <img>, <video>, <object>, <input
+type="image">, <svg>, <svg:image> and <svg:video>.
+
+Opera's implementation does not exactly match http://dev.w3.org/csswg/css3-images/#object-fit
+The differences are as follows:
+
+
+== Values ==
+
+Two additional values are supported:
+
+auto
+    The initial value. Is used to retain backwards compatibility -- traditionally bitmaps and SVG
+    render differently in <object>, so to remain the status quo, a new value was needed.
+    
+    Choose a method of scaling the content based on its type and element. The following table gives
+    the rendering for each type:
+    
+    Content         | Used value
+    ----------------+---------------------------------------------------------------------
+    bitmap          | -o-object-fit: fill
+    ----------------+---------------------------------------------------------------------
+    SVG in <img>    | synthesize a viewbox if none is specified (if possible ) and respect
+                    | preserveAspectRatio
+    ----------------+---------------------------------------------------------------------
+    SVG in <object> | if a viewbox is provided, respect preserveAspectRatio; otherwise,
+    or <svg> 	    | -o-object-fit: none; -o-object-position: top left
+    ----------------+---------------------------------------------------------------------
+    video           | -o-object-fit: contain
+
+    Viewbox synthesis is not possible when SVG width and height are specified as percentages.
+    
+    When rendering SVG with the property -o-object-fit set to 'auto', the -o-object-position
+    property is ignored, and SVG's own preserveAspectRatio attribute will take effect instead.
+
+none
+    This value was present in earlier drafts. Doesn't scale the object.
+
+
+== Inheritance ==
+
+-o-object-fit and -o-object-position are *not* inherited.
+
+
+== Known bugs ==
+
+   * -o-object-fit doesn't work for <embed> and <canvas>.
+   * overflow: visible doesn't work for <video>.
+   * overflow: visible doesn't work for the outermost <svg> element, but it continues to work for
+     other SVG elements. 
+   * -o-object-fit: contain currently will clip at image edges (for SVG).

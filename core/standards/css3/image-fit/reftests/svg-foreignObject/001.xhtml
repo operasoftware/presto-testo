@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>JPG in foreignObject</title>
+<link rel="stylesheet" href="../../support/reftests.css"/>
+<style>
+ #test > svg > * { overflow:hidden; -o-object-fit:cover; -o-object-position:2cm 2cm }
+</style>
+</head>
+<body>
+<div id="test">
+ <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <foreignObject x="0" y="0" width="200" height="200" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="../../support/wide.jpg"/>
+ </svg>
+</div>
+</body>
+</html>

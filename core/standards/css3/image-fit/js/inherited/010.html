@@ -1,0 +1,30 @@
+<!doctype html>
+<title>'inherit'ing from &lt;video poster=png src=ogg></title>
+<script src="/resources/testharness.js"></script>
+<script src="/resources/testharnessreport.js"></script>
+<video style=-o-object-fit:auto poster=../../support/opera.png?></video>
+<script>
+test(function() {
+  var e = document.body.firstChild;
+  e.appendChild(document.createElement('div'));
+  e.firstChild.style.OObjectFit = 'inherit';
+  e.firstChild.style.OObjectPosition = 'inherit';
+  assert_equals(getComputedStyle(e.firstChild, '').OObjectFit, 'auto');
+  assert_equals(getComputedStyle(e.firstChild, '').OObjectPosition, '50% 50%');
+  var t = async_test('load', {timeout:2000});
+  on_event(window, 'load', function(){ t.step(function() {
+    assert_equals(getComputedStyle(e.firstChild, '').OObjectFit, 'auto');
+    assert_equals(getComputedStyle(e.firstChild, '').OObjectPosition, '50% 50%');
+    e.src = '../../support/240x160.ogv';
+    e.play();
+    var t2 = async_test('playing', {timeout:2000});
+    on_event(e, 'playing', function(){ t.step(function() {
+      assert_equals(getComputedStyle(e.firstChild, '').OObjectFit, 'auto');
+      assert_equals(getComputedStyle(e.firstChild, '').OObjectPosition, '50% 50%');
+      t.done();
+      t2.done();
+    }); });
+  }); });
+});
+</script>
+

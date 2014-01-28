@@ -1,0 +1,13 @@
+<!doctype html>
+<title>object default style, png</title>
+<script src="/resources/testharness.js"></script>
+<script src="/resources/testharnessreport.js"></script>
+<object data=../../support/opera.png></object>
+<script>
+test(function() {
+  var e = document.body.firstChild;
+  assert_equals(getComputedStyle(e, '').OObjectFit, 'auto');
+  assert_equals(getComputedStyle(e, '').OObjectPosition, '50% 50%');
+});
+</script>
+

@@ -1,0 +1,13 @@
+<!doctype html>
+<title>object-fit:cover (SVG)</title>
+<style>
+img, embed, input, object, video { border:thin solid; width:39px; height:39px; -o-object-fit:cover; -o-object-position:50% 50% }
+</style>
+<p>There should be 5 identical images below:
+<p><img src="../support/001-1.svg"> (img)
+<p><embed src="../support/001-1.svg"> (embed)
+<p><input type="image" src="../support/001-1.svg"> (input type=image)
+<p><object data="../support/001-1.svg">FAIL: object not supported</object> (object)
+<p><video poster="../support/001-1.svg">FAIL: video not supported</video> (video poster)
+
+

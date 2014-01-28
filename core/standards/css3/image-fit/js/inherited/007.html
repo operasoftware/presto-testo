@@ -1,0 +1,15 @@
+<!doctype html>
+<title>'inherit'ing from &lt;img src=svg></title>
+<script src="/resources/testharness.js"></script>
+<script src="/resources/testharnessreport.js"></script>
+<img src=../../support/circle--.svg>
+<script>
+test(function() {
+  var e = document.body.firstChild;
+  e.appendChild(document.createElement('div'));
+  e.firstChild.style.OObjectFit = 'inherit';
+  e.firstChild.style.OObjectPosition = 'inherit';
+  assert_equals(getComputedStyle(e.firstChild, '').OObjectFit, 'auto');
+  assert_equals(getComputedStyle(e.firstChild, '').OObjectPosition, '50% 50%');
+});
+</script>

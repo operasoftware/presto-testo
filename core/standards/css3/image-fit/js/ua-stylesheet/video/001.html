@@ -1,0 +1,12 @@
+<!doctype html>
+<title>video default style</title>
+<script src="/resources/testharness.js"></script>
+<script src="/resources/testharnessreport.js"></script>
+<video></video>
+<script>
+test(function() {
+  var e = document.body.firstChild;
+  assert_equals(getComputedStyle(e, '').OObjectFit, 'contain');
+  assert_equals(getComputedStyle(e, '').OObjectPosition, '50% 50%');
+});
+</script>

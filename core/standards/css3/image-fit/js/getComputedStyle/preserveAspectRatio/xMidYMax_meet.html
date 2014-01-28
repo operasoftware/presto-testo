@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>getComputedStyle SVG preserveAspectratio='xMidYMax meet'</title>
+		<script src="/resources/testharness.js"></script>
+		<script src="/resources/testharnessreport.js"></script>
+	</head>
+	<body>
+		<img id="test" src="xMidYMax_meet.svg">
+		<script>
+		test(function() {
+		  var e = document.getElementById('test');
+		  assert_equals(getComputedStyle(e, '').OObjectFit, 'auto');
+		  assert_equals(getComputedStyle(e, '').OObjectPosition, '50% 50%');
+		});
+		</script>
+	</body>
+</html>

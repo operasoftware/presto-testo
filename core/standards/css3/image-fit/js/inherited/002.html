@@ -1,0 +1,12 @@
+<!doctype html>
+<title>inherited object-position</title>
+<script src="/resources/testharness.js"></script>
+<script src="/resources/testharnessreport.js"></script>
+<div style='-o-object-position:top left'><div></div></div>
+<script>
+test(function() {
+  var e = document.body.firstChild.firstChild;
+  assert_equals(getComputedStyle(e, '').OObjectFit, 'auto');
+  assert_equals(getComputedStyle(e, '').OObjectPosition, '50% 50%');
+});
+</script>

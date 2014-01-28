@@ -1,0 +1,155 @@
+<html  xmlns="http://www.w3.org/1999/xhtml" xmlns:svg="http://www.w3.org/2000/svg">
+    <head>
+        <title>Event transparency</title>
+        <style type="text/css">
+            /* The div that the test is contained within */
+            #div01{
+                position: relative;
+                margin:0 auto;
+                background-color: #ffcccc;
+                width: 640px;
+                height:250px;
+                padding:0px;
+            }
+
+            /* The div that acts as a button, and catches the clicks */
+            #divbutton{
+                height:100%;
+                width: 100%;
+            }
+
+            /* The div that contains the status text */
+            #divstatus{
+                position: relative;
+                margin:0 auto;
+                text-align: center;
+                width:615px;
+                height:60px;
+            }
+
+            /* Styling for the different media elements */
+            img, video, div.nonreplaced, svg {
+                margin-top: 10px;
+                height: 100px;
+                width: 100px;
+            }
+
+            img, object, video, div.nonreplaced, svg {
+                position: absolute;
+                background-color: transparent;
+                border: 5px dashed maroon;
+                overflow: visible;
+                padding: 3px;
+                box-sizing: border-box;
+                object-fit: contain; -o-object-fit: contain;
+            }
+
+            /* The font used in in the paragraphs */
+            p {
+                font-family: sans-serif;
+            }
+
+            h3 {
+                text-align: center;
+            }
+
+            #log {
+                white-space: pre;
+                text-align: center;
+            }
+        </style>
+
+        <script type="text/javascript">
+            /* This function makes the background color change to purple,and the status text is set to "purple" */
+                function down(obj) {
+                        obj.style.backgroundColor='#47006B';/*Purple*/
+                        document.getElementById("status").innerText = "The click went through";
+                }
+
+                /*This function resets the background to transparent,and clears the status field*/
+                function reset() {
+                        document.getElementById('divbutton').style.backgroundColor='transparent';
+                        document.getElementById("status").innerText = "";
+                }
+
+                var log;
+
+                function enable_debug()
+                {
+                    log = document.getElementById('log');
+                    document.getElementById('div01').addEventListener('mousemove', debug_mouse, false);
+                    document.getElementById('div01').addEventListener('mousedown', debug_mouse, false);
+                }
+
+                function disable_debug()
+                {
+                    document.getElementById('div01').removeEventListener('mousemove', debug_mouse, false);
+                    document.getElementById('div01').removeEventListener('mousedown', debug_mouse, false);
+                }
+
+                function debug_mouse(ev)
+                {
+                    switch (ev.type)
+                    {
+                        case 'mousemove':
+                            log.textContent = ev.target.tagName +
+                                (ev.target.id ? '#' + ev.target.id : '') +
+                                (ev.target.className ? '.' + ev.target.className : '') +
+                                '\noffset: x: ' + ev.x + ', y: ' + ev.y;
+                            ev.preventDefault();
+                            break;
+                        case 'mousedown':
+                            disable_debug();
+                            ev.preventDefault();
+                            break;
+                    }
+                }
+
+        </script>
+    </head>
+
+    <body>
+        <h3>Click on an area without any content and the background becomes purple</h3>
+
+        <div id="log"></div>
+
+        <div id="div01">
+            <img id="picture" src="../support/s.png" style="left: 20px"/>
+
+            <img src="../support/circle-viewbox-.svg" style="left:137px; width: 50px" />
+
+            <video controls="controls" src="../support/A_new_computer-small.ogg" style="left: 290px; height: 150px" />
+            <!-- For some reason the following is not loaded -->
+            <video src="../support/A_new_computer-small.ogg" style="left: 410px" />
+
+            <div class="nonreplaced" style="left: 530px">Non-replaced content</div>
+
+            <svg:svg style="left: 210px; width: 50px"
+                     width="363.85715"
+                     height="363.85715">
+                <svg:g
+                    id="layer1"
+                    transform="translate(-162.35713,-403.29073)">
+                    <svg:path
+                        style="fill:#d9bb7a;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+                        id="path2387" d="M 525.71428,585.2193 A 181.42857,181.42857 0 1 1 162.85713,585.2193 A 181.42857,181.42857 0 1 1 525.71428,585.2193 z" />
+                </svg:g>
+            </svg:svg>
+
+            <!-- The div that contains the button, when this di is clicked, the background color changes to purple  -->
+            <div id="divbutton"  onclick="down(this);">
+                &#160;
+            </div>
+        </div>
+
+        <!-- This is the div that contains the status text,when this element contains purple, the test is a pass -->
+        <div id="divstatus">
+            <div style="height: 20px;"> <p id="status">&#160;</p></div>
+
+            <!-- This button resets the background color and the status text -->
+            <button type="button" onclick="reset();" id="reset-button">reset</button>
+            <button type="button" onclick="enable_debug()">show coordinates (will disable itself on click)</button>
+            <p>Coordinates are relative to pink box (besides case when hovering SVG circle) so they should match watir script.</p>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,12 @@
+<!doctype html>
+<title>img default style, alt</title>
+<script src="/resources/testharness.js"></script>
+<script src="/resources/testharnessreport.js"></script>
+<img alt=foobar>
+<script>
+test(function() {
+  var e = document.body.firstChild;
+  assert_equals(getComputedStyle(e, '').OObjectFit, 'auto');
+  assert_equals(getComputedStyle(e, '').OObjectPosition, '50% 50%');
+});
+</script>

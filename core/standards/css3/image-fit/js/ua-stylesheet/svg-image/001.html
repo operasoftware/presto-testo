@@ -1,0 +1,14 @@
+<!doctype html>
+<title>svg image default style</title>
+<script src="/resources/testharness.js"></script>
+<script src="/resources/testharnessreport.js"></script>
+<script>
+test(function() {
+  var svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+  var e = document.createElementNS('http://www.w3.org/2000/svg', 'image');
+  svg.appendChild(e);
+  document.body.appendChild(svg);
+  assert_equals(getComputedStyle(e, '').OObjectFit, 'auto');
+  assert_equals(getComputedStyle(e, '').OObjectPosition, '50% 50%');
+});
+</script>

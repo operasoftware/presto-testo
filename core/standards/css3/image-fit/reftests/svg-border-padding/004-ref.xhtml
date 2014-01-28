@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Reference for border and padding on object</title>
+<link rel="stylesheet" href="../../support/reftests.css"/>
+<style>
+ .helper { border:none; border-left:100px dashed maroon; height:150px; width:100px }
+ .helper > * { left:50px; top:50px }
+</style>
+</head>
+<body>
+<div id="ref">
+ <span class="helper">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="50" height="50">
+   <circle r="100" cy="100" cx="100"/>
+  </svg>
+ </span>
+</div>
+</body>
+</html>

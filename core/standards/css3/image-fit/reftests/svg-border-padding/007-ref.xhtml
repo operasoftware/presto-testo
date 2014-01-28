@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Reference for border and padding on object no viewbox</title>
+<link rel="stylesheet" href="../../support/reftests.css"/>
+<style>
+ .helper { border:20px dashed maroon; height:110px; width:160px }
+ .helper > * { left:30px; top:30px; width:100px; height:50px; display:block; overflow:hidden }
+</style>
+</head>
+<body>
+<div id="ref">
+ <span class="helper">
+  <span>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+   <circle r="100" cy="100" cx="100"/>
+  </svg>
+  </span>
+ </span>
+</div>
+</body>
+</html>

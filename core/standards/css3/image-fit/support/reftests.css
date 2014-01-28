@@ -1,0 +1,5 @@
+#test, #ref { float:left; width:350px; height:300px; border:2px solid; padding:100px; overflow:hidden }
+#test { margin-right:50px }
+#test > *, .helper { width:200px; height:200px; border:2px solid fuchsia }
+.helper { display:inline-block; position:relative }
+.helper > * { position:absolute }

@@ -1,0 +1,413 @@
+
+TEST CASES
+case	'overflows'	'fits'	'x'	'y'	pairings
+1	'hidden'	'fill'	'0%'	'0%'	6
+2	'hidden'	'contain'	'50%'	'50%'	6
+3	'hidden'	'cover'	'100%'	'100%'	6
+4	'hidden'	'auto'	'left'	'left'	6
+5	'hidden'	'none'	'center'	'center'	6
+6	'hidden'	'fill'	'right'	'right'	5
+7	'hidden'	'contain'	'top'	'top'	5
+8	'hidden'	'cover'	'bottom'	'bottom'	5
+9	'hidden'	'auto'	'1em'	'1em'	5
+10	'hidden'	'none'	'30px'	'30px'	5
+11	'hidden'	'fill'	'2cm'	'2cm'	5
+12	'hidden'	'contain'	'0%'	''	4
+13	~'hidden'	'cover'	'50%'	'0%'	3
+14	~'hidden'	'auto'	'100%'	'50%'	3
+15	~'hidden'	'none'	'left'	'100%'	3
+16	~'hidden'	'fill'	'center'	'left'	3
+17	~'hidden'	'contain'	'right'	'center'	3
+18	~'hidden'	'cover'	'top'	'right'	3
+19	~'hidden'	'auto'	'bottom'	'top'	3
+20	~'hidden'	'none'	'1em'	'bottom'	3
+21	~'hidden'	'fill'	'30px'	'1em'	3
+22	~'hidden'	'contain'	'2cm'	'30px'	3
+23	~'hidden'	'cover'	'0%'	'2cm'	3
+24	~'hidden'	'auto'	'50%'	''	3
+25	~'hidden'	'none'	'100%'	'0%'	3
+26	~'hidden'	'fill'	'left'	'50%'	3
+27	~'hidden'	'contain'	'center'	'100%'	3
+28	~'hidden'	'cover'	'right'	'left'	3
+29	~'hidden'	'auto'	'top'	'center'	3
+30	~'hidden'	'none'	'bottom'	'right'	3
+31	~'hidden'	'fill'	'1em'	'top'	3
+32	~'hidden'	'contain'	'30px'	'bottom'	3
+33	~'hidden'	'cover'	'2cm'	'1em'	3
+34	~'hidden'	'auto'	'0%'	'30px'	3
+35	~'hidden'	'none'	'50%'	'2cm'	3
+36	~'hidden'	'fill'	'100%'	''	3
+37	~'hidden'	'contain'	'left'	'0%'	3
+38	~'hidden'	'cover'	'center'	'50%'	3
+39	~'hidden'	'auto'	'right'	'100%'	3
+40	~'hidden'	'none'	'top'	'left'	3
+41	~'hidden'	'fill'	'bottom'	'center'	3
+42	~'hidden'	'contain'	'1em'	'right'	3
+43	~'hidden'	'cover'	'30px'	'top'	3
+44	~'hidden'	'auto'	'2cm'	'bottom'	3
+45	~'hidden'	'none'	'0%'	'1em'	3
+46	~'hidden'	'fill'	'50%'	'30px'	3
+47	~'hidden'	'contain'	'100%'	'2cm'	3
+48	~'hidden'	'cover'	'left'	''	3
+49	~'hidden'	'auto'	'center'	'0%'	3
+50	~'hidden'	'none'	'right'	'50%'	3
+51	~'hidden'	'fill'	'top'	'100%'	3
+52	~'hidden'	'contain'	'bottom'	'left'	3
+53	~'hidden'	'cover'	'1em'	'center'	3
+54	~'hidden'	'auto'	'30px'	'right'	3
+55	~'hidden'	'none'	'2cm'	'top'	3
+56	~'hidden'	'fill'	'0%'	'bottom'	2
+57	~'hidden'	'contain'	'50%'	'1em'	2
+58	~'hidden'	'cover'	'100%'	'30px'	2
+59	~'hidden'	'auto'	'left'	'2cm'	2
+60	~'hidden'	'none'	'center'	''	2
+61	~'hidden'	~'fill'	'right'	'0%'	1
+62	~'hidden'	~'contain'	'top'	'50%'	1
+63	~'hidden'	~'cover'	'bottom'	'100%'	1
+64	~'hidden'	~'auto'	'1em'	'left'	1
+65	~'hidden'	~'none'	'30px'	'center'	1
+66	~'hidden'	~'fill'	'2cm'	'right'	1
+67	~'hidden'	~'contain'	'0%'	'top'	1
+68	~'hidden'	~'cover'	'50%'	'bottom'	1
+69	~'hidden'	~'auto'	'100%'	'1em'	1
+70	~'hidden'	~'none'	'left'	'30px'	1
+71	~'hidden'	~'fill'	'center'	'2cm'	1
+72	~'hidden'	~'contain'	'right'	''	1
+73	~'hidden'	~'cover'	'top'	'0%'	1
+74	~'hidden'	~'auto'	'bottom'	'50%'	1
+75	~'hidden'	~'none'	'1em'	'100%'	1
+76	~'hidden'	~'fill'	'30px'	'left'	1
+77	~'hidden'	~'contain'	'2cm'	'center'	1
+78	~'hidden'	~'cover'	'0%'	'right'	1
+79	~'hidden'	~'auto'	'50%'	'top'	1
+80	~'hidden'	~'none'	'100%'	'bottom'	1
+81	~'hidden'	~'fill'	'left'	'1em'	1
+82	~'hidden'	~'contain'	'center'	'30px'	1
+83	~'hidden'	~'cover'	'right'	'2cm'	1
+84	~'hidden'	~'auto'	'top'	''	1
+85	~'hidden'	~'none'	'bottom'	'0%'	1
+86	~'hidden'	~'fill'	'1em'	'50%'	1
+87	~'hidden'	~'contain'	'30px'	'100%'	1
+88	~'hidden'	~'cover'	'2cm'	'left'	1
+89	~'hidden'	~'auto'	'0%'	'center'	1
+90	~'hidden'	~'none'	'50%'	'right'	1
+91	~'hidden'	~'fill'	'100%'	'top'	1
+92	~'hidden'	~'contain'	'left'	'bottom'	1
+93	~'hidden'	~'cover'	'center'	'1em'	1
+94	~'hidden'	~'auto'	'right'	'30px'	1
+95	~'hidden'	~'none'	'top'	'2cm'	1
+96	~'hidden'	~'fill'	'bottom'	''	1
+97	~'hidden'	~'contain'	'1em'	'0%'	1
+98	~'hidden'	~'cover'	'30px'	'50%'	1
+99	~'hidden'	~'auto'	'2cm'	'100%'	1
+100	~'hidden'	~'none'	'0%'	'left'	1
+101	~'hidden'	~'fill'	'50%'	'center'	1
+102	~'hidden'	~'contain'	'100%'	'right'	1
+103	~'hidden'	~'cover'	'left'	'top'	1
+104	~'hidden'	~'auto'	'center'	'bottom'	1
+105	~'hidden'	~'none'	'right'	'1em'	1
+106	~'hidden'	~'fill'	'top'	'30px'	1
+107	~'hidden'	~'contain'	'bottom'	'2cm'	1
+108	~'hidden'	~'cover'	'1em'	''	1
+109	~'hidden'	~'auto'	'30px'	'0%'	1
+110	~'hidden'	~'none'	'2cm'	'50%'	1
+111	~'hidden'	~'fill'	'0%'	'100%'	1
+112	~'hidden'	~'contain'	'50%'	'left'	1
+113	~'hidden'	~'cover'	'100%'	'center'	1
+114	~'hidden'	~'auto'	'left'	'right'	1
+115	~'hidden'	~'none'	'center'	'top'	1
+116	~'hidden'	~'fill'	'right'	'bottom'	1
+117	~'hidden'	~'contain'	'top'	'1em'	1
+118	~'hidden'	~'cover'	'bottom'	'30px'	1
+119	~'hidden'	~'auto'	'1em'	'2cm'	1
+120	~'hidden'	~'none'	'30px'	''	1
+121	~'hidden'	~'fill'	'2cm'	'0%'	1
+122	~'hidden'	~'contain'	'0%'	'50%'	1
+123	~'hidden'	~'cover'	'50%'	'100%'	1
+124	~'hidden'	~'auto'	'100%'	'left'	1
+125	~'hidden'	~'none'	'left'	'center'	1
+126	~'hidden'	~'fill'	'center'	'right'	1
+127	~'hidden'	~'contain'	'right'	'top'	1
+128	~'hidden'	~'cover'	'top'	'bottom'	1
+129	~'hidden'	~'auto'	'bottom'	'1em'	1
+130	~'hidden'	~'none'	'1em'	'30px'	1
+131	~'hidden'	~'fill'	'30px'	'2cm'	1
+132	~'hidden'	~'contain'	'2cm'	''	1
+
+PAIRING DETAILS
+var1	var2	value1	value2	appearances	cases
+'y'	'x'	'0%'	'0%'	1	1
+'y'	'x'	'0%'	'50%'	1	13
+'y'	'x'	'0%'	'100%'	1	25
+'y'	'x'	'0%'	'left'	1	37
+'y'	'x'	'0%'	'center'	1	49
+'y'	'x'	'0%'	'right'	1	61
+'y'	'x'	'0%'	'top'	1	73
+'y'	'x'	'0%'	'bottom'	1	85
+'y'	'x'	'0%'	'1em'	1	97
+'y'	'x'	'0%'	'30px'	1	109
+'y'	'x'	'0%'	'2cm'	1	121
+'y'	'x'	'50%'	'0%'	1	122
+'y'	'x'	'50%'	'50%'	1	2
+'y'	'x'	'50%'	'100%'	1	14
+'y'	'x'	'50%'	'left'	1	26
+'y'	'x'	'50%'	'center'	1	38
+'y'	'x'	'50%'	'right'	1	50
+'y'	'x'	'50%'	'top'	1	62
+'y'	'x'	'50%'	'bottom'	1	74
+'y'	'x'	'50%'	'1em'	1	86
+'y'	'x'	'50%'	'30px'	1	98
+'y'	'x'	'50%'	'2cm'	1	110
+'y'	'x'	'100%'	'0%'	1	111
+'y'	'x'	'100%'	'50%'	1	123
+'y'	'x'	'100%'	'100%'	1	3
+'y'	'x'	'100%'	'left'	1	15
+'y'	'x'	'100%'	'center'	1	27
+'y'	'x'	'100%'	'right'	1	39
+'y'	'x'	'100%'	'top'	1	51
+'y'	'x'	'100%'	'bottom'	1	63
+'y'	'x'	'100%'	'1em'	1	75
+'y'	'x'	'100%'	'30px'	1	87
+'y'	'x'	'100%'	'2cm'	1	99
+'y'	'x'	'left'	'0%'	1	100
+'y'	'x'	'left'	'50%'	1	112
+'y'	'x'	'left'	'100%'	1	124
+'y'	'x'	'left'	'left'	1	4
+'y'	'x'	'left'	'center'	1	16
+'y'	'x'	'left'	'right'	1	28
+'y'	'x'	'left'	'top'	1	40
+'y'	'x'	'left'	'bottom'	1	52
+'y'	'x'	'left'	'1em'	1	64
+'y'	'x'	'left'	'30px'	1	76
+'y'	'x'	'left'	'2cm'	1	88
+'y'	'x'	'center'	'0%'	1	89
+'y'	'x'	'center'	'50%'	1	101
+'y'	'x'	'center'	'100%'	1	113
+'y'	'x'	'center'	'left'	1	125
+'y'	'x'	'center'	'center'	1	5
+'y'	'x'	'center'	'right'	1	17
+'y'	'x'	'center'	'top'	1	29
+'y'	'x'	'center'	'bottom'	1	41
+'y'	'x'	'center'	'1em'	1	53
+'y'	'x'	'center'	'30px'	1	65
+'y'	'x'	'center'	'2cm'	1	77
+'y'	'x'	'right'	'0%'	1	78
+'y'	'x'	'right'	'50%'	1	90
+'y'	'x'	'right'	'100%'	1	102
+'y'	'x'	'right'	'left'	1	114
+'y'	'x'	'right'	'center'	1	126
+'y'	'x'	'right'	'right'	1	6
+'y'	'x'	'right'	'top'	1	18
+'y'	'x'	'right'	'bottom'	1	30
+'y'	'x'	'right'	'1em'	1	42
+'y'	'x'	'right'	'30px'	1	54
+'y'	'x'	'right'	'2cm'	1	66
+'y'	'x'	'top'	'0%'	1	67
+'y'	'x'	'top'	'50%'	1	79
+'y'	'x'	'top'	'100%'	1	91
+'y'	'x'	'top'	'left'	1	103
+'y'	'x'	'top'	'center'	1	115
+'y'	'x'	'top'	'right'	1	127
+'y'	'x'	'top'	'top'	1	7
+'y'	'x'	'top'	'bottom'	1	19
+'y'	'x'	'top'	'1em'	1	31
+'y'	'x'	'top'	'30px'	1	43
+'y'	'x'	'top'	'2cm'	1	55
+'y'	'x'	'bottom'	'0%'	1	56
+'y'	'x'	'bottom'	'50%'	1	68
+'y'	'x'	'bottom'	'100%'	1	80
+'y'	'x'	'bottom'	'left'	1	92
+'y'	'x'	'bottom'	'center'	1	104
+'y'	'x'	'bottom'	'right'	1	116
+'y'	'x'	'bottom'	'top'	1	128
+'y'	'x'	'bottom'	'bottom'	1	8
+'y'	'x'	'bottom'	'1em'	1	20
+'y'	'x'	'bottom'	'30px'	1	32
+'y'	'x'	'bottom'	'2cm'	1	44
+'y'	'x'	'1em'	'0%'	1	45
+'y'	'x'	'1em'	'50%'	1	57
+'y'	'x'	'1em'	'100%'	1	69
+'y'	'x'	'1em'	'left'	1	81
+'y'	'x'	'1em'	'center'	1	93
+'y'	'x'	'1em'	'right'	1	105
+'y'	'x'	'1em'	'top'	1	117
+'y'	'x'	'1em'	'bottom'	1	129
+'y'	'x'	'1em'	'1em'	1	9
+'y'	'x'	'1em'	'30px'	1	21
+'y'	'x'	'1em'	'2cm'	1	33
+'y'	'x'	'30px'	'0%'	1	34
+'y'	'x'	'30px'	'50%'	1	46
+'y'	'x'	'30px'	'100%'	1	58
+'y'	'x'	'30px'	'left'	1	70
+'y'	'x'	'30px'	'center'	1	82
+'y'	'x'	'30px'	'right'	1	94
+'y'	'x'	'30px'	'top'	1	106
+'y'	'x'	'30px'	'bottom'	1	118
+'y'	'x'	'30px'	'1em'	1	130
+'y'	'x'	'30px'	'30px'	1	10
+'y'	'x'	'30px'	'2cm'	1	22
+'y'	'x'	'2cm'	'0%'	1	23
+'y'	'x'	'2cm'	'50%'	1	35
+'y'	'x'	'2cm'	'100%'	1	47
+'y'	'x'	'2cm'	'left'	1	59
+'y'	'x'	'2cm'	'center'	1	71
+'y'	'x'	'2cm'	'right'	1	83
+'y'	'x'	'2cm'	'top'	1	95
+'y'	'x'	'2cm'	'bottom'	1	107
+'y'	'x'	'2cm'	'1em'	1	119
+'y'	'x'	'2cm'	'30px'	1	131
+'y'	'x'	'2cm'	'2cm'	1	11
+'y'	'x'	''	'0%'	1	12
+'y'	'x'	''	'50%'	1	24
+'y'	'x'	''	'100%'	1	36
+'y'	'x'	''	'left'	1	48
+'y'	'x'	''	'center'	1	60
+'y'	'x'	''	'right'	1	72
+'y'	'x'	''	'top'	1	84
+'y'	'x'	''	'bottom'	1	96
+'y'	'x'	''	'1em'	1	108
+'y'	'x'	''	'30px'	1	120
+'y'	'x'	''	'2cm'	1	132
+'y'	'fits'	'0%'	'fill'	3	1, 61, 121
+'y'	'fits'	'0%'	'contain'	2	37, 97
+'y'	'fits'	'0%'	'cover'	2	13, 73
+'y'	'fits'	'0%'	'auto'	2	49, 109
+'y'	'fits'	'0%'	'none'	2	25, 85
+'y'	'fits'	'50%'	'fill'	2	26, 86
+'y'	'fits'	'50%'	'contain'	3	2, 62, 122
+'y'	'fits'	'50%'	'cover'	2	38, 98
+'y'	'fits'	'50%'	'auto'	2	14, 74
+'y'	'fits'	'50%'	'none'	2	50, 110
+'y'	'fits'	'100%'	'fill'	2	51, 111
+'y'	'fits'	'100%'	'contain'	2	27, 87
+'y'	'fits'	'100%'	'cover'	3	3, 63, 123
+'y'	'fits'	'100%'	'auto'	2	39, 99
+'y'	'fits'	'100%'	'none'	2	15, 75
+'y'	'fits'	'left'	'fill'	2	16, 76
+'y'	'fits'	'left'	'contain'	2	52, 112
+'y'	'fits'	'left'	'cover'	2	28, 88
+'y'	'fits'	'left'	'auto'	3	4, 64, 124
+'y'	'fits'	'left'	'none'	2	40, 100
+'y'	'fits'	'center'	'fill'	2	41, 101
+'y'	'fits'	'center'	'contain'	2	17, 77
+'y'	'fits'	'center'	'cover'	2	53, 113
+'y'	'fits'	'center'	'auto'	2	29, 89
+'y'	'fits'	'center'	'none'	3	5, 65, 125
+'y'	'fits'	'right'	'fill'	3	6, 66, 126
+'y'	'fits'	'right'	'contain'	2	42, 102
+'y'	'fits'	'right'	'cover'	2	18, 78
+'y'	'fits'	'right'	'auto'	2	54, 114
+'y'	'fits'	'right'	'none'	2	30, 90
+'y'	'fits'	'top'	'fill'	2	31, 91
+'y'	'fits'	'top'	'contain'	3	7, 67, 127
+'y'	'fits'	'top'	'cover'	2	43, 103
+'y'	'fits'	'top'	'auto'	2	19, 79
+'y'	'fits'	'top'	'none'	2	55, 115
+'y'	'fits'	'bottom'	'fill'	2	56, 116
+'y'	'fits'	'bottom'	'contain'	2	32, 92
+'y'	'fits'	'bottom'	'cover'	3	8, 68, 128
+'y'	'fits'	'bottom'	'auto'	2	44, 104
+'y'	'fits'	'bottom'	'none'	2	20, 80
+'y'	'fits'	'1em'	'fill'	2	21, 81
+'y'	'fits'	'1em'	'contain'	2	57, 117
+'y'	'fits'	'1em'	'cover'	2	33, 93
+'y'	'fits'	'1em'	'auto'	3	9, 69, 129
+'y'	'fits'	'1em'	'none'	2	45, 105
+'y'	'fits'	'30px'	'fill'	2	46, 106
+'y'	'fits'	'30px'	'contain'	2	22, 82
+'y'	'fits'	'30px'	'cover'	2	58, 118
+'y'	'fits'	'30px'	'auto'	2	34, 94
+'y'	'fits'	'30px'	'none'	3	10, 70, 130
+'y'	'fits'	'2cm'	'fill'	3	11, 71, 131
+'y'	'fits'	'2cm'	'contain'	2	47, 107
+'y'	'fits'	'2cm'	'cover'	2	23, 83
+'y'	'fits'	'2cm'	'auto'	2	59, 119
+'y'	'fits'	'2cm'	'none'	2	35, 95
+'y'	'fits'	''	'fill'	2	36, 96
+'y'	'fits'	''	'contain'	3	12, 72, 132
+'y'	'fits'	''	'cover'	2	48, 108
+'y'	'fits'	''	'auto'	2	24, 84
+'y'	'fits'	''	'none'	2	60, 120
+'y'	'overflows'	'0%'	'hidden'	11	1, 13, 25, 37, 49, 61, 73, 85, 97, 109, 121
+'y'	'overflows'	'50%'	'hidden'	11	2, 14, 26, 38, 50, 62, 74, 86, 98, 110, 122
+'y'	'overflows'	'100%'	'hidden'	11	3, 15, 27, 39, 51, 63, 75, 87, 99, 111, 123
+'y'	'overflows'	'left'	'hidden'	11	4, 16, 28, 40, 52, 64, 76, 88, 100, 112, 124
+'y'	'overflows'	'center'	'hidden'	11	5, 17, 29, 41, 53, 65, 77, 89, 101, 113, 125
+'y'	'overflows'	'right'	'hidden'	11	6, 18, 30, 42, 54, 66, 78, 90, 102, 114, 126
+'y'	'overflows'	'top'	'hidden'	11	7, 19, 31, 43, 55, 67, 79, 91, 103, 115, 127
+'y'	'overflows'	'bottom'	'hidden'	11	8, 20, 32, 44, 56, 68, 80, 92, 104, 116, 128
+'y'	'overflows'	'1em'	'hidden'	11	9, 21, 33, 45, 57, 69, 81, 93, 105, 117, 129
+'y'	'overflows'	'30px'	'hidden'	11	10, 22, 34, 46, 58, 70, 82, 94, 106, 118, 130
+'y'	'overflows'	'2cm'	'hidden'	11	11, 23, 35, 47, 59, 71, 83, 95, 107, 119, 131
+'y'	'overflows'	''	'hidden'	11	12, 24, 36, 48, 60, 72, 84, 96, 108, 120, 132
+'x'	'fits'	'0%'	'fill'	3	1, 56, 111
+'x'	'fits'	'0%'	'contain'	3	12, 67, 122
+'x'	'fits'	'0%'	'cover'	2	23, 78
+'x'	'fits'	'0%'	'auto'	2	34, 89
+'x'	'fits'	'0%'	'none'	2	45, 100
+'x'	'fits'	'50%'	'fill'	2	46, 101
+'x'	'fits'	'50%'	'contain'	3	2, 57, 112
+'x'	'fits'	'50%'	'cover'	3	13, 68, 123
+'x'	'fits'	'50%'	'auto'	2	24, 79
+'x'	'fits'	'50%'	'none'	2	35, 90
+'x'	'fits'	'100%'	'fill'	2	36, 91
+'x'	'fits'	'100%'	'contain'	2	47, 102
+'x'	'fits'	'100%'	'cover'	3	3, 58, 113
+'x'	'fits'	'100%'	'auto'	3	14, 69, 124
+'x'	'fits'	'100%'	'none'	2	25, 80
+'x'	'fits'	'left'	'fill'	2	26, 81
+'x'	'fits'	'left'	'contain'	2	37, 92
+'x'	'fits'	'left'	'cover'	2	48, 103
+'x'	'fits'	'left'	'auto'	3	4, 59, 114
+'x'	'fits'	'left'	'none'	3	15, 70, 125
+'x'	'fits'	'center'	'fill'	3	16, 71, 126
+'x'	'fits'	'center'	'contain'	2	27, 82
+'x'	'fits'	'center'	'cover'	2	38, 93
+'x'	'fits'	'center'	'auto'	2	49, 104
+'x'	'fits'	'center'	'none'	3	5, 60, 115
+'x'	'fits'	'right'	'fill'	3	6, 61, 116
+'x'	'fits'	'right'	'contain'	3	17, 72, 127
+'x'	'fits'	'right'	'cover'	2	28, 83
+'x'	'fits'	'right'	'auto'	2	39, 94
+'x'	'fits'	'right'	'none'	2	50, 105
+'x'	'fits'	'top'	'fill'	2	51, 106
+'x'	'fits'	'top'	'contain'	3	7, 62, 117
+'x'	'fits'	'top'	'cover'	3	18, 73, 128
+'x'	'fits'	'top'	'auto'	2	29, 84
+'x'	'fits'	'top'	'none'	2	40, 95
+'x'	'fits'	'bottom'	'fill'	2	41, 96
+'x'	'fits'	'bottom'	'contain'	2	52, 107
+'x'	'fits'	'bottom'	'cover'	3	8, 63, 118
+'x'	'fits'	'bottom'	'auto'	3	19, 74, 129
+'x'	'fits'	'bottom'	'none'	2	30, 85
+'x'	'fits'	'1em'	'fill'	2	31, 86
+'x'	'fits'	'1em'	'contain'	2	42, 97
+'x'	'fits'	'1em'	'cover'	2	53, 108
+'x'	'fits'	'1em'	'auto'	3	9, 64, 119
+'x'	'fits'	'1em'	'none'	3	20, 75, 130
+'x'	'fits'	'30px'	'fill'	3	21, 76, 131
+'x'	'fits'	'30px'	'contain'	2	32, 87
+'x'	'fits'	'30px'	'cover'	2	43, 98
+'x'	'fits'	'30px'	'auto'	2	54, 109
+'x'	'fits'	'30px'	'none'	3	10, 65, 120
+'x'	'fits'	'2cm'	'fill'	3	11, 66, 121
+'x'	'fits'	'2cm'	'contain'	3	22, 77, 132
+'x'	'fits'	'2cm'	'cover'	2	33, 88
+'x'	'fits'	'2cm'	'auto'	2	44, 99
+'x'	'fits'	'2cm'	'none'	2	55, 110
+'x'	'overflows'	'0%'	'hidden'	12	1, 12, 23, 34, 45, 56, 67, 78, 89, 100, 111, 122
+'x'	'overflows'	'50%'	'hidden'	12	2, 13, 24, 35, 46, 57, 68, 79, 90, 101, 112, 123
+'x'	'overflows'	'100%'	'hidden'	12	3, 14, 25, 36, 47, 58, 69, 80, 91, 102, 113, 124
+'x'	'overflows'	'left'	'hidden'	12	4, 15, 26, 37, 48, 59, 70, 81, 92, 103, 114, 125
+'x'	'overflows'	'center'	'hidden'	12	5, 16, 27, 38, 49, 60, 71, 82, 93, 104, 115, 126
+'x'	'overflows'	'right'	'hidden'	12	6, 17, 28, 39, 50, 61, 72, 83, 94, 105, 116, 127
+'x'	'overflows'	'top'	'hidden'	12	7, 18, 29, 40, 51, 62, 73, 84, 95, 106, 117, 128
+'x'	'overflows'	'bottom'	'hidden'	12	8, 19, 30, 41, 52, 63, 74, 85, 96, 107, 118, 129
+'x'	'overflows'	'1em'	'hidden'	12	9, 20, 31, 42, 53, 64, 75, 86, 97, 108, 119, 130
+'x'	'overflows'	'30px'	'hidden'	12	10, 21, 32, 43, 54, 65, 76, 87, 98, 109, 120, 131
+'x'	'overflows'	'2cm'	'hidden'	12	11, 22, 33, 44, 55, 66, 77, 88, 99, 110, 121, 132
+'fits'	'overflows'	'fill'	'hidden'	27	1, 6, 11, 16, 21, 26, 31, 36, 41, 46, 51, 56, 61, 66, 71, 76, 81, 86, 91, 96, 101, 106, 111, 116, 121, 126, 131
+'fits'	'overflows'	'contain'	'hidden'	27	2, 7, 12, 17, 22, 27, 32, 37, 42, 47, 52, 57, 62, 67, 72, 77, 82, 87, 92, 97, 102, 107, 112, 117, 122, 127, 132
+'fits'	'overflows'	'cover'	'hidden'	26	3, 8, 13, 18, 23, 28, 33, 38, 43, 48, 53, 58, 63, 68, 73, 78, 83, 88, 93, 98, 103, 108, 113, 118, 123, 128
+'fits'	'overflows'	'auto'	'hidden'	26	4, 9, 14, 19, 24, 29, 34, 39, 44, 49, 54, 59, 64, 69, 74, 79, 84, 89, 94, 99, 104, 109, 114, 119, 124, 129
+'fits'	'overflows'	'none'	'hidden'	26	5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100, 105, 110, 115, 120, 125, 130

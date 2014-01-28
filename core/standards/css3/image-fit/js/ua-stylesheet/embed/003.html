@@ -1,0 +1,12 @@
+<!doctype html>
+<title>embed default style, svg</title>
+<script src="/resources/testharness.js"></script>
+<script src="/resources/testharnessreport.js"></script>
+<embed src=../../support/circle--.svg>
+<script>
+test(function() {
+  var e = document.body.firstChild;
+  assert_equals(getComputedStyle(e, '').OObjectFit, 'auto');
+  assert_equals(getComputedStyle(e, '').OObjectPosition, '50% 50%');
+});
+</script>
