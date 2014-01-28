@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>tabindex attribute of textarea element</title>
+</head>
+<body>
+<p>Go through textareas using tab. Passed if textarea-1 is focused first and focus is shifted in bottom to top order.</p>
+<div><textarea tabindex="4" rows="1" cols="16" name="result-4">Textarea-4</textarea></div>
+<div><textarea tabindex="3" rows="1" cols="16" name="result-3">Textarea-3</textarea></div>
+<div><textarea tabindex="2" rows="1" cols="16" name="result-2">Textarea-2</textarea></div>
+<div><textarea tabindex="1" rows="1" cols="16" name="result-1">Textarea-1</textarea></div>
+</body>
+</html>

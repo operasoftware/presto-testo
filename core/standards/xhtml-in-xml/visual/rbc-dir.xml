@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>dir attribute of rbc element</title>
+</head>
+<body>
+<div><ruby><rbc dir="rtl"><rb>&#x202E;FAIL|SSAP&#x202C;</rb></rbc><rtc><rt>You should see PASS|LIAF *below*</rt></rtc></ruby></div>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:template match="xsl:template">
+<result>
+<xsl:choose>
+<xsl:when test='//pi[@xml:id="id1"]/tau[@xml:lang="nb"][@xml:id="id2"][not(preceding-sibling::*)][following-sibling::upsilon[@xml:lang="en-GB"][@xml:id="id3"][not(child::node())][following-sibling::psi[preceding-sibling::*[position() = 2]]/pi[@xml:lang="no"][not(child::node())][following-sibling::omega[contains(concat(@string,"$"),"ttribute$")][@xml:lang="en-GB"][following-sibling::mu[@xml:lang="en"][@xml:id="id4"][preceding-sibling::*[position() = 2]][not(child::node())][following-sibling::tau[contains(@insert,"lank")][@xml:lang="en-GB"][@xml:id="id5"][not(following-sibling::*)]/xi[@number="123456789"][@xml:lang="no-nb"][not(preceding-sibling::*)][not(following-sibling::*)]/epsilon[@xml:lang="no"][not(child::node())][following-sibling::beta[starts-with(concat(@number,"-"),"_blank-")][@xml:id="id6"][preceding-sibling::*[position() = 1]][following-sibling::beta[starts-with(@src,"1234")][@xml:lang="en-US"][@xml:id="id7"][preceding-sibling::*[position() = 2]]/xi[@xml:lang="no-nb"][not(following-sibling::*)]/epsilon[@xml:lang="en-GB"][@xml:id="id8"][not(preceding-sibling::*)][not(following-sibling::*)]/beta[@xml:id="id9"][following-sibling::lambda[contains(@attribute,"alue")][preceding-sibling::*[position() = 1]][not(following-sibling::*)]][position() = 1]][position() = 1]][position() = 1]]]][position() = 1]]]'>	
+	<xsl:value-of select="'PASS'"/>
+</xsl:when>
+<xsl:otherwise>FAIL</xsl:otherwise>
+</xsl:choose>
+</result>
+<xsl:if test="false()">
+<pi xml:id="id1"><tau xml:lang="nb" xml:id="id2"/><upsilon xml:lang="en-GB" xml:id="id3"/><psi><pi xml:lang="no"/><omega string="attribute" xml:lang="en-GB"/><mu xml:lang="en" xml:id="id4"/><tau insert="_blank" xml:lang="en-GB" xml:id="id5"><xi number="123456789" xml:lang="no-nb"><epsilon xml:lang="no"/><beta number="_blank" xml:id="id6"/><beta src="123456789" xml:lang="en-US" xml:id="id7"><xi xml:lang="no-nb"><epsilon xml:lang="en-GB" xml:id="id8"><beta xml:id="id9"/><lambda attribute="attribute-value"><green>This text must be green</green></lambda></epsilon></xi></beta></xi></tau></psi></pi></xsl:if>
+</xsl:template>
+</xsl:stylesheet>

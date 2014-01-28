@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>onmousedown attribute of button element</title>
+<script type="application/ecmascript">
+function start()
+	{ev = document.createEvent('MouseEvents');
+	ev.initEvent('mousedown',true,true);
+	document.getElementsByTagName('button')[0].dispatchEvent(ev);}
+</script>
+</head>
+<body onload="start()">
+<p><button type="button" onmousedown="document.getElementsByTagName('p')[1].firstChild.nodeValue = 'PASS'">Button</button></p>
+<p>FAIL</p>
+</body>
+</html>

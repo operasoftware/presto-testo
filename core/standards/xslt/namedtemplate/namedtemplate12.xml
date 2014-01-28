@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="namedtemplate12.xsl"?>
+<doc>
+  <LI>item1</LI>
+  <LI>item2</LI>
+  <OL>
+    <LI>subitem1</LI>
+    <LI>subitem2</LI>
+    <OL>
+      <LI>subsubitem</LI>
+    </OL>
+    <LI>subitem3</LI>
+  </OL>
+</doc>

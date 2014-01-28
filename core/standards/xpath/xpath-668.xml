@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:template match="xsl:template">
+<result>
+<xsl:choose>
+<xsl:when test='//omega[contains(@attribute,"u")][@xml:lang="en-US"]/zeta[@object="100%"][@xml:id="id1"][not(preceding-sibling::*)]//eta[@xml:id="id2"][not(following-sibling::*)]//upsilon[starts-with(concat(@token,"-"),"solid 1px green-")][@xml:lang="nb"][@xml:id="id3"][not(preceding-sibling::*)][not(following-sibling::*)]//iota[@insert][following-sibling::*[position()=1]][following-sibling::tau[contains(@string,"bute")][preceding-sibling::*[position() = 1]]/omega[starts-with(concat(@and,"-"),"this.nodeValue-")][@xml:lang="en"][@xml:id="id4"][not(preceding-sibling::*)][not(following-sibling::*)]//eta[@xml:id="id5"][following-sibling::*[position()=1]][not(child::node())][following-sibling::nu[starts-with(concat(@content,"-"),"content-")][@xml:id="id6"][preceding-sibling::*[position() = 1]]//omicron[starts-with(@insert,"_bl")][@xml:lang="no"]//zeta[@xml:id="id7"][not(preceding-sibling::*)][following-sibling::alpha[@xml:id="id8"][following-sibling::*[position()=2]][not(preceding-sibling::alpha)][following-sibling::psi[@xml:lang="no"][@xml:id="id9"][preceding-sibling::*[position() = 2]][not(child::node())][following-sibling::nu[@xml:lang="nb"][@xml:id="id10"][preceding-sibling::*[position() = 3]][not(following-sibling::*)]//alpha[@xml:id="id11"][not(preceding-sibling::*)][following-sibling::*[position()=1]][following-sibling::beta[@xml:lang="nb"][preceding-sibling::*[position() = 1]][not(following-sibling::*)]/lambda[@xml:lang="en"][@xml:id="id12"][not(preceding-sibling::*)]/epsilon[contains(@true,"Value")][@xml:lang="en-US"][not(preceding-sibling::*)][not(following-sibling::*)]//tau[@true][@xml:lang="no-nb"][@xml:id="id13"][not(child::node())][following-sibling::tau[@xml:id="id14"][not(following-sibling::*)][position() = 1]]]]][position() = 1]]]]'>	
+	<xsl:value-of select="'PASS'"/>
+</xsl:when>
+<xsl:otherwise>FAIL</xsl:otherwise>
+</xsl:choose>
+</result>
+<xsl:if test="false()">
+<omega attribute="true" xml:lang="en-US"><zeta object="100%" xml:id="id1"><eta xml:id="id2"><upsilon token="solid 1px green" xml:lang="nb" xml:id="id3"><iota insert="another attribute value"/><tau string="attribute value"><omega and="this.nodeValue" xml:lang="en" xml:id="id4"><eta xml:id="id5"/><nu content="content" xml:id="id6"><omicron insert="_blank" xml:lang="no"><zeta xml:id="id7"/><alpha xml:id="id8"/><psi xml:lang="no" xml:id="id9"/><nu xml:lang="nb" xml:id="id10"><alpha xml:id="id11"/><beta xml:lang="nb"><lambda xml:lang="en" xml:id="id12"><epsilon true="this.nodeValue" xml:lang="en-US"><tau true="123456789" xml:lang="no-nb" xml:id="id13"/><tau xml:id="id14"><green>This text must be green</green></tau></epsilon></lambda></beta></nu></omicron></nu></omega></tau></upsilon></eta></zeta></omega></xsl:if>
+</xsl:template>
+</xsl:stylesheet>

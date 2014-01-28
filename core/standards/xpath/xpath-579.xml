@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:template match="xsl:template">
+<result>
+<xsl:choose>
+<xsl:when test='//chi/delta[@object="123456789"][@xml:lang="en-GB"][@xml:id="id1"][not(following-sibling::*)]//pi[contains(concat(@attrib,"$"),"e$")][@xml:id="id2"][not(preceding-sibling::*)][not(following-sibling::*)]/delta[contains(@false,"e")][@xml:id="id3"][not(following-sibling::*)]//chi[@or][not(following-sibling::*)]/zeta[starts-with(@data,"t")][@xml:id="id4"][not(preceding-sibling::*)][following-sibling::gamma[starts-with(concat(@number,"-"),"solid 1px green-")][not(following-sibling::*)]/chi[@xml:id="id5"][not(preceding-sibling::*)][not(following-sibling::*)]//beta[not(following-sibling::*)]/rho[@att="content"][@xml:id="id6"][not(following-sibling::*)]/sigma[@xml:lang="nb"][not(preceding-sibling::*)][not(following-sibling::*)]/omicron[starts-with(@attribute,"this-is")][@xml:lang="no"][not(preceding-sibling::*)][not(child::node())][following-sibling::xi[@object][following-sibling::*[position()=1]][following-sibling::chi[@class][@xml:lang="en-US"][@xml:id="id7"][preceding-sibling::*[position() = 2]][not(following-sibling::*)]//psi[@class][following-sibling::*[position()=1]][not(child::node())][following-sibling::upsilon[@src][@xml:id="id8"]/omicron[@attrib][@xml:lang="en"][@xml:id="id9"][not(preceding-sibling::*)][position() = 1]]][position() = 1]]]'>	
+	<xsl:value-of select="'PASS'"/>
+</xsl:when>
+<xsl:otherwise>FAIL</xsl:otherwise>
+</xsl:choose>
+</result>
+<xsl:if test="false()">
+<chi><delta object="123456789" xml:lang="en-GB" xml:id="id1"><pi attrib="true" xml:id="id2"><delta false="attribute-value" xml:id="id3"><chi or="content"><zeta data="true" xml:id="id4"/><gamma number="solid 1px green"><chi xml:id="id5"><beta><rho att="content" xml:id="id6"><sigma xml:lang="nb"><omicron attribute="this-is-att-value" xml:lang="no"/><xi object="another attribute value"/><chi class="false" xml:lang="en-US" xml:id="id7"><psi class="solid 1px green"/><upsilon src="another attribute value" xml:id="id8"><omicron attrib="content" xml:lang="en" xml:id="id9"><green>This text must be green</green></omicron></upsilon></chi></sigma></rho></beta></chi></gamma></chi></delta></pi></delta></chi></xsl:if>
+</xsl:template>
+</xsl:stylesheet>

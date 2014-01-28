@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:template match="xsl:template">
+<result>
+<xsl:choose>
+<xsl:when test='//xi[@xml:lang="no-nb"]/alpha[@insert][@xml:lang="no-nb"][@xml:id="id1"][not(preceding-sibling::*)]//psi[@attrib][@xml:lang="en-US"][@xml:id="id2"][not(preceding-sibling::*)][following-sibling::lambda[starts-with(@att,"another attribute")][@xml:lang="no"][@xml:id="id3"][not(child::node())][following-sibling::omega[contains(@src,"se")][@xml:lang="no"][preceding-sibling::*[position() = 2]][not(following-sibling::*)]//psi[not(following-sibling::*)][not(preceding-sibling::psi)]//epsilon[@xml:id="id4"][not(preceding-sibling::*)]//kappa[contains(@token,"ttribut")][@xml:lang="en"][@xml:id="id5"][not(preceding-sibling::*)]//nu[@xml:id="id6"][not(preceding-sibling::*)][following-sibling::*[@attrib="_blank"][@xml:id="id7"][following-sibling::*[position()=1]][not(child::node())][following-sibling::nu[not(following-sibling::*)]][position() = 1]]][position() = 1]]'>	
+	<xsl:value-of select="'PASS'"/>
+</xsl:when>
+<xsl:otherwise>FAIL</xsl:otherwise>
+</xsl:choose>
+</result>
+<xsl:if test="false()">
+<xi xml:lang="no-nb"><alpha insert="true" xml:lang="no-nb" xml:id="id1"><psi attrib="false" xml:lang="en-US" xml:id="id2"/><lambda att="another attribute value" xml:lang="no" xml:id="id3"/><omega src="false" xml:lang="no"><psi><epsilon xml:id="id4"><kappa token="attribute-value" xml:lang="en" xml:id="id5"><nu xml:id="id6"/><any attrib="_blank" xml:id="id7"/><nu><green>This text must be green</green></nu></kappa></epsilon></psi></omega></alpha></xi></xsl:if>
+</xsl:template>
+</xsl:stylesheet>

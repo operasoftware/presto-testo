@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:template match="xsl:template">
+<result>
+<xsl:choose>
+<xsl:when test='//upsilon[@xml:lang="nb"]/beta[contains(concat(@delete,"$")," value$")][@xml:id="id1"][not(preceding-sibling::*)][not(child::node())][following-sibling::omega[contains(@attrib,"e")][@xml:lang="nb"][@xml:id="id2"][following-sibling::*[starts-with(concat(@true,"-"),"123456789-")][@xml:lang="no-nb"][@xml:id="id3"]/sigma[@xml:lang="en-US"][@xml:id="id4"][not(preceding-sibling::*)][following-sibling::theta[contains(@abort,"56789")][@xml:lang="en-GB"][@xml:id="id5"][preceding-sibling::*[position() = 1]][not(child::node())][following-sibling::psi[@xml:lang="en"][@xml:id="id6"][not(child::node())][following-sibling::psi//eta[contains(concat(@abort,"$"),"e value$")][@xml:lang="no"][not(following-sibling::*)]//sigma[not(preceding-sibling::*)]/omega[@xml:lang="no"]/epsilon[@attrib][@xml:id="id7"][following-sibling::zeta[@xml:lang="nb"][following-sibling::*[position()=1]][not(child::node())][following-sibling::alpha[@or="another attribute value"][preceding-sibling::*[position() = 2]][not(following-sibling::*)]/phi[starts-with(@true,"co")][@xml:lang="no-nb"][@xml:id="id8"][not(following-sibling::*)]/omega[contains(@object,"n")][@xml:lang="en"][not(following-sibling::*)][position() = 1]][position() = 1]][position() = 1]]]][position() = 1]][position() = 1]]'>	
+	<xsl:value-of select="'PASS'"/>
+</xsl:when>
+<xsl:otherwise>FAIL</xsl:otherwise>
+</xsl:choose>
+</result>
+<xsl:if test="false()">
+<upsilon xml:lang="nb"><beta delete="attribute value" xml:id="id1"/><omega attrib="attribute value" xml:lang="nb" xml:id="id2"/><any true="123456789" xml:lang="no-nb" xml:id="id3"><sigma xml:lang="en-US" xml:id="id4"/><theta abort="123456789" xml:lang="en-GB" xml:id="id5"/><psi xml:lang="en" xml:id="id6"/><psi><eta abort="another attribute value" xml:lang="no"><sigma><omega xml:lang="no"><epsilon attrib="attribute-value" xml:id="id7"/><zeta xml:lang="nb"/><alpha or="another attribute value"><phi true="content" xml:lang="no-nb" xml:id="id8"><omega object="content" xml:lang="en"><green>This text must be green</green></omega></phi></alpha></omega></sigma></eta></psi></any></upsilon></xsl:if>
+</xsl:template>
+</xsl:stylesheet>

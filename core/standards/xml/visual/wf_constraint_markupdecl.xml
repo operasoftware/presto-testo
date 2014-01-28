@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/css" href="data:text/css,%3Aroot%7Bdisplay%3Ablock%7D"?>
+<!DOCTYPE doc [
+
+<!ENTITY % menu
+
+	"<!ELEMENT menu (#PCDATA | item)*>"
+
+>
+
+%menu;
+
+]>
+
+<doc>
+
+<menu>
+
+<item>
+Passed if no XML processing error reported
+</item>
+
+</menu>
+
+</doc>
+
+

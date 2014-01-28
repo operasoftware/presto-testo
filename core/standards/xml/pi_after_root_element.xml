@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<!-- Testcase: pi_after_root.xml -->
+<!-- Description: The processing instruction is placed after the end root element -->
+<!-- Author:  Chris Petersen  Date: 12/21/2000 -->
+<main>
+<node>
+This sentence should appear as underline, yellow text. <!--The processing instruction , which specifies a stylesheet for this document, is located outside of root element.-->
+</node>
+</main>
+<?xml-stylesheet href="standard.css" type="text/css"?><?xml-stylesheet href="standard.css" type="text/css"?>

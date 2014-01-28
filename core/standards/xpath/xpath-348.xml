@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:template match="xsl:template">
+<result>
+<xsl:choose>
+<xsl:when test='//beta[starts-with(concat(@object,"-"),"_blank-")]//iota[not(following-sibling::*)]/theta[starts-with(concat(@number,"-"),"123456789-")][@xml:lang="nb"][@xml:id="id1"]//delta[@true][not(following-sibling::*)]//chi[@xml:lang="nb"][@xml:id="id2"][not(preceding-sibling::*)]/psi[contains(concat(@number,"$"),"ent$")]/beta[contains(concat(@name,"$"),"ribute value$")][@xml:id="id3"][not(preceding-sibling::*)]//omega[@object="attribute"][not(following-sibling::*)]/beta[not(preceding-sibling::*)][not(following-sibling::*)]//nu[@attribute="this-is-att-value"][@xml:lang="no"][not(child::node())][following-sibling::rho[@content][@xml:lang="en-US"][preceding-sibling::*[position() = 1]][not(following-sibling::*)]/delta[not(child::node())][following-sibling::epsilon[starts-with(concat(@false,"-"),"true-")][@xml:lang="en-US"][preceding-sibling::*[position() = 1]]//mu[starts-with(@src,"fals")][@xml:id="id4"][not(preceding-sibling::*)][not(child::node())][following-sibling::alpha[starts-with(@object,"attribute v")][@xml:lang="en-GB"][@xml:id="id5"][preceding-sibling::*[position() = 1]][following-sibling::*[position()=2]][not(child::node())][following-sibling::sigma[starts-with(concat(@desciption,"-"),"_blank-")][preceding-sibling::*[position() = 2]][following-sibling::*[position()=1]][not(child::node())][following-sibling::rho[@xml:id="id6"][not(following-sibling::*)][position() = 1]]]]][position() = 1]]'>	
+	<xsl:value-of select="'PASS'"/>
+</xsl:when>
+<xsl:otherwise>FAIL</xsl:otherwise>
+</xsl:choose>
+</result>
+<xsl:if test="false()">
+<beta object="_blank"><iota><theta number="123456789" xml:lang="nb" xml:id="id1"><delta true="solid 1px green"><chi xml:lang="nb" xml:id="id2"><psi number="content"><beta name="attribute value" xml:id="id3"><omega object="attribute"><beta><nu attribute="this-is-att-value" xml:lang="no"/><rho content="attribute" xml:lang="en-US"><delta/><epsilon false="true" xml:lang="en-US"><mu src="false" xml:id="id4"/><alpha object="attribute value" xml:lang="en-GB" xml:id="id5"/><sigma desciption="_blank"/><rho xml:id="id6"><green>This text must be green</green></rho></epsilon></rho></beta></omega></beta></psi></chi></delta></theta></iota></beta></xsl:if>
+</xsl:template>
+</xsl:stylesheet>

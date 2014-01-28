@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:template match="xsl:template">
+<result>
+<xsl:choose>
+<xsl:when test='//tau[@xml:lang="no"]/omega[@xml:lang="no"][@xml:id="id1"]/gamma[@xml:lang="en-US"][not(preceding-sibling::*)][not(following-sibling::*)]//iota[@xml:id="id2"]/mu[@xml:lang="en"][@xml:id="id3"]/delta[@xml:lang="en"][not(preceding-sibling::*)][not(child::node())][following-sibling::sigma[contains(concat(@and,"$"),"ttribute$")][@xml:lang="no"][@xml:id="id4"][preceding-sibling::*[position() = 1]][not(following-sibling::*)]/delta[@att][@xml:id="id5"][not(child::node())][following-sibling::gamma//omicron[@xml:id="id6"][not(child::node())][following-sibling::delta[@src="attribute value"][preceding-sibling::*[position() = 1]][following-sibling::*[position()=3]][not(child::node())][following-sibling::*[@xml:lang="nb"][@xml:id="id7"][following-sibling::*[position()=2]][following-sibling::iota[@xml:id="id8"][not(child::node())][following-sibling::beta[preceding-sibling::*[position() = 4]]//chi[@xml:lang="no-nb"][@xml:id="id9"]/gamma[contains(concat(@name,"$"),"true$")][@xml:lang="en-GB"][@xml:id="id10"][not(preceding-sibling::*)][not(preceding-sibling::gamma)]/phi[@number="123456789"][@xml:lang="nb"][@xml:id="id11"][not(preceding-sibling::*)][following-sibling::*[@xml:lang="en-US"][preceding-sibling::*[position() = 1]][not(following-sibling::*)]//phi[not(preceding-sibling::*)]]]][position() = 1]][position() = 1]][position() = 1]][position() = 1]]'>	
+	<xsl:value-of select="'PASS'"/>
+</xsl:when>
+<xsl:otherwise>FAIL</xsl:otherwise>
+</xsl:choose>
+</result>
+<xsl:if test="false()">
+<tau xml:lang="no"><omega xml:lang="no" xml:id="id1"><gamma xml:lang="en-US"><iota xml:id="id2"><mu xml:lang="en" xml:id="id3"><delta xml:lang="en"/><sigma and="attribute" xml:lang="no" xml:id="id4"><delta att="content" xml:id="id5"/><gamma><omicron xml:id="id6"/><delta src="attribute value"/><any xml:lang="nb" xml:id="id7"/><iota xml:id="id8"/><beta><chi xml:lang="no-nb" xml:id="id9"><gamma name="true" xml:lang="en-GB" xml:id="id10"><phi number="123456789" xml:lang="nb" xml:id="id11"/><any xml:lang="en-US"><phi><green>This text must be green</green></phi></any></gamma></chi></beta></gamma></sigma></mu></iota></gamma></omega></tau></xsl:if>
+</xsl:template>
+</xsl:stylesheet>

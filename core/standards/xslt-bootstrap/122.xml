@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0" xml:lang="en">
+<xsl:variable name="var1">P</xsl:variable>
+<xsl:variable name="var2">A</xsl:variable>
+<xsl:variable name="var3">S</xsl:variable>
+<xsl:template match="xsl:stylesheet">
+<xsl:if test="concat($var1,$var2,$var3,$var3) = 'PASS'"><result><xsl:value-of select="concat($var1,$var2,$var3,$var3)"/></result></xsl:if>
+</xsl:template>
+</xsl:stylesheet>

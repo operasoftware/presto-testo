@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:template match="xsl:template">
+<result>
+<xsl:choose>
+<xsl:when test='//theta[@or="this-is-att-value"]//beta[@xml:lang="en"][@xml:id="id1"][not(preceding-sibling::*)][following-sibling::omega[starts-with(@attr,"at")][@xml:lang="en-GB"][preceding-sibling::*[position() = 1]][not(following-sibling::*)]/nu[starts-with(@desciption,"solid 1px gre")][@xml:lang="en-US"]//epsilon[@true][@xml:lang="en-GB"][@xml:id="id2"][not(preceding-sibling::*)][following-sibling::gamma[contains(@data,"234")][preceding-sibling::*[position() = 1]][not(child::node())][following-sibling::sigma[not(child::node())][following-sibling::sigma[@xml:lang="no-nb"][@xml:id="id3"][not(following-sibling::*)]//zeta[@content][@xml:id="id4"][not(preceding-sibling::*)][following-sibling::upsilon[contains(@number,"attribute valu")][@xml:id="id5"]//theta[@xml:id="id6"][not(child::node())][following-sibling::theta[contains(concat(@false,"$"),"e$")][following-sibling::chi//beta[contains(concat(@attribute,"$"),"100%$")]//iota[@xml:lang="en-US"][@xml:id="id7"][not(preceding-sibling::*)]/phi[@token][@xml:lang="nb"][@xml:id="id8"][not(following-sibling::*)][not(preceding-sibling::phi)]/zeta[@xml:lang="en-US"]/omicron[@xml:id="id9"][not(preceding-sibling::*)]][position() = 1]][position() = 1]][position() = 1]]]][position() = 1]]'>	
+	<xsl:value-of select="'PASS'"/>
+</xsl:when>
+<xsl:otherwise>FAIL</xsl:otherwise>
+</xsl:choose>
+</result>
+<xsl:if test="false()">
+<theta or="this-is-att-value"><beta xml:lang="en" xml:id="id1"/><omega attr="attribute value" xml:lang="en-GB"><nu desciption="solid 1px green" xml:lang="en-US"><epsilon true="_blank" xml:lang="en-GB" xml:id="id2"/><gamma data="123456789"/><sigma/><sigma xml:lang="no-nb" xml:id="id3"><zeta content="attribute-value" xml:id="id4"/><upsilon number="another attribute value" xml:id="id5"><theta xml:id="id6"/><theta false="true"/><chi><beta attribute="100%"><iota xml:lang="en-US" xml:id="id7"><phi token="content" xml:lang="nb" xml:id="id8"><zeta xml:lang="en-US"><omicron xml:id="id9"><green>This text must be green</green></omicron></zeta></phi></iota></beta></chi></upsilon></sigma></nu></omega></theta></xsl:if>
+</xsl:template>
+</xsl:stylesheet>

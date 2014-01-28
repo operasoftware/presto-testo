@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:template match="xsl:template">
+<result>
+<xsl:choose>
+<xsl:when test='//phi[@abort]//mu[@xml:lang="no-nb"][@xml:id="id1"]/xi[starts-with(@name,"att")][@xml:lang="no"][@xml:id="id2"]//beta[contains(@number,"l")][@xml:lang="en"][not(preceding-sibling::*)][not(following-sibling::*)]//phi[@string][@xml:id="id3"][not(following-sibling::*)]/pi[contains(concat(@false,"$"),"100%$")][@xml:lang="en-GB"]/omicron[@xml:lang="en"][@xml:id="id4"][following-sibling::*[position()=1]][not(child::node())][following-sibling::zeta[contains(concat(@attribute,"$"),"e$")][@xml:id="id5"][not(following-sibling::*)]//chi[@xml:lang="en"][not(preceding-sibling::*)][following-sibling::rho[@false="another attribute value"][not(following-sibling::*)]/beta[@xml:lang="no"][following-sibling::lambda[contains(concat(@name,"$"),"deValue$")][@xml:lang="en"][preceding-sibling::*[position() = 1]][not(following-sibling::*)]/pi[@title="this-is-att-value"][@xml:id="id6"][not(preceding-sibling::*)]/kappa[@false="false"][@xml:id="id7"][not(following-sibling::*)][position() = 1]][position() = 1]]]'>	
+	<xsl:value-of select="'PASS'"/>
+</xsl:when>
+<xsl:otherwise>FAIL</xsl:otherwise>
+</xsl:choose>
+</result>
+<xsl:if test="false()">
+<phi abort="this-is-att-value"><mu xml:lang="no-nb" xml:id="id1"><xi name="attribute-value" xml:lang="no" xml:id="id2"><beta number="false" xml:lang="en"><phi string="100%" xml:id="id3"><pi false="100%" xml:lang="en-GB"><omicron xml:lang="en" xml:id="id4"/><zeta attribute="false" xml:id="id5"><chi xml:lang="en"/><rho false="another attribute value"><beta xml:lang="no"/><lambda name="this.nodeValue" xml:lang="en"><pi title="this-is-att-value" xml:id="id6"><kappa false="false" xml:id="id7"><green>This text must be green</green></kappa></pi></lambda></rho></zeta></pi></phi></beta></xi></mu></phi></xsl:if>
+</xsl:template>
+</xsl:stylesheet>

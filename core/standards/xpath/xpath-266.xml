@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:template match="xsl:template">
+<result>
+<xsl:choose>
+<xsl:when test='//theta[starts-with(concat(@delete,"-"),"another attribute value-")][@xml:lang="en"][@xml:id="id1"]//psi//beta[not(preceding-sibling::*)]/delta[not(preceding-sibling::*)]//lambda[starts-with(@class,"1")][not(preceding-sibling::*)][not(following-sibling::*)]/alpha[contains(concat(@false,"$"),"e$")][@xml:id="id2"][not(preceding-sibling::*)]//omega[@name][@xml:lang="no"][not(preceding-sibling::*)][not(child::node())][following-sibling::iota[preceding-sibling::*[position() = 1]][not(child::node())][following-sibling::iota[contains(concat(@content,"$"),"attribute$")][preceding-sibling::*[position() = 2]][not(following-sibling::*)]//psi[@name="attribute"][@xml:id="id3"]//theta[contains(@or,"0%")]/xi[@xml:lang="no-nb"][@xml:id="id4"]//kappa[@xml:lang="en-US"][@xml:id="id5"][not(preceding-sibling::*)][not(following-sibling::*)]/chi[contains(@or,"solid 1px gre")][@xml:lang="en-GB"][not(preceding-sibling::*)][not(following-sibling::chi)]/theta[@xml:lang="nb"][not(preceding-sibling::*)][not(child::node())][following-sibling::theta[@xml:lang="en"][preceding-sibling::*[position() = 1]]/psi[@xml:id="id6"][not(preceding-sibling::*)][not(following-sibling::*)]//rho[contains(concat(@attrib,"$"),"e$")][@xml:id="id7"][not(following-sibling::*)]/tau[@xml:lang="no-nb"]/beta[@xml:id="id8"][following-sibling::omega[contains(concat(@data,"$"),"lue$")][preceding-sibling::*[position() = 1]][following-sibling::epsilon[@xml:lang="en-US"][@xml:id="id9"]][position() = 1]][position() = 1]][position() = 1]]]'>	
+	<xsl:value-of select="'PASS'"/>
+</xsl:when>
+<xsl:otherwise>FAIL</xsl:otherwise>
+</xsl:choose>
+</result>
+<xsl:if test="false()">
+<theta delete="another attribute value" xml:lang="en" xml:id="id1"><psi><beta><delta><lambda class="100%"><alpha false="true" xml:id="id2"><omega name="true" xml:lang="no"/><iota/><iota content="attribute"><psi name="attribute" xml:id="id3"><theta or="100%"><xi xml:lang="no-nb" xml:id="id4"><kappa xml:lang="en-US" xml:id="id5"><chi or="solid 1px green" xml:lang="en-GB"><theta xml:lang="nb"/><theta xml:lang="en"><psi xml:id="id6"><rho attrib="attribute value" xml:id="id7"><tau xml:lang="no-nb"><beta xml:id="id8"/><omega data="this.nodeValue"/><epsilon xml:lang="en-US" xml:id="id9"><green>This text must be green</green></epsilon></tau></rho></psi></theta></chi></kappa></xi></theta></psi></iota></alpha></lambda></delta></beta></psi></theta></xsl:if>
+</xsl:template>
+</xsl:stylesheet>

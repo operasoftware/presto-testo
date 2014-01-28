@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:template match="xsl:template">
+<result>
+<xsl:choose>
+<xsl:when test='//zeta/gamma[@class][@xml:id="id1"][not(following-sibling::*)]/sigma[@delete][@xml:lang="nb"][@xml:id="id2"][not(preceding-sibling::*)][not(child::node())][following-sibling::mu[contains(@and,"ute-value")][preceding-sibling::*[position() = 1]][not(following-sibling::*)]/upsilon[contains(concat(@string,"$"),"attribute-value$")][@xml:lang="no-nb"][@xml:id="id3"]//epsilon[@desciption][@xml:lang="no-nb"][@xml:id="id4"][not(preceding-sibling::*)]/sigma[@xml:id="id5"][following-sibling::*[position()=11]][following-sibling::xi[@xml:lang="en-GB"][@xml:id="id6"][preceding-sibling::*[position() = 1]][following-sibling::*[position()=10]][following-sibling::omicron[@xml:lang="en-GB"][following-sibling::omicron[@content][@xml:id="id7"][preceding-sibling::*[position() = 3]][not(child::node())][following-sibling::eta[@true][@xml:lang="nb"][preceding-sibling::*[position() = 4]][following-sibling::*[position()=7]][following-sibling::tau[@xml:id="id8"][following-sibling::psi[@xml:id="id9"][not(child::node())][following-sibling::delta[contains(concat(@and,"$"),"nt$")][@xml:id="id10"][preceding-sibling::*[position() = 7]][following-sibling::*[position()=4]][following-sibling::zeta[@xml:id="id11"][following-sibling::alpha[not(child::node())][following-sibling::iota[preceding-sibling::*[position() = 10]][following-sibling::psi[@string="false"][preceding-sibling::*[position() = 11]]][position() = 1]]]]][position() = 1]]][position() = 1]][position() = 1]]]][position() = 1]]'>	
+	<xsl:value-of select="'PASS'"/>
+</xsl:when>
+<xsl:otherwise>FAIL</xsl:otherwise>
+</xsl:choose>
+</result>
+<xsl:if test="false()">
+<zeta><gamma class="this-is-att-value" xml:id="id1"><sigma delete="false" xml:lang="nb" xml:id="id2"/><mu and="attribute-value"><upsilon string="attribute-value" xml:lang="no-nb" xml:id="id3"><epsilon desciption="attribute" xml:lang="no-nb" xml:id="id4"><sigma xml:id="id5"/><xi xml:lang="en-GB" xml:id="id6"/><omicron xml:lang="en-GB"/><omicron content="this.nodeValue" xml:id="id7"/><eta true="false" xml:lang="nb"/><tau xml:id="id8"/><psi xml:id="id9"/><delta and="content" xml:id="id10"/><zeta xml:id="id11"/><alpha/><iota/><psi string="false"><green>This text must be green</green></psi></epsilon></upsilon></mu></gamma></zeta></xsl:if>
+</xsl:template>
+</xsl:stylesheet>

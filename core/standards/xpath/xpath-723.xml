@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:template match="xsl:template">
+<result>
+<xsl:choose>
+<xsl:when test='//omicron[@number]/tau[@xml:lang="en-GB"][not(preceding-sibling::*)][not(preceding-sibling::tau or following-sibling::tau)][following-sibling::iota[starts-with(concat(@class,"-"),"true-")][preceding-sibling::*[position() = 1]][following-sibling::nu[@xml:id="id1"][not(child::node())][following-sibling::chi[preceding-sibling::*[position() = 3]][following-sibling::pi[contains(@desciption,"0")][@xml:lang="no-nb"][preceding-sibling::*[position() = 4]][not(following-sibling::*)]/sigma[@token][following-sibling::eta[contains(concat(@object,"$"),"her attribute value$")][@xml:lang="en-US"][@xml:id="id2"]//rho[@xml:lang="en-GB"][@xml:id="id3"][not(preceding-sibling::*)]//*[contains(concat(@att,"$"),"ute value$")][@xml:lang="no-nb"][not(preceding-sibling::*)][not(child::node())][following-sibling::*[@desciption]]]]]][position() = 1]]'>	
+	<xsl:value-of select="'PASS'"/>
+</xsl:when>
+<xsl:otherwise>FAIL</xsl:otherwise>
+</xsl:choose>
+</result>
+<xsl:if test="false()">
+<omicron number="another attribute value"><tau xml:lang="en-GB"/><iota class="true"/><nu xml:id="id1"/><chi/><pi desciption="100%" xml:lang="no-nb"><sigma token="true"/><eta object="another attribute value" xml:lang="en-US" xml:id="id2"><rho xml:lang="en-GB" xml:id="id3"><any att="another attribute value" xml:lang="no-nb"/><any desciption="123456789"><green>This text must be green</green></any></rho></eta></pi></omicron></xsl:if>
+</xsl:template>
+</xsl:stylesheet>

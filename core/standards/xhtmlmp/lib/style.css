@@ -1,0 +1,35 @@
+/* TC-specific */
+samp {
+  background-color: #ddf;
+}
+var {
+  background-color: #fdd;
+}
+.error { 
+  background-color: orange;
+}
+.requirements, .steps {
+  background-color: #fff1cc;
+}
+.condition {
+  background-color: #ffd;
+  margin: .5em 0 2em 0;
+}
+.pass { 
+  background-color: green;
+  color: white;
+  text-transform: uppercase;
+  font-weight: bolder;
+ }
+.pass:before { 
+  content: "pass";
+ }
+.fail { 
+  background-color: red;
+  color: yellow;
+  text-transform: uppercase;
+  font-weight: bolder;
+ }
+.fail:before { 
+  content: "fail";
+ }

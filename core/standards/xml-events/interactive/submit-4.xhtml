@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ev="http://www.w3.org/2001/xml-events">
+<head>
+<title>Submit event</title>
+<ev:listener event="submit" observer="observer" handler="#handler" defaultAction="cancel"/>
+<script type="application/ecmascript" id="handler">
+<![CDATA[
+document.getElementsByTagName('tt')[0].firstChild.nodeValue = "PASSED";
+]]>
+</script>
+</head>
+<body id="observer">
+<form action="http://t/imported/giorgic/xml-events/post.php">
+<div>
+<input name="result" type="hidden" value="Failed"/>
+<input name="submit" type="submit" value="Press me"/>
+</div>
+</form>
+<div><tt>NOT TESTED</tt></div>
+</body>
+</html>

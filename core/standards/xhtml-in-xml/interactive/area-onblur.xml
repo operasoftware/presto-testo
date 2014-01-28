@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>onblur attribute of area element</title>
+</head>
+<body id="start">
+<p><object type="image/png" data="../hlp/area-blur.png" usemap="#map">images should be enabled</object></p>
+<p>Focus first box and then second one using spacial navigation, you should see word pass once you move to second box.</p>
+<div>
+<map id="map">
+<area shape="rect" coords="0,0,45,45" href="#start" alt="alt attribute" onblur="document.getElementsByTagName('p')[1].firstChild.nodeValue = 'PASS'"/>
+<area shape="rect" coords="50,50,100,100" alt="alt attribute" href="#start"/>
+</map>
+</div>
+</body>
+</html>
+

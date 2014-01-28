@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:template match="xsl:template">
+<result>
+<xsl:choose>
+<xsl:when test='//mu[@xml:id="id1"]//rho[@title][@xml:lang="en-GB"][following-sibling::*[position()=1]][following-sibling::rho[@object="this.nodeValue"][@xml:id="id2"][preceding-sibling::*[position() = 1]][not(following-sibling::*)]/epsilon[@object][@xml:lang="no-nb"][not(child::node())][following-sibling::alpha[@xml:lang="no"][@xml:id="id3"][preceding-sibling::*[position() = 1]][not(child::node())][following-sibling::phi[starts-with(concat(@content,"-"),"_blank-")][not(following-sibling::*)]/iota[@xml:lang="no"][@xml:id="id4"][not(preceding-sibling::*)][not(child::node())][following-sibling::psi[@xml:lang="en"][@xml:id="id5"][preceding-sibling::*[position() = 1]][following-sibling::*[position()=1]][following-sibling::zeta[@insert][@xml:lang="en-GB"][@xml:id="id6"][preceding-sibling::*[position() = 2]][not(following-sibling::*)]/lambda[@xml:lang="en"][@xml:id="id7"][not(preceding-sibling::*)][following-sibling::delta[contains(concat(@object,"$"),"se$")][preceding-sibling::*[position() = 1]]//mu[@attrib][@xml:lang="en-GB"]/omicron[contains(concat(@false,"$"),"lse$")][@xml:id="id8"][not(preceding-sibling::*)][not(child::node())][following-sibling::beta[@xml:id="id9"][not(following-sibling::*)]/rho[contains(concat(@attr,"$"),"100%$")][not(preceding-sibling::*)][following-sibling::tau[@xml:lang="no"][preceding-sibling::*[position() = 1]][following-sibling::*[position()=3]][following-sibling::*[@xml:lang="en-US"][@xml:id="id10"][not(child::node())][following-sibling::alpha[contains(concat(@att,"$"),"rue$")][following-sibling::omicron[@xml:lang="no"][@xml:id="id11"][preceding-sibling::*[position() = 4]][not(following-sibling::*)]//omicron[contains(concat(@abort,"$"),"tt-value$")][@xml:lang="en"]/upsilon[starts-with(concat(@string,"-"),"100%-")][@xml:lang="no-nb"][@xml:id="id12"]]]][position() = 1]]]][position() = 1]][position() = 1]][position() = 1]]]]'>	
+	<xsl:value-of select="'PASS'"/>
+</xsl:when>
+<xsl:otherwise>FAIL</xsl:otherwise>
+</xsl:choose>
+</result>
+<xsl:if test="false()">
+<mu xml:id="id1"><rho title="123456789" xml:lang="en-GB"/><rho object="this.nodeValue" xml:id="id2"><epsilon object="solid 1px green" xml:lang="no-nb"/><alpha xml:lang="no" xml:id="id3"/><phi content="_blank"><iota xml:lang="no" xml:id="id4"/><psi xml:lang="en" xml:id="id5"/><zeta insert="true" xml:lang="en-GB" xml:id="id6"><lambda xml:lang="en" xml:id="id7"/><delta object="false"><mu attrib="another attribute value" xml:lang="en-GB"><omicron false="false" xml:id="id8"/><beta xml:id="id9"><rho attr="100%"/><tau xml:lang="no"/><any xml:lang="en-US" xml:id="id10"/><alpha att="true"/><omicron xml:lang="no" xml:id="id11"><omicron abort="this-is-att-value" xml:lang="en"><upsilon string="100%" xml:lang="no-nb" xml:id="id12"><green>This text must be green</green></upsilon></omicron></omicron></beta></mu></delta></zeta></phi></rho></mu></xsl:if>
+</xsl:template>
+</xsl:stylesheet>

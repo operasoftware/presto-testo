@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:template match="xsl:template">
+<result>
+<xsl:choose>
+<xsl:when test='//psi[starts-with(concat(@attribute,"-"),"true-")][@xml:lang="en-US"][@xml:id="id1"]//chi[@xml:id="id2"][not(preceding-sibling::*)][not(child::node())][following-sibling::zeta[@or][@xml:lang="en-US"][preceding-sibling::*[position() = 1]][following-sibling::iota[starts-with(concat(@insert,"-"),"123456789-")][@xml:lang="en-GB"][@xml:id="id3"]/epsilon[starts-with(@false,"this-")][not(preceding-sibling::*)]/rho[not(following-sibling::*)]/gamma[@xml:lang="no-nb"]/alpha[@xml:id="id4"][not(preceding-sibling::*)][not(following-sibling::*)]/psi[starts-with(concat(@data,"-"),"attribute-")][@xml:lang="en"][following-sibling::*[position()=1]][following-sibling::tau[contains(@desciption," value")][preceding-sibling::*[position() = 1]][not(following-sibling::*)]/tau[starts-with(concat(@and,"-"),"attribute-")][@xml:lang="no"][not(child::node())][following-sibling::chi[starts-with(@string,"another at")][@xml:id="id5"][following-sibling::xi[preceding-sibling::*[position() = 2]]/alpha[contains(@class,"s-att-value")][not(following-sibling::*)]//eta[@xml:id="id6"][not(preceding-sibling::*)][not(child::node())][following-sibling::sigma[@content][preceding-sibling::*[position() = 1]]//psi[not(preceding-sibling::*)][not(child::node())][following-sibling::pi[starts-with(concat(@true,"-"),"another attribute value-")][@xml:lang="en-US"][@xml:id="id7"][not(following-sibling::*)]/theta[@xml:lang="nb"][position() = 1]]]]]]][position() = 1]]'>	
+	<xsl:value-of select="'PASS'"/>
+</xsl:when>
+<xsl:otherwise>FAIL</xsl:otherwise>
+</xsl:choose>
+</result>
+<xsl:if test="false()">
+<psi attribute="true" xml:lang="en-US" xml:id="id1"><chi xml:id="id2"/><zeta or="100%" xml:lang="en-US"/><iota insert="123456789" xml:lang="en-GB" xml:id="id3"><epsilon false="this-is-att-value"><rho><gamma xml:lang="no-nb"><alpha xml:id="id4"><psi data="attribute" xml:lang="en"/><tau desciption="attribute value"><tau and="attribute" xml:lang="no"/><chi string="another attribute value" xml:id="id5"/><xi><alpha class="this-is-att-value"><eta xml:id="id6"/><sigma content="this.nodeValue"><psi/><pi true="another attribute value" xml:lang="en-US" xml:id="id7"><theta xml:lang="nb"><green>This text must be green</green></theta></pi></sigma></alpha></xi></tau></alpha></gamma></rho></epsilon></iota></psi></xsl:if>
+</xsl:template>
+</xsl:stylesheet>

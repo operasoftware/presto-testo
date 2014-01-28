@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:template match="xsl:template">
+<result>
+<xsl:choose>
+<xsl:when test='//alpha[@data="attribute"][@xml:lang="en-US"][@xml:id="id1"]/iota[starts-with(@att,"this-is-att-v")][@xml:lang="en-GB"][@xml:id="id2"][not(preceding-sibling::*)][not(child::node())][following-sibling::xi[@xml:lang="en"][@xml:id="id3"]/eta[@xml:id="id4"][not(following-sibling::*)]/theta[starts-with(concat(@insert,"-"),"attribute-")][@xml:id="id5"][following-sibling::*[position()=4]][following-sibling::delta[@xml:lang="nb"][not(child::node())][following-sibling::beta[following-sibling::*[position()=2]][following-sibling::upsilon[contains(concat(@insert,"$"),"value$")][@xml:lang="en-US"][@xml:id="id6"][preceding-sibling::*[position() = 3]][not(child::node())][following-sibling::delta[starts-with(concat(@abort,"-"),"attribute-")][preceding-sibling::*[position() = 4]][not(following-sibling::*)]//mu[@xml:lang="en"][@xml:id="id7"][not(child::node())][following-sibling::alpha[@xml:id="id8"][preceding-sibling::*[position() = 1]][not(following-sibling::*)]/pi[@xml:lang="nb"][not(following-sibling::*)]/tau[@xml:lang="no"][@xml:id="id9"][not(preceding-sibling::*)][not(following-sibling::*)]//phi[contains(concat(@title,"$"),"ue$")]/phi[@string][@xml:id="id10"][not(preceding-sibling::*)][not(following-sibling::*)]]][position() = 1]]]][position() = 1]]'>	
+	<xsl:value-of select="'PASS'"/>
+</xsl:when>
+<xsl:otherwise>FAIL</xsl:otherwise>
+</xsl:choose>
+</result>
+<xsl:if test="false()">
+<alpha data="attribute" xml:lang="en-US" xml:id="id1"><iota att="this-is-att-value" xml:lang="en-GB" xml:id="id2"/><xi xml:lang="en" xml:id="id3"><eta xml:id="id4"><theta insert="attribute" xml:id="id5"/><delta xml:lang="nb"/><beta/><upsilon insert="another attribute value" xml:lang="en-US" xml:id="id6"/><delta abort="attribute"><mu xml:lang="en" xml:id="id7"/><alpha xml:id="id8"><pi xml:lang="nb"><tau xml:lang="no" xml:id="id9"><phi title="true"><phi string="_blank" xml:id="id10"><green>This text must be green</green></phi></phi></tau></pi></alpha></delta></eta></xi></alpha></xsl:if>
+</xsl:template>
+</xsl:stylesheet>

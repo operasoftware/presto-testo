@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>title attribute of tfoot element</title>
+<style type="text/css">
+[title="test result"] + tr > td
+	{content:'PASS'}
+</style>
+</head>
+<body>
+<table>
+<tfoot title="test result">
+<tr><td>You should see word PASS above</td></tr>
+</tfoot>
+<tr><td>FAIL</td></tr>
+</table>
+</body>
+</html>

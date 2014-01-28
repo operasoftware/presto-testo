@@ -1,0 +1,12 @@
+<?xml version="1.0"?> 
+<?xml-stylesheet type="text/xsl" href="whitespace06.xsl"?>
+<doc xmlns:foo="http://ns1" xmlns:roo="http://ns2">
+  <foo:test>
+         <a>a</a>
+                <b>b</b>
+  </foo:test>
+  <roo:test>
+         <c>c</c>
+                <d>d</d>
+  </roo:test>
+</doc>

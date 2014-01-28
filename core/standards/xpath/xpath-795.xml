@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:template match="xsl:template">
+<result>
+<xsl:choose>
+<xsl:when test='//chi[@xml:lang="en-US"]/gamma[@attribute][not(preceding-sibling::*)][following-sibling::omicron[@xml:lang="en-GB"][@xml:id="id1"][preceding-sibling::*[position() = 1]][not(child::node())][following-sibling::theta[@attribute="content"][@xml:id="id2"]/upsilon[starts-with(concat(@desciption,"-"),"attribute-")][@xml:lang="en-US"][@xml:id="id3"][following-sibling::theta[@desciption="true"][@xml:lang="en-GB"][@xml:id="id4"][following-sibling::*[position()=3]][following-sibling::omicron[@xml:lang="no"][@xml:id="id5"][not(child::node())][following-sibling::xi[@attribute][@xml:id="id6"][preceding-sibling::*[position() = 3]][following-sibling::psi[preceding-sibling::*[position() = 4]]/pi//psi[@name][not(child::node())][following-sibling::zeta[@xml:lang="en-US"][preceding-sibling::*[position() = 1]][not(following-sibling::*)]//beta[@xml:id="id7"]//mu[@attr][@xml:lang="en-US"][@xml:id="id8"][following-sibling::mu[@xml:lang="nb"][@xml:id="id9"][not(child::node())][following-sibling::kappa[@xml:lang="no"][@xml:id="id10"]]]]][position() = 1]][position() = 1]]][position() = 1]]]'>	
+	<xsl:value-of select="'PASS'"/>
+</xsl:when>
+<xsl:otherwise>FAIL</xsl:otherwise>
+</xsl:choose>
+</result>
+<xsl:if test="false()">
+<chi xml:lang="en-US"><gamma attribute="100%"/><omicron xml:lang="en-GB" xml:id="id1"/><theta attribute="content" xml:id="id2"><upsilon desciption="attribute" xml:lang="en-US" xml:id="id3"/><theta desciption="true" xml:lang="en-GB" xml:id="id4"/><omicron xml:lang="no" xml:id="id5"/><xi attribute="attribute" xml:id="id6"/><psi><pi><psi name="true"/><zeta xml:lang="en-US"><beta xml:id="id7"><mu attr="attribute" xml:lang="en-US" xml:id="id8"/><mu xml:lang="nb" xml:id="id9"/><kappa xml:lang="no" xml:id="id10"><green>This text must be green</green></kappa></beta></zeta></pi></psi></theta></chi></xsl:if>
+</xsl:template>
+</xsl:stylesheet>

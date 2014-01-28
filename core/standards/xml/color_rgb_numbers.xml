@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+ <?xml-stylesheet  type="text/css" href="color_prop.css"?>
+ <!-- Testcase: color_rgb_numbers.xml -->
+<!-- Description: To test the ability to apply rgb number values with CSS 1 -->
+<!--Expected Results: Each sentence should be rendered with a different color -->
+<!-- Author:  Chris Petersen  Date: 5/04/01 -->
+<!-- 
+   - The contents of this file are subject to the Mozilla Public
+   - License Version 1.1 (the "License"); you may not use this file
+   - except in compliance with the License. You may obtain a copy of
+   - the License at http://www.mozilla.org/MPL/
+   - 
+   - Software distributed under the License is distributed on an "AS
+   - IS" basis, WITHOUT WARRANTY OF ANY KIND, either express or
+   - implied. See the License for the specific language governing
+   - rights and limitations under the License.
+   -
+   - The Original Code is Mozilla Communicator Test Cases.
+   - 
+   - The Initial Developer of the Original Code is Netscape Communications
+   - Corp.  Portions created by Netscape Communications Corp. are 
+   - Copyright (C) 1999 Netscape Communications Corp.  All
+   - Rights Reserved.
+   - 
+   - Contributor(s): 
+  -->
+ <color_properties>
+ <intro>Each sentence uses a different RGB number value and should be rendered in that specified color.</intro>
+ <red_numbers>
+ This text is red by assigning a number for the RGB values  &#40;255, 0, 0&#41;
+ </red_numbers>
+ <orange_numbers>
+ This text is orange by assigning a number  for the RGB values  &#40;255, 102, 0&#41;
+ </orange_numbers>
+ <green_numbers>
+ This text is green by assigning a number  for the RGB values  &#40;0, 255, 0&#41;
+</green_numbers>
+<blue_numbers>
+ This text is blue by assigning a number  for the RGB values  &#40;0, 0, 255&#41;
+</blue_numbers>
+<purple_numbers>
+ This text is purple by assigning a number  for the RGB values  &#40;128 0, 128&#41;
+</purple_numbers>
+<gray_numbers>
+ This text is gray by assigning a number  for the RGB values  &#40;128, 128, 128&#41;
+</gray_numbers>
+ </color_properties>

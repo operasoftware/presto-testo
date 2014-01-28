@@ -1,0 +1,11 @@
+<?xml version="1.0" standalone="no" ?>
+<?xml-stylesheet type="text/xsl" href="copy21.xsl"?>
+<!DOCTYPE test [
+  <!ELEMENT test (extEnt)>
+  <!ELEMENT extEnt (sub2)> 
+  <!ATTLIST extEnt attr CDATA #REQUIRED>
+  <!ELEMENT sub2 (#PCDATA)> 
+  <!ENTITY extEnt SYSTEM "ent21.xml">
+  ]>
+
+<test>&extEnt;</test>

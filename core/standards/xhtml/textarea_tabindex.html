@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta name="generator"
+
+content="HTML Tidy for Mac OS, see www.w3.org" />
+
+<!-- testcase: textarea_tabindex.html -->
+
+<!-- description: HTML 4.0 TEXTAREA element/TABINDEX attribute-->
+
+<!-- Author: Christopher Pratt  Date: 05.03.99 -->
+
+<!-- Modified: Chris Petersen Date: 5/19/99 -->
+
+<!-- Modified: Changed doctype to xhtml 1.0 transitional Author: Chris Petersen Date: 2/01/01 -->
+
+<!-- 
+
+   - The contents of this file are subject to the Mozilla Public
+
+   - License Version 1.1 (the "License"); you may not use this file
+
+   - except in compliance with the License. You may obtain a copy of
+
+   - the License at http://www.mozilla.org/MPL/
+
+   - 
+
+   - Software distributed under the License is distributed on an "AS
+
+   - IS" basis, WITHOUT WARRANTY OF ANY KIND, either express or
+
+   - implied. See the License for the specific language governing
+
+   - rights and limitations under the License.
+
+   - 
+
+   - The Original Code is Mozilla Communicator Test Cases.
+
+   - 
+
+   - The Initial Developer of the Original Code is Netscape Communications
+
+   - Corp.  Portions created by Netscape Communications Corp. are 
+
+   - Copyright (C) 1999 Netscape Communications Corp.  All
+
+   - Rights Reserved.
+
+   - 
+
+   - Contributor(s): 
+
+  -->
+
+<!-- Purpose: To test the button element with the tabindex attribute. -->
+
+<!-- Expected result: When tabbing through these buttons, the order should be 1-4-2-3 -->
+
+<title>XHTML Functional -- TEXTAREA - TABINDEX</title>
+
+</head>
+
+<body>
+
+<p>The tabbing order has been specified by the tabindex attribute. The tab order should be the following: Field 1, Field 4, Field 2, Field 3.</p>
+
+<p>Apply focus in the first field and press the tab key.</p>
+
+<form action="" method="post"><textarea tabindex="1" name="area1"
+
+rows="5" cols="40"></textarea> <textarea tabindex="3" name="area2"
+
+rows="5" cols="40"></textarea> <textarea tabindex="4" name="area3"
+
+rows="5" cols="40"></textarea> <textarea tabindex="2" name="area4"
+
+rows="5" cols="40"></textarea></form>
+
+</body>
+
+</html>
+
+
+

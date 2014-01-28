@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [
+<!ATTLIST xsl:stylesheet id ID #IMPLIED>
+<!ENTITY ent SYSTEM "data:text/plain,PASS" NDATA txt>
+<!NOTATION txt PUBLIC "text/plain">
+]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:template match="xsl:template">
+<result><xsl:if test="contains(unparsed-entity-uri('ent'),'PASS')"><xsl:value-of select="'PASS'"/></xsl:if></result>
+</xsl:template>
+</xsl:stylesheet>

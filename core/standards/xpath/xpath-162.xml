@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:template match="xsl:template">
+<result>
+<xsl:choose>
+<xsl:when test='//omicron[@string][@xml:id="id1"]/nu[starts-with(@false,"co")][@xml:lang="nb"][not(preceding-sibling::*)][following-sibling::*[position()=1]][following-sibling::theta//pi[@xml:lang="nb"][@xml:id="id2"][not(preceding-sibling::*)][following-sibling::*[position()=4]][following-sibling::nu[@xml:lang="no"][preceding-sibling::*[position() = 1]][not(child::node())][following-sibling::alpha[@attribute][@xml:lang="nb"][preceding-sibling::*[position() = 2]][not(preceding-sibling::alpha)][following-sibling::lambda[@xml:lang="en-GB"][preceding-sibling::*[position() = 3]][following-sibling::psi[@attrib][@xml:lang="en"][preceding-sibling::*[position() = 4]][not(following-sibling::*)]]]]]]'>	
+	<xsl:value-of select="'PASS'"/>
+</xsl:when>
+<xsl:otherwise>FAIL</xsl:otherwise>
+</xsl:choose>
+</result>
+<xsl:if test="false()">
+<omicron string="false" xml:id="id1"><nu false="content" xml:lang="nb"/><theta><pi xml:lang="nb" xml:id="id2"/><nu xml:lang="no"/><alpha attribute="attribute" xml:lang="nb"/><lambda xml:lang="en-GB"/><psi attrib="false" xml:lang="en"><green>This text must be green</green></psi></theta></omicron></xsl:if>
+</xsl:template>
+</xsl:stylesheet>

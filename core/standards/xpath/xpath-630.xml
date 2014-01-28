@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:template match="xsl:template">
+<result>
+<xsl:choose>
+<xsl:when test='//upsilon[@xml:lang="nb"]//pi[@xml:id="id1"][not(preceding-sibling::*)][not(following-sibling::*)]/beta[@xml:lang="no"][@xml:id="id2"][not(preceding-sibling::*)][following-sibling::sigma[@xml:lang="no"][following-sibling::*[position()=1]][not(child::node())][following-sibling::zeta[@xml:lang="en-US"][@xml:id="id3"][preceding-sibling::*[position() = 2]][not(following-sibling::*)]//theta[starts-with(concat(@src,"-"),"content-")][@xml:lang="no"][following-sibling::*[position()=3]][not(child::node())][following-sibling::rho[@xml:lang="en-GB"][@xml:id="id4"][preceding-sibling::*[position() = 1]][not(child::node())][following-sibling::psi[@xml:id="id5"][following-sibling::*[position()=1]][following-sibling::nu[contains(concat(@string,"$"),"ibute value$")][@xml:lang="en-US"][not(following-sibling::*)]//chi[@xml:lang="en-US"]/gamma[not(preceding-sibling::*)][not(following-sibling::*)]//kappa[@xml:lang="nb"][@xml:id="id6"]/iota[@xml:lang="no-nb"][@xml:id="id7"][not(following-sibling::*)]/iota[@string="100%"][following-sibling::*[position()=6]][not(child::node())][following-sibling::xi[starts-with(concat(@number,"-"),"false-")][@xml:lang="en-US"][@xml:id="id8"][preceding-sibling::*[position() = 1]][not(preceding-sibling::xi)][following-sibling::sigma[@and][@xml:lang="nb"][preceding-sibling::*[position() = 2]][following-sibling::rho[contains(@attribute,"0")][not(child::node())][following-sibling::kappa[starts-with(@att,"at")][not(child::node())][following-sibling::eta[@false][@xml:lang="en-GB"][preceding-sibling::*[position() = 5]][not(child::node())][following-sibling::tau[@delete="false"][@xml:lang="en"][not(following-sibling::*)]/nu[@false][@xml:lang="en"][@xml:id="id9"][not(preceding-sibling::*)][not(preceding-sibling::nu or following-sibling::nu)][position() = 1]]][position() = 1]][position() = 1]]]]]]]][position() = 1]]'>	
+	<xsl:value-of select="'PASS'"/>
+</xsl:when>
+<xsl:otherwise>FAIL</xsl:otherwise>
+</xsl:choose>
+</result>
+<xsl:if test="false()">
+<upsilon xml:lang="nb"><pi xml:id="id1"><beta xml:lang="no" xml:id="id2"/><sigma xml:lang="no"/><zeta xml:lang="en-US" xml:id="id3"><theta src="content" xml:lang="no"/><rho xml:lang="en-GB" xml:id="id4"/><psi xml:id="id5"/><nu string="attribute value" xml:lang="en-US"><chi xml:lang="en-US"><gamma><kappa xml:lang="nb" xml:id="id6"><iota xml:lang="no-nb" xml:id="id7"><iota string="100%"/><xi number="false" xml:lang="en-US" xml:id="id8"/><sigma and="attribute value" xml:lang="nb"/><rho attribute="100%"/><kappa att="attribute"/><eta false="content" xml:lang="en-GB"/><tau delete="false" xml:lang="en"><nu false="_blank" xml:lang="en" xml:id="id9"><green>This text must be green</green></nu></tau></iota></kappa></gamma></chi></nu></zeta></pi></upsilon></xsl:if>
+</xsl:template>
+</xsl:stylesheet>

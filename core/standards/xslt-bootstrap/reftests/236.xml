@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:ns="http://bugs.opera.com" version="1.0">
+<xsl:template match="/">
+<result>
+<xsl:choose>
+<xsl:when test="function-available('ns:function') and ns:function()"><xsl:value-of select="'FAIL'"/></xsl:when>
+<xsl:otherwise><xsl:value-of select="'PASS'"/></xsl:otherwise>
+</xsl:choose>
+</result>
+</xsl:template>
+</xsl:stylesheet>
+

@@ -1,0 +1,438 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta name="generator"
+
+content="HTML Tidy for Mac OS, see www.w3.org" />
+
+<!-- test case: a_onblur.xml -->
+
+<!-- description: HTML 4.0 A element/ONBLUR attribute -->
+
+<!-- Author: Christine Dreckman Date: 5/12/99 -->
+
+<!-- Modified: Changed doctype to xhtml 1.0 transitional Author: Chris Petersen Date: 1/14/01 -->
+
+<!-- 
+
+
+
+   - The contents of this file are subject to the Mozilla Public
+
+
+
+   - License Version 1.1 (the "License"); you may not use this file
+
+
+
+   - except in compliance with the License. You may obtain a copy of
+
+
+
+   - the License at http://www.mozilla.org/MPL/
+
+
+
+   - 
+
+
+
+   - Software distributed under the License is distributed on an "AS
+
+
+
+   - IS" basis, WITHOUT WARRANTY OF ANY KIND, either express or
+
+
+
+   - implied. See the License for the specific language governing
+
+
+
+   - rights and limitations under the License.
+
+
+
+   - 
+
+
+
+   - The Original Code is Mozilla Communicator Test Cases.
+
+
+
+   - 
+
+
+
+   - The Initial Developer of the Original Code is Netscape Communications
+
+
+
+   - Corp.  Portions created by Netscape Communications Corp. are 
+
+
+
+   - Copyright (C) 1999 Netscape Communications Corp.  All
+
+
+
+   - Rights Reserved.
+
+
+
+   - 
+
+
+
+   - Contributor(s): 
+
+
+
+  -->
+
+<!-- Purpose: To test the ONBLUR attribute of the A element tag. The ONBLUR attribute specifies a script function to be executed when the element loses focus. In this case, the element loses focus when the user clicks on another item with the mouse-->
+
+<!-- Expected result: Losing focus on the link should generate a Javascript alert dialog box and, after clicking 'OK', the user should link to the anchor at the bottom of the page -->
+
+<title>HTML Functional -- A - ONBLUR</title>
+
+<script type="JavaScript">
+
+
+
+
+
+
+
+</script>
+
+</head>
+
+<body>
+
+<p>This tests the ONBLUR attribute of the A element tag. ONBLUR
+
+occurs when you lose focus. In this case, the user will lose focus
+
+AFTER the link is clicked. Upon focus loss, a Javascript alert
+
+dialog box will display with the following message: 'You lost focus
+
+by unclicking the link. As as result, this dialog box was
+
+generated'. After you click 'OK' on the dialog box, you should link
+
+to the anchor at the bottom of the page.</p>
+
+
+
+Clicking <a
+
+onblur="alert('You lost focus by unclicking the link. As a result, this dialog box was generated')"
+
+ href="a_onblur.xml#anchor">here</a> should link to the anchor at the bottom of
+
+the page <br />
+
+<br />
+
+<br />
+
+<br />
+
+<br />
+
+<br />
+
+<br />
+
+<br />
+
+<br />
+
+<br />
+
+<br />
+
+<br />
+
+<br />
+
+<br />
+
+<br />
+
+<br />
+
+<br />
+
+<br />
+
+<br />
+
+<br />
+
+<br />
+
+<br />
+
+<br />
+
+<br />
+
+<br />
+
+<br />
+
+<br />
+
+<br />
+
+<br />
+
+<br />
+
+<br />
+
+<br />
+
+<br />
+
+<br />
+
+<br />
+
+<br />
+
+<br />
+
+<br />
+
+<br />
+
+<br />
+
+<br />
+
+<br />
+
+<br />
+
+<br />
+
+<br />
+
+<br />
+
+<br />
+
+<br />
+
+<br />
+
+<br />
+
+<br />
+
+<br />
+
+<br />
+
+<br />
+
+<br />
+
+<br />
+
+<br />
+
+<br />
+
+<br />
+
+<br />
+
+<br />
+
+<br />
+
+<br />
+
+<br />
+
+<br />
+
+<br />
+
+<br />
+
+<br />
+
+<br />
+
+<br />
+
+<br />
+
+<br />
+
+<br />
+
+<br />
+
+<br />
+
+<br />
+
+<br />
+
+<br />
+
+<br />
+
+<br />
+
+<br />
+
+<br />
+
+<br />
+
+<br />
+
+<br />
+
+<br />
+
+<br />
+
+<br />
+
+<br />
+
+<br />
+
+<br />
+
+<br />
+
+<br />
+
+<br />
+
+<br />
+
+<br />
+
+<br />
+
+<br />
+
+<br />
+
+<br />
+
+<br />
+
+<br />
+
+<br />
+
+<br />
+
+<br />
+
+<br />
+
+<br />
+
+<br />
+
+<br />
+
+<br />
+
+<br />
+
+<br />
+
+<br />
+
+<br />
+
+<br />
+
+<br />
+
+<br />
+
+<br />
+
+<br />
+
+<br />
+
+<br />
+
+<br />
+
+<br />
+
+<br />
+
+<br />
+
+<br />
+
+<br />
+
+<br />
+
+<br />
+
+<br />
+
+<br />
+
+<br />
+
+<br />
+
+<br />
+
+<br />
+
+<br />
+
+<br />
+
+<br />
+
+<br />
+
+<br />
+
+<br />
+
+<br />
+
+<br />
+
+<br />
+
+<a id="anchor" name="anchor">This is the anchor at the bottom of
+
+the page.</a>
+
+</body>
+
+</html>
+
+
+

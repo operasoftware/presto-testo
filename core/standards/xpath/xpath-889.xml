@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:template match="xsl:template">
+<result>
+<xsl:choose>
+<xsl:when test='//eta[@true]/beta[starts-with(@attrib,"a")][@xml:lang="nb"][not(preceding-sibling::*)][following-sibling::psi[@xml:lang="en-GB"][not(following-sibling::*)]/kappa[@title][@xml:lang="no"][following-sibling::omega[@xml:id="id1"][not(following-sibling::*)]/delta[@xml:lang="en-GB"][not(preceding-sibling::*)]//beta[@xml:lang="en-GB"]//eta[@xml:lang="no"][@xml:id="id2"][not(preceding-sibling::*)][not(child::node())][following-sibling::chi[@abort][following-sibling::*[position()=1]][following-sibling::rho[@xml:id="id3"]/gamma[@xml:id="id4"][not(following-sibling::*)]/gamma[@xml:id="id5"][not(preceding-sibling::*)][not(child::node())][following-sibling::zeta[@xml:lang="en-US"][@xml:id="id6"][preceding-sibling::*[position() = 1]]/epsilon[@false][@xml:lang="nb"][not(preceding-sibling::*)]/nu[not(parent::*/*[position()=2])]/zeta[@xml:lang="en-GB"][@xml:id="id7"][not(following-sibling::*)]//delta[@name="this-is-att-value"][not(child::node())][following-sibling::pi[@xml:lang="en-GB"][not(following-sibling::*)][position() = 1]][position() = 1]]][position() = 1]]]]'>	
+	<xsl:value-of select="'PASS'"/>
+</xsl:when>
+<xsl:otherwise>FAIL</xsl:otherwise>
+</xsl:choose>
+</result>
+<xsl:if test="false()">
+<eta true="100%"><beta attrib="another attribute value" xml:lang="nb"/><psi xml:lang="en-GB"><kappa title="100%" xml:lang="no"/><omega xml:id="id1"><delta xml:lang="en-GB"><beta xml:lang="en-GB"><eta xml:lang="no" xml:id="id2"/><chi abort="attribute value"/><rho xml:id="id3"><gamma xml:id="id4"><gamma xml:id="id5"/><zeta xml:lang="en-US" xml:id="id6"><epsilon false="100%" xml:lang="nb"><nu><zeta xml:lang="en-GB" xml:id="id7"><delta name="this-is-att-value"/><pi xml:lang="en-GB"><green>This text must be green</green></pi></zeta></nu></epsilon></zeta></gamma></rho></beta></delta></omega></psi></eta></xsl:if>
+</xsl:template>
+</xsl:stylesheet>

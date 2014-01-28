@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>char attribute of td element</title>
+<style type="text/css">
+table + table td
+	{padding-left:100px;}
+</style>
+</head>
+<body>
+<p>You should see 1 dashed vertical line below</p>
+<table>
+<tr><td align="char" char="|" charoff="100">|</td></tr>
+<tr><td align="char" char="|" charoff="100">|</td></tr>
+<tr><td align="char" char="|" charoff="100">|               </td></tr>
+<tr><td align="char" char="|" charoff="100">                |</td></tr>
+<tr><td align="char" char="|" charoff="100">                |</td></tr>
+<tr><td align="char" char="|" charoff="100">                |</td></tr>
+</table>
+<table>
+<tr><td>|</td></tr>
+<tr><td>|</td></tr>
+<tr><td>|</td></tr>
+</table>
+</body>
+</html>

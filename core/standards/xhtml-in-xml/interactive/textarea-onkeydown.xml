@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>onkeydown attribute of textarea element</title>
+</head>
+<body onload="document.getElementsByTagName('textarea')[0].focus()">
+<div>
+<textarea name="txt" cols="20" rows="1" onkeydown="document.getElementsByTagName('p')[0].firstChild.nodeValue='PASS'">Press any key</textarea>
+</div>
+<p>Press any key while textarea is focused, you should see word pass.</p>
+</body>
+</html>
+

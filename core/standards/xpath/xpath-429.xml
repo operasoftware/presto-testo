@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:template match="xsl:template">
+<result>
+<xsl:choose>
+<xsl:when test='//beta[contains(concat(@abort,"$"),"%$")][@xml:lang="en"][@xml:id="id1"]//epsilon[@xml:lang="no"][@xml:id="id2"][not(following-sibling::*)]/pi[@xml:lang="en-GB"][@xml:id="id3"][not(preceding-sibling::*)][not(child::node())][following-sibling::kappa[starts-with(@data,"tru")][not(child::node())][following-sibling::phi[contains(@string,"e")][@xml:id="id4"][following-sibling::theta[@xml:lang="no-nb"][@xml:id="id5"][preceding-sibling::*[position() = 3]][following-sibling::xi[@xml:lang="no-nb"][@xml:id="id6"]/mu[@xml:lang="en-GB"][@xml:id="id7"][not(preceding-sibling::*)][not(child::node())][following-sibling::upsilon[@xml:lang="nb"][preceding-sibling::*[position() = 1]][not(child::node())][following-sibling::beta[@xml:lang="no-nb"]//phi[starts-with(concat(@string,"-"),"attribute-")][not(child::node())][following-sibling::nu[@xml:lang="no-nb"][following-sibling::upsilon[@xml:id="id8"]//nu[@or][@xml:lang="no"][not(preceding-sibling::*)]//theta[contains(concat(@false,"$"),"bute value$")][@xml:lang="en-GB"][@xml:id="id9"][not(preceding-sibling::*)][following-sibling::omega[preceding-sibling::*[position() = 1]][following-sibling::tau[not(following-sibling::*)]/omicron[@xml:lang="en-US"][not(preceding-sibling::*)][following-sibling::*[position()=2]][following-sibling::iota[@attribute="true"][@xml:id="id10"][preceding-sibling::*[position() = 1]][following-sibling::*[position()=1]][not(child::node())][following-sibling::tau[@xml:lang="en-US"][@xml:id="id11"][preceding-sibling::*[position() = 2]][not(following-sibling::*)]/nu[contains(concat(@desciption,"$"),"d 1px green$")][@xml:id="id12"][not(preceding-sibling::*)]/alpha[contains(concat(@attribute,"$"),"ontent$")][not(preceding-sibling::*)][not(following-sibling::*)][position() = 1]][position() = 1]]]][position() = 1]][position() = 1]]]][position() = 1]][position() = 1]]][position() = 1]]'>	
+	<xsl:value-of select="'PASS'"/>
+</xsl:when>
+<xsl:otherwise>FAIL</xsl:otherwise>
+</xsl:choose>
+</result>
+<xsl:if test="false()">
+<beta abort="100%" xml:lang="en" xml:id="id1"><epsilon xml:lang="no" xml:id="id2"><pi xml:lang="en-GB" xml:id="id3"/><kappa data="true"/><phi string="attribute value" xml:id="id4"/><theta xml:lang="no-nb" xml:id="id5"/><xi xml:lang="no-nb" xml:id="id6"><mu xml:lang="en-GB" xml:id="id7"/><upsilon xml:lang="nb"/><beta xml:lang="no-nb"><phi string="attribute-value"/><nu xml:lang="no-nb"/><upsilon xml:id="id8"><nu or="this.nodeValue" xml:lang="no"><theta false="attribute value" xml:lang="en-GB" xml:id="id9"/><omega/><tau><omicron xml:lang="en-US"/><iota attribute="true" xml:id="id10"/><tau xml:lang="en-US" xml:id="id11"><nu desciption="solid 1px green" xml:id="id12"><alpha attribute="content"><green>This text must be green</green></alpha></nu></tau></tau></nu></upsilon></beta></xi></epsilon></beta></xsl:if>
+</xsl:template>
+</xsl:stylesheet>

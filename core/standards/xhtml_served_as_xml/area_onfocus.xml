@@ -1,0 +1,130 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta name="generator"
+
+content="HTML Tidy for Mac OS, see www.w3.org" />
+
+<!-- testcase: area_onfocus.xml -->
+
+<!-- Author: Chris Petersen: Date 8/27/99 -->
+
+<!-- Modified: Changed doctype to xhtml 1.0 transitional Author: Chris Petersen Date: 1/14/01 -->
+
+<!-- 
+
+
+
+   - The contents of this file are subject to the Mozilla Public
+
+
+
+   - License Version 1.1 (the "License"); you may not use this file
+
+
+
+   - except in compliance with the License. You may obtain a copy of
+
+
+
+   - the License at http://www.mozilla.org/MPL/
+
+
+
+   - 
+
+
+
+   - Software distributed under the License is distributed on an "AS
+
+
+
+   - IS" basis, WITHOUT WARRANTY OF ANY KIND, either express or
+
+
+
+   - implied. See the License for the specific language governing
+
+
+
+   - rights and limitations under the License.
+
+
+
+   - 
+
+
+
+   - The Original Code is Mozilla Communicator Test Cases.
+
+
+
+   - 
+
+
+
+   - The Initial Developer of the Original Code is Netscape Communications
+
+
+
+   - Corp.  Portions created by Netscape Communications Corp. are 
+
+
+
+   - Copyright (C) 1999 Netscape Communications Corp.  All
+
+
+
+   - Rights Reserved.
+
+
+
+   - 
+
+
+
+   - Contributor(s): 
+
+
+
+  -->
+
+<!-- Purpose: To test the AREA element with the ONFOCUS attribute -->
+
+<!-- Expected result: Clicking on the red circle should cause a dialog to appear based on the onFocus event handler -->
+
+<title>XHTML Functional -- AREA - ONFOCUS</title>
+
+</head>
+
+<body>
+
+<p>Clicking on the red circle below should cause a dialog to appear
+
+that has been assign a onfocus handler.</p>
+
+
+
+<img src="images/circle.gif" alt="circle" usemap="#circle"
+
+border="0" /> <map id="circle" name="circle">
+
+<area shape="circle" coords="32,32,32"
+
+onfocus="alert('You have clicked on the red circle which has been assigned a onfocus event handler.')"
+
+ href="http://www.netscape.com" />
+
+</map>
+
+</body>
+
+</html>
+
+
+

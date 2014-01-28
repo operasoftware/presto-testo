@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+
+<?xml-stylesheet type="text/css" href="css_pseudo_element.css"?>
+
+<!-- Testcase: css_pseudo_element.xml -->
+
+<!-- Description: To test XML rendering of CSS 'pseudo element' -->
+
+<!-- Author:  Christine Dreckman  Date: 10/14/99 -->
+
+<!-- 
+   - The contents of this file are subject to the Mozilla Public
+   - License Version 1.1 (the "License"); you may not use this file
+   - except in compliance with the License. You may obtain a copy of
+   - the License at http://www.mozilla.org/MPL/
+   - 
+   - Software distributed under the License is distributed on an "AS
+   - IS" basis, WITHOUT WARRANTY OF ANY KIND, either express or
+   - implied. See the License for the specific language governing
+   - rights and limitations under the License.
+   - 
+   - The Original Code is Mozilla Communicator Test Cases.
+   - 
+   - The Initial Developer of the Original Code is Netscape Communications
+   - Corp.  Portions created by Netscape Communications Corp. are 
+   - Copyright (C) 1999 Netscape Communications Corp.  All
+   - Rights Reserved.
+   - 
+   - Contributor(s): 
+  -->
+<!-- Purpose: To test XML rendering of CSS 'pseudo element' -->
+
+<!-- Expected result: The first letter of the first paragraph should have a font-size of .5in and should be blue. The first line of the second paragraph should be in small caps and should be maroon -->
+
+<doc>
+
+<name xmlns:html="http://www.w3.org/1999/xhtml">
+
+<html:p class="one">The first letter of this paragraph should have a font-size of .5in and should be blue.
+
+</html:p>
+
+<html:p class="two">The first line of this paragraph should be maroon and should be in small caps. The line(s) following the first line should display in black and in regular case.
+
+</html:p>
+
+</name>
+
+</doc>
+
+

@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>span attribute of col element</title>
+</head>
+<body>
+<p>Two boxes below should have the same width</p>
+<table frame="box">
+<col width="50"/><col width="50"/>
+<tr><td>   </td><td>   </td></tr>
+</table>
+<p/>
+<table frame="box">
+<col span="2" width="50"/>
+<tr><td>   </td><td>   </td></tr>
+</table>
+</body>
+</html>

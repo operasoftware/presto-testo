@@ -1,0 +1,160 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta name="generator"
+
+content="HTML Tidy for Mac OS, see www.w3.org" />
+
+<!-- testcase: image_alt.xml -->
+
+<!-- description: HTML 4.0 Text Markup Element, IMG with the ALT attribute --><!-- Author: Frank Petitta, Date: 5/19/98 -->
+
+<!-- Author: Chris Petersen Modified: 7/27/98 -->
+
+<!-- Author: Chris Dreckman Modified: 10/15/98 -->
+
+<!-- Modified by Eli Goldberg on 2/26/99. Updated to HTML 4 Transitional, and added an additional scenario. -->
+
+<!-- Modified: Changed doctype to xhtml 1.0 transitional Author: Chris Petersen Date: 1/22/01 -->
+
+<!-- 
+
+
+
+   - The contents of this file are subject to the Mozilla Public
+
+
+
+   - License Version 1.1 (the "License"); you may not use this file
+
+
+
+   - except in compliance with the License. You may obtain a copy of
+
+
+
+   - the License at http://www.mozilla.org/MPL/
+
+
+
+   - 
+
+
+
+   - Software distributed under the License is distributed on an "AS
+
+
+
+   - IS" basis, WITHOUT WARRANTY OF ANY KIND, either express or
+
+
+
+   - implied. See the License for the specific language governing
+
+
+
+   - rights and limitations under the License.
+
+
+
+   - 
+
+
+
+   - The Original Code is Mozilla Communicator Test Cases.
+
+
+
+   - 
+
+
+
+   - The Initial Developer of the Original Code is Netscape Communications
+
+
+
+   - Corp.  Portions created by Netscape Communications Corp. are 
+
+
+
+   - Copyright (C) 1999 Netscape Communications Corp.  All
+
+
+
+   - Rights Reserved.
+
+
+
+   - 
+
+
+
+   - Contributor(s): 
+
+
+
+  -->
+
+<!-- Purpose: To test the ALT attribute with the IMG element. This page supplies three ALT tests: one with the preference option "automatically load images" selected,  
+
+
+
+
+
+
+
+
+
+
+
+and one with the preference option "automatically load images" deselected (using the first image on the page)
+
+
+
+
+
+
+
+
+
+
+
+and a third test (using the bottom image on the page) to confirm that the alt text is properly displayed for a broken image link.-->
+
+<!-- Expected result: IMAGES AUTOMATICALLY LOADED: Image should be displayed. If you mouse over the image, the alt name "eggplant" should be revealed. 
+
+
+
+
+
+
+
+
+
+
+
+IMAGES NOT AUTOMATICALLY LOADED: A place holder icon should appear in place of the image. If you mouse over the icon, the alt name "eggplant" should be revealed.-->
+
+<title>XHTML Functional -- IMG - ALT</title>
+
+</head>
+
+<body>
+
+<img src="images/eggplant.gif" alt="eggplant" /> <br />
+
+ <img src="../images/notaneggplant.gif"
+
+alt="look, ma! I'm a broken image!" />
+
+</body>
+
+</html>
+
+
+

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:template match="xsl:template">
+<result>
+<xsl:choose>
+<xsl:when test='//mu[contains(concat(@token,"$"),"%$")]//alpha[starts-with(concat(@src,"-"),"this-")][not(preceding-sibling::*)][not(child::node())][following-sibling::eta[contains(concat(@desciption,"$"),"00%$")][@xml:id="id1"][not(following-sibling::*)]/zeta[@xml:lang="nb"][@xml:id="id2"][following-sibling::*[position()=1]][not(child::node())][following-sibling::delta[not(following-sibling::*)]/pi[starts-with(@abort,"another attribute v")][@xml:lang="en-GB"][@xml:id="id3"][following-sibling::beta[preceding-sibling::*[position() = 1]][not(child::node())][following-sibling::iota[@number]//iota[@xml:lang="no-nb"][@xml:id="id4"][following-sibling::pi[not(child::node())][following-sibling::sigma[@xml:id="id5"][preceding-sibling::*[position() = 2]]/mu[contains(concat(@class,"$"),"t-value$")][@xml:lang="en-GB"][not(following-sibling::*)]//alpha[starts-with(@title,"this-i")][@xml:id="id6"][not(child::node())][following-sibling::iota[@xml:lang="en-US"][preceding-sibling::*[position() = 1]][not(following-sibling::*)]/alpha[@xml:lang="no-nb"][not(child::node())][following-sibling::eta[@xml:id="id7"][preceding-sibling::*[position() = 1]]//omicron[@and="this.nodeValue"][@xml:id="id8"][not(preceding-sibling::*)]/lambda[@abort][@xml:lang="en"]][position() = 1]][position() = 1]]]][position() = 1]]][position() = 1]]'>	
+	<xsl:value-of select="'PASS'"/>
+</xsl:when>
+<xsl:otherwise>FAIL</xsl:otherwise>
+</xsl:choose>
+</result>
+<xsl:if test="false()">
+<mu token="100%"><alpha src="this-is-att-value"/><eta desciption="100%" xml:id="id1"><zeta xml:lang="nb" xml:id="id2"/><delta><pi abort="another attribute value" xml:lang="en-GB" xml:id="id3"/><beta/><iota number="solid 1px green"><iota xml:lang="no-nb" xml:id="id4"/><pi/><sigma xml:id="id5"><mu class="this-is-att-value" xml:lang="en-GB"><alpha title="this-is-att-value" xml:id="id6"/><iota xml:lang="en-US"><alpha xml:lang="no-nb"/><eta xml:id="id7"><omicron and="this.nodeValue" xml:id="id8"><lambda abort="attribute" xml:lang="en"><green>This text must be green</green></lambda></omicron></eta></iota></mu></sigma></iota></delta></eta></mu></xsl:if>
+</xsl:template>
+</xsl:stylesheet>

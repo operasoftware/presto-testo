@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:template match="xsl:template">
+<result>
+<xsl:choose>
+<xsl:when test='//beta[@abort="content"]/kappa[starts-with(concat(@src,"-"),"this.nodeValue-")][@xml:id="id1"][not(child::node())][following-sibling::rho[contains(@token,"lank")][@xml:lang="no"][preceding-sibling::*[position() = 1]]//nu[@data][not(preceding-sibling::*)][following-sibling::*[position()=2]][following-sibling::omicron[starts-with(concat(@number,"-"),"attribute-")][not(child::node())][following-sibling::rho[contains(@insert,"1px green")][not(following-sibling::*)]//psi[not(child::node())][following-sibling::beta[@xml:lang="en-US"][@xml:id="id2"][preceding-sibling::*[position() = 1]][not(following-sibling::*)]]]][position() = 1]]'>	
+	<xsl:value-of select="'PASS'"/>
+</xsl:when>
+<xsl:otherwise>FAIL</xsl:otherwise>
+</xsl:choose>
+</result>
+<xsl:if test="false()">
+<beta abort="content"><kappa src="this.nodeValue" xml:id="id1"/><rho token="_blank" xml:lang="no"><nu data="this.nodeValue"/><omicron number="attribute-value"/><rho insert="solid 1px green"><psi/><beta xml:lang="en-US" xml:id="id2"><green>This text must be green</green></beta></rho></rho></beta></xsl:if>
+</xsl:template>
+</xsl:stylesheet>

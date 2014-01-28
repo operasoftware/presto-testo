@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0" xml:lang="en">
+<xsl:template match="xsl:stylesheet">
+<xsl:call-template name="result1"/>
+</xsl:template>
+<xsl:template name="result1">
+<xsl:call-template name="result2"/>
+</xsl:template>
+<xsl:template name="result2">
+<xsl:call-template name="result3"/>
+</xsl:template>
+<xsl:template name="result3">
+<xsl:call-template name="result4"/>
+</xsl:template>
+<xsl:template name="result4">
+<xsl:call-template name="result5"/>
+</xsl:template>
+<xsl:template name="result5">
+<xsl:call-template name="result6"/>
+</xsl:template>
+<xsl:template name="result6">
+<xsl:call-template name="result7"/>
+</xsl:template>
+<xsl:template name="result7">
+<xsl:call-template name="result8"/>
+</xsl:template>
+<xsl:template name="result8">
+<xsl:call-template name="result9"/>
+</xsl:template>
+<xsl:template name="result9">
+<result><xsl:value-of select="'PASS'"/></result>
+</xsl:template>
+</xsl:stylesheet>

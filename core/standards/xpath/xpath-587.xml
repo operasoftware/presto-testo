@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:template match="xsl:template">
+<result>
+<xsl:choose>
+<xsl:when test='//sigma//kappa[@xml:lang="en-US"][@xml:id="id1"][not(preceding-sibling::*)]//phi[contains(concat(@insert,"$"),"lid 1px green$")][@xml:lang="no-nb"][following-sibling::*[position()=2]][not(child::node())][following-sibling::theta[@xml:lang="en"][@xml:id="id2"][preceding-sibling::*[position() = 1]][not(child::node())][following-sibling::theta[preceding-sibling::*[position() = 2]][not(following-sibling::*)]//nu[@xml:lang="en"][not(preceding-sibling::*)][following-sibling::beta[@or][@xml:lang="en"][@xml:id="id3"][not(child::node())][following-sibling::omicron[@attrib="content"][@xml:id="id4"][following-sibling::nu//gamma[@xml:lang="en-US"][not(preceding-sibling::*)]//kappa[starts-with(@data,"attribut")][@xml:lang="no"][not(following-sibling::*)][position() = 1]]]][position() = 1]]]'>	
+	<xsl:value-of select="'PASS'"/>
+</xsl:when>
+<xsl:otherwise>FAIL</xsl:otherwise>
+</xsl:choose>
+</result>
+<xsl:if test="false()">
+<sigma><kappa xml:lang="en-US" xml:id="id1"><phi insert="solid 1px green" xml:lang="no-nb"/><theta xml:lang="en" xml:id="id2"/><theta><nu xml:lang="en"/><beta or="100%" xml:lang="en" xml:id="id3"/><omicron attrib="content" xml:id="id4"/><nu><gamma xml:lang="en-US"><kappa data="attribute" xml:lang="no"><green>This text must be green</green></kappa></gamma></nu></theta></kappa></sigma></xsl:if>
+</xsl:template>
+</xsl:stylesheet>

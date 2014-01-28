@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:template match="xsl:template">
+<result>
+<xsl:choose>
+<xsl:when test='//phi[@xml:id="id1"]//kappa[starts-with(concat(@att,"-"),"123456789-")][@xml:lang="no"][not(following-sibling::*)]//epsilon[@number][@xml:lang="no"][@xml:id="id2"][not(preceding-sibling::*)][not(following-sibling::*)]//zeta[@xml:lang="no"][@xml:id="id3"][not(following-sibling::*)]//beta[contains(@desciption,"6789")][@xml:lang="no"][@xml:id="id4"][not(following-sibling::beta)][not(child::node())][following-sibling::delta[@name][@xml:lang="en-US"][@xml:id="id5"][preceding-sibling::*[position() = 1]]//phi[@xml:lang="no-nb"][not(preceding-sibling::*)][not(child::node())][following-sibling::eta[starts-with(@false,"a")][@xml:lang="no"][preceding-sibling::*[position() = 1]][following-sibling::psi[contains(concat(@number,"$"),"%$")][@xml:lang="en"][preceding-sibling::*[position() = 2]][not(following-sibling::*)][position() = 1]][position() = 1]][position() = 1]]'>	
+	<xsl:value-of select="'PASS'"/>
+</xsl:when>
+<xsl:otherwise>FAIL</xsl:otherwise>
+</xsl:choose>
+</result>
+<xsl:if test="false()">
+<phi xml:id="id1"><kappa att="123456789" xml:lang="no"><epsilon number="content" xml:lang="no" xml:id="id2"><zeta xml:lang="no" xml:id="id3"><beta desciption="123456789" xml:lang="no" xml:id="id4"/><delta name="attribute" xml:lang="en-US" xml:id="id5"><phi xml:lang="no-nb"/><eta false="attribute" xml:lang="no"/><psi number="100%" xml:lang="en"><green>This text must be green</green></psi></delta></zeta></epsilon></kappa></phi></xsl:if>
+</xsl:template>
+</xsl:stylesheet>

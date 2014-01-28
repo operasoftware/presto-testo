@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:template match="xsl:template">
+<result>
+<xsl:choose>
+<xsl:when test='//zeta[contains(@delete,"%")][@xml:id="id1"]/mu[@xml:lang="en"][following-sibling::*[position()=1]][following-sibling::gamma[@xml:lang="no-nb"]/phi[@xml:lang="en-US"][@xml:id="id2"][following-sibling::upsilon[@and][@xml:lang="no"][@xml:id="id3"][not(preceding-sibling::upsilon)][following-sibling::pi[preceding-sibling::*[position() = 2]]/omega[@xml:lang="no-nb"][@xml:id="id4"][not(following-sibling::*)]/phi[@xml:id="id5"][following-sibling::pi[@xml:lang="en-US"][@xml:id="id6"][not(preceding-sibling::pi)]/theta[@xml:id="id7"][not(preceding-sibling::*)][following-sibling::*[position()=4]][following-sibling::phi[starts-with(concat(@attribute,"-"),"this.nodeValue-")][@xml:lang="en"][@xml:id="id8"][preceding-sibling::*[position() = 1]][not(child::node())][following-sibling::omega[preceding-sibling::*[position() = 2]][following-sibling::*[position()=2]][not(child::node())][following-sibling::delta[starts-with(concat(@or,"-"),"attribute value-")][@xml:lang="en"][@xml:id="id9"][preceding-sibling::*[position() = 3]][not(child::node())][following-sibling::psi[contains(concat(@att,"$"),"123456789$")][@xml:lang="en-GB"][preceding-sibling::*[position() = 4]]/delta[not(preceding-sibling::*)][not(following-sibling::*)]/iota[@name="false"]//alpha[@xml:lang="en-GB"][@xml:id="id10"][not(preceding-sibling::*)]/nu[@xml:id="id11"][not(preceding-sibling::*)]//theta[@xml:lang="no-nb"][not(preceding-sibling::*)]/*/iota[contains(concat(@object,"$"),"true$")][@xml:id="id12"][not(child::node())][following-sibling::kappa[contains(@token,"k")][@xml:lang="nb"][position() = 1]][position() = 1]][position() = 1]]][position() = 1]]]][position() = 1]]]'>	
+	<xsl:value-of select="'PASS'"/>
+</xsl:when>
+<xsl:otherwise>FAIL</xsl:otherwise>
+</xsl:choose>
+</result>
+<xsl:if test="false()">
+<zeta delete="100%" xml:id="id1"><mu xml:lang="en"/><gamma xml:lang="no-nb"><phi xml:lang="en-US" xml:id="id2"/><upsilon and="this.nodeValue" xml:lang="no" xml:id="id3"/><pi><omega xml:lang="no-nb" xml:id="id4"><phi xml:id="id5"/><pi xml:lang="en-US" xml:id="id6"><theta xml:id="id7"/><phi attribute="this.nodeValue" xml:lang="en" xml:id="id8"/><omega/><delta or="attribute value" xml:lang="en" xml:id="id9"/><psi att="123456789" xml:lang="en-GB"><delta><iota name="false"><alpha xml:lang="en-GB" xml:id="id10"><nu xml:id="id11"><theta xml:lang="no-nb"><any><iota object="true" xml:id="id12"/><kappa token="_blank" xml:lang="nb"><green>This text must be green</green></kappa></any></theta></nu></alpha></iota></delta></psi></pi></omega></pi></gamma></zeta></xsl:if>
+</xsl:template>
+</xsl:stylesheet>

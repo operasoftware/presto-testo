@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>onfocus attribute of area element</title>
+</head>
+<body id="start">
+<p><object type="image/png" data="../hlp/image.png" usemap="#map">images should be enabled</object></p>
+<p>You should see word pass once you focus image above using spacial navigation.</p>
+<div>
+<map id="map">
+<area shape="rect" coords="0,0,120,60" href="#start" alt="alt attribute" onfocus="document.getElementsByTagName('p')[1].firstChild.nodeValue = 'PASS'"/>
+</map>
+</div>
+</body>
+</html>
+

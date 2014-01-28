@@ -1,0 +1,9 @@
+﻿tc, observer, pass
+	{display:block;
+	padding:1ex;}
+observer
+	{background-color:silver;}
+pass
+	{font-family:monospace;}
+script
+	{display:none;}

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:template match="xsl:template">
+<result>
+<xsl:choose>
+<xsl:when test='//phi[contains(concat(@abort,"$"),"te value$")][@xml:lang="en"][@xml:id="id1"]/lambda[following-sibling::*[position()=1]][following-sibling::delta[not(following-sibling::*)]/iota[contains(@attr,"tent")][@xml:lang="en"][not(preceding-sibling::*)]//lambda[@desciption="_blank"][@xml:lang="no"][@xml:id="id2"][not(child::node())][following-sibling::xi[@attribute][@xml:id="id3"][preceding-sibling::*[position() = 1]]//nu[@xml:id="id4"][not(child::node())][following-sibling::*[@xml:lang="en-GB"][@xml:id="id5"][preceding-sibling::*[position() = 1]][position() = 1]]]]'>	
+	<xsl:value-of select="'PASS'"/>
+</xsl:when>
+<xsl:otherwise>FAIL</xsl:otherwise>
+</xsl:choose>
+</result>
+<xsl:if test="false()">
+<phi abort="attribute value" xml:lang="en" xml:id="id1"><lambda/><delta><iota attr="content" xml:lang="en"><lambda desciption="_blank" xml:lang="no" xml:id="id2"/><xi attribute="attribute" xml:id="id3"><nu xml:id="id4"/><any xml:lang="en-GB" xml:id="id5"><green>This text must be green</green></any></xi></iota></delta></phi></xsl:if>
+</xsl:template>
+</xsl:stylesheet>

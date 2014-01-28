@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:template match="xsl:template">
+<result>
+<xsl:choose>
+<xsl:when test='//kappa[starts-with(@att,"12345")]//chi[contains(@attribute,"te")][@xml:id="id1"][not(child::node())][following-sibling::*[starts-with(@content,"tru")][@xml:lang="nb"][@xml:id="id2"][preceding-sibling::*[position() = 1]][not(following-sibling::*)]/iota[starts-with(@desciption,"att")][@xml:lang="nb"][not(preceding-sibling::*)][following-sibling::mu[preceding-sibling::*[position() = 1]][not(following-sibling::*)]/alpha[@content]/zeta[starts-with(@false,"attribute-value")][@xml:lang="no"][@xml:id="id3"][not(following-sibling::*)]/beta[@att][@xml:lang="en-US"][@xml:id="id4"]/chi[@xml:lang="no-nb"][@xml:id="id5"][not(preceding-sibling::*)][not(following-sibling::*)]/rho[@class][not(preceding-sibling::*)][following-sibling::epsilon[@xml:lang="en-US"][@xml:id="id6"][preceding-sibling::*[position() = 1]][not(following-sibling::*)]/tau[contains(concat(@object,"$"),"00%$")][@xml:lang="en-GB"][@xml:id="id7"]//alpha[@xml:lang="no-nb"][@xml:id="id8"][following-sibling::*[position()=1]][following-sibling::rho[starts-with(concat(@and,"-"),"true-")][@xml:id="id9"][preceding-sibling::*[position() = 1]][not(following-sibling::*)]][position() = 1]][position() = 1]]]'>	
+	<xsl:value-of select="'PASS'"/>
+</xsl:when>
+<xsl:otherwise>FAIL</xsl:otherwise>
+</xsl:choose>
+</result>
+<xsl:if test="false()">
+<kappa att="123456789"><chi attribute="attribute" xml:id="id1"/><any content="true" xml:lang="nb" xml:id="id2"><iota desciption="attribute-value" xml:lang="nb"/><mu><alpha content="another attribute value"><zeta false="attribute-value" xml:lang="no" xml:id="id3"><beta att="solid 1px green" xml:lang="en-US" xml:id="id4"><chi xml:lang="no-nb" xml:id="id5"><rho class="123456789"/><epsilon xml:lang="en-US" xml:id="id6"><tau object="100%" xml:lang="en-GB" xml:id="id7"><alpha xml:lang="no-nb" xml:id="id8"/><rho and="true" xml:id="id9"><green>This text must be green</green></rho></tau></epsilon></chi></beta></zeta></alpha></mu></any></kappa></xsl:if>
+</xsl:template>
+</xsl:stylesheet>

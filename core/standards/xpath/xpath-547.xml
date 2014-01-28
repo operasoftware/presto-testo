@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:template match="xsl:template">
+<result>
+<xsl:choose>
+<xsl:when test='//eta[@xml:lang="no-nb"][@xml:id="id1"]/beta[starts-with(concat(@data,"-"),"attribute-")][not(preceding-sibling::*)][following-sibling::xi[preceding-sibling::*[position() = 1]][not(following-sibling::*)]/chi[not(preceding-sibling::*)]/kappa[@xml:lang="en-US"][not(preceding-sibling::*)]/theta[not(preceding-sibling::*)][not(following-sibling::*)][not(following-sibling::theta)]//chi[starts-with(concat(@number,"-"),"this.nodeValue-")][@xml:lang="nb"][@xml:id="id2"][not(preceding-sibling::*)][not(child::node())][following-sibling::lambda[@xml:lang="en-GB"][@xml:id="id3"][preceding-sibling::*[position() = 1]]/iota[@data="another attribute value"][@xml:id="id4"][not(preceding-sibling::*)][following-sibling::upsilon[@xml:lang="nb"][not(child::node())][following-sibling::xi[@delete][preceding-sibling::*[position() = 2]][not(child::node())][following-sibling::psi[@content="attribute-value"][@xml:lang="nb"][preceding-sibling::*[position() = 3]]/phi[@att][@xml:id="id5"][not(preceding-sibling::*)]/chi[@xml:id="id6"][not(preceding-sibling::*)]/mu[contains(concat(@content,"$"),"e$")][@xml:lang="en-GB"][not(following-sibling::*)]]][position() = 1]][position() = 1]]]'>	
+	<xsl:value-of select="'PASS'"/>
+</xsl:when>
+<xsl:otherwise>FAIL</xsl:otherwise>
+</xsl:choose>
+</result>
+<xsl:if test="false()">
+<eta xml:lang="no-nb" xml:id="id1"><beta data="attribute"/><xi><chi><kappa xml:lang="en-US"><theta><chi number="this.nodeValue" xml:lang="nb" xml:id="id2"/><lambda xml:lang="en-GB" xml:id="id3"><iota data="another attribute value" xml:id="id4"/><upsilon xml:lang="nb"/><xi delete="attribute-value"/><psi content="attribute-value" xml:lang="nb"><phi att="another attribute value" xml:id="id5"><chi xml:id="id6"><mu content="attribute-value" xml:lang="en-GB"><green>This text must be green</green></mu></chi></phi></psi></lambda></theta></kappa></chi></xi></eta></xsl:if>
+</xsl:template>
+</xsl:stylesheet>

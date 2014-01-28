@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:template match="xsl:template">
+<result>
+<xsl:choose>
+<xsl:when test='//xi[contains(@insert,"00%")][@xml:lang="en-GB"][@xml:id="id1"]//mu[@false][not(preceding-sibling::*)][not(child::node())][following-sibling::kappa[starts-with(concat(@delete,"-"),"attribute-")][@xml:lang="en-GB"][@xml:id="id2"][preceding-sibling::*[position() = 1]][following-sibling::*[position()=1]][not(child::node())][following-sibling::nu[@content][not(following-sibling::*)]/tau[not(preceding-sibling::*)][following-sibling::alpha[@xml:id="id3"][not(following-sibling::*)]//mu[contains(concat(@src,"$"),"px green$")][@xml:lang="en-US"][not(child::node())][following-sibling::phi[@or][not(following-sibling::*)]/chi[starts-with(concat(@data,"-"),"false-")][not(preceding-sibling::*)][following-sibling::*[position()=2]][not(child::node())][following-sibling::nu[@xml:id="id4"][following-sibling::iota[@xml:id="id5"][not(following-sibling::*)]//tau[starts-with(concat(@data,"-"),"content-")][not(preceding-sibling::*)][following-sibling::delta[@xml:lang="en"][not(following-sibling::*)]//phi[@xml:lang="en"][@xml:id="id6"][not(preceding-sibling::*)]/psi[not(preceding-sibling::*)][not(following-sibling::*)]/kappa[contains(concat(@attribute,"$"),"false$")][@xml:lang="en"][not(following-sibling::*)]/epsilon[contains(concat(@src,"$"),"e$")][@xml:lang="en"][@xml:id="id7"]//tau[@insert][not(preceding-sibling::*)][following-sibling::*[position()=1]][following-sibling::xi[@xml:id="id8"][not(following-sibling::*)]][position() = 1]][position() = 1]][position() = 1]][position() = 1]][position() = 1]]]]'>	
+	<xsl:value-of select="'PASS'"/>
+</xsl:when>
+<xsl:otherwise>FAIL</xsl:otherwise>
+</xsl:choose>
+</result>
+<xsl:if test="false()">
+<xi insert="100%" xml:lang="en-GB" xml:id="id1"><mu false="solid 1px green"/><kappa delete="attribute" xml:lang="en-GB" xml:id="id2"/><nu content="this-is-att-value"><tau/><alpha xml:id="id3"><mu src="solid 1px green" xml:lang="en-US"/><phi or="100%"><chi data="false"/><nu xml:id="id4"/><iota xml:id="id5"><tau data="content"/><delta xml:lang="en"><phi xml:lang="en" xml:id="id6"><psi><kappa attribute="false" xml:lang="en"><epsilon src="true" xml:lang="en" xml:id="id7"><tau insert="attribute value"/><xi xml:id="id8"><green>This text must be green</green></xi></epsilon></kappa></psi></phi></delta></iota></phi></alpha></nu></xi></xsl:if>
+</xsl:template>
+</xsl:stylesheet>

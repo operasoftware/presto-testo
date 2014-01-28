@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:template match="xsl:template">
+<result>
+<xsl:choose>
+<xsl:when test='//pi[@xml:id="id1"]//tau[following-sibling::*[position()=1]][following-sibling::rho[starts-with(concat(@and,"-"),"attribute-")][@xml:lang="en"][preceding-sibling::*[position() = 1]][not(following-sibling::*)]/phi[following-sibling::*[position()=6]][not(child::node())][following-sibling::omicron[@xml:lang="en"][@xml:id="id2"][preceding-sibling::*[position() = 1]][following-sibling::alpha[@xml:id="id3"][preceding-sibling::*[position() = 2]][following-sibling::*[position()=4]][following-sibling::theta[@token][@xml:lang="en-GB"][following-sibling::*[position()=3]][following-sibling::alpha[contains(concat(@string,"$"),"123456789$")][preceding-sibling::*[position() = 4]][not(child::node())][following-sibling::chi[@xml:id="id4"][preceding-sibling::*[position() = 5]][following-sibling::iota//pi[@name][@xml:id="id5"][not(preceding-sibling::*)]/phi[@xml:id="id6"][not(child::node())][following-sibling::pi[@xml:id="id7"][preceding-sibling::*[position() = 1]][following-sibling::theta[contains(@attrib,"olid 1p")][preceding-sibling::*[position() = 2]][not(child::node())][following-sibling::pi[@false][@xml:id="id8"][preceding-sibling::*[position() = 3]][not(following-sibling::*)]][position() = 1]][position() = 1]][position() = 1]][position() = 1]]][position() = 1]][position() = 1]]][position() = 1]]'>	
+	<xsl:value-of select="'PASS'"/>
+</xsl:when>
+<xsl:otherwise>FAIL</xsl:otherwise>
+</xsl:choose>
+</result>
+<xsl:if test="false()">
+<pi xml:id="id1"><tau/><rho and="attribute-value" xml:lang="en"><phi/><omicron xml:lang="en" xml:id="id2"/><alpha xml:id="id3"/><theta token="attribute value" xml:lang="en-GB"/><alpha string="123456789"/><chi xml:id="id4"/><iota><pi name="123456789" xml:id="id5"><phi xml:id="id6"/><pi xml:id="id7"/><theta attrib="solid 1px green"/><pi false="this.nodeValue" xml:id="id8"><green>This text must be green</green></pi></pi></iota></rho></pi></xsl:if>
+</xsl:template>
+</xsl:stylesheet>

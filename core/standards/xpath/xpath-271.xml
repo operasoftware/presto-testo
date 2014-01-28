@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:template match="xsl:template">
+<result>
+<xsl:choose>
+<xsl:when test='//delta[starts-with(concat(@name,"-"),"content-")][@xml:lang="en-US"]/alpha[contains(@number,"a")][@xml:id="id1"][following-sibling::*[position()=1]][following-sibling::lambda[@object][preceding-sibling::*[position() = 1]]//chi[@and][@xml:id="id2"][not(preceding-sibling::*)]//alpha[@xml:id="id3"][not(preceding-sibling::*)]//xi[@true][@xml:id="id4"][not(child::node())][following-sibling::pi[@false][preceding-sibling::*[position() = 1]]/rho[@xml:id="id5"][not(child::node())][following-sibling::psi[starts-with(@title,"12345678")][preceding-sibling::*[position() = 1]][not(following-sibling::*)]]]]'>	
+	<xsl:value-of select="'PASS'"/>
+</xsl:when>
+<xsl:otherwise>FAIL</xsl:otherwise>
+</xsl:choose>
+</result>
+<xsl:if test="false()">
+<delta name="content" xml:lang="en-US"><alpha number="false" xml:id="id1"/><lambda object="attribute-value"><chi and="content" xml:id="id2"><alpha xml:id="id3"><xi true="content" xml:id="id4"/><pi false="123456789"><rho xml:id="id5"/><psi title="123456789"><green>This text must be green</green></psi></pi></alpha></chi></lambda></delta></xsl:if>
+</xsl:template>
+</xsl:stylesheet>

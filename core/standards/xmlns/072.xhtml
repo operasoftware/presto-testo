@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>element selector and @namespace rule</title>
+<style type="text/css">
+@namespace ns "http://www.w3.org/1999/xhtml";
+@namespace xh "http://www.w3.org/1999/xhtml";
+ns|p
+	{content:"FAIL"}
+xh|p
+	{content:"PASS"}
+</style>
+</head>
+<body>
+<p>PASS</p>
+</body>
+</html>

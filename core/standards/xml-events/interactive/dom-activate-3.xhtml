@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ev="http://www.w3.org/2001/xml-events">
+<head>
+<title>DOMActivate event</title>
+</head>
+<body>
+<div><a href="#pass">Follow this hyperlink
+<script type="application/ecmascript" ev:event="DOMActivate">
+<![CDATA[
+document.getElementsByTagName('tt')[0].firstChild.nodeValue = "PASSED";
+]]>
+</script>
+</a></div> 
+<div id="pass" style="margin:50cm 0;"><tt>FAILED</tt></div>
+</body>
+</html>

@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>src attribute of script element</title>
+</head>
+<body>
+<p>Test result: <tt>Not Tested (script did not run)</tt></p>
+<script type="application/ecmascript" src="data:application/ecmascript,document.getElementsByTagName%28%27tt%27%29%5B0%5D.firstChild.nodeValue%20%3D%20%27PASS%27"/>
+</body>
+</html>

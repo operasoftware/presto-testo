@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:template match="xsl:template">
+<result>
+<xsl:choose>
+<xsl:when test='//mu[@xml:id="id1"]/upsilon//psi[starts-with(concat(@attr,"-"),"_blank-")][@xml:id="id2"][not(preceding-sibling::*)]//epsilon[starts-with(@delete,"1234")][following-sibling::*[position()=1]][not(child::node())][following-sibling::lambda[@xml:id="id3"][not(following-sibling::*)]//sigma[@object][@xml:lang="en"][not(preceding-sibling::*)]/beta[@class][@xml:lang="nb"]//*[not(child::node())][following-sibling::phi[@xml:id="id4"][preceding-sibling::*[position() = 1]][not(following-sibling::*)]/upsilon[@true][not(preceding-sibling::*)][not(following-sibling::*)]//psi[not(preceding-sibling::*)][not(following-sibling::*)]]]'>	
+	<xsl:value-of select="'PASS'"/>
+</xsl:when>
+<xsl:otherwise>FAIL</xsl:otherwise>
+</xsl:choose>
+</result>
+<xsl:if test="false()">
+<mu xml:id="id1"><upsilon><psi attr="_blank" xml:id="id2"><epsilon delete="123456789"/><lambda xml:id="id3"><sigma object="this-is-att-value" xml:lang="en"><beta class="attribute" xml:lang="nb"><any/><phi xml:id="id4"><upsilon true="attribute-value"><psi><green>This text must be green</green></psi></upsilon></phi></beta></sigma></lambda></psi></upsilon></mu></xsl:if>
+</xsl:template>
+</xsl:stylesheet>

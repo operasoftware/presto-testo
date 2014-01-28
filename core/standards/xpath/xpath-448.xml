@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:template match="xsl:template">
+<result>
+<xsl:choose>
+<xsl:when test='//eta[@xml:lang="en-US"]//zeta[@attribute][@xml:id="id1"][not(preceding-sibling::*)]//lambda[@attr="100%"][@xml:lang="en"][@xml:id="id2"][not(preceding-sibling::*)]//rho[contains(concat(@src,"$"),"Value$")][@xml:lang="en-US"][not(preceding-sibling::*)]/rho[contains(@name,"e")][not(preceding-sibling::*)]/psi[@xml:lang="no-nb"][not(preceding-sibling::*)][following-sibling::*[position()=1]][not(child::node())][following-sibling::epsilon[@or][@xml:id="id3"][not(following-sibling::*)]//psi//chi[not(preceding-sibling::*)][following-sibling::*[position()=3]][not(child::node())][following-sibling::iota[@xml:lang="en"][following-sibling::*[position()=2]][following-sibling::tau[@string="false"][preceding-sibling::*[position() = 2]][following-sibling::delta[@xml:id="id4"]/kappa[@xml:lang="en-US"][@xml:id="id5"][not(child::node())][following-sibling::omicron[starts-with(@string,"tr")][@xml:lang="no"][@xml:id="id6"][not(following-sibling::*)]//kappa[starts-with(@abort,"attr")]//omega[@desciption][@xml:lang="no"][not(preceding-sibling::*)][following-sibling::sigma[@xml:lang="nb"][preceding-sibling::*[position() = 1]]//delta[starts-with(@attribute,"_b")][@xml:id="id7"][following-sibling::mu[@number][@xml:lang="no"][@xml:id="id8"]/chi[@xml:lang="no-nb"][@xml:id="id9"]/eta[@xml:lang="no"][not(preceding-sibling::*)][not(child::node())][following-sibling::lambda[@xml:id="id10"][not(following-sibling::*)][position() = 1]]][position() = 1]][position() = 1]]]][position() = 1]][position() = 1]]'>	
+	<xsl:value-of select="'PASS'"/>
+</xsl:when>
+<xsl:otherwise>FAIL</xsl:otherwise>
+</xsl:choose>
+</result>
+<xsl:if test="false()">
+<eta xml:lang="en-US"><zeta attribute="false" xml:id="id1"><lambda attr="100%" xml:lang="en" xml:id="id2"><rho src="this.nodeValue" xml:lang="en-US"><rho name="true"><psi xml:lang="no-nb"/><epsilon or="another attribute value" xml:id="id3"><psi><chi/><iota xml:lang="en"/><tau string="false"/><delta xml:id="id4"><kappa xml:lang="en-US" xml:id="id5"/><omicron string="true" xml:lang="no" xml:id="id6"><kappa abort="attribute"><omega desciption="another attribute value" xml:lang="no"/><sigma xml:lang="nb"><delta attribute="_blank" xml:id="id7"/><mu number="false" xml:lang="no" xml:id="id8"><chi xml:lang="no-nb" xml:id="id9"><eta xml:lang="no"/><lambda xml:id="id10"><green>This text must be green</green></lambda></chi></mu></sigma></kappa></omicron></delta></psi></epsilon></rho></rho></lambda></zeta></eta></xsl:if>
+</xsl:template>
+</xsl:stylesheet>

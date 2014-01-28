@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<!-- Reference for entity uses period-->
+<!-- Testcase: parameter_ref_as_period.xml -->
+<!-- Description: The test the xml parser's ability to report a error when a document is NOT well-formed  -->
+<!-- Author:  Chris Petersen  Date: 12/06/2000 -->
+<!DOCTYPE main [
+<!ENTITY % para "<!ENTITY test 'This is a test'>">
+%.;
+]>
+<main>
+
+&.;
+</main>

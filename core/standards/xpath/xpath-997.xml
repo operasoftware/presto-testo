@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:template match="xsl:template">
+<result>
+<xsl:choose>
+<xsl:when test='//omega[@xml:id="id1"]/iota[starts-with(concat(@token,"-"),"attribute-")][@xml:lang="nb"][@xml:id="id2"][following-sibling::mu[@att][@xml:id="id3"][preceding-sibling::*[position() = 1]][not(following-sibling::*)]//upsilon[@number="123456789"][not(preceding-sibling::*)][not(following-sibling::*)]//rho[not(child::node())][following-sibling::xi[starts-with(concat(@title,"-"),"true-")][@xml:id="id4"][following-sibling::*[position()=4]][not(child::node())][following-sibling::gamma[@false="true"][@xml:lang="nb"][@xml:id="id5"][following-sibling::chi[@xml:lang="en-US"][@xml:id="id6"][preceding-sibling::*[position() = 3]][not(child::node())][following-sibling::theta[@title][preceding-sibling::*[position() = 4]][following-sibling::alpha[starts-with(@token,"10")][@xml:lang="nb"][@xml:id="id7"]/delta/rho[@src="true"]//gamma[@xml:id="id8"][not(preceding-sibling::*)]/beta[@xml:lang="en-GB"]/alpha[@att][@xml:id="id9"]/upsilon[contains(@and,"tru")][not(preceding-sibling::*)]//chi[@xml:id="id10"][not(preceding-sibling::*)][not(following-sibling::*)]//epsilon[@data="_blank"][not(preceding-sibling::*)][following-sibling::*[position()=1]][not(child::node())][following-sibling::xi[@xml:id="id11"][not(following-sibling::*)][not(preceding-sibling::xi)]//chi[@false="this-is-att-value"][@xml:id="id12"][position() = 1]][position() = 1]][position() = 1]]][position() = 1]]]]'>	
+	<xsl:value-of select="'PASS'"/>
+</xsl:when>
+<xsl:otherwise>FAIL</xsl:otherwise>
+</xsl:choose>
+</result>
+<xsl:if test="false()">
+<omega xml:id="id1"><iota token="attribute-value" xml:lang="nb" xml:id="id2"/><mu att="false" xml:id="id3"><upsilon number="123456789"><rho/><xi title="true" xml:id="id4"/><gamma false="true" xml:lang="nb" xml:id="id5"/><chi xml:lang="en-US" xml:id="id6"/><theta title="100%"/><alpha token="100%" xml:lang="nb" xml:id="id7"><delta><rho src="true"><gamma xml:id="id8"><beta xml:lang="en-GB"><alpha att="this.nodeValue" xml:id="id9"><upsilon and="true"><chi xml:id="id10"><epsilon data="_blank"/><xi xml:id="id11"><chi false="this-is-att-value" xml:id="id12"><green>This text must be green</green></chi></xi></chi></upsilon></alpha></beta></gamma></rho></delta></alpha></upsilon></mu></omega></xsl:if>
+</xsl:template>
+</xsl:stylesheet>

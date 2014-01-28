@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:template match="xsl:template">
+<result>
+<xsl:choose>
+<xsl:when test='//omega[@true][@xml:lang="en-US"][@xml:id="id1"]/delta[following-sibling::chi[@abort][@xml:lang="en"][following-sibling::kappa[preceding-sibling::*[position() = 2]]//lambda//tau[@xml:lang="nb"][@xml:id="id2"]//beta[contains(concat(@token,"$"),"false$")][@xml:id="id3"][not(preceding-sibling::*)][following-sibling::*[position()=1]][not(child::node())][following-sibling::gamma[@xml:lang="en"][preceding-sibling::*[position() = 1]][not(following-sibling::*)]//chi[@xml:id="id4"][not(preceding-sibling::*)][not(child::node())][following-sibling::xi[@xml:lang="no"][not(following-sibling::*)]//iota[starts-with(@desciption,"_")][@xml:id="id5"][not(following-sibling::*)]//xi[@xml:id="id6"][following-sibling::rho[@attr][@xml:lang="en"][@xml:id="id7"][preceding-sibling::*[position() = 1]][not(following-sibling::*)]//beta[starts-with(concat(@name,"-"),"100%-")][@xml:lang="en-US"][not(preceding-sibling::*)]//alpha[@xml:lang="no-nb"][@xml:id="id8"]][position() = 1]][position() = 1]][position() = 1]]]'>	
+	<xsl:value-of select="'PASS'"/>
+</xsl:when>
+<xsl:otherwise>FAIL</xsl:otherwise>
+</xsl:choose>
+</result>
+<xsl:if test="false()">
+<omega true="true" xml:lang="en-US" xml:id="id1"><delta/><chi abort="true" xml:lang="en"/><kappa><lambda><tau xml:lang="nb" xml:id="id2"><beta token="false" xml:id="id3"/><gamma xml:lang="en"><chi xml:id="id4"/><xi xml:lang="no"><iota desciption="_blank" xml:id="id5"><xi xml:id="id6"/><rho attr="true" xml:lang="en" xml:id="id7"><beta name="100%" xml:lang="en-US"><alpha xml:lang="no-nb" xml:id="id8"><green>This text must be green</green></alpha></beta></rho></iota></xi></gamma></tau></lambda></kappa></omega></xsl:if>
+</xsl:template>
+</xsl:stylesheet>

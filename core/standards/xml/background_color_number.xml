@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+ <?xml-stylesheet  type="text/css" href="color_prop.css"?>
+ <!-- Testcase: background_color_rgb_number.xml -->
+<!-- Description: To test the ability to apply background RGB number values with CSS 1 -->
+<!--Expected Results: Each sentence should be rendered with a different background color -->
+<!-- Author:  Chris Petersen  Date: 5/04/01 -->
+<!-- 
+   - The contents of this file are subject to the Mozilla Public
+   - License Version 1.1 (the "License"); you may not use this file
+   - except in compliance with the License. You may obtain a copy of
+   - the License at http://www.mozilla.org/MPL/
+   - 
+   - Software distributed under the License is distributed on an "AS
+   - IS" basis, WITHOUT WARRANTY OF ANY KIND, either express or
+   - implied. See the License for the specific language governing
+   - rights and limitations under the License.
+   -
+   - The Original Code is Mozilla Communicator Test Cases.
+   - 
+   - The Initial Developer of the Original Code is Netscape Communications
+   - Corp.  Portions created by Netscape Communications Corp. are 
+   - Copyright (C) 1999 Netscape Communications Corp.  All
+   - Rights Reserved.
+   - 
+   - Contributor(s): 
+  -->
+ <bgcolor_number_properties>
+ <intro>Each sentence uses a different RGB number value and should be rendered in that specified color.</intro>
+ <bg_red_number>
+ This text is assigned a color number of &#40;Red&#41;
+ </bg_red_number>
+ <bg_green_number>
+ This text is assigned a color number of &#40;Green&#41;
+ </bg_green_number>
+ <bg_purple_number>
+ This text is assigned a color number of &#40;Purple&#41;
+</bg_purple_number>
+<bg_yellow_number>
+ This text is assigned a color number of &#40;Yellow&#41;
+</bg_yellow_number>
+<bg_orange_number>
+ This text is assigned a color number of &#40;Orange&#41;
+</bg_orange_number>
+<bg_blue_number>
+This text is assigned a color number of &#40;Blue&#41;
+</bg_blue_number>
+ </bgcolor_number_properties> 

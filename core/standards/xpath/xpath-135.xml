@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:template match="xsl:template">
+<result>
+<xsl:choose>
+<xsl:when test='//epsilon[@object="attribute"][@xml:id="id1"]/mu[starts-with(@att,"1")][@xml:id="id2"][not(preceding-sibling::*)][not(following-sibling::*)]/phi[@xml:id="id3"][not(preceding-sibling::*)][following-sibling::*[position()=1]][not(child::node())][following-sibling::phi[@xml:id="id4"][preceding-sibling::*[position() = 1]][not(following-sibling::*)]//nu//lambda[@xml:lang="no"][@xml:id="id5"][not(preceding-sibling::*)][not(child::node())][following-sibling::tau[@attrib][@xml:lang="en-GB"][@xml:id="id6"][following-sibling::*[position()=3]][following-sibling::omicron[starts-with(concat(@title,"-"),"_blank-")][@xml:lang="en-US"][preceding-sibling::*[position() = 2]][not(following-sibling::omicron)][not(child::node())][following-sibling::upsilon[starts-with(concat(@number,"-"),"_blank-")][@xml:lang="en"][not(child::node())][following-sibling::iota[starts-with(concat(@delete,"-"),"100%-")][@xml:lang="no-nb"][@xml:id="id7"]/psi[not(following-sibling::*)]//iota[starts-with(@att,"this-is-att-valu")][@xml:id="id8"][position() = 1]]]]][position() = 1]]'>	
+	<xsl:value-of select="'PASS'"/>
+</xsl:when>
+<xsl:otherwise>FAIL</xsl:otherwise>
+</xsl:choose>
+</result>
+<xsl:if test="false()">
+<epsilon object="attribute" xml:id="id1"><mu att="100%" xml:id="id2"><phi xml:id="id3"/><phi xml:id="id4"><nu><lambda xml:lang="no" xml:id="id5"/><tau attrib="true" xml:lang="en-GB" xml:id="id6"/><omicron title="_blank" xml:lang="en-US"/><upsilon number="_blank" xml:lang="en"/><iota delete="100%" xml:lang="no-nb" xml:id="id7"><psi><iota att="this-is-att-value" xml:id="id8"><green>This text must be green</green></iota></psi></iota></nu></phi></mu></epsilon></xsl:if>
+</xsl:template>
+</xsl:stylesheet>

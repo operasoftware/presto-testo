@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:template match="xsl:template">
+<result>
+<xsl:choose>
+<xsl:when test='//omicron[starts-with(concat(@token,"-"),"solid 1px green-")][@xml:id="id1"]//chi[@xml:lang="en-GB"][@xml:id="id2"][not(preceding-sibling::*)][not(following-sibling::*)]/chi[contains(@attr,"ibute valu")][not(following-sibling::*)]/nu[contains(@and," value")][@xml:lang="en-US"][not(preceding-sibling::*)][following-sibling::psi[starts-with(@delete,"fals")][@xml:lang="en-GB"]/omicron[contains(@and,"eValue")][@xml:id="id3"][not(following-sibling::*)]/chi[@xml:lang="no"]/sigma[@xml:lang="no"][@xml:id="id4"][following-sibling::*[position()=2]][following-sibling::nu[not(child::node())][following-sibling::tau[@xml:lang="en-GB"][preceding-sibling::*[position() = 2]][not(following-sibling::*)][not(following-sibling::tau)]//theta[@xml:lang="no"][@xml:id="id5"]/upsilon[@xml:lang="en-US"][not(preceding-sibling::*)][following-sibling::*[position()=3]][not(child::node())][following-sibling::nu[contains(concat(@string,"$"),"ibute$")][@xml:lang="en-GB"][@xml:id="id6"][preceding-sibling::*[position() = 1]][following-sibling::chi[contains(concat(@and,"$"),"_blank$")][@xml:lang="nb"][preceding-sibling::*[position() = 2]][following-sibling::beta[starts-with(@string,"another attribute ")][not(following-sibling::*)]/beta[@xml:lang="no-nb"][@xml:id="id7"][not(child::node())][following-sibling::beta[@xml:id="id8"][preceding-sibling::*[position() = 1]]//eta[@xml:lang="no"][not(following-sibling::*)]/nu[not(following-sibling::*)]]][position() = 1]]][position() = 1]][position() = 1]]]'>	
+	<xsl:value-of select="'PASS'"/>
+</xsl:when>
+<xsl:otherwise>FAIL</xsl:otherwise>
+</xsl:choose>
+</result>
+<xsl:if test="false()">
+<omicron token="solid 1px green" xml:id="id1"><chi xml:lang="en-GB" xml:id="id2"><chi attr="attribute value"><nu and="another attribute value" xml:lang="en-US"/><psi delete="false" xml:lang="en-GB"><omicron and="this.nodeValue" xml:id="id3"><chi xml:lang="no"><sigma xml:lang="no" xml:id="id4"/><nu/><tau xml:lang="en-GB"><theta xml:lang="no" xml:id="id5"><upsilon xml:lang="en-US"/><nu string="attribute" xml:lang="en-GB" xml:id="id6"/><chi and="_blank" xml:lang="nb"/><beta string="another attribute value"><beta xml:lang="no-nb" xml:id="id7"/><beta xml:id="id8"><eta xml:lang="no"><nu><green>This text must be green</green></nu></eta></beta></beta></theta></tau></chi></omicron></psi></chi></chi></omicron></xsl:if>
+</xsl:template>
+</xsl:stylesheet>

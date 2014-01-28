@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:template match="xsl:template">
+<result>
+<xsl:choose>
+<xsl:when test='//gamma[@xml:id="id1"]//rho[@xml:lang="nb"][@xml:id="id2"][not(preceding-sibling::*)][not(child::node())][following-sibling::iota[@xml:id="id3"][not(following-sibling::*)]//chi[@string][not(following-sibling::chi)][not(child::node())][following-sibling::epsilon[contains(concat(@abort,"$"),"value$")][@xml:id="id4"][preceding-sibling::*[position() = 1]][following-sibling::theta[@data="solid 1px green"][@xml:id="id5"]//omega[starts-with(@true,"this.n")][@xml:lang="nb"][@xml:id="id6"][not(following-sibling::*)][not(preceding-sibling::omega or following-sibling::omega)]/theta[@xml:id="id7"][not(preceding-sibling::*)][not(child::node())][following-sibling::eta[contains(concat(@attribute,"$"),"bute value$")][@xml:lang="en-GB"][following-sibling::kappa[@src][@xml:lang="nb"][@xml:id="id8"]/iota[@xml:id="id9"][not(following-sibling::*)]/upsilon[starts-with(@insert,"fal")][@xml:lang="no"][@xml:id="id10"]//phi[not(following-sibling::*)]/lambda[not(following-sibling::*)]//chi[@data][@xml:lang="no-nb"][not(child::node())][following-sibling::theta[@xml:id="id11"][not(following-sibling::*)]]]][position() = 1]]]]'>	
+	<xsl:value-of select="'PASS'"/>
+</xsl:when>
+<xsl:otherwise>FAIL</xsl:otherwise>
+</xsl:choose>
+</result>
+<xsl:if test="false()">
+<gamma xml:id="id1"><rho xml:lang="nb" xml:id="id2"/><iota xml:id="id3"><chi string="attribute value"/><epsilon abort="attribute value" xml:id="id4"/><theta data="solid 1px green" xml:id="id5"><omega true="this.nodeValue" xml:lang="nb" xml:id="id6"><theta xml:id="id7"/><eta attribute="attribute value" xml:lang="en-GB"/><kappa src="content" xml:lang="nb" xml:id="id8"><iota xml:id="id9"><upsilon insert="false" xml:lang="no" xml:id="id10"><phi><lambda><chi data="attribute-value" xml:lang="no-nb"/><theta xml:id="id11"><green>This text must be green</green></theta></lambda></phi></upsilon></iota></kappa></omega></theta></iota></gamma></xsl:if>
+</xsl:template>
+</xsl:stylesheet>

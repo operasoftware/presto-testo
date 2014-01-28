@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>style attribute of rt element</title>
+<style type="text/css">
+div:first-child rt
+	{visibility:hidden}
+</style>
+</head>
+<body>
+<div><ruby><rb>a</rb><rp>FAIL</rp><rt style="visibility:visible">P</rt><rp>FAIL</rp></ruby></div>
+<div><ruby><rb>s</rb><rp>FAIL</rp><rt>S</rt><rp>FAIL</rp></ruby></div>
+<p>You should see word pass above</p>
+</body>
+</html>

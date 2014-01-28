@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<   !--This is a comment is located in the prolog. Whitespace has been added before the comment-->
+<!-- Testcase: comments_wspace.xml -->
+<!-- Description: The test the xml parser's ability to report a error when a document is NOT well-formed  -->
+<!-- Author:  Chris Petersen  Date: 12/06/2000 -->
+<?xml-stylesheet type="text/css" href="test.css"?>
+<root>
+This text should be displayed
+</root>
+

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:template match="xsl:template">
+<result>
+<xsl:choose>
+<xsl:when test='//mu[@xml:id="id1"]/lambda[@xml:id="id2"]//omega[contains(concat(@attribute,"$"),"23456789$")][@xml:lang="no-nb"][not(preceding-sibling::*)][following-sibling::*[position()=1]][following-sibling::gamma[contains(concat(@attribute,"$"),"lank$")][@xml:lang="en-US"][@xml:id="id3"][preceding-sibling::*[position() = 1]]/chi[@xml:lang="en-US"][@xml:id="id4"][not(preceding-sibling::*)][following-sibling::*[position()=1]][not(child::node())][following-sibling::epsilon[@attr][@xml:lang="en-GB"][@xml:id="id5"][preceding-sibling::*[position() = 1]][not(following-sibling::*)][position() = 1]][position() = 1]]'>	
+	<xsl:value-of select="'PASS'"/>
+</xsl:when>
+<xsl:otherwise>FAIL</xsl:otherwise>
+</xsl:choose>
+</result>
+<xsl:if test="false()">
+<mu xml:id="id1"><lambda xml:id="id2"><omega attribute="123456789" xml:lang="no-nb"/><gamma attribute="_blank" xml:lang="en-US" xml:id="id3"><chi xml:lang="en-US" xml:id="id4"/><epsilon attr="100%" xml:lang="en-GB" xml:id="id5"><green>This text must be green</green></epsilon></gamma></lambda></mu></xsl:if>
+</xsl:template>
+</xsl:stylesheet>

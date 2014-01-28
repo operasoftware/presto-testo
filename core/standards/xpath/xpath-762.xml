@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:template match="xsl:template">
+<result>
+<xsl:choose>
+<xsl:when test='//psi[@xml:id="id1"]//xi[starts-with(concat(@object,"-"),"true-")][@xml:lang="en-US"][@xml:id="id2"][not(child::node())][following-sibling::tau[contains(@content,"k")][preceding-sibling::*[position() = 1]][following-sibling::chi[not(following-sibling::*)]//upsilon[@xml:lang="en"][@xml:id="id3"][not(child::node())][following-sibling::epsilon[@xml:lang="no"][preceding-sibling::*[position() = 1]][not(following-sibling::*)]//sigma[starts-with(@string,"this-is-a")][@xml:id="id4"][not(child::node())][following-sibling::psi[contains(@object,"value")][@xml:lang="nb"][not(following-sibling::*)]/zeta[not(child::node())][following-sibling::omicron[contains(concat(@insert,"$"),"tent$")][@xml:lang="no-nb"][preceding-sibling::*[position() = 1]][position() = 1]][position() = 1]]]]]'>	
+	<xsl:value-of select="'PASS'"/>
+</xsl:when>
+<xsl:otherwise>FAIL</xsl:otherwise>
+</xsl:choose>
+</result>
+<xsl:if test="false()">
+<psi xml:id="id1"><xi object="true" xml:lang="en-US" xml:id="id2"/><tau content="_blank"/><chi><upsilon xml:lang="en" xml:id="id3"/><epsilon xml:lang="no"><sigma string="this-is-att-value" xml:id="id4"/><psi object="attribute value" xml:lang="nb"><zeta/><omicron insert="content" xml:lang="no-nb"><green>This text must be green</green></omicron></psi></epsilon></chi></psi></xsl:if>
+</xsl:template>
+</xsl:stylesheet>

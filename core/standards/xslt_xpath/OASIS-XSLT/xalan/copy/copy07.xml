@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="copy07.xsl"?>
+<data>
+<histogram misc="0" name="load-times" type="int"/>
+<INPUT type="text" OnDBLClick="retreive( )" testapos="JSFunction('val1','val2')"/> 
+</data>

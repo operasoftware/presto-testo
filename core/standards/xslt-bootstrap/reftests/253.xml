@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet version="1.0" id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+<xsl:template match="/">
+<result>
+    <xsl:if test="function-available('name')"><xsl:value-of select="'PASS'"/></xsl:if>
+</result>
+</xsl:template>
+</xsl:stylesheet>

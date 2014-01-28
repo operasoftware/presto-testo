@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:template match="xsl:template">
+<result>
+<xsl:choose>
+<xsl:when test='//pi[contains(@desciption,"%")][@xml:lang="nb"]/lambda[@xml:id="id1"][not(preceding-sibling::*)][not(following-sibling::*)]/alpha[@insert][@xml:lang="en-US"][@xml:id="id2"][not(following-sibling::*)]/beta[contains(concat(@attribute,"$"),"tribute$")][@xml:lang="en-GB"]/mu[@desciption][@xml:lang="nb"][not(preceding-sibling::*)][following-sibling::zeta[@xml:id="id3"][preceding-sibling::*[position() = 1]][following-sibling::tau[@number][@xml:id="id4"]/kappa[not(preceding-sibling::*)][following-sibling::nu[contains(@data,"is.nodeValue")][@xml:lang="en"][@xml:id="id5"]/mu[not(preceding-sibling::*)][not(child::node())][following-sibling::phi[@attr="content"][@xml:id="id6"][not(following-sibling::*)]//delta[not(following-sibling::*)]][position() = 1]]]]'>	
+	<xsl:value-of select="'PASS'"/>
+</xsl:when>
+<xsl:otherwise>FAIL</xsl:otherwise>
+</xsl:choose>
+</result>
+<xsl:if test="false()">
+<pi desciption="100%" xml:lang="nb"><lambda xml:id="id1"><alpha insert="solid 1px green" xml:lang="en-US" xml:id="id2"><beta attribute="attribute" xml:lang="en-GB"><mu desciption="attribute" xml:lang="nb"/><zeta xml:id="id3"/><tau number="this.nodeValue" xml:id="id4"><kappa/><nu data="this.nodeValue" xml:lang="en" xml:id="id5"><mu/><phi attr="content" xml:id="id6"><delta><green>This text must be green</green></delta></phi></nu></tau></beta></alpha></lambda></pi></xsl:if>
+</xsl:template>
+</xsl:stylesheet>

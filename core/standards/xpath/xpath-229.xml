@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:template match="xsl:template">
+<result>
+<xsl:choose>
+<xsl:when test='//theta[@xml:lang="no"]//chi[contains(concat(@title,"$"),"lue$")][@xml:id="id1"]/phi[not(child::node())][following-sibling::eta[@xml:id="id2"][preceding-sibling::*[position() = 1]]/kappa[starts-with(concat(@src,"-"),"100%-")][@xml:lang="en"][@xml:id="id3"][following-sibling::psi[contains(concat(@true,"$"),"content$")][@xml:lang="en-US"][@xml:id="id4"]/sigma[@xml:lang="en"][not(preceding-sibling::*)][following-sibling::*[position()=1]][following-sibling::tau[@abort="this.nodeValue"][@xml:lang="en"][preceding-sibling::*[position() = 1]][not(following-sibling::*)]//eta[following-sibling::*[position()=1]][not(child::node())][following-sibling::omicron[@xml:lang="en-GB"][preceding-sibling::*[position() = 1]]/psi[@class][@xml:lang="en-US"][@xml:id="id5"][not(following-sibling::*)]/nu[@delete][following-sibling::kappa[@xml:lang="en-GB"]//xi[starts-with(@insert,"attri")][@xml:lang="en-US"][@xml:id="id6"][not(preceding-sibling::*)][following-sibling::tau[starts-with(concat(@class,"-"),"content-")][@xml:id="id7"][not(preceding-sibling::tau)]/nu[@or="false"][@xml:id="id8"]/theta[@xml:lang="no"][@xml:id="id9"][following-sibling::*[position()=1]][not(child::node())][following-sibling::upsilon[starts-with(concat(@and,"-"),"this-")][position() = 1]][position() = 1]][position() = 1]]][position() = 1]][position() = 1]]]'>	
+	<xsl:value-of select="'PASS'"/>
+</xsl:when>
+<xsl:otherwise>FAIL</xsl:otherwise>
+</xsl:choose>
+</result>
+<xsl:if test="false()">
+<theta xml:lang="no"><chi title="this.nodeValue" xml:id="id1"><phi/><eta xml:id="id2"><kappa src="100%" xml:lang="en" xml:id="id3"/><psi true="content" xml:lang="en-US" xml:id="id4"><sigma xml:lang="en"/><tau abort="this.nodeValue" xml:lang="en"><eta/><omicron xml:lang="en-GB"><psi class="attribute" xml:lang="en-US" xml:id="id5"><nu delete="this.nodeValue"/><kappa xml:lang="en-GB"><xi insert="attribute-value" xml:lang="en-US" xml:id="id6"/><tau class="content" xml:id="id7"><nu or="false" xml:id="id8"><theta xml:lang="no" xml:id="id9"/><upsilon and="this-is-att-value"><green>This text must be green</green></upsilon></nu></tau></kappa></psi></omicron></tau></psi></eta></chi></theta></xsl:if>
+</xsl:template>
+</xsl:stylesheet>

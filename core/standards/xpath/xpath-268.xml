@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:template match="xsl:template">
+<result>
+<xsl:choose>
+<xsl:when test='//kappa[@attr]/gamma[contains(concat(@content,"$"),"tribute value$")][@xml:id="id1"][not(preceding-sibling::*)][not(following-sibling::*)]//tau[starts-with(@att,"f")]/xi[@token][@xml:lang="en-GB"][not(preceding-sibling::*)][following-sibling::*[position()=2]][not(child::node())][following-sibling::psi[@xml:id="id2"][preceding-sibling::*[position() = 1]][not(child::node())][following-sibling::xi[@src][preceding-sibling::*[position() = 2]][not(following-sibling::xi)]/kappa[@and][@xml:lang="en-GB"][not(child::node())][following-sibling::upsilon[@xml:lang="en"]//rho[@att="another attribute value"][@xml:lang="en"][not(preceding-sibling::*)]/beta[not(preceding-sibling::*)][not(following-sibling::*)]//nu[not(preceding-sibling::*)][not(child::node())][following-sibling::mu[@att][@xml:lang="en-US"][preceding-sibling::*[position() = 1]][not(following-sibling::*)]//*[@xml:lang="en-US"][not(preceding-sibling::*)]/mu[@xml:id="id3"]/delta[@object][@xml:lang="en-GB"][not(following-sibling::*)]//gamma[starts-with(@attr,"attribu")][following-sibling::iota[@xml:id="id4"][following-sibling::phi[@or][@xml:id="id5"][not(following-sibling::*)]//sigma[not(preceding-sibling::*)][following-sibling::kappa[@xml:lang="nb"][preceding-sibling::*[position() = 1]][following-sibling::*[position()=1]][following-sibling::lambda[preceding-sibling::*[position() = 2]][not(following-sibling::*)]//kappa[@xml:lang="en-GB"][not(preceding-sibling::*)][following-sibling::upsilon[contains(@data,"b")][@xml:lang="en-US"][@xml:id="id6"][not(child::node())][following-sibling::tau[@and="100%"][@xml:id="id7"][preceding-sibling::*[position() = 2]][not(following-sibling::*)]]][position() = 1]][position() = 1]]]]]][position() = 1]][position() = 1]]'>	
+	<xsl:value-of select="'PASS'"/>
+</xsl:when>
+<xsl:otherwise>FAIL</xsl:otherwise>
+</xsl:choose>
+</result>
+<xsl:if test="false()">
+<kappa attr="this-is-att-value"><gamma content="attribute value" xml:id="id1"><tau att="false"><xi token="attribute" xml:lang="en-GB"/><psi xml:id="id2"/><xi src="another attribute value"><kappa and="solid 1px green" xml:lang="en-GB"/><upsilon xml:lang="en"><rho att="another attribute value" xml:lang="en"><beta><nu/><mu att="attribute" xml:lang="en-US"><any xml:lang="en-US"><mu xml:id="id3"><delta object="attribute" xml:lang="en-GB"><gamma attr="attribute-value"/><iota xml:id="id4"/><phi or="attribute value" xml:id="id5"><sigma/><kappa xml:lang="nb"/><lambda><kappa xml:lang="en-GB"/><upsilon data="attribute-value" xml:lang="en-US" xml:id="id6"/><tau and="100%" xml:id="id7"><green>This text must be green</green></tau></lambda></phi></delta></mu></any></mu></beta></rho></upsilon></xi></tau></gamma></kappa></xsl:if>
+</xsl:template>
+</xsl:stylesheet>

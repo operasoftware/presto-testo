@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/css" href="tc.css"?>
+<!DOCTYPE tc [
+	<!ELEMENT tc (listener*, script*, observer, pass, script?)>
+	<!ATTLIST tc xmlns:ev CDATA #FIXED "http://www.w3.org/2001/xml-events">
+	<!ELEMENT listener EMPTY>
+	<!ATTLIST listener xmlns CDATA #FIXED "http://www.w3.org/2001/xml-events" event NMTOKEN #REQUIRED observer IDREF #IMPLIED target IDREF #IMPLIED handler CDATA #IMPLIED phase (capture|default) #IMPLIED propagate (stop|continue) #IMPLIED defaultAction (cancel|perform) #IMPLIED>
+	<!ELEMENT observer (target, script*)>
+	<!ATTLIST observer xml:id ID #IMPLIED ev:event NMTOKEN #IMPLIED ev:target IDREF #IMPLIED ev:handler CDATA #IMPLIED ev:phase (capture|default) #IMPLIED ev:propagate (stop|continue) #IMPLIED defaultAction (cancel|perform) #IMPLIED>
+	<!ELEMENT pass (#PCDATA)*>
+	<!ELEMENT script (#PCDATA)*>
+	<!ATTLIST script xmlns CDATA #FIXED "http://www.w3.org/1999/xhtml" type CDATA "application/ecmascript" id CDATA #IMPLIED ev:event NMTOKEN #IMPLIED ev:observer IDREF #IMPLIED ev:target IDREF #IMPLIED ev:phase (capture|default) #IMPLIED ev:propagate (stop|continue) #IMPLIED defaultAction (cancel|perform) #IMPLIED>
+	<!ELEMENT target (#PCDATA)*>
+	<!ATTLIST target xml:id ID #IMPLIED attribute (value | newvalue) #IMPLIED>
+]>
+<tc>
+<listener event="DOMAttrModified" observer="observer" handler="#handler"/>
+<script id="handler">document.getElementsByTagName('pass')[0].firstChild.nodeValue = "PASSED";</script>
+<observer xml:id="observer">
+	<target/>
+</observer> 
+<pass>NOT TESTED</pass>
+<script>
+	document.getElementsByTagName('pass')[0].firstChild.nodeValue = "FAILED";
+	document.getElementsByTagName('target')[0].setAttribute("attribute","newvalue");
+</script>
+</tc>

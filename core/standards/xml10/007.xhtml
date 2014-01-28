@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>XML well-formedness constraints: attribute list declarations</title>
+<script type="application/ecmascript">
+<![CDATA[
+function start()
+	{var parser = document.implementation.createLSParser(1,null), result = true;
+	for(var tc = 1; tc != 10; tc++)
+		{try
+			{if(parser.parseURI('007-' + tc + '.xml'))
+				{result = false}
+			}
+		catch(themALL)
+			{result = (result && themALL && (themALL.code == LSException.PARSE_ERR))}
+		}
+	document.getElementsByTagName('tt')[0].firstChild.nodeValue = result?"PASS":"FAIL";
+	try{top.opener.rr(result);}catch(e){}}
+]]>
+</script>
+</head>
+<body onload="start()">
+<p>Test result: <tt>Not Tested (script did not run)</tt></p>
+</body>
+</html>

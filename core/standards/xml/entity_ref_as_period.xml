@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<!--Reference for entity using period. Illegal and not well-formed-->
+<!-- Testcase: entity_ref_as_period.xml -->
+<!-- Description: The test the xml parser's ability to report a error when a document is NOT well-formed  -->
+<!-- Author:  Chris Petersen  Date: 12/06/2000 -->
+<!DOCTYPE main [
+<!ENTITY chris "This is replacement text for a entity">
+]>
+<main>
+&.;
+</main>

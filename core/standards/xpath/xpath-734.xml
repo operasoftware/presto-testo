@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:template match="xsl:template">
+<result>
+<xsl:choose>
+<xsl:when test='//nu[@and][@xml:lang="en-GB"]//nu[@xml:id="id1"][not(child::node())][following-sibling::eta[@insert][@xml:lang="no-nb"][preceding-sibling::*[position() = 1]][not(child::node())][following-sibling::*[starts-with(@abort,"solid 1px ")][@xml:id="id2"][preceding-sibling::*[position() = 2]]/xi[@xml:lang="en-GB"][not(following-sibling::*)]/psi[@xml:lang="en-US"][@xml:id="id3"][not(preceding-sibling::psi)]//mu[@xml:lang="no"][@xml:id="id4"][not(preceding-sibling::*)][not(child::node())][following-sibling::lambda[following-sibling::*[position()=3]][not(child::node())][following-sibling::delta[not(child::node())][following-sibling::xi[@xml:id="id5"][following-sibling::*[position()=1]][following-sibling::theta[preceding-sibling::*[position() = 4]][not(following-sibling::*)]//eta[not(following-sibling::*)]/beta[contains(concat(@data,"$"),"alse$")][@xml:lang="en"][not(preceding-sibling::*)][not(child::node())][following-sibling::theta[@xml:lang="en-US"][@xml:id="id6"][not(following-sibling::*)]/lambda[@attribute="true"][@xml:id="id7"][not(preceding-sibling::*)][following-sibling::*[position()=1]][following-sibling::beta[@xml:lang="en-US"][@xml:id="id8"][position() = 1]][position() = 1]]]]]][position() = 1]]]'>	
+	<xsl:value-of select="'PASS'"/>
+</xsl:when>
+<xsl:otherwise>FAIL</xsl:otherwise>
+</xsl:choose>
+</result>
+<xsl:if test="false()">
+<nu and="attribute value" xml:lang="en-GB"><nu xml:id="id1"/><eta insert="content" xml:lang="no-nb"/><any abort="solid 1px green" xml:id="id2"><xi xml:lang="en-GB"><psi xml:lang="en-US" xml:id="id3"><mu xml:lang="no" xml:id="id4"/><lambda/><delta/><xi xml:id="id5"/><theta><eta><beta data="false" xml:lang="en"/><theta xml:lang="en-US" xml:id="id6"><lambda attribute="true" xml:id="id7"/><beta xml:lang="en-US" xml:id="id8"><green>This text must be green</green></beta></theta></eta></theta></psi></xi></any></nu></xsl:if>
+</xsl:template>
+</xsl:stylesheet>

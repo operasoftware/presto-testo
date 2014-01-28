@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:key name="mykey" match="xsl:stylesheet" use="generate-id()"/>
+<xsl:template match="xsl:stylesheet">
+<result><xsl:if test="key('mykey',generate-id())/@version = 1.0"><xsl:value-of select="'PASS'"/></xsl:if></result>
+</xsl:template>
+</xsl:stylesheet>

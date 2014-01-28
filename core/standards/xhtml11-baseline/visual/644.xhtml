@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>align attribute of th element</title>
+<style type="text/css">
+tr + tr > th
+	{text-align:justify}
+table
+	{width:10em}
+th
+	{border:solid thin;
+	padding:1ex;}
+</style>
+</head>
+<body>
+<p>Two sentences below should be aligned identically</p>
+<table>
+<tr><th align="justify">This long sentence with several page breaks inside is intended to check whether attribute specifying text alignment has any affect.</th></tr>
+<tr><th>This long sentence with several page breaks inside is intended to check whether attribute specifying text alignment has any affect.</th></tr>
+</table>
+</body>
+</html>

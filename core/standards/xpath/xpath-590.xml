@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:template match="xsl:template">
+<result>
+<xsl:choose>
+<xsl:when test='//nu[@title="this-is-att-value"][@xml:id="id1"]//beta[@abort="123456789"][@xml:lang="no-nb"][not(preceding-sibling::*)][following-sibling::phi[@xml:lang="no"]/upsilon[contains(@class,"fal")][@xml:lang="nb"][@xml:id="id2"][not(following-sibling::*)]//gamma[@xml:lang="en-US"][not(following-sibling::*)]/iota[@xml:id="id3"][not(child::node())][following-sibling::beta[@class][@xml:lang="nb"][following-sibling::theta[not(following-sibling::*)]/theta[@xml:lang="no"][@xml:id="id4"][not(preceding-sibling::*)]//psi[@xml:id="id5"]/upsilon[not(preceding-sibling::*)][following-sibling::*[position()=3]][not(child::node())][following-sibling::zeta[@xml:lang="no"][@xml:id="id6"][preceding-sibling::*[position() = 1]][following-sibling::*[position()=2]][not(child::node())][following-sibling::phi[starts-with(@true,"solid ")][@xml:lang="nb"][@xml:id="id7"][preceding-sibling::*[position() = 2]][following-sibling::*[position()=1]][not(child::node())][following-sibling::omicron[starts-with(concat(@src,"-"),"attribute value-")][not(following-sibling::*)]//zeta[contains(concat(@insert,"$"),"e$")][not(preceding-sibling::*)]][position() = 1]][position() = 1]]][position() = 1]]]'>	
+	<xsl:value-of select="'PASS'"/>
+</xsl:when>
+<xsl:otherwise>FAIL</xsl:otherwise>
+</xsl:choose>
+</result>
+<xsl:if test="false()">
+<nu title="this-is-att-value" xml:id="id1"><beta abort="123456789" xml:lang="no-nb"/><phi xml:lang="no"><upsilon class="false" xml:lang="nb" xml:id="id2"><gamma xml:lang="en-US"><iota xml:id="id3"/><beta class="this-is-att-value" xml:lang="nb"/><theta><theta xml:lang="no" xml:id="id4"><psi xml:id="id5"><upsilon/><zeta xml:lang="no" xml:id="id6"/><phi true="solid 1px green" xml:lang="nb" xml:id="id7"/><omicron src="attribute value"><zeta insert="true"><green>This text must be green</green></zeta></omicron></psi></theta></theta></gamma></upsilon></phi></nu></xsl:if>
+</xsl:template>
+</xsl:stylesheet>

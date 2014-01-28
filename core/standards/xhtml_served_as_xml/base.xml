@@ -1,0 +1,128 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta name="generator"
+
+content="HTML Tidy for Mac OS, see www.w3.org" />
+
+<!-- testcase: base.xml -->
+
+<!-- description: HTML 4.0 BASE element -->
+
+<!--Author: Greg Lynn, 3/3/99 -->
+
+<!--Author: Germaine Brown, 6/9/99 Updated testcase structure and cleaned up the text for clarity -->
+
+<!-- Modified: Changed doctype to xhtml 1.0 transitional Author: Chris Petersen Date: 1/16/01 -->
+
+<!-- 
+
+
+
+   - The contents of this file are subject to the Mozilla Public
+
+
+
+   - License Version 1.1 (the "License"); you may not use this file
+
+
+
+   - except in compliance with the License. You may obtain a copy of
+
+
+
+   - the License at http://www.mozilla.org/MPL/
+
+
+
+   - 
+
+
+
+   - Software distributed under the License is distributed on an "AS
+
+
+
+   - IS" basis, WITHOUT WARRANTY OF ANY KIND, either express or
+
+
+
+   - implied. See the License for the specific language governing
+
+
+
+   - rights and limitations under the License.
+
+
+
+   - 
+
+
+
+   - The Original Code is Mozilla Communicator Test Cases.
+
+
+
+   - 
+
+
+
+   - The Initial Developer of the Original Code is Netscape Communications
+
+
+
+   - Corp.  Portions created by Netscape Communications Corp. are 
+
+
+
+   - Copyright (C) 1999 Netscape Communications Corp.  All
+
+
+
+   - Rights Reserved.
+
+
+
+   - 
+
+
+
+   - Contributor(s): 
+
+
+
+  -->
+
+<!-- Purpose: To test the BASE element -->
+
+<!-- Expected result: Selecting link should display mozilla.org home page. If a new window is spawned there is a bug. -->
+
+<meta name="generator" content="BBEdit 5.0" />
+
+<base />
+
+<title>XHTML Functional -- BASE</title>
+
+</head>
+
+<body>
+
+<p>This tests the BASE element with no href or target attribute
+
+set. Selecting the link below should simply take you to Mozilla.org
+
+and appear in this window. <a
+
+href="http://www.mozilla.org/">Mozilla.org home page</a></p>
+
+</body>
+
+</html>
+
+
+

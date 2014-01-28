@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:template match="xsl:template">
+<result>
+<xsl:choose>
+<xsl:when test='//upsilon[@xml:lang="en"][@xml:id="id1"]/rho[starts-with(@src,"f")][@xml:id="id2"][not(preceding-sibling::*)][following-sibling::epsilon[contains(concat(@title,"$"),"t$")][@xml:id="id3"][not(following-sibling::*)]//lambda[contains(concat(@token,"$"),"-value$")][not(child::node())][following-sibling::iota[starts-with(concat(@and,"-"),"attribute value-")][@xml:lang="nb"][preceding-sibling::*[position() = 1]][not(following-sibling::*)]/pi[@xml:lang="en"][@xml:id="id4"][not(following-sibling::*)]//kappa[@xml:id="id5"][following-sibling::*[position()=1]][not(child::node())][following-sibling::omega[@xml:lang="no"][preceding-sibling::*[position() = 1]]//theta[starts-with(@abort,"soli")][@xml:id="id6"]//delta[@attribute="this.nodeValue"][@xml:lang="en-GB"][@xml:id="id7"][not(following-sibling::*)]][position() = 1]]]'>	
+	<xsl:value-of select="'PASS'"/>
+</xsl:when>
+<xsl:otherwise>FAIL</xsl:otherwise>
+</xsl:choose>
+</result>
+<xsl:if test="false()">
+<upsilon xml:lang="en" xml:id="id1"><rho src="false" xml:id="id2"/><epsilon title="content" xml:id="id3"><lambda token="attribute-value"/><iota and="attribute value" xml:lang="nb"><pi xml:lang="en" xml:id="id4"><kappa xml:id="id5"/><omega xml:lang="no"><theta abort="solid 1px green" xml:id="id6"><delta attribute="this.nodeValue" xml:lang="en-GB" xml:id="id7"><green>This text must be green</green></delta></theta></omega></pi></iota></epsilon></upsilon></xsl:if>
+</xsl:template>
+</xsl:stylesheet>

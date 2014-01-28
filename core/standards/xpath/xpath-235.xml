@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:template match="xsl:template">
+<result>
+<xsl:choose>
+<xsl:when test='//eta[@xml:lang="en-GB"]//alpha//phi[@xml:lang="no"][@xml:id="id1"][not(following-sibling::*)]/upsilon[@attribute][@xml:lang="no"][not(following-sibling::*)][not(following-sibling::upsilon)]//chi[following-sibling::*[position()=2]][following-sibling::upsilon[preceding-sibling::*[position() = 1]][not(child::node())][following-sibling::nu[@title="solid 1px green"][@xml:id="id2"][preceding-sibling::*[position() = 2]]/omicron[starts-with(@or,"fa")][not(child::node())][following-sibling::lambda[contains(concat(@token,"$"),"green$")][@xml:id="id3"][not(following-sibling::*)]/gamma[@xml:lang="no"][@xml:id="id4"][not(child::node())][following-sibling::omega[starts-with(@attrib,"a")][@xml:lang="no"][preceding-sibling::*[position() = 1]][not(following-sibling::*)]/omicron[@xml:id="id5"][not(preceding-sibling::*)][following-sibling::epsilon[@xml:id="id6"][following-sibling::kappa[following-sibling::phi[contains(concat(@attribute,"$"),"k$")][@xml:lang="no-nb"][@xml:id="id7"][not(child::node())][following-sibling::iota[starts-with(concat(@delete,"-"),"100%-")][@xml:id="id8"][preceding-sibling::*[position() = 4]][not(child::node())][following-sibling::*[@xml:lang="no-nb"][not(following-sibling::*)]//alpha[contains(concat(@number,"$"),"ibute-value$")]//omega[contains(@desciption,"0%")][not(preceding-sibling::*)][not(child::node())][following-sibling::eta[@xml:id="id9"][not(following-sibling::*)]//xi[@xml:lang="en"][not(preceding-sibling::*)]/beta[@xml:lang="en-GB"][not(preceding-sibling::*)]/upsilon[@xml:id="id10"][not(following-sibling::*)]]][position() = 1]]]]][position() = 1]][position() = 1]][position() = 1]][position() = 1]]'>	
+	<xsl:value-of select="'PASS'"/>
+</xsl:when>
+<xsl:otherwise>FAIL</xsl:otherwise>
+</xsl:choose>
+</result>
+<xsl:if test="false()">
+<eta xml:lang="en-GB"><alpha><phi xml:lang="no" xml:id="id1"><upsilon attribute="attribute-value" xml:lang="no"><chi/><upsilon/><nu title="solid 1px green" xml:id="id2"><omicron or="false"/><lambda token="solid 1px green" xml:id="id3"><gamma xml:lang="no" xml:id="id4"/><omega attrib="attribute" xml:lang="no"><omicron xml:id="id5"/><epsilon xml:id="id6"/><kappa/><phi attribute="_blank" xml:lang="no-nb" xml:id="id7"/><iota delete="100%" xml:id="id8"/><any xml:lang="no-nb"><alpha number="attribute-value"><omega desciption="100%"/><eta xml:id="id9"><xi xml:lang="en"><beta xml:lang="en-GB"><upsilon xml:id="id10"><green>This text must be green</green></upsilon></beta></xi></eta></alpha></any></omega></lambda></nu></upsilon></phi></alpha></eta></xsl:if>
+</xsl:template>
+</xsl:stylesheet>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:template match="xsl:template">
+<result>
+<xsl:choose>
+<xsl:when test='//zeta[@xml:lang="nb"]/psi[contains(@object,"te")][not(preceding-sibling::*)][not(child::node())][following-sibling::kappa[@xml:id="id1"][preceding-sibling::*[position() = 1]][not(child::node())][following-sibling::chi[contains(@number,"d 1p")][@xml:lang="en"][@xml:id="id2"][following-sibling::*[position()=1]][not(preceding-sibling::chi)][not(preceding-sibling::chi or following-sibling::chi)][following-sibling::tau[@delete][@xml:lang="en-US"][not(following-sibling::*)]//phi[@token][@xml:id="id3"][not(preceding-sibling::*)]//xi[starts-with(concat(@att,"-"),"123456789-")][@xml:id="id4"][not(preceding-sibling::*)]//iota[@class="attribute-value"][not(preceding-sibling::*)]//rho[@xml:lang="en-GB"][not(preceding-sibling::*)][not(child::node())][following-sibling::chi[contains(@insert,"px green")][@xml:id="id5"][following-sibling::*[position()=3]][following-sibling::lambda[@token][@xml:lang="en-US"][not(child::node())][following-sibling::gamma[not(child::node())][following-sibling::mu[@xml:id="id6"]//omicron[contains(concat(@desciption,"$"),"his.nodeValue$")][@xml:id="id7"][not(preceding-sibling::*)]/sigma[starts-with(@attr,"at")][@xml:lang="en-US"][@xml:id="id8"][following-sibling::tau[contains(@true,"ute value")][@xml:lang="no-nb"][not(following-sibling::*)][position() = 1]]][position() = 1]][position() = 1]][position() = 1]][position() = 1]]]]'>	
+	<xsl:value-of select="'PASS'"/>
+</xsl:when>
+<xsl:otherwise>FAIL</xsl:otherwise>
+</xsl:choose>
+</result>
+<xsl:if test="false()">
+<zeta xml:lang="nb"><psi object="attribute"/><kappa xml:id="id1"/><chi number="solid 1px green" xml:lang="en" xml:id="id2"/><tau delete="attribute-value" xml:lang="en-US"><phi token="attribute" xml:id="id3"><xi att="123456789" xml:id="id4"><iota class="attribute-value"><rho xml:lang="en-GB"/><chi insert="solid 1px green" xml:id="id5"/><lambda token="100%" xml:lang="en-US"/><gamma/><mu xml:id="id6"><omicron desciption="this.nodeValue" xml:id="id7"><sigma attr="attribute" xml:lang="en-US" xml:id="id8"/><tau true="attribute value" xml:lang="no-nb"><green>This text must be green</green></tau></omicron></mu></iota></xi></phi></tau></zeta></xsl:if>
+</xsl:template>
+</xsl:stylesheet>

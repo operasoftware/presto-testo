@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:template match="xsl:template">
+<result>
+<xsl:choose>
+<xsl:when test='//chi[@data]/gamma[@data="123456789"][@xml:lang="en-US"][@xml:id="id1"][following-sibling::*[position()=1]][following-sibling::upsilon[@xml:lang="en-US"][@xml:id="id2"]//gamma[@xml:lang="en-GB"][@xml:id="id3"][not(preceding-sibling::*)]//chi[@xml:id="id4"][not(child::node())][following-sibling::zeta[contains(concat(@class,"$"),"is-att-value$")][preceding-sibling::*[position() = 1]][not(following-sibling::*)]//pi[@xml:lang="no-nb"][@xml:id="id5"][not(preceding-sibling::*)][following-sibling::*[position()=1]][following-sibling::chi[starts-with(concat(@number,"-"),"attribute-")][@xml:lang="en-US"]//pi[@xml:lang="en"]]]]'>	
+	<xsl:value-of select="'PASS'"/>
+</xsl:when>
+<xsl:otherwise>FAIL</xsl:otherwise>
+</xsl:choose>
+</result>
+<xsl:if test="false()">
+<chi data="_blank"><gamma data="123456789" xml:lang="en-US" xml:id="id1"/><upsilon xml:lang="en-US" xml:id="id2"><gamma xml:lang="en-GB" xml:id="id3"><chi xml:id="id4"/><zeta class="this-is-att-value"><pi xml:lang="no-nb" xml:id="id5"/><chi number="attribute-value" xml:lang="en-US"><pi xml:lang="en"><green>This text must be green</green></pi></chi></zeta></gamma></upsilon></chi></xsl:if>
+</xsl:template>
+</xsl:stylesheet>

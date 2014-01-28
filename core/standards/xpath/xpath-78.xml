@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:template match="xsl:template">
+<result>
+<xsl:choose>
+<xsl:when test='//psi//epsilon[contains(@att,"alue")][@xml:lang="no"][not(following-sibling::*)]/zeta[contains(@object,"s-att-value")][not(preceding-sibling::*)][not(child::node())][following-sibling::delta[following-sibling::pi[contains(concat(@number,"$"),"content$")][@xml:lang="nb"][@xml:id="id1"][not(child::node())][following-sibling::eta[starts-with(@delete,"this-is-att-valu")][@xml:lang="no"]//beta[not(following-sibling::*)]/lambda[@object][@xml:lang="no"][not(preceding-sibling::*)][not(child::node())][following-sibling::iota[@xml:lang="en-GB"][@xml:id="id2"][following-sibling::tau[@xml:id="id3"][not(child::node())][following-sibling::gamma[@insert="100%"][@xml:lang="nb"][not(child::node())][following-sibling::nu[@insert][@xml:id="id4"][preceding-sibling::*[position() = 4]][following-sibling::phi[starts-with(@token,"1234")][not(following-sibling::*)]][position() = 1]]][position() = 1]]][position() = 1]]]]'>	
+	<xsl:value-of select="'PASS'"/>
+</xsl:when>
+<xsl:otherwise>FAIL</xsl:otherwise>
+</xsl:choose>
+</result>
+<xsl:if test="false()">
+<psi><epsilon att="this-is-att-value" xml:lang="no"><zeta object="this-is-att-value"/><delta/><pi number="content" xml:lang="nb" xml:id="id1"/><eta delete="this-is-att-value" xml:lang="no"><beta><lambda object="attribute value" xml:lang="no"/><iota xml:lang="en-GB" xml:id="id2"/><tau xml:id="id3"/><gamma insert="100%" xml:lang="nb"/><nu insert="solid 1px green" xml:id="id4"/><phi token="123456789"><green>This text must be green</green></phi></beta></eta></epsilon></psi></xsl:if>
+</xsl:template>
+</xsl:stylesheet>

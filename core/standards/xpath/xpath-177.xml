@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:template match="xsl:template">
+<result>
+<xsl:choose>
+<xsl:when test='//theta[contains(concat(@attr,"$"),"ue$")]/zeta[@xml:lang="en-US"][not(preceding-sibling::*)]/rho[starts-with(concat(@insert,"-"),"attribute value-")][@xml:lang="nb"][@xml:id="id1"]/theta[starts-with(concat(@and,"-"),"this.nodeValue-")][@xml:lang="en"][not(preceding-sibling::*)][following-sibling::xi[@xml:lang="en"]/alpha[contains(@att,"hi")][@xml:id="id2"][not(preceding-sibling::*)][following-sibling::chi[@xml:lang="nb"][preceding-sibling::*[position() = 1]]//chi[@attrib="another attribute value"][@xml:id="id3"][following-sibling::*[position()=1]][following-sibling::psi[starts-with(@number,"_blank")][preceding-sibling::*[position() = 1]][not(following-sibling::*)]//epsilon[not(preceding-sibling::*)][following-sibling::gamma[@true][@xml:lang="en-GB"][not(following-sibling::*)][position() = 1]][position() = 1]][position() = 1]][position() = 1]]'>	
+	<xsl:value-of select="'PASS'"/>
+</xsl:when>
+<xsl:otherwise>FAIL</xsl:otherwise>
+</xsl:choose>
+</result>
+<xsl:if test="false()">
+<theta attr="true"><zeta xml:lang="en-US"><rho insert="attribute value" xml:lang="nb" xml:id="id1"><theta and="this.nodeValue" xml:lang="en"/><xi xml:lang="en"><alpha att="this-is-att-value" xml:id="id2"/><chi xml:lang="nb"><chi attrib="another attribute value" xml:id="id3"/><psi number="_blank"><epsilon/><gamma true="this-is-att-value" xml:lang="en-GB"><green>This text must be green</green></gamma></psi></chi></xi></rho></zeta></theta></xsl:if>
+</xsl:template>
+</xsl:stylesheet>

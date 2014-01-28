@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:template match="xsl:template">
+<result>
+<xsl:choose>
+<xsl:when test='//omicron[starts-with(@object,"12345")][@xml:lang="nb"]/phi[contains(@object,"k")][not(preceding-sibling::*)][not(child::node())][following-sibling::omicron[@xml:lang="en-US"][@xml:id="id1"][following-sibling::gamma[@attrib="attribute value"][@xml:lang="nb"][@xml:id="id2"][not(following-sibling::*)]/beta[@desciption="100%"][@xml:id="id3"][not(preceding-sibling::*)]/alpha[@xml:id="id4"][not(preceding-sibling::*)][not(following-sibling::*)]//rho[@src]]]'>	
+	<xsl:value-of select="'PASS'"/>
+</xsl:when>
+<xsl:otherwise>FAIL</xsl:otherwise>
+</xsl:choose>
+</result>
+<xsl:if test="false()">
+<omicron object="123456789" xml:lang="nb"><phi object="_blank"/><omicron xml:lang="en-US" xml:id="id1"/><gamma attrib="attribute value" xml:lang="nb" xml:id="id2"><beta desciption="100%" xml:id="id3"><alpha xml:id="id4"><rho src="attribute value"><green>This text must be green</green></rho></alpha></beta></gamma></omicron></xsl:if>
+</xsl:template>
+</xsl:stylesheet>

@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="node05.xsl"?>
+<doc xmlns:ns1="http://xsl.lotus.com/ns1" 
+     xmlns="http://xsl.lotus.com/ns2">
+<ns1:a attrib1="test"/>
+<b ns1:attrib2="test"/>
+</doc>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE element [
+<!ENTITY ent "value">
+]>
+<element>Entity outside root element</element>
+&ent;
+
+
+
+
+

@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>tabindex attribute of object element</title>
+<style type="text/css">
+object:focus
+	{outline:solid medium teal}
+</style>
+</head>
+<body>
+<p>Go through objects using tab. Passed if object-1 is focused first and focus is shifted in bottom to top order.</p>
+<p><object type="text/plain" data="data:text/plain,object-4" tabindex="4">FAIL</object></p>
+<p><object type="text/plain" data="data:text/plain,object-3" tabindex="3">FAIL</object></p>
+<p><object type="text/plain" data="data:text/plain,object-2" tabindex="2">FAIL</object></p>
+<p><object type="text/plain" data="data:text/plain,object-1" tabindex="1">FAIL</object></p>
+</body>
+</html>

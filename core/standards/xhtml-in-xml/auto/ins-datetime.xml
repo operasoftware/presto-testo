@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>datetime attribute of ins element</title>
+<style type="text/css">
+[datetime="15:07 16.01.2007"]
+	{content:"PASS"}
+</style>
+</head>
+<body>
+<p><ins datetime="15:07 16.01.2007">FAIL</ins></p>
+<p>You should see word PASS above</p>
+</body>
+</html>

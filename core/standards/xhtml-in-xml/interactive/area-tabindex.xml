@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>tabindex attribute of area element</title>
+</head>
+<body id="start">
+<p><object type="image/png" data="../hlp/area-tabindex.png" usemap="#map">images should be enabled</object></p>
+<p>Using tab you should be able to focus four boxes above, as you press tab, 
+focus should move from box to box clockwise</p>
+<div>
+<map id="map">
+<area shape="rect" coords="0,0,45,45" tabindex="1" href="data:text/plain,1" alt="alt attribute"/>
+<area shape="rect" coords="60,0,150,45" tabindex="2" href="data:text/plain,2" alt="alt attribute"/>
+<area shape="rect" coords="60,55,150,100" tabindex="3" href="data:text/plain,3" alt="alt attribute"/>
+<area shape="rect" coords="0,55,45,100" tabindex="4" href="data:text/plain,PASS" alt="alt attribute"/>
+</map>
+</div>
+</body>
+</html>
+

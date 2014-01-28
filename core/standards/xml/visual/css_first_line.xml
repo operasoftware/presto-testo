@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/css" href="data:text/css,root%2C%20observe%20%7Bdisplay%3Ablock%7Dobserve%20%7Bwidth%3A4em%3B%7Dobserve%3Afirst-child%3Afirst-line%2C%20line%20%7Bcolor%3Ateal%3B%7D"?>
+<root>
+<observe>These two paragraphs should be formatted identically</observe>
+<observe><line>These two paragraphs</line> should be formatted identically</observe>
+</root>
+<!--
+root, observe {display:block}
+observe {width:4em;}
+observe:first-child:first-line, line {color:teal;}
+-->

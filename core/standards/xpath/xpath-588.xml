@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:template match="xsl:template">
+<result>
+<xsl:choose>
+<xsl:when test='//upsilon[@and="another attribute value"][@xml:lang="no"][@xml:id="id1"]/lambda[@src][@xml:lang="en-US"][@xml:id="id2"][not(following-sibling::*)]//xi[@string][@xml:lang="en-US"][@xml:id="id3"][not(preceding-sibling::*)][not(following-sibling::*)]/mu[contains(concat(@class,"$"),"olid 1px green$")][@xml:lang="en-GB"][@xml:id="id4"][not(preceding-sibling::*)][following-sibling::*[position()=5]][following-sibling::upsilon[@xml:id="id5"][preceding-sibling::*[position() = 1]][following-sibling::kappa[@xml:lang="en"][@xml:id="id6"][preceding-sibling::*[position() = 2]][not(child::node())][following-sibling::upsilon[@xml:lang="en"][@xml:id="id7"][following-sibling::*[position()=2]][not(child::node())][following-sibling::*[preceding-sibling::*[position() = 4]][following-sibling::*[position()=1]][not(child::node())][following-sibling::*[@xml:lang="no-nb"][preceding-sibling::*[position() = 5]][not(following-sibling::*)]//omega[contains(@attribute,"e")][@xml:lang="en-GB"]/upsilon[@xml:id="id8"][not(preceding-sibling::*)]/nu[starts-with(concat(@attrib,"-"),"solid 1px green-")][@xml:lang="no"][following-sibling::iota//sigma[@xml:id="id9"][following-sibling::nu[@xml:lang="en-GB"][@xml:id="id10"][preceding-sibling::*[position() = 1]][not(following-sibling::*)][position() = 1]]][position() = 1]][position() = 1]]]]]'>	
+	<xsl:value-of select="'PASS'"/>
+</xsl:when>
+<xsl:otherwise>FAIL</xsl:otherwise>
+</xsl:choose>
+</result>
+<xsl:if test="false()">
+<upsilon and="another attribute value" xml:lang="no" xml:id="id1"><lambda src="attribute-value" xml:lang="en-US" xml:id="id2"><xi string="100%" xml:lang="en-US" xml:id="id3"><mu class="solid 1px green" xml:lang="en-GB" xml:id="id4"/><upsilon xml:id="id5"/><kappa xml:lang="en" xml:id="id6"/><upsilon xml:lang="en" xml:id="id7"/><any/><any xml:lang="no-nb"><omega attribute="true" xml:lang="en-GB"><upsilon xml:id="id8"><nu attrib="solid 1px green" xml:lang="no"/><iota><sigma xml:id="id9"/><nu xml:lang="en-GB" xml:id="id10"><green>This text must be green</green></nu></iota></upsilon></omega></any></xi></lambda></upsilon></xsl:if>
+</xsl:template>
+</xsl:stylesheet>

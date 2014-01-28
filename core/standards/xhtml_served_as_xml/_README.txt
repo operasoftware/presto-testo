@@ -1,0 +1,1 @@
+Do not use this suite. It is deprecated and replaced by http://t/core/standards/xhtml-in-xml/

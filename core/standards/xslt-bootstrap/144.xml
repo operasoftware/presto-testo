@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:template match="xsl:stylesheet">
+<xsl:variable name="current" select="current()"/>
+<xsl:if test="$current"><result><xsl:value-of select="'PASS'"/></result></xsl:if>
+</xsl:template>
+</xsl:stylesheet>

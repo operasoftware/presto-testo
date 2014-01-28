@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:template match="xsl:template">
+<result>
+<xsl:choose>
+<xsl:when test='//beta[@xml:id="id1"]//iota[@xml:lang="en-US"][@xml:id="id2"][not(following-sibling::*)]/iota[@xml:lang="no-nb"][not(preceding-sibling::*)]//epsilon[@xml:lang="en"][not(preceding-sibling::*)]/lambda[not(preceding-sibling::*)][not(following-sibling::*)]//epsilon[@xml:lang="en-US"][@xml:id="id3"][not(preceding-sibling::*)]//delta[@false][@xml:lang="no-nb"]'>	
+	<xsl:value-of select="'PASS'"/>
+</xsl:when>
+<xsl:otherwise>FAIL</xsl:otherwise>
+</xsl:choose>
+</result>
+<xsl:if test="false()">
+<beta xml:id="id1"><iota xml:lang="en-US" xml:id="id2"><iota xml:lang="no-nb"><epsilon xml:lang="en"><lambda><epsilon xml:lang="en-US" xml:id="id3"><delta false="attribute" xml:lang="no-nb"><green>This text must be green</green></delta></epsilon></lambda></epsilon></iota></iota></beta></xsl:if>
+</xsl:template>
+</xsl:stylesheet>

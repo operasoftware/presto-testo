@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:template match="xsl:template">
+<result>
+<xsl:choose>
+<xsl:when test='//eta[@xml:lang="nb"]//pi[@abort][@xml:lang="en-US"]//*[starts-with(@string,"att")][not(preceding-sibling::*)][not(following-sibling::*)]//delta[@xml:lang="en-GB"][not(preceding-sibling::*)][following-sibling::iota[@class][@xml:id="id1"][not(following-sibling::*)]//rho[not(preceding-sibling::*)][not(following-sibling::*)]//beta[@xml:lang="en-US"][not(following-sibling::*)]//*[@xml:id="id2"]//beta[@xml:id="id3"][not(preceding-sibling::*)][following-sibling::*[position()=2]][not(child::node())][following-sibling::gamma[starts-with(concat(@src,"-"),"_blank-")][preceding-sibling::*[position() = 1]][following-sibling::epsilon[@object][@xml:lang="en-GB"][preceding-sibling::*[position() = 2]]/kappa[starts-with(@content,"at")][@xml:lang="nb"][not(preceding-sibling::*)][not(child::node())][following-sibling::nu[contains(@att,"lid 1px g")][preceding-sibling::*[position() = 1]]/delta[@xml:lang="en-US"][@xml:id="id4"][not(child::node())][following-sibling::pi[@xml:lang="no-nb"][preceding-sibling::*[position() = 1]]//iota[@attribute="attribute"][@xml:id="id5"][not(preceding-sibling::*)][following-sibling::*[position()=2]][not(child::node())][following-sibling::upsilon[starts-with(@false,"attribute-v")][@xml:id="id6"][following-sibling::kappa[contains(@delete,"od")][@xml:id="id7"][preceding-sibling::*[position() = 2]][not(following-sibling::*)][position() = 1]]]]]]][position() = 1]]'>	
+	<xsl:value-of select="'PASS'"/>
+</xsl:when>
+<xsl:otherwise>FAIL</xsl:otherwise>
+</xsl:choose>
+</result>
+<xsl:if test="false()">
+<eta xml:lang="nb"><pi abort="attribute value" xml:lang="en-US"><any string="attribute"><delta xml:lang="en-GB"/><iota class="123456789" xml:id="id1"><rho><beta xml:lang="en-US"><any xml:id="id2"><beta xml:id="id3"/><gamma src="_blank"/><epsilon object="attribute" xml:lang="en-GB"><kappa content="attribute-value" xml:lang="nb"/><nu att="solid 1px green"><delta xml:lang="en-US" xml:id="id4"/><pi xml:lang="no-nb"><iota attribute="attribute" xml:id="id5"/><upsilon false="attribute-value" xml:id="id6"/><kappa delete="this.nodeValue" xml:id="id7"><green>This text must be green</green></kappa></pi></nu></epsilon></any></beta></rho></iota></any></pi></eta></xsl:if>
+</xsl:template>
+</xsl:stylesheet>

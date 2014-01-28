@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:variable name="var">
+<parent><child>PASS</child></parent>
+</xsl:variable>
+<xsl:template match="/">
+<result><xsl:value-of select="$var//text()"/></result>
+</xsl:template>
+</xsl:stylesheet>

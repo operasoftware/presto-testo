@@ -1,0 +1,142 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta name="generator"
+
+content="HTML Tidy for Mac OS, see www.w3.org" />
+
+<!-- testcase: br.xml -->
+
+<!-- Description: HTML 4.0 Text Markup Element, BR -->
+
+<!-- Author: Frank Petitta, Date: 5/18/98 -->
+
+<!-- Author: Claudius Gayle, modified: 03/03/99 -->
+
+<!-- Modified: Changed doctype to xhtml 1.0 transitional Author: Chris Petersen Date: 1/17/01 -->
+
+<!-- 
+
+
+
+   - The contents of this file are subject to the Mozilla Public
+
+
+
+   - License Version 1.1 (the "License"); you may not use this file
+
+
+
+   - except in compliance with the License. You may obtain a copy of
+
+
+
+   - the License at http://www.mozilla.org/MPL/
+
+
+
+   - 
+
+
+
+   - Software distributed under the License is distributed on an "AS
+
+
+
+   - IS" basis, WITHOUT WARRANTY OF ANY KIND, either express or
+
+
+
+   - implied. See the License for the specific language governing
+
+
+
+   - rights and limitations under the License.
+
+
+
+   - 
+
+
+
+   - The Original Code is Mozilla Communicator Test Cases.
+
+
+
+   - 
+
+
+
+   - The Initial Developer of the Original Code is Netscape Communications
+
+
+
+   - Corp.  Portions created by Netscape Communications Corp. are 
+
+
+
+   - Copyright (C) 1999 Netscape Communications Corp.  All
+
+
+
+   - Rights Reserved.
+
+
+
+   - 
+
+
+
+   - Contributor(s): 
+
+
+
+  -->
+
+<!-- Purpose: To check text w/Line Breaks.-->
+
+<!-- Expected result:  All the sentences should start with a upper case letter.  The breaks 
+
+
+
+             are on the end of each sentence.-->
+
+<title>XHTML Functional -- BR</title>
+
+</head>
+
+<body>
+
+Text with Line Breaks: <br />
+
+ Tomorrow, and tomorrow, and tomorrow <br />
+
+ Creeps in this petty pace from day to day <br />
+
+ To the last syllable of recorded time; <br />
+
+ And all our yesterdays have lighted fools <br />
+
+ The way to dusty death. Out, out, brief candle! <br />
+
+ Life's but a walking shadow, a poor player, <br />
+
+ That struts and frets his hour upon the stage <br />
+
+ And then is heard no more. It is a tale <br />
+
+ Told by an idiot, full of sound and fury, <br />
+
+ Signifying nothing.
+
+</body>
+
+</html>
+
+
+

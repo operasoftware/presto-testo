@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:template match="xsl:template">
+<result>
+<xsl:choose>
+<xsl:when test='//psi[starts-with(@attribute,"soli")][@xml:id="id1"]/alpha[starts-with(@delete,"100")][@xml:id="id2"][not(following-sibling::*)]//eta//kappa[following-sibling::eta[not(following-sibling::*)]/lambda[not(child::node())][following-sibling::upsilon[contains(@attr,"u")][@xml:lang="en-US"][@xml:id="id3"][preceding-sibling::*[position() = 1]][following-sibling::zeta[@content="content"][@xml:lang="no-nb"][@xml:id="id4"][not(child::node())][following-sibling::chi[@xml:lang="en"][following-sibling::phi[starts-with(@string,"cont")][@xml:lang="nb"][preceding-sibling::*[position() = 4]]/sigma[contains(@false,"ont")][@xml:id="id5"][not(preceding-sibling::*)][not(following-sibling::*)]//delta[@xml:id="id6"][not(following-sibling::*)]/omega[@xml:id="id7"]/tau[contains(@desciption,"lan")][@xml:lang="en-GB"][@xml:id="id8"][not(following-sibling::*)]/chi[@abort="false"][not(preceding-sibling::*)][not(following-sibling::*)]/tau[@xml:id="id9"]][position() = 1]]]]]'>	
+	<xsl:value-of select="'PASS'"/>
+</xsl:when>
+<xsl:otherwise>FAIL</xsl:otherwise>
+</xsl:choose>
+</result>
+<xsl:if test="false()">
+<psi attribute="solid 1px green" xml:id="id1"><alpha delete="100%" xml:id="id2"><eta><kappa/><eta><lambda/><upsilon attr="attribute" xml:lang="en-US" xml:id="id3"/><zeta content="content" xml:lang="no-nb" xml:id="id4"/><chi xml:lang="en"/><phi string="content" xml:lang="nb"><sigma false="content" xml:id="id5"><delta xml:id="id6"><omega xml:id="id7"><tau desciption="_blank" xml:lang="en-GB" xml:id="id8"><chi abort="false"><tau xml:id="id9"><green>This text must be green</green></tau></chi></tau></omega></delta></sigma></phi></eta></eta></alpha></psi></xsl:if>
+</xsl:template>
+</xsl:stylesheet>

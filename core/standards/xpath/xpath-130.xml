@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:template match="xsl:template">
+<result>
+<xsl:choose>
+<xsl:when test='//gamma//upsilon[not(child::node())][following-sibling::nu[@xml:id="id1"][not(child::node())][following-sibling::eta[starts-with(concat(@att,"-"),"another attribute value-")][preceding-sibling::*[position() = 2]]//sigma[not(preceding-sibling::*)]//lambda[@xml:lang="en-US"][@xml:id="id2"][not(preceding-sibling::*)][following-sibling::*[position()=2]][not(child::node())][following-sibling::rho[@xml:id="id3"][following-sibling::mu[contains(@title,"tt-valu")][@xml:id="id4"][not(following-sibling::*)]/sigma[contains(@title,"ibute")]/theta[contains(@true," value")][not(following-sibling::*)]/gamma[position() = 1]]][position() = 1]]]'>	
+	<xsl:value-of select="'PASS'"/>
+</xsl:when>
+<xsl:otherwise>FAIL</xsl:otherwise>
+</xsl:choose>
+</result>
+<xsl:if test="false()">
+<gamma><upsilon/><nu xml:id="id1"/><eta att="another attribute value"><sigma><lambda xml:lang="en-US" xml:id="id2"/><rho xml:id="id3"/><mu title="this-is-att-value" xml:id="id4"><sigma title="attribute-value"><theta true="attribute value"><gamma><green>This text must be green</green></gamma></theta></sigma></mu></sigma></eta></gamma></xsl:if>
+</xsl:template>
+</xsl:stylesheet>

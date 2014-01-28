@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ev="http://www.w3.org/2001/xml-events">
+<head>
+<title>Event propagation</title>
+<script type="application/ecmascript" ev:event="DOMAttrModified" ev:observer="observer" ev:propagate="stop" ev:phase="capture">
+<![CDATA[
+document.getElementsByTagName('tt')[0].firstChild.nodeValue = "PASSED";
+]]>
+</script>
+<script type="application/ecmascript" ev:event="DOMAttrModified" ev:observer="observer">
+<![CDATA[
+document.getElementsByTagName('tt')[0].firstChild.nodeValue = "FAILED";
+]]>
+</script>
+</head>
+<body id="observer">
+<div><tt>NOT TESTED (script did not run)</tt></div>
+<script type="application/ecmascript">
+<![CDATA[
+document.getElementsByTagName('tt')[0].setAttribute("class","passed");
+]]>
+</script>
+</body>
+</html>

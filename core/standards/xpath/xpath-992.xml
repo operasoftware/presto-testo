@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:template match="xsl:template">
+<result>
+<xsl:choose>
+<xsl:when test='//mu[@abort]/eta[@xml:id="id1"][not(preceding-sibling::*)][following-sibling::*[position()=2]][following-sibling::omega[@data][following-sibling::*[position()=1]][not(child::node())][following-sibling::*[@xml:id="id2"][preceding-sibling::*[position() = 2]][not(following-sibling::*)]//tau[@class="attribute-value"][@xml:lang="en-US"][@xml:id="id3"][not(preceding-sibling::*)][not(child::node())][following-sibling::pi[@delete="123456789"][@xml:lang="nb"][@xml:id="id4"][preceding-sibling::*[position() = 1]]/tau[@xml:lang="en-US"][@xml:id="id5"]/delta[@xml:lang="nb"][@xml:id="id6"]/beta[@xml:lang="no"][@xml:id="id7"][not(preceding-sibling::*)][not(child::node())][following-sibling::alpha[preceding-sibling::*[position() = 1]]/xi[@xml:id="id8"][not(preceding-sibling::*)]//xi[contains(concat(@abort,"$"),"solid 1px green$")][@xml:lang="no"][@xml:id="id9"][following-sibling::*[position()=4]][not(preceding-sibling::xi)][not(child::node())][following-sibling::psi[@insert][following-sibling::*[position()=3]][not(child::node())][following-sibling::nu[@string][not(child::node())][following-sibling::gamma[starts-with(concat(@number,"-"),"_blank-")][@xml:lang="en-US"][@xml:id="id10"][not(child::node())][following-sibling::phi[preceding-sibling::*[position() = 4]][position() = 1]]][position() = 1]][position() = 1]][position() = 1]]][position() = 1]][position() = 1]]'>	
+	<xsl:value-of select="'PASS'"/>
+</xsl:when>
+<xsl:otherwise>FAIL</xsl:otherwise>
+</xsl:choose>
+</result>
+<xsl:if test="false()">
+<mu abort="_blank"><eta xml:id="id1"/><omega data="attribute value"/><any xml:id="id2"><tau class="attribute-value" xml:lang="en-US" xml:id="id3"/><pi delete="123456789" xml:lang="nb" xml:id="id4"><tau xml:lang="en-US" xml:id="id5"><delta xml:lang="nb" xml:id="id6"><beta xml:lang="no" xml:id="id7"/><alpha><xi xml:id="id8"><xi abort="solid 1px green" xml:lang="no" xml:id="id9"/><psi insert="123456789"/><nu string="100%"/><gamma number="_blank" xml:lang="en-US" xml:id="id10"/><phi><green>This text must be green</green></phi></xi></alpha></delta></tau></pi></any></mu></xsl:if>
+</xsl:template>
+</xsl:stylesheet>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:template match="xsl:template">
+<result>
+<xsl:choose>
+<xsl:when test='//mu[@xml:id="id1"]//xi[@xml:lang="no"][@xml:id="id2"][not(preceding-sibling::*)]/omicron[@xml:id="id3"][following-sibling::xi[@xml:lang="en-GB"][@xml:id="id4"][preceding-sibling::*[position() = 1]][following-sibling::zeta[@xml:id="id5"][preceding-sibling::*[position() = 2]]/xi[@string][@xml:lang="en-US"][not(preceding-sibling::*)]/xi[@att="content"][@xml:id="id6"][following-sibling::alpha[@xml:id="id7"][preceding-sibling::*[position() = 1]]//nu[@attrib][@xml:id="id8"][not(preceding-sibling::*)]/tau[starts-with(@att,"attribut")][@xml:id="id9"][not(preceding-sibling::*)][not(child::node())][following-sibling::lambda[starts-with(@token,"this.nodeValue")][@xml:lang="nb"][@xml:id="id10"][not(preceding-sibling::lambda)][not(child::node())][following-sibling::alpha[@xml:lang="nb"][@xml:id="id11"]//delta[@delete][@xml:lang="no"][not(child::node())][following-sibling::upsilon[@class][@xml:lang="no"][@xml:id="id12"][following-sibling::phi[@xml:lang="en"][preceding-sibling::*[position() = 2]][following-sibling::lambda[@xml:lang="nb"][following-sibling::alpha[contains(@token,"s-is-a")][preceding-sibling::*[position() = 4]][not(following-sibling::*)]//epsilon[starts-with(@name,"another attribute val")][@xml:id="id13"][not(preceding-sibling::*)][not(following-sibling::*)]/phi[@xml:lang="en-GB"][@xml:id="id14"][following-sibling::epsilon[starts-with(@token,"12345")][@xml:id="id15"][preceding-sibling::*[position() = 1]][following-sibling::*[position()=1]][not(child::node())][following-sibling::pi[not(following-sibling::*)][position() = 1]][position() = 1]][position() = 1]]]][position() = 1]]][position() = 1]]]]]'>	
+	<xsl:value-of select="'PASS'"/>
+</xsl:when>
+<xsl:otherwise>FAIL</xsl:otherwise>
+</xsl:choose>
+</result>
+<xsl:if test="false()">
+<mu xml:id="id1"><xi xml:lang="no" xml:id="id2"><omicron xml:id="id3"/><xi xml:lang="en-GB" xml:id="id4"/><zeta xml:id="id5"><xi string="content" xml:lang="en-US"><xi att="content" xml:id="id6"/><alpha xml:id="id7"><nu attrib="true" xml:id="id8"><tau att="attribute" xml:id="id9"/><lambda token="this.nodeValue" xml:lang="nb" xml:id="id10"/><alpha xml:lang="nb" xml:id="id11"><delta delete="_blank" xml:lang="no"/><upsilon class="attribute-value" xml:lang="no" xml:id="id12"/><phi xml:lang="en"/><lambda xml:lang="nb"/><alpha token="this-is-att-value"><epsilon name="another attribute value" xml:id="id13"><phi xml:lang="en-GB" xml:id="id14"/><epsilon token="123456789" xml:id="id15"/><pi><green>This text must be green</green></pi></epsilon></alpha></alpha></nu></alpha></xi></zeta></xi></mu></xsl:if>
+</xsl:template>
+</xsl:stylesheet>

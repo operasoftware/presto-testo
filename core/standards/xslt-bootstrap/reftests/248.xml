@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet version="1.0" id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+<xsl:template match="/">
+<result>
+    <xsl:apply-templates select="xsl:stylesheet/xsl:template[not(@mode)]" mode="a"/>
+    <xsl:apply-templates select="xsl:stylesheet/xsl:template[not(@mode)]" mode="b"/>
+    <xsl:apply-templates select="*[not(@mode)]//result" mode="c"/>
+    <xsl:apply-templates select="/*[not(@mode)]/*[not(@mode)]/result" mode="c"/>
+</result>
+</xsl:template>
+<xsl:template match="/*/*" mode="a">P</xsl:template>
+<xsl:template match="/*//*" mode="b">A</xsl:template>
+<xsl:template match="*/*" mode="c">S</xsl:template>
+</xsl:stylesheet>

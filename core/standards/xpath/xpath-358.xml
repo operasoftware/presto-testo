@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:template match="xsl:template">
+<result>
+<xsl:choose>
+<xsl:when test='//theta[contains(concat(@content,"$"),"is.nodeValue$")][@xml:lang="en-US"][@xml:id="id1"]//gamma[starts-with(@or,"t")][@xml:lang="en"][following-sibling::*[position()=1]][following-sibling::beta[@xml:id="id2"][not(following-sibling::*)]//iota[starts-with(@and,"s")][not(preceding-sibling::*)]/psi[starts-with(@attr,"solid 1px")][@xml:id="id3"][not(preceding-sibling::*)][following-sibling::kappa[@desciption="attribute"][@xml:lang="nb"][@xml:id="id4"]]]'>	
+	<xsl:value-of select="'PASS'"/>
+</xsl:when>
+<xsl:otherwise>FAIL</xsl:otherwise>
+</xsl:choose>
+</result>
+<xsl:if test="false()">
+<theta content="this.nodeValue" xml:lang="en-US" xml:id="id1"><gamma or="true" xml:lang="en"/><beta xml:id="id2"><iota and="solid 1px green"><psi attr="solid 1px green" xml:id="id3"/><kappa desciption="attribute" xml:lang="nb" xml:id="id4"><green>This text must be green</green></kappa></iota></beta></theta></xsl:if>
+</xsl:template>
+</xsl:stylesheet>

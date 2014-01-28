@@ -1,0 +1,186 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head> 
+
+<meta name="generator"
+
+content="HTML Tidy for Mac OS, see www.w3.org" />
+
+<title>XHTML Functional -- IMG - USEMAP (GIF)</title>
+
+<!-- testcase: img_usemap_gif.xml -->
+
+<!-- Author: Christine Dreckman, Date 9/9/98 -->
+
+<!-- Modified: Changed doctype to xhtml 1.0 transitional Author: Chris Petersen Date: 1/22/01 -->
+
+<!-- 
+
+
+
+   - The contents of this file are subject to the Mozilla Public
+
+
+
+   - License Version 1.1 (the "License"); you may not use this file
+
+
+
+   - except in compliance with the License. You may obtain a copy of
+
+
+
+   - the License at http://www.mozilla.org/MPL/
+
+
+
+   - 
+
+
+
+   - Software distributed under the License is distributed on an "AS
+
+
+
+   - IS" basis, WITHOUT WARRANTY OF ANY KIND, either express or
+
+
+
+   - implied. See the License for the specific language governing
+
+
+
+   - rights and limitations under the License.
+
+
+
+   - 
+
+
+
+   - The Original Code is Mozilla Communicator Test Cases.
+
+
+
+   - 
+
+
+
+   - The Initial Developer of the Original Code is Netscape Communications
+
+
+
+   - Corp.  Portions created by Netscape Communications Corp. are 
+
+
+
+   - Copyright (C) 1999 Netscape Communications Corp.  All
+
+
+
+   - Rights Reserved.
+
+
+
+   - 
+
+
+
+   - Contributor(s): 
+
+
+
+  -->
+
+<!-- Purpose: To test the USEMAP attribute of the IMG tag using a gif image -->
+
+<!-- Expected result: A gif imagemap should be displayed with 12 shapes and a white background. Clicking on a shape should link you to a single HTML page.-->
+
+</head>
+
+<body>
+
+<p>This is an imagemap using a gif image</p>
+
+
+
+<img src="images/mapimg.gif" height="288" width="318"
+
+usemap="#mapimg" border="0" alt="image_map" /> <map id="mapimg" name="mapimg">
+
+<area shape="circle" alt="Lower Right Red Circle"
+
+coords="257,226,33" href="new_destination.xml" />
+
+<area shape="poly" alt="Lower Left Yellow Polygon"
+
+coords="58,199,92,222,92,243,58,268,23,241,23,221,58,199"
+
+href="new_destination.xml" />
+
+<area shape="rect" alt="Lower Middle Blue Square"
+
+coords="124,193,189,260" href="new_destination.xml" />
+
+<area shape="poly" alt="Left Brown Polygon"
+
+coords="91,11,140,96,110,98,110,276,62,276,97,248,99,215,61,188,9,222,8,196,89,159,90,10"
+
+ href="new_destination.xml" />
+
+<area shape="poly" alt="Right Brown Polygon"
+
+coords="168,5,266,6,221,37,222,66,265,97,228,124,228,161,255,179,219,200,219,248,265,271,266,283,194,259,195,34,170,12,170,6"
+
+ href="new_destination.xml" />
+
+<area shape="rect" alt="Middle Middle Blue Square"
+
+coords="122,101,192,171" href="new_destination.xml" />
+
+<area shape="poly" alt=" Middle Right Yellow Polygon"
+
+coords="264,106,297,127,297,147,264,174,231,148,231,127,266,105"
+
+href="new_destination.xml" />
+
+<area shape="circle" alt="Middle Left Red Circle"
+
+coords="45,134,34" href="new_destination.xml" />
+
+<area shape="poly" alt="Top Brown Polygon"
+
+coords="95,5,163,6,165,11,105,23,94,6"
+
+href="new_destination.xml" />
+
+<area shape="rect" alt="Upper Left Blue Square"
+
+coords="14,17,82,85" href="new_destination.xml" />
+
+<area shape="circle" alt="Upper Middle Red Circle"
+
+coords="157,52,33" href="new_destination.xml" />
+
+<area shape="poly" alt="Upper Right Yellow Polygon"
+
+coords="261,18,293,39,296,61,261,85,227,58,228,38,261,18"
+
+href="new_destination.xml" />
+
+<area shape="rect" alt="White Space" coords="0,0,316,287"
+
+href="default.xml" />
+
+</map>
+
+</body>
+
+</html>
+
+
+

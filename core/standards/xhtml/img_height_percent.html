@@ -1,0 +1,148 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta name="generator"
+
+content="HTML Tidy for Mac OS, see www.w3.org" />
+
+<!-- testcase: img_height_percent.xml -->
+
+<!-- description: HTML 4.0 Text Markup Element, IMG with the HEIGHT attribute set to percent -->
+
+<!-- Author: Eli Goldberg, Date: 2/24/99, derived from image_height.html authored by Frank Pettita -->
+
+<!-- Modified: Changed doctype to xhtml 1.0 transitional Author: Chris Petersen Date: 1/22/01 -->
+
+<!-- 
+
+
+
+   - The contents of this file are subject to the Mozilla Public
+
+
+
+   - License Version 1.1 (the "License"); you may not use this file
+
+
+
+   - except in compliance with the License. You may obtain a copy of
+
+
+
+   - the License at http://www.mozilla.org/MPL/
+
+
+
+   - 
+
+
+
+   - Software distributed under the License is distributed on an "AS
+
+
+
+   - IS" basis, WITHOUT WARRANTY OF ANY KIND, either express or
+
+
+
+   - implied. See the License for the specific language governing
+
+
+
+   - rights and limitations under the License.
+
+
+
+   - 
+
+
+
+   - The Original Code is Mozilla Communicator Test Cases.
+
+
+
+   - 
+
+
+
+   - The Initial Developer of the Original Code is Netscape Communications
+
+
+
+   - Corp.  Portions created by Netscape Communications Corp. are 
+
+
+
+   - Copyright (C) 1999 Netscape Communications Corp.  All
+
+
+
+   - Rights Reserved.
+
+
+
+   - 
+
+
+
+   - Contributor(s): 
+
+
+
+  -->
+
+<!-- Purpose: Test the HEIGHT attribute with the IMG element, in a percentage format. (i.e.img src="eggplant.gif" height="50%") -->
+
+<!-- Expected result: Starting with the default image (no height assignment), each of the images below will decrease in height by 25%.-->
+
+<title>XHTML Functional -- IMG - HEIGHT=percent</title>
+
+</head>
+
+<body>
+
+image with no height specification<br />
+
+<img src="images/eggplant.gif" alt="an image" /> <br />
+
+ image height=100%<br />
+
+ <img src="images/eggplant.gif" height="100%" alt="an image" />
+
+<br />
+
+ image height=25%<br />
+
+ <img src="images/eggplant.gif" height="25%" alt="an image" />
+
+<br />
+
+ image height=0%<br />
+
+ <img src="images/eggplant.gif" height="0%" alt="an image" />
+
+<br />
+
+ image height=-100%<br />
+
+ <img src="images/eggplant.gif" height="-100%" alt="an image" />
+
+<br />
+
+ image height=(74.000001%) [floating point]<br />
+
+ <img src="images/eggplant.gif" height="74.000001%"
+
+alt="an image" /> <br />
+
+</body>
+
+</html>
+
+
+

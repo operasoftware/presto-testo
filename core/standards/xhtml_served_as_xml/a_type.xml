@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>&lt;a&gt; element's 'type' attribute</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+
+<!--
+The material, including but not limited to all software, design, drawings, technical specifications and other confidential information sent to you ("Material"), is the exclusive property of Opera Software ASA and its suppliers. The Material is classified as strictly confidential information and is internationally protected by copyright-, trademark- and other such laws. The Material is sent to you for internal use only and shall only be used as expressly instructed by Opera Software.
+
+Any copying, reproduction, modification or distribution not in accordance with a special written license agreement with Opera Software is expressly prohibited, and may result in severe civil and criminal penalties. Opera Software actively and aggressively enforces its intellectual property rights to the fullest extent of the law.
+-->
+
+</head>
+
+<body>
+<p>Testing the 'type' attribute of the &lt;a&gt; element.</p>
+<p>Clicking the below link should take you to Opera's home page. If it does, the 
+  test passed.</p>
+<p><a href="http://www.opera.com" type="test"> http://www.opera.com</a></p>
+</body>
+</html>

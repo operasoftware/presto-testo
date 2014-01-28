@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:template match="xsl:template">
+<result>
+<xsl:choose>
+<xsl:when test='//xi//gamma[@xml:lang="no-nb"][not(preceding-sibling::*)][following-sibling::*[position()=3]][following-sibling::kappa[@xml:id="id1"][following-sibling::rho[starts-with(@title,"100")][following-sibling::lambda[starts-with(concat(@true,"-"),"another attribute value-")][@xml:lang="en-GB"][@xml:id="id2"]//gamma[@token][not(child::node())][following-sibling::psi[starts-with(concat(@insert,"-"),"100%-")][@xml:lang="en-GB"][@xml:id="id3"][not(following-sibling::*)]/tau[starts-with(concat(@number,"-"),"attribute-")][@xml:id="id4"][not(preceding-sibling::*)][following-sibling::tau[@xml:id="id5"][following-sibling::*[position()=2]][following-sibling::upsilon[@class][@xml:lang="en-US"][following-sibling::upsilon[not(following-sibling::*)]//sigma[starts-with(concat(@or,"-"),"true-")][@xml:lang="no-nb"][@xml:id="id6"][not(preceding-sibling::*)][not(child::node())][following-sibling::nu[@class][@xml:id="id7"][not(following-sibling::*)]//omega[@xml:lang="nb"][not(preceding-sibling::*)][not(following-sibling::*)]/rho[contains(concat(@false,"$"),"ue$")][@xml:lang="no-nb"][@xml:id="id8"][not(preceding-sibling::*)]//beta[starts-with(@content,"fa")][@xml:id="id9"][not(following-sibling::*)]//upsilon[contains(@att,"ut")][not(preceding-sibling::*)]//beta[@name="false"][@xml:lang="no"][not(preceding-sibling::*)][not(child::node())][following-sibling::delta[@xml:id="id10"][preceding-sibling::*[position() = 1]][following-sibling::pi[@xml:lang="no"][@xml:id="id11"][position() = 1]][position() = 1]][position() = 1]]]]]][position() = 1]]][position() = 1]]'>	
+	<xsl:value-of select="'PASS'"/>
+</xsl:when>
+<xsl:otherwise>FAIL</xsl:otherwise>
+</xsl:choose>
+</result>
+<xsl:if test="false()">
+<xi><gamma xml:lang="no-nb"/><kappa xml:id="id1"/><rho title="100%"/><lambda true="another attribute value" xml:lang="en-GB" xml:id="id2"><gamma token="this.nodeValue"/><psi insert="100%" xml:lang="en-GB" xml:id="id3"><tau number="attribute" xml:id="id4"/><tau xml:id="id5"/><upsilon class="solid 1px green" xml:lang="en-US"/><upsilon><sigma or="true" xml:lang="no-nb" xml:id="id6"/><nu class="true" xml:id="id7"><omega xml:lang="nb"><rho false="true" xml:lang="no-nb" xml:id="id8"><beta content="false" xml:id="id9"><upsilon att="attribute-value"><beta name="false" xml:lang="no"/><delta xml:id="id10"/><pi xml:lang="no" xml:id="id11"><green>This text must be green</green></pi></upsilon></beta></rho></omega></nu></upsilon></psi></lambda></xi></xsl:if>
+</xsl:template>
+</xsl:stylesheet>

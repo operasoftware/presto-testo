@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>id attribute of textarea element</title>
+<style type="text/css">
+#green
+	{color:green}
+textarea { resize: none; }
+</style>
+</head>
+<body>
+<div>
+<textarea name="txt" cols="36" rows="1" id="green">This text should be green</textarea>
+</div>
+</body>
+</html>

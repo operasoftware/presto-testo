@@ -1,0 +1,180 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta name="generator"
+
+content="HTML Tidy for Mac OS, see www.w3.org" />
+
+<!-- testcase: hr_width_pix.xml -->
+
+<!-- description: HTML 4.0 Text Markup Element HR with the WIDTH attribute set to pixels -->
+
+<!-- Author: Frank Petitta, Date: 5/27/98 -->
+
+<!-- Author: Chris Petersen: Modified: 7/29/98 -->
+
+<!-- Modified: Changed doctype to xhtml 1.0 transitional Author: Chris Petersen Date: 1/17/01 -->
+
+<!-- 
+
+
+
+   - The contents of this file are subject to the Mozilla Public
+
+
+
+   - License Version 1.1 (the "License"); you may not use this file
+
+
+
+   - except in compliance with the License. You may obtain a copy of
+
+
+
+   - the License at http://www.mozilla.org/MPL/
+
+
+
+   - 
+
+
+
+   - Software distributed under the License is distributed on an "AS
+
+
+
+   - IS" basis, WITHOUT WARRANTY OF ANY KIND, either express or
+
+
+
+   - implied. See the License for the specific language governing
+
+
+
+   - rights and limitations under the License.
+
+
+
+   - 
+
+
+
+   - The Original Code is Mozilla Communicator Test Cases.
+
+
+
+   - 
+
+
+
+   - The Initial Developer of the Original Code is Netscape Communications
+
+
+
+   - Corp.  Portions created by Netscape Communications Corp. are 
+
+
+
+   - Copyright (C) 1999 Netscape Communications Corp.  All
+
+
+
+   - Rights Reserved.
+
+
+
+   - 
+
+
+
+   - Contributor(s): 
+
+
+
+  -->
+
+<!-- Purpose:To test horizontal rule and the WIDTH attribute.  The WIDTH attribute is adjusted using integers.-->
+
+<!-- Expected result: The horizontal rule should display in the horizontal center(default) of the page.  
+
+
+
+
+
+
+
+The width of the horizontal rule should increase(by pixel) as you go down the list of rules. 
+
+
+
+
+
+
+
+The width is increased using integers and not percent. The horizontal rule should display as the 
+
+
+
+
+
+
+
+normal "grooved" rule. -->
+
+<title>XHTML Functional -- HR - WIDTH=pixels</title>
+
+</head>
+
+<body>
+
+The horizontal rule below has a width of 5 pixels. 
+
+
+
+<hr width="5" />
+
+<br />
+
+<br />
+
+ The horizontal rule below has a width of 10 pixels. 
+
+
+
+<hr width="10" />
+
+<br />
+
+<br />
+
+ The horizontal rule below has a width of 20 pixels. 
+
+
+
+<hr width="20" />
+
+<br />
+
+<br />
+
+ The horizontal rule below has a width of 30 pixels. 
+
+
+
+<hr width="30" />
+
+<br />
+
+<br />
+
+</body>
+
+</html>
+
+
+

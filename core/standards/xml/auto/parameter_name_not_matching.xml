@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<!-- Reference for parameter entity not matching-->
+<!-- Testcase: parameter_name_not_matching.xml -->
+<!-- Description: The test the xml parser's ability to report a error when a document is NOT well-formed  -->
+<!-- Author:  Chris Petersen  Date: 12/06/2000 -->
+<!DOCTYPE main [
+<!ENTITY % weak "<!ENTITY test 'This is a test'>">
+%para;
+]>
+<main>
+This text should not appear
+</main>

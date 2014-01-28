@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:template match="xsl:template">
+<result>
+<xsl:choose>
+<xsl:when test='//nu[@xml:id="id1"]/chi[contains(concat(@class,"$"),"k$")][@xml:lang="no"][@xml:id="id2"][not(preceding-sibling::*)][following-sibling::*[position()=1]][not(child::node())][following-sibling::*[preceding-sibling::*[position() = 1]][not(following-sibling::*)]/mu[@xml:lang="nb"][not(preceding-sibling::*)]/mu[contains(@number,"ute")][@xml:lang="en-US"][not(following-sibling::*)]/kappa[@xml:lang="en-US"][not(preceding-sibling::*)][not(child::node())][following-sibling::gamma[starts-with(concat(@number,"-"),"attribute value-")][@xml:lang="en"][@xml:id="id3"][preceding-sibling::*[position() = 1]]/iota[starts-with(concat(@number,"-"),"true-")][following-sibling::rho[@xml:lang="en-GB"][@xml:id="id4"][following-sibling::upsilon[@xml:id="id5"][position() = 1]][position() = 1]][position() = 1]]]'>	
+	<xsl:value-of select="'PASS'"/>
+</xsl:when>
+<xsl:otherwise>FAIL</xsl:otherwise>
+</xsl:choose>
+</result>
+<xsl:if test="false()">
+<nu xml:id="id1"><chi class="_blank" xml:lang="no" xml:id="id2"/><any><mu xml:lang="nb"><mu number="attribute" xml:lang="en-US"><kappa xml:lang="en-US"/><gamma number="attribute value" xml:lang="en" xml:id="id3"><iota number="true"/><rho xml:lang="en-GB" xml:id="id4"/><upsilon xml:id="id5"><green>This text must be green</green></upsilon></gamma></mu></mu></any></nu></xsl:if>
+</xsl:template>
+</xsl:stylesheet>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:template match="xsl:template">
+<result>
+<xsl:choose>
+<xsl:when test='//omega[@xml:id="id1"]//tau[contains(@insert,"00%")][@xml:lang="en"][@xml:id="id2"][following-sibling::*[position()=1]][not(child::node())][following-sibling::beta[starts-with(@object,"attribute ")][@xml:lang="no-nb"][@xml:id="id3"]/beta[starts-with(@desciption,"solid 1px ")][@xml:lang="no"][@xml:id="id4"][not(preceding-sibling::*)][not(following-sibling::*)]/nu[@true][@xml:id="id5"][not(following-sibling::*)]//alpha[contains(concat(@desciption,"$"),"e$")][not(preceding-sibling::*)][not(child::node())][following-sibling::gamma[@xml:lang="en-GB"][@xml:id="id6"][not(following-sibling::*)]/omicron[contains(concat(@insert,"$"),"0%$")][@xml:lang="nb"][@xml:id="id7"][not(preceding-sibling::*)]/kappa[contains(concat(@delete,"$"),"rue$")][@xml:lang="en-US"][@xml:id="id8"][not(preceding-sibling::*)]//omega[@xml:lang="en-GB"][@xml:id="id9"][not(preceding-sibling::*)]//nu[@xml:lang="no"][@xml:id="id10"]/kappa[@insert][@xml:lang="no-nb"][@xml:id="id11"][not(preceding-sibling::*)][following-sibling::*[position()=1]][following-sibling::kappa[starts-with(concat(@name,"-"),"content-")][@xml:lang="en"][not(following-sibling::*)]/phi[not(preceding-sibling::*)][position() = 1]]]]'>	
+	<xsl:value-of select="'PASS'"/>
+</xsl:when>
+<xsl:otherwise>FAIL</xsl:otherwise>
+</xsl:choose>
+</result>
+<xsl:if test="false()">
+<omega xml:id="id1"><tau insert="100%" xml:lang="en" xml:id="id2"/><beta object="attribute value" xml:lang="no-nb" xml:id="id3"><beta desciption="solid 1px green" xml:lang="no" xml:id="id4"><nu true="true" xml:id="id5"><alpha desciption="false"/><gamma xml:lang="en-GB" xml:id="id6"><omicron insert="100%" xml:lang="nb" xml:id="id7"><kappa delete="true" xml:lang="en-US" xml:id="id8"><omega xml:lang="en-GB" xml:id="id9"><nu xml:lang="no" xml:id="id10"><kappa insert="100%" xml:lang="no-nb" xml:id="id11"/><kappa name="content" xml:lang="en"><phi><green>This text must be green</green></phi></kappa></nu></omega></kappa></omicron></gamma></nu></beta></beta></omega></xsl:if>
+</xsl:template>
+</xsl:stylesheet>

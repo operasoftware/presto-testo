@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:template match="xsl:template">
+<result>
+<xsl:choose>
+<xsl:when test='//zeta[@xml:lang="en-US"]/theta[@title][@xml:lang="en-US"][not(preceding-sibling::*)][following-sibling::*[position()=1]][following-sibling::nu[@number="123456789"][@xml:lang="no"]/sigma[starts-with(@attribute,"attribu")][@xml:lang="nb"][not(preceding-sibling::*)][not(child::node())][following-sibling::sigma[@xml:lang="en"][following-sibling::*[position()=2]][not(child::node())][following-sibling::sigma[@and][@xml:id="id1"][preceding-sibling::sigma[2]][not(child::node())][following-sibling::omega[@xml:id="id2"]/nu[@insert="123456789"][@xml:id="id3"][not(preceding-sibling::*)][not(following-sibling::*)]//omega[contains(concat(@abort,"$"),"eValue$")][@xml:id="id4"][not(child::node())][following-sibling::kappa[preceding-sibling::*[position() = 1]]]][position() = 1]][position() = 1]]]'>	
+	<xsl:value-of select="'PASS'"/>
+</xsl:when>
+<xsl:otherwise>FAIL</xsl:otherwise>
+</xsl:choose>
+</result>
+<xsl:if test="false()">
+<zeta xml:lang="en-US"><theta title="solid 1px green" xml:lang="en-US"/><nu number="123456789" xml:lang="no"><sigma attribute="attribute-value" xml:lang="nb"/><sigma xml:lang="en"/><sigma and="123456789" xml:id="id1"/><omega xml:id="id2"><nu insert="123456789" xml:id="id3"><omega abort="this.nodeValue" xml:id="id4"/><kappa><green>This text must be green</green></kappa></nu></omega></nu></zeta></xsl:if>
+</xsl:template>
+</xsl:stylesheet>

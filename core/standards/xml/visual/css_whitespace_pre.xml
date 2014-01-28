@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/css" href="data:text/css,root%2C%20observe%20%7Bdisplay%3Ablock%7Dobserve%20%7Bwhite-space%3Apre%3Bfont-family%3Amonospace%3Bline-height%3A1em%7D"?>
+<root>
+<observe>You should see word PASS below</observe>
+<observe>
+OOOO OOOO OOOO OOOO
+O  O O  O O    O
+OOOO OOOO OOOO OOOO
+O    O  O    O    O
+O    O  O OOOO OOOO   
+</observe>
+</root>
+<!--
+root, observe {display:block}
+observe {white-space:pre;font-family:monospace;line-height:1em}
+-->
+

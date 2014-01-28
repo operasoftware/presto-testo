@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:template match="xsl:template">
+<result>
+<xsl:choose>
+<xsl:when test='//omega[@name][@xml:lang="en-GB"]/lambda[@content][@xml:id="id1"][following-sibling::*[position()=1]][not(child::node())][following-sibling::eta[@xml:lang="no"][@xml:id="id2"]/beta[starts-with(@abort,"1")][@xml:lang="no-nb"][not(preceding-sibling::*)][not(following-sibling::*)]//rho[@xml:id="id3"][not(child::node())][following-sibling::*[@xml:lang="en-GB"][not(child::node())][following-sibling::rho[starts-with(@true,"th")][@xml:lang="no"][preceding-sibling::*[position() = 2]]//phi[starts-with(concat(@object,"-"),"attribute value-")][@xml:lang="nb"][not(preceding-sibling::*)][following-sibling::sigma[starts-with(@insert,"tru")][@xml:lang="no"][@xml:id="id4"][preceding-sibling::*[position() = 1]][following-sibling::upsilon[@xml:lang="en"][not(child::node())][following-sibling::delta[@xml:lang="en"][@xml:id="id5"][not(following-sibling::*)]//theta[contains(@or,"tribute")][@xml:lang="no"][@xml:id="id6"][not(preceding-sibling::*)][following-sibling::iota[preceding-sibling::*[position() = 1]][following-sibling::*[position()=2]][not(child::node())][following-sibling::rho[starts-with(@and,"_b")][@xml:lang="nb"][following-sibling::psi[contains(@attribute,"att-value")][preceding-sibling::*[position() = 3]][not(following-sibling::*)]/phi[@xml:lang="en-US"][position() = 1]][position() = 1]]]]]]][position() = 1]]]'>	
+	<xsl:value-of select="'PASS'"/>
+</xsl:when>
+<xsl:otherwise>FAIL</xsl:otherwise>
+</xsl:choose>
+</result>
+<xsl:if test="false()">
+<omega name="attribute" xml:lang="en-GB"><lambda content="false" xml:id="id1"/><eta xml:lang="no" xml:id="id2"><beta abort="100%" xml:lang="no-nb"><rho xml:id="id3"/><any xml:lang="en-GB"/><rho true="this-is-att-value" xml:lang="no"><phi object="attribute value" xml:lang="nb"/><sigma insert="true" xml:lang="no" xml:id="id4"/><upsilon xml:lang="en"/><delta xml:lang="en" xml:id="id5"><theta or="attribute" xml:lang="no" xml:id="id6"/><iota/><rho and="_blank" xml:lang="nb"/><psi attribute="this-is-att-value"><phi xml:lang="en-US"><green>This text must be green</green></phi></psi></delta></rho></beta></eta></omega></xsl:if>
+</xsl:template>
+</xsl:stylesheet>

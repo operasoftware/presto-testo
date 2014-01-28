@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:template match="xsl:template">
+<result>
+<xsl:choose>
+<xsl:when test='//eta[contains(@token,"bla")][@xml:lang="no"][@xml:id="id1"]/tau[@attribute="another attribute value"][@xml:lang="no-nb"][@xml:id="id2"][not(preceding-sibling::*)][not(following-sibling::*)]//kappa[@abort="this-is-att-value"][@xml:lang="en-US"][not(child::node())][following-sibling::delta[starts-with(concat(@title,"-"),"this.nodeValue-")][@xml:lang="nb"][@xml:id="id3"][preceding-sibling::*[position() = 1]][not(following-sibling::*)]//*[@token][@xml:lang="no-nb"][@xml:id="id4"][following-sibling::*[position()=4]][not(child::node())][following-sibling::theta[@xml:lang="en"][@xml:id="id5"][following-sibling::*[position()=3]][following-sibling::xi[@xml:lang="no"][@xml:id="id6"][following-sibling::beta[@xml:lang="no"][preceding-sibling::*[position() = 3]][not(child::node())][following-sibling::kappa[contains(concat(@desciption,"$"),"alse$")][@xml:id="id7"][not(following-sibling::*)]/kappa[not(following-sibling::*)]//theta[@xml:id="id8"][not(child::node())][following-sibling::omicron[@data][following-sibling::psi[@xml:lang="nb"][not(following-sibling::*)]//rho[contains(@token,"t")][@xml:lang="nb"][not(following-sibling::*)][not(preceding-sibling::rho)]//omega[@xml:lang="en-GB"][@xml:id="id9"][not(following-sibling::*)]/eta[starts-with(@false,"t")][@xml:lang="en-GB"]/eta[@xml:lang="en-US"][@xml:id="id10"][not(preceding-sibling::*)]//omicron[@xml:id="id11"][not(preceding-sibling::*)][not(following-sibling::*)]][position() = 1]]][position() = 1]][position() = 1]]][position() = 1]]'>	
+	<xsl:value-of select="'PASS'"/>
+</xsl:when>
+<xsl:otherwise>FAIL</xsl:otherwise>
+</xsl:choose>
+</result>
+<xsl:if test="false()">
+<eta token="_blank" xml:lang="no" xml:id="id1"><tau attribute="another attribute value" xml:lang="no-nb" xml:id="id2"><kappa abort="this-is-att-value" xml:lang="en-US"/><delta title="this.nodeValue" xml:lang="nb" xml:id="id3"><any token="content" xml:lang="no-nb" xml:id="id4"/><theta xml:lang="en" xml:id="id5"/><xi xml:lang="no" xml:id="id6"/><beta xml:lang="no"/><kappa desciption="false" xml:id="id7"><kappa><theta xml:id="id8"/><omicron data="_blank"/><psi xml:lang="nb"><rho token="true" xml:lang="nb"><omega xml:lang="en-GB" xml:id="id9"><eta false="true" xml:lang="en-GB"><eta xml:lang="en-US" xml:id="id10"><omicron xml:id="id11"><green>This text must be green</green></omicron></eta></eta></omega></rho></psi></kappa></kappa></delta></tau></eta></xsl:if>
+</xsl:template>
+</xsl:stylesheet>

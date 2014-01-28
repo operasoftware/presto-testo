@@ -1,0 +1,824 @@
+<?xml version="1.0"?>
+
+<?xml-stylesheet type="text/css" href="entity.css"?>
+
+<!-- Testcase: char_ref_decimal.xml -->
+
+<!-- Description: To test character references in XML using decimal codes -->
+
+<!-- Author:  Christine Dreckman  Date: 10/11/99 -->
+
+<!-- 
+
+   - The contents of this file are subject to the Mozilla Public
+
+   - License Version 1.1 (the "License"); you may not use this file
+
+   - except in compliance with the License. You may obtain a copy of
+
+   - the License at http://www.mozilla.org/MPL/
+
+   - 
+
+   - Software distributed under the License is distributed on an "AS
+
+   - IS" basis, WITHOUT WARRANTY OF ANY KIND, either express or
+
+   - implied. See the License for the specific language governing
+
+   - rights and limitations under the License.
+
+   - 
+
+   - The Original Code is Mozilla Communicator Test Cases.
+
+   - 
+
+   - The Initial Developer of the Original Code is Netscape Communications
+
+   - Corp.  Portions created by Netscape Communications Corp. are 
+
+   - Copyright (C) 1999 Netscape Communications Corp.  All
+
+   - Rights Reserved.
+
+   - 
+
+   - Contributor(s): 
+
+  -->
+
+<!-- Purpose: To test character references in XML using decimal codes -->
+
+<!-- Expected result: Characters should display as indicated -->
+
+<doc>
+
+<htmlname xmlns:html="http://www.w3.org/TR/REC-html40">
+
+<html:h3>Entities using Decimal Codes:</html:h3>
+
+<html:h4> Entities should appear on the left with a description on the right</html:h4>
+
+<test3>&#33;&#160;&#160;Exclamation mark</test3>
+
+<html:br/>
+
+<test4>&#34;&#160;&#160;Quotation mark</test4>
+
+<html:br/>
+
+<test5>&#35;&#160;&#160;Number sign</test5>
+
+<html:br/>
+
+<test6>&#36;&#160;&#160;Dollar sign</test6>
+
+<html:br/>
+
+<test7>&#37;&#160;&#160;Percent sign</test7>
+
+<html:br/>
+
+<test8>&#38;&#160;&#160;Ampersand</test8>
+
+<html:br/>
+
+<test9>&#39;&#160;&#160;Apostrophe</test9>
+
+<html:br/>
+
+<test10>&#40;&#160;&#160;Left parenthesis</test10>
+
+<html:br/>
+
+<test11>&#41;&#160;&#160;Right parenthesis</test11>
+
+<html:br/>
+
+<test12>&#42;&#160;&#160;Asterisk</test12>
+
+<html:br/>
+
+<test13>&#43;&#160;&#160;Plus sign</test13>
+
+<html:br/>
+
+<test14>&#44;&#160;&#160;Comma</test14>
+
+<html:br/>
+
+<test15>&#45;&#160;&#160;Hyphen</test15>
+
+<html:br/>
+
+<test16>&#46;&#160;&#160;Period</test16>
+
+<html:br/>
+
+<test17>&#47;&#160;&#160;Slash</test17>
+
+<html:br/>
+
+<test18>&#48;&#160;&#160;Number 0</test18>
+
+<html:br/>
+
+<test19>&#49;&#160;&#160;Number 1</test19>
+
+<html:br/>
+
+<test20>&#50;&#160;&#160;Number 2</test20>
+
+<html:br/>
+
+<test21>&#51;&#160;&#160;Number 3</test21>
+
+<html:br/>
+
+<test22>&#52;&#160;&#160;Number 4</test22>
+
+<html:br/>
+
+<test23>&#53;&#160;&#160;Number 5</test23>
+
+<html:br/>
+
+<test24>&#54;&#160;&#160;Number 6</test24>
+
+<html:br/>
+
+<test25>&#55;&#160;&#160;Number 7</test25>
+
+<html:br/>
+
+<test26>&#56;&#160;&#160;Number 8</test26>
+
+<html:br/>
+
+<test27>&#57;&#160;&#160;Number 9</test27>
+
+<html:br/>
+
+<test28>&#58;&#160;&#160;Colon</test28>
+
+<html:br/>
+
+<test29>&#59;&#160;&#160;Semi-colon</test29>
+
+<html:br/>
+
+<test30>&#60;&#160;&#160;Less than</test30>
+
+<html:br/>
+
+<test31>&#61;&#160;Equals sign</test31>
+
+<html:br/>
+
+<test32>&#62;&#160;Greater than</test32>
+
+<html:br/>
+
+<test33>&#63;&#160;Question mark</test33>
+
+<html:br/>
+
+<test34>&#64;&#160;Commercial at</test34>
+
+<html:br/>
+
+<test35>&#65;&#160;Capital A</test35>
+
+<html:br/>
+
+<test36>&#66;&#160;Capital B</test36>
+
+<html:br/>
+
+<test37>&#67;&#160;Capital C</test37>
+
+<html:br/>
+
+<test38>&#68;&#160;Capital D</test38>
+
+<html:br/>
+
+<test39>&#69;&#160;Capital E</test39>
+
+<html:br/>
+
+<test40>&#70;&#160;Capital F</test40>
+
+<html:br/>
+
+<test41>&#71;&#160;Capital G</test41>
+
+<html:br/>
+
+<test42>&#72;&#160;Capital H</test42>
+
+<html:br/>
+
+<test43>&#73;&#160;Capital I</test43>
+
+<html:br/>
+
+<test44>&#74;&#160;Capital J</test44>
+
+<html:br/>
+
+<test45>&#75;&#160;Capital K</test45>
+
+<html:br/>
+
+<test46>&#76;&#160;Capital L</test46>
+
+<html:br/>
+
+<test47>&#77;&#160;Capital M</test47>
+
+<html:br/>
+
+<test48>&#78;&#160;Capital N</test48>
+
+<html:br/>
+
+<test49>&#79;&#160;Capital O</test49>
+
+<html:br/>
+
+<test50>&#80;&#160;Capital P</test50>
+
+<html:br/>
+
+<test51>&#81;&#160;Capital Q</test51>
+
+<html:br/>
+
+<test52>&#82;&#160;Capital R</test52>
+
+<html:br/>
+
+<test53>&#83;&#160;Capital S</test53>
+
+<html:br/>
+
+<test54>&#84;&#160;Capital T</test54>
+
+<html:br/>
+
+<test55>&#85;&#160;Capital U</test55>
+
+<html:br/>
+
+<test56>&#86;&#160;Capital V</test56>
+
+<html:br/>
+
+<test57>&#87;&#160;Capital W</test57>
+
+<html:br/>
+
+<test58>&#88;&#160;Capital X</test58>
+
+<html:br/>
+
+<test59>&#89;&#160;Capital Y</test59>
+
+<html:br/>
+
+<test60>&#90;&#160;Capital Z</test60>
+
+<html:br/>
+
+<test61>&#91;&#160;Left square bracket</test61>
+
+<html:br/>
+
+<test62>&#92;&#160;Backslash</test62>
+
+<html:br/>
+
+<test63>&#93;&#160;Right square bracket</test63>
+
+<html:br/>
+
+<test64>&#94;&#160;Caret</test64>
+
+<html:br/>
+
+<test65>&#95;&#160;Horizontal bar</test65>
+
+<html:br/>
+
+<test66>&#96;&#160;Grave accent</test66>
+
+<html:br/>
+
+<test67>&#97;&#160;Small a</test67>
+
+<html:br/>
+
+<test68>&#98;&#160;Small b</test68>
+
+<html:br/>
+
+<test69>&#99;&#160;Small c</test69>
+
+<html:br/>
+
+<test70>&#100;&#160;Small d</test70>
+
+<html:br/>
+
+<test71>&#101;&#160;Small e</test71>
+
+<html:br/>
+
+<test72>&#102;&#160;Small f</test72>
+
+<html:br/>
+
+<test73>&#103;&#160;Small g</test73>
+
+<html:br/>
+
+<test74>&#104;&#160;Small h</test74>
+
+<html:br/>
+
+<test75>&#105;&#160;Small i</test75>
+
+<html:br/>
+
+<test76>&#106;&#160;Small j</test76>
+
+<html:br/>
+
+<test77>&#107;&#160;Small k</test77>
+
+<html:br/>
+
+<test78>&#108;&#160;Small l</test78>
+
+<html:br/>
+
+<test79>&#109;&#160;Small m</test79>
+
+<html:br/>
+
+<test80>&#110;&#160;Small n</test80>
+
+<html:br/>
+
+<test81>&#111;&#160;Small o</test81>
+
+<html:br/>
+
+<test82>&#112;&#160;Small p</test82>
+
+<html:br/>
+
+<test83>&#113;&#160;Small q</test83>
+
+<html:br/>
+
+<test84>&#114;&#160;Small r</test84>
+
+<html:br/>
+
+<test85>&#115;&#160;Small s</test85>
+
+<html:br/>
+
+<test86>&#116;&#160;Small t</test86>
+
+<html:br/>
+
+<test87>&#117;&#160;Small u</test87>
+
+<html:br/>
+
+<test88>&#118;&#160;Small v</test88>
+
+<html:br/>
+
+<test89>&#119;&#160;Small w</test89>
+
+<html:br/>
+
+<test90>&#120;&#160;Small x</test90>
+
+<html:br/>
+
+<test91>&#121;&#160;Small y</test91>
+
+<html:br/>
+
+<test92>&#122;&#160;Small z</test92>
+
+<html:br/>
+
+<test93>&#123;&#160;Left curly brace</test93>
+
+<html:br/>
+
+<test94>&#124;&#160;Vertical bar</test94>
+
+<html:br/>
+
+<test95>&#125;&#160;Right curly brace</test95>
+
+<html:br/>
+
+<test106>&#126;&#160;Tilde</test106>
+
+<html:br/>
+
+<test106a>&#160;&#160;No-break space</test106a>
+
+<html:br/>
+
+<test107>&#161;&#160;Inverted exclamation mark</test107>
+
+<html:br/>
+
+<test108>&#162;&#160;Cent sign</test108>
+
+<html:br/>
+
+<test109>&#163;&#160;Pound Sterling</test109>
+
+<html:br/>
+
+<test110>&#164;&#160;General currency sign</test110>
+
+<html:br/>
+
+<test111>&#165;&#160;Yen sign</test111>
+
+<html:br/>
+
+<test112>&#166;&#160;Broken vertical bar</test112>
+
+<html:br/>
+
+<test113>&#167;&#160;Section sign</test113>
+
+<html:br/>
+
+<test114>&#168;&#160;Umlaut</test114>
+
+<html:br/>
+
+<test115>&#169;&#160;Copyright</test115>
+
+<html:br/>
+
+<test116>&#170;&#160;Feminine ordinal</test116>
+
+<html:br/>
+
+<test117>&#171;&#160;Left angle quote</test117>
+
+<html:br/>
+
+<test118>&#172;&#160;Not sign</test118>
+
+<html:br/>
+
+<test119>&#173;&#160;Soft hyphen</test119>
+
+<html:br/>
+
+<test120>&#174;&#160;Registered trademark</test120>
+
+<html:br/>
+
+<test121>&#175;&#160;Macron accent</test121>
+
+<html:br/>
+
+<test122>&#176;&#160;Degree sign</test122>
+
+<html:br/>
+
+<test123>&#177;&#160;Plus or minus</test123>
+
+<html:br/>
+
+<test124>&#178;&#160;Superscript two</test124>
+
+<html:br/>
+
+<test125>&#179;&#160;Superscript three</test125>
+
+<html:br/>
+
+<test126>&#180;&#160;Acute accent</test126>
+
+<html:br/>
+
+<test127>&#181;&#160;Micro sign</test127>
+
+<html:br/>
+
+<test128>&#182;&#160;Paragraph sign</test128>
+
+<html:br/>
+
+<test129>&#183;&#160;Middle dot</test129>
+
+<html:br/>
+
+<test130>&#184;&#160;Cedilla</test130>
+
+<html:br/>
+
+<test131>&#185;&#160;Superscript one</test131>
+
+<html:br/>
+
+<test132>&#186;&#160;Masculine ordinal</test132>
+
+<html:br/>
+
+<test133>&#187;&#160;Right angle quote</test133>
+
+<html:br/>
+
+<test134>&#188;&#160;Fraction 1/4</test134>
+
+<html:br/>
+
+<test135>&#189;&#160;Fraction 1/2</test135>
+
+<html:br/>
+
+<test136>&#190;&#160;Fraction 3/4</test136>
+
+<html:br/>
+
+<test137>&#191;&#160;Inverted question mark</test137>
+
+<html:br/>
+
+<test138>&#192;&#160;Capital A, grave accent</test138>
+
+<html:br/>
+
+<test139>&#193;&#160;Capital A, acute accent</test139>
+
+<html:br/>
+
+<test140>&#194;&#160;Capital A, circumflex accent</test140>
+
+<html:br/>
+
+<test141>&#195;&#160;Capital A, tilde</test141>
+
+<html:br/>
+
+<test142>&#196;&#160;Capital A, umlaut mark</test142>
+
+<html:br/>
+
+<test143>&#197;&#160;Capital A, ring</test143>
+
+<html:br/>
+
+<test144>&#198;&#160;Capital AE dipthong</test144>
+
+<html:br/>
+
+<test145>&#199;&#160;Capital C, cedilla</test145>
+
+<html:br/>
+
+<test146>&#200;&#160;Capital E, grave accent</test146>
+
+<html:br/>
+
+<test147>&#201;&#160;Capital E, acute accent</test147>
+
+<html:br/>
+
+<test148>&#202;&#160;Capital E, circumflex accent</test148>
+
+<html:br/>
+
+<test149>&#203;&#160;Capital E, umlaut mark</test149>
+
+<html:br/>
+
+<test150>&#204;&#160;Capital I, grave accent</test150>
+
+<html:br/>
+
+<test151>&#205;&#160;Capital I, acute accent</test151>
+
+<html:br/>
+
+<test152>&#206;&#160;Capital I, circumflex accent</test152>
+
+<html:br/>
+
+<test153>&#207;&#160;Capital I, umlaut mark</test153>
+
+<html:br/>
+
+<test154>&#208;&#160;Capital Eth, Icelandic</test154>
+
+<html:br/>
+
+<test155>&#209;&#160;Capital N, tilde</test155>
+
+<html:br/>
+
+<test156>&#210;&#160;Capital O, grave accent</test156>
+
+<html:br/>
+
+<test157>&#211;&#160;Capital O, acute accent</test157>
+
+<html:br/>
+
+<test158>&#212;&#160;Capital O, circumflex accent</test158>
+
+<html:br/>
+
+<test159>&#213;&#160;Capital O, tilde</test159>
+
+<html:br/>
+
+<test160>&#214;&#160;Capital O, umlaut mark</test160>
+
+<html:br/>
+
+<test161>&#215;&#160;Multiply sign</test161>
+
+<html:br/>
+
+<test162>&#216;&#160;Capital O, slash</test162>
+
+<html:br/>
+
+<test163>&#217;&#160;Capital U, grave accent</test163>
+
+<html:br/>
+
+<test164>&#218;&#160;Capital U, acute accent</test164>
+
+<html:br/>
+
+<test165>&#219;&#160;Capital U, circumflex accent</test165>
+
+<html:br/>
+
+<test166>&#220;&#160;Capital U, umlaut mark</test166>
+
+<html:br/>
+
+<test167>&#221;&#160;Capital Y, acute accent</test167>
+
+<html:br/>
+
+<test168>&#222;&#160;Capital THORN, Icelandic</test168>
+
+<html:br/>
+
+<test169>&#223;&#160;Small sharp s, German</test169>
+
+<html:br/>
+
+<test170>&#224;&#160;Small a, grave accent</test170>
+
+<html:br/>
+
+<test171>&#225;&#160;Small a, acute accent</test171>
+
+<html:br/>
+
+<test172>&#226;&#160;Small a, circumflex accent</test172>
+
+<html:br/>
+
+<test173>&#227;&#160;Small a, tilde</test173>
+
+<html:br/>
+
+<test174>&#228;&#160;Small a, umlaut mark</test174>
+
+<html:br/>
+
+<test175>&#229;&#160;Small a, ring</test175>
+
+<html:br/>
+
+<test176>&#230;&#160;Small ae, dipthong</test176>
+
+<html:br/>
+
+<test177>&#231;&#160;Small c, cedilla</test177>
+
+<html:br/>
+
+<test178>&#232;&#160;Small e, grave accent</test178>
+
+<html:br/>
+
+<test179>&#233;&#160;Small e, acute accent</test179>
+
+<html:br/>
+
+<test180>&#234;&#160;Small e, circumflex accent</test180>
+
+<html:br/>
+
+<test181>&#235;&#160;Small e, umlaut mark</test181>
+
+<html:br/>
+
+<test182>&#236;&#160;Small i, grave accent</test182>
+
+<html:br/>
+
+<test183>&#237;&#160;Small i, acute accent</test183>
+
+<html:br/>
+
+<test184>&#238;&#160;Small i ,circumflex accent</test184>
+
+<html:br/>
+
+<test185>&#239;&#160;Small i, umlaut mark</test185>
+
+<html:br/>
+
+<test186>&#240;&#160;Small eth, Icelandic</test186>
+
+<html:br/>
+
+<test187>&#241;&#160;Small n, tilde</test187>
+
+<html:br/>
+
+<test188>&#242;&#160;Small o, grave accent</test188>
+
+<html:br/>
+
+<test189>&#243;&#160;Small o, acute accent</test189>
+
+<html:br/>
+
+<test190>&#244;&#160;Small o, circumflex accent</test190>
+
+<html:br/>
+
+<test191>&#245;&#160;Small o, tilde</test191>
+
+<html:br/>
+
+<test192>&#246;&#160;Small o, umlaut mark</test192>
+
+<html:br/>
+
+<test193>&#247;&#160;Division sign</test193>
+
+<html:br/>
+
+<test194>&#248;&#160;Small o, slash</test194>
+
+<html:br/>
+
+<test195>&#249;&#160;Small u, grave accent</test195>
+
+<html:br/>
+
+<test196>&#250;&#160;Small u, acute accent</test196>
+
+<html:br/>
+
+<test197>&#251;&#160;Small u, circumflex accent</test197>
+
+<html:br/>
+
+<test198>&#252;&#160;Small u, umlaut mark</test198>
+
+<html:br/>
+
+<test199>&#253;&#160;Small y, acute accent</test199>
+
+<html:br/>
+
+<test200>&#254;&#160;Small thorn, Icelandic</test200>
+
+<html:br/>
+
+<test201>&#255;&#160;Small y, umlaut mark</test201>
+
+</htmlname>
+
+</doc>
+

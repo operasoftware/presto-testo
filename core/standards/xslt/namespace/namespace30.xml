@@ -1,0 +1,12 @@
+<?xml version="1.0"?> 
+<?xml-stylesheet type="text/xsl" href="namespace30.xsl"?>
+<doc>
+  <!-- This is the 1st comment -->
+  text-in-doc
+  <inner>
+    inner-text
+    <!-- This is the 2nd comment -->
+    <sub>subtext</sub>
+  </inner>
+  text-in-doc2
+</doc>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:template match="xsl:template">
+<result>
+<xsl:choose>
+<xsl:when test='//iota[@xml:lang="en-GB"]/kappa[contains(@abort,"alue")][@xml:id="id1"][not(preceding-sibling::*)][not(following-sibling::*)]/sigma[starts-with(concat(@attribute,"-"),"attribute value-")][not(child::node())][following-sibling::theta[@string="attribute value"][@xml:id="id2"][preceding-sibling::*[position() = 1]][not(following-sibling::*)]/omicron[@xml:lang="no-nb"][@xml:id="id3"][not(preceding-sibling::*)][following-sibling::lambda[@xml:lang="en-GB"][not(following-sibling::*)]//psi[not(preceding-sibling::*)][not(following-sibling::*)]/alpha[@xml:id="id4"][following-sibling::eta[@xml:lang="no-nb"][@xml:id="id5"][preceding-sibling::*[position() = 1]]//nu[contains(concat(@att,"$"),"e$")][@xml:lang="no-nb"][not(preceding-sibling::*)][following-sibling::omicron[@xml:lang="no"][@xml:id="id6"]/gamma[@xml:id="id7"][not(preceding-sibling::*)]/rho[@or][@xml:lang="en"][@xml:id="id8"][not(preceding-sibling::*)][following-sibling::*[position()=1]][following-sibling::phi[preceding-sibling::*[position() = 1]]/lambda[not(preceding-sibling::*)][not(following-sibling::*)]/sigma[@content="attribute"][@xml:id="id9"][not(following-sibling::*)]//rho[starts-with(@string,"attribute value")][@xml:lang="no"][not(following-sibling::*)][not(following-sibling::rho)]/psi[@attrib][@xml:lang="no-nb"][@xml:id="id10"][not(child::node())][following-sibling::zeta[@delete="this-is-att-value"][@xml:lang="en-GB"][not(child::node())][following-sibling::omega[starts-with(@src,"attribute va")][@xml:id="id11"][preceding-sibling::*[position() = 2]][not(following-sibling::*)][position() = 1]][position() = 1]][position() = 1]][position() = 1]][position() = 1]][position() = 1]][position() = 1]]'>	
+	<xsl:value-of select="'PASS'"/>
+</xsl:when>
+<xsl:otherwise>FAIL</xsl:otherwise>
+</xsl:choose>
+</result>
+<xsl:if test="false()">
+<iota xml:lang="en-GB"><kappa abort="another attribute value" xml:id="id1"><sigma attribute="attribute value"/><theta string="attribute value" xml:id="id2"><omicron xml:lang="no-nb" xml:id="id3"/><lambda xml:lang="en-GB"><psi><alpha xml:id="id4"/><eta xml:lang="no-nb" xml:id="id5"><nu att="true" xml:lang="no-nb"/><omicron xml:lang="no" xml:id="id6"><gamma xml:id="id7"><rho or="attribute" xml:lang="en" xml:id="id8"/><phi><lambda><sigma content="attribute" xml:id="id9"><rho string="attribute value" xml:lang="no"><psi attrib="this.nodeValue" xml:lang="no-nb" xml:id="id10"/><zeta delete="this-is-att-value" xml:lang="en-GB"/><omega src="attribute value" xml:id="id11"><green>This text must be green</green></omega></rho></sigma></lambda></phi></gamma></omicron></eta></psi></lambda></theta></kappa></iota></xsl:if>
+</xsl:template>
+</xsl:stylesheet>

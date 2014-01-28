@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:template match="xsl:template">
+<result>
+<xsl:choose>
+<xsl:when test='//omicron[@xml:lang="en-GB"][@xml:id="id1"]//pi[not(preceding-sibling::*)]/sigma[@xml:lang="en-US"][@xml:id="id2"][not(preceding-sibling::*)][not(preceding-sibling::sigma or following-sibling::sigma)][following-sibling::phi[@false][not(following-sibling::*)]/kappa[@xml:lang="en-US"][not(preceding-sibling::*)][not(following-sibling::*)]//*//sigma[contains(@class,"12345")][following-sibling::gamma[@xml:id="id3"][preceding-sibling::*[position() = 1]]//nu[contains(@data,"lue")][@xml:lang="no-nb"][not(preceding-sibling::*)]/psi[@or][@xml:lang="nb"][@xml:id="id4"][not(following-sibling::*)]//eta[@xml:lang="no"][@xml:id="id5"][not(preceding-sibling::*)][following-sibling::*[position()=2]][following-sibling::*[@xml:lang="en-US"][@xml:id="id6"][preceding-sibling::*[position() = 1]][following-sibling::mu[contains(@attrib,"te value")][@xml:lang="no-nb"][@xml:id="id7"][preceding-sibling::*[position() = 2]][not(following-sibling::*)]//omicron[@xml:lang="nb"][following-sibling::*[position()=3]][not(child::node())][following-sibling::rho[@number][@xml:id="id8"][preceding-sibling::*[position() = 1]][following-sibling::nu[@xml:id="id9"][preceding-sibling::*[position() = 2]][following-sibling::*[position()=1]][not(child::node())][following-sibling::omicron[@xml:lang="no-nb"][@xml:id="id10"]]][position() = 1]]][position() = 1]][position() = 1]][position() = 1]]'>	
+	<xsl:value-of select="'PASS'"/>
+</xsl:when>
+<xsl:otherwise>FAIL</xsl:otherwise>
+</xsl:choose>
+</result>
+<xsl:if test="false()">
+<omicron xml:lang="en-GB" xml:id="id1"><pi><sigma xml:lang="en-US" xml:id="id2"/><phi false="attribute"><kappa xml:lang="en-US"><any><sigma class="123456789"/><gamma xml:id="id3"><nu data="this-is-att-value" xml:lang="no-nb"><psi or="another attribute value" xml:lang="nb" xml:id="id4"><eta xml:lang="no" xml:id="id5"/><any xml:lang="en-US" xml:id="id6"/><mu attrib="attribute value" xml:lang="no-nb" xml:id="id7"><omicron xml:lang="nb"/><rho number="solid 1px green" xml:id="id8"/><nu xml:id="id9"/><omicron xml:lang="no-nb" xml:id="id10"><green>This text must be green</green></omicron></mu></psi></nu></gamma></any></kappa></phi></pi></omicron></xsl:if>
+</xsl:template>
+</xsl:stylesheet>

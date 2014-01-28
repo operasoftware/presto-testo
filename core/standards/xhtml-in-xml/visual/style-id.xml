@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>id attribute of style element</title>
+<style id="css" type="text/css">
+head
+	{display:block}
+#css
+	{display:block;
+	content:"PASS";}
+</style>
+</head>
+<body>
+<p>You should see word pass above</p>
+</body>
+</html>

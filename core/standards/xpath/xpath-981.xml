@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:template match="xsl:template">
+<result>
+<xsl:choose>
+<xsl:when test='//omega//kappa[not(preceding-sibling::*)][not(child::node())][following-sibling::iota[@xml:id="id1"][not(child::node())][following-sibling::upsilon[@xml:lang="en-GB"][not(following-sibling::*)]/zeta[@xml:lang="en-GB"][@xml:id="id2"][not(child::node())][following-sibling::phi[starts-with(@name,"12345")][@xml:lang="no-nb"][@xml:id="id3"][not(following-sibling::*)]//xi[@xml:lang="en-GB"][@xml:id="id4"][not(child::node())][following-sibling::lambda[@xml:id="id5"]//kappa[contains(concat(@abort,"$"),"e$")][@xml:lang="no-nb"][not(preceding-sibling::kappa)][following-sibling::xi[@xml:id="id6"][preceding-sibling::*[position() = 1]][not(following-sibling::*)]/delta[@xml:id="id7"][following-sibling::lambda[@attrib][@xml:id="id8"][preceding-sibling::*[position() = 1]]//psi[@xml:id="id9"]//tau[starts-with(@delete,"1234")][@xml:lang="en"][@xml:id="id10"][not(preceding-sibling::*)][following-sibling::xi[@xml:lang="no-nb"][@xml:id="id11"][preceding-sibling::*[position() = 1]][not(following-sibling::*)]//kappa[@src][not(preceding-sibling::*)]//rho[@xml:id="id12"][not(preceding-sibling::*)]]][position() = 1]][position() = 1]]][position() = 1]][position() = 1]]'>	
+	<xsl:value-of select="'PASS'"/>
+</xsl:when>
+<xsl:otherwise>FAIL</xsl:otherwise>
+</xsl:choose>
+</result>
+<xsl:if test="false()">
+<omega><kappa/><iota xml:id="id1"/><upsilon xml:lang="en-GB"><zeta xml:lang="en-GB" xml:id="id2"/><phi name="123456789" xml:lang="no-nb" xml:id="id3"><xi xml:lang="en-GB" xml:id="id4"/><lambda xml:id="id5"><kappa abort="attribute" xml:lang="no-nb"/><xi xml:id="id6"><delta xml:id="id7"/><lambda attrib="attribute value" xml:id="id8"><psi xml:id="id9"><tau delete="123456789" xml:lang="en" xml:id="id10"/><xi xml:lang="no-nb" xml:id="id11"><kappa src="another attribute value"><rho xml:id="id12"><green>This text must be green</green></rho></kappa></xi></psi></lambda></xi></lambda></phi></upsilon></omega></xsl:if>
+</xsl:template>
+</xsl:stylesheet>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:template match="xsl:template">
+<result>
+<xsl:choose>
+<xsl:when test='//beta[@xml:id="id1"]//zeta[contains(@object,"de")][@xml:lang="en-US"][@xml:id="id2"][not(preceding-sibling::*)][not(following-sibling::*)]//lambda[not(preceding-sibling::*)]//lambda[@xml:lang="en-US"][not(following-sibling::*)]/psi[contains(concat(@number,"$"),"e$")][not(preceding-sibling::*)][not(following-sibling::*)]//xi[contains(concat(@name,"$"),"her attribute value$")][@xml:lang="en-GB"][following-sibling::*[position()=1]][following-sibling::omega[@xml:lang="no-nb"]//tau[@xml:id="id3"]/gamma[@xml:lang="en-US"][@xml:id="id4"][not(preceding-sibling::*)][not(following-sibling::*)]]'>	
+	<xsl:value-of select="'PASS'"/>
+</xsl:when>
+<xsl:otherwise>FAIL</xsl:otherwise>
+</xsl:choose>
+</result>
+<xsl:if test="false()">
+<beta xml:id="id1"><zeta object="this.nodeValue" xml:lang="en-US" xml:id="id2"><lambda><lambda xml:lang="en-US"><psi number="false"><xi name="another attribute value" xml:lang="en-GB"/><omega xml:lang="no-nb"><tau xml:id="id3"><gamma xml:lang="en-US" xml:id="id4"><green>This text must be green</green></gamma></tau></omega></psi></lambda></lambda></zeta></beta></xsl:if>
+</xsl:template>
+</xsl:stylesheet>

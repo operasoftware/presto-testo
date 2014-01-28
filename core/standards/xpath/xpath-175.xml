@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:template match="xsl:template">
+<result>
+<xsl:choose>
+<xsl:when test='//beta[contains(concat(@false,"$"),"t-value$")][@xml:lang="en-GB"][@xml:id="id1"]//*[@xml:lang="en"][not(child::node())][following-sibling::rho[@false][preceding-sibling::*[position() = 1]][not(child::node())][following-sibling::omega[preceding-sibling::*[position() = 2]][following-sibling::omicron[@token="attribute"][@xml:lang="no-nb"][@xml:id="id2"][preceding-sibling::*[position() = 3]][not(following-sibling::*)]//zeta[@content][@xml:lang="nb"]/phi[@attrib][@xml:id="id3"]/nu[not(preceding-sibling::*)][following-sibling::*[position()=1]][not(child::node())][following-sibling::*[@xml:id="id4"][preceding-sibling::*[position() = 1]][not(following-sibling::*)]//rho[following-sibling::sigma[@xml:lang="no-nb"][@xml:id="id5"][not(child::node())][following-sibling::omega[starts-with(concat(@number,"-"),"solid 1px green-")][@xml:lang="en-US"][@xml:id="id6"]][position() = 1]][position() = 1]][position() = 1]][position() = 1]][position() = 1]]'>	
+	<xsl:value-of select="'PASS'"/>
+</xsl:when>
+<xsl:otherwise>FAIL</xsl:otherwise>
+</xsl:choose>
+</result>
+<xsl:if test="false()">
+<beta false="this-is-att-value" xml:lang="en-GB" xml:id="id1"><any xml:lang="en"/><rho false="solid 1px green"/><omega/><omicron token="attribute" xml:lang="no-nb" xml:id="id2"><zeta content="solid 1px green" xml:lang="nb"><phi attrib="attribute" xml:id="id3"><nu/><any xml:id="id4"><rho/><sigma xml:lang="no-nb" xml:id="id5"/><omega number="solid 1px green" xml:lang="en-US" xml:id="id6"><green>This text must be green</green></omega></any></phi></zeta></omicron></beta></xsl:if>
+</xsl:template>
+</xsl:stylesheet>

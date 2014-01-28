@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:template match="xsl:template">
+<result>
+<xsl:choose>
+<xsl:when test='//kappa[@xml:id="id1"]//zeta[following-sibling::omega[not(following-sibling::*)]/eta[starts-with(concat(@data,"-"),"true-")][not(child::node())][following-sibling::theta[@xml:lang="no"][@xml:id="id2"][not(child::node())][following-sibling::gamma[@xml:id="id3"][preceding-sibling::*[position() = 2]][not(child::node())][following-sibling::delta[not(child::node())][following-sibling::psi[starts-with(concat(@or,"-"),"attribute value-")][@xml:lang="en-US"][preceding-sibling::*[position() = 4]]//sigma[@xml:id="id4"][not(child::node())][following-sibling::kappa[@insert][@xml:lang="en"][@xml:id="id5"][not(child::node())][following-sibling::mu[@xml:id="id6"][following-sibling::*[position()=1]][following-sibling::iota[@xml:lang="no-nb"]//chi[not(preceding-sibling::*)]//sigma[starts-with(concat(@insert,"-"),"solid 1px green-")][@xml:lang="no"][following-sibling::eta[@or][@xml:id="id7"][preceding-sibling::*[position() = 1]][not(following-sibling::*)]/xi[contains(@false,"rue")][@xml:id="id8"][following-sibling::tau[starts-with(@or,"solid 1px ")][@xml:lang="en"][following-sibling::*[position()=1]][not(child::node())][following-sibling::kappa[@xml:lang="no-nb"][not(following-sibling::*)]/iota[@xml:lang="no-nb"][not(preceding-sibling::*)][following-sibling::psi[@xml:lang="no"][@xml:id="id9"][not(following-sibling::*)][position() = 1]]]][position() = 1]]][position() = 1]][position() = 1]][position() = 1]][position() = 1]]]]]'>	
+	<xsl:value-of select="'PASS'"/>
+</xsl:when>
+<xsl:otherwise>FAIL</xsl:otherwise>
+</xsl:choose>
+</result>
+<xsl:if test="false()">
+<kappa xml:id="id1"><zeta/><omega><eta data="true"/><theta xml:lang="no" xml:id="id2"/><gamma xml:id="id3"/><delta/><psi or="attribute value" xml:lang="en-US"><sigma xml:id="id4"/><kappa insert="content" xml:lang="en" xml:id="id5"/><mu xml:id="id6"/><iota xml:lang="no-nb"><chi><sigma insert="solid 1px green" xml:lang="no"/><eta or="_blank" xml:id="id7"><xi false="true" xml:id="id8"/><tau or="solid 1px green" xml:lang="en"/><kappa xml:lang="no-nb"><iota xml:lang="no-nb"/><psi xml:lang="no" xml:id="id9"><green>This text must be green</green></psi></kappa></eta></chi></iota></psi></omega></kappa></xsl:if>
+</xsl:template>
+</xsl:stylesheet>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:template match="xsl:template">
+<result>
+<xsl:choose>
+<xsl:when test='//psi[contains(@attribute,"alue")][@xml:id="id1"]//eta[@class="content"][@xml:lang="no"][not(preceding-sibling::*)][following-sibling::zeta[@object][preceding-sibling::*[position() = 1]][not(following-sibling::*)]//chi[contains(@title,"0%")][@xml:lang="no"][@xml:id="id2"]//nu[starts-with(concat(@string,"-"),"100%-")][@xml:id="id3"][not(preceding-sibling::*)][not(following-sibling::*)]//iota[contains(concat(@att,"$"),"e$")][@xml:lang="no"][@xml:id="id4"]/omega[starts-with(@content,"attribute-va")][@xml:lang="en-US"][@xml:id="id5"][not(preceding-sibling::*)]/beta[@xml:lang="nb"][not(preceding-sibling::*)]/tau[@delete="_blank"][@xml:lang="en-GB"][@xml:id="id6"][not(preceding-sibling::*)][not(child::node())][following-sibling::gamma[not(child::node())][following-sibling::alpha[@attr][following-sibling::*[position()=3]][following-sibling::pi[starts-with(concat(@attrib,"-"),"false-")][@xml:lang="no-nb"][following-sibling::*[position()=2]][not(child::node())][following-sibling::iota[@xml:lang="no"][following-sibling::*[position()=1]][not(child::node())][following-sibling::lambda[@xml:id="id7"][not(following-sibling::*)][position() = 1]][position() = 1]][position() = 1]]]][position() = 1]]'>	
+	<xsl:value-of select="'PASS'"/>
+</xsl:when>
+<xsl:otherwise>FAIL</xsl:otherwise>
+</xsl:choose>
+</result>
+<xsl:if test="false()">
+<psi attribute="this.nodeValue" xml:id="id1"><eta class="content" xml:lang="no"/><zeta object="attribute"><chi title="100%" xml:lang="no" xml:id="id2"><nu string="100%" xml:id="id3"><iota att="attribute-value" xml:lang="no" xml:id="id4"><omega content="attribute-value" xml:lang="en-US" xml:id="id5"><beta xml:lang="nb"><tau delete="_blank" xml:lang="en-GB" xml:id="id6"/><gamma/><alpha attr="solid 1px green"/><pi attrib="false" xml:lang="no-nb"/><iota xml:lang="no"/><lambda xml:id="id7"><green>This text must be green</green></lambda></beta></omega></iota></nu></chi></zeta></psi></xsl:if>
+</xsl:template>
+</xsl:stylesheet>

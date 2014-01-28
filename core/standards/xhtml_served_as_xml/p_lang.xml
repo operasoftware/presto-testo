@@ -1,0 +1,112 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional/EN"
+
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta name="generator"
+
+content="HTML Tidy for Mac OS, see www.w3.org" />
+
+<!-- testcase: p_lang.xml -->
+
+<!-- description: HTML 4.0 P element -->
+
+<!-- Author: Frank Petitta, Date: 5/27/98 -->
+
+<!-- Modified: Chris Petersen, Date: 6/04/99 -->
+
+<!-- Modified: Changed doctype to xhtml 1.0 transitional Author: Chris Petersen Date: 1/24/01 -->
+
+<!-- 
+
+   - The contents of this file are subject to the Mozilla Public
+
+   - License Version 1.1 (the "License"); you may not use this file
+
+   - except in compliance with the License. You may obtain a copy of
+
+   - the License at http://www.mozilla.org/MPL/
+
+   - 
+
+   - Software distributed under the License is distributed on an "AS
+
+   - IS" basis, WITHOUT WARRANTY OF ANY KIND, either express or
+
+   - implied. See the License for the specific language governing
+
+   - rights and limitations under the License.
+
+   - 
+
+   - The Original Code is Mozilla Communicator Test Cases.
+
+   - 
+
+   - The Initial Developer of the Original Code is Netscape Communications
+
+   - Corp.  Portions created by Netscape Communications Corp. are 
+
+   - Copyright (C) 1999 Netscape Communications Corp.  All
+
+   - Rights Reserved.
+
+   - 
+
+   - Contributor(s): 
+
+  -->
+
+<!-- Purpose: To test the Paragraph tag.-->
+
+<!-- Expected result: The text below should be displayed in three paragraphs. Each paragraph is separated 
+
+by the P tag. -->
+
+<title>XHTML Functional -- P - LANG</title>
+
+</head>
+
+<body>
+
+<p lang="en">This paragraph is in english , the second is in german
+
+and the third in spanish. The LANG attribute is used in both
+
+paragraphs to specify to the language of the element content</p>
+
+<p lang="de">Die Mac OS Online-Hilfe unterst&Yuml;tzt Sie
+
+interaktiv mit schrittweisen Anleitungen bei der L&scaron;sung von
+
+Problemen und Aufgaben. Falls Sie Fragen zur Verwendung, Wartung
+
+und Pflege Ihres Apple Produkts haben, sollten Sie dieses
+
+innovative Hilfesystem nutzen.</p>
+
+<p lang="es">Cada iMac dispone como m&rsquo;nimo de 32 MB de SDRAM,
+
+una de las tecnolog&rsquo;as m&Dagger;s veloces disponibles
+
+actualmente para memorias; se utilizan en sus tareas habituales,
+
+aplicaciones multimedia, juegos y navegaci&mdash;n por la Web.
+
+Puede a&ndash;adir m&Dagger;s memoria para conseguir a&oelig;n
+
+mayor rendimiento, especialmente si trabaja con archivos que
+
+contengan muchos gr&Dagger;ficos o desea disfrutar de los juegos
+
+m&Dagger;s exigentes.</p>
+
+</body>
+
+</html>
+
+
+

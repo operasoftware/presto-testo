@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:template match="xsl:template">
+<result>
+<xsl:choose>
+<xsl:when test='//xi[@xml:lang="en-GB"]//omicron[@xml:id="id1"][not(preceding-sibling::*)]//*[@true="this-is-att-value"][@xml:id="id2"][following-sibling::chi[@xml:id="id3"][not(following-sibling::*)]//alpha//epsilon[@object][@xml:lang="en"][@xml:id="id4"][not(preceding-sibling::*)][not(following-sibling::*)]//*[@src][not(preceding-sibling::*)]/kappa[starts-with(concat(@false,"-"),"another attribute value-")]/xi[starts-with(concat(@number,"-"),"123456789-")][@xml:lang="nb"][@xml:id="id5"][not(child::node())][following-sibling::mu[contains(@delete,"r")][not(following-sibling::*)]//xi[starts-with(@name,"_blan")][following-sibling::*[@xml:id="id6"][not(following-sibling::*)]/*[@object][@xml:lang="no-nb"][not(following-sibling::*)]/eta[@xml:lang="no-nb"][not(following-sibling::*)]/epsilon[@or="attribute value"][@xml:lang="en-GB"][not(preceding-sibling::*)][following-sibling::*[position()=2]][following-sibling::psi[@delete][@xml:id="id7"][following-sibling::*[position()=1]][following-sibling::kappa[@xml:id="id8"]//omega[@data][@xml:lang="en-US"][not(preceding-sibling::*)]/mu[starts-with(concat(@attribute,"-"),"true-")][@xml:id="id9"][not(following-sibling::*)]//eta[contains(concat(@number,"$"),"ue$")][@xml:lang="en-US"][@xml:id="id10"][not(preceding-sibling::*)][not(following-sibling::*)]//alpha[starts-with(concat(@attrib,"-"),"attribute-")][@xml:lang="en"][not(preceding-sibling::*)]/eta[@true][@xml:lang="no"][not(preceding-sibling::*)][following-sibling::alpha[@data="100%"][@xml:id="id11"]//omicron[@src="this-is-att-value"][@xml:id="id12"][not(preceding-sibling::*)][position() = 1]][position() = 1]]]]][position() = 1]]'>	
+	<xsl:value-of select="'PASS'"/>
+</xsl:when>
+<xsl:otherwise>FAIL</xsl:otherwise>
+</xsl:choose>
+</result>
+<xsl:if test="false()">
+<xi xml:lang="en-GB"><omicron xml:id="id1"><any true="this-is-att-value" xml:id="id2"/><chi xml:id="id3"><alpha><epsilon object="this.nodeValue" xml:lang="en" xml:id="id4"><any src="this.nodeValue"><kappa false="another attribute value"><xi number="123456789" xml:lang="nb" xml:id="id5"/><mu delete="true"><xi name="_blank"/><any xml:id="id6"><any object="this.nodeValue" xml:lang="no-nb"><eta xml:lang="no-nb"><epsilon or="attribute value" xml:lang="en-GB"/><psi delete="solid 1px green" xml:id="id7"/><kappa xml:id="id8"><omega data="attribute" xml:lang="en-US"><mu attribute="true" xml:id="id9"><eta number="true" xml:lang="en-US" xml:id="id10"><alpha attrib="attribute" xml:lang="en"><eta true="content" xml:lang="no"/><alpha data="100%" xml:id="id11"><omicron src="this-is-att-value" xml:id="id12"><green>This text must be green</green></omicron></alpha></alpha></eta></mu></omega></kappa></eta></any></any></mu></kappa></any></epsilon></alpha></chi></omicron></xi></xsl:if>
+</xsl:template>
+</xsl:stylesheet>

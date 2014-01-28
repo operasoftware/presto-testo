@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:template match="xsl:template">
+<result>
+<xsl:choose>
+<xsl:when test='//zeta[@attribute][@xml:lang="en-GB"][@xml:id="id1"]/lambda[@token][@xml:lang="no-nb"][not(preceding-sibling::*)][not(child::node())][following-sibling::*[@xml:lang="no-nb"][not(child::node())][following-sibling::delta[contains(concat(@class,"$"),"56789$")][@xml:lang="en-GB"]//zeta[@xml:lang="en-US"][@xml:id="id2"][following-sibling::eta[not(child::node())][following-sibling::lambda[starts-with(concat(@data,"-"),"solid 1px green-")][@xml:lang="no-nb"][preceding-sibling::*[position() = 2]][following-sibling::omicron[starts-with(concat(@desciption,"-"),"123456789-")][following-sibling::omicron[@false][@xml:id="id3"][not(child::node())][following-sibling::omega[@xml:id="id4"][preceding-sibling::*[position() = 5]][following-sibling::zeta[@xml:lang="en-GB"][@xml:id="id5"][not(child::node())][following-sibling::zeta[@xml:lang="no-nb"]/omega[@xml:lang="no-nb"][not(child::node())][following-sibling::chi[not(following-sibling::*)]]][position() = 1]]][position() = 1]]]][position() = 1]][position() = 1]]]'>	
+	<xsl:value-of select="'PASS'"/>
+</xsl:when>
+<xsl:otherwise>FAIL</xsl:otherwise>
+</xsl:choose>
+</result>
+<xsl:if test="false()">
+<zeta attribute="100%" xml:lang="en-GB" xml:id="id1"><lambda token="attribute value" xml:lang="no-nb"/><any xml:lang="no-nb"/><delta class="123456789" xml:lang="en-GB"><zeta xml:lang="en-US" xml:id="id2"/><eta/><lambda data="solid 1px green" xml:lang="no-nb"/><omicron desciption="123456789"/><omicron false="solid 1px green" xml:id="id3"/><omega xml:id="id4"/><zeta xml:lang="en-GB" xml:id="id5"/><zeta xml:lang="no-nb"><omega xml:lang="no-nb"/><chi><green>This text must be green</green></chi></zeta></delta></zeta></xsl:if>
+</xsl:template>
+</xsl:stylesheet>

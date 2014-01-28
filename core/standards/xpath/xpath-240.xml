@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:template match="xsl:template">
+<result>
+<xsl:choose>
+<xsl:when test='//upsilon//alpha[@content][@xml:id="id1"]//epsilon[contains(@attribute,"tent")][@xml:lang="en-GB"][not(preceding-sibling::*)][not(following-sibling::*)]//omega[@false="attribute value"][@xml:lang="en"][not(preceding-sibling::*)][following-sibling::*[position()=1]][following-sibling::kappa[@attribute][@xml:lang="no"][not(following-sibling::*)]/xi[starts-with(concat(@true,"-"),"content-")][@xml:lang="no-nb"][@xml:id="id2"][following-sibling::*[position()=1]][following-sibling::epsilon[@xml:lang="en"][preceding-sibling::*[position() = 1]]//xi[@xml:id="id3"][not(following-sibling::*)]//lambda[starts-with(@attr,"another attribute valu")][@xml:lang="en-US"][@xml:id="id4"][not(preceding-sibling::*)]//gamma[@xml:lang="no-nb"][@xml:id="id5"][not(preceding-sibling::*)]/rho[starts-with(concat(@src,"-"),"_blank-")][not(preceding-sibling::*)][following-sibling::alpha[@xml:id="id6"]//omicron[@xml:lang="en-US"]/nu[@attribute][@xml:id="id7"][not(following-sibling::*)]//epsilon[contains(@src,"value")][@xml:lang="en-GB"][@xml:id="id8"][not(preceding-sibling::*)][following-sibling::sigma[@desciption="123456789"][not(child::node())][following-sibling::chi[starts-with(@attribute,"attribute-value")][@xml:lang="en-US"]][position() = 1]][position() = 1]]][position() = 1]]'>	
+	<xsl:value-of select="'PASS'"/>
+</xsl:when>
+<xsl:otherwise>FAIL</xsl:otherwise>
+</xsl:choose>
+</result>
+<xsl:if test="false()">
+<upsilon><alpha content="solid 1px green" xml:id="id1"><epsilon attribute="content" xml:lang="en-GB"><omega false="attribute value" xml:lang="en"/><kappa attribute="100%" xml:lang="no"><xi true="content" xml:lang="no-nb" xml:id="id2"/><epsilon xml:lang="en"><xi xml:id="id3"><lambda attr="another attribute value" xml:lang="en-US" xml:id="id4"><gamma xml:lang="no-nb" xml:id="id5"><rho src="_blank"/><alpha xml:id="id6"><omicron xml:lang="en-US"><nu attribute="attribute-value" xml:id="id7"><epsilon src="attribute-value" xml:lang="en-GB" xml:id="id8"/><sigma desciption="123456789"/><chi attribute="attribute-value" xml:lang="en-US"><green>This text must be green</green></chi></nu></omicron></alpha></gamma></lambda></xi></epsilon></kappa></epsilon></alpha></upsilon></xsl:if>
+</xsl:template>
+</xsl:stylesheet>

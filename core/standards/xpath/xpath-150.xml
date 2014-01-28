@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:template match="xsl:template">
+<result>
+<xsl:choose>
+<xsl:when test='//phi[@xml:id="id1"]//pi[@xml:lang="no"][@xml:id="id2"][not(following-sibling::*)]//phi[@xml:id="id3"][not(preceding-sibling::*)][following-sibling::upsilon[@xml:id="id4"][preceding-sibling::*[position() = 1]]/sigma[contains(concat(@delete,"$"),"x green$")][following-sibling::kappa[contains(@true,"ibute val")][@xml:id="id5"][preceding-sibling::*[position() = 1]][not(child::node())][following-sibling::alpha[@title][position() = 1]]]]'>	
+	<xsl:value-of select="'PASS'"/>
+</xsl:when>
+<xsl:otherwise>FAIL</xsl:otherwise>
+</xsl:choose>
+</result>
+<xsl:if test="false()">
+<phi xml:id="id1"><pi xml:lang="no" xml:id="id2"><phi xml:id="id3"/><upsilon xml:id="id4"><sigma delete="solid 1px green"/><kappa true="another attribute value" xml:id="id5"/><alpha title="attribute value"><green>This text must be green</green></alpha></upsilon></pi></phi></xsl:if>
+</xsl:template>
+</xsl:stylesheet>

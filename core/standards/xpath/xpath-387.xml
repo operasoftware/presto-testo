@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:template match="xsl:template">
+<result>
+<xsl:choose>
+<xsl:when test='//xi[@xml:lang="no-nb"][@xml:id="id1"]/kappa[contains(@object,"co")][not(following-sibling::*)]/xi[@false][@xml:lang="en-US"][not(preceding-sibling::*)][not(following-sibling::*)]//psi[not(preceding-sibling::*)][following-sibling::rho[@attrib][@xml:lang="no"][@xml:id="id2"][preceding-sibling::*[position() = 1]][not(following-sibling::*)]//iota[@xml:lang="no-nb"][not(preceding-sibling::*)][following-sibling::iota[@xml:lang="no-nb"]/phi[starts-with(@true,"this.nodeVal")][@xml:lang="no"][@xml:id="id3"][not(preceding-sibling::*)][following-sibling::*[position()=1]][following-sibling::chi[@xml:id="id4"][not(following-sibling::*)]/lambda[contains(@title,"3456789")][not(preceding-sibling::*)]//epsilon[contains(concat(@false,"$"),"se$")][@xml:id="id5"]/alpha[@src="false"][@xml:lang="en-GB"][following-sibling::beta[not(preceding-sibling::beta)][not(child::node())][following-sibling::zeta[@attr="this.nodeValue"][@xml:id="id6"][not(following-sibling::*)]//phi//kappa[not(following-sibling::*)]//iota[contains(@src,"ue")][not(preceding-sibling::*)][not(following-sibling::*)]/psi[not(preceding-sibling::*)][not(following-sibling::*)]/phi[@object="another attribute value"][not(preceding-sibling::*)][not(following-sibling::phi)]//beta[not(following-sibling::*)]][position() = 1]]][position() = 1]]]'>	
+	<xsl:value-of select="'PASS'"/>
+</xsl:when>
+<xsl:otherwise>FAIL</xsl:otherwise>
+</xsl:choose>
+</result>
+<xsl:if test="false()">
+<xi xml:lang="no-nb" xml:id="id1"><kappa object="content"><xi false="_blank" xml:lang="en-US"><psi/><rho attrib="attribute" xml:lang="no" xml:id="id2"><iota xml:lang="no-nb"/><iota xml:lang="no-nb"><phi true="this.nodeValue" xml:lang="no" xml:id="id3"/><chi xml:id="id4"><lambda title="123456789"><epsilon false="false" xml:id="id5"><alpha src="false" xml:lang="en-GB"/><beta/><zeta attr="this.nodeValue" xml:id="id6"><phi><kappa><iota src="true"><psi><phi object="another attribute value"><beta><green>This text must be green</green></beta></phi></psi></iota></kappa></phi></zeta></epsilon></lambda></chi></iota></rho></xi></kappa></xi></xsl:if>
+</xsl:template>
+</xsl:stylesheet>

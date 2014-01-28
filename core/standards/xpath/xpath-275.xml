@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:template match="xsl:template">
+<result>
+<xsl:choose>
+<xsl:when test='//alpha[starts-with(@data,"attribute value")][@xml:lang="en-GB"][@xml:id="id1"]//omega[@xml:id="id2"][following-sibling::theta[not(preceding-sibling::theta)]/gamma[@class][@xml:id="id3"][not(preceding-sibling::*)]/beta[contains(@attr,"value")][@xml:lang="en"][not(preceding-sibling::*)]//sigma[contains(concat(@object,"$"),"ttribute value$")][@xml:lang="en"][@xml:id="id4"][following-sibling::*[position()=4]][not(child::node())][following-sibling::omega[@xml:lang="no"][@xml:id="id5"][preceding-sibling::*[position() = 1]][following-sibling::*[position()=3]][following-sibling::omega[contains(@object,"ru")][@xml:lang="no-nb"][preceding-sibling::*[position() = 2]][following-sibling::*[position()=2]][not(child::node())][following-sibling::omega[@xml:lang="en-US"][@xml:id="id6"][following-sibling::upsilon[@xml:lang="en-US"][preceding-sibling::*[position() = 4]]]][position() = 1]][position() = 1]][position() = 1]]'>	
+	<xsl:value-of select="'PASS'"/>
+</xsl:when>
+<xsl:otherwise>FAIL</xsl:otherwise>
+</xsl:choose>
+</result>
+<xsl:if test="false()">
+<alpha data="attribute value" xml:lang="en-GB" xml:id="id1"><omega xml:id="id2"/><theta><gamma class="content" xml:id="id3"><beta attr="this-is-att-value" xml:lang="en"><sigma object="attribute value" xml:lang="en" xml:id="id4"/><omega xml:lang="no" xml:id="id5"/><omega object="true" xml:lang="no-nb"/><omega xml:lang="en-US" xml:id="id6"/><upsilon xml:lang="en-US"><green>This text must be green</green></upsilon></beta></gamma></theta></alpha></xsl:if>
+</xsl:template>
+</xsl:stylesheet>

@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>frame attribute</title>
+<style type="text/css">
+table
+	{border-spacing:0}
+table, tr, td
+	{margin:0;
+	padding:0;}
+div
+	{border:double 3px;
+	margin:1em;
+	padding:1em;}
+</style>
+</head>
+<body>
+<p>Two boxes below must be formatted identically</p>
+<div>
+<table>
+<tr>
+<td><table frame="lhs"><tr><td>CELL</td></tr><tr><td>CELL</td></tr></table></td>
+<td><table frame="rhs"><tr><td>CELL</td></tr><tr><td>CELL</td></tr></table></td>
+</tr>
+</table>
+</div>
+<div>
+<table frame="vsides">
+<tr><td>CELL</td><td>CELL</td></tr>
+<tr><td>CELL</td><td>CELL</td></tr>
+</table>
+</div>
+</body>
+</html>
+

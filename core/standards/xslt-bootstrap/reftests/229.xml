@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:template match="/">
+  	<result>
+  		<xsl:for-each select="//set">
+			<xsl:sort select="@key" case-order="upper-first"/>
+			<xsl:value-of select="@value"/>
+		</xsl:for-each>
+  	</result>
+	<xsl:if test="false()">
+		<set value="S" key="b"/>
+		<set value="P" key="A"/>
+		<set value="S" key="c"/>
+		<set value="A" key="a"/>
+	</xsl:if>
+</xsl:template>
+</xsl:stylesheet>

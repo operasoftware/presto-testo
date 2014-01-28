@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:template match="xsl:template">
+<result>
+<xsl:choose>
+<xsl:when test='//delta[@xml:id="id1"]/nu[@xml:id="id2"][not(following-sibling::*)]//omicron[@xml:id="id3"][not(preceding-sibling::*)][not(child::node())][following-sibling::tau[@xml:lang="en"][@xml:id="id4"][following-sibling::gamma[not(following-sibling::*)]//rho[starts-with(concat(@string,"-"),"this-")][@xml:lang="en"][@xml:id="id5"][not(preceding-sibling::*)][not(following-sibling::*)]//lambda[@xml:lang="no"][@xml:id="id6"][not(child::node())][following-sibling::chi[@xml:lang="en-GB"][preceding-sibling::*[position() = 1]][following-sibling::omega[contains(concat(@object,"$"),"nk$")][preceding-sibling::*[position() = 2]][not(following-sibling::*)][not(following-sibling::omega)]/rho[not(child::node())][following-sibling::phi[@att="false"][@xml:lang="en"][@xml:id="id7"][following-sibling::pi[@xml:id="id8"]/zeta[contains(concat(@object,"$"),"e$")][@xml:lang="no"][@xml:id="id9"][not(preceding-sibling::*)]//kappa[@xml:lang="en-US"][not(preceding-sibling::*)][not(following-sibling::*)]//theta[@true][@xml:lang="en-US"][not(child::node())][following-sibling::psi[@xml:lang="en-US"][@xml:id="id10"][preceding-sibling::*[position() = 1]][following-sibling::*[position()=2]][not(preceding-sibling::psi)][following-sibling::epsilon[not(child::node())][following-sibling::omega[contains(concat(@string,"$"),"100%$")][not(following-sibling::*)]]]][position() = 1]]]][position() = 1]][position() = 1]][position() = 1]]'>	
+	<xsl:value-of select="'PASS'"/>
+</xsl:when>
+<xsl:otherwise>FAIL</xsl:otherwise>
+</xsl:choose>
+</result>
+<xsl:if test="false()">
+<delta xml:id="id1"><nu xml:id="id2"><omicron xml:id="id3"/><tau xml:lang="en" xml:id="id4"/><gamma><rho string="this-is-att-value" xml:lang="en" xml:id="id5"><lambda xml:lang="no" xml:id="id6"/><chi xml:lang="en-GB"/><omega object="_blank"><rho/><phi att="false" xml:lang="en" xml:id="id7"/><pi xml:id="id8"><zeta object="false" xml:lang="no" xml:id="id9"><kappa xml:lang="en-US"><theta true="solid 1px green" xml:lang="en-US"/><psi xml:lang="en-US" xml:id="id10"/><epsilon/><omega string="100%"><green>This text must be green</green></omega></kappa></zeta></pi></omega></rho></gamma></nu></delta></xsl:if>
+</xsl:template>
+</xsl:stylesheet>

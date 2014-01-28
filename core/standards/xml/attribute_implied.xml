@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<!DOCTYPE main [
+<!ELEMENT main (hello)>
+<!ELEMENT hello (#PCDATA)>
+<!ATTLIST hello greeting CDATA #IMPLIED>
+]>
+<main>
+<hello greeting="yes">
+This xml document includes a element and attribute declarations
+</hello>
+</main>

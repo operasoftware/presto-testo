@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>selected attribute of option element</title>
+</head>
+<body>
+<p>Only one option should be pre-selected</p>
+<p>
+<select name="sel" size="2">
+<option value="1" selected="selected">first option</option>
+<option value="2" selected="selected">second option</option>
+</select>
+</p>
+</body>
+</html>

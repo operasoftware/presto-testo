@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>dir attribute of sub element</title>
+</head>
+<body>
+<p><sub dir="rtl">&#x202E;FAIL|SSAP&#x202C;</sub></p>
+<p>You should see PASS|LIAF above</p>
+</body>
+</html>

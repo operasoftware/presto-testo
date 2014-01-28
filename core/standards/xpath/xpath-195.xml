@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:template match="xsl:template">
+<result>
+<xsl:choose>
+<xsl:when test='//mu[starts-with(@abort,"anothe")]/pi[@xml:id="id1"][not(child::node())][following-sibling::nu[preceding-sibling::*[position() = 1]][not(child::node())][following-sibling::delta[following-sibling::omega[@class="_blank"][following-sibling::delta[@object][@xml:lang="en"][following-sibling::*[position()=1]][not(child::node())][following-sibling::pi/zeta[@xml:lang="no-nb"][not(preceding-sibling::*)][not(child::node())][following-sibling::xi[@attr][@xml:lang="no-nb"][@xml:id="id2"][following-sibling::sigma[contains(concat(@string,"$"),"789$")][@xml:lang="no"]//chi[not(preceding-sibling::*)][not(child::node())][following-sibling::zeta[@and][@xml:id="id3"]//eta[not(preceding-sibling::*)][not(child::node())][following-sibling::mu[starts-with(concat(@true,"-"),"true-")][@xml:id="id4"][preceding-sibling::*[position() = 1]][following-sibling::*[starts-with(concat(@or,"-"),"123456789-")][@xml:id="id5"][preceding-sibling::*[position() = 2]][not(following-sibling::*)]/omicron[@xml:id="id6"][following-sibling::sigma[@attr][@xml:lang="en-US"][preceding-sibling::*[position() = 1]]/*[starts-with(concat(@insert,"-"),"this.nodeValue-")][@xml:lang="en"]][position() = 1]]]]][position() = 1]][position() = 1]]][position() = 1]][position() = 1]]]'>	
+	<xsl:value-of select="'PASS'"/>
+</xsl:when>
+<xsl:otherwise>FAIL</xsl:otherwise>
+</xsl:choose>
+</result>
+<xsl:if test="false()">
+<mu abort="another attribute value"><pi xml:id="id1"/><nu/><delta/><omega class="_blank"/><delta object="attribute value" xml:lang="en"/><pi><zeta xml:lang="no-nb"/><xi attr="123456789" xml:lang="no-nb" xml:id="id2"/><sigma string="123456789" xml:lang="no"><chi/><zeta and="attribute-value" xml:id="id3"><eta/><mu true="true" xml:id="id4"/><any or="123456789" xml:id="id5"><omicron xml:id="id6"/><sigma attr="123456789" xml:lang="en-US"><any insert="this.nodeValue" xml:lang="en"><green>This text must be green</green></any></sigma></any></zeta></sigma></pi></mu></xsl:if>
+</xsl:template>
+</xsl:stylesheet>

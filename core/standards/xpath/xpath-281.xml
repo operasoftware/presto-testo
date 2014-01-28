@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:template match="xsl:template">
+<result>
+<xsl:choose>
+<xsl:when test='//zeta[starts-with(concat(@and,"-"),"this-")]/rho[starts-with(concat(@or,"-"),"this-")][@xml:lang="en"][not(preceding-sibling::*)][not(child::node())][following-sibling::xi[@xml:lang="en"][preceding-sibling::*[position() = 1]][following-sibling::psi[contains(@and,"ute-value")][@xml:lang="no-nb"][@xml:id="id1"][preceding-sibling::*[position() = 2]][not(following-sibling::*)]//epsilon[@xml:lang="no-nb"][not(preceding-sibling::*)][not(following-sibling::*)]//lambda[contains(@src,"lse")][@xml:id="id2"][following-sibling::nu[@xml:id="id3"][not(following-sibling::*)]/sigma[@xml:lang="no-nb"][not(preceding-sibling::*)][not(following-sibling::*)]//theta[@string][@xml:lang="no"][@xml:id="id4"][not(preceding-sibling::*)]/delta[@xml:lang="en-US"][not(preceding-sibling::*)][not(child::node())][following-sibling::upsilon[@token="100%"][@xml:lang="nb"][@xml:id="id5"][preceding-sibling::*[position() = 1]][not(following-sibling::*)]/chi[starts-with(concat(@class,"-"),"another attribute value-")][@xml:id="id6"][not(preceding-sibling::*)]//psi[@xml:id="id7"][following-sibling::chi[starts-with(concat(@name,"-"),"attribute-")][@xml:lang="no"][preceding-sibling::*[position() = 1]]/chi[@xml:lang="nb"][not(following-sibling::*)]/rho[@title][not(preceding-sibling::*)]/omicron[@string][@xml:lang="en"][not(following-sibling::*)]][position() = 1]]]][position() = 1]]'>	
+	<xsl:value-of select="'PASS'"/>
+</xsl:when>
+<xsl:otherwise>FAIL</xsl:otherwise>
+</xsl:choose>
+</result>
+<xsl:if test="false()">
+<zeta and="this-is-att-value"><rho or="this-is-att-value" xml:lang="en"/><xi xml:lang="en"/><psi and="attribute-value" xml:lang="no-nb" xml:id="id1"><epsilon xml:lang="no-nb"><lambda src="false" xml:id="id2"/><nu xml:id="id3"><sigma xml:lang="no-nb"><theta string="false" xml:lang="no" xml:id="id4"><delta xml:lang="en-US"/><upsilon token="100%" xml:lang="nb" xml:id="id5"><chi class="another attribute value" xml:id="id6"><psi xml:id="id7"/><chi name="attribute-value" xml:lang="no"><chi xml:lang="nb"><rho title="attribute-value"><omicron string="content" xml:lang="en"><green>This text must be green</green></omicron></rho></chi></chi></chi></upsilon></theta></sigma></nu></epsilon></psi></zeta></xsl:if>
+</xsl:template>
+</xsl:stylesheet>

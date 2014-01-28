@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<!--Reference for entity is inside the markup-->
+<!-- Testcase: entity_ref_in_markup.xml -->
+<!-- Description: The test the xml parser's ability to report a error when a document is NOT well-formed  -->
+<!-- Author:  Chris Petersen  Date: 12/06/2000 -->
+<!DOCTYPE main [
+<!ENTITY test "This is replacement text for a entity">
+]>
+<main &test;>
+This text shouldn't appear
+</main>

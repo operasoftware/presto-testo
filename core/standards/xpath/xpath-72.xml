@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:template match="xsl:template">
+<result>
+<xsl:choose>
+<xsl:when test='//xi[@attrib]//delta[@xml:lang="no-nb"][not(preceding-sibling::*)]/gamma[not(following-sibling::*)]//beta[contains(concat(@title,"$"),"odeValue$")][@xml:id="id1"]/omega[contains(@true,"ribute value")][not(preceding-sibling::*)][not(following-sibling::*)]/upsilon[@xml:id="id2"]/chi[@xml:lang="en"][not(following-sibling::*)][not(parent::*/*[position()=2])]/rho[@insert][@xml:lang="no"][following-sibling::iota[following-sibling::upsilon[starts-with(@abort,"this.nodeVal")][@xml:id="id3"][preceding-sibling::*[position() = 2]][not(following-sibling::*)]]]'>	
+	<xsl:value-of select="'PASS'"/>
+</xsl:when>
+<xsl:otherwise>FAIL</xsl:otherwise>
+</xsl:choose>
+</result>
+<xsl:if test="false()">
+<xi attrib="attribute-value"><delta xml:lang="no-nb"><gamma><beta title="this.nodeValue" xml:id="id1"><omega true="another attribute value"><upsilon xml:id="id2"><chi xml:lang="en"><rho insert="another attribute value" xml:lang="no"/><iota/><upsilon abort="this.nodeValue" xml:id="id3"><green>This text must be green</green></upsilon></chi></upsilon></omega></beta></gamma></delta></xi></xsl:if>
+</xsl:template>
+</xsl:stylesheet>

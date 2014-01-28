@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:template match="xsl:template">
+<result>
+<xsl:choose>
+<xsl:when test='//beta[@attr="this.nodeValue"][@xml:lang="no-nb"]/theta[starts-with(@title,"100")]/omicron[@abort="true"][@xml:lang="en-GB"][not(child::node())][following-sibling::phi[@xml:id="id1"]/chi[contains(@attr,"u")][@xml:lang="en-GB"][@xml:id="id2"][not(preceding-sibling::*)][following-sibling::*[position()=1]][not(child::node())][following-sibling::nu[@xml:lang="no"][@xml:id="id3"][preceding-sibling::*[position() = 1]]//sigma[@string="this-is-att-value"][not(following-sibling::*)]//epsilon[@xml:id="id4"][not(preceding-sibling::*)][not(following-sibling::*)]/epsilon[@name="content"][@xml:id="id5"][not(preceding-sibling::*)][not(following-sibling::*)]//alpha[starts-with(@string,"attribute")][@xml:lang="no-nb"][@xml:id="id6"][not(preceding-sibling::*)]//chi[@xml:lang="en-GB"][@xml:id="id7"][position() = 1]]]'>	
+	<xsl:value-of select="'PASS'"/>
+</xsl:when>
+<xsl:otherwise>FAIL</xsl:otherwise>
+</xsl:choose>
+</result>
+<xsl:if test="false()">
+<beta attr="this.nodeValue" xml:lang="no-nb"><theta title="100%"><omicron abort="true" xml:lang="en-GB"/><phi xml:id="id1"><chi attr="true" xml:lang="en-GB" xml:id="id2"/><nu xml:lang="no" xml:id="id3"><sigma string="this-is-att-value"><epsilon xml:id="id4"><epsilon name="content" xml:id="id5"><alpha string="attribute value" xml:lang="no-nb" xml:id="id6"><chi xml:lang="en-GB" xml:id="id7"><green>This text must be green</green></chi></alpha></epsilon></epsilon></sigma></nu></phi></theta></beta></xsl:if>
+</xsl:template>
+</xsl:stylesheet>

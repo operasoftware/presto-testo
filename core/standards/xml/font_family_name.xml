@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+ <?xml-stylesheet  type="text/css" href="color_prop.css"?>
+ <!-- Testcase: font_family_name.xml -->
+<!-- Description: To test the ability to apply font names with CSS 1 -->
+<!--Expected Results: Each sentence should display in a specified  font face -->
+<!-- Author:  Chris Petersen  Date: 5/08/01 -->
+<!-- 
+   - The contents of this file are subject to the Mozilla Public
+   - License Version 1.1 (the "License"); you may not use this file
+   - except in compliance with the License. You may obtain a copy of
+   - the License at http://www.mozilla.org/MPL/
+   - 
+   - Software distributed under the License is distributed on an "AS
+   - IS" basis, WITHOUT WARRANTY OF ANY KIND, either express or
+   - implied. See the License for the specific language governing
+   - rights and limitations under the License.
+   -
+   - The Original Code is Mozilla Communicator Test Cases.
+   - 
+   - The Initial Developer of the Original Code is Netscape Communications
+   - Corp.  Portions created by Netscape Communications Corp. are 
+   - Copyright (C) 1999 Netscape Communications Corp.  All
+   - Rights Reserved.
+   - 
+   - Contributor(s): 
+  -->
+ <font_properties>
+ <intro>Each sentence uses a specific font family name</intro>
+ <Garamond>
+This sentence should be in a serif font
+ </Garamond>
+ <Courier_New>
+ This sentence should be in a monospace font
+ </Courier_New>
+ <Aristocrat>
+ This sentence should be in a cursive font
+</Aristocrat>
+<Old_Town>
+This sentence should be in a fantasy font
+</Old_Town>
+ </font_properties>

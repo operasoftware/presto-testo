@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:template match="xsl:template">
+<result>
+<xsl:choose>
+<xsl:when test='//mu[starts-with(@attrib,"true")][@xml:lang="en"]//phi[@xml:lang="no"][@xml:id="id1"][not(preceding-sibling::*)][not(following-sibling::*)]//psi[contains(@src,"attribut")][@xml:lang="nb"][@xml:id="id2"][not(preceding-sibling::*)]//xi[following-sibling::gamma[not(child::node())][following-sibling::iota[contains(concat(@false,"$"),"56789$")][@xml:lang="en"][@xml:id="id3"][not(child::node())][following-sibling::lambda[@xml:id="id4"]//upsilon[@xml:lang="no-nb"][@xml:id="id5"][following-sibling::*[position()=2]][following-sibling::iota[contains(@title,"alue")][@xml:lang="nb"][@xml:id="id6"][preceding-sibling::*[position() = 1]][following-sibling::*[position()=1]][not(child::node())][following-sibling::iota[@class][@xml:lang="no"][@xml:id="id7"][preceding-sibling::*[position() = 2]]/phi[@number="this.nodeValue"][@xml:lang="nb"][@xml:id="id8"][following-sibling::omicron[@false][@xml:lang="no"][following-sibling::xi[@xml:id="id9"][not(following-sibling::*)]/xi[@xml:lang="en"][@xml:id="id10"][following-sibling::beta[starts-with(concat(@or,"-"),"solid 1px green-")][@xml:lang="no-nb"][not(child::node())][following-sibling::omega[contains(concat(@or,"$"),"1px green$")][preceding-sibling::*[position() = 2]]//phi[contains(@content,"attri")][@xml:lang="no-nb"][@xml:id="id11"][not(preceding-sibling::*)][following-sibling::epsilon[@object][@xml:lang="nb"][preceding-sibling::*[position() = 1]][not(following-sibling::*)][position() = 1]]]][position() = 1]][position() = 1]][position() = 1]]][position() = 1]][position() = 1]]]'>	
+	<xsl:value-of select="'PASS'"/>
+</xsl:when>
+<xsl:otherwise>FAIL</xsl:otherwise>
+</xsl:choose>
+</result>
+<xsl:if test="false()">
+<mu attrib="true" xml:lang="en"><phi xml:lang="no" xml:id="id1"><psi src="attribute value" xml:lang="nb" xml:id="id2"><xi/><gamma/><iota false="123456789" xml:lang="en" xml:id="id3"/><lambda xml:id="id4"><upsilon xml:lang="no-nb" xml:id="id5"/><iota title="attribute-value" xml:lang="nb" xml:id="id6"/><iota class="_blank" xml:lang="no" xml:id="id7"><phi number="this.nodeValue" xml:lang="nb" xml:id="id8"/><omicron false="100%" xml:lang="no"/><xi xml:id="id9"><xi xml:lang="en" xml:id="id10"/><beta or="solid 1px green" xml:lang="no-nb"/><omega or="solid 1px green"><phi content="another attribute value" xml:lang="no-nb" xml:id="id11"/><epsilon object="true" xml:lang="nb"><green>This text must be green</green></epsilon></omega></xi></iota></lambda></psi></phi></mu></xsl:if>
+</xsl:template>
+</xsl:stylesheet>

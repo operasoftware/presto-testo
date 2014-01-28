@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:template match="xsl:template">
+<result>
+<xsl:choose>
+<xsl:when test='//tau[@abort][@xml:id="id1"]/rho[contains(concat(@true,"$"),"e$")][not(following-sibling::*)]//eta[not(preceding-sibling::*)][not(child::node())][following-sibling::alpha[@xml:lang="no"]//tau[@xml:id="id2"]//iota[@xml:lang="no"][@xml:id="id3"][following-sibling::omega[@string][@xml:lang="no-nb"][following-sibling::theta[starts-with(@attr,"cont")][@xml:id="id4"][preceding-sibling::*[position() = 2]]/sigma[starts-with(@name,"this.nodeValue")][@xml:lang="nb"][@xml:id="id5"][not(following-sibling::*)]//rho[starts-with(@attrib,"cont")][@xml:lang="nb"][@xml:id="id6"][not(child::node())][following-sibling::pi[contains(concat(@token,"$"),"rue$")][@xml:lang="en"][@xml:id="id7"][preceding-sibling::*[position() = 1]][following-sibling::xi[@xml:lang="en"][preceding-sibling::*[position() = 2]][following-sibling::omega[@xml:id="id8"][preceding-sibling::*[position() = 3]][not(following-sibling::*)]/*[@content][@xml:lang="no"][@xml:id="id9"][not(preceding-sibling::*)][following-sibling::chi[@class][@xml:lang="no"][@xml:id="id10"]/alpha[@xml:lang="nb"][@xml:id="id11"][following-sibling::*[position()=4]][not(child::node())][following-sibling::upsilon[starts-with(concat(@name,"-"),"this-")][@xml:id="id12"][preceding-sibling::*[position() = 1]][not(child::node())][following-sibling::rho[@delete][@xml:id="id13"][preceding-sibling::*[position() = 2]][not(child::node())][following-sibling::xi[contains(concat(@true,"$"),"ank$")][not(child::node())][following-sibling::alpha[@xml:lang="en"][@xml:id="id14"][preceding-sibling::*[position() = 4]][not(following-sibling::*)]]][position() = 1]]][position() = 1]][position() = 1]]][position() = 1]]][position() = 1]]]'>	
+	<xsl:value-of select="'PASS'"/>
+</xsl:when>
+<xsl:otherwise>FAIL</xsl:otherwise>
+</xsl:choose>
+</result>
+<xsl:if test="false()">
+<tau abort="solid 1px green" xml:id="id1"><rho true="this-is-att-value"><eta/><alpha xml:lang="no"><tau xml:id="id2"><iota xml:lang="no" xml:id="id3"/><omega string="another attribute value" xml:lang="no-nb"/><theta attr="content" xml:id="id4"><sigma name="this.nodeValue" xml:lang="nb" xml:id="id5"><rho attrib="content" xml:lang="nb" xml:id="id6"/><pi token="true" xml:lang="en" xml:id="id7"/><xi xml:lang="en"/><omega xml:id="id8"><any content="solid 1px green" xml:lang="no" xml:id="id9"/><chi class="attribute value" xml:lang="no" xml:id="id10"><alpha xml:lang="nb" xml:id="id11"/><upsilon name="this-is-att-value" xml:id="id12"/><rho delete="100%" xml:id="id13"/><xi true="_blank"/><alpha xml:lang="en" xml:id="id14"><green>This text must be green</green></alpha></chi></omega></sigma></theta></tau></alpha></rho></tau></xsl:if>
+</xsl:template>
+</xsl:stylesheet>

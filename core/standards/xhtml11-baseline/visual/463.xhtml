@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>style attribute of rp element</title>
+<style type="text/css">
+rt:before
+	{content:counter(p,upper-alpha) counter(a,upper-alpha) counter(s,upper-alpha) counter(s,upper-alpha);}
+</style>
+</head>
+<body>
+<div>
+<ruby>
+	<rb>You should see word PASS</rb>
+	<rp style="counter-reset:p 16 s 19 a 1">(</rp>
+		<rt>!</rt>
+	<rp>)</rp>
+</ruby>
+</div>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:template match="xsl:template">
+<result>
+<xsl:choose>
+<xsl:when test='//epsilon[@xml:id="id1"]//lambda[contains(@data,"alu")][@xml:lang="no-nb"][not(preceding-sibling::*)]//lambda[@xml:lang="nb"][not(child::node())][following-sibling::upsilon[@xml:lang="en-US"][@xml:id="id2"][preceding-sibling::*[position() = 1]][not(following-sibling::*)]/nu[contains(concat(@abort,"$"),"t-value$")][not(following-sibling::*)]//alpha[@xml:lang="en-US"][@xml:id="id3"][not(preceding-sibling::*)]//kappa[contains(concat(@string,"$"),"alue$")][@xml:lang="en-GB"][@xml:id="id4"]//lambda[contains(concat(@insert,"$")," value$")][not(preceding-sibling::*)][following-sibling::zeta[not(child::node())][following-sibling::psi[@xml:lang="nb"][@xml:id="id5"][not(child::node())][following-sibling::tau[@title="another attribute value"][@xml:lang="en-US"][preceding-sibling::*[position() = 3]][following-sibling::epsilon[not(following-sibling::*)]//gamma[contains(concat(@data,"$"),"23456789$")][@xml:id="id6"][not(following-sibling::*)]/mu[starts-with(@data,"solid 1px g")][not(preceding-sibling::*)][not(child::node())][following-sibling::omicron[@attr][@xml:lang="en-GB"][@xml:id="id7"][not(child::node())][following-sibling::lambda[@number][@xml:lang="nb"]//mu[contains(concat(@number,"$"),"t-value$")][@xml:lang="no"][not(child::node())][following-sibling::mu[@xml:id="id8"][preceding-sibling::*[position() = 1]][not(following-sibling::*)]//xi[@data="attribute"][@xml:lang="no"][not(preceding-sibling::*)]/pi[not(following-sibling::*)]//lambda[starts-with(concat(@false,"-"),"this-")][@xml:lang="en"][@xml:id="id9"]][position() = 1]]][position() = 1]]][position() = 1]][position() = 1]]]'>	
+	<xsl:value-of select="'PASS'"/>
+</xsl:when>
+<xsl:otherwise>FAIL</xsl:otherwise>
+</xsl:choose>
+</result>
+<xsl:if test="false()">
+<epsilon xml:id="id1"><lambda data="attribute-value" xml:lang="no-nb"><lambda xml:lang="nb"/><upsilon xml:lang="en-US" xml:id="id2"><nu abort="this-is-att-value"><alpha xml:lang="en-US" xml:id="id3"><kappa string="attribute-value" xml:lang="en-GB" xml:id="id4"><lambda insert="attribute value"/><zeta/><psi xml:lang="nb" xml:id="id5"/><tau title="another attribute value" xml:lang="en-US"/><epsilon><gamma data="123456789" xml:id="id6"><mu data="solid 1px green"/><omicron attr="_blank" xml:lang="en-GB" xml:id="id7"/><lambda number="attribute" xml:lang="nb"><mu number="this-is-att-value" xml:lang="no"/><mu xml:id="id8"><xi data="attribute" xml:lang="no"><pi><lambda false="this-is-att-value" xml:lang="en" xml:id="id9"><green>This text must be green</green></lambda></pi></xi></mu></lambda></gamma></epsilon></kappa></alpha></nu></upsilon></lambda></epsilon></xsl:if>
+</xsl:template>
+</xsl:stylesheet>

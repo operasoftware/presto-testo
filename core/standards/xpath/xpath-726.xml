@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:template match="xsl:template">
+<result>
+<xsl:choose>
+<xsl:when test='//omega/epsilon[@insert][not(child::node())][following-sibling::zeta[starts-with(concat(@string,"-"),"attribute value-")][@xml:id="id1"][not(child::node())][following-sibling::gamma[starts-with(@false,"this-is-att-")][@xml:lang="en"][@xml:id="id2"][preceding-sibling::*[position() = 2]]/pi[not(preceding-sibling::*)][following-sibling::phi[@content][@xml:id="id3"][preceding-sibling::*[position() = 1]][not(child::node())][following-sibling::xi[@xml:id="id4"][preceding-sibling::*[position() = 2]][following-sibling::*[contains(@true," 1px green")][@xml:lang="en-GB"][@xml:id="id5"][preceding-sibling::*[position() = 3]]//zeta[@xml:id="id6"][not(preceding-sibling::*)][not(following-sibling::*)]/kappa[@xml:lang="nb"][@xml:id="id7"][not(preceding-sibling::*)]//iota[contains(@token,"se")][@xml:id="id8"][not(child::node())][following-sibling::xi[starts-with(concat(@insert,"-"),"another attribute value-")][@xml:id="id9"][preceding-sibling::*[position() = 1]][not(child::node())][following-sibling::rho[contains(@object,"te")][@xml:id="id10"][not(child::node())][following-sibling::psi[@xml:lang="nb"][following-sibling::nu[contains(concat(@content,"$"),"ute$")][@xml:lang="no-nb"][following-sibling::nu[starts-with(@string,"solid 1px gre")][@xml:lang="en-GB"][@xml:id="id11"][preceding-sibling::*[position() = 5]][not(following-sibling::*)]][position() = 1]][position() = 1]]]][position() = 1]]][position() = 1]]]]'>	
+	<xsl:value-of select="'PASS'"/>
+</xsl:when>
+<xsl:otherwise>FAIL</xsl:otherwise>
+</xsl:choose>
+</result>
+<xsl:if test="false()">
+<omega><epsilon insert="attribute"/><zeta string="attribute value" xml:id="id1"/><gamma false="this-is-att-value" xml:lang="en" xml:id="id2"><pi/><phi content="_blank" xml:id="id3"/><xi xml:id="id4"/><any true="solid 1px green" xml:lang="en-GB" xml:id="id5"><zeta xml:id="id6"><kappa xml:lang="nb" xml:id="id7"><iota token="false" xml:id="id8"/><xi insert="another attribute value" xml:id="id9"/><rho object="attribute" xml:id="id10"/><psi xml:lang="nb"/><nu content="attribute" xml:lang="no-nb"/><nu string="solid 1px green" xml:lang="en-GB" xml:id="id11"><green>This text must be green</green></nu></kappa></zeta></any></gamma></omega></xsl:if>
+</xsl:template>
+</xsl:stylesheet>

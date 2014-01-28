@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:template match="xsl:template">
+<result>
+<xsl:choose>
+<xsl:when test='//upsilon[starts-with(concat(@content,"-"),"solid 1px green-")][@xml:id="id1"]/kappa[contains(@number,"olid ")][@xml:lang="nb"][not(preceding-sibling::*)]/mu[contains(@true,"ute v")][@xml:id="id2"][following-sibling::phi[@class][preceding-sibling::*[position() = 1]]/sigma[starts-with(@attr,"attribut")][@xml:lang="en-GB"][@xml:id="id3"][not(following-sibling::*)]/omicron[@xml:lang="en-US"][following-sibling::*[position()=1]][not(child::node())][following-sibling::psi[@xml:id="id4"][not(following-sibling::*)]//pi[contains(concat(@object,"$"),"another attribute value$")][not(preceding-sibling::*)][following-sibling::phi[@attr][@xml:id="id5"][following-sibling::omicron[starts-with(@att,"1234")][@xml:lang="en"][@xml:id="id6"][not(following-sibling::*)]][position() = 1]]][position() = 1]]'>	
+	<xsl:value-of select="'PASS'"/>
+</xsl:when>
+<xsl:otherwise>FAIL</xsl:otherwise>
+</xsl:choose>
+</result>
+<xsl:if test="false()">
+<upsilon content="solid 1px green" xml:id="id1"><kappa number="solid 1px green" xml:lang="nb"><mu true="attribute value" xml:id="id2"/><phi class="_blank"><sigma attr="attribute value" xml:lang="en-GB" xml:id="id3"><omicron xml:lang="en-US"/><psi xml:id="id4"><pi object="another attribute value"/><phi attr="false" xml:id="id5"/><omicron att="123456789" xml:lang="en" xml:id="id6"><green>This text must be green</green></omicron></psi></sigma></phi></kappa></upsilon></xsl:if>
+</xsl:template>
+</xsl:stylesheet>

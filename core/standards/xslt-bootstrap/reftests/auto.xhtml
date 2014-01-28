@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>XSLT Bootstrap Tests</title>
+<script type="application/ecmascript">
+<![CDATA[
+var passed = 0, failed = 0, i = 0, n = 270, delay;
+function start(event)
+	{event.preventDefault();
+	var mode = document.getElementsByTagName('select')[0].value;
+	document.getElementsByTagName('tt')[3].firstChild.nodeValue = n;
+	document.getElementsByTagName('p')[0].style.visibility = 'visible';
+	document.getElementsByTagName('select')[0].disabled = true;
+	document.getElementsByTagName('button')[0].disabled = true;
+	if(mode == 'x')
+		{while(i++!=n)
+			{xslt(('000').substring(i.toString().length) + i + '.xml');}
+		}
+	else
+		{createFrame(mode)}
+	i = 0;}
+function xslt(name)
+	{var processor = new XSLTProcessor(), result = false, errors = 'none';
+	try
+		{var xml = (document.implementation.createLSParser(1,null)).parseURI(name);
+		processor.importStylesheet(xml);
+		var doc = processor.transformToDocument(xml);
+		if(doc.documentElement.nodeName == 'result' && doc.documentElement.firstChild.nodeValue.search(/^[\s\n]*PASS[\s\n]*$/) != -1)
+			{result = true}
+		}
+	catch(themAll)
+		{errors = themAll}
+	report(result,errors)}
+function report(result,errors)
+	{if(result)
+		{document.getElementsByTagName('tt')[1].firstChild.nodeValue = ++passed;}
+	else
+		{document.getElementsByTagName('tt')[0].firstChild.nodeValue = ++failed;
+		var p = document.createElementNS('http://www.w3.org/1999/xhtml', 'p'), 
+		a = document.createElementNS('http://www.w3.org/1999/xhtml', 'a'), 
+		s = ('000').substring(i.toString().length) + i;
+		a.appendChild(document.createTextNode('Test ' + s + ' failed'));
+		a.setAttribute('href',s + '.xml');
+		p.appendChild(a);
+		if(errors != 'none')
+			{p.appendChild(document.createTextNode('> ' + errors))}
+		document.getElementsByTagName('body')[0].appendChild(p);}
+	document.getElementsByTagName('tt')[2].firstChild.nodeValue = i;}
+function createFrame(mode)
+	{var frame = document.createElementNS('http://www.w3.org/1999/xhtml', 'iframe');
+	frame.setAttribute('src','001.xml');
+	if(mode != 's')
+		{document.getElementsByTagName('body')[0].appendChild(frame);
+		delay = setInterval("loadTC()",(mode == 'l')?100:500)}
+	else
+		{frame.setAttribute('onload','loadTC()');
+		document.getElementsByTagName('body')[0].appendChild(frame);}
+	}
+function loadTC()
+	{var doc = document.getElementsByTagName('iframe')[0].contentDocument, result = false, errors = 'none'
+	try{if(doc.documentElement.nodeName == 'result' && doc.documentElement.firstChild.nodeValue.search(/^[\s\n]*PASS[\s\n]*$/) != -1)
+			{result = true}
+		}
+	catch(themAll)
+		{errors = themAll}
+	report(result,errors);	
+	document.getElementsByTagName('tt')[2].firstChild.nodeValue = i++;
+	if(i > n)
+		{clearInterval(delay);
+		document.getElementsByTagName('iframe')[0].style.display = 'none';}
+	else
+		{document.getElementsByTagName('iframe')[0].setAttribute('src',('000').substring(i.toString().length) + i + '.xml');}
+		}
+
+]]>
+</script>
+<style type="text/css">
+a[href]
+	{display:block;}
+a[href]:after
+	{content:"!!!"}
+a[href*="236"]:after
+	{content:" CORE-1905"}
+a[href*="243"]:after
+	{content:" CORE-13296"}
+a[href*="246"]:after
+	{content:" CORE-9509"}
+a[href*="256"]:after
+	{content:" CORE-15006"}
+a[href*="260"]:after, a[href*="265"]:after
+	{content:" CORE-23961"}
+a[href*="261"]:after
+	{content:" CORE-26234"}
+a[href*="266"]:after, a[href*="267"]:after
+	{content:" CORE-33385"}
+a[href*="268"]:after
+	{content:" CORE-33386"}
+a[href*="269"]:after
+	{content:" CORE-39389"}
+a[href*="270"]:after
+	{content:" CORE-40113"}
+a:link
+	{text-decoration:none;
+	color:navy;}
+a:visited
+	{text-decoration:none;
+	color:black;}
+p:first-child
+	{visibility:hidden;}
+</style>
+</head>
+<body>
+<p>Failed: <tt>0</tt> Passed: <tt>0</tt> Processed: <tt>0</tt> out of <tt>0</tt></p>
+<p>
+<form action="" onsubmit="start(event)">
+<select name="sel">
+<option value="x">Use XSLTProcessor()</option>
+<option value="s">Load TCs in iframe (trust onload)</option>
+<option value="l">Load TCs in iframe (0.1s interval)</option>
+<option value="t">Load TCs in iframe (0.5s interval)</option>
+</select>
+<button type="submit">Start</button>
+</form>
+</p>
+</body>
+</html>

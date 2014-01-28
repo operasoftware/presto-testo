@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:template match="xsl:template">
+<result>
+<xsl:choose>
+<xsl:when test='//chi[@xml:id="id1"]//iota[@xml:lang="en"][not(child::node())][following-sibling::gamma[@object][@xml:id="id2"][following-sibling::beta[@xml:lang="no"][@xml:id="id3"][preceding-sibling::*[position() = 2]]//theta[@name="attribute value"][@xml:id="id4"][following-sibling::delta[@name][@xml:lang="no-nb"][@xml:id="id5"][preceding-sibling::*[position() = 1]][not(following-sibling::*)]//nu/iota[@insert][@xml:lang="no-nb"][@xml:id="id6"][not(following-sibling::*)]//mu[contains(@data,"t-v")][@xml:lang="en"][not(preceding-sibling::*)][following-sibling::*[position()=2]][following-sibling::gamma[preceding-sibling::*[position() = 1]][not(child::node())][following-sibling::alpha[@xml:lang="en-US"][preceding-sibling::*[position() = 2]][not(following-sibling::*)]//theta[not(preceding-sibling::*)][following-sibling::epsilon[contains(concat(@desciption,"$"),"value$")][following-sibling::zeta//psi[not(child::node())][following-sibling::zeta[contains(concat(@desciption,"$"),"ute value$")][@xml:lang="no"]/iota[@xml:lang="en-US"][@xml:id="id7"][not(following-sibling::*)]//lambda[contains(concat(@insert,"$"),"r attribute value$")][not(preceding-sibling::*)]//iota[@title][@xml:lang="no-nb"][@xml:id="id8"][not(preceding-sibling::*)]/gamma[@name][@xml:lang="en-US"][not(preceding-sibling::*)][not(child::node())][following-sibling::epsilon[@xml:lang="en-GB"][following-sibling::alpha[not(following-sibling::*)]//chi[@number="solid 1px green"][@xml:lang="nb"]][position() = 1]][position() = 1]][position() = 1]][position() = 1]]][position() = 1]]][position() = 1]][position() = 1]]'>	
+	<xsl:value-of select="'PASS'"/>
+</xsl:when>
+<xsl:otherwise>FAIL</xsl:otherwise>
+</xsl:choose>
+</result>
+<xsl:if test="false()">
+<chi xml:id="id1"><iota xml:lang="en"/><gamma object="true" xml:id="id2"/><beta xml:lang="no" xml:id="id3"><theta name="attribute value" xml:id="id4"/><delta name="123456789" xml:lang="no-nb" xml:id="id5"><nu><iota insert="attribute" xml:lang="no-nb" xml:id="id6"><mu data="this-is-att-value" xml:lang="en"/><gamma/><alpha xml:lang="en-US"><theta/><epsilon desciption="this-is-att-value"/><zeta><psi/><zeta desciption="attribute value" xml:lang="no"><iota xml:lang="en-US" xml:id="id7"><lambda insert="another attribute value"><iota title="_blank" xml:lang="no-nb" xml:id="id8"><gamma name="_blank" xml:lang="en-US"/><epsilon xml:lang="en-GB"/><alpha><chi number="solid 1px green" xml:lang="nb"><green>This text must be green</green></chi></alpha></iota></lambda></iota></zeta></zeta></alpha></iota></nu></delta></beta></chi></xsl:if>
+</xsl:template>
+</xsl:stylesheet>

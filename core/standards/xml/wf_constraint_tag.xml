@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+
+<!-- Testcase: wf_constraint_tag.xml -->
+
+<!-- Description: To test well-formed constraints in XML. This tests 'unique att spec', a well-formed constraint of start or empty tags, using the same attribute multiple times in different tags -->
+
+<!-- Author:  Christine Dreckman  Date: 10/28/99 -->
+
+<!-- 
+   - The contents of this file are subject to the Mozilla Public
+   - License Version 1.1 (the "License"); you may not use this file
+   - except in compliance with the License. You may obtain a copy of
+   - the License at http://www.mozilla.org/MPL/
+   - 
+   - Software distributed under the License is distributed on an "AS
+   - IS" basis, WITHOUT WARRANTY OF ANY KIND, either express or
+   - implied. See the License for the specific language governing
+   - rights and limitations under the License.
+   - 
+   - The Original Code is Mozilla Communicator Test Cases.
+   - 
+   - The Initial Developer of the Original Code is Netscape Communications
+   - Corp.  Portions created by Netscape Communications Corp. are 
+   - Copyright (C) 1999 Netscape Communications Corp.  All
+   - Rights Reserved.
+   - 
+   - Contributor(s): 
+  -->
+<!-- Purpose: To test 'unique att spec', a well-formed constraint of 'stag', using the same attribute multiple times in different tags. Per spec, no attribute name may appear more than once in the same start-tag or empty-element tag -->
+
+<!-- Expected result: Document is well formed. Three sentences should display -->
+
+<doc>
+
+<test attribute="firsttag">Well formed document - if three sentences display, there is no bug.
+
+</test>
+
+<test attribute="secondtag">Sentence two.
+
+</test>
+
+<test attribute="thirdtag">Sentence three.
+
+</test>
+
+</doc>
+

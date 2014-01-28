@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:template match="xsl:template">
+<result>
+<xsl:choose>
+<xsl:when test='//upsilon[@xml:lang="en"]/theta[not(following-sibling::*)]//nu[@delete][@xml:lang="no-nb"][not(preceding-sibling::*)][not(child::node())][following-sibling::zeta[starts-with(@string,"_bl")][preceding-sibling::*[position() = 1]]/mu[@xml:id="id1"][not(preceding-sibling::*)]/beta[@xml:id="id2"]//upsilon[@xml:id="id3"][not(following-sibling::*)]/chi[contains(concat(@abort,"$"),"tribute-value$")][@xml:lang="en-GB"][@xml:id="id4"]/delta[@number][not(preceding-sibling::*)][not(child::node())][following-sibling::nu[not(following-sibling::*)]//epsilon[@xml:id="id5"][not(preceding-sibling::*)][not(child::node())][following-sibling::nu[@xml:lang="no"][preceding-sibling::*[position() = 1]]/tau[@xml:id="id6"][not(preceding-sibling::*)][following-sibling::*[position()=1]][not(child::node())][following-sibling::theta[@content][@xml:lang="en"][preceding-sibling::*[position() = 1]]//zeta[@and][@xml:id="id7"][following-sibling::mu[@insert="solid 1px green"][@xml:lang="en"][preceding-sibling::*[position() = 1]][not(following-sibling::*)]/xi[starts-with(@object,"10")][not(preceding-sibling::*)][not(following-sibling::*)][position() = 1]]][position() = 1]]]]'>	
+	<xsl:value-of select="'PASS'"/>
+</xsl:when>
+<xsl:otherwise>FAIL</xsl:otherwise>
+</xsl:choose>
+</result>
+<xsl:if test="false()">
+<upsilon xml:lang="en"><theta><nu delete="attribute-value" xml:lang="no-nb"/><zeta string="_blank"><mu xml:id="id1"><beta xml:id="id2"><upsilon xml:id="id3"><chi abort="attribute-value" xml:lang="en-GB" xml:id="id4"><delta number="content"/><nu><epsilon xml:id="id5"/><nu xml:lang="no"><tau xml:id="id6"/><theta content="content" xml:lang="en"><zeta and="content" xml:id="id7"/><mu insert="solid 1px green" xml:lang="en"><xi object="100%"><green>This text must be green</green></xi></mu></theta></nu></nu></chi></upsilon></beta></mu></zeta></theta></upsilon></xsl:if>
+</xsl:template>
+</xsl:stylesheet>

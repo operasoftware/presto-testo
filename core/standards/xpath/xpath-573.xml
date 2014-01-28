@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:template match="xsl:template">
+<result>
+<xsl:choose>
+<xsl:when test='//iota[contains(@data,"ank")][@xml:id="id1"]//*[@xml:id="id2"][not(child::node())][following-sibling::beta[preceding-sibling::*[position() = 1]][not(child::node())][following-sibling::iota[following-sibling::*[@title][@xml:lang="en-US"][@xml:id="id3"][not(following-sibling::*)]//psi[@xml:id="id4"]//chi[@xml:id="id5"][not(child::node())][following-sibling::kappa[contains(@desciption,"%")][preceding-sibling::*[position() = 1]][not(child::node())][following-sibling::zeta[@xml:lang="en-GB"][@xml:id="id6"][preceding-sibling::*[position() = 2]]//psi[@class][@xml:id="id7"][not(preceding-sibling::*)][not(following-sibling::*)]//mu[@xml:lang="no"]//omicron[starts-with(@abort,"1")][@xml:lang="en"][not(preceding-sibling::*)][following-sibling::*[position()=1]][not(child::node())][following-sibling::lambda[@xml:lang="nb"][@xml:id="id8"][preceding-sibling::*[position() = 1]][not(following-sibling::*)]/pi[@name="false"][@xml:lang="no"][not(preceding-sibling::*)]//zeta[@content][@xml:lang="nb"]/psi[@att="content"][@xml:lang="en"][@xml:id="id9"][following-sibling::rho[@xml:id="id10"][not(following-sibling::*)]/kappa[@xml:lang="en-US"]//lambda[starts-with(concat(@content,"-"),"attribute-")][@xml:lang="no-nb"][not(preceding-sibling::*)][following-sibling::pi[starts-with(@string,"at")][@xml:lang="no"][@xml:id="id11"][preceding-sibling::*[position() = 1]]/kappa[starts-with(@number,"th")][@xml:id="id12"]//mu[@xml:id="id13"][not(preceding-sibling::mu)][following-sibling::kappa[not(preceding-sibling::kappa)]]][position() = 1]][position() = 1]][position() = 1]][position() = 1]][position() = 1]]][position() = 1]]'>	
+	<xsl:value-of select="'PASS'"/>
+</xsl:when>
+<xsl:otherwise>FAIL</xsl:otherwise>
+</xsl:choose>
+</result>
+<xsl:if test="false()">
+<iota data="_blank" xml:id="id1"><any xml:id="id2"/><beta/><iota/><any title="content" xml:lang="en-US" xml:id="id3"><psi xml:id="id4"><chi xml:id="id5"/><kappa desciption="100%"/><zeta xml:lang="en-GB" xml:id="id6"><psi class="100%" xml:id="id7"><mu xml:lang="no"><omicron abort="100%" xml:lang="en"/><lambda xml:lang="nb" xml:id="id8"><pi name="false" xml:lang="no"><zeta content="content" xml:lang="nb"><psi att="content" xml:lang="en" xml:id="id9"/><rho xml:id="id10"><kappa xml:lang="en-US"><lambda content="attribute" xml:lang="no-nb"/><pi string="attribute" xml:lang="no" xml:id="id11"><kappa number="this.nodeValue" xml:id="id12"><mu xml:id="id13"/><kappa><green>This text must be green</green></kappa></kappa></pi></kappa></rho></zeta></pi></lambda></mu></psi></zeta></psi></any></iota></xsl:if>
+</xsl:template>
+</xsl:stylesheet>

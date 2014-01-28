@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:template match="xsl:template">
+<result>
+<xsl:choose>
+<xsl:when test='//chi[starts-with(@attr,"another attribu")][@xml:id="id1"]/omicron[@attr="123456789"][not(preceding-sibling::*)]/delta[not(preceding-sibling::*)][not(child::node())][following-sibling::chi[starts-with(@insert,"a")][@xml:lang="nb"][@xml:id="id2"][not(child::node())][following-sibling::lambda[contains(@object,"se")][@xml:lang="no"][@xml:id="id3"][preceding-sibling::*[position() = 2]][not(following-sibling::*)]//omicron[@xml:lang="no-nb"][not(following-sibling::*)]//*[@xml:lang="en-US"][@xml:id="id4"][not(preceding-sibling::*)][not(child::node())][following-sibling::*[contains(@name,"_blan")][@xml:lang="en"][@xml:id="id5"][following-sibling::*[position()=2]][following-sibling::upsilon[@xml:id="id6"][following-sibling::epsilon[@xml:lang="no"][@xml:id="id7"]/*[starts-with(concat(@attr,"-"),"attribute-")][@xml:lang="no-nb"][not(preceding-sibling::*)][following-sibling::mu[preceding-sibling::*[position() = 1]][not(child::node())][following-sibling::epsilon[@delete][@xml:lang="en-GB"][@xml:id="id8"][preceding-sibling::*[position() = 2]][following-sibling::eta[@xml:id="id9"][preceding-sibling::*[position() = 3]][following-sibling::omega[@desciption="_blank"][@xml:id="id10"][preceding-sibling::*[position() = 4]][not(following-sibling::*)]//rho[@att="another attribute value"][@xml:id="id11"][not(preceding-sibling::*)][not(following-sibling::*)]/mu[@xml:id="id12"][not(preceding-sibling::*)]//theta[@xml:id="id13"][not(preceding-sibling::*)][not(following-sibling::*)]][position() = 1]]]][position() = 1]][position() = 1]][position() = 1]]]]'>	
+	<xsl:value-of select="'PASS'"/>
+</xsl:when>
+<xsl:otherwise>FAIL</xsl:otherwise>
+</xsl:choose>
+</result>
+<xsl:if test="false()">
+<chi attr="another attribute value" xml:id="id1"><omicron attr="123456789"><delta/><chi insert="attribute" xml:lang="nb" xml:id="id2"/><lambda object="false" xml:lang="no" xml:id="id3"><omicron xml:lang="no-nb"><any xml:lang="en-US" xml:id="id4"/><any name="_blank" xml:lang="en" xml:id="id5"/><upsilon xml:id="id6"/><epsilon xml:lang="no" xml:id="id7"><any attr="attribute" xml:lang="no-nb"/><mu/><epsilon delete="solid 1px green" xml:lang="en-GB" xml:id="id8"/><eta xml:id="id9"/><omega desciption="_blank" xml:id="id10"><rho att="another attribute value" xml:id="id11"><mu xml:id="id12"><theta xml:id="id13"><green>This text must be green</green></theta></mu></rho></omega></epsilon></omicron></lambda></omicron></chi></xsl:if>
+</xsl:template>
+</xsl:stylesheet>

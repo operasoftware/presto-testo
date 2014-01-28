@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:template match="xsl:template">
+<result>
+<xsl:choose>
+<xsl:when test='//nu[@xml:id="id1"]/kappa[@xml:lang="nb"][@xml:id="id2"][following-sibling::xi//theta[@src][following-sibling::*[position()=3]][not(child::node())][following-sibling::rho[@xml:lang="no-nb"][@xml:id="id3"][preceding-sibling::*[position() = 1]][following-sibling::mu[contains(@att,"blan")][preceding-sibling::*[position() = 2]][not(child::node())][following-sibling::pi[contains(@or,"r attribute va")][preceding-sibling::*[position() = 3]][not(following-sibling::*)]//gamma[contains(@delete,"nodeValue")][@xml:id="id4"][not(preceding-sibling::*)][following-sibling::pi[@xml:id="id5"][preceding-sibling::*[position() = 1]][not(child::node())][following-sibling::alpha[following-sibling::kappa[contains(@src,"tent")][@xml:id="id6"][not(following-sibling::*)][position() = 1]]]]][position() = 1]]]]'>	
+	<xsl:value-of select="'PASS'"/>
+</xsl:when>
+<xsl:otherwise>FAIL</xsl:otherwise>
+</xsl:choose>
+</result>
+<xsl:if test="false()">
+<nu xml:id="id1"><kappa xml:lang="nb" xml:id="id2"/><xi><theta src="attribute"/><rho xml:lang="no-nb" xml:id="id3"/><mu att="_blank"/><pi or="another attribute value"><gamma delete="this.nodeValue" xml:id="id4"/><pi xml:id="id5"/><alpha/><kappa src="content" xml:id="id6"><green>This text must be green</green></kappa></pi></xi></nu></xsl:if>
+</xsl:template>
+</xsl:stylesheet>

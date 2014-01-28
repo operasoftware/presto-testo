@@ -1,0 +1,138 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta name="generator"
+
+content="HTML Tidy for Mac OS, see www.w3.org" />
+
+<!-- testcase: img_longdesc.xml -->
+
+<!-- description: HTML 4.0 Text Markup Element, IMG with the LONGDESC attribute -->
+
+<!-- Author: Eli Goldberg, Date: 2/24/99 -->
+
+<!-- Modified: Changed doctype to xhtml 1.0 transitional Author: Chris Petersen Date: 1/22/01 -->
+
+<!-- 
+
+
+
+   - The contents of this file are subject to the Mozilla Public
+
+
+
+   - License Version 1.1 (the "License"); you may not use this file
+
+
+
+   - except in compliance with the License. You may obtain a copy of
+
+
+
+   - the License at http://www.mozilla.org/MPL/
+
+
+
+   - 
+
+
+
+   - Software distributed under the License is distributed on an "AS
+
+
+
+   - IS" basis, WITHOUT WARRANTY OF ANY KIND, either express or
+
+
+
+   - implied. See the License for the specific language governing
+
+
+
+   - rights and limitations under the License.
+
+
+
+   - 
+
+
+
+   - The Original Code is Mozilla Communicator Test Cases.
+
+
+
+   - 
+
+
+
+   - The Initial Developer of the Original Code is Netscape Communications
+
+
+
+   - Corp.  Portions created by Netscape Communications Corp. are 
+
+
+
+   - Copyright (C) 1999 Netscape Communications Corp.  All
+
+
+
+   - Rights Reserved.
+
+
+
+   - 
+
+
+
+   - Contributor(s): 
+
+
+
+  -->
+
+<!-- Purpose: To test the LONGDESC attribute with the IMG element. http://www.bath.ac.uk/%7Epy8ieh/internet/eviltests/IMGlongdesc.xml for more info. -->
+
+<!-- Expected result: Attribute not supported by Gecko 1.0, per bug #1996. Were it supported, it would a link to a long description of the image. -->
+
+<title>XHTML Functional -- IMG - LONGDESC</title>
+
+</head>
+
+<body>
+
+Image long description using a valid relative URL:<br />
+
+ <img src="images/eggplant.gif" alt="eggplant"
+
+longdesc="image_alt.xml" /> <br />
+
+ Image long description using a valid absolute URL:<br />
+
+ <img src="images/eggplant.gif" alt="eggplant"
+
+longdesc="http://www.microsoft.com" /> <br />
+
+ Image long description using an invalid relative URL:<br />
+
+ <img src="images/eggplant.gif" alt="eggplant"
+
+longdesc="iamabadurl.xml" /> <br />
+
+ Image long description using an invalid absolute URL:<br />
+
+ <img src="images/eggplant.gif" alt="eggplant"
+
+longdesc="http://ww.netscape.com" /> <br />
+
+</body>
+
+</html>
+
+
+

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:template match="xsl:template">
+<result>
+<xsl:choose>
+<xsl:when test='//phi[@xml:lang="en"][@xml:id="id1"]//omicron[not(preceding-sibling::*)][not(following-sibling::*)]//theta[@xml:lang="no-nb"]/delta[@xml:id="id2"]/phi[starts-with(@or,"another attribute value")][@xml:lang="en"][not(preceding-sibling::*)][not(child::node())][following-sibling::chi[@xml:lang="en-GB"][@xml:id="id3"][preceding-sibling::*[position() = 1]][not(child::node())][following-sibling::omega[@xml:lang="no"][@xml:id="id4"][not(child::node())][following-sibling::rho[@xml:id="id5"][preceding-sibling::*[position() = 3]][not(preceding-sibling::rho)][following-sibling::upsilon[@xml:id="id6"][following-sibling::*[position()=1]][following-sibling::omicron[contains(concat(@attr,"$"),"ttribute value$")][@xml:lang="en-US"]//phi[@xml:id="id7"][following-sibling::*[position()=3]][not(child::node())][following-sibling::gamma[@name][@xml:lang="en"][preceding-sibling::*[position() = 1]][not(child::node())][following-sibling::gamma[contains(@data,"ank")][@xml:lang="en-GB"][preceding-sibling::*[position() = 2]][following-sibling::upsilon[not(following-sibling::*)]//tau[@xml:lang="en-GB"][not(preceding-sibling::*)]/chi[following-sibling::*[position()=1]][not(child::node())][following-sibling::pi[contains(@or,"blank")][@xml:lang="nb"]]][position() = 1]][position() = 1]]][position() = 1]]][position() = 1]]]'>	
+	<xsl:value-of select="'PASS'"/>
+</xsl:when>
+<xsl:otherwise>FAIL</xsl:otherwise>
+</xsl:choose>
+</result>
+<xsl:if test="false()">
+<phi xml:lang="en" xml:id="id1"><omicron><theta xml:lang="no-nb"><delta xml:id="id2"><phi or="another attribute value" xml:lang="en"/><chi xml:lang="en-GB" xml:id="id3"/><omega xml:lang="no" xml:id="id4"/><rho xml:id="id5"/><upsilon xml:id="id6"/><omicron attr="attribute value" xml:lang="en-US"><phi xml:id="id7"/><gamma name="this.nodeValue" xml:lang="en"/><gamma data="_blank" xml:lang="en-GB"/><upsilon><tau xml:lang="en-GB"><chi/><pi or="_blank" xml:lang="nb"><green>This text must be green</green></pi></tau></upsilon></omicron></delta></theta></omicron></phi></xsl:if>
+</xsl:template>
+</xsl:stylesheet>

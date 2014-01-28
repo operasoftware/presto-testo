@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:template match="xsl:template">
+<result>
+<xsl:choose>
+<xsl:when test='//psi[contains(@name,"e")][@xml:lang="no"][@xml:id="id1"]//chi[@xml:lang="en"][@xml:id="id2"][not(preceding-sibling::*)][not(child::node())][following-sibling::phi[@xml:id="id3"][not(following-sibling::*)]/alpha[not(preceding-sibling::*)]//nu[@xml:id="id4"]//kappa[contains(concat(@false,"$"),"nother attribute value$")][following-sibling::sigma[@xml:lang="en-US"][not(following-sibling::*)]/mu[@xml:id="id5"][not(preceding-sibling::*)][following-sibling::lambda[@xml:lang="no"][preceding-sibling::*[position() = 1]][not(child::node())][following-sibling::nu[starts-with(@delete,"solid 1p")]/psi[@xml:lang="no-nb"][not(preceding-sibling::*)][following-sibling::*[position()=1]][not(child::node())][following-sibling::omega[not(following-sibling::*)]/chi[contains(@name,"%")][@xml:lang="no-nb"][@xml:id="id6"][following-sibling::phi[preceding-sibling::*[position() = 1]]//iota[@xml:lang="no-nb"][@xml:id="id7"][not(preceding-sibling::*)][not(child::node())][following-sibling::xi[preceding-sibling::*[position() = 1]][not(following-sibling::*)]//chi[@xml:lang="en"][@xml:id="id8"][not(preceding-sibling::*)]/chi[starts-with(concat(@delete,"-"),"true-")][@xml:lang="en-US"][position() = 1]]]][position() = 1]]][position() = 1]][position() = 1]]'>	
+	<xsl:value-of select="'PASS'"/>
+</xsl:when>
+<xsl:otherwise>FAIL</xsl:otherwise>
+</xsl:choose>
+</result>
+<xsl:if test="false()">
+<psi name="another attribute value" xml:lang="no" xml:id="id1"><chi xml:lang="en" xml:id="id2"/><phi xml:id="id3"><alpha><nu xml:id="id4"><kappa false="another attribute value"/><sigma xml:lang="en-US"><mu xml:id="id5"/><lambda xml:lang="no"/><nu delete="solid 1px green"><psi xml:lang="no-nb"/><omega><chi name="100%" xml:lang="no-nb" xml:id="id6"/><phi><iota xml:lang="no-nb" xml:id="id7"/><xi><chi xml:lang="en" xml:id="id8"><chi delete="true" xml:lang="en-US"><green>This text must be green</green></chi></chi></xi></phi></omega></nu></sigma></nu></alpha></phi></psi></xsl:if>
+</xsl:template>
+</xsl:stylesheet>

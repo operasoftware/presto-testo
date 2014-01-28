@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:template match="xsl:template">
+<result>
+<xsl:choose>
+<xsl:when test='//epsilon[starts-with(@insert,"fa")][@xml:lang="en-US"][@xml:id="id1"]/eta[contains(concat(@class,"$"),"e$")][@xml:lang="en"]//nu[starts-with(concat(@string,"-"),"this-")][@xml:id="id2"][following-sibling::alpha[contains(concat(@name,"$"),"tribute$")][@xml:lang="en-US"][following-sibling::upsilon[preceding-sibling::*[position() = 2]]//nu[not(preceding-sibling::*)][following-sibling::upsilon[@xml:lang="en-GB"][not(child::node())][following-sibling::zeta[starts-with(@class,"con")][@xml:lang="en-US"][preceding-sibling::*[position() = 2]][not(child::node())][following-sibling::alpha[preceding-sibling::*[position() = 3]][not(following-sibling::*)]/omicron[following-sibling::iota[not(child::node())][following-sibling::theta[@xml:lang="no"][@xml:id="id3"][preceding-sibling::*[position() = 2]][not(child::node())][following-sibling::sigma[@xml:id="id4"][not(child::node())][following-sibling::alpha[@xml:id="id5"][following-sibling::sigma[starts-with(@content,"10")][@xml:id="id6"][not(child::node())][following-sibling::omicron[@content="true"][@xml:id="id7"][position() = 1]]]][position() = 1]][position() = 1]]]]]][position() = 1]][position() = 1]]'>	
+	<xsl:value-of select="'PASS'"/>
+</xsl:when>
+<xsl:otherwise>FAIL</xsl:otherwise>
+</xsl:choose>
+</result>
+<xsl:if test="false()">
+<epsilon insert="false" xml:lang="en-US" xml:id="id1"><eta class="true" xml:lang="en"><nu string="this-is-att-value" xml:id="id2"/><alpha name="attribute" xml:lang="en-US"/><upsilon><nu/><upsilon xml:lang="en-GB"/><zeta class="content" xml:lang="en-US"/><alpha><omicron/><iota/><theta xml:lang="no" xml:id="id3"/><sigma xml:id="id4"/><alpha xml:id="id5"/><sigma content="100%" xml:id="id6"/><omicron content="true" xml:id="id7"><green>This text must be green</green></omicron></alpha></upsilon></eta></epsilon></xsl:if>
+</xsl:template>
+</xsl:stylesheet>

@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ev="http://www.w3.org/2001/xml-events">
+<head>
+<title>Blur event</title>
+</head>
+<body>
+<div>
+<script type="application/ecmascript" ev:event="blur" ev:phase="capture">
+<![CDATA[
+document.getElementsByTagName('tt')[0].firstChild.nodeValue = "PASSED";
+]]>
+</script>
+	<input name="in" type="radio" value="1"/>Select first option
+</div>
+<div>
+	<input name="in" type="radio" value="2"/>Then select second one
+</div>
+<div><tt>NOT TESTED</tt></div>
+</body>
+</html>

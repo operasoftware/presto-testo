@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:template match="xsl:template">
+<result>
+<xsl:choose>
+<xsl:when test='//alpha[contains(concat(@attrib,"$"),"89$")][@xml:id="id1"]//phi[starts-with(concat(@src,"-"),"this.nodeValue-")][@xml:lang="en"][not(following-sibling::*)]/kappa[contains(@abort,"eValue")][@xml:lang="no"][not(preceding-sibling::*)]//upsilon[@attr="this.nodeValue"][not(child::node())][following-sibling::sigma//omega[@class][@xml:lang="en"][following-sibling::phi[@xml:id="id2"]/gamma[contains(concat(@abort,"$"),"eValue$")][@xml:lang="no-nb"][@xml:id="id3"][not(preceding-sibling::*)][following-sibling::zeta[starts-with(@attr,"1")][@xml:id="id4"][preceding-sibling::*[position() = 1]]/psi[starts-with(concat(@insert,"-"),"_blank-")][@xml:lang="no-nb"][@xml:id="id5"]//zeta[@attrib][@xml:lang="en-US"][not(preceding-sibling::*)][not(following-sibling::*)]/omega[@true="content"]/alpha[@xml:lang="nb"][not(preceding-sibling::*)][not(child::node())][following-sibling::kappa[@data][preceding-sibling::*[position() = 1]][not(child::node())][following-sibling::chi[@xml:id="id6"][not(following-sibling::*)]//rho[contains(concat(@att,"$"),"ue$")][@xml:id="id7"][not(preceding-sibling::*)]//*[@xml:lang="no"][not(preceding-sibling::*)][not(following-sibling::*)]][position() = 1]][position() = 1]][position() = 1]][position() = 1]]'>	
+	<xsl:value-of select="'PASS'"/>
+</xsl:when>
+<xsl:otherwise>FAIL</xsl:otherwise>
+</xsl:choose>
+</result>
+<xsl:if test="false()">
+<alpha attrib="123456789" xml:id="id1"><phi src="this.nodeValue" xml:lang="en"><kappa abort="this.nodeValue" xml:lang="no"><upsilon attr="this.nodeValue"/><sigma><omega class="100%" xml:lang="en"/><phi xml:id="id2"><gamma abort="this.nodeValue" xml:lang="no-nb" xml:id="id3"/><zeta attr="100%" xml:id="id4"><psi insert="_blank" xml:lang="no-nb" xml:id="id5"><zeta attrib="attribute value" xml:lang="en-US"><omega true="content"><alpha xml:lang="nb"/><kappa data="_blank"/><chi xml:id="id6"><rho att="true" xml:id="id7"><any xml:lang="no"><green>This text must be green</green></any></rho></chi></omega></zeta></psi></zeta></phi></sigma></kappa></phi></alpha></xsl:if>
+</xsl:template>
+</xsl:stylesheet>

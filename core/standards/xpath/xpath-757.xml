@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:template match="xsl:template">
+<result>
+<xsl:choose>
+<xsl:when test='//lambda[starts-with(@string,"tr")][@xml:lang="en-US"][@xml:id="id1"]/eta[not(following-sibling::*)]/alpha[@xml:lang="no-nb"][not(preceding-sibling::*)][following-sibling::beta[@xml:id="id2"][not(following-sibling::*)]//lambda[@xml:lang="en-US"][not(preceding-sibling::*)][not(following-sibling::*)]/rho[contains(@true,"l")][@xml:lang="nb"][@xml:id="id3"][not(following-sibling::*)]]'>	
+	<xsl:value-of select="'PASS'"/>
+</xsl:when>
+<xsl:otherwise>FAIL</xsl:otherwise>
+</xsl:choose>
+</result>
+<xsl:if test="false()">
+<lambda string="true" xml:lang="en-US" xml:id="id1"><eta><alpha xml:lang="no-nb"/><beta xml:id="id2"><lambda xml:lang="en-US"><rho true="_blank" xml:lang="nb" xml:id="id3"><green>This text must be green</green></rho></lambda></beta></eta></lambda></xsl:if>
+</xsl:template>
+</xsl:stylesheet>

@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ev="http://www.w3.org/2001/xml-events">
+<head>
+<title>Scroll event</title>
+</head>
+<body>
+<script type="application/ecmascript" ev:event="scroll">
+<![CDATA[
+document.getElementsByTagName('tt')[0].firstChild.nodeValue = "PASSED";
+]]>
+</script>
+<div>Scroll to the bottom of the page</div>
+<div style="margin:50cm 0 2cm 0;"><tt>FAILED</tt></div>
+</body>
+</html>

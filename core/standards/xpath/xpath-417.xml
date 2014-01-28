@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:template match="xsl:template">
+<result>
+<xsl:choose>
+<xsl:when test='//theta[@false]/mu[@attrib][@xml:id="id1"][not(following-sibling::*)]//lambda[@and][@xml:lang="en-GB"][@xml:id="id2"][following-sibling::*[position()=1]][following-sibling::psi[@xml:lang="en-GB"][@xml:id="id3"]/epsilon[following-sibling::delta[@xml:id="id4"][preceding-sibling::*[position() = 1]]/mu[@xml:id="id5"][not(preceding-sibling::*)][following-sibling::lambda[@xml:lang="nb"][@xml:id="id6"][preceding-sibling::*[position() = 1]]//theta[@xml:lang="en-GB"][@xml:id="id7"][following-sibling::pi[contains(@name,"en")][@xml:lang="en-GB"][@xml:id="id8"]//zeta[@title][@xml:lang="nb"][@xml:id="id9"][not(preceding-sibling::*)][not(following-sibling::*)]/rho[not(following-sibling::*)]]][position() = 1]][position() = 1]]'>	
+	<xsl:value-of select="'PASS'"/>
+</xsl:when>
+<xsl:otherwise>FAIL</xsl:otherwise>
+</xsl:choose>
+</result>
+<xsl:if test="false()">
+<theta false="this-is-att-value"><mu attrib="false" xml:id="id1"><lambda and="this.nodeValue" xml:lang="en-GB" xml:id="id2"/><psi xml:lang="en-GB" xml:id="id3"><epsilon/><delta xml:id="id4"><mu xml:id="id5"/><lambda xml:lang="nb" xml:id="id6"><theta xml:lang="en-GB" xml:id="id7"/><pi name="solid 1px green" xml:lang="en-GB" xml:id="id8"><zeta title="this-is-att-value" xml:lang="nb" xml:id="id9"><rho><green>This text must be green</green></rho></zeta></pi></lambda></delta></psi></mu></theta></xsl:if>
+</xsl:template>
+</xsl:stylesheet>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:template match="xsl:template">
+<result>
+<xsl:choose>
+<xsl:when test='//zeta[@token][@xml:id="id1"]/omega[@xml:lang="no-nb"][@xml:id="id2"]/nu[contains(@insert,"gre")][@xml:lang="no"][@xml:id="id3"]/upsilon[not(preceding-sibling::*)]/iota[@desciption][@xml:id="id4"]/alpha[@content][@xml:lang="en-US"][@xml:id="id5"][not(preceding-sibling::*)][following-sibling::*[@attrib][@xml:id="id6"][not(child::node())][following-sibling::xi[starts-with(@attr,"content")][@xml:lang="en"][@xml:id="id7"][following-sibling::iota[preceding-sibling::*[position() = 3]][not(following-sibling::*)]//pi[@xml:lang="en"][@xml:id="id8"][not(preceding-sibling::*)][following-sibling::zeta[@true][@xml:lang="en-GB"][@xml:id="id9"][following-sibling::*[position()=2]][following-sibling::psi[@content][@xml:lang="no-nb"][not(child::node())][following-sibling::*[@xml:id="id10"][not(following-sibling::*)][not(following-sibling::any)]/alpha[@xml:lang="en-US"][@xml:id="id11"][not(preceding-sibling::*)][not(following-sibling::*)]//epsilon[starts-with(concat(@content,"-"),"this.nodeValue-")][@xml:id="id12"]][position() = 1]][position() = 1]][position() = 1]][position() = 1]]]'>	
+	<xsl:value-of select="'PASS'"/>
+</xsl:when>
+<xsl:otherwise>FAIL</xsl:otherwise>
+</xsl:choose>
+</result>
+<xsl:if test="false()">
+<zeta token="attribute-value" xml:id="id1"><omega xml:lang="no-nb" xml:id="id2"><nu insert="solid 1px green" xml:lang="no" xml:id="id3"><upsilon><iota desciption="solid 1px green" xml:id="id4"><alpha content="false" xml:lang="en-US" xml:id="id5"/><any attrib="another attribute value" xml:id="id6"/><xi attr="content" xml:lang="en" xml:id="id7"/><iota><pi xml:lang="en" xml:id="id8"/><zeta true="attribute" xml:lang="en-GB" xml:id="id9"/><psi content="false" xml:lang="no-nb"/><any xml:id="id10"><alpha xml:lang="en-US" xml:id="id11"><epsilon content="this.nodeValue" xml:id="id12"><green>This text must be green</green></epsilon></alpha></any></iota></iota></upsilon></nu></omega></zeta></xsl:if>
+</xsl:template>
+</xsl:stylesheet>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:template match="xsl:template">
+<result>
+<xsl:choose>
+<xsl:when test='//sigma[@token]//eta[@xml:lang="no"][@xml:id="id1"][not(preceding-sibling::*)][following-sibling::*[@number][@xml:lang="no-nb"][@xml:id="id2"][preceding-sibling::*[position() = 1]]//omicron[@data][@xml:lang="nb"][not(preceding-sibling::*)][following-sibling::*[position()=2]][following-sibling::lambda[@xml:id="id3"][preceding-sibling::*[position() = 1]][following-sibling::tau[not(following-sibling::*)]/lambda[@xml:id="id4"][not(preceding-sibling::*)]/mu[starts-with(@title,"s")][@xml:id="id5"][not(preceding-sibling::*)][following-sibling::iota[@xml:lang="en"][preceding-sibling::*[position() = 1]][not(following-sibling::*)]//omicron[@src][@xml:lang="no"][not(child::node())][following-sibling::psi[@xml:lang="nb"][preceding-sibling::*[position() = 1]][following-sibling::theta[@xml:lang="no-nb"][not(following-sibling::*)]/beta[contains(concat(@token,"$"),"r attribute value$")][@xml:lang="no-nb"][not(preceding-sibling::*)]//chi[@token][@xml:lang="no"][@xml:id="id6"][not(preceding-sibling::*)][not(following-sibling::*)]//nu[@title="false"][@xml:lang="en-US"][@xml:id="id7"]//lambda[@desciption][@xml:lang="en-GB"][not(preceding-sibling::*)][not(following-sibling::*)]//chi[@xml:lang="en-US"][not(following-sibling::*)]//iota/mu[@xml:id="id8"][not(preceding-sibling::*)][not(following-sibling::*)]//lambda[@xml:id="id9"][not(child::node())][following-sibling::gamma[contains(concat(@string,"$"),"tent$")][@xml:lang="nb"][@xml:id="id10"]/lambda[@desciption][@xml:lang="en"][@xml:id="id11"][not(preceding-sibling::*)][following-sibling::*[position()=2]][following-sibling::xi[@xml:id="id12"][preceding-sibling::*[position() = 1]][not(following-sibling::xi)][following-sibling::theta[starts-with(concat(@content,"-"),"attribute-")][@xml:lang="en-GB"][@xml:id="id13"][not(following-sibling::*)]][position() = 1]][position() = 1]][position() = 1]]]]][position() = 1]]]'>	
+	<xsl:value-of select="'PASS'"/>
+</xsl:when>
+<xsl:otherwise>FAIL</xsl:otherwise>
+</xsl:choose>
+</result>
+<xsl:if test="false()">
+<sigma token="attribute value"><eta xml:lang="no" xml:id="id1"/><any number="123456789" xml:lang="no-nb" xml:id="id2"><omicron data="attribute value" xml:lang="nb"/><lambda xml:id="id3"/><tau><lambda xml:id="id4"><mu title="solid 1px green" xml:id="id5"/><iota xml:lang="en"><omicron src="false" xml:lang="no"/><psi xml:lang="nb"/><theta xml:lang="no-nb"><beta token="another attribute value" xml:lang="no-nb"><chi token="_blank" xml:lang="no" xml:id="id6"><nu title="false" xml:lang="en-US" xml:id="id7"><lambda desciption="100%" xml:lang="en-GB"><chi xml:lang="en-US"><iota><mu xml:id="id8"><lambda xml:id="id9"/><gamma string="content" xml:lang="nb" xml:id="id10"><lambda desciption="_blank" xml:lang="en" xml:id="id11"/><xi xml:id="id12"/><theta content="attribute" xml:lang="en-GB" xml:id="id13"><green>This text must be green</green></theta></gamma></mu></iota></chi></lambda></nu></chi></beta></theta></iota></lambda></tau></any></sigma></xsl:if>
+</xsl:template>
+</xsl:stylesheet>

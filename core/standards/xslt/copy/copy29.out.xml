@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<out><?xml-stylesheet type="text/xsl" href="copy29.xsl"?><doc name="foo">
+  <!-- This is a comment -->
+    test&lt; 
+  <?a-pi some data?>
+</doc>
+<?xml-stylesheet type="text/xsl" href="copy29.xsl"?><doc name="foo">
+  <!-- This is a comment -->
+    test&lt; 
+  <?a-pi some data?>
+</doc></out>

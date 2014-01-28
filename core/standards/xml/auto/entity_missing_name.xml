@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<!-- Entity name missing, not well-formed-->
+<!-- Testcase: entity_missing_name.xml -->
+<!-- Description: The test the xml parser's ability to report a error when a document is NOT well-formed  -->
+<!-- Author:  Chris Petersen  Date: 12/06/2000 -->
+<!DOCTYPE main [
+<!ENTITY  "This the replacement text for the entity">
+]>
+<main>
+This text should not appear
+</main>

@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+
+<!-- Testcase: comments_including_hyphen.xml -->
+
+<!-- Description: To test 'comments' in XML. This tests the inclusion of a double hyphen in comments -->
+
+<!-- Author:  Christine Dreckman  Date: 10/25/99 -->
+
+<!-- 
+   - The contents of this file are subject to the Mozilla Public
+   - License Version 1.1 (the "License"); you may not use this file
+   - except in compliance with the License. You may obtain a copy of
+   - the License at http://www.mozilla.org/MPL/
+   - 
+   - Software distributed under the License is distributed on an "AS
+   - IS" basis, WITHOUT WARRANTY OF ANY KIND, either express or
+   - implied. See the License for the specific language governing
+   - rights and limitations under the License.
+   - 
+   - The Original Code is Mozilla Communicator Test Cases.
+   - 
+   - The Initial Developer of the Original Code is Netscape Communications
+   - Corp.  Portions created by Netscape Communications Corp. are 
+   - Copyright (C) 1999 Netscape Communications Corp.  All
+   - Rights Reserved.
+   - 
+   - Contributor(s): 
+  -->
+<!-- Purpose: To test 'comments' in XML. This tests the inclusion of a double hyphen in comments -->
+
+<!-- Expected result: The two-hyphen string may not occur inside a comment except at the beginning and ending. A parsing error should be generated -->
+
+<doc>
+
+<!-- You should get a parsing error -- because you cannot use a two-hyphen string inside comment -->
+
+<test>This sentence should not display - if it does, it is a bug</test>
+
+</doc>

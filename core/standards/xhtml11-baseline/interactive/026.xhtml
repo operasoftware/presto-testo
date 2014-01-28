@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>tabindex attribute of area element</title>
+</head>
+<body id="start">
+<p><object type="image/png" data="../hlp/image.png" usemap="#map">images should be enabled</object></p>
+<p>Using tab you should be able to focus all corner areas of image above, 
+as you press tab, focus should move from corner to corner clockwise</p>
+<div>
+<map id="map">
+<area shape="rect" coords="0,0,20,20" tabindex="1" href="#start" alt="alt attribute"/>
+<area shape="rect" coords="100,0,120,20" tabindex="2" href="#start" alt="alt attribute"/>
+<area shape="rect" coords="100,40,120,60" tabindex="3" href="#start" alt="alt attribute"/>
+<area shape="rect" coords="0,40,20,60" tabindex="4" href="data:text/plain,PASS" alt="alt attribute"/>
+</map>
+</div>
+</body>
+</html>
+

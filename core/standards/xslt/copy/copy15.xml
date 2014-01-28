@@ -1,0 +1,14 @@
+<?xml version="1.0"?> 
+<?xml-stylesheet type="text/xsl" href="copy15.xsl"?>
+<OL>
+  <LI>item1</LI>
+  <LI>item2</LI>
+  <LI>item3</LI>
+  <OL>
+    <LI>yes1</LI>
+    <LI>me2</LI>
+    <OL>
+      <LI>subsubitem</LI>
+    </OL>
+  </OL>
+</OL>

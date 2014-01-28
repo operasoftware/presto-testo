@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:template match="xsl:template">
+<result>
+<xsl:choose>
+<xsl:when test='//chi[@xml:lang="en-US"]/epsilon[contains(concat(@attrib,"$"),"ent$")][@xml:lang="en"][not(preceding-sibling::*)][not(child::node())][following-sibling::iota[preceding-sibling::*[position() = 1]][following-sibling::*[position()=1]][following-sibling::rho[not(following-sibling::*)]/chi[@true][@xml:lang="no"][@xml:id="id1"]//zeta[@xml:lang="en-GB"][@xml:id="id2"][following-sibling::theta[@xml:id="id3"][not(child::node())][following-sibling::delta[@xml:lang="no"][not(following-sibling::*)]//alpha[@or="true"][@xml:lang="no"][@xml:id="id4"][not(preceding-sibling::*)][not(child::node())][following-sibling::pi[@xml:lang="no-nb"][preceding-sibling::*[position() = 1]]//nu[contains(concat(@attrib,"$"),"ue$")][@xml:lang="no-nb"][not(preceding-sibling::*)][not(following-sibling::*)]/lambda[contains(concat(@delete,"$"),"se$")][@xml:lang="en"][@xml:id="id5"][following-sibling::kappa[@xml:lang="en-GB"][@xml:id="id6"][following-sibling::chi[contains(@attribute,"d 1px green")]/nu[@xml:lang="en-US"][@xml:id="id7"][not(following-sibling::*)]//phi[@xml:lang="no"][not(preceding-sibling::*)][following-sibling::nu[@xml:id="id8"][preceding-sibling::*[position() = 1]][not(following-sibling::*)][position() = 1]][position() = 1]]][position() = 1]]]]]]'>	
+	<xsl:value-of select="'PASS'"/>
+</xsl:when>
+<xsl:otherwise>FAIL</xsl:otherwise>
+</xsl:choose>
+</result>
+<xsl:if test="false()">
+<chi xml:lang="en-US"><epsilon attrib="content" xml:lang="en"/><iota/><rho><chi true="this-is-att-value" xml:lang="no" xml:id="id1"><zeta xml:lang="en-GB" xml:id="id2"/><theta xml:id="id3"/><delta xml:lang="no"><alpha or="true" xml:lang="no" xml:id="id4"/><pi xml:lang="no-nb"><nu attrib="this.nodeValue" xml:lang="no-nb"><lambda delete="false" xml:lang="en" xml:id="id5"/><kappa xml:lang="en-GB" xml:id="id6"/><chi attribute="solid 1px green"><nu xml:lang="en-US" xml:id="id7"><phi xml:lang="no"/><nu xml:id="id8"><green>This text must be green</green></nu></nu></chi></nu></pi></delta></chi></rho></chi></xsl:if>
+</xsl:template>
+</xsl:stylesheet>

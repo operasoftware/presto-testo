@@ -1,0 +1,132 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta name="generator"
+
+content="HTML Tidy for Mac OS, see www.w3.org" />
+
+<!-- testcase: img_src.xml -->
+
+<!-- description: HTML 4.0 Text Markup Element IMG with the SRC attribute -->
+
+<!-- Author: Eli Goldberg, Date: 2/25/98 -->
+
+<!-- Modified: Changed doctype to xhtml 1.0 transitional Author: Chris Petersen Date: 1/22/01 -->
+
+<!-- 
+
+
+
+   - The contents of this file are subject to the Mozilla Public
+
+
+
+   - License Version 1.1 (the "License"); you may not use this file
+
+
+
+   - except in compliance with the License. You may obtain a copy of
+
+
+
+   - the License at http://www.mozilla.org/MPL/
+
+
+
+   - 
+
+
+
+   - Software distributed under the License is distributed on an "AS
+
+
+
+   - IS" basis, WITHOUT WARRANTY OF ANY KIND, either express or
+
+
+
+   - implied. See the License for the specific language governing
+
+
+
+   - rights and limitations under the License.
+
+
+
+   - 
+
+
+
+   - The Original Code is Mozilla Communicator Test Cases.
+
+
+
+   - 
+
+
+
+   - The Initial Developer of the Original Code is Netscape Communications
+
+
+
+   - Corp.  Portions created by Netscape Communications Corp. are 
+
+
+
+   - Copyright (C) 1999 Netscape Communications Corp.  All
+
+
+
+   - Rights Reserved.
+
+
+
+   - 
+
+
+
+   - Contributor(s): 
+
+
+
+  -->
+
+<!-- Purpose: Test the SRC attribute with the IMG element, to determine whether the image at the cited URI displays. -->
+
+<!-- Expected result: [Described in text labels on page.] -->
+
+<title>XHTML Functional -- IMG - SRC</title>
+
+</head>
+
+<body>
+
+displays (maze) image using relative url, space around = sign<br />
+
+ <img src="images/titan.jpg" alt="titan picture" /> <br />
+
+ displays (mozilla banner) image using absolute url, mixed
+
+capitalization tag<br />
+
+ <img src="http://www.mozilla.org/images/mozilla-banner.gif"
+
+alt="mozilla banner" /> <br />
+
+ directs src to an HTML file, rather than an image file; should
+
+display a broken image or bad link<br />
+
+ <img src="http://www.mozilla.org" alt="mozilla.org" /> <br />
+
+</body>
+
+</html>
+
+
+

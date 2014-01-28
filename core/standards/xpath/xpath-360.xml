@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:template match="xsl:template">
+<result>
+<xsl:choose>
+<xsl:when test='//rho/nu[not(preceding-sibling::*)][not(child::node())][following-sibling::psi[@xml:lang="en-GB"][not(following-sibling::*)]/mu[@xml:lang="no-nb"][not(preceding-sibling::*)]//theta[contains(concat(@number,"$"),".nodeValue$")][@xml:lang="nb"][@xml:id="id1"][not(child::node())][following-sibling::beta[@and="attribute value"][@xml:lang="en-US"][preceding-sibling::*[position() = 1]][not(child::node())][following-sibling::delta[@xml:id="id2"][preceding-sibling::*[position() = 2]]//sigma[@attr][@xml:lang="nb"][not(following-sibling::*)]//pi[@content][@xml:id="id3"][not(preceding-sibling::*)][position() = 1]]][position() = 1]]'>	
+	<xsl:value-of select="'PASS'"/>
+</xsl:when>
+<xsl:otherwise>FAIL</xsl:otherwise>
+</xsl:choose>
+</result>
+<xsl:if test="false()">
+<rho><nu/><psi xml:lang="en-GB"><mu xml:lang="no-nb"><theta number="this.nodeValue" xml:lang="nb" xml:id="id1"/><beta and="attribute value" xml:lang="en-US"/><delta xml:id="id2"><sigma attr="content" xml:lang="nb"><pi content="100%" xml:id="id3"><green>This text must be green</green></pi></sigma></delta></mu></psi></rho></xsl:if>
+</xsl:template>
+</xsl:stylesheet>

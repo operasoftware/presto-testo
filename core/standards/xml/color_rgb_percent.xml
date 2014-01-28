@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+ <?xml-stylesheet  type="text/css" href="color_prop.css"?>
+ <!-- Testcase: color_rgb_percent.xml -->
+<!-- Description: To test the ability to apply rgb percent values with CSS 1 -->
+<!--Expected Results: Each sentence should be rendered with a different color -->
+<!-- Author:  Chris Petersen  Date: 5/04/01 -->
+<!-- 
+   - The contents of this file are subject to the Mozilla Public
+   - License Version 1.1 (the "License"); you may not use this file
+   - except in compliance with the License. You may obtain a copy of
+   - the License at http://www.mozilla.org/MPL/
+   - 
+   - Software distributed under the License is distributed on an "AS
+   - IS" basis, WITHOUT WARRANTY OF ANY KIND, either express or
+   - implied. See the License for the specific language governing
+   - rights and limitations under the License.
+   -
+   - The Original Code is Mozilla Communicator Test Cases.
+   - 
+   - The Initial Developer of the Original Code is Netscape Communications
+   - Corp.  Portions created by Netscape Communications Corp. are 
+   - Copyright (C) 1999 Netscape Communications Corp.  All
+   - Rights Reserved.
+   - 
+   - Contributor(s): 
+  -->
+ <color_properties>
+ <intro>Each sentence uses a different RGB percentage value and should be rendered in that specified color.</intro>
+ <red_percent>
+ This text is red by assigning a percentage for the RGB values  &#40;100&#37;, 0&#37;, 0&#37;&#41;
+ </red_percent>
+ <orange_percent>
+ This text is orange by assigning a percentage for the RGB values  &#40;100&#37;, 40&#37;, 0&#37;&#41;
+ </orange_percent>
+ <green_percent>
+ This text is green by assigning a percentage for the RGB values  &#40;0&#37;, 100&#37;, 0&#37;&#41;
+</green_percent>
+<blue_percent>
+ This text is blue by assigning a percentage for the RGB values  &#40;0&#37;, 0&#37;, 100&#37;&#41;
+</blue_percent>
+<purple_percent>
+ This text is purple by assigning a percentage for the RGB values  &#40;50&#37;, 0&#37;, 50&#37;&#41;
+</purple_percent>
+<gray_percent>
+ This text is gray by assigning a percentage for the RGB values  &#40;50&#37;, 50&#37;, 50&#37;&#41;
+</gray_percent>
+ </color_properties>

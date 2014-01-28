@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:template match="xsl:template">
+<result>
+<xsl:choose>
+<xsl:when test='//mu[@and]//*[starts-with(concat(@content,"-"),"attribute value-")][@xml:lang="en-US"][@xml:id="id1"][not(preceding-sibling::*)][following-sibling::*[position()=2]][following-sibling::epsilon[@xml:lang="no"][preceding-sibling::*[position() = 1]][following-sibling::*[position()=1]][following-sibling::zeta[starts-with(@content,"another a")][@xml:id="id2"][preceding-sibling::*[position() = 2]][not(following-sibling::*)]/mu[@name][@xml:lang="no-nb"][not(preceding-sibling::*)][following-sibling::*[position()=2]][following-sibling::sigma[not(child::node())][following-sibling::gamma[@xml:lang="no"]/upsilon[@xml:id="id3"][not(preceding-sibling::*)]//omicron[@att][@xml:lang="en"][not(child::node())][following-sibling::psi[@xml:lang="en-GB"][@xml:id="id4"][preceding-sibling::*[position() = 1]][not(child::node())][following-sibling::pi[@xml:lang="no-nb"][@xml:id="id5"][not(child::node())][following-sibling::gamma[@xml:lang="en"][not(following-sibling::*)]//gamma[@att="solid 1px green"]//epsilon[contains(concat(@attrib,"$"),"ue$")][not(preceding-sibling::*)][not(child::node())][following-sibling::sigma[@xml:lang="en-GB"][following-sibling::chi[@abort][@xml:lang="en-GB"][@xml:id="id6"][preceding-sibling::*[position() = 2]][not(child::node())][following-sibling::omega[@xml:id="id7"][preceding-sibling::*[position() = 3]]//nu[@xml:lang="en"][not(preceding-sibling::*)][not(following-sibling::*)][position() = 1]]][position() = 1]][position() = 1]][position() = 1]]][position() = 1]]][position() = 1]]]'>	
+	<xsl:value-of select="'PASS'"/>
+</xsl:when>
+<xsl:otherwise>FAIL</xsl:otherwise>
+</xsl:choose>
+</result>
+<xsl:if test="false()">
+<mu and="false"><any content="attribute value" xml:lang="en-US" xml:id="id1"/><epsilon xml:lang="no"/><zeta content="another attribute value" xml:id="id2"><mu name="false" xml:lang="no-nb"/><sigma/><gamma xml:lang="no"><upsilon xml:id="id3"><omicron att="solid 1px green" xml:lang="en"/><psi xml:lang="en-GB" xml:id="id4"/><pi xml:lang="no-nb" xml:id="id5"/><gamma xml:lang="en"><gamma att="solid 1px green"><epsilon attrib="true"/><sigma xml:lang="en-GB"/><chi abort="attribute value" xml:lang="en-GB" xml:id="id6"/><omega xml:id="id7"><nu xml:lang="en"><green>This text must be green</green></nu></omega></gamma></gamma></upsilon></gamma></zeta></mu></xsl:if>
+</xsl:template>
+</xsl:stylesheet>

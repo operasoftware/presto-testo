@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:template match="/">
+	<result>
+		<xsl:call-template name="temp">
+			<xsl:with-param name="out" select="'PASS'"/>
+			<xsl:with-param name="param">
+				<xsl:call-template name="empty">
+					<xsl:with-param name="param" select="'value'"/>
+				</xsl:call-template>
+			</xsl:with-param>
+		</xsl:call-template>
+	</result>
+</xsl:template>
+
+<xsl:template name="temp">
+	<xsl:param name="out"/>
+	<xsl:param name="param"/>
+	<xsl:value-of select="$out"/>
+</xsl:template>
+
+<xsl:template name="empty">
+	<xsl:param name="param"/>
+</xsl:template>
+</xsl:stylesheet>
+

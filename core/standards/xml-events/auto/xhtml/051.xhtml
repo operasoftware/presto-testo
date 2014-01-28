@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ev="http://www.w3.org/2001/xml-events">
+<head>
+<title>Event target</title>
+</head>
+<body>
+<script type="application/ecmascript" ev:event="load">
+<![CDATA[
+var tt = document.getElementsByTagName('tt')[0];
+tt.firstChild.nodeValue = "PASSED";
+tt.setAttribute("class","passed");
+]]>
+</script>
+<script type="application/ecmascript" ev:event="DOMAttrModified" ev:phase="capture" ev:target="target">
+<![CDATA[
+document.getElementsByTagName('tt')[0].firstChild.nodeValue = "FAILED";
+]]>
+</script>
+<div id="target"><tt>NOT TESTED (script did not run)</tt></div>
+</body>
+</html>

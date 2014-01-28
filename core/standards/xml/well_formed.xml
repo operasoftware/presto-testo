@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!-- Testcase: well_formed.xml -->
+<!-- Description: To test well-formed content -->
+<!-- Author:  Chris Petersen Date: 10/25/2000 -->
+<!-- 
+   - The contents of this file are subject to the Mozilla Public
+   - License Version 1.1 (the "License"); you may not use this file
+   - except in compliance with the License. You may obtain a copy of
+   - the License at http://www.mozilla.org/MPL/
+   - 
+   - Software distributed under the License is distributed on an "AS
+   - IS" basis, WITHOUT WARRANTY OF ANY KIND, either express or
+   - implied. See the License for the specific language governing
+   - rights and limitations under the License.
+   - 
+   - The Original Code is Mozilla Communicator Test Cases.
+   - 
+   - The Initial Developer of the Original Code is Netscape Communications
+   - Corp.  Portions created by Netscape Communications Corp. are 
+   - Copyright (C) 2000 Netscape Communications Corp.  All
+   - Rights Reserved.
+   - 
+   - Contributor(s): 
+  -->
+<!-- Purpose: To test the well-formed content in a XML document -->
+<!-- Expected result: The parser should rendered the page since it's content is well-formed (start-end tags). -->
+<main>
+<statement>
+This document is well-formed so this text is displayed in the browser.
+</statement>
+</main>

@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:variable name="var1"><xsl:value-of select="'123'"/></xsl:variable>
+<xsl:variable name="var2"><xsl:value-of select="123"/></xsl:variable>
+<xsl:template match="result">
+<xsl:if test="string($var2) = $var1 and number($var1) = $var2"><result><xsl:value-of select="'PASS'"/></result></xsl:if>
+</xsl:template>
+</xsl:stylesheet>

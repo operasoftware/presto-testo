@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head profile="profile-404.xhtml">
+<title>resolved attribute values</title>
+<style type="text/css">
+body
+	{content:"FAIL"}
+head[profile="profile-404.xhtml"] + body
+	{content:"PASS"}
+</style>
+</head>
+<body/>
+</html>

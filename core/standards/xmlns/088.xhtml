@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xhtml:html xmlns:xhtml="http://www.w3.org/1999/xhtml">
+<xhtml:head>
+<xhtml:title>element selectors and @namespace rule</xhtml:title>
+<xhtml:style type="text/css">
+@namespace ns "http://www.w3.org/1999/xhtml";
+html > ns|body > *|p
+	{content:"PASS"}
+</xhtml:style>
+</xhtml:head>
+<xhtml:body>
+<xhtml:p>FAIL</xhtml:p>
+</xhtml:body>
+</xhtml:html>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:template match="xsl:template">
+<result>
+<xsl:choose>
+<xsl:when test='//beta[@xml:id="id1"]/upsilon[@xml:lang="no"][@xml:id="id2"][not(preceding-sibling::*)][following-sibling::*[position()=2]][not(child::node())][following-sibling::delta[@xml:id="id3"][following-sibling::chi[not(following-sibling::*)]/sigma[starts-with(@content,"12345678")][@xml:lang="en-GB"][@xml:id="id4"][following-sibling::lambda[@xml:lang="no-nb"][@xml:id="id5"][not(child::node())][following-sibling::delta[@xml:lang="en-GB"][@xml:id="id6"][following-sibling::omega[@xml:lang="en-GB"][preceding-sibling::*[position() = 3]]/eta[following-sibling::omicron[@xml:lang="nb"][preceding-sibling::*[position() = 1]][following-sibling::upsilon[preceding-sibling::*[position() = 2]][not(child::node())][following-sibling::eta[@insert="solid 1px green"][@xml:lang="no"][@xml:id="id7"][following-sibling::theta[@xml:id="id8"][preceding-sibling::*[position() = 4]]//zeta[@delete][not(preceding-sibling::*)][following-sibling::alpha[contains(@data,"ue")][not(child::node())][following-sibling::alpha[@xml:lang="no-nb"][not(following-sibling::*)]/kappa[@attr][not(preceding-sibling::*)][not(following-sibling::*)]//zeta[starts-with(@token,"attr")][following-sibling::xi[@insert][@xml:lang="nb"][@xml:id="id9"][following-sibling::phi//alpha[starts-with(concat(@token,"-"),"content-")][@xml:lang="no"][@xml:id="id10"][not(child::node())][following-sibling::delta[@xml:lang="en-GB"][@xml:id="id11"][preceding-sibling::*[position() = 1]][position() = 1]]][position() = 1]]]]][position() = 1]][position() = 1]]]]][position() = 1]]]]'>	
+	<xsl:value-of select="'PASS'"/>
+</xsl:when>
+<xsl:otherwise>FAIL</xsl:otherwise>
+</xsl:choose>
+</result>
+<xsl:if test="false()">
+<beta xml:id="id1"><upsilon xml:lang="no" xml:id="id2"/><delta xml:id="id3"/><chi><sigma content="123456789" xml:lang="en-GB" xml:id="id4"/><lambda xml:lang="no-nb" xml:id="id5"/><delta xml:lang="en-GB" xml:id="id6"/><omega xml:lang="en-GB"><eta/><omicron xml:lang="nb"/><upsilon/><eta insert="solid 1px green" xml:lang="no" xml:id="id7"/><theta xml:id="id8"><zeta delete="this.nodeValue"/><alpha data="true"/><alpha xml:lang="no-nb"><kappa attr="100%"><zeta token="attribute"/><xi insert="another attribute value" xml:lang="nb" xml:id="id9"/><phi><alpha token="content" xml:lang="no" xml:id="id10"/><delta xml:lang="en-GB" xml:id="id11"><green>This text must be green</green></delta></phi></kappa></alpha></theta></omega></chi></beta></xsl:if>
+</xsl:template>
+</xsl:stylesheet>

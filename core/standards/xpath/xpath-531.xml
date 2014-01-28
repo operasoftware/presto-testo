@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:template match="xsl:template">
+<result>
+<xsl:choose>
+<xsl:when test='//epsilon[@or]/sigma[starts-with(concat(@class,"-"),"another attribute value-")][not(preceding-sibling::*)][following-sibling::*[position()=3]][following-sibling::rho[@xml:lang="no"][@xml:id="id1"][preceding-sibling::*[position() = 1]][not(child::node())][following-sibling::psi[@insert][@xml:id="id2"][following-sibling::rho[@and][@xml:lang="no"][@xml:id="id3"][preceding-sibling::*[position() = 3]]//tau[@xml:lang="en-GB"][@xml:id="id4"][not(child::node())][following-sibling::kappa[@xml:lang="en-GB"][preceding-sibling::*[position() = 1]]//kappa[@number="attribute value"][@xml:lang="en-GB"][@xml:id="id5"][not(preceding-sibling::*)]/beta[not(preceding-sibling::*)][not(following-sibling::*)]//*[@xml:lang="en-GB"][@xml:id="id6"][not(preceding-sibling::*)]/sigma[@xml:lang="en-US"][@xml:id="id7"][not(preceding-sibling::*)][following-sibling::sigma[@xml:lang="en"][preceding-sibling::*[position() = 1]]/omega[@xml:lang="en-US"][not(child::node())][following-sibling::omega[@xml:id="id8"][not(following-sibling::*)]//psi[@xml:id="id9"][not(preceding-sibling::*)][following-sibling::pi[@data="100%"][@xml:lang="en"][@xml:id="id10"]/zeta[@abort][@xml:id="id11"][not(preceding-sibling::*)][not(child::node())][following-sibling::beta[@xml:lang="en"][preceding-sibling::*[position() = 1]][following-sibling::*[position()=1]][not(child::node())][following-sibling::*[@insert][preceding-sibling::*[position() = 2]][not(following-sibling::*)][not(following-sibling::any)][position() = 1]][position() = 1]][position() = 1]][position() = 1]][position() = 1]]][position() = 1]][position() = 1]]]'>	
+	<xsl:value-of select="'PASS'"/>
+</xsl:when>
+<xsl:otherwise>FAIL</xsl:otherwise>
+</xsl:choose>
+</result>
+<xsl:if test="false()">
+<epsilon or="attribute"><sigma class="another attribute value"/><rho xml:lang="no" xml:id="id1"/><psi insert="true" xml:id="id2"/><rho and="_blank" xml:lang="no" xml:id="id3"><tau xml:lang="en-GB" xml:id="id4"/><kappa xml:lang="en-GB"><kappa number="attribute value" xml:lang="en-GB" xml:id="id5"><beta><any xml:lang="en-GB" xml:id="id6"><sigma xml:lang="en-US" xml:id="id7"/><sigma xml:lang="en"><omega xml:lang="en-US"/><omega xml:id="id8"><psi xml:id="id9"/><pi data="100%" xml:lang="en" xml:id="id10"><zeta abort="content" xml:id="id11"/><beta xml:lang="en"/><any insert="false"><green>This text must be green</green></any></pi></omega></sigma></any></beta></kappa></kappa></rho></epsilon></xsl:if>
+</xsl:template>
+</xsl:stylesheet>

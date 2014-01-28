@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<!--A entity is placed outside of the root element-->
+<!-- Testcase: entity_outside_root.xml -->
+<!-- Description: The test the xml parser's ability to report a error when a document is NOT well-formed  -->
+<!-- Author:  Chris Petersen  Date: 12/06/2000 -->
+<root>
+This text shouldn't appear
+</root>
+&#34;

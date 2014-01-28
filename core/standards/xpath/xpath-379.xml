@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:template match="xsl:template">
+<result>
+<xsl:choose>
+<xsl:when test='//gamma[contains(@attrib,"lse")][@xml:lang="en-US"][@xml:id="id1"]//xi[contains(@string,"t")][not(preceding-sibling::*)][not(child::node())][following-sibling::xi[contains(@attr,"ri")][@xml:id="id2"]/theta[contains(@data,"tent")][@xml:id="id3"][not(preceding-sibling::*)][following-sibling::*[position()=1]][not(child::node())][following-sibling::psi[@true][@xml:lang="no-nb"][not(following-sibling::*)]/kappa[@false][@xml:lang="no"][following-sibling::*[position()=2]][following-sibling::tau[@or][@xml:id="id4"][not(child::node())][following-sibling::omicron[@attrib="content"][preceding-sibling::*[position() = 2]][not(following-sibling::*)]/sigma[contains(concat(@object,"$"),"attribute$")][not(preceding-sibling::*)][not(child::node())][following-sibling::delta[@xml:lang="en-US"][preceding-sibling::*[position() = 1]][following-sibling::chi[not(following-sibling::*)]//*[@xml:lang="en"][@xml:id="id5"]/mu[contains(concat(@name,"$"),"tribute value$")][not(child::node())][following-sibling::xi[@xml:id="id6"][preceding-sibling::*[position() = 1]]/beta[starts-with(@delete,"att")][@xml:id="id7"][not(child::node())][following-sibling::delta[@xml:lang="en-US"][@xml:id="id8"][preceding-sibling::*[position() = 1]][not(following-sibling::*)]//kappa[@xml:id="id9"][not(preceding-sibling::*)][not(child::node())][following-sibling::pi[@title][@xml:id="id10"][not(following-sibling::*)][position() = 1]]]][position() = 1]][position() = 1]]][position() = 1]][position() = 1]]]'>	
+	<xsl:value-of select="'PASS'"/>
+</xsl:when>
+<xsl:otherwise>FAIL</xsl:otherwise>
+</xsl:choose>
+</result>
+<xsl:if test="false()">
+<gamma attrib="false" xml:lang="en-US" xml:id="id1"><xi string="this-is-att-value"/><xi attr="attribute value" xml:id="id2"><theta data="content" xml:id="id3"/><psi true="another attribute value" xml:lang="no-nb"><kappa false="100%" xml:lang="no"/><tau or="100%" xml:id="id4"/><omicron attrib="content"><sigma object="attribute"/><delta xml:lang="en-US"/><chi><any xml:lang="en" xml:id="id5"><mu name="another attribute value"/><xi xml:id="id6"><beta delete="attribute value" xml:id="id7"/><delta xml:lang="en-US" xml:id="id8"><kappa xml:id="id9"/><pi title="this.nodeValue" xml:id="id10"><green>This text must be green</green></pi></delta></xi></any></chi></omicron></psi></xi></gamma></xsl:if>
+</xsl:template>
+</xsl:stylesheet>

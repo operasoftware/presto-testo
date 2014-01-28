@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta name="generator"
+
+content="HTML Tidy for Mac OS, see www.w3.org" />
+
+<!-- test case: link_rel.xml -->
+
+<!-- description: HTML 4.0 LINK element/REL attribute -->
+
+<!-- Author: Christine Dreckman Date: 5/13/99 -->
+
+<!-- Modified: Changed doctype to xhtml 1.0 transitional Author: Chris Petersen Date: 1/24/01 -->
+
+<!-- 
+
+   - The contents of this file are subject to the Mozilla Public
+
+   - License Version 1.1 (the "License"); you may not use this file
+
+   - except in compliance with the License. You may obtain a copy of
+
+   - the License at http://www.mozilla.org/MPL/
+
+   - 
+
+   - Software distributed under the License is distributed on an "AS
+
+   - IS" basis, WITHOUT WARRANTY OF ANY KIND, either express or
+
+   - implied. See the License for the specific language governing
+
+   - rights and limitations under the License.
+
+   - 
+
+   - The Original Code is Mozilla Communicator Test Cases.
+
+   - 
+
+   - The Initial Developer of the Original Code is Netscape Communications
+
+   - Corp.  Portions created by Netscape Communications Corp. are 
+
+   - Copyright (C) 1999 Netscape Communications Corp.  All
+
+   - Rights Reserved.
+
+   - 
+
+   - Contributor(s): 
+
+  -->
+
+<!-- Purpose: To test the REL attribute of the LINK element. The REL attribute defines a relationship from the current document to the referenced document. -->
+
+<!-- Expected result: There is no actual result. Rather, the REL attribute value identifies the relationship from the current document to the referenced document -->
+
+<title>XHTML Functional -- LINK - REL=link to link_rev.xml</title>
+
+<link rel="link to link_rev.xml" href="link_rev.xml" />
+
+</head>
+
+<body>
+
+<p>In the &lt;HEAD&gt; element there is a relationship link (REL)
+
+to the document link_rev.xml.</p>
+
+</body>
+
+</html>
+
+
+

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:template match="xsl:template">
+<result>
+<xsl:choose>
+<xsl:when test='//alpha[@xml:lang="nb"][@xml:id="id1"]/zeta[@true][@xml:lang="en-GB"][@xml:id="id2"][not(preceding-sibling::*)][following-sibling::*[position()=1]][following-sibling::delta[@delete="this-is-att-value"][@xml:lang="en"][@xml:id="id3"][preceding-sibling::*[position() = 1]][not(following-sibling::*)]/epsilon[starts-with(concat(@class,"-"),"content-")][@xml:lang="en-GB"][not(following-sibling::*)]/chi[contains(@object,"tru")][@xml:id="id4"][following-sibling::beta[@xml:lang="en"][@xml:id="id5"]//nu[@xml:lang="en-GB"][@xml:id="id6"][not(preceding-sibling::*)][following-sibling::xi[@object="100%"][@xml:id="id7"]//upsilon/omicron[starts-with(concat(@content,"-"),"solid 1px green-")][@xml:lang="nb"][@xml:id="id8"][following-sibling::*[position()=1]][not(child::node())][following-sibling::chi[@desciption][preceding-sibling::*[position() = 1]][not(following-sibling::*)]/beta[@xml:lang="nb"][@xml:id="id9"][not(preceding-sibling::*)][not(child::node())][following-sibling::upsilon[@xml:id="id10"]/lambda[starts-with(concat(@and,"-"),"this.nodeValue-")][@xml:lang="nb"][@xml:id="id11"][not(preceding-sibling::*)][following-sibling::*[position()=1]][not(child::node())][following-sibling::nu[@xml:lang="nb"][@xml:id="id12"][not(following-sibling::*)][position() = 1]][position() = 1]][position() = 1]]]][position() = 1]]'>	
+	<xsl:value-of select="'PASS'"/>
+</xsl:when>
+<xsl:otherwise>FAIL</xsl:otherwise>
+</xsl:choose>
+</result>
+<xsl:if test="false()">
+<alpha xml:lang="nb" xml:id="id1"><zeta true="solid 1px green" xml:lang="en-GB" xml:id="id2"/><delta delete="this-is-att-value" xml:lang="en" xml:id="id3"><epsilon class="content" xml:lang="en-GB"><chi object="true" xml:id="id4"/><beta xml:lang="en" xml:id="id5"><nu xml:lang="en-GB" xml:id="id6"/><xi object="100%" xml:id="id7"><upsilon><omicron content="solid 1px green" xml:lang="nb" xml:id="id8"/><chi desciption="this.nodeValue"><beta xml:lang="nb" xml:id="id9"/><upsilon xml:id="id10"><lambda and="this.nodeValue" xml:lang="nb" xml:id="id11"/><nu xml:lang="nb" xml:id="id12"><green>This text must be green</green></nu></upsilon></chi></upsilon></xi></beta></epsilon></delta></alpha></xsl:if>
+</xsl:template>
+</xsl:stylesheet>

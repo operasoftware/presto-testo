@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:template match="xsl:template">
+<result>
+<xsl:choose>
+<xsl:when test='//zeta[@xml:id="id1"]/mu[@xml:lang="en-GB"][@xml:id="id2"][not(child::node())][following-sibling::upsilon[@and="attribute value"][@xml:id="id3"][preceding-sibling::*[position() = 1]][not(child::node())][following-sibling::*[following-sibling::*[position()=1]][following-sibling::lambda[preceding-sibling::*[position() = 3]]/tau[@xml:lang="nb"][@xml:id="id4"][following-sibling::*[position()=1]][following-sibling::lambda[@or="true"][@xml:lang="nb"][@xml:id="id5"][preceding-sibling::*[position() = 1]]//kappa[@xml:lang="en"][@xml:id="id6"][following-sibling::*[position()=3]][following-sibling::kappa[@xml:lang="no-nb"][@xml:id="id7"][not(child::node())][following-sibling::omicron[@xml:lang="no-nb"][following-sibling::*[position()=1]][not(child::node())][following-sibling::psi[preceding-sibling::*[position() = 3]][not(following-sibling::*)]/rho[@delete][not(preceding-sibling::*)]]]]][position() = 1]]]]'>	
+	<xsl:value-of select="'PASS'"/>
+</xsl:when>
+<xsl:otherwise>FAIL</xsl:otherwise>
+</xsl:choose>
+</result>
+<xsl:if test="false()">
+<zeta xml:id="id1"><mu xml:lang="en-GB" xml:id="id2"/><upsilon and="attribute value" xml:id="id3"/><any/><lambda><tau xml:lang="nb" xml:id="id4"/><lambda or="true" xml:lang="nb" xml:id="id5"><kappa xml:lang="en" xml:id="id6"/><kappa xml:lang="no-nb" xml:id="id7"/><omicron xml:lang="no-nb"/><psi><rho delete="this-is-att-value"><green>This text must be green</green></rho></psi></lambda></lambda></zeta></xsl:if>
+</xsl:template>
+</xsl:stylesheet>

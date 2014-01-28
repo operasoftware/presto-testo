@@ -1,0 +1,130 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta name="generator"
+
+content="HTML Tidy for Mac OS, see www.w3.org" />
+
+<!-- testcase: button_tabindex.xml-->
+
+<!-- description: HTML 4.0 text markup BUTTON element with TABINDEX attribute -->
+
+<!-- Modified: Changed doctype to xhtml 1.0 transitional Author: Chris Petersen Date: 1/17/01 -->
+
+<!-- Author: Christopher Pratt  Date: 05.03.99 -->
+
+<!-- 
+
+
+
+   - The contents of this file are subject to the Mozilla Public
+
+
+
+   - License Version 1.1 (the "License"); you may not use this file
+
+
+
+   - except in compliance with the License. You may obtain a copy of
+
+
+
+   - the License at http://www.mozilla.org/MPL/
+
+
+
+   - 
+
+
+
+   - Software distributed under the License is distributed on an "AS
+
+
+
+   - IS" basis, WITHOUT WARRANTY OF ANY KIND, either express or
+
+
+
+   - implied. See the License for the specific language governing
+
+
+
+   - rights and limitations under the License.
+
+
+
+   - 
+
+
+
+   - The Original Code is Mozilla Communicator Test Cases.
+
+
+
+   - 
+
+
+
+   - The Initial Developer of the Original Code is Netscape Communications
+
+
+
+   - Corp.  Portions created by Netscape Communications Corp. are 
+
+
+
+   - Copyright (C) 1999 Netscape Communications Corp.  All
+
+
+
+   - Rights Reserved.
+
+
+
+   - 
+
+
+
+   - Contributor(s): 
+
+
+
+  -->
+
+<!-- Purpose: To test the button element with the tabindex attribute. -->
+
+<!-- Expected result: When tabbing through these buttons, the order should be 1-4-3-2    -->
+
+<title>XHTML Functional -- BUTTON - TABINDEX</title>
+
+</head>
+
+<body>
+
+<p>Each of these buttons are using a tabindex attribute. The
+
+tabbing order should be button 1, button 4, button 3, and button
+
+2.</p>
+
+
+
+<form action="http://wetnap/cgi-bin/echo-form.cgi" method="post">
+
+<button tabindex="1">This is button 1</button><button
+
+tabindex="4">This is button 2</button> <button tabindex="3">This is button 3</button>
+
+<button tabindex="2">This is button 4</button></form>
+
+</body>
+
+</html>
+
+
+

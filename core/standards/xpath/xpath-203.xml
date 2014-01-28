@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:template match="xsl:template">
+<result>
+<xsl:choose>
+<xsl:when test='//omicron[@xml:id="id1"]/kappa[@xml:lang="nb"][@xml:id="id2"][not(child::node())][following-sibling::gamma[@xml:id="id3"][not(following-sibling::*)]/rho[@xml:lang="nb"][not(preceding-sibling::*)]/rho[@xml:lang="en-US"]//upsilon[starts-with(@desciption,"false")][@xml:id="id4"][not(preceding-sibling::*)][following-sibling::*[position()=2]][not(child::node())][following-sibling::delta[starts-with(@delete,"123456789")][@xml:lang="no"][@xml:id="id5"][preceding-sibling::*[position() = 1]][following-sibling::upsilon[@data="content"][@xml:lang="no"][@xml:id="id6"][preceding-sibling::*[position() = 2]]/beta[contains(@title,"n")][@xml:lang="en-GB"][@xml:id="id7"][not(following-sibling::*)]/omicron[@xml:lang="no"][not(child::node())][following-sibling::gamma[@false][@xml:id="id8"]/iota[following-sibling::*[position()=3]][not(child::node())][following-sibling::omega[contains(concat(@title,"$"),"3456789$")][preceding-sibling::*[position() = 1]][not(child::node())][following-sibling::iota[@xml:lang="no-nb"][preceding-sibling::*[position() = 2]][following-sibling::epsilon[@xml:lang="en-GB"][@xml:id="id9"]/zeta[contains(@delete,"reen")]]]]]][position() = 1]]]'>	
+	<xsl:value-of select="'PASS'"/>
+</xsl:when>
+<xsl:otherwise>FAIL</xsl:otherwise>
+</xsl:choose>
+</result>
+<xsl:if test="false()">
+<omicron xml:id="id1"><kappa xml:lang="nb" xml:id="id2"/><gamma xml:id="id3"><rho xml:lang="nb"><rho xml:lang="en-US"><upsilon desciption="false" xml:id="id4"/><delta delete="123456789" xml:lang="no" xml:id="id5"/><upsilon data="content" xml:lang="no" xml:id="id6"><beta title="solid 1px green" xml:lang="en-GB" xml:id="id7"><omicron xml:lang="no"/><gamma false="attribute value" xml:id="id8"><iota/><omega title="123456789"/><iota xml:lang="no-nb"/><epsilon xml:lang="en-GB" xml:id="id9"><zeta delete="solid 1px green"><green>This text must be green</green></zeta></epsilon></gamma></beta></upsilon></rho></rho></gamma></omicron></xsl:if>
+</xsl:template>
+</xsl:stylesheet>

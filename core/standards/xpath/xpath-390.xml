@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:template match="xsl:template">
+<result>
+<xsl:choose>
+<xsl:when test='//zeta/kappa[contains(@desciption,"nk")][not(preceding-sibling::*)][following-sibling::omega[@abort="another attribute value"][@xml:lang="no-nb"][preceding-sibling::*[position() = 1]][following-sibling::lambda[@class="true"][@xml:lang="no-nb"][@xml:id="id1"][not(child::node())][following-sibling::iota[contains(@insert,"ute val")][preceding-sibling::*[position() = 3]][not(child::node())][following-sibling::chi[@xml:lang="no"][@xml:id="id2"][preceding-sibling::*[position() = 4]][not(following-sibling::*)]]][position() = 1]][position() = 1]]'>	
+	<xsl:value-of select="'PASS'"/>
+</xsl:when>
+<xsl:otherwise>FAIL</xsl:otherwise>
+</xsl:choose>
+</result>
+<xsl:if test="false()">
+<zeta><kappa desciption="_blank"/><omega abort="another attribute value" xml:lang="no-nb"/><lambda class="true" xml:lang="no-nb" xml:id="id1"/><iota insert="another attribute value"/><chi xml:lang="no" xml:id="id2"><green>This text must be green</green></chi></zeta></xsl:if>
+</xsl:template>
+</xsl:stylesheet>

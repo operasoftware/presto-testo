@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>rules attribute</title>
+<style type="text/css">
+table
+	{margin:0;}
+div
+	{border:double 3px;
+	margin:1em;
+	padding:1em;}
+</style>
+</head>
+<body>
+<p>Two boxes below must be formatted identically</p>
+<div>
+<table rules="rows">
+<tr><td>CELL</td><td>CELL</td></tr>
+<tr><td>CELL</td><td>CELL</td></tr>
+<tr><td>CELL</td><td>CELL</td></tr>
+</table>
+</div>
+<div>
+<table rules="groups">
+<thead>
+<tr><td>CELL</td><td>CELL</td></tr>
+</thead>
+<tbody>
+<tr><td>CELL</td><td>CELL</td></tr>
+</tbody>
+<tfoot>
+<tr><td>CELL</td><td>CELL</td></tr>
+</tfoot>
+</table>
+</div>
+</body>
+</html>

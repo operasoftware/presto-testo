@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:template match="xsl:template">
+<result>
+<xsl:choose>
+<xsl:when test='//alpha[contains(@number," 1px gre")]/eta[not(child::node())][following-sibling::iota[@xml:lang="en"][@xml:id="id1"][preceding-sibling::*[position() = 1]][following-sibling::nu[@object][preceding-sibling::*[position() = 2]][not(following-sibling::*)]//psi[@attrib][@xml:id="id2"][not(preceding-sibling::*)][following-sibling::*[position()=1]][following-sibling::nu[@delete][preceding-sibling::*[position() = 1]]//beta/tau[@xml:id="id3"]/chi[starts-with(concat(@true,"-"),"content-")][@xml:id="id4"][not(preceding-sibling::*)]/phi[@xml:id="id5"][following-sibling::psi[@xml:lang="en-GB"][@xml:id="id6"][preceding-sibling::*[position() = 1]]//iota[not(following-sibling::*)]/upsilon[contains(concat(@name,"$"),"k$")]/eta[@data="attribute"][not(child::node())][following-sibling::tau[@xml:id="id7"][preceding-sibling::*[position() = 1]]//eta[@token="attribute-value"][@xml:lang="en"][not(preceding-sibling::*)][following-sibling::kappa[@xml:id="id8"][preceding-sibling::*[position() = 1]][not(child::node())][following-sibling::iota[@xml:id="id9"][preceding-sibling::*[position() = 2]]//lambda[@desciption="123456789"]/gamma[@attr][@xml:id="id10"][following-sibling::*[position()=1]][not(child::node())][following-sibling::beta[@xml:id="id11"][preceding-sibling::*[position() = 1]][not(following-sibling::*)][position() = 1]]][position() = 1]][position() = 1]]][position() = 1]]]]'>	
+	<xsl:value-of select="'PASS'"/>
+</xsl:when>
+<xsl:otherwise>FAIL</xsl:otherwise>
+</xsl:choose>
+</result>
+<xsl:if test="false()">
+<alpha number="solid 1px green"><eta/><iota xml:lang="en" xml:id="id1"/><nu object="content"><psi attrib="another attribute value" xml:id="id2"/><nu delete="_blank"><beta><tau xml:id="id3"><chi true="content" xml:id="id4"><phi xml:id="id5"/><psi xml:lang="en-GB" xml:id="id6"><iota><upsilon name="_blank"><eta data="attribute"/><tau xml:id="id7"><eta token="attribute-value" xml:lang="en"/><kappa xml:id="id8"/><iota xml:id="id9"><lambda desciption="123456789"><gamma attr="attribute value" xml:id="id10"/><beta xml:id="id11"><green>This text must be green</green></beta></lambda></iota></tau></upsilon></iota></psi></chi></tau></beta></nu></nu></alpha></xsl:if>
+</xsl:template>
+</xsl:stylesheet>

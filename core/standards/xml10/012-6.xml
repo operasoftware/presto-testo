@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE element [
+<!ENTITY % ent "&ent;">
+<!ENTITY ent "%ent;">
+]>
+<element>recursion in entity declarations &ent;</element>
+
+
+
+
+
+
+

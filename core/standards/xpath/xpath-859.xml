@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:template match="xsl:template">
+<result>
+<xsl:choose>
+<xsl:when test='//pi[contains(concat(@and,"$"),"r attribute value$")]//nu[starts-with(@attrib,"100%")][@xml:lang="en-US"][not(preceding-sibling::*)][following-sibling::psi[contains(concat(@name,"$"),"0%$")][@xml:lang="en-US"][preceding-sibling::*[position() = 1]][following-sibling::*[position()=1]][following-sibling::tau[@xml:id="id1"][preceding-sibling::*[position() = 2]][not(following-sibling::*)]//sigma[not(child::node())][following-sibling::upsilon[@false][@xml:lang="nb"][@xml:id="id2"]/epsilon[starts-with(@and,"another at")]/pi[@string][@xml:lang="en-US"][not(preceding-sibling::*)][following-sibling::eta[@string="attribute"][@xml:lang="en-GB"][following-sibling::pi[@xml:lang="en"][@xml:id="id3"][preceding-sibling::*[position() = 2]][not(following-sibling::*)]//alpha[@xml:lang="nb"][not(preceding-sibling::*)]//sigma[not(preceding-sibling::*)][not(child::node())][following-sibling::sigma[@false][@xml:lang="en-US"][preceding-sibling::*[position() = 1]]/pi[contains(@true,"ther attribute value")][@xml:lang="no-nb"][@xml:id="id4"][not(preceding-sibling::*)]/theta[@xml:lang="nb"][not(preceding-sibling::*)][following-sibling::*[position()=1]][not(child::node())][following-sibling::alpha[preceding-sibling::*[position() = 1]][not(following-sibling::*)]/xi[@xml:lang="no"][not(preceding-sibling::xi)][not(child::node())][following-sibling::phi[@xml:id="id5"][preceding-sibling::*[position() = 1]]/theta[starts-with(@attr,"fals")][@xml:id="id6"][not(preceding-sibling::*)][not(child::node())][following-sibling::iota[contains(@insert,"nt")]][position() = 1]]]][position() = 1]]][position() = 1]]][position() = 1]]'>	
+	<xsl:value-of select="'PASS'"/>
+</xsl:when>
+<xsl:otherwise>FAIL</xsl:otherwise>
+</xsl:choose>
+</result>
+<xsl:if test="false()">
+<pi and="another attribute value"><nu attrib="100%" xml:lang="en-US"/><psi name="100%" xml:lang="en-US"/><tau xml:id="id1"><sigma/><upsilon false="attribute" xml:lang="nb" xml:id="id2"><epsilon and="another attribute value"><pi string="100%" xml:lang="en-US"/><eta string="attribute" xml:lang="en-GB"/><pi xml:lang="en" xml:id="id3"><alpha xml:lang="nb"><sigma/><sigma false="100%" xml:lang="en-US"><pi true="another attribute value" xml:lang="no-nb" xml:id="id4"><theta xml:lang="nb"/><alpha><xi xml:lang="no"/><phi xml:id="id5"><theta attr="false" xml:id="id6"/><iota insert="content"><green>This text must be green</green></iota></phi></alpha></pi></sigma></alpha></pi></epsilon></upsilon></tau></pi></xsl:if>
+</xsl:template>
+</xsl:stylesheet>

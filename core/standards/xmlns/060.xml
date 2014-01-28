@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html [<!ENTITY ns "http://www.w3.org/2000/svg">]>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Namespace set through entity reference</title>
+</head>
+<body>
+<p>You should see green box below</p>
+<svg xmlns="&ns;" version="1.1" width="100px" height="100px" viewBox="0 0 100 100">
+<rect x="0" y="0" width="100" height="100" fill="green"/>
+</svg>
+</body>
+</html>

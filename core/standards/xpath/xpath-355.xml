@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:template match="xsl:template">
+<result>
+<xsl:choose>
+<xsl:when test='//eta[@true="100%"]//mu[@xml:lang="no"][not(following-sibling::*)]/omega[@string][@xml:lang="nb"][not(child::node())][following-sibling::nu[preceding-sibling::*[position() = 1]][not(child::node())][following-sibling::omega[@xml:lang="en-GB"][preceding-sibling::*[position() = 2]][following-sibling::xi[@xml:lang="nb"][@xml:id="id1"][not(following-sibling::*)]/xi[not(following-sibling::*)]//rho[@xml:lang="en"][not(preceding-sibling::*)][not(following-sibling::*)]/omicron[following-sibling::kappa[@xml:id="id2"][preceding-sibling::*[position() = 1]][not(child::node())][following-sibling::nu[@delete="attribute"][preceding-sibling::*[position() = 2]][following-sibling::alpha[@xml:id="id3"][preceding-sibling::*[position() = 3]][not(child::node())][following-sibling::nu[starts-with(concat(@abort,"-"),"123456789-")][@xml:lang="en"][@xml:id="id4"][preceding-sibling::*[position() = 4]]//eta[contains(concat(@class,"$"),"is-is-att-value$")][following-sibling::*[position()=1]][not(child::node())][following-sibling::beta[@attrib][@xml:id="id5"][preceding-sibling::*[position() = 1]]/iota[not(following-sibling::*)]/beta[@string][@xml:lang="en"][@xml:id="id6"][not(following-sibling::*)]/omega[not(preceding-sibling::*)]][position() = 1]]][position() = 1]]]]]]'>	
+	<xsl:value-of select="'PASS'"/>
+</xsl:when>
+<xsl:otherwise>FAIL</xsl:otherwise>
+</xsl:choose>
+</result>
+<xsl:if test="false()">
+<eta true="100%"><mu xml:lang="no"><omega string="solid 1px green" xml:lang="nb"/><nu/><omega xml:lang="en-GB"/><xi xml:lang="nb" xml:id="id1"><xi><rho xml:lang="en"><omicron/><kappa xml:id="id2"/><nu delete="attribute"/><alpha xml:id="id3"/><nu abort="123456789" xml:lang="en" xml:id="id4"><eta class="this-is-att-value"/><beta attrib="100%" xml:id="id5"><iota><beta string="123456789" xml:lang="en" xml:id="id6"><omega><green>This text must be green</green></omega></beta></iota></beta></nu></rho></xi></xi></mu></eta></xsl:if>
+</xsl:template>
+</xsl:stylesheet>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:template match="xsl:template">
+<result>
+<xsl:choose>
+<xsl:when test='//tau[contains(concat(@insert,"$"),"eValue$")][@xml:id="id1"]/mu[@number="solid 1px green"][@xml:id="id2"]/gamma[@xml:lang="en-US"][not(preceding-sibling::*)][following-sibling::sigma[preceding-sibling::*[position() = 1]][following-sibling::*[position()=2]][following-sibling::alpha[starts-with(concat(@or,"-"),"this.nodeValue-")][@xml:lang="no-nb"][preceding-sibling::*[position() = 2]][following-sibling::*[position()=1]][not(child::node())][following-sibling::sigma[starts-with(concat(@and,"-"),"another attribute value-")][@xml:lang="en-GB"][preceding-sibling::*[position() = 3]][not(following-sibling::*)]]]]'>	
+	<xsl:value-of select="'PASS'"/>
+</xsl:when>
+<xsl:otherwise>FAIL</xsl:otherwise>
+</xsl:choose>
+</result>
+<xsl:if test="false()">
+<tau insert="this.nodeValue" xml:id="id1"><mu number="solid 1px green" xml:id="id2"><gamma xml:lang="en-US"/><sigma/><alpha or="this.nodeValue" xml:lang="no-nb"/><sigma and="another attribute value" xml:lang="en-GB"><green>This text must be green</green></sigma></mu></tau></xsl:if>
+</xsl:template>
+</xsl:stylesheet>

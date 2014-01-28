@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:template match="xsl:template">
+<result>
+<xsl:choose>
+<xsl:when test='//eta[@attr="100%"][@xml:lang="en"]/chi[@string="attribute-value"][@xml:id="id1"][not(following-sibling::*)]/epsilon[@xml:lang="nb"][not(preceding-sibling::*)][following-sibling::*[position()=2]][not(child::node())][following-sibling::gamma[contains(@attrib,"ttribut")][@xml:lang="en"][preceding-sibling::*[position() = 1]][not(child::node())][following-sibling::pi[preceding-sibling::*[position() = 2]]//nu[@xml:lang="nb"][not(preceding-sibling::*)][not(following-sibling::*)]/iota[@xml:lang="nb"][not(preceding-sibling::*)][following-sibling::tau[@xml:lang="no"][preceding-sibling::*[position() = 1]][not(child::node())][following-sibling::kappa[@data][@xml:lang="no-nb"][not(following-sibling::*)]/xi[@xml:lang="nb"][not(preceding-sibling::*)][not(child::node())][following-sibling::lambda[@xml:lang="no"][@xml:id="id2"][not(following-sibling::*)]//xi[@xml:id="id3"][not(following-sibling::*)]/nu[contains(concat(@name,"$"),"true$")][@xml:lang="en-GB"][not(preceding-sibling::*)][not(following-sibling::*)]][position() = 1]][position() = 1]][position() = 1]][position() = 1]]'>	
+	<xsl:value-of select="'PASS'"/>
+</xsl:when>
+<xsl:otherwise>FAIL</xsl:otherwise>
+</xsl:choose>
+</result>
+<xsl:if test="false()">
+<eta attr="100%" xml:lang="en"><chi string="attribute-value" xml:id="id1"><epsilon xml:lang="nb"/><gamma attrib="attribute" xml:lang="en"/><pi><nu xml:lang="nb"><iota xml:lang="nb"/><tau xml:lang="no"/><kappa data="attribute value" xml:lang="no-nb"><xi xml:lang="nb"/><lambda xml:lang="no" xml:id="id2"><xi xml:id="id3"><nu name="true" xml:lang="en-GB"><green>This text must be green</green></nu></xi></lambda></kappa></nu></pi></chi></eta></xsl:if>
+</xsl:template>
+</xsl:stylesheet>

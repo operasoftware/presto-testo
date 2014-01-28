@@ -1,0 +1,170 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta name="generator"
+
+content="HTML Tidy for Mac OS, see www.w3.org" />
+
+<!-- test case: ol_class.xml -->
+
+<!-- description: HTML 4.0 ordered list using the class attribute -->
+
+<!-- Author: Beth Epperson Date: 2/18/99 -->
+
+<!-- Modified: Changed doctype to xhtml 1.0 transitional Author: Chris Petersen Date: 1/23/01 -->
+
+<!-- 
+
+   - The contents of this file are subject to the Mozilla Public
+
+   - License Version 1.1 (the "License"); you may not use this file
+
+   - except in compliance with the License. You may obtain a copy of
+
+   - the License at http://www.mozilla.org/MPL/
+
+   - 
+
+   - Software distributed under the License is distributed on an "AS
+
+   - IS" basis, WITHOUT WARRANTY OF ANY KIND, either express or
+
+   - implied. See the License for the specific language governing
+
+   - rights and limitations under the License.
+
+   - 
+
+   - The Original Code is Mozilla Communicator Test Cases.
+
+   - 
+
+   - The Initial Developer of the Original Code is Netscape Communications
+
+   - Corp.  Portions created by Netscape Communications Corp. are 
+
+   - Copyright (C) 1999 Netscape Communications Corp.  All
+
+   - Rights Reserved.
+
+   - 
+
+   - Contributor(s): 
+
+  -->
+
+<!-- Purpose: To test the ordered list element class attribute. Set the item marker to decimal, lower alpha, upper alpha, lower roman, upper roman in the stle element -->
+
+<!-- Expected result: Ordered list element item marker value set to specific values in the style element -->
+
+<style type="text/css">
+
+  .decimal   { list-style: decimal }
+
+  .lalpha   { list-style: lower-alpha }
+
+  .ualpha   { list-style: upper-alpha }
+
+  .lroman   { list-style: lower-roman }
+
+  .uroman   { list-style: upper-roman }
+
+</style>
+
+<title>XHTML Functional -- OL - CLASS</title>
+
+</head>
+
+<body>
+
+<ol class="decimal">
+
+<li>ordered list with the class attribute, item marker is
+
+decimal</li>
+
+
+
+<li>item marker is decimal</li>
+
+
+
+<li>item marker is decimal</li>
+
+</ol>
+
+
+
+<ol class="lalpha">
+
+<li>item marker is lower alpha</li>
+
+
+
+<li>item marker is lower alpha</li>
+
+
+
+<li>item marker is lower alpha</li>
+
+</ol>
+
+
+
+<ol class="ualpha">
+
+<li>item marker is upper alpha</li>
+
+
+
+<li>item marker is upper alpha</li>
+
+
+
+<li>item marker is upper alpha</li>
+
+</ol>
+
+
+
+<ol class="lroman">
+
+<li>item marker is lower roman</li>
+
+
+
+<li>item marker is lower roman</li>
+
+
+
+<li>item marker is lower roman</li>
+
+</ol>
+
+
+
+<ol class="uroman">
+
+<li>item marker is upper roman</li>
+
+
+
+<li>item marker is upper roman</li>
+
+
+
+<li>item marker is upper roman</li>
+
+</ol>
+
+</body>
+
+</html>
+
+
+

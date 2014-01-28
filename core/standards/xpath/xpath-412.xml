@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:template match="xsl:template">
+<result>
+<xsl:choose>
+<xsl:when test='//alpha[starts-with(@attr,"this.no")][@xml:id="id1"]//xi[@xml:lang="no-nb"][@xml:id="id2"][not(preceding-sibling::*)][not(child::node())][following-sibling::lambda[starts-with(@insert,"attribu")][preceding-sibling::*[position() = 1]][not(following-sibling::*)]/rho[@string="solid 1px green"][@xml:id="id3"][not(preceding-sibling::*)][following-sibling::mu[contains(concat(@string,"$"),"e$")][@xml:lang="en-GB"][@xml:id="id4"][following-sibling::lambda[@token="100%"][preceding-sibling::*[position() = 2]][not(child::node())][following-sibling::beta[@xml:lang="no-nb"][preceding-sibling::*[position() = 3]][following-sibling::upsilon[preceding-sibling::*[position() = 4]][following-sibling::alpha[starts-with(concat(@object,"-"),"100%-")][@xml:id="id5"][preceding-sibling::*[position() = 5]][following-sibling::sigma[@class][@xml:lang="no-nb"][preceding-sibling::*[position() = 6]][not(following-sibling::*)][position() = 1]]][position() = 1]]]][position() = 1]]]'>	
+	<xsl:value-of select="'PASS'"/>
+</xsl:when>
+<xsl:otherwise>FAIL</xsl:otherwise>
+</xsl:choose>
+</result>
+<xsl:if test="false()">
+<alpha attr="this.nodeValue" xml:id="id1"><xi xml:lang="no-nb" xml:id="id2"/><lambda insert="attribute-value"><rho string="solid 1px green" xml:id="id3"/><mu string="true" xml:lang="en-GB" xml:id="id4"/><lambda token="100%"/><beta xml:lang="no-nb"/><upsilon/><alpha object="100%" xml:id="id5"/><sigma class="this-is-att-value" xml:lang="no-nb"><green>This text must be green</green></sigma></lambda></alpha></xsl:if>
+</xsl:template>
+</xsl:stylesheet>

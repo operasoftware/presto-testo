@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>type attribute of input element</title>
+<script type="application/ecmascript">
+function start()
+	{ev = document.createEvent('MouseEvents');
+	ev.initEvent('click',true,true);
+	document.getElementsByTagName('input')[1].dispatchEvent(ev);}
+</script>
+</head>
+<body onload="start()">
+<form action="../hlp/get.php">
+<div>
+<input type="hidden" name="result" value="PASS"/>
+<input type="image" name="submit" src="../hlp/image.png"/>
+</div>
+</form>
+<p>FAIL</p>
+</body>
+</html>

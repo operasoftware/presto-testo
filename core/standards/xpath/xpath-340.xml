@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:template match="xsl:template">
+<result>
+<xsl:choose>
+<xsl:when test='//lambda[@att][@xml:lang="en-GB"]/delta[@xml:lang="en-GB"][@xml:id="id1"][not(preceding-sibling::*)]/upsilon[@token][@xml:lang="en-US"][@xml:id="id2"][not(preceding-sibling::*)][following-sibling::delta[starts-with(concat(@att,"-"),"_blank-")][@xml:lang="nb"][preceding-sibling::*[position() = 1]]/beta[starts-with(concat(@attrib,"-"),"attribute value-")][@xml:id="id3"][not(preceding-sibling::*)][following-sibling::*[position()=2]][not(child::node())][following-sibling::tau[@xml:id="id4"][following-sibling::rho[not(following-sibling::*)]/eta[contains(@object,"d 1")][following-sibling::sigma[preceding-sibling::*[position() = 1]][not(following-sibling::*)]/iota[not(preceding-sibling::*)][following-sibling::*[position()=2]][not(child::node())][following-sibling::nu[preceding-sibling::*[position() = 1]][not(child::node())][following-sibling::phi[contains(concat(@att,"$"),"ank$")][@xml:lang="en-GB"][@xml:id="id5"][preceding-sibling::*[position() = 2]][not(following-sibling::*)]//alpha[@xml:lang="en-US"]//nu[@title][@xml:lang="en"][not(preceding-sibling::*)]/gamma[@delete][@xml:lang="en"][not(following-sibling::*)][position() = 1]]][position() = 1]]]]]'>	
+	<xsl:value-of select="'PASS'"/>
+</xsl:when>
+<xsl:otherwise>FAIL</xsl:otherwise>
+</xsl:choose>
+</result>
+<xsl:if test="false()">
+<lambda att="attribute" xml:lang="en-GB"><delta xml:lang="en-GB" xml:id="id1"><upsilon token="_blank" xml:lang="en-US" xml:id="id2"/><delta att="_blank" xml:lang="nb"><beta attrib="attribute value" xml:id="id3"/><tau xml:id="id4"/><rho><eta object="solid 1px green"/><sigma><iota/><nu/><phi att="_blank" xml:lang="en-GB" xml:id="id5"><alpha xml:lang="en-US"><nu title="attribute value" xml:lang="en"><gamma delete="this-is-att-value" xml:lang="en"><green>This text must be green</green></gamma></nu></alpha></phi></sigma></rho></delta></delta></lambda></xsl:if>
+</xsl:template>
+</xsl:stylesheet>

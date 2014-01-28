@@ -1,0 +1,8 @@
+<?xml version="1.0" standalone="YES"?>
+<!--The xml declaration is not well-formed, standalone value is uppercase-->
+<!-- Testcase: xml_standalone_yess_uppercase.xml -->
+<!-- Description: The test the xml parser's ability to report a error when a document is NOT well-formed  -->
+<!-- Author:  Chris Petersen  Date: 12/06/2000 -->
+<root>
+This text shouldn't appear
+</root>

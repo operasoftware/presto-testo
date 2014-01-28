@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>rbspan attribute of rt element</title>
+</head>
+<body>
+<p>Two annotations below should be formatted identically</p>
+<p><ruby><rbc><rb>BA</rb><rb>SE</rb></rbc><rtc><rt rbspan="2">overscript</rt></rtc></ruby></p>
+<p><ruby><rbc><rb>BASE</rb></rbc><rtc><rt>overscript</rt></rtc></ruby></p>
+</body>
+</html>

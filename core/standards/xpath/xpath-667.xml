@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:template match="xsl:template">
+<result>
+<xsl:choose>
+<xsl:when test='//epsilon[@or][@xml:lang="no-nb"]/eta[@false][following-sibling::mu[@false="another attribute value"][@xml:lang="en"][@xml:id="id1"][preceding-sibling::*[position() = 1]][not(following-sibling::*)]/upsilon[@object="this-is-att-value"][@xml:lang="en-US"][not(preceding-sibling::*)][not(child::node())][following-sibling::lambda[@xml:lang="nb"][@xml:id="id2"][preceding-sibling::*[position() = 1]][not(following-sibling::*)]/eta[@xml:lang="nb"][not(child::node())][following-sibling::mu[preceding-sibling::*[position() = 1]]/pi[starts-with(concat(@delete,"-"),"content-")][@xml:lang="no"]]][position() = 1]]'>	
+	<xsl:value-of select="'PASS'"/>
+</xsl:when>
+<xsl:otherwise>FAIL</xsl:otherwise>
+</xsl:choose>
+</result>
+<xsl:if test="false()">
+<epsilon or="attribute-value" xml:lang="no-nb"><eta false="this.nodeValue"/><mu false="another attribute value" xml:lang="en" xml:id="id1"><upsilon object="this-is-att-value" xml:lang="en-US"/><lambda xml:lang="nb" xml:id="id2"><eta xml:lang="nb"/><mu><pi delete="content" xml:lang="no"><green>This text must be green</green></pi></mu></lambda></mu></epsilon></xsl:if>
+</xsl:template>
+</xsl:stylesheet>

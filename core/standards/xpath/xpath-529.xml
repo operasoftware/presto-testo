@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:template match="xsl:template">
+<result>
+<xsl:choose>
+<xsl:when test='//sigma[@token][@xml:lang="no-nb"][@xml:id="id1"]/phi[starts-with(@desciption,"th")][@xml:id="id2"][not(following-sibling::*)]/zeta[@xml:lang="no"][@xml:id="id3"][not(preceding-sibling::*)][following-sibling::epsilon[contains(@and,"id 1px green")][following-sibling::chi[@xml:id="id4"]/omicron[@class][not(following-sibling::*)][position() = 1]]]'>	
+	<xsl:value-of select="'PASS'"/>
+</xsl:when>
+<xsl:otherwise>FAIL</xsl:otherwise>
+</xsl:choose>
+</result>
+<xsl:if test="false()">
+<sigma token="solid 1px green" xml:lang="no-nb" xml:id="id1"><phi desciption="this.nodeValue" xml:id="id2"><zeta xml:lang="no" xml:id="id3"/><epsilon and="solid 1px green"/><chi xml:id="id4"><omicron class="another attribute value"><green>This text must be green</green></omicron></chi></phi></sigma></xsl:if>
+</xsl:template>
+</xsl:stylesheet>

@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xhtml:html xmlns:xhtml="http://www.w3.org/1999/xhtml">
+<xhtml:head>
+<xhtml:title>xhtml namespace</xhtml:title>
+<xhtml:style type="text/css">
+@namespace ht "http://www.w3.org/TR/REC-html40";
+@namespace ns "http://www.w3.org/1999/xhtml";
+ns|p:not(ht|p)
+	{content:"PASS"}
+</xhtml:style>
+</xhtml:head>
+<xhtml:body>
+<xhtml:p>FAIL</xhtml:p>
+</xhtml:body>
+</xhtml:html>

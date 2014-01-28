@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/css" href="data:text/css,doc%2C%20intro%2C%20line%20%7Bdisplay%3Ablock%7D"?>
+<doc>
+<intro>Two lines below should be formatted identically</intro>
+<line><![CDATA[<char name="&amp;" hex='26'/>]]></line>
+<line>&lt;char name="&amp;amp;" hex='26'/></line>
+</doc>
+
+
+
+
+

@@ -1,0 +1,9 @@
+<?xml version="1.0">
+<!--The xml declaration is not closed with ? mark-->
+<!-- Testcase: xml_declar_missing_quote.xml -->
+<!-- Description: The test the xml parser's ability to report a error when a document is NOT well-formed  -->
+<!-- Author:  Chris Petersen  Date: 12/06/2000 -->
+<hello>
+This text shouldn't appear
+</hello>
+

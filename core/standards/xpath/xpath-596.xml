@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:template match="xsl:template">
+<result>
+<xsl:choose>
+<xsl:when test='//phi//delta[starts-with(@data,"_bl")][not(preceding-sibling::*)][not(following-sibling::*)]/phi[contains(concat(@class,"$"),"id 1px green$")][@xml:id="id1"][not(preceding-sibling::*)][not(following-sibling::*)]/nu[starts-with(@class,"fa")][@xml:id="id2"][not(following-sibling::*)]//beta[contains(concat(@class,"$"),"ribute$")][not(preceding-sibling::*)][not(child::node())][following-sibling::xi[starts-with(concat(@insert,"-"),"true-")][@xml:lang="en"][@xml:id="id3"][preceding-sibling::*[position() = 1]][following-sibling::xi[@xml:lang="nb"][not(child::node())][following-sibling::theta[@xml:id="id4"][preceding-sibling::*[position() = 3]][not(following-sibling::*)]/chi[starts-with(@number,"10")][@xml:lang="en"][not(preceding-sibling::*)]//delta[@xml:lang="en-GB"][@xml:id="id5"][not(preceding-sibling::*)][not(following-sibling::*)]//rho[starts-with(concat(@title,"-"),"true-")][@xml:lang="nb"][@xml:id="id6"][not(following-sibling::*)]/nu[contains(concat(@data,"$"),"odeValue$")][@xml:lang="no-nb"][not(following-sibling::*)]/upsilon[@xml:lang="en-US"]/phi[contains(@title,"odeV")][@xml:id="id7"][not(preceding-sibling::*)]//phi[starts-with(concat(@delete,"-"),"content-")][not(preceding-sibling::*)]/omega[@xml:lang="no-nb"][not(preceding-sibling::*)][following-sibling::epsilon[@xml:lang="no"][@xml:id="id8"][preceding-sibling::*[position() = 1]][following-sibling::eta[@xml:lang="en-US"][preceding-sibling::*[position() = 2]]/mu[@xml:id="id9"]/gamma[contains(concat(@att,"$"),"ank$")][@xml:id="id10"][not(following-sibling::*)]//sigma[@attrib][@xml:id="id11"][following-sibling::*[position()=1]][not(child::node())][following-sibling::delta[starts-with(@content,"tr")][@xml:lang="en"][not(following-sibling::*)]//chi[@xml:lang="en"][not(preceding-sibling::*)][not(preceding-sibling::chi)][position() = 1]][position() = 1]][position() = 1]]][position() = 1]][position() = 1]]'>	
+	<xsl:value-of select="'PASS'"/>
+</xsl:when>
+<xsl:otherwise>FAIL</xsl:otherwise>
+</xsl:choose>
+</result>
+<xsl:if test="false()">
+<phi><delta data="_blank"><phi class="solid 1px green" xml:id="id1"><nu class="false" xml:id="id2"><beta class="attribute"/><xi insert="true" xml:lang="en" xml:id="id3"/><xi xml:lang="nb"/><theta xml:id="id4"><chi number="100%" xml:lang="en"><delta xml:lang="en-GB" xml:id="id5"><rho title="true" xml:lang="nb" xml:id="id6"><nu data="this.nodeValue" xml:lang="no-nb"><upsilon xml:lang="en-US"><phi title="this.nodeValue" xml:id="id7"><phi delete="content"><omega xml:lang="no-nb"/><epsilon xml:lang="no" xml:id="id8"/><eta xml:lang="en-US"><mu xml:id="id9"><gamma att="_blank" xml:id="id10"><sigma attrib="solid 1px green" xml:id="id11"/><delta content="true" xml:lang="en"><chi xml:lang="en"><green>This text must be green</green></chi></delta></gamma></mu></eta></phi></phi></upsilon></nu></rho></delta></chi></theta></nu></phi></delta></phi></xsl:if>
+</xsl:template>
+</xsl:stylesheet>

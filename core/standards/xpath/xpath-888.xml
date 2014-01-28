@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:template match="xsl:template">
+<result>
+<xsl:choose>
+<xsl:when test='//sigma[@xml:lang="en"][@xml:id="id1"]/kappa[@src][@xml:id="id2"][not(preceding-sibling::*)][following-sibling::upsilon[contains(@attr,"another ")][@xml:lang="no"][@xml:id="id3"][preceding-sibling::*[position() = 1]][following-sibling::delta[not(preceding-sibling::delta or following-sibling::delta)]/*[@xml:lang="nb"][@xml:id="id4"][not(preceding-sibling::*)][not(child::node())][following-sibling::psi[starts-with(@and,"12345678")][@xml:lang="en-GB"][@xml:id="id5"][preceding-sibling::*[position() = 1]][following-sibling::*[position()=1]][following-sibling::omega[@delete="attribute-value"][preceding-sibling::*[position() = 2]][not(following-sibling::*)]//xi[@xml:lang="en"][following-sibling::iota[@xml:lang="en"][following-sibling::*[position()=1]][not(following-sibling::iota)][following-sibling::gamma[@xml:id="id6"][preceding-sibling::*[position() = 2]][not(following-sibling::*)]//eta[@xml:id="id7"]/zeta[@true][@xml:id="id8"]/xi[contains(@token,"fa")][not(following-sibling::*)]//omicron[@xml:id="id9"][not(preceding-sibling::*)][not(following-sibling::*)]//delta[@xml:lang="en-GB"][not(preceding-sibling::*)][not(child::node())][following-sibling::xi[starts-with(@att,"attr")][not(following-sibling::*)]//zeta[@xml:lang="nb"][not(preceding-sibling::*)][not(following-sibling::*)]/alpha[starts-with(concat(@true,"-"),"_blank-")][@xml:lang="en-GB"][@xml:id="id10"][not(preceding-sibling::*)]/theta[@object][@xml:lang="en-US"][@xml:id="id11"][not(preceding-sibling::*)][not(child::node())][following-sibling::theta[contains(@token,"blank")]/omega[not(preceding-sibling::*)][not(following-sibling::*)][not(parent::*/*[position()=2])]/iota[starts-with(@or,"_")][not(preceding-sibling::*)][not(following-sibling::*)]/sigma[contains(concat(@insert,"$"),"ttribute$")][not(following-sibling::*)]//alpha[@xml:lang="no-nb"][not(preceding-sibling::*)]]][position() = 1]]][position() = 1]]]][position() = 1]]'>	
+	<xsl:value-of select="'PASS'"/>
+</xsl:when>
+<xsl:otherwise>FAIL</xsl:otherwise>
+</xsl:choose>
+</result>
+<xsl:if test="false()">
+<sigma xml:lang="en" xml:id="id1"><kappa src="100%" xml:id="id2"/><upsilon attr="another attribute value" xml:lang="no" xml:id="id3"/><delta><any xml:lang="nb" xml:id="id4"/><psi and="123456789" xml:lang="en-GB" xml:id="id5"/><omega delete="attribute-value"><xi xml:lang="en"/><iota xml:lang="en"/><gamma xml:id="id6"><eta xml:id="id7"><zeta true="content" xml:id="id8"><xi token="false"><omicron xml:id="id9"><delta xml:lang="en-GB"/><xi att="attribute-value"><zeta xml:lang="nb"><alpha true="_blank" xml:lang="en-GB" xml:id="id10"><theta object="attribute-value" xml:lang="en-US" xml:id="id11"/><theta token="_blank"><omega><iota or="_blank"><sigma insert="attribute"><alpha xml:lang="no-nb"><green>This text must be green</green></alpha></sigma></iota></omega></theta></alpha></zeta></xi></omicron></xi></zeta></eta></gamma></omega></delta></sigma></xsl:if>
+</xsl:template>
+</xsl:stylesheet>

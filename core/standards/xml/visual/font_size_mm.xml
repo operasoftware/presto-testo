@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/css" href="data:text/css,*%20%7Bdisplay%3Ablock%7Dobserve%3Afirst-child%20%7Bfont-size%3A10mm%7Dobserve%20%7Bfont-size%3A1cm%3B%7D"?>
+<root>
+<observe>These two paragraphs should be formatted identically</observe>
+<observe>These two paragraphs should be formatted identically</observe>
+</root>
+<!--
+* {display:block}
+observe:first-child {font-size:10mm}
+observe {font-size:1cm;}
+-->

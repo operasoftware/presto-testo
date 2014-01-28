@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:template match="xsl:template">
+<result>
+<xsl:choose>
+<xsl:when test='//pi[contains(concat(@true,"$"),"value$")][@xml:lang="no"][@xml:id="id1"]//iota[@xml:lang="no-nb"][@xml:id="id2"][not(preceding-sibling::*)][not(child::node())][following-sibling::gamma[@xml:lang="en"][@xml:id="id3"][preceding-sibling::*[position() = 1]][not(following-sibling::*)]//lambda[not(following-sibling::*)][not(parent::*/*[position()=2])]//rho[contains(concat(@token,"$"),"ontent$")][@xml:lang="no"][following-sibling::iota[@xml:lang="en"][preceding-sibling::*[position() = 1]][not(following-sibling::*)][not(following-sibling::iota)]//epsilon//beta[@xml:lang="no-nb"][not(preceding-sibling::*)][following-sibling::*[position()=1]][not(child::node())][following-sibling::epsilon[preceding-sibling::*[position() = 1]]/delta[@xml:id="id4"][not(following-sibling::*)]/psi[@content][@xml:lang="nb"][@xml:id="id5"][not(preceding-sibling::*)]//mu[@xml:id="id6"]/delta[not(following-sibling::*)][position() = 1]]][position() = 1]]'>	
+	<xsl:value-of select="'PASS'"/>
+</xsl:when>
+<xsl:otherwise>FAIL</xsl:otherwise>
+</xsl:choose>
+</result>
+<xsl:if test="false()">
+<pi true="attribute value" xml:lang="no" xml:id="id1"><iota xml:lang="no-nb" xml:id="id2"/><gamma xml:lang="en" xml:id="id3"><lambda><rho token="content" xml:lang="no"/><iota xml:lang="en"><epsilon><beta xml:lang="no-nb"/><epsilon><delta xml:id="id4"><psi content="another attribute value" xml:lang="nb" xml:id="id5"><mu xml:id="id6"><delta><green>This text must be green</green></delta></mu></psi></delta></epsilon></epsilon></iota></lambda></gamma></pi></xsl:if>
+</xsl:template>
+</xsl:stylesheet>

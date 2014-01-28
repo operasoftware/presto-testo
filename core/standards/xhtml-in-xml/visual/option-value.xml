@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>value attribute of option element</title>
+</head>
+<body onload="document.getElementsByTagName('form')[0].submit()">
+<form action="../hlp/get.php">
+<div>
+<select name="result">
+<option value="PASS">FAIL</option>
+</select>
+</div>
+</form>
+</body>
+</html>

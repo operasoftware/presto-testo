@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:template match="xsl:template">
+<result>
+<xsl:choose>
+<xsl:when test='//nu[contains(concat(@abort,"$"),"blank$")][@xml:lang="en-US"]/nu[@xml:id="id1"][not(preceding-sibling::*)][following-sibling::*[position()=2]][following-sibling::chi[following-sibling::epsilon[@xml:id="id2"][preceding-sibling::*[position() = 2]]/lambda[@xml:id="id3"][not(preceding-sibling::*)][not(following-sibling::*)]/tau[@xml:lang="no"][@xml:id="id4"][not(preceding-sibling::*)][following-sibling::rho[@xml:id="id5"][preceding-sibling::*[position() = 1]][not(child::node())][following-sibling::beta[contains(concat(@attribute,"$"),"ank$")][@xml:lang="nb"][@xml:id="id6"][not(child::node())][following-sibling::eta[@delete][preceding-sibling::*[position() = 3]]/beta[@xml:lang="no-nb"][@xml:id="id7"][not(preceding-sibling::*)][following-sibling::*[position()=5]][following-sibling::phi[@content][@xml:id="id8"][following-sibling::nu[following-sibling::zeta[@xml:lang="no-nb"][@xml:id="id9"][following-sibling::delta[@xml:id="id10"][following-sibling::zeta[@xml:lang="en"][@xml:id="id11"][preceding-sibling::*[position() = 5]]]][position() = 1]][position() = 1]]]]][position() = 1]][position() = 1]]]'>	
+	<xsl:value-of select="'PASS'"/>
+</xsl:when>
+<xsl:otherwise>FAIL</xsl:otherwise>
+</xsl:choose>
+</result>
+<xsl:if test="false()">
+<nu abort="_blank" xml:lang="en-US"><nu xml:id="id1"/><chi/><epsilon xml:id="id2"><lambda xml:id="id3"><tau xml:lang="no" xml:id="id4"/><rho xml:id="id5"/><beta attribute="_blank" xml:lang="nb" xml:id="id6"/><eta delete="123456789"><beta xml:lang="no-nb" xml:id="id7"/><phi content="_blank" xml:id="id8"/><nu/><zeta xml:lang="no-nb" xml:id="id9"/><delta xml:id="id10"/><zeta xml:lang="en" xml:id="id11"><green>This text must be green</green></zeta></eta></lambda></epsilon></nu></xsl:if>
+</xsl:template>
+</xsl:stylesheet>

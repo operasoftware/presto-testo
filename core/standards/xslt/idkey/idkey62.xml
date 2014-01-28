@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="idkey62.xsl"?>
+<!DOCTYPE t04 [
+  <!ELEMENT t04 (a*)>
+  <!ELEMENT a EMPTY>
+  <!ATTLIST a id ID #REQUIRED>
+]>
+<t04>
+  <a id="a"/>
+  <a id="b"/>
+  <a id="c"/>
+  <a id="d"/>
+</t04>

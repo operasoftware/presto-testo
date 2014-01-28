@@ -1,0 +1,159 @@
+<?xml version="1.0"?>
+
+<?xml-stylesheet type="text/css" href="css_text.css"?>
+
+<!-- Testcase: css_text.xml -->
+
+<!-- Description: To test XML rendering of CSS 'text' properties -->
+
+<!-- Author:  Christine Dreckman  Date: 8/27/99 -->
+
+<!-- 
+
+   - The contents of this file are subject to the Mozilla Public
+
+   - License Version 1.1 (the "License"); you may not use this file
+
+   - except in compliance with the License. You may obtain a copy of
+
+   - the License at http://www.mozilla.org/MPL/
+
+   - 
+
+   - Software distributed under the License is distributed on an "AS
+
+   - IS" basis, WITHOUT WARRANTY OF ANY KIND, either express or
+
+   - implied. See the License for the specific language governing
+
+   - rights and limitations under the License.
+
+   - 
+
+   - The Original Code is Mozilla Communicator Test Cases.
+
+   - 
+
+   - The Initial Developer of the Original Code is Netscape Communications
+
+   - Corp.  Portions created by Netscape Communications Corp. are 
+
+   - Copyright (C) 1999 Netscape Communications Corp.  All
+
+   - Rights Reserved.
+
+   - 
+
+   - Contributor(s): 
+
+  -->
+
+<!-- Purpose: To test XML rendering of CSS 'text' properties -->
+
+<!-- Expected result: Items should display as indicated -->
+
+<doc>
+
+<test xmlns:html="http://www.w3.org/TR/REC-html40">
+
+1.<html:br/>
+
+<wordspace>There should be 1pc between each word in this sentence.
+
+</wordspace>
+
+<html:br/>
+
+<html:br/>
+
+2.<html:br/>
+
+<letterspace>Thereshouldbe10ptsbetweeneachletterinthissentence 
+
+</letterspace>
+
+<html:br/>
+
+<html:br/>
+
+3.<html:br/>
+
+<textdecor>This sentence should be overlined and lined through
+
+</textdecor>
+
+<html:br/>
+
+<html:br/>
+
+4.<html:br/>
+
+<aside>The word
+
+<verticalalign>
+
+text
+
+</verticalalign>
+
+in this sentence should be subscripted
+
+</aside> 
+
+<html:br/>
+
+<html:br/>
+
+5.<html:br/>
+
+<texttransform>
+
+this sentence should be in uppercase
+
+</texttransform>
+
+<html:br/>
+
+<html:br/>
+
+6.<html:br/>
+
+<html:div class="one">
+
+<textalign>This text should be centered aligned within this div
+
+</textalign>
+
+</html:div>
+
+<html:br/>
+
+<html:br/>
+
+7.<html:br/>
+
+<textindent>
+
+This text should be indented .25in on the left
+
+</textindent>
+
+<html:br/>
+
+<html:br/>
+
+8.<html:br/>
+
+<lineheight>The line height of this box should be 2 times the .25in font size
+
+</lineheight>
+
+<html:br/>
+
+<html:br/>
+
+
+
+</test>
+
+</doc>

@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<!-- Testcase: pi_in_child_element.xml -->
+<!-- Description: The processing instruction is placed inside child element -->
+<!-- Author:  Chris Petersen  Date: 12/21/2000 -->
+<main2>
+<again>
+<?xml-stylesheet href="standard.css" type="text/css"?>
+This sentence should appear as bold, purple text. <!--The processing instruction , which specifies a stylesheet for this document, is located in the child element.-->
+</again>
+</main2>

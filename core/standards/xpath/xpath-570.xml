@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:template match="xsl:template">
+<result>
+<xsl:choose>
+<xsl:when test='//theta[contains(@string,"ontent")][@xml:lang="nb"]//iota[contains(@token,"t-v")][@xml:lang="en"][not(preceding-sibling::*)][not(following-sibling::*)]/theta[@xml:id="id1"]//kappa[@xml:id="id2"][not(preceding-sibling::*)]//beta[@attribute="this-is-att-value"][@xml:lang="en"][@xml:id="id3"][not(preceding-sibling::*)][not(following-sibling::*)]/zeta[starts-with(concat(@true,"-"),"solid 1px green-")][@xml:id="id4"][following-sibling::omega[@and="attribute"][@xml:lang="no"][not(following-sibling::*)]//pi[@xml:lang="en"][not(preceding-sibling::*)][not(following-sibling::*)][position() = 1]]'>	
+	<xsl:value-of select="'PASS'"/>
+</xsl:when>
+<xsl:otherwise>FAIL</xsl:otherwise>
+</xsl:choose>
+</result>
+<xsl:if test="false()">
+<theta string="content" xml:lang="nb"><iota token="this-is-att-value" xml:lang="en"><theta xml:id="id1"><kappa xml:id="id2"><beta attribute="this-is-att-value" xml:lang="en" xml:id="id3"><zeta true="solid 1px green" xml:id="id4"/><omega and="attribute" xml:lang="no"><pi xml:lang="en"><green>This text must be green</green></pi></omega></beta></kappa></theta></iota></theta></xsl:if>
+</xsl:template>
+</xsl:stylesheet>

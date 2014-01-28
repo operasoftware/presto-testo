@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta name="generator"
+
+content="HTML Tidy for Mac OS, see www.w3.org" />
+
+<!-- testcase: input_type_file.xml -->
+
+<!-- description: HTML 4.0 text markup element INPUT with the TYPE attribute set to file -->
+
+<!-- Author: Frank Petitta, Date: 6/10/98 -->
+
+<!-- Author: Chris Petersen Modified: 8/4/98 -->
+
+<!-- Author: Chris Dreckman Modified: 10/30/98 -->
+
+<!-- Modified: Changed doctype to xhtml 1.0 transitional Author: Chris Petersen Date: 1/23/01 -->
+
+<!-- 
+
+   - The contents of this file are subject to the Mozilla Public
+
+   - License Version 1.1 (the "License"); you may not use this file
+
+   - except in compliance with the License. You may obtain a copy of
+
+   - the License at http://www.mozilla.org/MPL/
+
+   - 
+
+   - Software distributed under the License is distributed on an "AS
+
+   - IS" basis, WITHOUT WARRANTY OF ANY KIND, either express or
+
+   - implied. See the License for the specific language governing
+
+   - rights and limitations under the License.
+
+   - 
+
+   - The Original Code is Mozilla Communicator Test Cases.
+
+   - 
+
+   - The Initial Developer of the Original Code is Netscape Communications
+
+   - Corp.  Portions created by Netscape Communications Corp. are 
+
+   - Copyright (C) 1999 Netscape Communications Corp.  All
+
+   - Rights Reserved.
+
+   - 
+
+   - Contributor(s): 
+
+  -->
+
+<!-- Purpose: To test the INPUT element and TYPE attribute. Assign a value of TYPE=FILE. -->
+
+<!-- Expected result: Summary information for the selected file will be uploaded 
+
+to a new page with the following information -->
+
+<title>XHTML Functional -- INPUT - TYPE=file</title>
+
+</head>
+
+<body>
+
+<p>Upload the Contents:</p>
+
+<form method="POST" action="receive.cgi">Enter/Choose a file:
+
+<input type="file" name="userfile" size="40"
+
+maxlength="125" /><br />
+
+ <input type="submit" value="Send File" /></form>
+
+</body>
+
+</html>
+
+
+

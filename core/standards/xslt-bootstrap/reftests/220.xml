@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+	<xsl:template match="list">
+		<result>
+			<xsl:for-each select="item">
+				<xsl:sort data-type="number"/>
+				<xsl:value-of select="translate(.,'123456/','PASS')"/>
+			</xsl:for-each>
+		</result>
+		<xsl:if test="false()">
+			<list>
+				<item>4</item>
+				<item>3</item>
+				<item>5/6</item>
+				<item>2</item>
+				<item>1</item>
+			</list>
+		</xsl:if>
+	</xsl:template>
+</xsl:stylesheet>

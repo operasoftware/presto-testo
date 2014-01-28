@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ev="http://www.w3.org/2001/xml-events">
+<head>
+<title>DOMSubtreeModified event</title>
+<script type="application/ecmascript" id="handler">
+<![CDATA[
+if(listen)
+	{listen = false;
+	document.getElementsByTagName('tt')[0].firstChild.nodeValue = "PASSED";}
+]]>
+</script>
+</head>
+<body ev:event="DOMSubtreeModified" ev:handler="#handler">
+<div><tt>NOT TESTED (script did not run)</tt></div>
+<script type="application/ecmascript">
+<![CDATA[
+var listen = true, tt = document.getElementsByTagName('tt')[0];
+tt.replaceChild(document.createTextNode("FAILED"),tt.firstChild);
+]]>
+</script>
+</body>
+</html>

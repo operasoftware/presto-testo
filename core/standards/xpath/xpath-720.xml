@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:template match="xsl:template">
+<result>
+<xsl:choose>
+<xsl:when test='//mu//epsilon[@attrib="123456789"][@xml:id="id1"][following-sibling::*[position()=1]][not(child::node())][following-sibling::theta[preceding-sibling::*[position() = 1]]/gamma[@xml:id="id2"][not(child::node())][following-sibling::rho[@xml:id="id3"][preceding-sibling::*[position() = 1]][following-sibling::kappa[@xml:lang="no"][preceding-sibling::*[position() = 2]][following-sibling::upsilon[@xml:id="id4"][following-sibling::*[position()=2]][following-sibling::zeta[contains(@and,"123456")][@xml:lang="en-US"][following-sibling::chi[contains(concat(@or,"$"),"odeValue$")][preceding-sibling::*[position() = 5]]/lambda[starts-with(@object,"1")][@xml:id="id5"][not(following-sibling::*)]/theta[not(preceding-sibling::*)][not(child::node())][following-sibling::epsilon[@xml:lang="no-nb"][preceding-sibling::*[position() = 1]]][position() = 1]][position() = 1]]]][position() = 1]][position() = 1]]'>	
+	<xsl:value-of select="'PASS'"/>
+</xsl:when>
+<xsl:otherwise>FAIL</xsl:otherwise>
+</xsl:choose>
+</result>
+<xsl:if test="false()">
+<mu><epsilon attrib="123456789" xml:id="id1"/><theta><gamma xml:id="id2"/><rho xml:id="id3"/><kappa xml:lang="no"/><upsilon xml:id="id4"/><zeta and="123456789" xml:lang="en-US"/><chi or="this.nodeValue"><lambda object="100%" xml:id="id5"><theta/><epsilon xml:lang="no-nb"><green>This text must be green</green></epsilon></lambda></chi></theta></mu></xsl:if>
+</xsl:template>
+</xsl:stylesheet>

@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>defer attribute of script element</title>
+<script type="application/ecmascript">
+var pass = true
+</script>
+</head>
+<body>
+<script defer="defer" type="application/ecmascript" src="../hlp/script-defer.php"/>
+<p>Test result: <tt>FAIL</tt></p>
+<script type="application/ecmascript">
+document.getElementsByTagName('tt')[0].firstChild.nodeValue = result?'PASS':'FAIL';
+</script>
+</body>
+</html>

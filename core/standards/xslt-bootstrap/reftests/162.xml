@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:template match="xsl:stylesheet">
+<xsl:comment>DID NOT</xsl:comment>
+<xsl:copy-of select="$var"/>
+</xsl:template>
+<xsl:variable name="var">
+<result>PASS</result>
+</xsl:variable>
+</xsl:stylesheet>

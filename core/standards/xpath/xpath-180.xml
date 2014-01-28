@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:template match="xsl:template">
+<result>
+<xsl:choose>
+<xsl:when test='//upsilon[starts-with(@content,"attribute valu")][@xml:lang="en"][@xml:id="id1"]/iota[contains(concat(@attrib,"$"),"tribute value$")][not(preceding-sibling::*)][following-sibling::alpha[starts-with(concat(@false,"-"),"123456789-")][@xml:lang="no-nb"][@xml:id="id2"]//nu[contains(concat(@abort,"$"),"rue$")][@xml:id="id3"][following-sibling::omicron[preceding-sibling::*[position() = 1]][following-sibling::*[position()=6]][following-sibling::epsilon[@xml:lang="en-GB"][following-sibling::*[position()=5]][not(child::node())][following-sibling::mu[contains(concat(@data,"$"),"ute value$")][following-sibling::pi[@xml:id="id4"][not(child::node())][following-sibling::gamma[@desciption][@xml:lang="nb"][following-sibling::omicron[@insert][@xml:lang="en-US"][not(child::node())][following-sibling::sigma[preceding-sibling::*[position() = 7]][not(following-sibling::*)]//omega[@attribute][@xml:lang="no"][@xml:id="id5"][not(following-sibling::*)]//gamma[@xml:lang="en"][@xml:id="id6"][following-sibling::*[position()=1]][following-sibling::tau[@xml:id="id7"][preceding-sibling::*[position() = 1]][not(following-sibling::*)]/omicron[starts-with(@delete,"false")][not(preceding-sibling::*)]//rho[@xml:lang="nb"][not(preceding-sibling::*)][following-sibling::delta//lambda[@xml:lang="en"][@xml:id="id8"][not(preceding-sibling::*)][following-sibling::omega[@xml:id="id9"][preceding-sibling::*[position() = 1]][not(following-sibling::*)]/*[contains(@or,"ntent")][@xml:lang="nb"][@xml:id="id10"][not(preceding-sibling::*)]/kappa[contains(@name,"reen")][@xml:lang="en-GB"][@xml:id="id11"][not(following-sibling::*)]//nu[@xml:lang="no"][@xml:id="id12"][following-sibling::*[position()=2]][not(child::node())][following-sibling::rho[preceding-sibling::*[position() = 1]][not(child::node())][following-sibling::phi[@xml:lang="en-US"][@xml:id="id13"]]]]]][position() = 1]]]][position() = 1]][position() = 1]]]]]'>	
+	<xsl:value-of select="'PASS'"/>
+</xsl:when>
+<xsl:otherwise>FAIL</xsl:otherwise>
+</xsl:choose>
+</result>
+<xsl:if test="false()">
+<upsilon content="attribute value" xml:lang="en" xml:id="id1"><iota attrib="another attribute value"/><alpha false="123456789" xml:lang="no-nb" xml:id="id2"><nu abort="true" xml:id="id3"/><omicron/><epsilon xml:lang="en-GB"/><mu data="attribute value"/><pi xml:id="id4"/><gamma desciption="100%" xml:lang="nb"/><omicron insert="content" xml:lang="en-US"/><sigma><omega attribute="attribute value" xml:lang="no" xml:id="id5"><gamma xml:lang="en" xml:id="id6"/><tau xml:id="id7"><omicron delete="false"><rho xml:lang="nb"/><delta><lambda xml:lang="en" xml:id="id8"/><omega xml:id="id9"><any or="content" xml:lang="nb" xml:id="id10"><kappa name="solid 1px green" xml:lang="en-GB" xml:id="id11"><nu xml:lang="no" xml:id="id12"/><rho/><phi xml:lang="en-US" xml:id="id13"><green>This text must be green</green></phi></kappa></any></omega></delta></omicron></tau></omega></sigma></alpha></upsilon></xsl:if>
+</xsl:template>
+</xsl:stylesheet>

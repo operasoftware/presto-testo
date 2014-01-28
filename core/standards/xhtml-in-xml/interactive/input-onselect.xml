@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>onselect attribute of input element</title>
+</head>
+<body>
+<div><input type="text" name="in" value="select this text" onselect="this.value='PASS'"/></div>
+<p>You should see word pass once you select text in input field above.</p>
+</body>
+</html>
+

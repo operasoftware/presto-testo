@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/css" href="data:text/css,root%2C%20observe%2C%20outside%2C%20padded%20%7Bdisplay%3Ablock%7Doutside%20%7Bheight%3A1em%3Bline-height%3A1em%3Boverflow%3Ahidden%3B%7Dpadded%20%7Bpadding-top%3A1em%7D"?>
+<root>
+<observe>There should be only one sentence on this page.</observe>
+<outside><padded>FAIL</padded></outside>
+</root>
+<!-- 
+root, observe, outside, padded {display:block}
+outside {height:1em;line-height:1em;overflow:hidden;}
+padded {padding-top:1em}
+-->

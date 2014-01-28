@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:template match="xsl:template">
+<result>
+<xsl:choose>
+<xsl:when test='//omicron//beta[starts-with(concat(@string,"-"),"123456789-")][@xml:lang="en-GB"][not(preceding-sibling::*)][not(child::node())][following-sibling::epsilon[@or="this.nodeValue"][not(following-sibling::*)]//pi[starts-with(concat(@att,"-"),"_blank-")][@xml:lang="no-nb"]/delta[@delete]/rho[contains(@or,"lue")][@xml:lang="en-GB"]/alpha[not(preceding-sibling::*)]]'>	
+	<xsl:value-of select="'PASS'"/>
+</xsl:when>
+<xsl:otherwise>FAIL</xsl:otherwise>
+</xsl:choose>
+</result>
+<xsl:if test="false()">
+<omicron><beta string="123456789" xml:lang="en-GB"/><epsilon or="this.nodeValue"><pi att="_blank" xml:lang="no-nb"><delta delete="solid 1px green"><rho or="this-is-att-value" xml:lang="en-GB"><alpha><green>This text must be green</green></alpha></rho></delta></pi></epsilon></omicron></xsl:if>
+</xsl:template>
+</xsl:stylesheet>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE element [
+<!ENTITY int "&ent;">
+<!ENTITY ent "&int;">
+]>
+<element>Entity in entity declaration &ent;</element>
+
+
+
+
+
+

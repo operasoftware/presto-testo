@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:template match="xsl:template">
+<result>
+<xsl:choose>
+<xsl:when test='//sigma[@xml:id="id1"]//psi[not(preceding-sibling::*)]/pi[not(preceding-sibling::*)]//nu[contains(@src,"ode")][@xml:id="id2"][not(following-sibling::*)]//delta[@xml:lang="en-US"][not(preceding-sibling::delta)][following-sibling::iota[starts-with(concat(@desciption,"-"),"100%-")][@xml:lang="en-US"][@xml:id="id3"][following-sibling::xi[@xml:lang="en"][following-sibling::*[position()=1]][not(child::node())][following-sibling::omicron[@xml:lang="nb"][preceding-sibling::*[position() = 3]]/gamma[@string="attribute value"][@xml:lang="en"][not(preceding-sibling::*)]//theta[@xml:lang="no-nb"][@xml:id="id4"][not(preceding-sibling::*)]/eta[@abort][@xml:id="id5"][following-sibling::*[position()=4]][not(child::node())][following-sibling::omicron[@false="this.nodeValue"][preceding-sibling::*[position() = 1]][following-sibling::omicron[@xml:lang="nb"][@xml:id="id6"][following-sibling::*[position()=2]][not(child::node())][following-sibling::iota[@xml:lang="nb"][following-sibling::pi[@delete][@xml:lang="no"][@xml:id="id7"][preceding-sibling::*[position() = 4]][not(following-sibling::*)]//xi[starts-with(concat(@number,"-"),"_blank-")][not(preceding-sibling::*)][not(following-sibling::*)]][position() = 1]]][position() = 1]][position() = 1]][position() = 1]]]'>	
+	<xsl:value-of select="'PASS'"/>
+</xsl:when>
+<xsl:otherwise>FAIL</xsl:otherwise>
+</xsl:choose>
+</result>
+<xsl:if test="false()">
+<sigma xml:id="id1"><psi><pi><nu src="this.nodeValue" xml:id="id2"><delta xml:lang="en-US"/><iota desciption="100%" xml:lang="en-US" xml:id="id3"/><xi xml:lang="en"/><omicron xml:lang="nb"><gamma string="attribute value" xml:lang="en"><theta xml:lang="no-nb" xml:id="id4"><eta abort="attribute" xml:id="id5"/><omicron false="this.nodeValue"/><omicron xml:lang="nb" xml:id="id6"/><iota xml:lang="nb"/><pi delete="this-is-att-value" xml:lang="no" xml:id="id7"><xi number="_blank"><green>This text must be green</green></xi></pi></theta></gamma></omicron></nu></pi></psi></sigma></xsl:if>
+</xsl:template>
+</xsl:stylesheet>

@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:variable name="n" select="1"/>
+<xsl:template match="/">
+  	<result>
+  		<xsl:apply-templates select="//e"/>
+  	</result>
+	<xsl:if test="false()">
+		<e s="P" n="1"/>
+		<e s="A" n="1"/>
+		<e s="S" n="1"/>
+		<e s="S" n="1"/>
+	</xsl:if>
+</xsl:template>
+<xsl:template match="e[@n = 1]"><xsl:value-of select="@s"/></xsl:template>
+</xsl:stylesheet>

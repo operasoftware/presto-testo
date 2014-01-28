@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml-stylesheet type="text/xsl" href="position75.xsl"?>
+<doc>
+  <a test="true">A1<b>B1</b>A2<!-- This is the 1st comment -->A3<b>B2</b>
+    A4<!-- This is the 2nd comment -->A5</a>
+</doc>

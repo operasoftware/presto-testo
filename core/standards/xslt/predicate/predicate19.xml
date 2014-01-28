@@ -1,0 +1,20 @@
+<?xml version="1.0"?> 
+<?xml-stylesheet type="text/xsl" href="predicate19.xsl"?>
+<doc>
+  <a>
+    <asub>
+      <asubsub/>
+    </asub>
+  </a>
+  <b>
+    <bsub>x</bsub>
+  </b>
+  <c>inside</c>
+  <d>
+    <dsub>
+      <q>
+        <foundnode/>
+      </q>
+    </dsub>
+  </d>
+</doc>

@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/css" href="sample.css"?>
+<!DOCTYPE main [
+<!ELEMENT text  (#PCDATA)>
+]>
+<main>
+<text>
+Passed if no parsing error occured
+</text>
+</main>

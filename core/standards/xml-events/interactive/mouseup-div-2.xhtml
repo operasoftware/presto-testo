@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ev="http://www.w3.org/2001/xml-events">
+<head>
+<title>Mouseup event</title>
+<script type="application/ecmascript" ev:event="mouseup" ev:observer="observer">
+<![CDATA[
+document.getElementsByTagName('tt')[0].firstChild.nodeValue = "PASS";
+]]>
+</script>
+</head>
+<body>
+<div id="observer" style="background-color:silver;">Press and release mouse button on gray area, event should be registered as soon as you release mouse button</div> 
+<div><tt>NOT TESTED</tt></div>
+</body>
+</html>

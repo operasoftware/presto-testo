@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/css" href="data:text/css,*%20%7Bdisplay%3Ablock%7Dserif%20%7Bfont-family%3Aserif%3B%7Dsans%20%7Bfont-family%3Asans-serif%3B%7Dmono%20%7Bfont-family%3Amonospace%3B%7D"?>
+<root>
+<serif>This should be serif font</serif>
+<sans>This should be sans-serif font</sans>
+<mono>This should be monospace font</mono>
+</root>
+<!--
+* {display:block}
+serif {font-family:serif;}
+sans {font-family:sans-serif;}
+mono {font-family:monospace;}
+-->

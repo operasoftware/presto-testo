@@ -1,0 +1,12 @@
+<?xml version="1.0"?> 
+<?xml-stylesheet type="text/xsl" href="position07.xsl"?>
+<doc>
+  <a test="true">a</a>
+  <a>b</a>
+  <a test="false">c</a>
+  <a test="true">d</a>
+  <a>e</a>
+  <a test="false">f</a>
+  <a test="true">g</a>
+  <a test="false">h</a>
+</doc>

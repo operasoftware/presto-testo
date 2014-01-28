@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>action attribute of form element</title>
+<style type="text/css">
+form
+	{display:block;
+	content:"script-404.php"}
+form
+	{content:attr(action)}
+</style>
+</head>
+<body>
+<p>You should see two identical strings below</p>
+<form action="script-404.php"/>
+<form action="script-404.php"/>
+</body>
+</html>

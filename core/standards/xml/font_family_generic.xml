@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+ <?xml-stylesheet  type="text/css" href="color_prop.css"?>
+ <!-- Testcase: font_family_generic.xml -->
+<!-- Description: To test the ability to apply generic font families with CSS 1 -->
+<!--Expected Results: Each sentence should display in a specified  font face -->
+<!-- Author:  Chris Petersen  Date: 5/08/01 -->
+<!-- 
+   - The contents of this file are subject to the Mozilla Public
+   - License Version 1.1 (the "License"); you may not use this file
+   - except in compliance with the License. You may obtain a copy of
+   - the License at http://www.mozilla.org/MPL/
+   - 
+   - Software distributed under the License is distributed on an "AS
+   - IS" basis, WITHOUT WARRANTY OF ANY KIND, either express or
+   - implied. See the License for the specific language governing
+   - rights and limitations under the License.
+   -
+   - The Original Code is Mozilla Communicator Test Cases.
+   - 
+   - The Initial Developer of the Original Code is Netscape Communications
+   - Corp.  Portions created by Netscape Communications Corp. are 
+   - Copyright (C) 1999 Netscape Communications Corp.  All
+   - Rights Reserved.
+   - 
+   - Contributor(s): 
+   -  Ian Hickson (fixed a typo, see bug 131581)
+  -->
+ <font_properties>
+ <intro>Each sentence uses a generic font family name</intro>
+ <serif>
+This sentence should be in a serif font
+ </serif>
+ <sans-serif>
+ This sentence should be in a san-serif font
+ </sans-serif>
+ <cursive>
+ This sentence should be in a cursive font
+</cursive>
+<fantasy>
+This sentence should be in a fantasy font
+</fantasy>
+<monospace>
+This sentence should be in a monospace font
+</monospace>
+ </font_properties>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:template match="xsl:template">
+<result>
+<xsl:choose>
+<xsl:when test='//mu[@insert][@xml:lang="en-US"]/kappa[@xml:lang="en-GB"][not(following-sibling::*)]/beta[@attr][not(preceding-sibling::*)][not(child::node())][following-sibling::epsilon[@delete="this-is-att-value"][@xml:id="id1"][preceding-sibling::*[position() = 1]]/zeta[contains(@or,"th")][@xml:id="id2"][not(following-sibling::*)]//gamma[@token][@xml:id="id3"][not(following-sibling::*)]/beta[@token][@xml:lang="nb"][not(preceding-sibling::*)][following-sibling::gamma[@name="attribute-value"][@xml:id="id4"][not(child::node())][following-sibling::delta[@false][@xml:lang="no-nb"][not(child::node())][following-sibling::phi[contains(@src,"tribute valu")][@xml:id="id5"][not(following-sibling::*)]/zeta[@xml:id="id6"][not(preceding-sibling::*)][not(following-sibling::*)]/kappa[following-sibling::upsilon[@attr][preceding-sibling::*[position() = 1]][not(child::node())][following-sibling::zeta[@xml:lang="en-US"][preceding-sibling::*[position() = 2]][not(following-sibling::*)]//mu[starts-with(concat(@attr,"-"),"123456789-")][@xml:lang="en-US"][@xml:id="id7"][not(preceding-sibling::*)]][position() = 1]][position() = 1]][position() = 1]][position() = 1]][position() = 1]]'>	
+	<xsl:value-of select="'PASS'"/>
+</xsl:when>
+<xsl:otherwise>FAIL</xsl:otherwise>
+</xsl:choose>
+</result>
+<xsl:if test="false()">
+<mu insert="100%" xml:lang="en-US"><kappa xml:lang="en-GB"><beta attr="this.nodeValue"/><epsilon delete="this-is-att-value" xml:id="id1"><zeta or="this.nodeValue" xml:id="id2"><gamma token="attribute-value" xml:id="id3"><beta token="100%" xml:lang="nb"/><gamma name="attribute-value" xml:id="id4"/><delta false="this.nodeValue" xml:lang="no-nb"/><phi src="attribute value" xml:id="id5"><zeta xml:id="id6"><kappa/><upsilon attr="_blank"/><zeta xml:lang="en-US"><mu attr="123456789" xml:lang="en-US" xml:id="id7"><green>This text must be green</green></mu></zeta></zeta></phi></gamma></zeta></epsilon></kappa></mu></xsl:if>
+</xsl:template>
+</xsl:stylesheet>

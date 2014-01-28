@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:template match="xsl:template">
+<result>
+<xsl:choose>
+<xsl:when test='//kappa//kappa[contains(concat(@false,"$"),"tent$")][@xml:id="id1"][not(child::node())][following-sibling::iota[@xml:lang="en"][preceding-sibling::*[position() = 1]][following-sibling::*[position()=1]][not(child::node())][following-sibling::psi[@att]//sigma[@xml:lang="en"][@xml:id="id2"][not(child::node())][following-sibling::delta[@xml:lang="nb"][preceding-sibling::*[position() = 1]][not(following-sibling::*)]/xi[contains(concat(@name,"$"),"ue$")][not(preceding-sibling::*)][following-sibling::lambda[starts-with(concat(@token,"-"),"100%-")][@xml:lang="en-GB"][preceding-sibling::*[position() = 1]][following-sibling::beta[@xml:id="id3"][preceding-sibling::*[position() = 2]][not(child::node())][following-sibling::upsilon[starts-with(@attr,"solid 1px gr")][@xml:lang="en-US"]][position() = 1]][position() = 1]][position() = 1]][position() = 1]]]'>	
+	<xsl:value-of select="'PASS'"/>
+</xsl:when>
+<xsl:otherwise>FAIL</xsl:otherwise>
+</xsl:choose>
+</result>
+<xsl:if test="false()">
+<kappa><kappa false="content" xml:id="id1"/><iota xml:lang="en"/><psi att="attribute value"><sigma xml:lang="en" xml:id="id2"/><delta xml:lang="nb"><xi name="true"/><lambda token="100%" xml:lang="en-GB"/><beta xml:id="id3"/><upsilon attr="solid 1px green" xml:lang="en-US"><green>This text must be green</green></upsilon></delta></psi></kappa></xsl:if>
+</xsl:template>
+</xsl:stylesheet>

@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<!DOCTYPE root [
+<![CDATA[<P>This markup should be <i>processed as </i>character data</P>]]>
+<!ELEMENT root (#PCDATA)>
+]>
+<root>
+This text shouldn't appear
+</root></root>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE element [
+<!ELEMENT element (#PCDATA)>
+<!attlist element attribute (value) #IMPLIED>
+]>
+<element attribute="value">wrong attribute list declaration</element>
+
+

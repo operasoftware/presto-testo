@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:template match="xsl:template">
+<result>
+<xsl:choose>
+<xsl:when test='//lambda[contains(@att,"e")][@xml:lang="en-GB"]//kappa[@object="solid 1px green"][@xml:lang="nb"][not(preceding-sibling::*)][following-sibling::lambda[contains(@string,"her attri")][@xml:id="id1"][preceding-sibling::*[position() = 1]][following-sibling::rho[@xml:id="id2"][following-sibling::*[position()=1]][not(child::node())][following-sibling::rho[starts-with(concat(@true,"-"),"123456789-")][preceding-sibling::*[position() = 3]][not(following-sibling::*)]/alpha//zeta[following-sibling::*[position()=1]][following-sibling::*[@data][preceding-sibling::*[position() = 1]]//xi[contains(concat(@abort,"$"),"green$")][@xml:id="id3"][not(preceding-sibling::*)][not(child::node())][following-sibling::omicron[starts-with(concat(@title,"-"),"123456789-")][@xml:lang="en"][@xml:id="id4"][preceding-sibling::*[position() = 1]][not(child::node())][following-sibling::upsilon[@xml:lang="en"][preceding-sibling::*[position() = 2]][not(following-sibling::*)]/psi[contains(@delete,"e")][@xml:lang="no-nb"][@xml:id="id5"][not(preceding-sibling::*)]/epsilon[@string][@xml:lang="en-GB"][@xml:id="id6"][not(preceding-sibling::*)][not(following-sibling::*)]/*[@xml:id="id7"][not(following-sibling::*)]//delta[contains(concat(@abort,"$"),"nother attribute value$")][@xml:lang="en-US"][not(preceding-sibling::*)][not(following-sibling::*)]/epsilon[@xml:id="id8"][not(following-sibling::*)]/lambda[@xml:lang="nb"][@xml:id="id9"][following-sibling::gamma[@desciption][@xml:lang="nb"][@xml:id="id10"][preceding-sibling::*[position() = 1]]/rho[contains(@and,"100")]]][position() = 1]]]][position() = 1]]]'>	
+	<xsl:value-of select="'PASS'"/>
+</xsl:when>
+<xsl:otherwise>FAIL</xsl:otherwise>
+</xsl:choose>
+</result>
+<xsl:if test="false()">
+<lambda att="true" xml:lang="en-GB"><kappa object="solid 1px green" xml:lang="nb"/><lambda string="another attribute value" xml:id="id1"/><rho xml:id="id2"/><rho true="123456789"><alpha><zeta/><any data="_blank"><xi abort="solid 1px green" xml:id="id3"/><omicron title="123456789" xml:lang="en" xml:id="id4"/><upsilon xml:lang="en"><psi delete="attribute" xml:lang="no-nb" xml:id="id5"><epsilon string="100%" xml:lang="en-GB" xml:id="id6"><any xml:id="id7"><delta abort="another attribute value" xml:lang="en-US"><epsilon xml:id="id8"><lambda xml:lang="nb" xml:id="id9"/><gamma desciption="another attribute value" xml:lang="nb" xml:id="id10"><rho and="100%"><green>This text must be green</green></rho></gamma></epsilon></delta></any></epsilon></psi></upsilon></any></alpha></rho></lambda></xsl:if>
+</xsl:template>
+</xsl:stylesheet>

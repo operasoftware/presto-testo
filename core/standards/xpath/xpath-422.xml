@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:template match="xsl:template">
+<result>
+<xsl:choose>
+<xsl:when test='//mu[@xml:lang="no"]//kappa[starts-with(@or,"_b")][@xml:lang="en-US"][@xml:id="id1"][not(following-sibling::*)]//xi[@xml:id="id2"][not(preceding-sibling::*)]//alpha[starts-with(concat(@object,"-"),"123456789-")][@xml:id="id3"][following-sibling::omicron[contains(concat(@attrib,"$"),"nt$")][@xml:lang="no"][not(child::node())][following-sibling::lambda[@insert][@xml:lang="en-US"][@xml:id="id4"][following-sibling::phi[contains(@name,"ut")][@xml:lang="nb"][@xml:id="id5"][not(following-sibling::*)]//beta[@xml:lang="en"][@xml:id="id6"][not(preceding-sibling::*)][following-sibling::*[position()=1]][following-sibling::delta[contains(@insert,"his.node")][@xml:id="id7"][preceding-sibling::*[position() = 1]][not(following-sibling::*)]//iota[not(preceding-sibling::*)][following-sibling::*[position()=2]][not(child::node())][following-sibling::epsilon[@xml:lang="en"][@xml:id="id8"][preceding-sibling::*[position() = 1]][following-sibling::nu[not(following-sibling::*)][position() = 1]]][position() = 1]][position() = 1]][position() = 1]][position() = 1]]'>	
+	<xsl:value-of select="'PASS'"/>
+</xsl:when>
+<xsl:otherwise>FAIL</xsl:otherwise>
+</xsl:choose>
+</result>
+<xsl:if test="false()">
+<mu xml:lang="no"><kappa or="_blank" xml:lang="en-US" xml:id="id1"><xi xml:id="id2"><alpha object="123456789" xml:id="id3"/><omicron attrib="content" xml:lang="no"/><lambda insert="100%" xml:lang="en-US" xml:id="id4"/><phi name="attribute" xml:lang="nb" xml:id="id5"><beta xml:lang="en" xml:id="id6"/><delta insert="this.nodeValue" xml:id="id7"><iota/><epsilon xml:lang="en" xml:id="id8"/><nu><green>This text must be green</green></nu></delta></phi></xi></kappa></mu></xsl:if>
+</xsl:template>
+</xsl:stylesheet>

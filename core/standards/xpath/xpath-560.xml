@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:template match="xsl:template">
+<result>
+<xsl:choose>
+<xsl:when test='//omicron[@xml:lang="nb"][@xml:id="id1"]//epsilon[@class][@xml:id="id2"][not(preceding-sibling::*)]//omicron[not(following-sibling::*)]//beta[starts-with(@content,"this.no")][@xml:lang="en-GB"][not(following-sibling::*)]//mu[@xml:lang="en-GB"][@xml:id="id3"][not(preceding-sibling::*)][following-sibling::mu[not(following-sibling::*)]/sigma[@xml:id="id4"][not(preceding-sibling::*)][not(child::node())][following-sibling::upsilon[starts-with(@title,"at")][@xml:id="id5"][preceding-sibling::*[position() = 1]]/lambda[starts-with(@number,"attr")][@xml:lang="en-GB"][@xml:id="id6"][following-sibling::kappa[starts-with(concat(@content,"-"),"this-")][@xml:id="id7"][preceding-sibling::*[position() = 1]][not(following-sibling::*)]//*[not(following-sibling::*)]//epsilon[@xml:id="id8"][not(following-sibling::*)]//omicron[@delete][@xml:lang="no"][@xml:id="id9"][not(preceding-sibling::*)][not(following-sibling::*)]/gamma[@att][@xml:lang="nb"][@xml:id="id10"][not(preceding-sibling::*)][not(following-sibling::*)][position() = 1]]][position() = 1]]'>	
+	<xsl:value-of select="'PASS'"/>
+</xsl:when>
+<xsl:otherwise>FAIL</xsl:otherwise>
+</xsl:choose>
+</result>
+<xsl:if test="false()">
+<omicron xml:lang="nb" xml:id="id1"><epsilon class="_blank" xml:id="id2"><omicron><beta content="this.nodeValue" xml:lang="en-GB"><mu xml:lang="en-GB" xml:id="id3"/><mu><sigma xml:id="id4"/><upsilon title="attribute value" xml:id="id5"><lambda number="attribute-value" xml:lang="en-GB" xml:id="id6"/><kappa content="this-is-att-value" xml:id="id7"><any><epsilon xml:id="id8"><omicron delete="_blank" xml:lang="no" xml:id="id9"><gamma att="true" xml:lang="nb" xml:id="id10"><green>This text must be green</green></gamma></omicron></epsilon></any></kappa></upsilon></mu></beta></omicron></epsilon></omicron></xsl:if>
+</xsl:template>
+</xsl:stylesheet>

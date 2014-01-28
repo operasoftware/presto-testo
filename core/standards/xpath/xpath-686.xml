@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:template match="xsl:template">
+<result>
+<xsl:choose>
+<xsl:when test='//omega[@xml:lang="no"][@xml:id="id1"]//*[@attribute][@xml:lang="en-US"][not(preceding-sibling::*)][following-sibling::zeta[@xml:id="id2"][preceding-sibling::*[position() = 1]]//lambda[@content="attribute"][not(child::node())][following-sibling::mu[@xml:lang="en-GB"][@xml:id="id3"][preceding-sibling::*[position() = 1]][not(following-sibling::*)]/kappa[@class="attribute-value"][not(following-sibling::*)][not(preceding-sibling::kappa)]//lambda[starts-with(@token,"a")][@xml:lang="en-GB"][@xml:id="id4"][not(preceding-sibling::*)][following-sibling::zeta[@or][@xml:lang="en-US"][not(following-sibling::*)]/alpha[@xml:id="id5"][not(child::node())][following-sibling::pi[@xml:lang="en-GB"]//alpha[starts-with(@false,"at")][@xml:id="id6"]//eta[starts-with(@content,"so")][@xml:id="id7"][not(preceding-sibling::*)][following-sibling::eta/sigma[@xml:lang="en-GB"][@xml:id="id8"][not(child::node())][following-sibling::alpha[starts-with(@false,"attribute-")][@xml:lang="no-nb"]//lambda[@false][not(following-sibling::*)]/pi[@false="_blank"][not(preceding-sibling::*)]//upsilon[not(following-sibling::*)][position() = 1]]]][position() = 1]][position() = 1]][position() = 1]]'>	
+	<xsl:value-of select="'PASS'"/>
+</xsl:when>
+<xsl:otherwise>FAIL</xsl:otherwise>
+</xsl:choose>
+</result>
+<xsl:if test="false()">
+<omega xml:lang="no" xml:id="id1"><any attribute="this.nodeValue" xml:lang="en-US"/><zeta xml:id="id2"><lambda content="attribute"/><mu xml:lang="en-GB" xml:id="id3"><kappa class="attribute-value"><lambda token="attribute-value" xml:lang="en-GB" xml:id="id4"/><zeta or="attribute" xml:lang="en-US"><alpha xml:id="id5"/><pi xml:lang="en-GB"><alpha false="attribute" xml:id="id6"><eta content="solid 1px green" xml:id="id7"/><eta><sigma xml:lang="en-GB" xml:id="id8"/><alpha false="attribute-value" xml:lang="no-nb"><lambda false="content"><pi false="_blank"><upsilon><green>This text must be green</green></upsilon></pi></lambda></alpha></eta></alpha></pi></zeta></kappa></mu></zeta></omega></xsl:if>
+</xsl:template>
+</xsl:stylesheet>

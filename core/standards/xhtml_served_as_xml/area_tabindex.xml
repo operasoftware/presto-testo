@@ -1,0 +1,122 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta name="generator"
+
+content="HTML Tidy for Mac OS, see www.w3.org" />
+
+<!-- testcase: area_tabindex.xml -->
+
+<!-- description: HTML 4.0 text markup element AREA element with tabindex attribute --><!-- Author: Chris Petersen  Date: 8/26/99 -->
+
+<!-- 
+
+   - The contents of this file are subject to the Mozilla Public
+
+   - License Version 1.1 (the "License"); you may not use this file
+
+   - except in compliance with the License. You may obtain a copy of
+
+   - the License at http://www.mozilla.org/MPL/
+
+   - 
+
+   - Software distributed under the License is distributed on an "AS
+
+   - IS" basis, WITHOUT WARRANTY OF ANY KIND, either express or
+
+   - implied. See the License for the specific language governing
+
+   - rights and limitations under the License.
+
+   - 
+
+   - The Original Code is Mozilla Communicator Test Cases.
+
+   - 
+
+   - The Initial Developer of the Original Code is Netscape Communications
+
+   - Corp.  Portions created by Netscape Communications Corp. are 
+
+   - Copyright (C) 1999 Netscape Communications Corp.  All
+
+   - Rights Reserved.
+
+   - 
+
+   - Contributor(s): 
+
+  -->
+
+<!-- Purpose: To test the tabindex attribute used with the AREA tag -->
+
+<!-- Expected result: Tabindex defines the position of the object in the document's tabbing sequence.  (Mac users use Command.) -->
+
+<!-- Modified: Changed doctype to xhtml 1.0 transitional Author: Chris Petersen Date: 1/14/01 -->
+
+<title>XHTML Functional -- AREA - TABINDEX</title>
+
+</head>
+
+<body>
+
+<p>Tabindex defines the position of the object in the document's
+
+tabbing sequence. In this case, the
+
+tabindex will put focus on the links specified in the image.</p>
+
+<p>Steps to take</p>
+
+<ol>
+
+<li> Click in the white space of the document to get focus</li>
+
+<li>Press the tab key 5 times</li>
+
+</ol>
+
+<p>Result: As you tab, each colored section should be outlined in the following order:</p>
+
+<ul>
+
+<li>1=blue</li>
+
+<li>2=yellow</li>
+
+<li>3=pink</li>
+
+<li>4=orange</li>
+
+<li>5=lime</li>
+
+</ul>
+
+<img src="images/multicolor.gif" alt="multicolor" border="0" usemap="#image" width="152" height="86" /> 
+
+<map name="image" id="image">
+
+<area tabindex="5" shape="rect" alt="lime" coords="0,0,62,63" href="default_lime.xml" title="lime"/>
+
+<area tabindex="3" shape="rect" alt="pink" coords="1,63,63,85" href="default_pink.xml" title="pink"/>
+
+<area tabindex="2" shape="rect" alt="yellow" coords="63,0,87,85" href="default_yellow.xml" title="yellow"/>
+
+<area tabindex="4" shape="rect" alt="orange" coords="88,0,150,21" href="default_orange.xml" title="orange"/>
+
+<area tabindex="1" shape="rect" alt="blue" coords="88,21,151,85" href="default_blue.xml" title="blue"/>
+
+</map>
+
+</body>
+
+</html>
+
+
+

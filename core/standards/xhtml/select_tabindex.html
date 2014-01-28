@@ -1,0 +1,122 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta name="generator"
+
+content="HTML Tidy for Mac OS, see www.w3.org" />
+
+<!-- testcase: tabindex_select.xml -->
+
+<!-- description: HTML 4.0 SELECT element with TABINDEX attribute -->
+
+<!-- Author: Christopher Pratt  Date: 25.02.99 -->
+
+<!-- Modified: Changed doctype to xhtml 1.0 transitional Author: Chris Petersen Date: 1/26/01 -->
+
+<!-- 
+
+   - The contents of this file are subject to the Mozilla Public
+
+   - License Version 1.1 (the "License"); you may not use this file
+
+   - except in compliance with the License. You may obtain a copy of
+
+   - the License at http://www.mozilla.org/MPL/
+
+   - 
+
+   - Software distributed under the License is distributed on an "AS
+
+   - IS" basis, WITHOUT WARRANTY OF ANY KIND, either express or
+
+   - implied. See the License for the specific language governing
+
+   - rights and limitations under the License.
+
+   - 
+
+   - The Original Code is Mozilla Communicator Test Cases.
+
+   - 
+
+   - The Initial Developer of the Original Code is Netscape Communications
+
+   - Corp.  Portions created by Netscape Communications Corp. are 
+
+   - Copyright (C) 1999 Netscape Communications Corp.  All
+
+   - Rights Reserved.
+
+   - 
+
+   - Contributor(s): 
+
+  -->
+
+<!-- Purpose: To test the tabindex used with the select element -->
+
+<!-- Expected result: Should create a four drop-down menus. Tab order should be 1-4-2-3. -->
+
+<title>XHTML Functional -- SELECT - TABINDEX</title>
+
+</head>
+
+<body>
+
+<p>The tabbing order has been specified by the tabindex attribute. The tab order should be the following: Select element 1, Select element 4, Select element 2, Select element 3.</p>
+
+<p>Apply focus on the select element and press the tab key.</p>
+
+<form action="" method="post"><select tabindex="1">
+
+<option>Select element 1</option>
+
+<option>Assam</option>
+
+<option>Darjeeling</option>
+
+<option>Dooars</option>
+
+<option>Nilgiri</option>
+
+</select> <select tabindex="3">
+
+<option>Select element 2</option>
+
+<option>Chun Mee</option>
+
+<option>Pi Lo Chun</option>
+
+<option>Yunnan</option>
+
+</select> <select tabindex="4">
+
+<option>Select element 3</option>
+
+<option>Gyokuro</option>
+
+<option>Hoji-cha</option>
+
+<option>Matcha</option>
+
+</select> <select tabindex="2">
+
+<option>Select element 4</option>
+
+<option>Marinyn Estate</option>
+
+<option>Other</option>
+
+</select></form>
+
+</body>
+
+</html>
+
+
+

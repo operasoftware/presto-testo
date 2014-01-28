@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:template match="xsl:template">
+<result>
+<xsl:choose>
+<xsl:when test='//psi[@data][@xml:lang="en-US"]//iota[@xml:lang="nb"][not(following-sibling::*)]//*[@xml:id="id1"][not(preceding-sibling::*)][following-sibling::*[position()=1]][following-sibling::delta[@xml:id="id2"][preceding-sibling::*[position() = 1]][not(following-sibling::*)]/eta[@title][not(preceding-sibling::*)][not(following-sibling::*)]/upsilon[@xml:id="id3"][not(preceding-sibling::*)][not(child::node())][following-sibling::rho[@xml:lang="en"][preceding-sibling::*[position() = 1]]//iota[@title][not(preceding-sibling::*)]//sigma[not(preceding-sibling::*)]//iota[@desciption="_blank"][@xml:id="id4"][not(preceding-sibling::*)][following-sibling::lambda[starts-with(@abort,"attrib")][@xml:id="id5"][not(following-sibling::*)]/omega[@content][@xml:lang="en-GB"][not(preceding-sibling::*)][following-sibling::omicron[@abort="content"][@xml:lang="en"][preceding-sibling::*[position() = 1]][not(following-sibling::*)]]]][position() = 1]]'>	
+	<xsl:value-of select="'PASS'"/>
+</xsl:when>
+<xsl:otherwise>FAIL</xsl:otherwise>
+</xsl:choose>
+</result>
+<xsl:if test="false()">
+<psi data="attribute-value" xml:lang="en-US"><iota xml:lang="nb"><any xml:id="id1"/><delta xml:id="id2"><eta title="attribute-value"><upsilon xml:id="id3"/><rho xml:lang="en"><iota title="100%"><sigma><iota desciption="_blank" xml:id="id4"/><lambda abort="attribute value" xml:id="id5"><omega content="this.nodeValue" xml:lang="en-GB"/><omicron abort="content" xml:lang="en"><green>This text must be green</green></omicron></lambda></sigma></iota></rho></eta></delta></iota></psi></xsl:if>
+</xsl:template>
+</xsl:stylesheet>

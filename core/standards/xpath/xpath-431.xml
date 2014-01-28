@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:template match="xsl:template">
+<result>
+<xsl:choose>
+<xsl:when test='//psi[@xml:lang="en-US"][@xml:id="id1"]//nu[starts-with(concat(@desciption,"-"),"this.nodeValue-")][@xml:lang="en"][@xml:id="id2"][not(preceding-sibling::*)][not(following-sibling::*)]/gamma[contains(@false,"lue")][@xml:lang="nb"][@xml:id="id3"]/gamma[@src][@xml:lang="en-GB"][not(preceding-sibling::*)][following-sibling::eta[starts-with(@and,"another attribute val")]//psi[not(preceding-sibling::*)]/zeta[starts-with(@false,"attribute val")][not(child::node())][following-sibling::tau[preceding-sibling::*[position() = 1]][not(following-sibling::*)]/pi[@xml:lang="en"][@xml:id="id4"][not(preceding-sibling::*)][not(following-sibling::*)][not(following-sibling::pi)]//gamma[starts-with(@title,"another attribute valu")][@xml:id="id5"][not(preceding-sibling::*)][not(child::node())][following-sibling::rho[@xml:lang="no"][@xml:id="id6"][preceding-sibling::*[position() = 1]][not(following-sibling::rho)]/lambda[@xml:lang="no"][@xml:id="id7"][following-sibling::omicron[not(following-sibling::*)]]][position() = 1]][position() = 1]]'>	
+	<xsl:value-of select="'PASS'"/>
+</xsl:when>
+<xsl:otherwise>FAIL</xsl:otherwise>
+</xsl:choose>
+</result>
+<xsl:if test="false()">
+<psi xml:lang="en-US" xml:id="id1"><nu desciption="this.nodeValue" xml:lang="en" xml:id="id2"><gamma false="attribute value" xml:lang="nb" xml:id="id3"><gamma src="solid 1px green" xml:lang="en-GB"/><eta and="another attribute value"><psi><zeta false="attribute value"/><tau><pi xml:lang="en" xml:id="id4"><gamma title="another attribute value" xml:id="id5"/><rho xml:lang="no" xml:id="id6"><lambda xml:lang="no" xml:id="id7"/><omicron><green>This text must be green</green></omicron></rho></pi></tau></psi></eta></gamma></nu></psi></xsl:if>
+</xsl:template>
+</xsl:stylesheet>

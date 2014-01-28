@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ev="http://www.w3.org/2001/xml-events">
+<head>
+<title>Mouseout event</title>
+<ev:listener event="mouseout" observer="observer" handler="#handler" target="target"/>
+<script type="application/ecmascript" id="handler">
+<![CDATA[
+document.getElementsByTagName('tt')[0].firstChild.nodeValue = "PASSED";
+]]>
+</script>
+</head>
+<body id="observer" >
+<div id="target" style="background-color:silver;">Put mouse cursor over gray area and then move it out, you should see word PASSED below</div> 
+<div><tt>NOT TESTED</tt></div>
+</body>
+</html>

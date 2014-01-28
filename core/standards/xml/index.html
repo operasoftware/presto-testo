@@ -1,0 +1,1028 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <meta name="GENERATOR" content="Mozilla/4.77 (Macintosh; U; PPC) [Netscape]">
+   <title>XML_Matrix.html</title>
+</head>
+<body>
+
+<center>
+<h3>
+<font size=+3>XML (Extensible Markup Language) 1.0 Matrix</font></h3></center>
+
+<center><font size=+1>By Chris Petersen &lt;<a href="mailto:petersen@netscape.com">petersen@netscape.com</a>></font>
+<br><font size=+1>updated: May 09th, 2001</font></center>
+
+<center><table BORDER >
+<tr>
+<th>DESCRIPTION</th>
+
+<th>TEST CASE NAME</th>
+</tr>
+
+<tr>
+<td><b>WELL-FORMED CONSTRAINTS</b></td>
+
+<td>&nbsp;</td>
+</tr>
+
+<tr>
+<td>Parameter-entities in internal subset</td>
+
+<td><a href="wf_constraint_markupdecl.xml">wf_constraint_markupdecl.xml</a></td>
+</tr>
+
+<tr>
+<td>Element type match</td>
+
+<td><a href="wf_constraint_elem.xml">wf_constraint_elem.xml</a></td>
+</tr>
+
+<tr>
+<td>&nbsp;</td>
+
+<td><a href="wf_constraint_elem_mismatch.xml">wf_constraint_elem_mismatch.xml</a></td>
+</tr>
+
+<tr>
+<td>&nbsp;</td>
+
+<td><a href="wf_constraint_elem_mm_nest.xml">wf_constraint_elem_mismatch_nested.xml</a></td>
+</tr>
+
+<tr>
+<td>Unique att spec</td>
+
+<td><a href="wf_constraint_tag.xml">wf_constraint_elem_tag.xml</a></td>
+</tr>
+
+<tr>
+<td>&nbsp;</td>
+
+<td><a href="wf_constraint_tag_start.xml">wf_constraint_elem_tag_start.xml</a></td>
+</tr>
+
+<tr>
+<td>&nbsp;</td>
+
+<td><a href="wf_constraint_tag_empty.xml">wf_constraint_elem_tag_empty.xml</a></td>
+</tr>
+
+<tr>
+<td>No external entity references</td>
+
+<td><a href="wf_constraint_at_entity_ref.xml">wf_constraint_attr_ext_entity_ref.xml</a></td>
+</tr>
+
+<tr>
+<td>&nbsp;</td>
+
+<td><a href="wf_constraint_atentity_norf.xml">wf_constraint_attr_ext_entity_noref.xml</a></td>
+</tr>
+
+<tr>
+<td>No &lt; in attribute value</td>
+
+<td><a href="wf_constraint_attr_lt.xml">wf_constraint_attr_lt.xml</a></td>
+</tr>
+
+<tr>
+<td>Legal character</td>
+
+<td><a href="wf_constraint_legal_nul_hex.xml">wf_constraint_legal_nul_hex.xml</a></td>
+</tr>
+
+<tr>
+<td>&nbsp;</td>
+
+<td><a href="wf_constraint_legal_nul_dec.xml">wf_constraint_legal_nul_dec.xml</a></td>
+</tr>
+
+<tr>
+<td>&nbsp;</td>
+
+<td><a href="wf_constraint_legal_bs_hex.xml">wf_constraint_legal_bs_hex.xml</a></td>
+</tr>
+
+<tr>
+<td>&nbsp;</td>
+
+<td><a href="wf_constraint_legal_bs_dec.xml">wf_constraint_legal_bs_dec.xml</a></td>
+</tr>
+
+<tr>
+<td>Entity declared</td>
+
+<td>see <a href="entity_references.xml">entity_references.xml</a></td>
+</tr>
+
+<tr>
+<td>No recursion</td>
+
+<td>&nbsp;</td>
+</tr>
+
+<tr>
+<td>In DTD</td>
+
+<td>&nbsp;</td>
+</tr>
+
+<tr>
+<td><b>DOCUMENTS</b></td>
+
+<td>&nbsp;</td>
+</tr>
+
+<tr>
+<td>Well-Formed</td>
+
+<td><a href="well_formed.xml">well_formed.xml</a></td>
+</tr>
+
+<tr>
+<td>Well-formed and Valid</td>
+
+<td><a href="well_formed_valid.xml">well_formed_valid.xml</a></td>
+</tr>
+
+<tr>
+<td>Characters</td>
+
+<td><a href="unicode.xml">unicode.xml</a></td>
+</tr>
+
+<tr>
+<td></td>
+
+<td><a href="iso.xml">iso.xml</a></td>
+</tr>
+
+<tr>
+<td>Common Syntactic Constructs</td>
+
+<td><a href="syntax_name.xml">syntax_name.xml</a></td>
+</tr>
+
+<tr>
+<td>&nbsp;</td>
+
+<td><a href="syntax_name_digit.xml">syntax_name_digit.xml</a></td>
+</tr>
+
+<tr>
+<td>&nbsp;</td>
+
+<td><a href="syntax_name_space.xml">syntax_space.xml</a></td>
+</tr>
+
+<tr>
+<td>&nbsp;</td>
+
+<td><a href="syntax_name_hyphen.xml">syntax_name_hyphen.xml</a></td>
+</tr>
+
+<tr>
+<td>Character Data and Markup</td>
+
+<td>see <a href="well_formed.xml">well-formed.xml</a></td>
+</tr>
+
+<tr>
+<td>Comments</td>
+
+<td><a href="comments_hiding_tag.xml">comments_hiding_tag.xml</a></td>
+</tr>
+
+<tr>
+<td>&nbsp;</td>
+
+<td><a href="comments_in_tag.xml">comments_in_tag.xml</a></td>
+</tr>
+
+<tr>
+<td>&nbsp;</td>
+
+<td><a href="comments_including_hyphen.xml">comments_including_hyphen.xml</a></td>
+</tr>
+
+<tr>
+<td>&nbsp;</td>
+
+<td><a href="comments_nested.xml">comments_nested.xml</a></td>
+</tr>
+
+<tr>
+<td>Processing Instructions</td>
+
+<td><a href="pi_in_root_element.xml">pi_in_root_element.xml</a></td>
+</tr>
+
+<tr>
+<td>&nbsp;</td>
+
+<td><a href="pi_in_child_element.xml">pi_in_child_element.xml</a></td>
+</tr>
+
+<tr>
+<td>&nbsp;</td>
+
+<td><a href="pi_after_root_element.xml">pi_after_root_element.xml</a></td>
+</tr>
+
+<tr>
+<td>CDATA Sections</td>
+
+<td><a href="cdata.xml">cdata.xml</a></td>
+</tr>
+
+<tr>
+<td>Prolog and Document Type Declaration</td>
+
+<td><a href="prolog_dtd.xml">prolog_dtd.xml</a></td>
+</tr>
+
+<tr>
+<td>Standalone Document Declaration</td>
+
+<td><a href="standalone.xml">standalone.xml</a></td>
+</tr>
+
+<tr>
+<td>Whitespace Handling</td>
+
+<td>Requires validating parser</td>
+</tr>
+
+<tr>
+<td>End-of-Line Handling</td>
+
+<td>&nbsp;</td>
+</tr>
+
+<tr>
+<td>Language Identification</td>
+
+<td>Requires validating parser</td>
+</tr>
+
+<tr>
+<td><b>LOGICAL STRUCTURES</b></td>
+
+<td>&nbsp;</td>
+</tr>
+
+<tr>
+<td>Start-Tags, End-Tags, Empty-Element Tags</td>
+
+<td><a href="start_end.xml">start_end.xml</a></td>
+</tr>
+
+<tr>
+<td></td>
+
+<td><a href="empty.xml">empty.xml</a></td>
+</tr>
+
+<tr>
+<td>Element Type Declarations</td>
+
+<td><a href="element_type_declare.xml">element_type_declare.xml</a></td>
+</tr>
+
+<tr>
+<td>Attribute-List Declarations</td>
+
+<td><a href="attribute_implied.xml">attribute_implied.xml</a></td>
+</tr>
+
+<tr>
+<td>Conditional Sections</td>
+
+<td>Requires validating parser</td>
+</tr>
+
+<tr>
+<td><b>PHYSICAL STRUCTURES</b></td>
+
+<td>&nbsp;</td>
+</tr>
+
+<tr>
+<td>Character and Entity References</td>
+
+<td><a href="char_ref_decimal.xml">character_ref_decimal.xml</a></td>
+</tr>
+
+<tr>
+<td>&nbsp;</td>
+
+<td><a href="char_ref_predefined.xml">character_ref_predefined.xml</a></td>
+</tr>
+
+<tr>
+<td>&nbsp;</td>
+
+<td><a href="entity_ref.xml">entity_ref.xml</a></td>
+</tr>
+
+<tr>
+<td>Entity Declarations</td>
+
+<td><a href="entity_references.xml">entity_references.xml</a></td>
+</tr>
+
+<tr>
+<td></td>
+
+<td><a href="multiple_entities.xml">multiple_entities.xml</a></td>
+</tr>
+
+<tr>
+<td></td>
+
+<td><a href="parameter_entity.xml">parameter_entity.xml</a></td>
+</tr>
+
+<tr>
+<td>Predefined Entities</td>
+
+<td>see <a href="char_ref_predefined.xml">character_ref_predefined.xml</a></td>
+</tr>
+
+<tr>
+<td>Notation Declarations</td>
+
+<td>&nbsp;</td>
+</tr>
+
+<tr>
+<td><b>CONFORMANCE</b></td>
+
+<td>&nbsp;</td>
+</tr>
+
+<tr>
+<td><b>NOTATION</b></td>
+
+<td>&nbsp;</td>
+</tr>
+
+<tr>
+<td><b>CSS STYLESHEETS</b></td>
+
+<td>&nbsp;</td>
+</tr>
+
+<tr>
+<td>CSS1/Basic Concepts</td>
+
+<td><a href="css_pseudo_element.xml">css_pseudo_element.xml</a></td>
+</tr>
+
+<tr>
+<td>CSS1/Font Properties</td>
+
+<td>&nbsp;</td>
+</tr>
+
+<tr>
+<td>Font size in pixels</td>
+
+<td><a href="font_size_px.xml">font_size_px.xml</a></td>
+</tr>
+
+<tr>
+<td>Font size in points</td>
+
+<td><a href="font_size_pt.xml">font_size_pt.xml</a></td>
+</tr>
+
+<tr>
+<td>Font size in percentage</td>
+
+<td><a href="font_size_pct.xml">font_size_pct.xml</a></td>
+</tr>
+
+<tr>
+<td>Font size in picas</td>
+
+<td><a href="font_size_pc.xml">font_size_pc.xml</a></td>
+</tr>
+
+<tr>
+<td>Font size in millimeters</td>
+
+<td><a href="font_size_mm.xml">font_size_mm.xml</a></td>
+</tr>
+
+<tr>
+<td>Font size with larger value</td>
+
+<td><a href="font_size_larger.xml">font_size_larger.xml</a></td>
+</tr>
+
+<tr>
+<td>Font size with large value</td>
+
+<td><a href="font_size_large.xml">font_size_large.xml</a></td>
+</tr>
+
+<tr>
+<td>Font size in inches</td>
+
+<td><a href="font_size_in.xml">font_size_in.xml</a></td>
+</tr>
+
+<tr>
+<td>Font size in ex</td>
+
+<td><a href="font_size_ex.xml">font_size_ex.xml</a></td>
+</tr>
+
+<tr>
+<td>Font size in em</td>
+
+<td><a href="font_size_em.xml">font_size_em.xml</a></td>
+</tr>
+
+<tr>
+<td>Font family name reference</td>
+
+<td><a href="font_family_name.xml">font_family_name.xml</a></td>
+</tr>
+
+<tr>
+<td>Font family generic reference</td>
+
+<td><a href="font_family_generic.xml">font_family_generic.xml</a></td>
+</tr>
+
+<tr>
+<td>Font weight 100</td>
+
+<td><a href="font_weight_100.xml">font_weight_100.xml</a></td>
+</tr>
+
+<tr>
+<td>Font weight 800</td>
+
+<td><a href="font_weight_800.xml">font_weight_800.xml</a></td>
+</tr>
+
+<tr>
+<td>Font variant smallcaps</td>
+
+<td><a href="font_variant_smallcaps.xml">font_variant_smallcaps.xml</a></td>
+</tr>
+
+<tr>
+<td>Font variant normal</td>
+
+<td><a href="font_variant_normal.xml">font_variant_normal.xml</a></td>
+</tr>
+
+<tr>
+<td>Font style oblique</td>
+
+<td><a href="font_style_oblique.xml">font_style_oblique.xml</a></td>
+</tr>
+
+<tr>
+<td>Font style normal</td>
+
+<td><a href="font_style_normal.xml">font_style_normal.xml</a></td>
+</tr>
+
+<tr>
+<td>Font style italic</td>
+
+<td><a href="font_style_italic.xml">font_style_italic.xml</a></td>
+</tr>
+
+<tr>
+<td>Font size xx-small</td>
+
+<td><a href="font_size_xxsmall.xml">font_size_xxsmall.xml</a></td>
+</tr>
+
+<tr>
+<td>Font size xx-large</td>
+
+<td><a href="font_size_xxlarge.xml">font_size_xxlarge.xml</a></td>
+</tr>
+
+<tr>
+<td>Font size xsmall</td>
+
+<td><a href="font_size_xsmall.xml">font_size_xsmall.xml</a></td>
+</tr>
+
+<tr>
+<td>Font size xlarge&nbsp;</td>
+
+<td><a href="font_size_xlarge.xml">font_size_xlarge.xml</a></td>
+</tr>
+
+<tr>
+<td>Font size smaller</td>
+
+<td><a href="font_size_smaller.xml">font_size_smaller.xml</a></td>
+</tr>
+
+<tr>
+<td>Font weight normal</td>
+
+<td><a href="font_weight_normal.xml">font_weight_normal.xml</a></td>
+</tr>
+
+<tr>
+<td>Font weight lighter</td>
+
+<td><a href="font_weight_lighter.xml">font_weight_lighter.xml</a></td>
+</tr>
+
+<tr>
+<td>Font weight bolder</td>
+
+<td><a href="font_weight_bolder.xml">font_weight_bolder.xml</a></td>
+</tr>
+
+<tr>
+<td>Font weight bold</td>
+
+<td><a href="font_weight_bold.xml">font_weight_bold.xml</a></td>
+</tr>
+
+<tr>
+<td>CSS1/Color and Background Properties</td>
+
+<td>&nbsp;</td>
+</tr>
+
+<tr>
+<td>Color Hexadecimal (3 digit)</td>
+
+<td><a href="color_short_hex.xml">color_short_hex.xml</a></td>
+</tr>
+
+<tr>
+<td>Color Hexadecimal&nbsp; (6 digit)</td>
+
+<td><a href="color_full_hex_pair.xml">color_full_hex_pair.xml</a></td>
+</tr>
+
+<tr>
+<td>Color RGB percentange</td>
+
+<td><a href="color_rgb_percent.xml">color_rgb_percent.xml</a></td>
+</tr>
+
+<tr>
+<td>Color RGB&nbsp; numbers</td>
+
+<td><a href="color_rgb_numbers.xml">color_rgb_numbers.xml</a></td>
+</tr>
+
+<tr>
+<td>Color names</td>
+
+<td><a href="color_names.xml">color_names.xml</a></td>
+</tr>
+
+<tr>
+<td>Background url -repeat y</td>
+
+<td><a href="background_url_repeat_y.xml">background_url_repeat_y.xml</a></td>
+</tr>
+
+<tr>
+<td>Background url - repeat x</td>
+
+<td><a href="background_url_repeat_x.xml">background_url_repeat_x.xml</a></td>
+</tr>
+
+<tr>
+<td>Background url - no repeat</td>
+
+<td><a href="background_url_norepeat.xml">background_url_norepeat.xml</a></td>
+</tr>
+
+<tr>
+<td>Background url -default</td>
+
+<td><a href="background_url.xml">background_url.xml</a></td>
+</tr>
+
+<tr>
+<td>Background position -top</td>
+
+<td><a href="background_position_top.xml">background_position_top.xml</a></td>
+</tr>
+
+<tr>
+<td>Background position- right</td>
+
+<td><a href="background_position_right.xml">background_position_right.xml</a></td>
+</tr>
+
+<tr>
+<td>Background position - left</td>
+
+<td><a href="background_position_left.xml">background_position_left.xml</a></td>
+</tr>
+
+<tr>
+<td>Background position - bottom</td>
+
+<td><a href="background_position_bottom.xml">background_position_bottom.xml</a></td>
+</tr>
+
+<tr>
+<td>Background image -none</td>
+
+<td><a href="background_image_none.xml">background_image_none.xml</a></td>
+</tr>
+
+<tr>
+<td>Background color -transparent</td>
+
+<td><a href="background_color_trans.xml">background_color_trans.xml</a></td>
+</tr>
+
+<tr>
+<td>Background color RGB -percent</td>
+
+<td><a href="background_color_rgb_percnt.xml">background_color_rgb_percnt.xml</a></td>
+</tr>
+
+<tr>
+<td>Background color RGB -hexadecimal</td>
+
+<td><a href="background_color_rgb_hex.xml">background_color_rgb_hex.xml</a></td>
+</tr>
+
+<tr>
+<td>Background color -name</td>
+
+<td><a href="background_color_name.xml">background_color_name.xml</a></td>
+</tr>
+
+<tr>
+<td>Background color - number</td>
+
+<td><a href="background_color_number.xml">background_color_number.xml</a></td>
+</tr>
+
+<tr>
+<td>Background attached - scroll</td>
+
+<td><a href="background_attached_scroll.xml">background_attached_scroll.xml</a></td>
+</tr>
+
+<tr>
+<td>Background attached - fixed</td>
+
+<td><a href="background_attached_fixed.xml">background_attached_fixed.xml</a></td>
+</tr>
+
+<tr>
+<td>CSS1/Text Properties</td>
+
+<td><a href="css_text.xml">css_text.xml</a></td>
+</tr>
+
+<tr>
+<td>CSS1/Box Properties</td>
+
+<td><a href="css_border_color.xml">css_border_color.xml</a></td>
+</tr>
+
+<tr>
+<td>&nbsp;</td>
+
+<td><a href="css_border_style.xml">css_border_style.xml</a></td>
+</tr>
+
+<tr>
+<td>&nbsp;</td>
+
+<td><a href="css_margin.xml">css_margin.xml</a></td>
+</tr>
+
+<tr>
+<td>&nbsp;</td>
+
+<td><a href="css_padding.xml">css_padding.xml</a></td>
+</tr>
+
+<tr>
+<td>CSS1/Classification Properties</td>
+
+<td><a href="css_display_listitem.xml">css_display_listitem.xml</a></td>
+</tr>
+
+<tr>
+<td>&nbsp;</td>
+
+<td><a href="css_whitespace_pre.xml">css_whitespace_pre.xml</a></td>
+</tr>
+
+<tr>
+<td><b>CSS/HTML (Namespace and External StyleSheets)</b></td>
+
+<td>&nbsp;</td>
+</tr>
+
+<tr>
+<td>Lists</td>
+
+<td><a href="css_html_list.xml">css_html_list.xml</a></td>
+</tr>
+
+<tr>
+<td><b>NEGATIVE TESTS</b></b<</td></td>
+
+<td>&nbsp;</td>
+</tr>
+
+<tr>
+<td>Attribute with no whitespace after element</td>
+
+<td><a href="attrib_no_wspace.xml">attrib_no_wspace.xml</a></td>
+</tr>
+
+<tr>
+<td>Attribute quotes not matching&nbsp;</td>
+
+<td><a href="attrib_quotes_not_matching.xml">attrib_quotes_not_matching.xml&nbsp;</a></td>
+</tr>
+
+<tr>
+<td>Attribute value contains symbols</td>
+
+<td><a href="attrib_value_contain_symbol.xml">attrib_value_contain_symbol.xml</a></td>
+</tr>
+
+<tr>
+<td>Attribute value empty&nbsp;</td>
+
+<td><a href="attrib_value_empty.xml">attrib_value_empty.xml&nbsp;</a></td>
+</tr>
+
+<tr>
+<td>CDATA in DTD</td>
+
+<td><a href="cdata_in_DTD.xml">cdata_in_DTD.xml</a></td>
+</tr>
+
+<tr>
+<td>CDATA before declaration</td>
+
+<td><a href="cdata_before_declaration.xml">cdata_before_declaration.xml</a></td>
+</tr>
+
+<tr>
+<td>CDATA containing whitespace after declaration</td>
+
+<td><a href="cdata_ws_after_declar.xml">cdata_ws_after_declar.xml</a></td>
+</tr>
+
+<tr>
+<td>CDATA containing whitespace before declaration</td>
+
+<td><a href="cdata_ws_before_declar.xml">cdata_ws_before_declar.xml</a></td>
+</tr>
+
+<tr>
+<td>CDATA with nested CDATA element</td>
+
+<td><a href="cdata_nested.xml">cdata_nested.xml</a></td>
+</tr>
+
+<tr>
+<td>CDATA before the root element</td>
+
+<td><a href="cdata_before_root.xml">cdata_before_root.xml</a></td>
+</tr>
+
+<tr>
+<td>CDATA in lowercase</td>
+
+<td><a href="cdata_lowerrcase.xml">cdata_lowerrcase.xml</a></td>
+</tr>
+
+<tr>
+<td>Comments with whitespace before declaration</td>
+
+<td><a href="comments_wspace.xml">comments_wspace.xml</a></td>
+</tr>
+
+<tr>
+<td>Comments before XML declaration</td>
+
+<td><a href="comments_before_xml_dec.xml">comments_before_xml_dec.xml</a></td>
+</tr>
+
+<tr>
+<td>Element name missing from declaration</td>
+
+<td><a href="element_name_missing.xml">element_name_missing.xml</a></td>
+</tr>
+
+<tr>
+<td>Element with whitespace before declaration</td>
+
+<td><a href="element_wspace_bef_decl.xml">element_wspace_bef_decl.xml</a></td>
+</tr>
+
+<tr>
+<td>Entity replacement text missing</td>
+
+<td><a href="entity_decl_empty.xml">entity_decl_empty.xml</a></td>
+</tr>
+
+<tr>
+<td>Entity replacement text contains illegal character</td>
+
+<td><a href="entity_decl_illegal_char.xml">entity_decl_illegal_char.xml</a></td>
+</tr>
+
+<tr>
+<td>Entity replacement text contains illegal characters</td>
+
+<td><a href="entity_decl_illegal_chars.xml">entity_decl_illegal_chars.xml</a></td>
+</tr>
+
+<tr>
+<td>Entity replacement text missing quotes</td>
+
+<td><a href="entity_decl_missing_quotes.xml">entity_decl_missing_quotes.xml</a></td>
+</tr>
+
+<tr>
+<td>Entity declaration contains no whitespace</td>
+
+<td><a href="entity_decl_no_wspace.xml">entity_decl_no_wspace.xml</a></td>
+</tr>
+
+<tr>
+<td>Entity replacement text doesn't have matching&nbsp; quotes</td>
+
+<td><a href="entity_decl_quote_not_match.xml">entity_decl_quote_not_match.xml</a></td>
+</tr>
+
+<tr>
+<td>Entity missing name</td>
+
+<td><a href="entity_missing_name.xml">entity_missing_name.xml</a></td>
+</tr>
+
+<tr>
+<td>Entity name as period</td>
+
+<td><a href="entity_name_as_period.xml">entity_name_as_period.xml</a></td>
+</tr>
+
+<tr>
+<td>Entity outside of root</td>
+
+<td><a href="entity_outside_root.xml">entity_outside_root.xml</a></td>
+</tr>
+
+<tr>
+<td>Entity reference as a period</td>
+
+<td><a href="entity_ref_as_period.xml">entity_ref_as_period.xml</a></td>
+</tr>
+
+<tr>
+<td>Entity reference in markup</td>
+
+<td><a href="entity_ref_in_markup.xml">entity_ref_in_markup.xml</a></td>
+</tr>
+
+<tr>
+<td>Entity with whitespace before declaration&nbsp;</td>
+
+<td><a href="entity_wspace_before_decl.xml">entity_wspace_before_decl.xml</a></td>
+</tr>
+
+<tr>
+<td>No root end tag provided</td>
+
+<td><a href="no_root_end_tag.xml">no_root_end_tag.xml</a></td>
+</tr>
+
+<tr>
+<td>No root start or end tag provided&nbsp;</td>
+
+<td><a href="no_root_provided.xml">no_root_provided.xml</a></td>
+</tr>
+
+<tr>
+<td>No xml declaration version specified</td>
+
+<td><a href="no_xml_decl_version.xml">no_xml_decl_version.xml</a></td>
+</tr>
+
+<tr>
+<td>Parameter name not match reference</td>
+
+<td><a href="parameter_name_not_matching.xml">parameter_name_not_matching.xml</a></td>
+</tr>
+
+<tr>
+<td>Parameter reference as period</td>
+
+<td><a href="parameter_ref_as_period.xml">parameter_ref_as_period.xml</a></td>
+</tr>
+
+<tr>
+<td>XML declaration missing end quote</td>
+
+<td><a href="xml_declar_missing_quote.xml">xml_declar_missing_quote.xml</a></td>
+</tr>
+
+<tr>
+<td>XML declaration contains whitespace before declar</td>
+
+<td><a href="xml_declar_wspace_bef_decl.xml">xml_declar_wspace_bef_decl.xml</a></td>
+</tr>
+
+<tr>
+<td>XML declaration using exclamation marks</td>
+
+<td><a href="xml_decla_using_exclam.xml">xml_decla_using_exclam.xml</a></td>
+</tr>
+
+<tr>
+<td>XML declaration in DTD</td>
+
+<td><a href="xml_decl_in_DTD.xml">xml_decl_in_DTD.xml</a></td>
+</tr>
+
+<tr>
+<td>XML declaration in uppercase</td>
+
+<td><a href="xml_decl_uppercase.xml">xml_decl_uppercase.xml</a></td>
+</tr>
+
+<tr>
+<td>XML standalone value invalid</td>
+
+<td><a href="xml_standalne_value_invalid.xml">xml_standalne_value_invalid.xml</a></td>
+</tr>
+
+<tr>
+<td>XML standalone no value in uppercase</td>
+
+<td><a href="xml_standalone_no_uppercase.xml">xml_standalone_no_uppercase.xml</a></td>
+</tr>
+
+<tr>
+<td>XML standalone yes value in uppercase</td>
+
+<td><a href="xml_standalone_yes_uppercse.xml">xml_standalone_yes_uppercase.xml</a></td>
+</tr>
+
+<tr>
+<td>XML version assigned a value other than "1.0"</td>
+
+<td><a href="xml_version_bad_value.xml">xml_version_bad_value.xml</a></td>
+</tr>
+
+<tr>
+<td></td>
+
+<td></td>
+</tr>
+
+<tr>
+<td></td>
+
+<td></td>
+</tr>
+
+<tr>
+<td></td>
+
+<td></td>
+</tr>
+
+<tr>
+<td></td>
+
+<td></td>
+</tr>
+
+<tr>
+<td></td>
+
+<td></td>
+</tr>
+</table></center>
+
+</body>
+</html>

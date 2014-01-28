@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:template match="xsl:template">
+<result>
+<xsl:choose>
+<xsl:when test='//psi[@xml:lang="en-GB"]/rho[@xml:lang="en"][not(following-sibling::*)]//eta[@token="123456789"][@xml:lang="no"][not(preceding-sibling::*)][following-sibling::*[position()=1]][not(child::node())][following-sibling::kappa[starts-with(@or,"tru")][@xml:id="id1"][not(following-sibling::*)]/delta[starts-with(@desciption,"this.")][@xml:id="id2"]//phi[starts-with(@token,"100%")][@xml:lang="no-nb"][@xml:id="id3"][not(preceding-sibling::*)][following-sibling::alpha[preceding-sibling::*[position() = 1]][following-sibling::mu[@xml:id="id4"][preceding-sibling::*[position() = 2]]//psi[@xml:id="id5"]//zeta[@xml:lang="en"][@xml:id="id6"][not(preceding-sibling::*)]/phi[@src][@xml:lang="no"][not(preceding-sibling::*)][following-sibling::*[position()=1]][not(child::node())][following-sibling::tau[@xml:lang="en"][preceding-sibling::*[position() = 1]][not(preceding-sibling::tau)]/eta[contains(concat(@title,"$"),"true$")][@xml:id="id7"]//delta[contains(concat(@number,"$"),"attribute value$")][@xml:lang="nb"][@xml:id="id8"][not(preceding-sibling::*)]//chi[@desciption][@xml:id="id9"]//phi[@token][@xml:lang="en-US"][@xml:id="id10"][not(preceding-sibling::*)][not(following-sibling::*)]//xi[@attribute][not(preceding-sibling::*)][following-sibling::epsilon[@xml:id="id11"]//zeta[@xml:lang="en-US"][@xml:id="id12"][not(preceding-sibling::*)][not(child::node())][following-sibling::pi[@number][preceding-sibling::*[position() = 1]][following-sibling::omicron[@xml:lang="no-nb"][@xml:id="id13"][not(child::node())][following-sibling::delta[@data="_blank"][preceding-sibling::*[position() = 3]][not(following-sibling::*)]]]]][position() = 1]]]][position() = 1]]'>	
+	<xsl:value-of select="'PASS'"/>
+</xsl:when>
+<xsl:otherwise>FAIL</xsl:otherwise>
+</xsl:choose>
+</result>
+<xsl:if test="false()">
+<psi xml:lang="en-GB"><rho xml:lang="en"><eta token="123456789" xml:lang="no"/><kappa or="true" xml:id="id1"><delta desciption="this.nodeValue" xml:id="id2"><phi token="100%" xml:lang="no-nb" xml:id="id3"/><alpha/><mu xml:id="id4"><psi xml:id="id5"><zeta xml:lang="en" xml:id="id6"><phi src="123456789" xml:lang="no"/><tau xml:lang="en"><eta title="true" xml:id="id7"><delta number="attribute value" xml:lang="nb" xml:id="id8"><chi desciption="attribute-value" xml:id="id9"><phi token="true" xml:lang="en-US" xml:id="id10"><xi attribute="123456789"/><epsilon xml:id="id11"><zeta xml:lang="en-US" xml:id="id12"/><pi number="attribute-value"/><omicron xml:lang="no-nb" xml:id="id13"/><delta data="_blank"><green>This text must be green</green></delta></epsilon></phi></chi></delta></eta></tau></zeta></psi></mu></delta></kappa></rho></psi></xsl:if>
+</xsl:template>
+</xsl:stylesheet>

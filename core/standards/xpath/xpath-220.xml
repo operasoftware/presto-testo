@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:template match="xsl:template">
+<result>
+<xsl:choose>
+<xsl:when test='//alpha[@xml:lang="nb"][@xml:id="id1"]/sigma[@xml:id="id2"][not(following-sibling::*)]/xi[@content="attribute"][@xml:lang="no-nb"][@xml:id="id3"][following-sibling::pi[starts-with(concat(@content,"-"),"123456789-")][preceding-sibling::*[position() = 1]][following-sibling::lambda[preceding-sibling::*[position() = 2]][not(following-sibling::*)]//xi[@attribute][not(preceding-sibling::*)][not(child::node())][following-sibling::eta[contains(concat(@attr,"$"),"0%$")][not(preceding-sibling::eta)][following-sibling::kappa[@xml:lang="no-nb"][@xml:id="id4"][not(following-sibling::*)]/xi[@xml:lang="no-nb"][not(child::node())][following-sibling::tau[@xml:lang="no-nb"][@xml:id="id5"][not(child::node())][following-sibling::sigma[@true="attribute-value"]/sigma[@token][@xml:lang="en"][not(preceding-sibling::*)][not(following-sibling::*)]/epsilon[contains(@delete,"ibute-value")][@xml:lang="no-nb"][@xml:id="id6"][not(preceding-sibling::*)][not(following-sibling::*)]//*[@xml:id="id7"][following-sibling::epsilon[@or="attribute value"][@xml:lang="en-GB"][not(child::node())][following-sibling::theta[@delete="this-is-att-value"][@xml:id="id8"][not(following-sibling::*)]//delta[contains(concat(@true,"$"),"deValue$")][following-sibling::delta[@name="_blank"][@xml:lang="no"][following-sibling::beta[@xml:lang="nb"][preceding-sibling::*[position() = 2]][not(following-sibling::*)]//omega[@xml:lang="en-US"][@xml:id="id9"][following-sibling::*[position()=1]][following-sibling::zeta[starts-with(concat(@attr,"-"),"attribute-")][@xml:lang="en-US"][@xml:id="id10"][preceding-sibling::*[position() = 1]][not(following-sibling::*)][position() = 1]]]][position() = 1]]][position() = 1]][position() = 1]]]]]]'>	
+	<xsl:value-of select="'PASS'"/>
+</xsl:when>
+<xsl:otherwise>FAIL</xsl:otherwise>
+</xsl:choose>
+</result>
+<xsl:if test="false()">
+<alpha xml:lang="nb" xml:id="id1"><sigma xml:id="id2"><xi content="attribute" xml:lang="no-nb" xml:id="id3"/><pi content="123456789"/><lambda><xi attribute="this.nodeValue"/><eta attr="100%"/><kappa xml:lang="no-nb" xml:id="id4"><xi xml:lang="no-nb"/><tau xml:lang="no-nb" xml:id="id5"/><sigma true="attribute-value"><sigma token="content" xml:lang="en"><epsilon delete="attribute-value" xml:lang="no-nb" xml:id="id6"><any xml:id="id7"/><epsilon or="attribute value" xml:lang="en-GB"/><theta delete="this-is-att-value" xml:id="id8"><delta true="this.nodeValue"/><delta name="_blank" xml:lang="no"/><beta xml:lang="nb"><omega xml:lang="en-US" xml:id="id9"/><zeta attr="attribute" xml:lang="en-US" xml:id="id10"><green>This text must be green</green></zeta></beta></theta></epsilon></sigma></sigma></kappa></lambda></sigma></alpha></xsl:if>
+</xsl:template>
+</xsl:stylesheet>

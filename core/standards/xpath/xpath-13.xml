@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:template match="xsl:template">
+<result>
+<xsl:choose>
+<xsl:when test='//epsilon[contains(@attribute,"als")][@xml:id="id1"]/omicron[@xml:id="id2"]/mu[starts-with(@title,"another att")][@xml:lang="nb"][@xml:id="id3"][following-sibling::kappa[@xml:lang="no-nb"][following-sibling::*[position()=1]][following-sibling::psi[starts-with(@number,"this-is-at")][@xml:lang="en"][preceding-sibling::*[position() = 2]]//*[@xml:lang="no"][@xml:id="id4"][not(preceding-sibling::*)][not(following-sibling::*)]/sigma[@xml:id="id5"][not(preceding-sibling::*)]/rho[not(preceding-sibling::*)][following-sibling::*[position()=1]][following-sibling::tau[@xml:id="id6"]/lambda[@xml:lang="no"][@xml:id="id7"][not(preceding-sibling::*)]/chi[@xml:lang="nb"][@xml:id="id8"][not(following-sibling::chi)][not(child::node())][following-sibling::theta[contains(concat(@class,"$"),"ue$")][@xml:lang="en-GB"][@xml:id="id9"][preceding-sibling::*[position() = 1]][not(child::node())][following-sibling::zeta[preceding-sibling::*[position() = 2]]//pi[starts-with(concat(@data,"-"),"attribute-")][not(preceding-sibling::*)][not(preceding-sibling::pi)][not(child::node())][following-sibling::nu[@att][preceding-sibling::*[position() = 1]][position() = 1]]][position() = 1]]][position() = 1]][position() = 1]]'>	
+	<xsl:value-of select="'PASS'"/>
+</xsl:when>
+<xsl:otherwise>FAIL</xsl:otherwise>
+</xsl:choose>
+</result>
+<xsl:if test="false()">
+<epsilon attribute="false" xml:id="id1"><omicron xml:id="id2"><mu title="another attribute value" xml:lang="nb" xml:id="id3"/><kappa xml:lang="no-nb"/><psi number="this-is-att-value" xml:lang="en"><any xml:lang="no" xml:id="id4"><sigma xml:id="id5"><rho/><tau xml:id="id6"><lambda xml:lang="no" xml:id="id7"><chi xml:lang="nb" xml:id="id8"/><theta class="true" xml:lang="en-GB" xml:id="id9"/><zeta><pi data="attribute"/><nu att="this-is-att-value"><green>This text must be green</green></nu></zeta></lambda></tau></sigma></any></psi></omicron></epsilon></xsl:if>
+</xsl:template>
+</xsl:stylesheet>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:template match="xsl:template">
+<result>
+<xsl:choose>
+<xsl:when test='//iota//omega[contains(@src,"ibute value")][@xml:lang="no-nb"][@xml:id="id1"][not(child::node())][following-sibling::gamma[@xml:id="id2"][preceding-sibling::*[position() = 1]]/epsilon//omega[@xml:lang="no"]//nu/lambda[@object="content"][@xml:id="id3"][not(following-sibling::*)]//omega[@xml:lang="en"][not(child::node())][following-sibling::eta[starts-with(concat(@number,"-"),"solid 1px green-")][preceding-sibling::*[position() = 1]][not(child::node())][following-sibling::delta[starts-with(concat(@token,"-"),"attribute-")][@xml:lang="en-US"][@xml:id="id4"][preceding-sibling::*[position() = 2]][following-sibling::rho[@delete][@xml:lang="no"][preceding-sibling::*[position() = 3]][not(following-sibling::*)][position() = 1]]][position() = 1]]]'>	
+	<xsl:value-of select="'PASS'"/>
+</xsl:when>
+<xsl:otherwise>FAIL</xsl:otherwise>
+</xsl:choose>
+</result>
+<xsl:if test="false()">
+<iota><omega src="another attribute value" xml:lang="no-nb" xml:id="id1"/><gamma xml:id="id2"><epsilon><omega xml:lang="no"><nu><lambda object="content" xml:id="id3"><omega xml:lang="en"/><eta number="solid 1px green"/><delta token="attribute" xml:lang="en-US" xml:id="id4"/><rho delete="attribute value" xml:lang="no"><green>This text must be green</green></rho></lambda></nu></omega></epsilon></gamma></iota></xsl:if>
+</xsl:template>
+</xsl:stylesheet>

@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/css" href="data:text/css,root%2C%20observe%20%7Bdisplay%3Ablock%7D"?>
+<!DOCTYPE root [
+<!ENTITY % copy '<!ENTITY par "paragraphs should">'>
+%copy;
+]>
+<root>
+<observe>These two paragraphs should have the same content</observe>
+<observe>These two &par; have the same content</observe>
+</root>
+<!--
+root, observe {display:block}
+-->

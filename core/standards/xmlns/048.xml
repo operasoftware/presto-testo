@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ns="http://opera.com/ns/tc">
+<head>
+<title>Attribute in foreign namespace</title>
+</head>
+<body>
+<object type="text/plain" ns:data="data:text/plain,FAIL">PASS</object>
+</body>
+</html>

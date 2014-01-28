@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>tabindex attribute of button element</title>
+</head>
+<body>
+<p>Go through input fields using tab. Passed if button-1 is focused first and focus is shifted in bottom to top order.</p>
+<form action="data:text/plain,PASS">
+<div><button tabindex="4" type="submit">button-4</button></div>
+<div><button tabindex="3" type="button">button-3</button></div>
+<div><button tabindex="2" type="button">button-2</button></div>
+<div><button tabindex="1" type="button">button-1</button></div>
+</form>
+</body>
+</html>
+

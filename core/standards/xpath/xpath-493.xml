@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:template match="xsl:template">
+<result>
+<xsl:choose>
+<xsl:when test='//mu/omega[@xml:id="id1"][not(preceding-sibling::*)]//iota[@xml:id="id2"][not(preceding-sibling::*)][not(child::node())][following-sibling::nu[starts-with(@true,"100%")][@xml:lang="nb"][@xml:id="id3"][preceding-sibling::*[position() = 1]][not(child::node())][following-sibling::beta[starts-with(@title,"tru")][@xml:lang="no"][preceding-sibling::*[position() = 2]][not(following-sibling::*)]//lambda[@delete][@xml:id="id4"][not(preceding-sibling::*)][following-sibling::upsilon[not(following-sibling::*)]//sigma[@xml:lang="no"][@xml:id="id5"][not(preceding-sibling::*)][not(following-sibling::*)]/nu[starts-with(concat(@att,"-"),"true-")][@xml:id="id6"][following-sibling::*[position()=2]][not(child::node())][following-sibling::xi[@xml:lang="no-nb"][preceding-sibling::*[position() = 1]][not(child::node())][following-sibling::alpha[starts-with(@and,"conten")][not(following-sibling::*)]//xi[@class][@xml:lang="en"][@xml:id="id7"][not(preceding-sibling::*)][not(following-sibling::*)]/omicron[@or="_blank"][@xml:lang="en-US"][@xml:id="id8"][not(following-sibling::*)]/nu[starts-with(concat(@title,"-"),"attribute value-")][@xml:lang="en-GB"][@xml:id="id9"]//psi[@xml:id="id10"][not(child::node())][following-sibling::delta[@xml:lang="no"][@xml:id="id11"][preceding-sibling::*[position() = 1]]//iota[@xml:lang="en-GB"][not(preceding-sibling::*)][not(child::node())][following-sibling::nu[preceding-sibling::*[position() = 1]]][position() = 1]][position() = 1]][position() = 1]]][position() = 1]][position() = 1]]'>	
+	<xsl:value-of select="'PASS'"/>
+</xsl:when>
+<xsl:otherwise>FAIL</xsl:otherwise>
+</xsl:choose>
+</result>
+<xsl:if test="false()">
+<mu><omega xml:id="id1"><iota xml:id="id2"/><nu true="100%" xml:lang="nb" xml:id="id3"/><beta title="true" xml:lang="no"><lambda delete="100%" xml:id="id4"/><upsilon><sigma xml:lang="no" xml:id="id5"><nu att="true" xml:id="id6"/><xi xml:lang="no-nb"/><alpha and="content"><xi class="false" xml:lang="en" xml:id="id7"><omicron or="_blank" xml:lang="en-US" xml:id="id8"><nu title="attribute value" xml:lang="en-GB" xml:id="id9"><psi xml:id="id10"/><delta xml:lang="no" xml:id="id11"><iota xml:lang="en-GB"/><nu><green>This text must be green</green></nu></delta></nu></omicron></xi></alpha></sigma></upsilon></beta></omega></mu></xsl:if>
+</xsl:template>
+</xsl:stylesheet>

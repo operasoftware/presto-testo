@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>id attribute of ol element</title>
+<style type="text/css">
+#pass li + li
+	{content:"PASS"}
+</style>
+</head>
+<body>
+<ol id="pass">
+<li>You shoold see word PASS below</li>
+<li>FAIL</li>
+</ol>
+</body>
+</html>

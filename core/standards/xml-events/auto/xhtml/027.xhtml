@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ev="http://www.w3.org/2001/xml-events" ev:event="load" ev:handler="#handler" ev:phase="capture">
+<head>
+<title>Load event</title>
+<script type="application/ecmascript" id="handler">
+<![CDATA[
+document.getElementsByTagName('tt')[0].firstChild.nodeValue = "PASSED";
+]]>
+</script>
+</head>
+<body>
+<div><tt>NOT TESTED (script did not run)</tt></div>
+<script type="application/ecmascript">
+<![CDATA[
+document.getElementsByTagName('tt')[0].firstChild.nodeValue = "FAILED";
+]]>
+</script>
+</body>
+</html>

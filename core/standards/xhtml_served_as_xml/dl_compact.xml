@@ -1,0 +1,166 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta name="generator"
+
+content="HTML Tidy for Mac OS, see www.w3.org" />
+
+<!-- Testcase: dl_compact.xml -->
+
+<!-- Description: HTML 4.0 definition list using the compact attribute -->
+
+<!-- Author: Beth Epperson, Date: 2/18/99 -->
+
+<!-- Modified: Changed doctype to xhtml 1.0 transitional Author: Chris Petersen Date: 1/17/01 -->
+
+<!-- 
+
+
+
+   - The contents of this file are subject to the Mozilla Public
+
+
+
+   - License Version 1.1 (the "License"); you may not use this file
+
+
+
+   - except in compliance with the License. You may obtain a copy of
+
+
+
+   - the License at http://www.mozilla.org/MPL/
+
+
+
+   - 
+
+
+
+   - Software distributed under the License is distributed on an "AS
+
+
+
+   - IS" basis, WITHOUT WARRANTY OF ANY KIND, either express or
+
+
+
+   - implied. See the License for the specific language governing
+
+
+
+   - rights and limitations under the License.
+
+
+
+   - 
+
+
+
+   - The Original Code is Mozilla Communicator Test Cases.
+
+
+
+   - 
+
+
+
+   - The Initial Developer of the Original Code is Netscape Communications
+
+
+
+   - Corp.  Portions created by Netscape Communications Corp. are 
+
+
+
+   - Copyright (C) 1999 Netscape Communications Corp.  All
+
+
+
+   - Rights Reserved.
+
+
+
+   - 
+
+
+
+   - Contributor(s): 
+
+
+
+  -->
+
+<!-- Purpose: To test the definition list element with the COMPACT attribute.--><!-- Expected result: The first list uses the compact attribute. The spacing between the list items should be removed. The second list should render with spacing between list items. This attribute was never fully supported. -->
+
+<title>XHTML Functional -- DL - COMPACT</title>
+
+</head>
+
+<body>
+
+<dl compact="compact">
+
+<dt>definition list using the compact attribute</dt>
+
+
+
+<dd>whitespace between the list items should be removed</dd>
+
+
+
+<dt>HTML</dt>
+
+
+
+<dd>HyperText Markup Language</dd>
+
+
+
+<dt>CSS</dt>
+
+
+
+<dd>Casscading Style Sheets</dd>
+
+</dl>
+
+
+
+<dl>
+
+<dt>definition list with the default attribute values</dt>
+
+
+
+<dd>there should be whitespace between items</dd>
+
+
+
+<dt>HTML</dt>
+
+
+
+<dd>HyperText Markup Language</dd>
+
+
+
+<dt>CSS</dt>
+
+
+
+<dd>Casscading Style Sheets</dd>
+
+</dl>
+
+</body>
+
+</html>
+
+
+

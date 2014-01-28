@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:template match="xsl:template">
+<result>
+<xsl:choose>
+<xsl:when test='//kappa[@delete][@xml:lang="en-GB"]//epsilon[@xml:lang="no"][@xml:id="id1"][not(preceding-sibling::*)][not(following-sibling::*)]/eta[@xml:lang="en-GB"][@xml:id="id2"][following-sibling::*[position()=1]][following-sibling::*[@false][@xml:id="id3"][preceding-sibling::*[position() = 1]][not(following-sibling::*)]/nu[@desciption="false"][not(preceding-sibling::*)]/pi[@xml:lang="en-GB"][@xml:id="id4"][not(child::node())][following-sibling::beta//theta[starts-with(concat(@content,"-"),"attribute-")][@xml:lang="no"][@xml:id="id5"][not(child::node())][following-sibling::sigma[starts-with(concat(@desciption,"-"),"this-")][@xml:lang="nb"][@xml:id="id6"][not(following-sibling::*)]/nu[@xml:lang="en"][@xml:id="id7"][not(preceding-sibling::*)][not(following-sibling::*)][not(preceding-sibling::nu)]//gamma[starts-with(concat(@attrib,"-"),"this.nodeValue-")][@xml:id="id8"]//theta[contains(@title,"ue")][@xml:id="id9"][following-sibling::*[position()=1]][following-sibling::kappa[preceding-sibling::*[position() = 1]][not(following-sibling::*)]//sigma[@xml:lang="no-nb"][@xml:id="id10"][not(preceding-sibling::*)][following-sibling::omicron[starts-with(@token,"soli")][@xml:lang="no-nb"][preceding-sibling::*[position() = 1]][not(child::node())][following-sibling::rho[@xml:lang="no"][preceding-sibling::*[position() = 2]]/mu[contains(@src,"e")][@xml:lang="en"][not(preceding-sibling::*)][not(following-sibling::*)]//rho[@xml:lang="nb"][not(preceding-sibling::*)][not(following-sibling::*)]][position() = 1]]]]]]'>	
+	<xsl:value-of select="'PASS'"/>
+</xsl:when>
+<xsl:otherwise>FAIL</xsl:otherwise>
+</xsl:choose>
+</result>
+<xsl:if test="false()">
+<kappa delete="100%" xml:lang="en-GB"><epsilon xml:lang="no" xml:id="id1"><eta xml:lang="en-GB" xml:id="id2"/><any false="false" xml:id="id3"><nu desciption="false"><pi xml:lang="en-GB" xml:id="id4"/><beta><theta content="attribute-value" xml:lang="no" xml:id="id5"/><sigma desciption="this-is-att-value" xml:lang="nb" xml:id="id6"><nu xml:lang="en" xml:id="id7"><gamma attrib="this.nodeValue" xml:id="id8"><theta title="this.nodeValue" xml:id="id9"/><kappa><sigma xml:lang="no-nb" xml:id="id10"/><omicron token="solid 1px green" xml:lang="no-nb"/><rho xml:lang="no"><mu src="attribute" xml:lang="en"><rho xml:lang="nb"><green>This text must be green</green></rho></mu></rho></kappa></gamma></nu></sigma></beta></nu></any></epsilon></kappa></xsl:if>
+</xsl:template>
+</xsl:stylesheet>

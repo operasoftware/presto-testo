@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ev="http://www.w3.org/2001/xml-events">
+<head>
+<title>Event target</title>
+<ev:listener event="load" observer="observer" handler="#handler1"/>
+<ev:listener event="DOMAttrModified" observer="observer" handler="#handler2" phase="capture" target="target"/>
+<script type="application/ecmascript" id="handler1">
+<![CDATA[
+var tt = document.getElementsByTagName('tt')[0];
+tt.firstChild.nodeValue = "FAILED";
+tt.setAttribute("class","passed");
+]]>
+</script>
+<script type="application/ecmascript" id="handler2">
+<![CDATA[
+document.getElementsByTagName('tt')[0].firstChild.nodeValue = "PASSED";
+]]>
+</script>
+</head>
+<body id="observer">
+<div><tt id="target">NOT TESTED (script did not run)</tt></div>
+</body>
+</html>

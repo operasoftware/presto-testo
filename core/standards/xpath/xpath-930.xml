@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:template match="xsl:template">
+<result>
+<xsl:choose>
+<xsl:when test='//eta[@xml:lang="no"][@xml:id="id1"]/*[starts-with(concat(@desciption,"-"),"attribute value-")][not(preceding-sibling::*)][following-sibling::*[position()=1]][following-sibling::psi[@xml:id="id2"][preceding-sibling::*[position() = 1]]//chi[@xml:lang="nb"][not(following-sibling::*)]/beta[contains(@src,"bute")][@xml:id="id3"][not(preceding-sibling::*)][not(following-sibling::*)]/alpha[@delete][@xml:lang="en-US"][not(preceding-sibling::*)][following-sibling::tau[@xml:id="id4"][not(following-sibling::*)]//chi[@content="this-is-att-value"][@xml:lang="en-GB"][following-sibling::theta[@xml:id="id5"][preceding-sibling::*[position() = 1]][not(following-sibling::*)]/kappa[@content][@xml:lang="no"][@xml:id="id6"][not(preceding-sibling::*)][following-sibling::theta[contains(@attrib,"nt")][@xml:lang="en-GB"][following-sibling::gamma[starts-with(concat(@token,"-"),"_blank-")][@xml:lang="no"][@xml:id="id7"][preceding-sibling::*[position() = 2]][following-sibling::*[position()=1]][following-sibling::omicron[starts-with(@name,"_blan")][not(following-sibling::*)]//pi[@xml:lang="en"]/theta[@xml:lang="no"][not(following-sibling::*)]//iota[@xml:lang="no"][@xml:id="id8"][not(preceding-sibling::*)][following-sibling::*[position()=3]][not(child::node())][following-sibling::iota[@xml:lang="en"][@xml:id="id9"][preceding-sibling::*[position() = 1]][not(child::node())][following-sibling::nu[contains(@and,"als")][@xml:id="id10"][not(child::node())][following-sibling::sigma[contains(@data,"bute valu")][not(following-sibling::*)]//gamma[not(preceding-sibling::*)]//mu[@xml:id="id11"]]][position() = 1]]]][position() = 1]]]]]'>	
+	<xsl:value-of select="'PASS'"/>
+</xsl:when>
+<xsl:otherwise>FAIL</xsl:otherwise>
+</xsl:choose>
+</result>
+<xsl:if test="false()">
+<eta xml:lang="no" xml:id="id1"><any desciption="attribute value"/><psi xml:id="id2"><chi xml:lang="nb"><beta src="attribute" xml:id="id3"><alpha delete="this.nodeValue" xml:lang="en-US"/><tau xml:id="id4"><chi content="this-is-att-value" xml:lang="en-GB"/><theta xml:id="id5"><kappa content="attribute" xml:lang="no" xml:id="id6"/><theta attrib="content" xml:lang="en-GB"/><gamma token="_blank" xml:lang="no" xml:id="id7"/><omicron name="_blank"><pi xml:lang="en"><theta xml:lang="no"><iota xml:lang="no" xml:id="id8"/><iota xml:lang="en" xml:id="id9"/><nu and="false" xml:id="id10"/><sigma data="another attribute value"><gamma><mu xml:id="id11"><green>This text must be green</green></mu></gamma></sigma></theta></pi></omicron></theta></tau></beta></chi></psi></eta></xsl:if>
+</xsl:template>
+</xsl:stylesheet>

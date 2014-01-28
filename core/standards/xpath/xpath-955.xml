@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:template match="xsl:template">
+<result>
+<xsl:choose>
+<xsl:when test='//kappa[contains(@number,"e")][@xml:id="id1"]/upsilon[contains(concat(@title,"$"),"ue$")][@xml:lang="en"][not(preceding-sibling::*)][not(child::node())][following-sibling::sigma[@xml:id="id2"]/nu[@delete="123456789"][@xml:lang="en-US"][@xml:id="id3"][following-sibling::*[position()=1]][not(child::node())][following-sibling::beta[@desciption][@xml:id="id4"]//alpha[@desciption][@xml:lang="en"][not(parent::*/*[position()=2])]//omicron[contains(concat(@name,"$"),"tent$")][@xml:id="id5"][not(preceding-sibling::*)][not(following-sibling::*)]//upsilon[@xml:lang="nb"][@xml:id="id6"][not(preceding-sibling::*)][not(following-sibling::*)]/xi[@attr][@xml:lang="no"][not(preceding-sibling::*)][following-sibling::*[position()=1]][following-sibling::pi/upsilon[starts-with(@object,"_b")][@xml:lang="nb"][not(preceding-sibling::*)][following-sibling::kappa[@abort][preceding-sibling::*[position() = 1]][not(following-sibling::*)]/phi[starts-with(concat(@class,"-"),"content-")][@xml:lang="en-US"][not(preceding-sibling::*)]//rho[@abort][not(following-sibling::*)]//kappa[@false][@xml:lang="en-GB"]/upsilon[@xml:id="id7"][not(following-sibling::*)]//eta[@attribute="this.nodeValue"]/theta[@xml:lang="en-GB"][@xml:id="id8"][not(child::node())][following-sibling::nu[preceding-sibling::*[position() = 1]]//xi[@string][@xml:lang="en-GB"][@xml:id="id9"]/eta[starts-with(@object,"1")][not(following-sibling::*)][position() = 1]]][position() = 1]]]]'>	
+	<xsl:value-of select="'PASS'"/>
+</xsl:when>
+<xsl:otherwise>FAIL</xsl:otherwise>
+</xsl:choose>
+</result>
+<xsl:if test="false()">
+<kappa number="true" xml:id="id1"><upsilon title="true" xml:lang="en"/><sigma xml:id="id2"><nu delete="123456789" xml:lang="en-US" xml:id="id3"/><beta desciption="this.nodeValue" xml:id="id4"><alpha desciption="this.nodeValue" xml:lang="en"><omicron name="content" xml:id="id5"><upsilon xml:lang="nb" xml:id="id6"><xi attr="attribute value" xml:lang="no"/><pi><upsilon object="_blank" xml:lang="nb"/><kappa abort="false"><phi class="content" xml:lang="en-US"><rho abort="content"><kappa false="attribute" xml:lang="en-GB"><upsilon xml:id="id7"><eta attribute="this.nodeValue"><theta xml:lang="en-GB" xml:id="id8"/><nu><xi string="false" xml:lang="en-GB" xml:id="id9"><eta object="123456789"><green>This text must be green</green></eta></xi></nu></eta></upsilon></kappa></rho></phi></kappa></pi></upsilon></omicron></alpha></beta></sigma></kappa></xsl:if>
+</xsl:template>
+</xsl:stylesheet>

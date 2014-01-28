@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/css" href="data:text/css,*%20%7Bdisplay%3Ablock%7Dnormal%20%7Bfont-size%3Ax-large%7Dobserve%20%7Bfont-size%3Axx-large%3B%7D"?>
+<root>
+<normal>This is reference text</normal>
+<observe>This text should have larger font-size comparing to reference</observe>
+</root>
+<!--
+* {display:block}
+normal {font-size:x-large}
+observe {font-size:xx-large;}
+-->

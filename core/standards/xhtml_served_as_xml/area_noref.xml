@@ -1,0 +1,128 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta name="generator"
+
+content="HTML Tidy for Mac OS, see www.w3.org" />
+
+<!-- testcase: area_noref.xml -->
+
+<!-- Author: Christine Dreckman, Date 9/9/98 -->
+
+<!-- Modified: Changed doctype to xhtml 1.0 transitional Author: Chris Petersen Date: 1/14/01 -->
+
+<!-- 
+
+
+
+   - The contents of this file are subject to the Mozilla Public
+
+
+
+   - License Version 1.1 (the "License"); you may not use this file
+
+
+
+   - except in compliance with the License. You may obtain a copy of
+
+
+
+   - the License at http://www.mozilla.org/MPL/
+
+
+
+   - 
+
+
+
+   - Software distributed under the License is distributed on an "AS
+
+
+
+   - IS" basis, WITHOUT WARRANTY OF ANY KIND, either express or
+
+
+
+   - implied. See the License for the specific language governing
+
+
+
+   - rights and limitations under the License.
+
+
+
+   - 
+
+
+
+   - The Original Code is Mozilla Communicator Test Cases.
+
+
+
+   - 
+
+
+
+   - The Initial Developer of the Original Code is Netscape Communications
+
+
+
+   - Corp.  Portions created by Netscape Communications Corp. are 
+
+
+
+   - Copyright (C) 1999 Netscape Communications Corp.  All
+
+
+
+   - Rights Reserved.
+
+
+
+   - 
+
+
+
+   - Contributor(s): 
+
+
+
+  -->
+
+<!-- Purpose: To test the NOHREF attribute of the AREA element -->
+
+<!-- Expected result: A gif imagemap should be displayed with 1 red square. The red square should not be clickable. Clicking on the white background space should link to a separate HTML page. The linked page should take you to a 'default destination' page. -->
+
+<title>XHTML Functional -- AREA - NOREF</title>
+
+</head>
+
+<body>
+
+<p>This imagemap does not reference a URL for the red square</p>
+
+
+
+<img src="images/square.gif" height="144" width="200"
+
+usemap="#square" border="0" /> <map id="square" name="square">
+
+<area alt="Red Square" coords="65,30,144,110" nohref="nohref" />
+
+<area shape="rect" alt="White Space" coords="0,0,199,143"
+
+href="default.xml" />
+
+</map>
+
+</body>
+
+</html>
+
+
+

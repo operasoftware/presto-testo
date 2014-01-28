@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:template match="xsl:template">
+<result>
+<xsl:choose>
+<xsl:when test='//*[starts-with(@number,"conten")][@xml:lang="nb"]/iota[@attr="123456789"][not(preceding-sibling::*)][not(child::node())][following-sibling::tau[@data="attribute-value"][@xml:lang="no-nb"][not(child::node())][following-sibling::rho[@xml:lang="no-nb"][preceding-sibling::*[position() = 2]]/nu[@xml:lang="no-nb"][not(preceding-sibling::*)]/psi[@xml:lang="en-US"][@xml:id="id1"][position() = 1]][position() = 1]]'>	
+	<xsl:value-of select="'PASS'"/>
+</xsl:when>
+<xsl:otherwise>FAIL</xsl:otherwise>
+</xsl:choose>
+</result>
+<xsl:if test="false()">
+<any number="content" xml:lang="nb"><iota attr="123456789"/><tau data="attribute-value" xml:lang="no-nb"/><rho xml:lang="no-nb"><nu xml:lang="no-nb"><psi xml:lang="en-US" xml:id="id1"><green>This text must be green</green></psi></nu></rho></any></xsl:if>
+</xsl:template>
+</xsl:stylesheet>

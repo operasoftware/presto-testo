@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:template match="xsl:template">
+<result>
+<xsl:choose>
+<xsl:when test='//mu[@xml:lang="no"]/tau[contains(@data,"value")][@xml:lang="no"][not(child::node())][following-sibling::kappa[@att][not(following-sibling::*)]//delta[starts-with(@attrib,"100")][@xml:lang="en"][@xml:id="id1"]//omega[@xml:lang="en-GB"][@xml:id="id2"]/epsilon[@delete][following-sibling::sigma[@xml:id="id3"]/nu[starts-with(@token,"a")][not(preceding-sibling::*)]/rho[contains(concat(@delete,"$"),"00%$")][@xml:lang="no"][@xml:id="id4"]][position() = 1]]'>	
+	<xsl:value-of select="'PASS'"/>
+</xsl:when>
+<xsl:otherwise>FAIL</xsl:otherwise>
+</xsl:choose>
+</result>
+<xsl:if test="false()">
+<mu xml:lang="no"><tau data="attribute-value" xml:lang="no"/><kappa att="attribute"><delta attrib="100%" xml:lang="en" xml:id="id1"><omega xml:lang="en-GB" xml:id="id2"><epsilon delete="content"/><sigma xml:id="id3"><nu token="attribute value"><rho delete="100%" xml:lang="no" xml:id="id4"><green>This text must be green</green></rho></nu></sigma></omega></delta></kappa></mu></xsl:if>
+</xsl:template>
+</xsl:stylesheet>

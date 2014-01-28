@@ -1,0 +1,7 @@
+<!--This is a comment is before the xml declaration-->
+<?xml version="1.0"?>
+<!-- Testcase: comments_before_zml_dec.xml -->
+<!-- Description: The test the xml parser's ability to report a error when a document is NOT well-formed  -->
+<!-- Author:  Chris Petersen  Date: 12/06/2000 -->
+<root>
+</root>

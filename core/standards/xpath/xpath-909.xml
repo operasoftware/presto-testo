@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:template match="xsl:template">
+<result>
+<xsl:choose>
+<xsl:when test='//alpha[starts-with(concat(@attribute,"-"),"_blank-")][@xml:lang="en-US"]/omicron[@and="attribute-value"][@xml:lang="no"][not(preceding-sibling::*)][following-sibling::zeta[@attribute][@xml:id="id1"][not(following-sibling::*)]/delta[@content][not(following-sibling::*)]//delta[@xml:lang="no-nb"]//lambda[@xml:lang="no-nb"][not(preceding-sibling::*)]]'>	
+	<xsl:value-of select="'PASS'"/>
+</xsl:when>
+<xsl:otherwise>FAIL</xsl:otherwise>
+</xsl:choose>
+</result>
+<xsl:if test="false()">
+<alpha attribute="_blank" xml:lang="en-US"><omicron and="attribute-value" xml:lang="no"/><zeta attribute="123456789" xml:id="id1"><delta content="another attribute value"><delta xml:lang="no-nb"><lambda xml:lang="no-nb"><green>This text must be green</green></lambda></delta></delta></zeta></alpha></xsl:if>
+</xsl:template>
+</xsl:stylesheet>

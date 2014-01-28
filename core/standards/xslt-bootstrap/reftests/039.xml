@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:template match="xsl:stylesheet">
+<xsl:for-each select="xsl:template[@match='xsl:stylesheet']/xsl:*[@select]/result[position()=last()]/xsl:value-of[@select]">
+<result><xsl:value-of select="'PASS'"/></result>
+</xsl:for-each>
+</xsl:template>
+</xsl:stylesheet>

@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ev="http://www.w3.org/2001/xml-events">
+<head>
+<title>DOMAttrModified event</title>
+<ev:listener event="DOMAttrModified" observer="observer" handler="#handler" target="target"/>
+<script type="application/ecmascript" id="handler">
+<![CDATA[
+document.getElementsByTagName('tt')[0].firstChild.nodeValue = "PASSED";
+]]>
+</script>
+</head>
+<body id="observer">
+<div><tt id="target">NOT TESTED (script did not run)</tt></div>
+<script type="application/ecmascript">
+<![CDATA[
+var tt = document.getElementsByTagName('tt')[0];
+tt.firstChild.nodeValue = "FAILED";
+tt.setAttribute("class","passed");
+]]>
+</script>
+</body>
+</html>

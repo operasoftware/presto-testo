@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:template match="xsl:template">
+<result>
+<xsl:choose>
+<xsl:when test='//chi/tau[starts-with(@or,"this.nodeValu")][@xml:id="id1"][not(following-sibling::*)]//delta[contains(concat(@number,"$"),"ribute$")][@xml:lang="no-nb"]//alpha[@xml:id="id2"][not(child::node())][following-sibling::nu[starts-with(@false,"attribu")][@xml:lang="no"][@xml:id="id3"][preceding-sibling::*[position() = 1]][not(following-sibling::*)]//zeta[@false="attribute-value"][not(preceding-sibling::*)]//mu[@xml:lang="en"][@xml:id="id4"][not(preceding-sibling::*)][following-sibling::*[position()=1]][not(child::node())][following-sibling::phi[starts-with(@false,"123")][@xml:lang="nb"][@xml:id="id5"][not(following-sibling::*)]/zeta[contains(concat(@and,"$"),"ontent$")][@xml:lang="en"][following-sibling::*[position()=1]][not(child::node())][following-sibling::alpha[@xml:lang="nb"][@xml:id="id6"]/delta[@title][@xml:lang="en"][not(child::node())][following-sibling::delta[@xml:lang="no-nb"][preceding-sibling::*[position() = 1]][not(following-sibling::*)]/alpha[@xml:lang="en-US"][@xml:id="id7"][not(preceding-sibling::*)][following-sibling::*[position()=1]][not(child::node())][following-sibling::psi[@true][@xml:lang="en-GB"][preceding-sibling::*[position() = 1]][not(following-sibling::*)]][position() = 1]]]][position() = 1]]'>	
+	<xsl:value-of select="'PASS'"/>
+</xsl:when>
+<xsl:otherwise>FAIL</xsl:otherwise>
+</xsl:choose>
+</result>
+<xsl:if test="false()">
+<chi><tau or="this.nodeValue" xml:id="id1"><delta number="attribute" xml:lang="no-nb"><alpha xml:id="id2"/><nu false="attribute-value" xml:lang="no" xml:id="id3"><zeta false="attribute-value"><mu xml:lang="en" xml:id="id4"/><phi false="123456789" xml:lang="nb" xml:id="id5"><zeta and="content" xml:lang="en"/><alpha xml:lang="nb" xml:id="id6"><delta title="attribute" xml:lang="en"/><delta xml:lang="no-nb"><alpha xml:lang="en-US" xml:id="id7"/><psi true="_blank" xml:lang="en-GB"><green>This text must be green</green></psi></delta></alpha></phi></zeta></nu></delta></tau></chi></xsl:if>
+</xsl:template>
+</xsl:stylesheet>

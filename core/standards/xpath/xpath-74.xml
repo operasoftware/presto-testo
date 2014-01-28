@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:template match="xsl:template">
+<result>
+<xsl:choose>
+<xsl:when test='//iota[contains(@or,"node")][@xml:lang="en-US"]/epsilon[@false][not(following-sibling::*)]/chi[starts-with(concat(@abort,"-"),"false-")][not(preceding-sibling::*)][not(following-sibling::*)]/phi[not(preceding-sibling::*)][following-sibling::*[position()=3]][not(child::node())][following-sibling::rho[starts-with(@desciption,"attribute ")][@xml:lang="en-US"][preceding-sibling::*[position() = 1]][following-sibling::pi[not(child::node())][following-sibling::phi[@number]/iota[@delete][not(preceding-sibling::*)]/gamma[starts-with(concat(@insert,"-"),"this.nodeValue-")][@xml:lang="nb"][@xml:id="id1"][not(preceding-sibling::*)][not(child::node())][following-sibling::kappa[@xml:id="id2"]/chi[contains(concat(@name,"$"),"ontent$")][@xml:lang="no"][not(preceding-sibling::*)][following-sibling::*[position()=1]][following-sibling::xi[contains(concat(@class,"$"),"e value$")][@xml:id="id3"]//beta[@true="attribute"][@xml:lang="en"][@xml:id="id4"][not(preceding-sibling::*)]/eta[@xml:lang="en-GB"][not(preceding-sibling::*)][not(child::node())][following-sibling::omicron]][position() = 1]]]]]'>	
+	<xsl:value-of select="'PASS'"/>
+</xsl:when>
+<xsl:otherwise>FAIL</xsl:otherwise>
+</xsl:choose>
+</result>
+<xsl:if test="false()">
+<iota or="this.nodeValue" xml:lang="en-US"><epsilon false="another attribute value"><chi abort="false"><phi/><rho desciption="attribute value" xml:lang="en-US"/><pi/><phi number="another attribute value"><iota delete="attribute"><gamma insert="this.nodeValue" xml:lang="nb" xml:id="id1"/><kappa xml:id="id2"><chi name="content" xml:lang="no"/><xi class="attribute value" xml:id="id3"><beta true="attribute" xml:lang="en" xml:id="id4"><eta xml:lang="en-GB"/><omicron><green>This text must be green</green></omicron></beta></xi></kappa></iota></phi></chi></epsilon></iota></xsl:if>
+</xsl:template>
+</xsl:stylesheet>

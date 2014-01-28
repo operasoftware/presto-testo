@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ev="http://www.w3.org/2001/xml-events">
+<head>
+<title>Mousedown event</title>
+</head>
+<body>
+<div style="background-color:silver;">Press mouse button on gray area, event should be registered as soon as you press button and before you release it
+<script type="application/ecmascript" ev:event="mousedown">
+<![CDATA[
+document.getElementsByTagName('tt')[0].firstChild.nodeValue = "PASS";
+]]>
+</script>
+</div> 
+<div><tt>NOT TESTED</tt></div>
+</body>
+</html>

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet type="text/xsl" href="axes129.xsl"?>
+<docs xmlns:test="http://tester.com">
+  <doc x="x" test:y="y" jad:z="z" xmlns:jad="http://administrator.com"/>
+</docs>

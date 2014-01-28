@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:template match="xsl:template">
+<result>
+<xsl:choose>
+<xsl:when test='//zeta[@xml:id="id1"]/eta[@xml:lang="no-nb"][@xml:id="id2"][not(preceding-sibling::*)][not(following-sibling::*)]//iota[starts-with(concat(@title,"-"),"_blank-")][@xml:lang="en-GB"][following-sibling::mu[@attrib][@xml:id="id3"][following-sibling::mu[@string][not(following-sibling::*)]/lambda[@xml:lang="en-GB"][@xml:id="id4"][following-sibling::phi[contains(@object,"k")][@xml:id="id5"][preceding-sibling::*[position() = 1]][not(following-sibling::*)][position() = 1]]]]'>	
+	<xsl:value-of select="'PASS'"/>
+</xsl:when>
+<xsl:otherwise>FAIL</xsl:otherwise>
+</xsl:choose>
+</result>
+<xsl:if test="false()">
+<zeta xml:id="id1"><eta xml:lang="no-nb" xml:id="id2"><iota title="_blank" xml:lang="en-GB"/><mu attrib="false" xml:id="id3"/><mu string="123456789"><lambda xml:lang="en-GB" xml:id="id4"/><phi object="_blank" xml:id="id5"><green>This text must be green</green></phi></mu></eta></zeta></xsl:if>
+</xsl:template>
+</xsl:stylesheet>

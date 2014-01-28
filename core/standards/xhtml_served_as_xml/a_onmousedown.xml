@@ -1,0 +1,132 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta name="generator"
+
+content="HTML Tidy for Mac OS, see www.w3.org" />
+
+<!-- test case: a_onmousedown.xml -->
+
+<!-- description: HTML 4.0 A element with the ONMOUSEDOWN attribute -->
+
+<!-- Author: Christine Dreckman Date: 1/11/99 -->
+
+<!-- Modified: Changed doctype to xhtml 1.0 transitional Author: Chris Petersen Date: 1/14/01 -->
+
+<!-- 
+
+
+
+   - The contents of this file are subject to the Mozilla Public
+
+
+
+   - License Version 1.1 (the "License"); you may not use this file
+
+
+
+   - except in compliance with the License. You may obtain a copy of
+
+
+
+   - the License at http://www.mozilla.org/MPL/
+
+
+
+   - 
+
+
+
+   - Software distributed under the License is distributed on an "AS
+
+
+
+   - IS" basis, WITHOUT WARRANTY OF ANY KIND, either express or
+
+
+
+   - implied. See the License for the specific language governing
+
+
+
+   - rights and limitations under the License.
+
+
+
+   - 
+
+
+
+   - The Original Code is Mozilla Communicator Test Cases.
+
+
+
+   - 
+
+
+
+   - The Initial Developer of the Original Code is Netscape Communications
+
+
+
+   - Corp.  Portions created by Netscape Communications Corp. are 
+
+
+
+   - Copyright (C) 1999 Netscape Communications Corp.  All
+
+
+
+   - Rights Reserved.
+
+
+
+   - 
+
+
+
+   - Contributor(s): 
+
+
+
+  -->
+
+<!-- Purpose: To test the ONMOUSEDOWN attribute of the A element tag-->
+
+<!-- Expected result: Mousing down on the link should cause a Javascript alert dialog box to display -->
+
+<title>XHTML Functional -- A - ONMOUSEDOWN</title>
+
+<script type="text/javascript" language="Javascript">
+
+</script>
+
+</head>
+
+<body>
+
+<p>This page tests the ONMOUSEDOWN attribute of the A element tag.
+
+Mouse down on the link and a Javascript alert dialog box will be
+
+displayed with the following message: 'Mouse pressed down!'.</p>
+
+
+
+<a href="http://www.netscape.com"
+
+onmousedown="window.alert ('Mouse pressed down!')">Mouse down on
+
+this link</a>
+
+</body>
+
+</html>
+
+
+

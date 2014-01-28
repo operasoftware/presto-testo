@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:template match="xsl:template">
+<result>
+<xsl:choose>
+<xsl:when test='//phi[@xml:id="id1"]/rho[not(following-sibling::*)]/mu[not(preceding-sibling::*)][not(following-sibling::*)]/mu[@data="this-is-att-value"][following-sibling::alpha[@xml:lang="en-US"][following-sibling::eta[@xml:id="id2"][preceding-sibling::*[position() = 2]][not(child::node())][following-sibling::chi[@xml:lang="no-nb"][@xml:id="id3"][not(following-sibling::*)]/psi[contains(concat(@title,"$"),"value$")][@xml:lang="en"]//tau[contains(concat(@class,"$"),"ue$")][@xml:id="id4"][not(preceding-sibling::*)][following-sibling::alpha[not(following-sibling::*)]/tau[@xml:lang="en-GB"][@xml:id="id5"]//omicron[contains(concat(@abort,"$"),"bute value$")][@xml:id="id6"][not(preceding-sibling::*)][following-sibling::phi[@xml:lang="en"][not(following-sibling::*)]//alpha[@xml:id="id7"]/sigma[@attribute="123456789"][@xml:lang="en"][@xml:id="id8"][not(following-sibling::*)][position() = 1]][position() = 1]][position() = 1]][position() = 1]][position() = 1]]'>	
+	<xsl:value-of select="'PASS'"/>
+</xsl:when>
+<xsl:otherwise>FAIL</xsl:otherwise>
+</xsl:choose>
+</result>
+<xsl:if test="false()">
+<phi xml:id="id1"><rho><mu><mu data="this-is-att-value"/><alpha xml:lang="en-US"/><eta xml:id="id2"/><chi xml:lang="no-nb" xml:id="id3"><psi title="attribute value" xml:lang="en"><tau class="attribute-value" xml:id="id4"/><alpha><tau xml:lang="en-GB" xml:id="id5"><omicron abort="another attribute value" xml:id="id6"/><phi xml:lang="en"><alpha xml:id="id7"><sigma attribute="123456789" xml:lang="en" xml:id="id8"><green>This text must be green</green></sigma></alpha></phi></tau></alpha></psi></chi></mu></rho></phi></xsl:if>
+</xsl:template>
+</xsl:stylesheet>

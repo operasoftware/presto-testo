@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/css" href="data:text/css,root%2C%20observe%2C%20outside%20%7Bdisplay%3Ablock%7Doutside%20%7Bmargin-left%3A-4em%7D"?>
+<root>
+<observe>There should be only one sentence on this page.</observe>
+<outside>FAIL</outside>
+</root>
+<!-- 
+root, observe, outside {display:block}
+outside {margin-left:-4em}
+-->

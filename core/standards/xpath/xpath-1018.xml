@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:template match="xsl:template">
+<result>
+<xsl:choose>
+<xsl:when test='//chi[@xml:lang="en-GB"][@xml:id="id1"]/tau//phi[@title][@xml:id="id2"]/sigma[@xml:lang="no-nb"]//theta[@xml:id="id3"][not(preceding-sibling::*)]/tau[contains(concat(@title,"$"),"nother attribute value$")][@xml:lang="en"][not(following-sibling::*)]/phi[@attribute][following-sibling::*[position()=2]][not(child::node())][following-sibling::eta[@xml:lang="no"][preceding-sibling::*[position() = 1]][following-sibling::mu[@xml:lang="no"][@xml:id="id4"]/chi[@xml:lang="en-GB"][@xml:id="id5"][not(child::node())][following-sibling::tau[starts-with(@att,"false")][@xml:id="id6"][not(child::node())][following-sibling::eta[preceding-sibling::*[position() = 2]]/gamma[@attr][@xml:lang="no"][@xml:id="id7"][not(preceding-sibling::*)][following-sibling::upsilon[@xml:lang="en"][preceding-sibling::*[position() = 1]]/tau[contains(@and,"r")][not(preceding-sibling::*)][not(following-sibling::*)]//chi[@token="false"][@xml:lang="no"][not(following-sibling::*)]]]][position() = 1]]]'>	
+	<xsl:value-of select="'PASS'"/>
+</xsl:when>
+<xsl:otherwise>FAIL</xsl:otherwise>
+</xsl:choose>
+</result>
+<xsl:if test="false()">
+<chi xml:lang="en-GB" xml:id="id1"><tau><phi title="another attribute value" xml:id="id2"><sigma xml:lang="no-nb"><theta xml:id="id3"><tau title="another attribute value" xml:lang="en"><phi attribute="this.nodeValue"/><eta xml:lang="no"/><mu xml:lang="no" xml:id="id4"><chi xml:lang="en-GB" xml:id="id5"/><tau att="false" xml:id="id6"/><eta><gamma attr="true" xml:lang="no" xml:id="id7"/><upsilon xml:lang="en"><tau and="true"><chi token="false" xml:lang="no"><green>This text must be green</green></chi></tau></upsilon></eta></mu></tau></theta></sigma></phi></tau></chi></xsl:if>
+</xsl:template>
+</xsl:stylesheet>

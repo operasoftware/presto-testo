@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE element [
+<!ELEMENT element (#PCDATA)?>
+]>
+<element>wrong content model in element declaration</element>
+

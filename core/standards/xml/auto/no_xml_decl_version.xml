@@ -1,0 +1,8 @@
+<?xml ?>
+<!-- Testcase: no_xml_decl_version.xml -->
+<!-- Description: The test the xml parser's ability to report a error when a document is NOT well-formed  -->
+<!-- Author:  Chris Petersen  Date: 12/06/2000 -->
+<!--The xml declaration is not legal, no version attribute-->
+<root>
+This text shouldn't appear
+</root>

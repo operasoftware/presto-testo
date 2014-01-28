@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ev="http://www.w3.org/2001/xml-events">
+<head>
+<title>Mouseover event</title>
+<ev:listener event="mouseover" observer="observer" handler="#handler"/>
+<script type="application/ecmascript" id="handler">
+<![CDATA[
+document.getElementsByTagName('tt')[0].firstChild.nodeValue = "PASSED";
+]]>
+</script>
+</head>
+<body>
+<div id="observer" style="background-color:silver;">Place mouse cursor over gray area, you should see word PASSED below</div> 
+<div><tt>NOT TESTED</tt></div>
+</body>
+</html>

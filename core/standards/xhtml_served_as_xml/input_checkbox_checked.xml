@@ -1,0 +1,98 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta name="generator"
+
+content="HTML Tidy for Mac OS, see www.w3.org" />
+
+<title>XHTML Functional -- FORM - INPUT=CHECKBOX
+
+CHECKED=CHECKED</title>
+
+<!-- testcase: input_checkbox_checked.xml -->
+
+<!-- description: HTML 4.0 FORM element/INPUT and CHECKED attributes -->
+
+<!-- Author: Chris Petersen  Date: 4/20/99 -->
+
+<!-- Modified: Changed doctype to xhtml 1.0 transitional Author: Chris Petersen Date: 1/23/01 -->
+
+<!-- 
+
+   - The contents of this file are subject to the Mozilla Public
+
+   - License Version 1.1 (the "License"); you may not use this file
+
+   - except in compliance with the License. You may obtain a copy of
+
+   - the License at http://www.mozilla.org/MPL/
+
+   - 
+
+   - Software distributed under the License is distributed on an "AS
+
+   - IS" basis, WITHOUT WARRANTY OF ANY KIND, either express or
+
+   - implied. See the License for the specific language governing
+
+   - rights and limitations under the License.
+
+   - 
+
+   - The Original Code is Mozilla Communicator Test Cases.
+
+   - 
+
+   - The Initial Developer of the Original Code is Netscape Communications
+
+   - Corp.  Portions created by Netscape Communications Corp. are 
+
+   - Copyright (C) 1999 Netscape Communications Corp.  All
+
+   - Rights Reserved.
+
+   - 
+
+   - Contributor(s): 
+
+  -->
+
+<!-- Purpose: To test the INPUT element with the TYPE attribute set to CHECKBOX and the CHECKED attribute set to checked. -->
+
+<!-- Expected result: When the page is displayed, the 2nd and third options should be pre-selected, submitting should result in a return page displaying the 2nd and 3rd checkboxes selected. -->
+
+</head>
+
+<body>
+
+<p>Options 2 and 3 should be pre-selected, un-checking the boxes and
+
+selecting reload should result in the checkboxes being reset.</p>
+
+
+
+<form method="post" action="post-query.cgi"><input type="checkbox"
+
+name="pets" value="bird" /> bird<br />
+
+ <input type="checkbox" name="pets" value="cat"
+
+checked="checked" /> cat<br />
+
+ <input type="checkbox" name="pets" value="dog"
+
+checked="checked" /> dog<br />
+
+ <input type="reset" /> <input type="submit" /></form>
+
+</body>
+
+</html>
+
+
+

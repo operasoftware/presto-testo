@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:template match="xsl:template">
+<result>
+<xsl:choose>
+<xsl:when test='//epsilon[contains(@attrib,"e")][@xml:id="id1"]//eta[@true][not(preceding-sibling::*)][not(child::node())][following-sibling::eta[@or][@xml:id="id2"][not(child::node())][following-sibling::sigma[preceding-sibling::*[position() = 2]]//psi[@number][@xml:lang="nb"][@xml:id="id3"][following-sibling::*[@xml:lang="no"][@xml:id="id4"][preceding-sibling::*[position() = 1]][not(following-sibling::*)]//zeta[@xml:lang="en"][@xml:id="id5"][not(following-sibling::*)]/gamma[@xml:id="id6"]/theta[not(preceding-sibling::*)][not(following-sibling::*)]/chi//lambda[@xml:lang="no-nb"]/gamma[@xml:lang="no"][@xml:id="id7"][not(child::node())][following-sibling::phi[@xml:lang="nb"][@xml:id="id8"][preceding-sibling::*[position() = 1]][following-sibling::gamma[contains(@false,".nodeValue")][@xml:lang="en"][following-sibling::*[position()=1]][not(child::node())][following-sibling::iota[preceding-sibling::*[position() = 3]]//tau[@xml:lang="no-nb"][@xml:id="id9"][not(child::node())][following-sibling::chi[@xml:lang="no-nb"][preceding-sibling::*[position() = 1]]]][position() = 1]]][position() = 1]][position() = 1]]]'>	
+	<xsl:value-of select="'PASS'"/>
+</xsl:when>
+<xsl:otherwise>FAIL</xsl:otherwise>
+</xsl:choose>
+</result>
+<xsl:if test="false()">
+<epsilon attrib="false" xml:id="id1"><eta true="_blank"/><eta or="true" xml:id="id2"/><sigma><psi number="this.nodeValue" xml:lang="nb" xml:id="id3"/><any xml:lang="no" xml:id="id4"><zeta xml:lang="en" xml:id="id5"><gamma xml:id="id6"><theta><chi><lambda xml:lang="no-nb"><gamma xml:lang="no" xml:id="id7"/><phi xml:lang="nb" xml:id="id8"/><gamma false="this.nodeValue" xml:lang="en"/><iota><tau xml:lang="no-nb" xml:id="id9"/><chi xml:lang="no-nb"><green>This text must be green</green></chi></iota></lambda></chi></theta></gamma></zeta></any></sigma></epsilon></xsl:if>
+</xsl:template>
+</xsl:stylesheet>

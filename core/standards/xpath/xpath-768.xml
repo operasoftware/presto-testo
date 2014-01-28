@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:template match="xsl:template">
+<result>
+<xsl:choose>
+<xsl:when test='//*[@xml:lang="nb"]//pi[starts-with(@data,"attribut")][@xml:id="id1"][following-sibling::omega[contains(@attribute,"ue")][@xml:lang="no-nb"][following-sibling::chi[@xml:lang="en"][@xml:id="id2"][preceding-sibling::*[position() = 2]]/gamma[starts-with(concat(@or,"-"),"attribute value-")][not(preceding-sibling::*)][following-sibling::*[position()=1]][following-sibling::phi[contains(@content,"fal")][@xml:lang="en"][@xml:id="id3"][preceding-sibling::*[position() = 1]]//sigma[@xml:lang="en"]//kappa[@xml:id="id4"][following-sibling::omega[preceding-sibling::*[position() = 1]]//theta[@xml:lang="no-nb"][@xml:id="id5"][following-sibling::*[position()=3]][not(following-sibling::theta)][not(child::node())][following-sibling::epsilon[@delete][preceding-sibling::*[position() = 1]][following-sibling::*[position()=2]][following-sibling::gamma[@abort][@xml:lang="en-US"][preceding-sibling::*[position() = 2]][following-sibling::mu[@name][@xml:lang="en-GB"][@xml:id="id6"][preceding-sibling::*[position() = 3]][not(following-sibling::*)]//beta[@xml:lang="en-US"][not(preceding-sibling::*)][not(following-sibling::*)]][position() = 1]]]][position() = 1]]]]'>	
+	<xsl:value-of select="'PASS'"/>
+</xsl:when>
+<xsl:otherwise>FAIL</xsl:otherwise>
+</xsl:choose>
+</result>
+<xsl:if test="false()">
+<any xml:lang="nb"><pi data="attribute value" xml:id="id1"/><omega attribute="this-is-att-value" xml:lang="no-nb"/><chi xml:lang="en" xml:id="id2"><gamma or="attribute value"/><phi content="false" xml:lang="en" xml:id="id3"><sigma xml:lang="en"><kappa xml:id="id4"/><omega><theta xml:lang="no-nb" xml:id="id5"/><epsilon delete="false"/><gamma abort="attribute" xml:lang="en-US"/><mu name="_blank" xml:lang="en-GB" xml:id="id6"><beta xml:lang="en-US"><green>This text must be green</green></beta></mu></omega></sigma></phi></chi></any></xsl:if>
+</xsl:template>
+</xsl:stylesheet>

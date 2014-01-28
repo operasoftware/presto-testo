@@ -1,0 +1,8 @@
+<!DOCTYPE main [
+<?xml version="1.0"?>
+<!ELEMENT main (#PCDATA)>
+]>
+<main>
+<!--The XML declaration is located in the DTD. Not well-formed-->
+</main>
+

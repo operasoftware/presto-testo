@@ -1,0 +1,8 @@
+<?xml version="1.0"?> 
+<?xml-stylesheet type="text/xsl" href="namedtemplate02.xsl"?>
+<doc>
+  <a>top-level-a</a>
+    <doc1>
+	  <a>sub-level-a</a>
+	</doc1>
+</doc>

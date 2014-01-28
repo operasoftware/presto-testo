@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:template match="xsl:template">
+<result>
+<xsl:choose>
+<xsl:when test='//nu[@xml:lang="no"][@xml:id="id1"]/iota[starts-with(@content,"this-is-att-valu")][not(preceding-sibling::iota)]/zeta[@title][not(following-sibling::*)]//sigma[@delete="this-is-att-value"][@xml:id="id2"][not(preceding-sibling::*)][following-sibling::*[following-sibling::*[preceding-sibling::*[position() = 2]]/iota[@xml:id="id3"][not(child::node())][following-sibling::omega[@delete][following-sibling::iota[@desciption][@xml:lang="en"][preceding-sibling::*[position() = 2]]//upsilon[following-sibling::*[position()=2]][not(following-sibling::upsilon)][not(child::node())][following-sibling::chi[@xml:id="id4"][following-sibling::*[position()=1]][following-sibling::alpha[@att][@xml:lang="nb"][preceding-sibling::*[position() = 2]][not(following-sibling::*)]]][position() = 1]][position() = 1]][position() = 1]][position() = 1]]'>	
+	<xsl:value-of select="'PASS'"/>
+</xsl:when>
+<xsl:otherwise>FAIL</xsl:otherwise>
+</xsl:choose>
+</result>
+<xsl:if test="false()">
+<nu xml:lang="no" xml:id="id1"><iota content="this-is-att-value"><zeta title="123456789"><sigma delete="this-is-att-value" xml:id="id2"/><any/><any><iota xml:id="id3"/><omega delete="attribute value"/><iota desciption="this-is-att-value" xml:lang="en"><upsilon/><chi xml:id="id4"/><alpha att="this-is-att-value" xml:lang="nb"><green>This text must be green</green></alpha></iota></any></zeta></iota></nu></xsl:if>
+</xsl:template>
+</xsl:stylesheet>

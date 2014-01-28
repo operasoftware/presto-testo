@@ -1,0 +1,204 @@
+intro {display:block; font-size: 20pt; color: black;}
+
+/* Rules for RGB numbers */
+red_percent {display: block; color: rgb(100%,0%,0%); font-size: 18pt;}
+orange_percent {display: block; color: rgb(100%,40%,0%); font-size: 18pt;}
+green_percent {display: block; color: rgb(0%,100%,0%); font-size: 18pt;}
+blue_percent {display: block; color: rgb(0%,0%,100%); font-size: 18pt;}
+purple_percent {display: block; color: rgb(50%,0%,50%); font-size: 18pt;}
+gray_percent {display: block; color: rgb(50%,50%,50%); font-size: 18pt;}
+
+/* Rules for RGB numbers */
+red_numbers {display: block; color: rgb(255,0,0); font-size: 18pt;}
+orange_numbers {display: block; color: rgb(255,102,0); font-size: 18pt;}
+green_numbers {display: block; color: rgb(0,255,0); font-size: 18pt;}
+blue_numbers {display: block; color: rgb(0,0,255); font-size: 18pt;}
+purple_numbers {display: block; color: rgb(128,0,128); font-size: 18pt;}
+gray_numbers {display: block; color: rgb(128,128,128); font-size: 18pt;}
+
+/* Rules for Color names */
+red_color_name {display: block; color: red; font-size: 18pt;}
+green_color_name {display: block; color: green; font-size: 18pt;}
+lime_color_name {display: block; color: lime; font-size: 18pt;}
+olive_color_name {display: block; color: olive; font-size: 18pt;}
+purple_color_name {display: block; color: purple; font-size: 18pt;}
+gray_color_name {display: block; color: gray; font-size: 18pt;}
+
+/* Rules for  full Hexadecimal value  */
+red_full_hex {display: block; color: #ff0000; font-size: 18pt;}
+green_full_hex {display: block; color: #00ff00; font-size: 18pt;}
+gold_full_hex {display: block; color: #ffCC00; font-size: 18pt;}
+yellow_full_hex  {display: block; color: #ffff00; font-size: 18pt;}
+purple_full_hex  {display: block; color: #990099; font-size: 18pt;}
+gray_full_hex {display: block; color: #808080; font-size: 18pt;}
+
+/* Rules for  short Hexadecimal value  */
+red_shorthex {display: block; color: #f00; font-size: 18pt;}
+green_shorthex {display: block; color: #0f0; font-size: 18pt;}
+gold_shorthex {display: block; color: #fc0; font-size: 18pt;}
+yellow_shorthex  {display: block; color: #ff0; font-size: 18pt;}
+tan_shorthex  {display: block; color: #fc9; font-size: 18pt;}
+blue_shorthex {display: block; color: #00f; font-size: 18pt;}
+
+/* Rules for background color using color names */
+
+bgcolor_name_properties {display: block; color: white; font-size: 18pt;}
+bg_red_name {display: block; background-color: red;}
+bg_green_name {display: block; background-color: green;}
+bg_purple_name {display: block; background-color: purple;}
+bg_yellow_name {display: block; background-color: yellow;}
+bg_olive_name {display: block; background-color: olive;}
+bg_blue_name {display: block; background-color: blue;}
+
+/* Rules for background color using rgb percent */
+
+bgcolor_percent_properties {display: block; color: white; font-size: 18pt;}
+bg_red_percent {display: block; background-color: rgb(100%, 0%, 0%);}
+bg_green_percent {display: block; background-color: rgb(0%, 100%, 0%);}
+bg_purple_percent {display: block; background-color: rgb(50%, 0%, 50%);}
+bg_yellow_percent {display: block; background-color: rgb(100%, 100%, 0%);}
+bg_orange_percent {display: block; background-color: rgb(100%, 40%, 0%);}
+bg_blue_percent {display: block; background-color: rgb(0%, 0%, 100%);}
+
+/* Rules for background color using rgb numbers */
+
+bgcolor_number_properties {display: block; color: white; font-size: 18pt;}
+bg_red_number {display: block; background-color: rgb(255,0,0);}
+bg_green_number {display: block; background-color: rgb(0,255,0);}
+bg_purple_number {display: block; background-color: rgb(128,0,128);}
+bg_yellow_number {display: block; background-color: rgb(255,255,0);}
+bg_orange_number {display: block; background-color: rgb(255,102,0);}
+bg_blue_number {display: block; background-color: rgb(0,0,255);}
+
+
+
+/* Rules for background color using  RGB  hexadecimal  */
+
+bgcolor_hex_properties {display: block; color: white; font-size: 18pt;}
+bg_red_hex {display: block; background-color: #ff0000;}
+bg_green_hex {display: block; background-color: #00ff00;}
+bg_purple_hex {display: block; background-color: #800080;}
+bg_yellow_hex {display: block; background-color: #ffff00;}
+bg_orange_hex {display: block; background-color: #ff6600;}
+bg_blue_hex {display: block; background-color: #0000ff;}
+
+/* Rule for background image on root element */
+ bg_image_properties {background: url(leaf_reduced.gif);}
+ 
+ 
+ /* Rule for background image on root element - no repeat */
+ bg_image_properties_norepeat {background: url(leaf_reduced.gif);  background-repeat: no-repeat; }
+ 
+ 
+  /* Rule for background image on root element - repeat  x*/
+ bg_image_properties_repeat_x {background: url(leaf_reduced.gif);  background-repeat: repeat-x; }
+ 
+   /* Rule for background image on root element - repeat  y*/
+ bg_image_properties_repeat_y {background: url(leaf_reduced.gif);  background-repeat: repeat-y; }
+ 
+    /* Rule for background image position on root element - bottom */
+bg_image_position_bottom {background: url(leaf_reduced.gif);  background-position: bottom; background-repeat: no-repeat; }
+
+    /* Rule for background image position on root element - top */
+bg_image_position_top {background: url(leaf_reduced.gif);  background-position: top; background-repeat: no-repeat; }
+
+    /* Rule for background image position on root element - right */
+bg_image_position_right {background: url(leaf_reduced.gif);  background-position: right; background-repeat: no-repeat; }
+
+    /* Rule for background image position on root element - left */
+bg_image_position_left {background: url(leaf_reduced.gif);  background-position: left; background-repeat: no-repeat; }
+
+    /* Rule for background image position fixed on root element - fixed*/
+bg_image_attached_fixed {background: url(leaf_reduced.gif); background-attachment: fixed; }
+
+   /* Rule for background image position scroll on root element - scroll */
+bg_image_attached_scroll {background: url(leaf_reduced.gif); background-attachment: scroll; }
+
+
+   /* Rule for transparent background color on child element - transparent */
+bg_image_none { background-color: transparent; }
+bg_color_transparent {background-color: green;color:silver; }
+ 
+ 
+    /* Rule for font familes */
+font_properties { display: block; font: 35pt; }
+serif {display: block; font-family: serif; }
+sans-serif { display: block; font-family: sans-serif; }
+cursive { display: block; font-family: cursive; }
+fantasy {display: block; font-family: fantasy; }
+monospace {display: block; font-family: monospace; }
+
+    /* Rule for font  names */
+Garamond {display: block; font-family: "Garamond", serif; }
+Courier_New { display: block; font-family: "Courier New", monospace; }
+Aristocrat { display: block; font-family: "Aristocrat",cursive; }
+Old_Town {display: block; font-family: "Old Town", fantasy; }
+
+
+    /* Rule for font  weight - normal*/
+font_weight_normal {display: block; font-weight: normal;}
+ 
+ 
+     /* Rule for font  weight - lighter */
+font_weight_lighter {display: block; font-weight: lighter;}
+
+     /* Rule for font  weight - bolder */
+font_weight_bolder {display: block; font-weight: bolder;}
+weight_100  {display: block; font-weight: 400;}
+
+    /* Rule for font  weight - 800 */
+weight_800 {display: block; font-weight: 700;}
+
+
+    /* Rule for font  weight - bold */
+font_weight_bold {display: block; font-weight: bold;}
+
+
+     /* Rule for font  size - larger */
+font_size_default {display: block; font-size: 12pt;}
+larger_font  {display: block; font-size: larger;}
+
+     /* Rule for font  size - large */
+font_size_normal {display: block;}
+large_font  {display: block; font-size: larger;}
+
+    /* Rule for font  variant - small -caps */
+smallcaps_font {display: block; font-variant: small-caps;}
+
+    /* Rule for font  variant - normal  */
+smallcaps_font {display: block; font-variant: small-caps;}
+
+    /* Rule for font  style - oblique  */
+font_style_oblique {display: block; font-style: oblique;}
+
+    /* Rule for font  style - italic  */
+font_style_italic {display: block; font-style: italic;}
+
+    /* Rule for font  size - xx-small  */
+font_size_xxsmall {display: block; font-size: xx-small;}
+
+    /* Rule for font  size - x-small  */
+font_size_xsmall {display: block; font-size: x-small;}
+
+    /* Rule for font  size - smaller  */
+font_size_smaller {display: block; font-size: smaller;}
+
+    /* Rule for font  size - xx-large  */
+font_size_xxlarge {display: block; font-size: xx-large;}
+
+    /* Rules for font  size - pt, px, pc, mm, in, em, ex  */
+font_size_pt {display: block; font-size: 36pt;}
+font_size_px {display: block; font-size: 60px;}
+font-size_pct {display: block; font-size: 150%;}
+font-size_pc {display: block; font-size: 10pc ;}
+font-size_mm {display: block; font-size: 15mm ;}
+font-size_in {display: block; font-size: 3in ;}
+font-size_ex {display: block; font-size: 10ex ;}
+font-size_em {display: block; font-size: 8em ;}
+font-size_cm {display: block; font-size: 2cm ;}
+
+    /* Rule for font  size - x-large  */
+font_size_xlarge {display: block; font-size: x-large;}
+
+line {display:block}
+

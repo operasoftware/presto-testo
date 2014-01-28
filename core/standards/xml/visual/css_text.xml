@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/css" href="data:text/css,root%2C%20observe%20%7Bdisplay%3Ablock%7Dobserve%20%7Btext-transform%3Auppercase%7Dobserve%20+%20observe%20%7Btext-transform%3Alowercase%7D"?>
+<root>
+<observe>These should be uppercase letters.</observe>
+<observe>THESE SHOULD BE LOWERCASE LETTERS.</observe>
+</root>
+<!--
+root, observe {display:block}
+observe {text-transform:uppercase}
+observe + observe {text-transform:lowercase}
+-->

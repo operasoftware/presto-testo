@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:template match="xsl:template">
+<result>
+<xsl:choose>
+<xsl:when test='//tau[@xml:id="id1"]//gamma[not(preceding-sibling::*)]/alpha[not(preceding-sibling::*)][following-sibling::*[position()=1]][not(child::node())][following-sibling::phi[contains(@title,"nk")][@xml:lang="no"]//psi[@xml:lang="no-nb"][@xml:id="id2"]//zeta[contains(@att,"ank")][@xml:lang="nb"][@xml:id="id3"][not(preceding-sibling::*)][not(following-sibling::*)]//kappa[@attr="123456789"][@xml:id="id4"][following-sibling::xi[contains(concat(@false,"$"),"_blank$")][preceding-sibling::*[position() = 1]][not(following-sibling::*)][position() = 1]]]'>	
+	<xsl:value-of select="'PASS'"/>
+</xsl:when>
+<xsl:otherwise>FAIL</xsl:otherwise>
+</xsl:choose>
+</result>
+<xsl:if test="false()">
+<tau xml:id="id1"><gamma><alpha/><phi title="_blank" xml:lang="no"><psi xml:lang="no-nb" xml:id="id2"><zeta att="_blank" xml:lang="nb" xml:id="id3"><kappa attr="123456789" xml:id="id4"/><xi false="_blank"><green>This text must be green</green></xi></zeta></psi></phi></gamma></tau></xsl:if>
+</xsl:template>
+</xsl:stylesheet>

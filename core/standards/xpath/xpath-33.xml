@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:template match="xsl:template">
+<result>
+<xsl:choose>
+<xsl:when test='//nu[@xml:lang="nb"][@xml:id="id1"]//beta[@xml:lang="en"][@xml:id="id2"][not(preceding-sibling::*)][following-sibling::sigma[@xml:lang="en-GB"][preceding-sibling::*[position() = 1]][not(following-sibling::*)]//kappa[not(preceding-sibling::*)][not(child::node())][following-sibling::*[preceding-sibling::*[position() = 1]][following-sibling::*[position()=2]][not(child::node())][following-sibling::mu[@xml:lang="en"][not(child::node())][following-sibling::beta[@token][@xml:lang="no"][preceding-sibling::*[position() = 3]][not(following-sibling::*)]//delta[@xml:lang="en-GB"][not(preceding-sibling::*)][not(following-sibling::*)]/rho[contains(concat(@abort,"$"),"e$")][@xml:lang="nb"]/epsilon[@xml:lang="en-GB"][not(preceding-sibling::*)][not(child::node())][following-sibling::beta[@xml:id="id3"][preceding-sibling::*[position() = 1]][following-sibling::psi[starts-with(@desciption,"tr")][@xml:lang="en-GB"][@xml:id="id4"][preceding-sibling::*[position() = 2]][following-sibling::tau[starts-with(@object,"attribute")][@xml:id="id5"][preceding-sibling::*[position() = 3]]//omicron[@or][@xml:lang="no-nb"][not(preceding-sibling::*)][not(preceding-sibling::omicron)]]]]]][position() = 1]][position() = 1]]'>	
+	<xsl:value-of select="'PASS'"/>
+</xsl:when>
+<xsl:otherwise>FAIL</xsl:otherwise>
+</xsl:choose>
+</result>
+<xsl:if test="false()">
+<nu xml:lang="nb" xml:id="id1"><beta xml:lang="en" xml:id="id2"/><sigma xml:lang="en-GB"><kappa/><any/><mu xml:lang="en"/><beta token="another attribute value" xml:lang="no"><delta xml:lang="en-GB"><rho abort="attribute value" xml:lang="nb"><epsilon xml:lang="en-GB"/><beta xml:id="id3"/><psi desciption="true" xml:lang="en-GB" xml:id="id4"/><tau object="attribute-value" xml:id="id5"><omicron or="this-is-att-value" xml:lang="no-nb"><green>This text must be green</green></omicron></tau></rho></delta></beta></sigma></nu></xsl:if>
+</xsl:template>
+</xsl:stylesheet>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:template match="xsl:template">
+<result>
+<xsl:choose>
+<xsl:when test='//sigma[@xml:lang="en-GB"][@xml:id="id1"]//eta[contains(@object,"id 1px")][@xml:lang="en-US"][@xml:id="id2"][not(following-sibling::*)]//omega[@xml:id="id3"][not(preceding-sibling::*)][following-sibling::kappa[@false="this.nodeValue"][@xml:lang="en-US"][following-sibling::mu[@attribute][preceding-sibling::*[position() = 2]]/gamma[@class][@xml:lang="en-GB"][@xml:id="id4"][not(preceding-sibling::*)][following-sibling::sigma[contains(@class,"-is-att-v")][@xml:lang="no-nb"][preceding-sibling::*[position() = 1]][not(following-sibling::*)]//pi[contains(concat(@data,"$"),"ank$")][not(preceding-sibling::*)]//omega[starts-with(concat(@false,"-"),"this-")][@xml:id="id5"]][position() = 1]][position() = 1]]'>	
+	<xsl:value-of select="'PASS'"/>
+</xsl:when>
+<xsl:otherwise>FAIL</xsl:otherwise>
+</xsl:choose>
+</result>
+<xsl:if test="false()">
+<sigma xml:lang="en-GB" xml:id="id1"><eta object="solid 1px green" xml:lang="en-US" xml:id="id2"><omega xml:id="id3"/><kappa false="this.nodeValue" xml:lang="en-US"/><mu attribute="attribute-value"><gamma class="false" xml:lang="en-GB" xml:id="id4"/><sigma class="this-is-att-value" xml:lang="no-nb"><pi data="_blank"><omega false="this-is-att-value" xml:id="id5"><green>This text must be green</green></omega></pi></sigma></mu></eta></sigma></xsl:if>
+</xsl:template>
+</xsl:stylesheet>

@@ -1,0 +1,132 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta name="generator"
+
+content="HTML Tidy for Mac OS, see www.w3.org" />
+
+<!-- testcase: pre_spacing.xml -->
+
+<!-- Description: HTML 4.0 Pre element with spacing to provide format indentations. -->
+
+<!-- Author: Beth Epperson  Date: 5/5/99 -->
+
+<!-- Modified: Changed doctype to xhtml 1.0 transitional Author: Chris Petersen Date: 1/24/01 -->
+
+<!-- 
+
+   - The contents of this file are subject to the Mozilla Public
+
+   - License Version 1.1 (the "License"); you may not use this file
+
+   - except in compliance with the License. You may obtain a copy of
+
+   - the License at http://www.mozilla.org/MPL/
+
+   - 
+
+   - Software distributed under the License is distributed on an "AS
+
+   - IS" basis, WITHOUT WARRANTY OF ANY KIND, either express or
+
+   - implied. See the License for the specific language governing
+
+   - rights and limitations under the License.
+
+   - 
+
+   - The Original Code is Mozilla Communicator Test Cases.
+
+   - 
+
+   - The Initial Developer of the Original Code is Netscape Communications
+
+   - Corp.  Portions created by Netscape Communications Corp. are 
+
+   - Copyright (C) 1999 Netscape Communications Corp.  All
+
+   - Rights Reserved.
+
+   - 
+
+   - Contributor(s): 
+
+  -->
+
+<!-- <meta name="crc" content=> -->
+
+<title>XHTML Functional -- PRE - SPACING</title>
+
+</head>
+
+<body>
+
+<h4>PRE element using spaces for indentation and the BR element for
+
+linefeed</h4>
+
+<pre>
+
+
+
+Humpty Dumpty sat on a wall.<br />
+
+
+
+          Humpty Dumpty had a great fall.<br />
+
+
+
+          All the King's horses and all the King's men<br />
+
+
+
+          Couldn't put Humpty together again.<br />
+
+
+
+<br />
+
+
+
+They called a doctor from the town.<br />
+
+
+
+          To come and fix poor Humpty's crown.<br />
+
+
+
+          He put a stitch in Humpty's leg.<br />
+
+
+
+          And bandaged up poor Humpty's egg.<br />
+
+
+
+<br />
+
+
+
+He used some tape and then some glue,<br />
+
+
+
+          And Humpty's now as good as new.
+
+
+
+</pre>
+
+</body>
+
+</html>
+
+
+

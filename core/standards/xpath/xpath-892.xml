@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:template match="xsl:template">
+<result>
+<xsl:choose>
+<xsl:when test='//kappa[@xml:lang="no"]//omega[starts-with(@src,"tru")][@xml:lang="en"][not(following-sibling::*)]//omega[starts-with(@false,"another attribu")][@xml:lang="en-US"][not(preceding-sibling::*)][not(child::node())][following-sibling::xi[@xml:id="id1"][not(following-sibling::*)]/pi[@and][@xml:lang="en"][not(following-sibling::*)]/omicron[@xml:id="id2"][following-sibling::zeta[preceding-sibling::*[position() = 1]][following-sibling::*[position()=1]][following-sibling::omega[contains(concat(@name,"$"),"lse$")][@xml:lang="en"][not(following-sibling::*)]//theta[@att][@xml:id="id3"][following-sibling::*[position()=1]][not(child::node())][following-sibling::eta[@token][@xml:lang="no"][preceding-sibling::*[position() = 1]][not(following-sibling::*)]/gamma[@xml:id="id4"]//beta[@xml:lang="nb"][@xml:id="id5"][not(child::node())][following-sibling::upsilon[preceding-sibling::*[position() = 1]]//tau[@attr][not(preceding-sibling::*)][following-sibling::*[position()=1]][following-sibling::delta[@xml:lang="en"][@xml:id="id6"][not(preceding-sibling::delta)]/tau[starts-with(@attrib,"c")][@xml:lang="no"][not(preceding-sibling::*)]/gamma[contains(@true,"alue")][position() = 1]][position() = 1]][position() = 1]]][position() = 1]]]'>	
+	<xsl:value-of select="'PASS'"/>
+</xsl:when>
+<xsl:otherwise>FAIL</xsl:otherwise>
+</xsl:choose>
+</result>
+<xsl:if test="false()">
+<kappa xml:lang="no"><omega src="true" xml:lang="en"><omega false="another attribute value" xml:lang="en-US"/><xi xml:id="id1"><pi and="123456789" xml:lang="en"><omicron xml:id="id2"/><zeta/><omega name="false" xml:lang="en"><theta att="100%" xml:id="id3"/><eta token="true" xml:lang="no"><gamma xml:id="id4"><beta xml:lang="nb" xml:id="id5"/><upsilon><tau attr="content"/><delta xml:lang="en" xml:id="id6"><tau attrib="content" xml:lang="no"><gamma true="this.nodeValue"><green>This text must be green</green></gamma></tau></delta></upsilon></gamma></eta></omega></pi></xi></omega></kappa></xsl:if>
+</xsl:template>
+</xsl:stylesheet>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:template match="xsl:template">
+<result>
+<xsl:choose>
+<xsl:when test='//phi[@object]/sigma[contains(@insert,"tr")][@xml:lang="en"][not(preceding-sibling::*)][not(following-sibling::*)]//kappa[starts-with(@abort,"12345678")][following-sibling::*[position()=1]][not(child::node())][following-sibling::mu[@or]/beta[not(preceding-sibling::*)][following-sibling::*[position()=1]][not(child::node())][following-sibling::chi[@desciption][@xml:lang="en-GB"][preceding-sibling::*[position() = 1]]//zeta[@xml:lang="en-US"][@xml:id="id1"][not(preceding-sibling::*)]/omicron[@content][not(preceding-sibling::*)][not(following-sibling::*)]/lambda[contains(concat(@or,"$"),"lank$")][@xml:id="id2"]//sigma[@xml:id="id3"][following-sibling::gamma[@attribute][not(following-sibling::*)]//omicron[@attribute][@xml:id="id4"][not(preceding-sibling::*)][following-sibling::*[position()=3]][not(preceding-sibling::omicron)][following-sibling::iota[@src][not(child::node())][following-sibling::rho[@xml:id="id5"][not(child::node())][following-sibling::*[@xml:lang="no"][preceding-sibling::*[position() = 3]][not(following-sibling::*)]//gamma[@xml:lang="en-US"][@xml:id="id6"][not(preceding-sibling::*)][not(following-sibling::*)]//alpha[@att][@xml:lang="en-GB"][not(preceding-sibling::*)][not(following-sibling::*)]//zeta[@xml:id="id7"][not(preceding-sibling::*)][not(following-sibling::*)]/eta[@xml:id="id8"][position() = 1]]][position() = 1]][position() = 1]][position() = 1]]]'>	
+	<xsl:value-of select="'PASS'"/>
+</xsl:when>
+<xsl:otherwise>FAIL</xsl:otherwise>
+</xsl:choose>
+</result>
+<xsl:if test="false()">
+<phi object="solid 1px green"><sigma insert="true" xml:lang="en"><kappa abort="123456789"/><mu or="attribute-value"><beta/><chi desciption="false" xml:lang="en-GB"><zeta xml:lang="en-US" xml:id="id1"><omicron content="another attribute value"><lambda or="_blank" xml:id="id2"><sigma xml:id="id3"/><gamma attribute="attribute"><omicron attribute="this-is-att-value" xml:id="id4"/><iota src="another attribute value"/><rho xml:id="id5"/><any xml:lang="no"><gamma xml:lang="en-US" xml:id="id6"><alpha att="solid 1px green" xml:lang="en-GB"><zeta xml:id="id7"><eta xml:id="id8"><green>This text must be green</green></eta></zeta></alpha></gamma></any></gamma></lambda></omicron></zeta></chi></mu></sigma></phi></xsl:if>
+</xsl:template>
+</xsl:stylesheet>

@@ -1,0 +1,154 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta name="generator"
+
+content="HTML Tidy for Mac OS, see www.w3.org" />
+
+<!-- testcase: img_width_pixel.xml -->
+
+<!-- description: HTML 4.0 Text Markup Element, IMG with the WIDTH attribute set to pixels -->
+
+<!-- Author: Frank Petitta, Date: 5/19/98 -->
+
+<!-- Author: Chris Petersen Modified: 7/27/98 -->
+
+<!-- Author: Chris Dreckman Modified: 10/16/98 -->
+
+<!-- Modified by: Eli Goldberg, 2/25/99. Updated DOCTYPE to HTML 4.0 Transitional. -->
+
+<!-- Modified by: Eli Goldberg, 7/12/99. Corrected 25.99999 pixel width, which was previously 25.99999%. -->
+
+<!-- Modified: Changed doctype to xhtml 1.0 transitional Author: Chris Petersen Date: 1/22/01 -->
+
+<!-- 
+
+
+
+   - The contents of this file are subject to the Mozilla Public
+
+
+
+   - License Version 1.1 (the "License"); you may not use this file
+
+
+
+   - except in compliance with the License. You may obtain a copy of
+
+
+
+   - the License at http://www.mozilla.org/MPL/
+
+
+
+   - 
+
+
+
+   - Software distributed under the License is distributed on an "AS
+
+
+
+   - IS" basis, WITHOUT WARRANTY OF ANY KIND, either express or
+
+
+
+   - implied. See the License for the specific language governing
+
+
+
+   - rights and limitations under the License.
+
+
+
+   - 
+
+
+
+   - The Original Code is Mozilla Communicator Test Cases.
+
+
+
+   - 
+
+
+
+   - The Initial Developer of the Original Code is Netscape Communications
+
+
+
+   - Corp.  Portions created by Netscape Communications Corp. are 
+
+
+
+   - Copyright (C) 1999 Netscape Communications Corp.  All
+
+
+
+   - Rights Reserved.
+
+
+
+   - 
+
+
+
+   - Contributor(s): 
+
+
+
+  -->
+
+<!-- Purpose: Test the WIDTH attribute with the IMG element using pixel values (i.e.img src="eggplant.gif" width=50). -->
+
+<!-- Expected result: Starting with the an image with no specified width (default), the images should decrease in WIDTH size.-->
+
+<!-- TEST COVERAGE TO ADD: confirm proper handling of NON-GIF images, specifically, JPEG and PNG, as well as absolute URLs -->
+
+<title>XHTML Functional -- IMG - WIDTH=pixel</title>
+
+</head>
+
+<body>
+
+image with no width specification (default)<br />
+
+ <img src="images/eggplant.gif" alt="an image" /> <br />
+
+ image width="100"<br />
+
+ <img src="images/eggplant.gif" width="100" alt="an image" />
+
+<br />
+
+ image width=25<br />
+
+ <img src="images/eggplant.gif" width="25" alt="an image" /> <br />
+
+ image width="0"<br />
+
+ <img src="images/eggplant.gif" width="0" alt="an image" /> <br />
+
+ image width=-100<br />
+
+ <img src="images/eggplant.gif" width="-100" alt="an image" />
+
+<br />
+
+ image width=25.99999 [floating point]<br />
+
+ <img src="images/eggplant.gif" width="25.99999" alt="an image" />
+
+<br />
+
+</body>
+
+</html>
+
+
+

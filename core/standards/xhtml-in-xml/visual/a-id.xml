@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>onclick attribute of a element</title>
+<script type="application/ecmascript">
+function start()
+	{ev = document.createEvent('MouseEvents');
+	ev.initEvent('click',true,true);
+	document.getElementsByTagName('a')[0].dispatchEvent(ev);}
+</script>
+<style type="text/css">
+#done	
+	{margin:50cm 0 10cm 0;}
+</style>
+</head>
+<body onload="start()">
+<p><a href="#done">Hyperlink</a></p>
+<p>FAIL</p>
+<p id="done">PASS</p>
+</body>
+</html>

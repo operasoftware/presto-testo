@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/css" href="data:text/css,root%2C%20observe%20%7Bdisplay%3Ablock%7Dobserve%3Afirst-child%3Afirst-letter%2C%20letter%20%7Btext-transform%3Auppercase%3Bcolor%3Ateal%3Bfont-weight%3Abold%3Bfont-size%3A2em%3B%7D"?>
+<root>
+<observe>these two lines should be formatted identically</observe>
+<observe><letter>t</letter>hese two lines should be formatted identically</observe>
+</root>
+<!--
+root, observe {display:block}
+observe:first-child:first-letter, letter {text-transform:uppercase;color:teal;font-weight:bold;font-size:2em;}
+-->

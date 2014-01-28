@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ev="http://www.w3.org/2001/xml-events">
+<head>
+<title>DOMNodeRemoved event</title>
+</head>
+<body>
+<script type="application/ecmascript" ev:event="DOMNodeRemoved">
+<![CDATA[
+document.getElementsByTagName('tt')[0].firstChild.nodeValue = "PASS";
+]]>
+</script>
+<div><tt>FAIL</tt><tt>ED</tt></div>
+<script type="application/ecmascript">
+<![CDATA[
+var tt = document.getElementsByTagName('tt')[1];
+tt.replaceChild(document.createTextNode("ED"),tt.firstChild);
+]]>
+</script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:template match="xsl:template">
+<result>
+<xsl:choose>
+<xsl:when test='//alpha//mu[@content][@xml:id="id1"][not(preceding-sibling::*)][following-sibling::phi[@token][not(child::node())][following-sibling::pi[@attr][@xml:lang="en-US"][preceding-sibling::*[position() = 2]][following-sibling::alpha[contains(@content,"e")][@xml:lang="en-US"][@xml:id="id2"]/zeta[@xml:id="id3"][not(following-sibling::*)]//kappa[contains(concat(@title,"$"),"ttribute value$")][@xml:lang="no"][@xml:id="id4"][not(preceding-sibling::*)][following-sibling::delta[starts-with(concat(@desciption,"-"),"attribute-")][preceding-sibling::*[position() = 1]][following-sibling::chi[contains(concat(@token,"$"),"alue$")][preceding-sibling::*[position() = 2]][not(child::node())][following-sibling::psi[@attr][@xml:lang="en-US"][preceding-sibling::*[position() = 3]]/omicron[contains(concat(@and,"$"),"blank$")][@xml:lang="no-nb"][@xml:id="id5"][not(following-sibling::*)][position() = 1]]]][position() = 1]][position() = 1]]]'>	
+	<xsl:value-of select="'PASS'"/>
+</xsl:when>
+<xsl:otherwise>FAIL</xsl:otherwise>
+</xsl:choose>
+</result>
+<xsl:if test="false()">
+<alpha><mu content="100%" xml:id="id1"/><phi token="solid 1px green"/><pi attr="this.nodeValue" xml:lang="en-US"/><alpha content="false" xml:lang="en-US" xml:id="id2"><zeta xml:id="id3"><kappa title="attribute value" xml:lang="no" xml:id="id4"/><delta desciption="attribute-value"/><chi token="attribute value"/><psi attr="this-is-att-value" xml:lang="en-US"><omicron and="_blank" xml:lang="no-nb" xml:id="id5"><green>This text must be green</green></omicron></psi></zeta></alpha></alpha></xsl:if>
+</xsl:template>
+</xsl:stylesheet>

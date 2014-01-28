@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/css" href="data:text/css,%3Aroot%7Bdisplay%3Ablock%7D"?>
+<!DOCTYPE main [
+<!ELEMENT main (hello)>
+<!ELEMENT hello (#PCDATA)>
+<!ATTLIST hello greeting CDATA #IMPLIED>
+]>
+<main>
+<hello greeting="yes">
+Passes if no parsing error occured.
+</hello>
+</main>
+

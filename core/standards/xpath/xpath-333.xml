@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:template match="xsl:template">
+<result>
+<xsl:choose>
+<xsl:when test='//lambda[starts-with(concat(@name,"-"),"true-")]//beta[@xml:lang="en"][@xml:id="id1"][following-sibling::nu[contains(concat(@data,"$"),"attribute value$")][@xml:lang="no-nb"]//upsilon[contains(@number,"alue")][following-sibling::delta[@xml:lang="nb"][following-sibling::delta[@xml:lang="no-nb"][@xml:id="id2"][following-sibling::chi[@xml:lang="en-GB"][preceding-sibling::*[position() = 3]][following-sibling::epsilon[@attribute][@xml:id="id3"][preceding-sibling::*[position() = 4]][following-sibling::kappa[@abort="123456789"][@xml:lang="no-nb"][not(following-sibling::*)]//omega[@xml:lang="nb"][following-sibling::epsilon[not(following-sibling::*)]//omicron[@xml:lang="en"][not(preceding-sibling::*)][following-sibling::*[position()=1]][following-sibling::pi//lambda[not(following-sibling::*)]]]][position() = 1]][position() = 1]]]][position() = 1]]'>	
+	<xsl:value-of select="'PASS'"/>
+</xsl:when>
+<xsl:otherwise>FAIL</xsl:otherwise>
+</xsl:choose>
+</result>
+<xsl:if test="false()">
+<lambda name="true"><beta xml:lang="en" xml:id="id1"/><nu data="attribute value" xml:lang="no-nb"><upsilon number="attribute-value"/><delta xml:lang="nb"/><delta xml:lang="no-nb" xml:id="id2"/><chi xml:lang="en-GB"/><epsilon attribute="solid 1px green" xml:id="id3"/><kappa abort="123456789" xml:lang="no-nb"><omega xml:lang="nb"/><epsilon><omicron xml:lang="en"/><pi><lambda><green>This text must be green</green></lambda></pi></epsilon></kappa></nu></lambda></xsl:if>
+</xsl:template>
+</xsl:stylesheet>

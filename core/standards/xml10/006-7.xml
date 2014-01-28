@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE element [
+<!ELEMENT element (child) ?>
+<!ELEMENT child EMPTY>
+]>
+<element><child/></element>
+<!-- wrong content model in element declaration -->
+

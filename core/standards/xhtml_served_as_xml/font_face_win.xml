@@ -1,0 +1,146 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta name="generator"
+
+content="HTML Tidy for Mac OS, see www.w3.org" />
+
+<title>XHTML Functional -- FONT - FACE (win)</title>
+
+<!-- testcase: font_face_win.xml -->
+
+<!-- description: HTML 4.0 FONT element/FACE attribute -->
+
+<!-- Author: Beth Epperson  Date: 6/08/99 -->
+
+<!-- Modified: Changed doctype to xhtml 1.0 transitional Author: Chris Petersen Date: 1/18/01 -->
+
+<!-- 
+
+
+
+   - The contents of this file are subject to the Mozilla Public
+
+
+
+   - License Version 1.1 (the "License"); you may not use this file
+
+
+
+   - except in compliance with the License. You may obtain a copy of
+
+
+
+   - the License at http://www.mozilla.org/MPL/
+
+
+
+   - 
+
+
+
+   - Software distributed under the License is distributed on an "AS
+
+
+
+   - IS" basis, WITHOUT WARRANTY OF ANY KIND, either express or
+
+
+
+   - implied. See the License for the specific language governing
+
+
+
+   - rights and limitations under the License.
+
+
+
+   - 
+
+
+
+   - The Original Code is Mozilla Communicator Test Cases.
+
+
+
+   - 
+
+
+
+   - The Initial Developer of the Original Code is Netscape Communications
+
+
+
+   - Corp.  Portions created by Netscape Communications Corp. are 
+
+
+
+   - Copyright (C) 1999 Netscape Communications Corp.  All
+
+
+
+   - Rights Reserved.
+
+
+
+   - 
+
+
+
+   - Contributor(s): 
+
+
+
+  -->
+
+<!-- Purpose: To test the FACE attribute of the FORM element. -->
+
+<!-- Expected result: Specifying Windows specifc font faces -->
+
+</head>
+
+<body>
+
+<font face="Arial">This sentence is assigned the ARIAL
+
+font.</font><br />
+
+ <font face="Arial Narrow">This sentence is assigned the ARIAL
+
+NARROW font.</font><br />
+
+ <font face="Garamond">This sentence is assigned the GARAMOND
+
+font.</font><br />
+
+ <font face="Arial Black">This sentence is assigned the ARIAL BLACK
+
+font.</font><br />
+
+ <font face="Times New Roman">This sentence is assigned the TIMES
+
+NEW ROMAN font.</font><br />
+
+ <font face="Courier New">This sentence is assigned the COURIER NEW
+
+font.</font><br />
+
+ <font face="Verdana">This sentence is assigned the VERDANA
+
+font.</font><br />
+
+ <font face="Comic Sans MS">This sentence is assigned the COMIC
+
+SANS MS font.</font><br />
+
+</body>
+
+</html>
+
+
+

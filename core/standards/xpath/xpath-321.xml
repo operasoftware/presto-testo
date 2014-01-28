@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="#xslt"?>
+<!DOCTYPE xsl:stylesheet [<!ATTLIST xsl:stylesheet id ID #IMPLIED>]>
+<xsl:stylesheet id="xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:template match="xsl:template">
+<result>
+<xsl:choose>
+<xsl:when test='//delta[contains(concat(@att,"$")," 1px green$")][@xml:lang="no"][@xml:id="id1"]/omicron[@xml:lang="en"][following-sibling::*[position()=1]][not(child::node())][following-sibling::mu[@delete][@xml:id="id2"][preceding-sibling::*[position() = 1]][not(following-sibling::*)]//epsilon[@xml:lang="nb"][not(parent::*/*[position()=2])]/kappa[contains(@desciption,"deV")][not(preceding-sibling::*)][following-sibling::rho[contains(concat(@object,"$"),"nk$")][preceding-sibling::*[position() = 1]][following-sibling::theta[@true="_blank"][preceding-sibling::*[position() = 2]][not(following-sibling::*)]/theta[@xml:lang="nb"][@xml:id="id3"][not(preceding-sibling::*)][position() = 1]]]]'>	
+	<xsl:value-of select="'PASS'"/>
+</xsl:when>
+<xsl:otherwise>FAIL</xsl:otherwise>
+</xsl:choose>
+</result>
+<xsl:if test="false()">
+<delta att="solid 1px green" xml:lang="no" xml:id="id1"><omicron xml:lang="en"/><mu delete="this.nodeValue" xml:id="id2"><epsilon xml:lang="nb"><kappa desciption="this.nodeValue"/><rho object="_blank"/><theta true="_blank"><theta xml:lang="nb" xml:id="id3"><green>This text must be green</green></theta></theta></epsilon></mu></delta></xsl:if>
+</xsl:template>
+</xsl:stylesheet>

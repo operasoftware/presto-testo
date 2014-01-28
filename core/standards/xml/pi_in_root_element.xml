@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<!-- Testcase: pi_in_root_element.xml -->
+<!-- Description: The processing instruction is placed in root element -->
+<!-- Author:  Chris Petersen  Date: 12/21/2000 -->
+<main>
+<?xml-stylesheet href="standard.css" type="text/css"?>
+This sentence should appear as italic, neon-green text. The processing instruction , which specifies a stylesheet for this document, is located in the root element.
+</main>
