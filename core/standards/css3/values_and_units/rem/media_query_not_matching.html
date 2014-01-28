@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+   <title>Media query using rem unit, not matching</title>
+   <style>
+      html {
+         font-size: 8px;
+      }
+      @media (min-width: 125rem) {
+         p + p {
+            text-transform: uppercase;
+         }
+      }
+   </style>
+   <script>
+      onload = function() {
+         var p = document.getElementsByTagName('p')[1];
+         var passed = (getComputedStyle(p, null).textTransform == 'none');
+         p.firstChild.data = (passed ? 'PASS' : 'FAIL');
+         try{top.opener.rr(passed);}catch(e){}
+      }
+   </script>
+</head>
+<body>
+   <p>To be tested with window width &lt;2000px.</p>
+   <p>Not tested (JavaScript required)</p>
+</body>
+</html>

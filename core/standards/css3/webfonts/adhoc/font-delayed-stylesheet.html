@@ -1,0 +1,26 @@
+<html>
+<head>
+  <title>Delayed stylesheet with webfont definition</title>
+  <style>
+    p {
+      font-family: TestFont;
+    }
+  </style>
+  <script>
+    onload = function()
+    {
+      setTimeout(function(){
+        var l = document.createElement('link');
+        l.href = 'support/linked-ahem.css';
+        l.rel = 'stylesheet';
+        l.type = 'text/css';
+        document.getElementsByTagName('head')[0].appendChild(l);
+      }, 100);
+    }
+  </script>
+</head>
+<body>
+  Rectangle should display below and no FAIL after half a second.
+  <p>FAIL</p>
+</body>
+</html>

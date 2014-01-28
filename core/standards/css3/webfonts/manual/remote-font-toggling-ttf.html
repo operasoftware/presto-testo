@@ -1,0 +1,15 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+	<head>
+		<title>Basic font-face test with a remote truetype font</title>
+		<style type="text/css">
+			div { width: 4em; }
+			@font-face { font-family: "FontTest"; src: url(../scripts/togglefonts.php?font1=Vera.ttf&font2=VeraBd.ttf) ;}
+		</style>
+	</head>
+	<body>
+	<p>Caveat: When using this test simultaneously from several different clients, they have to be on different IP adresses.</p> 
+        <p>The font below should toggle between between a bold and regular font  between each reload</p>
+	<div style=" font: 20px FontTest;">Test</div>
+	</body>
+</html>

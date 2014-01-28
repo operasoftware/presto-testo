@@ -1,0 +1,27 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+   <title>word-wrap, grapheme clusters</title>
+   <style type="text/css">
+      div {
+         font: 16px "FreeSerif";
+         word-wrap: break-word;
+         width: 8px;
+         color: red;
+      }
+      div:first-line {
+         color: green;
+      }
+   </style>
+</head>
+<body>
+   <p>Best tested with the FreeSerif font installed.
+   All characters below should be green.</p>
+   <div>&#x0e01;&#x0e33;</div>
+   <div>&#x0937;&#x093f;</div>
+   <div>&#x09b7;&#x09bf;</div>
+   <div>&#x0a38;&#x0a3f;</div>
+   <div>&#x09a6;&#x09be;</div>
+</body>
+</html>

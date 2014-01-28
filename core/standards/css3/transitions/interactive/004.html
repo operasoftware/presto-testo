@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<title>Transition timing function: ease-out</title>
+<style>
+div { background-color: blue; position: absolute; left: 20px; height: 50px; width: 100px; }
+#one { transition: 2s ease-out 2s; -webkit-transition: 2s ease-out 2s; top: 50px; }
+#two { transition: 2s cubic-bezier(0, 0, 0.58, 1.0) 2s; -webkit-transition: 2s cubic-bezier(0, 0, 0.58, 1.0) 2s; top: 100px; }
+.test div { left: 520px; }
+</style>
+<script>
+onload = function() { document.body.className = "test"; }
+</script>
+<p>Afer a 2 second delay, the box below should move to the right using the 'ease-out' timing function,
+   quickly starting at the beginning and smoothly decelerating at the end. The box should remain in one piece.</p>
+<div id="one"></div>
+<div id="two"></div>

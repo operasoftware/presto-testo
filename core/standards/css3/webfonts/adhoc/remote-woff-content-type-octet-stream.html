@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<title>remote font (woff) served with content-type: application/octet-stream</title>
+<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+<style type="text/css">
+@font-face {
+  font-family: "TestFont";
+  src: url('/resources/scripts/content_type_load.php?file=../fonts/Ahem.woff&type=application/octet-stream') format("woff");
+}
+p.test { 
+  font-size: 20px;
+  color: green; 
+  background-color: red; 
+  width: 4em;
+  font-family:TestFont;
+}
+</style>
+</head>
+<body>
+<p>You should see a green rect below.<br/>
+<p class=test>FAIL</p>
+</body>
+</html>
+
+

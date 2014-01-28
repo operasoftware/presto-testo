@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<title>Transitioning opacity to transparent</title>
+<style>
+#test { transition-duration: 2s;
+        -webkit-transition-duration: 2s;
+        background-color: #0000FF; opacity: 1; }
+#test, #x { position: absolute; top: 100px; height: 200px; width: 200px;  }
+#x { background: url(support/Checker-16x16.png); }
+</style>
+<script>
+onload = function() {
+    var test = document.getElementById("test");
+    test.addEventListener("transitionend", callback, false);
+    test.addEventListener("webkitTransitionEnd", callback, false);
+    test.style.opacity = 0;
+    document.getElementById("result").innerHTML = "Running test (FAIL if this doesn't update again in 2 seconds)";
+}
+
+function callback(evt) {
+    var passed = evt.target.style.opacity == 0.0;
+    document.getElementById("result").innerHTML = passed ? "PASS if the transition was seen" : "FAIL - opacity is " + evt.target.style.opacity;
+    try{top.opener.rr(passed);}catch(e){}
+}
+</script>
+<p>The box below should transition from opaque (blue) to transparent over a 2 second duration, revealing the checkered background.
+<p id="result">FAIL - the script did not execute.
+<div id="x"></div>
+<div id="test"></div>
+

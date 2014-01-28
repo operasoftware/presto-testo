@@ -1,0 +1,19 @@
+ <!-- Test description: The loaded remote font's internal name has been changed to Ahem - it should not be confused with the locally installed Ahem font. -->
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+	<head>
+		<title>nasty font-face test, testing that the font name in a remote font does not confuse the font handler </title>
+		<style type="text/css">
+		        div { width: 4em; }
+			div.test { background: red; }
+			@font-face { font-family: AhemCaptainPodd; src: url("../fonts/AhemCaptainPodd.ttf") ;}  
+		</style>
+	</head>
+	<body>
+        <p>The font Ahem should be locally installed/in font dir
+ 	<p>You should see a green rectangle below</p>
+	        <div style="font: 20px AhemCaptainPodd;"></div>
+		<div class=test style=" color: green; font: 20px Ahem;">FAIL</div>
+	</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+	<head>
+		<title>font-face testing that we get an error message when trying to load a broken ttf font </title>
+		<style type="text/css">
+			div { 
+			  background: red; 
+			  color: green;
+			  width: 4em; 
+			  font-family: FontTest;
+			}
+			@font-face { 
+			  font-family: "FontTest"; 
+			  src: url(../fonts/broken.ttf) ;
+			}
+		</style>
+	</head>
+	<body>
+	<p>There should be the error message "webfont malformed - discarded" in the error console.</p>
+		<div> </div>
+	</body>
+</html>

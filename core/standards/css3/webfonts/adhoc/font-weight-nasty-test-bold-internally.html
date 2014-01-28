@@ -1,0 +1,23 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+	<head>
+		<title>font-face test where the webfont should be used as normal even though it has the font-weight "bold" internally</title>
+		<style type="text/css">
+			div { width: 4em; }
+			@font-face { 
+			  font-family: "FontTest"; 
+  			  font-weight: normal;
+			  src: url(../fonts/VeraBd.ttf) ;
+			}
+			@font-face { 
+			  font-family: "FontTest"; 
+  			  font-weight: bold;
+			  src: url(../fonts/Ahem.ttf) ;
+			}
+		</style>
+	</head>
+	<body>
+	<p>You should see a rectangle and the word PASS below</p>
+	  <p style="font: 20px FontTest"><b>FAIL</b> PASS</p>
+	</body>
+</html>

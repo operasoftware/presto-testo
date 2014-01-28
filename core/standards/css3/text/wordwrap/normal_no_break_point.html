@@ -1,0 +1,25 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+   <title>word-wrap:normal, not breaking where disallowed</title>
+   <style type="text/css">
+      div {
+         font-family: "Ahem"; 
+         width: 5em;
+         color: red;
+         word-wrap: normal;
+      }
+      span {
+         position: absolute;
+         height: 1em;
+         width: 6em;
+         background: white;
+      }
+   </style>
+</head>
+<body>
+   <p>To be tested with the Ahem font installed. There should be no red.</p>
+   <div><span></span>MMMMMM</div>
+</body>
+</html>

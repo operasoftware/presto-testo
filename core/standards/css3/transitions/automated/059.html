@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<title>Transitioning z-index</title>
+<style>
+div { position: absolute; top: 100px; width: 50px; height: 50px; background: silver; }
+#a { left: 50px;  z-index: 10; }
+#b { left: 100px; z-index: 11; }
+#c { left: 150px; z-index: 12; }
+#d { left: 200px; z-index: 13; }
+#e { left: 250px; z-index: 14; }
+#f { left: 300px; z-index: 15; }
+#g { left: 350px; z-index: 16; }
+#h { left: 400px; z-index: 17; }
+#i { left: 450px; z-index: 18; }
+#j { left: 500px; z-index: 19; }
+
+#a, #c, #e, #g, #i { background: gray; }
+
+#test { transition: z-index 2s linear;
+        -webkit-transition: all 2s linear;
+       z-index: 9; width: 500px; background: blue; left: 50px; }
+#test.test { z-index: 20; }
+</style>
+<script>
+onload = function() {
+	var test = document.getElementById("test");
+	test.addEventListener("transitionend", callback, false);
+	test.addEventListener("webkitTransitionEnd", callback, false);
+	test.className = "test";
+	document.getElementById("result").innerHTML = "Running test (FAIL if this doesn't update again in 2 seconds)";
+}
+
+function callback(evt) {
+	var passed = evt.elapsedTime == 2
+	document.getElementById("result").innerHTML = passed ? "PASS if the transition was seen" : "FAIL - duration was " + evt.elapsedTime;
+	try{top.opener.rr(passed);}catch(e){}
+}
+</script>
+<p>The bar below should change to blue in 10 steps, from left to right.
+<p id="result">FAIL - the script did not execute.
+<div id="a" class="box"></div>
+<div id="b" class="box"></div>
+<div id="c" class="box"></div>
+<div id="d" class="box"></div>
+<div id="e" class="box"></div>
+<div id="f" class="box"></div>
+<div id="g" class="box"></div>
+<div id="h" class="box"></div>
+<div id="i" class="box"></div>
+<div id="j" class="box"></div>
+<div id="test"></div>

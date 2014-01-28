@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Class matching performance, transition-property:none</title>
+<style type="text/css">
+  div {
+    -o-transition-property: none;
+    -moz-transition-property: none;
+    -webkit-transition-property: none;
+    transition-property: none;
+    -o-transition-duration: 1s;
+    -moz-transition-duration: 1s;
+    -webkit-transition-duration: 1s;
+    transition-duration: 1s;
+  }
+</style>
+<script type="text/javascript">
+function testIteration(elm, className)
+{
+  document.body.className = className;
+  var computed = getComputedStyle(elm, null);
+  var col = computed.color;
+}
+ 
+function runTest()
+{
+  var elm = document.getElementsByClassName("abcda")[0];
+ 
+  var start = new Date();
+ 
+  for (i=0; i<12; i++)
+  {
+    testIteration(elm, "root x"+i);
+  }
+ 
+  var end = new Date();
+ 
+  var used = end.getTime() - start.getTime();
+ 
+  try{top.opener.rr(used);}catch(e){}
+ 
+  document.querySelector('p').firstChild.data = "Style match time: "+used+"ms";
+}
+ 
+window.onload = function() { setTimeout(runTest, 1000); };
+ 
+var treeDepth = 5;
+var treeWidth = 6;
+var bufAddCount = 0;
+var buffer = "";
+ 
+function createClassRules(baseName, width, depth)
+{
+  if (depth > 0)
+  {
+    if (bufAddCount > 100)
+    {
+      document.write(buffer);
+      buffer = "";
+      bufAddCount = 0;
+    }
+ 
+    for (var i = 0; i < width; i++)
+    {
+      newBaseName = baseName+String.fromCharCode("a".charCodeAt(0)+i);
+      buffer += '.root .ab .'+newBaseName+' { color: green; }\n';
+      buffer += '.root .bc .'+newBaseName+' { color: green; }\n';
+      buffer += '.root .de .'+newBaseName+' { color: green; }\n';
+      buffer += '.root .d .'+newBaseName+' { color: green; }\n';
+      buffer += '.root .da .'+newBaseName+' { color: green; }\n';
+      buffer += '.root .ba .'+newBaseName+' { color: green; }\n';
+      buffer += '.root .db .'+newBaseName+' { color: green; }\n';
+      buffer += '.root .bbc .'+newBaseName+' { color: green; }\n';
+      buffer += '.root .dbf .'+newBaseName+' { color: green; }\n';
+      buffer += '.root .xxx .'+newBaseName+' { color: green; }\n';
+      bufAddCount++;
+      createClassRules(newBaseName, width, depth-1);
+    }
+  }
+}
+ 
+function createClassStyleSheet(baseName, width, depth)
+{
+  document.write("<style type=\"text/css\">");
+  createClassRules("", treeWidth, treeDepth);
+  if (document.bufAddCount > 0) {
+    document.write(buffer);
+  }
+  document.write("</style>");
+}
+ 
+function createClassChildren(baseName, width, depth)
+{
+  if (depth > 0)
+  {
+    for (var i = 0; i < width; i++)
+    {
+      newBaseName = baseName+String.fromCharCode("a".charCodeAt(0)+i);
+      document.write("<div class=\""+newBaseName+"\">");
+      createClassChildren(newBaseName, width, depth-1);
+      document.write("</div>");
+    }
+  }
+}
+ 
+createClassStyleSheet();
+</script>
+</head>
+<body>
+ <p>Testing... (JavaScript required)</p>
+ <script type="text/javascript">
+  createClassChildren("", treeWidth, treeDepth);
+ </script>
+</body>
+</html>

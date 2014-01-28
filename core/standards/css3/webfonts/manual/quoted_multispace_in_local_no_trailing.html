@@ -1,0 +1,18 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+	<head>
+		<title>font-face test that we don't load a local font unless we specify all trailing spaces in font name</title>
+		<style type="text/css">
+			div { width: 4em; }
+			@font-face { 
+			  font-family: "FontTest"; 
+			  src: local("Ahem   With   Many   Spaces");
+			}
+		</style>
+	</head>
+	<body>
+        <p>The font <a href=../fonts/AhemWithManySpaces.ttf>Ahem With Many Spaces</a> should be installed / in font dir .</p>		
+	<p>You should see PASS below </p>
+		<div style="font: 20px FontTest;">PASS</div>
+	</body>
+</html>

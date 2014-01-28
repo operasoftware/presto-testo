@@ -1,0 +1,17 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+	<head>
+		<title>font-face test with multiple font families</title>
+		<style type="text/css">
+			div { background: green; width: 4em; }
+			@font-face { font-family: "FontTest2", "FontTest1"; src: url("../fonts/Ahem.ttf") ;}
+		</style>
+	</head>
+	<body>
+  	<p>You should see "PASS" twice below </p>
+		<div style=" font: 20px FontTest1;">PASS</div>
+		<div style=" font: 20px FontTest2;">PASS</div>
+	</body>
+</html>
+
+

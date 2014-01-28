@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<title>Transitioning color</title>
+<style>
+#test { transition-duration: 2s;
+        -webkit-transition-duration: 2s;
+        color: #0000FF; }
+</style>
+<script>
+onload = function() {
+	var test = document.getElementById("test");
+	test.addEventListener("transitionend", callback, false);
+	test.addEventListener("webkitTransitionEnd", callback, false);
+	test.style.color = "#00FF00";
+	document.getElementById("result").innerHTML = "Running test (FAIL if this doesn't update again in 2 seconds)";
+}
+
+function callback(evt) {
+	// Set the color of another element to green and then compare the results
+	// This eliminates issues regarding the format of the return value, which is technically undefined
+	// and could be changed in the future.
+	var x = document.getElementById("x");
+	x.style.color = "#00FF00";
+	var passed = evt.target.style.color == x.style.color;
+	document.getElementById("result").innerHTML = passed ? "PASS if the transition was seen" : "FAIL - color is " + evt.target.style.color;
+	try{top.opener.rr(passed);}catch(e){}
+}
+</script>
+<p id="test">This text should transition from blue to green over a 2 second duration.
+<p id="result">FAIL - the script did not execute.
+<div id="x"></div>

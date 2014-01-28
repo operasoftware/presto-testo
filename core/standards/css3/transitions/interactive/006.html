@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<title>Transition from px to em</title>
+<style>
+div { background-color: blue; position: absolute; left: 20px; height: 50px;
+      width: 100px; font-size: 20px; transition: 2s 2s; 
+      -webkit-transition: 2s 2s; }
+#one { top: 100px; }
+#two { top: 150px; }
+.test #one { left: 520px; }
+.test #two { left: 26em; }
+</style>
+<script>
+onload = function() { document.body.className = "test"; }
+</script>
+<p>Afer a 2 second delay, the box below should move to the right, smoothly
+   accelerating at the beginning and decelerating at the end. The box should 
+   remain in one piece.</p>
+<div id="one"></div>
+<div id="two"></div>

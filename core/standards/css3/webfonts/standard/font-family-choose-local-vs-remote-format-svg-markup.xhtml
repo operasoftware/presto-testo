@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>font-face test trying to replace existing font with a remote inline svg font</title>
+		<style type="text/css">
+			div { background: black; width: 4em; }
+		</style>
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+      <defs>
+        <font-face font-family="Ahem" unicode-range="U+0-7F">
+          <font-face-src>
+            <font-face-uri xlink:href="../fonts/SVGFreeSans.svg#ascii"/>
+          </font-face-src>
+        </font-face>
+      </defs>
+    </svg>
+	</head>
+	<body>
+  <p>Ahem must be installed locally/present in font dir</p>
+  <p>You should see PASS below</p>
+  <div style="color: white; font: 20px Ahem;">PASS</div>
+	</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<title>Transition timing function: ease</title>
+<style>
+div { background-color: blue; position: absolute; left: 20px; height: 50px; width: 100px; }
+#one { transition: 2s ease 2s; -webkit-transition: 2s ease 2s; top: 50px; }
+#two { transition: 2s cubic-bezier(0.25, 0.1, 0.25, 1.0) 2s; -webkit-transition: 2s cubic-bezier(0.25, 0.1, 0.25, 1.0) 2s; top: 100px; }
+#three { transition: 2s 2s; -webkit-transition: 2s 2s; top: 150px; }
+.test div { left: 520px; }
+</style>
+<script>
+onload = function() { document.body.className = "test"; }
+</script>
+<p>Afer a 2 second delay, the box below should move to the right using the 'ease' timing function,
+   smoothly accelerating at the beginning and decelerating at the end. The box should remain in one piece.</p>
+<div id="one"></div>
+<div id="two"></div>
+<div id="three"></div>

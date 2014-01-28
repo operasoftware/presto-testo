@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg">
+  <title>font-face test trying to replace existing font with a remote svg font</title>
+  <style type="text/css">
+    @font-face { font-family: Ahem; src: url("../fonts/SVGFreeSans.svg#ascii") format("svg"); }
+  </style>
+
+  <text x="8" y="1em">Ahem must be installed locally/present in font dir</text>
+  <text x="8" y="2em">You should see PASS below</text>
+  <rect x="8" y="45" height="1em" width="4em" fill="black"/>
+  <text x="8" y="3em" style="fill: white; font: 20px Ahem;">PASS</text>
+</svg>

@@ -1,0 +1,15 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <title>font-face test of woff, large file (2MB)</title>
+    <style type="text/css">
+      @font-face { font-family: AhemFontTest; src: url("../fonts/AhemCJKSquares.ttf") format("truetype"); }
+      @font-face { font-family: FontTest; src:  url("../fonts/WenQuanYiMicroHei.woff") format("woff");}  
+    </style>
+  </head>
+  <body>
+  <p>This test might take some time to load fully (2MB font file). You should see a text below that is similar or identical to <span style="font-family: 'WenQuanYi Micro Hei'; font-size: 20px">文泉微米黑</span>.</p>
+    <div style="color:green; font: 20px FontTest, AhemFontTest;">文泉微米黑</div>
+  </body>
+</html>

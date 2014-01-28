@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink" style="font-size: 20px">
+   <text x="16" y="30">There should be a green square and no red.</text>
+   <rect x="16" y="46" fill="red" width="100" height="100"/>
+   <use xlink:href="nested_use_helper.svg#use" x="16" y="46"/>
+</svg>

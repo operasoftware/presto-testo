@@ -1,0 +1,20 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+   <title>wordWrap in getComputedStyle</title>
+   <script type="text/javascript">
+      function test() {
+         var passed = false;
+         var elm = document.getElementsByTagName('p')[0];
+         var value = getComputedStyle(elm, null).getPropertyValue('word-wrap');
+         passed = (value == "normal");
+         elm.firstChild.nodeValue = (passed ? "PASS" : "FAIL");
+         try{top.opener.rr(passed);}catch(e){}
+      }
+   </script>
+</head>
+<body onload="test()">
+   <p>Not tested (needs JavaScript support)</p>
+</body>
+</html>

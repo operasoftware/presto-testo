@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<title>transition-property: background-position, moving diagonally down and right</title>
+<style>
+div { transition-property: background-position; transition-duration: 2s;
+      -webkit-transition-property: background-position; -webkit-transition-duration: 2s;
+      background: url(support/cats.gif) no-repeat; background-position: 0px 0px; height: 250px; }
+div.test { background-position: 100px 100px; }
+</style>
+<script>
+onload = function() {
+	var test = document.getElementById("test");
+	test.addEventListener("transitionend", callback, false);
+	test.addEventListener("webkitTransitionEnd", callback, false);
+	test.className = "test";
+	document.getElementById("result").innerHTML = "Running test (FAIL if this doesn't update again in 2 seconds)";
+}
+
+function callback(evt) {
+	var passed = evt.elapsedTime == 2
+	document.getElementById("result").innerHTML = passed ? "PASS if the transition was seen" : "FAIL - duration was " + evt.elapsedTime;
+	try{top.opener.rr(passed);}catch(e){}
+}
+</script>
+<p>The image below should move diagonally 100px down and right over a 2 second duration.
+<p id="result">FAIL - the script did not execute.
+<div id="test"></div>

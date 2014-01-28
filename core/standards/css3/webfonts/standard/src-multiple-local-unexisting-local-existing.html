@@ -1,0 +1,18 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+	<head>
+		<title>font-face test - multiple source fonts, first unexisting local, then existing local</title>
+		<style type="text/css">
+			div { background: red; width: 4em; }
+			@font-face { 
+                                     font-family: FontTest; 
+                                     src: local("DummyFont"), local("Ahem");
+                        }  
+		</style>
+	</head>
+	<body>
+         <p>The font Ahem should be locally installed/in font dir
+	<p>You should see a green rectangle below</p>
+		<div style=" color: green; font: 20px FontTest;">FAIL</div>
+	</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" >
+<head>
+<title>remote font gentium bold, char #x25a</title>
+
+<style>
+
+/* Gentium, bold */
+@font-face {
+    font-family: "Gentium";
+    src: url("../fonts/GenR1020.TTF")
+}
+
+p#test { 
+     font: bold 120px "Gentium";	
+}
+
+td { 
+  vertical-align: top;
+}
+
+</style>
+
+
+</head>
+
+<body>
+<p>The character should look like the reference image.</p>
+
+<table border=1>
+<tr>
+<td>
+<p>Test:</p>
+<p id=test>&#x25a;</p>
+</td>
+<td>
+<p>Reference</p>
+<p><img src=support/gentium-x25a-ref.png></p>
+</td>
+</tr>
+</table>
+</body>
+</html>

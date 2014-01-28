@@ -1,0 +1,20 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+	<head>
+	        <title>font-face testing that we get an error message when trying to use a malformed svg font</title>
+		<style type="text/css">
+			div { 
+			  width: 4em; 
+			  font-family: FontTest, serif;
+			}
+			@font-face { 
+                          font-family: "FontTest"; 
+			  src: url("../fonts/AhemMalformed.svg#Font") format("svg");
+                        }
+		</style>
+	</head>
+	<body>
+	<p>There should be the error message "webfont malformed - discarded" in the error console.</p>
+		<div>XXXX</div>
+	</body>
+</html>

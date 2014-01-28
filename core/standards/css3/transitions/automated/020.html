@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<title>Transitioning border-spacing</title>
+<style>
+table { transition-property: border-spacing; transition-duration: 2s;
+        -webkit-transition-property: border-spacing; -webkit-transition-duration: 2s;
+        border-spacing: 5px; }
+table.test { border-spacing: 20px; }
+td { border: 1px solid black; }
+</style>
+<script>
+onload = function() {
+	var test = document.getElementById("test");
+	test.addEventListener("transitionend", callback, false);
+	test.addEventListener("webkitTransitionEnd", callback, false);
+	test.className = "test";
+	document.getElementById("result").innerHTML = "Running test (FAIL if this doesn't update again in 2 seconds)";
+}
+
+function callback(evt) {
+	var passed = evt.elapsedTime == 2
+	document.getElementById("result").innerHTML = passed ? "PASS if the transition was seen" : "FAIL - duration was " + evt.elapsedTime;
+	try{top.opener.rr(passed);}catch(e){}
+}
+</script>
+<p>The table's border-spacing should expand from 5px to 20px over a 2 second duration.
+<p id="result">FAIL - the script did not execute.
+<table id="test">
+    <tr><td>X<td>X
+    <tr><td>X<td>X
+</table>

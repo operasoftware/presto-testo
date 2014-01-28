@@ -1,0 +1,29 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+   <title>word-wrap:break-word, table</title>
+   <style type="text/css">
+      td {
+         font-family: "Ahem"; 
+         width: 5em;
+         color: red;
+         word-wrap: break-word;
+      }
+      td:first-line {
+         color: green;
+      }
+      span {
+         position: absolute;
+         height: 1em;
+         width: 5em;
+         background: white;
+      }
+   </style>
+</head>
+<body>
+   <p>To be tested with the Ahem font installed.
+   There should be a green rectangle and no red.</p>
+   <table><tr><td><span></span>MMMMMM</td></tr></table>
+</body>
+</html>

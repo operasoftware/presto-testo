@@ -1,0 +1,18 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+   <title>word-wrap, shaping characters</title>
+   <style type="text/css">
+      div {
+         word-wrap: break-word;
+         width: 2em;
+      }
+   </style>
+</head>
+<body>
+   <p>The leftmost character on the first line below should look like 
+   &#xfecc;, not like &#xfeca;.</p>
+   <div>&#x0639;&#x0639;&#x0639;&#x0639;&#x0639;&#x0639;&#x0639;&#x0639;</div>
+</body>
+</html>

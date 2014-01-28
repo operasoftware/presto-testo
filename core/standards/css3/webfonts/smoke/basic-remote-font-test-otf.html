@@ -1,0 +1,22 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+	<head>
+		<title>Basic font-face test with a remote opentype font</title>
+		<style type="text/css">
+			div { 
+			      width: 4em; 
+			      font-family: FontTest, Ahem;
+			      font-size: 20px;
+			    }			      
+			@font-face { 
+			  font-family: "FontTest"; 
+			  src: url(../fonts/Delicious-Roman.otf) ;
+			}
+		</style>
+	</head>
+	<body>
+	<p>Ahem should be installed / in font dir</p>
+	<p>You should see PASS below </p>
+		<div>PASS</div>
+	</body>
+</html>

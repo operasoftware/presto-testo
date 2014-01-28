@@ -1,0 +1,17 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+	<head>
+		<title>remote font defined with @font-face rule with same name on two different pages</title>
+		<style type="text/css">
+			div { background: green; width: 4em; }
+			@font-face { font-family: "FontTest"; src: url(../fonts/Vera.ttf) ;}
+		</style>
+	</head>
+	<body>
+        <p>1. Go to <a href=../smoke/basic-remote-font-test-ttf.html>this page</a>, which should pass.</p>
+        <p>2. Go back here, and reload page
+	You should see the word PASS on a green background below </p>
+        <p>The test is a pass if both 1) and 2) are.</p> 
+		<div style=" color: black; font-family: FontTest;">PASS</div>
+	</body>
+</html>

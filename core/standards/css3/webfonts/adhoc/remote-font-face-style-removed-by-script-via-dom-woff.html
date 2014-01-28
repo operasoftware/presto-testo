@@ -1,0 +1,25 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=windows-1252">
+    <title>font-face test with a remote font (woff), in a css rule removed by javascript post-load via DOM</title>
+    <style>
+      @font-face { font-family: FontTest; src: url("../fonts/Ahem.woff") ; }
+    </style>
+    <script>
+      function addFontFaceStyle() {
+        var rule = document.styleSheets[0].cssRules[0];
+        document.styleSheets[0].deleteRule(0); 
+      }        
+    </script>	
+</head>
+  <body onload="setTimeout('addFontFaceStyle()', 100);"> 
+    <noscript>
+      NOT TESTED: javascript has to be turned on. 
+    </noscript>
+    <p>You should see the word PASS below </p>
+    <div style=" color: black; font: 20px FontTest;">PASS</div>
+  </body>
+</html>
+
+

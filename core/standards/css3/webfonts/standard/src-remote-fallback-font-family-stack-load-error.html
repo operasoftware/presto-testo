@@ -1,0 +1,23 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+	<head>
+		<title>font-face testing that we fall back to the next font in the elements font-family stack if the remote font cant be loaded</title>
+		<style type="text/css">
+			div { 
+			  background: red; 
+			  color: green;
+			  width: 4em; 
+			  font-family: FontTest, Ahem;
+			}
+			@font-face { 
+			  font-family: "FontTest"; 
+			  src: url(../fonts/Notthere.ttf) ;
+			}
+		</style>
+	</head>
+	<body>
+        <p>The font Ahem should be installed / in font dir.</p>
+	<p>You should see a green rect below </p>
+		<div>FAIL</div>
+	</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+	<head>
+		<title>font-face test defining different webfonts for italic and normal, and then removing italic</title>
+		<style type="text/css">
+			div { width: 4em; }
+			@font-face { 
+			  font-family: FontTest; 
+			  font-style: italic;
+			  src: url("../fonts/Ahem.svg");
+			  }
+			@font-face { 
+			  font-family: FontTest; 
+			  font-style: normal;
+			  src: url("../fonts/Vera.ttf");
+			  }
+			div {
+			font-family: FontTest, serif;
+			}
+		</style>
+    <script>
+      function removeFontFaceStyle() {
+        var rule = document.styleSheets[0].cssRules[2];
+	document.styleSheets[0].deleteRule(1); 
+      }        
+    </script>	
+	
+<meta http-equiv="Content-Type" content="text/html;charset=windows-1252">
+</head>
+	<body onload="setTimeout('removeFontFaceStyle()', 500)";>
+  <p>You should see an italic pass and a normal pass below</p>
+  <div><i>PASS</i></div>
+  <div>PASS</div>
+	</body>
+</html>

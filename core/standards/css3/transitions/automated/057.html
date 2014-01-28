@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<title>Transitioning visibility</title>
+<style>
+div { transition: 1s 1s;
+      -webkit-transition: 1s 1s;
+       visibility: hidden;; }
+div.test { visibility: visible; }
+</style>
+<script>
+onload = function() {
+	var test = document.getElementById("test");
+	test.addEventListener("transitionend", callback, false);
+	test.addEventListener("webkitTransitionEnd", callback, false);
+	test.className = "test";
+	document.getElementById("result").innerHTML = "Running test (FAIL if this doesn't update again in 2 seconds)";
+}
+
+function callback(evt) {
+	var passed = evt.elapsedTime == 1
+	document.getElementById("result").innerHTML = passed ? "PASS if the transition was seen" : "FAIL - duration was " + evt.elapsedTime;
+	try{top.opener.rr(passed);}catch(e){}
+}
+</script>
+<p>After a short delay, the text below should become visible.
+<p id="result">FAIL - the script did not execute.
+<div id="test">Filler text filler text filler text.</div>

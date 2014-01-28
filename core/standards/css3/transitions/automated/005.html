@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<title>transition-delay, milliseconds</title>
+<style>
+div { transition-property: left; transition-duration: 2000ms; transition-delay: 1000ms;
+      -webkit-transition-property: left; -webkit-transition-duration: 2000ms; -webkit-transition-delay: 1000ms;
+      background: blue; position: relative; left: 0; height: 200px; width: 200px; }
+div.test { left: 200px; }
+</style>
+<script>
+var timer = null;
+
+onload = function() {
+	var test = document.getElementById("test");
+	test.addEventListener("transitionend", callback, false);
+	test.addEventListener("webkitTransitionEnd", callback, false);
+	timer = new Date();
+	test.className = "test";
+	document.getElementById("result").innerHTML = "Running test (FAIL if this doesn't update again in 3 seconds)";
+}
+
+function callback(evt) {
+	totaltime = new Date() - timer;
+	var passed = evt.elapsedTime == 2 && totaltime >= 3000 && totaltime <= 3300; // Allow for a slight (10%) timing variation
+	document.getElementById("result").innerHTML = passed ? "PASS if the transition was seen" : "FAIL - elapsed time was " + evt.elapsedTime + ", totaltime was " + totaltime;
+	try{top.opener.rr(passed);}catch(e){}
+}
+
+</script>
+<p>After a 1 second delay, the box below should move 200px to the right over a 2 second duration.
+<p id="result">FAIL - the script did not execute.
+<div id="test"></div>

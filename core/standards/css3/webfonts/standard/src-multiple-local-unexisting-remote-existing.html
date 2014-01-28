@@ -1,0 +1,14 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+	<head>
+		<title>font-face test - multiple source fonts, first unexisting local, then existing remote</title>
+		<style type="text/css">
+			div { background: red; width: 4em; }
+			@font-face { font-family: FontTest; src:  local("DummyFont"), url("../fonts/Ahem.ttf")  ;}  
+		</style>
+	</head>
+	<body>
+         <p>You should see a green rectangle below</p>
+	<div style=" color: green; font: 20px FontTest;">FAIL</div>
+	</body>
+</html>

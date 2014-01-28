@@ -1,0 +1,15 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+	<head>
+		<title>font-face test trying to replace existing font with a remote svg font</title>
+		<style type="text/css">
+			div { background: black; width: 4em; }
+			@font-face { font-family: Ahem; src: url("../fonts/SVGFreeSans.svg#ascii") ;}
+		</style>
+	</head>
+	<body>
+  <p>Ahem must be installed locally/present in font dir</p>
+  <p>You should see PASS below</p>
+  <div style=" color: white; font: 20px Ahem;">PASS</div>
+	</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <title>fontswitching - text not supported by woff at all</title>
+    <style type="text/css">
+      @font-face { 
+        font-family: FontTest; 
+        src:  url("../fonts/Ahem.woff") format("woff");
+
+      }  
+    </style>
+  </head>
+  <body>
+  <p>You should see the result text below.</p>
+    <div style="font: 20px FontTest;">&#x24C5;&#x24B6;&#x24C8;&#x24C8;</div>
+  </body>
+</html>

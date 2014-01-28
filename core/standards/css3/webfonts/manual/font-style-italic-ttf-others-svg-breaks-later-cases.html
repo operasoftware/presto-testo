@@ -1,0 +1,31 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+	<head>
+		<title>font-face test where font-style "italic" should be replaced by an ttf webfont and other faces by a svg one</title>
+		<style type="text/css">
+			div { width: 4em; }
+			p.normal { font: 20px FontTestItalicOnly}
+			p.it { font: 20px FontTestItalicOnly Ahem; font-style: italic }
+			@font-face { 
+			  font-family: "FontTestItalicOnly"; 
+			  src: url("../fonts/Ahem.svg#Font") format("svg");
+			}			
+			@font-face { 
+			  font-family: "FontTestItalicOnly"; 
+  			  font-style: italic;
+			  src: url(../fonts/Vera.ttf) ;
+			}
+		</style>
+	</head>
+	<body>
+	<p>After viewing this TC, the linked TC:s shouldn't fail</p>
+	  <div>
+	  <p class=it>PASS</p>
+	  <p class=normal>FAIL</p>
+	  </div>
+	<p><a href=../standard/src-remote-fallback-font-family-stack-load-error.html>http://t/core/standards/css3/webfonts/standard/src-remote-fallback-font-family-stack-load-error.html</a></p>
+	<p><a href=../adhoc/remote-font-name.html>http://t/core/standards/css3/webfonts/adhoc/remote-font-name.html</a></p>
+	</body>
+</html>
+
+

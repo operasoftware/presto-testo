@@ -1,0 +1,23 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+	<head>
+		<title>font-face testing that we don't use a @font-face rule where no font in the src is available </title>
+		<style type="text/css">
+			div { 
+			  background: red; 
+			  color: green;
+			  width: 4em; 
+			  font-family: Ahem;
+			}
+			@font-face { 
+			  font-family: "Ahem"; 
+			  src: url(../fonts/broken.ttf) ;
+			}
+		</style>
+	</head>
+	<body>
+        <p>The font Ahem should be installed / in font dir.</p>
+	<p>You should see a green rect below </p>
+		<div>FAIL</div>
+	</body>
+</html>

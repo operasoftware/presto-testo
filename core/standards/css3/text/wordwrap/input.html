@@ -1,0 +1,24 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+   <title>word-wrap, input element</title>
+   <style type="text/css">
+     input {
+        width: 50px;
+     }
+     input:first-child {
+       word-wrap: break-word;
+     } 
+   </style>
+</head>
+<body>
+   <p>"PASS" should be visible when scrolling all the way to the right in
+   the input field below.</p>
+   <div>
+      <input value="fillertextfillertextfillertextfillertextfillertextPASS" name="orig">
+      <input value="fillertextPASS" name="ref">
+   </div>
+</body>
+</html>
+

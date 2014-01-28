@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <title>Inserting SVG font when Webfont is in use</title>
+  <style type="text/css">
+    @font-face {
+    font-family: AnAfont;
+    src: url(http://t/resources/fonts/gilr35w.ttf) format("ttf");
+    }
+    @font-face {
+    font-family: AnAfontExt;
+    src: url(http://t/resources/fonts/gilr35w.ttf) format("ttf");
+    }
+  </style>
+  <g font-size="16">
+    <script>
+      <![CDATA[
+	var svgNS = 'http://www.w3.org/2000/svg';
+
+	function createLocalSVGFont()
+	{
+		var f = document.createElementNS(svgNS, 'font');
+		f.setAttribute('horiz-adv-x', 1000);
+
+		var ff= document.createElementNS(svgNS, 'font-face');
+		var ffattrs = {
+			"font-family": "AnAfont",
+			"units-per-em": "1000",
+			ascent: "800",
+			descent: "200",
+			alphabetic: "0"
+		};
+		for (var i in ffattrs)
+    			ff.setAttribute(i, ffattrs[i]);
+
+		var mg = document.createElementNS(svgNS, 'missing-glyph');
+		mg.setAttribute('d', 'M50 0V800H750V0H50ZM700 50V750H100V50H700Z');
+
+		var gl = document.createElementNS(svgNS, 'glyph');
+		gl.setAttribute('unicode', 'A');
+		gl.setAttribute('d', 'M0 800H1000V-200H0V800Z');
+
+		f.appendChild(ff);
+		f.appendChild(mg);
+		f.appendChild(gl);
+
+		document.getElementById('d').appendChild(f);
+	}
+
+	function createExternalSVGFont()
+	{
+		var ff = document.createElementNS(svgNS, 'font-face');
+		ff.setAttribute('font-family', 'AnAfontExt');
+
+		var ffs = document.createElementNS(svgNS, 'font-face-src');
+		var ffu = document.createElementNS(svgNS, 'font-face-uri');
+		ffu.setAttributeNS('http://www.w3.org/1999/xlink', 'href', 'http://t/resources/fonts/Ahem.svg#Font');
+
+		ffs.appendChild(ffu);
+		ff.appendChild(ffs);
+
+		document.getElementById('d').appendChild(ff);
+	}
+
+	window.onload = function()
+	{
+		createLocalSVGFont();
+		createExternalSVGFont();
+
+		document.getElementById('t').firstChild.data = '';
+	}
+      ]]>
+    </script>
+    <defs id="d"/>
+
+    <g font-family="AnAfont" font-size="100">
+      <rect width="4em" height="1em" fill="red"/>
+      <text y="80" fill="green">AAAA</text>
+    </g>
+
+    <g font-family="AnAfontExt" font-size="100">
+      <rect y="120" width="4em" height="1em" fill="red"/>
+      <text y="200" fill="green">AAAA</text>
+    </g>
+
+    <text x="10" y="250">There should be no red</text>
+    <text x="10" y="270" id="t">FAIL (script didn't run)</text>
+  </g>
+</svg>

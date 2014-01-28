@@ -1,0 +1,15 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+	<head>
+		<title>font-face test with a locally saved page</title>
+		<style type="text/css">
+			div { background: red; width: 4em; }
+			@font-face { font-family: "FontTest"; src: url(../fonts/Ahem.ttf) ;}
+		</style>
+	</head>
+	<body>
+        <p>Save the page with images, go to opera:blank, restart Opera and open the saved page (in the download directory).</p>
+	<p>You should see a green rect below </p>
+		<div style=" color: green; font: 20px FontTest;">FAIL</div>
+	</body>
+</html>

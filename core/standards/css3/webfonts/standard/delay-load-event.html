@@ -1,0 +1,20 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<title>font-face test delay the load event</title>
+<style>
+@font-face{font-family:delaytest; src:url(../fonts/delay.php)}
+div{font-family:delaytest}
+</style>
+<p>FAIL (script didn't run)</p>
+<p>Note: this test is not valid if the font is being cached.</p>
+<div>x</div>
+<script>
+window.addEventListener('DOMContentLoaded',function(){d1=new Date()},false);
+window.onload=function(){
+d2=new Date();
+document.getElementsByTagName('p')[0].firstChild.data=((d2-d1>1000)?'PASS':'FAIL')+' ('+(d2-d1)+'ms between DOMContentLoaded and load)';
+try{top.opener.rr(d2-d1>1000);}catch(e){}
+};
+</script>
+
+
+

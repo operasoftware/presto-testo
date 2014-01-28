@@ -1,0 +1,24 @@
+<!doctype html>
+<title>Removing an unused @font-face rule should not unload other @font-face rules with different font-family name - svg font</title>
+<style>
+@font-face {
+  font-family: y;
+  src: url(foo);
+}
+
+@font-face {
+  font-family: x;
+  src: url(http://t/resources/fonts/Ahem.svg#Font) format("svg");
+}
+
+div {
+  font-family: x;
+  font-size: 100px;
+  color: green;
+}
+</style>
+<p>There should be a green square below, and no red.</p>
+<div>X</div>
+<script>
+window.onload = function() { document.styleSheets[0].deleteRule(0); }
+</script>

@@ -1,0 +1,23 @@
+/* Gentium, Italic */
+@font-face {
+    font-family: "Gentium";
+    font-weight: normal;
+    font-style: italic;
+    src: url("../../fonts/GenI1020.TTF")
+}
+
+/* Gentium, bold */
+@font-face {
+    font-family: "Gentium";
+    font-weight: bold;
+    font-style: normal;
+    src: url("../../fonts/GenR1020.TTF")
+}
+
+
+h1 { 
+     color: blue;
+     display: block
+     position: absolute; top: 0px;
+     font: bold 120px "Gentium";	
+}

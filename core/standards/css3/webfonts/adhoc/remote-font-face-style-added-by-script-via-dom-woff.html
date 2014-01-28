@@ -1,0 +1,26 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<meta http-equiv="Content-Type" content="text/html;charset=windows-1252">
+<html>
+  <head>
+    <title>font-face test with a remote font (woff), in a css rule added by javascript post-load via DOM </title>
+    <style>
+    </style>
+    <script>
+      function addFontFaceStyle() {
+        document.styleSheets[0].insertRule('div { background: red; width: 4em; line-height: 1em; }', 0);
+	document.styleSheets[0].insertRule('@font-face { font-family: FontTest; src: url("../fonts/Ahem.woff") ;}',0); 
+      }        
+    </script>
+  </head>
+  <body onload="setTimeout('addFontFaceStyle()', 10);"> 
+    <noscript>
+      NOT TESTED: javascript has to be turned on. 
+    </noscript>
+    <p>You should see a green rect below </p>
+    <div style=" color: green; font: 20px FontTest;">FAIL</div>
+  </body>
+</html>
+
+
+
+

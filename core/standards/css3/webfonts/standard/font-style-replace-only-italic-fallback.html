@@ -1,0 +1,27 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+	<head>
+		<title>font-face test where one webfont should be used for font-style "italic" and another for everything else</title>
+		<style type="text/css">
+			div { width: 4em; }
+			p.normal { font: 20px FontTestItalicOnly }
+			p.it { font: 20px FontTestItalicOnly; font-style: italic }
+			@font-face { 
+			  font-family: "FontTestItalicOnly"; 
+			  src: url(../fonts/Vera.ttf) ;
+			}			
+			@font-face { 
+			  font-family: "FontTestItalicOnly"; 
+  			  font-style: italic;
+			  src: url(../fonts/Ahem.ttf) ;
+			}
+		</style>
+	</head>
+	<body>
+	<p>You should see the word PASS below, and not the word FAIL</p>
+	  <div>
+	  <p class=normal>PASS</p>
+	  <p class=it>FAIL</p>
+	  </div>
+	</body>
+</html>

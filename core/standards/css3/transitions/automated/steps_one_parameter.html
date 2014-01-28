@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+   <title>Transition timing function: steps(&lt;integer&gt;)</title>
+   <style>
+      div {
+         background-color: blue;
+         position: relative;
+         left: 0px;
+         height: 100px;
+         width: 100px;
+         transition: 0.8s steps(2) 0.8s;
+         -webkit-transition: 0.8s steps(2) 0.8s;
+         -moz-transition: 0.8s steps(2) 0.8s;
+      }
+      .test {
+         left: 300px;
+      }
+   </style>
+   <script>
+      onload = function() {
+         var div = document.getElementsByTagName('div')[0];
+         var divStyle = getComputedStyle(div, '');
+         var passed = false;
+         var log = document.querySelector('p').firstChild;
+         setTimeout(function() {
+            passed = (divStyle.left == '0px');
+         }, 1000);
+         setTimeout(function() {
+            passed = (passed && divStyle.left == '150px');
+         }, 1400);
+         setTimeout(function() {
+            passed = (passed && divStyle.left == '300px');
+            log.data = (passed ? 'PASS' : 'FAIL');
+            try{top.opener.rr(passed);}catch(e){}
+         }, 1800);
+         log.data = 'Testing, please wait two seconds...';
+         div.className = 'test';
+      };
+   </script>
+</head>
+<body>
+   <p>Not tested (Note: JavaScript required)</p>
+   <div></div>
+</body>
+</html>

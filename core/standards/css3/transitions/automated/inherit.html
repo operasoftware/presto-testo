@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>'inherit' value for transition properties</title>
+   <style>
+      #parent {
+         transition: width 1s 2s steps(1, end);
+      }
+      #longhands {
+         transition-property: inherit;
+         transition-duration: inherit;
+         transition-delay: inherit;
+         transition-timing-function: inherit;
+      }
+      #shorthand {
+         transition: inherit;
+      }
+   </style>
+   <script src="/resources/testharness.js"></script>
+   <script src="/resources/testharnessreport.js"></script>
+   <script>
+      var properties = ['transition-property', 'transition-duration',
+         'transition-delay', 'transition-timing-function'];
+      var expected = ['width', '1s', '2s', 'steps(1, end)'];
+      var tests = [];
+      properties.forEach(function(property) {
+         tests.push(async_test('Longhand inherited, ' + property));
+      });
+      properties.forEach(function(property) {
+         tests.push(async_test('Shorthand inherited, ' + property));
+      });
+      window.addEventListener("load", function() {
+         tests.forEach(function(test, index) {
+            test.step(function() { 
+               var testElement, style, propertyIndex;
+               if (index < properties.length) {
+                  testElement = document.getElementById('longhands');
+                  propertyIndex = index;
+               } else {
+                  testElement = document.getElementById('shorthand');
+                  propertyIndex = index - properties.length;
+               }
+               style = getComputedStyle(testElement, null);
+               assert_equals(style.getPropertyValue(properties[propertyIndex]),
+                             expected[propertyIndex]);
+            });
+            test.done();
+         });
+      });
+   </script>
+</head>
+<body>
+   <div id="parent">
+      <div id="longhands"></div>
+      <div id="shorthand"></div>
+   </div>
+   <div id="log">Not tested (JavaScript required)</div>
+</body>
+</html>

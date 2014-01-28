@@ -1,0 +1,37 @@
+<?xml version="1.0" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg">
+<defs>
+<font id="failtopass" horiz-adv-x="1024" >
+  <font-face 
+    font-family="FailToPass"
+    font-weight="400"
+    font-stretch="normal"
+    units-per-em="2048"
+    panose-1="2 11 6 3 3 8 4 2 2 4"
+    ascent="1556"
+    descent="-492"
+    x-height="1120"
+    cap-height="1493"
+    bbox="-375 -483 2636 1901"
+    underline-thickness="143"
+    underline-position="-142"
+    unicode-range="U+0020-FB02"
+  />
+<missing-glyph horiz-adv-x="1229" 
+d="M102 -362v1806h1024v-1806h-1024zM217 -248h795v1577h-795v-1577z" />
+    <glyph glyph-name="A" unicode="A" horiz-adv-x="1401" 
+d="M700 1294l-274 -743h549zM586 1493h229l569 -1493h-210l-136 383h-673l-136 -383h-213z" />
+    <glyph glyph-name="I" unicode="I" horiz-adv-x="1300" 
+d="M1096 1444v-197q-115 55 -217 82t-197 27q-165 0 -254.5 -64t-89.5 -182q0 -99 59.5 -149.5t225.5 -81.5l122 -25q226 -43 333.5 -151.5t107.5 -290.5q0 -217 -145.5 -329t-426.5 -112q-106 0 -225.5 24t-247.5 71v208q123 -69 241 -104t232 -35q173 0 267 68t94 194
+q0 110 -67.5 172t-221.5 93l-123 24q-226 45 -327 141t-101 267q0 198 139.5 312t384.5 114q105 0 214 -19t223 -57z" />
+    <glyph glyph-name="L" unicode="L" horiz-adv-x="1300" 
+d="M1096 1444v-197q-115 55 -217 82t-197 27q-165 0 -254.5 -64t-89.5 -182q0 -99 59.5 -149.5t225.5 -81.5l122 -25q226 -43 333.5 -151.5t107.5 -290.5q0 -217 -145.5 -329t-426.5 -112q-106 0 -225.5 24t-247.5 71v208q123 -69 241 -104t232 -35q173 0 267 68t94 194
+q0 110 -67.5 172t-221.5 93l-123 24q-226 45 -327 141t-101 267q0 198 139.5 312t384.5 114q105 0 214 -19t223 -57z" />
+    <glyph glyph-name="F" unicode="F" horiz-adv-x="1235" 
+d="M403 1327v-561h254q141 0 218 73t77 208q0 134 -77 207t-218 73h-254zM201 1493h456q251 0 379.5 -113.5t128.5 -332.5q0 -221 -128.5 -334t-379.5 -113h-254v-600h-202v1493z" />
+    <hkern u1="F" u2="A" k="131" />
+  </font>
+</defs>
+  <text x="8" y="1em" font-size="14px" font-family="sans-serif">This svgfont makes the string 'FAIL' (uppercase only) turn into a visual 'PASS'.</text>
+  <text x="8" y="2em" font-size="48px" font-family="FailToPass">FAIL</text>
+</svg>

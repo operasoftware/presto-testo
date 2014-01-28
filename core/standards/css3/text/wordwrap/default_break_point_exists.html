@@ -1,0 +1,28 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+   <title>word-wrap, default value, breaking where allowed</title>
+   <style type="text/css">
+      div {
+         font-family: "Ahem"; 
+         width: 5em;
+         color: green;
+      }
+      div:first-line {
+         color: red;
+      }
+      span {
+         position: absolute;
+         height: 1em;
+         width: 5em;
+         background: white;
+      }
+   </style>
+</head>
+<body>
+   <p>To be tested with the Ahem font installed.
+   There should be a green rectangle and no red.</p>
+   <div><span></span>MMMMM M</div>
+</body>
+</html>

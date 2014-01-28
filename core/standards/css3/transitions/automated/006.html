@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<title>transition-property: right</title>
+<style>
+div { transition-property: right; transition-duration: 2s;
+      -webkit-transition-property: right; -webkit-transition-duration: 2s;
+      background: blue; position: absolute; right: 0; height: 200px; width: 200px; }
+</style>
+<script>
+onload = function() {
+	var test = document.getElementById("test");
+	test.addEventListener("transitionend", callback, false);
+	test.addEventListener("webkitTransitionEnd", callback, false);
+	test.style.right = "200px";
+	document.getElementById("result").innerHTML = "Running test (FAIL if this doesn't update again in 2 seconds)";
+}
+
+function callback(evt) {
+	var passed = evt.target.style.right == "200px";
+	document.getElementById("result").innerHTML = passed ? "PASS if the transition was seen" : "FAIL - right is " + evt.target.style.right;
+	try{top.opener.rr(passed);}catch(e){}
+}
+</script>
+<p>The box below should move 200px to the left over a 2 second duration.
+<p id="result">FAIL - the script did not execute.
+<div id="test"></div>

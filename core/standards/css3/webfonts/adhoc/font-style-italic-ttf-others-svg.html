@@ -1,0 +1,28 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+	<head>
+		<title>font-face test where font-style "italic" should be replaced by an ttf webfont and other faces by a svg one</title>
+		<style type="text/css">
+			div { width: 4em; }
+			p.normal { font: 20px FontTestItalicOnly}
+			p.it { font: 20px FontTestItalicOnly, Ahem; font-style: italic }
+			@font-face { 
+			  font-family: "FontTestItalicOnly"; 
+			  src: url("../fonts/Ahem.svg#Font") format("svg");
+			}			
+			@font-face { 
+			  font-family: "FontTestItalicOnly"; 
+  			  font-style: italic;
+			  src: url(../fonts/Vera.ttf) ;
+			}
+		</style>
+	</head>
+	<body>
+	<p>You should see the word PASS below, and not the word FAIL</p>
+	  <div>
+	  <p class=it>PASS</p>
+	  <p class=normal>FAIL</p>
+	  </div>
+	</body>
+</html>
+

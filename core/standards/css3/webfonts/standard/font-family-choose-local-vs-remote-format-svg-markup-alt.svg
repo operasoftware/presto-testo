@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <title>font-face test trying to replace existing font with a remote svg font</title>
+  <defs>
+    <font-face font-family="Bitstream Vera Sans" unicode-range="U+0-7F">
+      <font-face-src>
+        <font-face-uri xlink:href="../fonts/failtopass.svg#failtopass"/>
+      </font-face-src>
+    </font-face>
+  </defs>
+
+  <text x="8" y="1em">Bitstream Vera Sans must be installed locally/present in font dir</text>
+  <text x="8" y="2em">You should see PASS below</text>
+  <rect x="8" y="45" height="1em" width="4em" fill="black"/>
+  <text x="8" y="3em" style="fill: white; font: 20px Bitstream Vera Sans;">FAIL</text>
+</svg>

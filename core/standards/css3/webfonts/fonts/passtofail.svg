@@ -1,0 +1,33 @@
+<?xml version="1.0" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg">
+<defs>
+<font id="passtofail" horiz-adv-x="1024" >
+  <font-face 
+    font-family="PassToFail"
+    font-weight="400"
+    font-stretch="normal"
+    units-per-em="2048"
+    panose-1="2 11 6 3 3 8 4 2 2 4"
+    ascent="1556"
+    descent="-492"
+    x-height="1120"
+    cap-height="1493"
+    bbox="-375 -483 2636 1901"
+    underline-thickness="143"
+    underline-position="-142"
+    unicode-range="U+0020-FB02"
+  />
+<missing-glyph horiz-adv-x="1229" 
+d="M102 -362v1806h1024v-1806h-1024zM217 -248h795v1577h-795v-1577z" />
+    <glyph glyph-name="A" unicode="A" horiz-adv-x="1401" 
+d="M700 1294l-274 -743h549zM586 1493h229l569 -1493h-210l-136 383h-673l-136 -383h-213z" />
+    <glyph glyph-name="P" unicode="P" horiz-adv-x="1178" 
+d="M201 1493h858v-170h-656v-440h592v-170h-592v-713h-202v1493z" />
+    <glyph glyph-name="SS" unicode="SS" horiz-adv-x="604" 
+d="M201 1493h202v-1493h-202v1493z M805 1493h202v-1323h727v-170h-929v1493z" />
+    <hkern u1="P" u2="A" k="188" />
+  </font>
+</defs>
+  <text x="8" y="1em" font-size="14px" font-family="sans-serif">This svgfont makes the string 'PASS' (uppercase only) turn into a visual 'FAIL'.</text>
+  <text x="8" y="2em" font-size="48px" font-family="PassToFail">PASS</text>
+</svg>

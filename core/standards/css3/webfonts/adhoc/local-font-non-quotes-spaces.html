@@ -1,0 +1,20 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+	<head>
+		<title>font-face test with a local font with no quotes around the font name</title>
+		<style type="text/css">
+			div { background: red; width: 4em; }
+			@font-face { 
+			             font-family: "FontTest"; 
+				     src: local(Ahem) ;
+				   }
+		</style>
+	
+<meta http-equiv="Content-Type" content="text/html;charset=windows-1252">
+</head>
+	<body>
+	<p>Ahem should be installed / in font dir</p>
+        <p>You should see a green rect below </p>
+	<div style=" color: green; font: 20px FontTest;">FAIL</div>
+	</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<title>Transitioning word-spacing</title>
+<style>
+div { transition: 2s;
+      -webkit-transition: 2s;
+       word-spacing: 0em; }
+div.test { word-spacing: 2em; }
+</style>
+<script>
+onload = function() {
+	var test = document.getElementById("test");
+	test.addEventListener("transitionend", callback, false);
+	test.addEventListener("webkitTransitionEnd", callback, false);
+	test.className = "test";
+	document.getElementById("result").innerHTML = "Running test (FAIL if this doesn't update again in 2 seconds)";
+}
+
+function callback(evt) {
+	var passed = evt.elapsedTime == 2
+	document.getElementById("result").innerHTML = passed ? "PASS if the transition was seen" : "FAIL - duration was " + evt.elapsedTime;
+	try{top.opener.rr(passed);}catch(e){}
+}
+</script>
+<p>The word spacing of the text below should decrease over a duration of 2 seconds.
+<p id="result">FAIL - the script did not execute.
+<div id="test">Filler text filler text filler text.</div>

@@ -1,0 +1,16 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"> 
+<html> 
+  <head> 
+    <title>font-face test of jpg source format and broken truetype font with format("svg")</title> 
+    <style type="text/css"> 
+      div { background: red; width: 4em; }
+      @font-face { font-family: NotAFont; src: url(../fonts/NotAFont.jpg) format("svg"); }
+      @font-face { font-family: InvalidFont; src: url(../fonts/broken.ttf) format("svg"); }
+      @font-face { font-family: FontTest; src: url(../fonts/Ahem.ttf)  format("truetype"); }  
+    </style> 
+  </head> 
+  <body> 
+  <p>You should see a green rectangle below</p> 
+    <div style=" color: green; font: 20px NotAFont, InvalidFont, FontTest;">FAIL</div> 
+  </body> 
+</html> 

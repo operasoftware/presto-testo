@@ -1,0 +1,14 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+	<head>
+		<title>font-face test trying to replace existing generic family "serif" with remote font</title>
+		<style type="text/css">
+			div { background: green; width: 4em; }
+			@font-face { font-family: serif; src:  url(../fonts/Ahem.ttf) ;}
+		</style>
+	</head>
+	<body>
+	<p>You should see the word PASS on a green background below </p>
+		<div style=" color: black; font: 20px serif;">PASS</div>
+	</body>
+</html>

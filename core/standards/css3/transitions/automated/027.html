@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<title>Transition events</title>
+<style>
+div { transition: 2s; transition-property: border-top-color, border-right-color, border-bottom-color, border-left-color;
+      -webkit-transition: 2s; -webkit-transition-property: border-top-color, border-right-color, border-bottom-color, border-left-color;
+      height: 100px; border: 10px solid silver; }
+</style>
+<script>
+onload = function() {
+	var test = document.getElementById("test");
+	test.addEventListener("transitionend", callback, false);
+	test.addEventListener("webkitTransitionEnd", callback, false);
+	document.getElementById("result").innerHTML = "Running test (FAIL if this doesn't update again in 2 seconds)";
+	test.style.borderRightColor = "blue";
+
+	setTimeout(checkResult, 2200); // Leave enough time for all events to have fired.
+}
+
+var count = 0;
+events = [];
+
+function callback(evt) {
+	count++;
+	events.push(evt);	
+}
+
+function checkResult() {
+	// Need to check that the event count is correct and see which events were fired.
+	var passed = (count == 1 && events[0].propertyName == "border-right-color");
+	var result = document.getElementById("result");
+
+	if (passed) {
+		result.innerHTML = "PASS if the transition was seen"
+	} else {
+		if (count == 0) {
+			result.innerHTML = "FAIL - Transition event was not fired"
+		} else {
+			result.innerHTML = "FAIL - Transition events fired for the wrong properties. Expected only border-right-color, got:<br>"
+			for (var i = 0; i < events.length; i++) {
+				result.innerHTML += events[i].propertyName + ", " + events[i].elapsedTime + " seconds<br>";
+			}
+		}
+	}
+	try{top.opener.rr(passed);}catch(e){}
+}
+
+</script>
+<p>The right border of the box below should transition from silver to blue over a 2 second duration.
+<p id="result">FAIL - the script did not execute.
+<div id="test"></div>

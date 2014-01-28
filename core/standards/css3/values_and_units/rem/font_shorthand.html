@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+   <title>Font shorthand with font size given in rem</title>
+   <style>
+      html {
+         font-size: 16px;
+      }
+      p {
+         font: 2rem Arial;
+      }
+   </style>
+   <script>
+      onload = function() {
+         var p = document.getElementsByTagName('p')[0];
+         var fontSizeOfP = getComputedStyle(p, null).fontSize;
+         var passed = (fontSizeOfP == '32px');
+         p.firstChild.data = (passed ? 'PASS' : 'FAIL (got '+fontSizeOfP+')');
+         try{top.opener.rr(passed);}catch(e){}
+      }
+   </script>
+</head>
+<body>
+   <p>Not tested (JavaScript required)</p>
+</body>
+</html>

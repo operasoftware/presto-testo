@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+   <title>Media query using rem unit, matching</title>
+   <style>
+      html {
+         font-size: 100px;
+      }
+      p {
+         font-size: 16px;
+      }
+      @media (min-width: 19rem) {
+         p + p {
+            text-transform: uppercase;
+         }
+      }
+   </style>
+   <script>
+      onload = function() {
+         var p = document.getElementsByTagName('p')[1];
+         var passed = (getComputedStyle(p, null).textTransform == 'uppercase');
+         p.firstChild.data = (passed ? 'PASS' : 'FAIL');
+         try{top.opener.rr(passed);}catch(e){}
+      }
+   </script>
+</head>
+<body>
+   <p>To be tested with window width &gt;=304px and &lt;1900px.</p>
+   <p>Not tested (JavaScript required)</p>
+</body>
+</html>

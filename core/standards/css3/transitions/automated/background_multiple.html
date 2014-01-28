@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+<head>
+   <title>Transitioning background-position, multiple layers</title>
+   <style>
+      #test {
+         transition: background-position 1s steps(2, start);
+         background-position: 0% 50%, 50px 100px;
+      }
+      #test.changed {
+         background-position: -20% 100%, 50px 80px;
+      }
+   </style>
+   <script src="/resources/testharness.js"></script>
+   <script src="/resources/testharnessreport.js"></script>
+   <script>
+      var eventTest = async_test('transitionend');
+      var interpolationTest = async_test('Value at 50%');
+      onload = function() {
+         var testElement = document.getElementById('test');
+         var eventTimeout = setTimeout(function() {
+            eventTest.step(function() {
+               assert_unreached('transitionend event not seen');
+            });
+            eventTest.done();
+         }, 2000);
+         testElement.addEventListener('transitionend', function(evt) {
+            clearTimeout(eventTimeout);
+            eventTest.step(function() {
+               assert_equals(evt.propertyName, 'background-position');
+            });
+            eventTest.done();
+         }, false);
+         testElement.className = 'changed';
+         setTimeout(function() {
+            interpolationTest.step(function() {
+               var style = getComputedStyle(testElement, null);
+               assert_equals(style.backgroundPosition, '-10% 75%, 50px 90px');
+            });
+            interpolationTest.done();
+         }, 10);
+      };
+   </script>
+</head>
+<body>
+   <div id="log">Not tested (JavaScript required)</div>
+   <div id="test"></div>
+</body>
+</html>

@@ -1,0 +1,15 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <title>font-face test of woff, large file (11.3MB)</title>
+    <style type="text/css">
+      @font-face { font-family: AhemFontTest; src: url("../fonts/AhemCJKSquares.ttf") format("truetype"); }
+      @font-face { font-family: FontTest; src:  url("../fonts/uming.woff") format("woff");}  
+    </style>
+  </head>
+  <body>
+  <p>This test might take some time to load fully (11.3MB font file). You should see a text below that is similar or identical to <span style="font-family: 文鼎PL细上海宋Uni; font-size: 20px">方正超大宋體</span>.</p>
+    <div style="color:green; font: 20px FontTest, AhemFontTest;">方正超大宋體</div>
+  </body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+	<head>
+		<title>testing synthetization of bold on a  remote font with font-weight normal</title>
+		<style type="text/css">
+		        div {
+			  font-family: "FontTest";
+			  font-size: 20px;
+			}
+			p#bold {
+			  font-weight: bold;			  
+			}
+			@font-face { 
+			  font-family: "FontTest";
+			  src: url(../fonts/Vera.woff);
+			  font-weight: normal; /* needed for webkit to synthesixe bold */
+			}
+		</style>
+	</head>
+	<body>
+	    <div>
+	    <p>The line below should be bolder than this one</p>
+	    <p id=bold>Bold text</p>
+	  </div>
+	</body>
+</html>

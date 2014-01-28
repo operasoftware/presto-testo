@@ -1,0 +1,28 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+	<head>
+		<title>testing synthetization of italic and bold on a remote font with font-style and font-weight normal</title>
+		<style type="text/css">
+		        div {
+			  font-family: "FontTest";
+			  font-size: 20px;
+			}
+			p#bolditalic {
+			  font-weight: bold;			  
+			  font-style: italic;
+			}
+			@font-face { 
+			  font-family: "FontTest";
+			  src: url(../fonts/Vera.woff);
+			  font-weight: normal; /* needed for webkit to synthesixe bold */
+			  font-style: normal; /* needed for webkit to synthesixe bold */
+			}
+		</style>
+	</head>
+	<body>
+	    <div>
+	    <p>The line below should be bolder than this one, and italic</p>
+	    <p id=bolditalic>Bold italic text</p>
+	  </div>
+	</body>
+</html>

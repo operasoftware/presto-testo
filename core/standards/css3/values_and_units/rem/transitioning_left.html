@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+   <title>Transition using rem unit</title>
+   <style>
+      div {
+         width: 100px;
+         height: 100px;
+         background: blue;
+         position: relative;
+         left: 0;
+         -o-transition: 100ms;
+         -webkit-transition: 100ms;
+         transition: 100ms;
+      }
+   </style>
+   <script>
+      var timeout;
+      function callback() {
+         clearTimeout(timeout);
+         document.getElementsByTagName('p')[0].firstChild.data = 'PASS';
+         try{top.opener.rr(true);}catch(e){};
+      }
+      onload = function() {
+         var div = document.getElementsByTagName('div')[0];
+         timeout = setTimeout(function() {
+            document.getElementsByTagName('p')[0].firstChild.data = 'FAIL';
+            try{top.opener.rr(false);}catch(e){};
+         }, 1000);
+         div.addEventListener('oTransitionEnd', callback, false);
+         div.addEventListener('webkitTransitionEnd', callback, false);
+         div.addEventListener('transitionend', callback, false);
+         div.style.left = '10rem';
+      }
+   </script>
+</head>
+<body>
+   <p>Result should arrive within 1 second (JavaScript required)</p>
+   <div></div>
+</body>
+</html>

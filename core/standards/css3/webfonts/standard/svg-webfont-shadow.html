@@ -1,0 +1,25 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<html>
+ <head>
+  <title>SVG web fonts - blur</title>
+  <style type="text/css">
+    @font-face {
+    font-family: svg-podd;
+    src: url(../fonts/CaptainPodd.svg#podd) format("svg"); 
+    }      
+    .podd-shadow{
+    font-family: "svg-podd";
+    color: #000000;
+    text-shadow: #ccc 5px 5px 3px;
+    font-size: 3em;
+    }
+  </style>
+ </head>
+ <body>
+  <p>PASS if the following text has text-shadow applied to the SVG webfont similar to the reference graphic:</p>
+  <div class="podd-shadow">do you know the muffin man?</div>
+  <p>Reference graphic:</p>
+  <img src="img/1.png" />
+  </table>
+ </body>
+</html>
