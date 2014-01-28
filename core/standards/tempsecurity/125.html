@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head><title> new Object methods and window object with other origin: getPrototypeOf() </title>
+<script src="/resources/jsframework.js"></script>
+</head>
+<body>
+	<iframe src="http://web1.testsuites.oslo.opera.com/generic/onload.htm" ></iframe>
+	<iframe src="http://web1.testsuites.oslo.opera.com/generic/check_pass_after_delay.htm"></iframe>
+<script>
+
+test(function wrapper(){ /* This is mainly just to make the test framework run the reporting after all the tests below. Odd hack.. */
+	if( ! Object.getPrototypeOf ){
+		test(function unsupported(){ assertTrue(true, 'unsupported functionality has no security problems, we assume'); }, 'none'); // this is just to report something to SPARTAN
+		return;
+	}
+	
+	/* we are apparently not clever if we throw an exception - other significant implementations do not */
+	test( function getPrototypeOf_other_origin_dont_throw(){
+		var win=document.getElementsByTagName('iframe')[0].contentWindow;
+		var exceptionOnInvocation=false;
+		try{
+			var result = Object.getPrototypeOf(win);
+		}catch(e){
+			exceptionOnInvocation=e;
+		}
+		assertTrue( exceptionOnInvocation===false, 'should not throw when invoked' );
+	}, 'none');
+	/* what is returned should be either undefined or at least safe from prying eyes.. */
+	test( function getPrototypeOf_other_origin_returns_undefined_or_protected_obj(){
+		var win=document.getElementsByTagName('iframe')[0].contentWindow;
+		var result = Object.getPrototypeOf(win);
+		// different security strategies.. in Chrome:
+		var isUndefined = result === undefined;
+		// in Firefox: 
+		var isObject = typeof result === 'object';
+		var throwsOnPropRead=false;
+		if(isObject){
+			try{
+				var str=result.location.href;
+			}catch(e){
+				throwsOnPropRead = true;
+			}
+		}
+		assertTrue( isUndefined || (isObject && throwsOnPropRead ), 'should return undefined or protected object when invoked' );
+	}, 'none');
+	/* just to combine two shiny new things.. */
+	test( function getPrototypeOf_other_origin_and_create(){
+		var win=document.getElementsByTagName('iframe')[0].contentWindow;
+		var result = Object.getPrototypeOf(win), obj;
+		if( typeof result !== 'undefined' ) /* hi "not WebKit"... */obj=Object.create( result );
+		// different security strategies.. in Chrome:
+		var isUndefined = obj === undefined;
+		// in Firefox: 
+		var isObject = typeof obj === 'object';
+		var throwsOnPropRead=false;
+		if(isObject){
+			try{
+				var doc=obj.document;
+			}catch(e){
+				throwsOnPropRead = true;
+			}
+		}
+		/* the current Opera implementation has an entirely empty (?) object being created, with obj.document being undefined and not throwing on access. I'm not sure if that should happen, given that this is a security policy nobody else has.. I'll leave the two next tests failing until we've discussed this.  */
+		assertTrue( isUndefined || (isObject && throwsOnPropRead ), 'create with other global object\'s prototype ' );
+	}, 'none');
+	/* iterating should throw (if what getPrototypeOf() returns is indeed something from a different origin) */
+	test( function getPrototypeOf_other_origin_and_iterate(){
+		var win=document.getElementsByTagName('iframe')[0].contentWindow;
+		var result = Object.getPrototypeOf(win), ar=[], exceptionOnIteration=false;
+		if( typeof result !== 'undefined' ) /* hi "not WebKit"... */{
+			try{
+				for( var name in result)ar.push( name );
+			}catch(e){
+				exceptionOnIteration=true;
+			}
+		}else{
+			// different security strategies.. in Chrome:
+			var isUndefined = result === undefined;
+		}
+		assertTrue( isUndefined || exceptionOnIteration, 'for..in iterating over other origin global object\'s prototype - got: ['+ar+']' );
+	}, 'none');
+	/* Setting stuff on different origin's prototype is basically code injection, should be disallowed */
+	test( function getPrototypeOf_other_origin_set_simple_property(){
+		var win=document.getElementsByTagName('iframe')[1].contentWindow;
+		var result = Object.getPrototypeOf(win), ar=[], exceptionOnPropWrite=false;
+		if( typeof result !== 'undefined' ) /* hi "not WebKit"... */{
+			try{
+				result.failed=true;
+			}catch(e){
+				exceptionOnPropWrite=true;
+			}
+		}else{
+			// different security strategies.. in Chrome:
+			var isUndefined = result === undefined;
+		}
+		assertTrue( isUndefined || exceptionOnPropWrite, 'setting property on other origin global object\'s prototype should fail' );
+	}, 'none');
+	/* Defining getters should of course not be allowed either */
+	test( function getPrototypeOf_other_origin_define_getter(){
+		var win=document.getElementsByTagName('iframe')[1].contentWindow;
+		var result = Object.getPrototypeOf(win), ar=[], exceptionOnPropWrite=false;
+		if( typeof result !== 'undefined' ) /* hi "not WebKit"... */{
+			try{
+				result.__defineGetter__('failed', function(){return true;});
+			}catch(e){
+				exceptionOnPropWrite=true;
+			}
+		}else{
+			// different security strategies.. in Chrome:
+			var isUndefined = result === undefined;
+		}
+		assertTrue( isUndefined || exceptionOnPropWrite, 'defining getter on other origin global object\'s prototype should fail' );
+	}, 'none');
+	/* Neither setters..*/
+	test( function getPrototypeOf_other_origin_define_setter(){
+		var win=document.getElementsByTagName('iframe')[1].contentWindow;
+		var result = Object.getPrototypeOf(win), ar=[], exceptionOnPropWrite=false;
+		if( typeof result !== 'undefined' ) /* hi "not WebKit"... */{
+			try{
+				result.__defineSetter__('foo', function(){return true;});
+			}catch(e){
+				exceptionOnPropWrite=true;
+			}
+		}else{
+			// different security strategies.. in Chrome:
+			var isUndefined = result === undefined;
+		}
+		assertTrue( isUndefined || exceptionOnPropWrite, 'defining setter on other origin global object\'s prototype should fail' );
+	}, 'none');
+	/* Neither defineProperty()..*/
+	test( function getPrototypeOf_other_origin_defineProperty(){
+		var win=document.getElementsByTagName('iframe')[1].contentWindow;
+		var result = Object.getPrototypeOf(win), ar=[], exceptionOnPropWrite=false;
+		if( typeof result !== 'undefined' ) /* hi "not WebKit"... */{
+			try{
+				Object.defineProperty(result, 'failed', { value: true, writable: true, enumerable: true, configurable: true } );
+			}catch(e){
+				exceptionOnPropWrite=true;
+			}
+		}else{
+			// different security strategies.. in Chrome:
+			var isUndefined = result === undefined;
+		}
+		assertTrue( isUndefined || exceptionOnPropWrite, 'defining property on other origin global object\'s prototype with Object.defineProperty() should fail' );
+	}, 'none');
+	/* what about calling generic methods? */
+	test( function getPrototypeOf_other_origin_document_and_toString(){
+		var doc=document.getElementsByTagName('iframe')[0].contentDocument;
+		if(doc)var result = Object.getPrototypeOf(doc), exceptionOnStringify=false;
+		if( typeof result !== 'undefined' ) /* hi "not WebKit"... */{
+			try{
+				var str = result.toString()
+			}catch(e){
+				exceptionOnStringify=true;
+			}
+		}else{
+			// different security strategies.. in Chrome:
+			var isUndefined = result === undefined;
+		}
+		assertTrue( isUndefined || exceptionOnStringify, 'stringifying other origin global object\'s prototype - got: "'+str+'"' );
+	}, 'none');
+	/* rewriting a method on some foreign origin prototype is certainly code injection.. */
+	test( function getPrototypeOf_other_origin_document_rewrite_methods(){
+		var doc=document.getElementsByTagName('iframe')[0].contentDocument;
+		if(doc)var result = Object.getPrototypeOf(doc), exceptionOnPropWrite=false;
+		if( typeof result !== 'undefined' ) /* hi "not WebKit"... */{
+			try{
+				result.getElementsByTagName = function(){}
+			}catch(e){
+				exceptionOnPropWrite=true;
+			}
+		}else{
+			// different security strategies.. in Chrome:
+			var isUndefined = result === undefined;
+		}
+		/* (Opera fails for not throwing, though actually it looks like this is not exploitable?! Not sure why.) */
+		assertTrue( isUndefined || exceptionOnPropWrite, 'setting property on other origin document object\'s prototype does not throw' );
+	}, 'none');
+/* some tests require a callback from check_pass_after_delay.html with pass/fail. Callback happens 500ms after load event inside IFRAME */
+	test(function set_on_prototype_not_successful(e){
+		var passed = e.data==='PASS';
+		assertTrue( passed, 'IFRAME document from other origin reported failure through postMessage(), something was injected' );
+	}, window, 'message' );
+
+}, document.getElementsByTagName('iframe')[1],  'load');
+
+
+</script></body>
+</html>

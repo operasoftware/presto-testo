@@ -1,0 +1,109 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html lang="en-us">
+<head>
+<title>Unicode for Normalization</title>
+<meta http-equiv=Content-Type content="text/html; charset=utf-8">
+<meta content="Stefan Probst" name=author>
+<meta content="" name=description>
+<meta content="" name=keywords>
+<meta http-equiv="Content-Language" content="en-us">
+</head>
+
+<h4>Unicode Normalization for Vietnam</h4>
+
+<em> by Stefan Probst and James Do (http://www.isoc-vn.org)</em>
+
+<p> PASS if all characters in Vietnamese word "Viet Nam" are rendered correctly. </p>
+
+<p><strong>A) Unicode Characters outside the ASCII table<br>
+  are encoded using "Numerical Character References" (NCR)</strong></p>
+<table border = 0>
+  <tr> 
+    <td colspan=2><br>
+      1) Fully Precomposed:<br>
+      Unicode Normalization Form C ("NFC"):</td>
+  </tr>
+  <tr> 
+    <td>Vi&#x1EC7;t Nam: Vi<font color="red">&amp;#x1EC7;</font>t Nam</td>
+    <td><font size ="+2">Vi&#x1EC7;t Nam</font></td>
+  </tr>
+  <tr> 
+    <td colspan=2><br>
+      2) "VN-Combining", i.e. characters pre-composed, tone marks combining<br>
+      Note: There is no international standard for this behaviour:</td>
+  </tr>
+  <tr> 
+    <td>Vi&#x00EA; &nbsp;&#x0323;t Nam: Vi<font color="red">&amp;#x00EA;&amp;#x0323;</font>t 
+      Nam</td>
+    <td><font size ="+2">Vi&#x00EA;&#x0323;t Nam</font></td>
+  </tr>
+  <tr> 
+    <td colspan=2><br>
+      3) "VN-Canonical", i.e. only combining characters, tone marks sorted last<br>
+      Note: There is no international standard for this order:</td>
+  </tr>
+  <tr> 
+    <td>Vie ^ &nbsp;&#x0323;t Nam: Vi<font color="red">e&amp;#x0302;&amp;#x0323;</font>t 
+      Nam</td>
+    <td><font size ="+2">Vie&#x0302;&#x0323;t Nam</font></td>
+  </tr>
+  <tr> 
+    <td colspan=2><br>
+      4) Only combining characters, sorted by canonical order:<br>
+      Unicode Normalization Form D ("NFD"):</td>
+  </tr>
+  <tr> 
+    <td>Vie &nbsp;&#x0323;^t Nam: Vi<font color="red">e&amp;#x0323;&amp;#x0302;</font>t 
+      Nam</td>
+    <td><font size ="+2">Vie&#x0323;&#x0302;t Nam</font></td>
+  </tr>
+</table>
+<p><strong>B) Unicode Characters outside the ASCII table<br>
+  are encoded using UTF-8 format</strong></p>
+<table border=0>
+  <tbody> 
+  <tr> 
+    <td colSpan=2><br>
+      1) Fully Precomposed:<br>
+      Unicode Normalization Form C ("NFC"):</td>
+  </tr>
+  <tr> 
+    <td>Việt Nam: Vi<font color=red>&#xE1;&#xBB;&#x87;</font>t Nam</td>
+    <td><font size=+2>Việt Nam</font></td>
+  </tr>
+  <tr> 
+    <td colSpan=2><br>
+      2) "VN-Combining", i.e. characters pre-composed, tone marks combining<br>
+      Note: There is no international standard for this behaviour:</td>
+  </tr>
+  <tr> 
+    <td>Viê &nbsp;̣t Nam: Vi<font color=red>&#xC3;&#xAA;&#xCC;&#xA3;</font>t 
+      Nam</td>
+    <td><font size=+2>Việt Nam</font></td>
+  </tr>
+  <tr> 
+    <td colSpan=2><br>
+      3) "VN-Canonical", i.e. only combining characters, tone marks sorted last<br>
+      Note: There is no international standard for this order:</td>
+  </tr>
+  <tr> 
+    <td>Vie ^ &nbsp;̣t Nam: Vi<font color=red>e&#xCC;&#x82;&#xCC;&#xA3;</font>t 
+      Nam</td>
+    <td><font size=+2>Việt Nam</font></td>
+  </tr>
+  <tr> 
+    <td colSpan=2><br>
+      4) Only combining characters, sorted by canonical order:<br>
+      Unicode Normalization Form D ("NFD"):</td>
+  </tr>
+  <tr> 
+    <td>Vie &nbsp;̣^t Nam: Vi<font color=red>e&#xCC;&#xA3;&#xCC;&#x82;</font>t 
+      Nam</td>
+    <td><font size=+2>Việt Nam</font></td>
+  </tr>
+  </tbody> 
+</table>
+
+</body>
+</html>
+

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<title>timer popup test</title>
+<link rel="stylesheet" href="/resources/testharness.css"/>
+<script src="/resources/testharness.js"></script>
+<script src="/resources/testharnessreport.js"></script>
+<script>
+	(function ()
+	 {
+		 var at  = async_test("automatic window.open from setTimeout 5 ms");
+		 var count = 0;
+		 setTimeout(function ()
+					{
+						var winh = window.open ("data:text/html,<p>FAIL, should not open if popup blocking is enabled.</p>");
+						at.step( function ()
+								{
+									assert_equals(String(winh), "[object Window]", "Handle to the opened window is null or a window?." );
+								});
+						at.done();
+					}, 5);
+	 })();
+	(function ()
+	 {
+		 var at  = async_test("automatic window.open from setTimeout 300ms");
+		 var count = 0;
+		 setTimeout(function ()
+					{
+						var winh = window.open ("data:text/html,<p>FAIL, should not open if popup blocking is enabled.</p>");
+						at.step( function ()
+								{
+									assert_equals(String(winh), "[object Window]", "Handle to the opened window is null or a window?." );
+								});
+						at.done();
+					}, 300);
+	 })();
+</script>
+<div id="log"></div>
+<div id="manual">

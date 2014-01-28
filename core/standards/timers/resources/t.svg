@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<script type="text/ecmascript">
+		<![CDATA[
+		if ( parent )
+		{
+			parent.atsvg1.step(function () {setTimeout(function () { parent.atsvg1.done(); }, 20);});
+		}
+		]]>
+    </script>
+    <text id="rect" y="45" />
+</svg>

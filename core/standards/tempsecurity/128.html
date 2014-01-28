@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head><title> new Object methods and window object with other origin: defineProperty() and defineProperties() </title>
+<script src="/resources/testharness.js"></script>
+</head>
+<body>
+	<iframe src="http://web1.testsuites.oslo.opera.com/generic/check_pass_after_delay.htm" onload="wrapper()"></iframe>
+	<p id="log"></p>
+	<textarea onchange="document.getElementsByTagName('pre')[0].textContent = eval(this.value)" style="width: 100%; height: 300px"></textarea>
+<pre></pre>
+
+<script>
+
+function wrapper(){
+	if( !  ( Object.defineProperty && Object.defineProperties ) ){
+		test(function unsupported(){ assert_true(true); }, 'unsupported functionality has no security problems, we assume' ); // this is just to report something to SPARTAN
+		return;
+	}
+	
+	/* some tests require a callback from check_pass_after_delay.html with pass/fail. Callback happens 500ms after load event inside IFRAME */
+	var iframe_var_injection_test =  async_test("cross-frame check_pass_after_delay result")
+	window.addEventListener('message',iframe_var_injection_test.step_func( function(e){
+		assert_true(e.data==='PASS', 'IFRAME document from other origin reported failure through postMessage(), something was injected'); 
+		iframe_var_injection_test.done();
+	}), false);
+
+	/* cross-domain tests */
+	
+	test( function(){
+		var exceptionOnInvocation=false;
+		var win = document.getElementsByTagName('iframe')[0].contentWindow;
+		var prop_desc={value: false, writeable: true, configurable: true, enumerable: true};
+		try{
+			Object.defineProperties( win, {'failed': prop_desc, 'failed2': prop_desc } ); 
+		}catch(e){
+			exceptionOnInvocation=e;
+		}
+		assert_true( exceptionOnInvocation!==false);
+	}, 'should  throw when trying to insert properties cross-origin'); 
+	test( function(){
+		var exceptionOnInvocation=false;
+		var win = document.getElementsByTagName('iframe')[0].contentWindow;
+		var prop_desc={value: false, writeable: true, configurable: true, enumerable: true};
+		try{
+			Object.defineProperty( win, 'failed', prop_desc ); 
+		}catch(e){
+			exceptionOnInvocation=e;
+		}
+		assert_true( exceptionOnInvocation!==false);
+	}, 'should  throw when trying to insert single property cross-origin'); 
+	/* empty desc is no-op on same-origin, but the origin-check kicks in before the "is empty" check in all implementations */
+	test( function(){
+		var exceptionOnInvocation=false;
+		var win = document.getElementsByTagName('iframe')[0].contentWindow;
+		try{
+			Object.defineProperty( win, 'failed', {} ); 
+		}catch(e){
+			exceptionOnInvocation=e;
+		}
+		assert_true( exceptionOnInvocation!==false);
+	}, 'should  throw when trying to insert single property cross-origin even if desc is empty'); 
+
+	/* Same origin tests */
+	/* We want to make sure the non-configurable properties can't be rewritten: window.window, window.location, window.top, window.location.href
+		This is not a cross-origin-specific concern
+	*/
+	var prop_desc = { value: 'failed', enumerable: true, configurable: false };
+	var win = window; // cache reference to use when window.window gets overwritten..
+	var url = location.href;
+	test( function(){
+		var exceptionOnInvocation=false;
+		try{
+			Object.defineProperty( window.location, 'href', prop_desc ); 
+		}catch(e){
+			exceptionOnInvocation=e;
+		}
+		assert_true( exceptionOnInvocation!==false || ''+location.href===url, 'got '+window.location.href);
+	}, 'should  throw or silently fail when trying to overwrite protected property location.href'); 
+	
+	test( function(){
+		var exceptionOnInvocation=false;
+		try{
+			Object.defineProperty( window, 'location', prop_desc ); 
+		}catch(e){
+			exceptionOnInvocation=e;
+		}
+		assert_true( exceptionOnInvocation!==false || ''+location===url, 'got '+window.location);
+	}, 'should  throw or silently fail when trying to overwrite protected property location'); 
+	
+	/* corollary: per the algorithm, we should ignore without throwing if the desc argument is actually empty */
+	test( function(){
+		var exceptionOnInvocation=false;
+		try{
+			Object.defineProperty( window, 'location', {} ); 
+		}catch(e){
+			exceptionOnInvocation=e;
+		}
+		assert_true( exceptionOnInvocation===false, 'got '+window.location);
+	}, 'should not throw when trying to overwrite protected property location with empty desc'); 
+	
+	test( function(){
+		var exceptionOnInvocation=false;
+		try{
+			Object.defineProperty( win, 'top', prop_desc ); 
+		}catch(e){
+			exceptionOnInvocation=e;
+		}
+		assert_true( exceptionOnInvocation!==false, 'got '+win.top);
+	}, 'should  throw when trying to overwrite protected property top'); 
+	
+	test( function(){
+		var exceptionOnInvocation=false;
+		try{
+			Object.defineProperty( win, 'window', prop_desc ); 
+		}catch(e){
+			exceptionOnInvocation=e;
+		}
+		assert_true( exceptionOnInvocation!==false, 'got '+win.window);
+	}, 'should  throw when trying to overwrite protected property window'); 
+	
+	test( function(){
+		var exceptionOnInvocation=false;
+		try{
+			Object.defineProperties( win, {'window': prop_desc, 'location': prop_desc, 'top': prop_desc } ); 
+		}catch(e){
+			exceptionOnInvocation=e;
+		}
+		assert_true( exceptionOnInvocation!==false, 'got '+win.window);
+	}, 'should  throw when trying to overwrite protected properties window, location, top'); 
+	
+
+};
+
+
+</script></body>
+</html>

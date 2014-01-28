@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head><title> Object.create() and window object with other origin </title>
+<script src="/resources/jsframework.js"></script>
+</head>
+<body>
+	<iframe src="http://web1.testsuites.oslo.opera.com/testbed/generic/onload.htm" width="10" height="10" onload="run_all_tests()"></iframe>
+<script>
+test(function wrapper(){ /* This is just to make the test framework run the reporting after all the tests below. Odd hack.. */
+
+	if( ! Object.create ){
+		test(function unsupported(){ assertTrue(true, 'unsupported functionality has no security problems, we assume'); }, 'none'); // this is just to report something to SPARTAN
+		return;
+	}
+	var obj;
+	test(function object_create_defined(){
+		assertDefined( Object.create, 'Object.create not supported' );
+		}, 'none');
+		
+	test(function object_create_other_origin_dont_throw(){
+		/*
+		*	Now, as ever so often with these tests, it's obvious what is wrong (getting cross-domain access to something),
+		* but it's neither specified nor obvious what the right behaviour is...
+		* throwing  is one option, and is safe but unpopular.. so we should not..
+		*/
+		var implementationThrowsException=false;
+		try{
+			obj = Object.create( document.getElementsByTagName('iframe')[0].contentWindow );
+		}catch(e){ 
+			implementationThrowsException=true;
+		}
+		assertTrue( implementationThrowsException===false, 'Exception should not be thrown when passing foreign object to Object.create() (simply because most implementations do not throw per 2001-07!)' );
+	}, 'none');
+
+	test(function object_create_other_origin_prototype_protected_or_undef(){
+		var prototypeIsProtected=false;
+		/* some (Firefox) make prototype so unavailable that even a comparison will throw.. */
+		try{
+			obj.prototype != {};
+		}catch(e){
+			prototypeIsProtected=true;
+		}
+		/* some (WebKit) detect the cross-origin access and simply set prototype to undefined */
+		assertTrue( prototypeIsProtected || obj.prototype === undefined , 'prototype is protected or undefined' );
+	}, 'none');
+	test( function object_create_other_origin_property_lookup_throws(){
+		/* however, no matter how it is done, trying to access a property of a property across origins via the prototype chain should cause an exception: */
+		assertThrows(
+			function(){
+				return obj.document.URL;
+			}, [], Error, null, 'passing other origin window object to Object.create(): looking up properties on prototype chain' );
+	}, 'none');
+	/* do weirder stuff.. what would happen if the IFRAME was removed? */
+	var ifr=document.getElementsByTagName('iframe')[0];
+	var win= ifr.contentWindow;
+	ifr.parentNode.removeChild(ifr);
+	test( function access_property_after_removing_iframe (){
+		assertThrows( function(){win.Object.create({})}, [], Error, null, 'accessing property on window after removing IFRAME should throw' );
+	}, 'none' );
+}, document.getElementsByTagName('iframe')[0],  'load');
+</script>
+</body>
+</html>

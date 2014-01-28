@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head><title> new Object methods and OBJECT element loading Flash contents </title>
+<script src="/resources/testharness.js"></script>
+</head>
+<body>
+	<object type="application/x-shockwave-flash" data="/resources/objects/flash.swf" width="50" height="50">
+		<p>Flash plugin must be enabled for this test!</p>
+	</object>
+	<p>
+	<p id="log"></p>
+
+<script>
+var attempts=0;
+function wrapper(){
+	if( !  ( Object.create ) ){
+		test(function unsupported(){ assert_true(true); }, 'unsupported functionality has no security problems, we assume' ); // this is just to report something to SPARTAN
+		return;
+	}
+
+	var elm=document.getElementsByTagName('object')[0];
+	if( ! elm.PercentLoaded ){
+		attempts++;
+		if(attempts<10){
+			return setTimeout( wrapper, 100 );
+		}else{ // really, really slow Flash day?
+			test( function(){ assert_true(false, 'Flash did not load'); }, 'Flash not loaded' );
+		}
+	}
+
+	test( function(){ 
+		var result = Object.getPrototypeOf(elm);
+		assert_true( result === HTMLObjectElement.prototype );
+	}, 'getPrototypeOf called on object element' );
+
+	test( function(){ 
+		var result = Object.getOwnPropertyDescriptor(elm, 'tagName');
+		assert_true( ('enumerable' in result) && ('configurable' in result) );
+	}, 'getOwnPropertyDescriptor called on object element' );
+	
+	test( function(){ 
+		var result = Object.getOwnPropertyDescriptor(elm, 'PercentLoaded');
+		assert_true( ('enumerable' in result) && ('configurable' in result) );
+	}, 'getOwnPropertyDescriptor used on plugin-defined method' );
+
+	test( function(){ 
+		var result = Object.getOwnPropertyNames(elm);
+		/* it would be interesting to assert that  PercentLoaded et al are included in getOwnPropertyNames() output*/
+		/* perhaps they will be later, for now I consider it  */
+		assert_true( result.length >0 );
+	}, 'getOwnPropertyNames called on OBJECT element loading Flash content' );
+
+	test( function(){ 
+		var result = Object.keys(elm);
+		assert_true( result.length >0 );
+	}, 'keys called on OBJECT element loading Flash content' );
+
+	test( function(){ 
+		var result = Object.create(elm);
+		assert_true( result.tagName==='OBJECT' );
+	}, 'create called on OBJECT element loading Flash content' );
+
+	test( function(){ 
+		var result = Object.defineProperty(elm, 'foo', { value: 'bar', enumerable: true, writable: true, configurable: true });
+		assert_true( elm.foo==='bar' );
+	}, 'defineProperty called on OBJECT element loading Flash content' );
+
+	test( function(){ 
+		var result = Object.defineProperties(elm, { 'multifoo': { value: 'bar', enumerable: true, writable: true, configurable: true } });
+		assert_true( result.multifoo=='bar' );
+	}, 'defineProperties called on OBJECT element loading Flash content' );
+
+	test( function(){ 
+		var result = Object.seal(elm);
+		result = Object.isSealed(elm);
+		assert_true( result||true ); /* we don't seriously test if these six methods work on element objects (yet) */
+	}, 'seal / isSealed called on OBJECT element loading Flash content' );
+
+	test( function(){ 
+		var result = Object.freeze(elm);
+		result = Object.isFrozen(elm);
+		assert_true( result||true );
+	}, 'freeze / isFrozen called on OBJECT element loading Flash content' );
+
+	test( function(){ 
+		var result = Object.preventExtensions(elm);
+		result = Object.isExtensible(elm);
+		assert_true( result||true );
+	}, 'preventExtensions / isExtensible called on OBJECT element loading Flash content' );
+	
+	
+	/* Now we also call the Object.* methods on something defined by the plugin */
+	test( function(){ 
+		var result = Object.getPrototypeOf(elm.PercentLoaded);
+		assert_true( result === Function.prototype );
+	}, 'getPrototypeOf called on method exposed by Flash' );
+
+	test( function(){ 
+		var result = Object.getOwnPropertyDescriptor(elm.PercentLoaded, 'valueOf');
+		assert_true( elm.PercentLoaded.valueOf && result === undefined ); /* 'valueOf' is from a prototype chain lookup, not an own property */
+	}, 'getOwnPropertyDescriptor called on method exposed by Flash' );
+
+	test( function(){ 
+		var result = Object.getOwnPropertyNames(elm.PercentLoaded);
+		assert_array_equals( result, [], 'the method exposed by Flash is not expected to have any own properties' );
+	}, 'getOwnPropertyNames called on method exposed by Flash' );
+
+	test( function(){ 
+		var result = Object.keys(elm.PercentLoaded);
+		assert_array_equals( result, [], 'the method exposed by Flash is not expected to have any properties' );
+	}, 'keys called on method exposed by Flash' );
+
+	test( function(){ 
+		var result = Object.create(elm.PercentLoaded); /* an object inheriting from a function isn't necessarily useful.. */
+		var exceptionOnCall=false;
+		try{ result.call(elm); }catch(e){ exceptionOnCall=true; }
+		assert_true( result && result.call && exceptionOnCall );
+	}, 'create called on method exposed by Flash' );
+
+	test( function(){ 
+		var result = Object.defineProperty(elm.PercentLoaded, 'test', {value:'fm'});
+		assert_true( elm.PercentLoaded.test==='fm' );
+	}, 'defineProperty called on method exposed by Flash' );
+
+	test( function(){ 
+		var result = Object.defineProperties(elm.PercentLoaded, { tanabata:{ value:'sky' } } );
+		assert_true( result.tanabata==='sky' );
+	}, 'defineProperties called on method exposed by Flash' );
+
+/* the two next tests actually seem to work finel */
+	test( function(){ 
+		var result = Object.seal(elm.PercentLoaded);
+		result = Object.isSealed(elm.PercentLoaded);
+		assert_true( result );
+	}, 'isSealed called on method exposed by Flash' );
+
+	test( function(){ 
+		var result = Object.freeze(elm.PercentLoaded);
+		result = Object.isFrozen(elm.PercentLoaded);
+		assert_true( result );
+	}, 'isFrozen called on method exposed by Flash' );
+
+	test( function(){ 
+		var result = Object.preventExtensions(elm.PercentLoaded);
+		result = Object.isExtensible(elm.PercentLoaded);
+		assert_true( result||true ); /* we don't really test this either */
+	}, 'isExtensible called on method exposed by Flash' );
+
+	
+};
+
+wrapper();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<title>timer tests</title>
+<link rel="stylesheet" href="/resources/testharness.css"/>
+<script src="/resources/testharness.js"></script>
+<script src="/resources/testharnessreport.js"></script>
+<script>
+	test (function ()
+		  {
+			  assert_true("setTimeout" in window, "setTimeout in window");
+		  }, "setTimeout in global object (window)");
+	(function ()
+	 {
+		 var at = async_test("setTimeout in global object (worker)");
+		 var wk = new Worker("resources/wrkr-st.js");
+		 wk.onmessage = function (r) {at.step(function (){ assert_equals("pass", r.data);}); at.done();}
+	 })();
+	test (function ()
+		  {
+			  assert_true("setInterval" in window, "setInterval in window");
+		  }, "setInterval in global object (window)");
+	(function ()
+	 {
+		 var at = async_test("setInterval in global object (worker)");
+		 var wk = new Worker("resources/wrkr-si.js");
+		 wk.onmessage = function (r) {at.step(function (){ assert_equals("pass", r.data);}); at.done();}
+	 })();
+	test (function ()
+		  {
+			  assert_true("clearTimeout" in window, "clearTimeout in window");
+		  }, "clearTimeout in global object (window)");
+	(function ()
+	 {
+		 var at = async_test("clearTimeout in global object (worker)");
+		 var wk = new Worker("resources/wrkr-ct.js");
+		 wk.onmessage = function (r) {at.step(function (){ assert_equals("pass", r.data);}); at.done();}
+	 })();
+	test (function ()
+		  {
+			  assert_true("clearInterval" in window, "clearInterval in window");
+		  }, "clearInterval in global object (window)");
+	(function ()
+	 {
+		 var at = async_test("clearInterval in global object (worker)");
+		 var wk = new Worker("resources/wrkr-ci.js");
+		 wk.onmessage = function (r) {at.step(function (){ assert_equals("pass", r.data);}); at.done();}
+	 })();
+	test (function ()
+		  {
+			  var r = setInterval(function () {clearInterval(r);}, 7);
+			  assert_true(typeof r === "number");
+			  assert_true(r > 0, "handle for timer is greater than 0");
+		  }, "setInterval returns an ES Number");
+	test (function ()
+		  {
+			  var r = setTimeout(function () {});
+			  assert_equals(typeof r, "number");
+			  assert_true(r > 0, "handle for timer is greater than 0");
+		  }, "setTimeout returns an ES Number");
+	test (function ()
+		  {
+			  var r = setTimeout(new RegExp("function (){ assert_unreached('Fail if called.'); }"), 42);
+			  assert_true(r > 0, "handle for timer is greater than 0");
+		  }, "setTimeout called with a RegExp object");
+	(function ()
+	{
+		at8 = async_test("setTimeout called with a String");
+		at8.step(function ()
+		{
+			var r = setTimeout("(function foo (){at8.done(); /* pass if we reach here; else fail by time out */})();", 30);
+			assert_true(r > 0, "handle for timer is greater than 0, got: " + r);
+		});
+	})();
+	(function ()
+	 {
+		 atsvg1 = async_test("setTimeout in SVG document.");
+		 var svgifr = document.createElement("iframe");
+		 document.documentElement.appendChild(svgifr);
+		 svgifr.src = "resources/t.svg";
+		 setTimeout(function () {document.documentElement.removeChild(svgifr); }, 1000);
+	 })();
+	(function ()
+	 {
+		 var at  = async_test("passing arguments to method called via setTimeout");
+		 setTimeout(function (arg1, arg2, arg3)
+					{
+						at.step( function ()
+								{
+									assert_true(arg1 == 1, "Argument1 is right.");
+									assert_true(arg2 == 2, "Argument2 is right.");
+									assert_true(arg3 == 3, "Argument3 is right.");
+								});
+						at.done();
+					}, 5, 1,2,3);
+	 })();
+	(function ()
+	 {
+		 var at  = async_test("passing arguments to method called via setInterval");
+		 var count = 0;
+		 var th = setInterval(function (arg1, arg2, arg3)
+							  {
+								  count ++;
+								  if (count > 1)
+									  clearInterval(th);
+								  at.step( function ()
+										  {
+											  assert_true(arg1 == 1, "Argument1 is right.");
+											  assert_true(arg2 == 2, "Argument2 is right.");
+											  assert_true(arg3 == 3, "Argument3 is right.");
+										  });
+								  at.done();
+							  }, 5, 1,2,3);
+	 })();
+	(function ()
+	 {
+		 var at  = async_test("test that clearTimeout works");
+		 var th = setTimeout(function ()
+							  {
+									  at.step(function ()
+									  { 
+										  assert_unreached("Should not have triggered.");
+									  });
+								  }, 100);
+		 clearTimeout(th);
+		 setTimeout(function () { at.done();}, 500);
+	 })();
+	(function ()
+	 {
+		 var at  = async_test("clearInterval is synonym of clearTimeout. (Ref:  http://www.w3.org/Bugs/Public/show_bug.cgi?id=14907)");
+		 var th = setTimeout(function ()
+							  {
+									  at.step(function ()
+									  { 
+										  assert_unreached("Should not have triggered.");
+									  });
+								  }, 100);
+		 clearInterval(th);
+		 setTimeout(function () { at.done();}, 500);
+	 })();
+	(function ()
+	 {
+		 var at  = async_test("clearTimeout is synonym of clearInterval. (Ref:  http://www.w3.org/Bugs/Public/show_bug.cgi?id=14907)");
+		 var th = setInterval(function ()
+							  {
+									  at.step(function ()
+									  { 
+										  assert_unreached("Should not have triggered.");
+									  });
+								  }, 100);
+		 clearTimeout(th);
+		 setTimeout(function () { at.done();}, 500);
+	 })();
+	(function ()
+	 {
+		 var at  = async_test("test that clearInterval works");
+		 var count = 0;
+		 var th = setInterval(function ()
+							  {
+								  count ++;
+								  if (count > 2)
+								  {
+									  at.step(function ()
+									  { 
+										  assert_unreached("Should not have triggered.");
+									  });
+								  }
+								  if (count > 1)
+								  {
+									  clearInterval(th);
+									  at.step(function ()
+									  {
+										  assert_true ( true, "Should reach here.");
+										  setTimeout(function () { at.done();}, 500);
+									  });
+								  }
+							  }, 5);
+	 })();
+	(function ()
+	 {
+		 window.at1 = async_test("this object in the program passed on to setTimeout");
+		 var r = setTimeout("var doh = this; at1.step(function () {assert_equals(doh, window, \"this object is the global object.\");});at1.done();delete window.at1;", 30);
+		 assert_true(r > 0, "handle for timer is greater than 0, got: " + r);
+	 })();
+	(function ()
+	 {
+		 window.at7 = async_test("this object in the callback to setTimeout");
+		 var r = setTimeout("var doh = this; at7.step(function () {assert_equals(doh, window, \"this object is the global object.\");});at7.done();delete window.at7;", 30);
+		 assert_true(r > 0, "handle for timer is greater than 0, got: " + r);
+	 })();
+	test (function ()
+		  {
+			  try
+			  {
+				  var r = setTimeout(null, 200);
+			  }
+			  catch(e)
+			  { assert_unreached("No error thrown."); }
+		  }, "setTimeout called with null does not throw.");
+
+	test (function ()
+		  {
+			  try 
+			  {
+				  var r = setInterval(null, 100);
+			  }
+			  catch(e) { assert_unreached("No error thrown."); }
+			  clearInterval(r);
+		  }, "setInterval called with null does not throw.");
+	test (function ()
+		  {
+			  var r;
+			  try
+			  {
+				  clearTimeout();
+			  } 
+			  catch (e) { assert_unreached ( "No error thrown"); }
+		  }, "clearTimeout called with no argument");
+	test (function ()
+		  {
+			  var r;
+			  try
+			  {
+				  clearInterval();
+			  } catch (e) { r = e; }
+			  assert_true ( r === undefined, "No error thrown");
+		  }, "clearInterval called with no argument");
+
+	(function ()
+	 {
+		 window.at2 = async_test ("setTimeout triggered from a document.write");
+		 var at2ifr = document.createElement("iframe");
+		 document.documentElement.appendChild(at2ifr);
+		 at2ifr.contentDocument.write("<!DOCTYPE html><script>var r = setTimeout(function ()\
+		 {parent.at2.step(function (){ parent.assert_true( r > 0, \"Timer handle is ok.\"); });parent.at2.done();}, 100);<\/script>");
+		 setTimeout(function () {document.documentElement.removeChild(at2ifr); }, 1000);
+	 })();
+
+
+	(function ()
+	 {
+		 window.at3 = async_test ("setTimeout triggered from an iframe with data: URI as source.");
+		 var at3ifr = document.createElement("iframe");
+		 document.documentElement.appendChild(at3ifr);
+		 at3ifr.src = "data:text/html, <!DOCTYPE HTML><script>var r = setTimeout(function (){parent.at3.step(function (){ parent.at3.done(); /* pass if we reach here; else fail by time out */}); }, 100);<\/script>";
+		 setTimeout(function () { document.documentElement.removeChild(at3ifr); }, 1000);
+	 })();
+
+
+	(function ()
+	 {
+		 at4 = async_test ("document navigated away after a timer is set up.");
+		 at4ifr = document.createElement("iframe");
+		 document.documentElement.appendChild(at4ifr);
+		 at4ifr.contentWindow.onunload = function () {};
+		 at4ifr.contentDocument.write ("<!DOCTYPE HTML><script>var r = setTimeout(function () {parent.at4.step(function (){ parent.assert_unreached( \"Should not have triggered.\"); });}, 300);parent.at4ifr.contentWindow.location.href = \"about:blank\";<\/script>");
+		 setTimeout(function () { window.at4.done(); document.documentElement.removeChild(at4ifr); }, 4000);
+	 })();
+
+
+	(function ()
+	 {
+		 window.at5 = async_test ("runtime's document removed after timer set up");
+		 window.at5ifr = document.createElement("iframe");
+		 at5ifr.id = "at5ifr";
+		 document.documentElement.appendChild(at5ifr);
+		 at5ifr.contentDocument.write ("<!DOCTYPE HTML><script>var r = setTimeout(function () {parent.at5.step(function (){ parent.assert_unreached( \"Should not have triggered.\"); });}, 300);parent.at5ifr.parentNode.removeChild(parent.at5ifr); parent.at5.step(function () { parent.assert_true(parent.document.getElementById(\"at5ifr\") === null, \"Iframe removed.\");});parent.at5.done();<\/script>");
+	 })();
+
+	(function ()
+	 {
+		 at6 = async_test ("slow loading document after a timer is triggered and window started to unload.");
+		 at6ifr = document.createElement("iframe");
+		 document.documentElement.appendChild(at6ifr);
+		 at6ifr.src = "data:text/html,<!DOCTYPE HTML><script> parent.at6ifr.contentWindow.onload = function () { parent.at6ifr.contentWindow.location.href = 'http://t/core/bts/javascript/325424/delayedresponse.php';}; setTimeout(function () { },10);<\/script>";
+		 setTimeout(function () { document.documentElement.removeChild(at6ifr); at6.done();}, 4000);
+	 })();
+</script>
+<div id="log"></div>
+<div id="manual">

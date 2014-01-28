@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head><title> new Object methods and window object with other origin: freeze() / isFrozen() </title>
+<script src="/resources/testharness.js"></script>
+</head>
+<body>
+	<p id="log"></p>
+
+<script>
+function wrapper(){
+	if( !  ( Object.freeze ) ){
+		test(function unsupported(){ assert_true(true); }, 'unsupported functionality has no security problems, we assume' ); // this is just to report something to SPARTAN
+		return;
+	}
+
+	/* outside script calling freeze() on window (i.e. proxy but we're not supposed to know that) */
+	test( function(){
+		var exceptionOnInvocation=false;
+		var win = document.getElementsByTagName('iframe')[0].contentWindow;
+		try{
+			Object.freeze( win ); 
+		}catch(e){
+			exceptionOnInvocation=e;
+		}
+		assert_true( exceptionOnInvocation!==false, 'didn\'t throw');
+	}, 'should  throw when trying to freeze other origin window (proxy)'); 
+	test( function(){
+		var exceptionOnInvocation=false;
+		var win = document.getElementsByTagName('iframe')[0].contentWindow;
+		try{
+			var result = Object.isFrozen( win ); 
+		}catch(e){
+			exceptionOnInvocation=e;
+		}
+		assert_true( exceptionOnInvocation!==false, ' (isFrozen() returned '+result+')');
+	}, 'should  throw when trying to check if other origin window (proxy) is frozen'); 
+	
+	/* We want to check that we can not read the isFrozen() status set from inside a frame 
+	* (For sure, this is just a more fancy way to repeat the previous test - the point is more to 
+	* see if Chrome really leaks data..
+	*/
+	var iframe_interaction_test_1 =  async_test("frame freezing its inner window object - frozenness should not be visible to other origin script");
+	window.addEventListener('message',iframe_interaction_test_1.step_func( function tmp(e){
+		if( e.source !== document.getElementsByTagName('iframe')[0].contentWindow  )return ; /* sorry Firefox, if you throw here - tough, I need this check */
+		var exceptionOnInvocation=false;
+		var win = document.getElementsByTagName('iframe')[0].contentWindow;
+		try{
+			var result = Object.isFrozen( win ); 
+		}catch(e){
+			exceptionOnInvocation=e;
+		}
+		/* Gecko would also pass this test if we allowed result===false being a pass condition.. */
+		assert_true( exceptionOnInvocation!==false, ' (isFrozen() returned '+result+')');
+		iframe_interaction_test_1.done();
+		window.removeEventListener('message', tmp, false);
+	}), false);
+	document.getElementsByTagName('iframe')[0].contentWindow.postMessage('Object.freeze(this); Object.isFrozen(this);true;', '*');/* throw in a temporary true to avoid a confusing 'failed' message in iframe */
+	
+	/* a naughty other-origin frame attempting to freeze() its top window's global should also fail */
+	var iframe_interaction_test_2 =  async_test("other origin frame trying to freeze its top window's global object should fail");
+	window.addEventListener('message',iframe_interaction_test_2.step_func( function tmp(e){
+		if( e.source !== document.getElementsByTagName('iframe')[1].contentWindow  )return ; /* sorry Firefox, if you throw here - tough, I need this check */
+		assert_true( e.data === true, 'exception was not thrown on freeze(top)? '+e.data );
+		iframe_interaction_test_2.done();
+		window.removeEventListener('message', tmp, false);
+	}), false);
+	document.getElementsByTagName('iframe')[1].contentWindow.postMessage('var res=false; try{Object.freeze(top);}catch(e){res=true;} res;', '*');
+	
+	/* while the outer page's script must not be allowed to do freeze(frames[1]), the inner frame's script should be allowed to do so */
+		/*removed test - not security-specific */
+/*	var iframe_interaction_test_3 =  async_test("frame trying to freeze its own global object through top.frames should succeed");
+	window.addEventListener('message',iframe_interaction_test_3.step_func( function tmp(e){
+		if( e.source !== document.getElementsByTagName('iframe')[2].contentWindow  )return ; // sorry Firefox, if you throw here - tough, I need this check 
+		assert_true( e.data === true, 'inner window object was not really frozen? isFrozen(window) running in window reported '+e.data );
+		iframe_interaction_test_3.done();
+		window.removeEventListener('message', tmp, false);
+	}), false);
+	document.getElementsByTagName('iframe')[2].contentWindow.postMessage('Object.freeze(top.frames[1]); Object.isFrozen(window);', '*');*/
+
+};
+
+
+</script>
+	<iframe src="http://web1.testsuites.oslo.opera.com/generic/messageeval.html"></iframe>
+	<iframe src="http://web1.testsuites.oslo.opera.com/generic/messageeval.html"></iframe>
+	<iframe src="http://web1.testsuites.oslo.opera.com/generic/messageeval.html" onload="wrapper()"></iframe>
+
+</body>
+</html>

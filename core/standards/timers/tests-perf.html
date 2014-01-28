@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<title>timer performance tests</title>
+<script>
+	function log (arg)
+	{
+		document.getElementById('log').textContent +=  arg;
+	}
+	onload = function run()
+	{
+		var count = 0;
+		var start = Date.now();
+		var end = 0;
+		var avg = 0;
+		var th = setInterval(function ()
+							 {
+								 count++;
+								 if (count > 500)
+								 {
+									 end = Date.now();
+									 avg = Math.abs((end - start) - 500 * 4);
+									 log (avg);
+									 clearInterval(th);
+									 try {top.opener.rr(Math.floor(10000 / avg));} catch (e) {}
+								 }
+							 }, 4);
+		var start = Date.now();
+	}
+</script>
+<p>A value close to 0 is better.</p>
+<div id=log></div>

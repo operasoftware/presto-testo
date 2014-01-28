@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<title>user initiated timer tests</title>
+<div id="content">
+    <h1>Timers and Pop-up blocking</h1>
+    <p>Note:1. <em>Short delay - < 1000ms; Long delay - > 999ms</em> </p>
+    <ol>
+        <li>
+        <script>setTimeout(window.open('data:text/plain, onload popup - should be blocked'), 20);</script>If a window was opened when this page loaded test 1 failed.
+        </li>
+        <li>window.open from the click handler. Only one popup window should be allowed.<button id="test">Run test</button></li>
+        <li>window.open from timer of short delay (< 1000ms) generated from click. One popup be allowed.<button id="test1a">Run test</button></li>
+        <li>window.open from click and timer generated from click - long delay. No popup is allowed.<button id="test1b">Run test</button></li>
+        <li>window.open from click and repeating timer with a short delay, generated from the click. One popup is allowed.<button id="test2">Run test</button></li>
+        <li>window.open from document opened by a repeating timer - short delay. Only one popup allowed.<button id="test3a">Run test</button></li>
+        <li>window.open from document opened by a repeating timer. Only one popup is allowed - the one that is opened on running the test.<button id="test3b">Run test.</button></li>
+        <li><p>Timer and fast navigation : for the following set of tests -</p>
+        <ul>
+            <li>Refresh this page and then click the button to run a test.</li>
+            <li>While the timer is ticking, click <a href="?foobar">this link</a> and then go back to the previous page (default settings are enough or you need to have fast navigation enabled).</li>
+            <li>The count to the end of the text in the button should keep on increasing whenever you are on this page.</li>
+            <li>On reloading the page all timers should stop.</li>
+        </ul>
+<ol>
+    <li>On fast navigation a setInterval (with a small delay) already setup should resume. <button id="test4a">Run test</button></li>
+    <li>On fast navigation a setTimeout (with a long delay) should resume<button id="test4b">Run test</button></li>
+    <li>On fast navigation a setTimeout with a long delay should resume.<button id="test4c">Run test</button></li>
+    <li>On fast navigation setInterval with a long delay should resume<button id="test4d">Run test</button></li>
+    </li>
+</ol>
+    </li>
+    <li>setTimeout is cleared by a reload of window. On running the test, the increasing numbers should be reset after 10.<button id="test5a">Run test</button></li>
+    <li>setTimeout from a user initiated click, clicks via script on another button in a short delay, to open a popup. Only one window should open.<button id="test6a">Run test</button></li>
+    <li>setTimeout from a user initiated click, clicks via script on another button in a long delay, to open a popup. No window should open.<button id="test6b">Run test</button></li>
+</ol>
+<script>
+    document.getElementById("test").addEventListener("click", function ()
+                                                     {
+                                                         window.open('data:text/plain, from click 1 - should be allowed ');
+                                                         window.open('data:text/plain, from click 2 - should be blocked');
+                                                     }, false);
+    document.getElementById("test1a").addEventListener("click", function ()
+                                                       {
+                                                           setTimeout(function ()
+                                                                      {
+                                                                          window.open('data:text/plain, from click - setTimeout 1 - should be allowed');
+                                                                          window.open('data:text/plain, from click - setTimeout 2 - should be blocked.');
+                                                                      }, 20);
+                                                       }, false);
+
+    document.getElementById("test1b").addEventListener("click", function ()
+                                                       {
+                                                           setTimeout(function ()
+                                                                      {
+                                                                          setTimeout(function ()
+                                                                          {
+                                                                                         window.open('data:text/plain, from click - setTimeout 2 - setTimeout 1 - should be blocked.');
+                                                                                     }, 500);
+                                                                          window.open('data:text/plain, from click - setTimeout 1 - should be blocked');
+                                                                      }, 5000);
+                                                       }, false);
+    document.getElementById("test2").addEventListener("click", function ()
+                                                      {
+                                                          var ih = setTimeout(function ()
+                                                                              {
+                                                                                  window.open('data:text/plain, from click - setTimeout - should be allowed');
+                                                                                  ih = setTimeout(function () {window.open('data:text/plain, from click - setTimeout - setTimeout - should be blocked');}, 20);
+                                                                              }, 20);
+                                                      }, false);
+    document.getElementById("test3a").addEventListener("click", function ()
+                                                       {
+                                                           var count = 0;
+                                                           var ih = setInterval(function ()
+                                                                                {
+                                                                                    count++;
+                                                                                    if (count > 2) clearInterval(ih);
+                                                                                    window.open('data:text/html, <!DOCTYPE html><script>setTimeout(function (){window.open("data:text/plain, from click -setInterval - setTimeout - should be blocked");}, 200);<\/script>from click - setInterval - allowed');
+                                                                                }, 20);
+                                                       }, false);
+    document.getElementById("test3b").addEventListener("click", function ()
+                                                       {
+                                                           var count = 0;
+                                                           var ih = setInterval(function ()
+                                                                                {
+                                                                                    count++;
+                                                                                    if (count > 2) clearInterval(ih);
+                                                                                    window.open('data:text/html, <!DOCTYPE html><script>setTimeout(function (){window.open("data:text/plain, from click -setInterval - setTimeout - should be blocked");}, 200);<\/script>from click - setInterval - allowed');
+                                                                                }, 1000);
+                                                       }, false);
+    document.getElementById("test4a").addEventListener("click", function (evt)
+                                                       {
+                                                           var count = 0;
+                                                           var ih;
+                                                           function ft ()
+                                                           {
+                                                               count++;
+                                                               if (count > 200) clearInterval(ih);
+                                                               evt.target.textContent += (',' + count);
+                                                           }
+                                                           ih = setInterval(ft, 20);
+                                                       }, false);
+    document.getElementById("test4b").addEventListener("click", function (evt)
+                                                       {
+                                                           var count = 0;
+                                                           var ih;
+                                                           function ft ()
+                                                           {
+                                                               count++;
+                                                               evt.target.textContent += (',' + count);
+                                                               if (count < 200)
+                                                                   ih = setTimeout(ft, 20);
+                                                           }
+                                                           ih = setTimeout(ft, 20);
+                                                       }, false);
+    document.getElementById("test4c").addEventListener("click", function (evt)
+                                                       {
+                                                           var count = 0;
+                                                           var ih;
+                                                           function ft ()
+                                                           {
+                                                               count++;
+                                                               evt.target.textContent += (',' + count);
+                                                               if (count < 200)
+                                                                   ih = setTimeout(ft, 20);
+                                                           }
+                                                           ih = setTimeout(ft, 1000);
+                                                       }, false);
+    document.getElementById("test4d").addEventListener("click", function (evt)
+                                                       {
+                                                           var count = 0;
+                                                           var ih = setInterval(function ()
+                                                                                {
+                                                                                    count++;
+                                                                                    if (count > 20) clearInterval(ih);
+                                                                                    evt.target.textContent += (',' + count);
+                                                                                }, 2000);
+                                                       }, false);
+    document.getElementById("test5a").addEventListener("click", function (evt)
+                                                       {
+                                                           var count = 0;
+                                                           var ih = setTimeout(function ft ()
+                                                                               {
+                                                                                   count++;
+                                                                                   evt.target.textContent += (',' + count);
+                                                                                   if (count > 10)
+                                                                                       window.location.reload();
+                                                                                   else
+                                                                                       setTimeout(ft, 200);
+                                                                               }, 200);
+                                                       }, false);
+    document.getElementById("test6a").addEventListener("click", function (evt)
+                                                       {
+                                                           var ih = setTimeout(function ft ()
+                                                                               {
+                                                                                   setTimeout(function () {
+                                                                                       document.getElementById('test').click();
+                                                                                   }, 200);
+                                                                               }, 200);
+                                                       }, false);
+    document.getElementById("test6b").addEventListener("click", function (evt)
+                                                       {
+                                                           var ih = setTimeout(function ft ()
+                                                                               {
+                                                                                   setTimeout(function () {
+                                                                                       document.getElementById('test').click();
+                                                                                   }, 1000);
+                                                                               }, 20);
+                                                       }, false);
+</script>
+</div>

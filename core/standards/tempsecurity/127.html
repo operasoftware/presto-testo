@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head><title> new Object methods and window object with other origin: getOwnPropertyNames() and keys() </title>
+<script src="/resources/jsframework.js"></script>
+</head>
+<body>
+	<iframe src="http://web1.testsuites.oslo.opera.com/generic/onload.htm"></iframe>
+
+<script>
+
+test(function wrapper(){ /* This is mainly just to make the test framework run the reporting after all the tests below. Odd hack.. */
+	if( !  ( Object.getOwnPropertyNames && Object.keys ) ){
+		test(function unsupported(){ assertTrue(true, 'unsupported functionality has no security problems, we assume'); }, 'none'); // this is just to report something to SPARTAN
+		return;
+	}
+	
+	/* Again, Gecko throws, WebKit returns empty array */
+	test( function getOwnPropertyNames_other_origin_throw_or_return_nothing_window(){
+		var win=document.getElementsByTagName('iframe')[0].contentWindow;
+		var exceptionOnInvocation=false;
+		try{
+			var result = Object.getOwnPropertyNames( win ); 
+		}catch(e){
+			exceptionOnInvocation=e;
+		}
+		assertTrue( exceptionOnInvocation!==false||result.length==0, 'should  throw when invoked or return undefined - got '+result);
+	}, 'none'); 
+	test( function keys_other_origin_throw_or_return_nothing_window(){
+		var win=document.getElementsByTagName('iframe')[0].contentWindow;
+		var exceptionOnInvocation=false;
+		try{
+			var result = Object.keys( win ); 
+		}catch(e){
+			exceptionOnInvocation=e;
+		}
+		assertTrue( exceptionOnInvocation!==false||result.length==0, 'should  throw when invoked or return undefined - got '+result);
+	}, 'none');
+	test( function getOwnPropertyNames_other_origin_throw_or_return_nothing_document(){
+		var d=document.getElementsByTagName('iframe')[0].contentDocument;
+		var exceptionOnInvocation=false;
+		try{
+			var result = Object.getOwnPropertyNames( d ); 
+		}catch(e){
+			exceptionOnInvocation=e;
+		}
+		assertTrue( exceptionOnInvocation!==false||result.length==0, 'should  throw when invoked or return undefined - got '+result);
+	}, 'none'); 
+	test( function keys_other_origin_throw_or_return_nothing_document(){
+		var d=document.getElementsByTagName('iframe')[0].contentDocument;
+		var exceptionOnInvocation=false;
+		try{
+			var result = Object.keys( d ); 
+		}catch(e){
+			exceptionOnInvocation=e;
+		}
+		assertTrue( exceptionOnInvocation!==false||result.length==0, 'should  throw when invoked or return undefined - got '+result);
+	}, 'none');
+	
+}, document.getElementsByTagName('iframe')[0],  'load');
+
+
+</script></body>
+</html>
