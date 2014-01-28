@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//VoiceXML Forum//DTD XHTML+Voice 1.2//EN"
+	"http://www.voicexml.org/specs/multimodal/x+v/12/dtd/xhtml+voice12.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:vxml="http://www.w3.org/2001/vxml"
+      xmlns:ev="http://www.w3.org/2001/xml-events"
+      xmlns:xv="http://www.voicexml.org/2002/xhtml+voice">
+
+<head>
+  <title>Vox ACSS Test: cue &lt;volume&gt;</title>
+
+  <vxml:form id="vox">
+   <vxml:block><vxml:prompt src="#text"/></vxml:block>
+  </vxml:form>
+  
+  <style type="text/css">
+  #c1 {
+    cue: url(blop.wav) silent;
+  }
+  #c2 {
+    cue: url(blop.wav) x-soft;
+  }
+  #c3 {
+    cue: url(blop.wav) soft;
+  }
+  #c4 {
+    cue: url(blop.wav) medium;
+  }
+  #c5 {
+    cue: url(blop.wav) loud;
+  }
+  #c6 {
+    cue: url(blop.wav) x-loud;
+  }
+  </style>
+</head>
+
+<body ev:event="load" ev:handler="#vox" id="text">
+<h1>
+  cue &lt;volume&gt;
+</h1>
+<ul>
+<li id="c1">silent</li>
+<li id="c2">x-soft</li>
+<li id="c3">soft</li>
+<li id="c4">medium</li>
+<li id="c5">loud</li>
+<li id="c6">x-loud</li>
+</ul>
+</body>
+</html>

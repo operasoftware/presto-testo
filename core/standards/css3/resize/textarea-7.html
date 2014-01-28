@@ -1,0 +1,20 @@
+<!doctype html>
+<title>textarea resize | negative asymmetric resize</title>
+<style>
+	textarea {
+		width: 78px;
+		height: 92px;
+	}
+</style>
+<p>There should be a textarea below, with a resize handle visible in
+	the bottom right corner.</p>
+<textarea></textarea>
+<script src="resize.js"></script>
+<script>
+	window.onload = function()
+	{
+		resize_textarea(175, 297, function(){
+			resize_textarea(-53, -189);
+		});
+	}
+</script>

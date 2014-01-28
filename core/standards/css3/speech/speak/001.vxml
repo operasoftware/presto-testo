@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//VoiceXML Forum//DTD XHTML+Voice 1.2//EN"
+	"http://www.voicexml.org/specs/multimodal/x+v/12/dtd/xhtml+voice12.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:vxml="http://www.w3.org/2001/vxml"
+      xmlns:ev="http://www.w3.org/2001/xml-events"
+      xmlns:xv="http://www.voicexml.org/2002/xhtml+voice">
+<head>
+  <title>Vox ACSS Test: speak</title>
+
+  <vxml:form id="vox">
+   <vxml:block><vxml:prompt src="#text"/></vxml:block>
+  </vxml:form>
+  
+  <style type="text/css">
+  .normal {
+    speak: normal;
+  }
+  #none {
+    speak: none;
+  }
+  #spellout {
+    speak: spell-out;
+  }
+  #digits {
+    speak: -xv-digits;
+  }
+  #literal {
+    speak: -xv-literal-punctuation;
+  }
+  #nopunct {
+    speak: -xv-no-punctuation;
+  }
+  li::before {
+    content: "[" attr(id) attr(class) "] ";
+    speak: normal;
+  }
+  </style>
+</head>
+
+<body ev:event="load" ev:handler="#vox" id="text">
+<h1>
+  speak
+</h1>
+<ul>
+  <li class="normal">Test silence...</li>
+  <li id="none">Test silence...</li>
+</ul>
+<ul>
+  <li class="normal">Testing</li>
+  <li id="spellout">Testing</li>
+</ul>
+<ul>
+  <li class="normal">234</li>
+  <li id="digits">234</li>
+</ul>
+<ul>
+  <li class="normal">Some text, containing punctuation signs!</li>
+  <li id="literal">Some text, containing punctuation signs!</li>
+  <li id="nopunct">Some text, containing punctuation signs!</li>
+</ul>
+</body>
+</html>

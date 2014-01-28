@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//VoiceXML Forum//DTD XHTML+Voice 1.2//EN"
+	"http://www.voicexml.org/specs/multimodal/x+v/12/dtd/xhtml+voice12.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:vxml="http://www.w3.org/2001/vxml"
+      xmlns:ev="http://www.w3.org/2001/xml-events"
+      xmlns:xv="http://www.voicexml.org/2002/xhtml+voice">
+<head>
+  <title>Vox ACSS Test: aural 'box' model 4</title>
+
+  <vxml:form id="vox">
+   <vxml:block><vxml:prompt src="#text"/></vxml:block>
+  </vxml:form>
+  
+  <style type="text/css">
+  ul, li {
+    pause: 3s;
+  }
+  ul {
+    cue: url(blop.wav);
+  }
+  li {
+    cue: url(ding.wav);
+  }
+  </style>
+</head>
+
+<body ev:event="load" ev:handler="#vox" id="text">
+<h1>
+  aural 'box' model 4
+</h1>
+<p>3 seconds pause before the unordered list</p>
+<ul>
+ <li>3 seconds pause before this list item, and between the two list items.</li>
+ <li>3 seconds pause after this list item, and 3 after the unordered list.</li>
+</ul>
+<div>
+  Done.
+</div>
+</body>
+</html>

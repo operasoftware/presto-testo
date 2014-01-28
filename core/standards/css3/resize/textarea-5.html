@@ -1,0 +1,13 @@
+<!doctype html>
+<title>textarea resize | rtl</title>
+<style>
+	textarea {
+		width: 100px;
+		height: 100px;
+	}
+</style>
+<p>There should be a textarea below, with a resize handle visible in
+	the bottom right corner.</p>
+<textarea dir="rtl"></textarea>
+<script src="resize.js"></script>
+<script>window.onload = function(){ resize_textarea(100, 100); }</script>

@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//VoiceXML Forum//DTD XHTML+Voice 1.2//EN"
+	"http://www.voicexml.org/specs/multimodal/x+v/12/dtd/xhtml+voice12.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:vxml="http://www.w3.org/2001/vxml"
+      xmlns:ev="http://www.w3.org/2001/xml-events"
+      xmlns:xv="http://www.voicexml.org/2002/xhtml+voice">
+<head>
+  <title>Vox ACSS Test: pause &lt;keyword&gt;</title>
+
+  <vxml:form id="vox">
+   <vxml:block><vxml:prompt src="#text"/></vxml:block>
+  </vxml:form>
+  
+  <style type="text/css">
+  #p1 {
+    pause: none;
+  }
+  #p2 {
+    pause: x-weak;
+  }
+  #p3 {
+    pause: weak;
+  }
+  #p4 {
+    pause: medium;
+  }
+  #p5 {
+    pause: strong;
+  }
+  #p6 {
+    pause: x-strong;
+  }
+  </style>
+</head>
+
+<body ev:event="load" ev:handler="#vox" id="text">
+<h1>
+  pause &lt;keyword&gt;
+</h1>
+<p id="p1">No pause before and after this paragraph.</p>
+<div>Done.</div>
+<p id="p2">x-weak pause before and after this paragraph.</p>
+<div>Done.</div>
+<p id="p3">weak pause before and after this paragraph.</p>
+<div>Done.</div>
+<p id="p4">medium pause before and after this paragraph.</p>
+<div>Done.</div>
+<p id="p5">strong pause before and after this paragraph.</p>
+<div>Done.</div>
+<p id="p6">x-strong pause before and after this paragraph.</p>
+<div>Done.</div>
+</body>
+</html>

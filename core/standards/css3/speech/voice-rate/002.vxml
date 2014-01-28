@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//VoiceXML Forum//DTD XHTML+Voice 1.2//EN"
+	"http://www.voicexml.org/specs/multimodal/x+v/12/dtd/xhtml+voice12.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:vxml="http://www.w3.org/2001/vxml"
+      xmlns:ev="http://www.w3.org/2001/xml-events"
+      xmlns:xv="http://www.voicexml.org/2002/xhtml+voice">
+<head>
+  <title>Vox ACSS Test: -xv-voice-rate &lt;keywords&gt;</title>
+
+  <vxml:form id="vox">
+   <vxml:block><vxml:prompt src="#text"/></vxml:block>
+  </vxml:form>
+  
+  <style type="text/css">
+  #xslow {
+    -xv-voice-rate: x-slow;
+  }
+  #slow {
+    -xv-voice-rate: slow;
+  }
+  #medium {
+    -xv-voice-rate: medium;
+  }
+  #fast {
+    -xv-voice-rate: fast;
+  }
+  #xfast {
+    -xv-voice-rate: x-fast;
+  }
+  </style>
+</head>
+
+<body ev:event="load" ev:handler="#vox" id="text">
+<h1>
+  -xv-voice-rate &lt;keywords&gt;
+</h1>
+<ul>
+  <li id="xslow">extra slow voice rate</li>
+  <li id="slow">slow voice rate</li>
+  <li id="medium">medium voice rate</li>
+  <li id="fast">fast voice rate</li>
+  <li id="xfast">extra fast voice rate</li>
+</ul>
+</body>
+</html>

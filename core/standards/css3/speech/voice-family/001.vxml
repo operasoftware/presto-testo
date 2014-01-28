@@ -1,0 +1,101 @@
+<!DOCTYPE html PUBLIC "-//VoiceXML Forum//DTD XHTML+Voice 1.2//EN"
+	"http://www.voicexml.org/specs/multimodal/x+v/12/dtd/xhtml+voice12.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:vxml="http://www.w3.org/2001/vxml"
+      xmlns:ev="http://www.w3.org/2001/xml-events"
+      xmlns:xv="http://www.voicexml.org/2002/xhtml+voice">
+<head>
+  <title>Vox ACSS Test: voice-family</title>
+  
+  <vxml:form id="vox">
+   <vxml:block><vxml:prompt src="#text"/></vxml:block>
+  </vxml:form>
+  
+  <style type="text/css">
+  .male {
+    voice-family: female;
+  }
+  .female1 {
+    voice-family: female 1;
+  }
+  .female2 {
+    voice-family: female 2;
+  }
+  .female3 {
+    voice-family: female 3;
+  }
+  .yfemale {
+    voice-family: young female;
+  }
+  .yfemale1 {
+    voice-family: young female 1;
+  }
+  .yfemale2 {
+    voice-family: young female 2;
+  }
+  .yfemale3 {
+    voice-family: young female 3;
+  }
+  .ofemale {
+    voice-family: old female;
+  }
+  .ofemale1 {
+    voice-family: old female 1;
+  }
+  .ofemale2 {
+    voice-family: old female 2;
+  }
+  .ofemale3 {
+    voice-family: old female 3;
+  }
+  .cfemale {
+    voice-family: child female;
+  }
+  .cfemale1 {
+    voice-family: child female 1;
+  }
+  .cfemale2 {
+    voice-family: child female 2;
+  }
+  .cfemale3 {
+    voice-family: child female 3;
+  }
+  </style>
+</head>
+
+<body ev:event="load" ev:handler="#vox" id="text">
+<h1>
+  voice-family
+</h1>
+<ul>
+  <li class="female">female voices
+  <ul>
+    <li class="female1">first female voice</li>
+    <li class="female2">second female voice</li>
+    <li class="female3">third female voice</li>
+  </ul>
+  </li>
+  <li class="yfemale">young female voices
+  <ul>
+    <li class="yfemale1">first young female voice</li>
+    <li class="yfemale2">second young female voice</li>
+    <li class="yfemale3">third young female voice</li>
+  </ul>
+  </li>
+  <li class="ofemale">old female voices
+  <ul>
+    <li class="ofemale1">first old female voice</li>
+    <li class="ofemale2">second old female voice</li>
+    <li class="ofemale3">third old female voice</li>
+  </ul>
+  </li>
+  <li class="cfemale">child female voices
+  <ul>
+    <li class="cfemale1">first child female voice</li>
+    <li class="cfemale2">second child female voice</li>
+    <li class="cfemale3">third child female voice</li>
+  </ul>
+  </li>
+</ul>
+</body>
+</html>

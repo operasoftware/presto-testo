@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//VoiceXML Forum//DTD XHTML+Voice 1.2//EN"
+	"http://www.voicexml.org/specs/multimodal/x+v/12/dtd/xhtml+voice12.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:vxml="http://www.w3.org/2001/vxml"
+      xmlns:ev="http://www.w3.org/2001/xml-events"
+      xmlns:xv="http://www.voicexml.org/2002/xhtml+voice">
+<head>
+  <title>Vox ACSS Test: -xv-voice-pitch-range &lt;floating point&gt;</title>
+
+  <vxml:form id="vox">
+   <vxml:block><vxml:prompt src="#text"/></vxml:block>
+  </vxml:form>
+  
+  <style type="text/css">
+  #x0 {
+    -xv-voice-pitch-range: 0.0;
+  }
+  #x50 {
+    -xv-voice-pitch-range: 50.5;
+  }
+  #x100 {
+    -xv-voice-pitch-range: 100.5;
+  }
+  </style>
+</head>
+
+<body ev:event="load" ev:handler="#vox" id="text">
+<h1>
+  -xv-voice-pitch-range &lt;floating point&gt;
+</h1>
+<ul>
+  <li id="x0">voice pitch range with the value 0.0</li>
+  <li id="x50">voice pitch range with the value 50.5</li>
+  <li id="x100">voice pitch range with the value 100.5</li>
+</ul>
+</body>
+</html>

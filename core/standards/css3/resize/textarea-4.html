@@ -1,0 +1,15 @@
+<!doctype html>
+<title>textarea resize | resize out of overflow</title>
+<style>
+	textarea {
+		width: 100px;
+		height: 100px;
+	}
+</style>
+<p>There should be a textarea below, with a resize handle visible in
+	the bottom right corner. Scrollbars and text content may be visible.</p>
+<textarea>
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eleifend tristique
+turpis.</textarea>
+<script src="resize.js"></script>
+<script>window.onload = function(){ resize_textarea(100, 100); }</script>

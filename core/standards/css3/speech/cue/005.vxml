@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//VoiceXML Forum//DTD XHTML+Voice 1.2//EN"
+	"http://www.voicexml.org/specs/multimodal/x+v/12/dtd/xhtml+voice12.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:vxml="http://www.w3.org/2001/vxml"
+      xmlns:ev="http://www.w3.org/2001/xml-events"
+      xmlns:xv="http://www.voicexml.org/2002/xhtml+voice">
+
+<head>
+  <title>Vox ACSS Test: cue &lt;number&gt;</title>
+
+  <vxml:form id="vox">
+   <vxml:block><vxml:prompt src="#text"/></vxml:block>
+  </vxml:form>
+  
+  <style type="text/css">
+  #c1 {
+    cue: url(blop.wav) 0;
+  }
+  #c2 {
+    cue: url(blop.wav) 20;
+  }
+  #c3 {
+    cue: url(blop.wav) 40;
+  }
+  #c4 {
+    cue: url(blop.wav) 60;
+  }
+  #c5 {
+    cue: url(blop.wav) 80;
+  }
+  #c6 {
+    cue: url(blop.wav) 100;
+  }
+  </style>
+</head>
+
+<body ev:event="load" ev:handler="#vox" id="text">
+<h1>
+  cue &lt;number&gt;
+</h1>
+<ul>
+<li id="c1">0</li>
+<li id="c2">20</li>
+<li id="c3">40</li>
+<li id="c4">60</li>
+<li id="c5">80</li>
+<li id="c6">100</li>
+</ul>
+</body>
+</html>

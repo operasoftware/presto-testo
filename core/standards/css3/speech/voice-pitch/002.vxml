@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//VoiceXML Forum//DTD XHTML+Voice 1.2//EN"
+	"http://www.voicexml.org/specs/multimodal/x+v/12/dtd/xhtml+voice12.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:vxml="http://www.w3.org/2001/vxml"
+      xmlns:ev="http://www.w3.org/2001/xml-events"
+      xmlns:xv="http://www.voicexml.org/2002/xhtml+voice">
+<head>
+  <title>Vox ACSS Test: -xv-voice-pitch &lt;keywords&gt;</title>
+  
+  <link rel="next" href="voice-pitch_n.vxml"/>
+  <link rel="prev" href="voice-family.vxml"/>
+  <link rel="help" href="http://www.w3.org/TR/2003/WD-css3-speech-20030514/#voice-char-props"/>
+  <link rel="index" href="opera.htm"/>
+
+  <vxml:form id="vox">
+   <vxml:block><vxml:prompt src="#text"/></vxml:block>
+  </vxml:form>
+  
+  <style type="text/css">
+  .xlow {
+    -xv-voice-pitch: x-low;
+  }
+  .low {
+    -xv-voice-pitch: low;
+  }
+  .medium {
+    -xv-voice-pitch: medium;
+  }
+  .high {
+    -xv-voice-pitch: high;
+  }
+  .xhigh {
+    -xv-voice-pitch: x-high;
+  }
+  #male {
+    voice-family: male;
+  }
+  #female {
+    voice-family: female;
+  }
+  </style>
+</head>
+
+<body ev:event="load" ev:handler="#vox" id="text">
+<h1>
+  -xv-voice-pitch &lt;keywords&gt;
+</h1>
+<ul>
+  <li id="male">Male voice
+    <ul>
+      <li class="xlow">extra low male voice</li>
+      <li class="low">low male voice</li>
+      <li class="medium">medium male voice</li>
+      <li class="high">high male voice</li>
+      <li class="xhigh">extra high male voice</li>
+    </ul>
+  </li>
+  <li id="female">Female voice
+    <ul>
+      <li class="xlow">extra low female voice</li>
+      <li class="low">low female voice</li>
+      <li class="medium">medium female voice</li>
+      <li class="high">high female voice</li>
+      <li class="xhigh">extra high female voice</li>
+    </ul>
+  </li>
+</ul>
+</body>
+</html>

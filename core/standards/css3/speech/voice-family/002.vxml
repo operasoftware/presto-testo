@@ -1,0 +1,101 @@
+<!DOCTYPE html PUBLIC "-//VoiceXML Forum//DTD XHTML+Voice 1.2//EN"
+	"http://www.voicexml.org/specs/multimodal/x+v/12/dtd/xhtml+voice12.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:vxml="http://www.w3.org/2001/vxml"
+      xmlns:ev="http://www.w3.org/2001/xml-events"
+      xmlns:xv="http://www.voicexml.org/2002/xhtml+voice">
+<head>
+  <title>Vox ACSS Test: voice-family</title>
+  
+  <vxml:form id="vox">
+   <vxml:block><vxml:prompt src="#text"/></vxml:block>
+  </vxml:form>
+  
+  <style type="text/css">
+  .male {
+    voice-family: male;
+  }
+  .male1 {
+    voice-family: male 1;
+  }
+  .male2 {
+    voice-family: male 2;
+  }
+  .male3 {
+    voice-family: male 3;
+  }
+  .ymale {
+    voice-family: young male;
+  }
+  .ymale1 {
+    voice-family: young male 1;
+  }
+  .ymale2 {
+    voice-family: young male 2;
+  }
+  .ymale3 {
+    voice-family: young male 3;
+  }
+  .omale {
+    voice-family: old male;
+  }
+  .omale1 {
+    voice-family: old male 1;
+  }
+  .omale2 {
+    voice-family: old male 2;
+  }
+  .omale3 {
+    voice-family: old male 3;
+  }
+  .cmale {
+    voice-family: child male;
+  }
+  .cmale1 {
+    voice-family: child male 1;
+  }
+  .cmale2 {
+    voice-family: child male 2;
+  }
+  .cmale3 {
+    voice-family: child male 3;
+  }
+  </style>
+</head>
+
+<body ev:event="load" ev:handler="#vox" id="text">
+<h1>
+  voice-family
+</h1>
+<ul>
+  <li class="male">male voices
+  <ul>
+    <li class="male1">first male voice</li>
+    <li class="male2">second male voice</li>
+    <li class="male3">third male voice</li>
+  </ul>
+  </li>
+  <li class="ymale">young male voices
+  <ul>
+    <li class="ymale1">first young male voice</li>
+    <li class="ymale2">second young male voice</li>
+    <li class="ymale3">third young male voice</li>
+  </ul>
+  </li>
+  <li class="omale">old male voices
+  <ul>
+    <li class="omale1">first old male voice</li>
+    <li class="omale2">second old male voice</li>
+    <li class="omale3">third old male voice</li>
+  </ul>
+  </li>
+  <li class="cmale">child male voices
+  <ul>
+    <li class="cmale1">first child male voice</li>
+    <li class="cmale2">second child male voice</li>
+    <li class="cmale3">third child male voice</li>
+  </ul>
+  </li>
+</ul>
+</body>
+</html>

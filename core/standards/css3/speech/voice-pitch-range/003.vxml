@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//VoiceXML Forum//DTD XHTML+Voice 1.2//EN"
+	"http://www.voicexml.org/specs/multimodal/x+v/12/dtd/xhtml+voice12.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:vxml="http://www.w3.org/2001/vxml"
+      xmlns:ev="http://www.w3.org/2001/xml-events"
+      xmlns:xv="http://www.voicexml.org/2002/xhtml+voice">
+<head>
+  <title>Vox ACSS Test: -xv-voice-pitch-range &lt;keyword&gt;</title>
+  
+  <vxml:form id="vox">
+   <vxml:block><vxml:prompt src="#text"/></vxml:block>
+  </vxml:form>
+  
+  <style type="text/css">
+  #xlow {
+    -xv-voice-pitch-range: x-low;
+  }
+  #low {
+    -xv-voice-pitch-range: low;
+  }
+  #medium {
+    -xv-voice-pitch-range: medium;
+  }
+  #high {
+    -xv-voice-pitch-range: high;
+  }
+  #xhigh {
+    -xv-voice-pitch-range: x-high;
+  }
+  </style>
+</head>
+
+<body ev:event="load" ev:handler="#vox" id="text">
+<h1>
+  -xv-voice-pitch-range &lt;keyword&gt;
+</h1>
+<ul>
+  <li id="xlow">Voice pitch range with the value 'x-low'.</li>
+  <li id="low">Voice pitch range with the value 'low'.</li>
+  <li id="medium">Voice pitch range with the value 'medium'.</li>
+  <li id="high">Voice pitch range with the value 'high'.</li>
+  <li id="xhigh">Voice pitch range with the value 'x-high'.</li>
+</ul>
+</body>
+</html>

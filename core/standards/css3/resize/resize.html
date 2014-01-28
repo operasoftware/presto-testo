@@ -1,0 +1,359 @@
+<!doctype html>
+<title>Textarea resize test suite</title>
+<meta name="author" content="andersr" />
+
+<script src="resize.js"></script>
+<script src="/resources/testharness.js"></script>
+<script src="/resources/testharnessreport.js"></script>
+
+<div id="warning">
+<p><strong>DO NOT TRIGGER MOUSE EVENTS WHILE TESTING.</strong></p>
+<p>This test uses fake mouse events during testing. Interference from real
+mouse events may lead to incorrect FAILs.</p>
+</div>
+<div id="log"></div>
+<hr />
+<div id="main"></div>
+
+<script>
+
+// The time to wait between stages. (See comment inside create_test()).
+var STAGE_TIMEOUT = 100; // ms
+
+/**
+ * Creates a textarea resize test.
+ *
+ * The 'spec' parameter can contain these fields:
+ *
+ *  name The name (and identifier) of the test.
+ *  dx   The change of size along the x-axis.
+ *  dy   The change of size along the y-axis.
+ *  html The HTML to setup in the page using innerHTML.
+ *  ew   The expected end width of the element. (Optional).
+ *  eh   The expected end height of the element. (Optional).
+ *
+ * If expected dimensions are not provided, it will be calculated from the
+ * initial dimensions of the element.
+ *
+ * @param spec An object which describes the test.
+ * @return A function to call when the test should begin.
+ */
+function create_test(spec)
+{
+	var test = async_test(spec.name);
+
+	// The textarea element.
+	var elm = null
+
+	// Test execution happens in three stages, and between each stage
+	// there is a timeout.
+	//
+	// Stage 1: The desired HTML fragment is set with innerHTML.
+	// Stage 2: The resizing happens using opera.generate-events.
+	// Stage 3: Check for success.
+	//
+	// There needs to be a timeout between stage one and two, because
+	// the resizing will only work after the textarea has been painted,
+	// and we don't know exactly when that happens.
+	//
+	// There needs to be a timeout between stage two and three, because
+	// we don't know exactly when the fake mouse events triggered in
+	// resize() are processed.
+
+	// Set HTML.
+	var stage_1 = test.step_func(function(){
+		var main = document.querySelector("#main");
+		main.innerHTML = spec.html + "<div style='clear: both;'></div>";
+		setTimeout(stage_2, STAGE_TIMEOUT);
+	});
+
+	// Perform resize.
+	var stage_2 = test.step_func(function(){
+		elm = document.querySelector("textarea");
+		assert_true(elm != null, "textarea does not exist");
+
+		// Initial dimensions.
+		var iw = elm.clientWidth;
+		var ih = elm.clientHeight;
+
+		resize(elm, spec.dx, spec.dy);
+
+		setTimeout(function(){ stage_3(iw, ih); }, STAGE_TIMEOUT);
+	});
+
+	var stage_3 = test.step_func(function(iw, ih){
+		// Expected dimensions.
+		var ew = (typeof(spec.ew) == "undefined" && iw + spec.dx) || spec.ew;
+		var eh = (typeof(spec.eh) == "undefined" && ih + spec.dy) || spec.eh;
+
+		// Current dimensions.
+		var cw = elm.clientWidth;
+		var ch = elm.clientHeight;
+
+		assert_equals(cw, ew, "Width:");
+		assert_equals(ch, eh, "Height:");
+
+		test.done();
+	});
+
+	// Return a function which must be called for the test to begin.
+	return stage_1;
+}
+
+// Generate (deterministically) content to put in textareas.
+function content(w, h)
+{
+	var chars = "0 1 2 3 4 5 6 7 8 9 a b c d e f ";
+
+	var str = "";
+
+	for (var i = 0; i < h; i++)
+	{
+		for (var j = 0; j < w; j++)
+			str += chars[((i*w)+j) % chars.length];
+		str += "\n";
+	}
+
+	return str;
+}
+
+// Global list of tests.
+var tests = [
+	create_test({
+		name: "Default style",
+		dx:	100,
+		dy: 100,
+		html: "<textarea></textarea>"
+	}),
+	create_test({
+		name: "Default style + border-box",
+		dx: 100,
+		dy: 100,
+		html: "<textarea style='box-sizing: border-box;'></textarea>"
+	}),
+	create_test({
+		name: "Default style + explicit content-box",
+		dx: 100,
+		dy: 100,
+		html: "<textarea style='box-sizing: content-box;'></textarea>"
+	}),
+	create_test({
+		name: "10px padding",
+		dx: 100,
+		dy: 100,
+		html: "<textarea style='padding: 10px;'></textarea>"
+	}),
+	create_test({
+		name: "13px margin",
+		dx: 100,
+		dy: 100,
+		html: "<textarea style='margin: 13px;'></textarea>"
+	}),
+	create_test({
+		name: "10px border",
+		dx: 100,
+		dy: 100,
+		html: "<textarea style='border: 10px solid black;'></textarea>"
+	}),
+	create_test({
+		name: "Uneven border",
+		dx: 100,
+		dy: 100,
+		html: "<textarea style='border-style: solid; border-color: black; border-width: 3px 5px 7px 11px;'></textarea>"
+	}),
+	create_test({
+		name: "No border",
+		dx: 100,
+		dy: 100,
+		html: "<textarea style='border: none'></textarea>"
+	}),
+	create_test({
+		name: "Border-box, 13px border",
+		dx: 13,
+		dy: 37,
+		html: "<textarea style='box-sizing: border-box; border: 13px solid black;'></textarea>"
+	}),
+	create_test({
+		name: "Border-box, 13px border, 7px padding",
+		dx: 84,
+		dy: 84,
+		html: "<textarea style='box-sizing: border-box; border: 13px solid black; padding: 7px;'></textarea>"
+	}),
+	create_test({
+		name: "Border-box, no border, 13px padding",
+		dx: 84,
+		dy: 84,
+		html: "<textarea style='box-sizing: border-box; border: none; padding: 13px;'></textarea>"
+	}),
+	create_test({
+		name: "Parent text-align center",
+		dx: 84,
+		dy: 84,
+		html: [
+			"<div style='text-align: center;'>",
+			"<textarea style='border: none;'></textarea>",
+			"</div>"
+		].join("")
+	}),
+	create_test({
+		name: "Parent text-align right",
+		dx: 200,
+		dy: 200,
+		html: [
+			"<div style='text-align: right;'>",
+			"<textarea style='border: none;'></textarea>",
+			"</div>"
+		].join("")
+	}),
+	create_test({
+		name: "Element text-align center",
+		dx: 0,
+		dy: 100,
+		html: "<textarea style='border: none; text-align: center;'></textarea>"
+	}),
+	create_test({
+		name: "Vertical scroll, word wrap",
+		dx: 100,
+		dy: 150,
+		html: [
+			"<textarea style='border: none;'>",
+			content(100, 50),
+			"</textarea>"
+		].join("")
+	}),
+	create_test({
+		name: "Horizontal scroll, no word wrap",
+		dx: 100,
+		dy: 150,
+		html: [
+			"<textarea style='border: none; white-space: nowrap;'>",
+			content(100, 1),
+			"</textarea>"
+		].join("")
+	}),
+	create_test({
+		name: "Scroll both, no word wrap",
+		dx: 100,
+		dy: 150,
+		html: [
+			"<textarea style='border: none; white-space: nowrap;'>",
+			content(100, 100),
+			"</textarea>"
+		].join("")
+	}),
+	create_test({
+		name: "Float left",
+		dx: 100,
+		dy: 150,
+		html: [
+			"<textarea style='border: none; float: left;'>",
+			content(100, 100),
+			"</textarea>"
+		].join("")
+	}),
+	create_test({
+		name: "Float right",
+		dx: 100,
+		dy: 150,
+		html: [
+			"<textarea style='border: none; float: right;'>",
+			content(100, 100),
+			"</textarea>"
+		].join("")
+	}),
+	create_test({
+		name: "Explicit size",
+		dx: 50,
+		dy: 50,
+		html: "<textarea style='width: 50px; height: 50px;'></textarea>"
+	}),
+	create_test({
+		name: "Floating jump",
+		dx: 10000,
+		dy: 10000,
+		html: [
+			"<div style='width: 30%; height: 100px; float: left; border: 1px solid black;'></div>",
+			"<div style='width: 30%; height: 100px; float: right; border: 1px solid black;'></div>",
+			"<textarea style='border: none;'>",
+			content(100, 100),
+			"</textarea>",
+
+		].join("")
+	}),
+	create_test({
+		name: "Resize: none",
+		dx: 100,
+		dy: 100,
+		ew: 50,
+		eh: 50,
+		html: "<textarea style='resize: none; border: none; padding: 0; width: 50px; height: 50px;'></textarea>"
+	}),
+	create_test({
+		name: "Resize: horizontal",
+		dx: 100,
+		dy: 100,
+		ew: 150,
+		eh: 50,
+		html: "<textarea style='resize: horizontal; border: none; padding: 0; width: 50px; height: 50px;'></textarea>"
+	}),
+	create_test({
+		name: "Resize: vertical",
+		dx: 100,
+		dy: 100,
+		ew: 50,
+		eh: 150,
+		html: "<textarea style='resize: vertical; border: none; padding: 0; width: 50px; height: 50px;'></textarea>"
+	}),
+	create_test({
+		name: "overflow: scroll",
+		dx: 100,
+		dy: 100,
+		html: "<textarea style='overflow: scroll;'>"+content(100,100)+"</textarea>"
+	}),
+	create_test({
+		name: "overflow: hidden",
+		dx: 50,
+		dy: 50,
+		html: "<textarea style='overflow: hidden;'>"+content(100,100)+"</textarea>"
+	}),
+	create_test({
+		name: "dir=rtl",
+		dx: 100,
+		dy: 100,
+		html: "<textarea dir='rtl'></textarea>"
+	}),
+	create_test({
+		name: "Minimum size",
+		dx: -10,
+		dy: -10,
+		ew: 50,
+		eh: 50,
+		html: "<textarea style='border: none; padding: 0; width: 50px; height: 50px;'></textarea>"
+	}),
+];
+
+var NUM_STAGES = 3;
+setup({ timeout: (STAGE_TIMEOUT * (NUM_STAGES - 1) + 300 ) * tests.length });
+
+// Allows us to pop() in run_next_test().
+tests.reverse();
+
+// Call this to run the next test (or do nothing if there are no more tests).
+function run_next_test()
+{
+	if (tests.length > 0)
+		tests.pop()(); // Call run function.
+}
+
+// Use the result callback to make sure tests are run serially.
+add_result_callback(run_next_test);
+
+// Remove warning.
+add_completion_callback(function(){
+	document.querySelector("#warning").style.display = "none";
+});
+
+// Finally, begin the first test.
+run_next_test();
+
+</script>

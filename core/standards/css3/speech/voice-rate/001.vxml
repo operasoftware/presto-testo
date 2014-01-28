@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//VoiceXML Forum//DTD XHTML+Voice 1.2//EN"
+	"http://www.voicexml.org/specs/multimodal/x+v/12/dtd/xhtml+voice12.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:vxml="http://www.w3.org/2001/vxml"
+      xmlns:ev="http://www.w3.org/2001/xml-events"
+      xmlns:xv="http://www.voicexml.org/2002/xhtml+voice">
+<head>
+  <title>Vox ACSS Test: -xv-voice-rate &lt;percentage&gt;</title>
+  
+  <link rel="next" href="voice-stress.vxml"/>
+  <link rel="prev" href="voice-rate_k.vxml"/>
+  <link rel="help" href="http://www.w3.org/TR/2003/WD-css3-speech-20030514/#voice-char-props"/>
+  <link rel="index" href="opera.htm"/>
+
+  <vxml:form id="vox">
+   <vxml:block><vxml:prompt src="#text"/></vxml:block>
+  </vxml:form>
+  
+  <style type="text/css">
+  #xv20 {
+    -xv-voice-rate: 20%;
+  }
+  #xv40 {
+    -xv-voice-rate: 40%;
+  }
+  #xv60 {
+    -xv-voice-rate: 60%;
+  }
+  #xv80 {
+    -xv-voice-rate: 80%;
+  }
+  #xv100 {
+    -xv-voice-rate: 100%;
+  }
+  </style>
+</head>
+
+<body ev:event="load" ev:handler="#vox" id="text">
+<h1>
+  -xv-voice-rate &lt;percentage&gt;
+</h1>
+<ul>
+  <li id="xv20">20% voice rate</li>
+  <li id="xv40">40% voice rate</li>
+  <li id="xv60">60% voice rate</li>
+  <li id="xv80">80% voice rate</li>
+  <li id="xv100">100% voice rate</li>
+</ul>
+</body>
+</html>

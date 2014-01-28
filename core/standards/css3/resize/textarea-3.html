@@ -1,0 +1,17 @@
+<!doctype html>
+<title>textarea resize | resize with scrollbars</title>
+<style>
+	textarea {
+		width: 100px;
+		height: 100px;
+	}
+</style>
+<p>There should be a textarea below, with a resize handle visible in
+	the bottom right corner. Scrollbars and text content may be visible.</p>
+<textarea>
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eleifend tristique
+turpis, ac accumsan erat egestas quis. Suspendisse ultricies dolor ac nisl
+pellentesque eu fermentum dui dignissim. Maecenas lorem purus, commodo sit
+amet ultrices ac, tristique mattis risus. </textarea>
+<script src="resize.js"></script>
+<script>window.onload = function(){ resize_textarea(100, 100); }</script>

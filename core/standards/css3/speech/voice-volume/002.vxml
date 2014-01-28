@@ -1,0 +1,105 @@
+<!DOCTYPE html PUBLIC "-//VoiceXML Forum//DTD XHTML+Voice 1.2//EN"
+	"http://www.voicexml.org/specs/multimodal/x+v/12/dtd/xhtml+voice12.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:vxml="http://www.w3.org/2001/vxml"
+      xmlns:ev="http://www.w3.org/2001/xml-events"
+      xmlns:xv="http://www.voicexml.org/2002/xhtml+voice">
+<head>
+  <title>Vox ACSS Test: -xv-voice-volume &lt;percentage&gt;</title>
+
+  <vxml:form id="vox">
+   <vxml:block><vxml:prompt src="#text"/></vxml:block>
+  </vxml:form>
+  
+  <style type="text/css">
+  li {
+    -xv-voice-volume: 0%;
+  }
+  li+li {
+    -xv-voice-volume: 1%;
+  }
+  li+li+li {
+    -xv-voice-volume: 2%;
+  }
+  li+li+li+li {
+    -xv-voice-volume: 3%;
+  }
+  li+li+li+li+li {
+    -xv-voice-volume: 4%;
+  }
+  li+li+li+li+li+li {
+    -xv-voice-volume: 5%;
+  }
+  li+li+li+li+li+li+li {
+    -xv-voice-volume: 6%;
+  }
+  li+li+li+li+li+li+li+li {
+    -xv-voice-volume: 7%;
+  }
+  li+li+li+li+li+li+li+li+li {
+    -xv-voice-volume: 8%;
+  }
+  li+li+li+li+li+li+li+li+li+li {
+    -xv-voice-volume: 9%;
+  }
+  li+li+li+li+li+li+li+li+li+li+li {
+    -xv-voice-volume: 10%;
+  }
+  li+li+li+li+li+li+li+li+li+li+li+li {
+    -xv-voice-volume: 20%;
+  }
+  li+li+li+li+li+li+li+li+li+li+li+li+li {
+    -xv-voice-volume: 30%;
+  }
+  li+li+li+li+li+li+li+li+li+li+li+li+li+li {
+    -xv-voice-volume: 40%;
+  }
+  li+li+li+li+li+li+li+li+li+li+li+li+li+li+li {
+    -xv-voice-volume: 50%;
+  }
+  li+li+li+li+li+li+li+li+li+li+li+li+li+li+li+li {
+    -xv-voice-volume: 60%;
+  }
+  li+li+li+li+li+li+li+li+li+li+li+li+li+li+li+li+li {
+    -xv-voice-volume: 70%;
+  }
+  li+li+li+li+li+li+li+li+li+li+li+li+li+li+li+li+li+li {
+    -xv-voice-volume: 80%;
+  }
+  li+li+li+li+li+li+li+li+li+li+li+li+li+li+li+li+li+li+li {
+    -xv-voice-volume: 90%;
+  }
+  li+li+li+li+li+li+li+li+li+li+li+li+li+li+li+li+li+li+li+li {
+    -xv-voice-volume: 100%;
+  }
+  </style>
+</head>
+
+<body ev:event="load" ev:handler="#vox" id="text">
+<h1>
+  -xv-voice-volume &lt;percentage&gt;
+</h1>
+<ul>
+  <li>0</li>
+  <li>1</li>
+  <li>2</li>
+  <li>3</li>
+  <li>4</li>
+  <li>5</li>
+  <li>6</li>
+  <li>7</li>
+  <li>8</li>
+  <li>9</li>
+  <li>10</li>
+  <li>20</li>
+  <li>30</li>
+  <li>40</li>
+  <li>50</li>
+  <li>60</li>
+  <li>70</li>
+  <li>80</li>
+  <li>90</li>
+  <li>100</li>
+</ul>
+</body>
+</html>
