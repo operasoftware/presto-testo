@@ -1,0 +1,26 @@
+<!doctype html>
+<title>WebSockets: send('')</title>
+<pre>FAIL (script didn't run)</pre>
+<script src=/resources/jsframework2.js></script>
+<script src=../../../../constants.js></script>
+<script>
+assertNotEquals(window.WebSocket, undefined, 'WebSocket not supported');
+assertNotThrows(function(){
+  var ws = new WebSocket(SCHEME_AND_DOMAIN+':8007/empty-message');
+  ws.onopen = function(e) {
+    debug(e);
+    ws.send('');
+  }
+  ws.onmessage = function(e) {
+    debug(e);
+    assertEquals(e.data, 'pass');
+    ws.close();
+  }
+  ws.onclose = function(e) {
+    debug(e);
+    setTestTimeout(null);
+    setTimeout(end, 500);
+  }
+  ws.onerror = assertUnreached;
+});
+</script>

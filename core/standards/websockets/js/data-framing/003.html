@@ -1,0 +1,33 @@
+<!doctype html>
+<title>WebSockets: 0x80 frame followed by 0x00 frame</title>
+<pre>FAIL (script didn't run)</pre>
+<script src=/resources/jsframework2.js></script>
+<script src=../../constants.js></script>
+<script>
+assertNotEquals(window.WebSocket, undefined, 'WebSocket not supported');
+assertNotThrows(function(){
+  var ws = new WebSocket(SCHEME_AND_DOMAIN+':8007/echo_raw');
+  ws.onopen = function(e) {
+    debug(e);
+    ws.send('\\x80\\x03LOL\\x00test\\xFF');
+  }
+  var errorCount = 0;
+  ws.onerror = function(e) {
+    debug(e);
+    errorCount++;
+  }
+  ws.onmessage = function(e) {
+    debug(e);
+    assertEquals(errorCount, 1, 'number of error events');
+    assertEquals(e.data, 'test', 'message data');
+    ws.onclose = function(e) {
+      debug(e);
+      ws.onclose = assertUnreached;
+      setTestTimeout(null);
+      setTimeout(end, 500);
+    }
+    ws.close();
+  }
+  ws.onclose = assertUnreached;
+});
+</script>

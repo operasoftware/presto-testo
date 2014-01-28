@@ -1,0 +1,20 @@
+<!doctype html>
+<title>WebSockets: 2^32 length binary frame</title>
+<pre>FAIL (script didn't run)</pre>
+<script src=/resources/jsframework2.js></script>
+<script src=../../constants.js></script>
+<script>
+assertNotEquals(window.WebSocket, undefined, 'WebSocket not supported');
+assertNotThrows(function(){
+  var ws = new WebSocket(SCHEME_AND_DOMAIN+':8007/echo_raw');
+  ws.onopen = function(e) {
+    ws.send('\\x80\\x90\\x80\\x80\\x80\\x00LOL');
+  }
+  ws.onclose = function(e) {
+    ws.onclose = assertUnreached;
+    setTestTimeout(null);
+    setTimeout(end, 500);
+  }
+  ws.onmessage = ws.onerror = assertUnreached;
+});
+</script>

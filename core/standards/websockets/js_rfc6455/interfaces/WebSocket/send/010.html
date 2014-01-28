@@ -1,0 +1,34 @@
+<!doctype html>
+<title>WebSockets: sending non-strings</title>
+<pre>FAIL (script didn't run)</pre>
+<script src=/resources/jsframework2.js></script>
+<script src=../../../../constants.js></script>
+<script>
+assertNotEquals(window.WebSocket, undefined, 'WebSocket not supported');
+assertNotThrows(function(){
+  var ws = new WebSocket(SCHEME_AND_DOMAIN+':8007/echo');
+  var stuffToSend = [null, undefined, 1, window, document.body, {}, [], ws, function(){}, new Error()]
+  var i = 0;
+  function sendNext() {
+    if (i == stuffToSend.length) {
+      ws.onclose = debug;
+      ws.close();
+      end();
+    } else {
+      debug('Sending: '+stuffToSend[i]);
+      ws.send(stuffToSend[i]);
+    }
+  }
+  ws.onopen = function(e) {
+    debug(e);
+    sendNext();
+  }
+  ws.onmessage = function(e) {
+    debug('Received: '+e.data);
+    assertEquals(e.data, String(stuffToSend[i]));
+    i++;
+    sendNext();
+  }
+  ws.onclose = ws.onerror = assertUnreached;
+});
+</script>

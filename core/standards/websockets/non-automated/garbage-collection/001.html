@@ -1,0 +1,26 @@
+<!doctype html>
+<title>WebSockets: closing connection when garbage collecting an open websocket</title>
+<p>Capture 'tcp and port 8007' in WireShark and reload this page. The connection should be closed (you should see [FIN, ACK] packets) after about 2s.</p>
+<pre>Log:
+</pre>
+<script src=../../js/garbage-collection/gc.js></script>
+<script>
+var pre = document.getElementsByTagName('pre')[0];
+try {
+  new WebSocket('ws://'+location.hostname+':8007/echo');
+  pre.textContent += 'Successfully created WebSocket object\n';
+  setTimeout(function() {
+    try {
+      gc(function() {
+        pre.textContent += 'Successfully collected garbage\n';
+      }, function() {
+        pre.textContent += 'Failed to collect garbage\n';
+      });
+    } catch(e) {
+      pre.textContent += 'Failed to collect garbage\n';
+    }
+  }, 2000);
+} catch(e) {
+  pre.textContent += 'Failed to create WebSocket object\n';
+}
+</script>

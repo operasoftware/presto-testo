@@ -1,0 +1,17 @@
+<!doctype html>
+<title>WebSockets: send() with no args</title>
+<pre>FAIL (script didn't run)</pre>
+<script src=/resources/jsframework2.js></script>
+<script src=../../../../constants.js></script>
+<script>
+assertNotEquals(window.WebSocket, undefined, 'WebSocket not supported');
+assertNotThrows(function(){
+  var ws = new WebSocket(SCHEME_AND_DOMAIN+'/');
+  assertThrows(function(){ws.send()}, function(e) {
+    //assertInstanceOf(e, DOMException);
+    //assertEquals(e.code, e.NOT_SUPPORTED_ERR);
+  });
+});
+end();
+</script>
+

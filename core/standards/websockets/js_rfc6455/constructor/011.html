@@ -1,0 +1,19 @@
+<!doctype html>
+<title>WebSockets: protocol mismatch</title>
+<pre>FAIL (script didn't run)</pre>
+<script src=/resources/jsframework2.js></script>
+<script src=../../constants.js></script>
+<script>
+assertNotEquals(window.WebSocket, undefined, 'WebSocket not supported');
+setTestTimeout(3000, 'got no close event');
+assertNotThrows(function(){
+  var ws = new WebSocket(SCHEME_AND_DOMAIN+':8007/handshake_protocol', 'FOOBAR');
+  ws.onclose = function(e) {
+    debug(e);
+    ws.onclose = assertUnreached;
+    setTestTimeout(null);
+    setTimeout(end, 500);
+  }
+  //ws.onopen = ws.onerror = ws.onmessage = assertUnreached;
+});
+</script>

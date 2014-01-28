@@ -1,0 +1,28 @@
+<!doctype html>
+<title>WebSockets: onopen, OPEN state</title>
+<p>Capture 'tcp and port 8007' in WireShark and reload this page. The connection should be closed (you should see [FIN, ACK] packets) after the 'open' event has been fired.</p>
+<pre>Log:
+</pre>
+<script src=../../js/garbage-collection/gc.js></script>
+<script>
+var pre = document.getElementsByTagName('pre')[0];
+try {
+  var ws = new WebSocket('ws://'+location.hostname+':8007/echo');
+  pre.textContent += 'Successfully created WebSocket object\n';
+  ws.onopen = function() {
+    try {
+      pre.textContent += 'Got open event\n';
+      gc(function() {
+        pre.textContent += 'Successfully collected garbage\n';
+      }, function() {
+        pre.textContent += 'Failed to collect garbage\n';
+      });
+    } catch(e) {
+      pre.textContent += 'Failed to collect garbage\n';
+    }
+  }
+  ws = null;
+} catch(e) {
+  pre.textContent += 'Failed to create WebSocket object\n';
+}
+</script>

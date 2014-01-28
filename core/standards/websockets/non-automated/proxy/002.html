@@ -1,0 +1,23 @@
+<!doctype html>
+<title>WebSockets: autoproxy echo</title>
+<script src=../../constants.js></script>
+<p>Set up Automatic Proxy Configuration URL to <b>http://t/core/networking/autoproxy/autoproxy.php?netcore3.oslo.osa:8888 </b> and reload this test. It should say PASS below.</p>
+<pre>FAIL (script didn't run)</pre>
+<script src=/resources/jsframework2.js></script>
+<script>
+assertNotThrows(function() {
+  var ws = new WebSocket('ws://'+DOMAIN_FOR_PROXY_TESTS+':8007/echo');
+  ws.onopen = function(e) {
+    debug(e);
+    ws.onmessage = function(e) {
+      debug(e);
+      assertEquals(e.data, 'test');
+      ws.onclose = debug;
+      ws.close();
+      end();
+    }
+    ws.send('test');
+  }
+  ws.onclose = assertUnreached;
+});
+</script>

@@ -1,0 +1,17 @@
+if readyState is CONNECTING:
+  has 'open' event listener: don't collect
+  has 'message' event listener: don't collect
+  has 'error' event listener: don't collect
+  has 'close' event listener: don't collect
+
+if readyState is OPEN or CLOSING:
+  has 'open' event listener: OK to collect
+  has 'message' event listener: don't collect
+  has 'error' event listener: don't collect
+  has 'close' event listener: don't collect
+
+if readyState is CLOSED:
+  has 'open' event listener: OK to collect
+  has 'message' event listener: OK to collect
+  has 'error' event listener: OK to collect
+  has 'close' event listener: OK to collect

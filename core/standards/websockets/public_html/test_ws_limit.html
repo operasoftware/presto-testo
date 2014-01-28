@@ -1,0 +1,76 @@
+<!DOCTYPE HTML> 
+<html> 
+	<head> 
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+		<title>Web socket limit test</title> 
+	</head> 
+	<body> 
+		<h1 id="line1">no websocket support</h1> 
+		<h1 id="line2"></h1> 
+		<h1 id="line3"></h1> 
+		<h1 id="line4"></h1> 
+		<script type="text/javascript"> 
+			if ("WebSocket" in window)
+			{
+				foundOutlier = 0;
+				pingSamples = 0;
+				pingAccMS = 0;
+				document.getElementById('line1').innerHTML = "checking latency";
+				pingws = new WebSocket("ws://"+location.hostname+":8007/echo");
+				function ping() {
+					pingStartMS = (new Date).getTime();
+					pingws.send("ping");
+				}
+				pingws.onopen = ping;
+				pingws.onmessage = function(m) {
+					pingSamples++;
+					pingAccMS += (new Date).getTime() - pingStartMS;
+					if (pingSamples >= 10 && pingAccMS > 250) {
+						pingws.close();
+						pingws = 0;
+						setTimeout(runtest(), 100);
+					} else {
+						document.getElementById('line1').innerHTML = "checking latency (~" + Math.round(10 * pingAccMS / pingSamples) / 10 + "ms)";
+						setTimeout(ping(), 100);
+					}
+				}
+
+				function startconnection() {
+					startTime = (new Date).getTime();
+					var ws = new WebSocket("ws://"+location.hostname+":8007/echo");
+					ws.onopen = opened;
+					ws.onclose = closed;
+					ws.id = sockArr.length;
+					sockArr.push(ws);
+				}
+
+				function opened() {
+					var ms = (new Date).getTime() - startTime;
+					sumConnectTimes += ms;
+					connectTimes.push(ms);
+					document.getElementById('line2').innerHTML = "total connections made: " + sockArr.length;
+					if (ms > 3 * sumConnectTimes / sockArr.length) {
+						foundOutlier = 1;
+						document.getElementById('line4').innerHTML = "found outlier, stopping performance measurement.";
+					}
+					if (foundOutlier == 0) {
+						var idealRunningTime = 2 * sockArr.length * pingAccMS / pingSamples;
+						var perc = Math.round(1000 * idealRunningTime / sumConnectTimes) / 10;
+						document.getElementById('line3').innerHTML = "connect performance: " + perc;
+					}
+					startconnection();
+				}
+				function closed(e) {
+					document.getElementsByTagName('line3')[0].innerHTML = 'connection ' + e.target.id + ' closed\n';
+				}
+
+				function runtest() {
+					sockArr = new Array();
+					connectTimes = new Array();
+					sumConnectTimes = 0;
+					startconnection();
+				}
+			}       
+		</script> 
+	</body> 
+</html> 

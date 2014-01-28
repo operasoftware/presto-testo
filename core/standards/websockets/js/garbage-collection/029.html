@@ -1,0 +1,28 @@
+<!doctype html>
+<title>WebSockets: onerror, CLOSED</title>
+<pre>FAIL (script didn't run)</pre>
+<script src=/resources/jsframework2.js></script>
+<script src=../../constants.js></script>
+<script src=gc.js></script>
+<script>
+assertNotEquals(window.WebSocket, undefined, 'WebSocket not supported');
+// see gc-policy.txt for the garbage collection policy
+setTestTimeout(12000);
+assertNotThrows(function() {
+  gc(function() {
+    var ws = new WebSocket(SCHEME_AND_DOMAIN+':8007/echo');
+    ws.onopen = function(e) {
+      debug(e);
+      this.onopen = null;
+      this.close();
+    }
+    ws.onerror = debug;
+    ws.onclose = function(e) {
+      debug(e);
+      this.onclose = null;
+      ws = null;
+      gc(end, assertUnreached);
+    }
+  }, assertUnreached);
+});
+</script>

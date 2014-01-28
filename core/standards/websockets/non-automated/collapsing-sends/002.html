@@ -1,0 +1,32 @@
+<!doctype html>
+<title>WebSockets: sending every 5 milliseconds while script is running</title>
+<p>Capture 'tcp and port 8007' in WireShark and reload this page. There should one [PSH, ACK] packet for each websocket frame (50 in total), sent with about 5ms interval.</p>
+<pre>Log:
+</pre>
+<script>
+var pre = document.getElementsByTagName('pre')[0];
+try {
+  var ws = new WebSocket('ws://'+location.hostname+':8007/echo');
+  pre.textContent += 'Successfully created WebSocket object\n';
+  ws.onopen = function(e) {
+    pre.textContent += 'Got open event\n';
+    var date;
+    for (var i = 0; i < 50; ++i) {
+      this.send(i);
+      date = new Date();
+      while (new Date()-date < 5) {
+      }
+    }
+  }
+  ws.onmessage = function(e) {
+    pre.textContent += 'Got message event: '+e.data+'\n';
+    if (e.data == '49')
+      this.close();
+  }
+  ws.onclose = function(e) {
+    pre.textContent += 'Got close event\n';
+  }
+} catch(e) {
+  pre.textContent += 'Failed to create WebSocket object\n';
+}
+</script>

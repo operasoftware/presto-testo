@@ -1,0 +1,18 @@
+<!doctype html>
+<title>WebSockets: Tab instead of space in handshake</title>
+<pre>FAIL (script didn't run)</pre>
+<script src=/resources/jsframework2.js></script>
+<script src=../../constants.js></script>
+<script>
+assertNotEquals(window.WebSocket, undefined, 'WebSocket not supported');
+assertNotThrows(function(){
+  var ws = new WebSocket(SCHEME_AND_DOMAIN+':8007/handshake_raw?'+encodeURIComponent('HTTP/1.1 101 LOL\\x0D\\x0AUpgrade:\\x09WebSocket\\x0D\\x0AConnection: Upgrade\\x0D\\x0ASec-WebSocket-Origin: '+location.protocol+'//'+location.host+'\\x0D\\x0ASec-WebSocket-Location: '));
+  ws.onopen = ws.onmessage = ws.onerror = assertUnreached;
+  ws.onclose = function(e) {
+    assertEquals(e.wasClean, false);
+    ws.onclose = assertUnreached;
+    setTestTimeout(null);
+    setTimeout(end, 500);
+  }
+});
+</script>

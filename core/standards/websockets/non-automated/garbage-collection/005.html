@@ -1,0 +1,22 @@
+<!doctype html>
+<title>WebSockets: navigating an iframe with an open websocket</title>
+<p>The number of uncollected websockets should be 0 or 1.</p>
+<p>Uncollected websockets: <span></span></p>
+<p>Iframe navigated <span>0</span> times</p>
+<iframe></iframe>
+<script>
+var iframe = document.getElementsByTagName('iframe')[0];
+var uncollected = document.getElementsByTagName('span')[0];
+var navigated = document.getElementsByTagName('span')[1];
+var i = 0;
+var stopAtNext = false;
+function next() {
+  if (stopAtNext)
+    return;
+  iframe.src = '005-1.html?'+Math.random();
+  uncollected.textContent = opera.uncollectedWebSockets();
+  navigated.textContent = i++;
+}
+</script>
+<p><button onclick="stopAtNext = false; next()">start</button>
+   <button onclick="stopAtNext = true;">stop</button></p>

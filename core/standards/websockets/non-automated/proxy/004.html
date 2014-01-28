@@ -1,0 +1,24 @@
+<!doctype html>
+<title>WebSockets: proxy digest</title>
+<script src=../../constants.js></script>
+<p>Set HTTP proxy to <script>document.write(PROXY_DIGEST_URL)</script> and reload this test. User/pass is <script>document.write(PROXY_DIGEST_CRED)</script>. It should say PASS below.</p>
+<pre>FAIL (script didn't run)</pre>
+<script src=/resources/jsframework2.js></script>
+<script>
+setTimeout(10000)
+assertNotThrows(function() {
+  var ws = new WebSocket('ws://'+DOMAIN_FOR_PROXY_TESTS+':8007/echo');
+  ws.onopen = function(e) {
+    debug(e);
+    ws.onmessage = function(e) {
+      debug(e);
+      assertEquals(e.data, 'test');
+      ws.onclose = debug;
+      ws.close();
+      end();
+    }
+    ws.send('test');
+  }
+  ws.onclose = assertUnreached;
+});
+</script>

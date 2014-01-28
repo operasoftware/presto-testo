@@ -1,0 +1,16 @@
+<!doctype html>
+<title>WebSockets: origin header</title>
+<pre>FAIL (script didn't run)</pre>
+<script src=/resources/jsframework2.js></script>
+<script src=../../constants.js></script>
+<script>
+ assertNotEquals(window.WebSocket, undefined, 'WebSocket not supported');
+ if (location.hostname != DOMAIN_FOR_CROSS_ORIGIN_TESTS_1) {
+   assertUnreached('This test needs to be run from '+DOMAIN_FOR_CROSS_ORIGIN_TESTS_1);
+ } else {
+ document.domain = DOMAIN_FOR_CROSS_ORIGIN_TESTS_1;
+ var iframe = document.createElement('iframe');
+ iframe.src = 'http://'+DOMAIN_FOR_CROSS_ORIGIN_TESTS_2+'/core/standards/websockets/non-automated/origin/001-1.html?'+DOMAIN_FOR_CROSS_ORIGIN_TESTS_1;
+ document.body.appendChild(iframe);
+ }
+</script>

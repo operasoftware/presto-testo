@@ -1,0 +1,15 @@
+<!doctype html>
+<title>WebSockets: not closing connection when not garbage collecting</title>
+<p>Capture 'tcp and port 8007' in WireShark and reload this page. Wait 10s (message will appear after 10s). The connection should NOT be closed (you should NOT see any [FIN, ACK] packets).</p>
+<pre>Log:
+</pre>
+<script>
+var pre = document.getElementsByTagName('pre')[0];
+try {
+  new WebSocket('ws://'+location.hostname+':8007/echo');
+  pre.textContent += 'Successfully created WebSocket object\n';
+} catch(e) {
+  pre.textContent += 'Failed to create WebSocket object\n';
+}
+setTimeout(function() { pre.textContent += '10s has elapsed\n'; }, 10000);
+</script>

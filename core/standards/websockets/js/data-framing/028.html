@@ -1,0 +1,32 @@
+<!doctype html>
+<title>WebSockets: messages with invalid utf-8, half multibyte sequence at the end (0xC3 EOF) (next message 0x80)</title>
+<pre>FAIL (script didn't run)</pre>
+<script src=/resources/jsframework2.js></script>
+<script src=../../constants.js></script>
+<script>
+assertNotEquals(window.WebSocket, undefined, 'WebSocket not supported');
+assertNotThrows(function(){
+  var ws = new WebSocket(SCHEME_AND_DOMAIN+':8007/echo_raw');
+  ws.onopen = function(e) {
+    debug(e);
+    ws.send('\\x00x\\xC3\\xFF\\x00\\x80x\\xFF');
+  }
+  var i = 0;
+  ws.onmessage = function(e) {
+    i++;
+    if (i == 1) {
+      assertEquals(e.data, 'x\uFFFD', 'first message');
+    } else if (i == 2) {
+      assertEquals(e.data, '\uFFFDx', 'second message');
+      ws.onclose = function(e) {
+        debug(e.type);
+        ws.onclose = assertUnreached;
+      setTestTimeout(null);
+      setTimeout(end, 500);
+      }
+      ws.close();
+    }
+  }
+  ws.onclose = ws.onerror = assertUnreached;
+});
+</script>

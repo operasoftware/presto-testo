@@ -1,0 +1,24 @@
+<!doctype html>
+<title>WebSockets: addEventListener message, CONNECTING</title>
+<pre>FAIL (script didn't run)</pre>
+<script src=/resources/jsframework2.js></script>
+<script src=../../constants.js></script>
+<script src=gc.js></script>
+<script>
+assertNotEquals(window.WebSocket, undefined, 'WebSocket not supported');
+// see gc-policy.txt for the garbage collection policy
+setTestTimeout(12000);
+assertNotThrows(function() {
+  gc(function() {
+    var ws = new WebSocket(SCHEME_AND_DOMAIN+':8007/sleep_2_then_open_raw?'+encodeURIComponent('\\x00test\\xFF'));
+    ws.addEventListener('message', function x(e) {
+      debug(e);
+      this.removeEventListener('message', x, false);
+      gc(end, assertUnreached);
+    }, false);
+    ws = null;
+    gc(assertUnreached, function() {});
+  }, assertUnreached);
+});
+</script>
+

@@ -1,0 +1,71 @@
+WebSockets Selftests
+
+
+Test Group 1: Handshake
+-----------------------
+
+- Connect to restricted port
+	Success: WebSocket not created
+
+- Different order for response headers
+	Success: Response handled.
+
+- Wrong response code
+	Success: Client closes connection and Close message handler called.
+
+- Wrong response text
+	Success: Client closes connection and Close message handler called.
+
+- Missing headers
+	Success: Client closes connection and Close message handler called.
+
+- Missing/incorrect sub-protocol in response.
+	Success: Client closes connection and Close message handler called.
+
+
+
+
+Test Group 2: Connected phase
+-----------------------------
+
+- Frame contains invalid UTF-8
+	Success: Any invalid bytes should be converted to U+FFFD REPLACEMENT CHARACTER.
+
+- Broken frames, no valid frame start
+	Success: Error message handler called.
+
+- One message event per message
+	Success: < MTU-sized packet containing 3 frames should trigger 3 events.
+
+
+
+
+Test Group 3: Closing
+---------------------
+
+- Graceful client close
+	Success: Close message handler called with wasClean == TRUE.
+
+- Graceful server close
+	Success: Close message handler called with wasClean == TRUE.
+
+- Lost connection
+	Success: Close message handler called with wasClean == FALSE.
+
+
+
+
+Test Group 4: Buffering
+-----------------------
+
+- Send / receive small, medium and large messages to/from echo server.
+	Success: Messages are echoed back with the correct content.
+
+
+
+
+Test group 5: Connection restriction
+------------------------------------
+
+- Create and open multiple OpWebSockets to the same URL.
+	Success: Only one should ever be in the connecting state at any one time.

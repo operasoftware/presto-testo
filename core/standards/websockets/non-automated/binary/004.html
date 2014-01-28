@@ -1,0 +1,69 @@
+<head>
+<title>WebSockets: bufferedAmount updating on send()</title>
+    <style type="text/css">
+    .condition {
+     background-color: #ffffe0;
+    padding: 1ex;
+    border: 1px solid blue;
+    }
+    </style>
+<script type="text/javascript">
+var ws;
+var datasize;
+function init() {
+   console.log("init");
+   if (ws != null) {
+     ws.close();
+     ws = null;
+   }
+   var div = document.getElementById("msg");
+   ws = new WebSocket("ws://certo2.oslo.osa:8007/echo");
+   ws.binaryType = "blob";
+   ws.onopen = function () {
+        div.innerText = "Connection opened\n" + div.innerText;
+   };
+   ws.onmessage = function (e) {
+      div.innerText = "Message Received:" + e.data + "\n" + div.innerText;
+      document.getElementById("log").innerHTML += "Message: " + ws.bufferedAmount + "\n";
+      if (e.data instanceof Blob) {
+        if(e.data.size == datasize)
+            div.innerText = "PASS\n" + div.innerText;
+        else
+            div.innerText = "FAIL: Blob object sizes does not match \n" + div.innerText;
+    }
+   };
+   ws.onclose = function (e) {
+      div.innerText = "closed\n" + div.innerText;
+   };
+   
+};
+var count = 0;
+function send() {
+   m = document.msgform.file.files[0];
+   datasize = m.size;
+   var log = document.getElementById("log");
+   log.innerHTML = "bufferedAmount updating:\n========================\n";
+   function f() {
+     log.innerHTML += "Update: " + ws.bufferedAmount + "\n";
+     if (ws.bufferedAmount > 0 && count++ < 100)
+        setTimeout(f, 50);
+     else if (ws.bufferedAmount > 0)
+        log.innerHTML += "Stopped, final value: " + ws.bufferedAmount + "\n";
+   }
+   ws.send(m);
+   setTimeout(f, 50);
+   log.innerHTML += "Initial: " + ws.bufferedAmount + "\n";
+   return false;
+};
+</script>
+<body onLoad="init();">
+<form name="msgform" action="#" onsubmit="return send();">
+<input type="file" name="file" >
+<input type="submit" value="send">
+</form>
+<div id="msg"></div>
+ <p class="condition">
+    Choose a file and press send, you should see the word PASS
+ </p>
+<pre id="log"></pre>
+</html>

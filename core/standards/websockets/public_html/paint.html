@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <title>Paintr 2.1 Beta</title>
+  <style>
+   html { font:1.4em/1.7 Arial, sans-serif; background:#fff; color:#000 }
+   button { margin:0 0 .4em 0; font-size:inherit }
+   canvas#paintr { border:solid }
+   p#disclaimer { clear:both }
+   p#rights { font-size:0.8em; background:#fff; color:#aaa }
+  </style>
+  <script>
+   HTMLCanvasElement.prototype.clearPaintr = function() {
+    this.getContext('2d').fillStyle = "#fff";
+    this.getContext('2d').fillRect(0, 0, this.width, this.height);
+   }
+
+   function initPaintr() {
+
+    var canvas = document.getElementById('paintr'),
+        ctx = canvas.getContext('2d'),
+        continueState = false,
+        drawState = false;
+    
+    window.ws = new WebSocket('ws://'+location.hostname+':8007/echo-to-others');
+    var wsState = document.getElementById('wsState');
+    
+    wsState.textContent = 'Connecting...';
+    
+    ws.onopen = function(e) {
+      wsState.textContent = 'Connected.';
+    }
+    
+    ws.onclose = function(e) {
+      wsState.textContent = 'Disconnected.';
+    }
+    
+    ws.onmessage = function(e) {
+      if (e.data.substr(0, 6) == 'PAINT ') {
+        if (e.data.substr(6, 6) == 'start ') {
+          var coords = e.data.substr(12).split('x');
+          var x = coords[0];
+          var y = coords[1];
+          start(null, x, y);
+        } else if (e.data.substr(6, 4) == 'stop') {
+          stop();
+        } else if (e.data.substr(6, 7) == 'update ') {
+          var coords = e.data.substr(13).split('x');
+          var x = coords[0];
+          var y = coords[1];
+          update(null, x, y);
+        } else if (e.data.substr(6, 5) == 'clear') {
+          canvas.clearPaintr();
+        }
+      }
+    }
+
+    function start(event, x, y) {
+     if (event) {
+       x = event.offsetX || event.layerX;
+       y = event.offsetY || event.layerY;
+     }
+     if(!continueState) {
+      canvas.clearPaintr();
+      if (ws.readyState == ws.OPEN)
+        ws.send('PAINT clear');
+     }
+     ctx.beginPath();
+     ctx.moveTo(x, y);
+     continueState = true;
+     drawState = true;
+    }
+
+    function stop(event) {
+     if(drawState) {
+      ctx.closePath();
+      drawState = false;
+     }
+    }
+
+    function update(event, x, y) {
+     if (event) {
+       x = event.offsetX || event.layerX;
+       y = event.offsetY || event.layerY;
+     }
+     if(drawState) {
+      ctx.lineTo(x, y);
+      ctx.stroke();
+     }
+    }
+
+    canvas.addEventListener("mousedown", function(e) {
+      start(e);
+      if (ws.readyState == ws.OPEN)
+        ws.send('PAINT start '+(e.offsetX || e.layerX)+'x'+(e.offsetY || e.layerY));
+    }, false);
+    addEventListener("mouseup", function(e) {
+      stop(e);
+      if (ws.readyState == ws.OPEN)
+        ws.send('PAINT stop');
+    }, false);
+    canvas.addEventListener("mousemove", function(e) {
+      update(e);
+      if (ws.readyState == ws.OPEN)
+        ws.send('PAINT update '+(e.offsetX || e.layerX)+'x'+(e.offsetY || e.layerY));
+    }, false);
+
+   }
+
+   window.onload = initPaintr;
+  </script>
+ </head>
+ <body>
+  <p><canvas id="paintr" width="1000" height="600"></canvas></p>
+  <p><button onclick="document.getElementById('paintr').clearPaintr(); if (ws.readyState == ws.OPEN) ws.send('PAINT clear');">Clear it!</button></p>
+  <p><button onclick="location = document.getElementById('paintr').toDataURL()">Save it!</button></p>
+  <p id=wsState></p>
+ </body>
+</html>

@@ -1,0 +1,34 @@
+<!doctype html>
+<title>WebSockets: preffed off by default</title>
+<style>
+  pre, samp { background:papayawhip; color:black }
+</style>
+<p>Log:
+<pre></pre>
+<script>
+var pre = document.getElementsByTagName('pre')[0];
+function test() {
+  if ('WebSocket' in window && 'CloseEvent' in window)
+    pre.textContent = 'WebSockets ON';
+  else if (typeof window.WebSocket == 'undefined' && typeof window.CloseEvent == 'undefined')
+    pre.textContent = 'WebSockets OFF';
+  else
+    pre.textContent = 'FAIL. Got WebSocket='+window.WebSocket+', CloseEvent='+window.CloseEvent+'. Expected both or neither to be undefined.';
+}
+test();
+</script>
+<p>Instructions:
+<ol>
+<li>The log above should say <samp>WebSockets OFF</samp>
+<li>Open opera:config. The "Enable WebSockets" pref (under User Prefs) should be unchecked.
+<li>Check the pref "Enable WebSockets". Save.
+<li><button onclick="test()">Click here</button>
+<li>The log above should still say <samp>WebSockets OFF</samp>
+<li><a href="">Click here</a> to reload this page.
+<li>The log above should say <samp>WebSockets ON</samp>
+<li>Uncheck the pref "Enable WebSockets" again. Save.
+<li><button onclick="test()">Click here</button>
+<li>The log above should still say <samp>WebSockets ON</samp>
+<li><a href="">Click here</a> to reload this page.
+<li>The log above should say <samp>WebSockets OFF</samp>
+</ol>

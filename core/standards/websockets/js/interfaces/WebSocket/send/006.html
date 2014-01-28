@@ -1,0 +1,31 @@
+<!doctype html>
+<title>WebSockets: send() with unpaired surrogate when readyState is OPEN</title>
+<pre>FAIL (script didn't run)</pre>
+<script src=/resources/jsframework2.js></script>
+<script src=../../../../constants.js></script>
+<script>
+assertNotEquals(window.WebSocket, undefined, 'WebSocket not supported');
+assertNotThrows(function(){
+  var ws = new WebSocket(SCHEME_AND_DOMAIN+':8007/echo');
+  function checkException(e) {
+    //assertInstanceOf(e, DOMException);
+    assertEquals(e.code, e.SYNTAX_ERR);
+  }
+  ws.onopen = function(e) {
+    // lone low surrogate, lone high surrogate + surrogates in wrong order.
+    ws.send('a\uDC00xb\uD800xc\uDC00\uD800x');
+    end();
+  }
+  ws.onmessage = function(e) {
+    debug(e);
+    assertEquals(e.data, 'a\uFFFDxb\uFFFDxc\uFFFD\uFFFDx');
+    ws.onclose = function(e) {
+      debug(e);
+      ws.onclose = assertUnreached;
+      setTestTimeout(null);
+      setTimeout(end, 500);
+    }
+    ws.close();
+  }
+});
+</script>

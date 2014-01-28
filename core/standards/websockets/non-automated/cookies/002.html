@@ -1,0 +1,48 @@
+<!doctype html>
+<title>WebSockets: not setting cookies when cookies are disabled</title>
+<p>Disable cookies. Then <button onclick=runTest()>click here to run the test</button>. Then enable cookies and <button onclick=checkResult()>click here to check the result</button>. It should say PASS below.</p>
+<pre>Log:
+</pre>
+<script>
+var pre = document.getElementsByTagName('pre')[0];
+function runTest() {
+  document.cookie = 'ws_test=; Path=/';
+  if (/ws_test=test/.test(document.cookie)) {
+    pre.textContent += 'You should disable cookies before running the test. Running anyway...\n';
+  }
+  document.cookie = 'ws_test=; Path=/; Expires=Sun, 06 Nov 1994 08:49:37 GMT';
+  try {
+    var ws = new WebSocket('ws://'+location.hostname+':8007/set-cookie?'+encodeURIComponent('ws_test=test; Path=/'));
+    pre.textContent += 'Successfully created WebSocket object\n';
+    ws.onopen = function(e) {
+      pre.textContent += 'Server responded successfully. Now enable cookies.\n';
+      ws.onclose = null;
+    }
+    ws.onclose = function(e) {
+      pre.textContent += 'Failed to open the websocket connection.';
+    }
+  } catch(e) {
+    pre.textContent += 'Failed to create WebSocket object\n';
+  }
+}
+function checkResult() {
+  if (/ws_test=test/.test(document.cookie)) {
+    pre.textContent += 'FAIL (cookie was set by the websocket server)\n';
+    removeCookie();
+  } else {
+    pre.textContent += 'PASS\n';
+  }
+}
+function removeCookie() {
+  if (/ws_test=test/.test(document.cookie)) {
+    document.cookie = 'ws_test=; Path=/; Expires=Sun, 06 Nov 1994 08:49:37 GMT';
+    if (/ws_test=test/.test(document.cookie)) {
+      pre.textContent += 'Failed to remove cookie.\n';
+    } else {
+      pre.textContent += 'Successfully removed cookie.\n';
+    }
+  } else {
+    pre.textContent += 'Cookie not found. Either it was already removed (or not set) or cookies are not enabled.\n';
+  }
+}
+</script>

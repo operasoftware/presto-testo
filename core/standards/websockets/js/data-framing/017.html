@@ -1,0 +1,29 @@
+<!doctype html>
+<title>WebSockets: binary frame with 35000 bytes long length</title>
+<pre>FAIL (script didn't run)</pre>
+<script src=/resources/jsframework2.js></script>
+<script src=../../constants.js></script>
+<script>
+assertNotEquals(window.WebSocket, undefined, 'WebSocket not supported');
+setTestTimeout(15000)
+assertNotThrows(function(){
+  var ws = new WebSocket(SCHEME_AND_DOMAIN+':8007/many_leading_0x80_in_length');
+  ws.onopen = debug;
+  var gotError = false;
+  ws.onerror = function(e) {
+    debug(e);
+    gotError = true;
+  }
+  ws.onmessage = function(e) {
+    assertEquals(gotError, true, 'gotError');
+    ws.onclose = function(e) {
+      debug(e);
+      ws.onclose = assertUnreached;
+      setTestTimeout(null);
+      setTimeout(end, 500);
+    }
+    ws.close();
+  }
+  ws.onclose = assertUnreached;
+});
+</script>

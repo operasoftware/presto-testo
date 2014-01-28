@@ -1,0 +1,73 @@
+<!DOCTYPE HTML>
+<title>WebSockets: performance of echoing messages</title>
+<pre>Log:
+</pre>
+<script src=../constants.js></script>
+<script>
+var pre = document.getElementsByTagName('pre')[0];
+var lines = [];
+function log(s) {
+  if (s instanceof Event) {
+    s = s.type+' '+s.target.id;
+  }
+  lines.push(s);
+}
+function showLog() {
+  pre.textContent += lines.join('\n');
+}
+function fail(s) {
+  log('FAIL');
+  log(s);
+  if (arguments.callee.done)
+    return;
+  arguments.callee.done = true;
+  showLog();
+  try{top.opener.rr()}catch(e){}
+}
+var ws;
+var i = 0;
+var startDate;
+var totalTime;
+function start() {
+  ws = new WebSocket(SCHEME_AND_DOMAIN+':8007/echo');
+  ws.onopen = function(e) {
+    startDate = new Date();
+    next();
+  }
+  ws.onmessage = next;
+  ws.onclose = fail;
+}
+function next(e) {
+  if (e) {
+    log('received '+i);
+    if (e.data != 'hello '+i) {
+      log('e.data was '+e.data+', expected hello '+i);
+      ws.close();
+      return;
+    }
+  }
+  i++;
+  if (i == 30) {
+    totalTime = new Date() - startDate;
+    ws.onclose = end;
+    ws.close();
+  } else {
+    ws.send('hello '+i);
+    log('sent '+i);
+  }
+}
+function end() {
+  log('==================');
+  log('Total time: '+totalTime+'ms');
+  if (!fail.done) {
+    showLog();
+    try{top.opener.rr(totalTime)}catch(e){}
+  }
+}
+
+if (window.WebSocket == undefined) {
+  fail('WebSocket not supported');
+} else {
+  start();
+}
+</script>

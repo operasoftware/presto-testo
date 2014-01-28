@@ -1,0 +1,28 @@
+<!doctype html>
+<title>Opera's WebSockets testsuite</title>
+<style>
+html { font:2em sans-serif; background-color:#ddddff }
+body { margin:1em 4%; padding:1em 4%; border:thin solid; border-radius:1em; background-color:white; box-shadow:0 0.3em 1em gray }
+h1 { font-size:100% }
+#result { font-size:2.5em; font-weight:bold; margin:0.5em 0 }
+.yes { color:green }
+.no { color:maroon }
+img { float:right; font-size:50% }
+small { font-size:20% }
+</style>
+<p><img src="http://www.opera.com/bitmaps/press/resources/img-press-logo.png" alt="Opera Software"></p>
+<h1>Does your browser support WebSockets?</h1>
+<p id="result"><br></p>
+<p>Download a <a href="http://my.opera.com/desktopteam/blog/2010/10/11/websockets">build of Opera</a> with WebSockets support.</p>
+<p>Download and run the <a href="opera-websockets-testsuite.zip">Opera WebSockets testsuite</a> for a more complete conformance test.</p>
+<p>Read the associated <a href="http://my.opera.com/core/blog/websockets">blog post</a>.</p>
+<script>
+var p = document.getElementById('result');
+if ('WebSocket' in window) {
+  p.innerHTML = 'Yes.';
+  p.className = 'yes';
+} else {
+  p.innerHTML = 'No. <small>(Or it might be disabled due to security problems.)</small>';
+  p.className = 'no';
+}
+</script>

@@ -1,0 +1,14 @@
+<!doctype html>
+<title>origin header helper</title>
+<script>
+var parentDomain = location.search.substr(1);
+document.domain = parentDomain;
+var ws = new parent.WebSocket(parent.SCHEME_AND_DOMAIN+':8007/origin');
+ws.onopen = parent.debug;
+ws.onclose = parent.assertUnreached;
+ws.onmessage = function(e) {
+  parent.debug(e);
+  parent.assertEquals(e.data, location.protocol+'//'+location.host);
+  ws.onclose = parent.end;
+}
+</script>

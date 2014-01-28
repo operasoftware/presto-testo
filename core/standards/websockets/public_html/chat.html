@@ -1,0 +1,44 @@
+<!doctype html>
+<title>websocket chat</title>
+<form>
+<fieldset disabled>
+<label> <input></label><input type=submit value=Send>
+</fieldset>
+</form>
+<pre></pre>
+<script>
+var input = document.getElementsByTagName('input')[0];
+document.forms[0].onsubmit = function(e) {
+  if (ws.readyState == ws.OPEN) {
+    var msg = '<'+nick+'> '+input.value;
+    input.value = '';
+    ws.send('CHAT '+msg);
+    log(msg);
+  } else {
+    log('You are not connected.');
+  }
+  return false;
+}
+var fieldset = document.getElementsByTagName('fieldset')[0];
+var pre = document.getElementsByTagName('pre')[0];
+function log(msg) {
+  pre.textContent += msg + '\n';
+}
+var nick = Math.floor(Math.random()*10000).toString(36);
+document.getElementsByTagName('label')[0].firstChild.data = nick+': ';
+var ws = new WebSocket('ws://'+location.hostname+':8007/echo-to-others');
+ws.onopen = function(e) {
+  ws.send('CHAT '+nick+' connected.');
+  log('You are now connected.');
+  fieldset.disabled = false;
+}
+ws.onclose = function(e) {
+  log('You disconnected.');
+  fieldset.disabled = true;
+}
+ws.onmessage = function(e) {
+  if (e.data.substr(0, 5) == 'CHAT ') {
+    log(e.data.substr(5));
+  }
+}
+</script>

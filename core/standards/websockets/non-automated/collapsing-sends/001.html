@@ -1,0 +1,29 @@
+<!doctype html>
+<title>WebSockets: collapsing send()s in a loop into one tcp packet</title>
+<p>Capture 'tcp and port 8007' in WireShark and reload this page. There should (ideally) be just one [PSH, ACK] packet containing all the 100 sent websocket frames.</p>
+<p>The spec does not require this behavior. However it is expected to give better performance. Note that if the JS engine timeslices then the messages might be sent in multiple packets.
+<pre>Log:
+</pre>
+<script>
+var pre = document.getElementsByTagName('pre')[0];
+try {
+  var ws = new WebSocket('ws://'+location.hostname+':8007/echo');
+  pre.textContent += 'Successfully created WebSocket object\n';
+  ws.onopen = function(e) {
+    pre.textContent += 'Got open event\n';
+    for (var i = 0; i < 100; ++i) {
+      this.send(i);
+    }
+  }
+  ws.onmessage = function(e) {
+    pre.textContent += 'Got message event: '+e.data+'\n';
+    if (e.data == '99')
+      this.close();
+  }
+  ws.onclose = function(e) {
+    pre.textContent += 'Got close event\n';
+  }
+} catch(e) {
+  pre.textContent += 'Failed to create WebSocket object\n';
+}
+</script>

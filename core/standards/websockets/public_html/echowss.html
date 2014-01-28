@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html> 
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Web socket basic</title>
+  </head>
+  <body>
+    <h1 id="heading">Performing websocket basic test</h1>
+    <script type="text/javascript">
+      var num = 10;     
+      var parms = window.location.search.substring(1).split('&');
+      for (var i = 0; i < parms.length; i++) 
+      {
+        var pos = parms[i].indexOf('=');
+        if (pos > 0) 
+          if ('size' == parms[i].substring(0, pos))
+            num = parms[i].substring(pos + 1);
+      }
+
+      testString = "";
+      for (var j = 0; j < num; ++j)
+        testString += j % 10;
+
+      if ("WebSocket" in window)
+      {
+        var ws = new WebSocket("wss://"+location.hostname+":8007/echo");
+        ws.onerror = function()
+        {
+          document.getElementById('heading').innerHTML = "Failed - WebSocket error";
+        }
+
+        ws.onmessage = function(e) 
+        {
+          if (e.data == testString)
+            document.getElementById('heading').innerHTML = "Passed - " + e.data.length + " bytes echoed";
+          else
+            document.getElementById('heading').innerHTML = "Failed - echoed data is incorrect";
+        }
+
+        ws.onopen = function() 
+        {
+          ws.send(testString);
+        }
+      }
+      else
+        document.getElementById('heading').innerHTML = "Failed - no WebSocket support";
+    </script>
+  </body>
+</html>
+

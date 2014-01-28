@@ -1,0 +1,14 @@
+<!doctype html>
+<title>WebSockets: closing connection when closing page with an open websocket</title>
+<p>Capture 'tcp and port 8007' in WireShark and reload this page. The connection should be closed (you should see [FIN, ACK] packets) when you close this page.</p>
+<pre>Log:
+</pre>
+<script>
+var pre = document.getElementsByTagName('pre')[0];
+try {
+  new WebSocket('ws://'+location.hostname+':8007/echo');
+  pre.textContent += 'Successfully created WebSocket object\n';
+} catch(e) {
+  pre.textContent += 'Failed to create WebSocket object\n';
+}
+</script>

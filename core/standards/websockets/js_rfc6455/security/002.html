@@ -1,0 +1,38 @@
+<!doctype html>
+<title>WebSockets: check Sec-WebSocket-Key</title>
+<pre>FAIL (script didn't run)</pre>
+<script src=/resources/jsframework2.js></script>
+<script src=../../constants.js></script>
+<script>
+assertNotEquals(window.WebSocket, undefined, 'WebSocket not supported');
+assertNotThrows(function(){
+    xmlhttp=null;
+    if (window.XMLHttpRequest)
+    {// code for Firefox, Mozilla, IE7, etc.
+	xmlhttp=new XMLHttpRequest();
+    }
+    else if (window.ActiveXObject)
+    {// code for IE6, IE5
+	xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    if (xmlhttp!=null)
+   {
+	xmlhttp.onreadystatechange = function()
+	{
+		if(xmlhttp.readyState == 4)
+		{
+			x=xmlhttp.responseText;
+			document.getElementById("header").innerHTML=x;
+		}
+	}
+	xmlhttp.open("GET", "check.php", true);
+	xmlhttp.setRequestHeader('Sec-WebSocket-Key', 'jW7qmdXj5Kk5jTClF1BN3');
+	xmlhttp.send(null);
+	}
+ else
+  {
+	//alert("Your browser does not support XMLHTTP.");
+  }
+end();
+});
+</script>

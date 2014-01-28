@@ -1,0 +1,20 @@
+<!doctype html>
+<title>WebSockets: invalid handshake (http 200 response)</title>
+<pre>FAIL (script didn't run)</pre>
+<script src=/resources/jsframework2.js></script>
+<script src=../../constants.js></script>
+<script>
+assertNotEquals(window.WebSocket, undefined, 'WebSocket not supported');
+setTestTimeout(10000, 'got no close event');
+assertNotThrows(function(){
+  var ws = new WebSocket(SCHEME_AND_DOMAIN+':8007/handshake_raw_no_trailing_data?'+encodeURIComponent('HTTP/1.1 200 OK\\x0D\\x0ADate: Mon, 12 Jul 2010 06:52:22 GMT\\x0D\\x0AServer: Apache/2.2.9 (Debian) mod-xslt/1.3.9 PHP/5.2.6-1+lenny8 with Suhosin-Patch mod_python/3.3.1 Python/2.5.2 mod_ssl/2.2.9 OpenSSL/0.9.8g mod_perl/2.0.4 Perl/v5.10.0\\x0D\\x0ALast-Modified: Tue, 20 Jan 2009 10:16:48 GMT\\x0D\\x0AETag: "5fd603-1bb-460e756464400"\\x0D\\x0AAccept-Ranges: bytes\\x0D\\x0AContent-Length: 3\\x0D\\x0AKeep-Alive: timeout=15, max=100\\x0D\\x0AConnection: Keep-Alive\\x0D\\x0AContent-Type: text/plain\\x0D\\x0A\\x0D\\x0ALOL'));
+  ws.onclose = function(e) {
+    debug(e);
+    assertEquals(e.wasClean, false);
+    ws.onclose = assertUnreached;
+    setTestTimeout(null);
+    setTimeout(end, 500);
+  }
+  ws.onerror = ws.onmessage = ws.onopen = assertUnreached;
+});
+</script>

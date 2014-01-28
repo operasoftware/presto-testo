@@ -1,0 +1,52 @@
+<!doctype html>
+<title>WebSockets: not sending cookies when cookies are disabled</title>
+<p>Have cookies enabled when loading this test. Then disable cookies. Then <button onclick=runTest()>click here to run the test</button>. It should say PASS below. Then enable cookies again and <button onclick=removeCookie()>click here to remove the cookie</button>.</p>
+<pre>Log:
+</pre>
+<script>
+var pre = document.getElementsByTagName('pre')[0];
+if (window.WebSocket) {
+  if (/ws_test=test/.test(document.cookie)) {
+    pre.textContent += 'Cookie was already set.\n';
+  } else {
+    document.cookie = 'ws_test=test; Path=/';
+    if (/ws_test=test/.test(document.cookie)) {
+      pre.textContent += 'Cookie successfully set.\n';
+    } else {
+      pre.textContent += 'Failed to set cookie. Are cookies enabled?\n';
+    }
+  }
+} else {
+  pre.textContent += 'WebSocket not supported.\n';
+}
+function runTest() {
+  if (/ws_test=test/.test(document.cookie)) {
+    pre.textContent += 'You should disable cookies before running the test. Running anyway...\n';
+  }
+  try {
+    var ws = new WebSocket('ws://'+location.hostname+':8007/echo-cookie');
+    pre.textContent += 'Successfully created WebSocket object\n';
+    ws.onmessage = function(e) {
+      if (/ws_test=test/.test(e.data)) {
+        pre.textContent += 'FAIL (cookie was sent in the websocket handshake)\n';
+      } else {
+        pre.textContent += 'PASS\n';
+      }
+    }
+  } catch(e) {
+    pre.textContent += 'Failed to create WebSocket object\n';
+  }
+}
+function removeCookie() {
+  if (/ws_test=test/.test(document.cookie)) {
+    document.cookie = 'ws_test=; Path=/; Expires=Sun, 06 Nov 1994 08:49:37 GMT';
+    if (/ws_test=test/.test(document.cookie)) {
+      pre.textContent += 'Failed to remove cookie.\n';
+    } else {
+      pre.textContent += 'Successfully removed cookie.\n';
+    }
+  } else {
+    pre.textContent += 'Cookie not found. Either it was already removed (or not set) or cookies are not enabled.\n';
+  }
+}
+</script>

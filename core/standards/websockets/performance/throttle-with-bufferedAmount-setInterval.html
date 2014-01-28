@@ -1,0 +1,76 @@
+<!DOCTYPE HTML>
+<title>WebSockets: throttling the outgoing messages using bufferedAmount and setInterval</title>
+<pre>Log:
+</pre>
+<script src=../constants.js></script>
+<script>
+if (window.WebSocket == undefined) {
+  document.getElementsByTagName('pre')[0].textContent += 'WebSocket not supported';
+  try{top.opener.rr()}catch(e){}
+} else {
+  var startDate;
+  var ws = new WebSocket(SCHEME_AND_DOMAIN+':8007/echo');
+  var s = (new Array(5001)).join('x');
+  var pre = document.getElementsByTagName('pre')[0];
+  var lines = [];
+  function log(msg) {
+    lines.push(msg);
+  }
+  function showLog() {
+    pre.textContent += lines.join('\n');
+  }
+  var lastSent;
+  var rttTimes = [];
+  var done = false;
+  var messageDates = {};
+  var sent = 0;
+  ws.onopen = function(e) {
+    startDate = new Date();
+    log('open');
+    var i = 0;
+    var interval = setInterval(function() {
+      if (ws.bufferedAmount == 0) {
+        ws.send(i+" "+s);
+        log("sent "+i);
+        lastSent = i;
+        messageDates[i] = new Date();
+        sent++;
+      }
+      i++;
+      if (sent == 10) {
+        clearInterval(interval);
+        done = true;
+      }
+    }, 10);
+  }
+  ws.onmessage = function(e) {
+    var i = e.data.split(' ')[0];
+    var time = new Date()-messageDates[i];
+    rttTimes.push(time);
+    log('received '+i+' (RTT '+time+'ms)');
+    if (done && i == lastSent) {
+      ws.close();
+    }
+  }
+  ws.onerror = function(e) {
+    log('error');
+  }
+  ws.onclose = function(e) {
+    log('close');
+    if (rttTimes.length == 0) {
+      log('No result')
+      showLog();
+      try{top.opener.rr()}catch(e){}
+    } else {
+      var sumTime = 0;
+      for (var i = 0; i < rttTimes.length; i++) {
+        sumTime += rttTimes[i];
+      }
+      log('======================');
+      log('Sum RTT time: '+sumTime+'ms');
+      showLog();
+      try{top.opener.rr(sumTime)}catch(e){}
+    }
+  }
+}
+</script>

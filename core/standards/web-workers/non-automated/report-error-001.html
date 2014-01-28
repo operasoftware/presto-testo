@@ -1,0 +1,19 @@
+<!--
+onerror = function(a, b, c) {
+  y(); // should log to console
+}
+function x() {
+  y();
+}
+x();
+/*
+-->
+<!doctype html>
+<title>reporting error in onerror handler to console</title>
+<p>You should see an error in the error console about a worker script at <script>document.write(location)</script># on line 3.</p>
+<script>
+var worker = new Worker('#');
+</script>
+<!--
+*/
+//-->

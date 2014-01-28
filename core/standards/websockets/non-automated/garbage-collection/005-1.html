@@ -1,0 +1,6 @@
+<!doctype html>
+<title>open a websocket</title>
+<script>
+var ws = new WebSocket('ws://'+location.hostname+':8007/echo');
+ws.onopen = parent.next;
+</script>

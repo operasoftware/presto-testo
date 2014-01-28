@@ -1,0 +1,20 @@
+<!doctype html>
+<title>WebSockets: Field: 0x0D in name</title>
+<pre>FAIL (script didn't run)</pre>
+<script src=/resources/jsframework2.js></script>
+<script src=../../constants.js></script>
+<script>
+assertNotEquals(window.WebSocket, undefined, 'WebSocket not supported');
+setTestTimeout(10000, 'got no close event');
+assertNotThrows(function(){
+  var ws = new WebSocket(SCHEME_AND_DOMAIN+':8007/handshake_raw?'+encodeURIComponent('HTTP/1.1 101 WebSocket Protocol Handshake\\x0D\\x0AFoo\\x0D\\x0AUpgrade: WebSocket\\x0D\\x0AConnection: Upgrade\\x0D\\x0ASec-WebSocket-Origin: '+location.protocol+'//'+location.host+'\\x0D\\x0ASec-WebSocket-Location: '));
+  ws.onclose = function(e) {
+    debug(e);
+    assertEquals(e.wasClean, false);
+    ws.onclose = assertUnreached;
+    setTestTimeout(null);
+    setTimeout(end, 500);
+  }
+  ws.onerror = ws.onmessage = ws.onopen = assertUnreached;
+});
+</script>

@@ -1,0 +1,14 @@
+<!doctype html>
+<title>test web sockets</title>
+<script>
+var count = 0;
+var connection = new WebSocket("ws://"+location.hostname+":8007/echo");
+connection.onopen = function () { connection.send("ping"); };
+connection.onmessage = function (e)
+{
+  connection.send("ping " + count);
+  document.querySelector("input").value = count++;
+};
+connection.onerror = function (error) { console.log('errror: ' + e.data); };
+</script>
+<p><input>

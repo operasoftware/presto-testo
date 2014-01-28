@@ -1,0 +1,62 @@
+<head>
+<title>WebSockets: Send/Receive blob, Object File via File uploader</title>
+    <style type="text/css">
+    .condition {
+     background-color: #ffffe0;
+    padding: 1ex;
+    border: 1px solid blue;
+    }
+    </style>
+<script type="text/javascript">
+var ws;
+var datasize;
+function init() {
+   console.log("init");
+   if (ws != null) {
+     ws.close();
+     ws = null;
+   }
+   var div = document.getElementById("msg");
+   ws = new WebSocket("ws://certo2.oslo.osa:8007/echo");
+   ws.binaryType = "arraybuffer";
+   ws.onopen = function () {
+        div.innerText = "Connection opened\n" + div.innerText;
+   };
+   ws.onmessage = function (e) {
+      div.innerText = "Message Received:" + e.data + "\n" + div.innerText;
+      if(e.data.byteLength == datasize)
+           div.innerText = "PASS\n" + div.innerText;
+       else
+         div.innerText = "FAIL: Blob object sizes does not match \n" + div.innerText;
+    
+   };
+   ws.onclose = function (e) {
+      div.innerText = "closed\n" + div.innerText;
+   };
+   
+};
+function send() {
+  var m = document.msgform.message.value;
+  var t = m;
+     if (t != "") {
+       var array = new Uint8Array(t.length);
+       for (var i = 0; i < t.length; i++) {
+          array[i] = t.charCodeAt(i);
+       }
+       m = array.buffer;
+     } 
+   datasize = m.byteLength;
+   ws.send(m);
+   return false;
+};
+</script>
+<body onLoad="init();">
+<form name="msgform" action="#" onsubmit="return send();">
+<input type="text" name="message" size="40" value="">
+<input type="submit" value="send">
+</form>
+<div id="msg"></div>
+ <p class="condition">
+    Enter some text and press send, you should see the word PASS
+ </p>
+</html>

@@ -1,0 +1,31 @@
+<!doctype html>
+<title>Web socket: High load from server</title>
+<meta charset=utf-8>
+<script>
+window.onload = function()
+{
+  var sock = new WebSocket("ws://certo2.opera.com:8081/test-web-sock-13-high-load");
+  var log = document.querySelector("pre");
+  var count = 0;
+  var total_count = 0;
+  var time = Date.now();
+  sock.onopen = function(event) { log.textContent += "web socket open\n"; };
+  sock.onerror = function(event) { log.textContent += "web socket error\n"; };
+  sock.onmessage = function(event)
+  {
+    count++;
+    var now = Date.now();
+    if (now - time > 1000)
+    {
+      var m_p_s = count * (1000 / (now - time)) >> 0;
+      total_count += count;
+      log.textContent = log.textContent.replace(/messages per second.*\n/, "") +
+                        "messages per second: " + m_p_s + " " +
+                        "total messages: " + total_count + "\n";
+      time = now;
+      count = 0;
+    }
+  };
+}
+</script>
+<pre></pre>

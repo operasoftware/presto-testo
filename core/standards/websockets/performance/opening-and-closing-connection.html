@@ -1,0 +1,91 @@
+<!DOCTYPE HTML>
+<title>WebSockets: performance of opening connection and closing connection</title>
+<pre>Log:
+</pre>
+<script src=../constants.js></script>
+<script>
+var pre = document.getElementsByTagName('pre')[0];
+var lines = [];
+function log(s) {
+  if (s instanceof Event) {
+    s = s.type+' '+s.target.id;
+  }
+  lines.push(s);
+}
+function showLog() {
+  pre.textContent += lines.join('\n');
+}
+function fail(s) {
+  log('FAIL');
+  log(s);
+  if (arguments.callee.done)
+    return;
+  arguments.callee.done = true;
+  showLog();
+  try{top.opener.rr()}catch(e){}
+}
+var sockets = [];
+var connectionTimes = [];
+var closeTimes = [500];
+var firstConnectionTime = 500;
+var i = 0;
+var startDate;
+function next(e) {
+  if (e && e.type == 'close') {
+    if (e.wasClean != true) {
+      fail(e);
+      log('wasClean was '+e.wasClean);
+      return;
+    }
+    var time = new Date()-startDate;
+    closeTimes.push(time);
+    log('Close time for '+this.id+': '+time+'ms');
+    if (this.id == 15) {
+      end();
+      return;
+    }
+  }
+  startDate = new Date();
+  var ws = new WebSocket(SCHEME_AND_DOMAIN+':8007/echo')
+  sockets.push(ws);
+  ws.id = i++;
+  ws.onopen = opened;
+  ws.onclose = fail;
+}
+function opened(e) {
+  var time = new Date()-startDate;
+  if (i == 1) {
+    firstConnectionTime += time;
+  } else {
+    connectionTimes.push(time);
+  }
+  log('Connection time for '+this.id+': '+time+'ms');
+  this.onclose = next;
+  startDate = new Date();
+  this.close();
+}
+function end() {
+  var sumConn = 0;
+  var sumClose = 0;
+  for (var i = 0; i < connectionTimes.length; ++i) {
+    sumConn += connectionTimes[i];
+  }
+  for (i = 0; i < closeTimes.length; ++i) {
+    sumClose += closeTimes[i];
+  }
+  log('=========================');
+  log('Sum of connection times (except the first): '+sumConn+'ms');
+  log('Sum of close times (plus 500ms): '+sumClose+'ms');
+  log('First connection time (plus 500ms): '+firstConnectionTime+'ms');
+  if (!fail.done) {
+    showLog();
+    try{top.opener.rr(sumConn, sumClose, firstConnectionTime)}catch(e){}
+  }
+}
+
+if (window.WebSocket == undefined) {
+  fail('WebSocket not supported');
+} else {
+  next();
+}
+</script>
