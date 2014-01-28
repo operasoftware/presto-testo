@@ -1,0 +1,16 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+
+<html>
+<head>
+<title>opacity - nested element blocks</title>
+  <style type="text/css" media="all,handheld">
+ div.t1 { height:2em; width:2em; opacity:.99 }
+ div.t1 > div { height:4em; width:4em; background:blue }
+ div.t2 { margin:3em 0 0; height:4em; width:4em; background:blue }
+</style>
+</head>
+<body>
+<p>The two squares should be identical:
+<div class="t1"><div></div></div>
+<div class="t2"></div></body>
+</html>

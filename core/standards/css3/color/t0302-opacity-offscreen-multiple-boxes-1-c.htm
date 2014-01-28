@@ -1,0 +1,31 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+	<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+		<title>css3-color Test Suite: opacity</title>
+		<link rel="author" href="http://dbaron.org/" title="L. David Baron">
+		<link rel="author" href="http://mozilla.com/" title="Mozilla Corporation">
+		<link rel="help" href="http://www.w3.org/TR/2003/CR-css3-color-20030514#transparency">
+		<meta content="" name="flags">
+		<meta content="Opacity is group opacity over elements (not boxes)." name="assert">
+		<style type="text/css">
+
+		body { background: white; }
+
+		div.test { margin: 1em; line-height: 0.5em; font-family: monospace; }
+		div.test span { opacity: 0.4; background: blue; color: blue; }
+
+		div.ref { height: 1em; width: 5em; background: rgb(153, 153, 255); }
+
+		</style>
+	</head>
+	<body>
+
+		<p>The following two boxes should be the same color:</p>
+
+		<div class="test"><span>XXXXX<br>XXXXX</span></div>
+
+		<div class="ref"></div>
+
+	</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+	<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+		<title>css3-color Test Suite: hsl() clipping outside device gamut</title>
+		<link rel="author" href="http://dbaron.org/" title="L. David Baron">
+		<link rel="author" href="http://mozilla.com/" title="Mozilla Corporation">
+		<link rel="help" href="http://www.w3.org/TR/css3-color/#hsl-color">
+		<meta content="" name="flags">
+		<meta content="Test clipping of hsl() values outside the device gamut." name="assert">
+		<style type="text/css">
+
+		table { border-spacing: 0 2px; padding: 0; border: none; }
+		td { border: none; padding: 0; height: 1.2em; }
+
+		</style>
+	</head>
+	<body>
+
+	<p><strong>WARNING: This test assumes that the device gamut is sRGB
+	(as it will be for many CRT monitors).</strong></p>
+
+	<p>Every row in this table should have both columns the same color:</p>
+
+	<table>
+		<tr>
+			<th style="background:white; color: black">Column 1</th>
+			<th style="background:black; color: white">Column 2</th>
+		</tr>
+		<tr>
+			<td style="background: hsl(240, 100%, -100%)">&nbsp;</td>
+			<td style="background: black">&nbsp;</td>
+		</tr>
+		<tr>
+			<td style="background: hsl(240, 75%, -20%)">&nbsp;</td>
+			<td style="background: black">&nbsp;</td>
+		</tr>
+		<tr>
+			<td style="background: hsl(240, 75%, 120%)">&nbsp;</td>
+			<td style="background: white">&nbsp;</td>
+		</tr>
+		<tr>
+			<td style="background: hsl(240, 130%, 50%)">&nbsp;</td>
+			<td style="background: rgb(0, 0, 255)">&nbsp;</td>
+		</tr>
+		<tr>
+			<td style="background: hsl(264, 130%, 50%)">&nbsp;</td>
+			<td style="background: rgb(102, 0, 255)">&nbsp;</td>
+		</tr>
+		<tr>
+			<td style="background: hsl(0, -50%, 40%)">&nbsp;</td>
+			<td style="background: rgb(102, 102, 102)">&nbsp;</td>
+		</tr>
+		<tr>
+			<td style="background: hsl(30, -50%, 60%)">&nbsp;</td>
+			<td style="background: rgb(153, 153, 153)">&nbsp;</td>
+		</tr>
+	</table>
+
+	</body>
+</html>

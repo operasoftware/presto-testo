@@ -1,0 +1,39 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+ <head>
+  <title>opacity - layered base colors</title>
+
+  <style type="text/css" media="all,handheld">
+	 div{
+	  position: absolute;
+		height: 100px;
+		width: 100px;
+	 }
+	 #one{
+	  left: 0;
+	  background: red;
+	  opacity: 0.3;
+	 }
+	 #two{
+	  left: 50px;
+	  background: green;
+	  opacity: 1;
+	 }
+	 #three{
+	  left: 100px;
+	  background: blue;
+	  opacity: 0.5;
+	 }
+  </style>
+
+ </head>
+<body>
+
+  <p>There should be four bars below (pale pink, green, dark blue, light blue).</p>
+	
+	<div id="one">&nbsp;</div>
+	<div id="two">&nbsp;</div>
+	<div id="three">&nbsp;</div>
+
+ </body>
+</html>

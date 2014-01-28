@@ -1,0 +1,31 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+ <head>
+  <title>opacity - nested element</title>
+
+  <style type="text/css" media="all,handheld">
+	div{
+	 position: absolute;
+	 width: 100px;
+	 height:100px;
+	}
+	#outer {
+	 opacity: 0;
+	}
+	#inner{
+	 background: red;
+	}
+
+  </style>
+
+ </head>
+<body>
+
+ <p>There should not be any red on this page</p>
+
+  <div id="outer">
+	 <div id="inner">&nbsp;</div>
+	</div>
+
+ </body>
+</html>

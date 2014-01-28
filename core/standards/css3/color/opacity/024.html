@@ -1,0 +1,64 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+ <head>
+  <title>opacity - poor man's gradient -  2D</title>
+
+  <style type="text/css" media="all,handheld">
+   td{
+	  height: 4px;
+		width: 4px;
+		background: navy;
+	 }
+	 table{
+	  border-collapse: collapse;
+	 }
+	</style>
+
+  <script language="JavaScript" type="text/javascript">
+   <!--
+   window.onload = function (){
+	  tbl = document.getElementById('tbl');
+	  for(i=0;i<25;i++){
+		 tr = document.createElement('tr');
+		 tr.style.opacity = i/25; 
+		 for(j=0;j<25;j++){
+		  td = document.createElement('td');
+		  td.style.opacity = j/25;
+		  tr.appendChild(td);
+		 }
+		 for(j=25;j>0;j--){
+		  td = document.createElement('td');
+		  td.style.opacity = j/25;
+		  tr.appendChild(td);
+		 }
+		 tbl.appendChild(tr);
+		}
+		for(i=25;i>0;i--){
+		 tr = document.createElement('tr');
+		 tr.style.opacity = i/25; 
+		 for(j=0;j<25;j++){
+		  td = document.createElement('td');
+		  td.style.opacity = j/25;
+		  tr.appendChild(td);
+		 }
+		 for(j=25;j>0;j--){
+		  td = document.createElement('td');
+		  td.style.opacity = j/25;
+		  tr.appendChild(td);
+		 }
+		 tbl.appendChild(tr);
+		}
+   }
+   //-->
+  </script>
+
+ </head>
+<body>
+
+  <p>There should be a blue unsharp star below.</p>
+
+  <table summary="" id="tbl">
+  </table>
+
+ </body>
+</html>

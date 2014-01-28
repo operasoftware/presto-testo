@@ -1,0 +1,37 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+ <head>
+  <title>opacity - layering - z-index</title>
+
+  <style type="text/css" media="all,handheld">
+  div{
+ 	 height: 100px;
+	 width: 100px;
+	 position: absolute;
+	}
+	#one {
+	 background: red;
+	 opacity: 0.1;
+	 z-index: 20;
+	}
+	#two{
+	 background: green;
+	 z-index: 10;
+	}
+  </style>
+
+ </head>
+<body>
+
+ <p>There should be a green square below</p>
+
+  <div id="one">
+	 &nbsp;
+  </div>
+	
+	<div id="two">
+	 &nbsp;
+	</div>
+	
+ </body>
+</html>

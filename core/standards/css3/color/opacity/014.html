@@ -1,0 +1,30 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+ <head>
+  <title>opacity - out of range - negative</title>
+
+  <style type="text/css" media="all,handheld">
+  div{
+ 	 height: 50px;
+	 width: 50px;
+	}
+	#outer {
+	 border: 1em solid blue;
+	 background: blue;
+	}
+	#inner{
+	 background: red;
+	 opacity: -256;
+	}
+  </style>
+
+ </head>
+<body>
+
+ <p>There should not be any red on this page, only a blue square.</p>
+
+  <div id="outer">
+   <div id="inner">&nbsp;</div>
+  </div>
+ </body>
+</html>

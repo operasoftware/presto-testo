@@ -1,0 +1,31 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+	<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+		<title>css3-color Test Suite: hsla() overpainting</title>
+		<link rel="author" href="http://dbaron.org/" title="L. David Baron">
+		<link rel="author" href="http://mozilla.com/" title="Mozilla Corporation">
+		<link rel="help" href="http://www.w3.org/TR/2003/CR-css3-color-20030514#hsla-color">
+		<meta content="" name="flags">
+		<meta content="Test that hsla() does not behave like opacity and draw in an offscreen buffer." name="assert">
+		<style type="text/css">
+
+		body { background: white; }
+
+		div.test { margin: 1em; line-height: 0; font-family: monospace; }
+		div.test span { background: hsla(240, 100%, 50%, 0.4); color: hsla(0, 100%, 50%, 0); }
+
+		div.ref { height: 1em; width: 5em; background: rgb(92, 92, 255); }
+
+		</style>
+	</head>
+	<body>
+
+		<p>These two rectangles should be the same color:</p>
+
+		<div class="test"><span>XXXXX<br>XXXXX</span></div>
+
+		<div class="ref"></div>
+
+	</body>
+</html>

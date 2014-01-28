@@ -1,0 +1,40 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+ <head>
+  <title>opacity - opacity getComputedStyle color return</title>
+
+  <style type="text/css" media="all,handheld">
+	 div{
+		height: 100px;
+		width: 100px;
+		opacity: 0.5;
+		background: navy;
+	 }
+  </style>
+
+	<script type="text/javascript">
+  <!--
+   window.onload = function(){
+	  ele = document.getElementById('one');
+		if(document.defaultView.getComputedStyle){
+		 if(document.defaultView.getComputedStyle(ele, '').getPropertyValue("background-color").indexOf('#')>-1 || document.defaultView.getComputedStyle(ele, '').getPropertyValue("background-color").indexOf('rgb(') == 0){
+		  document.getElementsByTagName('p')[0].firstChild.data = "PASS";
+		 }
+		 else{
+		  document.getElementsByTagName('p')[0].firstChild.data = "FAIL";
+		 }
+		}
+	 }
+  //-->
+  </script>
+
+	
+ </head>
+<body>
+
+  <p>Not tested (JS required)</p>
+	
+	<div id="one">&nbsp;</div>
+
+ </body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+	<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+		<title>css3-color Test Suite: whitespace in rgba() values</title>
+		<link rel="author" href="http://dbaron.org/" title="L. David Baron">
+		<link rel="author" href="http://mozilla.com/" title="Mozilla Corporation">
+		<link rel="help" href="http://www.w3.org/TR/2003/CR-css3-color-20030514#rgba-color">
+		<meta content="" name="flags">
+		<meta content="Test that whitespace is allowed within rgba() functions." name="assert">
+		<style type="text/css">
+		html, body { background: black; }
+		#one { color: rgba(  0,
+255		,0          ,1.0   ); }
+		#two { color: rgba(0
+,255		
+,0
+,          1.0); }
+		#three { color: rgba(     0   ,   255    	  , 			0 ,              1.0); }
+
+		#four { color: rgba(  0%,
+100%		,0%                   ,1.0    ); }
+		#five { color: rgba(0%
+,100%		
+,0%
+,          1.0); }
+		#six { color: rgba(     0%   ,   100%    	  , 			0% ,
+     1.0); }
+		</style>
+	</head>
+	<body>
+		<p id="one">This text should be green.</p>
+		<p id="two">This text should be green.</p>
+		<p id="three">This text should be green.</p>
+		<p id="four">This text should be green.</p>
+		<p id="five">This text should be green.</p>
+		<p id="six">This text should be green.</p>
+	</body>
+</html>

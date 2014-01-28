@@ -1,0 +1,22 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+
+<html>
+<head>
+<title>opacity - CSS Stacking Context Model (Evil test)</title>
+  <style type="text/css" media="all,handheld">
+ .block { height:1em; width:4em; display: block; font:1em/1 Ahem }
+ .float { height:1em; width:4em; float:left; margin-bottom: -1em; opacity:0.99; background:green }
+ .inline { display: inline; background:red }
+ .spacer { height:1em; width:4em; vertical-align:bottom }
+</style>
+</head>
+<body>
+<p>There should be no red below.</p>
+<div class="block">
+ <div class="float"></div>
+ <div class="inline">
+  <img src="data:image/gif,GIF89a%01%00%01%00%80%FF%00%C0%C0%C0%00%00%00!%F9%04%01%00%00%00%00%2C%00%00%00%00%01%00%01%00%00%02%02D%01%00%3B" class="spacer" alt="FAIL">
+ </div>
+</div>
+</body>
+</html>

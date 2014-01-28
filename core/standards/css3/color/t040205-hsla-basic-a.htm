@@ -1,0 +1,22 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+	<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+		<title>css3-color Test Suite: hsla()</title>
+		<link rel="author" href="http://dbaron.org/" title="L. David Baron">
+		<link rel="author" href="http://mozilla.com/" title="Mozilla Corporation">
+		<link rel="help" href="http://www.w3.org/TR/2003/CR-css3-color-20030514#hsla-color">
+		<meta content="" name="flags">
+		<meta content="Test basic functioning of hsla() colors." name="assert">
+		<style type="text/css">
+		html, body { background: white; }
+		p { font-weight: bold; margin: 0; }
+		#one { color: hsla(120, 100%, 70%, 1.0); }
+		#two { color: hsla(120, 100%, 50%, 0.6); }
+		</style>
+	</head>
+	<body>
+		<p id="one">This text should be light green (the same color as the line below).</p>
+		<p id="two">This text should be light green (the same color as the line above).</p>
+	</body>
+</html>

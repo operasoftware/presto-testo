@@ -1,0 +1,30 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+ <head>
+  <title>opacity - out of range - high</title>
+
+  <style type="text/css" media="all,handheld">
+  div{
+ 	 height: 50px;
+	 width: 50px;
+	}
+	#outer {
+	 border: 1em solid blue;
+	 background: blue;
+	}
+	#inner{
+	 background: green;
+	 opacity: 3;
+	}
+  </style>
+
+ </head>
+<body>
+
+ <p>There should be a green square with blue border below</p>
+
+  <div id="outer">
+   <div id="inner">&nbsp;</div>
+  </div>
+ </body>
+</html>

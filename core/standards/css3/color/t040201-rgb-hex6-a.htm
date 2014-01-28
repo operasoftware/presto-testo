@@ -1,0 +1,26 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+	<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+		<title>css3-color Test Suite: #rrggbb colors</title>
+		<link rel="author" href="http://dbaron.org/" title="L. David Baron">
+		<link rel="author" href="http://mozilla.com/" title="Mozilla Corporation">
+		<link rel="help" href="http://www.w3.org/TR/2003/CR-css3-color-20030514#rgb-color">
+		<meta content="" name="flags">
+		<meta content="Test that #rrggbb values produce correct colors." name="assert">
+		<style type="text/css">
+		#one { color: #000000; background: #ffffff; }
+		#two { color: #ffffff; background: #000000; }
+		#three { color: #ff0000; }
+		#four { color: #00ff00; }
+		#five { color: #0000ff; }
+		</style>
+	</head>
+	<body>
+		<p id="one">This should be black text on a white background.</p>
+		<p id="two">This should be white text on a black background.</p>
+		<p id="three">This text should be red.</p>
+		<p id="four">This text should be green.</p>
+		<p id="five">This text should be blue.</p>
+	</body>
+</html>

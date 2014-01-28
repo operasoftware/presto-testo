@@ -1,0 +1,32 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+ <head>
+  <title>opacity - image - z-index</title>
+
+  <style type="text/css" media="all,handheld">
+	div,img{
+	 height: 50px;
+	 width: 50px;
+	 position: absolute;
+	}
+	
+	img {
+	 opacity: 0.1;
+	 z-index: 20;
+	}
+	div{
+	 background: green;
+	}
+  </style>
+
+ </head>
+<body>
+
+ <p>There should be a green square below.</p>
+
+  <div>&nbsp;</div>
+  
+	<img src="red.gif" width="50" height="50" alt="red picture">
+ 
+ </body>
+</html>

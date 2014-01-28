@@ -1,0 +1,66 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+	<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+		<title>css3-color Test Suite: rgba() clipping outside device gamut</title>
+		<link rel="author" href="http://dbaron.org/" title="L. David Baron">
+		<link rel="author" href="http://mozilla.com/" title="Mozilla Corporation">
+		<link rel="help" href="http://www.w3.org/TR/css3-color#rgba-color">
+		<meta content="" name="flags">
+		<meta content="Test clipping of rgba() values outside the device gamut." name="assert">
+		<style type="text/css">
+
+		body { background: white; color: black; }
+		table { border-spacing: 0 2px; padding: 0; border: none; }
+		td { border: none; padding: 0; height: 1.2em; }
+
+		</style>
+	</head>
+	<body>
+
+	<p><strong>WARNING: This test assumes that the device gamut is sRGB
+	(as it will be for many CRT monitors).</strong></p>
+
+	<p>Every row in this table should have both columns the same color:</p>
+
+	<table>
+		<tr>
+			<th style="background:white; color: black">Column 1</th>
+			<th style="background:black; color: white">Column 2</th>
+		</tr>
+		<tr>
+			<td style="background: rgba(-30, 500, -1, 0.6)">&nbsp;</td>
+			<td style="background: rgb(102, 255, 102)">&nbsp;</td>
+		</tr>
+		<tr>
+			<td style="background: rgba(-260, -254, 300, 0.4)">&nbsp;</td>
+			<td style="background: rgb(153, 153, 255)">&nbsp;</td>
+		</tr>
+		<tr>
+			<td style="background: rgba(-254, 256, 0, 0.6)">&nbsp;</td>
+			<td style="background: rgb(102, 255, 102)">&nbsp;</td>
+		</tr>
+		<tr>
+			<td style="background: rgba(-10%, 200%, -1%, 0.4)">&nbsp;</td>
+			<td style="background: rgb(153, 255, 153)">&nbsp;</td>
+		</tr>
+		<tr>
+			<td style="background: rgba(-110%, 130%, -99%, 0.6)">&nbsp;</td>
+			<td style="background: rgb(102, 255, 102)">&nbsp;</td>
+		</tr>
+		<tr>
+			<td style="background: rgba(-99%, 101%, 0%, 0.4)">&nbsp;</td>
+			<td style="background: rgb(153, 255, 153)">&nbsp;</td>
+		</tr>
+		<tr>
+			<td style="background: rgba(50, -30, 255, 0.6)">&nbsp;</td>
+			<td style="background: rgb(132, 102, 255)">&nbsp;</td>
+		</tr>
+		<tr>
+			<td style="background: rgba(0, 50, 350, 0.4)">&nbsp;</td>
+			<td style="background: rgb(153, 173, 255)">&nbsp;</td>
+		</tr>
+	</table>
+
+	</body>
+</html>

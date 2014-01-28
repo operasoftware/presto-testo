@@ -1,0 +1,29 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+ <head>
+  <title>opacity - object on object</title>
+
+  <style type="text/css" media="all,handheld">
+	 object{
+	  position: absolute;
+		height: 100px;
+		width: 100px;
+	 }
+	 #one{
+	  opacity: 0.8;
+	 }
+	 #two{
+	  opacity: 0.2;
+	 }
+  </style>
+
+ </head>
+<body>
+
+  <p>There should be a green square below.</p>
+	
+	<object id="one" type="image/gif" data="green.gif">Green</object>
+	<object id="two" type="image/gif" data="red.gif">Red</object>
+
+ </body>
+</html>

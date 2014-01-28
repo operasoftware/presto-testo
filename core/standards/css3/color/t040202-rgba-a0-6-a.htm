@@ -1,0 +1,23 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+	<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+		<title>css3-color Test Suite: rgba() colors</title>
+		<link rel="author" href="http://dbaron.org/" title="L. David Baron">
+		<link rel="author" href="http://mozilla.com/" title="Mozilla Corporation">
+		<link rel="help" href="http://www.w3.org/TR/2003/CR-css3-color-20030514#rgba-color">
+		<link rel="help" href="http://www.w3.org/TR/2003/CR-css3-color-20030514#rgb-color">
+		<meta content="" name="flags">
+		<meta content="Opacity of 0.6 makes text partially opaque.  Colors are in sRGB color space (may test)." name="assert">
+		<style type="text/css">
+			html, body { background: white; color: black; }
+			p { color: black; }
+			#one { color: rgb(102, 102, 102); }
+			#two { color: rgba(0, 0, 0, 0.6); }
+		</style>
+	</head>
+	<body>
+		<p id="one">This text should be the same color (a shade of gray) as the line below.</p>
+		<p id="two">This text should be the same color (a shade of gray) as the line above.</p>
+	</body>
+</html>

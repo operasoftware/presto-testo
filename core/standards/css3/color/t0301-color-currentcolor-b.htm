@@ -1,0 +1,21 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+	<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+		<title>css3-color Test Suite: color</title>
+		<link rel="author" href="http://dbaron.org/" title="L. David Baron">
+		<link rel="author" href="http://mozilla.com/" title="Mozilla Corporation">
+		<link rel="help" href="http://www.w3.org/TR/2003/CR-css3-color-20030514#foreground">
+		<link rel="help" href="http://www.w3.org/TR/2003/CR-css3-color-20030514#currentcolor">
+		<meta content="" name="flags">
+		<meta content="That currentColor on the color property acts like inherit." name="assert">
+		<style type="text/css">
+			#one { color: green; }
+			#two { color: red; }
+			#two { color: currentColor; }
+		</style>
+	</head>
+	<body>
+		<div id="one"><p id="two">This text should be green.</p></div>
+	</body>
+</html>

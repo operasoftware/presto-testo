@@ -1,0 +1,36 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+ <head>
+  <title>opacity - poor man's gradient demo</title>
+
+  <style type="text/css" media="all,handheld">
+   div{
+	  height: 1em;
+		width: 4px;
+		float: left;
+		background: blue;
+	 }
+	</style>
+
+  <script language="JavaScript" type="text/javascript">
+   <!--
+   window.onload = function (){
+	  p = document.getElementById('outer');
+	  for(i=0;i<100;i++){
+		 d = document.createElement('div');
+		 d.style.opacity = i/100;
+		 p.appendChild(d);
+		}
+   }
+   //-->
+  </script>
+
+ </head>
+<body>
+
+  <p>There should be a blue bar below - the color gradually sharpening from left to right.</p>
+
+  <p id="outer"></p>
+
+ </body>
+</html>

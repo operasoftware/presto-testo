@@ -1,0 +1,28 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+	<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+		<title>css3-color Test Suite: opacity</title>
+		<link rel="author" href="http://dbaron.org/" title="L. David Baron">
+		<link rel="author" href="http://mozilla.com/" title="Mozilla Corporation">
+		<link rel="help" href="http://www.w3.org/TR/2003/CR-css3-color-20030514#transparency">
+		<meta content="" name="flags">
+		<meta content="That alpha within the offscreen buffer is composited correctly." name="assert">
+		<style type="text/css">
+
+		body { background: white; }
+
+		div { width: 5em; height: 1em; }
+		div.top { margin: 2px 0; }
+
+		</style>
+	</head>
+	<body>
+		<p>The following four boxes should be the same color:</p>
+
+		<div style="background: rgb(204, 204, 255)" class="top"></div>
+		<div style="opacity: 0.2; background: rgb(0, 0, 255)" class="top"></div>
+		<div style="opacity: 0.5" class="top"><div style="opacity: 0.4; background: rgb(0, 0, 255)"></div></div>
+		<div style="opacity: 0.4" class="top"><div style="background: rgba(0, 0, 255, 0.5)"></div></div>
+	</body>
+</html>

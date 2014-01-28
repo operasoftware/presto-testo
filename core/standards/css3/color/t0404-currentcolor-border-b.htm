@@ -1,0 +1,28 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+	<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+		<title>css3-color Test Suite: currentColor (with 'border-color')</title>
+		<link rel="author" href="http://dbaron.org/" title="L. David Baron">
+		<link rel="author" href="http://mozilla.com/" title="Mozilla Corporation">
+		<link rel="help" href="http://www.w3.org/TR/2003/CR-css3-color-20030514#currentcolor">
+		<meta content="" name="flags">
+		<meta content="currentColor uses the color from the color property" name="assert">
+		<style type="text/css">
+		#one {
+			color: green;
+			border: medium solid red;
+			border: medium solid currentColor;
+		}
+		#two {
+			color: green;
+			border: medium solid red;
+			border-color: currentcolor;
+		}
+		</style>
+	</head>
+	<body>
+		<p id="one">This paragraph should have a green border.</p>
+		<p id="two">This paragraph should have a green border.</p>
+	</body>
+</html>
