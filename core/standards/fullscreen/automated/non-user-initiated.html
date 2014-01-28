@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>requestFullScreen from non-user-initiated event</title>
+	<script src="/resources/testharness.js"></script>
+	<script src="/resources/testharnessreport.js"></script>
+	<script>
+		var test = async_test("requestFullScreen from non-user-initiated event");
+
+		onload = function()
+		{
+			if (document.querySelector('div').requestFullscreen)
+				document.querySelector('div').requestFullscreen();
+			else
+				test.step(function()
+				{
+					assert_true(false, "requestFullscreen support");
+				})
+			test.done();
+		}
+
+		document.addEventListener('fullscreenchange', function(e)
+		{
+			test.step(function() {
+				assert_false(true, "got fullscreenchange event");
+			});
+
+			removeFullscreenElement();
+		}, false);
+
+		function removeFullscreenElement()
+		{
+			var el = document.fullscreenElement;
+			el.parentNode.removeChild(el);
+		}
+	</script>
+</head>
+<body>
+
+	<p>There should be a PASS below.</p>
+
+	<div id="log"></div>
+
+</body>
+</html>

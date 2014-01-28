@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Geolocation:call watchPosition with wrong type for enableHighAccuracy. No exception expected. </title>
+<link rel="stylesheet" type="text/css" href="style.css"/>
+</head>
+<body>
+<p id="instructions"></p>
+<p id="message">NOT TESTED (script did not run)</p>
+<script type="text/javascript" src="common.js"></script>
+<script type="text/javascript">
+run(function() {
+  geo.watchPosition(dummyFunction, null, {enableHighAccuracy: "boom"});
+  geo.watchPosition(dummyFunction, null, {enableHighAccuracy: 321});
+  geo.watchPosition(dummyFunction, null, {enableHighAccuracy: -Infinity});
+  geo.watchPosition(dummyFunction, null, {enableHighAccuracy: {foo: 5}});
+  pass();
+});
+</script>
+</body>
+</html>

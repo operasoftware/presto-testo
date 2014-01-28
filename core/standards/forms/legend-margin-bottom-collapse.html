@@ -1,0 +1,52 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+<head>
+<title>Forms :: legend : margin-bottom, null fieldset border</title>
+<style type="text/css">
+html, body {background: white;}
+form * {
+	font-family: Ahem;
+	font-size: 1em;
+	line-height: 1em;
+}
+form {
+	background: #FFCC00;
+	padding: 0;
+	width: 3em;
+}
+fieldset {
+	color: #3366CC;
+	background-color: #3366CC;
+	margin: 0;
+	border: none;
+	height: 3em;
+}
+legend {
+	color: black;
+	margin-bottom: 1em;
+}
+div {
+	color: white;
+}
+</style>
+</head>
+
+<body>
+
+<form action="">
+	<div>xxxx</div>
+	<fieldset>
+		<legend>x</legend>
+		x
+	</fieldset>
+</form>
+
+<h4>Ahem font required for this test</h4>
+<ul>
+<li>there should be two boxes, thin yellow and thick blue, with yellow stacked imediately to the top of blue</li>
+<li>blue and yellow boxes should be of identical width, and they should be identically left-aligned</li>
+<li>there should also be a black square, vertically aligned with the top of the yellow box, and overlapping the blue box</li>
+</ul>
+
+</body>
+</html>

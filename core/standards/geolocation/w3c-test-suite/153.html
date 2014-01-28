@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Geolocation:check for accuracy property. </title>
+<link rel="stylesheet" type="text/css" href="style.css"/>
+</head>
+<body>
+<p id="instructions"></p>
+<p id="message">NOT TESTED (script did not run)</p>
+<script type="text/javascript" src="common.js"></script>
+<script type="text/javascript">
+askAccept();
+run(function() {
+  geo.getCurrentPosition(
+      function(position) {
+        if (position
+            && typeof position.coords == 'object'
+            && typeof position.coords.accuracy == 'number') {
+          pass();
+        } else {
+          fail();
+        }
+      },
+      function(error) {
+        maybe('INCONCLUSIVE: Failed to get a location.');
+      });
+});
+</script>
+</body>
+</html>

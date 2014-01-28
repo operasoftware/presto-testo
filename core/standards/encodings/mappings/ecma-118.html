@@ -1,0 +1,18 @@
+<html>
+ <head>
+  <meta charset="ecma-118"><title>Mappings for single-byte encodings: ecma-118</title><style type="text/css">p#test { display: none; }</style>
+ </head>
+ <body>
+  <p id="test">®Òÿ</p>
+  <p>
+   <script type="text/javascript">
+    var passed = (document.getElementById('test').innerText == '\ufffd\ufffd\ufffd')
+    if (passed)
+     document.write('PASS')
+    else
+     document.write('FAIL')
+   try{top.opener.rr(passed);}catch(e){}
+   </script>
+  </p>
+ </body>
+</html>

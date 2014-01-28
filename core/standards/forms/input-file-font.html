@@ -1,0 +1,34 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+<head>
+<title>Forms :: file input : font</title>
+<style type="text/css">
+form * {
+	font-family: Ahem;
+	font-size: 1em;
+	line-height: 1em;
+}
+fieldset, div {
+	padding: 0;
+	margin: 10px;
+	border: none;
+}
+</style>
+</head>
+
+<body>
+
+<form action="">
+	<fieldset>
+		<input type="file" value="fail">
+	</fieldset>
+</form>
+
+<ul>
+<li>you should see one black rectangle and no text above</li>
+<li>when you type in the field, you should only see one, expanding black rectangle instead of text</li>
+</ul>
+<h4>Ahem font required for this test</h4>
+
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Overriding styles specified by the :fullscreen selector</title>
+	<meta name="assert" content="The following CSS rules do apply at 'user agent
+	declarations' in the cascading order (:fullscreen selector).">
+	<script src="/resources/testharness.js"></script>
+	<script src="/resources/testharnessreport.js"></script>
+	<style>
+		@media all and (view-mode: fullscreen) {
+			#f {
+				background-color: rgb(0, 200, 0);
+			}
+		}
+	</style>
+	<script>
+		var test = async_test('Overriding styles specified by the :fullscreen selector');
+
+		function enterFullscreen()
+		{
+			document.getElementById('f').requestFullscreen();
+			return false;
+		}
+
+		onload = function()
+		{
+			document.querySelector('a').onclick = enterFullscreen;
+		}
+
+		document.addEventListener('fullscreenchange', function(e)
+		{
+			test.step(function()
+			{
+				var el = document.getElementById('f');
+				assert_equals(getComputedStyle(el).backgroundColor, 'rgb(0, 200, 0)', 'User specified background-color')
+			});
+
+			test.done();
+			removeFullscreenElement();
+		}, false);
+
+		function removeFullscreenElement()
+		{
+			var el = document.fullscreenElement;
+			el.parentNode.removeChild(el);
+		}
+	</script>
+</head>
+<body>
+
+	<div id="f">
+		<p>Document should have a green background after entering fullscreen mode.</p>
+
+		<a href="#">enter fullscreen</a>
+	</div>
+
+	<div id="log"></div>
+
+</body>
+</html>

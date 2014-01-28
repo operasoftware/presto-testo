@@ -1,0 +1,48 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+<head>
+<title>Forms :: checkbox input : absolute position</title>
+<style type="text/css">
+form * {
+	font-family: Ahem;
+	font-size: 1em;
+	line-height: 1em;
+}
+fieldset, div {
+	padding: 0;
+	margin: 0;
+	border: none;
+}
+input {
+	background: lime;
+	padding: 0;
+	margin: 0;
+	border: none;
+	width: 1em;
+	height: 1em;
+	position: absolute;
+	right: 1em;
+	top: 1em;
+}
+div input {
+	top: 3em;
+}
+</style>
+</head>
+
+<body>
+
+<form action="">
+	<fieldset>
+		<input type="checkbox" value="x">
+	</fieldset>
+	<div>
+		<input type="checkbox" value="x">
+	</div>
+</form>
+
+<h4>Ahem font required for this test</h4>
+<p>you should see two green squares near the top-right corner of the screen</p>
+
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Fire fullscreenchange event</title>
+	<script src="/resources/testharness.js"></script>
+	<script src="/resources/testharnessreport.js"></script>
+	<script>
+		var test1 = async_test("Fullscreenchange event on enter");
+		var test2 = async_test("Fullscreenchange event on exit");
+
+		function enterFullscreen()
+		{
+			document.querySelector('#test').requestFullscreen();
+		}
+
+		function exitFullscreen()
+		{
+			document.exitFullscreen();
+		}
+
+		document.addEventListener('fullscreenchange', function(e)
+		{
+			if (document.fullscreenElement)
+				test1.done();
+			else
+				test2.done();
+
+			removeFullscreenElement();
+		}, false);
+
+		function removeFullscreenElement()
+		{
+			var el = document.fullscreenElement;
+			el.parentNode.removeChild(el);
+		}
+	</script>
+</head>
+<body>
+
+	<p>Enter and exit fullscreen mode. Two events should be logged below, one for each mode.</p>
+
+	<div id="test">
+		<button onclick="enterFullscreen()">enter fullscreen</button>
+		<button onclick="exitFullscreen();">exit fullscreen</button>
+	</div>
+
+	<div id="log"></div>
+
+</body>
+</html>

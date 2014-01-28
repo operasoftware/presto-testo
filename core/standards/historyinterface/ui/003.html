@@ -1,0 +1,15 @@
+<!doctype html>
+<html>
+	<head>
+		<title>The UI must reflect a state pushed before onload</title>
+	</head>
+	<body>
+
+		<noscript><p>Enable JavaScript and reload</p></noscript>
+		<p>The browser's address field should show a URL ending with /PASS</p>
+		<script type="text/javascript">
+history.pushState('','','PASS');
+		</script>
+
+	</body>
+</html>

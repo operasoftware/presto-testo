@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>:fullscreen-ancestor selector matching</title>
+	<meta name="assert" content="The :fullscreen-ancestor pseudo-class must
+	match all elements that are ancestors of the top element of the context
+	object's fullscreen element stack (if any).">
+	<script src="/resources/testharness.js"></script>
+	<script src="/resources/testharnessreport.js"></script>
+	<style>
+		:fullscreen-ancestor {
+			background-color: rgb(0, 200, 0);
+		}
+	</style>
+	<script>
+		var test = async_test(":fullscreen-ancestor selector matching");
+
+		document.addEventListener('fullscreenchange', function(e)
+		{
+			test.step(function() {
+				assert_equals(getComputedStyle(document.body).backgroundColor, 'rgb(0, 200, 0)', "element's background color");
+			});
+
+			test.done();
+			removeFullscreenElement();
+		}, false);
+
+		function removeFullscreenElement()
+		{
+			var el = document.fullscreenElement;
+			el.parentNode.removeChild(el);
+		}
+	</script>
+</head>
+<body>
+
+	<p>Fullscreen element should have green background.</p>
+
+	<button id="fs" onclick="this.requestFullscreen();">enter fullscreen</button>
+
+	<div id="log"></div>
+
+</body>
+</html>

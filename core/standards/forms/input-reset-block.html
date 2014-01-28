@@ -1,0 +1,48 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+<head>
+<title>Forms :: reset input : block display; zero margin, padding, border</title>
+<style type="text/css">
+form * {
+	font-family: Ahem;
+	font-size: 1em;
+	line-height: 1em;
+}
+fieldset, div {
+	background: #FFCC00;
+	padding: 0;
+	margin: 10px;
+	border: 1px solid black;
+	width: 20em;
+}
+input, span {
+	color: #FFCC00;
+	background-color: red;
+	padding: 0;
+	margin: 0;
+	border: none;
+	height: 1em;
+	display: block;
+}
+</style>
+</head>
+
+<body>
+
+<form action="">
+	<fieldset>
+		<input type="reset" value="xxxxxxxxxxxxxxxxxxxx" title="20 characters">
+	</fieldset>
+	<div>
+		<input type="reset" value="xxxxxxxxxxxxxxxxxxxx" title="20 characters">
+	</div>
+	<div>
+		<span>xxxxxxxxxxxxxxxxxxxx</span>
+	</div>
+</form>
+
+<h4>Ahem font required for this test</h4>
+<p>boxes above should be identical, and there should be no red</p>
+
+</body>
+</html>

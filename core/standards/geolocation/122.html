@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>geolocation test</title>
+<link rel="stylesheet" type="text/css" href="style.css"/>
+</head>
+<body>
+<p id="instructions"></p>
+<p id="message">NOT TESTED (script did not run)</p>
+<hr/>
+<p>Test setup: Set <a href="opera:config#Geolocation|LocationProviderURL">opera:config#Geolocation|LocationProviderURL</a> to <strong id="setup"></strong></p>
+<script type="text/javascript" src="common.js"></script>
+<script type="text/javascript">
+setupDevice('{"latitude":12.456,"longitude":-45.123,"accuracy":3,"x-move":10}');
+askAccept();
+var firstPos;
+var success2=function(pos) {
+  if (pos.coords.latitude===firstPos.coords.latitude &&
+     pos.coords.longitude===firstPos.coords.longitude &&
+     pos.coords.accuracy===firstPos.coords.accuracy)
+    fail("got first position, but we moved in the meantime");
+  else
+    pass("first position was: "+positionToString(firstPos)+". Second is: "+positionToString(pos));
+}
+var success=function(pos) {
+  firstPos=pos;
+  geo.getCurrentPosition(success2, unexpectedError,{maximumAge:0});
+}
+geo.getCurrentPosition(success,unexpectedError,{maximumAge:0});
+</script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Computed styles of the fullscreen element</title>
+	<meta name="assert" content="CSS rules given below are to be put between
+	'author normal declarations' and 'author important declarations' in the
+	cascading order.">
+	<script src="/resources/testharness.js"></script>
+	<script src="/resources/testharnessreport.js"></script>
+	<script>
+		var test = async_test('Computed styles of the fullscreen element');
+
+		function runTest(e)
+		{
+			if (!document.fullscreenElement)
+				return;
+
+			var expected_style = {
+				'position': 'fixed'
+				,'top': '0px'
+				,'left': '0px'
+				,'right': '0px'
+				,'bottom': '0px'
+				,'z-index': '2147483647'
+				,'box-sizing': 'border-box'
+				,'margin': '0px'
+				,'width': '{window_width}'
+				,'height': '{window_height}'
+				,'background': 'rgb(0, 0, 0)'
+				,'color': 'rgb(255, 255, 255)'
+			}
+
+			var el = document.getElementById('fullscreen_element');
+			var passed;
+
+			for (var prop in expected_style)
+			{
+				var exp = parsePlaceholders(expected_style[prop]);
+				var got = getComputedStyle(el).getPropertyValue(prop);
+				test.step(function() {
+					assert_equals(got, exp, 'Value of "' + prop + '"');
+				})
+			}
+
+			test.done();
+			removeFullscreenElement();
+		}
+
+		function parsePlaceholders(val)
+		{
+			return val.replace('{window_width}', window.innerWidth + 'px')
+					.replace('{window_height}', window.innerHeight + 'px');
+		}
+
+		function enterFullscreen()
+		{
+			document.getElementById('fullscreen_element').requestFullscreen();
+			return false;
+		}
+
+		onload = function()
+		{
+			document.querySelector('a').onclick = enterFullscreen;
+			document.addEventListener('fullscreenchange', runTest, false);
+		}
+
+		function createNode(type, content, attributes)
+		{
+			var el = document.createElement(type);
+
+			if (content != undefined || content != null)
+				el.textContent = content;
+
+			for (var k in attributes)
+				el[k] = attributes[k];
+
+			return el;
+		}
+
+		function removeFullscreenElement()
+		{
+			var el = document.fullscreenElement;
+			el.parentNode.removeChild(el);
+		}
+	</script>
+</head>
+<body>
+
+	<p>Passed if no FAIL appears after entering fullscreen.</p>
+
+	<div id="fullscreen_element">
+		<a href="#">enter fullscreen</a>
+	</div>
+
+	<div id="log"></div>
+
+</body>
+</html>

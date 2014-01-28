@@ -1,0 +1,50 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+<head>
+<title>Forms :: textarea : percentage height and width</title>
+<style type="text/css">
+form * {
+	font-family: Ahem;
+	font-size: 1em;
+	line-height: 1em;
+}
+fieldset, div {
+	padding: 0;
+	margin: 10px;
+	border: none;
+	height: 1em;
+}
+textarea, span {
+	color: black;
+	background: red;
+	padding: 0;
+	margin: 0;
+	border: none;
+	width: 5em;
+	height: 1em;
+	overflow: hidden;
+	display: inline-block;
+	resize: none;
+}
+</style>
+</head>
+
+<body>
+
+<form action="">
+	<fieldset>
+		<textarea rows="5" cols="5">xxxxx</textarea>
+	</fieldset>
+	<div>
+		<textarea rows="5" cols="5">xxxxx</textarea>
+	</div>
+	<div>
+		<span>xxxxx</span>
+	</div>
+</form>
+
+<h4>Ahem font required for this test</h4>
+<p>there should be three identical-sized black boxes above and no red anywhere</p>
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>geolocation test</title>
+<link rel="stylesheet" type="text/css" href="style.css"/>
+</head>
+<body>
+<p id="instructions"></p>
+<p id="message">NOT TESTED (script did not run)</p>
+<hr/>
+<p>Test setup: Set <a href="opera:config#Geolocation|LocationProviderURL">opera:config#Geolocation|LocationProviderURL</a> to <strong id="setup"></strong></p>
+<script type="text/javascript" src="common.js"></script>
+<script type="text/javascript">
+var counter=0;
+function success(pos) {
+  setupDevice('{"latitude":-3,"longitude":-4,"accuracy":1,"x-move":10}');
+  message('Received position '+counter+': '+pos.coords.latitude+", "+pos.coords.longitude+". So far so good.");
+  if (counter++>=1) {
+    pass('callback called more than once');
+  }
+}
+setupDevice('{"latitude":-3,"longitude":-4,"accuracy":1}');
+askAccept();
+setTimeout("if (counter<=1) fail('success callback not called or only once.')",10000);
+run(function(){ geo.watchPosition(success,unexpectedError); });
+</script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+<head>
+<title>Forms :: legend : table-cell display, border-collapse</title>
+<style type="text/css">
+fieldset {
+	margin: 20px;
+	border: none;
+	border-collapse: collapse;
+	display: table;
+}
+fieldset+fieldset {
+	padding: 0;
+}
+legend, div {
+	background: #FFCC00;
+	padding: 0;
+	border: 1px solid black;
+	width: 1em;
+	display: table-cell;
+}
+</style>
+</head>
+
+<body>
+
+<form action="">
+	<fieldset>
+		<legend>&nbsp;</legend>
+		<div>&nbsp;</div>
+	</fieldset>
+	<fieldset>
+		<div>&nbsp;</div>
+		<div>&nbsp;</div>
+	</fieldset>
+</form>
+
+<p>there should be 2 identical figures above</p>
+
+</body>
+</html>

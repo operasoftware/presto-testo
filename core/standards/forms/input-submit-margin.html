@@ -1,0 +1,52 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+<head>
+<title>Forms :: submit input : margin</title>
+<style type="text/css">
+form * {
+	font-family: Ahem;
+	font-size: 1em;
+	line-height: 1em;
+}
+fieldset, div {
+	background-color: lime;
+	padding: 0;
+	margin: 10px;
+	border: 1px solid black;
+	width: 3em;
+	height: 3em;
+}
+input, span {
+	color: black;
+	padding: 0;
+	margin: 1em;
+	border: none;
+	width: 1em;
+	height: 1em;
+	display: block;
+}
+</style>
+</head>
+
+<body>
+
+<form action="">
+	<fieldset>
+		<input type="submit" value="x">
+	</fieldset>
+	<div>
+		<input type="submit" value="x">
+	</div>
+	<div>
+		<span>x</span>
+	</div>
+</form>
+
+<h4>Ahem font required for this test</h4>
+<ul>
+<li>you should see three identical, green squares, each containing a black square</li>
+<li>there should be no red</li>
+</ul>
+
+</body>
+</html>

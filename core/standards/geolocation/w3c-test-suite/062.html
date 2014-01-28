@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Geolocation:check that watchPosition returns synchronously before any callbacks are invoked. </title>
+<link rel="stylesheet" type="text/css" href="style.css"/>
+</head>
+<body>
+<p id="instructions"></p>
+<p id="message">NOT TESTED (script did not run)</p>
+<script type="text/javascript" src="common.js"></script>
+<script type="text/javascript">
+instruction('Respond to any permission prompt that appears.');
+run(function() {
+  var hasMethodReturned = false;
+  function checkMethodHasReturned() {
+    if (hasMethodReturned) {
+      pass();
+    } else {
+      fail();
+    }
+  }
+  geo.watchPosition(checkMethodHasReturned, checkMethodHasReturned);
+  hasMethodReturned = true;
+});
+</script>
+</body>
+</html>

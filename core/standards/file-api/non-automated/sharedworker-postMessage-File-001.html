@@ -1,0 +1,55 @@
+<!--
+onconnect = function(e) {
+    e.ports[0].onmessage = function(e) {
+        var log = [];
+        try {
+            if (!(e.data instanceof File))
+                log.push('e.data was not instanceof File');
+            if (!('lastModifiedDate' in e.data))
+                log.push('e.data did not have lastModifiedDate');
+            if (!('name' in e.data))
+                log.push('e.data did not have name');
+            if (!('size' in e.data))
+                log.push('e.data did not have size');
+            if (!('type' in e.data))
+                log.push('e.data did not have type');
+            if (!('slice' in e.data))
+                log.push('e.data did not have slice');
+        } catch (ex) {
+            log.push('Threw: '+ex);
+        }
+        this.postMessage(log.join(', '));
+    }
+}
+/* -->
+<!DOCTYPE html>
+<title>worker postMessage File 001 - sending a File to a worker</title>
+<link rel="stylesheet" href="../resources/style.css"/>
+<script src="../resources/lib.js"></script>
+<script>
+onload = function() {
+    try {
+        var t_file = document.getElementById('t_file');
+        var worker = new SharedWorker('#');
+        t_file.onchange = function(e) {
+            try {
+                worker.port.postMessage(this.files[0]);
+            } catch(ex) {
+                setResult(0, 'Threw: '+ex);
+            }
+        }
+        worker.port.onmessage = function(e) {
+            if (e.data == '')
+                setResult(1, 'File sent to sharedworker successfully');
+            else
+                setResult(0, e.data);
+        }
+    } catch(e) {
+        setResult(0, "Threw: " + e);
+    }
+}
+</script>
+<body>
+<p>Please select a file to test: <input type='file' id='t_file' name='t_file' /></p>
+</body>
+<!-- */ //-->

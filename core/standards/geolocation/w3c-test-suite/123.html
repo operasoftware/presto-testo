@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Geolocation:call getCurrentPosition with wrong type for enableHighAccuracy. No exception expected. </title>
+<link rel="stylesheet" type="text/css" href="style.css"/>
+</head>
+<body>
+<p id="instructions"></p>
+<p id="message">NOT TESTED (script did not run)</p>
+<script type="text/javascript" src="common.js"></script>
+<script type="text/javascript">
+run(function() {
+  geo.getCurrentPosition(dummyFunction, null, {enableHighAccuracy: "boom"});
+  geo.getCurrentPosition(dummyFunction, null, {enableHighAccuracy: 321});
+  geo.getCurrentPosition(dummyFunction, null, {enableHighAccuracy: -Infinity});
+  geo.getCurrentPosition(dummyFunction, null, {enableHighAccuracy: {foo: 5}});
+  pass();
+});
+</script>
+</body>
+</html>

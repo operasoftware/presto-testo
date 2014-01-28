@@ -1,0 +1,50 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+<head>
+<title>Forms :: file input : applicability of general styles</title>
+<style type="text/css">
+form * {
+	font-family: Ahem;
+	font-size: 1em;
+	line-height: 1em;
+}
+fieldset, div {
+	padding: 0;
+	margin: 10px;
+	border: none;
+}
+input {
+	color: lime;
+	background-color: #3366CC;
+	padding: 0;
+	margin: 0;
+	border: none;
+	box-sizing: content-box;
+}
+</style>
+</head>
+
+<body>
+
+<form action="">
+	<fieldset>
+		<input type="file">
+	</fieldset>
+	<div>
+		<input type="file">
+	</div>
+	<fieldset>
+		<input type="text"> <input type="button" value="xxxxx">
+	</fieldset>
+</form>
+
+<h4>Ahem font required for this test</h4>
+<p>above you should see all of the following: </p>
+<ul>
+<li>three blue boxes one below another</li>
+<li>three green boxes one below another</li>
+<li>you should not see any other colors</li>
+</ul>
+
+</body>
+</html>

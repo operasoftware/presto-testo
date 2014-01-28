@@ -1,0 +1,50 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+<head>
+<title>Forms :: submit input : float alongside inline content</title>
+<style type="text/css">
+form * {
+	font-family: Ahem;
+	font-size: 1em;
+	line-height: 1em;
+}
+fieldset, div {
+	color: #3366CC;
+	background-color: red;
+	padding: 0;
+	margin: 0;
+	border: none;
+	width: 22em;
+}
+input, span {
+	color: black;
+	padding: 0;
+	margin: 0;
+	border: none;
+	width: 1em;
+	height: 1em;
+	float: left;
+}
+h4 {clear: both;}
+</style>
+</head>
+
+<body>
+
+<form action="">
+	<fieldset>
+		<input type="submit" value="x">xxxxxxxxxx<input type="submit" value="x">xxxxxxxxxx
+	</fieldset>
+	<div>
+		<input type="submit" value="x">xxxxxxxxxx<input type="submit" value="x">xxxxxxxxxx
+	</div>
+	<div>
+		<span>x</span>xxxxxxxxxx<span>x</span>xxxxxxxxxx
+	</div>
+</form>
+
+<h4>Ahem font required for this test</h4>
+<p>you should see an unbroken black and blue bar with no red</p>
+
+</body>
+</html>

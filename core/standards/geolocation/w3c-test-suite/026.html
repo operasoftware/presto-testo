@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Geolocation:check that window.navigator.geolocation exists and is of type 'object'. </title>
+<link rel="stylesheet" type="text/css" href="style.css"/>
+</head>
+<body>
+<p id="instructions"></p>
+<p id="message">NOT TESTED (script did not run)</p>
+<script type="text/javascript" src="common.js"></script>
+<script type="text/javascript">
+run(function() {
+  if (typeof window.navigator.geolocation == 'object') {
+    pass();
+  } else {
+    fail();
+  }
+});
+</script>
+</body>
+</html>

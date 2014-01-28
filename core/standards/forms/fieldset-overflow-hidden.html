@@ -1,0 +1,36 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+<head>
+<title>Forms :: fieldset : percentage width, hidden overflow</title>
+<style type="text/css">
+fieldset, form>div {
+	padding: 0;
+	margin: 10px;
+	border: 1px solid black;
+	width: 3em;
+	height: 3em;
+	overflow: hidden;
+}
+fieldset div, div div {
+	background: lime;
+	height: 300px;
+	width: 100%;
+}
+</style>
+</head>
+
+<body>
+
+<form action="">
+	<fieldset>
+		<div></div>
+	</fieldset>
+	<div>
+		<div></div>
+	</div>
+</form>
+
+<p>you should see two unbroken, green rectangles with a black border and no scrollbars</p>
+
+</body>
+</html>

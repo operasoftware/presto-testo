@@ -1,0 +1,48 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+<head>
+<title>Forms :: text input : margin</title>
+<style type="text/css">
+form * {
+	font-family: Ahem;
+	font-size: 1em;
+	line-height: 1em;
+}
+fieldset, div {
+	background-color: lime;
+	padding: 0;
+	margin: 10px;
+	border: 1px solid black;
+	width: 3em;
+}
+input, span {
+	color: black;
+	background-color: red;
+	padding: 0;
+	margin: 1em;
+	border: 1px solid black;
+	width: 1em;
+	display: block;
+}
+</style>
+</head>
+
+<body>
+
+<form action="">
+	<fieldset>
+		<input type="text" value="x">
+	</fieldset>
+	<div>
+		<input type="text" value="x">
+	</div>
+	<div>
+		<span>x</span>
+	</div>
+</form>
+
+<h4>Ahem font required for this test</h4>
+<p>boxes above should be identical and there should be no red</p>
+
+</body>
+</html>

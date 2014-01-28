@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>geolocation test</title>
+<link rel="stylesheet" type="text/css" href="style.css"/>
+</head>
+<body>
+<p id="instructions"></p>
+<p id="message">NOT TESTED (script did not run)</p>
+<hr/>
+<p>Test setup: Set <a href="opera:config#Geolocation|LocationProviderURL">opera:config#Geolocation|LocationProviderURL</a> to <strong id="setup"></strong></p>
+<script type="text/javascript" src="common.js"></script>
+<script type="text/javascript">
+function error(pos) {
+  if (error.code == error.POSITION_UNAVAILABLE) pass("correctly raised error on negative speed");
+  else fail("raised error but with the wrong code");
+}
+function success(pos) {
+  if (pos.coords.speed == null) pass("This implementation doesn't support speed, so it is correctly sent as null");
+  else fail("This implementation doesn't support speed, but speed isn't returned as null");
+}
+setupDevice('{"latitude":1.234, "longitude":-1.234, "speed":-34}');
+askAccept();
+run(function(){
+geo.getCurrentPosition(success, error);
+});
+</script>
+</body>
+</html>

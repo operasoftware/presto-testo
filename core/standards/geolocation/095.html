@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>geolocation test</title>
+<link rel="stylesheet" type="text/css" href="style.css"/>
+</head>
+<body>
+<p id="instructions"></p>
+<p id="message">NOT TESTED (script did not run)</p>
+<hr/>
+<p>Test setup: Set <a href="opera:config#Geolocation|LocationProviderURL">opera:config#Geolocation|LocationProviderURL</a> to <strong id="setup"></strong></p>
+<script type="text/javascript" src="common.js"></script>
+<script type="text/javascript">
+function success(pos) {
+  if (pos.timestamp==null || pos.timestamp==undefined) {
+    fail("no timestamp returned");
+    clearTimeout(t);
+  }
+  else if (pos.timestamp > new Date()) {
+    fail("wrong value for timestamp: "+(pos.timestamp)+", now is: "+new Date().getTime());
+    clearTimeout(t);
+  } 
+  else
+  {
+   pass("timestamp is: "+pos.timestamp);
+   clearTimeout(t);
+  }
+}
+setupDevice();
+askAccept();
+run(function(){
+geo.getCurrentPosition(success, unexpectedError);
+});
+</script>
+</body>
+</html>

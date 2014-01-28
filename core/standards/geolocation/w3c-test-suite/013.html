@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Geolocation:call getCurrentPosition with null success and error callbacks, check that exception is thrown </title>
+<link rel="stylesheet" type="text/css" href="style.css"/>
+</head>
+<body>
+<p id="instructions"></p>
+<p id="message">NOT TESTED (script did not run)</p>
+<script type="text/javascript" src="common.js"></script>
+<script type="text/javascript">
+runExpectingException('TypeError', function() {
+  geo.getCurrentPosition(null, null);
+});
+</script>
+</body>
+</html>

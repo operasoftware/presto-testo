@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>geolocation test</title>
+<link rel="stylesheet" type="text/css" href="style.css"/>
+</head>
+<body>
+<p id="instructions"></p>
+<p id="message">NOT TESTED (script did not run)</p>
+<hr/>
+<p>Test setup: Set <a href="opera:config#Geolocation|LocationProviderURL">opera:config#Geolocation|LocationProviderURL</a> to <strong id="setup"></strong></p>
+<script type="text/javascript" src="common.js"></script>
+<script type="text/javascript">
+setupDevice();
+askRefuse();
+run(function(){geo.getCurrentPosition(unexpectedSuccess, error);});
+function error(e) {
+  if (e) {
+    if (e.UNKNOWN_ERROR===0 && e.PERMISSION_DENIED===1 && e.POSITION_UNAVAILABLE===2 && e.TIMEOUT===3) {
+      if (e.code && (e.code===0 || e.code===1 || e.code===2 || e.code===3)) {
+        if (e.message) {
+          pass("PositionError object is correct: "+errorToString(e));
+        } else {
+          fail("error message is missing: "+errorToString(e));
+        }
+      }
+      else
+      {
+        fail("error code is incorrect: "+errorToString(e));
+      }
+    }
+    else 
+    {
+      fail("error constants are incorrect"); 
+    }
+  }
+  else
+  {
+    fail("null error returned");
+  }
+};
+</script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+<head>
+<title>Forms :: selectbox : block display, zero margin and padding</title>
+<style type="text/css">
+form * {
+	font-family: Ahem;
+	font-size: 1em;
+	line-height: 1em;
+}
+fieldset, div {
+	padding: 0;
+	margin: 10px;
+	border: none;
+}
+select, option, span {
+	color: #FFCC00;
+	background-color: red;
+	padding: 0;
+	margin: 0;
+	border: none;
+	width: 4em;
+	height: 1em;
+	display: block;
+}
+option {
+	width: auto;
+}
+</style>
+</head>
+
+<body>
+
+<form action="">
+	<fieldset>
+		<select>
+			<option>xxx</option>
+		</select>
+	</fieldset>
+	<div>
+		<select>
+			<option>xxx</option>
+		</select>
+	</div>
+	<div>
+		<span>xxxx</span>
+	</div>
+</form>
+
+<h4>Ahem font required for this test</h4>
+<p>boxes above should be of identical width and height, and there should be no red</p>
+
+</body>
+</html>

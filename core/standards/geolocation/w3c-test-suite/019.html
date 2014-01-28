@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Geolocation:call watchPosition, check that there's UI appearing with the document host </title>
+<link rel="stylesheet" type="text/css" href="style.css"/>
+</head>
+<body>
+<p id="instructions"></p>
+<p id="message">NOT TESTED (script did not run)</p>
+<script type="text/javascript" src="common.js"></script>
+<script type="text/javascript">
+instruction('Clear all Geolocation permissions before running this test.');
+maybe('PASS if you see a permission prompt including the host ' + window.location.hostname + ', FAIL otherwise.');
+run(function() {
+  geo.watchPosition(
+      dummyFunction,
+      function(error) {
+        if (isUsingPreemptivePermission) {
+          unexpectedErrorCallback(error);
+        } else {
+          maybe('INCONCLUSIVE: position acquisition failed when not using preemptive permissions.');
+        }
+      });
+});
+</script>
+</body>
+</html>

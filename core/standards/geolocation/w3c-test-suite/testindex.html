@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Geolocation tests index</title>
+</head>
+<body>
+<h1>Geolocation tests</h1>
+<p>Adapted from <a href="http://dev.w3.org/geo/api/test-suite/">W3C Geolocation test-suite</a></p>
+<div id="changes">
+<h2>Changes</h2>
+<ol>
+<li>Each test is now an HTML file, e.g.<code>042.html</code></li>
+<li><code>common.js</code> includes code for SPARTAN reporting using JS test framework.</li>
+</ol>
+</div>
+<div id="testdata">
+<p><a href="001.html">001.html</a> <span>access="deny"</span> <span>category="auto"</span> <span>: user denies access, check that error callback is called with correct code</span></p>
+<p><a href="002.html">002.html</a> <span>access="allow"</span> <span>category="auto"</span> <span>: user allows access, check that success callback is called or error callback is called with correct code.</span></p>
+<p><a href="011.html">011.html</a> <span>category="auto"</span> <span>: call getCurrentPosition with null success callback, check that exception is thrown</span></p>
+<p><a href="013.html">013.html</a> <span>category="auto"</span> <span>: call getCurrentPosition with null success and error callbacks, check that exception is thrown</span></p>
+<p><a href="015.html">015.html</a> <span>category="auto"</span> <span>: call watchPosition with null success callback, check that exception is thrown</span></p>
+<p><a href="017.html">017.html</a> <span>category="auto"</span> <span>: call watchPosition with null success and error callbacks, check that exception is thrown</span></p>
+<p><a href="018.html">018.html</a> <span>category="manual"</span> <span>category="manual"</span> <span>: call getCurrentPosition, check that there's UI appearing with the document host</span></p>
+<p><a href="019.html">019.html</a> <span>category="manual"</span> <span>category="manual"</span> <span>: call watchPosition, check that there's UI appearing with the document host</span></p>
+<p><a href="026.html">026.html</a> <span>category="auto"</span> <span>: check that window.navigator.geolocation exists and is of type 'object'.</span></p>
+<p><a href="027.html">027.html</a> <span>category="auto"</span> <span>: call getCurrentPosition without arguments, check that exception is thrown</span></p>
+<p><a href="028.html">028.html</a> <span>category="auto"</span> <span>: call getCurrentPosition() with wrong type for first argument. Exception expected.</span></p>
+<p><a href="029.html">029.html</a> <span>category="auto"</span> <span>: call getCurrentPosition() with wrong type for second argument. Exception expected.</span></p>
+<p><a href="030.html">030.html</a> <span>category="auto"</span> <span>: call getCurrentPosition() with wrong type for third argument. No exception expected.</span></p>
+<p><a href="031.html">031.html</a> <span>category="auto"</span> <span>: Check that getCurrentPosition returns synchronously before any callbacks are invoked.</span></p>
+<p><a href="058.html">058.html</a> <span>category="auto"</span> <span>: call watchPosition with no arguments, check that exception is thrown</span></p>
+<p><a href="059.html">059.html</a> <span>category="auto"</span> <span>: call watchPosition() with wrong type for first argument. Exception expected.</span></p>
+<p><a href="060.html">060.html</a> <span>category="auto"</span> <span>: call watchPosition() with wrong type for second argument. Exception expected.</span></p>
+<p><a href="061.html">061.html</a> <span>category="auto"</span> <span>: call watchPosition() with wrong type for third argument. No exception expected.</span></p>
+<p><a href="062.html">062.html</a> <span>category="auto"</span> <span>: check that watchPosition returns synchronously before any callbacks are invoked.</span></p>
+<p><a href="080.html">080.html</a> <span>category="auto"</span> <span>: Test that calling clearWatch with invalid watch IDs does not cause an exception.</span></p>
+<p><a href="086.html">086.html</a> <span>access="allow"</span> <span>category="auto"</span> <span>: set timeout and maximumAge to 0, check that timeout error raised (getCurrentPosition)</span></p>
+<p><a href="088.html">088.html</a> <span>access="allow"</span> <span>category="auto"</span> <span>: set timeout and maximumAge to 0, check that timeout error raised (watchPosition)</span></p>
+<p><a href="091.html">091.html</a> <span>access="allow"</span> <span>category="auto"</span> <span>: check that a negative timeout value is equivalent to a 0 timeout value (getCurrentLocation)</span></p>
+<p><a href="092.html">092.html</a> <span>access="allow"</span> <span>category="auto"</span> <span>: check that a negative timeout value is equivalent to a 0 timeout value (watchPosition)</span></p>
+<p><a href="095.html">095.html</a> <span>access="allow"</span> <span>category="manual"</span> <span>: check existence of timestamp attribute, and correct type</span></p>
+<p><a href="104.html">104.html</a> <span>access="allow"</span> <span>category="manual"</span> <span>: check type of altitude</span></p>
+<p><a href="105.html">105.html</a> <span>access="allow"</span> <span>category="manual"</span> <span>: check type of altitudeAccuracy</span></p>
+<p><a href="106.html">106.html</a> <span>access="allow"</span> <span>category="manual"</span> <span>: check type of heading</span></p>
+<p><a href="107.html">107.html</a> <span>access="allow"</span> <span>category="manual"</span> <span>: check type of speed</span></p>
+<p><a href="108.html">108.html</a> <span>access="deny"</span> <span>category="auto"</span> <span>: check that the error type exists and that its attributes have the right numeric value</span></p>
+<p><a href="123.html">123.html</a> <span>category="auto"</span> <span>: call getCurrentPosition with wrong type for enableHighAccuracy. No exception expected.</span></p>
+<p><a href="124.html">124.html</a> <span>category="auto"</span> <span>: call watchPosition with wrong type for enableHighAccuracy. No exception expected.</span></p>
+<p><a href="141.html">141.html</a> <span>category="manual"</span> <span>: user asked to approve/remember, then asked to revoke, then reload. The permission dialogue should reappear.</span></p>
+<p><a href="142.html">142.html</a> <span>category="manual"</span> <span>: user asked to deny/remember, then ask to revoke, then reload. The permission dialogue should reappear</span></p>
+<p><a href="150.html">150.html</a> <span>category="auto"</span> <span>: check that the geolocation property of window.navigator is enumerable.</span></p>
+<p><a href="151.html">151.html</a> <span>category="auto"</span> <span>: check that watchPosition returns a long.</span></p>
+<p><a href="152.html">152.html</a> <span>access="allow"</span> <span>category="manual"</span> <span>: check for latitude and longitude.</span></p>
+<p><a href="153.html">153.html</a> <span>access="allow"</span> <span>category="manual"</span> <span>: check for accuracy property.</span></p>
+</div>
+</body>
+</html>

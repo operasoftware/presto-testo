@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>geolocation test</title>
+<link rel="stylesheet" type="text/css" href="style.css"/>
+</head>
+<body>
+<p id="instructions"></p>
+<p id="message">NOT TESTED (script did not run)</p>
+<hr/>
+<p>Test setup: Set <a href="opera:config#Geolocation|LocationProviderURL">opera:config#Geolocation|LocationProviderURL</a> to <strong id="setup"></strong></p>
+<script type="text/javascript" src="common.js"></script>
+<script type="text/javascript">
+setupDevice('{"latitude":12.456,"longitude":-45.123,"accuracy":3}');
+askAccept();
+message('recursively calling getCurrentPosition '+g_stress_iterations+" times");
+var counter=0;
+var callback=function() {
+  if (counter<g_stress_iterations) {
+    geo.getCurrentPosition(callback,unexpectedError,{timeout:0,maximumAge:20000});
+  }
+  else
+  {
+	  pass();
+  }
+  counter++;
+}
+geo.getCurrentPosition(callback,unexpectedError);
+setTimeout("if (counter==g_stress_iterations) pass(); else fail('counter reached '+counter);",20000);
+</script>
+</body>
+</html>

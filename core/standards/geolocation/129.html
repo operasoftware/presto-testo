@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>geolocation test</title>
+<link rel="stylesheet" type="text/css" href="style.css"/>
+</head>
+<body>
+<p id="instructions"></p>
+<p id="message">NOT TESTED (script did not run)</p>
+<hr/>
+<p>Test setup: Set <a href="opera:config#Geolocation|LocationProviderURL">opera:config#Geolocation|LocationProviderURL</a> to <strong id="setup"></strong></p>
+<script type="text/javascript" src="common.js"></script>
+<script type="text/javascript">
+var success=function() { fail("callback unexpectedly called"); };
+var error=function() { fail("callback unexpectedly called"); };
+maybe("Don't answer the privacy dialog, and <a href='http://www.example.com'>navigate away</a>. If the privacy dialog goes away then PASS, otherwise FAIL");
+run(function(){
+  geo.getCurrentPosition(success, error);
+});
+</script>
+</body>
+</html>

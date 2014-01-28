@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+	<head>
+		<title>It must be possible to change the URL while a script is replacing states</title>
+		<script type="text/javascript">
+setInterval(function () {
+	history.replaceState('','',location.href.replace(/\?.*$/,'')+'?'+Math.random()+''+(new Date()).getTime());
+},1);
+		</script>
+	</head>
+	<body>
+
+		<noscript><p>Enable JavaScript and reload</p></noscript>
+		<ul>
+			<li>It should be possible to focus the address field.</li>
+			<li>Type in a new URL to an existing site, such as http://t/resources/pass.html (or https://ssl.opera.com:8012/resources/pass.html externally)</li>
+			<li>It should be possible to type that new URL.</li>
+			<li>Press Enter/Go</li>
+			<li>PASS if the URL that you entered loads.</li>
+		</ul>
+
+	</body>
+</html>

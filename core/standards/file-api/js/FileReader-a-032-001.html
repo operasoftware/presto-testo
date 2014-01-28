@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<title>FileReader-a-032-001-Readonly check: FileReader.readyState is readonly or not.</title>
+<link rel="stylesheet" href="../resources/style.css"/>
+<script src="../resources/lib.js"></script>
+<script>
+onload = function() {
+    try {
+        (function() {
+            try {
+                var t_filerdr = new FileReader();
+                var oval = t_filerdr.readyState;
+                var nval;
+                if ((oval === undefined) || (oval === null)) nval = 9999;
+                else nval = null;
+                try {
+                    t_filerdr.readyState = nval;
+                    if (t_filerdr.readyState !== oval) {
+                        setResult(0, "FileReader.readyState  is not readonly, value now is: " + t_filerdr.readyState);
+                    } else {
+                        setResult(1, "FileReader.readyState is readonly.");
+                    }
+                } catch(e) {
+                    if (t_filerdr.readyState !== oval) {
+                        setResult(0, "FileReader.readyState  is not readonly, value now is: " + t_filerdr.readyState);
+                    } else {
+                        setResult(1, "FileReader.readyState is readonly.");
+                    }
+                }
+            } catch(e) {
+                setResult(0, "Threw exception: " + e);
+            }
+        })();
+    } catch(e) {
+        setResult(0, "Threw: " + e);
+    }
+}
+</script>
+<body>
+
+</body>

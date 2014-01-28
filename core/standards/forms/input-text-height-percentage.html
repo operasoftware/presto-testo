@@ -1,0 +1,23 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+<head>
+<title>forms: text input: percentage height, child of paragraph</title>
+<style type="text/css">
+input {
+	height: auto;
+}
+p+p input {
+	height: 90%;
+}
+</style>
+</head>
+
+<body>
+<h4>boxes below should be identical</h4>
+
+<p><input type="text" value=""></p>
+
+<p><input type="text" value=""></p>
+
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Geolocation:check that a negative timeout value is equivalent to a 0 timeout value (getCurrentLocation) </title>
+<link rel="stylesheet" type="text/css" href="style.css"/>
+</head>
+<body>
+<p id="instructions"></p>
+<p id="message">NOT TESTED (script did not run)</p>
+<script type="text/javascript" src="common.js"></script>
+<script type="text/javascript">
+askAccept();
+run(function() {
+  geo.getCurrentPosition(
+      unexpectedSuccessCallback,
+      function(error) {
+        if (error.code == error.TIMEOUT) {
+          pass();
+        } else {
+          unexpectedErrorCallback(error);
+        }
+      },
+      {timeout: -1, maximumAge: 0});
+});
+</script>
+</body>
+</html>

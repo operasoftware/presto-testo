@@ -1,0 +1,18 @@
+<html>
+ <head>
+  <meta charset="cp1255"><title>Mappings for single-byte encodings: cp1255</title><style type="text/css">p#test { display: none; }</style>
+ </head>
+ <body>
+  <p id="test">ÊÙÚÛÜÝÞßûüÿ</p>
+  <p>
+   <script type="text/javascript">
+    var passed = (document.getElementById('test').innerText == '\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd')
+    if (passed)
+     document.write('PASS')
+    else
+     document.write('FAIL')
+   try{top.opener.rr(passed);}catch(e){}
+   </script>
+  </p>
+ </body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+<head>
+<title>Forms :: text input : float</title>
+<style type="text/css">
+form * {
+	font-family: Ahem;
+	font-size: 1em;
+	line-height: 1em;
+}
+fieldset, div {
+	background-color: red;
+	padding: 0;
+	margin: 1em;
+	border: none;
+	width: 2em;
+	height: 1em;
+}
+input, span {
+	font-size: 1em;
+	line-height: 1em;
+	color: lime;
+	padding: 0;
+	margin: 0;
+	border: none;
+	width: 1em;
+	height: 1em;
+	float: left;
+}
+</style>
+</head>
+
+<body>
+
+<form action="">
+	<fieldset>
+		<input type="text" value="x">
+		<input type="text" value="x">
+	</fieldset>
+	<div>
+		<input type="text" value="x">
+		<input type="text" value="x">
+	</div>
+	<div>
+		<span>x</span>
+		<span>x</span>
+	</div>
+</form>
+
+<h4>Ahem font required for this test</h4>
+<p>you should see three identical, green rectangles, and no red</p>
+
+</body>
+</html>

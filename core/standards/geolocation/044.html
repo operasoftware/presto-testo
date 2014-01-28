@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>geolocation test</title>
+<link rel="stylesheet" type="text/css" href="style.css"/>
+</head>
+<body>
+<p id="instructions"></p>
+<p id="message">NOT TESTED (script did not run)</p>
+<hr/>
+<p>Test setup: Set <a href="opera:config#Geolocation|LocationProviderURL">opera:config#Geolocation|LocationProviderURL</a> to <strong id="setup"></strong></p>
+<script type="text/javascript" src="common.js"></script>
+<script type="text/javascript">
+setupDevice();
+askAccept();
+function success(pos) {
+  if (pos.coords.heading===null) pass(); else fail("heading is "+pos.coords.heading+". Should be:"+null);
+}
+run(function(){
+  geo.getCurrentPosition(success,unexpectedError);
+});
+</script>
+</body>
+</html>

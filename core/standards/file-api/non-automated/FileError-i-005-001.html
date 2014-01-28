@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<title>FileError-i-005-001-Test FileError.NOT_READABLE_ERR.</title>
+<link rel="stylesheet" href="../resources/style.css"/>
+<script src="../resources/lib.js"></script>
+<script>
+onload = function() {
+    try {
+        var t_file = document.getElementById('t_file');
+        t_file.onchange = function() {
+            try {
+                var t_blob = t_file.files[0];
+                var t_filerdr = new FileReader();
+                var t_ferror = t_filerdr.error;
+                t_filerdr.onerror = function(evt) {
+                    if (t_filerdr.error.code === t_filerdr.error.NOT_READABLE_ERR) setResult(1, "FileReader.error.code is NOT_READABLE_ERR.");
+                    else setResult(0, "FileReader.error.code is not NOT_READABLE_ERR, got: " + t_filerdr.error.code);
+                };
+                t_filerdr.onloadend = function(evt) {
+                    if (t_filerdr.error.code === t_filerdr.error.NOT_READABLE_ERR) setResult(1, "FileReader.error.code is NOT_READABLE_ERR.");
+                    else setResult(0, "FileReader.error.code is not NOT_READABLE_ERR, got: " + t_filerdr.error.code);
+                    if (t_filerdr.result === null) setResult(1, "FileReader.result is null.");
+                    else setResult(0, "FileReader.result is not null, got: " + t_filerdr.result);
+                };
+                t_filerdr.readAsDataURL(t_blob);
+            } catch(e) {
+                setResult(0, "Threw exception:" + e);
+            }
+        }
+    } catch(e) {
+        setResult(0, "Threw: " + e);
+    }
+}
+</script>
+<body>
+<p>Set permissions on a file so that it is not readable and then select that file: <input id="t_file" type="file" /></p>
+</body>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<title>FileReader-a-026-001-Enumerablity check: FileReader.LOADING</title>
+<link rel="stylesheet" href="../resources/style.css"/>
+<script src="../resources/lib.js"></script>
+<script>
+onload = function() {
+    try {
+        (function() {
+            try {
+                var t_filerdr = new FileReader();
+                var found = false;
+                for (var x in t_filerdr) {
+                    if (x === "LOADING") {
+                        found = true;
+                        break;
+                    }
+                };
+                if (found) {
+                    setResult(1, "FileReader.LOADING is enumerable.");
+                } else {
+                    setResult(0, "FileReader.LOADING is not enumerable.");
+                }
+            } catch(e) {
+                setResult(0, "Threw exception: " + e);
+            }
+        })();
+    } catch(e) {
+        setResult(0, "Threw: " + e);
+    }
+}
+</script>
+<body>
+
+</body>

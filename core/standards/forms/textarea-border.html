@@ -1,0 +1,39 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+<head>
+<title>Forms :: textarea : borders</title>
+<style type="text/css">
+fieldset, div {
+	padding: 0;
+	margin: 10px;
+	border: none;
+}
+textarea {
+	background: lime;
+	padding: 0;
+	margin: 0;
+	border: 10px solid black;
+	height: 20px;
+	width: 20px;
+	overflow: hidden;
+	display: block;
+	resize: none;
+}
+</style>
+</head>
+
+<body>
+
+<form action="">
+	<fieldset>
+		<textarea rows="5" cols="10"></textarea>
+	</fieldset>
+	<div>
+		<textarea rows="5" cols="10"></textarea>
+	</div>
+</form>
+
+<p>you should see two green squares with thick black border around them</p>
+
+</body>
+</html>

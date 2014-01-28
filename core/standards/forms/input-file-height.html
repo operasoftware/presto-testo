@@ -1,0 +1,47 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+<head>
+<title>Forms :: file input : inline-block display, width and height</title>
+<style type="text/css">
+fieldset, div {
+	padding: 0;
+	margin: 5px;
+	border: none;
+}
+input, span {
+	background: green;
+	padding: 0;
+	margin: 0;
+	border: 5px solid green;
+	width: 300px;
+	height: 50px;
+	box-sizing: content-box;
+	display: inline-block;
+}
+</style>
+</head>
+
+<body>
+
+<form action="">
+	<fieldset>
+		<input type="file">
+	</fieldset>
+	<div>
+		<input type="file">
+	</div>
+	<div>
+		<span></span>
+	</div>
+</form>
+
+<h4>Ahem font required for this test</h4>
+<ul>
+<li>There should be three green boxes above</li>
+<li>They should be of identical width</li>
+<li>They should be of identical height</li>
+<li>They should be left-aligned to the same line</li>
+</ul>
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Geolocation:check that the geolocation property of window.navigator is enumerable. </title>
+<link rel="stylesheet" type="text/css" href="style.css"/>
+</head>
+<body>
+<p id="instructions"></p>
+<p id="message">NOT TESTED (script did not run)</p>
+<script type="text/javascript" src="common.js"></script>
+<script type="text/javascript">
+function hasGeolocationProperty() {
+  for (var property in window.navigator) {
+    if (property == 'geolocation') {
+      return true;
+    }
+  }
+  return false;
+}
+run(function() {
+  if (hasGeolocationProperty() && 'geolocation' in window.navigator) {
+    pass();
+  } else {
+    fail();
+  }
+});
+</script>
+</body>
+</html>

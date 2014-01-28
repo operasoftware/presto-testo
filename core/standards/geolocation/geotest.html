@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Geolocation Test Tool</title>
+  <link rel="stylesheet" type="text/css" href="style.css"/>
+</head>
+<body>
+<p id="instructions"></p>
+<p id="message">NOT TESTED (script did not run)</p>
+<hr/>
+<p>Test setup: Set <a href="opera:config#Geolocation|LocationProviderURL">opera:config#Geolocation|LocationProviderURL</a> to <strong id="setup"></strong></p>
+<script type="text/javascript" src="common.js"></script>
+
+<h1>Setup Custom Response</h1>
+<table>
+	<tr><th><label for="status">Status</label></th>
+		<td><select id="status">
+				<option value="">(None)</option>
+				<option>OK</option>
+				<option>REQUEST_DENIED</option>
+				<option>INVALID_REQUEST</option>
+				<option>ZERO_RESULTS</option>
+				<option>OVER_QUERY_LIMIT</option>
+			</select>
+		</td>
+	</tr>
+
+	<tr><th>Location</th>
+		<td><input type="text" id="latitude" placeholder="Latitude" value="">,
+			<input type="text" placeholder="Longitude" id="longitude" value=""></td>
+	</tr>
+
+	<tr><th><label for="accuracy">Accuracy</label></th>
+		<td><input type="text" id="accuracy" value=""></td></tr>
+
+	<tr><th><label for="access_token">Access Token</label></th>
+		<td><input type="text" id="access_token" value=""></td></tr>
+</table>
+<button onclick="doSetup()">Setup</button> <button onclick="setupDevice()">Reset Setup</button>
+
+<hr>
+
+<table>
+	<tr><th>coords.latitude</th>        <td class="coords" data-property="latitude"></td></tr>
+    <tr><th>coords.longitude</th>       <td class="coords" data-property="longitude"></td></tr>
+    <tr><th>coords.altitude</th>        <td class="coords" data-property="altitude"></td></tr>
+    <tr><th>coords.accuracy</th>        <td class="coords" data-property="accuracy"></td></tr>
+    <tr><th>coords.altitudeAccuracy</th><td class="coords" data-property="altitudeAccuracy"></td></tr>
+    <tr><th>coords.heading</th>         <td class="coords" data-property="heading"></td></tr>
+    <tr><th>coords.speed</th>           <td class="coords" data-property="speed"></td></tr>
+</table>
+
+<button onclick="geo.getCurrentPosition(success,errorCallback);">Get Location</button>
+<script type="text/javascript">
+function doSetup() {
+	var obj = {
+		"status":    document.getElementById("status").value,
+		"latitude":  document.getElementById("latitude").value,
+		"longitude": document.getElementById("longitude").value,
+		"accuracy": document.getElementById("accuracy").value,
+		"access_token": document.getElementById("access_token").value
+	}
+
+	setupDevice(JSON.stringify(obj, function(key, value) {
+		if (value === "") return undefined;
+		if (key === "latitude"
+		 || key === "longitude"
+		 || key === "accuracy") return Number(value);
+		return value;
+	}));
+}
+
+function errorCallback(err) {
+	var statusMessages = ["PERMISSION_DENIED", "POSITION_UNAVAILABLE", "TIMEOUT"]
+	alert(statusMessages[err.code - 1]);
+}
+
+//	setupDevice('{"latitude":123.456,"longitude":-3.456,"accuracy":3.456,"altitude_accuracy":3.456}');
+function success(pos) {
+	var cells = document.querySelectorAll(".coords");
+
+	for (var i = 0; i < cells.length; i++) {
+		cells[i].textContent = "" + pos.coords[cells[i].getAttribute("data-property")];
+	}
+}
+
+</script>
+</body>
+</html>

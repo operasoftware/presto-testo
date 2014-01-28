@@ -1,0 +1,36 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+<head>
+<title>Forms :: Fieldset and div: float and block formatting context</title>
+<style type="text/css">
+html, body {background: white;}
+fieldset {
+	padding: 0;
+	margin: 0;
+	border: none;
+	float: left;
+	height: 4em;
+}
+div {
+	background: lime;
+	height: 4em;
+}
+#c {
+	padding-top: 50px;
+	clear: both;
+}
+</style>
+</head>
+
+<body>
+
+<form action="">
+	<fieldset>pa</fieldset>
+	<div>ss</div>
+</form>
+
+<h4 id="c">pass condition</h4>
+<p>you should see one, unbroken word "pass" above on a green background</p>
+
+</body>
+</html>

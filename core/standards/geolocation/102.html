@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>geolocation test</title>
+<link rel="stylesheet" type="text/css" href="style.css"/>
+</head>
+<body>
+<p id="instructions"></p>
+<p id="message">NOT TESTED (script did not run)</p>
+<hr/>
+<p>Test setup: Set <a href="opera:config#Geolocation|LocationProviderURL">opera:config#Geolocation|LocationProviderURL</a> to <strong id="setup"></strong></p>
+<script type="text/javascript" src="common.js"></script>
+<script type="text/javascript">
+function success(pos) {
+  if (pos.coords.speed==undefined) {
+     fail("speed undefined");
+  }
+  else if (typeof pos.coords.speed != 'number' ) {
+    fail("speed should be a Number");
+  }
+  else if (pos.coords.speed<0) {
+    fail("out of range value for speed: "+pos.coords.speed);
+  }
+  else if (pos.coords.speed!=678.4 && pos.coords.altitude!=null) {
+    fail("speed should be 678.4 or null, but is "+pos.coords.speed);
+  }
+  else
+  {
+   pass("speed is: "+pos.coords.speed);
+  }
+}
+setupDevice('{"latitude":1.234,"longitude":-1.234,"accuracy":123,"speed":678.4}');
+askAccept();
+run(function(){
+geo.getCurrentPosition(success, unexpectedError);
+});
+</script>
+</body>
+</html>

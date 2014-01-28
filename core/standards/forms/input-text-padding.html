@@ -1,0 +1,49 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+<head>
+<title>Forms :: text input : nonzero padding</title>
+<style type="text/css">
+form * {
+	font-family: Ahem;
+	font-size: 1em;
+	line-height: 1em;
+}
+fieldset, div {
+	background-color: red;
+	padding: 0;
+	margin: 10px;
+	border: none;
+	width: 22em;
+}
+input, span {
+	color: black;
+	background-color: lime;
+	padding: 1em;
+	margin: 0;
+	border: none;
+	height: 1em;
+	display: block;
+}
+</style>
+</head>
+
+<body>
+
+<form action="">
+	<fieldset>
+		<input type="text" value="xxxxxxxxxxxxxxxxxxxx" title="20 characters">
+	</fieldset>
+	<div>
+		<span>xxxxxxxxxxxxxxxxxxxx</span>
+	</div>
+</form>
+
+<h4>Ahem font required for this test</h4>
+<ul>
+<li>there should be two identical boxes above</li>
+<li>each box should consist of a black rectangle inside a green rectangle</li>
+<li>there should be no red</li>
+</ul>
+
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>geolocation requests from framed documents</title>
+<link rel="stylesheet" type="text/css" href="style.css"/>
+</head>
+<body>
+	<p>There should be separate notifications for each document in iframe requesting geolocation data.</p>
+</body>
+<script>
+	var ifr = document.createElement("iframe");
+	ifr.src = "http://html5demos.com/geo?abc";
+	document.body.appendChild(ifr);
+	var ifr = document.createElement("iframe");
+	ifr.src = "002.html";
+	document.body.appendChild(ifr);
+	var ifr = document.createElement("iframe");
+	ifr.src = "http://html5demos.com/geo?xyz";
+	document.body.appendChild(ifr);
+</script>
+</html>

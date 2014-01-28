@@ -1,0 +1,42 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+<head>
+<title>Forms :: selectbox : null border</title>
+<style type="text/css">
+form * {
+	font-family: Ahem;
+	font-size: 1em;
+	line-height: 1em;
+}
+fieldset, div {
+	padding: 0;
+	margin: 10px;
+	border: none;
+}
+select {
+	color: lime;
+	border: none;
+}
+</style>
+</head>
+
+<body>
+
+<form action="">
+	<fieldset>
+		<select>
+			<option>x</option>
+		</select>
+	</fieldset>
+	<div>
+		<select>
+			<option>x</option>
+		</select>
+	</div>
+</form>
+
+<h4>Ahem font required for this test</h4>
+<p>there should be no border around the green block</p>
+
+</body>
+</html>

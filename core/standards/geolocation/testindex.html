@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Geolocation tests index</title>
+</head>
+<body>
+<h1>Geolocation tests</h1>
+<p>Adapted from <a href="http://dev.w3.org/geo/api/test-suite/">W3C Geolocation test-suite</a></p>
+<div id="changes">
+<ol>
+<li>Each test is now an HTML file, e.g.<code>042.html</code></li>
+<li><code>common.js</code> includes code for SPARTAN reporting using JS test framework.</li>
+<li>Some tests have been corrected.</li>
+</ol>
+<p><a href="001.html">001.html</a> <span>access="deny"</span> <span>category="auto"</span> <span>: user denies access, check that no success callback is called and error callback is returned with correct error (and in due time)</span></p>
+<p><a href="002.html">002.html</a> <span>access="allow"</span> <span>category="auto"</span> <span>: user allows access, check that success callback is called</span></p>
+<p><a href="003.html">003.html</a> <span>access="deny"</span> <span>category="auto"</span> <span>: user denies access, check that no success callback is called, even if the device returns a valid position</span></p>
+<p><a href="004.html">004.html</a> <span>access="deny"</span> <span>category="auto"</span> <span>: user denies access, check that no success callback is called, even with highAccuracy set</span></p>
+<p><a href="005.html">005.html</a> <span>access="deny"</span> <span>category="auto"</span> <span>: user denies access, check that no success callback is called, even with timeout set</span></p>
+<p><a href="006.html">006.html</a> <span>access="deny"</span> <span>category="auto"</span> <span>: user denies access, check that no success callback is called, even with maximumAge set</span></p>
+<p><a href="007.html">007.html</a> <span>access="default"</span> <span>category="auto"</span> <span>: many getCurrentPosition called, users waits, check that no callback is called</span></p>
+<p><a href="008.html">008.html</a> <span>access="allow"</span> <span>category="auto"</span> <span>: order in which callbacks are called</span></p>
+<p><a href="009.html">009.html</a> <span>access="deny"</span> <span>category="auto"</span> <span>: 2 getCurrentPosition called, user answers no, check that neither success callbacks are called </span></p>
+<p><a href="010.html">010.html</a> <span>category="manual"</span> <span>: call getCurrentPosition, ask if there is an UI appearing</span></p>
+<p><a href="011.html">011.html</a> <span>access="allow"</span> <span>category="auto"</span> <span>: call getCurrentPosition with null success callback, check if exception</span></p>
+<p><a href="012.html">012.html</a> <span>category="manual"</span> <span>: call getCurrentPosition with null error callback, ask if there is a UI appearing</span></p>
+<p><a href="013.html">013.html</a> <span>access="allow"</span> <span>category="auto"</span> <span>: call getCurrentPosition with null success and error callbacks, check for exception</span></p>
+<p><a href="014.html">014.html</a> <span>category="manual"</span> <span>: call watchPosition, ask if there is a UI appearing</span></p>
+<p><a href="015.html">015.html</a> <span>access="allow"</span> <span>category="auto"</span> <span>: call watchPosition with null success callback, check exception</span></p>
+<p><a href="016.html">016.html</a> <span>category="manual"</span> <span>: call watchPosition with null error callback, ask if there is an UI appearing</span></p>
+<p><a href="017.html">017.html</a> <span>access="allow"</span> <span>category="auto"</span> <span>: call watchPosition with null success and error callbacks, check exception</span></p>
+<p><a href="018.html">018.html</a> <span>category="manual"</span> <span>: call getCurrentPosition, ask if there is a UI appearing with the URI</span></p>
+<p><a href="019.html">019.html</a> <span>category="manual"</span> <span>: call watchPosition, ask if there is a UI appearing with the URI</span></p>
+<p><a href="020.html">020.html</a> <span>category="manual"</span> <span>access="allow"</span> <span>: revoking permissions from privacy dialog after allowing once</span></p>
+<p><a href="021.html">021.html</a> <span>category="manual"</span> <span>access="deny"</span> <span>: revoking permissions from privacy dialog after denying once</span></p>
+<p><a href="022.html">022.html</a> <span>category="manual"</span> <span>: (optional) user asked to allow (but not remember), then reload page. Check that user is prompted again</span></p>
+<p><a href="023.html">023.html</a> <span>category="manual"</span> <span>: (optional) user asked to deny (but not remember), then reload page. Check that user asked again</span></p>
+<p><a href="024.html">024.html</a> <span>category="manual"</span> <span>: (optional) user asked to approve and remember, then reload page. Check that user not asked again</span></p>
+<p><a href="025.html">025.html</a> <span>category="manual"</span> <span>: (optional) user asked to deny and remember, then reload page. Check that user not asked again</span></p>
+<p><a href="026.html">026.html</a> <span>category="auto"</span> <span>: check for window.* [Navigator object] has a "geolocation" member which is an instance of class NavigatorGeolocation.</span></p>
+<p><a href="027.html">027.html</a> <span>access="allow"</span> <span>category="auto"</span> <span>: call getCurrentPosition() without arguments. Exception expected.</span></p>
+<p><a href="028.html">028.html</a> <span>access="allow"</span> <span>category="auto"</span> <span>: call getCurrentPosition() with wrong type for first argument. Exception expected.</span></p>
+<p><a href="029.html">029.html</a> <span>access="deny"</span> <span>category="auto"</span> <span>: call getCurrentPosition() with wrong type for second argument. Exception expected.</span></p>
+<p><a href="030.html">030.html</a> <span>access="allow"</span> <span>category="auto"</span> <span>: call getCurrentPosition() with wrong type for third argument. Exception expected.</span></p>
+<p><a href="031.html">031.html</a> <span>category="auto"</span> <span>: pass if getCurrentPosition returns withing 100ms</span></p>
+<p><a href="032.html">032.html</a> <span>category="auto"</span> <span>: check that correct latitude is available in the position object</span></p>
+<p><a href="033.html">033.html</a> <span>category="auto"</span> <span>: check that correct longitude is available in the position object</span></p>
+<p><a href="034.html">034.html</a> <span>category="auto"</span> <span>: check that correct accuracy is available in the position object</span></p>
+<p><a href="035.html">035.html</a> <span>category="auto"</span> <span>: check that correct altitude is available in the position object</span></p>
+<p><a href="036.html">036.html</a> <span>category="auto"</span> <span>: check that correct altitudeAccuracy is available in the position object</span></p>
+<p><a href="037.html">037.html</a> <span>category="auto"</span> <span>: check that correct heading is available in the position object</span></p>
+<p><a href="038.html">038.html</a> <span>category="auto"</span> <span>: check that correct speed is available in the position object</span></p>
+<p><a href="039.html">039.html</a> <span>access="allow"</span> <span>category="auto"</span> <span>: set the device to return no latitude, and check that the API returns error with correct code</span></p>
+<p><a href="040.html">040.html</a> <span>access="allow"</span> <span>category="auto"</span> <span>: set the device to return no longitude, and check that the API returns error with correct code</span></p>
+<p><a href="041.html">041.html</a> <span>access="allow"</span> <span>category="auto"</span> <span>: set the device to return no accuracy, and check that the API returns error with correct code</span></p>
+<p><a href="042.html">042.html</a> <span>access="allow"</span> <span>category="auto"</span> <span>: set the device to return no lat nor lon nor acc, and check that the API returns error with correct code</span></p>
+<p><a href="043.html">043.html</a> <span>access="allow"</span> <span>category="auto"</span> <span>: set the device to return no altitudeAccuracy, and check that the API returns null</span></p>
+<p><a href="044.html">044.html</a> <span>access="allow"</span> <span>category="auto"</span> <span>: set the device to return no heading, and check that the API returns null</span></p>
+<p><a href="045.html">045.html</a> <span>access="allow"</span> <span>category="auto"</span> <span>: set the device to return no speed, and check that the API returns null</span></p>
+<p><a href="046.html">046.html</a> <span>access="allow"</span> <span>category="auto"</span> <span>: set the device to return no altitude, and check that the API returns null</span></p>
+<p><a href="047.html">047.html</a> <span>access="allow"</span> <span>category="auto"</span> <span>: set the device to return wrong latitude type, and check that the API returns POSITION_UNAVAILABLE</span></p>
+<p><a href="048.html">048.html</a> <span>access="allow"</span> <span>category="auto"</span> <span>: set the device to return wrong longitude type, and check that the API returns POSITION_UNAVAILABLE</span></p>
+<p><a href="049.html">049.html</a> <span>access="allow"</span> <span>category="auto"</span> <span>: set the device to return wrong accuracy type, and check that the API returns POSITION_UNAVAILABLE</span></p>
+<p><a href="050.html">050.html</a> <span>access="allow"</span> <span>category="auto"</span> <span>: set the device to return wrong altitude type, and check that the API returns POSITION_UNAVAILABLE</span></p>
+<p><a href="051.html">051.html</a> <span>access="allow"</span> <span>category="auto"</span> <span>: set the device to return wrong altitudeAccuracy type, and check that the API returns POSITION_UNAVAILABLE</span></p>
+<p><a href="052.html">052.html</a> <span>access="allow"</span> <span>category="auto"</span> <span>: set the device to return wrong heading type, and check that the API returns POSITION_UNAVAILABLE</span></p>
+<p><a href="053.html">053.html</a> <span>access="allow"</span> <span>category="auto"</span> <span>: set the device to return wrong speed type, and check that the API returns POSITION_UNAVAILABLE</span></p>
+<p><a href="054.html">054.html</a> <span>access="deny"</span> <span>category="auto"</span> <span>: ask user to deny, and check that the API returns error with PERMISSON_DENIED</span></p>
+<p><a href="055.html">055.html</a> <span>access="allow"</span> <span>category="auto"</span> <span>: set device to return an HTTP error, check that API reports POSITION_UNAVAILABLE</span></p>
+<p><a href="057.html">057.html</a> <span>access="allow"</span> <span>category="auto"</span> <span>: set timeout, check that API reports TIMEOUT</span></p>
+<p><a href="058.html">058.html</a> <span>access="allow"</span> <span>category="auto"</span> <span>: call watchPosition() without arguments</span></p>
+<p><a href="059.html">059.html</a> <span>access="allow"</span> <span>category="auto"</span> <span>: call watchPosition() with wrong type for first argument.</span></p>
+<p><a href="060.html">060.html</a> <span>access="allow"</span> <span>category="auto"</span> <span>: call watchPosition() with wrong type for second argument.</span></p>
+<p><a href="061.html">061.html</a> <span>access="allow"</span> <span>category="auto"</span> <span>: call watchPosition() with wrong type for third argument.</span></p>
+<p><a href="062.html">062.html</a> <span>category="auto"</span> <span>: check that watchPosition returns a long, immediately.</span></p>
+<p><a href="063.html">063.html</a> <span>access="allow"</span> <span>category="auto"</span> <span>: set the device to return a preset latitude, longitude, accuracy, and check that the API returns same values</span></p>
+<p><a href="066.html">066.html</a> <span>access="allow"</span> <span>category="auto"</span> <span>: set the device to return a preset altitude, and check that the API returns same values</span></p>
+<p><a href="067.html">067.html</a> <span>access="allow"</span> <span>category="auto"</span> <span>: set the device to return a preset altitudeAccuracy, and check that the API returns same values</span></p>
+<p><a href="068.html">068.html</a> <span>access="allow"</span> <span>category="auto"</span> <span>: set the device to return a preset heading, and check that the API returns same values</span></p>
+<p><a href="069.html">069.html</a> <span>access="allow"</span> <span>category="auto"</span> <span>: set the device to return a preset speed, and check that the API returns same values</span></p>
+<p><a href="070.html">070.html</a> <span>access="allow"</span> <span>category="auto"</span> <span>: set the device to return no latitude, and check that the API returns error with correct code</span></p>
+<p><a href="071.html">071.html</a> <span>access="allow"</span> <span>category="auto"</span> <span>: set the device to return no altitudeAccuracy, and check that the API returns null</span></p>
+<p><a href="072.html">072.html</a> <span>access="allow"</span> <span>category="auto"</span> <span>: set the device to return no heading, and check that the API returns null</span></p>
+<p><a href="073.html">073.html</a> <span>access="allow"</span> <span>category="auto"</span> <span>: set the device to return no speed, and check that the API returns null</span></p>
+<p><a href="074.html">074.html</a> <span>access="allow"</span> <span>category="auto"</span> <span>: set the device to return no altitude, and check that the API returns null</span></p>
+<p><a href="075.html">075.html</a> <span>access="allow"</span> <span>category="auto"</span> <span>: make position change and check if callback is called.</span></p>
+<p><a href="076.html">076.html</a> <span>access="allow"</span> <span>category="auto"</span> <span>: make position not change and check that callback is not called.</span></p>
+<p><a href="077.html">077.html</a> <span>access="allow"</span> <span>category="auto"</span> <span>: start a watch, make the device return an error first, and normal positions afterwards. Check that error callback is called first, then success.</span></p>
+<p><a href="078.html">078.html</a> <span>access="allow"</span> <span>category="auto"</span> <span>: start a watch, then on the first callback make the device return an error, and normal positions again afterwards. Check that success is called first time, then error callback is called, then success again.</span></p>
+<p><a href="079.html">079.html</a> <span>access="allow"</span> <span>category="auto"</span> <span>: start a watch, clear it, move position, check callback is not called again.</span></p>
+<p><a href="080.html">080.html</a> <span>access="allow"</span> <span>category="auto"</span> <span>: Test clearWatch with wrong identifier, fail if more than 1 call to the same clearWatch</span></p>
+<p><a href="081.html">081.html</a> <span>access="allow"</span> <span>category="auto"</span> <span>: Test that consecutive callbacks don't return the same value</span></p>
+<p><a href="082.html">082.html</a> <span>access="allow"</span> <span>category="auto"</span> <span>: compare set timeout with total timed value (getCurrentPosition).</span></p>
+<p><a href="083.html">083.html</a> <span>access="allow"</span> <span>category="auto"</span> <span>: compare set timeout with total timed value (watchPosition).</span></p>
+<p><a href="084.html">084.html</a> <span>access="allow"</span> <span>category="auto"</span> <span>: check that setting highAccuracy doesn't crash getCurrentPosition()</span></p>
+<p><a href="085.html">085.html</a> <span>access="allow"</span> <span>category="auto"</span> <span>: check that setting highAccuracy doesn't crash watchPosition()</span></p>
+<p><a href="086.html">086.html</a> <span>access="allow"</span> <span>category="auto"</span> <span>: set timeout and maximumAge to 0, check that timeout error raised (getCurrentPosition)</span></p>
+<p><a href="088.html">088.html</a> <span>access="allow"</span> <span>category="auto"</span> <span>: set timeout and maximumAge to 0, check that timeout error raised (watchPosition)</span></p>
+<p><a href="091.html">091.html</a> <span>access="allow"</span> <span>category="auto"</span> <span>: check that a negative timeout value is equivalent to a 0 timeout value (getCurrentLocation)</span></p>
+<p><a href="092.html">092.html</a> <span>access="allow"</span> <span>category="auto"</span> <span>: check that a negative timeout value is equivalent to a 0 timeout value (watchPosition)</span></p>
+<p><a href="093.html">093.html</a> <span>access="default"</span> <span>category="auto"</span> <span>: check that getCurrentPosition() doesn't return error twice</span></p>
+<p><a href="094.html">094.html</a> <span>category="auto"</span><span>: n/a </span></p>
+<p><a href="095.html">095.html</a> <span>access="allow"</span> <span>category="auto"</span> <span>: check existence of timestamp attribute, and correct type</span></p>
+<p><a href="096.html">096.html</a> <span>access="allow"</span> <span>category="auto"</span> <span>: test that latitude is a valid number and has the correct value</span></p>
+<p><a href="097.html">097.html</a> <span>access="allow"</span> <span>category="auto"</span> <span>: test that longitude is a valid number and has the correct value</span></p>
+<p><a href="098.html">098.html</a> <span>access="allow"</span> <span>category="auto"</span> <span>: test that accuracy is a valid number and has the correct value</span></p>
+<p><a href="099.html">099.html</a> <span>access="allow"</span> <span>category="auto"</span> <span>: iset the device to return a preset latitude, longitude and accuracy, and check that the API returns same values</span></p>
+<p><a href="100.html">100.html</a> <span>access="allow"</span> <span>category="auto"</span> <span>: test that altitude is a valid number and has the correct value</span></p>
+<p><a href="101.html">101.html</a> <span>access="allow"</span> <span>category="auto"</span> <span>: test that altitudeAccuracy is being correctly reported</span></p>
+<p><a href="102.html">102.html</a> <span>access="allow"</span> <span>category="auto"</span> <span>: test that speed is being correctly reported</span></p>
+<p><a href="103.html">103.html</a> <span>category="manual"</span> <span>access="allow"</span> <span>: test that heading is a valid number</span></p>
+<p><a href="104.html">104.html</a> <span>access="allow"</span> <span>category="auto"</span> <span>: check for null altitude</span></p>
+<p><a href="105.html">105.html</a> <span>access="allow"</span> <span>category="auto"</span> <span>: check for null altitudeAccuracy</span></p>
+<p><a href="106.html">106.html</a> <span>category="manual"</span> <span>access="allow"</span> <span>: check for null heading</span></p>
+<p><a href="107.html">107.html</a> <span>access="allow"</span> <span>category="auto"</span> <span>: check for null speed</span></p>
+<p><a href="108.html">108.html</a> <span>access="deny"</span> <span>category="auto"</span> <span>: check that the error type exists and that its attributes have the right numeric value</span></p>
+<p><a href="109.html">109.html</a> <span>access="default"</span> <span>category="auto"</span> <span>: set device in Error and check that correct error is reported by API</span></p>
+<p><a href="110.html">110.html</a> <span>access="allow"</span> <span>category="auto"</span> <span>: set device to take a long time, set timeout to a short duration, and check that correct error is reported by API</span></p>
+<p><a href="111.html">111.html</a> <span>access="allow"</span> <span>category="auto"</span> <span>: make server return 500, check error code received by API.</span></p>
+<p><a href="112.html">112.html</a> <span>access="allow"</span> <span>category="auto"</span> <span>: make server return 400, check error code received by API.</span></p>
+<p><a href="113.html">113.html</a> <span>access="allow"</span> <span>category="auto"</span> <span>: make server return empty body, check error code received by API.</span></p>
+<p><a href="114.html">114.html</a> <span>access="allow"</span> <span>category="auto"</span> <span>: make server return empty json, check error code received by API.</span></p>
+<p><a href="115.html">115.html</a> <span>access="allow"</span> <span>category="auto"</span> <span>: make server return rubbish, check error code received by API.</span></p>
+<p><a href="116.html">116.html</a> <span>access="allow"</span> <span>category="auto"</span> <span>: fire many getCurrentPosition, count callbacks</span></p>
+<p><a href="117.html">117.html</a> <span>access="allow"</span> <span>category="auto"</span><span>: n/a </span></p>
+<p><a href="118.html">118.html</a> <span>access="allow"</span> <span>category="auto"</span> <span>: uniqueness of watchPosition id values (call function many times, check collisions)</span></p>
+<p><a href="119.html">119.html</a> <span>access="allow"</span> <span>category="auto"</span> <span>: callbacks recursively calling getCurrentPosition</span></p>
+<p><a href="120.html">120.html</a> <span>access="allow"</span> <span>category="auto"</span> <span>: callbacks recursively calling watchPosition</span></p>
+<p><a href="121.html">121.html</a> <span>access="allow"</span> <span>category="auto"</span> <span>: request cached value (timeout:0 and maximumAge not set) and check it is correct</span></p>
+<p><a href="122.html">122.html</a> <span>access="allow"</span> <span>category="auto"</span> <span>: get a position, then set maximumAge to 0, then move, then get another position. Both must be different</span></p>
+<p><a href="123.html">123.html</a> <span>access="allow"</span> <span>category="auto"</span> <span>: call getCurrentPosition with wrong type for enableHighAccuracy. No error expected.</span></p>
+<p><a href="124.html">124.html</a> <span>access="allow"</span> <span>category="auto"</span> <span>: call watchPosition with wrong type for enableHighAccuracy. No error expected.</span></p>
+<p><a href="129.html">129.html</a> <span>category="manual"</span><span>: n/a </span></p>
+<p><a href="130.html">130.html</a> <span>category="auto"</span> <span>: call watchPosition() without arguments. Exception expected.</span></p>
+<p><a href="131.html">131.html</a> <span>access="allow"</span> <span>category="auto"</span> <span>: call watchPosition() with wrong type for first argument. Exception expected.</span></p>
+<p><a href="132.html">132.html</a> <span>access="deny"</span> <span>category="auto"</span> <span>: call watchPosition() with wrong type for second argument. Exception expected.</span></p>
+<p><a href="133.html">133.html</a> <span>access="allow"</span> <span>category="auto"</span> <span>: call watchPosition() with wrong type for third argument. Exception expected.</span></p>
+<p><a href="134.html">134.html</a> <span>access="deny"</span> <span>category="auto"</span> <span>: set timeout to 0, ask user to refuse. Error should be PERMISSION_DENIED (getCurrentPosition).</span></p>
+<p><a href="135.html">135.html</a> <span>access="deny"</span> <span>category="auto"</span> <span>: set timeout to 0, ask user to refuse. Error should be PERMISSION_DENIED (watchPosition).</span></p>
+<p><a href="136.html">136.html</a> <span>access="allow"</span> <span>category="auto"</span> <span>: call getCurrentPosition with null success callback, check if exception happens immediately.</span></p>
+<p><a href="137.html">137.html</a> <span>access="allow"</span> <span>category="auto"</span> <span>: call watchPosition with null success callback, check exception immediately.</span></p>
+<p><a href="138.html">138.html</a> <span>access="allow"</span> <span>category="auto"</span> <span>: call getCurrentPosition with null success and error callbacks, check if exception happens immediately.</span></p>
+<p><a href="139.html">139.html</a> <span>access="allow"</span> <span>category="auto"</span> <span>: request cached value (timeout:0 and maximumAge set to a negative value) and check it is correct</span></p>
+<p><a href="140.html">140.html</a> <span>access="allow"</span> <span>category="auto"</span> <span>: call watchPosition with null success and error callbacks, check if exception happens immediately.</span></p>
+<p><a href="141.html">141.html</a> <span>category="manual"</span> <span>: (optional) user asked to approve/remember, then asked to revoke, then reload. The permission dialog should reappear.</span></p>
+<p><a href="142.html">142.html</a> <span>category="manual"</span> <span>: (optional) user asked to deny/remember, then ask to revoke, then reload. The permission dialog should reappear</span></p>
+<p><a href="143.html">143.html</a> <span>category="manual"</span> <span>access="allow"</span> <span>: check that heading is NaN when speed is 0</span></p>
+<p><a href="144.html">144.html</a> <span>category="manual"</span> <span>access="allow"</span> <span>: a non-valid heading value is sent to the device. The API mustn't send it back.</span></p>
+<p><a href="145.html">145.html</a> <span>access="allow"</span> <span>category="auto"</span> <span>: test that an error is raised if accuracy is reported as negative</span></p>
+<p><a href="146.html">146.html</a> <span>access="allow"</span> <span>category="auto"</span> <span>: test that an error is raised if altitudeAccuracy is reported as negative</span></p>
+<p><a href="147.html">147.html</a> <span>access="allow"</span> <span>category="auto"</span> <span>: test that an error is raised if speed is reported as negative</span></p>
+<p><a href="148.html">148.html</a> <span>access="allow"</span> <span>category="auto"</span> <span>: test that an error is raised if heading is reported as greater than or equal to 360</span></p>
+<p><a href="149.html">149.html</a> <span>access="allow"</span> <span>category="auto"</span><span>: n/a </span></p>
+</body>
+</html>

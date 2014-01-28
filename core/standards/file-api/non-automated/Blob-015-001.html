@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<title>Blob-015-001-Test that name attribute is not present in a Blob.</title>
+<link rel="stylesheet" href="../resources/style.css"/>
+<script src="../resources/lib.js"></script>
+<script>
+onload = function() {
+    try {
+        var t_file = document.getElementById("t_file");
+        t_file.onchange = function() {
+            try {
+                var t_blob = t_file.files[0].slice(0, 100, "text/html");
+                var part = t_blob.slice(1, 3, "");
+                if (part.name === undefined) setResult(1, "There is no name attribute on Blob.");
+                else setResult(0, "Blob has a name attribute, there should not be one. Got: " + part.name);
+            } catch(e) {
+                setResult(0, "Threw exception: " + e);
+            }
+        }
+    } catch(e) {
+        setResult(0, "Threw: " + e);
+    }
+}
+</script>
+<body>
+<p>Please select "blob.txt" from resources folder to test: <input type='file' id='t_file' name='t_file' /></p>
+</body>

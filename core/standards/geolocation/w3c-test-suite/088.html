@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Geolocation:set timeout and maximumAge to 0, check that timeout error raised (watchPosition) </title>
+<link rel="stylesheet" type="text/css" href="style.css"/>
+</head>
+<body>
+<p id="instructions"></p>
+<p id="message">NOT TESTED (script did not run)</p>
+<script type="text/javascript" src="common.js"></script>
+<script type="text/javascript">
+askAccept();
+run(function() {
+  geo.watchPosition(
+      unexpectedSuccessCallback,
+      function(error) {
+        if (error.code == error.TIMEOUT) {
+          pass();
+        } else {
+          unexpectedErrorCallback(error);
+        }
+      },
+      {timeout: 0, maximumAge: 0});
+});
+</script>
+</body>
+</html>

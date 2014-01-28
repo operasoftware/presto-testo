@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>geolocation test</title>
+<link rel="stylesheet" type="text/css" href="style.css"/>
+</head>
+<body>
+<p id="instructions"></p>
+<p id="message">NOT TESTED (script did not run)</p>
+<hr/>
+<p>Test setup: Set <a href="opera:config#Geolocation|LocationProviderURL">opera:config#Geolocation|LocationProviderURL</a> to <strong id="setup"></strong></p>
+<script type="text/javascript" src="common.js"></script>
+<script type="text/javascript">
+function success(pos) {
+  if (pos.coords.altitudeAccuracy==undefined) {
+    fail("altitudeAccuracy undefined");
+  }
+  else if (typeof pos.coords.altitudeAccuracy != 'number' ) {
+    fail("altitudeAccuracy should be a Number");
+  }
+  else if (pos.coords.altitudeAccuracy<0) {
+    fail("out of range value for altitudeAccuracy: "+pos.coords.altitudeAccuracy);
+  }
+  else if (pos.coords.altitudeAccuracy!=11.23 && pos.coords.altitudeAccuracy!=null) {
+    fail("altitudeAccuracy should be 11.23 or null, but is "+pos.coords.altitudeAccuracy);
+  }
+  else
+  {
+   pass("altitudeAccuracy is: "+pos.coords.altitudeAccuracy);
+  }
+}
+setupDevice('{"latitude":1.234,"longitude":-1.234,"accuracy":123,"altitude_accuracy":11.23}');
+askAccept();
+run(function(){
+geo.getCurrentPosition(success, unexpectedError);
+});
+</script>
+</body>
+</html>

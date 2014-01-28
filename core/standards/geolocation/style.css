@@ -1,0 +1,8 @@
+q { font-style: italic }
+li { padding-bottom: 1em; }
+.fail { background-color: #f88; }
+.pass { background-color: #8f8; }
+.maybe { background-color: #aaf; }
+.issue { background-color: #ff8; }
+.na { background-color: #fcc; }
+.spec-issue { color: red }

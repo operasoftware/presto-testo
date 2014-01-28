@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+	<head>
+		<title>It must be possible to click a link while a script is replacing states</title>
+		<script type="text/javascript">
+setInterval(function () {
+	history.replaceState('','',location.href.replace(/\?.*$/,'')+'?'+Math.random()+''+(new Date()).getTime());
+},1);
+		</script>
+	</head>
+	<body>
+
+		<noscript><p>Enable JavaScript and reload</p></noscript>
+		<ul>
+			<li><a href="pass.html">Click this text.</a></li>
+			<li>Fail if nothing happens.</li>
+		</ul>
+
+	</body>
+</html>

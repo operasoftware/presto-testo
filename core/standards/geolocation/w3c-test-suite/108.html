@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Geolocation:check that the error type exists and that its attributes have the right numeric value </title>
+<link rel="stylesheet" type="text/css" href="style.css"/>
+</head>
+<body>
+<p id="instructions"></p>
+<p id="message">NOT TESTED (script did not run)</p>
+<script type="text/javascript" src="common.js"></script>
+<script type="text/javascript">
+askRefuse();
+run(function() {
+  geo.getCurrentPosition(
+      unexpectedSuccessCallback,
+      function (error) {
+        if (error
+            && typeof error == 'object'
+            && error.PERMISSION_DENIED === 1
+            && error.POSITION_UNAVAILABLE === 2
+            && error.TIMEOUT === 3
+            && typeof error.code == 'number'
+            && typeof error.message == 'string') {
+          pass();
+        } else {
+          fail();
+        }
+      });
+});
+</script>
+</body>
+</html>

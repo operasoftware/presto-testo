@@ -1,0 +1,49 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+<head>
+<title>Forms :: fieldset with legend : padding, margin</title>
+<style type="text/css">
+form * {
+	font-family: Ahem;
+	font-size: 1em;
+	line-height: 1em;
+}
+form {
+	background-color: red;
+	padding: 0;
+	border: 1px solid white;
+	width: 3em;
+	position: relative;
+}
+fieldset {
+	background-color: lime;
+	padding: 1em 0 0;
+	margin: -0.5em 0 0;
+	color: black;
+	border: none;
+	width: 3em;
+	height: 3em;
+}
+legend {
+	background-color: #FFCC00;
+	padding: 0;
+	margin: 0;
+	height: 1em;
+	visibility: hidden;
+}
+</style>
+</head>
+
+<body>
+
+<form action="">
+	<fieldset>
+		<legend>xxx</legend>
+	</fieldset>
+</form>
+
+<h4>Ahem font required for this test</h4>
+<p>there should be no red</p>
+
+</body>
+</html>

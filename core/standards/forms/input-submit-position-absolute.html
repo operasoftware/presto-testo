@@ -1,0 +1,56 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+<head>
+<title>Forms :: submit input : absolute position</title>
+<style type="text/css">
+form * {
+	font-family: Ahem;
+	font-size: 1em;
+	line-height: 1em;
+}
+fieldset, div {
+	padding: 0;
+	margin: 0;
+	border: none;
+}
+input, span {
+	font-size: 1em;
+	line-height: 1em;
+	color: lime;
+	padding: 0;
+	margin: 0;
+	border: none;
+	width: 1em;
+	height: 1em;
+	position: absolute;
+	right: 1em;
+	top: 1em;
+}
+div input {
+	top: 3em;
+}
+span {
+	top: 5em;
+}
+</style>
+</head>
+
+<body>
+
+<form action="">
+	<fieldset>
+		<input type="submit" value="x">
+	</fieldset>
+	<div>
+		<input type="submit" value="x">
+	</div>
+	<div>
+		<span>x</span>
+	</div>
+</form>
+
+<h4>Ahem font required for this test</h4>
+<p>you should see three identical, green squares in the top-right corner of the screen</p>
+
+</body>
+</html>

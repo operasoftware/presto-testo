@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>geolocation test</title>
+<link rel="stylesheet" type="text/css" href="style.css"/>
+</head>
+<body>
+<p id="instructions"></p>
+<p id="message">NOT TESTED (script did not run)</p>
+<hr/>
+<p>Test setup: Set <a href="opera:config#Geolocation|LocationProviderURL">opera:config#Geolocation|LocationProviderURL</a> to <strong id="setup"></strong></p>
+<script type="text/javascript" src="common.js"></script>
+<script type="text/javascript">
+var start = new Date();
+setupDevice('{"longitude":10, "latitude":-4, "accuracy":1, "x-delay":100}');
+askAccept();
+geo.getCurrentPosition(unexpectedSuccess,error,{timeout:5000,maximumAge:0});
+function error(e) {
+  var stop = new Date();
+  var interval = stop-start;
+  if (Math.abs(interval-5000)>100) fail("callback not called in 5s (±100ms), as timeout expected"); else pass();
+}
+</script>
+</body>
+</html>

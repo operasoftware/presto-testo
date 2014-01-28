@@ -1,0 +1,5 @@
+Blob.slice called with negative start and length larger than size causes a blob of length to be returned (however large it be)
+norepro: Crash on setting multiple event listeners (loadstart)
+readAsArrayBuffer ->null 
+FileReader.readyState on onloadstart event is DONE?!
+

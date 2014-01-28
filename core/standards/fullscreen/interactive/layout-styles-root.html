@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Overflow hidden on fullscreen ancestor's root</title>
+	<meta name="assert" content="If there is a fullscreen element that is not
+	the root then we should hide the viewport scrollbar.">
+	<script src="/resources/testharness.js"></script>
+	<script src="/resources/testharnessreport.js"></script>
+	<style>
+		html, body {
+			height: 5000px;
+		}
+	</style>
+	<script>
+		var test = async_test("Overflow hidden on fullscreen ancestor's root");
+
+		function enterFullscreen()
+		{
+			document.getElementById('fullscreen_element').requestFullscreen();
+			return false;
+		}
+
+		function runTest(e)
+		{
+			test.step(function() {
+				assert_equals(getComputedStyle(document.documentElement).overflow, 'hidden', 'Value of overflow property');
+			})
+			test.done();
+			removeFullscreenElement();
+		}
+
+		onload = function()
+		{
+			document.querySelector('a').onclick = enterFullscreen;
+			document.addEventListener('fullscreenchange', runTest, false);
+		}
+
+		function removeFullscreenElement()
+		{
+			var el = document.fullscreenElement;
+			el.parentNode.removeChild(el);
+		}
+	</script>
+</head>
+<body>
+
+	<p>PASS should appear below after entering fullscreen.</p>
+
+	<div id="fullscreen_element">
+		<a href="#">enter fullscreen</a>
+	</div>
+
+	<div id="log"></div>
+
+</body>
+</html>

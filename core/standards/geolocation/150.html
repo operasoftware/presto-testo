@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>geolocation test</title>
+	<link rel="stylesheet" type="text/css" href="/t/resources/testharness.css"/>
+	<script src="/resources/testharness.js"></script>
+	<script src="/resources/testharnessreport.js"></script>
+</head>
+<body>
+<p id="instructions"></p>
+<hr/>
+<p>Test setup: Set <a href="opera:config#Geolocation|LocationProviderURL">opera:config#Geolocation|LocationProviderURL</a> to <strong id="setup"></strong></p>
+<p>Set <a href="opera:config#Geolocation|Sendlocationrequestonlyonchange">opera:config#Geolocation|Sendlocationrequestonlyonchange</a> to <strong>false</strong></p>
+<div id="log"></div>
+
+<script src="common.js"></script>
+
+<script>
+var tests = {};
+tests["init"] = async_test("Request location", {timeout:20000});
+
+var expected = {
+	browser: "opera",
+	sensor: "true",
+	wifi: ["mac", "ss", "age", "chan", "snr", "ssid"],
+	cell: ["id", "lac", "mcc", "mnc", "age", "ss", "ta"],
+	device: ["mcc", "mnc", "carrier", "rt"],
+	location: ["lat", "lng"],
+	token: getRandomToken(10)
+};
+
+function error(err) {
+	tests["init"].step(function() {
+		// This should never happen. If it does, something may have gone wrong with the mock location server
+		assert_unreached(errorToString(err));
+	});
+	tests["init"].done();
+}
+
+function success(pos) {
+	assert_true(true, "Location acquired");
+
+	tests["api"] = async_test("Check that the new GET API was used");
+	tests["init"].done();
+
+	getLog();
+}
+
+/*
+ * browser ("opera")
+ * sensor ("true")
+ * wifi
+ * - mac (MAC Address, required)
+ * - ss (Signal strength, float, optional)
+ * - age (milliseconds, unsigned integer, optional)
+ * - chan (Channel, unsigned integer, optional)
+ * - snr (Signal-to-noise ratio, float, optional)
+ * - ssid (SSID, string, optional)
+ * cell
+ * - id (CID for GSM, BID for CDMA, unsigned integer, optional)
+ * - lac (Location area code, LAC for GSM, NID for CDMA, unsigned integer, optional)
+ * - mcc (Mobile country code, unsigned integer, optional)
+ * - mnc (Mobile network code, unsigned integer, optional)
+ * - age (Milliseconds, unsigned integer, optional)
+ * - ss (Signal strength, float, optional)
+ * - ta (Timing advance, float, optional)
+ * device
+ * - mcc (Mobile country code, unsigned integer, optional)
+ * - mnc (Mobile network code, unsigned integer, optional)
+ * - carrier (Carrier name, string, optional)
+ * - rt (radio type, 0 (Unknown), 1 (GSM), 2 (CDMA), 3 (WCDMA), unsigned integer, optional.)
+ * location
+ * - lat (Latitude, degrees, float, required)
+ * - lng (Longitude, degrees, float, required)
+ * token
+ */
+
+function getLog() {
+	var req = new XMLHttpRequest();
+	req.onreadystatechange = function() {
+		if (this.readyState === 4) {
+			if (this.status === 204) {
+				// FAIL. Most likely old POST API used, no query string log
+				tests["api"].step(function() {
+					// This should never happen. If it does, something may have gone wrong with the mock location server
+					assert_unreached("Use of old API detected.");
+				});
+				tests["api"].done();
+			} else {
+				// 
+				var params = tokenizeQueryString(req.responseText);
+				//opera.postError(JSON.stringify(params));
+
+				// Setup remaining tests
+				tests["browser"] = async_test("Parameter check: 'browser' is set to 'opera'");
+				tests["sensor"] = async_test("Parameter check: 'sensor' is set to 'true'");
+
+				tests["wifi-fields"] = async_test("Parameter check: 'wifi' parameters contains correct fields");
+				tests["wifi-order"] = async_test("Wifi signals are sorted by signal strength");
+				tests["wifi-mac"] = async_test("Wifi field check: 'mac' field is present and contains a properly formatted mac address");
+				tests["wifi-ss"] = async_test("Wifi field check: 'ss' (signal strength) field contains a floating point number");
+				tests["wifi-age"] = async_test("Wifi field check: 'age' field contains an unsigned integer (milliseconds)");
+				tests["wifi-chan"] = async_test("Wifi field check: 'chan' (channel) field contains an unsigned integer");
+				tests["wifi-snr"] = async_test("Wifi field check: 'snr' (signal-to-noise ratio) field contains a floating point number");
+				tests["wifi-ssid"] = async_test("Wifi field check: 'ssid' field contains a string");
+
+				tests["cell-fields"] = async_test("Parameter check: 'cell' parameters contains correct fields");
+				tests["cell-order"] = async_test("Cell signals are sorted by signal strength");
+				tests["cell-id"]  = async_test("Cell field check: 'id' field contains an unsigned integer");
+				tests["cell-lac"] = async_test("Cell field check: 'lac' (location area code) field contains an unsigned integer");
+				tests["cell-mcc"] = async_test("Cell field check: 'mcc' (mobile country code) field contains an unsigned integer");
+				tests["cell-mnc"] = async_test("Cell field check: 'mnc' (mobile network code) field contains an unsigned integer");
+				tests["cell-age"] = async_test("Cell field check: 'age' field contains an unsigned integer (milliseconds)");
+				tests["cell-ss"]  = async_test("Cell field check: 'ss' (signal strength) field contains a floating point number");
+				tests["cell-ta"]  = async_test("Cell field check: 'ta' (timing advance) field contains a floating point number, in range 0 <= ta < =63");
+
+				tests["device-fields"] = async_test("Parameter check: 'device' parameter contains correct fields");
+				tests["device-mcc"] = async_test("Device field check: 'mcc' (mobile country code) field contains an unsigned integer");
+				tests["device-mnc"] = async_test("Device field check: 'mnc' (mobile network code) field contains an unsigned integer");
+				tests["device-carrier"]  = async_test("Device field check: 'carrier' field contains a string");
+				tests["device-rt"]  = async_test("Device field check: 'rt' (radio type) field contains a floating point number");
+
+				tests["location-fields"] = async_test("Parameter check: 'location' parameter contains correct fields");
+				tests["location-lat"] = async_test("Location field check: 'lat' field contains a floating point, in range -90.0 <= lat <= 90.0");
+				tests["location-lng"] = async_test("Location field check: 'lng' field contains a floating point, in range -180.0 <= lng <= 180.0");
+
+				tests["token"] = async_test("Parameter check: 'token' parameter matches expected value");
+
+				// API test passed
+				tests["api"].done();
+
+				validateParam(params);
+			}
+		}
+	}
+	req.open("GET", "getlog.php", false)	
+	req.send();
+}
+
+function tokenizeQueryString(str) {
+	var token = str.split("&");
+	var params = {};
+
+	for (var i = 0; i < token.length; i++) {
+		var name = token[i].substring(0, token[i].indexOf("=")), value;
+		if (params[name] === undefined) params[name] = [];
+
+		switch (name) {
+			case "wifi":
+			case "cell":
+			case "device":
+			case "location":
+				value = {};
+				var field = token[i].substring(token[i].indexOf("=") + 1).split("%7C");
+				for (var j = 0; j < field.length; j++) {
+					value[field[j].substring(0, field[j].indexOf("%3A"))] = field[j].substring(field[j].indexOf("%3A") + 3);
+				}
+				break;
+			default:
+				value = (token[i].substring(token[i].indexOf("=") + 1));
+		}
+		params[name].push(value);
+	}
+	return params;
+}
+
+function validateParam(params) {
+	tests["browser"].step(function() {
+		assert_own_property(params, "browser", "browser is a required parameter");
+	});
+	tests["sensor"].step(function() {
+		assert_own_property(params, "sensor", "sensor is a required parameter");
+	});
+	tests["token"].step(function() {
+		assert_own_property(params, "token", "token is a required parameter");
+	});
+
+	for (name in params) {
+		switch (name) {
+		case "browser":
+		case "sensor":
+		case "token":
+			tests[name].step(function() {
+				assert_equals(params[name].length, 1, "Parameter should only occur once");
+				assert_equals(params[name][0], expected[name]);
+			});
+			break;
+		case "wifi":
+			for (var i = 0; i < params[name].length; i++) {
+				tests["wifi-fields"].step(function() {
+					assert_own_property(params[name][i], "mac", "mac is a required key in wifi parameter (" + i + ")")
+					for (key in params[name][i]) {
+						assert_true(expected[name].indexOf(key) >= 0, "Only expected fields are allowed. Encountered: '" + key + ":" + params[name][i][key] + "'.");
+					}
+				});
+				
+				tests["wifi-order"].step(function() {
+					if (i > 0) {
+						ss1 = Number(params[name][i-1]["ss"]);
+						ss2 = Number(params[name][i]["ss"]);
+						assert_true(ss1 >= ss2, "Signal strength should be ordered highest to lowest");
+					}
+				});
+				
+				tests["wifi-mac"].step(function() {
+					assert_regexp_match(params[name][i]["mac"], /([0-9A-Fa-f]{2}-){5}[0-9A-Fa-f]{2}/, "mac should be formatted correctly");
+				});
+
+				tests["wifi-ss"].step(function() {
+					if (params[name][i]["ss"]) {
+						assert_regexp_match(params[name][i]["ss"], /-?\d+(\.\d+)?/, "ss should be a floating point number");
+					}
+				});
+
+				tests["wifi-age"].step(function() {
+					if (params[name][i]["age"]) {
+						assert_regexp_match(params[name][i]["age"], /\d+/, "age should be an unsigned integer");
+					}
+				});
+
+				tests["wifi-chan"].step(function() {
+					if (params[name][i]["chan"]) {
+						assert_regexp_match(params[name][i]["chan"], /\d{1,2}/, "chan should be an unsigned integer");
+					}
+				});
+
+				tests["wifi-snr"].step(function() {
+					if (params[name][i]["snr"]) {
+						assert_regexp_match(params[name][i]["snr"], /-?d+(\.\d+)?/, "snr should be a floating point number");
+					}
+				});
+
+				tests["wifi-ssid"].step(function() {
+					if (params[name][i]["ssid"]) {
+						assert_regexp_match(params[name][i]["ssid"], /.+/, "ssid should be a non-empty string");
+					}
+				});
+			}
+			break;
+		case "cell":
+			//id, lac, mcc, age, ss, ta
+			for (var i = 0; i < params[name].length; i++) {
+				tests["cell-fields"].step(function() {
+					for (key in params[name][i]) {
+						assert_true(expected[name].indexOf(key) >= 0, "Only expected fields are allowed. Encountered: '" + key + ":" + params[name][i][key] + "'.");
+					}
+				});
+
+				tests["cell-order"].step(function() {
+					if (i > 0) {
+						ss1 = Number(params[name][i-1]["ss"]);
+						ss2 = Number(params[name][i]["ss"]);
+						assert_true(ss1 > ss2, "Signal strength should be ordered highest to lowest");
+					}
+				});
+
+				tests["cell-id"].step(function() {
+					if (params[name][i]["id"]) {
+						assert_regexp_match(params[name][i]["id"], /\d+/, "id should be an unsigned integer");
+					}
+				});
+
+				tests["cell-lac"].step(function() {
+					if (params[name][i]["lac"]) {
+						assert_regexp_match(params[name][i]["lac"], /\d+/, "lac should be an unsigned integer");
+					}
+				});
+
+				tests["cell-mcc"].step(function() {
+					if (params[name][i]["mcc"]) {
+						assert_regexp_match(params[name][i]["mcc"], /\d+/, "mcc should be an unsigned integer");
+					}
+				});
+
+				tests["cell-mnc"].step(function() {
+					if (params[name][i]["mnc"]) {
+						assert_regexp_match(params[name][i]["mnc"], /\d+/, "mnc should be an unsigned integer");
+					}
+				});
+
+				tests["cell-age"].step(function() {
+					if (params[name][i]["age"]) {
+						assert_regexp_match(params[name][i]["age"], /\d+/, "age should be an unsigned integer");
+					}
+				});
+
+				tests["cell-ss"].step(function() {
+					if (params[name][i]["ss"]) {
+						assert_regexp_match(params[name][i]["ss"], /-?\d+(\.\d+)?/, "ss should be a floating point number");
+					}
+				});
+
+				tests["cell-ta"].step(function() {
+					if (params[name][i]["ta"]) {
+						assert_regexp_match(params[name][i]["ss"], /-?\d+(\.\d+)?/, "ta should be a floating point number");
+					}
+				});
+			}
+			
+			break;
+		case "device":
+			// mcc, mnc, carrier, rt 
+			for (var i = 0; i < params[name].length; i++) {
+				tests["device-fields"].step(function() {
+					for (key in params[name][i]) {
+						assert_true(expected[name].indexOf(key) >= 0, "Only expected fields are allowed. Encountered: '" + key + ":" + params[name][i][key] + "'.");
+					}				
+				});
+
+				tests["device-mcc"].step(function() {
+					if (params[name][i]["mcc"]) {
+						assert_regexp_match(params[name][i]["mcc"], /\d{1,2}/, "mcc should be an unsigned integer");
+					}
+				});
+
+				tests["device-mnc"].step(function() {
+					if (params[name][i]["mnc"]) {
+						assert_regexp_match(params[name][i]["mnc"], /\d{1,2}/, "mnc should be an unsigned integer");
+					}
+				});
+
+				tests["device-carrier"].step(function() {
+					if (params[name][i]["carrier"]) {
+						assert_regexp_match(params[name][i]["carrier"], /.+/, "carrier should be a non-empty string");
+					}
+				});
+
+				tests["device-rt"].step(function() {
+					if (params[name][i]["rt"]) {
+						assert_regexp_match(params[name][i]["rt"], /\d{1}/, "rt should be an unsigned integer");
+						assert_true(Number(params[name][i]["rt"]) >= 0 && Number(params[name][i]["rt"]) <= 3, "rt valid values are 0, 1, 2, or 3");
+						
+					}
+				});
+			}
+			break;
+		case "location":
+			opera.postError("Name: " + name);
+			// lat, lng
+			for (var i = 0; i < params[name].length; i++) {
+				tests["location-fields"].step(function() {
+					assert_equals(params[name].length, 1, "Parameter should only occur once");
+					assert_own_property(params[name][i], "lat", "lat is a required key in location parameter (" + i + ")");
+					assert_own_property(params[name][i], "lng", "lng is a required key in location parameter (" + i + ")");
+					for (key in params[name][i]) {
+						assert_true(expected[name].indexOf(key) >= 0, "Only expected fields are allowed. Encountered: '" + key + ":" + params[name][i][key] + "'.");
+					}
+				});
+
+				tests["location-lat"].step(function() {
+					if (params[name][i]["lat"]) {
+						assert_regexp_match(params[name][i]["lat"], /-?\d+(\.\d+)?/, "lat should be a floating point number");
+						assert_true(Number(params[name][i]["lat"]) >= -90.0, "Latitude should be greater than -90.0");
+						assert_true(Number(params[name][i]["lat"]) <= 90.0, "Latitude should be less than 90.0");
+					}
+				});
+			
+				tests["location-lng"].step(function() {
+					if (params[name][i]["lng"]) {
+						assert_regexp_match(params[name][i]["lng"], /-?\d+(\.\d+)?/, "lng should be a floating point number");
+						assert_true(Number(params[name][i]["lng"]) >= -180.0, "Latitude should be greater than -180.0");
+						assert_true(Number(params[name][i]["lng"]) <=  180.0, "Latitude should be less than 180.0");
+					}
+				});
+			}
+			break;
+		}
+	}
+	for (test in tests) {
+		tests[test].done()
+	}
+}
+
+function getRandomToken(length) {
+	// XXX Hack to explicitly control the token during development only!
+	// return "abcd";
+
+	var token = "";
+	var chars = "1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+	for (var i = 0; i < length; i++) {
+	    var c = Math.floor(Math.random() * 62);
+	    token += chars.charAt(c);
+	}
+	return token
+}
+
+setupDevice('{"longitude":10, "latitude":-4,"accuracy":3,"access_token":"' + expected["token"] + '"}');
+//setupDevice('{"x-empty":true}');
+askAccept();
+run(function() {
+  	geo.getCurrentPosition(tests["init"].step_func(function() {
+
+		geo.getCurrentPosition(tests["init"].step_func(success), error, {maximumAge:0})
+	}), error, {maximumAge:0});
+});
+</script>
+</body>
+</html>

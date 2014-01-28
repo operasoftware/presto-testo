@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>geolocation test</title>
+<link rel="stylesheet" type="text/css" href="style.css"/>
+</head>
+<body>
+<p id="instructions"></p>
+<p id="message">NOT TESTED (script did not run)</p>
+<hr/>
+<p>Test setup: Set <a href="opera:config#Geolocation|LocationProviderURL">opera:config#Geolocation|LocationProviderURL</a> to <strong id="setup"></strong></p>
+<script type="text/javascript" src="common.js"></script>
+<script type="text/javascript">
+run(function(){
+var t1,t2;
+t1=new Date().getTime();
+var id=geo.watchPosition(dummyFunction,dummyFunction);
+t2=new Date().getTime();
+if (t2-t1<100) {
+  message("getCurrentPosition call took "+(t2-t1)+"ms to execute.");
+  if (typeof(id)==="number") {
+    if (id>=-2147483648 && id<=2147483647) 
+      pass();
+    else
+      fail("watchPosition returned a value out of long range: "+id);
+  }
+  else fail("watchPosition didn't return a number, instead: "+id);
+}
+else {
+  fail("getCurrentPosition call took "+(t2-t1)+"ms to execute");
+}
+});
+</script>
+</body>
+</html>

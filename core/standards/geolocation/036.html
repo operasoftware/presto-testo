@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>geolocation test</title>
+<link rel="stylesheet" type="text/css" href="style.css"/>
+</head>
+<body>
+<p id="instructions"></p>
+<p id="message">NOT TESTED (script did not run)</p>
+<hr/>
+<p>Test setup: Set <a href="opera:config#Geolocation|LocationProviderURL">opera:config#Geolocation|LocationProviderURL</a> to <strong id="setup"></strong></p>
+<script type="text/javascript" src="common.js"></script>
+<script type="text/javascript">
+run(function(){
+setupDevice('{"latitude":123.456,"longitude":-3.456,"accuracy":3.456,"altitude_accuracy":3.456}');
+function success(pos) {
+ if(pos.coords.altitudeAccuracy===3.456)
+    pass();
+  else
+   fail("Not the values we wanted (3.456). Instead got "+pos.coords.altitudeAccuracy);
+}
+geo.getCurrentPosition(success,fail);
+});
+</script>
+</body>
+</html>

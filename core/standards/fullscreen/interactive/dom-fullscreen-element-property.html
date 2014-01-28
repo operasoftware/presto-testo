@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>fullscreenElement property</title>
+	<script src="/resources/testharness.js"></script>
+	<script src="/resources/testharnessreport.js"></script>
+	<script>
+		var test = async_test("fullscreenElement property");
+
+		onload = function()
+		{
+			document.querySelector('button').addEventListener('click', goFullscreen, false);
+		}
+
+		function goFullscreen()
+		{
+			var __el = this;
+
+			test.step(function() {
+				assert_equals(document.fullscreenElement, null, "FullscreenElement before entering fullscreen");
+			})
+
+			this.requestFullscreen();
+
+			test.step(function() {
+				assert_equals(document.fullscreenElement, __el, "FullscreenElement after entering fullscreen");
+			})
+
+			test.done();
+			removeFullscreenElement();
+		}
+
+		function removeFullscreenElement()
+		{
+			var el = document.fullscreenElement;
+			el.parentNode.removeChild(el);
+		}
+	</script>
+</head>
+<body>
+
+	<p>Click box below to trigger fullscreen mode.</p>
+
+	<button>enter fullscreen</button>
+
+	<div id="log"></div>
+
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Color property on fullscreen button element</title>
+	<script src="/resources/testharness.js"></script>
+	<script src="/resources/testharnessreport.js"></script>
+	<script>
+		var test = async_test('Color property on fullscreened button element.');
+
+		onload = function()
+		{
+			document.querySelector('button').addEventListener('click', function(e)
+			{
+				this.requestFullscreen();
+			}, false);
+		}
+
+		document.addEventListener('fullscreenchange', function(e)
+		{
+			var fs_elm = document.fullscreenElement;
+			test.step(function()
+			{
+				assert_equals(getComputedStyle(fs_elm).color, 'rgb(255, 255, 255)')
+			});
+			test.done();
+			removeFullscreenElement();
+		}, false);
+
+		function removeFullscreenElement()
+		{
+			var el = document.fullscreenElement;
+			el.parentNode.removeChild(el);
+		}
+	</script>
+</head>
+<body>
+
+	<button>enter fullscreen</button>
+
+	<div id="log"></div>
+
+</body>
+</html>

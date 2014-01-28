@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<title>FileReader-i-018-001-Test FileReader.result at loadend using readAsDataURL filesize of above 50 KB image.</title>
+<link rel="stylesheet" href="../resources/style.css"/>
+<script src="../resources/lib.js"></script>
+<script>
+onload = function() {
+    try {
+        var t_file = document.getElementById('t_file');
+        t_file.onchange = function() {
+            try {
+                var t_blob = t_file.files[0];
+                var t_filerdr = new FileReader();
+                t_filerdr.addEventListener("loadend", function(evt) {
+                    if (t_filerdr.result !== null) setResult(-1, "You should see a complete image with four green dots (one in each corner) below.");
+                    else setResult(0, "FileReader.result is null, got: " + t_filerdr.result);
+					var img = document.createElement("img");
+					img.src = t_filerdr.result;
+					document.body.appendChild(img);
+                },
+                false);
+                t_filerdr.readAsDataURL(t_blob);
+            } catch(e) {
+                setResult("Threw exception:" + e);
+            }
+        }
+    } catch(e) {
+        setResult(0, "Threw: " + e);
+    }
+}
+</script>
+<body>
+<p>Please select "t.png" from resources folder to test: <input type='file' id='t_file' name='t_file' /></p>
+<p>Repeat this test with t.bmp, t.jpg and t.gif.</p>
+</body>

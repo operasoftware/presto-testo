@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+	<head>
+		<title>The UI must reflect a replaced state</title>
+		<script type="text/javascript">
+window.onload = function () {
+	if( location.protocol == 'file:' ) {
+		document.getElementsByTagName('p')[0].innerHTML = 'This test cannot be run from file: (URL resolving will not work). It must be loaded over HTTP.';
+		return;
+	}
+	history.replaceState('','Replaced state',location.href.replace(/\/[^\/]*$/,'')+'\/PASS');
+};
+		</script>
+	</head>
+	<body>
+
+		<noscript><p>Enable JavaScript and reload</p></noscript>
+		<p>The browser's address field should show a URL ending with /PASS</p>
+
+	</body>
+</html>

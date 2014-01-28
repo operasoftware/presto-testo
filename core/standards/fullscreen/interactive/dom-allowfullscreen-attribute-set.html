@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Set allowfullscreen attribute on iframe</title>
+	<script src="/resources/testharness.js"></script>
+	<script src="/resources/testharnessreport.js"></script>
+	<style>
+		iframe {
+			border: none; /* Work-around for Watir bug. */
+			width: 400px;
+			height: 200px;
+		}
+	</style>
+	<script>
+		var test = async_test('Entering fullscreen with allowfullscreen attribute set');
+		var entered_fullscreen;
+
+		function check_if_entered_fullscreen()
+		{
+			assert_true(entered_fullscreen, "Entered fullscreen");
+		}
+
+		function onFullscreenError(e)
+		{
+			entered_fullscreen = false;
+			test.step(check_if_entered_fullscreen);
+			test.done();
+			removeFullscreenElement();
+		}
+
+		document.addEventListener('fullscreenchange', function(e)
+		{
+			entered_fullscreen = true;
+			test.step(check_if_entered_fullscreen)
+			test.done();
+			removeFullscreenElement();
+		}, false);
+
+		function removeFullscreenElement()
+		{
+			var el = document.fullscreenElement;
+			el.parentNode.removeChild(el);
+		}
+	</script>
+</head>
+<body>
+
+	<p>PASS should appear after entering and exiting fullscreen.</p>
+
+	<div id="log"></div>
+
+	<iframe allowfullscreen src="data:text/html,
+		<script>document.addEventListener('fullscreenerror', parent.onFullscreenError, false);</script>
+		<button onclick='document.body.requestFullscreen()'>enter fullscreen</button>
+		<button onclick='document.exitFullscreen()'>exit fullscreen</button>"></iframe>
+
+</body>
+</html>

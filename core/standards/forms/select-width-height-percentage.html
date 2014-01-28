@@ -1,0 +1,54 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+<head>
+<title>Forms :: selectbox : percentage width and height</title>
+<style type="text/css">
+fieldset, div {
+	padding: 0;
+	margin: 10px;
+	border: none;
+	width: 400px;
+	height: 40px;
+}
+select, span {
+	background: lime;
+	padding: 0;
+	margin: 0;
+	border: 5px solid black;
+	width: 75%;
+	height: 75%;
+	box-sizing: content-box;
+}
+span {
+	display: block;
+}
+</style>
+</head>
+
+<body>
+
+<form action="">
+	<fieldset>
+		<select>
+			<option></option>
+		</select>
+	</fieldset>
+	<div>
+		<select>
+			<option></option>
+		</select>
+	</div>
+	<div>
+		<span></span>
+	</div>
+</form>
+
+<h4>Ahem font required for this test</h4>
+<ul>
+<li>you should see three green blocks</li>
+<li>each block should have an identical black border</li>
+<li>blocks should be of equal width and height</li>
+</ul>
+
+</body>
+</html>

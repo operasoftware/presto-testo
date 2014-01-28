@@ -1,0 +1,36 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+<head>
+<title>Forms :: fieldset : percentage width, scroll overflow, position absolute</title>
+<style type="text/css">
+fieldset {
+	padding: 0;
+	margin: 0;
+	border: 1px solid black;
+	width: 3em;
+	height: 3em;
+	overflow: scroll;
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+div {
+	background: lime;
+	height: 300px;
+	width: 100%;
+}
+</style>
+</head>
+
+<body>
+
+<form action="">
+	<fieldset>
+		<div></div>
+	</fieldset>
+</form>
+
+<p>you should see an unbroken, green square with scrollbars in the top-right corner of the page</p>
+
+</body>
+</html>

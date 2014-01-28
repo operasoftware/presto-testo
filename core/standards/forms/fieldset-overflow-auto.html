@@ -1,0 +1,38 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+<head>
+<title>Forms :: fieldset : percentage width, auto overflow</title>
+<style type="text/css">
+body {background: white;}
+fieldset, form>div {
+	padding: 0;
+	margin: 10px;
+	color: lime;
+	border: 1px solid black;
+	width: 3em;
+	height: 3em;
+	overflow: auto;
+}
+fieldset div, div div {
+	background: lime;
+	height: 300px;
+	width: 100%;
+}
+</style>
+</head>
+
+<body>
+
+<form action="">
+	<fieldset>
+		<div></div>
+	</fieldset>
+	<div>
+		<div></div>
+	</div>
+</form>
+
+<p>you should see two unbroken, green rectangles with a black border and a scrollbar</p>
+
+</body>
+</html>

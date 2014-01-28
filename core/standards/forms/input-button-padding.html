@@ -1,0 +1,50 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+<head>
+<title>Forms :: button input : padding</title>
+<style type="text/css">
+form * {
+	font-family: Ahem;
+	font-size: 1em;
+	line-height: 1em;
+}
+fieldset, div {
+	padding: 0;
+	margin: 10px;
+	border: none;
+	width: 3em;
+}
+input, span {
+	font-size: 1em;
+	line-height: 1em;
+	color: black;
+	background-color: lime;
+	padding: 1em;
+	margin: 0;
+	border: 1px solid black;
+	height: 1em;
+	box-sizing: content-box;
+	display: block;
+}
+</style>
+</head>
+
+<body>
+
+<form action="">
+	<fieldset>
+		<input type="button" value="x">
+	</fieldset>
+	<div>
+		<input type="button" value="x">
+	</div>
+	<div>
+		<span>x</span>
+	</div>
+</form>
+
+<h4>Ahem font required for this test</h4>
+<p>you should see three identical, green squares, each containing a black square </p>
+
+</body>
+</html>

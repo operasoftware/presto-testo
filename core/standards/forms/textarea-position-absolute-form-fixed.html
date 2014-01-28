@@ -1,0 +1,56 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+<head>
+<title>Forms :: textarea and fieldset : position absolute; form position fixed, nonzero right and bottom offsets</title>
+<style type="text/css">
+form, form * {
+	font-family: Ahem;
+	font-size: 1em;
+	line-height: 1em;
+}
+form {
+	background-color: red;
+	padding: 0;
+	margin: 0;
+	height: 2em;
+	width: 2em;
+	position: fixed;
+	right: 5px;
+	bottom: 5px;
+}
+fieldset {
+	padding: 0;
+	margin: 0;
+	border: none;
+	width: 2em;
+	height: 2em;
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+textarea {
+	background: lime;
+	border: none;
+	width: 2em;
+	height: 2em;
+	position: absolute;
+	right: 0;
+	top: 0;
+	resize: none;
+}
+</style>
+</head>
+
+<body>
+
+<form action="">
+	<fieldset>
+		<textarea rows="5" cols="5"></textarea>
+	</fieldset>
+</form>
+
+<h4>Ahem font required for this test</h4>
+<p>there should be a green block near the bottom-right corner of the viewport. There should be no red</p>
+
+</body>
+</html>

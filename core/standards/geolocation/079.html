@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>geolocation test</title>
+<link rel="stylesheet" type="text/css" href="style.css"/>
+</head>
+<body>
+<p id="instructions"></p>
+<p id="message">NOT TESTED (script did not run)</p>
+<hr/>
+<p>Test setup: Set <a href="opera:config#Geolocation|LocationProviderURL">opera:config#Geolocation|LocationProviderURL</a> to <strong id="setup"></strong></p>
+<script type="text/javascript" src="common.js"></script>
+<script type="text/javascript">
+var step=0, watchId;
+setupDevice('{"longitude":10, "latitude":-4, "accuracy":0.01, "x-move":0.001}');
+askAccept();
+run(function(){
+      watchId=geo.watchPosition(success,unexpectedError);
+});
+function success(pos) {
+  if (step++==0) {
+    message("callback correctly called. Now clearing watch.");
+    geo.clearWatch(watchId);
+  } else {
+    fail("watchPosition has been cancelled, so this callback should not happen.");
+    geo.clearWatch(watchId);
+  }
+}
+setTimeout("if(step==1) { pass('watch was correctly cleared.'); geo.clearWatch(watchId);} else fail('step='+step);",20000);
+</script>
+</body>
+</html>

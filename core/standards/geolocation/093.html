@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>geolocation test</title>
+<link rel="stylesheet" type="text/css" href="style.css"/>
+</head>
+<body>
+<p id="instructions"></p>
+<p id="message">NOT TESTED (script did not run)</p>
+<hr/>
+<p>Test setup: Set <a href="opera:config#Geolocation|LocationProviderURL">opera:config#Geolocation|LocationProviderURL</a> to <strong id="setup"></strong></p>
+<script type="text/javascript" src="common.js"></script>
+<script type="text/javascript">
+setupDevice('{"error":500}');
+askAccept();
+var count=0;
+function error(e) {
+  count++;
+  if (count==1) message('error detected. Good');
+  if (count > 1) fail("error callback called more than once");
+}
+run(function(){
+geo.getCurrentPosition(unexpectedSuccess, error, {timeout: 10});
+});
+waitUntil("if (count==1) pass('error callback called only once'); else fail(count+' errors detected');");
+</script>
+</body>
+</html>

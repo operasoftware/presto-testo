@@ -1,0 +1,51 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+<head>
+<title>Forms :: text input : null margin</title>
+<style type="text/css">
+form * {
+	font-family: Ahem;
+	font-size: 1em;
+	line-height: 1em;
+}
+fieldset, div {
+	background: red;
+	padding: 0;
+	margin: 10px;
+	border: 1px solid black;
+	width: 1em;
+}
+input, span {
+	font-size: 1em;
+	line-height: 1em;
+	color: lime;
+	background-color: lime;
+	padding: 0;
+	margin: 0;
+	border: none;
+	width: 1em;
+	height: 1em;
+}
+span {display: block;}
+</style>
+</head>
+
+<body>
+
+<form action="">
+	<fieldset>
+		<input type="text" value="x">
+	</fieldset>
+	<div>
+		<input type="text" value="x">
+	</div>
+	<div>
+		<span>x</span>
+	</div>
+</form>
+
+<h4>Ahem font required for this test</h4>
+<p>there should be three identical green boxes with black borders above, and there should be no red</p>
+
+</body>
+</html>

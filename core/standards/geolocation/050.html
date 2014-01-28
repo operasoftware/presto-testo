@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>geolocation test</title>
+<link rel="stylesheet" type="text/css" href="style.css"/>
+</head>
+<body>
+<p id="instructions"></p>
+<p id="message">NOT TESTED (script did not run)</p>
+<hr/>
+<p>Test setup: Set <a href="opera:config#Geolocation|LocationProviderURL">opera:config#Geolocation|LocationProviderURL</a> to <strong id="setup"></strong></p>
+<script type="text/javascript" src="common.js"></script>
+<script type="text/javascript">
+function error(e) {
+  if (e.code===e.POSITION_UNAVAILABLE && e.message) pass(); else fail("code is "+e.code+", message is:"+e.message);
+}
+askAccept();
+setupDevice('{"altitude":"foobar"}');
+run(function(){
+  geo.getCurrentPosition(unexpectedSuccess,error);
+});
+waitUntil("fail('no callback called');");
+</script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+<head>
+<title>Forms :: textarea : margin</title>
+<style type="text/css">
+form * {
+	font-family: Ahem;
+	font-size: 1em;
+	line-height: 1em;
+}
+fieldset, div {
+	background: red;
+	padding: 0;
+	margin: 10px;
+	border: none;
+	width: 11em;
+}
+textarea {
+	margin: 0;
+	border: 1px solid black;
+	overflow: auto;
+	overflow-y: scroll;
+	resize: none;
+}
+</style>
+</head>
+
+<body>
+
+<form action="">
+	<fieldset>
+		<textarea rows="5" cols="10"></textarea>
+	</fieldset>
+	<div>
+		<textarea rows="5" cols="10"></textarea>
+	</div>
+</form>
+
+<h4>Ahem font required for this test</h4>
+<p>boxes above should be identical, and there should be no red</p>
+
+</body>
+</html>

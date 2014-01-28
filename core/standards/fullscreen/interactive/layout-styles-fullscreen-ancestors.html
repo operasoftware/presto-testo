@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Styles of the fullscreen element's ancestors</title>
+	<meta name="assert" content="Ancestors of a fullscreen element should not...">
+	<script src="/resources/testharness.js"></script>
+	<script src="/resources/testharnessreport.js"></script>
+	<style>
+		html, body {
+			z-index: 1000;
+			opacity: .9;
+			clip: rect(0, 100px, 100px, 0);
+			overflow: hidden;
+			/*transform: rotate(0deg);*/ /* everything disappears... */
+			transition: all .5s;
+		}
+	</style>
+	<script>
+		var test = async_test("Styles of the fullscreen element's ancestors");
+
+		var expected_style = {
+			'z-index': 'auto'
+			,'opacity': '1'
+			,'clip': 'rect(0px, 0px, 0px, 0px)'
+			,'transform': 'none'
+			,'transition': 'none'
+		}
+
+		function enterFullscreen()
+		{
+			document.getElementById('fullscreen_element').requestFullscreen();
+			return false;
+		}
+
+		function runTest(e)
+		{
+			var el = document.getElementById('fullscreen_element');
+
+			while (el = el.parentElement)
+			{
+				for (var prop in expected_style)
+				{
+					var exp = expected_style[prop];
+					var got = getComputedStyle(el).getPropertyValue(prop);
+					test.step(function() {
+						assert_equals(got, exp, 'Value of "' + prop + '"');
+					})
+				}
+			}
+
+			test.done();
+			removeFullscreenElement();
+		}
+
+		onload = function()
+		{
+			document.querySelector('a').onclick = enterFullscreen;
+			document.addEventListener('fullscreenchange', runTest, false);
+		}
+
+		function createNode(type, content, attributes)
+		{
+			var el = document.createElement(type);
+
+			if (content != undefined || content != null)
+				el.textContent = content;
+
+			for (var k in attributes)
+				el[k] = attributes[k];
+
+			return el;
+		}
+
+		function removeFullscreenElement()
+		{
+			var el = document.fullscreenElement;
+			el.parentNode.removeChild(el);
+		}
+	</script>
+</head>
+<body>
+
+	<p>Passed if no FAIL appears after entering fullscreen.</p>
+
+	<div id="fullscreen_element">
+		<a href="#">enter fullscreen</a>
+	</div>
+
+	<div id="log"></div>
+
+</body>
+</html>

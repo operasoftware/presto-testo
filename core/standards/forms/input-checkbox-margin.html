@@ -1,0 +1,46 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+<head>
+<title>Forms :: checkbox input : zero margin</title>
+<style type="text/css">
+* {
+	font-size: 1em;
+	line-height: 1em;
+}
+fieldset, div {
+	padding: 0;
+	margin: 10px;
+	border: none;
+}
+span {
+	background: red;
+}
+input {
+	padding: 0;
+	margin: 0;
+	border: 1px solid black;
+	box-sizing: content-box;
+}
+</style>
+</head>
+
+<body>
+
+<form action="">
+	<fieldset>
+		<span>
+			<input type="checkbox">
+		</span>
+	</fieldset>
+	<div>
+		<span>
+			<input type="checkbox">
+		</span>
+	</div>
+</form>
+
+<p>there should be no red</p>
+
+</body>
+</html>
+

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Geolocation:check that watchPosition returns a long. </title>
+<link rel="stylesheet" type="text/css" href="style.css"/>
+</head>
+<body>
+<p id="instructions"></p>
+<p id="message">NOT TESTED (script did not run)</p>
+<script type="text/javascript" src="common.js"></script>
+<script type="text/javascript">
+run(function() {
+  var id = geo.watchPosition(dummyFunction);
+  if (typeof id === 'number' && id >= -2147483648 && id <= 2147483647) {
+    pass();
+  } else {
+    fail();
+  }
+});
+</script>
+</body>
+</html>

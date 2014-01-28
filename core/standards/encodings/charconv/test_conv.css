@@ -1,0 +1,7 @@
+h1 { font-size: 18px }
+.p { color: green }
+.f { color: red }
+div#diff {
+  color: red;
+  padding-left: 2em;
+}
