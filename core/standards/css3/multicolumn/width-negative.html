@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>multicolumn | column-width</title>
+<style>
+body {
+	margin: 0;
+	width: 600px;
+}
+div {
+	font-size: 1em;
+	line-height: 1em;
+	color: black;
+	background: yellow;
+	orphans: 1;
+	widows: 1;
+}
+#test {
+	column-width: -100px;
+	column-gap: 0;
+}
+</style>
+</head>
+
+<body>
+<div id="test">
+	d da dam dame damer 
+	d da dam dame damer 
+	d da dam dame damer 
+	d da dam dame damer 
+	d da dam dame damer 
+	d da dam dame damer 
+	d da dam dame damer 
+	d da dam dame damer 
+	d da dam dame damer 
+	d da dam dame damer 
+	d da dam dame damer 
+</div>
+
+<p>Patterns above and below this line should be identical</p>
+
+<div>
+	d da dam dame damer 
+	d da dam dame damer 
+	d da dam dame damer 
+	d da dam dame damer 
+	d da dam dame damer 
+	d da dam dame damer 
+	d da dam dame damer 
+	d da dam dame damer 
+	d da dam dame damer 
+	d da dam dame damer 
+	d da dam dame damer 
+</div>
+
+</body>
+</html>

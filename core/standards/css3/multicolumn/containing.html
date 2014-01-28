@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>multicolumn | containing element</title>
+<style>
+body>div {
+	font-family: ahem;
+	font-size: 1em;
+	line-height: 1em;
+	color: black;
+	background: yellow;
+	margin: 1em;
+	border: 1em solid gray;
+	width: 8em;
+
+	column-count: 3;
+}
+span {
+	position: absolute;
+	top: -1em;
+	color: red;
+}
+</style>
+</head>
+
+<body>
+<p>You should see three black squares and there should be no red.</p>
+
+<div id="one">
+	xx xx 
+	<span>xx xx</span>
+	xx xx 
+	xx xx
+</div>
+
+</body>
+</html>

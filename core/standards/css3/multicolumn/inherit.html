@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>multicolumn | inheritance</title>
+<style>
+body {
+	margin: 0;
+	width: 75em;
+}
+body>div {
+	column-count: 3;
+}
+div {
+	font-family: ahem;
+	font-size: 1em;
+	line-height: 1em;
+	color: black;
+	background: yellow;
+	margin: 0 1em 1em;
+	orphans: 1;
+	widows: 1;
+}
+</style>
+</head>
+
+<body>
+
+<p>You should see 21 black rectangles on yellow background. They 
+should be vertically aligned. (ignore shape and a horizontal scrollbar,
+if any)</p>
+
+<div>
+	<div>
+		xx xx
+		xx xx
+		xx xx 
+		xx xx
+	</div>
+	<div>
+		xx xx
+		xx xx
+		xx xx 
+		xx xx
+	</div>
+	<div>
+		xx xx
+		xx xx
+		xx xx 
+		xx xx
+	</div>
+</div>
+
+</body>
+</html>

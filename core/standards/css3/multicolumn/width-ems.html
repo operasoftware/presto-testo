@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>multicolumn | column-width</title>
+<style>
+body {
+	margin: 0;
+	width: 40em;
+}
+div {
+	font-family: monospace;
+	font-size: 1em;
+	line-height: 1em;
+	color: black;
+	background: yellow;
+	orphans: 1;
+	widows: 1;
+}
+div:first-child {
+	column-width: 8em;
+	column-gap: 0;
+}
+#ref span {
+	float: left;
+	width: 8em;
+}
+#ref::after {
+	content: "";
+	clear: both;
+	display: block;
+}
+</style>
+</head>
+
+<body>
+<div id="test">
+	one two three four
+	five six seven eight
+	nine ten eleven twelve
+	thirtn fourtn fiftn sixtn
+	seventn eightn ninetn twenty
+	hundred thousand million billion
+	trillion gazillion
+</div>
+
+<p>Patterns above and below this line should be identical</p>
+
+<div id="ref">
+<span>
+	one two three four
+	five six seven eight 
+</span>
+<span>
+	nine ten eleven twelve
+	thirtn 
+</span>
+<span>
+	fourtn fiftn sixtn
+	seventn eightn
+</span>
+<span>
+	ninetn twenty
+	hundred thousand 
+</span>
+<span>
+	million billion
+	trillion gazillion
+</span>
+</div>
+
+</body>
+</html>

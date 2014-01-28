@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>multicolumn | column-gap</title>
+<style>
+div {
+	font-family: ahem;
+	font-size: 0.5em;
+	line-height: 1em;
+	color: black;
+	background: yellow;
+	height: 12em;
+	width: 150em;
+	orphans: 1;
+	widows: 1;
+
+	column-count: 5;
+	column-gap: 5em;
+	column-fill: auto;
+}
+</style>
+</head>
+
+<body>
+
+<p>There should be TWO patterns on yellow background below, regardless
+of viewport width (ignore any horizontal scrollbars)</p>
+
+<div>
+	one two three four
+	five six seven eight
+	nine ten eleven twelve
+	thirtn fourtn fiftn sixtn
+	seventn eightn ninetn twenty
+	hundred thousand million billion
+	trillion
+	one two three four
+	five six seven eight
+	nine ten eleven twelve
+	thirtn fourtn fiftn sixtn
+	seventn eightn ninetn twenty
+	hundred thousand million billion
+	trillion
+	one two three four
+	five six seven eight
+	nine ten eleven twelve
+	thirtn fourtn fiftn sixtn
+	seventn eightn ninetn twenty
+	hundred thousand million billion
+	trillion
+</div>
+
+</body>
+</html>

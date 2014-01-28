@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>multicolumn | column-count</title>
+<style>
+body {
+	width: 600px;
+}
+div {
+	font-family: ahem;
+	font-size: 1em;
+	line-height: 1em;
+	color: black;
+	background: yellow;
+	orphans: 1;
+	widows: 1;
+}
+#ref span {
+	float: left;
+	width: 100px;
+}
+#ref::after {
+	content: "";
+	clear: both;
+	display: block;
+}
+/* test */
+#test {
+	column-count: 6;
+	column-gap: 0;
+}
+</style>
+</head>
+
+<body>
+<div id="test">
+	d da dam dame damer 
+	d da dam dame damer 
+	d da dam dame damer 
+	d da dam dame damer 
+	d da dam dame damer 
+	d da dam dame damer 
+	d da dam dame damer 
+	d da dam dame damer 
+	d da dam dame damer 
+	d da dam dame damer 
+	d da dam dame damer 
+</div>
+
+<p>Patterns above and below this line should be identical</p>
+
+<div id="ref">
+<span>	d da dam dame damer 
+	d da dam dame damer </span>
+<span>	d da dam dame damer 
+	d da dam dame damer </span>
+<span>	d da dam dame damer 
+	d da dam dame damer </span>
+<span>	d da dam dame damer 
+	d da dam dame damer </span>
+<span>	d da dam dame damer 
+	d da dam dame damer </span>
+<span>	d da dam dame damer </span>
+</div>
+
+</body>
+</html>

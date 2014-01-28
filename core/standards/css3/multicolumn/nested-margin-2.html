@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>multicolumn | nesting, margin</title>
+<style>
+body {
+	width: 75em;
+}
+div {
+	font-family: ahem;
+	font-size: 1em;
+	line-height: 1em;
+	color: white;
+	margin: 1em;
+	orphans: 1;
+	widows: 1;
+
+	column-count: 3;
+}
+div div {
+	margin: 0 1em;
+}
+div div:last-child {
+	color: blue;
+	margin: 1em;
+}
+</style>
+</head>
+
+<body>
+<p>You should see 8 blue recnangles, 4 on one line, and 4 on another
+line.</p>
+
+<div>
+	<div>
+		xx xx
+		xx xx
+		xx xx 
+		xx xx
+	</div>
+	<div>
+		xx xx
+		xx xx
+		xx xx 
+		xx xx
+	</div>
+	<div>
+		xx xx
+		xx xx
+		xx xx 
+		xx xx
+	</div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>multicolumn | column-span | container</title>
+<style>
+html::before {
+	content: "You should see a single blue rectangle with a thick yellow border";
+}	
+body {
+	margin: 0 auto;
+	width: 10em;
+	height: 10em;
+	orphans: 1;
+	widows: 1;
+
+	column-count: 2;
+	column-gap: 1em;
+	column-fill: auto;
+}
+div {
+	border: 2em solid blue;
+	column-span: all;
+	background: yellow;
+}
+span {
+	color: yellow;
+	width: 5em;
+	height: 4em;
+	display: block;
+
+}
+</style>
+</head>
+
+<body>
+<div>
+	<span>damer</span>
+	<span>samer</span>
+	<span>damer</span>
+	<span>samer</span>
+	<span>damer</span>
+	<span>samer</span>
+</div>
+
+</body>
+</html>

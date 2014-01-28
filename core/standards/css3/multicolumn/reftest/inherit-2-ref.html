@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<title>multicolumn | nesting, inheritance</title>
+<style>
+body {
+	margin: 0;
+}
+body>div {
+	color: black;
+	background: blue;
+	margin: 1em;
+	width: 46em;
+	height: 2em;
+}
+.a1 {
+	margin-left: 1em;
+	width: 12em;
+	height: 2em;
+	background: yellow;
+	float: left;
+}
+.a2 {
+	margin-left: 4em;
+}
+.a3 {
+	margin-right: 1em;
+}
+.a1 div {
+	background: black;
+	margin-left: 1em;
+	width: 2em;
+	height: 2em;
+	float: left;
+}
+.a1 .one {
+	background: black;
+	margin-left: 0;
+}
+.a1 .three {
+	margin-left: 2em;
+}
+</style>
+
+<div>
+	<div class="a1">
+		<div class="one"></div>
+		<div></div>
+		<div class="three"></div>
+		<div></div>
+	</div>
+	<div class="a1 a2">
+		<div class="one"></div>
+		<div></div>
+		<div class="three"></div>
+		<div></div>
+	</div>
+	<div class="a1 a2 a3">
+		<div class="one"></div>
+		<div></div>
+		<div class="three"></div>
+		<div></div>
+	</div>
+</div>

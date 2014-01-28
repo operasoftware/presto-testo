@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>multicolumn | print | break-after</title>
+<style>
+body {
+	margin: 0;
+	width: 600px;
+}
+@media not print {h1~* {display: none;}}
+@media print {
+h1 {
+	display: none;
+}
+div {
+	color: black;
+	border: 1em solid white;
+	width: 25em;
+
+	column-count: 3;
+}
+div p {
+	break-after: avoid-column;
+	background: lightgray;
+	margin: 0;
+}
+</style>
+</head>
+
+<body>
+<h1>Turn on print preview.</h1>
+
+<p>There should be 3 columns of text on all pages. The text in the gray
+box should be split across pages.</p>
+
+<div>
+Ash nazg durbatulûk, ash nazg gimbatul, ash nazg thrakatulûk agh
+burzum-ishi krimpatul.
+Ash nazg durbatulûk, ash nazg gimbatul, ash nazg thrakatulûk agh
+burzum-ishi krimpatul.
+Ash nazg durbatulûk, ash nazg gimbatul, ash nazg thrakatulûk agh
+burzum-ishi krimpatul.
+Ash nazg durbatulûk, ash nazg gimbatul, ash nazg thrakatulûk agh
+burzum-ishi krimpatul.
+Ash nazg durbatulûk, ash nazg gimbatul, ash nazg thrakatulûk agh
+burzum-ishi krimpatul.
+Ash nazg durbatulûk, ash nazg gimbatul, ash nazg thrakatulûk agh
+burzum-ishi krimpatul.
+Ash nazg durbatulûk, ash nazg gimbatul, ash nazg thrakatulûk agh
+burzum-ishi krimpatul.
+Ash nazg durbatulûk, ash nazg gimbatul, ash nazg thrakatulûk agh
+burzum-ishi krimpatul.
+Ash nazg durbatulûk, ash nazg gimbatul, ash nazg thrakatulûk agh
+burzum-ishi krimpatul.
+Ash nazg durbatulûk, ash nazg gimbatul, ash nazg thrakatulûk agh
+burzum-ishi krimpatul.
+Ash nazg durbatulûk, ash nazg gimbatul, ash nazg thrakatulûk agh
+burzum-ishi krimpatul.
+Ash nazg durbatulûk, ash nazg gimbatul, ash nazg thrakatulûk agh
+burzum-ishi krimpatul.
+Ash nazg durbatulûk, ash nazg gimbatul, ash nazg thrakatulûk agh
+burzum-ishi krimpatul.
+Ash nazg durbatulûk, ash nazg gimbatul, ash nazg thrakatulûk agh
+burzum-ishi krimpatul.
+Ash nazg durbatulûk, ash nazg gimbatul, ash nazg thrakatulûk agh
+burzum-ishi krimpatul.
+Ash nazg durbatulûk, ash nazg gimbatul, ash nazg thrakatulûk agh
+burzum-ishi krimpatul.
+Ash nazg durbatulûk, ash nazg gimbatul, ash nazg thrakatulûk agh
+burzum-ishi krimpatul.
+Ash nazg durbatulûk, ash nazg gimbatul, ash nazg thrakatulûk agh
+burzum-ishi krimpatul.
+Ash nazg durbatulûk, ash nazg gimbatul, ash nazg thrakatulûk agh
+burzum-ishi krimpatul.
+Ash nazg durbatulûk, ash nazg gimbatul, ash nazg thrakatulûk agh
+burzum-ishi krimpatul.
+Ash nazg durbatulûk, ash nazg gimbatul, ash nazg thrakatulûk agh
+burzum-ishi krimpatul.
+<p>Ash nazg durbatulûk, ash</p> nazg gimbatul, ash nazg thrakatulûk agh
+burzum-ishi krimpatul.
+Ash nazg durbatulûk, ash nazg gimbatul, ash nazg thrakatulûk agh
+burzum-ishi krimpatul.
+Ash nazg durbatulûk, ash nazg gimbatul, ash nazg thrakatulûk agh
+burzum-ishi krimpatul.
+Ash nazg durbatulûk, ash nazg gimbatul, ash nazg thrakatulûk agh
+burzum-ishi krimpatul.
+Ash nazg durbatulûk, ash nazg gimbatul, ash nazg thrakatulûk agh
+burzum-ishi krimpatul.
+</div>
+
+</body>
+</html>

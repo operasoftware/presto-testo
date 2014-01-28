@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>multicolumn | column-span | container</title>
+<style>
+html::before {
+	content: "You should see text: one two three four five six seven' below";
+}	
+body {
+	margin: 0;
+	width: 10em;
+	height: 10em;
+	orphans: 1;
+	widows: 1;
+
+	column-count: 3;
+}
+p {
+	column-span: all;
+}
+div {
+	column-span: all;
+}
+span {
+	color: white;
+	width: 5em;
+	height: 4em;
+	display: block;
+}
+</style>
+</head>
+
+<body>
+<div>
+	<span>damer</span>
+	<span>samer</span>
+	<span>damer</span>
+	<span>samer</span>
+	<span>damer</span>
+	<span>samer</span>
+</div>
+
+<p>one two three four five six seven</p>
+
+</body>
+</html>

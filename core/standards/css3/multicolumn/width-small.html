@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>multicolumn | column-width</title>
+<style>
+body {
+	margin: 0;
+}
+body>div {
+	font-family: ahem;
+	font-size: 1em;
+	line-height: 1em;
+	color: black;
+	background: yellow;
+	margin: 1em;
+	border: 1em solid gray;
+	width: 12em;
+	orphans: 1;
+	widows: 1;
+
+	column-width: 1em;
+	column-gap: 0;
+}
+span {
+	color: blue;
+}
+#ref {
+	column-width: auto;
+}
+</style>
+</head>
+
+<body>
+<p>All patterns below should be identical.</p>
+
+<div>
+	xx xx 
+<span>
+	xx xx
+</span>
+<span>
+	xx xx 
+</span>
+	xx xx
+</div>
+
+<div id="ref">
+	xx<span>xxxx</span>xxx
+</div>
+
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>multicol | column-span: all | block-level child</title>
+<style>
+body>div {
+	column-count: 2;
+	color: black;
+	background: black;
+}
+h1 {
+	column-span: all;
+}
+</style>
+</head>
+
+<body>
+<p>There should be no text below.</p>
+
+<div>
+	<div>
+		<h1>foo</h1>
+		FAIL<br>
+		FAIL<br>
+		FAIL<br>
+		FAIL<br>
+		FAIL<br>
+		FAIL<br>
+		FAIL<br>
+	</div>
+</div>
+</body>
+</html>

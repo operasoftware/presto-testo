@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>multicolumn | table-cell</title>
+<style>
+div {
+	display: table-cell;
+	background: yellow;
+	orphans: 1;
+	widows: 1;
+
+	column-count: 6;
+	column-gap: 0;
+}
+</style>
+</head>
+
+<body>
+<p>The word 'PASSED' should be seen on one line below.</p>
+
+<div>P<br>A<br>S<br>S<br>E<br>D</div>
+
+</body>
+</html>

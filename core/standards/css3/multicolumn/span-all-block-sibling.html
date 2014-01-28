@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>multicol | column-span: all | block-level children</title>
+<style>
+html {
+	width: 1200px;
+	column-count: 3;
+	column-gap: 2em;
+	column-rule: 5px dotted black;
+	background: white;
+}
+h1 {
+	column-span: all;
+}
+dl {
+	font-size: 70%;
+	padding: 5px 10px 3px;
+	margin: 0 0 15px;
+	background: lightblue;
+	height: 70px;
+}
+dt {
+	font-weight: bold;
+	font-style: normal;
+	width: 47%;
+	height: 100%;
+	float: left;
+}
+dd {
+	line-height: 120%;
+	padding: 0;
+	margin: 0 0 5px 47%;
+	width: 50%;
+}
+</style>
+</head>
+
+<body>
+<h1>Maximize window. you should not see duplication of content: only 10 numbered
+	blue blocks</h1>
+
+<dl>
+	<dt>block1</dt>
+	<dd>block1 block1</dd>
+	<dd>block1 block1</dd>
+	<dd>block1 block1 block1</dd>
+	<dd>damer block1 block1</dd>
+</dl>
+
+<dl>
+	<dt>block2</dt>
+	<dd>block2 block2</dd>
+	<dd>block2 block2</dd>
+	<dd>block2 block2 block2</dd>
+	<dd>damer block2 block2</dd>
+</dl>
+
+<dl>
+	<dt>block3</dt>
+	<dd>block3 block3</dd>
+	<dd>block3 block3</dd>
+	<dd>block3 block3 block3</dd>
+	<dd>damer block3 block3</dd>
+</dl>
+
+<dl>
+	<dt>block4</dt>
+	<dd>block4 block4</dd>
+	<dd>block4 block4</dd>
+	<dd>block4 block4 block4</dd>
+	<dd>damer block4 block4</dd>
+</dl>
+
+<dl>
+	<dt>block5</dt>
+	<dd>block5 block5</dd>
+	<dd>block5 block5</dd>
+	<dd>block5 block5 block5</dd>
+	<dd>damer block5 block5</dd>
+</dl>
+
+<dl>
+	<dt>block6</dt>
+	<dd>block6 block6</dd>
+	<dd>block6 block6</dd>
+	<dd>block6 block6 block6</dd>
+	<dd>damer block6 block6</dd>
+</dl>
+
+<dl>
+	<dt>block7</dt>
+	<dd>block7 block7</dd>
+	<dd>block7 block7</dd>
+	<dd>block7 block7 block7</dd>
+	<dd>damer block7 block7</dd>
+</dl>
+
+<dl>
+	<dt>block8</dt>
+	<dd>block8 block8</dd>
+	<dd>block8 block8</dd>
+	<dd>block8 block8 block8</dd>
+	<dd>damer block8 block8</dd>
+</dl>
+
+<dl>
+	<dt>block9</dt>
+	<dd>block9 block9</dd>
+	<dd>block9 block9</dd>
+	<dd>block9 block9 block9</dd>
+	<dd>damer block9 block9</dd>
+</dl>
+
+<dl>
+	<dt>block10</dt>
+	<dd>block10 block10</dd>
+	<dd>block10 block10</dd>
+	<dd>block10 block10 block10</dd>
+	<dd>damer block10 block10</dd>
+</dl>
+
+</body>
+</html>
