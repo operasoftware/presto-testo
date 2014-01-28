@@ -1,0 +1,38 @@
+<!-- foo.html and bar.html both contain DIVs with an id=thediv; in foo.html
+     this has a name=foo and in bar.html it has a name=bar.  The following code
+     behaves differently in Opera and MSIE:
+
+        in Moz 1.1, the alert shows '[bar,undefined][foo]'
+        in MSIE 5.0, the alert shows '[bar,undefined][]' if the last call to 
+                                getElementById is commented out (otherwise error)
+        in Opera 6, the alert shows '[foo,Foo][foo]'
+        in Opera 7, the alert shows '[,undefined][]'
+
+     (I expected Mozilla's and Opera6's behavior; Opera7 seems buggy,
+     though there is probably just one bug.)
+
+     The program behaves identically in all four regardless of whether 
+     it's w.location or w.document.location.
+-->
+
+<script>
+var ismsie = navigator.userAgent.indexOf("MSIE") >= 0 && navigator.userAgent.indexOf("Opera") == -1;
+var w=window.open("global_int1.html");
+var d=null;
+setTimeout( function () { 
+               d=w.document;
+               w.location="global_int2.html";
+               setTimeout( function () {
+                            var test =
+                                     "[" + 
+                                     w.document.getElementById("thediv").getAttribute("align") + 
+                                     "," + 
+                                     w.foovariable + "]" +
+                                     "[" + 
+                                     (ismsie ? "NODIV" : d.getElementById("thediv").getAttribute("align")) +
+                                     "]";
+                            alert( test == "[right,undefined][left]" ? "It works OK now" : ("FAILED: " + test) );
+                           }, 1000 ); 
+            }, 1000 );
+</script>
+

@@ -1,0 +1,30 @@
+<html>
+<head>
+<title>Loop benchmark: global index and limit variables</title>
+</head>
+<body>
+<script src="reportresult.js"></script>
+<script>
+var n=1000000;
+var i;
+
+function loop()
+{
+    for ( i=0 ; i < n ; i++ )
+        ;
+    return "Done";
+}
+
+var before = new Date();
+var result = loop();
+var after = new Date();
+
+if (navigator.userAgent.indexOf('3.62') >= 0)
+  alert( result + ': ' + ((after.getTime()) - (before.getTime())) + 'ms' );
+else
+  document.writeln( new Array( result, after - before ) + '<br>' );
+
+reportresult( "loop " + n, after-before );
+</script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<html>
+
+<head>
+<title>Compiler test: return product of local variable and constant</title>
+</head>
+
+<body>
+
+<p>Should print "30", "32" and two bytecoded functions</p>
+
+<pre>
+<script>
+function f( x )
+{
+    return (function (y) { return x+y; });
+}
+document.writeln( f(10)(20) );
+
+function g( x )
+{
+    return (function h(y,w) { if (y > 0) return h(y-1,w*2); else return w*x; });
+}
+
+document.writeln( g(1)(5,1) );
+document.writeln( f );
+document.writeln( g );
+</script>
+</pre>
+
+</body>
+</html>

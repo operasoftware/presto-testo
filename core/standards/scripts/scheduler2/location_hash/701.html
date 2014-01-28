@@ -1,0 +1,34 @@
+<!doctype html>
+<title>Location hash - set iframe hash from iframe - check result after page completely loaded</title>
+<script src="/resources/testharness.js"></script><script src="/resources/testharnessreport.js"></script>
+<script>
+var t = async_test();
+var histlength;
+var iframe_history_lenght;
+t.step(function() {
+    if( location.hash && location.hash != '#' ) {
+        location.href = location.href.replace(/#.*$/,'');
+        return;
+    }
+    histlength = history.length;
+});
+</script>
+<div id="log"></div>
+<iframe src="701i.html" id="test_iframe"></iframe>
+<script>
+var iframe = document.getElementById("test_iframe");
+
+window.onload = function () {
+    setTimeout(completely_loaded, 100);
+};
+function completely_loaded() {
+    t.step(function() {
+        assert_equals( iframe.contentWindow.location.hash, '#foo' );
+        assert_equals( iframe.contentWindow.history.length, iframe_history_lenght );
+        assert_equals( history.length, histlength );
+    });
+    t.done();
+}
+</script>
+
+

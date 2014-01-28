@@ -1,0 +1,68 @@
+<html>
+<head>
+<title>DOM tests -- CSS2 interface</title>
+</head>
+
+<body>
+
+<!-- All the HTML elements below this line are used by the tests -->
+
+<div id='a' style='border: thin solid black'>
+This box should be 100px high
+</div>
+
+<div id='b' style='border: thin solid black; height: 3cm'>
+This box should be 3cm high
+</div>
+
+<div id='c' style='border: thin solid black;'>
+No height defined
+</div>
+
+<!-- All the HTML elements above this line are used by the tests -->
+
+
+<script src="../../regression-lib/testbase.js"></script>
+<script>
+/* Regression tests for Opera's handling of the DOM 2 CSS2 interface
+ *
+ * 2002-04-11 / stighal
+ */
+
+var cvs = "$Id: height.html 4838 2006-01-18 05:59:01Z hallvord $";
+
+testmodule( "CSS2 interface", cvs );
+
+var a, b, c;
+
+try {
+a = document.getElementById("a");
+b = document.getElementById("b");
+c = document.getElementById("c");
+
+testcase( "Reading properties" );
+
+test('getting height from a with nothing specified', a.style.height, "");
+test('getting height from b with "3cm" specified', b.style.height, "3cm");
+
+testcase( "Setting properties" );
+
+a.style.height = "100px";
+test('reading height on a set by script to "100px"', a.style.height, "100px");
+
+testcase( "Negative tests" );
+
+c.style.height = "foo";
+test('reading height on a set by script to foo (illegal)', c.style.height, "");
+
+c.style.height = "outset";
+test('reading height on a set by script to outset (illegal keyword)', c.style.height, "");
+
+} catch (e) { exception( e ); }
+
+testmodule_finished();
+
+</script>
+
+</body>
+</html>

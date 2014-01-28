@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <title>testObjectES5_spec.js#testDefineProperty_21</title>
+  <script src="../opjsunit.js"></script>
+  <script>function testDefineProperty_21()
+{
+    var o = {};
+    assertEquals(o, Object.defineProperty(o, "0", { value: 5, writable: true, enumerable: true, configurable: false }));
+    assertTrue("0" in o);
+    assertEnum(o, "0");
+    assertEquals(5, o[0]);
+    assertObjectEquals({ value: 5, writable: true, enumerable: true, configurable: false }, Object.getOwnPropertyDescriptor(o, "0"));
+    o[0] = 10;
+    assertEquals(10, o[0]);
+    assertFalse(delete o[0], "property not deleted");
+    assertTrue("0" in o);
+}</script>
+  <p>Failed (Script did not run)</p>
+  <script>
+function test() {
+  var passed = false;
+  var error = "";
+  var output_element = document.getElementsByTagName("p")[0];
+  try {
+    for (var count=0; count<100; count++) {
+      testDefineProperty_21();
+    }
+    passed = true;
+  } catch(e) {
+    error = e.message;
+  }
+  try {top.opener.rr(passed)} catch(e){}
+  if (passed) {
+    output_element.textContent = "PASS"
+    output_element.style.color = "green";
+  } else {
+    output_element.textContent = "FAIL: " + error + " (failed on iteration " + count + ")"
+    output_element.style.color = "red";
+  }
+}
+window.addEventListener("load", test, false);
+  </script>
+</html>

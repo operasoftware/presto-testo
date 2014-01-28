@@ -1,0 +1,27 @@
+<html>
+<head>
+<title>DOM 2 HTML StyleElement - Interactive</title>
+<script src="../testconfig.js"></script>
+<script src="../regression-lib/testbase.js"></script>
+
+<style id="myStyle" type="text/css">
+	body {background-color: rgb(51,153,102);}
+	h1.myclass {border-width:1; border:solid; text-align:center}
+</style>
+
+<script src="scripts/htmlstyleelement_int.js"></script>
+
+<body>
+<h1 class="myclass">HTML StyleElement - Interactive</h1>
+<script type="text/javascript">showred(cvs);</script>
+<hr>
+1: disabled
+<a href="javascript:startHTMLStyleElementInteractiveDisabled()">Start HTML StyleElement disabled reflow tests</a>
+<hr>
+2: media
+<a href="javascript:startHTMLStyleElementInteractiveMedia()">Start HTML StyleElement media reflow tests</a>
+<hr>
+3: type
+<a href="javascript:startHTMLStyleElementInteractiveType()">Start HTML StyleElement type reflow tests</a>
+</body>
+</html>

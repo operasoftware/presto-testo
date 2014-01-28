@@ -1,0 +1,19 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!--
+   Created by torstein@opera.com
+-->
+<html>
+
+<head>
+<title>Array object test</title>
+<script type="text/javascript">
+var href = [ "agnetha", "benny", "bjørn", "anni-frid" ];
+</script>
+</head>
+
+<body>
+<span onclick="if (href.length != 4 || href[2] != 'bjørn') alert( 'bug #44437 failed' ); else alert( 'It works OK now' );">Bug 44437; click me, you should see a reassuring alert.</span>
+<br>
+<br>
+</body>
+</html>

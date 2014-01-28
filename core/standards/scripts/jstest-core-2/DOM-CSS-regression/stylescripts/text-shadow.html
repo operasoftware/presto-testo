@@ -1,0 +1,68 @@
+<html>
+<head>
+<title>DOM tests -- CSS2 interface</title>
+</head>
+
+<body>
+
+<!-- All the HTML elements below this line are used by the tests -->
+
+<div id='a'>
+Text inside div a
+</div>
+
+<div id='b' style='text-shadow: red 3px 3px'>
+Text inside div b
+</div>
+
+<div id='c'>
+Text inside div c
+</div>
+
+<!-- All the HTML elements above this line are used by the tests -->
+
+
+<script src="../../regression-lib/testbase.js"></script>
+<script>
+/* Regression tests for Opera's handling of the DOM 2 CSS2 interface
+ *
+ * 2002-04-11 / stighal
+ */
+
+var cvs = "$Id: text-shadow.html 4838 2006-01-18 05:59:01Z hallvord $";
+
+testmodule( "CSS2 interface", cvs );
+
+var a, b, c;
+
+try {
+a = document.getElementById("a");
+b = document.getElementById("b");
+c = document.getElementById("c");
+
+testcase( "Reading properties" );
+
+test('getting text-shadow from a with nothing specified', a.style.textShadow, "");
+test_expect_failure('getting text-shadow from b with "red 3px 3px" specified', 'not-reported', b.style.textShadow, "red 3px 3px", "Might just be a bug in the test; needs investigation.");
+
+testcase( "Setting properties" );
+
+a.style.textShadow = "3px 4px 1em blue";
+test_expect_failure('reading text-shadow on a set by script to "3px 4px 1em blue"', 'not-reported', a.style.textShadow, "3px 4px 1em blue", "Might just be a bug in the test; needs investigation.");
+
+testcase( "Negative tests" );
+
+c.style.textShadow = "foo";
+test('reading text-shadow on a set by script to foo (illegal)', c.style.textShadow, "");
+
+c.style.textShadow = "outset";
+test('reading text-shadow on a set by script to outset (illegal keyword)', c.style.textShadow, "");
+
+} catch (e) { exception( e ); }
+
+testmodule_finished();
+
+</script>
+
+</body>
+</html>

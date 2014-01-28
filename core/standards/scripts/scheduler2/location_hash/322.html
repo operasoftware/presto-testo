@@ -1,0 +1,35 @@
+<!doctype html>
+<title>Location hash - set hash in external script with async - check after page is completely loaded</title>
+<script src="/resources/testharness.js"></script><script src="/resources/testharnessreport.js"></script>
+<script>
+var t = async_test();
+var histlength;
+t.step(function() {
+    if( location.hash && location.hash != '#' ) {
+        location.href = location.href.replace(/#.*$/,'');
+        return;
+    }
+    histlength = history.length;
+});
+</script>
+<script>
+t.step(function() {
+    location.hash = '#foo';
+});
+</script>
+<script src="322.js" id="test_script" async></script>
+<script>
+window.onload = function () {
+    setTimeout(completely_loaded, 100);
+};
+function completely_loaded() {
+    t.step(function() {
+        var s = document.getElementById("test_script");
+        assert_true( s.async );
+        assert_equals( location.hash, '#bar' );
+        assert_equals( history.length, histlength );
+    });
+    t.done();
+}
+</script>
+<div id="log"></div>

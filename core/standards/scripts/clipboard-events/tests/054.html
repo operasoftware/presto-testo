@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html><head>
+	<meta charset="UTF-8">
+	<title>  event.clipboardData exists and inherits from DataTransfer  - paste event on document</title>
+	<script src="_lib.js"></script>
+	<script>
+	
+/** event.clipboardData exists and inherits from DataTransfer */
+/* Events: copy cut paste */
+/* Targets: document */
+
+function test(e){
+	var passed = typeof e.clipboardData === 'object' && e.clipboardData instanceof DataTransfer;
+	return passed;
+}
+
+	</script>
+</head>
+<body>
+
+	<p>FAILED (This TC requires JavaScript enabled)</p>
+	
+
+	<script>
+	var dataToPaste="";
+	var externalPassCondition=null;
+	var eventTarget=document;
+	var eventType='paste';
+	window.onload=function(){
+		setupTest( document, 'paste', dataToPaste, externalPassCondition );
+	}
+	</script>
+</body></html>

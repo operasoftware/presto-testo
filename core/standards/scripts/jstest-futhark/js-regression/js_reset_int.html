@@ -1,0 +1,54 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/REC-html401/strict.dtd">
+<!--
+   Created by torstein@opera.com
+-->
+<html>
+   <head>
+      <title>Reset Object Test</title>
+      <script type="text/javascript" src="../regression-lib/testbase.js"></script>
+      <script type="text/javascript" src="scripts/js_reset_int.js"></script>
+   </head>
+   <body>
+      <h1>Reset Object Test - Interaction</h1>
+      <script type="text/javascript">showred( cvs );</script>
+      <p>
+         The popup window is for reports from the different event
+         handlers. Click the links below and test the key event handlers
+         by entering something in the resetfield.
+         onblur, onclick, onfocus.
+      </p>
+      <form id="theform" name="theform">
+         <div>
+            <input type="text" value="a text value"> 
+            <input type="password" value="a password value"> 
+            <input type="checkbox" name="cbname" value="a checkbox value"> 
+            <input type="radio" value="radio value"> 
+            <input type="radio" name="radioname" value="a radio value" checked> 
+            <input type="radio" name="radioname" value="another radio value"> 
+            <input type="file" value="a file value">
+         </div>  
+         <div>
+            <input type="reset"
+                   id="thereset"
+                   name="thereset" 
+                   onblur="reportEvent( 'onblur' )"
+                   onfocus="reportEvent( 'onfocus' )" 
+                   onclick="reportEvent( 'onclick' )"
+                   value="Reset all values to default"
+            >
+         </div>
+      </form>
+      <h2>User interaction</h2>
+      <ol>
+         <li>
+            <a href="javascript:testClickMethod();">Click reset</a>
+         </li>
+         <li>
+            <a href="javascript:testBlurMethod();">Remove focus</a>
+         </li>
+         <li>
+            <a href="javascript:testFocusMethod();">Get focus on the reset button</a>
+         </li>
+      </ol>
+   </body>
+</html>

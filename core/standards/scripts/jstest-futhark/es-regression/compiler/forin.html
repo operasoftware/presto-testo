@@ -1,0 +1,53 @@
+<html>
+
+<head>
+<title>Compiler test: FOR loops</title>
+</head>
+
+<body>
+
+<script>
+function f()
+{
+  var x = [1,2,3];  // 3 enumerable properties, length is DONT_ENUM.
+  var j=0;
+  for ( var i in x )
+    j++;
+  return j;
+}
+
+function g()
+{
+  var x = [1,2,3];  // 3 enumerable properties, length is DONT_ENUM.
+  x.foo = "yabba";
+  var j=0;
+  for ( var i in x )
+    j++;
+  return j;
+}
+
+function h()
+{
+  var x = [3,5,7];  // 3 enumerable properties, length is DONT_ENUM.
+  var j=1;
+  for ( var i in x )
+    j *= x[i];
+  return j;
+}
+</script>
+
+<p>Should print "3 4 105 5"</p>
+
+<pre>
+<script>
+//document.writeln(f);
+document.writeln(f());
+document.writeln(g());
+document.writeln(h());
+Array.prototype.fnis="fnis";
+document.writeln(g());
+</script>
+</pre>
+
+</body>
+</html>

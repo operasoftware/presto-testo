@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html><head>
+	<title> frameset nesting another IFRAME with window.onload  </title>
+	<script src="../_files/lib.js" ></script>
+	<script>
+	window.name='window containing inner frameset';
+	window.onload=function(e){
+		load.call(this, e );
+	};</script>
+</head>
+<frameset onload="load(event, ' on inner <FRAMESET> in nested file')">
+	<frame src="support.html" onload="load( event, 'on inner <FRAME> in nested file' )" id="inner_frame"></frame>
+</frameset></html>

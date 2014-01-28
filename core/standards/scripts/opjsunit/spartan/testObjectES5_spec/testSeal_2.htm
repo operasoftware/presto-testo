@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <title>testObjectES5_spec.js#testSeal_2</title>
+  <script src="../opjsunit.js"></script>
+  <script>function testSeal_2()
+{
+    var o = { a: 1, b: 2, c: 3 };
+    Object.seal(o);
+    assertFalse(delete o.a);
+    assertFalse(delete o.b);
+    assertFalse(delete o.c);
+    assertObjectEquals({ a: 1, b: 2, c: 3 }, o);
+    o.d = 4;
+    assertFalse("d" in o, "o.d doesn't exist");
+    assertUndefined(o.d);
+    assertDontEnum(o, "d");
+}</script>
+  <p>Failed (Script did not run)</p>
+  <script>
+function test() {
+  var passed = false;
+  var error = "";
+  var output_element = document.getElementsByTagName("p")[0];
+  try {
+    for (var count=0; count<100; count++) {
+      testSeal_2();
+    }
+    passed = true;
+  } catch(e) {
+    error = e.message;
+  }
+  try {top.opener.rr(passed)} catch(e){}
+  if (passed) {
+    output_element.textContent = "PASS"
+    output_element.style.color = "green";
+  } else {
+    output_element.textContent = "FAIL: " + error + " (failed on iteration " + count + ")"
+    output_element.style.color = "red";
+  }
+}
+window.addEventListener("load", test, false);
+  </script>
+</html>

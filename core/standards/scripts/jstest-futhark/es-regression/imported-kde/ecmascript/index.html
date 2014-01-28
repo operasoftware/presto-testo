@@ -1,0 +1,65 @@
+<html>
+
+<head>
+<title>KDE ECMAScript test suite</title>
+</head>
+
+<body>
+<h1>KDE ECMAScript test suite</h1>
+
+<script>
+var testname=false;  // Inspected by testrunner.html
+
+function dotest(f)
+{
+  testname=f;
+  window.open( "testrunner.html", "testrunner.html", "scrollbars=yes" );
+}
+</script>
+
+<p><b>All tests</b></p>
+
+<a href="index-all.html">Run all non-interactive tests</a> (requires DOM)<br>
+
+<P><b>Individual tests</b></P>
+
+<p>These tests pop up in a new window.</p>
+
+<a href="javascript:void(dotest('Array.js'))">Array</a><br>
+<a href="javascript:void(dotest('Boolean.js'))">Boolean</a><br>
+<a href="javascript:void(dotest('Date.js'))">Date</a><br>
+<a href="javascript:void(dotest('Error.js'))">Error</a><br>
+<a href="javascript:void(dotest('GlobalObject.js'))">GlobalObject</a><br>
+<a href="javascript:void(dotest('Number.js'))">Number</a><br>
+<a href="javascript:void(dotest('Object.js'))">Object</a><br>
+<a href="javascript:void(dotest('Prototype.js'))">Prototype</a><br>
+<a href="javascript:void(dotest('RegExp.js'))">RegExp</a><br>
+<a href="javascript:void(dotest('StringObject.js'))">StringObject</a><br>
+<a href="javascript:void(dotest('assignments.js'))">assignments</a><br>
+<a href="javascript:void(dotest('completion.js'))">completion</a><br>
+<a href="javascript:void(dotest('conditional.js'))">conditional</a><br>
+<a href="javascript:void(dotest('crash-1.js'))">crash-1</a><br>
+<a href="javascript:void(dotest('crash-2.js'))">crash-2</a><br>
+<a href="javascript:void(dotest('delete.js'))">delete</a><br>
+<a href="javascript:void(dotest('eval.js'))">eval</a><br>
+<a href="javascript:void(dotest('exception_propagation.js'))">exception_propagation</a><br>
+<a href="javascript:void(dotest('exceptions.js'))">exceptions</a><br>
+<a href="javascript:void(dotest('function.js'))">function</a><br>
+<a href="javascript:void(dotest('function_arguments.js'))">function_arguments</a><br>
+<a href="javascript:void(dotest('function_constructor.js'))">function_constructor</a><br>
+<a href="javascript:void(dotest('function_length.js'))">function_length</a><br>
+<a href="javascript:void(dotest('iteration.js'))">iteration</a><br>
+<a href="javascript:void(dotest('literals.js'))">literals</a><br>
+<a href="javascript:void(dotest('math.js'))">math</a><br>
+<a href="javascript:void(dotest('md5-1.js'))">md5-1</a><br>
+<a href="javascript:void(dotest('md5-2.js'))">md5-2</a><br>
+<a href="javascript:void(dotest('object_prototype_tostring.js'))">object_prototype_tostring</a><br>
+<a href="javascript:void(dotest('operators.js'))">operators</a><br>
+<a href="javascript:void(dotest('parse.js'))">parse</a><br>
+<a href="javascript:void(dotest('prototype_length.js'))">prototype_length</a><br>
+<a href="javascript:void(dotest('scope.js'))">scope</a><br>
+<a href="javascript:void(dotest('statements.js'))">statements</a><br>
+<a href="javascript:void(dotest('var_decl_init.js'))">var_decl_init</a><br>
+
+</body>
+</html>

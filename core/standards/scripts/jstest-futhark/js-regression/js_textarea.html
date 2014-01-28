@@ -1,0 +1,31 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/REC-html401/strict.dtd">
+<!--
+   Created by torstein@opera.com
+-->
+<html>
+   <head>
+      <title>Textarea Object Test</title>
+      <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+      <script type="text/javascript" src="../regression-lib/testbase.js"></script>
+      <script type="text/javascript" src="../testconfig.js"></script>
+      <script type="text/javascript" src="scripts/js_textarea.js"></script>
+   </head>
+   <body>
+      <form id="theform" name="theform">
+         <textarea id="theta"
+                   name="theta" 
+                   rows="1" cols="50"
+                   onblur="void(0)"
+                   onchange="void(1)" 
+                   onfocus="void(2)" 
+                   onkeydown="void(3)" 
+                   onkeypress="void(4)" 
+                   onkeyup="void(5)" 
+                   onselect="void(6)" 
+         >Textarea default value</textarea>
+      </form>
+      <script type="text/javascript">
+        main( document.theform.theta );
+      </script>
+   </body>
+</html>

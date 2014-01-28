@@ -1,0 +1,48 @@
+<html>
+
+<head>
+<title>Compiler test: Arrays</title>
+</head>
+
+<body>
+
+<p>Should print "-4 -2 3"</p>
+
+<script>
+function f()
+{
+  var v = new Array(0,0,3,0,0);
+  if (--v.length == 4)
+    return -++v[2];
+  else
+    return "WRONG";
+}
+
+function g()
+{
+  var v = new Array(0,0,3,0,0);
+  if (v.length == 5)
+  {
+    v[2]--;
+    return -v[2];
+  }
+  else
+    return "WRONG";
+}
+
+function h()
+{
+  var v = [ 1,2,3,4,5 ];
+  if (v.length == 5)
+    return v[2];
+  else
+    return "WRONG";
+}
+document.writeln(f());
+document.writeln(g());
+document.writeln(h());
+//document.writeln( h.toString().split("\n").join("<br>") );
+</script>
+
+</body>
+</html>

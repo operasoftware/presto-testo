@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html><head>
+	<title>load event on FRAMESET with delayed frame </title>
+	<script>_conf_timeout_delay=3000;</script>
+	<script src="_files/lib.js" ></script>
+	<script>var expected = [
+			'load in window [support.html] (in FRAME [support.html])',
+			'load  on FRAME  in window [013.html]',
+			'load  on FRAMESET  in window [013.html]'
+			];
+	</script>
+</head>
+<frameset rows="*" onload="load(event, ' on FRAMESET ')">
+<frame src="_files/delay.php?url=support.html&amp;time=2" onload="load(event, ' on FRAME ')"> </frame>
+</frameset></html>

@@ -1,0 +1,94 @@
+<html>
+<head>
+<title>DOM tests -- CSS2 interface</title>
+</head>
+
+<body>
+
+<!-- All the HTML elements below this line are used by the tests -->
+
+<h1>This test will not work well if you don't have Speech Support</h1>
+
+<div style='border: dashed blue'>
+<div id='a' style='border: solid black'>
+Text inside div a
+</div>
+
+<div id='b' style='border: solid red; -xv-voice-rate: slow'>
+Text inside div b
+</div>
+
+<div id='c'>
+Text inside div c
+</div>
+
+<div id='d'>
+Text inside div d
+</div>
+
+<div id='e'>
+Text inside div e
+</div>
+</div>
+
+<!-- All the HTML elements above this line are used by the tests -->
+
+
+<script src="../../regression-lib/testbase.js"></script>
+<script>
+/* Regression tests for Opera's handling of the DOM 2 CSS2 interface
+ *
+ * 2002-04-11 / stighal
+ */
+
+var cvs = "$Id: xv-voice-rate.html 10655 2006-12-18 15:47:57Z hallvord $";
+
+testmodule( "CSS2 interface", cvs );
+
+var a, b, c;
+
+try {
+a = document.getElementById("a");
+b = document.getElementById("b");
+c = document.getElementById("c");
+d = document.getElementById("d");
+e = document.getElementById("e");
+
+testcase( "Reading properties" );
+
+test('getting -xv-voice-rate from a with nothing specified', a.style.xvVoiceRate, "");
+test('getting speech-rate from a with nothing specified', a.style.speechRate, "");
+
+test('getting -xv-voice-rate from b with "slow" specified', b.style.xvVoiceRate, "slow");
+test('getting speech-rate from b with "slow" specified', b.style.speechRate, "slow");
+
+testcase( "Setting properties" );
+
+a.style.xvVoiceRate = "fast";
+test('reading -xv-voice-rate on a set by script to "fast"', a.style.xvVoiceRate, "fast");
+
+d.style.speechRate = "fast";
+test('reading speech-rate on d set by script to "fast"', d.style.speechRate, "fast");
+
+testcase( "Negative tests" );
+
+c.style.xvVoiceRate = "foo";
+test('reading -xv-voice-rate on c set by script to foo (illegal)', c.style.xvVoiceRate, "");
+
+e.style.speechRate = "foo";
+test('reading speech-rate on e set by script to foo (illegal)', e.style.speechRate, "");
+
+c.style.xvVoiceRate = "outset";
+test('reading -xv-voice-rate on c set by script to outset (illegal keyword)', c.style.xvVoiceRate, "");
+
+e.style.speechRate = "outset";
+test('reading speech-rate on e set by script to outset (illegal keyword)', e.style.speechRate, "");
+
+} catch (e) { exception( e ); }
+
+testmodule_finished();
+
+</script>
+
+</body>
+</html>

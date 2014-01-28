@@ -1,0 +1,65 @@
+<html>
+<head>
+<title>DOM tests -- CSS2 interface</title>
+</head>
+
+<body>
+
+<!-- All the HTML elements below this line are used by the tests -->
+
+<div style='border: dashed blue'>
+<div id='a' style='border: solid black'>
+Text inside div a
+</div>
+
+<div id='b' style='border: solid red; font: italic normal bolder 16pt/20pt "Times New Roman"'>
+Text inside div b
+</div>
+</div>
+
+<!-- All the HTML elements above this line are used by the tests -->
+
+
+<script src="../../regression-lib/testbase.js"></script>
+<script>
+/* Regression tests for Opera's handling of the DOM 2 CSS2 interface
+ *
+ * 2002-04-11 / stighal
+ */
+
+var cvs = "$Id: font.html 10655 2006-12-18 15:47:57Z hallvord $";
+
+testmodule( "CSS2 interface", cvs );
+
+var a, b;
+
+try {
+a = document.getElementById("a");
+b = document.getElementById("b");
+
+testcase( "Reading properties" );
+
+test('getting font from a with nothing specified', a.style.font, "");
+test('getting font from b with "italic normal bolder 16pt/20pt "Times New Roman"" specified', b.style.font, 'italic normal bolder 16pt/20pt "Times New Roman"');
+
+testcase( "Setting properties" );
+
+a.style.font = "menu";
+test('reading font-family on a set by script to "menu"', a.style.font, "menu");
+
+testcase( "Negative tests" );
+
+a.style.fontFamily = "foo";
+test('reading font-family on a set by script to foo (illegal)', a.style.fontFamily, "");
+
+a.style.fontFamily = "outset";
+test('reading font-family on a set by script to outset (illegal keyword)', a.style.fontFamily, "");
+
+} catch (e) { exception( e ); }
+
+testmodule_finished();
+
+</script>
+
+</body>
+</html>

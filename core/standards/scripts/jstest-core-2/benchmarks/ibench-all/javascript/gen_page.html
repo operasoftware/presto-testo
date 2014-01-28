@@ -1,0 +1,457 @@
+<HTML>
+<HEAD>
+<TITLE>JavaScript Performance Test - Generate Page Script</TITLE>
+
+<script type="text/javascript">   
+<!--
+
+var monthNames;
+var dayNames;
+var dayLongNames;
+var daysInMonthOf;
+var today;
+var day;
+var month;
+var year;
+var detect;
+var smallFontSize;
+var testMode = true;
+
+function beginTest()
+{
+	// get current time
+	var sample = (new Date()).getTime();
+	var next_sample;
+
+	// wait for time to change to begin test - this should reduce error due to poor resolution timers
+	do
+	{	
+		next_sample = (new Date()).getTime();
+	}
+	while (next_sample == sample);
+
+	return next_sample;
+}
+
+function progress(current, total)
+{
+	if (parent.frames[0])
+		parent.frames[0].document.jsTest.status.value =  String(current * 100 / total);
+}
+
+function writeIt(str)
+{
+	if (!testMode)
+		document.writeln(str);
+}
+
+function Init()
+{
+	detect = new Is();
+
+	smallFontSize = detect.win32 ? 1 : 2;
+
+	monthNames = new Array('January', 'February', 'March', 'April', 'May', 'June', 'July',
+						   'August', 'September', 'October', 'November', 'December');
+	dayLongNames = new Array('Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday');
+	dayNames = new Array('S', 'M', 'T', 'W', 'T', 'F', 'S');
+
+	//						 Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec
+	daysInMonthOf= new Array( 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31);
+
+	today = new Date();
+	day = today.getDate();
+	month = today.getMonth();
+	year = today.getYear();
+
+	// JavaScript 1.3 returns (year - 1900)
+	if (year < 1900)
+		year += 1900;
+}
+
+
+function Is () {
+   // convert all characters to lowercase to simplify testing
+    var agt=navigator.userAgent.toLowerCase()
+
+    // *** BROWSER VERSION ***
+    this.major = parseInt(navigator.appVersion)
+    this.minor = parseFloat(navigator.appVersion)
+
+    //test for Netscape Navigator
+	this.nav  = ((agt.indexOf('mozilla')!=-1) && ((agt.indexOf('spoofer')==-1)
+                && (agt.indexOf('compatible') == -1)))
+    this.nav2 = (this.nav && (this.major == 2))
+    this.nav3 = (this.nav && (this.major == 3))
+    this.nav4 = (this.nav && (this.major == 4))
+    this.nav4up = this.nav && (this.major >= 4)
+    this.nav5up = this.nav && (this.major >= 5)
+    
+    //test for IE browser
+    this.ie   = (agt.indexOf("msie") != -1)
+    this.ie3  = (this.ie && (this.major == 2))
+    this.ie4  = (this.ie && (this.major == 4))
+    this.ie4up  = (this.ie  && (this.major >= 4))    
+	
+	//test for OS
+    this.win   = ( (agt.indexOf("win")!=-1) || (agt.indexOf("16bit")!=-1) )
+    // NOTE: On Opera 3.0, the userAgent string includes "Windows 95/NT4" on all
+    //        Win32, so you can't distinguish between Win95 and WinNT.
+    this.win95 = ((agt.indexOf("win95")!=-1) || (agt.indexOf("windows 95")!=-1))
+
+    // NOTE: Reliable detection of Win98 may not be possible. It appears that:
+    //       - On Nav 4.x and before you'll get plain "Windows" in userAgent.
+    //       - On Mercury client, the 32-bit version will return "Win98", but
+    //         the 16-bit version running on Win98 will still return "Win95".
+    this.win98 = ((agt.indexOf("win98")!=-1)||(agt.indexOf("windows 98")!=-1))
+    this.winnt = ((agt.indexOf("winnt")!=-1)||(agt.indexOf("windows nt")!=-1))	
+    this.win32 = this.win95 || this.winnt || this.win98 || 
+                 ((this.major >= 4) && (navigator.platform == "Win32")) ||
+                 (agt.indexOf("win32")!=-1) || (agt.indexOf("32bit")!=-1)
+                 
+    this.mac    = (agt.indexOf("mac")!=-1)
+}    
+
+function isLeapYear(year)
+{
+	year = Math.floor(year);
+
+	if (Math.floor(year % 4) == 0)
+	{
+		if (Math.floor(year % 100) == 0)
+		{
+			if (Math.floor(year % 400) == 0)
+				return true;
+
+			return false;
+		}
+
+		return true;
+	}		
+
+	return false;
+}
+
+function writeWelcome(hour)
+{
+	var welcomeString;
+
+	if (hour < 2 && hour > 18)
+	{
+		welcomeString = 'Good evening';
+	}
+	else
+	{
+		if (hour > 2 && hour < 13)
+		{
+			welcomeString = 'Good morning';
+		}
+		else
+		{
+			welcomeString = 'Good afternoon';
+		}
+	}
+
+	welcomeString += ', Welcome to i-Bench';
+	writeIt('<b>' + welcomeString.fontsize(4) + '</b>');
+}
+
+function writeTodaysDate()
+{
+	var dateString = monthNames[month] + ' ' + day;
+
+	writeIt('<p align="right">');
+	writeIt(dateString.bold());
+	writeIt('</p>');
+}
+
+function whatDayIsIt(month, day, year)
+{
+	var tempMonth = month + 1;
+	var a = Math.floor((14 - tempMonth) / 12);
+	var y = year - a;
+	var m = tempMonth + (12 * a) - 2;
+
+	var d = day;
+	d += y;
+	d += Math.floor(y / 4);
+	d -= Math.floor(y / 100); 
+	d += Math.floor(y / 400);
+	d += Math.floor((31 * m) / 12);
+
+	d = Math.floor(d % 7);
+
+	return d;
+}
+
+function writeCalendar(calMonth, calDay, calYear)
+{
+
+	var todayIndex = whatDayIsIt(calMonth, calDay, calYear);
+	var firstIndex = whatDayIsIt(calMonth, 1, calYear);
+	var daysInMonth = daysInMonthOf[calMonth];
+
+	if (calMonth == 1 && isLeapYear(calYear))
+		daysInMonth = 29;
+
+	writeIt('<table align="right" cellspacing="0" cellpadding="1" border=1 bgcolor="#4040FF">');
+
+	writeIt('<tr><td align="center" colspan=7 bgcolor="#404080">' + monthNames[calMonth].fontsize(smallFontSize) + '</td></tr>');
+
+	writeIt('<tr>');
+	for (var dayIndex = 0; dayIndex < 7; dayIndex++)
+	{
+		writeIt('<td align="center" bgcolor="#8080FF">' + dayNames[dayIndex].fontsize(smallFontSize) + '</td>');	 
+	}
+	writeIt('</tr>');
+
+	var dayOfMonth = 1;
+
+	for (var rows = 0; rows < 6; rows++)
+	{
+		writeIt('<tr>');
+
+		for (dayIndex = 0; dayIndex < 7; dayIndex++)
+		{
+			var dayString = '&nbsp;';
+
+			if ((dayIndex == todayIndex) && (dayOfMonth == calDay))
+			{
+				writeIt('<td bgcolor="000000" align="center">');
+			}
+			else
+				writeIt('<td align="center">');
+
+			if (rows == 0)
+			{
+				if (dayIndex >= firstIndex)
+				{
+					dayString = dayOfMonth.toString(10);
+					dayOfMonth++;
+				}
+			}
+			else
+			{
+				if (dayOfMonth <= daysInMonth)
+				{
+					dayString = dayOfMonth.toString(10);
+					dayOfMonth++;
+				}
+			}
+
+			writeIt(dayString.fontsize(smallFontSize));
+
+			writeIt('</td>');	
+							
+		}
+		writeIt('</tr>');
+	}
+	writeIt('</table>');
+}
+
+function writeHorzRule(size, width, align)
+{
+	var hrString = '<HR';
+
+	if (size.length > 0)	
+		hrString += ' size="' + size + '"';
+
+	if (width.length > 0)
+		hrString += ' width="' + width + '"';
+
+	if (align.length > 0)
+		hrString += ' align="' + align + '"';
+
+	hrString += ' >';
+
+	writeIt(hrString);	
+}
+
+function writeNewFeatures()
+{
+	var newFeatures = new Array('JavaScript Performance Test', 'Windows Media Audio Performance Test', 'PC Magazine Performance Test Mix');
+	var newFeaturesURL = new Array('../perf_javascript.asp', '../perf_wma.asp', '../../testlist/run.html#pcmagTests');
+
+	var whatsNewString = "What's new";
+	writeIt('<b>' + whatsNewString.fontsize(3) + '</b><ul>');
+
+	for (var i = 0; i < newFeatures.length; i++)
+	{
+		writeIt('<li>' + newFeatures[i].link(newFeaturesURL[i]) + '</li>');
+	}
+
+	writeIt('</ul>');
+}
+
+function writeUpdatedFeatures()
+{
+	var updatedFeatures = new Array('Load complex pages',  'Flash Performance Test', 'Shockwave Performance Test');
+	var updatedFeaturesURL = new Array('../perf_loadcomplexpages.asp',  '../perf_flash.asp', '../perf_shockwave.asp');
+
+	var whatsUpdatedString = "What's changed";
+	writeIt('<b>' + whatsUpdatedString.fontsize(3) + '</b><ul>');
+
+	for (var i = 0; i < updatedFeatures.length; i++)
+	{
+		writeIt('<li>' + updatedFeatures[i].link(updatedFeaturesURL[i]) + '</li>');
+	}
+
+	writeIt('</ul>');
+}
+
+function writeTipOfTheDay()
+{
+	var tips = new Array();
+	tips[0] = 'Use the Test Selection and Scores Page to pick and choose the tests to run';
+	tips[1] = 'Always perform a Check Installation before running a performance test';
+	tips[2] = 'For best performance, make sure the VRML plugin is using hardware acceleration.';
+	tips[3] = 'The JavaScript Performance Test will run on Windows CE device using Pocket IE 3.0';
+	tips[4] = 'Always clear the RAM and disk cache before running the Load Pages tests';
+
+	writeIt('<p align="left">' +  '<em>' + 'Tip of the Day'.fontsize(2) + '</em>');
+	writeIt('<blockquote>');
+
+	var index = Math.min(Math.floor(Math.random() * 5), 4);
+	writeIt(tips[index].fontsize(smallFontSize));
+
+	writeIt('</blockquote>');
+	writeIt('</p>');
+
+}
+
+function writeCopyrightAndLastModified()
+{
+	var copyrightString = 'Copyright &copy; ' + year + ' Ziff Davis Media Inc. All right reserved.';
+	writeIt(copyrightString.fontsize(smallFontSize) + '<br>');
+
+	var lastmod = document.lastModified;
+	var updatedString;
+
+	// get string of last modified date
+	var lastmoddate = Date.parse(lastmod);
+	   
+	// convert modified string to date
+	if (lastmoddate == 0)
+	{               
+		// unknown date (or January 1, 1970 GMT)   
+		updatedString = "Updated: Unknown";
+	} 
+	else 
+	{   
+		var dateLastMod = new Date(document.lastModified);
+
+		// JavaScript 1.3 returns (year - 1900)
+		var lastModYear = dateLastMod.getYear();
+		if (lastModYear < 1900)
+			lastModYear += 1900;
+
+		lastmod = dayLongNames[dateLastMod.getDay()];
+		lastmod += '  ' + monthNames[dateLastMod.getMonth()];
+		lastmod += ' ' + dateLastMod.getDate() + ',';
+		lastmod += ' ' + lastModYear;
+
+		var hours = dateLastMod.getHours();
+		var pm = (hours > 11) ? true : false;
+		if (hours > 12)
+			hours -= 12;
+		if (hours == 0)
+			hours = 12;
+		lastmod += '  ' + hours;
+
+		var minutes = dateLastMod.getMinutes();
+		lastmod += ':' + ((minutes < 10) ? ('0' + minutes) : minutes);
+			
+		var seconds = dateLastMod.getSeconds();
+		lastmod += ':' + ((seconds < 10) ? ('0' + seconds) : seconds);
+
+		lastmod += ' ' + (pm ? 'PM' : 'AM');
+
+		updatedString = "Updated: " + lastmod;
+	}
+
+	writeIt(updatedString.fontsize(smallFontSize));
+}
+
+function GenPage()
+{
+	// start the test
+	var startTime = beginTest();
+
+	if (parent.frames[0])
+		parent.frames[0].document.jsTest.currentTest.value = 'Generating page...';
+
+	Init();
+
+	for (var i = 0; i < 200; i++)
+	{
+
+		progress(i + 1, 200);
+
+		// only write page on last loop
+		testMode = (i < 199) ? true : false;
+
+		document.bgColor = "003366";
+		document.fgColor = "FFFFFF";
+		document.linkColor = "4040FF";
+		document.vlinkColor = "8080FF";
+
+		var hour = (i < 199) ? Math.floor(i % 24) : today.getHours();
+		writeWelcome(hour);
+
+		// write the calender. The i % 11 changes the data for each iteration - we want the last iteration (99)
+		// to be the current year.
+		var yearAdd = (i >= 100) ? i - 100 : i;
+		writeCalendar(month, day, year + (yearAdd % 11));
+
+		// change the rule size each time 
+		writeHorzRule(((i % 2) + 1).toString(10), '100%', 'center')
+
+		var startString = "Run i-Bench";
+		writeIt('<p align="left">' + startString.link('../../testlist/run.html') + '</p>');
+
+		writeNewFeatures();
+
+		writeUpdatedFeatures();
+
+		writeTipOfTheDay();
+
+		// change the rule size each time 
+		writeHorzRule(((i % 2) + 1).toString(10), '60%', 'center')
+
+		writeIt('<br clear="all"><p align="center">');
+		writeCopyrightAndLastModified();
+		writeIt('</p>');
+	}
+
+	// stop the test
+	thisTime = (new Date()).getTime() - startTime;
+
+	if (parent.frames[0])
+		parent.frames[0].document.jsTest.genpage.value =  thisTime;
+	else
+		alert('Elapsed time = ' + thisTime);
+
+}
+
+// -->
+</script>
+
+</HEAD>
+
+<body>
+<script type="text/javascript">   
+<!--
+	GenPage();
+
+	// run next part of test
+	if (parent.frames[1])
+		setTimeout('parent.frames[1].location = "download_table.html"', '2000');
+
+// -->
+</script>
+
+<!-- Copyright &copy; 2000 Ziff Davis Media Inc.  All rights reserved. -->
+
+</body>
+
+</HTML>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html><head>
+	<title>load event on FRAMESET where some frames are blank</title>
+	<script>_conf_timeout_delay=1500;</script>
+	<script src="_files/lib.js" ></script>
+	<script>var expected = [
+			'load  on top right FRAME  in window [018.html]',
+			'load  on bottom left FRAME  in window [018.html]',
+			'load in window [support.html] (in FRAME#topleft [support.html])',
+			'load  on top left FRAME  in window [018.html]',
+			'load in window [support.html] (in IFRAME#nested [support.html])',
+			'load  on nested IFRAME  in window [nested.html] (in FRAME#bottomright [nested.html])',
+			'load in window [nested.html] (in FRAME#bottomright [nested.html])',
+			'load  on bottom right FRAME  in window [018.html]',
+			'load  on FRAMESET  in window [018.html]'
+		];
+	</script>
+</head>
+<frameset rows="*,30%" cols="60%,*" onload="load(event, ' on FRAMESET ')">
+<frame src="_files/support.html" onload="load(event, ' on top left FRAME ')" id="topleft"></frame>
+<frame src="" onload="load(event, ' on top right FRAME ')" id="topright"></frame>
+<frame src="" onload="load(event, ' on bottom left FRAME ')" id="bottomleft"></frame>
+<frame src="_files/nested.html" onload="load(event, ' on bottom right FRAME ')" id="bottomright"></frame>
+</frameset></html>

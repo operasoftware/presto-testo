@@ -1,0 +1,80 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/REC-html401/strict.dtd">
+<!--
+   Created by torstein@opera.com
+-->
+<html>
+   <head>
+      <title>Link Object Test - Interactive</title>
+      <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+      <script type="text/javascript" src="../regression-lib/testbase.js"></script>
+   </head>
+   <body>
+      <h1>Link Object Test - Interactive</h1>
+      <script type="text/javascript">showred( cvs );</script>
+      <p>
+         The popup window is for reportrs from the different event
+         handlers for the two link objects. 
+      </p>
+      <div>
+         <h3>Anchor, link object is an a element</h3>
+         <a href="js_link_int.html"
+            name="myname" id="myid"
+            target="mytarget"
+            onclick="reportEvent( 'a: onclick' )"
+            ondblclick="reportEvent( 'a: ondblclick' )" 
+            onkeydown="reportEvent( 'a: onkeydown' )" 
+            onkeypress="reportEvent( 'a: onkeypress' )" 
+            onkeyup="reportEvent( 'a: onkeyup' )" 
+            onmousedown="reportEvent( 'a: onmousedown' )" 
+            onmouseout="reportEvent( 'a: onmouseout' )" 
+            onmouseup="reportEvent( 'a: onmouseup' )" 
+            onmouseover="reportEvent( 'a: onmouseover' )" 
+         >
+            www.opera.com
+         </a>
+         <h3>Imagemap, link object is an area element</h3>
+         <img src="graphics/operalogo_100x105.gif"
+              alt="opera logo"
+              usemap="#mymap"
+         >
+         <map name="mymap">
+            <area alt="an area alt text"   
+                  href="js_link_int.html"
+                  target="mytarget"
+                  shape="rect"
+                  coords="0,0,50,61"
+                  onclick="reportEvent( 'area: onclick )"
+                  ondblclick="reportEvent( 'area: ondblclick )"
+                  onmouseover="reportEvent( 'area: onmouseover' )"
+                  onmouseout="reportEvent( 'area: onmouseout' )"
+            >
+         </map>
+      </div>
+      <h2>User interaction</h2>
+      <ol>
+         <li>
+            <strong>Anchor &amp; Area: </strong>onclick(). Triggered when
+            clicking the link.
+         </li>
+         <li>
+            <strong>Anchor &amp; Area: </strong>onmouseover(). Triggered when
+            hovering the mouse over the link (area).
+         </li>
+         <li>
+            <strong>Anchor &amp; Area: </strong>onmouseout(). Triggered when
+            the mouse leaves the link area.
+         </li>
+         <li>
+            <strong>Anchor: </strong>
+            ondblclick(). Triggered when double clicking on the link
+         </li>
+         <li>
+            <strong>Anchor: </strong>
+            onkeydown(), onkeypress(), onkeyup().
+            Triggered when a key is pressed on the link.
+            e.g. navigating between the two links with 'a' and 'q' in Opera.
+            Should be triggered in the order listed here.
+         </li>
+      </ol>
+   </body>
+</html>

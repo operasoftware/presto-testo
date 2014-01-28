@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html><head>
+	<title>  nested IFRAMEs onload performance TC  </title>
+	<style>iframe{width: 100%}</style>
+</head>
+<body onload="outputNestCount()">
+	<p style="white-space:pre">Log of events in this document and children: </p>
+	<noscript>FAILED (This TC requires JavaScript enabled)</noscript>
+
+	<script type="text/javascript">
+	// This script generates new IFRAMEs loading this very URL with some random cruft
+	// until "depth limit" is reached.
+	var pageStart = (new Date()).getTime();
+	var allIframesWritten;
+	var depthLimit=3;
+	var thisDepth=calculateNestingDepth();
+	var log=document.getElementsByTagName('p')[0].firstChild;
+	if(self==top){
+		var firstEventTime, duration;
+		var firstEvent=true;
+		var endNumber;
+	}
+	function calculateNestingDepth(){
+		var win=self,nestcount=(self==top)?0:1;
+		while( win!=top ){
+			win=win.parent;
+			nestcount++;
+		}
+		return nestcount;
+	}
+
+	function outputNestCount(){
+		log.data+='\nOnload on self, nested '+thisDepth+' levels deep';
+	}
+
+	function report(depth){
+		if( firstEvent ){
+			endNumber = (depth===depthLimit) ? 1 : depthLimit; // correct order is max ... 0, old Opera implementation will do 0 ... max
+			firstEventTime=(new Date()).getTime();
+			firstEvent=false;
+		}
+		log.data+='\n - Onload from document nested at '+depth+' ';
+		if( depth===endNumber ){
+			var now=(new Date()).getTime();
+			eventDuration = now - allIframesWritten;
+
+			// interesting data points:
+			// from page start to written/parsed all IFRAMEs
+			// from written/parsed all IFRAMEs to finished sending events
+			log.data+='\nIFRAMEs written/parsed in '+(allIframesWritten - pageStart)+'ms. Spent '+eventDuration+'ms on sending events, time from start '+( now - pageStart );
+			try{top.opener.rr( eventDuration, allIframesWritten - pageStart );}catch(e){}
+		}
+	}
+
+/*	var url=location.href;
+	if( url.indexOf('rnd=')>-1 ){
+		url=url.replace( /rnd=(.*)/, 'rnd='+Math.random() );
+	}else{
+		url+='?rnd='+Math.random();
+	}*/
+	// data: URL test
+	url='<!DOCTYPE html>'+document.documentElement.outerHTML+Math.random();
+	url='data:text/html,'+encodeURIComponent(url);
+
+	if(thisDepth<depthLimit){
+		document.write( '<iframe src="'+url+'" onload="top.report('+(thisDepth+1)+')"></iframe>' );
+	}else{
+		top.allIframesWritten=(new Date()).getTime();
+	}
+
+	</script>
+
+</body></html>

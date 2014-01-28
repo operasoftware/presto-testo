@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html><head>
+	<title>load event on IFRAME </title>
+	<script src="_files/lib.js" ></script>
+	<script>var expected = [
+			'load in window [support.html] (in IFRAME [support.html])',
+			'load on <IFRAME> in window [005.html]'
+		];
+	</script>
+
+</head>
+<body>
+<iframe src="_files/support.html" onload="load(event, 'on <IFRAME>')"> IFRAME must be supported and enabled </iframe>
+
+	<p>FAILED (This TC requires JavaScript enabled)</p>
+
+</body></html>

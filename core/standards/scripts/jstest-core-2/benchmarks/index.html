@@ -1,0 +1,133 @@
+<html>
+
+<head>
+<title>JavaScript benchmark programs</title>
+</head>
+
+<body>
+
+<h1>JavaScript benchmark programs</h1>
+
+<p>This is a collection of simple benchmark programs.  When they are
+run inside Opera, they test (a) the performance of the ECMAScript
+engine and (b) the performance of the JavaScript scheduler.  From
+these benchmarks it is generally impossible for you to tell where the
+time goes -- you need access to the Opera source code for that.  (For
+example, in Opera 5 and Opera 6 a great deal of time was lost in the
+scheduler.)  But these will give you at least some idea where Opera
+is, relative to the competition.</p>
+
+
+<h2>Control structures and basic computation</h2>
+
+<dl>
+<dt><a href="loop.html">Empty for-loop (1,000,000 iterations)</a>
+<dt><a href="loop-global.html">Empty for-loop, over global variables (1,000,000 iterations)</a>
+<dt><a href="fib.html">Doubly recursive Fibonacci(25)</a>
+<dt><a href="mmul.html">Matrix multiplication</a>
+<dt><a href="mmul2.html">Matrix multiplication using FOR..IN</a>
+</dl>
+
+<h2>Math</h2>
+
+<dl>
+<dt><a href="leftshift.html">Various math operations: simulating the left shift operator</a>
+</dl>
+
+<h2>Strings and RegExps</h2>
+
+<dl>
+<dt><a href="textmanipulation.html">Text manipulation test</a>
+<dt><a href="teamnicole1.html">Text search-and-replace #1</a>
+<dt><a href="teamnicole2.html">Text search-and-replace #2</a>
+<dt><a href="regexp-test-recompile.html">RegExp.test (new regexp every time)</a>
+<dt><a href="regexp-test-precompile.html">RegExp.test (same regexp every time)</a>
+</dl>
+
+<h2>Arrays</h2>
+
+<dl>
+<dt><a href="arrayinit.html">Array initialization (four different ways)</a>
+<dt><a href="arrayjoin.html">join() benchmark</a>
+<dt><a href="sort-sorted-num.html">sort() benchmark (sorted array of numbers)</a>
+<dt><a href="sort-sorted-str.html">sort() benchmark (sorted array of strings)</a>
+<dt><a href="sort-random-num.html">sort() benchmark (random array of numbers)</a>
+<dt><a href="sort-random-str.html">sort() benchmark (random array of strings)</a>
+<dt><a href="sort-random-str-fn.html">sort() benchmark (random array of strings with user predicate)</a>
+</dl>
+
+<h2>Allocation and garbage collection</h2>
+
+<dl>
+<dt><a href="gcbench.html">GCBench (garbage collection benchmark)</a>
+</dl>
+
+<h2>Compiler benchmarks</h2>
+
+<dl>
+<dt><a href="compiler/verylarge1.html">A huge script.</a>
+<dd>Should compile and run in a couple of seconds in a release build on 
+    a 3GHz desktop system, and in a fresh Opera instance the memory use
+    (eg as measured by "Peak memory size" in the Windows XP task manager)
+    should stay below 100MB.
+</dl>
+
+<h2>Uncategorized and/or obsolete</h2>
+
+<dl>
+<dt><a href="mandel1.html">Mandelbrot set, pixel-wise output</a>
+<dt><a href="mandel2.html">Mandelbrot set, row-wise output</a>
+<dt><a href="mandel3.html">Mandelbrot set, matrix output</a>
+<dt><a href="speedtestfs.html">Script generating a lot of HTML</a>
+<dt><a href="generating.html">Script generating script, recursively</a>
+<dt><a href="ibench-all/perf_javascript.html">iBench full test</a>
+<dt><a href="ibench-records.html">iBench "records" test</a>
+<dt><a href="ibench-search.html">iBench "search" test</a>
+<dt><a href="ibench-sort.html">iBench "sort" test</a>
+<dt><a href="ibench-generate.html">iBench "generate" test</a>
+<dt><a href="ibench-download.html">iBench "download" test</a>
+</dl>
+
+<h2>Misc</h2>
+
+<p><a href="run-all.html">Auto-run most benchmarks (requires DOM)</a></p>
+
+<p><b>External benchmark suites</b></p>
+
+<ul>
+<li><a href="external.html">Separate page for these</a>
+</ul>
+
+<p><b>Notes</b></p>
+
+<ul>
+<li>For accurate measurement, try to reduce noice by disabling all
+    other programs on your system
+<li>Some care has been taken to reduce environmental effects (like
+    startup overhead and timer granularity)
+<li>Tests may take up to a few minutes in some cases but most complete 
+    in less than 30 seconds
+<li>Bear in mind when you view results that these are micro-benchmarks,
+    usually testing only a few features
+<li>The iBench tests have been extracted from a possibly older version of
+    the Ziff-Davis iBench test suite
+</ul>
+
+<p><b>Results</b></p>
+
+<ul>
+<li><a href="old-results.html">Some old results for Opera 5 and Opera 6</a><br>
+</ul>
+
+<p><b>To do</b></p>
+
+<ul>
+<li>The results of most of the benchmarks are cryptic and could be presented
+    more comprehensibly
+<li>It might be possible to autorun these
+</ul>
+
+</body>
+</html>
+
+

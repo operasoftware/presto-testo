@@ -1,0 +1,24 @@
+<html>
+<body>
+<script>
+<!--
+function f( arg ) 
+{
+  var w = window.open();
+  w.document.open();
+  w.document.write( '<head><script>function stop() { setTimeout( "window.close()", 2000 ); }</script></head>' );
+  w.document.write( '<body onload="stop()"><h1>Hello, there' );
+  if (arg)
+    w.document.write( ', ' + arg );
+  w.document.write( '!</h1></body>' );
+  w.document.close();
+}
+
+setInterval( f, 5000, "Lars" );
+//-->
+</script>
+
+In MDI mode, size this window with CTRL+SHIFT+3.
+
+</body>
+</html>

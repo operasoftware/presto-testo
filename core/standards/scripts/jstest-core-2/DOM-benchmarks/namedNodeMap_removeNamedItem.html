@@ -1,0 +1,43 @@
+<html>
+<head>
+<script src="reportresult.js"></script>
+<script>
+var a, d1;
+var attrs = 250;
+
+function removeAttributes(n)
+{
+    for (var i = attrs-1; i >= 0; i--)
+    {
+		var name = "attr" + i;
+		a.removeNamedItem(name);
+    }
+    return "Done";
+}
+
+function createAttrs(n)
+{
+	d1 = document.createElement("div");
+	for (var i = 0; i < n; i++)
+	{
+		var attrName = "attr" + i;
+		var attrValue = "value" + i;
+		d1.setAttribute (attrName, attrValue);
+	}
+}
+
+</script>
+</head>
+
+<body>
+<script>
+createAttrs(attrs);
+var before = new Date();
+a = d1.attributes;
+var result = removeAttributes(attrs);
+var after = new Date();
+document.writeln( [ result, after - before ] + '<br>' );
+reportresult( "attributes", after-before );
+</script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<html>
+<head>
+<title>DOM tests -- CSS2 interface</title>
+</head>
+
+<body>
+
+<!-- All the HTML elements below this line are used by the tests -->
+
+<div id='a' style='outline-style: dotted'>
+Text inside div a
+</div>
+
+<div id='b' style='outline-style: solid; outline-color: red'>
+Text inside div b
+</div>
+
+<div id='c'>
+Text inside div c
+</div>
+
+<!-- All the HTML elements above this line are used by the tests -->
+
+
+<script src="../../regression-lib/testbase.js"></script>
+<script>
+/* Regression tests for Opera's handling of the DOM 2 CSS2 interface
+ *
+ * 2002-04-11 / stighal
+ */
+
+var cvs = "$Id: outline-color.html 4838 2006-01-18 05:59:01Z hallvord $";
+
+testmodule( "CSS2 interface", cvs );
+
+var a, b, c;
+
+try {
+a = document.getElementById("a");
+b = document.getElementById("b");
+c = document.getElementById("c");
+
+testcase( "Reading properties" );
+
+test('getting outline-color from a with nothing specified', a.style.outlineColor, "");
+test('getting outline-color from b with "red" specified', b.style.outlineColor, "rgb(255, 0, 0)");
+
+testcase( "Setting properties" );
+
+a.style.outlineColor = "invert";
+test('reading outline-color on a set by script to "invert"', a.style.outlineColor, "invert");
+
+testcase( "Negative tests" );
+
+c.style.outlineColor = "foo";
+test('reading outline-color on a set by script to foo (illegal)', c.style.outlineColor, "");
+
+c.style.outlineColor = "outset";
+test('reading outline-color on a set by script to outset (illegal keyword)', c.style.outlineColor, "");
+
+} catch (e) { exception( e ); }
+
+testmodule_finished();
+
+</script>
+
+</body>
+</html>

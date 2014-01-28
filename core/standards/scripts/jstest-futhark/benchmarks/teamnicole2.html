@@ -1,0 +1,25 @@
+<html>
+<body>
+<p>Abstracted from www.teamnicole.com.</p>
+
+<p>The program starts out with a 30K characters long string, which it
+repeatedly searches for a pattern using string.split, and then creates a
+new string using array.join. </p>
+
+<p>This works really well, though in Opera the operations is performed by
+a different algorithm (see teamnicole1.html).</p>
+
+<script src="reportresult.js"></script>
+<script>
+var SM=false;
+</script>
+<script src="teamnicole.js"></script>
+<script>
+var before = new Date();
+var result = teamnicole();
+var after = new Date();
+document.writeln( '<br>' + (after - before) + 'ms <br>' );
+reportresult( "teamnicole 1", after-before );
+</script>
+</body>
+</html>

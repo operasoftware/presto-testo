@@ -1,0 +1,158 @@
+<html>
+<head>
+  <title>Opera JavaScript/JScript test suite</title>
+  <script type="text/javascript" src="../testconfig.js"></script>
+<script>
+// Absolutely do not remove this script, the js_history test depends on it.
+var ready=false;
+function setready()
+{
+  ready=true;
+}
+</script>
+</head>
+
+<body onload="setready()">
+<h1>Opera JavaScript/JScript test suite</h1>
+
+<p>$Id: index.html 4838 2006-01-18 05:59:01Z hallvord $</p>
+
+<p>Each of the tests below tests some specific aspect of the system
+relative to a well-understood (if not always well-written)
+specification.  The programs contain both tests written from the
+specification as well as cases reported as bugs (to guard against
+regressions).</p>
+
+<h2>JavaScript v1.3 client plus MSIE extensions</h2>
+
+<p><b>General rule:</b> check the DOM and LiveConnect test suites, and
+don't duplicate tests unnecessarily.  But do make sure everything is
+tested!</p>
+
+<p><b>General rule:</b> separate all interactive tests (anything
+requiring the user to do or read anything at all) into separate files;
+we want to run the noninteractive tests automatically.</p>
+
+<p><b>Noninteractive tests</b></p>
+
+<a href="all.html">Run all noninteractive tests</a><br><br>
+
+<a href="js_anchor.html">Anchor object</a><br>
+<a href="js_applet.html">Applet object</a><br>
+<a href="js_area.html">Area object</a><br>
+<a href="js_button.html">Button object</a><br>
+<a href="js_checkbox.html">Checkbox object</a><br>
+<a href="js_document.html">Document object</a><br>
+<a href="js_fileupload.html">FileUpload object</a><br>
+<a href="js_form.html">Form object</a><br>
+<a href="js_frame.html">Frame object</a><br>
+<a href="js_hidden.html">Hidden object</a><br>
+<a href="js_history.html">History object</a><br>
+<a href="js_image.html">Image object</a><br>
+<a href="js_link.html">Link object</a><br>
+<a href="js_location.html">Location object</a><br>
+<a href="js_mimetype.html">Mimetype object</a><br>
+<a href="js_navigator.html">Navigator object</a><br>
+<a href="js_option.html">Option object</a><br>
+<a href="js_password.html">Password object</a><br>
+<a href="js_plugin.html">Plugin object</a><br>
+<a href="js_radio.html">Radio object</a><br>
+<a href="js_reset.html">Reset object</a><br>
+<a href="js_screen.html">Screen object</a><br>
+<a href="js_select.html">Select object</a><br>
+<a href="js_style.html">Style object</a><br>
+<a href="js_submit.html">Submit object</a><br>
+<a href="js_sun.html">Sun object</a><br>
+<a href="js_text.html">Text object</a><br>
+<a href="js_textarea.html">Textarea object</a><br>
+<a href="js_window.html">Window object</a><br>
+<br>
+<a href="msie_collections.html">MSIE collection semantics</a><br>
+
+<p><b>Interactive tests</b></p>
+
+<a href="js_button_int.html">Button object</a><br>
+<a href="js_checkbox_int.html">Checkbox object</a><br>
+<a href="js_document_int.html">Document object</a><br>
+<a href="js_fileupload_int.html">FileUpload object</a><br>
+<a href="js_form_int.html">Form object</a><br>
+<a href="js_history_int.html">History object</a><br>
+<a href="js_image_int.html">Image object</a><br>
+<a href="js_link_int.html">Link object</a><br>
+<a href="js_location_int.html">Location object</a><br>
+<a href="js_option_int.html">Option object</a><br>
+<a href="js_password_int.html">Password object</a><br>
+<a href="js_radio_int.html">Radio object</a><br>
+<a href="js_reset_int.html">Reset object</a><br>
+<a href="js_select_int.html">Select object</a><br>
+<a href="js_submit_int.html">Submit object</a><br>
+<a href="js_text_int.html">Text object</a><br>
+<a href="js_textarea_int.html">Textarea object</a><br>
+<a href="js_window_int.html">Window object</a><br>
+<br>
+<a href="js_set_interval_int.html">window.setInterval</a><br>
+<br>
+<a href="js_frame_int_59556.html">frame reference bug (#59556)</a><br>
+<a href="js_set_interval_int_82042.html">window.setInterval bug (#82042)</a><br>
+
+<hr>
+<p><b>Not yet implemented</b></p>
+
+<a href="js_event.html">Event object</a><br>
+<a href="js_java.html">Java object</a><br>
+<a href="js_javaarray.html">JavaArray object</a><br>
+<a href="js_javaobject.html">JavaObject object</a><br>
+<a href="js_javapackage.html">JavaPackage object</a><br>
+<a href="js_packages.html">Packages object</a><br>
+
+<hr>
+<p><b>Older DOM tests???</b></p>
+<ul>
+	<li><a href="documentObjectTest.html">Document Object Test</a>
+	<li><a href="eventObjectTest.html">Event Object Test</a>
+	<li><a href="navigatorObjectTest.html">Navigator Object Test</a>
+	<li><a href="windowObjectTest.html">Window Object Test</a>	
+</ul>
+
+<hr>
+<p><b>Older stuff, needs to be sorted through / cataloged / disposed of</b></p>
+
+<a href="msie-spoof.html">MSIE spoofing</a> (please turn on MSIE spoofing first)<br>
+<a href="ns-spoof.html">NS spoofing</a> (please turn on NS spoofing first)<br>
+<a href="radio.html">Radio buttons</a> (try with and without MSIE spoofing)<br>
+<a href="jsurl.html">javascript: URL test</a><br />
+<a href="windowAnimationTest.html">Window Animation Test, basically a window.moveTo() test</a><br />
+<a href="anchorArrayObjectTest.html">Anchor Array Object Test (&nbsp;incomplete&nbsp;)</a><br />
+<a href="inputElementTest.html">Input Element Test (&nbsp;incomplete&nbsp;)</a><br />
+<a href="windowObjectTest.html">Window Object Test (&nbsp;incomplete&nbsp;)</a><br />
+<a href="locationObjectTest.html">Location Object Test (&nbsp;incomplete&nbsp;)</a><br />
+<a href="historyObjectTest.html">History Object Test (&nbsp;incomplete&nbsp;)</a><br />
+<a href="imageObjectTest.html">Img Element Test </a><br />
+<a href="javaArrayTest.html">Java Array Test </a><br />
+<a href="javaClassTest.html">Java Class Test </a><br />
+<a href="javaPackageTest.html">Java Package Test (&nbsp;incomplete&nbsp;)</a><br />
+<a href="pluginObjectTest.html">Plugin Object Test </a><br />
+<a href="mimetypeObjectTest.html">Mimetype Object Test </a><br />
+<a href="navigatorObjectTest.html">Navigator Object Test</a> (identify as Opera, using standard language, running on 
+<script>
+<!--
+document.writeln(get_platform()
+);
+-->
+</script>
+) <br />
+<a href="screenObjectTest.html">Screen Object Test</a> (Assuming a  
+<script>
+<!--
+document.writeln(get_screen_width()+"x"+get_screen_height() + " screen with a color depth of " + get_color_depth()
+);
+-->
+</script>
+) <br />
+
+<br>
+
+<a href="setIntervalTest.html">Testing window.setInterval (bug #45555)</a>
+</body>
+</html>
+

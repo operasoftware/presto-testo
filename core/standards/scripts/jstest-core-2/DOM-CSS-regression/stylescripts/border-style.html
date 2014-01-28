@@ -1,0 +1,91 @@
+<html>
+<head>
+<title>DOM tests -- CSS2 interface</title>
+</head>
+
+<body>
+
+<!-- All the HTML elements below this line are used by the tests -->
+
+<div id='a'>
+Outset border of default width and style.
+</div>
+
+<div id='b' style='border-color: red; border-style: solid; border-width: 4px;'>
+Solid red border 4px wide.
+</div>
+
+<div id='c' style='border-top-style: dotted'>
+Dotted border with default color and width.
+</div>
+
+<div id='d'>
+No border.
+</div>
+
+<!-- All the HTML elements above this line are used by the tests -->
+
+
+<script src="../../regression-lib/testbase.js"></script>
+<script>
+/* Regression tests for Opera's handling of the DOM 2 CSS2 interface
+ *
+ * 2002-04-11 / stighal
+ */
+
+var cvs = "$Id: border-style.html 4838 2006-01-18 05:59:01Z hallvord $";
+
+testmodule( "CSS2 interface", cvs );
+
+var a, b;
+
+try {
+a = document.getElementById("a");
+b = document.getElementById("b");
+c = document.getElementById("c");
+d = document.getElementById("d");
+
+testcase( "Reading properties" );
+
+test('getting border-style from a with nothing specified', a.style.borderStyle, "");
+test('getting border-style from b with solid specified', b.style.borderStyle, "solid");
+
+testcase( "Setting properties" );
+
+a.style.borderStyle = "outset";
+test('reading border-style on a set by script to outset', a.style.borderStyle, "outset");
+
+testcase("Shorthand tests");
+
+test('getting border-style from c where only border-top-style is set by style', c.style.borderStyle, "");
+
+c.style.borderRightStyle = "double";
+test('getting border-style from c where border-top-style is set by style and border-right-style is set by script', c.style.borderStyle, "");
+
+c.style.borderBottomStyle = "ridge";
+c.style.borderLeftStyle = "double";
+test('getting border-style from c where the border styles are set to {dotted double ridge double}', c.style.borderStyle, "dotted double ridge");
+
+c.style.borderBottomStyle = "dotted";
+test('getting border-style from c where the border styles are set to {dotted double dotted double}', c.style.borderStyle, "dotted double");
+
+c.style.borderRightStyle = "dotted";
+c.style.borderLeftStyle = "dotted";
+test('getting border-style from c where the border styles are set to {dotted dotted dotted dotted}', c.style.borderStyle, "dotted");
+
+testcase( "Negative tests" );
+
+d.style.borderStyle = "foo";
+test('reading border-style on d set by script to foo (illegal)', d.style.borderStyle, "");
+
+d.style.borderStyle = "bold";
+test('reading border-style on d set by script to bold (illegal keyword)', d.style.borderStyle, "");
+
+} catch (e) { exception( e ); }
+
+testmodule_finished();
+
+</script>
+
+</body>
+</html>

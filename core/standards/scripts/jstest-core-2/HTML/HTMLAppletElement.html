@@ -1,0 +1,28 @@
+<html>
+<head>
+<script src="../testconfig.js"></script>
+<script src="../regression-lib/testbase-non-inline.js"></script>
+<title>DOM 2 HTML AppletElement </title>
+</head>
+
+<body onLoad="go();">
+<p>
+<applet id="myApplet1"></applet>
+
+<applet id="myApplet2" code="TestApplet.class"
+  archive="http://www.opera.com/ http://www.opera.no/"
+  codebase="../classes/"
+  width="100"
+  height="50" 
+  hspace="5" vspace="7"
+  name = "a" align="right"
+  alt="alt"
+  >applet applet</applet>
+
+<applet id="myApplet3" code="clock.class"
+  >applet applet</applet>
+</p>
+<script src="scripts/htmlappletelement.js"></script>
+<div id="container"></div>
+</body>
+</html>

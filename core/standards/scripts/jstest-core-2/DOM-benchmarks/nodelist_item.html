@@ -1,0 +1,38 @@
+<html>
+<head>
+<script src="reportresult.js"></script>
+<script>
+var elms = 1000;
+function getSpans(n)
+{
+    var nodes = document.getElementsByTagName("span");
+    for (var i = 0; i < n; i++)
+    {
+	 var j = nodes.item[elms - 2];
+    }
+    return "Done";
+}
+
+function createElements(n)
+{
+	var d = document.createElement("div");
+	for (var i = 0; i < n; i++)
+	{
+		d.appendChild (document.createElement("span"));
+	}
+	document.body.appendChild(d);
+}
+</script>
+</head>
+
+<body>
+<script>
+createElements(elms);
+var before = new Date();
+var result = getSpans(50000);
+var after = new Date();
+document.writeln( [ result, after - before ] + '<br>' );
+reportresult( "NodeList item", after-before );
+</script>
+</body>
+</html>

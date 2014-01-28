@@ -1,0 +1,28 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/REC-html401/strict.dtd">
+<!--
+   Created by haukur@opera.com
+-->
+<html>
+   <head>
+      <title>Button Object Test</title>
+      <script type="text/javascript" language="javascript" src="../regression-lib/testbase.js"></script>
+      <script type="text/javascript" language="javascript" src="scripts/js_button.js"></script>
+      <script type="text/javascript" src="../testconfig.js"></script>
+   </head>
+   <body>
+      <form id="theform" name="theform">
+         <input type="button" 
+                   id="thebutton"
+                   name="thebutton"
+                   value="alpha"
+                   onblur="void(0)"
+                   onclick="void(1)" 
+                   onfocus="void(2)"
+                   onmousedown="void(3)"
+                   onmouseup="void(4)">
+      </form>
+      <script type="text/javascript" language="javascript">
+               main( document.theform.thebutton );
+      </script>
+   </body>
+</html>

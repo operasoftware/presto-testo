@@ -1,0 +1,28 @@
+<html>
+<head>
+<title>Regression | Object object</title>
+</head>
+
+<body>
+<script>
+/*
+This SCRIPT tag is part of 'testcase( "Properties of prototypes on implicit conversion (no bug#)" );' in object.js
+The stuff below is here because it needs to be before the IFRAME that uses it.
+This is to avoid using a popup window */
+String.prototype.isString=true;
+String.prototype.isNumber=false;
+Number.prototype.isString=false;
+Number.prototype.isNumber=true;
+
+function showPrototypeInfo(n,s)
+{
+   return "" + n.isString + "," + n.isNumber + "," + s.isString + "," + s.isNumber;
+}
+
+</script>
+<script src="../testconfig.js"></script>
+<script src="../regression-lib/testbase-non-inline.js"></script>
+<script src="scripts/object.js"></script>
+<iframe src="object2.html" width="0" height="0" onload="doTestWhenIframeIsReady()"></iframe>
+</body>
+</html>

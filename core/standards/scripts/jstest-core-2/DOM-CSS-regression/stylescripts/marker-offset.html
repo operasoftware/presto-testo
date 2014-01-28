@@ -1,0 +1,80 @@
+<html>
+<head>
+<title>DOM tests -- CSS2 interface</title>
+<style>
+li:before {
+  display: marker;
+  content: "!!!";
+  font-weight: bold;
+}
+</style>
+</head>
+
+<body>
+
+<!-- All the HTML elements below this line are used by the tests -->
+
+<ol>
+<li id='a'>
+Text inside li a
+</li>
+
+<li id='b' style='marker-offset: 7mm'>
+Text inside li b
+</li>
+
+<li id='c'>
+Text inside li c
+</li>
+</ol>
+
+<!-- All the HTML elements above this line are used by the tests -->
+
+
+<script src="../../regression-lib/testbase.js"></script>
+<script>
+/* Regression tests for Opera's handling of the DOM 2 CSS2 interface
+ *
+ * 2002-04-11 / stighal
+ */
+
+var cvs = "$Id: marker-offset.html 4838 2006-01-18 05:59:01Z hallvord $";
+
+testmodule( "CSS2 interface", cvs );
+
+var a, b, c;
+
+try {
+a = document.getElementById("a");
+b = document.getElementById("b");
+c = document.getElementById("c");
+
+testcase( "Reading properties" );
+
+test('getting marker-offset from a with nothing specified', a.style.markerOffset, "");
+test_expect_failure('getting marker-offset from b with top specified', 'not-reported', b.style.markerOffset, "7mm", "Might just be a bug in the test; needs investigation.");
+
+testcase( "Setting properties" );
+
+a.style.markerOffset = "3cm";
+test_expect_failure('reading marker-offset on a set by script to 3cm', 'not-reported', a.style.markerOffset, "3cm", "Might just be a bug in the test; needs investigation.");
+
+a.style.markerOffset = "5em";
+test_expect_failure('reading marker-offset on a set by script to 5em', 'not-reported', a.style.markerOffset, "5em", "Might just be a bug in the test; needs investigation.");
+
+testcase( "Negative tests" );
+
+c.style.markerOffset = "foo";
+test('reading marker-offset on c set by script to foo (illegal)', c.style.markerOffset, "");
+
+c.style.markerOffset = "bold";
+test('reading marker-offset on d set by script to bold (illegal keyword)', c.style.markerOffset, "");
+
+} catch (e) { exception( e ); }
+
+testmodule_finished();
+
+</script>
+
+</body>
+</html>

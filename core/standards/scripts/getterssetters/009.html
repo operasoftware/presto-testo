@@ -1,0 +1,30 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+	<head>
+		<title>Value set to undefined when defining a setter</title>
+	</head>
+	<body>
+
+<p id="ostat">Enable JavaScript and reload.</p>
+<script type="text/javascript">
+
+var oUnsup = 'unsupported';
+function reportStatus( oStatus ) {
+	document.getElementById('ostat').firstChild.nodeValue = ( oStatus == true ) ? 'PASS' : ( ( oStatus == oUnsup ) ? 'FAIL (getters/setters not supported)' : 'FAIL' );
+	try{
+		try{top.opener.rr(oStatus);}catch(e){}
+	}catch(e){}
+}
+
+if( window.__defineGetter__ ) {
+	window.foo = 'whocares';
+	window.__defineSetter__('foo',function () { });
+	reportStatus( window.foo == window.undefined );
+} else {
+	reportStatus(oUnsup)
+}
+
+</script>
+
+	</body>
+</html>

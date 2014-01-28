@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <title>testPCRE_spec.js#testRegexpPCRE_172</title>
+  <script src="../opjsunit.js"></script>
+  <script>function testRegexpPCRE_172() {
+  var regexp = /.i./ig;
+  assertEquals("Mis", regexp.exec("Mississippi").toString()); //test 176
+  assertEquals("sis", regexp.exec("MississippiA").toString()); //test 177
+  assertEquals("ri ", regexp.exec("Missouri river").toString()); //test 178
+  assertEquals("riv", regexp.exec("Missouri riverA").toString()); //test 179
+}</script>
+  <p>Failed (Script did not run)</p>
+  <script>
+function test() {
+  var passed = false;
+  var error = "";
+  var output_element = document.getElementsByTagName("p")[0];
+  try {
+    for (var count=0; count<100; count++) {
+      testRegexpPCRE_172();
+    }
+    passed = true;
+  } catch(e) {
+    error = e.message;
+  }
+  try {top.opener.rr(passed)} catch(e){}
+  if (passed) {
+    output_element.textContent = "PASS"
+    output_element.style.color = "green";
+  } else {
+    output_element.textContent = "FAIL: " + error + " (failed on iteration " + count + ")"
+    output_element.style.color = "red";
+  }
+}
+window.addEventListener("load", test, false);
+  </script>
+</html>

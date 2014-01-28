@@ -1,0 +1,64 @@
+<!-- Test: Executable content with FILE: privilege can be injected
+       into JS console and can be used to read other content with
+       FILE: privilege
+
+     2003-02-03 / lth
+
+     Reported by GrayMagic.
+
+     http://greymagic.com/adv/gm003-op-PVT3SCT/    Preview advisory
+     http://greymagic.com/adv/gm003-op/            Probable final URL
+
+     Using the JavaScript console and the CSS 'url' attribute, it was
+     possible to insert JavaScript code for execution in the console
+     (passing a javascript: url to the url attribute, and relying on
+     missing quoting of the content).  Since the console code is
+     loaded from the disk, it runs with privileges that allow it to
+     access documents loaded from the disk, and functions that run in
+     its context inherit this privilege.  At the same time, it is
+     possible to insert iframe content into the attacker document
+     (using DOM) that contains disk content.  The script injected into
+     the console can read the contents of the iframe and show it or
+     send it off somewhere.
+
+     This test case tests that it is not possible to inject a script
+     into the console (and for good measure, it also shows the attack
+     on the directory listing).
+
+     If the attack succeeds then an alert is shown; otherwise, there
+     is no alert.
+
+     -->
+
+<html>
+
+<head>
+<title>Console intermediary attack</title>
+</head>
+
+<body>
+
+<p>If the attack is successful, you should see an alert box with a
+listing of the root directory of your C: drive.  Otherwise, you should
+see some iframes (some of which may show your disk content) but no
+alert.
+</p>
+
+<p>NOTE!  This attack opens the JS console using the syntax
+file://localhost/console.html.  For it to work, you must use an Opera
+whose working directory contains console.html, as do many normal
+installations of Opera (but not all).  If you get an alert 'can't open
+file' then you must change your installation to perform the test
+properly.  (I really ought to fix that.)</p>
+
+<iframe name="diskcontent" src="file://c:/"></iframe>
+<iframe name="attack" src="file://localhost/console.html"></iframe>
+<script>
+function attackfn()
+{
+    alert(diskcontent.document.body.innerText);
+}
+opera.postError("http://\"style=\"background-image:url('javascript:top.attackfn()')\"");
+</script>
+</body>
+</html>

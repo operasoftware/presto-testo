@@ -1,0 +1,38 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+	<head>
+		<title>Scopes are searched as normal</title>
+	</head>
+	<body>
+
+<p id="ostat">Enable JavaScript and reload.</p>
+<script type="text/javascript">
+
+var oUnsup = 'unsupported';
+function reportStatus( oStatus ) {
+	document.getElementById('ostat').firstChild.nodeValue = ( oStatus == true ) ? 'PASS' : ( ( oStatus == oUnsup ) ? 'FAIL (getters/setters not supported)' : 'FAIL' );
+	try{
+		try{top.opener.rr(oStatus);}catch(e){}
+	}catch(e){}
+}
+
+function innerscope() {
+	foo = 'whocares';
+}
+var state = false;
+if( window.__defineSetter__ ) {
+	try {
+		__defineSetter__('foo',function () { state = true; });
+		innerscope();
+	} catch (e) {
+		state = e instanceof TypeError;
+	}
+	reportStatus(state);
+} else {
+	reportStatus(oUnsup)
+}
+
+</script>
+
+	</body>
+</html>

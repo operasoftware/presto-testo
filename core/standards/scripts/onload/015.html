@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html><head>
+	<title>load event on FRAMESET with delayed frame and fast frame </title>
+	<script>_conf_timeout_delay=5000;</script>
+	<script src="_files/lib.js" ></script>
+	<script>var expected = [
+			'load in window [support.html] (in FRAME [support.html])',
+			'load  on fast FRAME  in window [015.html]',
+			'load in window [support.html] (in FRAME [support.html])',
+			'load  on slow FRAME  in window [015.html]',
+			'load  on FRAMESET  in window [015.html]'
+		];
+	</script>
+</head>
+<frameset rows="*,30%" onload="load(event, ' on FRAMESET ')">
+<frame src="_files/delay.php?url=support.html&amp;time=3" onload="load(event, ' on slow FRAME ')"> IFRAME must be supported and enabled </frame>
+<frame src="_files/support.html" onload="load(event, ' on fast FRAME ')"></frame>
+</frameset></html>

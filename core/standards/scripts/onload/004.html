@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html><head>
+	<title>load event test (inline, window, DOMContentLoaded) </title>
+	<!-- load event on SCRIPT may as we see call a function defined in the script we're loading, so it happens after execution.. -->
+	<script src="_files/lib.js" onload="load(event)"></script>
+	<script>var expected = [
+			'load in window [004.html]',
+			'DOMContentLoaded in window [004.html]',
+			'load in window [004.html]'
+			];
+	</script>
+
+	<script>
+		if(document.addEventListener)document.addEventListener('DOMContentLoaded', load, false);
+		window.onload=load;
+	</script>
+</head>
+<body>
+
+	<p>FAILED (This TC requires JavaScript enabled)</p>
+
+</body></html>

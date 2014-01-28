@@ -1,0 +1,87 @@
+<html>
+<head>
+<title>DOM tests -- CSS2 interface</title>
+</head>
+
+<body>
+
+<!-- All the HTML elements below this line are used by the tests -->
+
+
+<div style='float: left; border: thin dotted blue; width: 10em'>
+This should<br/>
+be floated<br/>
+to the left
+</div>
+
+<div id='a' style='border: thin dotted blue; font-weight: bold; width: 20em'>
+This should not be floated
+</div>
+
+<div style='float: right; border: thin dotted red; width: 10em'>
+This should<br/>
+be floated<br/>
+to the right
+</div>
+
+<div id='b' style='border: thin dotted red; float: right; clear: right; font-weight: bold; width: 10em'>
+This should<br/>
+also be floated<br/>
+to the right
+</div>
+
+<div style='border: thin dotted red'>
+This box should not be floated.
+</div>
+
+<div id='c' style='border: thin dotted green; font-weight: bold'>
+This should not be floated either. That means it should be in the middle.
+</div>
+
+<!-- All the HTML elements above this line are used by the tests -->
+
+
+<script src="../../regression-lib/testbase.js"></script>
+<script>
+/* Regression tests for Opera's handling of the DOM 2 CSS2 interface
+ *
+ * 2002-04-11 / stighal
+ */
+
+var cvs = "$Id: float.html 10655 2006-12-18 15:47:57Z hallvord $";
+
+testmodule( "CSS2 interface", cvs );
+
+var a, b, c;
+
+try {
+a = document.getElementById("a");
+b = document.getElementById("b");
+c = document.getElementById("c");
+
+testcase( "Reading properties" );
+
+test('getting float from a with nothing specified', a.style.cssFloat, "");
+test('getting float from b with right specified', b.style.cssFloat, "right");
+
+testcase( "Setting properties" );
+
+a.style.cssFloat = "none";
+test('reading float on a set by script to none', a.style.cssFloat, "none");
+
+testcase( "Negative tests" );
+
+c.style.cssFloat = "foo";
+test('reading float on a set by script to foo (illegal)', c.style.cssFloat, "");
+
+c.style.cssFloat = "outset";
+test('reading float on a set by script to outset (illegal keyword)', c.style.cssFloat, "");
+
+} catch (e) { exception( e ); }
+
+testmodule_finished();
+
+</script>
+
+</body>
+</html>

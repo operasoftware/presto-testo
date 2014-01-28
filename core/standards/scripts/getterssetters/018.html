@@ -1,0 +1,35 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+	<head>
+		<title>getters cannot get themselves</title>
+	</head>
+	<body>
+
+<p id="ostat">Enable JavaScript and reload.</p>
+<script type="text/javascript">
+
+var oUnsup = 'unsupported';
+function reportStatus( oStatus ) {
+	document.getElementById('ostat').firstChild.nodeValue = ( oStatus == true ) ? 'PASS' : ( ( oStatus == oUnsup ) ? 'FAIL (getters/setters not supported)' : 'FAIL' );
+	try{top.opener.rr(oStatus);}catch(e){}
+}
+
+var oEl = {}, whocares;
+if( oEl.__defineGetter__ ) {
+	oEl.__defineGetter__('title',function () { return oEl.title; });
+	document.getElementById('ostat').firstChild.nodeValue = 'FAIL';
+	try {
+		whocares = oEl.title;
+		reportStatus(false);
+	} catch(e) {
+		//alert(e.name)
+		reportStatus(true);
+	}
+} else {
+	reportStatus(oUnsup)
+}
+
+</script>
+
+	</body>
+</html>

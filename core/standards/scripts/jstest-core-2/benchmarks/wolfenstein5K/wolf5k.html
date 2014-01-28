@@ -1,0 +1,423 @@
+<!-- From http://www.the5k.org/.  Castle Wolfenstein in 5K of JS.
+     Reformatted and annotated (sketchily) by lth  -->
+
+<script>
+N6=8184;
+N5=2040;
+N4=1008;
+N3=4092;
+N2=65535;
+N1=2340;
+N0=1032;
+d=document;
+nn=!d.all;
+m=Math;
+C=m.PI;
+r=m.random;
+f=m.floor;
+ab=m.abs;
+sq=m.sqrt;
+si=m.sin;
+co=m.cos;
+pz=U=fwd=p=$x=im=A2=A3=Z=$c=c0=d5=d4=0;
+w=[];
+M=_=H=hl=64;
+W=px=py=128;
+RAD=C/180;
+d6=32;
+INF=1e300;
+F=30*RAD;
+R=2*F/W;
+a1=f(64/m.tan(F));
+b2=C/2;
+c3=C;
+c4=C*3/2;
+h="0123456789ABCDEF";
+$e=P(W);
+p1=P(1152);
+for(i=0;i<1152;i++)
+  p1[i]=i>=H*16?255:0;
+b=P(1152);
+N=[];
+for(i=0;i<256;i++)
+  N[i]="0x"+h.substr(f(i/16),1)+h.substr(i%16,1);
+bm=[[N2,128,448,128,N2,14336,4096,14336,N2,14,4,14,N2,448,128,448],[N2,53259,40965,49155,32865,32913,37505,35457,34417,35345,37617,33281,49667,40965,53259,N2],[N5,1224,720,7928,4740,32740,65508,1088,N4,N0,2244,N1,2052,N1,N0,N4],[N6,4104,12680,12680,6120,6120,4488,4488,4104,N6],[N6,N6,N6,N6,N6,N6,N6,N6,N6,N6],[N5,N5,0x3f0,N6,8188,32764,65532,18424,N4,N5,N3,N3,N3,N3,N5,N4],[5136,5136,2592,2592,1088,1984],[8176,8176,4064,4064,1984,1984],[N4,N0,N1,2052,N1,2244,N0,N4],[N4,N5,N3,N3,N3,N3,N5,N4],[0,0,0,0,0,2080,6096,9544,2336,256]];
+A5=[7,5,5,5,7,1,3,1,1,1,7,1,7,4,7,7,1,7,1,7,5,5,7,1,1,7,4,7,1,7,7,4,7,5,7,7,1,1,1,1,7,5,7,5,7,7,5,7,1,1];
+function P(a)
+{
+  return a?new Array(a):[]
+}
+function $(x,y)
+{
+  x=f(x/_);
+  y=f(y/_);
+  return(x<0||y<0||x>15||y>15)?1:(w[y]&1<<x)
+}
+function rc()
+{
+  p=[].concat(p1);
+  var c2=-F,a=$c+c2,a6=-1,$d,Lht,c1,u,uh=uv=0,a5=INF;
+  for($v=0;$v<W;$v++)
+  {
+    c1=$f;
+    Lht=ht;
+    var c=co(a),s=m.sin(a),t=s/c,a4,a5,$f,d2,dx,dy,$a,$b,$q,$r,$s,$t,$o,$p,ht;
+    if(!a||a==c3)
+    {
+      a4=INF
+    }
+    else
+    {
+      if(s>0)
+      {
+        $b=f(py/_+1)*_;
+        dy=_;
+        $a=px+($b-py)/t;
+        dx=_/t
+      }
+      else
+      {
+        $b=f(py/_)*_-.0001;
+        dy=-_;
+        $a=px+($b-py)/t;
+        dx=-_/t
+      }
+      while(!$($a,$b))
+      {
+        $a+=dx;
+        $b+=dy
+      }
+      $q=$a;
+      $r=$b;
+      a4=ab((px-$a)/c);
+      uh=$a%_;
+      if(s>0)uh=_-uh
+    }
+    if(a==b2||a==c4)
+    {
+      a5=INF
+    }
+    else
+    {
+      if(c>0)
+      {
+        $a=f(px/_+1)*_;
+        dx=_;
+        $b=py+($a-px)*t;
+        dy=_*t
+      }
+      else
+      {
+        $a=f(px/_)*_-.0001;
+        dx=-_;
+        $b=py+($a-px)*t;dy=-_*t
+      }
+      while(!$($a,$b))
+      {
+        $a+=dx;
+        $b+=dy
+      }
+      $s=$a;
+      $t=$b;
+      a5=ab((px-$a)/c);
+      uv=$b%_;
+      if(c<0)uv=_-uv
+    }
+    $d=a6;
+    if(a4<a5)
+    {
+      u=uh;
+      $f=a4;
+      a6=0;
+      $o=$q;
+      $p=$r
+    }
+    else
+    {
+      u=uv;
+      $f=a5;
+      a6=1;
+      $o=$s;
+      $p=$t
+    }
+    $e[$v]=$f*=co(c2);
+    ht=f(_/$f*a1);
+    var dd=ab(c1-$f),$k=f(d6-ht/2),$l=f(d6+ht/2),b3=$k,a0=u/4;
+    if(dd>_&&Lht>ht)
+      ht=Lht;
+    if($k<0)
+      $k=0;
+    if($l>=H)
+      $l=H-1;
+    x=f($o/_);
+    y=f($p/_);
+    var pat=(x<0||x>15)&&y%2?1:A2>4?2:0;
+    for(y=$k;y<$l;y++)
+    {
+      var bit=0,b1=((y-b3)/ht*_)>>2,b2=bm[pat][15-b1]&1<<(a0&15);
+      if(!(b2||($v&&$d!=a6)||(dd>=_&&$v)||($f>=_*3&&$f<_*4&&$v%4==y%4)||($f>=_*4&&$f<_*6&&$v%3==y%3)||($f>=_*6&&$v%2==y%2)))
+        Y($v,y)
+    }
+    a+=R;
+    c2+=R
+  }
+}
+function A6(a,$m,$k,r)
+{
+  if(a<1)
+  {
+    A7(0,$m,$k)
+  }
+  else
+  {
+    for(i=f(m.log(a)/m.log(10));i>=0;i--,$m+=4)
+    {
+      var t=m.pow(10,i),j=f(a/t);
+      A7(j,$m,$k,r);
+      a-=j*t
+    }
+  }
+}
+function A7(a,$m,$k,r)
+{
+  for(k=0;k<5;k++)
+  {
+    var d=A5[a*5+k];
+    if(r)
+    {
+      d=7-d
+    }
+    Y($m+1,$k+k,d&4);
+    Y($m+2,$k+k,d&2);
+    Y($m+3,$k+k,d&1)
+  }
+}
+function I(pat,a9,$k,$m,$l,$n,$f,r)
+{
+  var b3=$k,ht=ab($l-$k),wd=ab($n-$m),$g=0,$v;
+  if($k<0)
+    $k=0;
+  if($l>=H)
+    $l=H-1;
+  for(k=0;k<wd;k++)
+  {
+    $v=$m+k;
+    if($v>=0&&$v<=W&&!($f&&($f>$e[$v])))
+    {
+      var a0=f(k/wd*16)&15;
+      for(j=$k;j<$l;j++)
+      {
+        var b1=15-f((j-b3)/ht*16),b2=bm[pat][b1]&1<<a0,a8=bm[a9][b1]&1<<a0;
+        if(a8)
+        {
+          Y($v,j,b2?!r:r);
+          $g=1
+        }
+      }
+    }
+  }
+  return $g
+}
+function Y(x,y,v)
+{
+  var Q=y*16+(x>>3);
+  x=1<<(x&7);
+  p[Q]=v?p[Q]&(255-x):p[Q]|x
+}
+
+/* Render the play area.
+   Changes the image either to r.gif (a red pixel that is scaled to fill the entire
+   play area) or to an XBM that is constructed on the fly through a javascript: URL. 
+   */
+function X(cz)
+{
+  for(i in p)
+    b[i]=N[cz?0:255-p[i]];
+  z="#define t_";
+  im=z+"width "+W+"\n"+z+"height "+(H+8)+"\nstatic char t_bits[] = {"+b.join(",")+"}";
+  d.images[0].src=cz==2?"r.gif":"javascript:"+($x++)+";im;"
+}
+
+function tk() /* 'turn': run every 50 ms */
+{
+  if(pz>0)
+  {
+    pz--;
+    return
+  }
+  if(c0-d4<2)
+  {
+    S();
+    return
+  }
+  for(i in $h)
+  {
+    var o=$h[i];
+    if(!o.z)
+    {
+      if(o.c<3)
+      {
+        if($(o.x+o.dx,o.y+o.dy))
+        {
+          o.dx=-o.dx;
+          o.dy=-o.dy
+        }
+        o.x+=o.dx;
+        o.y+=o.dy;
+        M=1
+      }
+      if(!o.i&&ab(o.x-px)<_&&ab(o.y-py)<_)
+      {
+        o.z=1;
+        hl+=(64-hl)/4;
+        cz=1
+      }
+    }
+  }
+  if(U)
+  {
+    $c-=U*RAD;
+    M=1
+  }
+  if(fwd)
+  {
+    var c8=px+fwd*co($c),c9=py+fwd*si($c);
+    if(!$(c8,c9))
+    {
+      px=c8;
+      py=c9;
+      M=1
+    }
+  }
+  if(M)
+  {
+    M=0;
+    rc();
+    var cz,tx=co($c),ty=si($c),$z=sq(tx*tx+ty*ty);
+    for(i in $h)
+    {
+      var o=$h[i],x=o.x-px,y=o.y-py;
+      o.d=sq(x*x+y*y);
+      o.a=m.acos((tx*x+ty*y)/(o.d*$z));
+      if(tx*y-ty*x<0)
+      {
+        o.a=-o.a
+      }
+    }
+    $h.sort(function(a,b){return b.d-a.d});
+    for(i in $h)
+    {
+      var o=$h[i],ht=f(_/o.d*a1),$k=f(d6-ht/2),$l=f(d6+ht/2),pat=o.i?2:3,a9=o.i?5:4;
+      o.l=f(W/2+o.a/R-ht/2);
+      o.r=o.l+ht;
+      if(o.z)
+      {
+        if(o.i)
+        {
+          pat=8;
+          a9=9
+        }
+        else
+          continue
+      }
+      if(o.i&&!d5&&o.c==1&&!o.z&&r()<.05)
+      {
+        hl-=f(r()*8);
+        cz=pz=2;
+        if(hl<0)
+        {
+          d5=1;
+          d6=H/8
+        }
+      }
+      if(o.d>_&&I(pat,a9,$k,o.l,$l,o.r,o.d))
+        o.c=1;
+      else 
+        o.c++
+    }
+    A6(A3,2,H+1);
+    A6(c0-d4-1,26,H+1);
+    if(!d5)
+      I(6,7,H-32,W/2-16,H,W/2+16,0);
+    for(i=0;i<hl;i++)
+      Y(W-2-i,H+3,1);
+    X(cz)
+  }
+}
+function S() /* init/reinit ? */
+{
+  pz=36;
+  A2++;
+  px=py=128;
+  d4=c0=$c=0;
+  p=[].concat(p1);
+  A6(A2,W/2-2,H/2,1);
+  X();
+  w=[];
+  var d1=30+4*A2;
+  while(d1)
+  {
+    x=f(r()*16);
+    y=f(r()*16);
+    if(x*y>4){
+      w[y]=w[y]|1<<x;
+      d1--
+    }
+  }
+  $h=[];
+  i=6+4*A2;
+  while(i)
+  {
+    x=_*(f(r()*12)+2);
+    y=_*(f(r()*12)+2);
+    j=i%8?1:0;
+    if(!$(x,y))
+    {
+      var o=[];
+      o.x=x;
+      o.y=y;
+      o.i=j;
+      k=r()>.5?1:-1;
+      o.dx=j?f(r()*_/4*A2)*k:0;
+      o.dy=j?f(r()*_/4*A2)*k:0;
+      o.z=o.c=0;
+      $h[$h.length]=o;
+      i--;
+      c0+=j
+    }
+  }
+}
+function K(e) /* keydown */
+{
+  Z=nn?e.which:event.keyCode;
+  if(!d5&&Z==32&&!pz)
+  {
+    I(10,10,H-32,W/2-16,H,W/2+16,0,1);
+    X();
+    for(i in $h)
+    {
+      var o=$h[i];
+      if(o.i&&!o.z&&o.l<W/2&&o.r>W/2&&o.c==1)
+      {
+        o.z=1;
+        d4++;
+        A3+=10*(A2+f(o.d/_))
+      }
+    }
+    M=1
+  }
+  Z=Z&223;
+  U=Z==74?12:Z==76?-12:U;
+  if(!d5&&Z==75)fwd=_/3;
+  if(!d5&&Z==77)fwd=-_/3
+}
+function L(e) /* keyup */
+{
+  Z=nn?e.which&223:event.keyCode;
+  if(Z==74||Z==76)U=0;
+  if(Z==75||Z==77)fwd=0
+}
+</SCRIPT>
+<body onload="S();i=window;if(nn){ce=captureEvents;ce(256);ce(512)}else i=d;i.onkeydown=K;i.onkeyup=L;setInterval(tk,50)">
+<img src="a.gif"width=128 height=71 border=1>
+</body>

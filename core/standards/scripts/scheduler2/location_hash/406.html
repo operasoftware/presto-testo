@@ -1,0 +1,44 @@
+<!doctype html>
+<title>Location hash - set hash then go back in history and set hash in one code block - check result after timeout</title>
+<script src="/resources/testharness.js"></script><script src="/resources/testharnessreport.js"></script>
+<script>
+var t = async_test();
+var histlength;
+t.step(function() {
+    if( location.hash && location.hash != '#' ) {
+        location.href = location.href.replace(/#.*$/,'');
+        return;
+    }
+    histlength = history.length;
+});
+
+window.onload = function () {
+    setTimeout(step1, 100);  
+};
+ 
+function step1() {
+    t.step(function() {
+        location.hash = '#foo';
+    });
+    t.step(function() {
+        history.go(-1);
+    });
+    t.step(function() {
+        location.hash = '#bar';
+    });
+    t.step(function() {
+        assert_equals( location.hash, '#bar' );
+        assert_equals( history.length, histlength + 2 );
+    });
+    setTimeout(last_step, 100);  
+}
+
+function last_step() {
+    t.step(function() {
+        assert_equals( location.hash, '#foo' );
+        assert_equals( history.length, histlength + 2 );
+    });
+    t.done();
+}
+</script>
+<div id="log"></div>

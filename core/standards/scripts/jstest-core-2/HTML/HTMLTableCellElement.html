@@ -1,0 +1,26 @@
+<html>
+<head>
+<script src="../testconfig.js"></script>
+<script src="../regression-lib/testbase.js"></script>
+
+<title>DOM 2 HTML Table Cell Element </title>
+</head>
+
+<body>
+<p>
+  <table id="myTable">
+	<thead><tr><td></td></tr></thead>
+	<tfoot><tr><th id="myHead"></th></tr></tfoot>
+	<tbody>
+	  <tr id="myRow">
+	    <td id="myCell">a</td>
+	    <td id="myCell2"  align="right" bgcolor="red" char="-" charoff="1" valign="top"
+		  abbr="kort" axis="myCell" colspan="2" headers="myHead" height="20" nowrap="true" rowspan="2" scope="col" width="4%">b</td>
+	  </tr>
+	</tbody>
+  </table>
+</p>
+
+<script src="scripts/htmltablecellelement.js"></script>
+</body>
+</html>

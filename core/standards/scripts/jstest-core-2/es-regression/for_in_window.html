@@ -1,0 +1,30 @@
+<head>
+<script>
+function dotest()
+{
+  var s = "";
+  var k = 0;
+  var nfound = 0;
+  for (var i in window.frames[0])
+  {
+    ++k;
+    s = " " + s + i;
+    switch (i)
+    {
+    case "foo" : nfound |= 4; break;
+    case "bar" : nfound |= 2; break;
+    case "baz" : nfound |= 1; break;
+    }
+  }
+  if (nfound != 7)
+      alert( "TEST FAILED!\n" + k + s );
+  else
+      alert( "TEST SUCCEEDED!\n" );
+}
+</script>
+</head>
+
+<frameset onload="dotest()">
+<frame src=for_in_window2.html></frame>
+</frameset>
+

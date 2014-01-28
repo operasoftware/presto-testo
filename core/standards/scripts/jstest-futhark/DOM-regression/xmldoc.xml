@@ -1,0 +1,9 @@
+<xml xmlns:html="http://www.w3.org/1999/xhtml" xmlns:bogus="http://www.bogus.com/spec">
+<html:DIV id="div1">Heisann!</html:DIV>
+<bogus:taggen xml:id="taggen1" bogus:battr="Joho" />
+<bogus:taggen xml:id="taggen2" html:ALIGN="CENTER" />
+<address xml:id="taggen3" />
+<html:span id="my-span">Split
+Text</html:span>
+<html:span id="last-element"/>
+</xml>

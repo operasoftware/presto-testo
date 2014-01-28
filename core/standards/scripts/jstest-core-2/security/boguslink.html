@@ -1,0 +1,46 @@
+<!-- Test: Executable content with FILE: privilege can be injected
+       into JS console and can be used to read other content with
+       FILE: privilege
+
+     2003-02-06 / lth
+
+     Reported by GrayMagic (no known public advisory)
+
+     Using opera.postError it is possible to post text to the console
+     that is interpreted as a URL and therefore is clickable, but also
+     executes a payload of trojan code.  This attack takes advantage
+     of the specific code in the console and the way quoting of text
+     is (not) done.
+
+     The attack requires a user to click on a strange-looking link in
+     the console for the payload to be executed; the payload is
+     visible in the link, so the user should be suspicious.  However,
+     the payload can be concealed in a containing page, so an attack
+     is not completely outlandish.
+
+     This page tests whether the quoting is done correctly to avoid
+     this attack.
+
+     -->
+
+<html>
+
+<head>
+<title>Console intermediary attack II</title>
+</head>
+
+<body>
+<p>This page posts three error messages to the JS console.  Click on
+each of them in turn; you should see no alert boxes popping up.  (The
+third was never a problem but is there to demonstrate that it is not a
+problem.  The other two were broken in Opera 7.00 and Opera 7.01 on
+Windows.)</p>
+
+<script>
+opera.postError("http://');alert(location.href)");
+opera.postError("http://&apos;);alert(location.href)");
+opera.postError("http://&amp;apos;);alert(location.href)");
+</script>
+</body>
+
+</html>

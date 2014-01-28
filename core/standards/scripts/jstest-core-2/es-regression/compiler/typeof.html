@@ -1,0 +1,15 @@
+<title>Compiler test: typeof</title>
+
+<p>Should print "It's undefined, Jim.".</p>
+<pre>
+<script>
+function f()
+{
+  if (typeof(foo) == "string")
+    document.writeln("not likely");
+  else
+    document.writeln("It's undefined, Jim.");
+}
+f();
+</script>
+</pre>

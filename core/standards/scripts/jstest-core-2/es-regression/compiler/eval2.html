@@ -1,0 +1,24 @@
+<html>
+
+<head>
+<title>Compiler test: eval</title>
+</head>
+
+<body>
+
+<p>Should print "torry.pedersen@vg.no (Pedersen, Torry)".</p>
+
+<pre>
+<script>
+// This really tests that arguments are passed in the right order to functions
+// with reified environments...
+function mt(ar, na) // vg.no
+{
+  return eval('String.fromCharCode(' + ar + ')') + ' (' + na + ')';
+}
+document.writeln( mt('116,111,114,114,121,46,112,101,100,101,114,115,101,110,64,118,103,46,110,111', 'Pedersen, Torry') );
+</script>
+</pre>
+
+</body>
+</html>

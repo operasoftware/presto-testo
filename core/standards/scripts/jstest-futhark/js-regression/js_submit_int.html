@@ -1,0 +1,58 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/REC-html401/strict.dtd">
+<!--
+   Created by torstein@opera.com
+-->
+<html>
+   <head>
+      <title>Submit Object Test - Interactive</title>
+      <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+      <script type="text/javascript" src="../regression-lib/testbase.js"></script>
+      <script type="text/javascript" src="scripts/js_submit_int.js"></script>
+   </head>
+   <body>
+      <h1>Submit Object Test - Interactive</h1>
+      <script type="text/javascript">showred( cvs );</script>
+      <p>
+         The popup window is for reports from the different event
+         handlers. Click the links below and test the key event handlers
+         by entering something in the submitfield.
+         onblur, onclick, onfocus.
+      </p>
+      <ol>
+         <li>
+            onblur(): When a form element loses focus or when a
+            window or frame loses focus.
+         </li>
+         <li>
+            onclick(): When the form object is clicked. 
+         </li>
+         <li>
+            onfocus(): When someone clicks or uses the TAB to get
+            focus in the form element.
+         </li>
+      </ol>
+      <form id="theform" name="theform">
+         <div>
+            <input id="thesubmit" name="thesubmit"
+                   type="submit"
+                   onblur="reportEvent( 'onblur' );"
+                   onclick="reportEvent( 'onclick' );"
+                   onfocus="reportEvent( 'onfocus' );" 
+                   value="This is Submit value!"
+            >
+         </div>
+      </form>
+      <h2>User interaction</h2>
+      <ol>
+         <li>
+            <a href="javascript:testClickMethod();">Click the submit button</a>
+         </li>
+         <li>
+            <a href="javascript:testBlurMethod();">Remove focus from the button (&nbsp;if it has focus&nbsp;)</a>
+         </li>
+         <li>
+            <a href="javascript:testFocusMethod();">Get focus on the submit button</a>
+         </li>
+      </ol>
+   </body>
+</html>

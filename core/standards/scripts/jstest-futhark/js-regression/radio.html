@@ -1,0 +1,26 @@
+<html>
+<head>
+<script src="../regression-lib/testbase.js"></script>
+<script>
+</script>
+<link rel="stylesheet" type="text/css" href="../styles/mystyle.css" media="screen" />
+
+</head>
+<body>
+<form name="f">
+<input name="r" type=radio checked>
+<input name="r" type=radio>
+<input name="r" type=radio>
+</form>
+
+<script>
+show( document.f.r );
+show( document.f.r.length );
+if (spoofingExplorer()) {
+  show( document.all["r"] );
+  show( document.all["r"].length );
+}
+</script>
+
+</body>
+</html>

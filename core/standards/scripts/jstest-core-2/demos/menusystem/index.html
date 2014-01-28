@@ -1,0 +1,60 @@
+<html>
+  <head>
+    <title>Demo menu system</title>
+  </head>
+
+  <body>
+    <h2>Demo menu system</h2>
+    <p>
+      This is a rather straight forward menu system, which can be configured
+      to use various DHTML features to create the HTML for the menus and for
+      handling events.
+    </p>
+    <h2>Author</h2>
+    <p>
+      Jens Lindstr&ouml;m <a href="mailto:jl@opera.com">&lt;jl@opera.com&gt;</a> 
+      wrote this. It's quite possible that there are bugs in the menu system.
+      If you find one, please report it.
+    </p>
+    <h2>Versions</h2>
+    <p>
+      There are three versions:
+      <dl>
+        <dt><a href="menusystem-document.write.html">menusystem-document.write.html</a></dt>
+        <dd>
+          Uses document.write to create the HTML and registers event handlers
+          using HTML attributes (<... onclick="...">).  Works in Opera 6, but doesn't
+          look so nice.
+        </dd>
+
+        <dt><a href="menusystem-innerHTML.html">menusystem-innerHTML.html</a></dt>
+        <dd>
+          Uses innerHTML and insertAdjacentHTML to create the HTML and registers 
+          event handlers by assigning to event properties (element.onlick = ...).
+        </dd>
+
+        <dt><a href="menusystem-dom2.html">menusystem-dom2.html</a></dt>
+        <dd>
+          Uses createElement, createTextNode and appendChild to create the HTML and
+          registers event handlers using addEventListener.
+        </dd>
+     </p>
+     <p>
+       The three versions only differ in assignments to properties on a global object
+       'features' which controls how the code in <a href="menusystem.js">menusystem.js</a>
+       behaves. The different possible configurations are documented in the beginning
+       of <a href="menusystem.js">menusystem.js</a>.
+     </p>
+     <h2>Known problems</h2>
+     <p>
+       The document.write-based example doesn't work (it is probably the registering of
+       event handlers as HTML attributes that doesn't work). The problem causes an alert
+       to be displayed with an error message in.
+     </p>
+     <p>
+       If you are using MSIE for some reason, you need to add "features.MSIE_compatible = true;"
+       somewhere, as MSIE's event objects are a bit limited. That should work with Opera too,
+       and possibly with Mozilla.
+     </p>
+  </body>
+</html>

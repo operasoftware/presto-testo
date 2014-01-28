@@ -1,0 +1,47 @@
+<html>
+<head>
+<script src="reportresult.js"></script>
+<script>
+var a, d1, d2;
+
+function getNextSibling(n)
+{
+    for (var i = 0; i < n; i++)
+    {
+	a = d2.nextSibling;
+    }
+    return "Done";
+}
+
+function createElements()
+{
+	d1 = document.createElement("div");
+	document.body.appendChild(d1);
+
+	for (var i = 0; i < 5; i++)	
+	{
+		if (i == 3)
+		{
+			d2 = document.createElement("span");
+			d1.appendChild (d2);
+		}
+		else
+		{
+			d1.appendChild (document.createElement("span"));
+		}
+	}
+}
+</script>
+</head>
+
+<body>
+<script>
+createElements();
+var before = new Date();
+var result = getNextSibling(1000000);
+var after = new Date();
+document.writeln( [ result, after - before ] + '<br>' );
+reportresult( "nextSibling", after-before );
+</script>
+</body>
+</html>

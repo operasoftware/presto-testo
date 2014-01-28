@@ -1,0 +1,84 @@
+<html>
+<head>
+<title>DOM tests -- CSS2 interface</title>
+</head>
+
+<body>
+
+<!-- All the HTML elements below this line are used by the tests -->
+
+<div style='margin: 1em; border: thin dashed blue'>
+<div id='a' style='border: thin solid black'>
+The maximum<br/>
+height of<br/>
+this box<br/>
+should be<br/>
+no more<br/>
+than 100px.
+</div>
+</div>
+
+<div style='margin: 1em; border: thin dashed blue'>
+<div id='b' style='border: thin solid red; max-height: 3cm'>
+The maximum<br/>
+height of<br/>
+this box<br/>
+should be<br/>
+no more<br/>
+than 3cm.
+</div>
+</div>
+
+<div style='margin: 1em; border: thin dashed blue'>
+<div id='c' style='border: thin solid black'>
+No max-height set
+</div>
+</div>
+
+<!-- All the HTML elements above this line are used by the tests -->
+
+
+<script src="../../regression-lib/testbase.js"></script>
+<script>
+/* Regression tests for Opera's handling of the DOM 2 CSS2 interface
+ *
+ * 2002-04-11 / stighal
+ */
+
+var cvs = "$Id: max-height.html 10655 2006-12-18 15:47:57Z hallvord $";
+
+testmodule( "CSS2 interface", cvs );
+
+var a, b, c;
+
+try {
+a = document.getElementById("a");
+b = document.getElementById("b");
+c = document.getElementById("c");
+
+testcase( "Reading properties" );
+
+test('getting max-height from a with nothing specified', a.style.maxHeight, "");
+test('getting max-height from b with "3cm" specified', b.style.maxHeight, "3cm");
+
+testcase( "Setting properties" );
+
+a.style.maxHeight = "100px";
+test('reading max-height on a set by script to "100px"', a.style.maxHeight, "100px");
+
+testcase( "Negative tests" );
+
+c.style.maxHeight = "foo";
+test('reading max-height on a set by script to foo (illegal)', c.style.maxHeight, "");
+
+c.style.maxHeight = "outset";
+test('reading max-height on a set by script to outset (illegal keyword)', c.style.maxHeight, "");
+
+} catch (e) { exception( e ); }
+
+testmodule_finished();
+
+</script>
+
+</body>
+</html>

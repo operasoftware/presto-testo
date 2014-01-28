@@ -1,0 +1,8 @@
+<!doctype html>
+<iframe id="test"></iframe>
+<script>
+function load() {
+  opener.gTestsuite.start_callback(document.getElementById("test"))
+}
+document.addEventListener("DOMContentLoaded", load, false);
+</script>

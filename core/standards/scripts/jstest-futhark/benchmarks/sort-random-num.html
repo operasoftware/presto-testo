@@ -1,0 +1,73 @@
+<!-- -*- mode: c++ -*-
+
+     Sort benchmark: randomize an array of numbers and then sort it,
+     using a precompiled random schedule (to avoid math overhead),
+     and subtracting randomization overhead.
+
+     Adapted from http://umsu.de/jsperf/index2.php
+     2004-11-11 / lth -->
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+<title>Sort benchmark: Randomized array of numbers</title>
+</head>
+<body>
+<script src="reportresult.js"></script>
+<script>
+function randomize(a,schedule)
+{
+    var len = a.length;
+    for (var i=0 ; i < len ; i++)
+    {
+	var tmp = a[i];
+	var j = schedule[i];
+	a[i] = a[j];
+	a[j] = tmp;
+    }
+}
+
+function sort_test(a,loops,random_schedule,do_sort) 
+{
+    for (var i=0; i<loops; i++)
+    {
+	randomize(a,random_schedule);
+	if (do_sort)
+	    a.sort();
+    }
+    return "Done";
+}
+
+function make(len)
+{
+    var a = new Array();
+    for (var i=0; i<len; i++) 
+	a[i] = i*33;
+    return a;
+}
+
+var arraylen=1000;
+var iter=100;
+
+var random_schedule = new Array();
+for ( i=0 ; i < arraylen ; i++ )
+    random_schedule = Math.floor(Math.random()*arraylen);
+
+var before = new Date();
+var result = sort_test(make(arraylen),iter,random_schedule,false);
+var after = new Date();
+var random_time = after - before;
+
+var before = new Date();
+var result = sort_test(make(arraylen),iter,random_schedule,true);
+var after = new Date();
+
+document.writeln( new Array( result, after - before ) + '<br>' );
+
+reportresult( "randomize and then sort array[" + arraylen + " ] of strings " + iter + " times", 
+	      after-before-random_time );
+</script>
+</body>
+</html>
+

@@ -1,0 +1,68 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/REC-html401/strict.dtd">
+<!--
+   Created by torstein@opera.com
+-->
+<html>
+   <head>
+      <title>Document Object Test - Interactive</title>
+      <script type="text/javascript" src="../regression-lib/testbase.js"></script>
+      <script type="text/javascript" src="scripts/js_document_int.js"></script>
+   </head>
+   <body onclick="reportEvent( 'onclick' );"
+         ondblclick="reportEvent( 'ondblclick' );"
+         onkeydown="reportEvent( 'onkeydown' );"
+         onkeypress="reportEvent( 'onkeypress' );"
+         onkeyup="reportEvent( 'onkeyup' );"
+         onmousedown="reportEvent( 'onmousedown' );"
+         onmouseup="reportEvent( 'onmouseup' );"
+   >
+      <h1>Document Object Test - Interactive</h1>
+      <script type="text/javascript">showred( cvs );</script>
+      <p>
+         The popup window is for reportrs from the different event
+         handlers.  
+      </p>
+      <form action="">
+         <input type="button" />
+      </form>
+      <h2>User interaction</h2>
+      <h3>Event Handlers</h3>
+      <ol>
+         <li>onclick, when an object on a form is clicked. Click the button.</li>
+         <li>
+            ondblclick, when the user double-clicks a form element or a link.
+            Try double clicking on the button.
+         </li>
+         <li>
+            onkeydown, onkeypress, onkeyup. Press a key, e.g. 'd' in Opera to
+            go to the next block of text. The event handlers should trigger in
+            the order listed here.
+         </li>
+         <li>onmousedown, when you press your mousebutton.</li>
+         <li>onmouseup, when you let go of your mousebutton.</li>
+      </ol>
+      <h3>Methods not properly tested in non-interactive part</h3>
+      <ol>
+         <li>
+            <a href="javascript:testOpenMethod( self )">open()</a>. Click here to
+            open a window...
+         </li>
+         <li>
+            ...click here to stop it from loading  
+            <a href="javascript:testStopMethod()">stop()</a>. 
+         </li>
+         <li>
+            ...and close it again by clicking  
+            <a href="javascript:testCloseMethod()">close()</a>. 
+         </li>
+         <li>
+            <a href="javascript:testWriteMethod()">write()</a>. Click here to
+            write "Hello world 37" on the screen using write().
+         </li>
+         <li>
+            <a href="javascript:testWritelnMethod()">writeln()</a>. Click here to
+            write "Hello world 37" on the screen using writeln().
+         </li>
+      </ol>
+   </body>
+</html>

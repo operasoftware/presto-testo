@@ -1,0 +1,46 @@
+th{
+	text-align: left;
+	background: #ccc;
+	}
+td{white-space: pre}
+
+.peaceAndHarmony td{
+	background-color: #080;
+	border: thin solid #080;
+	color: #fff;
+}
+.oddOneOut td{
+	background-color: #9f9;
+	border: thin solid #080;
+	color: #050;
+}
+
+.oddOneOut .theOddOne{
+	background-color: #800;
+	border: thin solid #800;
+	color: #fff;
+}
+
+.wellAtLeastTwoOfThemDidTheSameThing td{
+		background-color: #fff;
+	border: thin solid #000;
+}
+.wellAtLeastTwoOfThemDidTheSameThing .theTwoSome{
+	background-color: #9f9;
+}
+.totalChaos td{
+	background-color: #800;
+	border: thin solid #000;
+	color: #fff;
+
+}
+td.fail{
+	background-image: URL( 'fail.jpg' );
+	background-position: top right;
+	background-repeat: no-repeat;
+	}
+td.pass{
+	background-image: URL( 'pass.jpg' );
+	background-position: top right;
+	background-repeat: no-repeat;
+	}

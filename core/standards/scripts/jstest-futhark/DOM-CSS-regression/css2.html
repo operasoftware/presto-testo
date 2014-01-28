@@ -1,0 +1,245 @@
+<html>
+<head>
+<title>DOM tests -- CSS2 interface</title>
+<style>
+#ingress {
+  border: 3px solid #afa;
+  background-color: #cfc;
+  margin: 1em;
+  padding: 1em;
+}
+
+#generalTests {
+  border: 3px solid #faa;
+  background-color: #fcc;
+  margin: 1em;
+  padding: 1em;
+}
+
+#propertyTests {
+  border: 3px solid #faa;
+  background-color: #fcc;
+  margin: 1em;
+  padding: 1em;
+}
+
+.tests {
+  width: 90%;
+}
+
+.tests TD {
+  vertical-align: top;
+}
+
+.heading {
+ font-weight: bold;
+}
+
+.source {
+ white-space: pre;
+ font-family: Courier New, monospace;
+}
+</style>
+<script type="text/javascript">
+var path_prefix = document.location.href.substr(0, document.location.href.lastIndexOf("/") + 1);
+
+document.write("<style>\na[href=\"" + path_prefix + "stylescripts/not_supported.html\"] {\n color: #aaa;\n}\n</style>");
+document.close();
+</script>
+</head>
+
+<body>
+
+<h2>DOM 2 - CSS2 Interface</h2>
+
+<div id='ingress'>
+These tests are written to verify that Opera supports the CSS2 Interface of DOM 2.<br/>
+The CSS2 Interface is accessed throught the ElementCSSInlineStyle
+Interface of DOM 2, that is through the style attribute of
+HTML-elements like this:<br/>
+
+<div class='source'>
+  document.getElementById("someid").style.color = "red";
+</div>
+</div>
+
+<h3>General tests</h3>
+<div id='generalTests'>
+<a href=''>Some general test</a>
+</div>
+
+<h3>All Properties</h3>
+<div id='propertyTests'>
+  <table class='tests'>
+  <tr>
+    <td>
+      <span class='heading'>Background</span><br/>
+      <a href='stylescripts/background.html'>background</a><br/>
+      <a href='stylescripts/background-attachment.html'>backgroundAttachment</a><br/>
+      <a href='stylescripts/background-color.html'>backgroundColor</a><br/>
+      <a href='stylescripts/background-image.html'>backgroundImage</a><br/>
+      <a href='stylescripts/background-position.html'>backgroundPosition</a><br/>
+      <a href='stylescripts/background-repeat.html'>backgroundRepeat</a><br/><br/>
+
+      <span class='heading'>Border</span><br/>
+      <a href='stylescripts/border.html'>border</a><br/>
+      <a href='stylescripts/border-bottom.html'>borderBottom</a><br/>
+      <a href='stylescripts/border-bottom-color.html'>borderBottomColor</a><br/>
+      <a href='stylescripts/border-bottom-style.html'>borderBottomStyle</a><br/>
+      <a href='stylescripts/border-bottom-width.html'>borderBottomWidth</a><br/>
+      <a href='stylescripts/border-collapse.html'>borderCollapse</a><br/>
+      <a href='stylescripts/border-color.html'>borderColor</a><br/>
+      <a href='stylescripts/border-left.html'>borderLeft</a><br/>
+      <a href='stylescripts/border-left-color.html'>borderLeftColor</a><br/>
+      <a href='stylescripts/border-left-style.html'>borderLeftStyle</a><br/>
+      <a href='stylescripts/border-left-width.html'>borderLeftWidth</a><br/>
+      <a href='stylescripts/border-right.html'>borderRight</a><br/>
+      <a href='stylescripts/border-right-color.html'>borderRightColor</a><br/>
+      <a href='stylescripts/border-right-style.html'>borderRightStyle</a><br/>
+      <a href='stylescripts/border-right-width.html'>borderRightWidth</a><br/>
+      <a href='stylescripts/border-spacing.html'>borderSpacing</a><br/>
+      <a href='stylescripts/border-style.html'>borderStyle</a><br/>
+      <a href='stylescripts/border-top.html'>borderTop</a><br/>
+      <a href='stylescripts/border-top-color.html'>borderTopColor</a><br/>
+      <a href='stylescripts/border-top-style.html'>borderTopStyle</a><br/>
+      <a href='stylescripts/border-top-width.html'>borderTopWidth</a><br/>
+      <a href='stylescripts/border-width.html'>borderWidth</a><br/><br/>
+    </td>
+
+    <td>
+      <span class='heading'>Box</span><br/>
+      <a href='stylescripts/bottom.html'>bottom</a><br/>
+      <a href='stylescripts/clear.html'>clear</a><br/>
+      <a href='stylescripts/clip.html'>clip</a><br/>
+      <a href='stylescripts/float.html'>cssFloat</a><br/>
+      <a href='stylescripts/display.html'>display</a><br/>
+      <a href='stylescripts/height.html'>height</a><br/>
+      <a href='stylescripts/left.html'>left</a><br/>
+      <a href='stylescripts/margin.html'>margin</a><br/>
+      <a href='stylescripts/margin-bottom.html'>marginBottom</a><br/>
+      <a href='stylescripts/margin-left.html'>marginLeft</a><br/>
+      <a href='stylescripts/margin-right.html'>marginRight</a><br/>
+      <a href='stylescripts/margin-top.html'>marginTop</a><br/>
+      <a href='stylescripts/max-height.html'>maxHeight</a><br/>
+      <a href='stylescripts/max-width.html'>maxWidth</a><br/>
+      <a href='stylescripts/min-height.html'>minHeight</a><br/>
+      <a href='stylescripts/min-width.html'>minWidth</a><br/>
+      <a href='stylescripts/overflow.html'>overflow</a><br/>
+      <a href='stylescripts/padding.html'>padding</a><br/>
+      <a href='stylescripts/padding-bottom.html'>paddingBottom</a><br/>
+      <a href='stylescripts/padding-left.html'>paddingLeft</a><br/>
+      <a href='stylescripts/padding-right.html'>paddingRight</a><br/>
+      <a href='stylescripts/padding-top.html'>paddingTop</a><br/>
+      <a href='stylescripts/position.html'>position</a><br/>
+      <a href='stylescripts/right.html'>right</a><br/>
+      <a href='stylescripts/top.html'>top</a><br/>
+      <a href='stylescripts/visibility.html'>visibility</a><br/>
+      <a href='stylescripts/vertical-align.html'>verticalAlign</a><br/>
+      <a href='stylescripts/width.html'>width</a><br/>
+      <a href='stylescripts/z-index.html'>zIndex</a><br/>
+    </td>
+
+    <td>
+      <span class='heading'>Font</span><br/>
+      <a href='stylescripts/font.html'>font</a><br/>
+      <a href='stylescripts/font-family.html'>fontFamily</a><br/>
+      <a href='stylescripts/font-size.html'>fontSize</a><br/>
+      <a href='stylescripts/not_supported.html'>fontSizeAdjust</a><br/>
+      <a href='stylescripts/not_supported.html'>fontStretch</a><br/>
+      <a href='stylescripts/font-style.html'>fontStyle</a><br/>
+      <a href='stylescripts/font-variant.html'>fontVariant</a><br/>
+      <a href='stylescripts/font-weight.html'>fontWeight</a><br/><br/>
+
+      <span class='heading'>Generated</span><br/>
+      <a href='stylescripts/content.html'>content</a><br/>
+      <a href='stylescripts/counter-increment.html'>counterIncrement</a><br/>
+      <a href='stylescripts/counter-reset.html'>counterReset</a><br/>
+      <a href='stylescripts/quotes.html'>quotes</a><br/><br/>
+
+      <span class='heading'>Page</span><br/>
+      <a href='stylescripts/not_supported.html'>marks</a><br/>
+      <a href='stylescripts/orphans.html'>orphans</a><br/>
+      <a href='stylescripts/page.html'>page</a><br/>
+      <a href='stylescripts/page-break-after.html'>pageBreakAfter</a><br/>
+      <a href='stylescripts/page-break-before.html'>pageBreakBefore</a><br/>
+      <a href='stylescripts/page-break-inside.html'>pageBreakInside</a><br/>
+      <a href='stylescripts/size.html'>size</a><br/>
+      <a href='stylescripts/widows.html'>widows</a><br/><br/>
+    </td>
+
+    <td>
+      <span class='heading'>Tables</span><br/>
+      <a href='stylescripts/caption-side.html'>captionSide</a><br/>
+      <a href='stylescripts/empty-cells.html'>emptyCells</a><br/>
+      <a href='stylescripts/list-style.html'>listStyle</a><br/>
+      <a href='stylescripts/list-style-image.html'>listStyleImage</a><br/>
+      <a href='stylescripts/list-style-position.html'>listStylePosition</a><br/>
+      <a href='stylescripts/list-style-type.html'>listStyleType</a><br/>
+      <a href='stylescripts/not_supported.html'>markerOffset</a><br/>
+      <a href='stylescripts/table-layout.html'>tableLayout</a><br/>
+
+      <span class='heading'>Text</span><br/>
+      <a href='stylescripts/color.html'>color</a><br/>
+      <a href='stylescripts/direction.html'>direction</a><br/>
+      <a href='stylescripts/letter-spacing.html'>letterSpacing</a><br/>
+      <a href='stylescripts/line-height.html'>lineHeight</a><br/>
+      <a href='stylescripts/text-align.html'>textAlign</a><br/>
+      <a href='stylescripts/text-decoration.html'>textDecoration</a><br/>
+      <a href='stylescripts/text-indent.html'>textIndent</a><br/>
+      <a href='stylescripts/not_supported.html'>textShadow</a><br/>
+      <a href='stylescripts/text-transform.html'>textTransform</a><br/>
+      <a href='stylescripts/unicode-bidi.html'>unicodeBidi</a><br/>
+      <a href='stylescripts/white-space.html'>whiteSpace</a><br/>
+      <a href='stylescripts/word-spacing.html'>wordSpacing</a><br/>
+
+      <span class='heading'>UI</span><br/>
+      <a href='stylescripts/cursor.html'>cursor</a><br/>
+      <a href='stylescripts/outline.html'>outline</a><br/>
+      <a href='stylescripts/outline-color.html'>outlineColor</a><br/>
+      <a href='stylescripts/outline-style.html'>outlineStyle</a><br/>
+      <a href='stylescripts/outline-width.html'>outlineWidth</a><br/>
+    </td>
+
+    <td>
+      <span class='heading'>Speach</span><br/>
+      <a href='stylescripts/not_supported.html'>azimuth</a><br/>
+      <a href='stylescripts/cue.html'>cue</a><br/>
+      <a href='stylescripts/cue-after.html'>cueAfter</a><br/>
+      <a href='stylescripts/cue-before.html'>cueBefore</a><br/>
+      <a href='stylescripts/not_supported.html'>elevation</a><br/>
+      <a href='stylescripts/pause.html'>pause</a><br/>
+      <a href='stylescripts/pause-after.html'>pauseAfter</a><br/>
+      <a href='stylescripts/pause-before.html'>pauseBefore</a><br/>
+      <a href='stylescripts/xv-voice-pitch.html'>pitch (*)</a><br/>
+      <a href='stylescripts/not_supported.html'>pitchRange</a><br/>
+      <a href='stylescripts/not_supported.html'>playDuring</a><br/>
+      <a href='stylescripts/not_supported.html'>richness</a><br/>
+      <a href='stylescripts/speak.html'>speak</a><br/>
+      <a href='stylescripts/not_supported.html'>speakHeader</a><br/>
+      <a href='stylescripts/not_supported.html'>speakNumeral</a><br/>
+      <a href='stylescripts/not_supported.html'>speakPunctuation</a><br/>
+      <a href='stylescripts/xv-voice-rate.html'>speechRate (*)</a><br/>
+      <a href='stylescripts/not_supported.html'>stress</a><br/>
+      <a href='stylescripts/voice-family.html'>voiceFamily</a><br/>
+      <a href='stylescripts/xv-voice-volume.html'>volume (*)</a><br/>
+      <a href='stylescripts/xv-phonemes.html'>xvPhonemes</a><br/>
+      <a href='stylescripts/xv-voice-pitch.html'>xvVoicePitch</a><br/>
+      <a href='stylescripts/xv-voice-pitch-range.html'>xvVoicePitchRange</a><br/>
+      <a href='stylescripts/xv-voice-rate.html'>xvVoiceRate</a><br/>
+      <a href='stylescripts/xv-voice-stress.html'>xvVoiceStress</a><br/>
+      <a href='stylescripts/xv-voice-volume.html'>xvVoiceVolume</a><br/><br/>
+
+      (*) Mapped to <br />coresponding xv*<br /> value
+    </td>
+  </tr>
+  </table>
+
+</div>
+
+<hr/>
+
+Nice colors and tests by 5716h4L@0p3r4.c0m
+
+</body>
+</html>
+

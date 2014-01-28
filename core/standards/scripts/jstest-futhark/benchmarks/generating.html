@@ -1,0 +1,33 @@
+<html>
+<head>
+<script>
+function tag(x,end) { return "<" + (end?"/":"") + x + ">"; }
+var nested = 0;
+var indent = "";
+var HTML = tag("SCRIPT") + "  generate_some_html();  " + tag("SCRIPT",true);
+
+function spew( s )
+{
+  for ( var i=0 ; i < s.length ; i++ )
+    document.write( s.charAt(i) );
+  document.writeln();
+}
+
+function generate_some_html()
+{
+  var dent = indent;
+  indent = indent + "  ";
+  spew( dent + "IN\n" );
+  if (nested++ < 10)
+    spew( HTML );
+  spew( dent + "OUT\n" );
+}
+</script>
+<body>
+<pre>
+<script>
+generate_some_html();
+</script>
+</pre>
+</body>
+</html>

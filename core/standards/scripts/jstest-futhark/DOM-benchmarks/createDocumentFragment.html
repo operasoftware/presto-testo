@@ -1,0 +1,17 @@
+<script src="reportresult.js"></script>
+<script>
+function createDF(n)
+{
+    for ( var i=0 ; i < n ; i++ )
+    {
+	document.createDocumentFragment();
+    }
+    return "Done";
+}
+
+var before = new Date();
+var result = createDF(100000);
+var after = new Date();
+document.writeln( [ result, after - before ] + '<br>' );
+reportresult( "createDocumentFragment", after-before );
+</script>

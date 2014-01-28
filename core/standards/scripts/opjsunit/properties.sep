@@ -1,0 +1,452 @@
+(Global
+  (this)
+  (instance
+    (value
+     NaN
+     Infinity
+     undefined)
+     (function
+     (eval (args (string noconvert)) (length 1))
+     (parseInt (args string int32) (length 2))
+     (parseFloat (args string) (length 1))
+     (isNaN (args number) (length 1))
+     (isFinite (args number) (length 1))
+     (decodeURI (args string) (length 1))
+     (decodeURIComponent (args string) (length 1))
+     (encodeURI (args string) (length 1))
+     (encodeURIComponent (args string) (length 1))
+     )
+     (constructor
+     Object
+     Function
+     Array
+     String
+     Boolean
+     Number
+     Date
+     RegExp
+     Error
+     EvalError
+     RangeError
+     ReferenceError
+     SyntaxError
+     TypeError
+     URIError)
+     (other
+      Math
+      (JSON (implemented false))
+     )
+  )
+)
+(Object
+ ({})
+ (constructor 
+    (value
+     prototype)
+    (function
+     (getPrototypeOf (args (object noconvert)) (length 1) (implemented false))
+     (getOwnPropertyDescriptor (args (object noconvert) string) (length 2) (implemented false))
+     (getOwnPropertyNames (args (object noconvert)) (length 1) (implemented false))
+     (create (args (object noconvert) object) (length 2) (implemented false))
+     (defineProperty (args (object noconvert) string (object noconvert)) (length 3) (implemented false))
+     (defineProperties (args (object noconvert) object) (length 2) (implemented false))
+     (seal (args (object noconvert)) (length 1) (implemented false))
+     (freeze (args (object noconvert)) (length 1) (implemented false))
+     (preventExtensions (args (object noconvert)) (length 1) (implemented false))
+     (isSealed (args (object noconvert)) (length 1) (implemented false))
+     (isFrozen (args (object noconvert)) (length 1) (implemented false))
+     (isExtensible (args (object noconvert)) (length 1) (implemented false))
+     (keys (args (object noconvert)) (length 1) (implemented false))
+    )
+    (prototype
+      (function
+       (toString (length 0))
+       (toLocaleString (get toString) (length 0))
+       (valueOf (length 0))
+       (hasOwnProperty (args string) (length 1))
+       (isPrototypeOf (args (object noconvert)) (length 1))
+       (propertyIsEnumerable (args string) (getown *)) (length 1))
+     )
+  )
+)
+(Function
+  ("new Function()")
+  (constructor
+    (value
+    prototype
+    length)
+    (prototype
+      (value
+       constructor)
+      (function
+       (toString (length 0))
+       (apply (args object (object noconvert)) (length 2))
+       (call (args object (any repeated)) (length 1))
+       (bind (args function (any repeated)) (length 1) (implemented false))
+      ) 
+    )
+  )
+  (instance
+    (value
+     length
+     prototype)
+  )
+)
+(Array
+  ("new Array(1,2,3)" [1,2,3])
+  (constructor
+    (value
+     prototype
+     length)
+    (function
+     isArray)
+    (prototype
+     (value
+      constructor)
+     (function
+      (toString (get join) generic (length 0))
+      (toLocaleString (get [[index]]) generic (length 0))
+      (concat (args (any repeated)) (get length [[index]]) generic (length 1))
+      (join (args string) (get length [[index]]) generic (length 1))
+      (pop (get length [[index]]) (set length) (delete [[index]]) generic (length 0))
+      (push (args any) (get length) (set [[index]] length) generic (length 1))
+      (reverse (get length [[index]]) (set [[index]]) (delete [[index]]) generic (length 0))
+      (shift (get length [[index]]) (set length [[index]]) generic (length 0))
+      (slice (args int int) (get length [[index]]) generic (length 2))
+      (sort (args function) (get length [[index]]) (set [[index]]) generic (length 1))
+      (splice (args int int (any repeated)) (get length [[index]]) (delete [[index]]) (set [[index]] length) generic (length 2))
+      (unshift (args (any repeated)) (get length [[index]]) (set [[index]] length) generic (length 1))
+      (indexOf (args any int32) (get length [[index]]) generic (length 2))
+      (lastIndexOf (args any int32) (get length [[index]]) generic (length 2))
+      (every (args function object) (get length [[index]]) generic (length 2))
+      (some (args function object) (get length [[index]]) generic (length 2))
+      (forEach (args function object) (get length [[index]]) generic (length 2))
+      (map (args function object) (get length [[index]]) generic (length 2))
+      (filter (args function object) (get length [[index]]) generic (length 2))
+      (reduce (args function any) (get length [[index]]) generic (length 2))
+      (reduceRight (args function any) (get length [[index]]) generic (length 2))
+      )
+    )
+ )
+ (instance
+    (value
+     length
+     [[index]]
+    )
+ )
+)
+(String
+  ("new String('abc')" '"abc"')
+  (constructor
+    (value
+     prototype
+     fromCharCode
+     length) 
+     (prototype
+       (value
+        constructor)
+       (function
+        (toString (length 0))
+        (valueOf (length 0))
+        (charAt (args int) generic (length 1))
+        (charCodeAt (args int) generic (length 1))
+        (concat (args (string repeated)) generic (length 1))
+        (indexOf (args string int) generic (length 1))
+        (lastIndexOf (args string int) generic (length 1))
+        (localeCompare (args string) generic (length 1))
+        (match (args (multi regexp string)) generic (length 1))
+        (replace (args (multi regexp string) (multi function string)) generic (length 2))
+        (search (args (multi regexp string)) generic (length 1))
+        (slice (args int int) generic (length 2))
+        (split (args int string) generic (length 2))
+        (substring (args int int) generic (length 2))
+        (toLowerCase generic (length 0))
+        (toLocaleLowerCase generic (length 0))
+        (toUpperCase generic (length 0))
+        (toLocaleUpperCase generic (length 0))
+        (trim generic (length 0))
+        (toJSON (args any) (implemented false) generic (length 1))
+	(substr (args int int) nonstandard generic (length 1))
+      )
+    )
+  )
+  (instance
+    (value
+     length
+     [[index]])
+  )
+)
+(Boolean
+  ("new Boolean()" true)
+  (constructor 
+    (value
+     prototype)
+    (prototype
+      (value
+       constructor)
+      (function
+       (toString (length 0))
+       (valueOf (length 0))
+       (toJSON (args any) (length 1) (implemented false))
+      )
+    )
+  )
+)
+(Number
+  ("new Number(1)" 1)
+  (constructor
+    (value
+     prototype
+     MAX_VALUE
+     MIN_VALUE
+     NaN
+     NEGATIVE_INFINITY
+     POSITIVE_INFINITY)
+    (prototype
+      (value
+       constructor)
+      (function
+       (toString (args int) (length 0))
+       (toLocaleString (length 0))
+       (valueOf (length 0))
+       (toFixed (args int) (length 1))
+       (toExponential (args int) (length 1))
+       (toPrecision (args int) (length 1))
+       (toJSON (args any) (implemented false) generic (length 1))
+       )
+     )
+  )
+)
+(Math
+  ()
+  (instance
+    (value
+     E
+     LN10
+     LN2
+     LOG2E
+     LOG10E
+     PI
+     SQRT1_2
+     SQRT2)
+    (function
+     (abs (args number) (length 1))
+     (acos (args number) (length 1))
+     (asin (args number) (length 1))
+     (atan (args number) (length 1))
+     (atan2 (args number number) (length 2))
+     (ceil (args number) (length 1))
+     (cos (args number) (length 1))
+     (exp (args number) (length 1))
+     (floor (args number) (length 1))
+     (log (args number) (length 1))
+     (max (args (number repeated)) (length 2))
+     (min (args (number repeated)) (length 2))
+     (pow (args number number) (length 2))
+     (random (length 0))
+     (round (args number) (length 1))
+     (sin (args number) (length 1))
+     (sqrt (args number) (length 1))
+     (tan (args number) (length 1))
+    )
+  )
+)
+(Date
+  ("new Date(2012, 05, 12)")
+  (constructor
+    (value
+     prototype)
+   (function
+    (parse (args string))
+    (UTC (args number number number number number number number))
+    now)
+   (prototype
+    (value
+     constructor)
+    (function
+     (toString (length 0))
+     (toDateString (length 0))
+     (toTimeString (length 0))
+     (toLocaleString (length 0))
+     (toLocaleDateString (length 0))
+     (toLocaleTimeString (length 0))
+     (valueOf (length 0))
+     (getTime (length 0))
+     (getFullYear (length 0))
+     (getUTCFullYear (length 0))
+     (getMonth (length 0))
+     (getUTCMonth (length 0))
+     (getDate (length 0))
+     (getUTCDate (length 0))
+     (getDay (length 0))
+     (getUTCDay (length 0))
+     (getHours (length 0))
+     (getUTCHours (length 0))
+     (getMinutes (length 0))
+     (getUTCMinutes (length 0))
+     (getSeconds (length 0))
+     (getUTCSeconds (length 0))
+     (getMilliseconds (length 0))
+     (getUTCMilliseconds (length 0))
+     (getTimezoneOffset (length 0))
+     (setTime (args number) (length 1))
+     (setMilliseconds (args number) (length 1))
+     (setUTCMilliseconds (args number) (length 1))
+     (setSeconds (args number) (length 1))
+     (setUTCSeconds (args number) (length 1))
+     (setMinutes (args number) (length 1))
+     (setUTCMinutes (args number) (length 1))
+     (setHours (args number) (length 1))
+     (setUTCHours (args number) (length 1))
+     (setDate (args number) (length 1))
+     (setUTCDate (args number) (length 1))
+     (setMonth (args number) (length 1))
+     (setUTCMonth (args number) (length 1))
+     (setFullYear (args number) (length 1))
+     (setUTCFullYear (args number (length 1)))
+     (toUTCString (length 0) (implemented false))
+     (toISOString (length 0) (implemented false))
+     (toJSON (args any) generic (length 1) (implemented false))
+     )
+   )
+ )
+)
+(RegExp
+  (/abc/ "new RegExp('abc')")
+  (constructor  
+    (value
+     prototype
+     (multiline nonstandard))
+    (prototype
+      (value  
+       constructor)
+      (function
+       (exec (args string) (get global lastIndex multiline ignoreCase) (length 1))
+       (test (args string) (get global lastIndex multiline ignoreCase) (length 1))
+       (toString (get source) (length 0))
+      )
+    )
+  )
+  (instance
+    (value
+     source
+     global
+     ignoreCase
+     multiline
+     lastIndex)
+  )
+)
+(Error
+ ("new Error()")
+  (constructor
+    (value
+     prototype)
+    (prototype
+      (value
+       constructor
+       name
+       message)
+    (function
+     (toString (length 0)))
+    )
+  )
+)
+(EvalError
+ ("new EvalError()")
+  (constructor
+    (value
+     prototype)
+    (prototype
+      (value
+       constructor
+       name
+       message)
+    (function
+     (toString (length 0)))
+    )
+  )
+)
+(RangeError
+ ("new RangeError()")
+  (constructor
+    (value
+     prototype)
+    (prototype
+      (value
+       constructor
+       name
+       message)
+    (function
+     (toString (length 0)))
+    )
+  )
+)
+(ReferenceError
+ ("new ReferenceError()")
+  (constructor
+    (value
+     prototype)
+    (prototype
+      (value
+       constructor
+       name
+       message)
+    (function
+     (toString (length 0)))
+    )
+  )
+)
+(SyntaxError
+ ("new SyntaxError()")
+  (constructor
+    (value
+     prototype)
+    (prototype
+      (value
+       constructor
+       name
+       message)
+    (function
+     (toString (length 0)))
+    )
+  )
+)
+(TypeError
+ ("new TypeError()")
+  (constructor
+    (value
+     prototype)
+    (prototype
+      (value
+       constructor
+       name
+       message)
+    (function
+     (toString (length 0)))
+    )
+  )
+)
+(URIError
+ ("new URIError()")
+  (constructor
+    (value
+     prototype)
+    (prototype
+      (value
+       constructor
+       name
+       message)
+    (function
+     (toString (length 0)))
+    )
+  )
+)
+(JSON
+  ()
+  (instance
+    (function
+     (parse (args string function) (length 2) (implemented false))
+     (stringify (args any (multi function array) (multi number string any)) (length 3) (implemented false))
+    )
+  )
+)

@@ -1,0 +1,70 @@
+<html>
+<head>
+<title>DOM tests -- CSS2 interface</title>
+</head>
+
+<body>
+
+<!-- All the HTML elements below this line are used by the tests -->
+
+<div style='border: dashed blue'>
+<div id='a' style='border: solid black'>
+Text inside div a
+</div>
+
+<div id='b' style='border: solid red; counter-reset: i'>
+Text inside div b
+</div>
+
+<div id='c'>
+Text inside div c
+</div>
+</div>
+
+<!-- All the HTML elements above this line are used by the tests -->
+
+
+<script src="../../regression-lib/testbase.js"></script>
+<script>
+/* Regression tests for Opera's handling of the DOM 2 CSS2 interface
+ *
+ * 2002-04-11 / stighal
+ */
+
+var cvs = "$Id: counter-reset.html 86264 2011-01-17 15:10:46Z bratell $";
+
+testmodule( "CSS2 interface", cvs );
+
+var a, b, c;
+
+try {
+a = document.getElementById("a");
+b = document.getElementById("b");
+c = document.getElementById("c");
+
+testcase( "Reading properties" );
+
+test('getting counter-reset from a with nothing specified', a.style.counterReset, "");
+test('getting counter-reset from b with "i" specified', b.style.counterReset, 'i');
+
+testcase( "Setting properties" );
+
+a.style.counterReset = 'fish 3';
+test('reading counter-reset on a set by script to "fish 3"', a.style.counterReset, 'fish 3');
+
+testcase( "Negative tests" );
+
+c.style.counterReset = "1";
+test('reading counter-reset on a set by script to foo (illegal)', c.style.counterReset, "");
+
+c.style.counterReset = "url(fish.css)";
+test('reading counter-reset on a set by script to "url(fish.css)" (illegal keyword)', c.style.counterReset, "");
+
+} catch (e) { exception( e ); }
+
+testmodule_finished();
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,53 @@
+<html>
+
+<head>
+<title>Compiler test: SWITCH; BREAK to label</title>
+</head>
+
+<body>
+
+<script>
+function f(x)
+{
+  switch (x)
+  {
+  case 1: return "One!"; break;
+  case 2: return "Two!"; break;
+  default:
+  case 3: return "Three!"; break;
+  }
+}
+
+function g(x)
+{
+  var k=0;
+foo:
+  // Note, 'i' is *not* local
+  for ( i=0 ; i < 10 ; i++ )
+  {
+    switch (x)
+    {
+    default: ++k; break foo;
+    case 3: ++k;
+    case 2: ++k; 
+    case 1: ++k;
+    }
+  }
+  return k;
+}
+</script>
+
+<p>Should print "One! Two! Three! 20 1".</p>
+
+<script>
+document.writeln( f(1) );
+document.writeln( f(2) );
+document.writeln( f(4) );
+document.writeln( g(2) );
+document.writeln( g(4) );
+document.writeln( '<br>' );
+//document.writeln( g.toString().split("\n").join("<br>") )
+</script>
+
+</body>
+</html>

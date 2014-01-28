@@ -1,0 +1,33 @@
+<html>
+
+<head>
+<title>Compiler test: constructor and method calls</title>
+</head>
+
+<body>
+
+<p>Should print "ell" and "10".</p>
+
+<pre>
+<script>
+function f() 
+{ 
+  var x = new String("Hello there");
+  return x.substring(1,4);
+}
+
+function F(n)
+{
+  this.n = n;
+}
+function g()
+{
+  return new F(10);
+}
+document.writeln( f() );
+document.writeln( g().n );
+</script>
+</pre>
+
+</body>
+</html>

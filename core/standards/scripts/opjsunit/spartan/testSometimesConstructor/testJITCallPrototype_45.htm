@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <title>testSometimesConstructor.js#testJITCallPrototype_45</title>
+  <script src="../opjsunit.js"></script>
+  <script>function testJITCallPrototype_45() {
+  var expr = new Object('foo');
+  var func = function() {
+    return new Object('foo');
+  };
+  for (var i = 0; i < 50; i++) {
+    var obj = func();
+    assertEquals(Object.prototype.toString.call(expr), Object.prototype.toString.call(obj));
+    assertEquals(expr.__proto__, obj.__proto__);
+    assertObjectEquals(expr, obj);
+  }
+  var obj = new func();
+  assertEquals(Object.prototype.toString.call(expr), Object.prototype.toString.call(obj));
+  assertEquals(expr.__proto__, obj.__proto__);
+  assertObjectEquals(expr, obj);
+}</script>
+  <p>Failed (Script did not run)</p>
+  <script>
+function test() {
+  var passed = false;
+  var error = "";
+  var output_element = document.getElementsByTagName("p")[0];
+  try {
+    for (var count=0; count<100; count++) {
+      testJITCallPrototype_45();
+    }
+    passed = true;
+  } catch(e) {
+    error = e.message;
+  }
+  try {top.opener.rr(passed)} catch(e){}
+  if (passed) {
+    output_element.textContent = "PASS"
+    output_element.style.color = "green";
+  } else {
+    output_element.textContent = "FAIL: " + error + " (failed on iteration " + count + ")"
+    output_element.style.color = "red";
+  }
+}
+window.addEventListener("load", test, false);
+  </script>
+</html>

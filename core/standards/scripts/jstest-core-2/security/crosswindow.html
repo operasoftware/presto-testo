@@ -1,0 +1,63 @@
+<!-- Test....: Properties on other windows cannot be set or read from other domain
+     Requires: HTTP or other domain-based mechanism; does not make sense with FILE.
+
+     2003-02-02 / lth
+
+     Reported by GrayMagic.
+
+     http://greymagic.com/adv/gm002-op-PVT3SCT/    Preview advisory
+     http://greymagic.com/adv/gm002-op/            Probable final URL
+
+     Since there was no checking on access of native properties, it
+     would be possible to get a handle to an existing window by
+     opening it (or by pre-creating it before the victim opens it) and
+     then override properties on it.
+
+     This test case tests that it is not possible to change the
+     contents of a window object from a nonmatching domain.  We test
+     this by opening a window in the same domain, then changing our
+     domain and trying to inject a bogus version of 'setInterval' in
+     the other window.  If we succeed, our bogus version will be
+     called and the alert will reveal that the bug is still there.
+
+     If we do not succeed, the original setInterval will be used in
+     the other window, and it will show an alert showing that the
+     problem is no longer present.
+
+     -->
+
+<html>
+
+<head>
+<title>Crosswindow attacker</title>
+<script>
+var w = null;
+
+function test()
+{
+    if (location.protocol == 'file:')
+    {
+        alert('Test cannot run with FILE: protocol, try HTTP:');
+        return;
+    }
+
+    w = window.open("crosswindow2.html", "", "height=200, width=200");
+
+    var d = document.domain;
+    document.domain = d.substring(d.indexOf('.')+1);
+    setTimeout( "test2()", 2000 );
+}
+
+function test2()
+{
+    w.setInterval = function () { alert("Bug is still here!!"); }
+}
+</script>
+</head>
+
+<body onload="test()">
+Attacker: This will take about 5 seconds...
+</body>
+
+</html>
+

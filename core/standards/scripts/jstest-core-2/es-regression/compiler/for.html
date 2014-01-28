@@ -1,0 +1,60 @@
+<html>
+
+<head>
+<title>Compiler test: FOR loops</title>
+</head>
+
+<body>
+
+<script>
+function f()
+{
+  for ( var i=0, j=1 ; i < 10 ; i++ )
+    j*=2;
+  return j;
+}
+
+function g()
+{
+  for ( var i=0, j=1 ; i < 10 ; i++ )
+  {
+    continue;
+    j*=2;
+  }
+  return j;
+}
+
+function h()
+{
+  var i, j;
+  for ( i=0, j=1 ; i < j ; i++ )
+  {
+    j*=2;
+    break;
+  }
+  return j;
+}
+
+function k()
+{
+  var i, j;
+  for ( i=0, j=1 ; i < j ; i++ )
+  {
+    j*=2;
+    return j;
+  }
+  return j;
+}
+</script>
+
+<p>Should print "1024 1 2 2"</p>
+
+<script>
+document.writeln(f());
+document.writeln(g());
+document.writeln(h());
+document.writeln(k());
+</script>
+
+</body>
+</html>

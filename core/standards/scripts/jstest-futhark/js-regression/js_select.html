@@ -1,0 +1,36 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/REC-html401/strict.dtd">
+<!--
+   Created by torstein@opera.com
+-->
+<html>
+   <head>
+      <title>Select Object Test</title>
+      <script type="text/javascript" src="../regression-lib/testbase.js"></script>
+      <script type="text/javascript" src="scripts/js_select.js"></script>
+      <script type="text/javascript" src="../testconfig.js"></script>
+   </head>
+   <body>
+      <div style="visibility: hidden;">
+         <form id="theform" name="theform">
+            <select
+                   id="theselect"
+                   name="theselect" 
+                   onblur="void(0)"
+                   onchange="void(1)" 
+                   onfocus="void(2)" 
+             >
+                <option value="first option value">Option 1</option>
+                <option value="second option value">Option 2</option>
+             </select> 
+            <select
+                   name="theselect2" 
+                   multiple
+             >
+             </select> 
+         </form>
+      </div>
+      <script type="text/javascript">
+        main( document.theform.theselect );
+      </script>
+   </body>
+</html>

@@ -1,0 +1,95 @@
+<html>
+
+<head>
+<script>
+var urls = [
+"http://www.opera.com",            // home is where the heart is
+"http://www.qnx.com",
+"http://www.aftenposten.no",
+"http://www.vg.no",
+"http://www.dagbladet.no",
+"http://www.dagsavisen.no",
+"http://www.ibm.com",
+"http://www.dell.com",
+"http://www.toshiba.com",
+"http://www.hp.com",
+"http://www.apple.com",
+"http://www.sony.com",
+"http://www.nytimes.com",
+"http://www.boston.com/globe/",
+"http://www.theregister.co.uk",
+"http://www.oregonian.com",
+"http://www.lemonde.fr",
+"http://www.newburyportnews.com",
+"http://www.moma.org",
+"http://www.mos.org",
+"http://www.mfa.org",
+"http://www.casterman.com",
+"http://www.alltheweb.com",
+"http://www.norge.no",
+"http://www.nho.no",
+"http://www.research.att.com",
+"http://www.research.microsoft.com",
+"http://www.ai.mit.edu",
+"http://www.w3.org",
+"http://www.schemers.org",
+"http://www.nor.no",
+"http://www.spv.no",
+"http://www.media.mit.edu",
+"http://www.neu.edu",
+"http://www.cs.uoregon.edu",
+"http://www.intel.com",
+"http://www.amd.com",
+"http://www.motorola.com",
+"http://www.ti.com",
+"http://www.research.ibm.com",
+"http://www.bostonphoenix.com",
+"http://www.operamail.com",
+"http://www.trolltech.com",
+"http://www.sun.com",
+"http://java.sun.com",
+"http://www.cs.utexas.edu",
+"http://www.cs.indiana.edu",
+"http://www.lucent.com",
+"http://www.gnu.org",
+"http://www.netscape.com",
+"http://developer.netscape.com",
+"http://www.news.com",
+"http://www.cnn.com",
+"http://www.digi.no",
+"http://www.sol.no",
+"http://www.nettavisen.no",
+"http://www.amazon.com",
+"http://www.borders.com",
+"http://www.powells.com",
+"http://www.barnesandnoble.com",
+"http://www.wbur.org",
+"http://www.wgbh.org",
+"http://www.rccl.com",
+"http://www.acer.com",
+"http://www.patagon.com",
+"http://www.cnnfn.com" ];
+</script>
+</head>
+
+<body>
+<script>
+var w = window.open( "http://www.ibm.com", "bullseye", "location=yes" );
+var n = 0;
+
+function startloop()
+{
+  var theurl;
+
+  theurl = urls[n];
+  n = (n + 1) % urls.length;
+  setTimeout( "startloop();", 15000 );
+  window.open( theurl, "bullseye" );
+}
+
+startloop();
+
+</script>
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+<html>
+<head>
+<script src="reportresult.js"></script>
+<script>
+var d1, s1;
+
+function clone(n)
+{
+    for (var i = 0; i < n; i++)
+    {
+	d1.cloneNode(true);	
+    }
+    return "Done";
+}
+
+function createElements()
+{
+	d1 = document.createElement("div");
+	d1.setAttribute("id", "div1");
+	var d2 = document.createElement("div");
+	d2.appendChild (document.createTextNode("some text"));
+	d1.appendChild (d2);
+}
+</script>
+</head>
+
+<body>
+<script>
+createElements();
+var before = new Date();
+var result = clone(20000);
+var after = new Date();
+document.writeln( [ result, after - before ] + '<br>' );
+reportresult( "cloneNode(deep)", after-before );
+</script>
+</body>
+</html>

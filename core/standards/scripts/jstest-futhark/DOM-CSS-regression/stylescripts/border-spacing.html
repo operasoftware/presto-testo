@@ -1,0 +1,83 @@
+<html>
+<head>
+<title>DOM tests -- CSS2 interface</title>
+</head>
+
+<body>
+
+<!-- All the HTML elements below this line are used by the tests -->
+
+<table id='a' style='border: thin solid red'>
+<tr>
+  <td style='border: thin inset red'>The inner and outer borders are separated by 2in horizontally and 4mm vertically</td>
+</tr>
+</table>
+
+<table id='b' style='border-spacing: 10px; border: thin solid black'>
+<tr>
+  <td style='border: 3px inset gray'>Text inside table b</td>
+</tr>
+</table>
+
+<table id='c' style='border: thin dotted blue'>
+<tr>
+  <td style='border: thin black solid'>Default spacing.</td>
+</tr>
+</table>
+
+<!-- All the HTML elements above this line are used by the tests -->
+
+
+<script src="../../regression-lib/testbase.js"></script>
+<script>
+/* Regression tests for Opera's handling of the DOM 2 CSS2 interface
+ *
+ * 2002-04-11 / stighal
+ */
+
+var cvs = "$Id: border-spacing.html 44005 2009-03-31 20:25:46Z hallvord $";
+expect(7);
+testmodule( "CSS2 interface", cvs );
+
+var a, b;
+
+try {
+a = document.getElementById("a");
+b = document.getElementById("b");
+c = document.getElementById("c");
+
+testcase( "Reading properties" );
+
+test('getting border-spacing from a with nothing specified', a.style.borderSpacing, "");
+test('getting border-spacing from b with 10 px specified', b.style.borderSpacing, "10px");
+
+testcase( "Setting properties" );
+
+a.style.borderSpacing = "2in 4mm";
+test('reading border-spacing on a set by script to 2in', a.style.borderSpacing, "2in 4mm");
+
+testcase( "Negative tests" );
+
+c.style.borderSpacing = "foo";
+test('reading border-spacing on a set by script to foo (illegal)', c.style.borderSpacing, "");
+
+c.style.borderSpacing = "1px foo";
+test('reading border-spacing on a set by script to "1px foo" (2nd illegal)', c.style.borderSpacing, "");
+
+c.style.borderSpacing = "solid";
+test('reading border-spacing on a set by script to solid (illegal keyword)', c.style.borderSpacing, "");
+
+testcase( "Shorthand tests" );
+
+b.style.borderSpacing = "2px 2px";
+test('reading border-spacing from a specified by script to "2px 2px"', b.style.borderSpacing, "2px");
+
+} catch (e) { exception( e ); }
+
+testmodule_finished();
+
+</script>
+
+</body>
+</html>
+

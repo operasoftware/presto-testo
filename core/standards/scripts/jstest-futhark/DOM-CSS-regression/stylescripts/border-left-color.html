@@ -1,0 +1,68 @@
+<html>
+<head>
+<title>DOM tests -- CSS2 interface</title>
+</head>
+
+<body>
+
+<!-- All the HTML elements below this line are used by the tests -->
+
+<div id='a'>
+Red left border of default width and style.
+</div>
+
+<div id='b' style='border-left-style: solid; border-left-color: green'>
+Solid green left border.
+</div>
+
+<div id='c'>
+No borders
+</div>
+
+<!-- All the HTML elements above this line are used by the tests -->
+
+
+<script src="../../regression-lib/testbase.js"></script>
+<script>
+/* Regression tests for Opera's handling of the DOM 2 CSS2 interface
+ *
+ * 2002-04-11 / stighal
+ */
+
+var cvs = "$Id: border-left-color.html 91631 2011-04-07 09:27:28Z bratell $";
+
+testmodule( "CSS2 interface", cvs );
+
+var a, b;
+
+try {
+a = document.getElementById("a");
+b = document.getElementById("b");
+c = document.getElementById("c");
+
+testcase( "Reading properties" );
+
+test('getting border-left-color from a with nothing specified', a.style.borderLeftColor, "");
+test('getting border-left-color from b with a lot specified', b.style.borderLeftColor, "green");
+
+testcase( "Setting properties" );
+
+a.style.borderLeftColor = "red";
+test('reading border-left-color on a set by script to red', a.style.borderLeftColor, "red");
+
+testcase( "Negative tests" );
+
+c.style.borderLeftColor = "foo";
+test('reading border-left-color value set to foo (illegal)', c.style.borderLeftColor, "");
+
+c.style.borderLeftColor = "medium";
+test('reading border-left-color value set to medium (illegal keyword)', c.style.borderLeftColor, "");
+
+} catch (e) { exception( e ); }
+
+testmodule_finished();
+
+</script>
+
+</body>
+</html>

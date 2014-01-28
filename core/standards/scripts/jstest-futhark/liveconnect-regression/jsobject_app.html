@@ -1,0 +1,44 @@
+<html>
+<head>
+<title>JSObject interface test applet</title>
+<script>
+<!--
+  var result = new Object();
+  var test_obj = new Object();
+  test_obj.member = 'Hello';
+  test_obj.member2 = 'World';
+  test_obj.javaobj = new java.lang.Integer(12);
+  test_obj[7] = 'Seven';
+  test_obj["="] = 'equal';
+  test_obj['"'] = 'double-fnutt';
+  test_obj["'"] = 'single-fnutt';
+
+  function f(arg)
+  {
+    if (arg == 'tull')
+      return 42;
+    else
+      return -1;
+  }
+
+  function PrintResult()
+  {
+    window.open('jsobject.html', '');
+  }
+
+-->
+</script>
+</head>
+<body onload="PrintResult();">
+<form id="form1">
+<input type="hidden" value="test" />
+<select id="sel">
+<option>Option1</option>
+<option>Option2</option>
+</select>
+</form>
+<h1>JSObject interface test applet</h1>
+Running tests....
+<applet code="JSObjApplet.class" mayscript></applet>
+</body>
+</html>

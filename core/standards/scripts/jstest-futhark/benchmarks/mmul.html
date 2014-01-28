@@ -1,0 +1,62 @@
+<html>
+<body>
+<script src="reportresult.js"></script>
+<script>
+var iters = 200;
+
+function mmul( a, b, c )
+{
+  var arows, acols, brows, bcols, crows, ccols, res, i, j, k;
+
+  arows = a.length;
+  acols = a[0].length;
+  brows = b.length;
+  bcols = b[0].length;
+  crows = arows;
+  ccols = bcols;
+
+  for ( i=0 ; i < arows ; i++ )
+    for ( j=0 ; j < bcols ; j++ ) {
+      res = 0.0;
+      for ( k=0 ; k < acols ; k++ )
+        res = res + a[i][k] * b[k][j]
+      c[i][j] = res;
+    }
+
+  return "Done";
+}
+
+function make_matrix( rows, cols )
+{
+  var m = new Array(rows);
+  for ( var i=0 ; i < rows ; i++ )
+    m[i] = new Array(cols);
+  return m;
+}
+
+function init_matrix(m)
+{
+  for ( var i=0 ; i < m.length ; i++ )
+    for ( var j=0 ; j < m[i].length ; j++ )
+      m[i][j] = Math.random();
+}
+
+var ma = make_matrix( 10, 20 );  init_matrix(ma);
+var mb = make_matrix( 20, 30 );  init_matrix(mb);
+var mc = make_matrix( 10, 30 );
+
+var before = new Date();
+var result;
+for ( var i=0 ; i < iters ; i++ )
+  result = mmul(ma, mb, mc);
+var after = new Date();
+
+if (navigator.userAgent.indexOf('3.62') >= 0)
+  alert( result + ': ' + ((after.getTime()) - (before.getTime())) + 'ms' );
+else
+  document.writeln( new Array( result, after - before ) + '<br>' );
+
+reportresult( "matrix multiply 10x20 by 20x30", after-before );
+</script>
+</body>
+</html>

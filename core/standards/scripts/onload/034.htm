@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html><head>
+	<title>load events - IFRAME removes itself on DOMContentLoaded</title>
+	<script src="_files/lib.js"></script>
+	<script>
+		window.onload=load;
+	</script>
+	<script>var expected = [ /* Firefox style */
+			'DOMContentLoaded in IFRAME in window [034.htm]',
+			'load in window [034.htm]'
+		];
+		function iframeDCLHandler(e){
+			load( e, 'in IFRAME' );
+			if( e.type==='DOMContentLoaded' ){
+				e.target.defaultView.frameElement.parentNode.removeChild(e.target.defaultView.frameElement);
+			}
+		}
+	</script>
+</head>
+<body>
+	<p>FAILED (This TC requires JavaScript enabled)</p>
+	<iframe src="_files/iframe-contents-DCL-remover.html" onload="load(event, 'on <IFRAME>')"></iframe>
+</body></html>

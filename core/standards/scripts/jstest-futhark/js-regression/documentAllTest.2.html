@@ -1,0 +1,42 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<html>
+<head>
+<script src="../testconfig.js"></script>
+<script src="../regression-lib/testbase.js"></script>
+<script>
+var doc_title = "document.all";
+document.writeln("<title>" + doc_title + "</title>");
+</script>
+</head>
+
+<body id="myBody">
+
+<form>
+
+<input id="id1"> </input>
+<input id="id2"> </input>
+<input id="id1"> </input>
+<input name="name1"> </input>
+<input name="name2"> </input>
+<input name="name1"> </input>
+
+</form>
+
+<div id="div1">Div1</div>
+
+<div class="id_upper" id="Menu">Div</div>
+<div class="id_lower" id="menu">div</div>
+<div class="nm_upper" name="Menu">Div</div>
+<div class="nm_lower" name="menu">div</div>
+ 
+<form>
+  <input class="id_upper_form" id="Menu" type="text">
+  <input class="id_lower_form" id="menu" type="text">
+  <input class="nm_upper_form" name="Menu" type="text">
+  <input class="nm_lower_form" name="menu" type="text">
+</form> 
+ 
+<script src="scripts/documentAllTest2.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <title>testPropertyValueTransfer_spec.js#testPropertyValueTransfer_425</title>
+  <script src="../opjsunit.js"></script>
+  <script>function testPropertyValueTransfer_425() {
+  /* Instructions: ESI_GETI_IMM, ESI_GET, ESI_GETI_IMM. */
+  var x;
+  x = {"0": {"1": {"0": 1, "c": 2}, "0": {"0": 1, "c": 2}, "c": 2}, "c": 2};
+  for (var i = 0; i < 100; i++) {
+    var a = i % 2;
+    assertEquals(1, x["0"][a]["0"]);
+  }
+}</script>
+  <p>Failed (Script did not run)</p>
+  <script>
+function test() {
+  var passed = false;
+  var error = "";
+  var output_element = document.getElementsByTagName("p")[0];
+  try {
+    for (var count=0; count<100; count++) {
+      testPropertyValueTransfer_425();
+    }
+    passed = true;
+  } catch(e) {
+    error = e.message;
+  }
+  try {top.opener.rr(passed)} catch(e){}
+  if (passed) {
+    output_element.textContent = "PASS"
+    output_element.style.color = "green";
+  } else {
+    output_element.textContent = "FAIL: " + error + " (failed on iteration " + count + ")"
+    output_element.style.color = "red";
+  }
+}
+window.addEventListener("load", test, false);
+  </script>
+</html>

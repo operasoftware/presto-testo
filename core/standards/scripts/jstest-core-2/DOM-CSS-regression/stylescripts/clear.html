@@ -1,0 +1,80 @@
+<html>
+<head>
+<title>DOM tests -- CSS2 interface</title>
+</head>
+
+<body>
+
+<!-- All the HTML elements below this line are used by the tests -->
+
+<div style='float: right; border: thin dotted blue'>
+This box should be placed above the box marked "<span style='font-weight: bold'>Above this</span>"
+</div>
+
+<div id='a' style='float: right; border: thin dotted blue; font-weight: bold'>
+Above this
+</div>
+
+<div style='float: left; border: thin dotted red'>
+This box should be placed above the box marked "<span style='font-weight: bold'>Above this too</span>"
+</div>
+
+<div id='b' style='border: thin dotted red; float: left; font-weight: bold; clear: left'>
+Above this too
+</div>
+
+<div style='float: left; border: thin dotted red'>
+This box should be placed besides the box marked "<span style='font-weight: bold'>Beside this</span>"
+</div>
+
+<div id='c' style='border: thin dotted green; float: left; font-weight: bold'>
+Beside this
+</div>
+
+<!-- All the HTML elements above this line are used by the tests -->
+
+
+<script src="../../regression-lib/testbase.js"></script>
+<script>
+/* Regression tests for Opera's handling of the DOM 2 CSS2 interface
+ *
+ * 2002-04-11 / stighal
+ */
+
+var cvs = "$Id: clear.html 4838 2006-01-18 05:59:01Z hallvord $";
+
+testmodule( "CSS2 interface", cvs );
+
+var a, b, c;
+
+try {
+a = document.getElementById("a");
+b = document.getElementById("b");
+c = document.getElementById("c");
+
+testcase( "Reading properties" );
+
+test('getting clear from a with nothing specified', a.style.clear, "");
+test('getting clear from b with left specified', b.style.clear, "left");
+
+testcase( "Setting properties" );
+
+a.style.clear = "right";
+test('reading clear on a set by script to both', a.style.clear, "right");
+
+testcase( "Negative tests" );
+
+c.style.clear = "foo";
+test('reading clear on a set by script to foo (illegal)', c.style.clear, "");
+
+c.style.clear = "outset";
+test('reading clear on a set by script to outset (illegal keyword)', c.style.clear, "");
+
+} catch (e) { exception( e ); }
+
+testmodule_finished();
+
+</script>
+
+</body>
+</html>

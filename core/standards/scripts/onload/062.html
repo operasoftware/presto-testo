@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <title>Removing slow-loading iframe stops load delay</title>
+  <script src="/resources/testharness.js"></script>
+  <script src="/resources/testharnessreport.js"></script>
+  <div id="log"></div>
+  <iframe src="_files/slice-and-dice.cgi?file=empty.html&parts=d4"></iframe>
+  <script>
+    var t = async_test(undefined, {timeout:4000});
+
+    events = [];
+
+    var time = 0;
+
+    onload = t.step_func(function() {
+      document.body.style.width = "";
+      events.push("load");
+      assert_array_equals(events, ["DOMContentLoaded", "load"]);
+
+      assert_true(Date.now() - time < 1000, Date.now() - time);
+      setTimeout(t.step_func(function() {
+        assert_array_equals(events, ["DOMContentLoaded", "load", "marker"]);
+        t.done()
+      }), 100);
+    })
+
+    addEventListener("DOMContentLoaded",
+      //Run this in a timeout so it is reasonably sure it happens while we are
+      //spinning the event loop waiting for loading to complete
+      function() {setTimeout(t.step_func(function() {
+                  time = Date.now();
+                  events.push("DOMContentLoaded");
+
+                  var iframe = document.getElementsByTagName("iframe")[0];
+    
+                  document.body.style.width = "0";
+
+                  iframe.parentNode.removeChild(iframe);
+
+                  //This adds an event to the event queue that we can use as a marker to
+                  //determine exactly when the load event fires
+                  //We asssume setTimeout(foo,0) has no delay
+                  setTimeout(function() {
+                                     events.push("marker");
+                                   }, 0);
+      }), 200)}, false);
+  </script>

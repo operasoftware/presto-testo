@@ -1,0 +1,171 @@
+<html>
+  <script>
+
+    var failed;
+
+    function test ()
+    {
+      testBasic ();
+      testNameChange ();
+      testDefaultValue ();
+    }
+
+    function error (text)
+    {
+      if (!failed)
+      {
+        document.writeln ("<b style='color: red'>failed!</b><ul>");
+        failed = true;
+      }
+      document.writeln ("<li>" + text + "</li>");
+    }
+
+    function error_foo (text)
+    {
+    }
+
+    function done ()
+    {
+      if (failed)
+      {
+        document.writeln ("</ul>");
+        failed = false;
+      }
+      else
+        document.writeln ("<b style='color: green'>done.</b>");
+    }
+
+    function testBasic ()
+    {
+      document.write ("<p>Basic testing... ");
+
+      var r11 = document.all['1-1'];
+      var r12 = document.all['1-2'];
+      var rX = document.all['X'];
+      var r21 = document.all['2-1'];
+      var r22 = document.all['2-2'];
+      
+      function currentState ()
+      {
+        return ((r11.checked ? '1' : '0') + 
+                (r12.checked ? '1' : '0') + 
+                (rX.checked ? '1' : '0') + 
+                (r21.checked ? '1' : '0') +
+                (r22.checked ? '1' : '0'));
+      }
+
+      if (currentState () != '10110')
+        error ("State was " + currentState () + ", expected 10110 (initial state).");
+
+      r12.checked = true;
+      rX.checked = true;
+      r22.checked = true;
+
+      if (currentState () != '01101')
+        error ("State was " + currentState () + ", expected 01101.");
+
+      r11.checked = true;
+      r21.checked = true;
+
+      if (currentState () != '10110')
+        error ("State was " + currentState () + ", expected 10110.");
+
+      done ();
+    }
+
+    function testNameChange ()
+    {
+      document.write ("<p>Name change testing... ");
+
+      var r11 = document.all['1-1'];
+      var r12 = document.all['1-2'];
+      var rX = document.all['X'];
+      var r21 = document.all['2-1'];
+      var r22 = document.all['2-2'];
+      
+      function currentState ()
+      {
+        return ((r11.checked ? '1' : '0') + 
+                (r12.checked ? '1' : '0') + 
+                (rX.checked ? '1' : '0') + 
+                (r21.checked ? '1' : '0') +
+                (r22.checked ? '1' : '0'));
+      }
+
+      r11.checked = true;
+      rX.checked = true;
+      r21.checked = true;
+
+      rX.name = "radio1";
+      if (currentState () != '00110')
+        error ("State was " + currentState () + ", expected 00110.");
+      
+      r12.checked = true;
+      if (currentState () != '01010')
+        error ("State was " + currentState () + ", expected 01010.");
+
+      rX.name = "radio2";
+      if (currentState () != '01010')
+        error ("State was " + currentState () + ", expected 01010.");
+
+      rX.checked = true;
+      if (currentState () != '01100')
+        error ("State was " + currentState () + ", expected 01100.");
+
+      done ();
+    }
+
+    function testDefaultValue ()
+    {
+      document.write ("<p>Default value and form reset testing... ");
+
+      var form = document.all['form1'];
+      var r11 = document.all['1-1'];
+      var r12 = document.all['1-2'];
+      var r21 = document.all['2-1'];
+      var r22 = document.all['2-2'];
+      
+      function currentState ()
+      {
+        return ((r11.checked ? '1' : '0') + 
+                (r12.checked ? '1' : '0') + 
+                (r21.checked ? '1' : '0') +
+                (r22.checked ? '1' : '0'));
+      }
+
+      form.reset ();
+
+      if (currentState () != '1010')
+        error ("State was " + currentState () + ", expected 1010 (initial default).");
+
+      r11.defaultChecked = false;
+      r12.defaultChecked = true;
+      r21.defaultChecked = false;
+      r22.defaultChecked = true;
+      form.reset ();
+      
+      if (currentState () != '0101')
+        error ("State was " + currentState () + ", expected 0101 (modified default).");
+
+      done ();
+    }
+</script>
+
+<body>
+  <script>
+    document.open ("text/html");
+    document.write ("<form name='form1'>");
+    document.write ("  <input type='radio' id='1-1' name='radio1' value='1-1' checked>");
+    document.write ("  <input type='radio' id='1-2' name='radio1' value='1-2'>");
+    document.write ("  <input type='radio' id='X' name='radioX' value='X' checked>");
+    document.write ("  <input type='radio' id='2-1' name='radio2' value='2-1' checked>");
+    document.write ("  <input type='radio' id='2-2' name='radio2' value='2-2'>");
+    document.write ("</form>");
+  </script>
+  <script>
+    test ();
+    document.close ();
+  </script>
+</body>
+
+</html>

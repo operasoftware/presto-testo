@@ -1,0 +1,25 @@
+<html>
+
+<head>
+<title>Compiler test: FOR-IN loops (global level)</title>
+</head>
+
+<body>
+
+<script>
+var x = [1,2,3];  // 3 enumerable properties, length is DONT_ENUM.
+var j=0;
+for ( var i in x )
+  j++;
+</script>
+
+<p>Should print "3"</p>
+
+<pre>
+<script>
+document.writeln(j);
+</script>
+</pre>
+
+</body>
+</html>

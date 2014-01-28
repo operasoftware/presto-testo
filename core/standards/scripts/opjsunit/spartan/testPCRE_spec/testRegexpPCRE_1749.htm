@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <title>testPCRE_spec.js#testRegexpPCRE_1749</title>
+  <script src="../opjsunit.js"></script>
+  <script>function testRegexpPCRE_1749() {
+  var regexp = /^\X{2,3}?(.)/;
+  assertEquals(null, regexp.exec("x{2e81}x{3007}x{2f804}x{31a0}")); //test 1771
+}</script>
+  <p>Failed (Script did not run)</p>
+  <script>
+function test() {
+  var passed = false;
+  var error = "";
+  var output_element = document.getElementsByTagName("p")[0];
+  try {
+    for (var count=0; count<100; count++) {
+      testRegexpPCRE_1749();
+    }
+    passed = true;
+  } catch(e) {
+    error = e.message;
+  }
+  try {top.opener.rr(passed)} catch(e){}
+  if (passed) {
+    output_element.textContent = "PASS"
+    output_element.style.color = "green";
+  } else {
+    output_element.textContent = "FAIL: " + error + " (failed on iteration " + count + ")"
+    output_element.style.color = "red";
+  }
+}
+window.addEventListener("load", test, false);
+  </script>
+</html>

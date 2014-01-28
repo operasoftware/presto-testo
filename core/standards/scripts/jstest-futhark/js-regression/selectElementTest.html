@@ -1,0 +1,346 @@
+<html>
+<head>
+  <script>
+
+    var failed;
+
+    function test ()
+    {
+      select1 = document.form1.select1;
+      select2 = document.form2.select2;
+      select3 = document.form3.select3;
+
+      add1 (select1);
+      clear1 (select1);
+      add2 (select1);
+      clear2 (select1);
+
+      optgroups1 (select2);
+      clear1 (select2);
+
+      single1 (select3);
+    }
+
+    function error (text)
+    {
+      if (!failed)
+      {
+        document.writeln ("<b style='color: red'>failed!</b><ul>");
+        failed = true;
+      }
+      document.writeln ("<li>" + text + "</li>");
+    }
+
+    function done ()
+    {
+      if (failed)
+      {
+        document.writeln ("</ul>");
+        failed = false;
+      }
+      else
+        document.writeln ("<b style='color: green'>done.</b>");
+    }
+
+    function add1 (select)
+    { 
+      document.writeln ("<p>Adding options... ");
+
+      if (select.options.length != 0)
+        error ("length = " + select.options.length + ", should be 0");
+
+      select.options[0] = new Option("text1", "value1", false, false);
+      select.options[1] = new Option("text2", "value2", true, true);
+
+      if (select.options.length != 2)
+      {
+        error ("length != 2");
+      }
+      if (select.options[0].text != "text1" || select.options[0].value != "value1")
+      {
+        error ("option[0] has wrong text or value");
+      }
+      if (select.options[1].text != "text2" || select.options[1].value != "value2")
+      {
+        error ("option[1] has wrong text or value");
+      }
+      if (select.options[0].selected != false)
+      {
+        error ("option[0] shouldn't be selected but is");
+      }
+      if (select.options[1].selected != true)
+      {
+        error ("option[1] should be selected but isn't");
+      }
+      if (select.selectedIndex != 1)
+      {
+        error ("wrong selectedIndex");
+      }
+
+      done (failed);
+      document.writeln ("</p>");
+    }
+
+    function clear1 (select)
+    {
+      document.writeln ("<p>Clearing by setting length to zero... ");
+      var failed = false;
+
+      if (select.options.length == 0)
+      {
+        error ("length = " + select.options.length + ", should be non-zero");
+      }
+
+      select.options.length = 0;
+
+      if (select.options.length != 0)
+      {
+        error ("length = " + select.options.length + ", should be 0");
+      }
+      if (select.selectedIndex != -1)
+      {
+        error ("selectedIndex = " + select.selectedIndex + ", should be -1");
+      }
+
+      done (failed);
+      document.writeln ("</p>");
+    }
+
+    function add2 (select)
+    {
+      document.writeln ("<p>Adding options beyond end of list... ");
+      var failed = false;
+
+      if (select.options.length != 0)
+      {
+        error ("length = " + select.options.length + ", should be 0");
+      }
+
+      select.options[9] = new Option("text", "value", true, true);
+
+      if (select.options.length != 10)
+      {
+        error ("length = " + select.options.length + ", should be 10");
+      }
+
+      for (var index = 0; index < select.options.length - 1; ++index)
+      {
+        if (select.options[index].selected != false)
+        {
+          error ("select.options[" + index + "].selected = true, should be false");
+          }
+        if (select.options[index].text != "")
+        {
+          error ("select.options[" + index + "].text = " + select.options[index].text + ", should be false");
+          }
+        if (select.options[index].value != "")
+        {
+          error ("select.options[" + index + "].value = " + select.options[index].value + ", should be false");
+          }
+      }
+
+      done (failed);
+      document.writeln ("</p>");
+    }
+
+    function clear2 (select)
+    {
+      document.writeln ("<p>Clearing by setting elements to null... ");
+      var failed = false;
+
+      if (select.options.length == 0)
+      {
+        error ("length = " + select.options.length + ", should be non-zero");
+      }
+
+      while (select.options.length > 0)
+        select.options[0] = null;
+
+      if (select.options.length != 0)
+      {
+        error ("length = " + select.options.length + ", should be 0");
+      }
+      if (select.selectedIndex != -1)
+      {
+        error ("selectedIndex = " + select.selectedIndex + ", should be -1");
+      }
+
+      done (failed);
+      document.writeln ("</p>");
+    }
+
+    function optgroups1 (select)
+    {
+      document.writeln ("<p>Options with optgroups... ");
+
+      var failed = false;
+      if (select.options.length != 6)
+      {
+        error ("length != 6");
+      }
+
+      if (select.options[0].text != "1-1" || select.options[0].value != "1-1")
+      {
+        error ("option[0] has wrong text or value");
+      }
+      if (select.options[0].selected != true)
+      {
+        error ("option[0] has should be selected but isn't");
+      }
+
+      if (select.options[1].text != "1-2" || select.options[1].value != "1-2")
+      {
+        error ("option[1] has wrong text or value");
+      }
+      if (select.options[1].selected != false)
+      {
+        error ("option[1] has shouldn't be selected but is");
+      }
+
+      if (select.options[2].text != "2-1" || select.options[2].value != "2-1")
+      {
+        error ("option[2] has wrong text or value");
+      }
+      if (select.options[2].selected != false)
+      {
+        error ("option[2] has shouldn't be selected but is");
+      }
+
+      if (select.options[3].text != "2-2" || select.options[3].value != "2-2")
+        error ("option[3] has wrong text or value");
+      if (select.options[3].selected != true)
+        error ("option[3] has should be selected but isn't");
+
+      if (select.options[4].text != "3-1" || select.options[4].value != "3-1")
+        error ("option[4] has wrong text or value");
+      if (select.options[4].selected != false)
+        error ("option[4] has shouldn't be selected but is");
+
+      if (select.options[5].text != "3-2" || select.options[5].value != "3-2")
+        error ("option[5] has wrong text or value");
+      if (select.options[5].selected != false)
+        error ("option[5] has shouldn't be selected but is");
+
+      if (select.selectedIndex != 0)
+        error ("selectedIndex = " + select.selectedIndex + ", should be 0");
+
+      done (failed);
+      document.writeln ("</p>");
+    }
+
+    function single1 (select)
+    {
+      document.writeln ("<p>Single select... ");
+
+      if (select.options.length != 0)
+        error ("length != 0");
+
+      select.options[0] = new Option("1", "1", true, true);
+      select.options[1] = new Option("2", "2", true, true);
+      select.options[2] = new Option("3", "3", true, true);
+
+      if (select.selectedIndex != 2)
+        error ("selectedIndex = " + select.selectedIndex + ", should be 2");
+
+      if (select.options.length != 3)
+        error ("options.length = " + select.options.length + ", should be 3");
+
+      select.options.length = 0;
+      if (select.options.length != 0)
+        error ("options.length = " + select.options.length + ", should be 0");
+
+      select.options[0] = new Option("1", "1", false, false);
+      select.options[1] = new Option("2", "2", false, false);
+      select.options[2] = new Option("3", "3", false, false);
+
+      if (select.selectedIndex != -1 && select.selectedIndex != 0)
+        error ("selectedIndex = " + select.selectedIndex + ", should be -1 or 0");
+
+      select.options.length = 0;
+      if (select.options.length != 0)
+        error ("options.length = " + select.options.length + ", should be 0");
+
+      done (failed);
+      document.writeln ("</p>");
+    }
+
+    function reset1 (select)
+    {
+      function currentState ()
+      {
+        var i, s = "";
+        for (i = 0; i < 4; ++i)
+          s += select.options[i].selected ? "1" : "0";
+        return s;        
+      }
+
+      document.writeln ("<p>Form reset... ");
+      
+      select.options.length = 0;
+      select.options[0] = new Option("1", "1", true, true);
+      select.options[1] = new Option("2", "2", false, false);
+      select.options[2] = new Option("3", "3", true, false);
+      select.options[3] = new Option("4", "4", false, true);
+
+      if (currentState () != "1001")
+        error ("Current state is " + currentState () + ", should be 1001 (initial).");
+
+      select.form.reset ();
+
+      if (currentState () != "1010")
+        error ("Current state is " + currentState () + ", should be 1010 (after reset).");
+
+      select.options[0].selected = true;
+      select.options[1].selected = true;
+      select.options[2].selected = false;
+      select.options[3].selected = false;
+
+      select.options[0].defaultSelected = false;
+      select.options[1].defaultSelected = true;
+      select.options[2].defaultSelected = false;
+      select.options[3].defaultSelected = true;
+
+      if (currentState () != "1100")
+        error ("Current state is " + currentState () + ", should be 1100 (after reset).");
+
+      
+    }
+
+  </script>
+</head>
+
+<body>
+  <script>
+    document.open ("text/html");
+    document.writeln ("<form name='form1'>");
+    document.writeln ("  <select name='select1' multiple>");
+    document.writeln ("  </select>");
+    document.writeln ("</form>");
+    document.writeln ("<form name='form2'>");
+    document.writeln ("  <select name='select2' multiple>");
+    document.writeln ("    <optgroup>");
+    document.writeln ("      <option value='1-1' selected>1-1</option>");
+    document.writeln ("      <option value='1-2'>1-2</option>");
+    document.writeln ("    </optgroup>");
+    document.writeln ("    <optgroup>");
+    document.writeln ("      <option value='2-1'>2-1</option>");
+    document.writeln ("      <option value='2-2' selected>2-2</option>");
+    document.writeln ("    </optgroup>");
+    document.writeln ("    <optgroup>");
+    document.writeln ("      <option value='3-1'>3-1</option>");
+    document.writeln ("      <option value='3-2'>3-2</option>");
+    document.writeln ("    </optgroup>");
+    document.writeln ("  </select>");
+    document.writeln ("</form>");
+    document.writeln ("<form name='form3'>");
+    document.writeln ("  <select name='select3'>");
+    document.writeln ("  </select>");
+    document.writeln ("</form>");
+  </script>
+  <script>
+    test ();
+    document.close ();
+  </script>
+</body>
+
+</html>

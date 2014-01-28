@@ -1,0 +1,37 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+
+<head>
+<title>continue in for..in</title>
+</head>
+
+<body>
+
+<h1>Continue inside for..in loop</h1>
+
+<p>A bug in the implementation of <b>for..in</b> statements would
+abort the script if there was a <b>continue</b> executed in the body
+of the loop; you would only see the first two lines of the expected
+output in this test.  The problem was fixed for ECMAScript module
+version linear_a_1_beta_9.</p>
+
+<p>The below should read: "Before loop", "Thing in 0", "Thing in 1", "After loop".</p>
+
+<script>
+var ting = [ "fisk", "fnys" ];
+
+document.writeln("<p>Before loop");
+
+for (a in ting)
+{
+  document.writeln("<p>Thing in " + a);
+  continue;
+  document.writeln("<p>Thing out  " + a);
+}  
+
+document.writeln("<p>After loop");
+</script>
+
+</body>
+</html>

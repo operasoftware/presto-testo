@@ -1,0 +1,32 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+	<head>
+		<title>Redeclaration of variables not permitted</title>
+	</head>
+	<body>
+
+<p id="ostat">Enable JavaScript and reload.</p>
+<script type="text/javascript">
+
+var oUnsup = 'unsupported';
+function reportStatus( oStatus ) {
+	document.getElementById('ostat').firstChild.nodeValue = ( oStatus == true ) ? 'PASS' : ( ( oStatus == oUnsup ) ? 'FAIL (getters/setters not supported)' : 'FAIL' );
+	try{top.opener.rr(oStatus);}catch(e){}
+}
+
+var foo;
+if( window.__defineGetter__ ) {
+	try {
+		window.__defineGetter__('foo',function () { });
+		reportStatus(false);
+	} catch(e) {
+		reportStatus(true);
+	}
+} else {
+	reportStatus(oUnsup)
+}
+
+</script>
+
+	</body>
+</html>

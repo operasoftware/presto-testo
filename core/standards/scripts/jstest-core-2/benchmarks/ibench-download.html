@@ -1,0 +1,191 @@
+<HTML>
+<HEAD>
+<TITLE>JavaScript Performance Test - Build Table Script</TITLE>
+
+<script type="text/javascript">   
+<!--
+
+var result = "-1";
+
+function beginTest()
+{
+	// get current time
+	var sample = (new Date()).getTime();
+	var next_sample;
+
+	// wait for time to change to begin test - this should reduce error due to poor resolution timers
+	do
+	{	
+		next_sample = (new Date()).getTime();
+	}
+	while (next_sample == sample);
+
+	return next_sample;
+}
+
+function progress(current, total)
+{
+//	if (parent.frames[0])
+//		parent.frames[0].document.jsTest.status.value =  String(current * 100 / total);
+}
+
+function floatFix (Val, Places) 
+{
+	var OutString = "";
+	var Res = String(Math.round(Val * Math.pow(10, Places)));
+	var Dec = Res.length - Places;
+	if (Places != 0)
+	{
+		if (Dec > 0)
+		{
+			OutString = Res.substring(0, Dec);
+			OutString += "." + Res.substring(Dec, Res.length);
+		}
+		else
+		{
+			OutString = "0.";
+			for (var i = Dec; i < 0; i++)
+				OutString += "0";
+
+			OutString += Res;
+		}
+	}
+	else
+		OutString = Res;
+	return (OutString);
+}  
+
+function DownloadTime(size, connbps)
+{
+	// convert everything to bit counts
+	size *= 1024;			// to bytes
+	size *= 8;				// to bits
+
+	return (size / connbps);
+}
+
+function DownloadTimesTable()
+{
+
+	// start the test
+	var startTime = beginTest();
+
+	var columns = 25;
+	var sizeStart = 100;
+	var sizeEnd = 30000;
+	var x2 = Math.log(sizeEnd);
+	var x1 = Math.log(sizeStart);
+	var sizeStep = (x2 - x1) / (columns - 1);
+	var actualSize = new Array();
+
+	var bps = new Array();
+	bps[0] = 28800;
+	bps[1] = 56000;
+	bps[2] = 112000;
+	for (i = 0; i < 14; i++)
+		bps[3 + i] = 200000 + (i * 100000);
+
+	var rows = bps.length;
+
+	document.writeln('<center><h4>Download Times (in minutes)</h4></center>');	
+	document.writeln('<table cellspacing="0" cellpadding="2" border="1" align="center">');
+
+	document.writeln('<tr>');
+	document.writeln('<td align="center" bgcolor="#FFFFCC" rowspan="2"><font size="-1">');
+	document.writeln('<b>Connection<br>speed (kbps)</b>');
+	document.writeln('</font></td>');
+	document.writeln('<td align="center" bgcolor="#FFFF99" colspan=' + columns + '><font size="-1">');
+	document.writeln('<b>File size (kBytes)</b>');
+	document.writeln('</font></td>');
+	document.writeln('</tr>');
+ 
+	// write file sizes
+	document.writeln('<tr>');
+	var j = 0;
+	for (size = x1; size <= x2; size += sizeStep)
+	{	
+		// display the cell
+		document.writeln('<td align="center" bgcolor="#FFFF99"><font size="-2">');
+		actualSize[j] = Math.exp(size)
+		document.writeln(floatFix(actualSize[j], 0));
+		document.writeln('</font></td>');
+		j++;
+	}
+	document.writeln('</tr>');
+
+	for (var i = 0; i < rows; i++)
+	{
+
+		progress(i + 1, rows);
+
+		document.writeln('<tr>');
+
+		document.writeln('<td align="center" bgcolor="#FFFFCC">');
+		document.writeln('<font size="-2">');
+		document.writeln(floatFix(bps[i] / 1000, 1));
+		document.writeln('</font>');
+		document.writeln('</td>');
+
+		j = 0;
+		for (var size = x1; size <= x2; size += sizeStep)
+		{	
+			var downloadTime = DownloadTime(actualSize[j], bps[i]);
+			j++;
+
+			// convert to minutes
+			downloadTime /= 60;
+
+			if (downloadTime < 1)
+			{
+				color = 'CCFFFF';
+			}
+			else
+			{
+				if (downloadTime < 5)
+				{
+					color = '99FFFF';
+				}
+				else
+				{
+					if (downloadTime < 10)
+						color = '33FFFF';
+					else
+						color = '00CCFF';
+				}
+			}
+	
+			// display the cell
+			document.writeln('<td align="center" bgcolor="#' + color +'">');
+			document.writeln('<font size="-2">');
+			document.writeln(floatFix(downloadTime, 2));
+			document.writeln('</font>');
+			document.writeln('</td>');
+		}
+ 		document.writeln('</tr>');
+	}
+	document.writeln('</table>');
+
+	// stop the test
+	thisTime = (new Date()).getTime() - startTime;
+
+	document.writeln('Elapsed time = ' + thisTime + '<br>');
+
+}
+// -->
+</script>
+
+</HEAD>
+<BODY>
+
+<script src="reportresult.js"></script>
+<script type="text/javascript">   
+<!--
+	DownloadTimesTable();
+	reportresult( "iBench 'download' test", thisTime );
+// -->
+</script>
+
+<!-- Copyright &copy; 2000 Ziff Davis Media Inc.  All rights reserved. -->
+</BODY>
+
+</HTML>

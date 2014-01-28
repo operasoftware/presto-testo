@@ -1,0 +1,26 @@
+<html>
+<head>
+<title>Compiler test: return out of TRY past CATCH</title>
+</head>
+
+<body>
+<p>Should print "1,2,3"</p>
+
+<pre>
+<script>
+function copyArray( inputArray )
+{
+    try {
+	var returnArray = new Array( inputArray.length );
+	for( var i = 0; i < inputArray.length; i++ ) 
+	    returnArray[ i ] = inputArray[ i ];
+	return returnArray;
+    }
+    catch( e ) { document.writeln( "EXCEPTION" ); }
+}
+document.writeln( copyArray( [1,2,3] ) );
+</script>
+</pre>
+
+</body>
+</html>

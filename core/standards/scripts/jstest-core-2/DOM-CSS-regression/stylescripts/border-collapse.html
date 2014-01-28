@@ -1,0 +1,72 @@
+<html>
+<head>
+<title>DOM tests -- CSS2 interface</title>
+</head>
+
+<body>
+
+<!-- All the HTML elements below this line are used by the tests -->
+
+<table id='a' style='border: solid red'>
+<tr>
+  <td style='border: solid black'>The red border around entire line should have been...</td>
+  <td style='border: solid black'>...collapsed with the black borders around these textboxes</td>
+</tr>
+</table>
+
+<table id='b' style='border: medium dotted red; border-collapse: collapse'>
+<tr>
+  <td style='border: thick solid blue'>The border around the entire table should be collapsed into the thick blue one around the text</td>
+</tr>
+</table>
+
+<div id='c'>
+No borders
+</div>
+
+<!-- All the HTML elements above this line are used by the tests -->
+
+
+<script src="../../regression-lib/testbase.js"></script>
+<script>
+/* Regression tests for Opera's handling of the DOM 2 CSS2 interface
+ *
+ * 2002-04-11 / stighal
+ */
+
+var cvs = "$Id: border-collapse.html 4838 2006-01-18 05:59:01Z hallvord $";
+
+testmodule( "CSS2 interface", cvs );
+
+var a, b;
+
+try {
+a = document.getElementById("a");
+b = document.getElementById("b");
+c = document.getElementById("c");
+
+testcase( "Reading properties" );
+
+test('getting border-collapse from a with nothing specified', a.style.borderCollapse, "");
+test('getting border-collapse from b with a lot specified', b.style.borderCollapse, "collapse");
+
+testcase( "Setting properties" );
+
+a.style.borderCollapse = "collapse";
+test('reading border on a set by script to collapse', a.style.borderCollapse, "collapse");
+
+testcase( "Negative tests" );
+
+c.style.borderCollapse = "foo";
+test('reading border-collapse from a specified by script to foo (illegal)', c.style.borderCollapse, "");
+
+c.style.borderCollapse = "red";
+test('reading border-collpse from a specified by script to red (illegal keyword)', c.style.borderCollapse, "");
+} catch (e) { exception( e ); }
+
+testmodule_finished();
+
+</script>
+
+</body>
+</html>

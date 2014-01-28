@@ -1,0 +1,16 @@
+<!doctype html>
+<html>
+    <head>
+        <title></title>
+    </head>
+    <body>
+        <script type="text/javascript">
+            top.iframe_history_lenght = history.length;
+            var i = 50;
+            do {
+                location.hash = '#foo' + i;
+                location.hash = '#bar' + i;
+            } while (--i);
+        </script>
+    </body>
+</html>

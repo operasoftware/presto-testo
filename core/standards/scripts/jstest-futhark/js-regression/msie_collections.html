@@ -1,0 +1,61 @@
+<html>
+
+<head>
+<title>MSIE Collection Object Test</title>
+<script src="../testconfig.js"></script>
+<script src="../regression-lib/testbase.js"></script>
+</head>
+
+<body>
+<form id="form1">
+<input type="button" name="thebutton" value="alpha">
+<input type=radio name=r1 value=a>
+<input type=radio name=r1 value=b>
+<input type=radio name=r1 value=c>
+<input type=radio name=r1 value=d>
+<input type=radio name=r1 value=e>
+</form>
+
+<form id="form2">
+<input type="button" name="thebutton" value="alpha"></input>
+<input type=radio name=r1 value="a"></input>
+<input type=radio name=r1 value="b"></input>
+<input type=radio name=r1 value="c"></input>
+<input type=radio name=r1 value="d"></input>
+<input type=radio name=r1 value="e"></input>
+</form>
+<br>
+<br>
+<!-- multiple 'name' should turn into a collection when
+     accessed as subcollection of document.all -->
+<a href="http://www.opera.com" name="opera">A link</a><br>
+<a href="http://www.ibm.com" name=opera>Another link</a><br>
+<a href="http://www.netscape.com" name=opera>A third link</a><br>
+<a href="http://www.sun.com" name=opera>A fourth link</a><br>
+<br>
+<!-- multiple 'id' (MSIE extension) should turn into a collection when
+     accessed as subcollection of document.all -->
+<a href="http://www.opera.com" id=ibm>A link</a><br>
+<a href="http://www.ibm.com" id=ibm>Another link</a><br>
+<a href="http://www.netscape.com" id=ibm>A third link</a><br>
+<br>
+
+<!-- Don't add any forms here -->
+<div id=top_1>Div 1
+  <div id=second_1 name="abra">Div 1.1
+    <div id=third_1>Div 1.1.1</div>
+  </div>
+  <p>Para</p>
+  <textarea>Text area</textarea>
+  <div id=second_2 name="CADABRA">Div 1.2
+    <div id=third_2>Div 1.2.1</div>
+  </div>
+</div>
+
+<div id=top_2>Div 2</div>
+
+<script src="scripts/msie_collections.js"></script>
+
+</body>
+
+</html>

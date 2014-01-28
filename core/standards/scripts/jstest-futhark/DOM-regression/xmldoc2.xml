@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xml xmlns:html="http://www.w3.org/1999/xhtml">
+
+<html:DIV   id="tag1"  ATTR1="mytext1">Upper case attribute in html element</html:DIV>
+<html:DIV   id="tag2"  attr2="mytext2">Lower case attribute in html element</html:DIV>
+<BLOKK id="tag3"  ATTR3="mytext3">Upper case attribute in illegal element</BLOKK>
+<BLOKK id="tag4"  attr4="mytext4">Lower case attribute in illegal element</BLOKK>
+
+<html:span html:id="last-element"/>
+</xml>

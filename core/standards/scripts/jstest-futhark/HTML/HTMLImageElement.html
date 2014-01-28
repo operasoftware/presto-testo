@@ -1,0 +1,31 @@
+<html>
+<head>
+<script src="../testconfig.js"></script>
+<script src="../regression-lib/testbase-non-inline.js"></script>
+<script src="scripts/htmlimageelement.js"></script>
+<title>DOM 2 HTML ImageElement</title>
+</head>
+
+<body onload="main()">
+<p>
+<img id="noImage" src="" alt="">
+<img id="myImage" src="/resources/images/opera.png">
+</p>
+
+<map name="myMap">
+<area href="http://www.opera.com" alt="Opera" title="Opera" shape=rect coords="0,0,100,23">
+</map>
+<p>
+This is a paragraph with an image right in the middle 
+<img id="myImage2" src="/resources/images/opera.png" name="myImage2"
+align="middle" border=1 width="100" height="23" alt="Opera Logo" longDesc="imagedesc.html"
+hspace=10 vspace=15 name="Logo" isMap="true" useMap="#myMap" > 
+of the text.
+</p>
+
+<div id="myDiv">
+</div>
+
+<div id="container"></div>
+</body>
+</html>

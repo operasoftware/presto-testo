@@ -1,0 +1,76 @@
+<html>
+<head>
+<title>DOM tests -- CSS2 interface</title>
+</head>
+
+<body>
+
+<!-- All the HTML elements below this line are used by the tests -->
+
+<div id='a'>
+Black text on rgb(100, 10, 20) (redish)
+</div>
+
+<div id='b' style='background-color: gray'>
+Default text color on gray
+</div>
+
+<div id='c'>
+Default color values
+</div>
+
+<!-- All the HTML elements above this line are used by the tests -->
+
+
+<script src="../../regression-lib/testbase.js"></script>
+<script>
+/* Regression tests for Opera's handling of the DOM 2 CSS2 interface
+ *
+ * 2002-04-11 / stighal
+ */
+
+var cvs = "$Id: background-color.html 91616 2011-04-07 08:59:52Z bratell $";
+
+testmodule( "CSS2 interface", cvs );
+
+var a, b, c;
+
+try {
+a = document.getElementById("a");
+b = document.getElementById("b");
+c = document.getElementById("c");
+
+testcase( "Reading properties" );
+
+test('getting background-color from a with nothing specified', a.style.backgroundColor, "");
+test('getting background-color from b with gray specified in style', b.style.backgroundColor, "gray");
+
+testcase( "Setting properties" );
+
+a.style.backgroundColor = "red";
+test('reading background-color on a set by script to red', a.style.backgroundColor, "red");
+
+a.style.backgroundColor = "#fa0";
+test('reading background-color on a set by script to #fa0', a.style.backgroundColor, "rgb(255, 170, 0)");
+
+a.style.backgroundColor = "#faa201";
+test('reading background-color on a set by script to #faa201', a.style.backgroundColor, "rgb(250, 162, 1)");
+
+a.style.backgroundColor = "rgb(100, 10, 20)";
+test('reading bacground-color on a set by script to rgb(100, 10, 20)', a.style.backgroundColor, "rgb(100, 10, 20)");
+} catch (e) { exception( e ); }
+
+testcase( "Negative tests" );
+
+c.style.backgroundColor = "foo";
+test('reading background-color on c set by script to foo (illegal)', c.style.backgroundColor, "");
+
+c.style.backgroundColor = "bold";
+test('reading background-color on d set by script to bold (illegal keyword)', c.style.backgroundColor, "");
+
+testmodule_finished();
+
+</script>
+
+</body>
+</html>

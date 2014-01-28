@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <title>testPropertiesGlobal_spec.js#testMathExpAttributes_0</title>
+  <script src="opjsunit.js"></script>
+  <script src="testPropertiesGlobal_spec.js"></script>
+  <p>Failed (Script did not run)</p>
+  <script>
+function test() {
+  opera.postError("Running test testMathExpAttributes_0");
+  var passed = false;
+  var error = "";
+  var output_element = document.getElementsByTagName("p")[0];
+  try {
+    for (var count=0; count<10; count++) {
+      testMathExpAttributes_0();
+    }
+    passed = true;
+  } catch(e) {
+    opera.postError(e);
+    error = e.message;
+  }
+  try {top.opener.rr(passed)} catch(e){}
+  opera.postError("Got result: " + (passed?"pass":"fail"));
+  if (passed) {
+    output_element.textContent = "PASS"
+    output_element.style.color = "green";
+  } else {
+    output_element.textContent = "FAIL: " + error + " (failed on iteration " + count + ")"
+    output_element.style.color = "red";
+  }
+}
+document.addEventListener("DOMContentLoaded", test, false);
+  </script>
+</html>

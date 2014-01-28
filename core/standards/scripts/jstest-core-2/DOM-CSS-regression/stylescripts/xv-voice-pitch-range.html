@@ -1,0 +1,72 @@
+<html>
+<head>
+<title>DOM tests -- CSS2 interface</title>
+</head>
+
+<body>
+
+<!-- All the HTML elements below this line are used by the tests -->
+
+<h1>This test will not work well if you don't have Speech Support</h1>
+
+<div style='border: dashed blue'>
+<div id='a' style='border: solid black'>
+Text inside div a
+</div>
+
+<div id='b' style='border: solid red; -xv-voice-pitch-range: low'>
+Text inside div b
+</div>
+
+<div id='c'>
+Text inside div c
+</div>
+</div>
+
+<!-- All the HTML elements above this line are used by the tests -->
+
+
+<script src="../../regression-lib/testbase.js"></script>
+<script>
+/* Regression tests for Opera's handling of the DOM 2 CSS2 interface
+ *
+ * 2002-04-11 / stighal
+ */
+
+var cvs = "$Id: xv-voice-pitch-range.html 4838 2006-01-18 05:59:01Z hallvord $";
+
+testmodule( "CSS2 interface", cvs );
+
+var a, b, c;
+
+try {
+a = document.getElementById("a");
+b = document.getElementById("b");
+c = document.getElementById("c");
+
+testcase( "Reading properties" );
+
+test('getting -xv-voice-pitch-range from a with nothing specified', a.style.xvVoicePitchRange, "");
+test('getting -xv-voice-pitch-range from b with low specified', b.style.xvVoicePitchRange, "low");
+
+testcase( "Setting properties" );
+
+a.style.xvVoicePitchRange = "500Hz";
+test('reading -xv-voice-pitch-range on a set by script to 500Hz', a.style.xvVoicePitchRange, "500Hz");
+
+testcase( "Negative tests" );
+
+c.style.xvVoicePitchRange = "foo";
+test('reading -xv-voice-pitch-range on a set by script to foo (illegal)', c.style.xvVoicePitchRange, "");
+
+c.style.xvVoicePitchRange = "outset";
+test('reading -xv-voice-pitch-range on a set by script to outset (illegal keyword)', c.style.xvVoicePitchRange, "");
+
+} catch (e) { exception( e ); }
+
+testmodule_finished();
+
+</script>
+
+</body>
+</html>

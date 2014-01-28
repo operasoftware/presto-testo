@@ -1,0 +1,67 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/REC-html401/strict.dtd">
+<!--
+   Created by torstein@opera.com
+-->
+<html>
+   <head>
+      <title>Option Object Test</title>
+      <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+      <script type="text/javascript" src="../regression-lib/testbase.js"></script>
+      <script type="text/javascript" src="scripts/js_option_int.js"></script>
+   </head>
+   <body>
+      <h1>Option Object Test - Interactive</h1>
+      <script type="text/javascript">
+         showred( cvs );
+         openReportWindow( self );
+      </script>
+      <p>
+         The second option in the select should be selected by default,
+         and display the text "Default selected" in the drop down list.
+      </p>
+      <form id="theform" name="theform" action="">
+         <div>
+            <select name="theselect">
+               <option value="Option default value">My option text</option>
+               <option value="A value" selected>Default selected</option>
+            </select>
+         </div>
+      </form>
+      <hr>
+      <h2>User interaction</h2>
+      <ol>
+         <li>
+            <a href="javascript:addOption( self, 'Another', false );">Add an option to the select box</a>.
+            Report of the event should occur in the popup window. There should be a new
+            option available in the drop down list  called 'Another option text'.
+         </li>
+         <li>
+            <a href="javascript:addOption( self, 'Yet another', true );">Add yet another option to the select box</a>.
+            Report of the event should occur in the popup window. There should be a new
+            option available in the drop down list called 'Yet another option text', and it should be selected by default in the
+            drop down list.
+         </li>
+         <li>
+            <a href="javascript:removeOption( self );">Remove the last option</a>.
+            Reports on the event is given in the popup. 
+         </li>
+         <li>
+            <a href="javascript:addOption( self, 'Even yet another', true );
+                                selectOption( self, document.theform.theselect.length - 2 );
+                    "
+            >
+               Add even yet another option to the select box
+               and use selectedIndex on the select to select the now second last option.  
+            </a>
+            Adds "Even yet another" opton to the select, and uses the selectIndex property of
+            the options array to set the selected options to the second last item. Thus, the
+            last option before adding another.
+         </li>
+         <li>
+            <a href="javascript:changeValue( self );">Change the text of the first item</a>.
+            The text displayed in the list box should change.
+            <strong>The selected item should not change.</strong>
+         </li>
+      </ol>
+   </body>
+</html>

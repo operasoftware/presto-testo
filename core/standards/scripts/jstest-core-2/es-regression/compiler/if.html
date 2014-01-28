@@ -1,0 +1,52 @@
+<html>
+
+<head>
+<title>Compiler test: IF statement</title>
+</head>
+
+<body>
+
+<script>
+function f(a)
+{
+  if (a < 10)
+    return "Yes";
+  else
+    return "No";
+  return "Broken";
+}
+
+function g(a)
+{
+  if (a < 10)
+    return "Yes";
+  return "No";
+}
+
+function h(a,b)
+{
+  if (a < 10)
+    if (b < 20)
+      return "Yes";
+    else
+      return "No";
+  return "Not at all";
+}
+</script>
+
+<p>Should print "Yes No Yes No Yes No Not at all".</p>
+
+<pre>
+<script>
+document.writeln( f(9) );
+document.writeln( f(10) );
+document.writeln( g(9) );
+document.writeln( g(10) );
+document.writeln( h(9,19) );
+document.writeln( h(9,20) );
+document.writeln( h(10,20) );
+</script>
+</pre>
+
+</body>
+</html>

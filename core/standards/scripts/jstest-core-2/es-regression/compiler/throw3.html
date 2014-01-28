@@ -1,0 +1,30 @@
+<html>
+
+<head>
+<title>Compiler test: FINALLY</title>
+</head>
+
+<body>
+
+<p>Should print "1" twice</P>
+
+<pre>
+<script>
+var x="";
+
+function g()
+{
+  try { a() } 
+  catch (e) { 1; }
+  finally { x+="1" }
+  return x;
+}
+
+document.writeln( g() );
+//document.writeln( g );
+document.writeln( '<br>' + x );
+</script>
+</pre>
+
+</body>
+</html>

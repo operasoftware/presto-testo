@@ -1,0 +1,31 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+	<head>
+		<title>+= operator on DOM node should use getter and setter</title>
+	</head>
+	<body>
+
+<p id="ostat">Enable JavaScript and reload.</p>
+<script type="text/javascript">
+
+var oUnsup = 'unsupported';
+function reportStatus( oStatus ) {
+	document.getElementById('ostat').firstChild.nodeValue = ( oStatus == true ) ? 'PASS' : ( ( oStatus == oUnsup ) ? 'FAIL (getters/setters not supported)' : 'FAIL' );
+	try{top.opener.rr(oStatus);}catch(e){}
+}
+
+var state, oEl = document.getElementById('ostat');
+if( oEl.__defineGetter__ ) {
+	oEl.__defineGetter__('foo',function () { return state; });
+	oEl.__defineSetter__('foo',function (f) { state = f; });
+	oEl.foo = 'PA';
+	oEl.foo += 'SS';
+	reportStatus( state == 'PASS' );
+} else {
+	reportStatus(oUnsup)
+}
+
+</script>
+
+	</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/REC-html401/strict.dtd">
+<!--
+   Created by torstein@opera.com
+-->
+<html>
+   <head>
+      <title>Radio Object Test</title>
+      <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+      <script type="text/javascript" src="../regression-lib/testbase.js"></script>
+      <script type="text/javascript" src="scripts/js_radio.js"></script>
+      <script type="text/javascript" src="../testconfig.js"></script>
+   </head>
+   <body>
+      <form id="theform" name="theform">
+         <div>
+            <input type="radio"
+                   id="theradio"
+                   name="theradio" 
+                   onblur="void(0)"
+                   onfocus="void(2)" 
+                   onclick="void(6)"
+                   value="Radio default value"
+            >
+         </div>
+      </form>
+      <script type="text/javascript">
+        main( document.theform.theradio );
+      </script>
+   </body>
+</html>

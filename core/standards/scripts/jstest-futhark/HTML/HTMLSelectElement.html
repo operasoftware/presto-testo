@@ -1,0 +1,37 @@
+<html>
+<head>
+<script src="../testconfig.js"></script>
+<script src="../regression-lib/testbase.js"></script>
+<script src="scripts/focus.js"></script>
+
+<title>DOM 2 HTML SelectElement </title>
+</head>
+
+<body>
+
+<form id="myForm">
+  <select id="mySelect"></select>
+  <select id="mySelect2"
+  		  disabled
+		  size=3
+          name="sel" tabIndex=2 onFocus="reg_call()" onBlur="unreg_call();">
+    <option>a</option>
+    <option id="myOption" selected value="her">b</option>
+    <option value="der">c</option>
+  </select>
+</form>
+
+<form id="myForm2"></form>
+<script src="scripts/htmlselectelement.js"></script>
+
+<!--bug# 43154:>
+
+<form id="myForm3">
+<select id="sel3">
+<option>eeyore
+<option selected>elephant
+<option>penguin
+</select>
+
+</body>
+</html>

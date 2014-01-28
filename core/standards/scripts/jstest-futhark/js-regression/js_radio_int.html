@@ -1,0 +1,83 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/REC-html401/strict.dtd">
+<!--
+   Created by torstein@opera.com
+-->
+<html>
+   <head>
+      <title>Radio Object Test</title>
+      <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+      <script type="text/javascript" src="../regression-lib/testbase.js"></script>
+      <script type="text/javascript" src="scripts/js_radio_int.js"></script>
+   </head>
+   <body>
+      <h1>Radio Object Test - Interactive</h1>
+      <script type="text/javascript">showred( cvs );</script>
+      <p>
+         The popup window is for reports from the different event
+         handlers. Click the links below to test the key event handlers
+         onblur, onclick and onfocus. 
+      </p>
+      <p>
+         When clicking the different buttons in the radio button group,
+         only one should be selected at a time. The previous button that
+         had focus, should trigger an onblur(), while the one gaining the
+         click should report an onfocus() followed by a onclick().
+      </p>
+      <form id="theform" name="theform" action="">
+         <div>
+            <strong>Single radio button</strong>
+            <input type="radio"
+                   id="theradio"
+                   name="theradio" 
+                   onblur="reportEvent( 'onblur' )"
+                   onfocus="reportEvent( 'onfocus' )" 
+                   onclick="reportEvent( 'onclick' )"
+                   value="Radio value"
+            >
+         </div>
+      </form>
+      <hr>
+      <form id="theform2" name="theform2" action="">
+         <div>
+            <strong>Radio button group</strong>
+            <input type="radio"
+                   name="theradio" 
+                   onblur="reportEvent( '1: onblur' )"
+                   onfocus="reportEvent( '1: onfocus' )" 
+                   onclick="reportEvent( '1: onclick' )"
+                   value="Radio value"
+            >
+            <input type="radio"
+                   name="theradio" 
+                   onblur="reportEvent( '2: onblur' )"
+                   onfocus="reportEvent( '2: onfocus' )" 
+                   onclick="reportEvent( '2: onclick' )"
+                   value="Radio value"
+            >
+            <input type="radio"
+                   name="theradio" 
+                   onblur="reportEvent( '3: onblur' )"
+                   onfocus="reportEvent( '3: onfocus' )" 
+                   onclick="reportEvent( '3: onclick' )"
+                   value="Radio value"
+            >
+         </div>
+      </form>
+      <h2>User interaction</h2>
+      <ol>
+         <li>
+            <a href="javascript:testClickMethod();">Click the first radio button</a>
+            The first radio button on the page should be selected.
+         </li>
+         <li>
+            <a href="javascript:testBlurMethod();">Remove focus from the first radio button</a>
+            If the first radio button had focus, it should be removed. 
+         </li>
+         <li>
+            <a href="javascript:testFocusMethod();">Get focus on the first radio button</a>
+            The first radio button should gain focus, but not change value 
+            (&nbsp;selected/not selected&nbsp;).
+         </li>
+      </ol>
+   </body>
+</html>

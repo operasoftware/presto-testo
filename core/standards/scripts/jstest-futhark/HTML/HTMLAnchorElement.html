@@ -1,0 +1,24 @@
+<html>
+<head>
+<script src="../testconfig.js"></script>
+<script src="../regression-lib/testbase.js"></script>
+<script src="scripts/focus.js"></script>
+
+<title>DOM 2 HTML Anchor Element </title>
+</head>
+
+<body>
+<p>
+  <a id="myAnchor"></a>
+  <a href="tom">tom</a>
+  <a href="tom">tom</a>
+  <a id="myAnchor2" name="navn" tabindex="10"  accesskey="U" charset="iso-8859-1" 
+    coords="101,102,103" shape="circle" 
+	href="link.html" hreflang="i-navajo" rel="Copyright" rev="Start" target="_top" type="multipart/voice-message"
+    onFocus="reg_call()" onBlur="unreg_call();">link</a>
+  <a href="tom">tom</a>
+  <a href="tom">tom</a>
+</p>
+<script src="scripts/htmlanchorelement.js"></script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/REC-html401/strict.dtd">
+<!--
+   Created by haukur@opera.com
+-->
+<html>
+   <head>
+      <title>Form Object Test</title>
+      <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+      <script language="javascript" type="text/javascript" src="../regression-lib/testbase.js"></script>
+      <script language="javascript" type="text/javascript" src="scripts/js_form.js"></script>
+      <script language="javascript" type="text/javascript" src="../testconfig.js"></script>
+   </head>
+   <body>
+      <form id="theform" 
+            name="theform"
+            action="http://davis.intern.opera.no/my_repository/js-regression/js_form.htm"
+            method="Post"
+            target="http://davis.intern.opera.no"
+            enctype="multipart/form-data"
+            accept-charset="ISO-8859-1"
+            type="text"
+            onreset="void(0)"
+            onsubmit="void(1)">
+         <input id="thetext"
+	 	name="thetext"
+	 	type = "text">
+      </form>
+      <script language="javascript" type="text/javascript">
+        main( document.theform );
+      </script>
+   </body>
+</html>

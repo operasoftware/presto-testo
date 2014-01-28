@@ -1,0 +1,18 @@
+<html>
+
+<head>
+<title>Browser speed test</title>
+<script>
+function get_config()
+{
+    return { buffer_output: controlframe.controls.buffer_output.checked,
+             no_output: controlframe.controls.no_output.checked, 
+             concat_in_array: controlframe.controls.concat_in_array.checked };
+}
+</script>
+</head>
+
+<frameset rows="10%,*">
+  <frame id=controlframe src="speedcontrol.html">
+  <frame id=testframe src="about:blank">
+</frameset>

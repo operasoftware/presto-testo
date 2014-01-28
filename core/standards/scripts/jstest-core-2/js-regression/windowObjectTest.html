@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!--
+   Created by torstein@opera.com
+-->
+<html>
+   <head>
+      <link rel="stylesheet" type="text/css" href="../styles/mystyle.css" media="screen" />
+      <title>Window object test</title>
+      <script type="text/javascript" src="../regression-lib/testbase.js"></script>
+      <script type="text/javascript" src="scripts/windowObjectTest.js"></script>
+      <script type="text/javascript" src="scripts/intervalAndTimeoutTest.js"></script>
+   </head>
+   <body>
+      <script type="text/javascript">
+         self.defaultStatus='myDefaultStatus';
+         self.locationbar=true;
+         self.menubar=true;
+         self.name='My Main Window';
+         self.personalbar=false;
+         self.scrollbars=true;
+         self.statusbar=true;
+         self.toolbar=true;
+         self.opener='index.html';
+         main( self );
+         document.close();
+      </script>
+      <a href="javascript:main2( self )">Clock test, setinterval</a>
+   </body>
+</html>

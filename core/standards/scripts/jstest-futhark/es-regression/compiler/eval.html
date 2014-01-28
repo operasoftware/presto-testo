@@ -1,0 +1,22 @@
+<html>
+
+<head>
+<title>Compiler test: eval</title>
+</head>
+
+<body>
+
+<p>Should print "37" three times, not four, and if you have the JS console up you
+should see a syntax error message (because 'return' is used on the global level).</p>
+
+<script>
+var abracadabra=37;
+var fnord = new Object;  fnord.fisk=37;
+document.writeln( eval('37') );
+document.writeln( eval('abracadabra') );
+document.writeln( eval('fnord.fisk') );
+document.writeln( eval('return 37') );
+</script>
+
+</body>
+</html>

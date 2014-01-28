@@ -1,0 +1,42 @@
+<!doctype html>
+<title>Location hash - set hash twice after page completely loaded</title>
+<script src="/resources/testharness.js"></script><script src="/resources/testharnessreport.js"></script>
+<script>
+var t = async_test();
+var histlength;
+var step_delay = 100;
+t.step(function() {
+    if( location.hash && location.hash != '#' ) {
+        location.href = location.href.replace(/#.*$/,'');
+        return;
+    }
+    histlength = history.length;
+});
+
+window.onload = function () {
+    setTimeout(step1, step_delay);  
+};
+
+function step1() {
+    t.step(function() {
+        location.hash = '#foo';
+    });
+    setTimeout(step2, 1);
+}
+
+function step2() {
+    t.step(function() {
+        location.hash = '#bar';
+    });
+    setTimeout(last_step, step_delay);
+}
+
+function last_step() {
+    t.step(function() {
+        assert_equals( location.hash, '#bar' );
+        assert_equals( history.length, histlength + 2 );
+    });
+    t.done();
+}
+</script>
+<div id="log"></div>

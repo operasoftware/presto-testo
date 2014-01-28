@@ -1,0 +1,27 @@
+<html>
+
+<head>
+<title>Compiler test: DESC</title>
+</head>
+
+<body>
+
+<p>Description</p>
+
+<script>
+function loop(n)
+{
+    for ( var i=0 ; i < n ; i++ )
+        ;
+    return "Done";
+}
+
+var before = new Date();
+var result = loop(1000000);
+var after = new Date();
+document.writeln( [ result, after - before ] + '<br>' );
+document.writeln( loop.toString().split("\n").join("<br>") );
+</script>
+
+</body>
+</html>

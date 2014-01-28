@@ -1,0 +1,46 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>opjsunit testsuite</title>
+<script src="tests.js"></script>
+<script src="treeview.js"></script>
+<script src="harness.js"></script>
+<script src="opjsunit.js"></script>
+
+<style>
+html {font-family:"Gill Sans", "DejaVu Sans", "Bitstream Vera Sans", "Veranda", "Helvetica", sans}
+*[hidden] {display:none}
+.disclosure {display:inline-block; width:1.5em}
+li {list-style:none; margin:0; padding:0}
+.col {margin-right:1em;}
+.result {text-transform:capitalize; font-variant: small-caps}
+.pass {color:green;}
+.fail {color:red;}
+.timeout {color:blue;}
+</style>
+
+<h1>opjsunit ECMAScript Tests</h1>
+
+<pre id="log"></pre>
+
+<div id="harness">
+  <div id="controls" hidden>
+    <p><input type="button" value="Start" id="control_button"></p>
+    <div id="load">
+<!--      <input type="button" value="Load Test List" id="load_test_button">-->
+      <input type="button" value="Load Skip List" id="load_skip_button">
+      <input type="button" value="Select All" id="select_all_button">
+      <div id="load_controls" hidden>
+	<p>A list of tests in the format <samp>tests/Conformance/14_Program/S14_A5_T2.js</samp></p>
+	<p><textarea id="test_list" cols="80", rows="40"></textarea></p>
+		<input type="button" value="Hide" id="hide_load_button"><input type="button" value="Load" id="load_button">
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="results">
+  <p id="status"></p>
+</div>
+
+<div id="tree">
+</div>

@@ -1,0 +1,37 @@
+<html>
+<head>
+<script src="reportresult.js"></script>
+<script>
+var d1, d2;
+
+function getParentNode(n)
+{
+    for (var i = 0; i < n; i++)
+    {
+	d1 = d2.parentNode;
+    }
+    return "Done";
+}
+
+function createElements()
+{
+	d1 = document.createElement("div");
+	document.body.appendChild(d1);
+
+	d2 = document.createElement("div");
+	d1.appendChild (d2);
+}
+</script>
+</head>
+
+<body>
+<script>
+createElements();
+var before = new Date();
+var result = getParentNode(1000000);
+var after = new Date();
+document.writeln( [ result, after - before ] + '<br>' );
+reportresult( "parentNode", after-before );
+</script>
+</body>
+</html>

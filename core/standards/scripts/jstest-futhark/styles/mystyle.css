@@ -1,0 +1,212 @@
+/*
+
+           Cascading Stylesheet 
+                 laget av 
+         torstein.k.johansen@hiof.no
+                                        
+                                                                 */
+/***************** body *********************/
+body 
+{ 
+   color: black;
+   background-color: white;
+   margin-left: 10%;
+   margin-right: 10%;
+   margin-top: 5%;
+   font-family: arial, helvetica, sans-serif;
+}
+
+/***************** text *********************/
+
+h1
+{ 
+     color: #cccccc; 
+     background-color: #ffffff;
+     text-shadow: 0.2em 0.2em silver;
+}
+
+p
+{ 
+   color: black;
+   background-color: white;
+   font-size: 1em;
+}
+
+p.reg:first-letter {
+   font-size: 300%;
+   float: left;
+   margin-right: 0.1em;
+   margin-bottom: -0.3em;
+   margin-top: -0.1em;
+}
+
+span.code
+{ 
+   font-family: monospace;
+}
+
+span.red
+{ 
+   color: #993333;
+   background-color: white;
+}
+
+span.done, span.header
+{ 
+   color: #993333;
+   background-color: white;
+}
+
+span.value
+{ 
+   font-size: 0.8em;
+   font-style: italic;
+}
+/***************** links *********************/
+
+a, a:visited, a:active
+{ 
+   color: #993333;
+   background-color: white;
+   text-decoration: none;
+   font-family: arial, helvetica, sans-serif;
+}
+
+a:hover
+{ 
+   color: red;
+   background-color: white;
+}
+
+a.menu:hover 
+{   
+   color: #000000;
+   background-color: #cccccc;
+   text-decoration: none;
+}
+
+a.menu 
+{
+   color: #336699;
+   background-color: #cccccc; /*#336666;*/
+   text-decoration: none;
+}
+
+
+/***************** id's *********************/
+#main
+{ 
+   border: solid #cccccc 0.1em;
+   padding: 1em;
+}
+
+#theform
+{ 
+   border: solid #cccccc 0.1em;
+   padding: 1em;
+}
+
+#searchform
+{ 
+   border: solid #cccccc 0.1em;
+   padding: 1em;
+}
+
+/***************** divs *********************/
+
+div.guest
+{ 
+   visibility: hidden;
+}
+
+div.menu 
+{ 
+  color: #000000; 
+  background-color: #cccccc; 
+  text-align: center;
+  border-width: thin; 
+  border-style: solid; 
+  border-color: #000000; 
+  margin-top: 1em;
+  padding: 0.3em; 
+}
+
+div.links 
+{ 
+  color: #000000; 
+  background-color: #cccccc; 
+  border-width: thin; 
+  border-style: solid; 
+  border-color: #000000; 
+  margin-top: 1em;
+  padding: 0.3em; 
+}
+
+/*** Classes for ECMAScript testsuite ***/
+div.passed
+{ 
+  color: #000000; 
+  background-color: #ffffff; 
+  visibility: hidden;
+  top: 50%;
+}
+
+div.failed
+{ 
+  color: black; 
+  background-color: #ffffff; 
+}
+
+div.notsupported
+{  
+  color: #ff0000; 
+  background-color: #ffffff; 
+  font-size: 0.7em;
+}
+
+/***************** ids *********************/
+#me, #gallery, #computerrelated
+{
+   color: #000000;
+   background-color: #cccccc;
+   font-family: sans-serif;
+   font-size: 0.7em;
+   position: absolute;
+   top: 50%; 
+   right: 15%;
+   width: 150px; 
+   visibility: hidden;
+   padding: 0.5em;
+   border: solid #000000 1px;
+}
+
+#menu1, #menu2, #menu3
+{
+   position: absolute;
+	height: 20px;
+	width: 60px;
+	border: solid #cccccc 1px;
+	background-color: #ffffff;
+   font-size: 0.7em;
+   padding: 0.5em;
+
+}
+
+#menu1
+{
+   right: 35%;;
+   top: 13%;
+}
+
+
+#menu2 
+{
+   right: 25%;
+   top: 13%;
+}
+
+#menu3 
+{
+   right: 15%;
+   top: 13%;
+}

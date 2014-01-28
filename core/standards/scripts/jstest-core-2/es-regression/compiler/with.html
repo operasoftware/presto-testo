@@ -1,0 +1,29 @@
+<html>
+
+<head>
+<title>Compiler test: WITH</title>
+</head>
+
+<body>
+
+<p>Should print "[5,20,10,10]"</p>
+
+<pre>
+<script>
+function f(x)
+{
+  var y=x;
+  var obj={x:10, y:20, z:-1};
+  var obj2;
+  with(obj)
+    with(obj2={x:x, y:40})
+      z=y=x;
+  return [y, obj.y, obj2.y, obj.z];
+}
+document.writeln(f(5) + '<br><br><br>');
+//document.writeln(f);
+</script>
+</pre>
+
+</body>
+</html>

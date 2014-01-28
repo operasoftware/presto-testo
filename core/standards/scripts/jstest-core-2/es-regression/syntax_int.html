@@ -1,0 +1,29 @@
+<html>
+
+<head>
+<title>ES syntax | linked scripts</title>
+</head>
+
+<body>
+<p><b>You should see several syntax errors in the error console.</b></p>
+
+<script src="scripts/syntax_int1.js"></script>
+<script src="scripts/syntax_int2.js"></script>
+<script>for ( i=0 ; i < 10 ; i++ )
+  if (i < 10)) 
+    i++; 
+  else
+    j++;
+</script>
+
+<p>For <tt>scripts/syntax_int1.js</tt> there should be a syntax error on line 2:
+an extra right paren after the '10'.</p>
+
+<p>For <tt>scripts/syntax_int1.js</tt> there should be a syntax error on line 2:
+an illegal '++' after the '10'.</p>
+
+<p>For the inline#1 script in this file there should be a syntax error on line 2:
+an extra right paren after the '10'.</p>
+
+</body>
+</html>

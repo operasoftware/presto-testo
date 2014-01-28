@@ -1,0 +1,59 @@
+<html>
+<script>
+var cvs="$Id";
+var gid=0;
+var fticker=0;
+var gticker=-1;
+var fnames="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+var gnames="0123456789*";
+
+function doit()
+{
+  setInterval( f, 1000 );
+}
+
+function f()
+{
+  document.getElementById("foo").firstChild.replaceData(0,1,fnames.charAt(fticker%fnames.length));
+  fticker++;
+  if (gticker == -1)
+  {
+    gid = setInterval( g, 200 );
+    gticker=0;
+  }
+  else if (gticker == -2)
+    gticker = -1;
+}
+
+function g()
+{
+  document.getElementById("bar").firstChild.replaceData(0,1,gnames.charAt(gticker));
+  if (gticker++ == 10)
+  {
+    clearInterval(gid);
+    gticker=-2;
+  }
+}
+</script>
+<body onload="doit()">
+<script type="text/javascript">showred( cvs );</script>
+
+<p>This tests multiple setInterval calls.</p>
+
+<ol>
+<li><p>The first char below should cycle with period 1000, the second
+with period 200.  You should see the first char changing while the
+second is cycling; the second will pause after 10 iterations before
+starting anew, so you should also see the first char changing while
+the second is pausing.</p>
+
+<div id=foo>A</div>
+<div id=bar>C</div>
+
+<li><p>The intervals are started by the onload handler, so if you go BACK now and
+then FORWARD again, they should be started anew.  Try it!</p>
+</ol>
+
+(This test requires nontrivial DOM support.  This test does not work in MSIE.)
+</body>
+</html>

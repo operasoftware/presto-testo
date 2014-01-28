@@ -1,0 +1,34 @@
+<html>
+<head>
+<script src="reportresult.js"></script>
+<script>
+var d1, s1;
+
+function hasAttr(n)
+{
+    for (var i = 0; i < n; i++)
+    {
+	d1.hasAttributes();	
+    }
+    return "Done";
+}
+
+function createElements()
+{
+	d1 = document.createElement("div");
+	d1.setAttribute("id", "div1");
+}
+</script>
+</head>
+
+<body>
+<script>
+createElements();
+var before = new Date();
+var result = hasAttr(100000);
+var after = new Date();
+document.writeln( [ result, after - before ] + '<br>' );
+reportresult( "hasAttributes", after-before );
+</script>
+</body>
+</html>

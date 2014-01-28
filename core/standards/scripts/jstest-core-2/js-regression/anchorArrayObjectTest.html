@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!--
+   Created by torstein@opera.com
+-->
+<html>
+<head>
+<title>AnchorArray object test</title>
+</head>
+
+<body>
+
+<script src="../regression-lib/testbase.js"></script>
+<script src="scripts/anchorArrayObjectTest.js"></script>
+
+<!-- don't mess with these -->
+<a tabindex=2 name="a1" href="http://www.apple.com">www.apple.com</a><br />
+<a tabindex=3 name="a2" href="http://www.coca.com/">www.coca.com</a><br />
+<a tabindex=4 name="a3" href="http://www.msnd.com">www.msnd.com</a><br />
+<a tabindex=1 name="a4" href="http://www.linux.com/">www.linux.com</a><br />
+
+<br>
+<a onclick="test_anchors()">Click me.  If the popup window stays open, you will
+see error messages; otherwise Opera passed the test.</a>
+
+</body>
+</html>

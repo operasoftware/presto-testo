@@ -1,0 +1,49 @@
+<html>
+	  <head>
+	  		<title>HTML Element Test</title>
+			<script type="text/javascript" src="scripts/advanceHTMLElementTest.js"></script>
+	  </head>
+	  <body onload="setChildrenText();return true;">
+	  		<img src="../graphics/operalogo_100x105.gif" width="100" height="105" alt="" border="0" align="">
+			<br><br>
+			<table id="MainTable">
+				   <tr>
+				   	   <td>Select your browser:</td>
+					   <td>
+                			<select name="Browser">
+                              <option selected value="0">Opera</option>
+                              <option value="1">Internet Explorer</option>
+                              <option value="2">Netscape</option>
+                			</select>
+					   </td>
+				</tr>
+			</table>
+			<br><br>
+			<input id="SubmitBrowserType" type="Submit" name="SubmitButton" value="Submit">
+			<br><br>
+			<hr>
+			<p>Children tags of body:</p>
+			<textarea id="ChildrenTag" name="Children" rows="6" cols="20" readonly="true"></textarea>
+			<br><br>
+			<p>Children tag id of body:</p>
+			<textarea id="ChildrenID" name="ChildrenID" rows="6" cols="20" readonly="true"></textarea>
+			<br><br>
+			<hr>		
+			<br><br>
+            <table border="1"  width="50%">
+              <tr><!-- Row 1 -->
+                 <td width="20%">innerHTML</td><!-- Col 1 -->
+                 <td><a href="#" name="HTMLDirection">Venstre</a></td><!-- Col 2 -->
+              </tr>
+              <tr><!-- Row 2 -->
+                 <td>innerText</td><!-- Col 1 -->
+                 <td><a href="#" name="TextDirection">Left</a></td><!-- Col 2 -->
+              </tr>
+            </table>			
+			
+			<br><br>
+			<button name="ChangeDirection" onclick="onToggle();return false;">Change!</button>
+			<br><br> 	
+	  </body>
+</html>
+

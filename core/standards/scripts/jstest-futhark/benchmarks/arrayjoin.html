@@ -1,0 +1,30 @@
+<!-- benchmark: Array.prototype.join() -->
+
+<script src="reportresult.js"></script>
+<script>
+function join_bm(length, loops)
+{
+    var i;
+    var a = new Array();
+    for (i=0; i<length; i++)
+       a[i] = i + 'a';
+    for (i=0; i<loops; i++)
+       a.join('-');
+    return "OK";
+}
+</script>
+<script>
+function run_benchmark(name, thunk, done)
+{
+  var before = new Date();
+  var result = thunk();
+  var after = new Date();
+  document.writeln( [ name, result, after - before ] );
+  document.writeln( '<br>' );
+  reportresult( name, after-before, done );
+}
+
+run_benchmark("Array.prototype.join()", 
+              (function(){ return join_bm(1000,500); }), 
+              false);
+</script>

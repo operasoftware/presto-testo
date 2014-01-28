@@ -1,0 +1,1 @@
+document.flag = true;

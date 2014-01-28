@@ -1,0 +1,23 @@
+<html>
+
+<head>
+<title>Compiler test: return a constant</title>
+</head>
+
+<body>
+
+<p>Should print "37 undefined undefined".</p>
+
+<pre>
+<script>
+function f() { return 37; }
+function g() { return; }
+function h() { /* fall off the end */ }
+document.writeln( f() );
+document.writeln( g() );
+document.writeln( h() );
+</script>
+</pre>
+
+</body>
+</html>

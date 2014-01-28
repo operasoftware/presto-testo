@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html><head>
+	<title>load event on FRAMESET with scripted content and nested IFRAME </title>
+	<script src="_files/lib.js" ></script>
+	<script>var expected = [
+			'load in window [support.html] (in IFRAME#nested [support.html])',
+			'load  on nested IFRAME  in window [nested.html] (in FRAME [nested.html])',
+			'load in window [nested.html] (in FRAME [nested.html])',
+			'load  on FRAME  in window [011.html]',
+			'load  on FRAMESET  in window [011.html]'
+		];
+	</script>
+</head>
+<frameset rows="*" onload="load(event, ' on FRAMESET ')">
+<frame src="_files/nested.html" onload="load(event, ' on FRAME ')"></frame>
+</frameset></html>

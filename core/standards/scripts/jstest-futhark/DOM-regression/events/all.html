@@ -1,0 +1,30 @@
+<html>
+
+<head>
+<title>DOM Events autorun tests</title>
+
+<script src="../../regression-lib/autorun.js"></script>
+<script>
+function setup()
+{
+  setup_autorun(["documentevent.html",
+                 "eventtarget.html",
+                 "event.html",
+                 "uievent.html",
+                 "mouseevent.html",
+                 "mutationevent.html"]);
+}
+</script>
+</head>
+
+<body onload="setup()">
+
+<p>This page runs all tests in the Opera DOM Events test
+suite.  Each test is run in a separate window.  If all the tests in a
+test set pass, or if the failures are known, then the window is
+closed; otherwise, the window stays open so that you can see what
+failed.</p>
+
+</body>
+
+

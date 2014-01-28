@@ -1,0 +1,34 @@
+<html>
+<head>
+<script src="reportresult.js"></script>
+<script>
+var a, d;
+
+function getNodeValue(n)
+{
+    for (var i = 0; i < n; i++)
+    {
+	a = d.nodeValue;
+    }
+    return "Done";
+}
+
+function createElement()
+{
+	d = document.createTextNode("some text");
+	document.body.appendChild(d);
+}
+</script>
+</head>
+
+<body>
+<script>
+createElement();
+var before = new Date();
+var result = getNodeValue(1000000);
+var after = new Date();
+document.writeln( [ result, after - before ] + '<br>' );
+reportresult( "nodeValue", after-before );
+</script>
+</body>
+</html>

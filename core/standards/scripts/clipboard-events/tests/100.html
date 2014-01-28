@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html><head>
+	<meta charset="UTF-8">
+	<title>  clearData() method without arguments  - cut event on document</title>
+	<script src="_lib.js"></script>
+	<script>
+	
+/** clearData() method without arguments */
+/* Events: copy cut */
+/* External pass condition - clipboard data: "" */
+/* paste data: "clipboard text" */
+function test(e){
+	var passed = false;
+	e.clipboardData.clearData();
+	e.preventDefault();
+}
+
+	</script>
+</head>
+<body>
+
+	<p>FAILED (This TC requires JavaScript enabled)</p>
+	<form><input autofocus id="input_text"></form>
+
+	<script>
+	var dataToPaste="clipboard text";
+	var externalPassCondition="";
+	var eventTarget=document;
+	var eventType='cut';
+	window.onload=function(){
+		setupTest( document, 'cut', dataToPaste, externalPassCondition );
+	}
+	</script>
+</body></html>

@@ -1,0 +1,52 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/REC-html401/strict.dtd">
+<!--
+   Created by haukur@opera.com
+-->
+<html>
+   <head>
+      <title>Button Object Test - Interactive</title>
+      <script type="text/javascript" src="../regression-lib/testbase.js"></script>
+      <script type="text/javascript" src="scripts/js_button_int.js"></script>
+   </head>
+   <body>
+      <h1>Button Object Test - Interactive</h1>
+      <script type="text/javascript">showred( cvs );</script>
+      <p>
+         A popup window will show when the first event is triggered, e.g.
+         when you click the button. The popup window is for reports from the different event
+         handlers. 
+      </p>
+      <form id="theform" name="theform">
+         <input id="thebutton" name="thebutton"
+                type="button"
+                onfocus="reportEvent( 'onfocus' );"
+                onblur="reportEvent( 'onblur' );"
+		onclick="reportEvent( 'onclick' );"
+		onmouseup="reportEvent( 'onmouseup' )"
+		onmousedown="reportEvent( 'onmousedown' );"
+                value="This is a Button object">
+      </form>
+      <h2>User interaction</h2>
+      <ol>
+         <li>
+            <a href="javascript:testFocusMethod();">focus(), the button receives the focus.</A>
+            The onfocus() event handler should trigger.
+         </li>
+	 <li>
+	    <a href="javascript:testClickMethod();">click(), the button is clicked.</A>
+       The onclick() event handler should trigger.
+	 </li>
+         <li>
+            <a href="javascript:testBlurMethod();">blur(), the focus is removed from the button </A>
+            The onblur() event handler should trigger.
+            (&nbsp;it needs to have focus first&nbsp;)
+         </li>
+         <li>
+            Click the button.
+            The are three event handlers that should now trigger, reporting in the popup window:
+            onmousedown(), onmouseup() and onclick(), onmousedown() should trigger before
+            onmouseup(). If the button didn't have focus already, onfocus() should also be triggered.
+         </li>
+      </ol>
+   </body>
+</html>

@@ -1,0 +1,1 @@
+parent.push_event("script");

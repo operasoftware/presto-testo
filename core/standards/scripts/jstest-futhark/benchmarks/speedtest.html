@@ -1,0 +1,196 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<!-- From "http://silencer.times.lv/opera7/browser_speed_test.htm",
+     posted by author to opera.beta
+
+     $Id: speedtest.html 10655 2006-12-18 15:47:57Z hallvord $
+
+     Slightly modified by lth: two configuration variables at the
+     start let you run the program various ways.
+
+     Following times from 
+       - Opera 7 build 2513
+       - Lth's computer (1.8 GHz Pentium, win2k), idle
+
+     Standard operation (buffer_output=false, no_output=false):
+      computation time 15 seconds
+      concat time 0 seconds
+      flush time 0 seconds
+
+     Computation only (no_output=true)
+       computation time 3 seconds
+       concat time 0 seconds
+       flush time 0 seconds
+
+     Buffered output (buffered in array)
+       computation time 3 seconds
+       concat time 8 seconds
+       flush time 0 seconds
+
+     Buffered output (buffered in string)
+       computation/output time 33 seconds
+       concat time 8 seconds
+       flush time 0 seconds
+
+     Note, script produces 0.5MB of HTML output.
+
+     Performance bug #1: concat of many args is no smarter than concat of
+     one arg, or indeed than +=.
+
+     Performance bug #2: += on a single-owner string is not very smart.
+-->
+
+<HTML>
+<HEAD><TITLE>Brouser speed test by ZuhweLL</TITLE></HEAD>
+<BODY>
+<SCRIPT LANGUAGE="JavaScript">
+
+var buffer_output=true;            // if not, every w() turns into document.write
+var no_output=false;               // if not, no output at all
+var concat_in_array=false;         // if not, use += to accumulate in a string
+
+/* Buffer uses array of strings to reduce cost of concatenating
+   string all the time, but this is really a performance bug in
+   Opera that we should fix.
+   */
+
+var output=new Array();  // Output as array of strings
+var outstring="";        // Output as single string
+
+function make_outstring()
+{
+        if (outstring == "")
+                outstring = String.prototype.concat.apply( new String(), output );
+}
+
+function flush()
+{
+        if (!no_output && buffer_output)
+	{
+		make_outstring();
+                document.write(outstring);
+	}
+}
+
+function w(text)
+{
+        if (!no_output)
+        {
+                if (buffer_output)
+		        if (concat_in_array)
+			        output.push( text );
+			else
+			        outstring += text;
+		else
+		        document.write(text);
+	}
+}
+
+function numtohex(x)
+{
+	if (x==10) { x='A' }
+	if (x==11) { x='B' }
+	if (x==12) { x='C' }
+	if (x==13) { x='D' }
+	if (x==14) { x='E' }
+	if (x==15) { x='F' }
+	return x+''
+}
+
+function inttohex(dec,b)
+{
+	h=''
+	i=0
+	z=dec
+	x=dec
+	while (i<(b*2))
+	{
+		i+=1
+		x=z%16
+		z=Math.floor(z/(16))
+		h=numtohex(x)+h
+	}
+	return h
+}
+
+function hextoint(h)
+{
+	h='0x'+h
+	return eval(h)
+}
+	
+function colorgrad(cA,cZ,step)
+{
+	cAr=hextoint(cA.charAt(0)+cA.charAt(1))
+	cAg=hextoint(cA.charAt(2)+cA.charAt(3))
+	cAb=hextoint(cA.charAt(4)+cA.charAt(5))
+	cZr=hextoint(cZ.charAt(0)+cZ.charAt(1))
+	cZg=hextoint(cZ.charAt(2)+cZ.charAt(3))
+	cZb=hextoint(cZ.charAt(4)+cZ.charAt(5))
+	
+	zr=(cAr-cZr)/256
+	zg=(cAg-cZg)/256
+	zb=(cAb-cZb)/256
+	x=inttohex((Math.floor(cAr-zr*step)),1)+inttohex((Math.floor(cAg-zg*step)),1)+inttohex((Math.floor(cAb-zb*step)),1)
+	return x
+}
+
+function drawgradline(ifs,iff,step)
+{
+	while (ifs < iff)
+	{
+		ifs+=step
+		c1=colorgrad('ff709e','20568e',ifs)
+		w('<td bgcolor="#'+c1+'"><div style="position:relative; top:0; left:0; width:10; height:10"><font size=1></font></div></td>')
+	}
+}
+
+function drawtest(step)
+{
+	zs=0
+	zf=128
+	stime=new Date()
+	w('This benchmark can be configured in various ways, see source<br><br>');
+	w('Drawing table '+(zf/step)+'x'+(zf/step)+'...')
+	w('<TABLE CELLPADDING=0 CELLSPACING=0 BORDER=0>')
+	
+	while (zf<256)
+	{
+	        
+	        w('<tr>')
+		drawgradline(zs,zf,step)
+		w('</tr>')
+		
+		zs+=step
+		zf+=step
+	}
+	w('</TABLE>')
+	ftime=new Date()
+	etime=(Date.parse(ftime)-Date.parse(stime))/1000
+
+	stime=new Date()
+	make_outstring();
+	ftime=new Date();
+	etime2=(Date.parse(ftime)-Date.parse(stime))/1000
+
+	stime=new Date()
+	flush();
+	ftime=new Date()
+	etime3=(Date.parse(ftime)-Date.parse(stime))/1000
+
+	document.write('compute time: '+etime+' seconds<br>')
+	document.write('concat time: '+etime2+' seconds<br>')
+	document.write('flush time: '+etime3+' seconds<br>');
+}
+
+if (parent != self && parent.get_config)
+{
+    cfg=parent.get_config();
+    buffer_output = cfg.buffer_output;
+    no_output = cfg.no_output;
+    concat_in_array = cfg.concat_in_array;
+}
+drawtest(2) // 2 for 64x64, 4 for 32x32, 8 for 16x16
+
+</SCRIPT>
+</BODY>
+</HTML>

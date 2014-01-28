@@ -1,0 +1,17 @@
+<html>
+<head>
+<script>
+var fnord=1;
+function dotest()
+{
+  alert( "Should be 2: " + window.frames[0].eval( "fnord" ) );
+}
+</script>
+</head>
+
+<frameset rows=*,* onload="dotest()">
+  <frame src="eval_in_window2.html">
+  <frame>
+</frameset>
+
+</html>

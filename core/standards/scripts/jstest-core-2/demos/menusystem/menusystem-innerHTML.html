@@ -1,0 +1,65 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="menusystem.css">
+    <script src="menusystem.js"></script>
+    <title>Demo menu system</title>
+
+    <script>
+      features.innerHTML = true;
+      features.js_events = true;
+
+      if (navigator.appName == "Microsoft Internet Explorer")
+        features.MSIE_compatible = true;
+
+      features.verify ();
+      
+      var main_menu = new MenuItem (MENUTYPE_MAIN);
+      main_menu.setId ("main_menu");
+
+      for (var i = 0; i < 3; ++i)
+        {
+          var submenu = new MenuItem (MENUTYPE_SUBMENU);
+          submenu.setLabel ("Submenu " + i);
+          submenu.setPosition (MENUPOS_UNDER);
+
+          for (var j = 0; j < 5; ++j)
+            {
+              var link = new MenuItem (MENUTYPE_LINK);
+              link.setLabel ("Link " + i + "/" + j);
+              link.setURL ("javascript:alert ('Link " + i + "/" + j + "')");
+              submenu.addItem (link);
+            }
+
+          var subsubmenu = new MenuItem (MENUTYPE_SUBMENU);
+          subsubmenu.setLabel ("Submenu " + i + "/6");
+
+          if (i < 2)
+            subsubmenu.setPosition (MENUPOS_LEFT);
+          else
+            subsubmenu.setPosition (MENUPOS_RIGHT);
+
+          for (var j = 0; j < 5; ++j)
+            {
+              var link = new MenuItem (MENUTYPE_LINK);
+              link.setLabel ("Link " + i + "/6/" + j);
+              link.setURL ("javascript:alert ('Link " + i + "/6/" + j + "')");
+              subsubmenu.addItem (link);
+            }
+            
+          submenu.addItem (subsubmenu);
+          main_menu.addItem (submenu);
+        }
+    </script>
+  </head>
+
+  <body onload="main_menu.setContainer (document.getElementById ('menu_container'));">
+    <div id="menu_container">
+      <script>
+        main_menu.writeContainerHTML ();
+      </script>
+    </div>
+    <script>
+      main_menu.writeOtherHTML ();
+    </script>
+  </body>
+</html>

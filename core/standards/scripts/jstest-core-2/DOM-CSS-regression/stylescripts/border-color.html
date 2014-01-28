@@ -1,0 +1,91 @@
+<html>
+<head>
+<title>DOM tests -- CSS2 interface</title>
+</head>
+
+<body>
+
+<!-- All the HTML elements below this line are used by the tests -->
+
+<div id='a'>
+Black border of default width and style.
+</div>
+
+<div id='b' style='border-color: red; border-style: solid; border-width: 4px;'>
+Solid red border of width 4px
+</div>
+
+<div id='c' style='border-top-color: blue'>
+Blue border with default width and style.
+</div>
+
+<div id='d'>
+No borders
+</div>
+
+<!-- All the HTML elements above this line are used by the tests -->
+
+
+<script src="../../regression-lib/testbase.js"></script>
+<script>
+/* Regression tests for Opera's handling of the DOM 2 CSS2 interface
+ *
+ * 2002-04-11 / stighal
+ */
+
+var cvs = "$Id: border-color.html 4838 2006-01-18 05:59:01Z hallvord $";
+
+testmodule( "CSS2 interface", cvs );
+
+var a, b, c, d;
+
+try {
+a = document.getElementById("a");
+b = document.getElementById("b");
+c = document.getElementById("c");
+d = document.getElementById("d");
+
+testcase( "Reading properties" );
+
+test('getting border-color from a with nothing specified', a.style.borderColor, "");
+test('getting border-color from b with red specified', b.style.borderColor, "rgb(255, 0, 0)");
+
+testcase( "Setting properties" );
+
+a.style.borderColor = "black";
+test('reading border-color on a set by script to black', a.style.borderColor, "rgb(0, 0, 0)");
+
+testcase("Shorthand tests");
+
+test('getting border-color from c where only border-top-width is set by style', c.style.borderColor, "");
+
+c.style.borderRightColor = "green";
+test('getting border-color from c where border-top-color is set by style and border-right-color is set by script', c.style.borderColor, "");
+
+c.style.borderBottomColor = "yellow";
+c.style.borderLeftColor = "green";
+test('getting border-color from c where the border colors are set to {blue green yellow green}', c.style.borderColor, "rgb(0, 0, 255) rgb(0, 128, 0) rgb(255, 255, 0)");
+
+c.style.borderBottomColor = "blue";
+test('getting border-color from c where the border colors are set to {blue green blue green}', c.style.borderColor, "rgb(0, 0, 255) rgb(0, 128, 0)");
+
+c.style.borderRightColor = "blue";
+c.style.borderLeftColor = "blue";
+test('getting border-color from c where the border colors are set to {blue blue blue blue}', c.style.borderColor, "rgb(0, 0, 255)");
+
+testcase( "Negative tests" );
+
+d.style.borderColor = "foo";
+test('reading border-color from a specified by script to foo (illegal)', d.style.borderColor, "");
+
+d.style.borderColor = "medium";
+test('reading border-collpse from a specified by script to medium (illegal keyword)', d.style.borderColor, "");
+
+} catch (e) { exception( e ); }
+
+testmodule_finished();
+
+</script>
+
+</body>
+</html>

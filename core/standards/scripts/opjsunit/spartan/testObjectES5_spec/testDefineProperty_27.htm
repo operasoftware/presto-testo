@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <title>testObjectES5_spec.js#testDefineProperty_27</title>
+  <script src="../opjsunit.js"></script>
+  <script>function testDefineProperty_27()
+{
+    /* (Re)defining a property stored in a hash table. */
+    function put(o, n, v) { o[n] = v; };
+    var obj = {a:2};
+    put(obj, "b", 5);
+    Object.defineProperty(obj,"b", {value: 4, enumerable: false});
+    assertEquals(obj.b, 4);
+}</script>
+  <p>Failed (Script did not run)</p>
+  <script>
+function test() {
+  var passed = false;
+  var error = "";
+  var output_element = document.getElementsByTagName("p")[0];
+  try {
+    for (var count=0; count<100; count++) {
+      testDefineProperty_27();
+    }
+    passed = true;
+  } catch(e) {
+    error = e.message;
+  }
+  try {top.opener.rr(passed)} catch(e){}
+  if (passed) {
+    output_element.textContent = "PASS"
+    output_element.style.color = "green";
+  } else {
+    output_element.textContent = "FAIL: " + error + " (failed on iteration " + count + ")"
+    output_element.style.color = "red";
+  }
+}
+window.addEventListener("load", test, false);
+  </script>
+</html>

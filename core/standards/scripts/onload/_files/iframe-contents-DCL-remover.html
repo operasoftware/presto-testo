@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html><head>
+	<title> IFRAME contents, removes itself on DOMContentLoaded </title>
+</head>
+<body>
+
+	<p>This IFRAME removes itself on DOMContentLoaded</p>
+
+	<script type="text/javascript">
+	function test(e){
+		e=e||window.event;
+		parent.iframeDCLHandler(e);
+	}
+	document.addEventListener('DOMContentLoaded', test, false);
+	window.onload=test;
+	</script>
+	<script src="../_files/lib.js"></script>
+
+</body></html>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html><head>
+	<title>load event on IFRAME without scripted content </title>
+	<script src="_files/lib.js" ></script>
+	<script>var expected = [
+			'load in window [007.html]'
+		];
+	</script>
+
+</head>
+<body>
+<iframe src="_files/1x1-green.png" onload="load(event)"> IFRAME must be supported and enabled </iframe>
+
+	<p>FAILED (This TC requires JavaScript enabled)</p>
+
+</body></html>

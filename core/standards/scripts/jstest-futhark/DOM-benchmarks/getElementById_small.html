@@ -1,0 +1,37 @@
+<html>
+<head>
+<script src="reportresult.js"></script>
+<script>
+function getElm(n)
+{
+    for (var i = 0; i < n; i++)
+    {
+	document.getElementById("s_9");
+    }
+    return "Done";
+}
+
+function createElements(n)
+{
+	var d = document.createElement("div");
+	for (var i = 0; i < n; i++)
+	{
+		var s = d.appendChild (document.createElement("span"));
+		s.setAttribute ("id", "s_" + i);
+	}
+	document.body.appendChild(d);
+}
+</script>
+</head>
+
+<body>
+<script>
+createElements(10);
+var before = new Date();
+var result = getElm(100000);
+var after = new Date();
+document.writeln( [ result, after - before ] + '<br>' );
+reportresult( "getElementById (10 elements)", after-before );
+</script>
+</body>
+</html>

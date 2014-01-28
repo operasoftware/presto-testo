@@ -1,0 +1,827 @@
+<html>
+  <head>
+    <style>
+      div#content 
+      { 
+        font-family: monospace; 
+        border: solid thin black;
+        padding: 5px;
+        width: 80ex;
+        height: 25em;
+      }
+    </style>
+    <script>
+      var content = null;
+      var current_line = null;
+      var cursor = null;
+      var cursor_state = 'on';
+      var cursor_timer_id = -1;
+      var cursor_disabled = false;
+      var escape = false;
+      var ATTR_keyCode = "which";
+      var mark = null;
+      var kill_ring = new Array();
+      var kill_stopped = true;
+      var kill_forward = true;
+      var killing = false;
+      var last_yank = null;
+      var NBSP = String.fromCharCode (160);
+      var prefix = false;
+      var prefix_nr = null;
+      
+      function initialize ()
+      {
+        content = document.getElementById ("content");
+        current_line = firstLine ();
+        cursor = firstChar (current_line);
+        cursor.synthetic = true;
+        cursor.whitespace = true;
+        cursorOn ();
+
+        if (document.body && document.body.addEventListener)
+          document.body.addEventListener ("keypress", keypress, false);
+        else
+          document.onkeypress = keypress;
+      }
+      
+      function cursorOn ()
+      {
+        if (cursor_timer_id != -1)
+          clearTimeout (cursor_timer_id);
+        if (!cursor_disabled)
+        {
+          cursor_state = 'on';
+          cursor.style.color = 'white';
+          cursor.style.backgroundColor = 'black';
+          if (!cursor_disabled)
+            cursor_timer_id = setTimeout (cursorOff, 600);
+        }
+      }
+
+      function cursorOff ()
+      {
+        if (cursor_timer_id != -1)
+          clearTimeout (cursor_timer_id);
+        cursor_state = 'off';
+        cursor.style.color = 'black';
+        cursor.style.backgroundColor = 'white';
+        if (!cursor_disabled)
+          cursor_timer_id = setTimeout (cursorOn, 600);
+      }
+
+      function cursorDisable ()
+      {
+        cursor_disabled = true;
+        cursorOff ();
+      }
+
+      function cursorEnable ()
+      {
+        cursor_disabled = false;
+        cursorOn ();
+      }
+
+      function commandCategory (category)
+      {
+        if (!kill_stopped && !killing && category != "kill")
+          kill_stopped = true;
+
+        if (category != "yank")
+          last_yank = null;
+
+        prefix = false;
+      }
+      
+      function beginKill (forward)
+      {
+        if (!killing)
+        {
+          if (kill_stopped)
+          {
+            kill_ring[kill_ring.length] = "";
+            kill_stopped = false;
+          }
+
+          killing = true;
+        }
+
+        kill_forward = forward;
+      }
+
+      function endKill ()
+      {
+        killing = false;
+      }
+
+      function killChar (ch)
+      {
+        killString (charAsString (ch));
+      }
+
+      function killString (str)
+      {
+        if (killing)
+        {
+          if (kill_forward)
+            kill_ring[kill_ring.length - 1] += str;
+          else
+            kill_ring[kill_ring.length - 1] =
+              str + kill_ring[kill_ring.length - 1];
+        }
+      }
+      
+      function markBetween (ch1, ch2)
+      {
+        while (ch1)
+        {
+          if (ch1 == ch2)
+            return false;
+          else if (ch1 == mark)
+            return true;
+          else if (charAfter (ch1))
+            ch1 = charAfter (ch1);
+          else if (lineAfter (lineFromChar (ch1)))
+            ch1 = firstChar (lineAfter (lineFromChar (ch1)));
+          else
+            return false;
+        }
+      }
+
+      function regionAsString ()
+      {
+        if (!mark)
+        {
+          alert ("Mark not set.");
+          return null;
+        }
+
+        if (charIsBefore (mark, cursor))
+        {
+          ch1 = mark;
+          ch2 = cursor;
+        }
+        else
+        {
+          ch1 = cursor;
+          ch2 = mark;
+        }
+
+        var str = "";
+        while (ch1 && ch1 != ch2)
+        {
+          str += charAsString (ch1);
+          var tmp = nextChar (ch1);
+          if (tmp && lineFromChar (tmp) != lineFromChar (ch1))
+            str += "\n";
+          ch1 = tmp;
+        }
+
+        return str;
+      }
+
+      function charAsString (ch)
+      {
+        if (ch.nodeName == "SPAN" &&
+            ch.firstChild.nodeName == "#text")
+          return ch.firstChild.data;
+        else
+          return "";
+      }
+
+      function lineIsBefore (l1, l2)
+      {
+        while (l1 && l1 != l2)
+          l1 = lineAfter (l1);
+
+        return l1 == l2;
+      }
+      
+      function charIsBefore (ch1, ch2)
+      {
+        var l1 = lineFromChar (ch1), l2 = lineFromChar (ch2);
+        if (l1 != l2)
+          return lineIsBefore (l1, l2);
+        else
+        {
+          while (ch1 && ch1 != ch2)
+            ch1 = charAfter (ch1);
+
+          return ch1 == ch2;
+        }
+      }
+      
+      function firstLine ()
+      {
+        var element = content.firstChild;
+        while (element && element.nodeName != "DIV")
+          element = element.nextSibling;
+        return element;
+      }
+      
+      function lineBefore (line)
+      {
+        if (!line)
+          line = current_line;
+
+        var element = line.previousSibling;
+        while (element && element.nodeName != "DIV")
+          element = element.previousSibling;
+        return element;
+      }
+      
+      function lineAfter (line)
+      {
+        if (!line)
+          line = current_line;
+
+        var element = line.nextSibling;
+        while (element && element.nodeName != "DIV")
+          element = element.nextSibling;
+        return element;
+      }
+      
+      function lineFromChar (ch)
+      {
+        var element = ch.parentNode;
+        while (element && element.nodeName != "DIV")
+          element = element.parentNode;
+        return element;
+      }
+
+      function firstChar (line)
+      {
+        if (!line)
+          line = current_line;
+
+        var element = line.firstChild;
+        while (element && element.nodeName != "SPAN")
+          element = element.nextSibling;
+        return element;
+      }
+
+      function lastChar (line)
+      {
+        if (!line)
+          line = current_line;
+
+        var element = line.lastChild;
+        while (element && element.nodeName != "SPAN")
+          element = element.previousSibling;
+        return element;
+      }
+      
+      function charBefore (ch)
+      {
+        if (!ch)
+          ch = cursor;
+
+        var element = ch.previousSibling;
+        while (element && element.nodeName != "SPAN")
+          element = element.previousSibling;
+        return element;
+      }
+      
+      function charAfter (ch)
+      {
+        if (!ch)
+          ch = cursor;
+
+        var element = ch.nextSibling;
+        while (element && element.nodeName != "SPAN")
+          element = element.nextSibling;
+        return element;
+      }
+
+      function nextChar (ch)
+      {
+        if (charAfter (ch))
+          return charAfter (ch);
+        else if (lineAfter (lineFromChar (ch)))
+          return firstChar (lineAfter (lineFromChar (ch)));
+        else
+          return null;
+      }
+
+      function previousChar (ch)
+      {
+        if (charBefore (ch))
+          return charBefore (ch);
+        else if (lineBefore (lineFromChar (ch)))
+          return lastChar (lineBefore (lineFromChar (ch)));
+        else
+          return null;
+      }
+
+      function keydown (e)
+      {
+        /* Opera 7 sends high key codes for shift/ctrl/alt.  Ignore them. */
+        if (e[ATTR_keyCode] == 0 || e[ATTR_keyCode] > 50000)
+          return;
+        else if (e.preventDefault)
+          e.preventDefault ();
+      }
+
+      function keyup (e)
+      {
+        /* Opera 7 sends high key codes for shift/ctrl/alt.  Ignore them. */
+        if (e[ATTR_keyCode] == 0 || e[ATTR_keyCode] > 50000)
+          return;
+        else if (e.preventDefault)
+          e.preventDefault ();
+      }
+
+      function keypress (e)
+      {
+        /* Opera 7 sends high key codes for shift/ctrl/alt.  Ignore them. */
+        if (e[ATTR_keyCode] == 0 || e[ATTR_keyCode] > 50000)
+          return;
+        else if (e.preventDefault)
+          e.preventDefault ();
+
+        if (!e.shiftKey)
+          ch = String.fromCharCode (e[ATTR_keyCode]).toLowerCase ();
+        else
+          ch = String.fromCharCode (e[ATTR_keyCode]).toUpperCase ();
+
+        if (e.ctrlKey)
+        {
+          if (ch == 'b')
+            backwardChar ();
+          else if (ch == 'f')
+            forwardChar ();
+          else if (ch == 'a')
+            beginningOfLine ();
+          else if (ch == 'e')
+            endOfLine ();
+          else if (ch == 'd')
+            deleteChar ();
+          else if (ch == 'k')
+            killLine ();
+          else if (ch == 'o')
+            openLine ();
+          else if (ch == 'p')
+            backwardLine ();
+          else if (ch == 'n')
+            forwardLine ();
+          else if (ch == 'y')
+            yank ();
+          else if (ch == ' ')
+            setMark ();
+          else if (ch == 'w')
+            killRegion ();
+          else if (ch == 'u')
+            prefix = true;
+        }
+        else if (e.altKey || escape)
+        {
+          escape = false;
+
+          if (ch == 'x')
+          {
+            command = prompt ("M-x:");
+            if (command.length > 0)
+              eval (command + "()");
+          }
+          else if (ch == 'f')
+            forwardWord ();
+          else if (ch == 'b')
+            backwardWord ();
+          else if (ch == 'd')
+            killWord ();
+          else if (e[ATTR_keyCode] == 8)
+            backwardKillWord ();
+          else if (ch == 'w')
+            killRingSave ();
+        }
+        else
+        {
+          if (e[ATTR_keyCode] == 27)
+            escape = true;
+          else if (e[ATTR_keyCode] == 13)
+            newline ();
+          else if (e[ATTR_keyCode] == 8)
+            backspace ();
+          else
+            insertChar (ch);
+        }
+      }
+
+      function backspace ()
+      {
+        commandCategory ("delete");
+        
+        cursorDisable ();
+        if (charBefore (cursor) && lineFromChar (cursor))
+        {
+          killChar (charBefore (cursor));
+          if (charBefore (cursor) == mark)
+            mark = cursor;
+          lineFromChar (cursor).removeChild (charBefore (cursor));
+        }
+        else if (lineBefore ())
+        {
+          killString ("\n");
+          
+          var line = current_line;
+          current_line = lineBefore ();
+
+          cursor = ch = firstChar (line);
+
+          while (ch && !ch.synthetic)
+          {
+            current_line.insertBefore (ch, lastChar ());
+            ch = firstChar (line);
+          }
+
+          if (lineFromChar (cursor) != current_line)
+            cursor = lastChar ();
+
+          content.removeChild (line);
+        }
+        cursorEnable ();
+      }
+
+      function deleteChar ()
+      {
+        commandCategory ("delete");
+
+        cursorDisable ();
+        if (charAfter (cursor))
+        {
+          forwardChar ();
+          backspace ();
+        }
+        else if (lineAfter ())
+        {
+          current_line = lineAfter ();
+          cursor = firstChar ();
+          backspace ();
+        }
+        cursorEnable ();
+      }
+
+      function killLine ()
+      {
+        commandCategory ("kill");
+
+        cursorDisable ();
+        
+        if (markBetween (cursor, lastChar ()))
+          mark = null;
+
+        beginKill (true);
+        if (charAfter ())
+          while (charAfter ())
+            deleteChar ();
+        else
+          deleteChar ();
+        endKill ();
+        cursorEnable ();
+      }
+
+      function insertChar (ch)
+      {
+        commandCategory ("insert");
+
+        if (ch == undefined || ch == null)
+        {
+          ch = prompt ("Insert: ");
+          ch = ch.charAt (0);
+        }
+
+        if (ch == ' ')
+          ch = NBSP;
+
+        if (ch == '\n')
+          newline ();
+        else
+        {
+          var span = document.createElement ("SPAN");
+          span.synthetic = false;
+          current_line.insertBefore (span, cursor);
+          
+          var text = document.createTextNode (ch);
+          span.appendChild (text);
+          span.whitespace = ch == NBSP;
+        }
+      }
+
+      function backwardLine ()
+      {
+        commandCategory ("move");
+
+        cursorOff ();
+        if (lineBefore ())
+        {
+          cursorDisable ();
+
+          var column = 0;
+          while (charBefore ())
+          {
+            backwardChar ();
+            ++column;
+          }
+
+          current_line = lineBefore ();
+          cursor = firstChar ();
+
+          while (column > 0 && charAfter ())
+          {
+            forwardChar ();
+            --column;
+          }
+          
+          cursorEnable ();
+        }
+        cursorOn ();
+      }
+
+      function forwardLine ()
+      {
+        commandCategory ("move");
+
+        cursorOff ();
+        if (lineAfter ())
+        {
+          cursorDisable ();
+
+          var column = 0;
+          while (charBefore ())
+          {
+            backwardChar ();
+            ++column;
+          }
+
+          current_line = lineAfter ();
+          cursor = firstChar ();
+
+          while (column > 0 && charAfter ())
+          {
+            forwardChar ();
+            --column;
+          }
+          
+          cursorEnable ();
+        }
+        cursorOn ();
+      }
+
+      function forwardChar ()
+      {
+        commandCategory ("move");
+
+        cursorOff ();
+        if (charAfter ())
+          cursor = charAfter ();
+        else if (lineAfter ())
+          cursor = firstChar (lineAfter ());
+        cursorOn ();
+      }
+
+      function backwardChar ()
+      {
+        commandCategory ("move");
+
+        cursorOff ();
+        if (charBefore ())
+          cursor = charBefore ();
+        else if (lineBefore ())
+          cursor = lastChar (lineBefore ());
+        cursorOn ();
+      }
+
+      function forwardWord ()
+      {
+        commandCategory ("move");
+
+        cursorDisable ();
+        while (cursor.whitespace && charAfter ())
+          forwardChar ();
+        while (!cursor.whitespace && charAfter ())
+          forwardChar ();
+        cursorEnable ();
+      }
+
+      function backwardWord ()
+      {
+        commandCategory ("move");
+
+        cursorDisable ();
+        while (charBefore () && charBefore ().whitespace)
+          backwardChar ();
+        while (charBefore () && !charBefore ().whitespace)
+          backwardChar ();
+        cursorEnable ();
+      }
+
+      function killWord ()
+      {
+        commandCategory ("kill");
+
+        cursorDisable ();
+        beginKill (true);
+        while (cursor.whitespace && nextChar (cursor))
+          deleteChar ();
+        while (!cursor.whitespace && nextChar (cursor))
+          deleteChar ();
+        endKill (true);
+        cursorEnable ();
+      }
+
+      function backwardKillWord ()
+      {
+        commandCategory ("kill");
+
+        cursorDisable ();
+        beginKill (false);
+        while (previousChar (cursor) && previousChar (cursor).whitespace)
+          backspace ();
+        while (previousChar (cursor) && !previousChar (cursor).whitespace)
+          backspace ();
+        endKill ();
+        cursorEnable ();
+      }
+
+      function transposeChars ()
+      {
+        commandCategory ("delete");
+        
+        if (charAfter () && !charAfter ().synthetic)
+        {
+          cursorOff ();
+          current_line.insertBefore (charAfter (), cursor);
+          cursorOn ();
+        }
+      }
+
+      function beginningOfLine ()
+      {
+        commandCategory ("move");
+        
+        cursorOff ();
+        cursor = firstChar ();
+        cursorOn ();
+      }
+
+      function endOfLine ()
+      {
+        commandCategory ("move");
+        
+        cursorOff ();
+        cursor = lastChar ();
+        cursorOn ();
+      }
+      
+      function openLine ()
+      {
+        commandCategory ("insert");
+        
+        cursorOff ();
+        
+        var div = document.createElement ("DIV");
+        if (lineAfter ())
+          content.insertBefore (div, lineAfter ());
+        else
+          content.appendChild (div);
+
+        current_line = div;
+
+        var span = document.createElement ("SPAN");
+        span.synthetic = true;
+        span.whitespace = true;
+
+        current_line.appendChild (span);
+        cursor = span;
+
+        span.innerHTML = "&nbsp;";
+
+        cursorOn ();
+      }
+     
+      function newline ()
+      {
+        commandCategory ("insert");
+        
+        cursorDisable ();
+        var line = current_line;
+        var ch = cursor;
+
+        openLine ();
+        
+        while (ch && !ch.synthetic)
+        {
+          next_ch = ch.nextSibling;
+          while (next_ch && next_ch.nodeName != "SPAN")
+            next_ch = next_ch.nextSibling;
+          
+          current_line.insertBefore (ch, lastChar ());
+          ch = next_ch;
+        }
+
+        cursor = firstChar ();
+        cursorEnable ();
+      }
+
+      function yank ()
+      {
+        cursorDisable ();
+
+        var pre = prefix;
+        var pre_nr = prefix_nr;
+        var line = lineFromChar (cursor);
+        var cur = charBefore (cursor);
+
+        commandCategory ("yank");
+        
+        str = kill_ring[kill_ring.length - 1];
+        if (str)
+          for (var i = 0; i < str.length; ++i)
+            insertChar (str.charAt (i));
+
+        if (pre && pre_nr == null)
+        {
+          current_line = line;
+          cursorOff ();
+          if (cur && charAfter (cur))
+            cursor = charAfter (cur);
+          else
+            cursor = firstChar ();
+        }
+        
+        cursorEnable ();
+      }
+
+      function setMark ()
+      {
+        mark = cursor;
+      }
+
+      function exchangePointAndMark ()
+      {
+        var tmp = mark;
+        mark = cursor;
+        cursor = tmp;
+      }
+
+      function killRingSave ()
+      {
+        commandCategory ("copy");
+
+        var str = regionAsString ();
+        if (str != null)
+          kill_ring[kill_ring.length] = str;
+      }
+
+      function killRegion ()
+      {
+        commandCategory ("kill");
+
+        var str = regionAsString ();
+        if (str != null)
+        {
+          if (kill_stopped)
+            kill_ring[kill_ring.length] = str;
+          else
+            kill_ring[kill_ring.length - 1] += str;
+
+          if (charIsBefore (mark, cursor))
+            exchangePointAndMark ();
+
+          var line1 = lineAfter (lineFromChar (cursor)),
+              line2 = lineFromChar (mark);
+          
+          while (line1 && line1 != line2)
+          {
+            var tmp = lineAfter (line1);
+            content.removeChild (line1);
+            line1 = tmp;
+          }
+
+          while (cursor != mark)
+            deleteChar ();
+        }
+      }
+    </script>
+  </head>
+
+  <body onload="initialize ();">
+    <div id="description">
+      <h2>Emacs emulator</h2>
+      <p>
+        This is an Emacs emulator. It supports a various number of commands,
+        for an accurate listing, check the key bindings in the function
+        "keypress".
+      </p>
+      <h2>Author</h2>
+      <p>
+        Jens Lindstr&ouml;m <a href="mailto:jl@opera.com">&lt;jl@opera.com&gt;</a> 
+        wrote this. If you find bugs, please report it.
+      </p>
+    </div>
+    <div id="content">
+      <div>
+        <span>&nbsp;</span>
+      </div>
+    </div>
+  </body>
+</html>

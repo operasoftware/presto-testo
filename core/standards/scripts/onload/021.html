@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html><head>
+	<title>load event that appends content to document </title>
+	<script src="_files/lib.js" ></script>
+	<script>
+	function iframe_load(e, extra_info){
+		load.call(this, e, extra_info);
+		var img=document.createElement('img');
+		img.onload=load;
+		img.src='_files/1x1-green.png';
+		document.body.appendChild(img);
+	}
+	</script>
+	<script>var expected = [
+			'load  on IFRAME in window [021.html]',
+			'load in window [021.html]'
+		];
+	</script>
+</head>
+<body>
+<iframe src="_files/1x1-green.png" onload="iframe_load(event, ' on IFRAME')"> IFRAME must be supported and enabled </iframe>
+
+	<p>FAILED (This TC requires JavaScript enabled)</p>
+
+</body></html>

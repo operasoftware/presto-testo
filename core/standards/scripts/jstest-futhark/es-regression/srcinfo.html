@@ -1,0 +1,58 @@
+<html>
+
+<head>
+<script>
+var ok=false;
+
+function kabang()
+{
+  return foo;
+}
+
+function kabong()
+{
+  return kabang(3);
+}
+
+function waitforok()
+{
+  if (ok)
+    itsok();
+  else
+    setTimeout( "waitforok()", 1000 );
+}
+
+function itsok()
+{
+  var s=frames[0].document.scripts;
+  frames[0].location.replace('http://www.opera.com');
+  for ( var i=0 ; i < 100000 ; i++ )
+    ;
+  opera.collect();  
+  opera.collect();  
+  opera.collect();  
+  opera.collect();  
+  opera.collect();
+  opera.collect();  
+  opera.collect();  
+  opera.collect();  
+  opera.collect();  
+  opera.collect();
+  opera.collect();  
+  opera.collect();  
+  opera.collect();  
+  opera.collect();  
+  opera.collect();
+  for ( var i=0 ; i < 10000 ; i++ )
+    ;
+  alert( "Should be 3: " + s.length );
+}
+
+</script>
+</head>
+
+<frameset rows=*,* onload="waitforok()">
+  <frame src="srcinfo-frame.html">
+  <frame>
+</frameset>
+</html>

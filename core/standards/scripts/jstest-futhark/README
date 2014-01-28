@@ -1,0 +1,13 @@
+This is the JSTest module: a test suite for ECMAScript, JavaScript,
+DOM, LiveConnect, and related technologies, and Opera's implementation
+of these.
+
+Load index.html into your web browser, and take it from there.
+
+Some tests require a little bit of localization.  You can edit
+testconfig.js in this directory to set this up.
+
+The testsuite module is created from a small toplevel module called
+jstest2-toplevel (which contains this file among others) together with
+testsuites extracted from the various source code modules in the CVS.
+

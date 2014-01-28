@@ -1,0 +1,159 @@
+<html>
+<body>
+
+<h1 align=center>Some old performance measurements</h1>
+
+<p align=center><font color=red>Opera Confidential.  Do not distribute</font></p>
+
+<p>In the following table, all numbers are elapsed time measured on my
+machine (SUBZERO, a 733&nbsp;MHZ Pentium&nbsp;III running
+WinNT&nbsp;4.0sp6).  The entries labelled with dates are timed from my
+source tree on that date.  Entries marked "interrupts masked" were run
+with interrupts disable during the benchmark in order to remove
+scheduler noise; this is the best-case time for Opera.  Numbers in
+parenthesis after some measurements for Opera are the times relative
+to Netscape 4.75.</p>
+
+<p>Performance in Opera 5.12 and 6.0 was measured with the slow
+document.write (except that running with interrupts off also disables
+suspensions for document.write, so these times are as if they were run
+with the fast document.write).  This should matter only on iBench.</p>
+
+<p>In most cases times were obtained by loading this page, clicking on
+the benchmark link, waiting for it to complete, clicking on "Back",
+repeating twice more, and taking the best of the three times.</p>
+
+<p>FIXME: All tests should be rerun with the standard methodology.</p>
+
+<table border=1 align=center>
+<colgroup span=1>
+  <col>
+<colgroup align=right span=6>
+  <col>
+  <col>
+  <col>
+  <col>
+  <col>
+  <col>
+<tr>
+<th>Benchmark</th> 
+
+<th>MSIE 5.01</th>  <th>NS 4.75</th> <th>Opera 5.12</th>  <th>17 July</th>  <th>17 July<br>Interrupts masked</th>  <th>6.0 build 993</th>
+</tr>
+
+<tr>
+<td><a href="loop.html">Empty for-loop (1,000,000)</a></td>  <td>484</td>  <td>781</td>  <td>7,813</td>  <td>7,812</td>  <td>2,500 (3.20)</td>
+</tr>
+
+<tr>
+<td><a href="fib.html">Doubly recursive Fibonacci (25)</a></td>  <td>859</td>   <td>968</td>  <td>4,937</td>  <td>4,953</td>   <td>3,500 (3.62)</td>
+</tr>
+
+<tr>
+<td><a href="arrayinit.html">Array init (four cases)</a></td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Left-to-right, size unknown</td> <td>250</td> <td>390</td> <td></td> <td></td> <td>375 (0.96)</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Right-to-left, size unknown</td> <td>250</td> <td>330</td> <td></td> <td></td> <td>5,150 (20.6)</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Left-to-right, size known</td> <td>250</td>  <td>330</td> <td></td> <td></td> <td>375 (1.14)</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Right-to-left, size known</td> <td>250</td> <td>330</td> <td></td> <td></td> <td>5,150 (20.6)</td>
+</tr>
+
+<tr>
+<td><a href="mmul.html">Matrix multiplication</a></td> <td>7,100</td> <td>5,000</td> <td></td> <td></td> <td>14,400 (2.03)</td>
+</tr>
+
+<tr>
+<td><a href="mandel1.html">Mandelbrot set, pixel-wise output</a></td> <td>420</td> <td>2,407</td> <td>20,500</td> <td></td> <td></td> <td>20,484</td>
+</tr>
+
+<tr>
+<td><a href="mandel2.html">Mandelbrot set, row-wise output</a></td> <td>260</td> <td>2,000</td> <td>2,700</td> <td></td> <td></td> <td>2,735</td>
+</tr>
+
+<tr>
+<td><a href="mandel3.html">Mandelbrot set, matrix output</a></td> <td>305</td> <td>1,800</td> <td>2,650</td> <td></td> <td></td> <td>2,625</td>
+</tr>
+
+<tr>
+<td><a href="generating.html">Script generating script, recursively</a></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td>
+</tr>
+
+<tr>
+<td><a href="gcbench.html">GCBench</a></td> <td>10,891</td> <td>11,625</td>  <td>9,641</td> <td>9,640</td>   <td>6,985 (0.60)</td>  <td style="color: red">21,516 / 11,000</td>
+</tr>
+
+<tr>
+<td><a href="http://www.etestinglabs.com/benchmarks/i-bench/i-bench.asp">Ziff-Davis iBench JavaScript benchmark</a></td>
+</tr>
+
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="ibench-all/perf_javascript.html">iBench as distributed</a></td> <td>4,050</td> <td>7,080</td> <td></td> <td>41,130</td>   <td>9,072 (1.28)</td> <td style="color: red">78,000</td>
+</tr>
+
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="ibench-records.html">iBench "records" test</a></td> <td>750</td>   <td>2,313</td> <td></td>  <td></td>  <td>2,250 (0.97)</td>  
+</tr>
+
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="ibench-search.html">iBench "search" test</a></td> <td>703</td>  <td>1,625</td> <td></td>  <td></td>    <td>1,812 (1.12)</td>  
+</tr>
+
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="ibench-sort.html">iBench "sort" test</a></td> <td>1,031</td>   <td>1,328</td>  <td></td>  <td></td>  <td>2,500 (1.88)</td>  
+</tr>
+
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="ibench-generate.html">iBench "generate" test</a></td> <td>469</td>  <td>1,188</td>  <td></td>  <td></td>  <td>1,328 (1.12)</td>  
+</tr>
+
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="ibench-download.html">iBench "download" test</a></td> <td>250</td>  <td>360</td>  <td></td>  <td></td>  <td>1,250 (3.47)</td>  
+</tr>
+
+</table>
+
+<br>
+<hr>
+
+<p align=center>Random notes below this point</p>
+
+<dl>
+<dt><b>Figures for build 993</b>
+<dd><p>The time measured is shown in red.  The time following the slash is
+    the time measured if ESC is pressed just after starting the benchmark,
+    ie, if page loading is aborted.  Apparently page loading really slows
+    down JS execution.  This was also the case in 5.12 to some extent.</p>
+
+<dt><b>Variability in measurements</b>
+<dd><p>Times in Opera are highly variable for not well understood
+    reasons; a factor of 2 is common on consecutive runs (sometimes the
+    second run is the faster, sometimes it is the slower).  The times
+    shown for Opera 6.0 and 5.12 were the best of several runs.</p>
+
+<dt><b>Proximity of times for Opera 5.12 and Opera 6.0</b>
+<dd><p>I am unnerved by the close proximity of the results for 5.12 and 6.0, but I
+    have re-verified them and I don't think I did something wrong when I
+    measured.</p>
+
+</dl>
+
+<p>Both the variability in the measurements and the close proximity of
+the fastest measurements are probably due to a scheduler anomaly.
+Depending on how the scheduler hits the quanta of the operating
+system's timer callback, we get a slow run or a fast run, and the time
+spent is actually dominated waiting for timer callbacks.  The times
+shown for Opera 6.0 with interrupts suspended bears this out: there is
+no other reason why fib, loop, and gcbench should be faster with
+interrupts off than with interrupts on.</p>
+
+
+</body>
+</html>
+

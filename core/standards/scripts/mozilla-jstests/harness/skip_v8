@@ -1,0 +1,35 @@
+ecma_3/RegExp/regress-307456.js
+js1_2/Array/slice.js
+js1_5/Array/array-001.js
+js1_5/Exceptions/regress-121658.js
+js1_5/Function/regress-364023.js
+js1_5/GC/regress-278725.js
+js1_5/GC/regress-346794.js
+js1_5/Regress/regress-104077.js
+js1_5/Regress/regress-155081-2.js
+js1_5/Regress/regress-155081.js
+js1_5/Regress/regress-159334.js
+js1_5/Regress/regress-203278-1.js
+js1_5/Regress/regress-271716-n.js
+js1_5/Regress/regress-312588.js
+js1_5/Regress/regress-367561-01.js
+js1_5/Regress/regress-96128-n.js
+
+#memory overflow
+js1_5/Function/regress-338001.js
+js1_5/extensions/regress-355497.js
+js1_5/Function/regress-338121-01.js
+js1_5/Function/regress-338121-02.js
+js1_5/Function/regress-338121-03.js
+js1_5/GC/regress-324278.js
+js1_5/Regress/regress-303213.js
+js1_5/Regress/regress-360969-05.js
+js1_5/Regress/regress-3649-n.js
+
+#temporary (overflows memory)
+ecma_3/String/15.5.4.11.js
+js1_5/GC/regress-203278-2.js
+ecma/LexicalConventions/7.6.js
+
+#needs irrelevant
+ecma/extensions/9.9-1.js

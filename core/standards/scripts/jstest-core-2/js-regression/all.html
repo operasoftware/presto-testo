@@ -1,0 +1,52 @@
+<html>
+
+<head>
+<title>JScript/JavaScript autorun tests</title>
+
+<script src="../regression-lib/autorun.js"></script>
+<script>
+function setup()
+{
+  setup_autorun(["js_anchor.html",
+                 "js_area.html",
+                 "js_button.html",
+                 "js_checkbox.html",
+                 "js_document.html",
+                 "js_fileupload.html",
+                 "js_form.html",
+                 "js_frame.html",
+                 "js_history.html",
+                 "js_image.html",
+                 "js_link.html",
+                 "js_location.html",
+                 "js_mimetype.html",
+                 "js_navigator.html",
+                 "js_option.html",
+                 "js_password.html",
+                 "js_plugin.html",
+                 "js_radio.html",
+                 "js_reset.html",
+                 "js_screen.html",
+                 "js_select.html",
+                 "js_style.html",
+                 "js_submit.html",
+                 "js_sun.html",
+                 "js_text.html",
+                 "js_textarea.html",
+                 "js_window.html",
+		 "msie_collections.html"]);
+}
+</script>
+</head>
+
+<body onload="setup()">
+
+<p>This page runs all noninteractive tests in the Opera JScript/JavaScript
+test suite.  Each test is run in a separate window.  If all the tests
+in a test set pass, or if the failures are known, then the window is
+closed; otherwise, the window stays open so that you can see what
+failed.</p>
+
+</body>
+
+

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <title>testPCRE_spec.js#testRegexpPCRE_3681</title>
+  <script src="../opjsunit.js"></script>
+  <script>function testRegexpPCRE_3681() {
+  var regexp = /a*/g;
+  assertEquals("a", regexp.exec("abbab").toString()); //test 3704
+  assertEquals("", regexp.exec("abcde").toString()); //test 3705
+  assertEquals("", regexp.exec("-things").toString()); //test 3706
+  assertEquals("", regexp.exec("0digit").toString()); //test 3707
+  assertEquals("", regexp.exec("*** Failers").toString()); //test 3708
+  assertEquals("", regexp.exec("bcdef    ").toString()); //test 3709
+}</script>
+  <p>Failed (Script did not run)</p>
+  <script>
+function test() {
+  var passed = false;
+  var error = "";
+  var output_element = document.getElementsByTagName("p")[0];
+  try {
+    for (var count=0; count<100; count++) {
+      testRegexpPCRE_3681();
+    }
+    passed = true;
+  } catch(e) {
+    error = e.message;
+  }
+  try {top.opener.rr(passed)} catch(e){}
+  if (passed) {
+    output_element.textContent = "PASS"
+    output_element.style.color = "green";
+  } else {
+    output_element.textContent = "FAIL: " + error + " (failed on iteration " + count + ")"
+    output_element.style.color = "red";
+  }
+}
+window.addEventListener("load", test, false);
+  </script>
+</html>

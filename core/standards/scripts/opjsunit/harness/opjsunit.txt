@@ -1,0 +1,88 @@
+OpJsUnit
+========
+
+OpJsUnit is Opera's new unit testing framework for testing Javascript from the command line with jsshell.
+
+Usage
+-----
+python opjsunit.py -s path/to/jsshell path/to/mytests/
+
+In my system I write:
+python opjsunit.py -s /home/kilsmo/src/ecmascript_standalone/jsshell /home/kilsmo/src/opjsunittests/
+
+Description
+-----------
+
+opjsunit will run all the *.js files on the top level of the given directory.
+
+opjsunit.js includes all the assertion functions that you can use in your tests.
+
+Assertion functions
+-------------------
+
+assertTrue(value)
+
+Asserts that the value is true (!value is false)
+
+assertEquals(expected, actual)
+
+Asserts that the actual value is the same as the expected value
+
+How to write a test file
+------------------------
+
+Inside your *.js test file, you add a number of functions with the prefix test. A test function
+should never call another test function. (there is nothing that will stop you from doing that,
+except that you are not supposed to do that)
+
+You can add other functions inside your *.js file, utility functions, assertion functions.
+
+You can also add code on the global level, that is run before a test is run.
+
+In general, this is the three tests that a test should include (in this order):
+
+1. Initialize things that the test need.
+2. Run the actual code that you want to test.
+3. Call assertion functions to make sure that the tested code is correct.
+
+How the tests are run
+---------------------
+
+opjsunit.py first finds all the test files in the test directory. For each test file, it finds
+all the test functions.
+
+For each test function, it runs the jsshell with code that will call that specific test function.
+
+Since each test function is run separately, there is no reason to include a setUp function that
+will be called automatically before each test, instead just include the setup code in the script
+on the global level to make it run.
+
+Writing your own assertion functions
+------------------------------------
+
+If your assertion fails you should call opjsunitFail with your message as parameter. This will
+throw an exception, that will signal that the test fails.
+
+Any test that for some other reason than an assertion throws an exception, will count as a failed
+test. This is a very powerful feature. Let's say that we want to test that the function
+alwaysReturnsTrue always returns true. You like to do TDD (Test Driven Development), so you write
+your test before the alwaysReturnsTrue is written. The test will look like this:
+
+function testAlwaysReturnsTrue()
+{
+    assertTrue(alwaysReturnsTrue());
+}
+
+When we call the alwaysReturnsTrue that does not exist, an exception is thrown. So, testing a
+function that does not exist will result in a failed test. Perfect! (in Java, you would have
+to create an empty function before executing the test, so test first becomes in reality
+impossible)
+
+Making html versions for Spartan
+--------------------------------
+
+You can use the makehtml.py script to make spartan versions of the tests. It can be run like this:
+
+   python2 harness/makehtml.py
+
+Bear in mind that it expects to find "jsshell" in your PATH.

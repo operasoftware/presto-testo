@@ -1,0 +1,75 @@
+<html>
+<head>
+<title>DOM tests -- CSS2 interface</title>
+</head>
+
+<body>
+
+<!-- All the HTML elements below this line are used by the tests -->
+
+<div id='a'>
+Black text on red background.
+</div>
+
+<div id='b' style='background: url("chess.png") gray 30% repeat fixed'>
+Black text on gray background
+</div>
+
+<div id='c'>
+Black text on white background
+</div>
+
+<!-- All the HTML elements above this line are used by the tests -->
+
+
+<script src="../../regression-lib/testbase.js"></script>
+<script>
+/* Regression tests for Opera's handling of the DOM 2 CSS2 interface
+ *
+ * 2002-04-11 / stighal
+ */
+
+var cvs = "$Id: background.html 91672 2011-04-07 12:02:44Z bratell $";
+
+testmodule( "CSS2 interface", cvs );
+
+var a, b, c;
+
+href = document.location.href;
+path_prefix = href.substr(0, href.lastIndexOf("/") + 1);
+
+try {
+a = document.getElementById("a");
+b = document.getElementById("b");
+c = document.getElementById("c");
+
+testcase( "Reading properties" );
+
+test('getting background from a with nothing specified', a.style.background, "");
+test_expect_failure('getting background from b with a lot specified', 148016, b.style.background, "gray url(" + path_prefix + "chess.png) fixed 30% 50%");
+
+testcase( "Setting properties" );
+
+a.style.background = "red";
+test('reading background on a set by script to red', a.style.background, "red" );
+
+testcase( "Getting partial values" );
+
+test('reading background-repeat from b specified by style attribute', b.style.backgroundRepeat, "repeat" );
+
+testcase( "Negative tests" );
+
+c.style.background = "foo";
+test('reading background from c specified by script to foo (illegal value)', c.style.background, "");
+
+c.style.background = "outset";
+test('reading background from c specified by script to outset (illegal keyword)', c.style.background, "");
+
+} catch (e) { exception( e ); }
+
+testmodule_finished();
+
+</script>
+
+</body>
+</html>

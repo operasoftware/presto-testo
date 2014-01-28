@@ -1,0 +1,70 @@
+<html>
+<head>
+<title>DOM tests -- CSS2 interface</title>
+</head>
+
+<body>
+
+<!-- All the HTML elements below this line are used by the tests -->
+
+<div style='border: dashed blue'>
+<div id='a' style='background-color: black; position: relative; color: white; width: 150px; height: 35px'>
+Text inside div a
+</div>
+
+<div id='b' style='background-color: red; position: relative; top: -15px; left: 20px;  width: 150px; height: 35px; z-index: 3'>
+Text inside div b
+</div>
+
+<div id='c'>
+Text inside div c
+</div>
+</div>
+
+<!-- All the HTML elements above this line are used by the tests -->
+
+
+<script src="../../regression-lib/testbase.js"></script>
+<script>
+/* Regression tests for Opera's handling of the DOM 2 CSS2 interface
+ *
+ * 2002-04-11 / stighal
+ */
+
+var cvs = "$Id: z-index.html 10655 2006-12-18 15:47:57Z hallvord $";
+
+testmodule( "CSS2 interface", cvs );
+
+var a, b, c;
+
+try {
+a = document.getElementById("a");
+b = document.getElementById("b");
+c = document.getElementById("c");
+
+testcase( "Reading properties" );
+
+test('getting z-index from a with nothing specified', a.style.zIndex, "");
+test('getting z-index from b with "3" specified', b.style.zIndex, "3");
+
+testcase( "Setting properties" );
+
+a.style.zIndex = "5";
+test('reading z-index on a set by script to "5"', a.style.zIndex, "5");
+
+testcase( "Negative tests" );
+
+c.style.zIndex = "foo";
+test('reading z-index on a set by script to foo (illegal)', c.style.zIndex, "");
+
+c.style.zIndex = "outset";
+test('reading z-index on a set by script to outset (illegal keyword)', c.style.zIndex, "");
+
+} catch (e) { exception( e ); }
+
+testmodule_finished();
+
+</script>
+
+</body>
+</html>

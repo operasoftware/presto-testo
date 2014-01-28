@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html><head>
+	<title>load events - IFRAME document replaced from its IFRAMEs load event</title>
+	<script>var _conf_timeout_delay=3000;</script>
+	<script src="_files/lib.js"></script>
+	<script>
+		window.onload=load;
+		var firstTime=true; // prevents redirect loop for IFRAME
+	</script>
+	<script>/*var expected = [
+		];*/
+	</script>
+</head>
+<body>
+
+	<p>FAILED (This TC requires JavaScript enabled)</p>
+	<iframe src="_files/support.html" onload="if(firstTime)document.getElementsByTagName('iframe')[0].src='_files/delay.php?url=redirect.html&time=2'; firstTime=false;"></iframe>
+</body></html>

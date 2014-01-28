@@ -1,0 +1,82 @@
+<html>
+<head>
+<title>DOM tests -- CSS2 interface</title>
+</head>
+
+<body>
+
+<!-- All the HTML elements below this line are used by the tests -->
+
+<div id='a'>
+Red border with default width and style
+</div>
+
+<div id='b' style='border: thin solid blue'>
+Thin solid blue border
+</div>
+
+<div id='c' style='border-top: medium dotted red'>
+Medium dotted red border
+</div>
+
+<div id='d'>
+No borders
+</div>
+
+<!-- All the HTML elements above this line are used by the tests -->
+
+
+<script src="../../regression-lib/testbase.js"></script>
+<script>
+/* Regression tests for Opera's handling of the DOM 2 CSS2 interface
+ *
+ * 2002-04-11 / stighal
+ */
+
+var cvs = "$Id: border.html 91666 2011-04-07 11:48:43Z bratell $";
+
+testmodule( "CSS2 interface", cvs );
+
+var a, b, c, d;
+
+try {
+a = document.getElementById("a");
+b = document.getElementById("b");
+c = document.getElementById("c");
+d = document.getElementById("d");
+
+testcase( "Reading properties" );
+
+test('getting border from a with nothing specified', a.style.border, "");
+test('getting border from b with "thin solid blue" specified by style', b.style.border, "thin solid blue");
+
+testcase( "Setting properties" );
+
+a.style.border = "red";
+test('reading border on a set by script to red', a.style.border, "red");
+
+testcase( "Shorthand tests" );
+
+test('reading border from c where only border-top is specified to "medium dotted red" by style attribute', c.style.border, "");
+
+c.style.borderRight = "medium dotted red";
+c.style.borderBottom = "medium dotted red";
+c.style.borderLeft = "medium dotted red";
+test('reading border from c where all borders are specified to "medium dotted red" by script', c.style.border, "dotted red");
+
+testcase( "Negative tests" );
+
+d.style.border = "foo";
+test('reading border from d specified to "foo" by script (illegal value)', d.style.border, "");
+
+d.style.border = "bold";
+test('reading border from d specified to "bold" by script (illegal keyword)', d.style.border, "");
+
+} catch (e) { exception( e ); }
+
+testmodule_finished();
+
+</script>
+
+</body>
+</html>

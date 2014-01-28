@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <title>testPCRE_spec.js#testRegexpPCRE_1505</title>
+  <script src="../opjsunit.js"></script>
+  <script>function testRegexpPCRE_1505() {
+  var regexp = /^\p{Mn}/;
+  assertEquals(null, regexp.exec("0123456789x{660}x{661}x{662}x{663}x{664}x{665}x{666}x{667}x{668}x{669}x{66a}")); //test 1527
+}</script>
+  <p>Failed (Script did not run)</p>
+  <script>
+function test() {
+  var passed = false;
+  var error = "";
+  var output_element = document.getElementsByTagName("p")[0];
+  try {
+    for (var count=0; count<100; count++) {
+      testRegexpPCRE_1505();
+    }
+    passed = true;
+  } catch(e) {
+    error = e.message;
+  }
+  try {top.opener.rr(passed)} catch(e){}
+  if (passed) {
+    output_element.textContent = "PASS"
+    output_element.style.color = "green";
+  } else {
+    output_element.textContent = "FAIL: " + error + " (failed on iteration " + count + ")"
+    output_element.style.color = "red";
+  }
+}
+window.addEventListener("load", test, false);
+  </script>
+</html>

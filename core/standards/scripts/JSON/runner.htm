@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<!--
+Copyright 2009 Opera Software.
+This code is released under the BSD license found in the license.txt file.
+-->
+<html><head>
+	<title>Simple JSON testsuite runner</title>
+	<style type="text/css">
+		table{width: 100%; border: 1px solid #000}
+		th{text-align: left}
+		td{
+			border: 1px solid #000;
+		}
+		tr.pass{ background: #5c5 }
+		tr.fail{ background: #f33 }
+		a{ color: #000; text-decoration: none }
+	</style>
+ 	<script src="fileArray.php?ext=.js"></script>
+	<script src="fileArray.php?ext=.json&dir=json.org%2Ftest"></script>
+	<script src="_files/quickfind.js"></script>
+<!-- 	<script src="_files/json2.js"></script>-->
+</head>
+<body>
+<!--
+
+	Hi, and welcome to the simple JSON test runner
+
+	This framework supports two types of tests: plain .json source input files,
+	and .js files that define a function named test.
+	The content of a /** "documentation" */ type comment, if any, is used as test title
+
+	The name of .json source files must match "pass\d+\.json" if the JSON data is valid and
+	"fail\d+\.json" if not. (This is a convention from the json.org test suite).
+
+	The test() function should return whether the test passed or failed.
+	If it does not return a boolean, the test result is classified as "indetermined"
+	and the return value is printed verbatim in the result column for human review.
+
+	Failing tests can create an array or string as a property of the test method, named "failures".
+	This is intended to create a human-readable and more detailed output from a failed test.
+
+	Happy testing,
+	Hallvord  January 5th 2009
+
+-->
+	<p>Test results should appear below. <button onclick="start()" type="button">Start test</button><br><small>Running the tests may crash or hang some browsers</small></p>
+	<table>
+		<tr><th>Category</th><th>Test</th><th>Result</th></tr>
+	</table>
+
+	<script type="text/javascript">
+	function start(){
+		var testCounter = 0, xhr= (typeof XMLHttpRequest!='undefined') ?  new XMLHttpRequest() : (typeof ActiveXObject!='undefined') ? new ActiveXObject('Microsoft.XMLHTTP') : null;
+		var testsPassed=0,testsFailed=0,testsUnsure=0;
+		var testInterval = setInterval( loadAndRunTest, 100 );
+		function loadAndRunTest(){
+			if( !fileArray[testCounter] ){
+				document.body.insertBefore(document.createElement('p'), document.getElementsByTagName('table')[0]).appendChild(document.createTextNode('Ran '+fileArray.length+' tests, '+testsPassed+' passed, '+testsFailed+' failed - score: '+( (testsPassed/(fileArray.length-testsUnsure))*100 ).toFixed(1)+'%. Also, '+testsUnsure+' tests did not return a pass/fail indication (this is expected for performance tests since whether performance is "good enough" is up to human judgement)'));
+				return clearInterval( testInterval );
+			}
+			var url=fileArray[testCounter];
+			var passed, threw_exception=false;
+			xhr.open( 'GET', url, false );
+			xhr.send(null);
+			var source = xhr.responseText;
+			var testTitle = ( /\/\*\*(.*)\*\//.test( source ) ) ? RegExp.$1 : source;
+			var testCategory = ( /JSON\/(.*?)\//.test( url ) ) ? RegExp.$1 : '';
+			/* handling .json source files by passing them to JSON.parse() directly */
+			if( /\.json$/i.test(url) ){
+				try{
+					JSON.parse( source );
+				}catch(e){
+					threw_exception=true;
+				}
+
+				var passed = ( ( /fail\d+\.json$/i.test(url) && threw_exception ) || /* "fail.json" files must cause an exception to pass */
+					( /pass\d+\.json$/i.test(url) && ! threw_exception ) ); /* while "pass.json" pass if exception was not thrown */
+			}else{ // handle complete test methods by executing them with a new <SCRIPT> element
+				var script=document.createElement('script');
+				try{
+					script.appendChild(document.createTextNode(source));
+				}catch(e){ // Internet Explorer compat..
+					script.text=source;
+				}
+				document.body.appendChild(script); // inline scripts added through DOM execute immediately
+				document.body.removeChild(script);
+				try{
+					passed=test();
+				}catch(e){
+					threw_exception=e;
+					passed=false; // tests that are expected to throw must catch the expected exception themselves..
+				}
+			}
+			if(typeof JSON=='undefined')passed=false; /* ..because some of the tests that should throw would look silly in a regression chart.. */
+
+			if(passed===true){
+				testsPassed++;
+			}else if(passed===false){
+				testsFailed++;
+			}else{ // test() returned a message, not a boolean. We'll output the message in the table and leave it to humans to interpret it.
+				testsUnsure++;
+			}
+			/* adding test result to table */
+			var tr=document.getElementsByTagName('tbody')[0].appendChild(document.createElement('tr'));
+			var td=tr.appendChild(document.createElement('th'));
+			td.appendChild( document.createTextNode( testCategory ) );
+			td=tr.appendChild(document.createElement('td'));
+			td.appendChild(document.createElement('a')).href=url;
+			td.firstChild.appendChild( document.createTextNode( testTitle ) );
+			if(source.match(/unspecified assertation/))td.appendChild( document.createTextNode( ' [UNDERSPECIFIED]' ) );
+			if(source.match(/violates spec/))td.appendChild( document.createTextNode( ' [SPEC VIOLATION! Implementations have aligned on non-spec\'ed behaviour]' ) );
+			td=tr.appendChild(document.createElement('td'));
+			td.appendChild( document.createTextNode( (passed===true?'PASSED':passed===false?'FAILED':passed) ) );
+			if( passed===false&&test.failures )td.appendChild( document.createTextNode(  ' Test failures: '+test.failures  ));
+			td.appendChild( document.createTextNode( (threw_exception?' - with exception':'') ) );
+			if(threw_exception&&threw_exception!==true)td.title=threw_exception;
+			tr.className=passed===true?'pass': passed===false?'fail':'';
+			testCounter++;
+		}
+	}
+
+	</script>
+
+</body></html>

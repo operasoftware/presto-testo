@@ -1,0 +1,15 @@
+<script src="reportresult.js"></script>
+<script>
+function loop(n)
+{
+    for ( var i=0 ; i < n ; i++ )
+        ;
+    return "Done";
+}
+
+var before = new Date();
+var result = loop(1000000);
+var after = new Date();
+document.writeln( [ result, after - before ] + '<br>' );
+reportresult( "loop 1,000,000", after-before );
+</script>

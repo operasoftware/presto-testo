@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!--
+   Created by torstein@opera.com
+-->
+<html>
+   <head>
+      <link rel="stylesheet" type="text/css" href="../styles/mystyle.css" media="screen">
+      <title>Element object test</title>
+      <script type="text/javascript" src="../regression-lib/testbase.js"></script>
+      <script type="text/javascript" src="scripts/inputElementTest.js"></script>
+   </head>
+   <body>
+      <form id="TheFormID" name="TheFormName"
+            method="post"  
+            enctype="multipart/form-data"
+      >
+         <input type="text" size="13" id="MyID" 
+                value="MyDefaultValue" name="inputFieldName"
+                maxlength="20"
+                tabindex="1"
+                accesskey="a"
+                readonly
+         >
+         <input type="radio" id="RadioID" name="radiobuttongroup" checked>
+         <input type="radio" id="AnotherRadioID" name="radiobuttongroup">
+         <input type="image" id="ImageID"
+                src="http://odin.hiof.no/~torstekj/graphics/linux/linuX.jpg"
+                alt="Linux picture"
+                usemap="http://www.w3c.org"
+          >
+         <input type="file" id="FileID"
+                accept="text/html"
+         >
+      </form>
+      <script type="text/javascript">main( document.getElementById( 'MyID' ),
+                                           document.getElementById( 'RadioID' ), 
+                                           document.getElementById( 'ImageID' ), 
+                                           document.getElementById( 'FileID' ) )
+      </script>
+   </body>
+</html>

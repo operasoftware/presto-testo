@@ -1,0 +1,69 @@
+<html>
+<head>
+<title>Regression | 'eval' routine</title>
+</head>
+
+<body>
+<script src="../regression-lib/testbase.js"></script>
+
+<script>
+	var cvs = "$Id: eval.html 22469 2008-01-21 19:04:59Z hallvord $";
+
+	testmodule( 'eval', cvs );
+	var y = 101
+	var THIS = "ABC"
+	//***************************************
+	testcase("eval invoked directly, without 'this' - scope is f's scope, 'this' is f's this");
+	function f1() {
+		eval("var x = 5");
+		tdef("f1:eval scope is local", x);
+		ttrue("f1:eval this is this", eval("this") == this);
+	}
+	f1();
+	testcase("eval invoked directly, without 'this' - scope is f's scope, 'this' is f's this (from function.call)");
+	f1.call(THIS);
+	// x is globally undefined !
+
+	//***************************************
+	testcase("eval invoked indirectly (through alias), without 'this' - scope is global, 'this' is f's this");
+	function f2() {
+		lave("var x = 5"); // this defines x in the global scope
+		tdef("f2:lave scope is global", window.x);
+		ttrue("f2:lave this is this", lave("this") == this);
+	}
+	var lave = eval;
+	f2();
+	//alert(x); // x is globally defined
+	testcase("eval invoked indirectly (through alias), without 'this' - scope is global, 'this' is f's this (from function.call)");
+	f2.call(THIS);
+	//alert(THIS.x); // x is globally defined*/
+
+	//***************************************
+	testcase("eval invoked directly, with 'this' - scope is o (non standard - just following FF), 'this' is f's this");
+	function f3(o) {
+		expect_exception("eval invoked directly, with 'this'", EvalError, function() { o.eval("var x = 5 + y") });
+		//tdef("f3:eval scope is o", o.x);
+		//ttrue("f3:eval this is this", o.eval("this") == this);
+	}
+	f3({y:2});
+	testcase("eval invoked directly, with 'this' - scope is o (non standard - just following FF), 'this' is f's this (from function.call)");
+	f3.call(THIS, {y:2});
+	// x is globally undefined !*/
+
+	//***************************************
+	testcase("eval invoked indirectly (through alias), with 'this' - scope is o (non standard - just following FF), 'this' is f's this");
+	function f4(o) {
+		expect_exception("eval invoked indirectly (through alias), with 'this'", EvalError, function() { o.lave("var x = 5 + y") });
+		//tdef("f4:lave scope is o", o.x);
+		//ttrue("f4:lave this is this", o.lave("this") == this);
+	}
+	f4({y:2, lave:eval});
+	testcase("eval invoked indirectly (through alias), with 'this' - scope is o (non standard - just following FF), 'this' is f's this (from function.call)");
+	f4.call(THIS, {y:2, lave:eval});
+	// x is globally undefined !*/
+
+	testmodule_finished();
+</script>
+
+</body>
+</html>

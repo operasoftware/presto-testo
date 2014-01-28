@@ -1,0 +1,36 @@
+<html>
+
+<head>
+<script>
+var urls = [
+"http://www.ibm.com",
+"http://www.aftenposten.no",
+"http://www.nytimes.com",
+"http://www.yahoo.com",
+"http://www.npr.org",
+"http://cnnfn.com",
+"http://java.sun.com" ];
+</script>
+</head>
+
+<body>
+<script>
+var w = window.open( "http://www.ibm.com", "bullseye", "location=yes" );
+var n = 0;
+
+function startloop()
+{
+  var theurl;
+
+  theurl = urls[n];
+  n = (n + 1) % urls.length;
+  setTimeout( "startloop();", 15000 );
+  window.open( theurl, "bullseye" );
+}
+
+startloop();
+
+</script>
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+	<head>
+		<title>Defining a setter defaults to global scope</title>
+	</head>
+	<body>
+
+<p id="ostat">Enable JavaScript and reload.</p>
+<script type="text/javascript">
+
+var oUnsup = 'unsupported';
+function reportStatus( oStatus ) {
+	document.getElementById('ostat').firstChild.nodeValue = ( oStatus == true ) ? 'PASS' : ( ( oStatus == oUnsup ) ? 'FAIL (getters/setters not supported)' : 'FAIL' );
+	try{top.opener.rr(oStatus);}catch(e){}
+}
+
+function bar() {
+	// in firefox this will throw an error
+	// just in case we decide not to, I also test to see if the global variable was assigned the setter
+	// the redefinition of the variable is dealt with elsewhere
+	__defineSetter__('foo',function () { state = true; });
+}
+
+var state = false, foo;
+if( window.__defineSetter__ ) {
+	try {
+		bar();
+		foo = 'whocares';
+		reportStatus(state);
+	} catch(e) {
+		reportStatus(true);
+	}
+} else {
+	reportStatus(oUnsup)
+}
+
+</script>
+
+	</body>
+</html>

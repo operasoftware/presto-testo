@@ -1,0 +1,30 @@
+<!doctype html>
+<title>Location hash - set hash in external script with async</title>
+<script src="/resources/testharness.js"></script><script src="/resources/testharnessreport.js"></script>
+<script>
+var t = async_test();
+var histlength;
+t.step(function() {
+    if( location.hash && location.hash != '#' ) {
+        location.href = location.href.replace(/#.*$/,'');
+        return;
+    }
+    histlength = history.length;
+});
+</script>
+<script>
+t.step(function() {
+    location.hash = '#foo';
+});
+</script>
+<script src="320.js" id="test_script" async></script>
+<script>
+t.step(function() {
+    var s = document.getElementById("test_script");
+    assert_true( s.async );
+    assert_equals( location.hash, '#foo' );
+    assert_equals( history.length, histlength );
+});
+t.done();
+</script>
+<div id="log"></div>

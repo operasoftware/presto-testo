@@ -1,0 +1,48 @@
+<!doctype html>
+<title>Location hash - set iframe hash twice and page hash from page</title>
+<script src="/resources/testharness.js"></script><script src="/resources/testharnessreport.js"></script>
+<script>
+var t = async_test();
+var histlength;
+t.step(function() {
+    if( location.hash && location.hash != '#' ) {
+        location.href = location.href.replace(/#.*$/,'');
+        return;
+    }
+    histlength = history.length;
+});
+</script>
+<div id="log"></div>
+<iframe src="802i.php?delay=1" id="test_iframe"></iframe>
+
+<script>
+var iframe = document.getElementById("test_iframe");
+var iframe_history_lenght;
+t.step(function() {
+    iframe_history_lenght = iframe.contentWindow.history.length;
+});
+t.step(function() {
+    iframe.contentWindow.location.hash = '#foo';
+});
+t.step(function() {
+    iframe.contentWindow.location.hash = '#fooo';
+});
+t.step(function() {
+    location.hash = '#boo';
+});
+
+window.onload = function () {
+    setTimeout(completely_loaded, 100);
+};
+function completely_loaded() {
+    t.step(function() {
+        assert_equals( location.hash, '#boo' );
+        assert_equals( iframe.contentWindow.location.hash, '#fooo' );
+        assert_equals( history.length, histlength );
+        assert_equals( iframe.contentWindow.history.length, iframe_history_lenght );
+    });
+    t.done();
+}
+</script>
+
+

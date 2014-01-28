@@ -1,0 +1,81 @@
+
+<html>
+<head>
+<title>DOM tests -- CSS2 interface</title>
+</head>
+
+<body>
+
+<!-- All the HTML elements below this line are used by the tests -->
+
+<div id='a'>
+Outset blue top border 3px wide.
+</div>
+
+<div id='b' style='border-top: thin solid red'>
+Thin solid red top border.
+</div>
+
+<div id='c' style='border-top-color: green'>
+Thick green top border.
+</div>
+
+<div id='d'>
+No borders.
+</div>
+
+<!-- All the HTML elements above this line are used by the tests -->
+
+
+<script src="../../regression-lib/testbase.js"></script>
+<script>
+/* Regression tests for Opera's handling of the DOM 2 CSS2 interface
+ *
+ * 2002-04-11 / stighal
+ */
+
+var cvs = "$Id: border-top.html 4838 2006-01-18 05:59:01Z hallvord $";
+
+testmodule( "CSS2 interface", cvs );
+
+var a, b, c;
+
+try {
+a = document.getElementById("a");
+b = document.getElementById("b");
+c = document.getElementById("c");
+d = document.getElementById("d");
+
+testcase( "Reading properties" );
+
+test('getting border-top from a with nothing specified', a.style.borderTop, "");
+test('getting border-top from b with a lot specified', b.style.borderTop, "thin solid rgb(255, 0, 0)");
+
+testcase( "Setting properties" );
+
+a.style.borderTop = "3px outset blue";
+test('reading border-top on a set by script', a.style.borderTop, "3px outset rgb(0, 0, 255)");
+
+testcase( "Getting partial values" );
+
+test('reading border-top from c with color specified by style attribute', c.style.borderTop, "rgb(0, 128, 0)");
+
+c.style.borderTopWidth = "thick";
+test('reading border-top from c with color specified by style and width specified by script', c.style.borderTop, "thick rgb(0, 128, 0)");
+
+testcase( "Negative tests" );
+
+d.style.borderTop = "foo";
+test('reading border-top on d set by script to foo (illegal)', d.style.borderTop, "");
+
+d.style.borderTop = "bold";
+test('reading border-top on d set by script to bold (illegal keyword)', d.style.borderTop, "");
+
+} catch (e) { exception( e ); }
+
+testmodule_finished();
+
+</script>
+
+</body>
+</html>

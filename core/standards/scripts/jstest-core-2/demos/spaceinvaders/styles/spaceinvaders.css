@@ -1,0 +1,59 @@
+
+/* 
+   Stylesheet for the Space Invaders DOM application
+   by torstein@opera.com
+
+   $Id: spaceinvaders.css 4838 2006-01-18 05:59:01Z hallvord $
+*/
+
+body 
+{
+  font-family: monospace; 
+  color: cyan;
+  background-color: black;
+}
+
+h1
+{ 
+   color: teal;
+}
+
+span.c
+{
+   color: cyan;
+}
+
+.yellow
+{
+   color: yellow;
+}
+
+.red
+{
+   color: red;
+}
+
+td
+{ 
+  width: 50px;
+  height: 50px;
+  font-size: 0.7em;
+  text-align: center;
+}
+
+.alien
+{ 
+  color: orange;
+}
+
+a
+{ 
+  color: lime;
+  background-color: black;
+}
+
+a:hover
+{ 
+  color: yellow;
+  background-color: black;
+}

@@ -1,0 +1,73 @@
+<html>
+<head>
+<title>DOM tests -- CSS2 interface</title>
+</head>
+
+<body>
+
+<!-- All the HTML elements below this line are used by the tests -->
+
+<ol>
+<li id='a'>
+Text inside li a
+</li>
+
+<li id='b' style='list-style-position: inside'>
+Text inside li b
+</li>
+
+<li id='c'>
+Text inside li c
+</li>
+</ol>
+
+<!-- All the HTML elements above this line are used by the tests -->
+
+
+<script src="../../regression-lib/testbase.js"></script>
+<script>
+/* Regression tests for Opera's handling of the DOM 2 CSS2 interface
+ *
+ * 2002-04-11 / stighal
+ */
+
+var cvs = "$Id: list-style-position.html 4838 2006-01-18 05:59:01Z hallvord $";
+
+testmodule( "CSS2 interface", cvs );
+
+var a, b, c;
+
+try {
+a = document.getElementById("a");
+b = document.getElementById("b");
+c = document.getElementById("c");
+
+testcase( "Reading properties" );
+
+test('getting list-style-position from a with nothing specified', a.style.listStylePosition, "");
+test('getting list-style-position from b with top specified', b.style.listStylePosition, "inside");
+
+testcase( "Setting properties" );
+
+a.style.listStylePosition = "inside";
+test('reading list-style-position on a set by script to inside', a.style.listStylePosition, "inside");
+
+a.style.listStylePosition = "outside";
+test('reading list-style-position on a set by script to outside', a.style.listStylePosition, "outside");
+
+testcase( "Negative tests" );
+
+c.style.listStylePosition = "foo";
+test('reading list-style-position on c set by script to foo (illegal)', c.style.listStylePosition, "");
+
+c.style.listStylePosition = "bold";
+test('reading list-style-position on d set by script to bold (illegal keyword)', c.style.listStylePosition, "");
+
+} catch (e) { exception( e ); }
+
+testmodule_finished();
+
+</script>
+
+</body>
+</html>

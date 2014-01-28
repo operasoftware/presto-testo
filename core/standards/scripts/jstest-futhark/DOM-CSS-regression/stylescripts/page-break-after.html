@@ -1,0 +1,70 @@
+<html>
+<head>
+<title>DOM tests -- CSS2 interface</title>
+</head>
+
+<body>
+
+<!-- All the HTML elements below this line are used by the tests -->
+
+<div style='border: dashed blue'>
+<div id='a' style='border: solid black'>
+Text inside div a
+</div>
+
+<div id='b' style='border: solid red; page-break-after: always'>
+Text inside div b
+</div>
+
+<div id='c'>
+Text inside div c
+</div>
+</div>
+
+<!-- All the HTML elements above this line are used by the tests -->
+
+
+<script src="../../regression-lib/testbase.js"></script>
+<script>
+/* Regression tests for Opera's handling of the DOM 2 CSS2 interface
+ *
+ * 2002-04-11 / stighal
+ */
+
+var cvs = "$Id: page-break-after.html 10655 2006-12-18 15:47:57Z hallvord $";
+
+testmodule( "CSS2 interface", cvs );
+
+var a, b, c;
+
+try {
+a = document.getElementById("a");
+b = document.getElementById("b");
+c = document.getElementById("c");
+
+testcase( "Reading properties" );
+
+test('getting page-break-after from a with nothing specified', a.style.pageBreakAfter, "");
+test('getting page-break-after from b with "always" specified', b.style.pageBreakAfter, "always");
+
+testcase( "Setting properties" );
+
+a.style.pageBreakAfter = "right";
+test('reading page-break-after on a set by script to "right"', a.style.pageBreakAfter, "right");
+
+testcase( "Negative tests" );
+
+c.style.pageBreakAfter = "foo";
+test('reading page-break-after on a set by script to foo (illegal)', c.style.pageBreakAfter, "");
+
+c.style.pageBreakAfter = "outset";
+test('reading page-break-after on a set by script to outset (illegal keyword)', c.style.pageBreakAfter, "");
+
+} catch (e) { exception( e ); }
+
+testmodule_finished();
+
+</script>
+
+</body>
+</html>

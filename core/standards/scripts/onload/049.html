@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <title>Slow loading @import in external stylesheet</title>
+  <script src="/resources/testharness.js"></script>
+  <script src="/resources/testharnessreport.js"></script>
+
+  <script>
+    var t = async_test(undefined, {timeout:4000});
+    //We assume that the page would have loaded before the timeout if it wasn't waiting for the import
+    timeout_fired = false;
+    setTimeout(t.step_func(function() {timeout_fired = true;}), 1000);
+    onload = t.step_func(function() {assert_true(timeout_fired); t.done()});
+  </script>
+  <link rel="stylesheet" href="_files/import.css">
+  <div id="log"></div>
+  <div id="test">Test</div>

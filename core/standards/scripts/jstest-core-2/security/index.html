@@ -1,0 +1,34 @@
+<html>
+<head>
+<title>JavaScript security tests</title>
+</head>
+
+<body>
+
+<h1>JavaScript security tests</h1>
+
+<h2>Positive security</h2>
+
+<p>Tests that check whether Opera controls access to information from scripts that
+are not loaded from the same protocol, domain, and port number as the information
+itself.</p>
+
+<a href="otherwindow1.html">Denying access to document in other window, from other domain</a><br />
+<br>
+<a href="bug69363.html">Bug #69363: javascript: URL plus alert can sniff contents of document</a><br />
+<a href="iframe-sniff.html">Bug #unknown: javascript: URL can sniff contents of iframe (Andreas Sandblad)</a><br />
+<a href="frameset-sniff.html">Bug #unknown: javascript: URL can sniff contents of frameset (Hallvord RM Steen)</a><br />
+<a href="crosswindow.html">Cross-window access to native properties of window with different domain is denied (GrayMagic Opera advisory #2).  <b>REQUIRES HTTP.</b></a><br>
+<a href="consolespoof.html">JS console can be injected with script that runs in FILE: domain, allowing it to browse the disk (GrayMagic Opera advisory #3).</a><br>
+<a href="boguslink.html">JS console can be injected with a link that contains a payload of trojan JS code that runs in the FILE: domain, allowing it to browse the disk (GrayMagic Opera advisory, unpublished).</a><br>
+<a href="boguslink2.html">JS console can be injected with a link that contains a payload of trojan JS code that runs in the FILE: domain, allowing it to browse the disk (Nesumin advisory to securityfocus).  7.10 or later.</a><br>
+
+<h2>Negative security</h2>
+
+<p>Tests that check that important functionality is still available in Opera, that is,
+that security is not too tight.</p>
+
+<a href="bug75054.html">Bug #75054: bookmarklets must still work</a><br />
+
+</body>
+</html>

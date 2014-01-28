@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <title>Slow loading font in inline stylesheet</title>
+  <script src="/resources/testharness.js"></script>
+  <script src="/resources/testharnessreport.js"></script>
+  <style>
+    @font-face { font-family: FontTest; src: url("_files/slice-and-dice.cgi?file=Ahem.woff&parts=d2"); }  
+    #test {font-family:FontTest;}
+  </style>
+  <div id="log"></div>
+  <script>
+    var t = async_test(undefined, {timeout:4000});
+    //We assume that the page would have loaded before the timeout if it wasn't waiting for the image
+    timeout_fired = false;
+    setTimeout(t.step_func(function() {timeout_fired = true;}), 1000);
+    onload = t.step_func(function() {assert_true(timeout_fired); t.done()});
+  </script>
+  <div id="test">Test</div>

@@ -1,0 +1,70 @@
+<html>
+<head>
+<title>DOM tests -- CSS2 interface</title>
+</head>
+
+<body>
+
+<!-- All the HTML elements below this line are used by the tests -->
+
+<div style='border: dashed blue'>
+<div id='a' style='border: solid black'>
+Text inside span a
+</div>
+
+<div id='b' style='border: solid red; position: relative'>
+Text inside span b
+</div>
+
+<div id='c'>
+Text inside div c
+</div>
+</div>
+
+<!-- All the HTML elements above this line are used by the tests -->
+
+
+<script src="../../regression-lib/testbase.js"></script>
+<script>
+/* Regression tests for Opera's handling of the DOM 2 CSS2 interface
+ *
+ * 2002-04-11 / stighal
+ */
+
+var cvs = "$Id: position.html 10655 2006-12-18 15:47:57Z hallvord $";
+
+testmodule( "CSS2 interface", cvs );
+
+var a, b, c;
+
+try {
+a = document.getElementById("a");
+b = document.getElementById("b");
+c = document.getElementById("c");
+
+testcase( "Reading properties" );
+
+test('getting position from a with nothing specified', a.style.position, "");
+test('getting position from b with "relative" specified', b.style.position, "relative");
+
+testcase( "Setting properties" );
+
+a.style.position = "absolute";
+test('reading position on a set by script to "absolute"', a.style.position, "absolute");
+
+testcase( "Negative tests" );
+
+c.style.position = "foo";
+test('reading position on a set by script to foo (illegal)', c.style.position, "");
+
+c.style.position = "outset";
+test('reading position on a set by script to outset (illegal keyword)', c.style.position, "");
+
+} catch (e) { exception( e ); }
+
+testmodule_finished();
+
+</script>
+
+</body>
+</html>

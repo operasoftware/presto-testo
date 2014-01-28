@@ -1,0 +1,55 @@
+<html>
+<head>
+<title>KDE ECMAScript test suite</title>
+
+<script src="../../../regression-lib/autorun.js"></script>
+<script>
+var programs=
+[ 'Array.js',
+  'Boolean.js',
+  'Date.js',
+  'Error.js',
+  'GlobalObject.js',
+  'Number.js',
+  'Object.js',
+  'Prototype.js',
+  'RegExp.js',
+  'StringObject.js',
+  'assignments.js',
+  'completion.js',
+  'conditional.js',
+  'delete.js',
+  'eval.js',
+  'exception_propagation.js',
+  'exceptions.js',
+  'function.js',
+  'function_arguments.js',
+  'function_constructor.js',
+  'function_length.js',
+  'iteration.js',
+  'literals.js',
+  'math.js',
+  'md5-1.js',
+  'md5-2.js',
+  'object_prototype_tostring.js',
+  'operators.js',
+  'parse.js',
+  'prototype_length.js',
+  'scope.js',
+  'statements.js',
+  'var_decl_init.js' ];
+
+var testname=false;   // This is inspected by the test document
+
+function generate_doc()
+{
+  setup_autorun( programs, function (p) { testname=p; return "testrunner.html"; } );
+}
+</script>
+
+</head>
+<body onload="generate_doc()">
+<h1>KDE ECMAScript test suite -- run all</h1>
+
+</body>
+</html>

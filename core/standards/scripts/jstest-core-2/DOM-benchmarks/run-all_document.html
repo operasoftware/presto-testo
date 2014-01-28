@@ -1,0 +1,73 @@
+<!-- -*- mode: c++; tab-width: 4 -*- 
+
+     Framework for running a set of ECMAScript/JavaScript/DOM benchmarks
+     Lars T Hansen
+
+     $Id: run-all_document.html 4838 2006-01-18 05:59:01Z hallvord $
+
+     Every benchmark should include the script reportresult.js.  The last
+     thing the benchmark should do (*following* all calls to document.write, etc,
+     and ideally as the last HTML element) is to call reportresult() with the
+     name of the benchmark and the time in milliseconds.  The rest is more or
+     less magic.  See reportresult.js for further info.
+ -->
+<html>
+<body>
+<script>
+programs = 
+["loop.html", 
+"createElement.html",
+"createTextNode.html",
+"createDocumentFragment.html",
+"createAttribute.html",
+"getElementsByTagName_small.html",
+"getElementsByTagName_medium.html",
+"getElementById_small.html",
+"getElementById_medium.html"
+];
+</script>
+<script src="run-all.js"></script>
+<h2>DOM Benchmarks</h2>
+<p>Report results as averages across <input id=nruns_input type=text size=2> runs.<br>
+<input type=button value=start onclick=start_test()></p>
+<script>
+document.getElementById("nruns_input").value=nruns_default;
+</script>
+
+<table id=allresults border=1>
+<colgroup span=1 align=left>
+<colgroup span=1 align=right>
+<tbody>
+<tr><th>Benchmark</th><th>Runtime (ms)</th></tr>
+</tbody>
+</table>
+
+<br>
+<br>
+<br>
+<p>Total elapsed time: <span id=elapsed>0s</span></p>
+
+<br>
+<br>
+<br>
+<p><b>Notes and guidelines</b></p>
+
+<p>On a fast (1.8GHz) system with Opera 7 it will take several minutes to
+run the benchmark suite.</p>
+
+<p>Benchmarks are sensitive to noise, so for the best results you should
+<ol>
+<li>Reboot your computer
+<li>Start a release build of Opera <em>outside</em> Visual Studio
+<li>Load this file
+<li>Click 'Start'
+</ol>
+</p>
+
+<p>In Opera 7 Beta 2, and probably in other versions, there is a bug
+that makes timings obtained with autorunning quite different from (worse than)
+times obtained by running one and one benchmark.</p>
+
+</body>
+</html>
+  

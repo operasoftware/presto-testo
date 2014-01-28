@@ -1,0 +1,64 @@
+<HTML>
+<HEAD>
+<META NAME="GENERATOR" Content="Microsoft Developer Studio">
+<META HTTP-EQUIV="Content-Type" content="text/html; charset=iso-8859-1">
+<LINK REL=StyleSheet HREF="../ibench.css" TYPE="text/css" TITLE="i-Bench(TM) Styles">
+<TITLE>JavaScript Performance Test</TITLE>
+
+<script type="text/javascript">   
+<!--
+
+function OnLoad()
+{
+	// run next part of test	
+	setTimeout('parent.frames[1].location = "records.html"', '2000');
+}
+
+// -->
+</script>
+
+</HEAD>
+
+<body class="ibstyle" onLoad="OnLoad()">
+
+<table cellspacing="0" cellpadding="2" border="0" align="center" bgcolor="#003366">
+<tr>
+	<td width="170" align="center" class="ibstyle">
+		<img src="../ibench_150x40_wl.gif" alt="i-Bench(TM)" width="150" height="40" hspace="3" vspace="2">
+	</td>
+	<td align="left" valign="middle" class="ibstyle">
+		<span class="f5"> &gt; Performance Tests &gt;</span>
+		<span class="h3x"> JavaScript</span>
+	</td>
+	<td align="center" class="ibstyle">
+		<img src="../processing.gif" alt="Processing" hspace="5" vspace="2"> 
+		<img src="../performance_hdr.gif" alt="Performance Test" hspace="5" vspace="2"> 
+	</td>
+
+</tr>
+</table>
+
+<table width="590" cellspacing="0" cellpadding="1" bgcolor="#D6DDE4" border="1" align="center">
+<form name="jsTest">
+<tr>
+	<td width="60%" align="center">
+		&nbsp;<b>Status:</b>&nbsp;
+		<input type="text" name="currentTest" size="30">
+	</td>
+	<td  align="center">
+		&nbsp;<b>Progress:</b>&nbsp;
+		<input type="text" name="status" size="4">&nbsp;% 
+	</td>
+
+	<!-- Hidden Fields -->
+	<input type="hidden" name="fv">
+	<input type="hidden" name="dt">
+	<input type="hidden" name="search">
+	<input type="hidden" name="sort">
+	<input type="hidden" name="genpage">
+
+</form>
+</table>
+
+</BODY>
+</HTML>

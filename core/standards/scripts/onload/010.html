@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html><head>
+	<title>load event on FRAMESET with scripted content inside </title>
+	<script src="_files/lib.js" ></script>
+	<script>var expected = [
+			'load in window [support.html] (in FRAME [support.html])',
+			'load  on FRAME  in window [010.html]',
+			'load  on FRAMESET  in window [010.html]'
+		];
+	</script>
+</head>
+<frameset rows="*" onload="load(event, ' on FRAMESET ')">
+<frame src="_files/support.html" onload="load(event, ' on FRAME ')"></frame>
+</frameset></html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <title>testObjectES5_spec.js#testDefineProperty_6</title>
+  <script src="../opjsunit.js"></script>
+  <script>function testDefineProperty_6()
+{
+    var o = {};
+    assertEquals(o, Object.defineProperty(o, "x", { value: 5, writable: false, enumerable: true, configurable: true }));
+    assertTrue("x" in o);
+    assertEnum(o, "x");
+    assertEquals(5, o.x);
+    o.x = 10;
+    assertEquals(5, o.x);
+    assertTrue(delete o.x);
+    assertFalse("x" in o);
+}</script>
+  <p>Failed (Script did not run)</p>
+  <script>
+function test() {
+  var passed = false;
+  var error = "";
+  var output_element = document.getElementsByTagName("p")[0];
+  try {
+    for (var count=0; count<100; count++) {
+      testDefineProperty_6();
+    }
+    passed = true;
+  } catch(e) {
+    error = e.message;
+  }
+  try {top.opener.rr(passed)} catch(e){}
+  if (passed) {
+    output_element.textContent = "PASS"
+    output_element.style.color = "green";
+  } else {
+    output_element.textContent = "FAIL: " + error + " (failed on iteration " + count + ")"
+    output_element.style.color = "red";
+  }
+}
+window.addEventListener("load", test, false);
+  </script>
+</html>

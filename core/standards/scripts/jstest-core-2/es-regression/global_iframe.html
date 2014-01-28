@@ -1,0 +1,50 @@
+<!-- helper page to load into the iframe in global.html -->
+<html>
+<body onload="parent.iframe_loaded=true">
+<script>
+var comment="Comment: iframe.";
+var window_identification="window: iframe";
+
+Array.prototype.where = "iframe";
+Boolean.prototype.where = "iframe";
+Date.prototype.where = "iframe";
+Error.prototype.where = "iframe";
+Number.prototype.where = "iframe";
+Object.prototype.where = "iframe";
+RegExp.prototype.where = "iframe";
+String.prototype.where = "iframe";
+
+parent.scope_array_result = parent.build("array").where;
+parent.scope_boolean_result = parent.build("boolean").where;
+parent.scope_date_result = parent.build("date").where;
+parent.scope_error_result = parent.build("error").where;
+parent.scope_function_result = parent.build("function")();
+parent.scope_number_result = parent.build("number").where;
+parent.scope_object_result = parent.build("object").where;
+parent.scope_regexp_result = parent.build("regexp").where;
+parent.scope_string_result = parent.build("string").where;
+parent.scope_tostring_result = parent.build("tostring","x");
+parent.scope_a_concat_result1 = parent.build("a_concat1", 1, 2).where;
+parent.scope_a_concat_result2 = parent.build("a_concat2", [1], [2]).where;
+parent.scope_a_splice_result1 = parent.build("a_splice1", 1, 2).where;
+parent.scope_a_splice_result2 = parent.build("a_splice2", [1], 2).where;
+parent.scope_a_slice_result1 = parent.build("a_slice1", 1, 2).where;
+parent.scope_a_slice_result2 = parent.build("a_slice2", [1,2]).where;
+parent.scope_s_match_result = parent.build("s_match").where;
+parent.scope_s_split_result = parent.build("s_split").where;
+parent.scope_r_exec_result = parent.build("r_exec").where;
+parent.scope_regexp_$n_result = parent.regex_test();
+parent.scope_a_literal_result = parent.build("a_literal",1,2).where;
+parent.scope_o_literal_result = parent.build("o_literal",1,2).where;
+parent.scope_f_literal_result = parent.build("f_lambda").where;
+parent.scope_f_literal_function = parent.build("f_lambda");
+parent.scope_e_thrown_result = parent.build("e_thrown").where;
+
+function executes_in_iframe()
+{
+  return this.comment;   // When called from a script in the parent frame, it should return the parent's string
+}
+
+</script>
+This is the contents of the iframe.
+</body>

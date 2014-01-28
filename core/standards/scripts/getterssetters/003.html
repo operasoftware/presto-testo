@@ -1,0 +1,31 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+	<head>
+		<title>Setters work inside eval</title>
+	</head>
+	<body>
+
+<p id="ostat">Enable JavaScript and reload.</p>
+<script type="text/javascript">
+
+var oUnsup = 'unsupported';
+function reportStatus( oStatus ) {
+	document.getElementById('ostat').firstChild.nodeValue = ( oStatus == true ) ? 'PASS' : ( ( oStatus == oUnsup ) ? 'FAIL (getters/setters not supported)' : 'FAIL' );
+	try{
+		try{top.opener.rr(oStatus);}catch(e){}
+	}catch(e){}
+}
+
+var state = false;
+if( window.__defineSetter__ ) {
+	window.__defineSetter__('foo',function () { state = true; });
+	eval( 'window.foo = \'whocares\'' );
+	reportStatus(state);
+} else {
+	reportStatus(oUnsup)
+}
+
+</script>
+
+	</body>
+</html>

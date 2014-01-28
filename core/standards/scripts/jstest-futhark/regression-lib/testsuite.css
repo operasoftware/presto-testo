@@ -1,0 +1,37 @@
+/*
+The material, including but not limited to all software, design,
+drawings, technical specifications and other confidential information
+sent to you (Material), is the exclusive property of Opera Software
+ASA and its suppliers. The Material is classified as strictly
+confidential information and is internationally protected by copyright-,
+trademark- and other such laws. The Material is sent to you for internal
+use only and shall only be used as expressly instructed by Opera
+Software.
+
+Any copying, reproduction, modification or distribution not in
+accordance with a special written license agreement with Opera Software
+is expressly prohibited, and may result in severe civil and criminal
+penalties. Opera Software actively and aggressively enforces its
+intellectual property rights to the fullest extent of the law.
+*/
+
+
+.warning {display: block}
+.warning:before {content: "WARNING:"; color: red;}
+
+.testresults {table-layout: fixed;}
+.testresults td,  .testresults th {font: 10px sans-serif;}
+.testresults th{ text-align: left; background: #696 }
+tr.pass td {background: #EFE;}
+
+body.hidepassedtests tr.pass{ display: none; }
+
+tr.fail td{background: #FEE}
+th {white-space: nowrap;}
+
+th.testno {width: 5%;}
+th.feature {width: 20%;}
+th.return {width: 25%;}
+th.expect {width: 25%;}
+th.ok {width: 10%;}
+th.rem {width: 15%;}

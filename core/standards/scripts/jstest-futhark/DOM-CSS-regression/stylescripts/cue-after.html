@@ -1,0 +1,73 @@
+<html>
+<head>
+<title>DOM tests -- CSS2 interface</title>
+</head>
+
+<body>
+
+<!-- All the HTML elements below this line are used by the tests -->
+
+<h1>This test will not work well if you don't have Speech Support</h1>
+
+<div style='border: dashed blue'>
+<div id='a' style='border: solid black'>
+Text inside div a
+</div>
+
+<div id='b' style='border: solid red; cue-after: url(ding.wav)'>
+Text inside div b
+</div>
+
+<div id='c'>
+Text inside div c
+</div>
+</div>
+
+<!-- All the HTML elements above this line are used by the tests -->
+
+
+<script src="../../regression-lib/testbase.js"></script>
+<script>
+/* Regression tests for Opera's handling of the DOM 2 CSS2 interface
+ *
+ * 2002-04-11 / stighal
+ */
+
+var cvs = "$Id: cue-after.html 10655 2006-12-18 15:47:57Z hallvord $";
+
+testmodule( "CSS2 interface", cvs );
+
+var path_prefix = document.location.href.substr(0, document.location.href.lastIndexOf("/") + 1);
+var a, b, c;
+
+try {
+a = document.getElementById("a");
+b = document.getElementById("b");
+c = document.getElementById("c");
+
+testcase( "Reading properties" );
+
+test('getting cue-after from a with nothing specified', a.style.cueAfter, "");
+test('getting cue-after from b with "url(ding.wav)" specified', b.style.cueAfter, "url(" + path_prefix + "ding.wav)");
+
+testcase( "Setting properties" );
+
+a.style.cueAfter = "url(dong.wav)";
+test('reading cue-after on a set by script to "url(dong.wav)"', a.style.cueAfter, "url(" + path_prefix + "dong.wav)");
+
+testcase( "Negative tests" );
+
+c.style.cueAfter = "foo";
+test('reading cue-after on a set by script to foo (illegal)', c.style.cueAfter, "");
+
+c.style.cueAfter = "outset";
+test('reading cue-after on a set by script to outset (illegal keyword)', c.style.cueAfter, "");
+
+} catch (e) { exception( e ); }
+
+testmodule_finished();
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!--#include file="../results/page.asp"-->
+<%
+BeginPage
+GetRS rs_pv,"_pv2,_pv9,_pv35,_pv99"
+%>
+<html>
+
+<!--
+  --  overall_finis.asp
+  --  Perform calculation of i-Bench Overall Score.
+  --
+  --  Copyright (c) 2000 Ziff Davis Media Inc.
+  --
+  --  ZD Labs
+  --  1001 Aviation Parkway, Suite 400
+  --  Morrisville, NC 27560 USA
+  --
+  --  http://www.zdbop.com
+  -->
+
+  <head>
+    <title>i-Bench Overall Score Computation</title>
+
+    <script src="../testlist/tests.js" type="text/javascript"></script>
+    <script src="../testlist/overallScore.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+	<!--
+
+		function HandleOnLoad()
+		{
+			var currentOverallScore = "<%GetPerfValue rs_pv,"_pv9"%>";
+
+			// load the scores into the calculation routine
+			initOverallScoreLoadPages("<%GetPerfValue rs_pv,"_pv2"%>");
+			initOverallScoreJavaScript("<%GetPerfValue rs_pv,"_pv35"%>");
+			initOverallScoreJava("<%GetPerfValue rs_pv,"_pv99"%>");
+
+			// perfrom the calculation for Overall Score
+			var x = calcOverallScore();
+
+			// set score to zero if an Overall Score has been generated and the newly calculated score is 
+			// not valid
+			if (x < 0 && !isNaN(currentOverallScore))
+				x = 0;
+
+			// less than 0 indicates one of the tests has not been run.  We should not update the Overall Score
+			// in this case.
+			if (x >= 0)
+			{
+				// update the score
+				document.results._pv9.value = floatFix(x, 2);
+				postToNextTest(document.results, "pOverallScore");
+			}
+			else
+			{
+				// move to next test without updating score
+				loadNextTest("pOverallScore");
+			}
+		}
+    // -->
+    </script>
+
+  </head>
+  <body onLoad="setTimeout('HandleOnLoad()', 1000)"  bgcolor="#FFFFFF">
+    <p>Posting i-Bench Overall Score...</p>
+    <p style="font-size: smaller; color: black">
+      Copyright &copy; 2000 Ziff Davis Media Inc.  All rights reserved.</p>
+
+	<form name="results" method="POST" action="../testlist/home_js.asp#pOverallScore">
+		<input name="_pv9" type="hidden" value="-1">
+	</form>
+
+  </body>
+</html>
+<%
+CloseRS rs_pv
+EndPage
+%>
+
+

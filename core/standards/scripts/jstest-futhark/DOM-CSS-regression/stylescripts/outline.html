@@ -1,0 +1,81 @@
+<html>
+<head>
+<title>DOM tests -- CSS2 interface</title>
+</head>
+
+<body>
+
+<!-- All the HTML elements below this line are used by the tests -->
+
+<div id='a'>
+Text inside div a
+</div>
+
+<div id='b' style='outline: invert dashed 3px'>
+Text inside div b
+</div>
+
+<div id='c' style='outline-color: red'>
+Text inside div c
+</div>
+
+<div id='d'>
+Text inside div d
+</div>
+
+<!-- All the HTML elements above this line are used by the tests -->
+
+
+<script src="../../regression-lib/testbase.js"></script>
+<script>
+/* Regression tests for Opera's handling of the DOM 2 CSS2 interface
+ *
+ * 2002-04-11 / stighal
+ */
+
+var cvs = "$Id: outline.html 91668 2011-04-07 11:52:16Z bratell $";
+
+testmodule( "CSS2 interface", cvs );
+
+var a, b, c, d;
+
+try {
+a = document.getElementById("a");
+b = document.getElementById("b");
+c = document.getElementById("c");
+d = document.getElementById("d");
+
+testcase( "Reading properties" );
+
+test('getting outline from a with nothing specified', a.style.outline, "");
+test('getting outline from b with "invert dashed 3px" specified by style', b.style.outline, "dashed 3px");
+
+testcase( "Setting properties" );
+
+a.style.outline = "red inset thin";
+test('reading outline on a set by script to "red inset thin"', a.style.outline, "red inset thin");
+
+testcase("Shorthand tests");
+
+test('getting outline from c where only outline-color is set by style', c.style.outline, "red");
+
+c.style.outlineWidth = "4px";
+c.style.outlineStyle = "double";
+test('getting outline from c where outline-width is set by script to "4px" and outline-style is set by script to "double"', c.style.outline, "red double 4px");
+
+testcase( "Negative tests" );
+
+d.style.outline = "foo";
+test('reading outline on d set by script to foo (illegal)', d.style.outline, "");
+
+d.style.outline = "top";
+test('reading outline on d set by script to top (illegal keyword)', d.style.outline, "");
+
+} catch (e) { exception( e ); }
+
+testmodule_finished();
+
+</script>
+
+</body>
+</html>

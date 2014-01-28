@@ -1,0 +1,25 @@
+<html>
+<head>
+<script src="../testconfig.js"></script>
+<script src="../regression-lib/testbase.js"></script>
+<title>DOM 2 HTML ParamElement </title>
+</head>
+
+<body onload="go()">
+<p>
+
+<object id="myObject" classid="clock.class" 
+  codetype="application/x-java-applet" 
+  height="50" width="100" tabindex=5 
+>
+<param id="myParam">
+<param id="myParam2" name="image" type="image/jpeg" value="silmaril.jpg" valueType="ref" >
+<param id="myParam3" name="col" type="" value="red" valueType="" >
+<param id="myParam4">
+applet object</object>
+
+</p>
+<script src="scripts/htmlparamelement.js"></script>
+<p>Test results in separate window</p>
+</body>
+</html>

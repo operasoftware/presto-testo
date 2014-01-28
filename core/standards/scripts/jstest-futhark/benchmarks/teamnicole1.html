@@ -1,0 +1,28 @@
+<html>
+<body>
+<p>Abstracted from www.teamnicole.com.</p>
+
+<p>The program starts out with a 30K characters long string, which it
+repeatedly searches for a pattern.  When it finds the pattern it
+creates a new string with a string substituted for the pattern.  Then
+it repeats the process on the new string.</p>
+
+<p>This is a really clueless way of doing things.</p>
+
+<p>Anyway, this program can take quite a while to run in Opera 7.0x and
+earlier.  On my 2GHz system it takes about 40 seconds.</p>
+
+<script src="reportresult.js"></script>
+<script>
+var SM=true;
+</script>
+<script src="teamnicole.js"></script>
+<script>
+var before = new Date();
+var result = teamnicole();
+var after = new Date();
+document.writeln( '<br>' + (after - before) + '<br>' );
+reportresult( "teamnicole 1", after-before );
+</script>
+</body>
+</html>

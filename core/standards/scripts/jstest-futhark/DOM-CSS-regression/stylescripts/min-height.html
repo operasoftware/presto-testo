@@ -1,0 +1,74 @@
+<html>
+<head>
+<title>DOM tests -- CSS2 interface</title>
+</head>
+
+<body>
+
+<!-- All the HTML elements below this line are used by the tests -->
+
+<div style='margin: 1em; border: thin dashed blue'>
+<div id='a' style='border: solid black'>
+The minimum height of this box is 100px
+</div>
+</div>
+
+<div style='margin: 1em; border: thin dashed blue'>
+<div id='b' style='border: solid red; min-height: 3cm'>
+The minimum height of this box is 3cm
+</div>
+</div>
+
+<div style='margin: 1em; border: thin dashed blue'>
+<div id='c'>
+No minimum height set
+</div>
+</div>
+
+<!-- All the HTML elements above this line are used by the tests -->
+
+
+<script src="../../regression-lib/testbase.js"></script>
+<script>
+/* Regression tests for Opera's handling of the DOM 2 CSS2 interface
+ *
+ * 2002-04-11 / stighal
+ */
+
+var cvs = "$Id: min-height.html 10655 2006-12-18 15:47:57Z hallvord $";
+
+testmodule( "CSS2 interface", cvs );
+
+var a, b, c;
+
+try {
+a = document.getElementById("a");
+b = document.getElementById("b");
+c = document.getElementById("c");
+
+testcase( "Reading properties" );
+
+test('getting min-height from a with nothing specified', a.style.minHeight, "");
+test('getting min-height from b with "3cm" specified', b.style.minHeight, "3cm");
+
+testcase( "Setting properties" );
+
+a.style.minHeight = "100px";
+test('reading min-height on a set by script to "100px"', a.style.minHeight, "100px");
+
+testcase( "Negative tests" );
+
+c.style.minHeight = "foo";
+test('reading min-height on a set by script to foo (illegal)', c.style.minHeight, "");
+
+c.style.minHeight = "outset";
+test('reading min-height on a set by script to outset (illegal keyword)', c.style.minHeight, "");
+
+} catch (e) { exception( e ); }
+
+testmodule_finished();
+
+</script>
+
+</body>
+</html>

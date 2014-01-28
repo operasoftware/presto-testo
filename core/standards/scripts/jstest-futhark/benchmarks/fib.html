@@ -1,0 +1,25 @@
+<html>
+<body>
+<script src="reportresult.js"></script>
+<script>
+function fib(n)
+{
+    if (n < 2)
+        return n;
+    else
+        return fib(n-1) + fib(n-2);
+}
+
+var before = new Date();
+var result = fib(25);
+var after = new Date();
+
+if (navigator.userAgent.indexOf('3.62') >= 0)
+  alert( result + ': ' + ((after.getTime()) - (before.getTime())) + 'ms' );
+else
+  document.writeln( new Array( result, after - before ) + '<br>' );
+
+reportresult( "fib 25", after-before );
+</script>
+</body>
+</html>

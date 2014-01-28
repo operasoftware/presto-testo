@@ -1,0 +1,386 @@
+<!-- -*- mode: fundamental; tab-width: 4 -*- -->
+<html>
+<body>
+<script>
+//  JavaScript version translated from the Scheme version by Lars T Hansen, Opera Software.
+//  Scheme version translated from the Java version by Will Clinger, Northeastern University.
+//  Java version by David Detlefs, Sun Microsystems, Inc.
+//
+//  GCOld.sch x.x 00/08/03
+//  translated from GCOld.java 2.0a 00/08/23
+// 
+//  Copyright 2000 Sun Microsystems, Inc. All rights reserved.
+
+// Should be good enough for this benchmark.
+
+function newRandom()
+{
+	var x=1;
+	var a=701;
+	var c=743483;
+	var m=524287;
+
+	function random14(n)
+	{
+		x=((a*x)+c) & m;
+    	return (x >> 3) % n;
+	}
+
+	function loop (q, r, n)
+	{
+		if (q == 0)
+			return r % n;
+		else
+			return loop( Math.floor(r / 16384),
+					     (r*16384) + random14(16384),
+					     n );
+	}
+
+	function rng(n)
+	{
+		if (n < 16384)
+			return random14(n);
+		else
+			return loop( n, random15(16384), n );
+	}
+
+	return rng;
+}
+
+; A TreeNode is a record with three fields: left, right, val.
+; The left and right fields contain a TreeNode or 0, and the
+; val field will contain the integer height of the tree.
+
+function newTreeNode( left, right, val )
+{
+	this.left = left ? left : 0;
+	this.right = right ? right : 0;
+	this.val = val ? val : 0;
+}
+
+//  Args:
+//  live-data-size: in megabytes.
+//  work: units of mutator non-allocation work per byte allocated,
+//    (in unspecified units.  This will affect the promotion rate
+//     printed at the end of the run: more mutator work per step implies
+//     fewer steps per second implies fewer bytes promoted per second.)
+//  short/long ratio: ratio of short-lived bytes allocated to long-lived
+//     bytes allocated.
+//  pointer mutation rate: number of pointer mutations per step.
+//  steps: number of steps to do.
+
+function GCOld( size, workUnits, promoteRate, ptrMutRate, steps )
+{
+	function println()
+	{
+		for ( var i=0 ; i < arguments.length ; i++ )
+			document.writeln( arguments[i] );
+		document.writeln( '<br>' );
+	}
+
+	// Rounds an inexact real to two decimal places.
+
+	function round2( x )
+	{
+		return Math.round( x * 100.0 ) / 100.0;
+	}
+
+	// Returns the height of the given tree.
+
+	function height(t)
+	{
+		if (t == 0)
+			return 0;
+		else
+			return 1 + max( height( t.left ), height( t.right ) );
+	}
+
+	// Returns the length of the shortest path in the given tree.
+
+	function shortestPath( t )
+	{
+		if (t == 0)
+			return 0;
+		else
+			return 1 + min( shortestPath( t.left ), shortestPath( t.right ) );
+	}
+
+	// Returns the number of nodes in a balanced tree of the given height.
+
+	function heightToNodes( h )
+	{
+		return Math.expt(2,h) - 1;
+	}
+
+	// Returns the height of the largest balanced tree
+	// that has no more than the given number of nodes.
+
+	function nodesToHeight( nodes )
+	{
+		var h, n;
+		for ( h=1, n=1 ; n+n+1 <= nodes ; h++, n+=n )
+			;
+		return h-1;
+	}
+
+	var pathBits = 65536;        // to generate 16 random bits
+	var MEG = 1000000;
+	var INSIGNIFICANT = 999;     // this many bytes don't matter
+	var bytes_per_word = 4;
+	var bytes_per_node = 20;     // bytes per tree node in typical JVM
+	var words_per_dead = 100;    // size of young garbage objects
+
+	// Returns the number of bytes in a balanced tree of the given height.
+
+	function heightToBytes( h )
+	{
+		return bytes_per_node * heightToNodes(h);
+	}
+
+	// Returns the height of the largest balanced tree
+    // that occupies no more than the given number of bytes.
+
+	function bytesToHeight( bytes )
+	{
+		return nodesToHeight( bytes/bytes_per_node );
+	}
+
+	var treeHeight = 14;
+	var treeSize = heightToBytes(treeHeight);
+
+	var msg1 = "Usage: java GCOld <size> <work> <ratio> <mutation> <steps>";
+	var msg2 = "  where <size> is the live storage in megabytes";
+	var msg3 = "        <work> is the mutator work per step (arbitrary units)";
+    var msg4 = "        <ratio> is the ratio of short-lived to long-lived allocation";
+	var msg5 = "        <mutation> is the mutations per step";
+    var msg6 = "        <steps> is the number of steps";
+
+	// Counters (and global variables that discourage optimization).
+
+    var youngBytes = 0;
+    var nodes = 0;
+    var actuallyMut = 0;
+    var mutatorSum = 0;
+    var aexport = [];
+
+    // Global variables.
+
+    var trees = [];
+    var where = 0;
+    var rnd = newRandom();
+
+    // Returns a newly allocated balanced binary tree of height h.
+
+	function makeTree(h)
+	{
+		var res;
+		if (h == 0)
+			return null;
+		else {
+			res = newTreeNode();
+			nodes++;
+			res.left = makeTree( h-1 );
+			res.right = makeTree( h-1 );
+			res.val = h;
+			return res;
+		}
+	}
+
+    ; Allocates approximately size megabytes of trees and stores
+    ; them into a global array.
+
+    (define (init)
+      ; Each tree will be about a megabyte.
+      (let ((ntrees (quotient (* size MEG) treeSize)))
+	(set! trees (make-vector ntrees null))
+	(println "Allocating " ntrees " trees.")
+        (println "  (" (* ntrees treeSize) " bytes)")
+	(do ((i 0 (+ i 1)))
+	    ((>= i ntrees))
+	  (vector-set! trees i (makeTree treeHeight))
+	  (doYoungGenAlloc (* promoteRate ntrees treesize) words/dead))
+	(println "  (" nodes " nodes)")))
+
+    ; Confirms that all trees are balanced and have the correct height.
+
+    (define (checkTrees)
+      (let ((ntrees (vector-length trees)))
+        (do ((i 0 (+ i 1)))
+            ((>= i ntrees))
+          (let* ((t (vector-ref trees i))
+                 (h1 (height t))
+                 (h2 (shortestPath t)))
+            (if (or (not (= h1 treeHeight))
+                    (not (= h2 treeHeight)))
+                (println "*****BUG: " h1 " " h2))))))
+
+    ; Called only by replaceTree (below) and by itself.
+
+    (define (replaceTreeWork full partial dir)
+      (let ((canGoLeft (and (not (eq? (TreeNode.left full) null))
+			    (> (TreeNode.val (TreeNode.left full))
+			       (TreeNode.val partial))))
+	    (canGoRight (and (not (eq? (TreeNode.right full) null))
+			     (> (TreeNode.val (TreeNode.right full))
+			        (TreeNode.val partial)))))
+	(cond ((and canGoLeft canGoRight)
+	       (if dir
+		   (replaceTreeWork (TreeNode.left full)
+				    partial
+				    (not dir))
+		   (replaceTreeWork (TreeNode.right full)
+				    partial
+				    (not dir))))
+	      ((and (not canGoLeft) (not canGoRight))
+	       (if dir
+		   (setf (TreeNode.left full) partial)
+		   (setf (TreeNode.right full) partial)))
+	      ((not canGoLeft)
+	       (setf (TreeNode.left full) partial))
+	      (else
+	       (setf (TreeNode.right full) partial)))))
+
+    ; Given a balanced tree full and a smaller balanced tree partial,
+    ; replaces an appropriate subtree of full by partial, taking care
+    ; to preserve the shape of the full tree.
+
+    (define (replaceTree full partial)
+      (let ((dir (zero? (modulo (TreeNode.val partial) 2))))
+        (set! actuallyMut (+ actuallyMut 1))
+	(replaceTreeWork full partial dir)))
+
+    ; Allocates approximately n bytes of long-lived storage,
+    ; replacing oldest existing long-lived storage.
+
+    (define (oldGenAlloc n)
+      (let ((full (quotient n treeSize))
+	    (partial (modulo n treeSize)))
+	;(println "In oldGenAlloc, doing "
+	;         full
+	;         " full trees and one partial tree of size "
+	;         partial)
+	(do ((i 0 (+ i 1)))
+	    ((>= i full))
+	  (vector-set! trees where (makeTree treeHeight))
+	  (set! where
+                (modulo (+ where 1) (vector-length trees))))
+	(let loop ((partial partial))
+          (if (> partial INSIGNIFICANT)
+              (let* ((h (bytesToHeight partial))
+                     (newTree (makeTree h)))
+                (replaceTree (vector-ref trees where) newTree)
+                (set! where
+                      (modulo (+ where 1) (vector-length trees)))
+                (loop (- partial (heightToBytes h))))))))
+
+    ; Interchanges two randomly selected subtrees (of same size and depth).
+
+    (define (oldGenSwapSubtrees)
+      ; Randomly pick:
+      ;   * two tree indices 
+      ;   * A depth
+      ;   * A path to that depth.
+      (let* ((index1 (rnd (vector-length trees)))
+	     (index2 (rnd (vector-length trees)))
+	     (depth (rnd treeHeight))
+	     (path (rnd pathBits))
+	     (tn1 (vector-ref trees index1))
+	     (tn2 (vector-ref trees index2)))
+	(do ((i 0 (+ i 1)))
+	    ((>= i depth))
+	  (if (even? path)
+	      (begin (set! tn1 (TreeNode.left tn1))
+		     (set! tn2 (TreeNode.left tn2)))
+	      (begin (set! tn1 (TreeNode.right tn1))
+		     (set! tn2 (TreeNode.right tn2))))
+	  (set! path (quotient path 2)))
+	(if (even? path)
+	    (let ((tmp (TreeNode.left tn1)))
+	      (setf (TreeNode.left tn1) (TreeNode.left tn2))
+	      (setf (TreeNode.left tn2) tmp))
+	    (let ((tmp (TreeNode.right tn1)))
+	      (setf (TreeNode.right tn1) (TreeNode.right tn2))
+	      (setf (TreeNode.right tn2) tmp)))
+	(set! actuallyMut (+ actuallyMut 2))))
+
+    ; Update "n" old-generation pointers.
+
+    (define (oldGenMut n)
+      (do ((i 0 (+ i 1)))
+	  ((>= i (quotient n 2)))
+	(oldGenSwapSubTrees)))
+
+    ; Does the amount of mutator work appropriate for n bytes of young-gen
+    ; garbage allocation.
+
+    (define (doMutWork n)
+      (let ((limit (quotient (* workUnits n) 10)))
+	(do ((k 0 (+ k 1))
+	     (sum 0 (+ sum 1)))
+	    ((>= k limit)
+             ; We don't want dead code elimination to eliminate this loop.
+	     (set! mutatorSum (+ mutatorSum sum))))))
+
+    ; Allocate n bytes of young-gen garbage, in units of "nwords"
+    ; words.
+
+    (define (doYoungGenAlloc n nwords)
+      (let ((nbytes (* nwords bytes/word)))
+	(do ((allocated 0 (+ allocated nbytes)))
+	    ((>= allocated n)
+             (set! youngBytes (+ youngBytes allocated)))
+	  (set! aexport (make-vector nwords 0)))))
+
+    ; Allocate "n" bytes of young-gen data; and do the
+    ; corresponding amount of old-gen allocation and pointer
+    ; mutation.
+
+    ; oldGenAlloc may perform some mutations, so this code
+    ; takes those mutations into account.
+
+    (define (doStep n)
+      (let ((mutations actuallyMut))
+	(doYoungGenAlloc n words/dead)
+	(doMutWork n)
+	; Now do old-gen allocation
+	(oldGenAlloc (quotient n promoteRate))
+	(oldGenMut (max 0 (- (+ mutations ptrMutRate) actuallyMut)))))
+
+    (println size " megabytes")
+    (println workUnits " work units per step.")
+    (println "promotion ratio is 1:" promoteRate)
+    (println "pointer mutation rate is " ptrMutRate)
+    (println steps " steps")
+
+    (init)
+    (checkTrees)
+    (set! youngBytes 0)
+    (set! nodes 0)
+
+    (println "Initialization complete...")
+
+    (run-benchmark "GCOld"
+		   1
+		   (lambda ()
+		     (do ((step 0 (+ step 1)))
+			 ((>= step steps))
+		       (doStep MEG)))
+		   (lambda (result) #t))
+
+    (checkTrees)
+
+    (println "Allocated " steps " Mb of young gen garbage")
+    (println "    (actually allocated "
+             (round2 (/ youngBytes MEG))
+             " megabytes)")
+    (println "Promoted " (round2 (/ steps promoteRate)) " Mb")
+    (println "    (actually promoted "
+             (round2 (/ (* nodes bytes/node) MEG))
+             " megabytes)")
+    (if (not (zero? ptrMutRate))
+        (println "Mutated " actuallyMut " pointers"))
+
+    ; This output serves mainly to discourage optimization.
+
+    (+ mutatorSum (vector-length aexport))))
+

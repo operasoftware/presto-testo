@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html><head>
+	<title>load events - IFRAME document replaced before its content document's load event</title>
+	<script>var _conf_timeout_delay=1500;</script>
+	<script src="_files/lib.js"></script>
+	<script>
+		window.onload=load;
+	</script>
+	<script>var expected = [
+			'load in window [025.html]',
+			'load in window [support.html] (in IFRAME [support.html])',
+			'load on <IFRAME> in window [025.html]'
+		];
+	</script>
+</head>
+<body>
+
+	<p>FAILED (This TC requires JavaScript enabled)</p>
+	<iframe src="_files/redirect-instant.html" onload="load(event, 'on <IFRAME>')"></iframe>
+</body></html>

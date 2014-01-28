@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html><head>
+	<title> frame contents nesting another IFRAME with window.onload  </title>
+	<script src="../_files/lib.js" ></script>
+	<script>window.onload=function(e){
+		load.call(this, e);
+	};</script>
+</head>
+<body>
+	<iframe src="support.html" onload="load( event, ' on nested IFRAME ' )" id="nested"></iframe>
+</body></html>

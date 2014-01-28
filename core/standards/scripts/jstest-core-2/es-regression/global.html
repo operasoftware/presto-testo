@@ -1,0 +1,95 @@
+<html>
+<head>
+<title>Regression | Global Object</title>
+</head>
+
+<body>
+<script>
+var iframe_loaded=false;
+var window_identification="window: parent";
+
+
+/* The variable 'comment' also exists in the iframe (below),
+   and in the iframe, the prototypes are modified as shown
+   here but the value assigned to the where property is 'iframe'.
+   If the scoping is done right in the interpreter, then calling
+   build to create new objects should pickup the global bindings
+   in the scope of build, that is, in the parent.
+   */
+var comment="Comment: parent";
+Array.prototype.where = "parent";
+Boolean.prototype.where = "parent";
+Date.prototype.where = "parent";
+Error.prototype.where = "parent";
+Number.prototype.where = "parent";
+Object.prototype.where = "parent";
+RegExp.prototype.where = "parent";
+String.prototype.where = "parent";
+
+function build(p,q,r)
+{
+   var x,y;
+   switch (p)
+   {
+   case "array"    : return new Array();
+   case "boolean"  : return new Boolean();
+   case "date"     : return new Date();
+   case "error"    : return new Error();
+   case "function" : return new Function("return comment;");
+   case "number"   : return new Number();
+   case "object"   : return new Object();
+   case "regexp"   : return new RegExp("a*");
+   case "string"   : return new String();
+   case "tostring" : return q.where;  // ToObject conversion
+   // In the following, case 1 is an array created in this file, and the other an array that
+   // comes from the other frame.  Methods and prototypes are different for the two.
+   case "a_concat1": return (x=new Array(),x.push(q),x).concat(y=new Array(),y.push(r),y);
+   case "a_concat2": return q.concat(r);
+   case "a_splice1": return (x=new Array(),x.push(q),x).splice(0,1,r);
+   case "a_splice2": return q.splice(0,1,r);
+   case "a_slice1" : return (x=new Array(),x.push(q),x.push(y),x).slice(0,1);
+   case "a_slice2" : return q.slice(0,1);
+   case "s_match"  : return (new String("abracadabra")).match(/a/g);   // explicit constructor to avoid toString bug
+   case "s_split"  : return (new String("abracadabra")).split(/a/g);   // ditto
+   case "r_exec"   : return /(a)+/g.exec("abracadabra");
+   case "a_literal": return [q,r];
+   case "o_literal": return { q: q, r: r };
+   case "f_lambda" : return function () { return window_identification; };
+   case "e_thrown" : try { x=new Array(); x.length=-1; } catch (e) { return e; };
+   default         : return { where: "NOT HERE" };
+   }
+}
+
+function regex_test()
+{
+  var re_date = /^(\d+)\/(\d+)\/(\d+)$/;
+  var str_datetime = "10/12/14";
+  re_date.exec(str_datetime);
+  return (RegExp.$1 + RegExp.$2 + RegExp.$3);
+}
+</script>
+<iframe height=30 id=theframe src="global_iframe.html"></iframe><br>
+<script src="../regression-lib/testbase.js"></script>
+<script src="scripts/global.js"></script>
+<script>
+/* Declaring a global variable introduces a new name separate from
+   what the window object supports natively.  (Weird but true.)
+
+   If the browser goes to opera.com then bug 158382 is still with us.
+   This was a problem in some early betas of linear_b_2.
+
+   UPDATE: the original test was
+   var location = "http://www.opera.com"
+   but in light of bug 293682 we protect some properties like location, document and window.window
+   from being overridden. Test changed to deal with decodeURI instead of location.
+   This needs to be in a separate SCRIPT element and last in the page to avoid breaking other tests
+*/
+var decodeURI = "test decodeURI string";
+test(  'overriding global property by defining variable', window.decodeURI, "test decodeURI string");
+test(  'overriding global property by defining variable 2', typeof decodeURI, "string");
+
+testmodule_finished();
+</script>
+
+</body>
+</html>

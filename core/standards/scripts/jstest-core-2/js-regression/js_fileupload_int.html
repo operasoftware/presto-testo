@@ -1,0 +1,51 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/REC-html401/strict.dtd">
+<!--
+   Created by haukur@opera.com
+-->
+<html>
+   <head>
+      <title>FileUpload Object Test - Interactive</title>
+      <script type="text/javascript" src="../regression-lib/testbase.js"></script>
+      <script type="text/javascript" src="scripts/js_fileupload_int.js"></script>
+   </head>
+   <body>
+      <h1>FileUpload Object Test - Interactive</h1>
+      <script type="text/javascript">showred( cvs );</script>
+      <p>
+         A popup window will show when the first event is triggered, e.g.
+         when you click in the textfield. The popup window is for reports from the different event
+         handlers. 
+      </p>
+      <form id="theform" name="theform">
+         <input id="thefile" name="thefile"
+                type="file"
+                onblur="reportEvent( 'onblur' );"
+                onfocus="reportEvent( 'onfocus' );"
+		onchange="reportEvent( 'onchange' );"
+                value="This is a FileUpload object">
+      </form>
+      <h2>User interaction</h2>
+      <ol>
+         <li>
+           	 <a href="javascript:testFocusMethod();">focus(), the checkbox receives focus </A>
+             The onfocus() event handler should trigger.
+         </li>
+         <li>
+            <a href="javascript:testBlurMethod();">blur(), focus is removed from the checkbox.</A>
+            The onblur() event handler should trigger.
+            (&nbsp;it needs to have focus first&nbsp;)
+         </li>
+
+	 <li>
+	    <a href="javascript:testSelectMethod();">select()</A> 
+       Selects the input area of the file upload field.
+	 </li>
+          <li>
+             onchange(). Event handler should be triggered
+             when the field loses its focus and its value has been modified.
+             Try modifiying the string in the text field, and then
+             remove focus from the text field and button (&nbsp;the fileupload element&nbsp;).
+          </li>
+      </ol>
+   </body>
+</html>

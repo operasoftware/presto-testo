@@ -1,0 +1,46 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/REC-html401/strict.dtd">
+<!--
+   Created by torstein@opera.com
+-->
+<html>
+   <head>
+      <title>Link Object Test</title>
+      <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+      <script type="text/javascript" src="../testconfig.js"></script>
+      <script type="text/javascript" src="../regression-lib/testbase.js"></script>
+      <script type="text/javascript" src="scripts/js_link.js"></script>
+   </head>
+   <body>
+      <div style="visibility: hidden;">
+         <a id="anchorlink"
+	    href="http://www.opera.com:80/index.html?mysearch"
+            name="myname" id="myid"
+            target="mytarget"
+            onclick="void(0)"
+            ondblclick="void(1)" 
+            onkeydown="void(2)" 
+            onkeypress="void(3)" 
+            onkeyup="void(4)" 
+            onmousedown="void(5)" 
+            onmouseout="void(6)" 
+            onmouseup="void(7)" 
+            onmouseover="void(8)" 
+         >
+            www.opera.com
+         </a>
+         <map name="mymap">
+            <area id=arealink
+	          alt="an area alt text"
+                  href="http://www.opera.com:80/index.html#myhash"
+                  target="mytarget"
+                  ondblclick="void(0)"
+                  onmouseover="void(1)"
+                  onmouseout="void(2)"
+            >
+         </map>
+      </div>
+      <script type="text/javascript">
+        main( self.document );
+      </script>
+   </body>
+</html>

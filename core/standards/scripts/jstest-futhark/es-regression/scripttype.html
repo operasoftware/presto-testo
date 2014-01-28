@@ -1,0 +1,95 @@
+<!-- test cases for script types recognized and rejected -->
+<html>
+
+<head>
+<script type="text/javascript" src="../regression-lib/testbase.js"></script>
+</head>
+
+<body>
+<script>
+var cvs = "$Id: scripttype.html 116844 2012-06-11 09:10:00Z olak $";
+
+testmodule("Script type support", cvs );
+
+var language_livescript=false;
+var language_jscript=false;
+var language_jscript1=false;
+var language_javascript=false;
+var language_javascript_1_3=false;
+var language_javascript_1_5=false;
+var language_javascript_1_6=false;
+var language_ecmascript=false;
+var language_ecmascript3=false;
+var type_text_javascript=false;
+var type_text_javascript_e4x=false;
+
+</script>
+
+<script language="livescriptyabba">
+language_livescript=true;
+</script>
+
+<script language="jscript">
+language_jscript=true;
+</script>
+
+<script language="jscript1">
+language_jscript1=true;
+</script>
+
+<script language="javascript">
+language_javascript=true;
+</script>
+
+<script language="javascript 1.3">
+language_javascript_1_3=true;
+</script>
+
+<script language="JavaScript1.5">
+language_javascript_1_5=true;
+</script>
+
+<script language="javascript1.6">
+language_javascript_1_6=true;
+</script>
+
+<script language="ecmascript">
+language_ecmascript=true;
+</script>
+
+<script language="ecmascript 3">
+language_ecmascript3=true;
+</script>
+
+<script type="text/javascript">
+type_text_javascript=true;
+</script>
+
+<script type="text/javascript;e4x=1">
+type_text_javascript_e4x=true;
+</script>
+
+<script>
+testcase( "language attribute" );
+
+test( 'Supports language="livescriptyabba"', language_livescript, false );
+test( 'Supports language="jscript"', language_jscript, true );
+test( 'Supports language="jscript1"', language_jscript1, false );
+test( 'Supports language="javascript"', language_javascript, true );
+test( 'Supports language="javascript 1.3"', language_javascript_1_3, false );
+test( 'Supports language="JavaScript1.5"', language_javascript_1_5, true );
+test( 'Supports language="javascript1.6"', language_javascript_1_6, false );
+test( 'Supports language="ecmascript"', language_ecmascript, true );
+test( 'Supports language="ecmascript3"', language_ecmascript3, false );
+
+testcase( "type attribute" );
+
+test( 'Supports type="text/javascript"', type_text_javascript, true );
+test( 'Supports type="text/javascript;e4x=1"', type_text_javascript_e4x, false )
+
+testmodule_finished();
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,32 @@
+<html>
+
+<head>
+<title>Compiler test: THROW</title>
+</head>
+
+<body>
+
+<p>Should print "Burpelson Air Force Base" and some bytecode</p>
+
+<pre>
+<script>
+function f()
+{
+  throw "Burpelson Air Force Base";
+}
+
+function g()
+{
+  var j="Broken";
+  try { f(); return "Yow!"; } catch (e) { j=e; }
+  return j;
+}
+
+document.writeln( g() );
+document.writeln( f );
+document.writeln( g );
+</script>
+</pre>
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <title>testObjectES5_spec.js#testDefineProperty_26</title>
+  <script src="../opjsunit.js"></script>
+  <script>function testDefineProperty_26()
+{
+    /* The 'function' attribute must track */
+    /* that of the value put when defining */
+    /* a property. */
+    var x = {f : function() {;}};
+    Object.defineProperty(x,"f", {value: 2});
+    assertEquals(x.f, 2);
+}</script>
+  <p>Failed (Script did not run)</p>
+  <script>
+function test() {
+  var passed = false;
+  var error = "";
+  var output_element = document.getElementsByTagName("p")[0];
+  try {
+    for (var count=0; count<100; count++) {
+      testDefineProperty_26();
+    }
+    passed = true;
+  } catch(e) {
+    error = e.message;
+  }
+  try {top.opener.rr(passed)} catch(e){}
+  if (passed) {
+    output_element.textContent = "PASS"
+    output_element.style.color = "green";
+  } else {
+    output_element.textContent = "FAIL: " + error + " (failed on iteration " + count + ")"
+    output_element.style.color = "red";
+  }
+}
+window.addEventListener("load", test, false);
+  </script>
+</html>

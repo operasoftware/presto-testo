@@ -1,0 +1,70 @@
+<html>
+<head>
+<title>DOM tests -- CSS2 interface</title>
+</head>
+
+<body>
+
+<!-- All the HTML elements below this line are used by the tests -->
+
+<div style='border: dashed blue'>
+<div id='a' style='border: solid black'>
+Text inside div a
+</div>
+
+<div id='b' style='border: solid red; direction: rtl'>
+Text inside div b
+</div>
+
+<div id='c'>
+Text inside div c
+</div>
+</div>
+
+<!-- All the HTML elements above this line are used by the tests -->
+
+
+<script src="../../regression-lib/testbase.js"></script>
+<script>
+/* Regression tests for Opera's handling of the DOM 2 CSS2 interface
+ *
+ * 2002-04-11 / stighal
+ */
+
+var cvs = "$Id: direction.html 10655 2006-12-18 15:47:57Z hallvord $";
+
+testmodule( "CSS2 interface", cvs );
+
+var a, b, c;
+
+try {
+a = document.getElementById("a");
+b = document.getElementById("b");
+c = document.getElementById("c");
+
+testcase( "Reading properties" );
+
+test('getting direction from a with nothing specified', a.style.direction, "");
+test('getting direction from b with "rtl" specified', b.style.direction, "rtl");
+
+testcase( "Setting properties" );
+
+a.style.direction = "ltr";
+test('reading direction on a set by script to "ltr"', a.style.direction, "ltr");
+
+testcase( "Negative tests" );
+
+c.style.direction = "foo";
+test('reading direction on a set by script to foo (illegal)', c.style.direction, "");
+
+c.style.direction = "outset";
+test('reading direction on a set by script to outset (illegal keyword)', c.style.direction, "");
+
+} catch (e) { exception( e ); }
+
+testmodule_finished();
+
+</script>
+
+</body>
+</html>

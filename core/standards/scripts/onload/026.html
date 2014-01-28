@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html><head>
+	<title>load events - nested mess of frames and iframes</title>
+	<script>var _conf_timeout_delay=1500;</script>
+	<script src="_files/lib.js"></script>
+	<script>
+		window.onload=load;
+	</script>
+	<script>var expected = [
+			'load in window [support.html] (in FRAME#inner_frame [support.html])',
+			'load on inner <FRAME> in nested file in window [nested-frameset.html] (in FRAME [nested-frameset.html])',
+			'load  on inner <FRAMESET> in nested file in window [nested-frameset.html] (in FRAME [nested-frameset.html])',
+			'load  on outer <FRAME> in window [026.html]',
+			'load  on outer <FRAMESET> in window [026.html]'
+		];
+	</script>
+</head>
+<frameset onload="load(event, ' on outer <FRAMESET>')">
+	<frame src="_files/nested-frameset.html" onload="load(event, ' on outer <FRAME>')"></frame>
+</frameset></html>

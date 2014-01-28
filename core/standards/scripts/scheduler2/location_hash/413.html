@@ -1,0 +1,33 @@
+<!doctype html>
+<title>Location hash - and set hash many times with different values over maximum history after the page completely loaded</title>
+<script src="/resources/testharness.js"></script><script src="/resources/testharnessreport.js"></script>
+<script>
+//This test assumes that maximum history length per page is 50 (just like in chrome/firefox)
+var t = async_test();
+t.step(function() {
+    if( location.hash && location.hash != '#' ) {
+        location.href = location.href.replace(/#.*$/,'');
+        return;
+    }
+});
+
+window.onload = function () {
+    setTimeout(completely_loaded, 100);  
+};
+function completely_loaded() {
+    t.step(function() {
+        var i = 50;
+        do {
+            location.hash = '#foo' + i;
+            location.hash = '#bar' + i;
+        } while (--i);
+
+    });
+    t.step(function() {
+        assert_equals( location.hash, '#bar' + 1);
+        assert_equals( history.length, 50 );
+    });
+    t.done();
+}
+</script>
+<div id="log"></div>

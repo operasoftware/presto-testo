@@ -1,0 +1,26 @@
+<html>
+<head>
+<title>DOM tests -- Element</title>
+</head>
+
+<!-- Change this file only very carefully, the tests depend on it! -->
+
+<body>
+
+<p>Testing retrival of attribues in different cases</p>
+
+<DIV   id="tag1"  ATTR1="mytext1">Upper case attribute in html element</DIV>  
+<DIV   id="tag2"  attr2="mytext2">Lower case attribute in html element</DIV>  
+<BLOKK id="tag3"  ATTR3="mytext3">Upper case attribute in illegal element</BLOKK>  
+<BLOKK id="tag4"  attr4="mytext4">Lower case attribute in illegal element</BLOKK>  
+<p>
+<iframe src="xmldoc2.xml" name="node-xml" id="xmliframe" width="0" height="0"></iframe>
+<!-- All the HTML elements above this line are used by the tests -->
+
+<div id="container"></div>
+
+<script src="../regression-lib/testbase-non-inline.js"></script>
+<script src="scripts/element2.js"></script>
+
+</body>
+</html>

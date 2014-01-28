@@ -1,0 +1,40 @@
+<!-- Regression tests for Opera's spoofing of Netscape 4.75
+     Somewhat dependent on my host system, we can fix this
+     by using strategic regexps.
+
+     2001-04-18 / lth
+  -->
+
+<html>
+<head>
+<title>Testing | Mozilla 4.75 on NT 4.0 spoofing</title>
+<link rel="stylesheet" type="text/css" href="../styles/mystyle.css" media="screen" />
+<script src="../regression-lib/testbase.js"></script>
+</head>
+
+<body>
+<script>
+var cvs = "$Id: ns-spoof.html 10655 2006-12-18 15:47:57Z hallvord $";
+
+showred( "Testing Mozilla 4.75 spoofing." );
+showred( cvs );
+show( "" );
+
+test( "navigator.appCodeName", navigator.appCodeName, "Mozilla" );
+test( "navigator.appName", navigator.appName, "Netscape" );
+test( "navigator.appVersion", navigator.appVersion, 
+      "4.75 [en] (WinNT; U)" );
+tdef( "navigator.javaEnabled", navigator.javaEnabled );
+tdef( "navigator.language", navigator.language );
+tdef( "navigator.mimeTypes", navigator.mimeTypes );
+test( "navigator.platform", navigator.platform, "Win32" );
+tdef( "navigator.plugins", navigator.plugins );
+tdef( "navigator.taintEnabled", navigator.taintEnabled );
+test( "navigator.userAgent", navigator.userAgent, 
+      "Mozilla/4.75 [en] (WinNT; U)" );
+show( "" );
+
+showred( "Done!" );
+</script>
+</body>
+</html>

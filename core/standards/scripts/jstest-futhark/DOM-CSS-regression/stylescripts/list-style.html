@@ -1,0 +1,84 @@
+<html>
+<head>
+<title>DOM tests -- CSS2 interface</title>
+</head>
+
+<body>
+
+<!-- All the HTML elements below this line are used by the tests -->
+
+<ol>
+<li id='a'>
+Text inside li a
+</li>
+
+<li id='b' style='list-style: disc inside'>
+Text inside li b
+</li>
+
+<li id='c' style='list-style-type: armenian'>
+Text inside li c
+</li>
+
+<li id='d'>
+Text inside li d
+</li>
+</ol>
+<!-- All the HTML elements above this line are used by the tests -->
+
+
+<script src="../../regression-lib/testbase.js"></script>
+<script>
+/* Regression tests for Opera's handling of the DOM 2 CSS2 interface
+ *
+ * 2002-04-11 / stighal
+ */
+
+var cvs = "$Id: list-style.html 10655 2006-12-18 15:47:57Z hallvord $";
+
+testmodule( "CSS2 interface", cvs );
+
+var a, b, c, d;
+
+href = document.location.href;
+path_prefix = href.substr(0, href.lastIndexOf("/") + 1);
+
+try {
+a = document.getElementById("a");
+b = document.getElementById("b");
+c = document.getElementById("c");
+d = document.getElementById("d");
+
+testcase( "Reading properties" );
+
+test('getting list-style from a with nothing specified', a.style.listStyle, "");
+test('getting list-style from b with a lot specified', b.style.listStyle, "inside");
+
+testcase( "Setting properties" );
+
+a.style.listStyle = "url(fish.gif) square";
+test_expect_failure('reading list-style on a set by script', 148016, a.style.listStyle, "square url(" + path_prefix + "fish.gif)");
+
+testcase( "Getting partial values" );
+
+test('reading list-style from c with type specified by style attribute', c.style.listStyle, "armenian");
+
+c.style.listStylePosition = "inside";
+test('reading list-style from c with color specified by style and width specified by script', c.style.listStyle, "armenian inside");
+
+testcase( "Negative tests" );
+
+d.style.listStyle = "foo";
+test('reading list-style on d set by script to foo (illegal)', d.style.listStyle, "");
+
+d.style.listStyle = "bold";
+test('reading list-style on d set by script to bold (illegal keyword)', d.style.listStyle, "");
+
+} catch (e) { exception( e ); }
+
+testmodule_finished();
+
+</script>
+
+</body>
+</html>

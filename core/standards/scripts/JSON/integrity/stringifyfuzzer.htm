@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html><head>
+	<title>  JSON.stringify fuzz testing  </title>
+	<script src="../_files/MersenneTwister19937.js"></script>
+	<script src="../_files/randomseed.js"></script>
+	<script src="../_files/jsonfuzz.js"></script>
+</head>
+<body>
+
+	<p style="white-space: pre">FAILED (This TC requires JavaScript enabled)</p>
+
+	<script type="text/javascript">
+	function test(){
+		var log=document.getElementsByTagName('p')[0].firstChild;
+		var iterations = 1000;
+		while(iterations>0){
+			log.data = 'iteration '+( 1000-iterations ) + '... ' ;
+			try{
+				eval('var obj='+ createRandomJSONText(  ) );
+				JSON.stringify( obj );
+				log.data+='done.';
+			}catch(e){
+				log.data+=e;
+			}
+			iterations--;
+		}
+	}
+	window.onload=test;
+	</script>
+
+</body></html>

@@ -1,0 +1,31 @@
+<html>
+<head>
+<title>Ecmascript-thread deadlock</title>
+<script>
+<!--
+
+  var deadlock_called = false;
+  var deadlock2_called = false;
+
+  function RunTests()
+  {
+    document.applets[0].deadlock();
+    deadlock_called = true;
+    document.applets[0].deadlock2();
+    deadlock2_called = true;
+    window.open('es_deadlock_test.html', 'es-deadlock')
+  }
+
+  function deadlock()
+  {
+    var a = 1;
+  }
+
+-->
+</script>
+</head>
+<body onload="RunTests();">
+<h1>Ecmascript-thread deadlock</h1>
+<applet id="LCApplet" code="LCApplet.class" mayscript></applet>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/REC-html401/strict.dtd">
+<!--
+   Created by torstein@opera.com
+-->
+<html>
+   <head>
+      <title>History Object Test - Interactive</title>
+      <script type="text/javascript" src="../regression-lib/testbase.js"></script>
+      <script type="text/javascript" src="scripts/js_history_int.js"></script>
+   </head>
+   <body>
+      <h1>History Object Test - Interactive</h1>
+      <script type="text/javascript">showred( cvs );</script>
+      <p>
+         The popuup window with the url field is your browsing window.
+         Enter a few urls in the address field, so the window object
+         gets a few entries in its history list. Then use the links
+         below to test the different methods of navigating in this history.
+      </p>
+      <p>
+         The other popup window is for the different navigation methods to
+         report what is the new values of the current, previous and next properties
+         after one of the methods below has been issued. 
+      </p>
+      <script type="text/javascript">
+         openReportWindow( self );
+         openBrowserWindow( self );
+      </script>
+      <h2>User interaction</h2>
+      <h3>On popup window</h3>
+      <ol>
+         <li>
+            <a href="javascript:goBack();">Go back in history using history.back()</a>
+            Loads the previous URL in the history list.
+         </li>
+         <li>
+            <a href="javascript:goForward();">Go forward in history using history.forward()</a>
+            Loads the next URL in the history list.
+         </li>
+         <li>
+            <a href="javascript:goBackByIndex();">Go back in history using history.go( -1 )</a>
+            Loads the previous URL from the history list.
+         </li>
+         <li>
+            <a href="javascript:goForwardByIndex();">Go forward in history using history.go( 1 )</a>
+            Loads the next URL from the history list.
+         </li>
+      </ol>
+      <h3>On this window</h3>
+      <p>
+         You should have been to one other page before using this page in order to get
+         these tests working. Also, after loading this page, enter a new url, load this
+         page and then go back again to this page. Now, you should have both entries
+         in future and back history, so to speak, and should be able to use the
+         methods below.
+      </p>
+      <ol>
+         <li>
+            <a href="javascript:history.back();">Go back in history using history.back()</a>
+            Loads the previous URL in the history list.
+         </li>
+         <li>
+            <a href="javascript:history.forward();">Go forward in history using history.forward()</a>
+            Loads the next URL in the history list.
+         </li>
+         <li>
+            <a href="javascript:history.go( - 1 );">Go back in history using history.go( -1 )</a>
+            Loads the previous URL from the history list.
+         </li>
+         <li>
+            <a href="javascript:history.go( 1 );">Go forward in history using history.go( 1 )</a>
+            Loads the next URL from the history list.
+         </li>
+      </ol>
+   </body>
+</html>

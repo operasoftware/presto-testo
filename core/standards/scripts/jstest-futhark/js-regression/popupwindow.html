@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!--
+   Created by torstein@opera.com
+-->
+<html>
+   <head>
+      <link rel="stylesheet" type="text/css" href="../styles/mystyle.css" media="screen" />
+      <title>Window object test - popup window</title>
+      <script type="text/javascript" src="../regression-lib/testbase.js"></script>
+      <script type="text/javascript" src="scripts/windowObjectTest.js"></script>
+   </head>
+   <body>
+   <h1>Popup window</h1>
+   <ul>
+     <li>It should be 400x400</li>
+     <li>toolbar, with back, forward etc.</li>
+     <li>Location entry field</li>
+     <li>Netscape users should have buttons such as What's New and What's Cool.</li>
+     <li><strong>no (working)</strong>statusbar at the bottom of the browser</li>
+     <li>scrollbars, horizontal and vertical, if needed</li>
+     <li>you should <strong>not</strong> be able to resize the window</li>
+     <li>You should get confirm dialog after 5 seconds</li>
+     <li>The keyboard focus should be in the windowObjectTest.html window</li>
+  </ul>
+   <script type="text/javascript">
+      try
+      {
+         print( 'opener: <strong>' + self.opener.name + '</strong>' );
+         print( 'innerHeight: <strong>' + self.innerHeight + '</strong>' );
+         print( 'innerWidth: <strong>' + self.innerWidth + '</strong>' );
+         print( 'outerHeight: <strong>' + self.outerHeight + '</strong>' );
+         print( 'outerWidth: <strong>' + self.outerWidth + '</strong>' );
+         print( 'name: <strong>' + self.name + '</strong>' );
+      }
+      catch( e )
+      {
+         print( e );
+      }
+   </script>
+   <p>
+      <a href="javascript:window.close()">Close me</a>
+   </p>
+   </body>
+</html>
+
+

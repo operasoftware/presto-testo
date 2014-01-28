@@ -1,0 +1,19 @@
+<html>
+<SCRIPT LANGUAGE="JavaScript">
+function refreshFrames()
+{
+  alert( parent.frames );
+  alert( parent.frames.length );
+  parent.frames[1].location.href="http://www.opera.com";
+}
+</SCRIPT>
+<body>
+<p>BUG #59556: When you hit the Refresh button, the frame on the right
+should refresh with www.opera.com.  The bug is that because the frame
+is initially empty then the lookup <tt>frames[k]</tt> does not find
+it.</p>
+
+<a href="javascript:refreshFrames()">Refresh</a>
+
+</body>
+</html>

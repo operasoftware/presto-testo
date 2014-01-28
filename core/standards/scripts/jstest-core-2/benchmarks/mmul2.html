@@ -1,0 +1,47 @@
+<!-- like mmul.html, but uses for..in to iterate across the arrays -->
+<script src="reportresult.js"></script>
+<script>
+var iters = 200;
+
+function mmul( a, b, c )
+{
+  var res, i, j, k;
+
+  for ( i in a )
+    for ( j in b[0] ) {
+      res = 0.0;
+      for ( k in a[0] )
+        res = res + a[i][k] * b[k][j]
+      c[i][j] = res;
+    }
+
+  return "Done";
+}
+
+function make_matrix( rows, cols )
+{
+  var m = new Array(rows);
+  for ( var i=0 ; i < rows ; i++ )
+    m[i] = new Array(cols);
+  return m;
+}
+
+function init_matrix(m)
+{
+  for ( var i=0 ; i < m.length ; i++ )
+    for ( var j=0 ; j < m[i].length ; j++ )
+      m[i][j] = Math.random();
+}
+
+var ma = make_matrix( 10, 20 );  init_matrix(ma);
+var mb = make_matrix( 20, 30 );  init_matrix(mb);
+var mc = make_matrix( 10, 30 );  init_matrix(mc);
+
+var before = new Date();
+var result;
+for ( var i=0 ; i < iters ; i++ )
+  result = mmul(ma, mb, mc);
+var after = new Date();
+document.writeln( [ result, after - before ] + '<br>' );
+reportresult( "matrix multiply (for..in) 10x20 by 20x30", after-before );
+</script>

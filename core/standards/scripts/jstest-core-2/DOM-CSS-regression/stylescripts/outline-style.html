@@ -1,0 +1,68 @@
+<html>
+<head>
+<title>DOM tests -- CSS2 interface</title>
+</head>
+
+<body>
+
+<!-- All the HTML elements below this line are used by the tests -->
+
+<div id='a'>
+Text inside div a
+</div>
+
+<div id='b' style='outline-style: dashed'>
+Text inside div b
+</div>
+
+<div id='c'>
+Text inside div c
+</div>
+
+<!-- All the HTML elements above this line are used by the tests -->
+
+
+<script src="../../regression-lib/testbase.js"></script>
+<script>
+/* Regression tests for Opera's handling of the DOM 2 CSS2 interface
+ *
+ * 2002-04-11 / stighal
+ */
+
+var cvs = "$Id: outline-style.html 4838 2006-01-18 05:59:01Z hallvord $";
+
+testmodule( "CSS2 interface", cvs );
+
+var a, b, c;
+
+try {
+a = document.getElementById("a");
+b = document.getElementById("b");
+c = document.getElementById("c");
+
+testcase( "Reading properties" );
+
+test('getting outline-style from a with nothing specified', a.style.outlineStyle, "");
+test('getting outline-style from b with "dashed" specified', b.style.outlineStyle, "dashed");
+
+testcase( "Setting properties" );
+
+a.style.outlineStyle = "inset";
+test('reading outline-style on a set by script to "inset"', a.style.outlineStyle, "inset");
+
+testcase( "Negative tests" );
+
+c.style.outlineStyle = "foo";
+test('reading outline-style on a set by script to foo (illegal)', c.style.outlineStyle, "");
+
+c.style.outlineStyle = "crosshair";
+test('reading outline-style on a set by script to outset (illegal keyword)', c.style.outlineStyle, "");
+
+} catch (e) { exception( e ); }
+
+testmodule_finished();
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,69 @@
+<html>
+<head>
+<title>JS smoke test</title>
+<script>
+function act1()
+{
+  alert( 'Hello, world.' );
+}
+
+function act2()
+{
+  setTimeout( 'act2b()', 2000 );
+}
+
+function act2b()
+{
+  document.open();
+  document.write( 'Goodbye, world.' );
+  document.close();
+}
+
+var counter=0;
+
+function act3()
+{
+  switch (++counter)
+  {
+  case 1: alert( 'First time!'); break;
+  case 2: alert( 'Second time!'); break;
+  case 3: alert( 'Last time!'); break;
+  }
+}
+
+</script>
+</head>
+<body>
+<h1>Does your browser drool?</h1>
+
+<div>This page tests some basic abilities; if things don't work here, then there might be
+serious breakage in your version of Opera.</div>
+
+<form>
+<script>
+document.write( "<INPUT TYPE=BUTTON VALUE='Alert' ONCLICK='act1();'> Press me to see an alert<br>" );
+document.write( "<INPUT TYPE=BUTTON VALUE='Window' ONCLICK='act2();'> Press me to open a window<br>" );
+document.write( "<br><A ONMOUSEOVER='act3();'>Mouse over me three times</A><br>" );
+</script>
+</form>
+
+<div>Clicking in the text boxes below should cause the radio buttons to be set.</div>
+
+<form name="q">
+<input type="radio" name="radio1">
+<input name="text1" onfocus="document.q.radio1[0].checked=true"><br>
+<input type="radio" name="radio1">
+<input name="text2" onfocus="document.q.radio1[1].checked=true"><br>
+</form>
+
+<div>Entering text in the text below and then clicking on the canvas should cause
+an alert, a switch to a new page, and when you go back to this page, the first text
+box above should contain the string 'heihei'.  If you do not change the content,
+nothing should happen.</div>
+
+<form name="f" action="http://www.ikke.no/">
+<input name="text3" onchange="alert('Tittei'); document.q.text1.value='heihei'; document.f.submit();"><br>
+</form>
+
+</body>
+</html>

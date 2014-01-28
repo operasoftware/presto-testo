@@ -1,0 +1,63 @@
+<html>
+  <head>
+    <title>DOM inspector</title>
+  </head>
+
+  <body>
+    <h2>DOM inspector</h2>
+    <p>
+      This is a DOM inspector. It probably needs more user documentation to be
+      directly usable.
+    </p>
+    <h2>Author</h2>
+    <p>
+      Jens Lindstr&ouml;m <a href="mailto:jl@opera.com">&lt;jl@opera.com&gt;</a> 
+      wrote this. If you find bugs, please report them.
+    </p>
+    <h2>Server side support</h2>
+    <p>
+      The DOM inspector works by injecting some (quite a lot, in fact) script code
+      into a page. For security reasons, this is not something that can actually
+      be done straight away on the client side. There are probably two main ways
+      to solve this:
+    </p>
+    <ul>
+      <li>
+        Adding special support for it in Opera.
+      </li>
+      <li>
+        Letting a simple proxy service insert a script tag into a page and
+        serve the resulting page to the client.
+      </li>
+    </ul>
+    <p>
+      The second alternativ is the one I have used so far. There is a Python script
+      (<a href="inspector.py">inspector.py</a>) that asks for an url, loads the url,
+      inserts a script tag (and a base tag to make relative urls work as intended)
+      and sends the result to the client.
+    </p>
+    <p>
+      The Python script itself is a very quick hack, and will most likely not work
+      with all pages (or work at all in all cases). But it works in some cases, and
+      that is good enough, right now.
+    </p>
+    <p>
+      The script is currently available via
+      <a href="http://i100.ryd.student.liu.se/~whiskey/js/inspector/inspector.py">
+      my home computer on my student Internet connection</a>. It probably won't be
+      there forever, especially since I'm already not actually a student.
+    </p>
+    <h2>Known problems</h2>
+    <p>
+      The inspector highlights the currently selected element by adding a one-pixel
+      border and changing its color to different colours (all red). Properly restoring
+      the border when the element is no longer selected requires DOM CSS support
+      that Opera 7 currently doesn't have. This results in borders being left or
+      old borders not being restored.
+    </p>
+    <p>
+      It generally doesn't seem to work very well. That is something we'll have to
+      fix.
+    </p>
+  </body>
+</html>

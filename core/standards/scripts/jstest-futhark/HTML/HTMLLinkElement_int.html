@@ -1,0 +1,42 @@
+<html>
+<head>
+<title>DOM 2 HTML LinkElement - Interactive</title>
+<script src="../testconfig.js"></script>
+<script src="../regression-lib/testbase-non-inline.js"></script>
+
+<link id="myLinkStylesheet" title="myTitle" rel="stylesheet" type="text/css" href="htmllinkelement_int.css">
+<link id="myLinkIndex" rel="index" charset="iso-8859-5" href="iso-8859-5.html" hreflang="ru" target="_blank">
+<link id="myLinkNext" rel="next" rev="prev" charset="iso-8859-1" href="iso-8859-1.html">
+<link id="myLinkContents" rel="contents" rev="prev" charset="iso-8859-1" href="http://web/people/hela/DOM2-regression-tests/remote-iso-8859-5.html">
+</head>
+
+<script src="scripts/htmllinkelement_int.js"></script>
+
+<body>
+<h1>HTML LinkElement - Interactive</h1>
+<script type="text/javascript">showred(cvs);</script>
+<hr>
+1: disabled.
+<a href="javascript:startHTMLLinkElementInteractiveDisabled()">Start HTML LinkElement's attribute disabled reflow tests</a>
+<hr>
+2: charset. Selecting "Next" link shows local file with russian text encoded in ISO-8859-1. After the reflow tests, check that the "Next" link shows russian text encoded in ISO-8859-5.
+<a href="javascript:startHTMLLinkElementInteractiveCharsetLocal()">Start HTML LinkElement's attribute charset local reflow tests</a>
+<hr>
+3: charset. Selecting "Contents" link shows server side file with russian text encoded in ISO-8859-1. After the reflow tests, check that the "Contents" link still shows russian text file encoded in ISO-8859-1.
+<a href="javascript:startHTMLLinkElementInteractiveCharsetRemote()">Start HTML LinkElement's attribute charset remote reflow tests</a>
+<hr>
+4: href. Selecting "Index" link shows local file with russian text encoded in ISO-8859-5. After the reflow tests, check that the content of the "Index" link has changed.
+<a href="javascript:startHTMLLinkElementInteractiveHref()">Start HTML LinkElement's attribute href reflow tests</a>
+<hr>
+5: rel. Selecting "Index" link shows local file with japanese text. After the reflow tests, check that the content of "Index" has changed to "Help".
+<a href="javascript:startHTMLLinkElementInteractiveRel()">Start HTML LinkElement's attribute rel reflow tests</a>
+<hr>
+6: media. 
+<a href="javascript:startHTMLLinkElementInteractiveMedia()">Start HTML LinkElement's attribute media reflow tests</a>
+<hr>
+7: type. 
+<a href="javascript:startHTMLLinkElementInteractiveType()">Start HTML LinkElement's attribute type reflow tests</a>
+
+<div id="container"></div>
+</body>
+</html>

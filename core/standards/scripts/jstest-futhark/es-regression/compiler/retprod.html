@@ -1,0 +1,26 @@
+<html>
+
+<head>
+<title>Compiler test: return product of local variable and constant</title>
+</head>
+
+<body>
+
+<p>Should print "20" followed by "function f() { [BYTECODE] }".</p>
+
+<pre>
+<script>
+function f() 
+{
+    var a=10;      // vardecl stmt
+    a=a*2;         // expression stmt
+    return a;
+}
+document.writeln( f() );
+document.writeln( '<br>' );
+document.writeln( f.toString() );
+</script>
+</pre>
+
+</body>
+</html>

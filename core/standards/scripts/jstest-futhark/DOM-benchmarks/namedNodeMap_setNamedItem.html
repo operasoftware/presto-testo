@@ -1,0 +1,44 @@
+<html>
+<head>
+<script src="reportresult.js"></script>
+<script>
+var a, d1;
+var attrs = 1000;
+var iterations = 100000;
+
+function getAttributes(n)
+{
+    a = d1.attributes;
+
+    for (var i = 0; i < n; i++)
+    {
+		var attr = document.createAttribute ("attr" + (attrs-2));
+		a.setNamedItem (attr);
+    }
+    return "Done";
+}
+
+function createAttrs(n)
+{
+	d1 = document.createElement("div");
+	for (var i = 0; i < n; i++)
+	{
+		var attrName = "attr" + i;
+		var attrValue = "value" + i;
+		d1.setAttribute (attrName, attrValue);
+	}
+}
+</script>
+</head>
+
+<body>
+<script>
+createAttrs(attrs);
+var before = new Date();
+var result = getAttributes(iterations);
+var after = new Date();
+document.writeln( [ result, after - before ] + '<br>' );
+reportresult( "NamedNodeMap setNamedItem", after-before );
+</script>
+</body>
+</html>

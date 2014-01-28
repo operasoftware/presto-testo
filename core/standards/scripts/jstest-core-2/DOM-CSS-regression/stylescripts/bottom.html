@@ -1,0 +1,70 @@
+<html>
+<head>
+<title>DOM tests -- CSS2 interface</title>
+</head>
+
+<body>
+
+<!-- All the HTML elements below this line are used by the tests -->
+
+<div style='border: thin solid black; height: 10em'>
+<div id='a' style='border: dotted medium blue; position: relative; height: 3em'>
+This box should be 2in from the bottom of the black box.
+</div>
+
+<div id='b' style='border: thin solid blue; position: relative; height: 5em; bottom: 2em; width: 150px;'>
+This box should be 2em from the bottom of the black box.
+</div>
+</div>
+
+<div id='c'>
+Text inside div c
+</div>
+
+<!-- All the HTML elements above this line are used by the tests -->
+
+
+<script src="../../regression-lib/testbase.js"></script>
+<script>
+/* Regression tests for Opera's handling of the DOM 2 CSS2 interface
+ *
+ * 2002-04-11 / stighal
+ */
+
+var cvs = "$Id: bottom.html 4838 2006-01-18 05:59:01Z hallvord $";
+
+testmodule( "CSS2 interface", cvs );
+
+var a, b, c;
+
+try {
+a = document.getElementById("a");
+b = document.getElementById("b");
+c = document.getElementById("c");
+
+testcase( "Reading properties" );
+
+test('getting bottom from a with nothing specified', a.style.bottom, "");
+test('getting bottom from b with 10em specified', b.style.bottom, "2em");
+
+testcase( "Setting properties" );
+
+a.style.bottom = "2in";
+test('reading bottom on a set by script to 2in', a.style.bottom, "2in");
+
+testcase( "Negative tests" );
+
+c.style.bottom = "foo";
+test('reading bottom on a set by script to foo (illegal)', c.style.bottom, "");
+
+c.style.bottom = "outset";
+test('reading bottom on a set by script to outset (illegal keyword)', c.style.bottom, "");
+
+} catch (e) { exception( e ); }
+
+testmodule_finished();
+
+</script>
+
+</body>
+</html>

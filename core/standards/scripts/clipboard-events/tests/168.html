@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html><head>
+	<meta charset="UTF-8">
+	<title>  clearData() method is noop in paste event  - paste event on document</title>
+	<script src="_lib.js"></script>
+	<script>
+	
+/** clearData() method is noop in paste event */
+/* Events: paste */
+/* paste data: "clipboard text" */
+/* External pass condition - clipboard data: "clipboard text" */
+function test(e){
+	e.clipboardData.clearData();
+	e.preventDefault();
+}
+
+	</script>
+</head>
+<body>
+
+	<p>FAILED (This TC requires JavaScript enabled)</p>
+	<form><input autofocus id="input_text"></form>
+
+	<script>
+	var dataToPaste="clipboard text";
+	var externalPassCondition="clipboard text";
+	var eventTarget=document;
+	var eventType='paste';
+	window.onload=function(){
+		setupTest( document, 'paste', dataToPaste, externalPassCondition );
+	}
+	</script>
+</body></html>

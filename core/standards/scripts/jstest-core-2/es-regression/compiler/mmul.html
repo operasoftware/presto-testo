@@ -1,0 +1,310 @@
+<script>
+function mmul( a, b, c )
+{
+  var arows, acols, brows, bcols, crows, ccols, res, i, j, k;
+
+  arows = a.length;
+  acols = a[0].length;
+  brows = b.length;
+  bcols = b[0].length;
+  crows = arows;
+  ccols = bcols;
+
+  for ( i=0 ; i < arows ; i++ )
+    for ( j=0 ; j < bcols ; j++ ) {
+      res = 0.0;
+      for ( k=0 ; k < acols ; k++ )
+        res = res + a[i][k] * b[k][j]
+      c[i][j] = res;
+    }
+
+  return "Done";
+}
+
+document.write(mmul.toString().split("\n").join("<br>"));
+</script>
+
+<!-- 
+
+Two cases, basic blocks and extended basic blocks.
+
+----------------------------------------------------------------------
+Basic blocks first:
+
+Block 1:
+
+0000 NOP
+0001 GETLEX 0
+0002 TOOBJECTNOW
+0003 GETPROPI length
+0004 PUTLEX 3
+0005 GETLEX 0
+0006 TOOBJECTNOW
+0007 CONSTANT 0         < Peephole optimization removes second instr here
+0008 TOPROPERTYNAME     <
+0009 GETPROP
+0010 TOOBJECTNOW
+0011 GETPROPI length
+0012 PUTLEX 4
+0013 GETLEX 1
+0014 TOOBJECTNOW
+0015 GETPROPI length
+0016 PUTLEX 5
+0017 GETLEX 1
+0018 TOOBJECTNOW
+0019 CONSTANT 0         < Peephole optimization removes second instr here
+0020 TOPROPERTYNAME     <
+0021 GETPROP
+0022 TOOBJECTNOW
+0023 GETPROPI length
+0024 PUTLEX 6
+0025 GETLEX 3
+0026 PUTLEX 7
+0027 GETLEX 6
+0028 PUTLEX 8
+0029 CONSTANT 0
+0030 PUTLEX 10
+
+Block 2 (target of 0104):
+
+0031 GETLEX 10
+0032 TONUMBER (if object)
+0033 GETLEX 3
+0034 TONUMBER (if object)
+0035 LT
+0036 BRANCHF_F 68 (105)
+
+Block 3:
+
+0037 CONSTANT 0
+0038 PUTLEX 11
+
+Block 4 (target of 0099):
+
+0039 GETLEX 11
+0040 TONUMBER (if object)
+0041 GETLEX 6
+0042 TONUMBER (if object)
+0043 LT
+0044 BRANCHF_F 55 (100)
+
+Block 5:
+
+0045 CONSTANT 0
+0046 PUTLEX 9
+0047 CONSTANT 0
+0048 PUTLEX 12
+
+Block 6 (target of 0084):
+
+0049 GETLEX 12
+0050 TONUMBER (if object)
+0051 GETLEX 4
+0052 TONUMBER (if object)
+0053 LT
+0054 BRANCHF_F 30 (85)
+
+Block 7:
+
+0055 GETLEX 9
+0056 TOPRIMITIVE
+0057 GETLEX 0
+0058 TOOBJECTNOW
+0059 GETLEX 10
+0060 TOPROPERTYNAME
+0061 GETPROP
+0062 TOOBJECTNOW
+0063 GETLEX 12
+0064 TOPROPERTYNAME
+0065 GETPROP
+0066 TONUMBER
+0067 GETLEX 1
+0068 TOOBJECTNOW
+0069 GETLEX 12
+0070 TOPROPERTYNAME
+0071 GETPROP
+0072 TOOBJECTNOW
+0073 GETLEX 11
+0074 TOPROPERTYNAME
+0075 GETPROP
+0076 TONUMBER
+0077 MUL
+0078 ADD
+0079 PUTLEX 9
+0080 GETLEX 12
+0081 TONUMBER
+0082 ADDI 1
+0083 PUTLEX 12
+0084 BRANCH_B 36 (49)
+
+Block 8:
+
+0085 GETLEX 2
+0086 TOOBJECTNOW
+0087 GETLEX 10
+0088 TOPROPERTYNAME
+0089 GETPROP
+0090 TOOBJECTNOW
+0091 GETLEX 11
+0092 TOSTRING (if object)
+0093 GETLEX 9
+0094 PUTPROP
+0095 GETLEX 11
+0096 TONUMBER
+0097 ADDI 1
+0098 PUTLEX 11
+0099 BRANCH_B 61 (39)
+
+Block 9 (target of 0044):
+
+0100 GETLEX 10
+0101 TONUMBER
+0102 ADDI 1
+0103 PUTLEX 10
+0104 BRANCH_B 74 (31)
+
+Block 10 (target of 0036):
+
+0105 CONSTANT "Done"
+0106 RETURN
+
+
+----------------------------------------------------------------------
+Extended basic blocks next:
+
+Block 1:
+
+0000 NOP
+0001 GETLEX 0
+0002 TOOBJECTNOW
+0003 GETPROPI length
+0004 PUTLEX 3
+0005 GETLEX 0
+0006 TOOBJECTNOW
+0007 CONSTANT 0         < Peephole optimization removes second instr here
+0008 TOPROPERTYNAME     < or better, converts everything to GETPROPA
+0009 GETPROP            < 
+0010 TOOBJECTNOW
+0011 GETPROPI length
+0012 PUTLEX 4
+0013 GETLEX 1
+0014 TOOBJECTNOW
+0015 GETPROPI length
+0016 PUTLEX 5
+0017 GETLEX 1
+0018 TOOBJECTNOW
+0019 CONSTANT 0         < Peephole optimization removes second instr here
+0020 TOPROPERTYNAME     < or better, converts everything to GETPROPA
+0021 GETPROP            <
+0022 TOOBJECTNOW
+0023 GETPROPI length
+0024 PUTLEX 6
+0025 GETLEX 3
+0026 PUTLEX 7
+0027 GETLEX 6
+0028 PUTLEX 8
+0029 CONSTANT 0
+0030 PUTLEX 10             // OUT: {L10=NUM}
+
+Block 2 (target of 0104 and 0030):
+
+IN: {L10=NUM}
+
+0031 GETLEX 10
+0032 TONUMBER (if object)   // Will be removed
+0033 GETLEX 3
+0034 TONUMBER (if object)
+0035 LT
+0036 BRANCHF_F 68 (105)     // OUT: {L10=NUM}
+0037 CONSTANT 0
+0038 PUTLEX 11              // OUT: {L10=NUM,L11=NUM}
+
+Block 3 (target of 0099 and 0038):
+
+IN: {L10=NUM,L11=NUM}
+ 
+0039 GETLEX 11
+0040 TONUMBER (if object)   // Will be removed
+0041 GETLEX 6
+0042 TONUMBER (if object)
+0043 LT
+0044 BRANCHF_F 55 (100)     // OUT: {L10=NUM,L11=NUM}
+0045 CONSTANT 0
+0046 PUTLEX 9
+0047 CONSTANT 0
+0048 PUTLEX 12              // OUT: {L9=NUM,L10=NUM,L11=NUM,L12=NUM}
+
+Block 4 (target of 0084 and 0048):
+
+IN: {L9=NUM,L10=NUM,L11=NUM,L12=NUM}
+
+0049 GETLEX 12
+0050 TONUMBER (if object)   // Will be removed
+0051 GETLEX 4
+0052 TONUMBER (if object)
+0053 LT
+0054 BRANCHF_F 30 (85)      // OUT: {L9=NUM,L10=NUM,L11=NUM,L12=NUM}
+0055 GETLEX 9
+0056 TOPRIMITIVE            // Will be removed
+0057 GETLEX 0
+0058 TOOBJECTNOW
+0059 GETLEX 10
+0060 TOPROPERTYNAME         // Will *not* be removed, but perhaps we can have a faster GETPROP?
+0061 GETPROP
+0062 TOOBJECTNOW
+0063 GETLEX 12
+0064 TOPROPERTYNAME         // Ditto
+0065 GETPROP
+0066 TONUMBER
+0067 GETLEX 1
+0068 TOOBJECTNOW
+0069 GETLEX 12
+0070 TOPROPERTYNAME         // Ditto
+0071 GETPROP
+0072 TOOBJECTNOW
+0073 GETLEX 11
+0074 TOPROPERTYNAME         // Ditto
+0075 GETPROP
+0076 TONUMBER
+0077 MUL
+0078 ADD                    // Known types: NUM NUM => NUM (and can use faster instr)
+0079 PUTLEX 9               // Preserves type!!
+0080 GETLEX 12
+0081 TONUMBER               // Will be removed
+0082 ADDI 1
+0083 PUTLEX 12              // Preserves type
+0084 BRANCH_B 36 (49)       // OUT: {L9=NUM,L10=NUM,L11=NUM,L12=NUM}
+0085 GETLEX 2
+0086 TOOBJECTNOW
+0087 GETLEX 10
+0088 TOPROPERTYNAME         // See above
+0089 GETPROP
+0090 TOOBJECTNOW
+0091 GETLEX 11
+0092 TOSTRING (if object)   // Will be removed
+0093 GETLEX 9
+0094 PUTPROP                // Probable bug: why is there no TOPROPERTYNAME here??
+0095 GETLEX 11
+0096 TONUMBER               // Will be removed
+0097 ADDI 1
+0098 PUTLEX 11              // Preserves type
+0099 BRANCH_B 61 (39)       // OUT: {L9=NUM,L10=NUM,L11=NUM,L12=NUM}
+
+Block 5 (target of 0044):
+
+IN: {L10=NUM,L11=NUM}
+
+0100 GETLEX 10
+0101 TONUMBER              // Will be removed
+0102 ADDI 1
+0103 PUTLEX 10             // Preserves type
+0104 BRANCH_B 74 (31)      // OUT: {L10=NUM,L11=NUM}
+
+Block 6 (target of 0036):
+
+IN: {L10=NUM}
+
+0105 CONSTANT "Done"
+0106 RETURN
+
+-->

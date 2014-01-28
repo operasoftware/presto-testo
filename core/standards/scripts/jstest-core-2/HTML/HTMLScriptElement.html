@@ -1,0 +1,20 @@
+<html>
+<head>
+<script src="../testconfig.js"></script>
+<script src="../regression-lib/testbase-non-inline.js"></script>
+<title>DOM 2 HTML ScriptElement </title>
+</head>
+
+<body>
+<div id="container">
+</div>
+
+<script id="myScript"></script>
+<script id="myScript2" src="http://www.opera.no/script/" charset="utf-8" defer type="text/javascript">
+var a = 1;
+</script>
+
+<script src="scripts/htmlscriptelement.js"></script>
+
+</body>
+</html>

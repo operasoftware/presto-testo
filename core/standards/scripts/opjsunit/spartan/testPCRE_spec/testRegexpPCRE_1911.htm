@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <title>testPCRE_spec.js#testRegexpPCRE_1911</title>
+  <script src="../opjsunit.js"></script>
+  <script>function testRegexpPCRE_1911() {
+  var regexp = /^\p{Balinese}\p{Cuneiform}\p{Nko}\p{Phags_Pa}\p{Phoenician}/;
+  assertEquals(null, regexp.exec("x{1b00}x{12000}x{7c0}x{a840}x{10900}")); //test 1933
+}</script>
+  <p>Failed (Script did not run)</p>
+  <script>
+function test() {
+  var passed = false;
+  var error = "";
+  var output_element = document.getElementsByTagName("p")[0];
+  try {
+    for (var count=0; count<100; count++) {
+      testRegexpPCRE_1911();
+    }
+    passed = true;
+  } catch(e) {
+    error = e.message;
+  }
+  try {top.opener.rr(passed)} catch(e){}
+  if (passed) {
+    output_element.textContent = "PASS"
+    output_element.style.color = "green";
+  } else {
+    output_element.textContent = "FAIL: " + error + " (failed on iteration " + count + ")"
+    output_element.style.color = "red";
+  }
+}
+window.addEventListener("load", test, false);
+  </script>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/REC-html401/strict.dtd">
+<!--
+   Created by torstein@opera.com
+-->
+<html>
+   <head>
+      <title>Select Object Test</title>
+      <script type="text/javascript" src="../regression-lib/testbase.js"></script>
+      <script type="text/javascript" src="scripts/js_select_int.js"></script>
+   </head>
+   <body>
+      <h1>Select Object Test - Interactive</h1>
+      <script type="text/javascript">showred( cvs );</script>
+      <p>
+         The popup window is for reportrs from the different event
+         handlers. Use the select boxes to test the eventhandlers
+         onblur, onchange, onfocus.
+      </p>
+      <ol>
+         <li>
+            onblur(): When a form element loses focus or when a
+            window or frame loses focus.
+         </li>
+         <li>
+            onchange():  When the field loses focus and its value has been modified. 
+         </li>
+         <li>
+            onfocus(): When someone clicks or uses the TAB to get
+            focus in the form element.
+         </li>
+      </ol>
+      <p>
+         It should be possible to select multiple items in the
+         box to the right. 
+      </p>
+      <form id="theform" name="theform">
+         <select
+                id="theselect"
+                name="theselect" 
+                onblur="reportEvent( '1: onblur' );"
+                onchange="reportEvent( '1: onchange' );"
+                onfocus="reportEvent( '1: onfocus' );" 
+          >
+             <option value="first option value">Option 1</option>
+             <option value="second option value">Option 2</option>
+          </select>
+          <select
+                id="theselect2"
+                name="theselect2" 
+                onblur="reportEvent( '2: onblur' );"
+                onchange="reportEvent( '2: onchange' );"
+                onfocus="reportEvent( '2: onfocus' );" 
+                multiple
+          >
+             <option value="first option value">Option 1</option>
+             <option value="second option value">Option 2</option>
+             <option value="third option value">Option 3</option>
+          </select>
+      </form>
+      <ol>
+         <li>
+            <a href="javascript:testFocusMethod();">Get focus in the left select box</a>
+         </li>
+         <li>
+            <a href="javascript:testBlurMethod();">Remove focus from left select box</a>
+         </li>
+         <li>
+            <a href="javascript:testSelectedIndexProperty();">Get the selectedIndex of the multiplie selection box</a>
+            Should return the index of the first option selected, even though there
+            are mutliple selected. (&nbsp;-1 if none is selected&nbsp;).
+         </li>
+      </ol>
+   </body>
+</html>

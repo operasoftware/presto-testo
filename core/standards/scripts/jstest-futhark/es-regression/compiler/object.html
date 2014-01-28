@@ -1,0 +1,48 @@
+<html>
+
+<head>
+<title>Compiler test: object initialization and conjuncts/disjuncts</title>
+</head>
+
+<body>
+
+<p>Should print "Yes! Yes! No!" followed by some bytecode.</p>
+
+<pre>
+<script>
+function f() 
+{ 
+  var x = { a: 1, b: 2, c: 3, 0: 10 };
+  if (x.a == 1 && x.b == 2 && x.c == 3 && x[0] == 10)
+    return "Yes!";
+  else
+    return "Wrong";
+}
+
+function g() 
+{ 
+  var x = { a: 1, b: 2, c: 3, 0: 10 };
+  if (x.a == 0 || x.b == 1 || x.c == 2 || x[0] == 10)
+    return "Yes!";
+  else
+    return "Wrong";
+}
+
+function h() 
+{ 
+  var x = { a: 1, b: 2, c: 3, 0: 10 };
+  if (x.a == 0 || x.b == 1 || x.c == 2 || x[0] == 9)
+    return "Wrong";
+  else
+    return "No!";
+}
+
+document.writeln( f() );
+document.writeln( g() );
+document.writeln( h() );
+document.writeln( h.toString() );
+</script>
+</pre>
+
+</body>
+</html>

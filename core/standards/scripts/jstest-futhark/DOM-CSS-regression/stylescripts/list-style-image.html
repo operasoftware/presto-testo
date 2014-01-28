@@ -1,0 +1,76 @@
+<html>
+<head>
+<title>DOM tests -- CSS2 interface</title>
+</head>
+
+<body>
+
+<!-- All the HTML elements below this line are used by the tests -->
+
+<ol>
+<li id='a'>
+Text inside li a
+</li>
+
+<li id='b' style='list-style-image: none'>
+Text inside li b
+</li>
+
+<li id='c'>
+Text inside li c
+</li>
+</ol>
+
+<!-- All the HTML elements above this line are used by the tests -->
+
+
+<script src="../../regression-lib/testbase.js"></script>
+<script>
+/* Regression tests for Opera's handling of the DOM 2 CSS2 interface
+ *
+ * 2002-04-11 / stighal
+ */
+
+var cvs = "$Id: list-style-image.html 10655 2006-12-18 15:47:57Z hallvord $";
+
+testmodule( "CSS2 interface", cvs );
+
+var a, b, c;
+
+href = document.location.href;
+path_prefix = href.substr(0, href.lastIndexOf("/") + 1);
+
+try {
+a = document.getElementById("a");
+b = document.getElementById("b");
+c = document.getElementById("c");
+
+testcase( "Reading properties" );
+
+test('getting list-style-image from a with nothing specified', a.style.listStyleImage, "");
+test('getting list-style-image from b with top specified', b.style.listStyleImage, "none");
+
+testcase( "Setting properties" );
+
+a.style.listStyleImage = "url(cat.jpg)";
+test_expect_failure('reading list-style-image on a set by script to url(cat.jpg)', 148016, a.style.listStyleImage, "url(" + path_prefix + "cat.jpg)");
+
+a.style.listStyleImage = "url(fish.gif)";
+test_expect_failure('reading list-style-image on a set by script to url(fish.gif)', 148016, a.style.listStyleImage, "url(" + path_prefix + "fish.gif)");
+
+testcase( "Negative tests" );
+
+c.style.listStyleImage = "foo";
+test('reading list-style-image on c set by script to foo (illegal)', c.style.listStyleImage, "");
+
+c.style.listStyleImage = "bold";
+test('reading list-style-image on d set by script to bold (illegal keyword)', c.style.listStyleImage, "");
+
+} catch (e) { exception( e ); }
+
+testmodule_finished();
+
+</script>
+
+</body>
+</html>

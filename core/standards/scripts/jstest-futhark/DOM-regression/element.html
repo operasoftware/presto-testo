@@ -1,0 +1,38 @@
+<html>
+<head>
+<title>DOM tests -- Element</title>
+</head>
+
+<!-- Change this file only very carefully, the tests depend on it! -->
+
+<body id="body-foo" bgcolor="white">
+
+<!-- All the HTML elements below this line are used by the tests -->
+
+<div id="first_div"><svg:svg><html:span>spanned</html:span></svg:svg></div>
+<div>
+</div>
+<div id="pe">
+  <div>
+    Hmmm
+    <div>
+      Inside DIV
+    </div>
+    A lot of DIVs.
+  </div>
+  <div>
+     Joda...
+  </div>
+</div>
+<div>
+</div>
+<iframe src="xmldoc2.xml" name="node-xml" id="xmliframe2" width="0" height="0"></iframe>
+<iframe src="xmldoc.xml" name="node-xml" id="xmliframe" width="0" height="0"></iframe>
+<!-- All the HTML elements above this line are used by the tests -->
+
+<div id="container"></div>
+<script src="../regression-lib/testbase-non-inline.js"></script>
+<script src="scripts/element.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,69 @@
+<html>
+<head>
+<title>DOM tests -- CSS2 interface</title>
+</head>
+
+<body>
+
+<!-- All the HTML elements below this line are used by the tests -->
+
+<h1>This test will not work well if you don't have Speech Support</h1>
+
+<div style='border: dashed blue'>
+<div id='a' style='border: solid black'>
+Text inside div a
+</div>
+
+<div id='b' style='border: solid red; -xv-phonemes: "fisk"'>
+Text inside div b
+</div>
+
+<div id='c'>
+Text inside div c
+</div>
+</div>
+
+<!-- All the HTML elements above this line are used by the tests -->
+
+
+<script src="../../regression-lib/testbase.js"></script>
+<script>
+/* Regression tests for Opera's handling of the DOM 2 CSS2 interface
+ *
+ * 2002-04-11 / stighal
+ */
+
+var cvs = "$Id: xv-phonemes.html 4838 2006-01-18 05:59:01Z hallvord $";
+
+testmodule( "CSS2 interface", cvs );
+
+var a, b, c;
+
+try {
+a = document.getElementById("a");
+b = document.getElementById("b");
+c = document.getElementById("c");
+
+testcase( "Reading properties" );
+
+test('getting -xv-phonemes from a with nothing specified', a.style.xvPhonemes, "");
+test('getting -xv-phonemes from b with "fisk" specified', b.style.xvPhonemes, "\"fisk\"");
+
+testcase( "Setting properties" );
+
+a.style.xvPhonemes = "\"frosk\"";
+test('reading -xv-phonemes on a set by script to "frosk"', a.style.xvPhonemes, "\"frosk\"");
+
+testcase( "Negative tests" );
+
+c.style.xvPhonemes = "outset";
+test('reading -xv-phonemes on a set by script to outset (illegal keyword)', c.style.xvPhonemes, "");
+
+} catch (e) { exception( e ); }
+
+testmodule_finished();
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!-- synthetic program to touch more GC points -->
+<html>
+<body>
+<script>
+var a = { foo: "foo", bar: "bar" };
+var b = 5, c = 8;
+var f = 
+  function ( x )
+  {
+    a = a;
+    in$the$beginning:
+    switch(a)
+    {
+    case 0: 
+      break;
+    default:
+      try {
+        throw( x );
+      }
+      catch( e ) {
+        return e;
+      }
+    }
+  }
+
+var i;
+var s;
+
+// Force a number of garbage collections.
+for ( i=0 ; i < 100000 ; i++ )
+  s = String( i );
+
+// Use values that may have been collected improperly.
+document.writeln( f( a.foo + a.bar ) );
+document.writeln( f( b + c ) );
+</script>
+</body>
+</html>

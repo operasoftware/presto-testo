@@ -1,0 +1,202 @@
+NaN {DontEnum, DontDelete}
+Infinity {DontEnum, DontDelete}
+undefined {DontEnum, DontDelete}
+eval {DontEnum} undefined 1
+parseInt {DontEnum} undefined 2
+parseFloat {DontEnum} undefined 1
+isNaN {DontEnum} undefined 1
+isFinite {DontEnum} undefined 1
+decodeURI {DontEnum} undefined 1
+decodeURIComponent {DontEnum} undefined 1
+encodeURI {DontEnum} undefined 1
+encodeURIComponent {DontEnum} undefined 1
+Object {DontEnum} Object.prototype 1
+Object.prototype {DontEnum, DontDelete, ReadOnly}
+Object.prototype.constructor {DontEnum} Object
+Object.prototype.toString {DontEnum} undefined 0
+Object.prototype.toLocaleString {DontEnum} undefined 0
+Object.prototype.valueOf {DontEnum} undefined 0
+Object.prototype.hasOwnProperty {DontEnum} undefined 1
+Object.prototype.isPrototypeOf {DontEnum} undefined 1
+Object.prototype.propertyIsEnumerable {DontEnum} undefined 1
+Function {DontEnum} Function.prototype 1
+Function.prototype {ReadOnly, DontDelete, DontEnum}
+Function.prototype.constructor {DontEnum} Function
+Function.prototype.toString {DontEnum} undefined 0
+Function.prototype.apply {DontEnum} undefined 2
+Function.prototype.call {DontEnum} undefined 1
+Array {DontEnum} Array.prototype 1
+Array.prototype {ReadOnly, DontDelete, DontEnum}
+Array.prototype.constructor {DontEnum} Array
+Array.prototype.toString {DontEnum} undefined 0
+Array.prototype.toLocaleString {DontEnum} undefined 0
+Array.prototype.concat {DontEnum} undefined 1
+Array.prototype.join {DontEnum} undefined 1
+Array.prototype.pop {DontEnum} undefined 0
+Array.prototype.push {DontEnum} undefined 1
+Array.prototype.reverse {DontEnum} undefined 0
+Array.prototype.shift {DontEnum} undefined 0
+Array.prototype.slice {DontEnum} undefined 2
+Array.prototype.sort {DontEnum} undefined 1
+Array.prototype.splice {DontEnum} undefined 2
+Array.prototype.unshift {DontEnum} undefined 1
+String {DontEnum} String.prototype 1
+String.fromCharCode {DontEnum} undefined 1
+String.prototype {ReadOnly, DontDelete, DontEnum}
+String.prototype.toString {DontEnum} undefined 0
+String.prototype.valueOf {DontEnum} undefined 0
+String.prototype.charAt {DontEnum} undefined 1
+String.prototype.charCodeAt {DontEnum} undefined 1
+String.prototype.concat {DontEnum} undefined 1
+String.prototype.indexOf {DontEnum} undefined 1
+String.prototype.lastIndexOf {DontEnum} undefined 1
+String.prototype.localeCompare {DontEnum} undefined 1
+String.prototype.match {DontEnum} undefined 1
+String.prototype.replace {DontEnum} undefined 2
+String.prototype.search {DontEnum} undefined 1
+String.prototype.slice {DontEnum} undefined 2
+String.prototype.split {DontEnum} undefined 2
+String.prototype.substring {DontEnum} undefined 2
+String.prototype.toLowerCase {DontEnum} undefined 0
+String.prototype.toLocaleLowerCase {DontEnum} undefined 0
+String.prototype.toUpperCase {DontEnum} undefined 0
+String.prototype.toLocaleUpperCase {DontEnum} undefined 0
+Boolean {DontEnum} Boolean.prototype 1
+Boolean.prototype {ReadOnly, DontDelete, DontEnum}
+Boolean.prototype.constructor {DontEnum} Boolean
+Boolean.prototype.toString {DontEnum} undefined 0
+Boolean.prototype.valueOf {DontEnum} undefined 0
+Number {DontEnum} Number.prototype 1
+Number.prototype {ReadOnly, DontDelete, DontEnum}
+Number.MAX_VALUE {ReadOnly, DontDelete, DontEnum}
+Number.MIN_VALUE {ReadOnly, DontDelete, DontEnum}
+Number.NaN {ReadOnly, DontDelete, DontEnum}
+Number.NEGATIVE_INFINITY {ReadOnly, DontDelete, DontEnum}
+Number.POSITIVE_INFINITY {ReadOnly, DontDelete, DontEnum}
+Number.prototype.constructor {DontEnum} Number
+Number.prototype.toString {DontEnum} undefined 1 
+Number.prototype.toLocaleString {DontEnum} undefined 0
+Number.prototype.valueOf {DontEnum} undefined 0
+Number.prototype.toFixed {DontEnum} undefined 1
+Number.prototype.toExponential {DontEnum} undefined 1
+Number.prototype.toPrecision {DontEnum} undefined 1
+Math.E {ReadOnly, DontDelete, DontEnum}
+Math.LN10 {ReadOnly, DontDelete, DontEnum}
+Math.LN2 {ReadOnly, DontDelete, DontEnum}
+Math.LOG2E {ReadOnly, DontDelete, DontEnum}
+Math.LOG10E {ReadOnly, DontDelete, DontEnum}
+Math.PI {ReadOnly, DontDelete, DontEnum}
+Math.SQRT1_2 {ReadOnly, DontDelete, DontEnum}
+Math.SQRT2 {ReadOnly, DontDelete, DontEnum}
+Math.abs {DontEnum} undefined 1
+Math.acos {DontEnum} undefined 1
+Math.asin {DontEnum} undefined 1
+Math.atan {DontEnum} undefined 1
+Math.atan2 {DontEnum} undefined 2
+Math.ceil {DontEnum} undefined 1
+Math.cos {DontEnum} undefined 1
+Math.exp {DontEnum} undefined 1
+Math.floor {DontEnum} undefined 1
+Math.log {DontEnum} undefined 1
+Math.max {DontEnum} undefined 2
+Math.min {DontEnum} undefined 2
+Math.pow {DontEnum} undefined 2
+Math.random {DontEnum} undefined 0
+Math.round {DontEnum} undefined 1
+Math.sin {DontEnum} undefined 1
+Math.sqrt {DontEnum} undefined 1
+Math.tan {DontEnum} undefined 1
+Date {DontEnum} Date.prototype 7
+Date.prototype {ReadOnly, DontDelete, DontEnum}
+Date.parse {DontEnum} undefined 1
+Date.UTC {DontEnum} undefined 7
+Date.prototype.constructor {DontEnum} Date
+Date.prototype.toString {DontEnum} undefined 0
+Date.prototype.toDateString {DontEnum} undefined 0
+Date.prototype.toTimeString {DontEnum} undefined 0
+Date.prototype.toLocaleString {DontEnum} undefined 0
+Date.prototype.toLocaleDateString {DontEnum} undefined 0
+Date.prototype.toLocaleTimeString {DontEnum} undefined 0
+Date.prototype.valueOf {DontEnum} undefined 0
+Date.prototype.getTime {DontEnum} undefined 0
+Date.prototype.getFullYear {DontEnum} undefined 0
+Date.prototype.getUTCFullYear {DontEnum} undefined 0
+Date.prototype.getMonth {DontEnum} undefined 0
+Date.prototype.getUTCMonth {DontEnum} undefined 0
+Date.prototype.getDate {DontEnum} undefined 0
+Date.prototype.getUTCDate {DontEnum} undefined 0
+Date.prototype.getDay {DontEnum} undefined 0
+Date.prototype.getUTCDay {DontEnum} undefined 0
+Date.prototype.getHours {DontEnum} undefined 0
+Date.prototype.getUTCHours {DontEnum} undefined 0
+Date.prototype.getMinutes {DontEnum} undefined 0
+Date.prototype.getUTCMinutes {DontEnum} undefined 0
+Date.prototype.getSeconds {DontEnum} undefined 0
+Date.prototype.getUTCSeconds {DontEnum} undefined 0
+Date.prototype.getMilliseconds {DontEnum} undefined 0 
+Date.prototype.getUTCMilliseconds {DontEnum} undefined 0 
+Date.prototype.getTimezoneOffset {DontEnum} undefined 0 
+Date.prototype.setTime {DontEnum} undefined 1
+Date.prototype.setMilliseconds {DontEnum} undefined 1
+Date.prototype.setUTCMilliseconds {DontEnum} undefined 1
+Date.prototype.setSeconds {DontEnum} undefined 2
+Date.prototype.setUTCSeconds {DontEnum} undefined 2
+Date.prototype.setMinutes {DontEnum} undefined 3
+Date.prototype.setUTCMinutes {DontEnum} undefined 3
+Date.prototype.setHours {DontEnum} undefined 4
+Date.prototype.setUTCHours {DontEnum} undefined 4
+Date.prototype.setDate {DontEnum} undefined 1
+Date.prototype.setUTCDate {DontEnum} undefined 1
+Date.prototype.setMonth {DontEnum} undefined 2
+Date.prototype.setUTCMonth {DontEnum} undefined 2
+Date.prototype.setFullYear {DontEnum} undefined 3
+Date.prototype.setUTCFullYear {DontEnum} undefined 3
+Date.prototype.toUTCString {DontEnum} undefined 0
+RegExp {DontEnum} RegExp.prototype 2
+RegExp.prototype {ReadOnly, DontDelete, DontEnum}
+RegExp.prototype.constructor {DontEnum} RegExp
+RegExp.prototype.exec {DontEnum} undefined 1 
+RegExp.prototype.test {DontEnum} undefined 1 
+RegExp.prototype.toString {DontEnum} undefined 0
+Error {DontEnum} Error.prototype 1
+Error.prototype {ReadOnly, DontDelete, DontEnum}
+Error.prototype.constructor {DontEnum} Error
+Error.prototype.name {DontEnum} "Error"
+Error.prototype.message {DontEnum}
+Error.prototype.toString {DontEnum} undefined 0
+EvalError {DontEnum} EvalError.prototype 1
+EvalError.prototype {ReadOnly, DontDelete, DontEnum}
+EvalError.prototype.constructor {DontEnum} EvalError
+EvalError.prototype.name {DontEnum} "EvalError"
+EvalError.prototype.message {DontEnum}
+EvalError.prototype.toString {DontEnum} undefined 0
+RangeError {DontEnum} RangeError.prototype 1
+RangeError.prototype {ReadOnly, DontDelete, DontEnum}
+RangeError.prototype.constructor {DontEnum} RangeError
+RangeError.prototype.name {DontEnum} "RangeError"
+RangeError.prototype.message {DontEnum}
+RangeError.prototype.toString {DontEnum} undefined 0
+ReferenceError {DontEnum} ReferenceError.prototype 1
+ReferenceError.prototype {ReadOnly, DontDelete, DontEnum}
+ReferenceError.prototype.constructor {DontEnum} ReferenceError
+ReferenceError.prototype.name {DontEnum} "ReferenceError"
+ReferenceError.prototype.message {DontEnum}
+ReferenceError.prototype.toString {DontEnum} undefined 0
+SyntaxError {DontEnum} SyntaxError.prototype 1
+SyntaxError.prototype {ReadOnly, DontDelete, DontEnum}
+SyntaxError.prototype.constructor {DontEnum} SyntaxError
+SyntaxError.prototype.name {DontEnum} "SyntaxError"
+SyntaxError.prototype.message {DontEnum}
+SyntaxError.prototype.toString {DontEnum} undefined 0
+TypeError {DontEnum} TypeError.prototype 1
+TypeError.prototype {ReadOnly, DontDelete, DontEnum}
+TypeError.prototype.constructor {DontEnum} TypeError
+TypeError.prototype.name {DontEnum} "TypeError"
+TypeError.prototype.message {DontEnum}
+TypeError.prototype.toString {DontEnum} undefined 0
+URIError {DontEnum} URIError.prototype 1
+URIError.prototype {ReadOnly, DontDelete, DontEnum}
+URIError.prototype.constructor {DontEnum} URIError
+URIError.prototype.name {DontEnum} "URIError"
+URIError.prototype.message {DontEnum}
+URIError.prototype.toString {DontEnum} undefined 0

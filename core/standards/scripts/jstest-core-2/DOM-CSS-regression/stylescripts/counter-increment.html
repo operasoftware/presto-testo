@@ -1,0 +1,70 @@
+<html>
+<head>
+<title>DOM tests -- CSS2 interface</title>
+</head>
+
+<body>
+
+<!-- All the HTML elements below this line are used by the tests -->
+
+<div style='border: dashed blue'>
+<div id='a' style='border: solid black'>
+Text inside div a
+</div>
+
+<div id='b' style='border: solid red; counter-increment: i'>
+Text inside div b
+</div>
+
+<div id='c'>
+Text inside div c
+</div>
+</div>
+
+<!-- All the HTML elements above this line are used by the tests -->
+
+
+<script src="../../regression-lib/testbase.js"></script>
+<script>
+/* Regression tests for Opera's handling of the DOM 2 CSS2 interface
+ *
+ * 2002-04-11 / stighal
+ */
+
+var cvs = "$Id: counter-increment.html 4838 2006-01-18 05:59:01Z hallvord $";
+
+testmodule( "CSS2 interface", cvs );
+
+var a, b, c;
+
+try {
+a = document.getElementById("a");
+b = document.getElementById("b");
+c = document.getElementById("c");
+
+testcase( "Reading properties" );
+
+test('getting counter-increment from a with nothing specified', a.style.counterIncrement, "");
+test('getting counter-increment from b with "i" specified', b.style.counterIncrement, '"i"');
+
+testcase( "Setting properties" );
+
+a.style.counterIncrement = '"fish" 3';
+test('reading counter-increment on a set by script to "fish" 3', a.style.counterIncrement, '"fish" 3');
+
+testcase( "Negative tests" );
+
+c.style.counterIncrement = "1";
+test('reading counter-increment on a set by script to foo (illegal)', c.style.counterIncrement, "");
+
+c.style.counterIncrement = "url(fish.css)";
+test('reading counter-increment on a set by script to "url(fish.css)" (illegal keyword)', c.style.counterIncrement, "");
+
+} catch (e) { exception( e ); }
+
+testmodule_finished();
+
+</script>
+
+</body>
+</html>

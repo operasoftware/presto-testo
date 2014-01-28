@@ -1,0 +1,164 @@
+<HTML>
+<HEAD>
+<TITLE>JavaScript Performance Test - Sort Script</TITLE>
+
+<script type="text/javascript">   
+<!--
+
+var array_size = 100;
+
+function beginTest()
+{
+	// get current time
+	var sample = (new Date()).getTime();
+	var next_sample;
+
+	// wait for time to change to begin test - this should reduce error due to poor resolution timers
+	do
+	{	
+		next_sample = (new Date()).getTime();
+	}
+	while (next_sample == sample);
+
+	return next_sample;
+}
+
+function progress(current, total)
+{
+	if (parent.frames[0])
+		parent.frames[0].document.jsTest.status.value =  String(current * 100 / total);
+}
+
+function displayArray(title, data)
+{
+	document.writeln('<center><h4>' + title + '</h4></center>');	
+	document.writeln('<table cellspacing="0" cellpadding="2" border="1" align="center">');
+
+	for (var i = 0; i < array_size; i++)
+	{
+		if (i % 20 == 0)
+			document.writeln('<tr>');
+
+		document.writeln('<td align="center" bgcolor="#FFFFCC">');
+		document.writeln('<font size="-2">');
+		document.writeln(Math.round(data[i]));
+		document.writeln('</font>');
+		document.writeln('</td>');
+
+ 		if (i % 20 == 19)
+			document.writeln('</tr>');
+	}
+	document.writeln('</table>');
+}
+
+function compareNumbers(a, b) 
+{  
+	return a - b;
+}
+
+// 
+// This routines checks the random number generator for 
+// 'randomness'. If it is acceptable then using random sequences in the
+// sort should not introduce any variance in the test.
+// For the data here chiSquare from 80 to 120 is acceptable
+// See Algorithms by Robert Sedgewick (Testing Randomness p 41)
+//
+function chiSquare()
+{
+	var chiSquareSum = 0;
+	for (var loops = 0; loops < 10; loops++)
+	{
+		var f = new Array();
+		var r = 100;
+		var N = 1000;
+
+		for (var i = 0; i < r; i ++)
+		{
+			f[i] = 0;
+		}
+
+		for (i = 0; i < N; i ++)
+		{
+			var rint = Math.round(r * Math.random());
+			f[rint]++;
+		}
+
+		var t = 0;
+		for (i = 0; i < r; i++)
+		{
+			t += f[i] * f[i];
+		}
+
+		var chiSquare = ((r * t) / N) - N;
+
+		chiSquareSum += chiSquare;
+	}
+
+	document.writeln('<p><center>Avergage ChiSquare statistic is ' + (chiSquareSum / 10) + '<br>');
+	document.writeln('Values between 80 to 120 indicate a reasonable random number generator' + '</center></p>');
+}
+
+function SortArray()
+{
+
+	// start the test
+	var startTime = beginTest();
+
+	if (parent.frames[0])
+		parent.frames[0].document.jsTest.currentTest.value = 'Sorting array...';
+
+	var values = new Array();
+
+	var loopCount = 200;
+	for (var loops = 0; loops < loopCount; loops++)
+	{
+		progress(loops + 1, loopCount);
+
+		for (i = 0; i < array_size; i++)
+			values[i] = 1000 * Math.random();
+
+		if (loops == (loopCount - 1))
+			displayArray('Unsorted Data', values);
+
+		values.sort(compareNumbers);
+
+		if (loops == (loopCount - 1))
+			displayArray('Sorted Data', values);
+	}
+
+	// stop the test
+	thisTime = (new Date()).getTime() - startTime;
+
+	if (parent.frames[0])
+		parent.frames[0].document.jsTest.sort.value =  thisTime;
+	else
+		alert('Elapsed time = ' + thisTime);
+
+	// uncomment to test random number generator
+	chiSquare();
+}
+
+
+
+// -->
+</script>
+
+</HEAD>
+<BODY  bgcolor="#FFFFFF">
+
+<script type="text/javascript">   
+<!--
+
+	SortArray();
+
+	// run next part of test	
+	if (parent.frames[1])
+		setTimeout('parent.frames[1].location = "gen_page.html"', '2000');
+
+// -->
+</script>
+
+<!-- Copyright &copy; 2000 Ziff Davis Media Inc.  All rights reserved. -->
+
+</BODY>
+</HTML>

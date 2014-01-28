@@ -1,0 +1,20 @@
+<html>
+<head>
+<script src="../testconfig.js"></script>
+<script src="../regression-lib/testbase.js"></script>
+<script src="scripts/focus.js"></script>
+
+<title>DOM 2 HTML TextArea Element </title>
+</head>
+
+<body>
+<form id="myForm">
+  <textarea id="myTextArea"></textarea>
+  <textarea id="myTextArea2" cols="15" rows="2" disabled readonly name="navn" tabindex="10"  accesskey="U"
+    onFocus="reg_call()" onBlur="unreg_call();" onSelect="reg_call();">verdi</textarea>
+</form>
+<form id="myForm2"></form>
+
+<script src="scripts/htmltextareaelement.js"></script>
+</body>
+</html>

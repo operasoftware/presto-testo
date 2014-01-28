@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <title>Slow loading font in inline stylesheet + display:none</title>
+  <script src="/resources/testharness.js"></script>
+  <script src="/resources/testharnessreport.js"></script>
+  <style>
+    @font-face { font-family: FontTest; src: url("_files/slice-and-dice.cgi?file=Ahem.woff&parts=d3"); }
+    #test {font-family:FontTest; display:none}
+  </style>
+  <div id="log"></div>
+  <script>
+    var t = async_test(undefined, {timeout:4000});
+    var time = Date.now();
+    setTimeout(t.step_func(function() {assert_unreached("Load event not fired until font loaded")}), 2000);
+    onload = t.step_func(function() {t.done();});
+  </script>
+  <div id="test">Test</div>

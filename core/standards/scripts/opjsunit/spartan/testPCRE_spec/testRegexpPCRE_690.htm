@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <title>testPCRE_spec.js#testRegexpPCRE_690</title>
+  <script src="../opjsunit.js"></script>
+  <script>function testRegexpPCRE_690() {
+  var regexp = /^$/mg;
+  assertEquals("", regexp.exec("abc\x0d\x0dxyz").toString()); //test 697
+  assertEquals("", regexp.exec("abc\n\x0dxyz  ").toString()); //test 698
+  assertEquals(null, regexp.exec("** Failers ")); //test 699
+  assertEquals("", regexp.exec("abc\x0d\nxyz").toString()); //test 700
+  assertEquals("", regexp.exec("abc\x0d\n\x0d\n").toString()); //test 701
+  assertEquals("", regexp.exec("abc\x0d\n\x0d\n").toString()); //test 702
+  assertEquals("", regexp.exec("abc\x0d\n\x0d\n").toString()); //test 703
+}</script>
+  <p>Failed (Script did not run)</p>
+  <script>
+function test() {
+  var passed = false;
+  var error = "";
+  var output_element = document.getElementsByTagName("p")[0];
+  try {
+    for (var count=0; count<100; count++) {
+      testRegexpPCRE_690();
+    }
+    passed = true;
+  } catch(e) {
+    error = e.message;
+  }
+  try {top.opener.rr(passed)} catch(e){}
+  if (passed) {
+    output_element.textContent = "PASS"
+    output_element.style.color = "green";
+  } else {
+    output_element.textContent = "FAIL: " + error + " (failed on iteration " + count + ")"
+    output_element.style.color = "red";
+  }
+}
+window.addEventListener("load", test, false);
+  </script>
+</html>

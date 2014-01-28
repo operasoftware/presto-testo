@@ -1,0 +1,32 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/REC-html401/strict.dtd">
+<!--
+   Created by haukur@opera.com
+-->
+<html>
+   <head>
+      <title>Applet Object Test</title>
+      <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+      <script language="javascript" type="text/javascript" src="../regression-lib/testbase.js"></script>
+      <script language="javascript" type="text/javascript" src="scripts/js_applet.js"></script>
+   </head>
+   <body onLoad="go();">
+   <h1>Applet Object Test</h1>
+   	<p>
+	<applet id="theapplet" name="theapplet"
+	codebase="./classes"
+	code="Hangman.class"
+	width="500"
+	height="200"
+	name="hangman" MAYSCRIPT>
+	</applet>
+	</p>
+   <script src="scripts/js_applet.js"></script>
+   <!--
+   <script type="text/javascript" language="javascript">
+   	main( document.theapplet );
+   </script>
+   //-->
+   </body>
+</html>
+
+

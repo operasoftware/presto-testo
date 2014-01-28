@@ -1,0 +1,44 @@
+<html>
+	<head>
+		<title>document.all test</title>
+		<script type="text/javascript" src="../regression-lib/testbase.js"></script>
+		<script type="text/javascript" src="scripts/eventObjectTest.js"></script>
+	</head>
+	<body onkeydown="onKeyPressEvent();return true;" onkeyup="onKeyUpEvent();return true;">
+		<img src="../graphics/operalogo_100x105.gif" onmousedown="onImgMouseDownEvent();return true;" onmouseout="onImgMouseOutEvent();return true;" onmouseover="onImgMouseOverEvent();return true;">
+		<br><br>
+		<table>
+			<tr>
+				<td>keyCode: </td>
+				<td><input type="text" name="KeyCode" readonly="true"></td>
+			<tr>			
+			<tr>
+				<td>Special key pressed: </td>
+				<td><input type="text" name="SpecialKey" readonly="true"></td>
+			</tr>
+		</table>
+		<br><br>
+		<table>
+			<tr>
+				<td>clientX and clientY: </td>
+				<td><input type="text" name="Position" readonly="true"></td>
+			</tr>
+			<tr>
+				<td>offsetX and offsetY: </td>
+				<td><input type="text" name="Offset" readonly="true"></td>
+			</tr>
+			<tr>
+				<td>srcElement: </td>
+				<td><input type="text" name="SrcElement" readonly="true"></td>
+			<tr>
+			<tr>
+				<td>button: </td>
+				<td><input type="text" name="Button" readonly="true"></td>
+			<tr>		
+			<tr>
+				<td>fromElement: </td>
+				<td><input type="text" name="FromElement" readonly="true"></td>
+			<tr>						
+		</table>
+	</body>
+</html>

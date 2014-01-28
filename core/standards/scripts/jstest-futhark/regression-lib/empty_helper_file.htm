@@ -1,0 +1,28 @@
+<html>
+<head>
+  <title>Opera JavaScript/JScript test suite: history test helper file</title>
+<script>
+// Absolutely do not remove this script, the js_history test depends on it.
+var ready=false;
+function setready()
+{
+  ready=true;
+}
+function makeHistory(){
+	var entryNum;
+	if(location.search==''){
+		entryNum=1;
+	}else{
+		entryNum=parseInt( location.search.substr(9) )+1;
+	}
+	document.links[0].href='?history='+entryNum;
+	document.links[0].innerText=entryNum;
+	document.links[0].click();
+}
+</script>
+</head>
+
+<body onload="setready()">
+<p>Blank helper file for history tests</p>
+<p><a href=""></a></p>
+</body></html>

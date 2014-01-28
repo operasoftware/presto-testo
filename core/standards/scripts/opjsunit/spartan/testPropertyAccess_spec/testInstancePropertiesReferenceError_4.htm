@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <title>testPropertyAccess_spec.js#testInstancePropertiesReferenceError_4</title>
+  <script src="../opjsunit.js"></script>
+  <script>function testInstancePropertiesReferenceError_4() {
+  o = new ReferenceError();
+  var p = "constructor";
+  assertDefined(o[p]);
+  assertEquals(o.constructor, o[p]);
+  assertEquals(o["constructor"], o[p]);
+}</script>
+  <p>Failed (Script did not run)</p>
+  <script>
+function test() {
+  var passed = false;
+  var error = "";
+  var output_element = document.getElementsByTagName("p")[0];
+  try {
+    for (var count=0; count<100; count++) {
+      testInstancePropertiesReferenceError_4();
+    }
+    passed = true;
+  } catch(e) {
+    error = e.message;
+  }
+  try {top.opener.rr(passed)} catch(e){}
+  if (passed) {
+    output_element.textContent = "PASS"
+    output_element.style.color = "green";
+  } else {
+    output_element.textContent = "FAIL: " + error + " (failed on iteration " + count + ")"
+    output_element.style.color = "red";
+  }
+}
+window.addEventListener("load", test, false);
+  </script>
+</html>

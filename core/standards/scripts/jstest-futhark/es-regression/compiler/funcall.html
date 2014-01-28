@@ -1,0 +1,26 @@
+<html>
+
+<head>
+<title>Compiler test: function calls</title>
+</head>
+
+<body>
+
+<p>Should print "55" followed by bytecode for the fibonacci function.</p>
+
+<pre>
+<script>
+function fib(n)
+{
+  if (n < 2)
+    return n;
+  else
+    return fib(n-1)+fib(n-2);
+}
+document.writeln( fib(10) );
+document.writeln( fib.toString() );
+</script>
+</pre>
+
+</body>
+</html>

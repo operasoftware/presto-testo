@@ -1,0 +1,8 @@
+<!DOCTYPE html>
+<html><head>
+	<title>load event on FRAMESET with javascript: URL </title>
+	<script src="_files/lib.js" ></script>
+</head>
+<frameset rows="*" onload="load(event, ' on FRAMESET ')">
+<frame src="javascript:'<html><body><p>Frame contents</p></body></html>'" onload="load(event, ' on FRAME ')"> </frame>
+</frameset></html>

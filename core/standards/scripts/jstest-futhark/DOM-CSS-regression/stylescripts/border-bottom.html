@@ -1,0 +1,80 @@
+<html>
+<head>
+<title>DOM tests -- CSS2 interface</title>
+</head>
+
+<body>
+
+<!-- All the HTML elements below this line are used by the tests -->
+
+<div id='a'>
+Outset blue bottom border of width 3px
+</div>
+
+<div id='b' style='border-bottom: thin solid red'>
+Thin solid red bottom border
+</div>
+
+<div id='c' style='border-bottom-color: green'>
+Thick green bottom border
+</div>
+
+<div id='d'>
+No borders
+</div>
+
+<!-- All the HTML elements above this line are used by the tests -->
+
+
+<script src="../../regression-lib/testbase.js"></script>
+<script>
+/* Regression tests for Opera's handling of the DOM 2 CSS2 interface
+ *
+ * 2002-04-11 / stighal
+ */
+
+var cvs = "$Id: border-bottom.html 91628 2011-04-07 09:23:17Z bratell $";
+
+testmodule( "CSS2 interface", cvs );
+
+var a, b, c, d;
+
+try {
+a = document.getElementById("a");
+b = document.getElementById("b");
+c = document.getElementById("c");
+d = document.getElementById("d");
+
+testcase( "Reading properties" );
+
+test('getting border-bottom from a with nothing specified', a.style.borderBottom, "");
+test('getting border-bottom from b with a lot specified', b.style.borderBottom, "thin solid red");
+
+testcase( "Setting properties" );
+
+a.style.borderBottom = "3px outset blue";
+test('reading border-bottom on a set by script', a.style.borderBottom, "3px outset blue");
+
+testcase( "Getting partial values" );
+
+test('reading border-bottom from c with color specified by style attribute', c.style.borderBottom, "green");
+
+c.style.borderBottomWidth = "thick";
+test('reading border-bottom from c with color specified by style and width specified by script', c.style.borderBottom, "thick green");
+
+testcase( "Negative tests" );
+
+d.style.borderBottom = "foo";
+test('reading border-bottom on d set by script to foo (illegal)', d.style.borderBottom, "");
+
+d.style.borderBottom = "bold";
+test('reading border-bottom on d set by script to bold (illegal keyword)', d.style.borderBottom, "");
+
+} catch (e) { exception( e ); }
+
+testmodule_finished();
+
+</script>
+
+</body>
+</html>

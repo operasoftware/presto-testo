@@ -1,0 +1,53 @@
+<html>
+<head>
+<script src="../testconfig.js"></script>
+<script src="../regression-lib/testbase.js"></script>
+<title>DOM 2 HTML ObjectElement </title>
+</head>
+
+<body onload="go()">
+<p>
+<object id="myObject1"></object>
+<object id="myObject2" align="right" declare 
+  codebase="http://www.opera.com/graphics/"  
+  data="logo_z.gif" type="image/gif"
+  archive="http://www.opera.com/ http://www.opera.no" 
+  border=2 standby="loading" 
+  height="50" width="90" tabindex=5 
+  usemap="#map" 
+  name="o"
+  hspace="5" vspace="7"
+  >image object</object>
+<object id="myObject3"
+  codebase="http://www.opera.com/"
+  classid="clock.class" 
+  data="index.html" type="text/html"
+  border="2" standby="loading" 
+  height="50" width="120" tabindex=5 
+  hspace="5" vspace="7"
+  >html object</object>
+<object id="myObject4" code="clock.class" 
+  codetype="application/x-java-applet" 
+  height="50" width="100" tabindex=5 
+  hspace="5" vspace="7"
+  align="right"
+  archive="http://www.opera.com/ http://www.opera.no" 
+  border=3 standby="loading applet object" 
+  name="o4"
+>applet object</object>
+<object id="myObject5" 
+  codetype="application/x-java-applet" 
+><param name="code" value="TestApplet.class">
+applet object</object>
+<object id="myObject6"
+  data="iframe.html" type="text/html"
+  border="2" standby="loading" 
+  height="50" width="120"
+  >html object</object>
+</p>
+<script src="scripts/htmlobjectelement.js"></script>
+<script>
+testGeneral();
+</script>
+</body>
+</html>

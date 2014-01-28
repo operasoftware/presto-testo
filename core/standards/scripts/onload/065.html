@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<head>
+	<title>load events - script added in iframe load handler</title>
+	<script src="/resources/testharness.js"></script>
+	<script src="/resources/testharnessreport.js"></script>
+</head>
+<div id="log"></div>
+<iframe id=a></iframe>
+<script>
+var t = async_test(undefined, {timeout:4000});
+var events = [];
+
+push_event = t.step_func(function(e) {
+  events.push(e);
+  if (events.length === 3) {
+    assert_array_equals(events, ["iframe load", "load", "script"]);
+    t.done();
+  }
+});
+
+onload = function() {push_event('load');}
+
+var f = document.getElementById("a");
+
+f.contentDocument.open();
+
+f.contentWindow.onload =  function() {
+  push_event('iframe load');
+  var s = f.contentDocument.createElement('script');
+  s.src='_files/slice-and-dice.cgi?file=parent_push_event.js&parts=d2';
+  f.contentDocument.body.appendChild(s);
+}
+
+f.contentDocument.close()
+</script>

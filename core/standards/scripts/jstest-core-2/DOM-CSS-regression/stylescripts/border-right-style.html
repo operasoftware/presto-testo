@@ -1,0 +1,68 @@
+<html>
+<head>
+<title>DOM tests -- CSS2 interface</title>
+</head>
+
+<body>
+
+<!-- All the HTML elements below this line are used by the tests -->
+
+<div id='a'>
+Outset right border with default color and style.
+</div>
+
+<div id='b' style='border-right-style: solid; border-right-color: green'>
+Solid green right border.
+</div>
+
+<div id='c'>
+No borders.
+</div>
+
+<!-- All the HTML elements above this line are used by the tests -->
+
+
+<script src="../../regression-lib/testbase.js"></script>
+<script>
+/* Regression tests for Opera's handling of the DOM 2 CSS2 interface
+ *
+ * 2002-04-11 / stighal
+ */
+
+var cvs = "$Id: border-right-style.html 4838 2006-01-18 05:59:01Z hallvord $";
+
+testmodule( "CSS2 interface", cvs );
+
+var a, b;
+
+try {
+a = document.getElementById("a");
+b = document.getElementById("b");
+c = document.getElementById("c");
+
+testcase( "Reading properties" );
+
+test('getting border-right-style from a with nothing specified', a.style.borderRightStyle, "");
+test('getting border-right-style from b with a lot specified', b.style.borderRightStyle, "solid");
+
+testcase( "Setting properties" );
+
+a.style.borderRightStyle = "outset";
+test('reading border-right-style on a set by script to outset', a.style.borderRightStyle, "outset");
+
+testcase( "Negative tests" );
+
+c.style.borderRightStyle = "foo";
+test('reading border-right-style value set to foo (illegal)', c.style.borderRightStyle, "");
+
+c.style.borderRightStyle = "medium";
+test('reading border-right-style value set to medium (illegal keyword)', c.style.borderRightStyle, "");
+
+} catch (e) { exception( e ); }
+
+testmodule_finished();
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <title>Slow loading background image in inline stylesheet + non-matching @media unknown</title>
+  <script src="/resources/testharness.js"></script>
+  <script src="/resources/testharnessreport.js"></script>
+  <style>
+    @media unknown {#test {background-image:url("_files/slice-and-dice.cgi?file=1x1-green.png&parts=d2");
+                          background-repeat:repeat; 
+                          background-color:orange}}
+  </style>
+  <div id="log"></div>
+  <script>
+    var t = async_test(undefined, {timeout:4000});
+    var time = Date.now();
+    setTimeout(t.step_func(function() {assert_unreached("Load event not fired until background loaded")}), 1000);
+    onload = t.step_func(function() {t.done();});
+  </script>
+  <div id="test">Test</div>

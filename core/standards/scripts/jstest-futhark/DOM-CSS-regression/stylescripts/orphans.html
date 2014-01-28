@@ -1,0 +1,70 @@
+<html>
+<head>
+<title>DOM tests -- CSS2 interface</title>
+</head>
+
+<body>
+
+<!-- All the HTML elements below this line are used by the tests -->
+
+<div style='border: dashed blue'>
+<div id='a' style='border: solid black'>
+Text inside div a
+</div>
+
+<div id='b' style='border: solid red; orphans: 4'>
+Text inside div b
+</div>
+
+<div id='c'>
+Text inside div c
+</div>
+</div>
+
+<!-- All the HTML elements above this line are used by the tests -->
+
+
+<script src="../../regression-lib/testbase.js"></script>
+<script>
+/* Regression tests for Opera's handling of the DOM 2 CSS2 interface
+ *
+ * 2002-04-11 / stighal
+ */
+
+var cvs = "$Id: orphans.html 10655 2006-12-18 15:47:57Z hallvord $";
+
+testmodule( "CSS2 interface", cvs );
+
+var a, b, c;
+
+try {
+a = document.getElementById("a");
+b = document.getElementById("b");
+c = document.getElementById("c");
+
+testcase( "Reading properties" );
+
+test('getting orphans from a with nothing specified', a.style.orphans, "");
+test('getting orphans from b with "4" specified', b.style.orphans, "4");
+
+testcase( "Setting properties" );
+
+a.style.orphans = "9";
+test('reading orphans on a set by script to "9"', a.style.orphans, "9");
+
+testcase( "Negative tests" );
+
+c.style.orphans = "foo";
+test('reading orphans on a set by script to foo (illegal)', c.style.orphans, "");
+
+c.style.orphans = "outset";
+test('reading orphans on a set by script to outset (illegal keyword)', c.style.orphans, "");
+
+} catch (e) { exception( e ); }
+
+testmodule_finished();
+
+</script>
+
+</body>
+</html>

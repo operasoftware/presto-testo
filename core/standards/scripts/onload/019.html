@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html><head>
+	<title>load event on FRAMESET where one frame is generated with document.write</title>
+	<script>_conf_timeout_delay=1500;
+	setTimeout( function(){
+		top.frames[1].document.open();
+		top.frames[1].document.write( '<html><body><p>Hello doc.write</p></body></html>' );
+		top.frames[1].document.close();
+	}, 1000 );
+	</script>
+	<script src="_files/lib.js" ></script>
+	<script>var expected = [
+			'load  on bottom FRAME  in window [019.html]',
+			'load in window [support.html] (in FRAME#topframe [support.html])',
+			'load  on top FRAME  in window [019.html]',
+			'load  on FRAMESET  in window [019.html]',
+			'load  on bottom FRAME  in window [019.html]'
+		];
+	</script>
+</head>
+<frameset rows="*,30%" onload="load(event, ' on FRAMESET ')">
+<frame src="_files/support.html" onload="load(event, ' on top FRAME ')" id="topframe"></frame>
+<frame src="" onload="load(event, ' on bottom FRAME ')" id="bottomframe"></frame>
+</frameset></html>

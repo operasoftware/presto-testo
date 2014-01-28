@@ -1,0 +1,67 @@
+		/* Styles for eTestingLabs section - Do not use these as they may change*/
+		.yllwfont   {color: #FFFF33; font-family: Arial, Geneva, Helvetica, sans-serif; font-size: 13px;}
+		a.yllwlink  {color: #FFFF33; font-family: Arial, Geneva, Helvetica, sans-serif; font-size: 11px;}
+		a.yllwlink10 {color: #FFFF33; font-family: Arial, Geneva, Helvetica, sans-serif; font-size: 13px;}
+		a.bllink    {color: #99ccff; font-family: Arial, Geneva, Helvetica, sans-serif; font-size: 11px;}
+		
+		/* Styles for i-Bench(TM) */
+		body.ibstyle {color: #000000; background: #FFFFFF; font-family: Arial, Geneva, Helvetica, sans-serif; font-size: 13px;}
+		
+		.ibstyle {color: #000000; background: #FFFFFF; font-family: Arial, Geneva, Helvetica, sans-serif; font-size: 13px;}
+		
+		/* Headings */
+		h3			{font-family: Arial, Geneva, Helvetica, sans-serif; font-size: 19px; font-weight: bold}
+		h4 			{font-family: Arial, Geneva, Helvetica, sans-serif; font-size: 17px; font-weight: bold}
+		h5 			{font-family: Arial, Geneva, Helvetica, sans-serif; font-size: 15px; font-weight: bold}
+	
+		/* Same as headings but don't introduce white space*/
+		.h3x		{font-family: Arial, Geneva, Helvetica, sans-serif; font-size: 19px; font-weight: bold}
+		.h4x 		{font-family: Arial, Geneva, Helvetica, sans-serif; font-size: 17px; font-weight: bold}
+		.h5x 		{font-family: Arial, Geneva, Helvetica, sans-serif; font-size: 15px; font-weight: bold}
+
+		/* blockquote */
+		blockquote	{font-family: Arial, Geneva, Helvetica, sans-serif; font-size: 13px;}
+
+		/* paragraphs */
+		p			{font-family: Arial, Geneva, Helvetica, sans-serif; font-size: 13px;}
+		p.f6		{font-family: Arial, Geneva, Helvetica, sans-serif; font-size: 13px;}
+		p.f7		{font-family: Arial, Geneva, Helvetica, sans-serif; font-size: 11px;}
+
+		/* font sizes analogous to Headings - non bold */			
+		.f3         {font-family: Arial, Geneva, Helvetica, sans-serif; font-size: 19px;}
+		.f4         {font-family: Arial, Geneva, Helvetica, sans-serif; font-size: 17px;}
+		.f5         {font-family: Arial, Geneva, Helvetica, sans-serif; font-size: 15px;}
+		.f6         {font-family: Arial, Geneva, Helvetica, sans-serif; font-size: 13px;}
+		.f7         {font-family: Arial, Geneva, Helvetica, sans-serif; font-size: 11px;}
+		.f7Warn     {font-family: Arial, Geneva, Helvetica, sans-serif; font-size: 11px; color: red}
+			
+		/* TABLES */
+		/* Netscape Navigator ignores the table styles so it is best to use the td styles which work */ 
+		table.ibstyle  {color: #000000; background: #FFFFFF; font-family: Arial, Geneva, Helvetica, sans-serif; font-size: 13px;}
+		table.ibpanel  {color: #000000; background: #D6DDE4; font-family: Arial, Geneva, Helvetica, sans-serif; font-size: 13px;}
+		
+		/* Use for table cells with text */
+		td.ibtext   {color: #000000; background: #FFFFFF; font-family: Arial, Geneva, Helvetica, sans-serif; font-size: 13px;}
+		td.ibtext7  {color: #000000; background: #FFFFFF; font-family: Arial, Geneva, Helvetica, sans-serif; font-size: 11px;}
+		
+		/* Use for table cells with i-Bench color scheme (White on dark blue) */
+		td.ibstyle	{color: #FFFFFF; background: #003366; font-family: Arial, Geneva, Helvetica, sans-serif; font-size: 13px;} 
+		
+		/* Use for table cells containing FORM elements */
+		td.ibpanel	{color: #000000; background: #D6DDE4; font-family: Arial, Geneva, Helvetica, sans-serif; font-size: 13px;}
+		td.ibpanel1	{color: #000000; background: #D6DDE4; font-family: Arial, Geneva, Helvetica, sans-serif; font-size: 13px; padding-top: .5em;}
+		td.ibpanel7	{color: #000000; background: #D6DDE4; font-family: Arial, Geneva, Helvetica, sans-serif; font-size: 11px;}
+		td.ibtest	{color: #000000; background: #99CCCC; font-family: Arial, Geneva, Helvetica, sans-serif; font-size: 13px;}
+		td.ibtest7	{color: #000000; background: #99CCCC; font-family: Arial, Geneva, Helvetica, sans-serif; font-size: 11px;}
+		td.ibrow	{color: #000000; background: #BAD1E4; font-family: Arial, Geneva, Helvetica, sans-serif; font-size: 13px;}
+		td.ibrow7	{color: #000000; background: #BAD1E4; font-family: Arial, Geneva, Helvetica, sans-serif; font-size: 11px;}
+				
+		a.quicklink {color: #FFFFFF; font-family: Arial, Geneva, Helvetica, sans-serif; font-size: 11px;}
+		ul.submenu	{color: #000000; font-family: Arial, Geneva, Helvetica, sans-serif; font-size: 11px;}
+		ol.f6		{font-family: Arial, Geneva, Helvetica, sans-serif; font-size: 13px; list-style-type: decimal; }
+		ol.f7		{font-family: Arial, Geneva, Helvetica, sans-serif; font-size: 11px; list-style-type: decimal; }
+		ul.f6		{font-family: Arial, Geneva, Helvetica, sans-serif; font-size: 13px; list-style-type: disc; }
+		ul.f7		{font-family: Arial, Geneva, Helvetica, sans-serif; font-size: 11px; list-style-type: disc; }
+	    ul.f6ie5	{font-family: Arial, Geneva, Helvetica, sans-serif; font-size: 13px; list-style-type: disc; list-style-position: inside;}	
+
+		hr.ibstyle	{color:#003366;}

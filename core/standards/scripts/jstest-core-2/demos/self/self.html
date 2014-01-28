@@ -1,0 +1,16 @@
+<!-- Self-reproducing javascript.  Generating the HTML tags too is left as an exercise for the reader. -->
+<!-- lth@opera.com, sometime in the mists of time -->
+<html>
+<body>
+<pre>
+<script>
+var nl=String.fromCharCode(0x0A);
+var quot=String.fromCharCode(0x27);
+var enn='N';
+var glob='g';
+var self='var nl=String.fromCharCode(0x0A);Nvar quot=String.fromCharCode(0x27);Nvar enn=QMQ;Nvar glob=QGQ;Nvar self=QSQ;Ndocument.writeln( self.replace( new RegExp( enn, glob ), nl ).replace( /QMQ/, quot + enn + quot ).replace( /QGQ/, quot + glob + quot ).replace( /QSQ/, quot + self + quot ) );';
+document.writeln( self.replace( new RegExp( enn, glob ), nl ).replace( /QMQ/, quot + enn + quot ).replace( /QGQ/, quot + glob + quot ).replace( /QSQ/, quot + self + quot ) );
+</script>
+</pre>
+</body>
+</html>

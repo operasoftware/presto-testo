@@ -1,0 +1,139 @@
+<!-- DO NOT CHANGE THIS UNLESS YOU REALLY KNOW WHAT YOU ARE DOING!  -->
+<!-- Whitespace is significant in the vbscripts, be careful -->
+<html>
+<head>
+<title>Regression | subset VBScript support</title>
+</head>
+
+<script src="../regression-lib/testbase.js"></script>
+
+<script>
+function has_shockwave(v) {
+        var mt,sw,ep,d,i;
+        return Boolean((mt=navigator.mimeTypes) &&
+                       (sw=mt["application/x-shockwave-flash"]) &&
+                       (ep=sw.enabledPlugin) &&
+                       ((d = ep.description), ((i=d.indexOf(".")) != -1)) &&
+                       (parseInt(d.substring(i-1)) >= v));
+}
+
+var cvs = "$Id: vbscript.html 10655 2006-12-18 15:47:57Z hallvord $";
+testmodule( "Subset VBScript support (on Windows systems only!!!)", cvs );
+</script>
+
+<!-- nettavisen.no -->
+<!-- This script should be executed, and the noscript block shouldn't be -->
+<script language="vbscript">
+on error resume next
+supercallifragilistic = (IsObject(CreateObject("ShockwaveFlash.ShockwaveFlash.5")))
+</script>
+
+<noscript>
+<script>
+supercallifragilistic = 37;
+</script>
+</noscript>
+
+<script language="javascript">
+testcase( "Should recognize" );
+test( "supercallifragilistic", window.supercallifragilistic, has_shockwave(5) );  // not 37
+</script>
+
+
+<!-- This script should not be exectuted, but the noscript block should be -->
+<script language="vbscript">
+supergetifragilistic = (IsObject(CreateObject("ShockwaveFlash.ShockwaveFlash.5")))
+</script>
+
+<noscript>
+<script>
+supergetifragilistic = 37;
+</script>
+</noscript>
+
+<script language="javascript">
+testcase( "Should not recognize" );
+test( "supergetifragilistic", window.supergetifragilistic, 37 );
+</script>
+
+<!-- porsche.com, note this tests TYPE attribute too -->
+<script type=text/vbscript>
+Function flashActX(flashVer)
+	On Error Resume Next
+	
+	Dim FlashObj
+	FlashObj = IsObject(CreateObject("ShockwaveFlash.ShockwaveFlash." & flashVer))
+	flashActX = FlashObj
+End Function
+</script>
+
+<script>
+testcase( "should recognize: porsche.com" );
+test( "script worked", typeof( flashActX ), "function" );
+</script>
+
+<!-- hegnar.no, in some ad script, note use of HTML comments etc -->
+<script>
+var hegnar = true;
+</script>
+
+<script language=vbscript>
+<!--
+// Catch the fscommand in ie with vbscript, and pass it on to JavaScript.
+
+Sub eas_FSCommand(ByVal command, ByVal args)
+    call eas_DoFSCommand(command, args)
+end sub
+
+//-->
+</script>
+
+<noscript>
+<script>
+hegnar = false;
+</script>
+</noscript>
+
+<script>
+testcase( "should recognize: hegnar.no" );
+test( "hegnar", hegnar, true );
+</script>
+
+<!-- washingtonpost.com -->
+<script>
+delete flash2Installed;
+delete flash3Installed;
+delete flash4Installed;
+delete flash5Installed;
+delete flash6Installed;
+delete flash7Installed;
+</script>
+
+<script language=vbscript>
+on error resume next
+flash2Installed = (IsObject(CreateObject("ShockwaveFlash.ShockwaveFlash.2")))
+flash3Installed = (IsObject(CreateObject("ShockwaveFlash.ShockwaveFlash.3")))
+flash4Installed = (IsObject(CreateObject("ShockwaveFlash.ShockwaveFlash.4")))
+flash5Installed = (IsObject(CreateObject("ShockwaveFlash.ShockwaveFlash.5")))
+flash6Installed = (IsObject(CreateObject("ShockwaveFlash.ShockwaveFlash.6")))
+flash7Installed = (IsObject(CreateObject("ShockwaveFlash.ShockwaveFlash.7")))
+</script>
+
+<script>
+testcase("should find a flash version");
+test( "flashXInstalled is defined", 
+      "flash2Installed" in window && 
+      "flash3Installed" in window && 
+      "flash4Installed" in window && 
+      "flash5Installed" in window && 
+      "flash6Installed" in window && 
+      "flash7Installed" in window,
+      true );
+</script>
+
+<script>
+testmodule_finished();
+</script>
+
+</body>
+</html>

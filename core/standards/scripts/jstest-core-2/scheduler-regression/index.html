@@ -1,0 +1,51 @@
+<html>
+  <head>
+    <title>Scheduler regression tests</title>
+  </head>
+
+  <body>
+    <h1>Scheduler regression tests</h1>
+
+    <h2>Inline script tests</h2>
+    <p>
+      These tests test the correct scheduling of inline scripts, especially
+      in relation to processing data written using document.write.
+    </p>
+    <ul>
+      <li>
+        <a href="inlineScripts.html">
+          Inline scripts writing to the same document.
+        </a>
+      </li>
+      <li>
+        <a href="inlineScriptsOtherDocument.html">
+          Inline scripts writing to another document (in an iframe).
+        </a>
+      </li>
+    </ul>
+
+    <h2>Timeout script tests</h2>
+    <p>
+      These tests test so that timeout and interval threads are executed
+      at the right time, and are properly stopped by clearTimeout/clearInterval.
+    </p>
+    <ul>
+      <li>
+        <a href="timeoutTest.html">
+          Tests setTimeout and clearTimeout.
+        </a>
+      </li>
+      <li>
+        <a href="intervalTest.html">
+          Tests setInterval and clearInterval.
+        </a>
+      </li>
+    </ul>
+
+    <h2>Bugs?</h2>
+    <p>
+      Report any failures primarily to Jens Lindström &lt;jl@opera.com&gt;, unless
+      you fix the problem yourself.
+    </p>
+  </body>
+</html>

@@ -1,0 +1,346 @@
+<HTML>
+<HEAD>
+<TITLE>JavaScript Performance Test - Search</TITLE>
+
+<script type="text/javascript">   
+<!--
+
+function beginTest()
+{
+	// get current time
+	var sample = (new Date()).getTime();
+	var next_sample;
+
+	// wait for time to change to begin test - this should reduce error due to poor resolution timers
+	do
+	{	
+		next_sample = (new Date()).getTime();
+	}
+	while (next_sample == sample);
+
+	return next_sample;
+}
+
+function progress(current, total)
+{
+	if (parent.frames[0])
+		parent.frames[0].document.jsTest.status.value =  String(current * 100 / total);
+}
+
+
+function DisplaySearchResults(keyword, descriptions, urls)
+{
+	document.writeln('<tr>');
+	document.writeln('<td><font size="-1">' + keyword + '</font></td>');
+	document.writeln('<td>');
+	for (var i = 0; i < urls.length; i++)
+	{	
+		document.writeln('<font size="-2"><a href="' + urls[i] + '">' + descriptions[i] + '</a></font><br>');	
+	}
+	document.writeln('</td>');
+	document.writeln('</tr>');
+}
+
+function FindIt(site_urls, site_keywords, site_descs, keyword, displayIt)
+{
+	var match = 0;
+	var urls = new Array();
+	var descriptions = new Array();
+
+	keywordLC = keyword.toLowerCase();
+
+	for (var i = 0; i < site_keywords.length; i++)
+	{
+		if (site_keywords[i].indexOf(keywordLC) != -1)
+		{
+			urls[match] = site_urls[i];
+			descriptions[match] = site_descs[i];
+			match++;
+		}
+	}
+
+	if (displayIt)
+		DisplaySearchResults(keyword, descriptions, urls);
+
+	urls.length = 0;
+	descriptions.length = 0;
+
+	return match;
+}
+
+function Search()
+{
+	if (parent.frames[0])
+		parent.frames[0].document.jsTest.currentTest.value = 'Search for keyword match';
+
+	// start the test
+	var startTime = beginTest();
+
+	var testURL = new Array();                      // Test URL lookup table
+	var testDesc = new Array();
+	var	testKeywords = new Array();					// Keyword lookup table
+
+	testURL[0] = "../performance_tests/perf_loadcomplexpages.asp";
+	testDesc[0] = "Load Complex Pages Performance Test";
+	testKeywords[0] = "performance html load complex pages";
+
+	testURL[1] = "../performance_tests/perf_loadtextbasedpages.asp";
+	testDesc[1] = "Load Text-based Pages Performance Test";
+	testKeywords[1] = "performance html load text pages";
+
+	testURL[2] = "../performance_tests/perf_xmlcss.asp";
+	testDesc[2] = "Load XML/CSS Page Performance Test";
+	testKeywords[2] = "performance xml css load style sheets";
+
+	testURL[3] = "../performance_tests/perf_xmlxsl.asp";
+	testDesc[3] = "Load XML/XSL Page  Performance Test";
+	testKeywords[3] = "performance xml xsl load style sheets";
+
+	testURL[4] = "../performance_tests/perf_javavm.asp";
+	testDesc[4] = "Java VM Performance Test";
+	testKeywords[4] = "performance processing java virtual machine vm";
+
+	testURL[5] = "../performance_tests/perf_flash.asp";
+	testDesc[5] = "Flash Animation Performance Test";
+	testKeywords[5] = "performance animation flash macromedia";
+
+	testURL[6] = "../performance_tests/perf_shockwave.asp";
+	testDesc[6] = "Shockwave Animation Performance Test";
+	testKeywords[6] = "performance animation shockwave macromedia";
+
+	testURL[7] = "../performance_tests/perf_realaudio.asp"; 
+	testDesc[7] = "RealAudio 5.0 and G2 Performance Tests";
+	testKeywords[7] = "performance audio realaudio 5.0 G2";
+
+	testURL[8]  = "../quicktime/perf_quicktime.asp";   
+	testDesc[8] = "QuickTime Video Performance Tests";
+	testKeywords[8] = "performance video quicktime apple";
+
+	testURL[9] = "../quicktime/perf_qteffects.asp";
+	testDesc[9] = "QuickTime Effects Performance Test";
+	testKeywords[9] = "performance video quicktime apple effects";
+
+	testURL[10] = "../performance_tests/perf_realvideo.asp";  
+	testDesc[10] = "RealVideo G2 Performance Tests";
+	testKeywords[10] = "performance video real realvideo G2 streaming";
+
+	testURL[11] = "../performance_tests/perf_wmt.asp"; 
+	testDesc[11] = "Windows Media Video Performance Tests";
+	testKeywords[11] = "performance video windows media streaming wmt";
+	 
+	testURL[12] = "../performance_tests/perf_vrml.asp";
+	testDesc[12] = "VRML Performance Test";
+	testKeywords[12] = "performance 3d vrml";
+
+	testURL[13] = "../capabilities_tests/cap_video_flash.asp";
+	testDesc[13] = "Flash Animation Capability Test";
+	testKeywords[13] = "capability flash macromedia";
+
+	testURL[14] = "../capabilities_tests/cap_video_shockwave.asp";
+	testDesc[14] = "Shockwave Animation Capability Test";
+	testKeywords[14] = "capability shockwave macromedia";
+
+	testURL[15] = "../capabilities_tests/cap_audio_mp3.asp";
+	testDesc[15] = "MP3 Audio Capability Tests";
+	testKeywords[15] = "capability audio mp3";
+
+	testURL[16] = "../capabilities_tests/cap_audio_mp3_embedded.asp";
+	testDesc[16] = "Embedded MP3 Audio Capability Test";
+	testKeywords[16] = "capability audio mp3 embedded";
+
+	testURL[17] = "../capabilities_tests/cap_audio_realaudio50.asp";
+	testDesc[17] = "RealAudio 5.0 Capability Tests";
+	testKeywords[17] = "capability audio real readaudio 5.0 streaming";
+
+	testURL[18] = "../capabilities_tests/cap_audio_realaudio50_embedded.asp";
+	testDesc[18] = "Embedded RealAudio 5.0 Capability Test";
+	testKeywords[18] = "capability audio real readaudio 5.0 embedded streaming";
+
+	testURL[19] = "../capabilities_tests/cap_audio_realaudiog2.asp";
+	testDesc[19] = "RealAudio G2 Capability Tests";
+	testKeywords[19] = "capability audio real readaudio G2";
+
+	testURL[20] = "../capabilities_tests/cap_audio_realaudiog2_embedded.asp";
+	testDesc[20] = "Embedded RealAudio G2 Capability Test";
+	testKeywords[20] = "capability audio real readaudio G2 embedded streaming";
+
+	testURL[21] = "../capabilities_tests/cap_audio_wmt.asp";
+	testDesc[21] = "Windows Media Audio Capability Tests";
+	testKeywords[21] = "capability audio wma windows media streaming";
+
+	testURL[22] = "../capabilities_tests/cap_audio_wmt_embedded.asp";
+	testDesc[22] = "Embedded Windows Media Audio Capability Test";
+	testKeywords[22] = "capability audio wma windows media streaming embedded";
+
+	testURL[23] = "../capabilities_tests/cap_audio_aiff.asp";
+	testDesc[23] = "AIFF Audio Capability Test";
+	testKeywords[23] = "capability audio aiff";
+
+	testURL[24] = "../capabilities_tests/cap_audio_aiff_embedded.asp";
+	testDesc[24] = "Embedded AIFF Audio Capability Test";
+	testKeywords[24] = "capability audio aiff embedded";
+
+	testURL[25] = "../capabilities_tests/cap_audio_au.asp";
+	testDesc[25] = "AU Audio Capability Test";
+	testKeywords[25] = "capability audio au";
+
+	testURL[26] = "../capabilities_tests/cap_audio_au_embedded.asp";
+	testDesc[26] = "Embedded AU Audio Capability Test";
+	testKeywords[26] = "capability audio au embedded";
+
+	testURL[27] = "../capabilities_tests/cap_audio_midi.asp";
+	testDesc[27] = "MIDI Audio Capability Test";
+	testKeywords[27] = "capability audio midi";
+
+	testURL[28] = "../capabilities_tests/cap_audio_midi_embedded.asp";
+	testDesc[28] = "Embedded MIDI Audio Capability Test";
+	testKeywords[28] = "capability audio midi embedded";
+
+	testURL[29] = "../capabilities_tests/cap_audio_wave.asp";
+	testDesc[29] = "WAV Audio Capability Test";
+	testKeywords[29] = "capability audio wav";
+
+	testURL[30] = "../capabilities_tests/cap_audio_wave_embedded.asp";
+	testDesc[30] = " Embedded WAV Audio Capability Test";
+	testKeywords[30] = "capability audio wav embedded";
+
+	testURL[31] = "../capabilities_tests/cap_video_mpeg.asp";
+	testDesc[31] = "MPEG Video Capability Tests";
+	testKeywords[31] = "capability video mpeg";
+
+	testURL[32] = "../capabilities_tests/cap_video_quicktime.asp";
+	testDesc[32] = "QuickTime Video Capability Tests";
+	testKeywords[32] = "capability video quicktime apple";
+
+	testURL[33] = "../capabilities_tests/cap_video_quicktime_embed.asp";
+	testDesc[33] = "Embedded QuickTime Video Capability Test";
+	testKeywords[33] = "capability video quicktime apple embedded";
+
+	testURL[34] = "../capabilities_tests/cap_video_realvideog2.asp";
+	testDesc[34] = "RealVideo G2 Capability Tests";
+	testKeywords[34] = "capability video real realvideo G2 streaming";
+
+	testURL[35] = "../capabilities_tests/cap_video_realvideog2_embedded.asp";
+	testDesc[35] = "Embedded RealVideo G2 Capability Test";
+	testKeywords[35] = "capability video real realvideo G2 embedded streaming";
+
+	testURL[36] = "../capabilities_tests/cap_video_wmt.asp";
+	testDesc[36] = "Windows Media Video Capability Tests";
+	testKeywords[36] = "capability video wmt windows media streaming";
+
+	testURL[37] = "../capabilities_tests/cap_video_wmt_embed.asp";
+	testDesc[37] = "Embedded Windows Media Video Capability Test";
+	testKeywords[37] = "capability video wmt windows media embedded streaming";
+
+	testURL[38] = "../capabilities_tests/cap_image_gif.asp";
+	testDesc[38] = "GIF Image Capability Tests";
+	testKeywords[38] = "capability image gif animated transparent";
+
+	testURL[39] = "../capabilities_tests/cap_image_jpeg.asp";
+	testDesc[39] = "JPEG Image Capability Tests";
+	testKeywords[39] = "capability image jpeg progressive";
+
+	testURL[40] = "../capabilities_tests/cap_image_png.asp";
+	testDesc[40] = "PNG Image Capability Tests";
+	testKeywords[40] = "capability image png transparent";
+
+	testURL[41] = "../capabilities_tests/cap_model_metastream.asp";
+	testDesc[41] = "MetaStream Capability Test";
+	testKeywords[41] = "capability 3d metastream metacreations";
+
+	testURL[42] = "../capabilities_tests/cap_model_vrml.asp";
+	testDesc[42] = "VRML Capability Test";
+	testKeywords[42] = "capability 3d vrml";
+
+	testURL[43] = "../html40comp/html40main.asp";
+	testDesc[43] = "HTML 4.0 Compatibility Tests";
+	testKeywords[43] = "compatibility html 4.0 css style sheets";
+
+	testURL[44] = "../html32comp/html32main.asp";
+	testDesc[44] = "HTML 3.2 Compatibility Tests";
+	testKeywords[44] = "compatibility html 3.2";
+
+	testURL[45] = "../capabilities_tests/cap_xmlcss.asp";
+	testDesc[45] = "XML/CSS Compatibility Test";
+	testKeywords[45] = "compatibility xml css style sheets";
+
+	testURL[46] = "../capabilities_tests/cap_xmlxsl.asp";
+	testDesc[46] = "XML/XSL Compatibility Test";
+	testKeywords[46] = "compatibility xml xsl style sheets";
+
+	testURL[47] = "../performance_tests/perf_wmt7.asp";
+	testDesc[47] = "Windows Media Player 7 Performance Test";
+	testKeywords[47] = "performance video media player";
+
+	testURL[48] = "../performance_tests/perf_acrobat.asp";
+	testDesc[48] = "Adobe Acrobat Performance Test";
+	testKeywords[48] = "performance adobe acrobat pdf";
+
+	// perform some searches
+
+	var matches = 0;
+	
+	document.writeln('<center><h4>Search Results</h4></center>');	
+	document.writeln('<table cellspacing="0" cellpadding="2" bgcolor="#D6DDE4" border="1" align="center">');
+
+	var searchCount = 200;
+
+	for (var p = 0; p < searchCount; p++)
+	{
+		progress(p + 1, searchCount);
+
+		matches +=  FindIt(testURL, testKeywords, testDesc, "3D", p == 0);
+
+		matches +=  FindIt(testURL, testKeywords, testDesc, "PDF", p == 0);
+			
+		matches +=  FindIt(testURL, testKeywords, testDesc, "QuickTime", p == 0);
+
+		matches +=  FindIt(testURL, testKeywords, testDesc, "RealAudio", p == 0);
+
+		matches +=  FindIt(testURL, testKeywords, testDesc, "Windows Media", p == 0);
+
+		matches +=  FindIt(testURL, testKeywords, testDesc, "Image", p == 0);
+
+		matches +=  FindIt(testURL, testKeywords, testDesc, "Flash", p == 0);
+
+		matches +=  FindIt(testURL, testKeywords, testDesc, "Shockwave", p == 0);
+
+		matches +=  FindIt(testURL, testKeywords, testDesc, "Media Player", p == 0);
+
+	}
+
+	document.write('</table>');
+
+	document.writeln('<center><p>Total matches = ' + matches + '</p></center>');
+
+	// stop the test
+	thisTime = (new Date()).getTime() - startTime;
+
+	if (parent.frames[0])
+		parent.frames[0].document.jsTest.search.value =  thisTime;
+	else
+		alert('Elapsed time = ' + thisTime);
+}
+
+// -->
+</script>
+
+</HEAD>
+<BODY  bgcolor="#FFFFFF">
+
+<script type="text/javascript">   
+<!--
+
+	Search();
+
+	// run next part of test
+	if (parent.frames[1])
+		setTimeout('parent.frames[1].location = "sort_array.html"', '2000');
+
+// -->
+</script>
+
+<!-- Copyright &copy; 2000 Ziff Davis Media Inc.  All rights reserved. -->
+
+</BODY>
+</HTML>

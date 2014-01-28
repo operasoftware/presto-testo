@@ -1,0 +1,47 @@
+<html>
+<head>
+<script src="reportresult.js"></script>
+<script>
+var d1, s1;
+var nodes = new Array();
+var levels = 10;
+
+function normalize(n)
+{
+    for (var i = 0; i < n; i++)
+    {
+	nodes[i].normalize();
+    }
+    return "Done";
+}
+
+function createElements(n)
+{
+	for (var i = 0; i < n; i++)
+	{
+		nodes[i] = document.createElement("div");
+		var parent = nodes[i];
+		for (var j = 0; j < levels; j++)
+		{
+			d1 = document.createElement("div");
+			parent.appendChild(d1);
+			d1.appendChild (document.createTextNode("text " + j));
+			parent = d1;
+		}
+	}
+}
+</script>
+</head>
+
+<body>
+<script>
+var iterations = 10000;
+createElements(iterations);
+var before = new Date();
+var result = normalize(iterations);
+var after = new Date();
+document.writeln( [ result, after - before ] + '<br>' );
+reportresult( "normalize", after-before );
+</script>
+</body>
+</html>

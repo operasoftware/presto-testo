@@ -1,0 +1,41 @@
+<html>
+<head>
+<title>Compiler test: logical expressions</title>
+</head>
+
+<body>
+<!-- problem here was that && and || left too many values on the stack -->
+<p>Should write "true".</p>
+
+<pre>
+<script>
+var _testcase = "";
+var _tests_passed = 0;
+var _tests_failed = 0;
+
+function test( feature, value, expected, info )
+{
+    var isok = typeof(value) == "number" && typeof(expected) == "number" && isNaN(value) && isNaN(expected)
+	|| value == expected;
+    if (!isok) 
+    {
+	_tests_failed++;
+	document.writeln( "*** FAILED while testing: " + _testcase + ": " + feature );
+    }
+    else
+	_tests_passed++;
+    return isok;
+}
+
+try {
+
+var as = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
+ document.writeln( test( 'Long string', as.length, 46 ) );
+
+} catch (e) { document.writeln("Foo"); }
+
+//document.writeln(test)
+</script>
+</pre>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<html>
+
+<head>
+<title>Compiler test: eval</title>
+</head>
+
+<body>
+
+<p>Should print "37" once, but not twice, and if you have the JS console up you
+should see a syntax error message (because 'return' is used on the global level).</p>
+
+<script>
+document.writeln( eval('37') );
+document.writeln( eval('return 37') );
+</script>
+
+</body>
+</html>

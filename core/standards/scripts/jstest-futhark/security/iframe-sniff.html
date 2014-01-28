@@ -1,0 +1,32 @@
+<html>
+<body>
+<p>This test case checks that it is not possible to read the contents
+of an iframe by means of a javascript: URL in a link.  This bug was
+reported by Andreas Sandblad to support, we do not have a bug number
+for it.</p>
+
+<p>This example reads cookies but it can also be used to read
+directory contents and the usual set of things.</p>
+
+<p>When you click on the link 'sniff' you should either get an alert
+with a cookie (fetched from www.google.com), or nothing should happen.
+If you get an alert then the security check is not working; if a
+cookie is displayed then something is definitely wrong, otherwise, it
+may be that www.google.com no longer supplies cookies.  If nothing
+happens, then security has not been violated.</p>
+
+<p>(If you do not see content in the iframe, then the test will not
+work.  Also, if you are loading this page from www.google.com then the
+test will not behave as described.)</p>
+
+<center>
+<a href="javascript:alert(document.cookie)" target=sniff>Sniff</a>
+</center>
+<br>
+<br>
+<br>
+
+<iframe name=sniff src="http://www.google.com" height=100></iframe><br>
+
+</body>
+</html>

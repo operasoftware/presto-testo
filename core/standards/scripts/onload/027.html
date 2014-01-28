@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html><head>
+	<title>doing document.write from IFRAME onload </title>
+	<script>_conf_timeout_delay=2500;</script>
+	<script src="_files/lib.js" ></script>
+	<script>/*var expected = [
+			'load in window [support.html] (in IFRAME [support.html])',
+			'load in window [009.html]',
+			'load in window [009.html]'
+		];*/
+		var number_of_events=0;
+		function iframe_onload(e, str){
+			load.call( this, e, str);
+			// in IE8 this is called recursively until it goes OOM without the number_of_events check..
+			number_of_events++;
+			if(number_of_events>1)return;
+
+			document.getElementsByTagName('iframe')[0].contentDocument.open();
+			document.getElementsByTagName('iframe')[0].contentDocument.write('<html><body onload="top.load(event, \' on written BODY\')"><p>Hello doc.write!</p></body></html>');
+			// without this close() call both Firefox and Safari get into a never-stops-loading state
+			document.getElementsByTagName('iframe')[0].contentDocument.close();
+		}
+		onload=load;
+	</script>
+
+</head>
+<body>
+<iframe src="_files/support.html" onload="iframe_onload(event, 'on <iframe>');"> IFRAME must be supported and enabled </iframe>
+
+	<p>FAILED (This TC requires JavaScript enabled)</p>
+
+</body></html>

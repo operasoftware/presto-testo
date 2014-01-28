@@ -1,0 +1,74 @@
+<html>
+
+<head>
+<title>Compiler test: WHILE loops</title>
+</head>
+
+<body>
+
+<script>
+function f() 
+{
+    var a=10, b=0;
+    while (a > 0) 
+    { 
+	b=b+2; 
+	--a;
+    }
+    return b; 
+}
+
+function g()
+{
+    var a=10, b=0;
+    while (a > 0) 
+    { 
+	b=b+1; 
+	if (b&1) continue;
+	--a;
+	if (a == 5) break;
+    }
+    return b; 
+}
+
+function h()
+{
+    var a=10, b=0;
+foo:
+    while (true)
+      while (a > 0) 
+      { 
+	  b=b+1; 
+  	  if (b&1) continue foo;
+	  --a;
+	  if (a == 5) break foo;
+      }
+    return b; 
+}
+
+function i() 
+{
+    var a=10, b=0;
+    while (a > 0)
+    { 
+	b=b+2; 
+	if (--a == 5) return b;
+    }
+    return b; 
+}
+</script>
+
+<p>Should print "20 10 10 10".</p>
+
+<pre>
+<script>
+document.writeln( f() );
+document.writeln( g() );
+//document.writeln( g.toString().split("\n").join("<br>") );
+document.writeln( h() );
+document.writeln( i() );
+</script>
+</pre>
+
+</body>
+</html>

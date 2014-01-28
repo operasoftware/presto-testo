@@ -1,0 +1,46 @@
+<html>
+
+<head>
+<script>
+var urls = [
+"http://www.usatoday.com",
+"http://www.dell.com",
+"http://www.aol.com/",
+"http://www.microsoft.com/",
+"http://www.lycos.com/",
+"http://www.amazon.com/",
+"http://www.altavista.com/",
+"http://www.ebay.com/",
+"http://www.zdnet.com",
+"http://www.mapquest.com",
+"http://www.sony.com/index3.htm",
+"http://www.shokwave.com",
+"http://www.verisign.com",
+"http://rccl.com",
+"http://www.acer.com",
+"http://www.yahoo.com" ];
+
+</script>
+</head>
+
+<body>
+<script>
+var w = window.open( "http://www.ibm.com", "bullseye", "location=yes" );
+var n = 0;
+
+function startloop()
+{
+  var theurl;
+
+  theurl = urls[n];
+  n = (n + 1) % urls.length;
+  setTimeout( "startloop();", 15000 );
+  window.open( theurl, "bullseye" );
+}
+
+startloop();
+
+</script>
+</body>
+
+</html>

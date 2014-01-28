@@ -1,0 +1,35 @@
+<html>
+<head>
+<script src="reportresult.js"></script>
+<script>
+var a, d1;
+
+function getOwnerDocument(n)
+{
+    for (var i = 0; i < n; i++)
+    {
+	a = d1.ownerDocument;
+    }
+    return "Done";
+}
+
+function createElement()
+{
+	d1 = document.createElement("div");
+	document.body.appendChild(d1);
+
+}
+</script>
+</head>
+
+<body>
+<script>
+createElement();
+var before = new Date();
+var result = getOwnerDocument(1000000);
+var after = new Date();
+document.writeln( [ result, after - before ] + '<br>' );
+reportresult( "ownerDocument", after-before );
+</script>
+</body>
+</html>

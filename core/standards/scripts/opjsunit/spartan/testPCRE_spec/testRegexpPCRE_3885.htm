@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <title>testPCRE_spec.js#testRegexpPCRE_3885</title>
+  <script src="../opjsunit.js"></script>
+  <script>function testRegexpPCRE_3885() {
+  var regexp = /^$/mg;
+  assertEquals("", regexp.exec("abc\x0d\x0dxyz").toString()); //test 3938
+  assertEquals("", regexp.exec("abc\n\x0dxyz  ").toString()); //test 3939
+  assertEquals(null, regexp.exec("** Failers ")); //test 3940
+  assertEquals("", regexp.exec("abc\x0d\nxyz").toString()); //test 3941
+}</script>
+  <p>Failed (Script did not run)</p>
+  <script>
+function test() {
+  var passed = false;
+  var error = "";
+  var output_element = document.getElementsByTagName("p")[0];
+  try {
+    for (var count=0; count<100; count++) {
+      testRegexpPCRE_3885();
+    }
+    passed = true;
+  } catch(e) {
+    error = e.message;
+  }
+  try {top.opener.rr(passed)} catch(e){}
+  if (passed) {
+    output_element.textContent = "PASS"
+    output_element.style.color = "green";
+  } else {
+    output_element.textContent = "FAIL: " + error + " (failed on iteration " + count + ")"
+    output_element.style.color = "red";
+  }
+}
+window.addEventListener("load", test, false);
+  </script>
+</html>

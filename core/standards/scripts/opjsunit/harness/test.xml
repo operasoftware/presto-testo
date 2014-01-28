@@ -1,0 +1,13 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:py="http://genshi.edgewall.org/">
+  <title>${title}</title>
+  <script src="../opjsunit.js"/>
+  <py:choose test="run_individually">
+  <script py:when="True">${function_code}</script>
+  <script py:when="False" src="${test_filename}"></script>
+  </py:choose>
+  <p>Failed (Script did not run)</p>
+  <script>
+    ${harness_code}
+  </script>
+</html>

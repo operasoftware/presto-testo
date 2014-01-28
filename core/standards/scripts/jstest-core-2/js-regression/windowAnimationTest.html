@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!--
+   Created by torstein@opera.com
+-->
+<html>
+   <head>
+      <link rel="stylesheet" type="text/css" href="../styles/mystyle.css" media="screen" />
+      <title>Window Animation test</title>
+      <script type="text/javascript" src="../regression-lib/testbase.js"></script>
+      <script type="text/javascript" src="scripts/windowAnimationTest.js"></script>
+   </head>
+   <body>
+      <h1>Window moveTo() test</h1>
+      <p>
+         You should see a little window bouncing around the screen, starting in 
+         the upper left corner and moving down to the lower right corner, then bouncing upwards
+         and so on.
+      </p>         
+      <p>
+         This animation behaves <strong>very</strong> differently on Mac, Windows and Linux.
+      </p>
+      <p>
+         <strong>Linux</strong><br />
+         It seems to work best on the Linux version. It moves correctly and the animation is quite
+         smooth. It is possible to create several windows, but the old one dies and remains visible on the screen
+         when creating a new one. The new window starts its journey from where the old one stopped.
+      </p>
+      <p>
+         <strong>Windows</strong><br />
+         It works alright, but the screen update is really poor. It flashes and it doesn't go in the 
+         correct directons, it seems to refuse going diagonally, quite often. It's not possible to open 
+         multiple anim. windows.
+      </p>
+      <p>
+         <strong>Mac</strong><br />
+         Works better than on Windows :-). Moving all around the screen, not just limited to the Opera area.
+         However, it goes a lot faster when moving over the "Opera area". Opening new windows doesn't work, you
+         must close the anim window, in order to open a new one.
+      </p>
+      <a href="javascript:main( self )">Start window animation</a>
+      <a href="javascript:stopAnim()">Stop window animation</a>
+   </body>
+</html>

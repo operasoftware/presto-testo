@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <title>testPropertyValueTransfer_spec.js#testPropertyValueTransfer_400</title>
+  <script src="../opjsunit.js"></script>
+  <script>function testPropertyValueTransfer_400() {
+  /* Instructions: ESI_GET, ESI_GETN_IMM, ESI_PUTI_IMM. */
+  /* Failure: becomes-sparse at depth 1. */
+  var x;
+  x = {"1": {"a": {"0": 1, "c": 2}, "c": 2}, "0": {"a": {"0": 1, "c": 2}, "c": 2}, "c": 2};
+  for (var i = 0; i < 100; i++) {
+    var a = i % 2;
+    if (i === 99) {
+      x[10000] = 2;
+    }
+    x[a].a["0"] = 42;
+    assertEquals(42, x[a].a["0"]);
+  }
+}</script>
+  <p>Failed (Script did not run)</p>
+  <script>
+function test() {
+  var passed = false;
+  var error = "";
+  var output_element = document.getElementsByTagName("p")[0];
+  try {
+    for (var count=0; count<100; count++) {
+      testPropertyValueTransfer_400();
+    }
+    passed = true;
+  } catch(e) {
+    error = e.message;
+  }
+  try {top.opener.rr(passed)} catch(e){}
+  if (passed) {
+    output_element.textContent = "PASS"
+    output_element.style.color = "green";
+  } else {
+    output_element.textContent = "FAIL: " + error + " (failed on iteration " + count + ")"
+    output_element.style.color = "red";
+  }
+}
+window.addEventListener("load", test, false);
+  </script>
+</html>

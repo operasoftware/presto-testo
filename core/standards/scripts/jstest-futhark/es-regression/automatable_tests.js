@@ -1,0 +1,21 @@
+fileArray = [ "/core/standards/scripts/jstest-futhark/es-regression/arrayObjectTest.html",
+                  "/core/standards/scripts/jstest-futhark/es-regression/eval.html",
+                  "/core/standards/scripts/jstest-futhark/es-regression/boolean.html",
+		  "/core/standards/scripts/jstest-futhark/es-regression/dateObjectTest.html",
+		  "/core/standards/scripts/jstest-futhark/es-regression/dateParseTest.html",
+		  "/core/standards/scripts/jstest-futhark/es-regression/exceptions.html",
+		  "/core/standards/scripts/jstest-futhark/es-regression/function.html",
+		  "/core/standards/scripts/jstest-futhark/es-regression/global.html",
+		  "/core/standards/scripts/jstest-futhark/es-regression/math.html",
+		  "/core/standards/scripts/jstest-futhark/es-regression/math2.html",
+		  "/core/standards/scripts/jstest-futhark/es-regression/math3.html",
+		  "/core/standards/scripts/jstest-futhark/es-regression/number.html",
+		  "/core/standards/scripts/jstest-futhark/es-regression/object.html",
+		  "/core/standards/scripts/jstest-futhark/es-regression/operators.html",
+		  "/core/standards/scripts/jstest-futhark/es-regression/regExpObjectTest.html",
+		  "/core/standards/scripts/jstest-futhark/es-regression/regExpTest.html",
+		  /* "/core/standards/scripts/jstest-futhark/es-regression/scripttype.html", */ /* stopped automatic run for some reason/hallvord 2007-03 */
+		  "/core/standards/scripts/jstest-futhark/es-regression/statements.html",
+		  "/core/standards/scripts/jstest-futhark/es-regression/stringObjectTest.html",
+		  /*"/core/standards/scripts/jstest-futhark/suspend.html",*/ /* only automatic in debug builds */
+		  "/core/standards/scripts/jstest-futhark/es-regression/syntax.html" ];

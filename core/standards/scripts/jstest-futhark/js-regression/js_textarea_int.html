@@ -1,0 +1,45 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/REC-html401/strict.dtd">
+<!--
+   Created by torstein@opera.com
+-->
+<html>
+   <head>
+      <title>Textarea Object Test - Interactive</title>
+      <script type="text/javascript" src="../regression-lib/testbase.js"></script>
+      <script type="text/javascript" src="scripts/js_textarea_int.js"></script>
+   </head>
+   <body>
+      <h1>Textarea Object Test - Interactive</h1>
+      <p>
+         The popup window is for reportrs from the different event
+         handlers. Click the links below and test the key event handlers
+         by entering something in the textarea.
+      </p>
+      <form id="theform" name="theform">
+         <textarea id="theta" name="theta"  
+                   rows="5" cols="55"
+                   onblur="reportEvent( 'onblur' );"
+                   onchange="reportEvent( 'onchange' );"
+                   onfocus="reportEvent( 'onfocus' );" 
+                   onkeydown="reportEvent( 'onkeydown' );"
+                   onkeypress="reportEvent( 'onkeypress' );"
+                   onkeyup="reportEvent( 'onkeyup' );"
+                   onselect="reportEvent( 'onselect' );"
+         >
+            This is Textarea object test textarea!
+         </textarea>
+      </form>
+      <h2>User interaction</h2>
+      <ol>
+         <li>
+            <a href="javascript:testSelectMethod();">Select text</a>
+         </li>
+         <li>
+            <a href="javascript:testBlurMethod();">Remove focus</a>
+         </li>
+         <li>
+            <a href="javascript:testFocusMethod();">Get focus in the Textarea</a>
+         </li>
+      </ol>
+   </body>
+</html>

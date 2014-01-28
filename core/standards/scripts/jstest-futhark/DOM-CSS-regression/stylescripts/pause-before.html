@@ -1,0 +1,72 @@
+<html>
+<head>
+<title>DOM tests -- CSS2 interface</title>
+</head>
+
+<body>
+
+<!-- All the HTML elements below this line are used by the tests -->
+
+<h1>This test will not work well if you don't have Speech Support</h1>
+
+<div style='border: dashed blue; pause-before: 49ms'>
+<div id='a' style='border: solid black'>
+Text inside div a
+</div>
+
+<div id='b' style='border: solid red; pause-before: inherit'>
+Text inside div b
+</div>
+
+<div id='c'>
+Text inside div c
+</div>
+</div>
+
+<!-- All the HTML elements above this line are used by the tests -->
+
+
+<script src="../../regression-lib/testbase.js"></script>
+<script>
+/* Regression tests for Opera's handling of the DOM 2 CSS2 interface
+ *
+ * 2002-04-11 / stighal
+ */
+
+var cvs = "$Id: pause-before.html 10655 2006-12-18 15:47:57Z hallvord $";
+
+testmodule( "CSS2 interface", cvs );
+
+var a, b, c;
+
+try {
+a = document.getElementById("a");
+b = document.getElementById("b");
+c = document.getElementById("c");
+
+testcase( "Reading properties" );
+
+test('getting pause-before from a with nothing specified', a.style.pauseBefore, "");
+test('getting pause-before from b with "inherit" specified', b.style.pauseBefore, "inherit");
+
+testcase( "Setting properties" );
+
+a.style.pauseBefore = "20%";
+test('reading pause-before on a set by script to "20%"', a.style.pauseBefore, "20%");
+
+testcase( "Negative tests" );
+
+c.style.pauseBefore = "foo";
+test('reading pause-before on a set by script to foo (illegal)', c.style.pauseBefore, "");
+
+c.style.pauseBefore = "outset";
+test('reading pause-before on a set by script to outset (illegal keyword)', c.style.pauseBefore, "");
+
+} catch (e) { exception( e ); }
+
+testmodule_finished();
+
+</script>
+
+</body>
+</html>

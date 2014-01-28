@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html><head>
+  <title>load event on FRAMESET where one frame never finishes loading</title>
+  <script>_conf_timeout_delay=1500;</script>
+  <script src="_files/lib.js" ></script>
+  <script>var expected = [
+      'load in window [support.html] (in FRAME#topframe [support.html])',
+      'load  on top FRAME  in window [017.html]'
+    ];
+    // fallback when nothing happens for spartan
+    var failtimeout = setTimeout(function(){try{top.opener.rr(false);}catch(e){}}, 3000);
+  </script>
+</head>
+<frameset rows="*,30%" onload="clearTimeout(failtimeout); load(event, ' on FRAMESET ')">
+<frame src="_files/support.html" onload="load(event, ' on top FRAME ')" id="topframe"> </frame>
+<frame src="_files/delay.php?url=support.html&time=100" onload="load(event, ' on bottom FRAME ')" id="bottomframe"></frame>
+</frameset></html>
+
+
+

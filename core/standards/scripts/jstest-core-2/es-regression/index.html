@@ -1,0 +1,58 @@
+<html>
+<head>
+<title>Opera ECMAScript test suite</title>
+</head>
+<body>
+<h1>Opera ECMAScript test suite</h1>
+
+<p>$Id: index.html 8647 2006-09-20 16:30:25Z hallvord $</p>
+
+<p><b>Noninteractive tests</b></p>
+<a href="all.html">Run all noninteractive tests</a><br>
+<br>
+<a href="syntax.html">§7: Syntax (lexing and parsing)</a><br />
+<a href="operators.html">§11 Operators</a> (known incomplete)<br />
+<a href="exceptions.html">§11.2: Exceptions</a><br/>
+<a href="statements.html">§12 Statements</a> (known incomplete)<br />
+<a href="global.html">§15.1: The Global object</a><br />
+<a href="object.html">§15.2: The Object object</a>  [VERIFIED COMPLETE]<br />
+<a href="function.html">§15.3: Functions and the Function object</a> (known incomplete)<br />
+<a href="arrayObjectTest.html">§15.4 Array Object Test</a><br />
+<a href="stringObjectTest.html">§15.5 String Object Test</a><br />
+<a href="boolean.html">§15.6: Booleans and Boolean objects</a><br />
+<a href="number.html">§15.7: Numbers and Number objects</a> (known incomplete)<br />
+<a href="math.html">§15.8: Math object #1 -- superficial tests</a><br />
+<a href="math2.html">§15.8: Math object #2 -- properties and assignment</a><br />
+<a href="math3.html">§15.8: Math object #3 -- methods</a><br />
+<a href="dateObjectTest.html">§15.9 Date Object Test</a><br />
+<a href="dateParseTest.html">§15.9 Date Parse Test</a><br />
+<a href="regExpObjectTest.html">§15.10 RegExp Object Test</a><br />
+<a href="regExpTest.html">§15.10 RegExp Test</a><br />
+<a href="regExpTestES4.html">§15.10 RegExp Test (ECMAScript 4 extensions)</a><br />
+<a href="scripttype.html">Support for type and language attribute on script tag</a><br />
+
+<p><b>Non-interactive but special case</b></p>
+
+<a href="vbscript.html">Subset VBScript support (Windows only)</a><br>
+<a href="suspend.html">Suspend on [[Get]], [[Put]], [[Call]], [[Construct]] (Debug builds only)</a><br />
+
+<p><b>Interactive tests</b></p>
+
+<a href="global_int.html">The window stays the same even if a new document is loaded into it (proxy problem)</a><br>
+<a href="syntax_int.html">Syntax errors signalled in linked and inline scripts</a><br>
+<a href="function_int.html">§15.3: Functions and the Function object</a><br />
+<a href="arrayObjectTest_int.html">§15.4 Array Object Test</a><br />
+<a href="for_in_continue.html"><b>continue</b> inside a <b>for...in</b> loop</a><br>
+<a href="for_in_window.html"><b>for...in</b> across the contents of a window</a><br>
+<a href="srcinfo.html">Ad-hoc tests for debug info</a><br>
+<a href="custom_error.html">JS console formats custom error objects nicely</a><br>
+
+<p><b>Bugs</b></p>
+
+<a href="bug-arrayjoin-156935.html">Bug: Array.prototype.join infinite loop on object overflow</a><br>
+<a href="bug-stringconcat-156935.html">Bug: String.prototype.concat infinite loop on object overflow</a><br>
+<a href="bug-regexparse-164204.html">Bug: Regex parser segment overflow & crash on certain long input</a><br>
+<a href="bug-scriptversion-180376.html">Bug: would crash on script type with bogus version parameter</a><br>
+
+</body>
+</html>

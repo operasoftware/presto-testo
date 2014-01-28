@@ -1,0 +1,28 @@
+<html>
+<head>
+<script src="../testconfig.js"></script>
+<script src="../regression-lib/testbase.js"></script>
+<title>DOM 2 HTML AreaElement </title>
+</head>
+
+<body>
+<p>
+<map id="myMap">
+<area id="myArea">
+<area id="myArea2" accesskey="a" alt="area" coords="20,20,20" href="http://www.opera.no" nohref shape="circle" tabindex=4 target="_top">
+</map>
+
+<img id="checker_img" src="../graphics/checker.gif" usemap="#myMap2" />
+<map id="myMap2">
+<area id="square1" />
+<area id="square2" />
+<area id="square3" />
+<area id="square4" />
+</map>
+</p>
+<script src="scripts/htmlareaelement.js"></script>
+<script>
+testGeneral();
+</script>
+</body>
+</html>

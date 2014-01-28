@@ -1,0 +1,23 @@
+<html>
+
+<head>
+<title>Compiler test: ARGUMENTS</title>
+</head>
+
+<body>
+
+<p>Should print "Burpelson Air Force Base,10" and "fnord,zapp"</p>
+
+<pre>
+<script>
+function f() { return arguments; }
+function g() { return h(); }
+function h() { return g.arguments; }
+
+document.writeln( f("Burpelson air force base",10) );
+document.writeln( g("fnord","zapp") );
+</script>
+</pre>
+
+</body>
+</html>

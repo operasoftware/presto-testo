@@ -1,0 +1,39 @@
+<html>
+<head>
+<script src="reportresult.js"></script>
+<script>
+var d1, s1;
+var nodes = new Array();
+
+function append(n)
+{
+    for (var i = 0; i < n; i++)
+    {
+	d1.appendChild (nodes[i]);	
+    }
+    return "Done";
+}
+
+function createElements()
+{
+	d1 = document.createElement("div");
+
+	for (var i = 0; i < 100000; i++)
+	{
+		nodes[i] = document.createElement("span");
+	}
+}
+</script>
+</head>
+
+<body>
+<script>
+createElements();
+var before = new Date();
+var result = append(100000);
+var after = new Date();
+document.writeln( [ result, after - before ] + '<br>' );
+reportresult( "appendChild", after-before );
+</script>
+</body>
+</html>

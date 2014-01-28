@@ -1,0 +1,6 @@
+$Id: TODO 10655 2006-12-18 15:47:57Z hallvord $
+
+Frame
+   * seems like onload event handler doesn't trigger
+     on <frameset> in Opera 7, build 2099.
+

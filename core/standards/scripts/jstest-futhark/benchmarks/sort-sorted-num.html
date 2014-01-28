@@ -1,0 +1,43 @@
+<!-- -*- mode: c++ -*-
+
+     Sort benchmark: sort an already-sorted array of numbers.
+
+     Adapted from http://umsu.de/jsperf/index2.php
+     2004-11-11 / lth -->
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+<title>Sort benchmark: already-sorted array of numbers</title>
+</head>
+<body>
+<script src="reportresult.js"></script>
+<script>
+function sort_test(a,loops) 
+{
+    for (var i=0; i<loops; i++)
+	a.sort();
+    return "Done";
+}
+
+function make(len)
+{
+    var a = new Array();
+    for (var i=0; i<len; i++) 
+	a[i] = i*33;
+    return a;
+}
+
+var before = new Date();
+var result = sort_test(make(1000),100);
+var after = new Date();
+
+document.writeln( new Array( result, after - before ) + '<br>' );
+
+reportresult( "sort already-sorted array[1000] of numbers 100 times", 
+	      after-before );
+</script>
+</body>
+</html>
+

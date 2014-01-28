@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <title>Removing slow-loading link rel="stylesheet" doesn't stop load delay</title>
+  <script src="/resources/testharness.js"></script>
+  <script src="/resources/testharnessreport.js"></script>
+  <div id="log"></div>
+  <link rel="stylesheet" href="_files/slice-and-dice.cgi?file=fast.css&parts=d4">
+  <script>
+    var t = async_test(undefined, {timeout:4000});
+
+    events = [];
+
+    var time = 0;
+
+    onload = t.step_func(function() {
+      document.body.style.width = "";
+      events.push("load");
+      assert_array_equals(events, ["DOMContentLoaded", "marker", "load"]);
+
+      assert_true(Date.now() - time > 1000, Date.now() - time);
+      t.done()
+    })
+
+    addEventListener("DOMContentLoaded",
+      //Run this in a timeout so it is reasonably sure it happens while we are
+      //spinning the event loop waiting for loading to complete
+      function() {setTimeout(t.step_func(function() {
+                  time = Date.now();
+                  events.push("DOMContentLoaded");
+
+                  var link = document.getElementsByTagName("link")[0];
+    
+                  document.body.style.width = "0";
+
+                  link.parentNode.removeChild(link);
+
+                  //This adds an event to the event queue that we can use as a marker to
+                  //determine exactly when the load event fires
+                  //We asssume setTimeout(foo,0) has no delay
+                  setTimeout(function() {
+                                     events.push("marker");
+                                   }, 0);
+      }), 200)}, false);
+  </script>

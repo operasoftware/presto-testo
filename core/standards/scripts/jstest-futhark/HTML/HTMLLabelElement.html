@@ -1,0 +1,31 @@
+<html>
+<head>
+<script src="../testconfig.js"></script>
+<script src="../regression-lib/testbase.js"></script>
+<title>DOM 2 HTML LabelElement</title>
+</head>
+
+<body>
+
+<form id="myForm" name="myForm">
+<label id="label1">
+<label id="label2" accessKey="M" for="inp1">
+<input id="inp1" type="text" name="firstInput"> 
+<input id="inp2" type="text" name="secondInput">
+</form>
+
+<form id="myForm2" name="myForm2">
+<input id="inp3" type="text" name="thirdInput">
+<label id="label_write">Write label</label>
+<input id="input_write" type="text" name="writeInput">
+</form>
+
+<div id="myDiv">
+</div>
+
+<script src="scripts/htmllabelelement.js"></script>
+<script>
+testGeneral();
+</script>
+</body>
+</html>

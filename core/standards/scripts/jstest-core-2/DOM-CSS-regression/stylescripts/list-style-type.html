@@ -1,0 +1,73 @@
+<html>
+<head>
+<title>DOM tests -- CSS2 interface</title>
+</head>
+
+<body>
+
+<!-- All the HTML elements below this line are used by the tests -->
+
+<ol>
+<li id='a'>
+Text inside li a
+</li>
+
+<li id='b' style='list-style-type: disc'>
+Text inside li b
+</li>
+
+<li id='c'>
+Text inside li c
+</li>
+</ol>
+
+<!-- All the HTML elements above this line are used by the tests -->
+
+
+<script src="../../regression-lib/testbase.js"></script>
+<script>
+/* Regression tests for Opera's handling of the DOM 2 CSS2 interface
+ *
+ * 2002-04-11 / stighal
+ */
+
+var cvs = "$Id: list-style-type.html 4838 2006-01-18 05:59:01Z hallvord $";
+
+testmodule( "CSS2 interface", cvs );
+
+var a, b, c;
+
+try {
+a = document.getElementById("a");
+b = document.getElementById("b");
+c = document.getElementById("c");
+
+testcase( "Reading properties" );
+
+test('getting list-style-type from a with nothing specified', a.style.listStyleType, "");
+test('getting list-style-type from b with top specified', b.style.listStyleType, "disc");
+
+testcase( "Setting properties" );
+
+a.style.listStyleType = "square";
+test('reading list-style-type on a set by script to square', a.style.listStyleType, "square");
+
+a.style.listStyleType = "hiragana";
+test('reading list-style-type on a set by script to hiragana', a.style.listStyleType, "hiragana");
+
+testcase( "Negative tests" );
+
+c.style.listStyleType = "foo";
+test('reading list-style-type on c set by script to foo (illegal)', c.style.listStyleType, "");
+
+c.style.listStyleType = "bold";
+test('reading list-style-type on d set by script to bold (illegal keyword)', c.style.listStyleType, "");
+
+} catch (e) { exception( e ); }
+
+testmodule_finished();
+
+</script>
+
+</body>
+</html>

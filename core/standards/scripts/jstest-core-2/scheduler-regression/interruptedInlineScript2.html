@@ -1,0 +1,16 @@
+<html>
+  <head>
+    <title>Interrupted Inline Script #2</title>
+  </head>
+
+  <body onclick="alert ('OK');">
+    <p>This document contains an inline script with a never ending loop.
+       It will never finish loading.  Please stop it (and pay attention
+       to Opera crashing or otherwise acting strangely.)
+    <p>When you've stopped the loading, please click anywhere on this
+       text and make sure that an alert saying "OK" is displayed.
+    <script>
+      document.write ("<" + "script>while (true);</" + "script>");
+    </script>
+  </body>
+</html>

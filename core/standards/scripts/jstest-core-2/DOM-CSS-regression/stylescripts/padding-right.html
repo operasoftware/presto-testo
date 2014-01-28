@@ -1,0 +1,70 @@
+<html>
+<head>
+<title>DOM tests -- CSS2 interface</title>
+</head>
+
+<body>
+
+<!-- All the HTML elements below this line are used by the tests -->
+
+<div style='border: dashed blue'>
+<div id='a' style='border: solid black'>
+Text inside div a
+</div>
+
+<div id='b' style='border: solid red; padding-right: 3cm'>
+Text inside div b
+</div>
+
+<div id='c'>
+Text inside div c
+</div>
+</div>
+
+<!-- All the HTML elements above this line are used by the tests -->
+
+
+<script src="../../regression-lib/testbase.js"></script>
+<script>
+/* Regression tests for Opera's handling of the DOM 2 CSS2 interface
+ *
+ * 2002-04-11 / stighal
+ */
+
+var cvs = "$Id: padding-right.html 4838 2006-01-18 05:59:01Z hallvord $";
+
+testmodule( "CSS2 interface", cvs );
+
+var a, b, c;
+
+try {
+a = document.getElementById("a");
+b = document.getElementById("b");
+c = document.getElementById("c");
+
+testcase( "Reading properties" );
+
+test('getting padding-right from a with nothing specified', a.style.paddingRight, "");
+test('getting padding-right from b with "3cm" specified', b.style.paddingRight, "3cm");
+
+testcase( "Setting properties" );
+
+a.style.paddingRight = "100px";
+test('reading padding-right on a set by script to "100px"', a.style.paddingRight, "100px");
+
+testcase( "Negative tests" );
+
+c.style.paddingRight = "foo";
+test('reading padding-right on a set by script to foo (illegal)', c.style.paddingRight, "");
+
+c.style.paddingRight = "outset";
+test('reading padding-right on a set by script to outset (illegal keyword)', c.style.paddingRight, "");
+
+} catch (e) { exception( e ); }
+
+testmodule_finished();
+
+</script>
+
+</body>
+</html>

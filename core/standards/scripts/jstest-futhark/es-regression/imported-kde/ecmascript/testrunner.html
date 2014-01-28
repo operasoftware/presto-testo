@@ -1,0 +1,12 @@
+<html>
+<body>
+<script src="base.js"></script>
+<script>
+if (window.opener && window.opener.testname)
+  document.writeln( '<script src="' + window.opener.testname + '"><' + '/script>' );
+else
+  document.writeln( 'NO TEST NAME!' );
+testsDone();
+</script>
+</body>
+</html>

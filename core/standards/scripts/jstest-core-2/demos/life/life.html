@@ -1,0 +1,356 @@
+<!-- John Conway's "Game of Life" in JavaScript/DOM
+     lth@opera.com
+     2002-08-05, 2002-09-06
+
+     For vastly more info about the Game of Life, see 
+     http://www.radicaleye.com/lifepage/
+
+     Issues at present:
+      - Opera does not allow .children to be used on tables or table rows,
+        this seems like a silly restriction, especially as appendChild
+        can be used to add a cell or a row
+      - Opera does not allow characterData.data to be written (or at least
+        the display is not updated), this seems like a bug.  After all it
+	can write nodeValue on the element.
+      - I use a lot of JS shorthands to set attributes but should probably
+        use setAttribute instead.
+      - The style object is cached incorrectly, so
+           alert( t.style );
+           t.style = "font-family: monospace; font-size: 10px"
+        does not work correctly
+      - If the table is wrapped in a DIV and the style is set on the DIV,
+        then the table must have font-size: inherit if the size is to be
+        propagated, but it will propagate both color and family without
+        that.  Mozilla wants inherit on all three to propagate them into
+        the table.  Our behavior seems to be inconsistent.
+      - Performance is stunningly bad if display optimization is not
+        enabled.  In general, this may be a place to start to assess the
+        performance of the DOM code
+
+     To do:
+      - 'Optimize' should be controlled by a checkbox
+      - Would be nice if we could control the board size interactively
+      - Would be nice to have functionality to place fixed patterns on the
+        board.
+
+Some basic patterns.
+
+  Oscillator:
+      ...
+      ooo
+      ...
+
+  Glider:
+      ooo
+      o..
+      .o.
+
+  Gosper gun:
+      ........................O...........
+      ......................O.O...........
+      ............OO......OO............OO
+      ...........O...O....OO............OO
+      OO........O.....O...OO..............
+      OO........O...O.OO....O.O...........
+      ..........O.....O.......O...........
+      ...........O...O....................
+      ............OO......................
+
+-->
+
+<html>
+<head>
+<script>
+// Configuration
+var blank=".";        // representation of empty space
+var nonblank="o";     // representation of nonempty space
+var rows=30;          // height of field
+var cols=30;          // width of field
+var delay=200;        // minimum milliseconds between generations
+var optimize=true;    // reduce DOM accesses
+// End configuration
+
+var get;              // function to get an element
+var put;              // function to update an element
+
+configure();          // Must call very early, becore creating any arrays
+
+var elementid = false;// True if TD elements need an ID
+var stopped=false;
+var thetable=null;
+var board_to_display=false;
+var board_at_present=false;
+var updates=new Array();
+
+function setup()
+{
+  var t = document.createElement("TABLE");
+  var tb = document.createElement("TBODY");  // MSIE needs this to display the table!
+  t.appendChild(tb);
+  for ( var i=0 ; i < rows ; i++ )
+  {
+    var r = document.createElement("TR");
+    for ( var j=0 ; j < cols ; j++ )
+    {
+      var c = document.createElement("TD");
+      c.onclick = clickhandler(i,j);
+      if (elementid)
+        c.id = "" + i + "-" + j;
+      c.appendChild( document.createTextNode( blank ) );
+      r.appendChild( c );
+    }
+    tb.appendChild( r );
+  }
+  thetable = t;
+  t.style.fontFamily = "monospace";
+  t.style.color = "red";
+  t.style.fontWeight = "bold";
+  document.body.appendChild(t);
+
+  document.body.appendChild(document.createElement("BR"));
+  document.body.appendChild(document.createElement("BR"));
+
+  var b = document.createElement("INPUT");
+  b.type = "button";
+  b.value = "PLAY";
+  b.onclick = play;
+  document.body.appendChild(b);
+
+  var b = document.createElement("INPUT");
+  b.type = "button";
+  b.value = "STOP";
+  b.onclick = stop;
+  document.body.appendChild(b);
+
+  document.body.appendChild(document.createElement("BR"));
+
+  if (optimize)
+  {  
+    var b = new Array( rows );
+    for ( var i=0 ; i < rows ; i++ )
+    {
+      b[i] = new Array( cols );
+      for ( var j=0 ; j < cols ; j++ )
+        b[i][j] = 0;
+    }
+    board_at_present = b;
+  }
+}
+
+function stop()
+{
+  stopped=true;
+}
+
+function play()
+{
+  stopped=false;  
+  move();
+}
+
+function clickhandler(i,j) 
+{ 
+  return function () { clicked(i,j); }; 
+}
+
+function clicked( i,j )
+{
+  put(i,j,!get(i,j));
+  if (optimize)
+    updates.push( [i,j,get(i,j)] );
+}
+
+function move()
+{
+  if (stopped) 
+    return;
+
+  scheduledisplay();
+
+  var b;
+  if (!optimize)
+    b = getboard();
+  else
+  {
+    for ( var i=0 ; i < updates.length ; i++ )
+    {
+      var x = updates[i];
+      board_at_present[x[0]][x[1]] = x[2];
+    }
+    updates = new Array();
+    b = board_at_present;
+  }
+
+  var c = new Array( rows );
+  for ( var i=0 ; i < rows ; i++ )
+  {
+    c[i] = new Array(cols);
+    for ( var j=0 ; j < cols ; j++ )
+    {
+      switch (neighbors(b,i,j))
+      {
+      case 2 : c[i][j] = b[i][j]; break;
+      case 3 : c[i][j] = 1; break;
+      default: c[i][j] = 0; break;
+      }
+    }
+  }
+
+  readydisplay( c );
+}
+
+function scheduledisplay()
+{
+  board_to_display = false;
+  setTimeout( "showmove()", delay );
+}
+
+function readydisplay( c )
+{
+  board_to_display = c;
+}
+
+function showmove()
+{
+  setboard( board_to_display );
+  if (optimize)
+    board_at_present = board_to_display;
+  move();
+}
+
+function neighbors(b,i,j)
+{
+  return b[i > 0 ? i-1 : rows-1][j > 0 ? j-1 : cols-1] +
+         b[i > 0 ? i-1 : rows-1][j] +
+	 b[i > 0 ? i-1 : rows-1][j < cols-1 ? j+1 : 0] + 
+         b[i][j > 0 ? j-1 : cols-1] +
+         b[i][j < cols-1 ? j+1 : 0] +
+         b[i < rows-1 ? i+1 : 0][j > 0 ? j-1 : cols-1] + 
+         b[i < rows-1 ? i+1 : 0][j] + 
+         b[i < rows-1 ? i+1 : 0][j < cols-1 ? j+1 : 0];
+}
+
+function getboard()
+{
+  var b = new Array( rows );
+  for ( var i=0 ; i < rows ; i++ )
+  {
+    b[i] = new Array( cols );
+    for ( var j=0 ; j < cols ; j++ )
+      b[i][j] = get(i,j);
+  }
+  return b;
+}
+
+function setboard(c)
+{
+  if (!optimize)
+  {
+    for ( var i=0 ; i < rows ; i++ )
+      for ( var j=0 ; j < cols ; j++ )
+        put(i,j,c[i][j]);
+  }
+  else
+  {
+    for ( var i=0 ; i < rows ; i++ )
+      for ( var j=0 ; j < cols ; j++ )
+        if (board_at_present[i][j] != c[i][j])
+          put(i,j,c[i][j]);
+  }
+}
+
+/* Browser detection */
+
+function isOpera()
+{
+   return window.opera && document.implementation.hasFeature;
+}
+
+function isExplorer()
+{
+   return (navigator.appName == "Microsoft Internet Explorer" &&
+           navigator.userAgent.indexOf("Opera") == -1);
+}
+
+function isMozilla()
+{
+   return navigator.userAgent.indexOf("Mozilla/5.0") != -1 && 
+      navigator.userAgent.indexOf("rv:") != -1 &&
+      navigator.userAgent.indexOf("Opera") == -1;
+}
+
+function configure()
+{
+  if (isOpera())
+  {
+    get = operaGet;
+    put = operaPut;
+  }
+  else if (isMozilla())
+  {
+    get = mozillaGet;
+    put = mozillaPut;
+    elementid = true;
+  }
+  else if (isExplorer())
+  {
+    get = ie5Get;
+    put = ie5Put;
+    elementid = true;
+  }
+
+  if (!Array.prototype.push)  // Some IE versions
+    Array.prototype.push = function (x) { this[this.length] = x; };
+}
+
+/* DOM access -- varies among browsers */
+
+// Weird: why must I use rows.item(i) here?  Why not children[i]?
+// Weird: ditto cells.item(i)
+
+function operaGet(i,j)
+{
+// nodeValue works too
+//  return thetable.rows.item(i).cells.item(j).firstChild.nodeValue == nonblank;
+  return thetable.rows.item(i).cells.item(j).firstChild.data == nonblank;
+}
+
+function operaPut(i,j,v)
+{
+// Weird: why must I use replaceData?  Isn't data writeable?  It is in Mozilla, and in the spec.
+// nodeValue works too
+//  thetable.rows.item(i).cells.item(j).firstChild.nodeValue = (v ? nonblank : blank);
+  thetable.rows.item(i).cells.item(j).firstChild.replaceData( 0, 3, (v ? nonblank : blank) );
+}
+
+function mozillaGet(i,j)
+{
+  var elt = document.getElementById("" + i + "-" + j);
+  return elt.firstChild.data == nonblank;
+}
+
+function mozillaPut(i,j,v)
+{
+  var elt = document.getElementById("" + i + "-" + j);
+  elt.firstChild.data = (v ? nonblank : blank);
+}
+
+function ie5Get(i,j)
+{
+  var elt = document.getElementById("" + i + "-" + j);
+  return elt.firstChild.nodeValue == nonblank;
+}
+
+function ie5Put(i,j,v)
+{
+  var elt = document.getElementById("" + i + "-" + j);
+  elt.firstChild.nodeValue = (v ? nonblank : blank);
+}
+
+</script>
+</head>
+
+<body onload="setup()">
+</body>
+
+</html>

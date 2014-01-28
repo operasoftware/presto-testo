@@ -1,0 +1,28 @@
+<!-- See crosswindow.html for explanation -->
+<html>
+
+<head>
+<title>Crosswindow victim</title>
+<script>
+function test()
+{
+    setTimeout( "test2()", 4000 );
+}
+
+function test2()
+{
+    i = setInterval( "test3()", 1000 );
+}
+
+function test3()
+{
+    clearInterval(i);
+    alert( "It's OK now!" );
+}
+</script>
+</head>
+
+<body onload="test()">
+Victim: This will take about 5 seconds...
+</body>
+</html>

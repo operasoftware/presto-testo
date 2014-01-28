@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html><head>
+	<meta charset="UTF-8">
+	<title>  default action of cut event when there is no selection - no text change  - copy event on document</title>
+	<script src="_lib.js"></script>
+	<script>
+	
+/** default action of cut event when there is no selection - no text change */
+/* Events: copy */
+/* Test HTML: <form><input id="input_text" onfocus="this.selectionEnd=this.selectionStart" autofocus value="copied text"></form>*/
+/* Targets: document */
+/* paste data: "clipboard text" */
+function test(e){
+	var elm=e.target;
+  setTimeout(
+		function(){
+			result(elm.value===elm.defaultValue);
+		},
+		50
+	);
+}
+
+	</script>
+</head>
+<body>
+
+	<p>FAILED (This TC requires JavaScript enabled)</p>
+	<form><input id="input_text" onfocus="this.selectionEnd=this.selectionStart" autofocus value="copied text"></form>
+
+	<script>
+	var dataToPaste="clipboard text";
+	var externalPassCondition=null;
+	var eventTarget=document;
+	var eventType='copy';
+	window.onload=function(){
+		setupTest( document, 'copy', dataToPaste, externalPassCondition );
+	}
+	</script>
+</body></html>

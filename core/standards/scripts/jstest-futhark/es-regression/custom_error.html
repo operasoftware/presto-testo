@@ -1,0 +1,25 @@
+<html>
+<head>
+<title></title>
+<script type="text/javascript">
+function CustomException(message)
+{
+        this.message = message;
+        this.name = "CustomException";
+}
+
+CustomException.prototype = new Error();
+
+onload = function()
+{
+        throw new CustomException("This is a failure");
+}
+
+</script>
+</head>
+
+<body>
+<p>You should see an error in the JS console with name "CustomException"
+and message "This is a failure".</p>
+</body>
+</html>

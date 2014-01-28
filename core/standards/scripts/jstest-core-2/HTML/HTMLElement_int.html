@@ -1,0 +1,73 @@
+<html>
+<head>
+<script src="../testconfig.js"></script>
+<script src="../regression-lib/testbase.js"></script>
+<title>DOM 2 HTML Element </title>
+
+<style>
+
+address
+{
+  color:   red;
+}
+
+address:before
+{
+  content: "J";
+  color:   red;
+}
+
+address:after
+{
+  content: "X";
+  color:   red;
+}
+
+.c2
+{
+  color:   green;
+}
+
+#a2:after
+{
+  content: "Y";
+  color:   green;
+}
+
+address[title="t2"]:before
+{
+  content: "K";
+  color:   green;
+}
+
+.c3
+{
+  color:   blue;
+}
+
+#a4:after
+{
+  content: "Z";
+  color:   blue;
+}
+
+address[title="t3"]:before
+{
+  content: "L";
+  color:   blue;
+}
+
+</style>
+
+
+</head>
+
+<body>
+<address> A </address>
+<address id="a2" title="t2" lang="l2" dir="ltr" class="c2"> B </address>
+<address id="a3" title="t2" lang="l2" dir="ltr" class="c2"> C </address>
+
+<script src="scripts/htmlelement_int.js"></script>
+
+</body>
+</html>

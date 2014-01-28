@@ -1,0 +1,42 @@
+<html>
+<head>
+<script src="reportresult.js"></script>
+<script>
+var d1, s1;
+var nodes = new Array();
+
+function replace(n)
+{
+    for (var i = 0; i < n; i++)
+    {
+	d1.replaceChild (nodes[i], s1);
+	s1 = nodes[i];
+    }
+    return "Done";
+}
+
+function createElements()
+{
+	d1 = document.createElement("div");
+	s1 = document.createElement("span");
+	d1.appendChild (s1);
+	document.body.appendChild(d1);
+	for (var i = 0; i < 100000; i++)
+	{
+		nodes[i] = document.createElement("span");
+	}
+}
+</script>
+</head>
+
+<body>
+<script>
+createElements();
+var before = new Date();
+var result = replace(25000);
+var after = new Date();
+document.writeln( [ result, after - before ] + '<br>' );
+reportresult( "replaceChild", after-before );
+</script>
+</body>
+</html>

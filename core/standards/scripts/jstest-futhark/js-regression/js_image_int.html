@@ -1,0 +1,83 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/REC-html401/strict.dtd">
+<!--
+   Created by torstein@opera.com
+-->
+<html>
+   <head>
+      <title>Image Object Test - Interactive</title>
+      <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+      <script type="text/javascript" src="../regression-lib/testbase.js"></script>
+      <script type="text/javascript" src="scripts/js_image_int.js"></script>
+   </head>
+   <body>
+      <h1>Image Object Test - Interactive</h1>
+      <script type="text/javascript">showred( cvs );</script>
+      <p>
+         The popup window is for reports from the different event
+         handlers. You should have seen the 'small picture: onload() triggered' message
+         in the popup when loading this page.
+      </p>
+      <div>
+         <img id=myimg
+              src="../graphics/logo_z.gif"
+              alt="opera logo"
+              onabort="reportEvent( 'small picture: onabort' )"
+              onerror="reportEvent( 'small picture: onerror' )" 
+              onkeydown="reportEvent( 'small picture: onkeydown' )"      
+              onkeypress="reportEvent( 'small picture: onkeypress' )"      
+              onkeyup="reportEvent( 'small picture: onkeyup' )" 
+              onload="reportEvent( 'small picture: onload' )" 
+         >
+      </div>
+      <h2>User interaction</h2>
+      <h3>Eventhandlers</h3>
+      <ol>
+         <li>
+            ONABORT: When the user aborts the loading
+            of an image (for example by clicking a link or clicking the Stop button).
+         </li>
+         <li>
+            ONERROR: When a javascript runtime error occurs while the
+            image is loading.  <br><br>Case 1: This image does not exist, and you should see an onerror:
+            <img src="../graphics/nothere.gif" onerror="reportEvent( 'missing picture: onerror' )">
+	    <br><br>
+            Case 2: <a href="javascript:void(document.getElementById('myimg').src='../graphics/nothere.gif')">Set
+            src on image at top of the page to nonexisting image</a>, and you should see an onerror.
+         </li>
+         <li>
+            ONKEYDOWN, ONKEYPRESS, ONKEYUP:
+            Triggered when a key is pressed on the link.
+            e.g. navigating between the blocks using 'd' in Opera.
+            Should be triggered in the order listed here.
+         </li>
+         <li>
+            <a href="javascript:imageSwapNormal()">Swap the first image.</a>
+            Clicking the link several times should toggle the image src between
+            a standard Opera logo and a Linux Opera logo. This should also
+            trigger the onload() event handler.
+            <p>Bug in Opera 7 build 2093, #82306</p>
+         </li>
+         <li>
+            <a href="javascript:imageSwapCached()">Swap the first image.</a>
+            Same effect as the above, but this time, it uses a new constructed
+            image object's source to replace the original image source.
+            Clicking the link several times should toggle the image src between
+            a standard Opera logo and a Linux Opera logo. This should also
+            trigger the onload() event handler.
+            <p>Bug in Opera 7 build 2093, #82306</p>
+         </li>
+      </ol>
+      <div>
+         <img src="http://www.coresis.com/penguin/BIG.jpg"
+              alt="big picture"
+              name="mypicture"
+              onabort="reportEvent( 'big picture: onabort' )"
+              onerror="reportEvent( 'big picture: onerror' )" 
+              onkeydown="reportEvent( 'big picture: onkeydown' )"      
+              onkeypress="reportEvent( 'big picture: onkeypress' )"      
+              onkeyup="reportEvent( 'big picture: onkeyup' )" 
+              onload="reportEvent( 'big picture: onload' )" 
+         >
+      </div>
+   </body>
+</html>

@@ -1,0 +1,78 @@
+<script>
+/*foo="element"
+bar="myvalue"
+yetanother='myattr="foo"'
+more_content="hello, world" */
+/*
+alert(<element attr="baz'foo" another  = {bar} {yetanother}>
+        text content
+        {more_content}
+        <nested>
+         <nested-again>
+          <and-again>
+           finally inside
+          </and-again>
+          <empty />
+         </nested-again>
+        </nested>
+        <?xml pi inside content?>
+        <!-- a comment here -->
+        <![CDATA[XML CData that contains a <!-- comment --> and a <? processing instruction ?>]]>
+      </{foo}>);
+alert(<><element1/><element2 /></>);
+alert(<!--xml comment -->);
+alert(<![CDATA[XML CData]]>); */
+
+default xml namespace = "http://www.opera.com/e4x";
+
+//alert(<?xml processing instruction ?>);
+
+/*for each ( x in [1,2,3] )
+  document.writeln(x);
+switch (2)
+{
+case 1: document.writeln("case"); break;
+default: document.writeln("default"); break;
+}
+*/
+/* These are all valid */
+
+/* PrimaryExpression pp 40-43 */
+foo = new Number(17);
+bar = function () { return foo; }
+
+x = *;                             // PropertyIdentifier -> WildcardIdentifier
+x = *::*;                          // PropertyIdentifier -> QualifiedIdentifier
+x = *::foo;                        // PropertyIdentifier -> QualifiedIdentifier
+x = French::*;                     // PropertyIdentifier -> QualifiedIdentifier
+x = *::[foo + "foo"];              // PropertyIdentifier -> QualifiedIdentifier
+x = @foo;
+x = @*;
+x = @English::foo;
+x = @*::foo;
+x = @*::*;
+x = @English::[foo + "fnord"];
+x = @[foo];
+
+/* Left-hand side expressions pp 47-53 */
+
+x = foo.*;
+x = foo.@bar;
+x = foo.English::nonsense;
+x = foo.@English::*;
+x = foo..bar;
+x = foo..@*::*;
+x = foo.(3 + 27)
+x = bar().(3 + 27);
+
+foo.* = 37;
+foo.English::nonsense = 42;
+foo..bar = 37;
+foo..* = 37;
+foo.(3 + 27) = 37;
+bar().(3 + 27) = 37;
+foo.@bar = 37;
+foo.@bar::baz = 37;
+foo.@[3 + 27] = 37;
+
+</script>

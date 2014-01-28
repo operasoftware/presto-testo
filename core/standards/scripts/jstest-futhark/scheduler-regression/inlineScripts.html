@@ -1,0 +1,20 @@
+<html>
+  <head>
+    <title>Scheduler tests -- inline scripts</title>
+  </head>
+
+  <body>
+    <div id="container">
+    </div>
+    <script src="../regression-lib/testbase-non-inline.js"></script>
+    <script src="scripts/inlineScripts.js"></script>
+    <script>
+    testcase( 'Writing external scripts - wrap up' );
+      test ("Flag updated by external script", flag2, true); // used to be called directly after the document.write statement in external file above 
+      test ("Flag updated by external script after endtag", flag3, true);
+      test ("Flag updated by external script written by inline", flag4, true);
+
+      testmodule_finished ();
+    </script>
+  </body>
+</html>

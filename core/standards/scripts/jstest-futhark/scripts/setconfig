@@ -1,0 +1,7 @@
+#!/bin/sh
+rm -f testconfig.new
+(sed -e "s@var \$\$protocol_and_host *= *\"[^\\\"]*\"@var \$\$protocol_and_host = \"$1\"@" -e "s@var \$\$base *= *\"[^\\\"]*\"@var \$\$base = \"$2\"@" testconfig.js > testconfig.new) || (echo "FAILED TO REGENERATE FILE"; rm -f testconfig.new)
+if [ -f testconfig.new ]
+then
+  mv -f testconfig.new testconfig.js
+fi

@@ -1,0 +1,80 @@
+<html>
+<head>
+<title>DOM tests -- CSS2 interface</title>
+</head>
+
+<body>
+
+<!-- All the HTML elements below this line are used by the tests -->
+
+<div id='a'>
+Outset blue left border 3px wide.
+</div>
+
+<div id='b' style='border-left: thin solid red'>
+Thin solid red left border.
+</div>
+
+<div id='c' style='border-left-color: green'>
+Thick green left border.
+</div>
+
+<div id='d'>
+No borders
+</div>
+
+<!-- All the HTML elements above this line are used by the tests -->
+
+
+<script src="../../regression-lib/testbase.js"></script>
+<script>
+/* Regression tests for Opera's handling of the DOM 2 CSS2 interface
+ *
+ * 2002-04-11 / stighal
+ */
+
+var cvs = "$Id: border-left.html 4838 2006-01-18 05:59:01Z hallvord $";
+
+testmodule( "CSS2 interface", cvs );
+
+var a, b, c;
+
+try {
+a = document.getElementById("a");
+b = document.getElementById("b");
+c = document.getElementById("c");
+d = document.getElementById("d");
+
+testcase( "Reading properties" );
+
+test('getting border-left from a with nothing specified', a.style.borderLeft, "");
+test('getting border-left from b with a lot specified', b.style.borderLeft, "thin solid rgb(255, 0, 0)");
+
+testcase( "Setting properties" );
+
+a.style.borderLeft = "3px outset blue";
+test('reading border-left on a set by script', a.style.borderLeft, "3px outset rgb(0, 0, 255)");
+
+testcase( "Getting partial values" );
+
+test('reading border-left from c with color specified by style attribute', c.style.borderLeft, "rgb(0, 128, 0)");
+
+c.style.borderLeftWidth = "thick";
+test('reading border-left from c with color specified by style and width specified by script', c.style.borderLeft, "thick rgb(0, 128, 0)");
+
+testcase( "Negative tests" );
+
+d.style.borderLeft = "foo";
+test('reading border-left on d set by script to foo (illegal)', d.style.borderLeft, "");
+
+d.style.borderLeft = "bold";
+test('reading border-left on d set by script to bold (illegal keyword)', d.style.borderLeft, "");
+
+} catch (e) { exception( e ); }
+
+testmodule_finished();
+
+</script>
+
+</body>
+</html>

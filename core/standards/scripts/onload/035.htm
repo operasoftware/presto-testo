@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html><head>
+	<title>load events - IFRAME moved in DOM from its DOMContentLoaded</title>
+	<script src="_files/lib.js"></script>
+	<script>
+		window.onload=load;
+	</script>
+	<script>var expected = [ /* Firefox style */
+			'DOMContentLoaded in IFRAME in window [035.htm]',
+			'load in window [035.htm]', /* this happens here because the IFRAME was removed from the document, no reason to delay load waiting for it */
+			'DOMContentLoaded in IFRAME in window [035.htm]', /* but then it was appended again, and fires another DOMContentLoaded.. */
+			'DOMContentLoaded in IFRAME in window [035.htm]',
+			'DOMContentLoaded in IFRAME in window [035.htm]',
+			'DOMContentLoaded in IFRAME in window [035.htm]',
+			'DOMContentLoaded in IFRAME in window [035.htm]',
+			'DOMContentLoaded in IFRAME in window [035.htm]',
+			'DOMContentLoaded in IFRAME in window [035.htm]',
+			'DOMContentLoaded in IFRAME in window [035.htm]',
+			'DOMContentLoaded in IFRAME in window [035.htm]',
+			'DOMContentLoaded in IFRAME in window [035.htm]',
+			'DOMContentLoaded in IFRAME in window [035.htm]',
+			'DOMContentLoaded in IFRAME in window [035.htm]',
+			'DOMContentLoaded in IFRAME in window [035.htm]',
+			'DOMContentLoaded in IFRAME in window [035.htm]',
+			'DOMContentLoaded in IFRAME in window [035.htm]',
+			'DOMContentLoaded in IFRAME in window [035.htm]',
+			'DOMContentLoaded in IFRAME in window [035.htm]',
+			'DOMContentLoaded in IFRAME in window [035.htm]',
+			'DOMContentLoaded in IFRAME in window [035.htm]',
+			'load in IFRAME in window [035.htm]',  /* once we stop moving it, onload inside it will fire, ..... */
+			'load on <IFRAME> in window [035.htm]' /* ....followed by onload on the <iframe></iframe> element */
+		];
+		var counter=20; // this could go on forever, we need to stop it after 'counter' number of iterations
+		function iframeDCLHandler(e){
+			load( e, 'in IFRAME' );
+			if( e.type==='DOMContentLoaded' ){
+				counter --;
+				if(counter<=0){
+					e.target.removeEventListener(e.type, e.target.defaultView.test, false);
+				}else{
+					var frame=e.target.defaultView.frameElement.parentNode.removeChild(e.target.defaultView.frameElement);
+					document.body.insertBefore(frame, document.getElementsByTagName('p')[0]);
+					document.body.appendChild(frame); // why give the implementation too easy a time?
+				}
+			}
+		}
+	</script>
+</head>
+<body>
+	<p>FAILED (This TC requires JavaScript enabled)</p>
+	<iframe src="_files/iframe-contents-DCL-remover.html" onload="load(event, 'on <IFRAME>')"></iframe>
+</body></html>

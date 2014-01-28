@@ -1,0 +1,46 @@
+<!-- Regression tests for Opera's spoofing of MSIE 5.0 
+     Somewhat dependent on my host system, we can fix this
+     by using strategic regexps.
+  -->
+
+<html>
+<head>
+<title>Testing | MSIE 5.0 on NT 4.0 spoofing</title>
+<link rel="stylesheet" type="text/css" href="../styles/mystyle.css" media="screen" />
+<script src="../regression-lib/testbase.js"></script>
+</head>
+
+<body>
+<script>
+var cvs = "$Id: msie-spoof.html 10655 2006-12-18 15:47:57Z hallvord $";
+
+showred( "Testing MSIE 5.0 spoofing." );
+showred( cvs );
+show( "" );
+
+try {
+  test( "navigator.appCodeName", navigator.appCodeName, "Mozilla" );
+  test( "navigator.appName", navigator.appName, "Microsoft Internet Explorer" );
+  test( "navigator.appVersion", navigator.appVersion, 
+        "4.0 (compatible; MSIE 5.0; Windows NT 4.0)" );
+  tdef( "navigator.javaEnabled", navigator.javaEnabled );
+  tdef( "navigator.language", navigator.language );
+  tdef( "navigator.browserLanguage", navigator.browserLanguage );
+  tdef( "navigator.mimeTypes", navigator.mimeTypes );
+  test( "navigator.platform", navigator.platform, "Win32" );
+  tdef( "navigator.plugins", navigator.plugins );
+  tdef( "navigator.taintEnabled", navigator.taintEnabled );
+  test( "navigator.userAgent", navigator.userAgent, 
+        "Mozilla/4.0 (compatible; MSIE 5.0; Windows NT 4.0)" );
+  show( "" );
+}
+catch (e) {
+  show( "" );
+  showred( "EXCEPTION: TESTS FAILED TO EXECUTE." );
+  show( "" );
+}
+
+showred( "Done!" );
+</script>
+</body>
+</html>

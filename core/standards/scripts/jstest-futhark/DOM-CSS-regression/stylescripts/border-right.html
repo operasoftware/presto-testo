@@ -1,0 +1,80 @@
+<html>
+<head>
+<title>DOM tests -- CSS2 interface</title>
+</head>
+
+<body>
+
+<!-- All the HTML elements below this line are used by the tests -->
+
+<div id='a'>
+Outset blue right border 3px wide.
+</div>
+
+<div id='b' style='border-right: thin solid red'>
+Thin solid red right border.
+</div>
+
+<div id='c' style='border-right-color: green'>
+Thick green right border.
+</div>
+
+<div id='d'>
+No borders.
+</div>
+
+<!-- All the HTML elements above this line are used by the tests -->
+
+
+<script src="../../regression-lib/testbase.js"></script>
+<script>
+/* Regression tests for Opera's handling of the DOM 2 CSS2 interface
+ *
+ * 2002-04-11 / stighal
+ */
+
+var cvs = "$Id: border-right.html 91659 2011-04-07 11:38:40Z bratell $";
+
+testmodule( "CSS2 interface", cvs );
+
+var a, b, c;
+
+try {
+a = document.getElementById("a");
+b = document.getElementById("b");
+c = document.getElementById("c");
+d = document.getElementById("d");
+
+testcase( "Reading properties" );
+
+test('getting border-right from a with nothing specified', a.style.borderRight, "");
+test('getting border-right from b with a lot specified', b.style.borderRight, "thin solid red");
+
+testcase( "Setting properties" );
+
+a.style.borderRight = "3px outset blue";
+test('reading border-right on a set by script', a.style.borderRight, "3px outset blue");
+
+testcase( "Getting partial values" );
+
+test('reading border-right from c with color specified by style attribute', c.style.borderRight, "green");
+
+c.style.borderRightWidth = "thick";
+test('reading border-right from c with color specified by style and width specified by script', c.style.borderRight, "thick green");
+
+testcase( "Negative tests" );
+
+d.style.borderRight = "foo";
+test('reading border-right on d set by script to foo (illegal)', d.style.borderRight, "");
+
+d.style.borderRight = "bold";
+test('reading border-right on d set by script to bold (illegal keyword)', d.style.borderRight, "");
+
+} catch (e) { exception( e ); }
+
+testmodule_finished();
+
+</script>
+
+</body>
+</html>

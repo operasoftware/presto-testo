@@ -1,0 +1,26 @@
+<html>
+<head>
+<script src="../testconfig.js"></script>
+<script src="../regression-lib/testbase.js"></script>
+<title>DOM 2 HTML FormElement </title>
+</head>
+
+<body>
+<form id="myForm">
+  <input id="h0" type="reset" value="initial">
+  <input id="h1" type="hidden" value="initial">
+  <input id="h2" type="radio" value="radio">
+  <input type="radio" value="initial"  checked>
+  <input id="h3" type="text" value="initial">
+  <textarea id="h4">initial</textarea>
+  <select id="h5" size=2>
+    <option value="pompel">p1</option>
+    <option value="pilt" selected>p2</option>
+  </select>
+</form>
+<form id="myForm2" action="gogo" method="post" enctype="multipart/form-data" accept-charset="utf-8" accept="text/xml" name="f2">
+  <input type="hidden">
+</form>
+<script src="scripts/htmlformelement.js"></script>
+</body>
+</html>

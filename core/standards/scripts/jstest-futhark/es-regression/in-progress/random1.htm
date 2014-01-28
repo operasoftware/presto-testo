@@ -1,0 +1,71 @@
+<html>
+<head>
+<title>Test Math.random() for return of 1.0</title>
+</head>
+
+<body bgcolor="#dfdfdf" text="#000000" link="#0000ff" vlink="#800080" alink="#ff0000">
+<BR>
+Test case for bug 70205.  Submitted by s-chalmers@hotspot.freeserve.co.uk.
+<BR>
+Test for return of 1.0 by Math.random()
+<form name='progress'>
+ <input name='soFar' size=10 type=text value="">
+ <input name='theResult' size=50 type=text value="">
+ <input name='reStart' type='button' value="Do Not Press" onclick='location.reload()'>
+</form>
+<BR>
+<NOSCRIPT>
+*** JavaScript required ***
+</NOSCRIPT>
+<SCRIPT language='javascript'>
+<!--
+
+function randTest()
+{
+ var i=0,r,step,found=0;
+
+ var tLimit=500000;
+
+ document.forms[0].theResult.value='Testing...';
+ window.status="";
+
+ for(i=0,step=0; i<tLimit; i++,step++)
+ { 
+
+  if((i & 0x1388) == 0x1388)
+  {
+   window.status=Math.round((i/tLimit)*100)+'%  done';
+   document.forms[0].soFar.value=Math.round((i/tLimit)*100)+'% done';
+  }
+  if( Math.floor(Math.random()*10)==10 )
+  { 
+   found++;
+   if(confirm("After a mere "+step+" calls, Math.random() returned 1.0\n\nContinue?")==false)
+    i=tLimit;
+
+   step=0;
+  }
+
+ } 
+
+ if(i==tLimit)
+ {
+  document.forms[0].theResult.value='End of test: ' + (found>0 ? 'Failed' : 'Passed');
+   if(found)
+    document.forms[0].theResult.value+=' '+found+' Errors from '+tLimit+' calls.';
+ }
+ else
+  if(i>tLimit)
+   document.forms[0].theResult.value='User abort.';
+ 
+ document.forms[0].reStart.value="Test Again";
+
+}
+
+setTimeout("randTest()",2000);
+
+//-->
+</SCRIPT>
+
+</body>
+</html>

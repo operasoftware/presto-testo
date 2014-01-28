@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html><head>
+	<meta charset="UTF-8">
+	<title>  clearData() method with text/html argument  - cut event on document</title>
+	<script src="_lib.js"></script>
+	<script>
+	
+/** clearData() method with text/html argument */
+/* Events: copy cut */
+/* paste data: "{'text/html':'<p>This is <b>formatted HTML</b> for copy/paste tests.</p>', 'text/plain': 'This is formatted HTML for copy/paste tests.'}" */
+/* External pass condition - clipboard data: "This is formatted HTML for copy/paste tests." */
+function test(e){
+	e.clipboardData.clearData('text/html');
+	e.preventDefault();
+}
+
+	</script>
+</head>
+<body>
+
+	<p>FAILED (This TC requires JavaScript enabled)</p>
+	<form><input autofocus id="input_text"></form>
+
+	<script>
+	var dataToPaste='{"text/html":"<p>This is <b>formatted HTML</b> for copy/paste tests.</p>", "text/plain": "This is formatted HTML for copy/paste tests."}';
+	var externalPassCondition="This is formatted HTML for copy/paste tests.";
+	var eventTarget=document;
+	var eventType='cut';
+	window.onload=function(){
+		setupTest( document, 'cut', dataToPaste, externalPassCondition );
+	}
+	</script>
+</body></html>

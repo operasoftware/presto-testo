@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html><head>
+	<title>load event test (stylesheet and DOMContentLoaded) </title>
+	<script src="_files/lib.js"></script>
+	<script>
+		if(document.addEventListener)document.addEventListener('DOMContentLoaded', load, false);
+		window.onload=load;
+	</script>
+	<script>var expected = [
+			'DOMContentLoaded in window [022.html]',
+			'load  on LINK in window [022.html]',
+			'load in window [022.html]'
+		];
+		/* we also allow the opposite order between load on LINK and DOMContentLoaded */
+		var expected2 = [
+			'load  on LINK in window [022.html]',
+			'DOMContentLoaded in window [022.html]',
+			'load in window [022.html]'
+		];
+	</script>
+	<link href="_files/present_data.css" rel="stylesheet" type="text/css" onload="load(event, ' on LINK')">
+</head>
+<body>
+
+	<p>FAILED (This TC requires JavaScript enabled)</p>
+
+</body></html>

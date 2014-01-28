@@ -1,0 +1,96 @@
+<!-- benchmark: initialize an array in four ways: left-to-right, right-to-left, and
+     both with an initial length and without -->
+<script src="reportresult.js"></script>
+<script>
+var asize = 8000;     // Multiple of 8, please
+var iterations = 10;  // How many times to do it
+
+function left_to_right(new_a)
+{
+  var unrolled_iters, unrolled_iter, offs, iter, a;
+
+  for ( iter=0 ; iter < iterations ; iter++ )
+  {
+    a = new_a();
+    unrolled_iters=asize/8;        
+    unrolled_iter=0;
+    while (unrolled_iters-- > 0)
+    {
+      offs=(unrolled_iter++)*8;
+      a[offs++] = 1;
+      a[offs++] = 2;
+      a[offs++] = 3;
+      a[offs++] = 4;
+      a[offs++] = 5;
+      a[offs++] = 6;
+      a[offs++] = 7;
+      a[offs++] = 8;
+    }
+  }
+  globala = a;
+  return "Done";
+}
+
+function right_to_left(new_a)
+{
+  var unrolled_iters, unrolled_iter, offs, iter, a;
+
+  for ( iter=0 ; iter < iterations ; iter++ )
+  {
+    a = new_a();
+    unrolled_iters=asize/8;        
+    unrolled_iter=asize/8;
+    while (unrolled_iters-- > 0)
+    {
+      offs=(unrolled_iter--)*8;
+      a[--offs] = 8;
+      a[--offs] = 7;
+      a[--offs] = 6;
+      a[--offs] = 5;
+      a[--offs] = 4;
+      a[--offs] = 3;
+      a[--offs] = 2;
+      a[--offs] = 1;
+    }
+  }
+  globala = a;
+  return "Done";
+}
+
+function err(k,n)
+{
+  document.writeln( "ERROR IN ARRAY!: at " + k + ": " + globala[k] + " should be " + n + "<br>" );
+}
+
+function checkarray()
+{
+  for ( i=0 ; i < globala.length/8; i+=8 )
+    for ( j=0 ; j < 8 ; j++ )
+      if (globala[i+j] != j+1) err(i+j,j+1);
+}
+
+function undefarray() { return new Array(); }
+function defarray()   { return new Array(asize); }
+
+function arrayinit1() { return left_to_right( undefarray ); }
+function arrayinit2() { return right_to_left( undefarray ); }
+function arrayinit3() { return left_to_right( defarray ); }
+function arrayinit4() { return right_to_left( defarray ); }
+
+function run_benchmark(name, thunk, done)
+{
+  var before = new Date();
+  var result = thunk();
+  var after = new Date();
+  document.writeln( [ name, result, after - before ] );
+  document.writeln( '<br>' );
+  checkarray();
+  reportresult( name, after-before, done );
+}
+
+run_benchmark("Array init left-to-right, size not given", arrayinit1, false);
+run_benchmark("Array init right-to-left, size not given", arrayinit2, false);
+run_benchmark("Array init left-to-right, size given", arrayinit3, false);
+run_benchmark("Array init right-to-left, size given", arrayinit4, true);
+
+</script>

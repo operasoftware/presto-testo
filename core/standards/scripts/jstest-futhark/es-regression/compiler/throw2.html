@@ -1,0 +1,35 @@
+<html>
+
+<head>
+<title>Compiler test: FINALLY</title>
+</head>
+
+<body>
+
+<p>Should print "4" and "41"</P>
+
+<pre>
+<script>
+var x="";
+
+function g()
+{
+  try { a() } 
+  catch(e) {
+    try { b() } 
+    catch(e) {} 
+    finally { x+="4"; return x; }; 
+    x+="2"; 
+  }
+  finally { x+="1" }
+  return x;
+}
+
+document.writeln( g() );
+//document.writeln( g );
+document.writeln( '<br>' + x );
+</script>
+</pre>
+
+</body>
+</html>

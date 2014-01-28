@@ -1,0 +1,49 @@
+<html>
+
+<head>
+<title>Compiler test: exception handling</title>
+</head>
+
+<body>
+<p>Should print "5" and "100".</p>
+
+<pre>
+<script>
+var zappa=0;
+
+// Mixed unstructured control flow: BREAK out of a TRY-FINALLY
+function f()
+{
+    var iters=0;
+    zappa=10;
+ out:
+    while (zappa > 0) 
+    {
+	while (zappa > 0) 
+	{
+	    try 
+	    {
+		do 
+		{
+		    ++iters;
+		    if (--zappa == 5)
+			break out;
+		} while (zappa);
+	    }
+	    finally 
+	    {
+		zappa=100;
+	    }
+	}
+	document.writeln("bomb");
+    }
+    return iters;
+}
+document.writeln(f());
+document.writeln(zappa);
+</script>
+</pre>
+
+</body>
+</html>
+

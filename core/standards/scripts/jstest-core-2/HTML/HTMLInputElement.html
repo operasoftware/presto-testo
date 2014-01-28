@@ -1,0 +1,22 @@
+<html>
+<head>
+<script src="../testconfig.js"></script>
+<script src="../regression-lib/testbase.js"></script>
+<script src="scripts/focus.js"></script>
+
+<title>DOM 2 HTML InputElement </title>
+</head>
+
+<body>
+<map name="myMap"></map>
+<form id="myForm">
+  <input id="myInput">
+  <input id="myInput2" type="text" value="verdi" accept="text/plain" accesskey="U" align="center" alt="abcd" disabled maxlength="10" name="navn" readonly size="5" onSelect="reg_call()">
+  <input id="myInput3" type="checkbox" value="verdi2" checked size="32" tabindex="10" onFocus="reg_call()" onBlur="unreg_call()">
+  <input id="myInput4" type="image" src="../graphics/operalogo_100x105.gif" usemap="myMap">
+</form>
+<form id="myForm2"></form>
+
+<script src="scripts/htmlinputelement.js"></script>
+</body>
+</html>

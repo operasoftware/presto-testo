@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <title>testObjectES5_spec.js#testDefineProperty_15</title>
+  <script src="../opjsunit.js"></script>
+  <script>function testDefineProperty_15()
+{
+    var o = { a: 1, b: 2, c: 3 }, x = "wrong";
+    var g = function () { return "new"; };
+    var s = function (y) { x = y; };
+    assertEquals(o, Object.defineProperty(o, "b", { get: g, set: s, enumerable: false, configurable: true }));
+    assertObjectEquals({ a: 1, b: "new", c: 3 }, o);
+    assertDontEnum(o, "b");
+    assertEquals("new", o.b);
+    o.b = 5;
+    assertEquals("new", o.b);
+    assertEquals(5, x);
+    assertTrue(delete o.b);
+    assertFalse("b" in o);
+}</script>
+  <p>Failed (Script did not run)</p>
+  <script>
+function test() {
+  var passed = false;
+  var error = "";
+  var output_element = document.getElementsByTagName("p")[0];
+  try {
+    for (var count=0; count<100; count++) {
+      testDefineProperty_15();
+    }
+    passed = true;
+  } catch(e) {
+    error = e.message;
+  }
+  try {top.opener.rr(passed)} catch(e){}
+  if (passed) {
+    output_element.textContent = "PASS"
+    output_element.style.color = "green";
+  } else {
+    output_element.textContent = "FAIL: " + error + " (failed on iteration " + count + ")"
+    output_element.style.color = "red";
+  }
+}
+window.addEventListener("load", test, false);
+  </script>
+</html>

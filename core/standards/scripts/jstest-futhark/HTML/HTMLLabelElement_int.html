@@ -1,0 +1,24 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html><head>
+	<title> HTMLLabelElement test: setting htmlFor or the for attribute </title>
+</head>
+<body>
+
+	<p>FAILED (This TC requires JavaScript enabled)</p>
+	<form action="" name="form1">
+		<p><label>Clicking here should focus input: </label><input id="t1"></p>
+		<p><label>Clicking here should focus input: </label><input id="t2"></p>
+	</form>
+
+	<script type="text/javascript">
+	
+	function test(){
+		var log=document.getElementsByTagName('p')[0].firstChild;
+		document.getElementsByTagName('label')[0].htmlFor = 't1';
+		document.getElementsByTagName('label')[1].setAttribute( 'for', 't2');
+		log.data='Click the text below to test. Each line should focus the corresponding input.';
+	}
+	window.onload=test;
+	</script>
+
+</body></html>

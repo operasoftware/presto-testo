@@ -1,0 +1,68 @@
+<html>
+<head>
+<title>DOM tests -- CSS2 interface</title>
+</head>
+
+<body>
+
+<!-- All the HTML elements below this line are used by the tests -->
+
+<div id='a'>
+Text inside div a
+</div>
+
+<div id='b' style='white-space: nowrap'>
+Text inside div b
+</div>
+
+<div id='c'>
+Text inside div c
+</div>
+
+<!-- All the HTML elements above this line are used by the tests -->
+
+
+<script src="../../regression-lib/testbase.js"></script>
+<script>
+/* Regression tests for Opera's handling of the DOM 2 CSS2 interface
+ *
+ * 2002-04-11 / stighal
+ */
+
+var cvs = "$Id: white-space.html 4838 2006-01-18 05:59:01Z hallvord $";
+
+testmodule( "CSS2 interface", cvs );
+
+var a, b, c;
+
+try {
+a = document.getElementById("a");
+b = document.getElementById("b");
+c = document.getElementById("c");
+
+testcase( "Reading properties" );
+
+test('getting white-space from a with nothing specified', a.style.whiteSpace, "");
+test('getting white-space from b with "nowrap" specified', b.style.whiteSpace, "nowrap");
+
+testcase( "Setting properties" );
+
+a.style.whiteSpace = "pre";
+test('reading white-space on a set by script to "pre"', a.style.whiteSpace, "pre");
+
+testcase( "Negative tests" );
+
+c.style.whiteSpace = "foo";
+test('reading white-space on a set by script to foo (illegal)', c.style.whiteSpace, "");
+
+c.style.whiteSpace = "outset";
+test('reading white-space on a set by script to outset (illegal keyword)', c.style.whiteSpace, "");
+
+} catch (e) { exception( e ); }
+
+testmodule_finished();
+
+</script>
+
+</body>
+</html>

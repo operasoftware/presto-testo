@@ -1,0 +1,89 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html><head>
+	<title>User JavaScript tests</title>
+	
+	<script>/*event listener test script #1*/</script>
+	<script>/*event listener test script #2*/</script>
+	<script src="test.js" onload="testJSOnloadRan1=true;"></script>
+	<script>var scriptRewriteSuccessful=false;</script>
+	<script>scriptExecutionStopped=false;</script>
+	<script src="test.js?2" onload="testJSOnloadWasCancelled=false;"></script>
+	
+	<script src="../regression-lib/testbase.js"></script>
+</head>
+<body>
+
+	<p>FAILED (This TC requires JavaScript enabled)</p>
+	<p>Note: to run the test use <a href="user.js">this script</a> as your User JavaScript.</p>
+	
+	<script type="text/javascript">
+	var cvs = "$Id: userjs.html 10631 2006-12-16 03:00:02Z hallvord $";
+
+	var log=document.getElementsByTagName('p')[0].firstChild;
+	testmodule('User JavaScript support', cvs);
+	if( ! window.isTestUserJSInstalled ){
+		log.data='FAILED - install user javascript first!';
+		testmodule_finished();
+	}else{
+		testcase('defineMagic*');
+		
+		var defMVGetPassed=false;
+		test( 'defineMagicVariable #1', defMVGetPassed, true );
+		
+		var setterFunctionRan=false;
+		var defMVSetPassed=true;
+		test( 'defineMagicVariable #2', setterFunctionRan, true );
+		
+		function defMFPassed(){return false;}
+		test( 'defineMagicFunction #1', defMFPassed(1), true );
+		test( 'defineMagicFunction #2', defineMagicFunctionArgumentsOK, true );
+		
+		testcase('Before/AfterScript event listener');
+		test( 'beforeScriptFunctionRan', beforeScriptFunctionRan, true );
+		test( 'beforeScriptFunctionArgumentsOK', beforeScriptFunctionArgumentsOK, true );
+		test( 'beforeScriptFunctionWasRemoved', beforeScriptFunctionWasRemoved, true );
+		test( 'afterScriptFunctionRan', afterScriptFunctionRan, true );
+		test( 'afterScriptFunctionArgumentsOK', afterScriptFunctionArgumentsOK, true );
+		test( 'afterScriptFunctionWasRemoved', afterScriptFunctionWasRemoved, true );
+		test( 'beforeExternalScriptFunctionRan', beforeExternalScriptFunctionRan, true );
+		test( 'beforeExternalScriptFunctionArgumentsOK', beforeExternalScriptFunctionArgumentsOK, true );
+		test( 'beforeExternalScriptFunctionWasRemoved', beforeExternalScriptFunctionWasRemoved, true );
+		test( 'scriptRewriteSuccessful', scriptRewriteSuccessful, true );
+		test( 'scriptExecutionStopped', scriptExecutionStopped, true );
+		test( 'beforeEventLoadFired', beforeEventLoadFired, true );
+		test( 'afterEventLoadFired', afterEventLoadFired, true );
+		test( 'beforeEventListenerLoadFired', beforeEventListenerLoadFired, true );
+		test( 'afterEventListenerLoadFired', afterEventListenerLoadFired, true );
+		test( 'testJSOnloadRan1', testJSOnloadRan1, true );
+		test( 'testJSOnloadWasCancelled', testJSOnloadWasCancelled, true );
+		
+		/* Js for the javascript: url events */
+		location.href='javascript:var javascriptURLRewritten=false';
+		location.replace('javascript:var javascriptURLCancelled=false;"FAILED to cancel javascript URL"');
+		location.replace('javascript:"FAILED to cancel javascript URL return value"');
+		
+		testcase('Override history navigation mode');
+		test( '#1', sOHNMPassed1, true, 'This test is expected to fail on re-load' );
+		test( '#2', sOHNMPassed2, true );
+		
+		log.data='';
+		if( ! document.body.appendChild ) testmodule_finished(); /* just in case we have something with User JS but without DOM ??! */
+	}
+	
+	onload=function(){
+		// document.write / writeln will now overwrite document, fix them
+		document.write=document.writeln=function(s){var tmp=document.createElement('div');tmp.innerHTML=s;while(tmp.hasChildNodes()){document.body.appendChild(tmp.childNodes[0]);}}
+		
+		testcase( 'Before/AfterJavascriptURL' );
+/* The four tests below are run from onload since javascript: URLs are executed asynchronously */
+		test( 'beforeJSUrlListenerRan', beforeJSUrlListenerRan, true );
+		test( 'afterJSUrlListenerRan', afterJSUrlListenerRan, true );
+		test( 'javascriptURLRewritten', javascriptURLRewritten, true );
+		test( 'javascriptURLCancelled', javascriptURLCancelled, true );
+		testmodule_finished();
+		
+	}
+	
+	</script>
+
+</body></html>

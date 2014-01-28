@@ -1,0 +1,28 @@
+<html>
+<head>
+<script src="../testconfig.js"></script>
+<script src="../regression-lib/testbase.js"></script>
+
+<title>DOM 2 HTML Table Element </title>
+</head>
+
+<body>
+<p>
+  <table id="myTable"></table>
+  <table border=1 id="myTable2" align="right" bgcolor="red" cellpadding="1" cellspacing="1" 
+    frame="below" rules="rows" summary="summary" width="100%">
+    <caption align="left">Caption</caption>
+	<thead><tr><td>H</td></tr></thead>
+	<tfoot><tr><td>F</td></tr></tfoot>
+	<tbody><tr><td>R
+	  <table>
+	    <tr><td>Intern</td></tr>
+	    <tr><td>I</td><td>Intern</td></tr>
+	  </table>
+	</td></tr></tbody>
+  </table>
+</p>
+
+<script src="scripts/htmltableelement.js"></script>
+</body>
+</html>

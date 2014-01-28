@@ -1,0 +1,32 @@
+<html>
+<head>
+<script>
+function kablam( n )
+{
+  if (n == 0)
+    return new Array();
+  else
+    return new Array( kablam( n-1 ), kablam( n-1 ) );
+}
+
+function run_kablam()
+{
+  var x = document.getElementById( "nana" );
+  var n = parseInt( x.value );
+  if (n > 0)
+    kablam( n );
+  else
+    alert( 'Foo!' + n );
+}
+</script>
+</head>
+
+<body>
+Given an "n", allocate a tree containing 2<sup style="font-size: smaller">n</sup> nodes<br>
+<form>
+n = <input type=text id="nana"> 
+<input type=button onclick="run_kablam();" value="Click me">
+</form>
+</body>
+</html>
+

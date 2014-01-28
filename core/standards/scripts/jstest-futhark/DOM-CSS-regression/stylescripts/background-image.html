@@ -1,0 +1,72 @@
+<html>
+<head>
+<title>DOM tests -- CSS2 interface</title>
+</head>
+
+<body>
+
+<!-- All the HTML elements below this line are used by the tests -->
+
+<div id='a'>
+Background image with fish motif
+</div>
+
+<div id='b' style='background-image: url("chess.png")'>
+Background image with chess motif
+</div>
+
+<div id='c'>
+No background
+</div>
+
+<!-- All the HTML elements above this line are used by the tests -->
+
+
+<script src="../../regression-lib/testbase.js"></script>
+<script>
+/* Regression tests for Opera's handling of the DOM 2 CSS2 interface
+ *
+ * 2002-04-11 / stighal
+ */
+
+var cvs = "$Id: background-image.html 10655 2006-12-18 15:47:57Z hallvord $";
+
+testmodule( "CSS2 interface", cvs );
+
+var a, b, c;
+
+href = document.location.href;
+path_prefix = href.substr(0, href.lastIndexOf("/") + 1);
+
+try {
+a = document.getElementById("a");
+b = document.getElementById("b");
+c = document.getElementById("c");
+
+testcase( "Reading properties" );
+
+test('getting background-image from a with nothing specified', a.style.backgroundImage, "");
+test_expect_failure('getting background-image from b with "url(chess.png)" specified', 148016, b.style.backgroundImage, "url(" + path_prefix + "chess.png)");
+
+testcase( "Setting properties" );
+
+a.style.backgroundImage = "url(fish.jpg)";
+test_expect_failure('reading background-image on a set by script to "url(fish.jpg)"', 148016, a.style.backgroundImage, "url(" + path_prefix + "fish.jpg)" );
+
+testcase( "Negative tests" );
+
+c.style.backgroundImage = "foo";
+test('reading background-image on c set by script to foo (illegal)', c.style.backgroundImage, "");
+
+c.style.backgroundImage = "bold";
+test('reading background-image on d set by script to bold (illegal keyword)', c.style.backgroundImage, "");
+
+} catch (e) { exception( e ); }
+
+testmodule_finished();
+
+</script>
+
+</body>
+</html>
+

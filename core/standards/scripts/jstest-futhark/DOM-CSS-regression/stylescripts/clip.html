@@ -1,0 +1,68 @@
+<html>
+<head>
+<title>DOM tests -- CSS2 interface</title>
+</head>
+
+<body>
+
+<!-- All the HTML elements below this line are used by the tests -->
+
+<div id='a' style='overflow: hidden'>
+Should not be clipped
+</div>
+
+<div id='b' style='clip: rect(0, 50, 20, auto)'>
+Should be clipped
+</div>
+
+<div id='c'>
+No clip
+</div>
+
+<!-- All the HTML elements above this line are used by the tests -->
+
+
+<script src="../../regression-lib/testbase.js"></script>
+<script>
+/* Regression tests for Opera's handling of the DOM 2 CSS2 interface
+ *
+ * 2002-04-11 / stighal
+ */
+
+var cvs = "$Id: clip.html 10655 2006-12-18 15:47:57Z hallvord $";
+
+testmodule( "CSS2 interface", cvs );
+
+var a, b, c;
+
+try {
+a = document.getElementById("a");
+b = document.getElementById("b");
+c = document.getElementById("c");
+
+testcase( "Reading properties" );
+
+test('getting clip from a with nothing specified', a.style.clip, "");
+test('getting clip from b with a lot specified', b.style.clip, "rect(0px, 50px, 20px, auto)");
+
+testcase( "Setting properties" );
+
+a.style.clip = "auto";
+test('reading clip on a set by script to auto', a.style.clip, "auto");
+
+testcase( "Negative tests" );
+
+c.style.clip = "foo";
+test('reading clip on a set by script to foo (illegal)', c.style.clip, "");
+
+c.style.clip = "outset";
+test('reading clip on a set by script to outset (illegal keyword)', c.style.clip, "");
+
+} catch (e) { exception( e ); }
+
+testmodule_finished();
+
+</script>
+
+</body>
+</html>

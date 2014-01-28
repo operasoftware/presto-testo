@@ -1,0 +1,15 @@
+<html>
+  <head>
+    <title>Interrupted Inline Script #3</title>
+  </head>
+
+  <body onclick="alert ('OK');">
+    <p>This document contains an external inline script that will take
+       some time to load (assuming Jens' private server is up and
+       answering.)  Please stop the loading right away (and pay attention
+       to Opera crashing or otherwise acting strangely.)
+    <p>When you've stopped the loading, please click anywhere on this
+       text and make sure that an alert saying "OK" is displayed.
+    <script src="http://sloth.whyi.org/~whiskey/cgi-bin/delay.py?delay=600"></script>
+  </body>
+</html>

@@ -1,0 +1,12 @@
+<html>
+  <head>
+    <title>Scheduler tests -- inline scripts written to other document</title>
+  </head>
+
+  <body onload="runTest ();">
+    <iframe id="iframe1" src="empty.html" style="position: absolute; width: 0px; height: 0px"></iframe>
+    <div id="container"></div>
+    <script src="../regression-lib/testbase-non-inline.js"></script>
+    <script src="scripts/inlineScriptsOtherDocument.js"></script>
+  </body>
+</html>

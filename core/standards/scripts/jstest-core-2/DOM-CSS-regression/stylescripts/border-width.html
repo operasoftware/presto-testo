@@ -1,0 +1,91 @@
+<html>
+<head>
+<title>DOM tests -- CSS2 interface</title>
+</head>
+
+<body>
+
+<!-- All the HTML elements below this line are used by the tests -->
+
+<div id='a'>
+4em wide border with default color and style.
+</div>
+
+<div id='b' style='border-width: 5px; border-style: solid; border-color: white;'>
+Solid white border 5px wide.
+</div>
+
+<div id='c' style='border-top-width: 1px'>
+1px wide border with default color and style.
+</div>
+
+<div id='d'>
+No borders.
+</div>
+
+<!-- All the HTML elements above this line are used by the tests -->
+
+
+<script src="../../regression-lib/testbase.js"></script>
+<script>
+/* Regression tests for Opera's handling of the DOM 2 CSS2 interface
+ *
+ * 2002-04-11 / stighal
+ */
+
+var cvs = "$Id: border-width.html 4838 2006-01-18 05:59:01Z hallvord $";
+
+testmodule( "CSS2 interface", cvs );
+
+var a, b;
+
+try {
+a = document.getElementById("a");
+b = document.getElementById("b");
+c = document.getElementById("c");
+d = document.getElementById("d");
+
+testcase( "Reading properties" );
+
+test('getting border-width from a with nothing specified', a.style.borderWidth, "");
+test('getting border-width from b with 5px specified', b.style.borderWidth, "5px");
+
+testcase( "Setting properties" );
+
+a.style.borderWidth = "4em";
+test('reading border-width on a set by script to 4em', a.style.borderWidth, "4em");
+
+testcase("Shorthand tests");
+
+test('getting border-width from c where only border-top-width is set by style', c.style.borderWidth, "");
+
+c.style.borderRightWidth = "2px";
+test('getting border-width from c where border-top-width is set by style and border-right-width is set by script', c.style.borderWidth, "");
+
+c.style.borderBottomWidth = "3px";
+c.style.borderLeftWidth = "2px";
+test('getting border-width from c where the border widths are set to {1px 2px 3px 2px}', c.style.borderWidth, "1px 2px 3px");
+
+c.style.borderBottomWidth = "1px";
+test('getting border-width from c where the border widths are set to {1px 2px 1px 2px}', c.style.borderWidth, "1px 2px");
+
+c.style.borderRightWidth = "1px";
+c.style.borderLeftWidth = "1px";
+test('getting border-width from c where the border widths are set to {1px 1px 1px 1px}', c.style.borderWidth, "1px");
+
+testcase( "Negative tests" );
+
+d.style.borderWidth = "foo";
+test('reading border-width on d set by script to foo (illegal)', d.style.borderWidth, "");
+
+d.style.borderWidth = "bold";
+test('reading border-width on d set by script to bold (illegal keyword)', d.style.borderWidth, "");
+
+} catch (e) { exception( e ); }
+
+testmodule_finished();
+
+</script>
+
+</body>
+</html>

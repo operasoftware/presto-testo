@@ -1,0 +1,28 @@
+<html>
+<body>
+<noscript>
+<h1 align=center>YOU MUST ENABLE SCRIPTING!</h1>
+</noscript>
+
+<p>This test case checks that it is not possible to read the contents
+of a frame from another frame using javascript: URLs.  This bug was
+reported by Andreas Sandblad to support, subsequently refined by
+Hallvord Steen.  We do not have a bug number for it.</p>
+
+<p>When you click on the link below you will be taken to a page with
+four frames.  In the rightmost frame there are three buttons.  Click
+them; you get a series of alerts.  The first alert, if shown,
+describes what will happen (what sniffed info you will see).  If you
+see the predicted info you have a problem; otherwise (even when you
+see no alerts) you are fine.</p>
+
+<p>(If you do not see content in the iframe, then the test will not
+work.  Also, you should load this file from a web server, not from
+your local disk, as in the latter case it's OK for the script to
+see the directory listing.)</p>
+
+<p><a href="frameset-sniff-fs.html">Go to the test!</a></p>
+
+</body>
+</html>
+

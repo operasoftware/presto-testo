@@ -1,0 +1,40 @@
+<!doctype html>
+<title>Location hash - set hash then go back in history and set hash many times with same value in one code block</title>
+<script src="/resources/testharness.js"></script><script src="/resources/testharnessreport.js"></script>
+<script>
+var t = async_test();
+var histlength;
+t.step(function() {
+    if( location.hash && location.hash != '#' ) {
+        location.href = location.href.replace(/#.*$/,'');
+        return;
+    }
+    histlength = history.length;
+});
+
+window.onload = function () {
+    setTimeout(completely_loaded, 100);  
+};
+function completely_loaded() {
+    t.step(function() {
+        location.hash = '#foo';
+    });
+    t.step(function() {
+        var i = 5000;
+        do {
+            location.hash = '#bar';
+        } while (--i);
+
+    });
+    t.step(function() {
+        history.go(-1);
+    });
+
+    t.step(function() {
+        assert_equals( location.hash, '#bar' );
+        assert_equals( history.length, histlength + 2 );
+    });
+    t.done();
+}
+</script>
+<div id="log"></div>

@@ -1,0 +1,512 @@
+<HTML>
+<HEAD>
+<TITLE>JavaScript Performance Test - Order Form Validation</TITLE>
+
+<script type="text/javascript">   
+<!--
+
+function beginTest()
+{
+	// get current time
+	var sample = (new Date()).getTime();
+	var next_sample;
+
+	// wait for time to change to begin test - this should reduce error due to poor resolution timers
+	do
+	{	
+		next_sample = (new Date()).getTime();
+	}
+	while (next_sample == sample);
+
+	return next_sample;
+}
+
+function progress(current, total)
+{
+//	if (parent.frames[0])
+//		parent.frames[0].document.jsTest.status.value =  String(current * 100 / total);
+}
+
+function record(in_first, in_mi, in_last, in_street, in_city, in_state, in_zip, 
+				in_phone, in_fax, in_email, in_cardnum, in_cardtype, in_expdate)
+{
+	this.fname = in_first;
+	this.miname = in_mi;
+	this.lname = in_last;
+	this.street = in_street;
+	this.city = in_city;
+	this.state = in_state;
+	this.zip = in_zip;
+	this.phonenumber = in_phone;
+	this.faxnumber = in_fax;
+	this.email = in_email;
+	this.cardnum = in_cardnum;
+	this.cardtype = in_cardtype;
+	this.cardexpdate = in_expdate;
+}
+
+function removeChar(str, ch)
+{
+	out = new String("");
+
+	for (var i = 0; i < str.length; i++)
+	{
+		if (str.charAt(i) != ch.charAt(0))
+		{
+			out += str.charAt(i);
+		}
+	}
+
+	return out;
+}
+
+function isNumeric(str)
+{
+	for (var i = 0; i < str.length; i++)
+	{
+		var code = str.charCodeAt(i);
+		if (code < 48 || code > 57)
+		{
+			return false;
+		}
+	}
+
+	return true;
+}
+
+function validateFirstDigit(ccnum, type)
+{
+	var temp = '';
+	
+	temp = type.toLowerCase();
+
+	if (temp == "visa")
+	{
+		return (ccnum.charAt(0) == '4');
+	}
+
+	if (temp == "mastercard")
+	{
+		return (ccnum.charAt(0) == '5');
+	}
+
+	if (temp == "american express")
+	{
+		return (ccnum.charAt(0) == '3' && ccnum.charAt(1) == '7');
+	}
+
+	if (temp == "discover")
+	{
+		return (ccnum.charAt(0) == '6');
+	}
+
+	if (temp == "test a")
+	{
+		return (ccnum.charAt(0) == '9');
+	}
+
+	if (temp == "test b")
+	{
+		return (ccnum.charAt(0) == '8');
+	}
+	
+
+	return false;
+}
+		
+function validateCardNumber(ccnum, type)
+{
+	// remove spaces and dashes
+	ccnum = removeChar(ccnum, ' ');
+	ccnum = removeChar(ccnum, '-');
+
+	// must be numeric characters only at this point
+	if (!isNumeric(ccnum))
+		return false;
+
+	// check length - must be between 13 and 16 digits
+	if (ccnum.length < 13 || ccnum.length > 16)
+		return false;
+
+	// test first digits against card type
+	if (!validateFirstDigit(ccnum, type))
+		return false;
+
+	// zero pad number to 16 digits
+	if (ccnum.length == 13)
+	{
+		ccnum = '000' + ccnum;
+	}
+	else
+	{
+		if (ccnum.length == 14)
+		{
+			ccnum = '00' + ccnum;
+		}
+		else
+		{
+			if (ccnum.length == 15)
+				ccnum = '0' + ccnum;
+		}
+	}
+
+	// calculate checksum
+	var sum = 0;
+	for (var i = 0; i < 16; i++)
+	{
+		var x = Number(ccnum.charAt(i))
+		if (i % 2 == 0)
+		{
+			x *= 2;
+			if ( x > 9)
+				x -= 9;
+		}
+
+		sum += x;
+	}
+
+	//alert("failed checksum sum %10 = " + (sum % 10));
+
+	// check for sum / 10 == 0
+	return ((sum % 10) < 0.05);
+}
+
+function validateExpDate(ccexpdate)
+{
+	// parse the expiration date MMYYYY
+
+	// remove extraneous characters
+	ccexpdate = removeChar(ccexpdate, ' ');
+	ccexpdate = removeChar(ccexpdate, '/');
+	ccexpdate = removeChar(ccexpdate, '-');
+
+	// verify the length
+	if (ccexpdate.length != 6)
+		return false;
+
+	// should all be numeric now
+	if (!isNumeric(ccexpdate))
+		return false;
+
+	// get month
+	month = Number(ccexpdate.substring(0, 2));
+	if (month < 1 || month > 12)
+		return false;
+
+	year = Number(ccexpdate.substring(2, 6));
+
+	// Normally, check against current date but for benchmark purposes use a fixed date
+	today = new Date("Feb 23, 2000");
+
+	thisYear = today.getYear();
+	thisMonth = today.getMonth() + 1;
+
+	// JavaScript 1.3 returns (year - 1900)
+	if (thisYear < 1900)
+		thisYear += 1900;
+
+	if (year < thisYear)
+	{
+		return false;
+	}
+	else 
+	{
+		if (year == thisYear)
+		{
+			if (month < thisMonth)
+				return false;
+		}
+	}
+
+	return true;
+}
+
+function validateEMail(addr)
+{
+	if (addr.length < 5)
+		return false;
+
+	var index = addr.indexOf('@');
+	if (index == -1)
+		return false;
+
+	index = addr.indexOf('@', index + 1);
+	if (index != -1)
+		return false;
+
+	index = addr.indexOf('.');
+	if (index == -1)
+		return false;
+
+	return true;
+}
+
+function validateZip(zipcode)
+{
+	if (zipcode.length == 0)
+		return false;
+
+	var ziptemp = removeChar(zipcode, '-');
+
+	if (!isNumeric(ziptemp))
+		return false;
+
+	if ((zipcode.length != 5) &&  (zipcode.length != 10))
+		return false;
+
+	return true;
+}
+
+function validatePhoneNumber(phoneNumber)
+{
+	if (phoneNumber.length == 0)
+		return false;
+
+	phoneNumber = removeChar(phoneNumber, '-');
+	phoneNumber = removeChar(phoneNumber, '(');
+	phoneNumber = removeChar(phoneNumber, ')');
+
+	if (!isNumeric(phoneNumber))
+		return false;
+
+	if ((phoneNumber.length != 7) &&  (phoneNumber.length != 10))
+		return false;
+
+	return true;
+}
+
+function validateState(state_name, valid_state_names)
+{
+	state_name = state_name.toUpperCase();
+
+	for (i = 0; i < valid_state_names.length; i++)
+	{
+		if (valid_state_names[i] == state_name)
+		{
+			return true;
+		}
+	}
+
+	return false;
+}
+
+function displayRecord(rec)
+{
+	document.writeln('<table cellspacing="0" cellpadding="2" border="1" align="center" bgcolor="#D6DDE4">');
+
+	document.writeln('<tr>');
+	document.writeln('<td colspan="3" align="center"><b>Sample record</b></td>');
+	document.writeln('</tr>');
+
+	document.writeln('<tr>');
+	document.writeln('<td><b>First name:</b> ' + rec.fname + '</td>');
+	document.writeln('<td><b>MI:</b> ' + rec.miname + '</td>');
+	document.writeln('<td><b>Last name:</b> ' + rec.lname + '</td>');
+	document.writeln('</tr>');
+
+	document.writeln('<tr>');
+	document.writeln('<td><b>Street:</b> ' + rec.street + '</td>');
+	document.writeln('<td><b>City:</b> ' + rec.city + '</td>');
+	document.writeln('<td><b>State:</b> ' + rec.state + ' <b>Zip:</b> ' + rec.zip + '</td>');
+	document.writeln('</tr>');
+
+	document.writeln('<tr>');
+	document.writeln('<td><b>Phone:</b> ' + rec.phonenumber + '</td>');
+	document.writeln('<td><b>Fax:</b> ' + rec.faxnumber + '</td>');
+	document.writeln('<td><b>E-Mail:</b> ' + rec.email + '</td>');
+	document.writeln('</tr>');
+
+	document.writeln('<tr>');
+	document.writeln('<td><b>Card Numner:</b> ' + rec.cardnum + '</td>');
+	document.writeln('<td><b>Card Type:</b> ' + rec.cardtype + '</td>');
+	document.writeln('<td><b>Expiration Date:</b> ' + rec.cardexpdate + '</td>');
+	document.writeln('</tr>');
+
+	document.writeln('</table>');
+
+}
+
+function OrderFormValidation()
+{
+	document.write('<center><h4>Order Form Validation</h4></center>');
+
+	// start the test
+	var startTime = beginTest();
+
+	var states = new Array('ALABAMA','AL','ALASKA','AK','AMERICAN SAMOA','AS','ARIZONA','AZ',
+						   'ARKANSAS','AR','CALIFORNIA','CA','COLORADO','CO','CONNECTICUT','CT',
+						   'DELAWARE','DE','DISTRICT OF COLUMBIA','DC','FEDERATED STATES OF MICRONESIA','FM',
+						   'FLORIDA','FL','GEORGIA','GA','GUAM','GU','HAWAII','HI','IDAHO','ID','ILLINOIS','IL',
+						   'INDIANA','IN','IOWA','IA','KANSAS','KS','KENTUCKY','KY','LOUISIANA','LA','MAINE','ME',
+						   'MARSHALL ISLANDS','MH','MARYLAND','MD','MASSACHUSETTS','MA','MICHIGAN','MI','MINNESOTA','MN',
+						   'MISSISSIPPI','MS','MISSOURI','MO','MONTANA','MT','NEBRASKA','NE','NEVADA','NV','NEW HAMPSHIRE','NH',
+						   'NEW JERSEY','NJ','NEW MEXICO','NM','NEW YORK','NY','NORTH CAROLINA','NC','NORTH DAKOTA','ND',
+						   'NORTHERN MARIANA ISLANDS','MP','OHIO','OH','OKLAHOMA','OK','OREGON','OR','PALAU','PW',
+						   'PENNSYLVANIA','PA','PUERTO RICO','PR','RHODE ISLAND','RI','SOUTH CAROLINA','SC','SOUTH DAKOTA','SD',
+						   'TENNESSEE','TN','TEXAS','TX','UTAH','UT','VERMONT','VT','VIRGIN ISLANDS','VI','VIRGINIA','VA',
+						   'WASHINGTON','WA','WEST VIRGINIA','WV','WISCONSIN','WI','WYOMING','WY')
+
+	var records = new Array();
+
+	// OK
+	records[0] = new record('Tom', '', 'Thumb', 
+							'124 East Street', 'Morrisville', 'NC', '27560', 
+							'919-222-0010','919-222-0010', 'tthumb@ziffdavis.com', 
+							'971-700-862-0031','Test A', '04/2005');
+	// bad expiration date
+	records[1] = new record('John', 'R', 'Doe', 
+							'124 West Street', 'Morrisville', 'NC', '27560', 
+							'919-333-0010','919-333-0010', 'jrdoe@ziffdavis.com', 
+							'843-9594-0885-539','Test B', '01/1999');
+	// bad e-mail
+	records[2] = new record('Tiny', '', 'Tim', 
+							'124 South Street', 'Cary', 'North Carolina', '27513', 
+							'919-444-0010','919-444-0011', 'tim@@ziffdavis.com', 
+							'971-700-862-0031','Test A', '04/2000');
+	// bad fax number
+	records[3] = new record('Jane', 'E', 'Doe', 
+							'234 West Street', 'Cary', 'NC', '27513', 
+							'919-444-0012','919-444-001a', 'jrdoe@ziffdavis.com', 
+							'843-9594-0885-539','Test B', '05/2003');
+	// bad card number
+	records[4] = new record('Tom', '', 'Thumb', 
+							'124 East Street', 'Morrisville', 'NC', '27560', 
+							'919-222-0010','919-222-0010', 'tthumb@ziffdavis.com', 
+							'4444-5555-6666-4444','Visa', '04/2000');
+	// bad card number
+	records[5] = new record('John', 'R', 'Doe', 
+							'124 West Street', 'Morrisville', 'NC', '27560', 
+							'919-333-0010','919-333-0010', 'jrdoe@ziffdavis.com', 
+							'5555-6666-7777-9998','Mastercard', '01/2003');
+	// bad zip code
+	records[6] = new record('Tiny', '', 'Tim', 
+							'124 South Street', 'Cary', 'NC', '27513-908x', 
+							'919-444-0010','919-444-0011', 'tim@ziffdavis.com', 
+							'971-700-862-0031','Test A', '04/2000');
+	// bad card number
+	records[7] = new record('Jane', 'E', 'Doe', 
+							'234 West Street', 'Laramie', 'WY', '82051', 
+							'919-444-0012','919-444-0011', 'jane_e_doe@ziffdavis.com', 
+							'3798-5678-1234-1','American Express', '05/2003');
+
+	// bad card number
+	records[8] = new record('James', 'G', 'Jones', 
+							'812 East Street', 'Austin', 'TX', '78701', 
+							'919-444-0013','919-444-0014', 'jgj@ziffdavis.com', 
+							'987654321','American Express', '09/2000');
+
+	// bad expiration
+	records[9] = new record('George', '', 'Thomason', 
+							'754 South Main Street', 'Mobile', 'AL', '36601', 
+							'919-555-0013','919-555-0014', 'gthomason@ziffdavis.com', 
+							'971-700-862-0031','Test A', '11/1998');
+
+	// OK
+	records[10] = new record('William', 'T', 'Wilson', 
+							'89 Second Street', 'Fairhope', 'AL', '36532', 
+							'919-666-0013','919-666-0014', 'wtw@ziffdavis.com', 
+							'971-700-862-0031','Test A', '12/2003');
+
+	// OK
+	records[11] = new record('Xavier', '', 'Sims', 
+							'9021 Second Street', 'Fairhope', 'AL', '36532', 
+							'919-777-0013','919-777-0014', 'xman@ziffdavis.com', 
+							'971-700-862-0031','Test A', '11/2001');
+
+	// OK
+	records[12] = new record('Wally', 'X', 'Waltham', 
+							'89 West Blvd', 'Los Angeles', 'CA', '90001', 
+							'919-999-0013','919-999-0014', 'wally@ziffdavis.com', 
+							'971-700-862-0031','Test A', '01/2004');
+
+	// OK
+	records[13] = new record('Walter', '', 'Calhoun', 
+							'192 South Blvd', 'Los Angeles', 'CA', '90002', 
+							'919-998-0013','919-998-0014', 'walt@ziffdavis.com', 
+							'971-700-862-0031','Test A', '06/2002');
+
+	// OK
+	records[14] = new record('Jessica', '', 'Jefferson', 
+							'PO Box 901', 'Los Angeles', 'CA', '90003', 
+							'919-997-0013','919-997-0014', 'jessica_jefferson@ziffdavis.com', 
+							'971-700-862-0031','Test A', '03/2003');
+
+	// OK
+	records[15] = new record('Carol', '', 'Young', 
+							'PO Box 4009', 'Los Angeles', 'CA', '90003', 
+							'919-996-0013','919-996-0014', 'carol_young@ziffdavis.com', 
+							'971-700-862-0031','Test A', '07/2003');
+
+
+
+	var recCount = records.length;
+
+	var validCount = 0;
+
+	for (var k = 0; k < (recCount * 16); k++)
+	{
+
+		progress(k + 1, recCount * 16); 
+
+		var m = k % recCount;
+
+		// validate the data in the form
+		var valid = true;
+
+		// check for blank fields;
+		valid &= (records[m].fname.length != 0);
+		valid &= (records[m].lname.length != 0);
+		valid &= (records[m].street.length != 0);
+		valid &= (records[m].city.length != 0);
+
+		valid &= validateState(records[m].state, states);
+
+		// check zip code
+		valid &= validateZip(records[m].zip);
+
+		// check phone numbers
+		valid &= validatePhoneNumber(records[m].phonenumber);
+		valid &= validatePhoneNumber(records[m].faxnumber);
+
+		// check credit card
+		valid &= validateCardNumber(records[m].cardnum, records[m].cardtype);
+
+		valid &= validateExpDate(records[m].cardexpdate);
+
+		// check email
+		valid &= validateEMail(records[m].email);
+
+		if (valid)
+			validCount++;
+
+	}
+
+	displayRecord(records[0]);
+
+	document.writeln('<center><p><b>Records processed:</b> ' + k + '<br>');
+	document.writeln('<b>Valid:</b> ' + validCount + '<br>');
+	document.writeln('<b>Invalid:</b> ' + (k - validCount) + '</p></center>');
+
+	thisTime = (new Date()).getTime() - startTime;
+
+	document.writeln( 'Elapsed time = ' + thisTime + '<br>');
+}
+
+// -->
+</script>
+
+</HEAD>
+<BODY> 
+
+<script src="reportresult.js"></script>
+<script type="text/javascript">   
+<!--
+	OrderFormValidation();
+	reportresult( "iBench 'records' test", thisTime );
+// -->
+</script>
+
+<!-- Copyright &copy; 2000 Ziff Davis Media Inc.  All rights reserved. -->
+
+</BODY>
+</HTML>

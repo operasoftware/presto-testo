@@ -1,0 +1,71 @@
+<html>
+<head>
+<title>DOM tests -- CSS2 interface</title>
+</head>
+
+<body>
+
+<!-- All the HTML elements below this line are used by the tests -->
+
+<div style='border: dashed blue'>
+<div id='a' style='border: solid black'>
+Text inside div a
+</div>
+
+<div id='b' style='border: solid red; font-family: "Comic Sans MS"'>
+Text inside div b
+</div>
+
+<div id='c'>
+Text inside div c
+</div>
+</div>
+
+<!-- All the HTML elements above this line are used by the tests -->
+
+
+<script src="../../regression-lib/testbase.js"></script>
+<script>
+/* Regression tests for Opera's handling of the DOM 2 CSS2 interface
+ *
+ * 2002-04-11 / stighal
+ */
+
+var cvs = "$Id: font-family.html 39648 2009-01-25 14:00:46Z hallvord $";
+
+testmodule( "CSS2 interface", cvs );
+
+var a, b, c;
+
+try {
+a = document.getElementById("a");
+b = document.getElementById("b");
+c = document.getElementById("c");
+
+testcase( "Reading properties" );
+
+test('getting font-family from a with nothing specified', a.style.fontFamily, "");
+test('getting font-family from b with ""Comic Sans MS"" specified', b.style.fontFamily, '"Comic Sans MS"');
+
+testcase( "Setting properties" );
+
+a.style.fontFamily = "monospace";
+test('reading font-family on a set by script to "monospace"', a.style.fontFamily, "monospace");
+
+testcase( "Negative tests" );
+
+// these two tests basically test the same thing. Opera used to handle this differently but that was a bug. Refer to CORE-13839 for details.
+c.style.fontFamily = "foo";
+test('reading font-family on a set by script to foo (unknown font name)', c.style.fontFamily, '"foo"');
+
+c.style.fontFamily = "outset";
+test('reading font-family on a set by script to outset (unknown keyword)', c.style.fontFamily, '"outset"');
+
+} catch (e) { exception( e ); }
+
+testmodule_finished();
+
+</script>
+
+</body>
+</html>

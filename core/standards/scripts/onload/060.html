@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <title>Removing slow-loading image doesn't affect load delay</title>
+  <script src="/resources/testharness.js"></script>
+  <script src="/resources/testharnessreport.js"></script>
+  <div id="log"></div>
+  <img src="_files/slice-and-dice.cgi?file=1x1-green.png&parts=d4">
+  <script>
+    var t = async_test(undefined, {timeout:4000});
+    t.step(function() {
+      var img = document.getElementsByTagName("img")[0];
+      img.parentNode.removeChild(img);
+      var load_fired = false;
+      onload = function() {load_fired = true}
+      setTimeout(t.step_func(function() {assert_false(load_fired); t.done()}), 1000);
+    });
+  </script>

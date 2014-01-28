@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html><head>
+	<title>capturing load event on IFRAME with scripted content inside </title>
+	<script src="_files/lib.js" ></script>
+	<script>if(document.addEventListener){
+		document.addEventListener('load', load, true);
+	}</script>
+	<script>var expected = [
+			'load in window [support.html] (in IFRAME [support.html])',
+			'load in window [009.html]',
+			'load in window [009.html]'
+		];
+	</script>
+
+</head>
+<body>
+<iframe src="_files/support.html" onload="load(event)"> IFRAME must be supported and enabled </iframe>
+
+	<p>FAILED (This TC requires JavaScript enabled)</p>
+
+</body></html>

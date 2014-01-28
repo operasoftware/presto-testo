@@ -1,0 +1,35 @@
+<body>
+
+<p>Test case for <a
+href="https://bugs.opera.com/show_bug.cgi?id=156935">#156935</a>: If
+the maximum object size is exceeded during string append then
+String.prototype.concat may go into an indeterminate state.
+
+<p>This test requires some memory.
+
+<p><a href="javascript:testit()">Click this link to run the test</a>.
+You should se an alert that shows a MemoryError exception.
+
+<script>
+function testit()
+{
+    var s = "0123456789ABCDEF";
+    s = s + s + s + s + s + s + s + s;
+    s = s + s + s + s;  // 512 chars = 1KB, plus some overhead
+
+    // Make a 1MB string
+    var A = new Array();
+    for ( i=0 ; i < 1024 ; i++ )
+      A[A.length] = s;
+    s = A.join("");
+
+    var res;
+    try {
+       s.concat(s,s,s,s,s,s,s,s);
+    }
+    catch (e) { res=e; }
+    alert( res );
+}
+</script>
+
+</body>

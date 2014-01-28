@@ -1,0 +1,57 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/REC-html401/strict.dtd">
+<!--
+   Created by haukur@opera.com
+-->
+<html>
+   <head>
+      <title>Form Object Test - Interactive</title>
+      <script type="text/javascript" src="../regression-lib/testbase.js"></script>
+      <script type="text/javascript" src="scripts/js_form_int.js"></script>
+   </head>
+   <body>
+      <h1>Form Object Test - Interactive</h1>
+      <script type="text/javascript">showred( cvs );</script>
+      <p>
+         A popup window will show when the first event is triggered, e.g.
+         when you reset the form.
+         The popup window is for reports from the different event
+         handlers. 
+      </p>
+      <form id="theform" name="theform"
+                onreset="reportEvent( 'onreset' );"
+                onsubmit="reportEvent( 'onsubmit' );"
+                action=""
+                method="get"
+      >
+         <div>
+            <input type="text" value="This is a text field">
+            <input type="textarea" value="This is a textarea">
+            <input type="password" value="This is a textarea">
+            <input type="checkbox" value="This is a checkbox">
+            <input type="radio" value="This is a radio">
+            <input type="file" value="This is a file">
+            <input type="hidden" value="This is a hidden">
+            <input type="image" value="This is an image">
+            <input type="button" value="This is a button">
+            <input type="submit">
+            <input type="reset">
+         </div>
+      </form>
+      <h2>User interaction</h2>
+      <ol>
+         <li>
+            <a href="javascript:testResetMethod();">reset()</A>
+            Resets all form values (&nbsp;texts, checkboxes etc&nbsp;)
+            to their default values. The same behavior should be expected
+            when clicking the reset button. 
+            The onreset() event handler should be triggered.
+         </li>
+         <li>
+            <a href="javascript:testSubmitMethod();">submit()</A>
+            Submits the form. The same behavior should be expected
+            when clicking the submit button.
+            The onsubmit() event handler should be triggered.
+         </li>
+      </ol>
+   </body>
+</html>

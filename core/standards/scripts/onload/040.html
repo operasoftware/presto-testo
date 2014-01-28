@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <title>Slow loading background image in inline stylesheet + display:none</title>
+  <script src="/resources/testharness.js"></script>
+  <script src="/resources/testharnessreport.js"></script>
+  <style>
+    #test {background-image:url("_files/slice-and-dice.cgi?file=1x1-green.png&parts=d2");
+           background-repeat:repeat; 
+           background-color:orange; 
+           display:none}
+  </style>
+  <div id="log"></div>
+  <script>
+    var t = async_test(undefined, {timeout:4000});
+    //We assume that the page would have loaded before the timeout if it wasn't waiting for the image
+    timeout_fired = false;
+    setTimeout(t.step_func(function() {timeout_fired = true;}), 1000);
+    onload = t.step_func(function() {assert_true(timeout_fired); t.done()});
+  </script>
+  <div id="test">Test</div>

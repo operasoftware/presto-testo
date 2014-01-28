@@ -1,0 +1,68 @@
+<html>
+<head>
+<title>DOM tests -- CSS2 interface</title>
+</head>
+
+<body>
+
+<!-- All the HTML elements below this line are used by the tests -->
+
+<div id='a'>
+Red top border with default style and width.
+</div>
+
+<div id='b' style='border-top-style: solid; border-top-color: green'>
+Solid green top border.
+</div>
+
+<div id='c'>
+No borders.
+</div>
+
+<!-- All the HTML elements above this line are used by the tests -->
+
+
+<script src="../../regression-lib/testbase.js"></script>
+<script>
+/* Regression tests for Opera's handling of the DOM 2 CSS2 interface
+ *
+ * 2002-04-11 / stighal
+ */
+
+var cvs = "$Id: border-top-color.html 91662 2011-04-07 11:45:16Z bratell $";
+
+testmodule( "CSS2 interface", cvs );
+
+var a, b;
+
+try {
+a = document.getElementById("a");
+b = document.getElementById("b");
+c = document.getElementById("c");
+
+testcase( "Reading properties" );
+
+test('getting border-top-color from a with nothing specified', a.style.borderTopColor, "");
+test('getting border-top-color from b with a lot specified', b.style.borderTopColor, "green");
+
+testcase( "Setting properties" );
+
+a.style.borderTopColor = "red";
+test('reading border-top-color on a set by script to red', a.style.borderTopColor, "red");
+
+testcase( "Negative tests" );
+
+c.style.borderTopColor = "foo";
+test('reading border-top-color value set to foo (illegal)', c.style.borderTopColor, "");
+
+c.style.borderTopColor = "medium";
+test('reading border-top-color value set to medium (illegal keyword)', c.style.borderTopColor, "");
+
+} catch (e) { exception( e ); }
+
+testmodule_finished();
+
+</script>
+
+</body>
+</html>

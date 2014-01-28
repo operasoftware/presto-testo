@@ -1,0 +1,16 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:py="http://genshi.edgewall.org/">
+  <title>opjsunit</title>
+  <h1>opjsunit test harness</h1>
+  <form>
+  <ul id="categories">
+    <li py:for="test_file in test_files"><input type="checkbox" id="${test_file.name}"/>${test_file.name}
+    <ul id="test_file.name" xml:space="preserve">
+      <li py:for="test in test_lists[test_file.name].iterByName()"><input id="${test_file.name + '#' + test.function}" type="checkbox"/>
+	<a href="${test._relative_path}">${test.function}</a>
+      </li>
+    </ul>
+    </li>
+  </ul>
+  </form>
+</html>

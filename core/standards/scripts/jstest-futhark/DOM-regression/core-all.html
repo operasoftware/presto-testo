@@ -1,0 +1,38 @@
+<html>
+
+<head>
+<title>DOM Core autorun tests</title>
+
+<script src="../regression-lib/autorun.js"></script>
+<script>
+function setup()
+{
+  setup_autorun(["domimplementation.html",
+                 "attrnode.html",
+                 "chardata.html",
+                 "document.html",
+                 "importNode1.html",
+                 "except.html",
+                 "node.html",
+                 "node-reflow.html",
+                 "text.html",
+                 "fragment.html",
+                 "nodelist.html",
+                 "element.html",
+                 "element2.html",
+                 "nodemap.html"]);
+}
+</script>
+</head>
+
+<body onload="setup()">
+
+<p>This page runs all noninteractive tests in the Opera DOM Core test
+suite.  Each test is run in a separate window.  If all the tests in a
+test set pass, or if the failures are known, then the window is
+closed; otherwise, the window stays open so that you can see what
+failed.</p>
+
+</body>
+
+

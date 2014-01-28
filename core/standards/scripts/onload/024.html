@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html><head>
+	<title>load events - IFRAME document replaced from inline script</title>
+	<script>var _conf_timeout_delay=3000;</script>
+	<script src="_files/lib.js"></script>
+	<script>
+		window.onload=load;
+	</script>
+	<script>var expected = [
+			'load in window [redirect.html] (in IFRAME [redirect.html])',
+			'load on <IFRAME> in window [024.html]',
+			'load in window [support.html] (in IFRAME [support.html])',
+			'load on <IFRAME> in window [024.html]',
+			'load in window [024.html]',
+			];
+	</script>
+</head>
+<body>
+
+	<p>FAILED (This TC requires JavaScript enabled)</p>
+	<iframe src="_files/support.html" onload="load(event, 'on <IFRAME>')"></iframe>
+	<script>
+	document.getElementsByTagName('iframe')[0].src='_files/delay.php?url=redirect.html&time=2';
+	</script>
+</body></html>

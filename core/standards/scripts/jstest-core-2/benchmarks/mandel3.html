@@ -1,0 +1,73 @@
+<HTML>
+<!-- BASE HREF="http://home.hia.no/~fgill/javascript/" -->
+
+<HEAD>
+<TITLE>MandelBrot Computation</TITLE>
+</HEAD>
+
+<BODY TEXT="#000000" BGCOLOR="#c0c0c0" LINK="#606000" VLINK="#000000" ALINK="#000000">
+
+<p>Computes the Mandelbrot set from -2.0-1.5i to 1.25+1.5i.</p>
+
+<p>This version uses document.write to write a line of pixels at a time.</p>
+
+<p>In Opera 6.0, try hitting ESC once during the compututation to see
+it speed up!  This is a performance bug, which appears to be related to
+image loading.</p>
+
+<script src="reportresult.js"></script>
+<SCRIPT language="JavaScript">
+var before = new Date();
+
+var xmin=-2.0;
+var ymin=-1.5;
+var xmax=1.25;
+var ymax=1.5;
+
+var ant_x=40;
+var ant_y=32;
+var dx=(xmax-xmin)/ant_x;
+var dy=(ymax-ymin)/ant_y;
+var iter=0;
+var px=0.0;
+var py=0.0;
+var a=0.0;
+var b=0.0;
+var old_a=0.0;
+
+var y=0;
+doc="";
+for (var y=0; y<ant_y; y++) {
+  line = "";
+  for (var x=0; x<ant_x; x++) {
+    iter=0;
+    px=xmin+dx*x;
+    py=ymax-dy*y;
+    a=px;
+    b=py;
+    while (a*a+b*b<4.0 && iter<64) {
+      old_a=a;
+      a=a*a-b*b+px;
+      b=2*old_a*b+py;
+      iter++;
+    }
+    line += "<img src="+iter%8+".gif>";
+  }
+  doc += line + "<br>";
+}
+document.writeln(doc);
+
+var after = new Date();
+document.writeln( after - before + ' milliseconds<br>' );
+</SCRIPT>
+<BR>
+
+<hr>
+Original created by <A HREF="mailto:fgill@krs.hia.no"> Frode Gill</A>; this version
+severely mangled by lth@opera.<br>
+<A HREF="http://home.hia.no/~fgill/fractal.html">Frode Gill's fractal page</A>
+<script>
+reportresult( "mandelbrot, matrix output", after-before );
+</script>
+</BODY>
+</HTML>

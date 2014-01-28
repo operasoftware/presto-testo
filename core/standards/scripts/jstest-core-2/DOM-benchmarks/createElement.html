@@ -1,0 +1,17 @@
+<script src="reportresult.js"></script>
+<script>
+function createElm(n)
+{
+    for ( var i=0 ; i < n ; i++ )
+    {
+	document.createElement("div");
+    }
+    return "Done";
+}
+
+var before = new Date();
+var result = createElm(100000);
+var after = new Date();
+document.writeln( [ result, after - before ] + '<br>' );
+reportresult( "createElement", after-before );
+</script>

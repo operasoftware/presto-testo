@@ -1,0 +1,50 @@
+<!-- js_document.html -->
+<!-- FIXME: must add an applet and update the tests -->
+<!-- FIXME: must add an embed and update the tests (this will also add to plugins) -->
+
+<html>
+
+<head>
+<title>JavaScript 1.3 Document test</title> <!-- Don't change the title -->
+<script>
+var html_cvs="$Id: js_document.html 4838 2006-01-18 05:59:01Z hallvord $";
+</script>
+</head>
+
+<body alink=red vlink=yellow link=black bgcolor=white text=blue
+      onclick="void(0)" ondblclick="void(1)" onkeydown="void(2)" onkeypress="void(3)"
+      onkeyup="void(4)" onmousedown="void(5)" onmouseup="void(6)">
+
+<!-- important, do not move anything above this DIV -->
+<div>
+<a id=a1 name="ThisIsMyAnchor">Anchor 1</a><br>
+<a id=a2 name="ThisIsAnotherAnchor">Anchor 2</a> <a id=a3 name="ThisIsYetAnotherAnchor">
+</a><br>
+</div>
+<div>
+<img src="graphics/operalogo_100x105.gif" name="img1">
+<img src="graphics/operalogo_100x105.gif" name="img2">
+<img src="graphics/operalogo_100x105.gif" name="img3">
+</div>
+<div>
+<form name=testform1>
+<input type=text name=formless value=Foo></input>
+</form>
+</div>
+<div>
+<area id="a1" 
+      alt="This is my area" shape="circle" coords="10,10,10" 
+      href="graphics/operalogo_100x105.gif"></area>
+</div>
+<div>
+<a href="http://www.opera.com">A link!</a>  
+<a name="link3" href="http://www.microsoft.com">Another!</a>
+</div>
+
+<script type="text/javascript" src="../regression-lib/testbase.js"></script>
+<script type="text/javascript" src="../testconfig.js"></script>
+<script type="text/javascript" src="scripts/js_document.js"></script>
+
+</body>
+
+</html>

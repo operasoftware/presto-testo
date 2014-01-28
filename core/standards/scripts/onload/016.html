@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html><head>
+	<title>load event on FRAMESET with one re-loaded frame </title>
+	<script>_conf_timeout_delay=3000;
+		setTimeout( function(){ top.frames[1].location.reload() }, 1500 )
+	</script>
+	<script src="_files/lib.js" ></script>
+	<!-- IE8 and Firefox agree on this. Safari dispatches load events to bottom frame first, and Opera has a known bug firing dispatching to FRAME/IFRAME element before dispatching to the documents inside them -->
+	<script>var expected = [
+			'load in window [support.html] (in FRAME#topframe [support.html])',
+			'load  on top FRAME  in window [016.html]',
+			'load in window [support.html] (in FRAME#bottomframe [support.html])',
+			'load  on bottom FRAME  in window [016.html]',
+			'load  on FRAMESET  in window [016.html]',
+			'load in window [support.html] (in FRAME#bottomframe [support.html])',
+			'load  on bottom FRAME  in window [016.html]'
+		];
+	</script>
+</head>
+<frameset rows="*,30%" onload="load(event, ' on FRAMESET ')">
+<frame src="_files/support.html" onload="load(event, ' on top FRAME ')" id="topframe"></frame>
+<frame src="_files/support.html" onload="load(event, ' on bottom FRAME ')" id="bottomframe"></frame>
+</frameset></html>

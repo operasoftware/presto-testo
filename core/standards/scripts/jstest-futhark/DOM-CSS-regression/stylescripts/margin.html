@@ -1,0 +1,100 @@
+<html>
+<head>
+<title>DOM tests -- CSS2 interface</title>
+</head>
+
+<body>
+
+<!-- All the HTML elements below this line are used by the tests -->
+
+<div style='margin: 1em; border: thin dashed blue'>
+<div id='a' style='border: thin solid black'>
+There should be 1em margin around this box
+</div>
+</div>
+
+<div style='margin: 1em; border: thin dashed blue'>
+<div id='b' style='border: thin solid red; margin: 5px'>
+The margin around this box should be 5px
+</div>
+</div>
+
+<div style='margin: 1em; border: thin dashed blue'>
+<div id='c' style='border: thin solid green; margin-top: 30mm'>
+The margin around this should be 30mm on each side
+</div>
+</div>
+
+<div style='margin: 1em; border: thin dashed blue'>
+<div id='d'>
+No margin set
+</div>
+</div>
+</div>
+
+<!-- All the HTML elements above this line are used by the tests -->
+
+
+<script src="../../regression-lib/testbase.js"></script>
+<script>
+/* Regression tests for Opera's handling of the DOM 2 CSS2 interface
+ *
+ * 2002-04-11 / stighal
+ */
+
+var cvs = "$Id: margin.html 10655 2006-12-18 15:47:57Z hallvord $";
+
+testmodule( "CSS2 interface", cvs );
+
+var a, b, c, d;
+
+try {
+a = document.getElementById("a");
+b = document.getElementById("b");
+c = document.getElementById("c");
+d = document.getElementById("d");
+
+testcase( "Reading properties" );
+
+test('getting margin from a with nothing specified', a.style.margin, "");
+test('getting margin from b with 5px specified', b.style.margin, "5px");
+
+testcase( "Setting properties" );
+
+a.style.margin = "1em";
+test('reading margin on a set by script to 1em', a.style.margin, "1em");
+
+testcase("Shorthand tests");
+
+test('getting margin from c where only margin-top is set by style', c.style.margin, "");
+
+c.style.marginRight = "3in";
+test('getting margin from c where border-top-style is set by style and border-right-style is set by script', c.style.margin, "");
+
+c.style.marginBottom = "2cm";
+c.style.marginLeft = "3in";
+test('getting margin from c where the margins are set to {30mm 3in 2cm 3in}', c.style.margin, "30mm 3in 2cm");
+
+c.style.marginBottom = "30mm";
+test('getting margin from c where the margins are set to {30mm 3in 30mm 3in}', c.style.margin, "30mm 3in");
+
+c.style.marginRight = "30mm";
+c.style.marginLeft = "30mm";
+test('getting margin from c where the margins are set to {30mm 30mm 30mm 30mm}', c.style.margin, "30mm");
+
+testcase( "Negative tests" );
+
+d.style.left = "foo";
+test('reading left on a set by script to foo (illegal)', d.style.left, "");
+
+d.style.left = "outset";
+test('reading left on a set by script to outset (illegal keyword)', d.style.left, "");
+
+} catch (e) { exception( e ); }
+
+testmodule_finished();
+
+</script>
+
+</body>
+</html>

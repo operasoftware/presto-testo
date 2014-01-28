@@ -1,0 +1,27 @@
+<!doctype html>
+<title>Location hash - set hash during inline execution - multiple script blocks</title>
+<script src="/resources/testharness.js"></script><script src="/resources/testharnessreport.js"></script>
+<script>
+var t = async_test();
+var histlength;
+t.step(function() {
+    if( location.hash && location.hash != '#' ) {
+        location.href = location.href.replace(/#.*$/,'');
+        return;
+    }
+    histlength = history.length;
+});
+</script>
+<script>
+t.step(function() {
+    location.hash = '#foo';
+});
+</script>
+<script>
+t.step(function() {
+    assert_equals( location.hash, '#foo' );
+    assert_equals( history.length, histlength );
+});
+t.done();
+</script>
+<div id="log"></div>

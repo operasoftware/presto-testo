@@ -1,0 +1,17 @@
+<script src="reportresult.js"></script>
+<script>
+function createAttr(n)
+{
+    for ( var i=0 ; i < n ; i++ )
+    {
+	document.createAttribute("height");
+    }
+    return "Done";
+}
+
+var before = new Date();
+var result = createAttr(100000);
+var after = new Date();
+document.writeln( [ result, after - before ] + '<br>' );
+reportresult( "createAttribute (100,000 iterations)", after-before );
+</script>

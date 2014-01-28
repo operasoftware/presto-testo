@@ -1,0 +1,17 @@
+<script src="reportresult.js"></script>
+<script>
+function createTN(n)
+{
+    for ( var i=0 ; i < n ; i++ )
+    {
+	document.createTextNode("Some text");
+    }
+    return "Done";
+}
+
+var before = new Date();
+var result = createTN(100000);
+var after = new Date();
+document.writeln( [ result, after - before ] + '<br>' );
+reportresult( "createTextNode", after-before );
+</script>

@@ -1,0 +1,42 @@
+div#menu_container
+  {
+    border: groove thick black;
+    position: relative;
+    width: 50%;
+  }
+  
+div.class_submenu_item
+  {
+    border: thin black solid;
+    padding: 1px;
+  }
+
+span.class_submenu
+  {
+    font-family: sans-serif;
+    position: relative;
+    width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  
+span.class_link
+  {
+    font-family: sans-serif;
+    position: relative;
+    width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+a.class_link
+  {
+    font-decoration: none;
+  }
+  
+div.class_submenu
+  {
+    position: absolute;
+    visibility: hidden;
+    border: groove thick black;
+  }

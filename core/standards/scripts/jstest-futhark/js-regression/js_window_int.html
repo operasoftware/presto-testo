@@ -1,0 +1,208 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/REC-html401/strict.dtd">
+<!--
+   Created by torstein@opera.com
+-->
+<html>
+   <head>
+      <title>Window Object Test - Interactive</title>
+      <script type="text/javascript" src="../regression-lib/testbase.js"></script>
+      <script type="text/javascript" src="scripts/js_window_int.js"></script>
+   </head>
+   <body onblur="reportEvent( 'onBlur' )"
+         ondragdrop="reportEvent( 'onDragDrop' )"
+         onerror="reportEvent( 'onError' )"
+         onfocus="reportEvent( 'onFocus' )"
+         onload="reportEvent( 'onLoad' )"
+         onmove="reportEvent( 'onMove' )"
+         onresize="reportEvent( 'onResize' )" 
+         onunload="reportEvent( 'onUnload' )"
+   >
+      <h1>Window Object Test - Interactive</h1>
+      <script type="text/javascript">showred( cvs );</script>
+      <p>
+         The popup window is for reports from the different event
+         handlers.
+      </p>
+      <h2>User interaction</h2>
+      <h3>Event handlers</h3>
+      Try to trigger the following event handlers:
+      <ol>
+         <li>
+            onBlur(), remove focus from the window, clicking on a different
+            window on your desktop.
+         </li>
+         <li>
+            onDragDrop(), when the user drops an object onto the
+            browser window, such as dropping a file.
+         </li>
+         <li>
+            onError(), when the loading of a document or image causes an error.
+            <a href="javascript:triggError()">Trigg an error</a>
+         </li>
+         <li>
+            onFocus(), should be triggered when loading the page, and when
+            the window receives focus after been blurred (&nbsp;another window
+            hsa had the focus&nbsp;).
+         </li>
+         <li>
+            onLoad(), should be triggered when loading the page, and when
+            reloading it.
+         </li>
+         <li>
+            onMove(), should be triggered when 
+            when the user or script moves a window or frame.
+            <a href="javascript:moveWindow( self );">Move this window</a>
+         </li>
+         <li>
+            onResize(), should be triggered  
+            when a user or script resizes a window or frame.
+            <a href="javascript:resizeWindow( self, true );">Resize this window horizontally</a>
+            <a href="javascript:resizeWindow( self, false );">Resize this window vertically</a>
+         </li>
+         <li>
+            onUnload(), should be triggered when closing the window, or
+            entering a different URL.
+            <a href="javascript:unloadDocument( self )">Go back in history</a>
+         </li>
+      </ol>
+      <h3>Properties not tested in the non interactive test</h3>
+      <ol>
+         <li>
+            pageXOffset. 
+            Provides the current x-position, in pixels, of a window's viewed page.
+            <a href="javascript:getPageXOffset( self )">Get current pageXOffset</a>
+         </li>
+         <li>
+            pageYOffset. 
+            Provides the current y-position, in pixels, of a window's viewed page.
+            <a href="javascript:getPageYOffset( self )">Get current pageYOffset</a>
+         </li>
+      </ol>
+      <h3>Methods not tested in the non interactive test</h3>
+      <ol>
+         <li>
+            <a href="javascript:self.back();">back()</a> should take you
+            one document back in history.
+         </li>
+         <li>
+            <a href="javascript:self.blur();">blur()</a> should take away
+            the focus from this window.
+         </li>
+         <li>
+            All clicks in one of the three frames should be registered in
+            the evenHandler window.
+            <a href="javascript:testCaptureEvents( self );">enableExternalCapture() and captureEvents()</a>
+         </li>
+         <li>
+            find(),  Finds the specified text string in the contents of the specified window.
+            <a href="javascript:testFind( self );">test the find() method</a> A popup should be displayed
+            with the word "world" highlighted.
+         </li>
+         <li>
+            <a href="javascript:testFocus( self );">testFocus().</a> Two popups should appear, but it's
+            the first one that should have the focus.
+         </li>
+         <li>
+            <a href="javascript:self.forward();">forward().</a> Moves one forward in the
+            document history (&nbsp;if there is one&nbsp;).
+         </li>
+         <li>
+            <a href="javascript:self.home();">home().</a> Moves to the page defined as your homepage.
+         </li>
+         <li>
+            <a href="javascript:self.print();">print().</a> Prints the contents of the window or frame.
+         </li>
+         <li>
+            <a href="javascript:testPrompt( self )">prompt().</a>
+            If you press 'Ok', the text in the input field is returned, if you press 'Cancel', null is returned.
+         </li>
+         <li>
+            <p>
+               <a href="javascript:testScroll( self )">scroll().</a><br>
+               <a href="javascript:testScrollTo( self )">sccrollTo().</a>
+            </p>
+            <p>
+               scrollTo() replaced scroll() in JS 1.2, but the scroll() remains for backward compatibility.
+               Thus, both methods should behave identically, that is to:
+               Scrolls the viewing area of the window so that the specified point becomes the top-left corner.
+            </p>
+            <p>
+               The test: both scroll() and scrollTo() opens two windows; one 100x200 and one 100x100.
+               The first one should scroll down 200 pixels on the y axis, so that red box is the first
+               thing you see in your top left corner. The second window is a square that is to be scrolled
+               200 pixels, both on the x and y axis. Thus, you should lower right corner of the cyan
+               square in the top left corner of the window.
+            </p>
+         </li>
+         <li>
+            <p>
+               <a href="javascript:testScrollBy( self )">scrollBy().</a>
+               Scrolls the contents of the window a specified amount of the x, y. It differs from
+               scroll() and scrollTo() in that it scrolls relative to where the viewarea is.
+               Scrollbars shoud be visible in order to get any effect of this method.
+            </p>
+            <p>
+               The test opens two windows; one 100x200 and one 100x100.
+               The first one starts at x = 0 and y = 200, then uses scrollBy() to go
+               down 300 on the axis, you should see the lower left corner of the second, red box.
+               The second uses scrollBy() to go 200 on the x axis and 200 on the y axis. Thus,
+               you shuld see the lower right corner of the first box in your top left corner
+               of the window.
+            </p>
+            <p>
+               <a href="javascript: self.scroll( 100, 100 );">
+                  Click here to get the top left corner to ( 100, 100 ) using scroll()
+               </a><br>
+               <a href="javascript: self.scrollTo( 100, 100 );">
+                  Click here to get the top left corner to ( 100, 100 ) using scrollTo()
+               </a>
+            </p>
+            <p>
+               <a href="javascript: self.scrollBy( 100, 0 );">Click here to scroll this window +100 on the x axis</a><br>
+               <a href="javascript: self.scrollBy( 0, -100 );">Click here to scroll this window -100 on the y axis</a><br>
+               <a href="javascript: self.scrollBy( 100, -100 );">
+                  Click here to scroll this window +100 on the x axis and -100 on the y axis
+               </a>
+            </p>
+         </li>
+         <li>
+            <a href="javascript:testSetHotKeys( self );">setHotKeys()</a>
+            Enables or disables hot keys in a window which does not have menus.
+         </li>
+         <li>
+            <p>
+               <a href="javascript:testSetIntervalLambda( self );">setInterval() with a lambda function</a>&nbsp;
+               <a href="javascript:clearIntervalLambda( self );">clearInterval()</a>
+            </p>
+            <p>
+               <a href="javascript:testSetIntervalNormal( self );">setInterval() with a normal expression</a>&nbsp;
+               <a href="javascript:clearIntervalNormal( self );">clearInterval()</a>
+            </p>
+            <p>
+               Evaluates an expression or calls a function every time a specified number of milliseconds elapses, until
+               canceled by a call to clearInterval.
+            </p>
+         </li>
+         <li>
+            <p>
+               <a href="javascript:testSetTimeoutLambda( self );">setInterval() with a lambda function</a>&nbsp;
+               <a href="javascript:clearTimeoutLambda( self );">clearInterval()</a>
+            </p>
+            <p>
+               <a href="javascript:testSetTimeoutNormal( self );">setTimeout() with a normal expression</a>&nbsp;
+               <a href="javascript:clearTimeoutNormal( self );">clearTimout()</a>
+            </p>
+         </li>
+         <li>
+            <a href="javascript:testStop( self );">stop() (&nbsp;crashes Mozilla&nbsp;)</a><br>
+            <a href="javascript:newwin.stop()">Stop the document loading  in the other window from here</a>
+            This method performs the same action as a user choosing the Stop button in the browser. 
+         </li>
+      </ol>
+      <img src="http://www.opera.com/graphics/logo_z.gif"
+           alt="Opera logo"
+           width="2000"
+           height="10"
+      >
+   </body>
+</html>

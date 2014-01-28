@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html><head>
+	<title>load event on nested FRAMESET </title>
+	<script>_conf_timeout_delay=1500;</script>
+	<script src="_files/lib.js" ></script>
+	<script>
+	/** Complex frameset load event test case
+	This test is complex enough to require some explanation. We have a screen split into 6 visible frames.
+	-----------------------------------------------------------------------------
+	|                                                 |      Top right (empty)  |
+	|    Top left (support.html, result summary)      |-------------------------|
+	|                                                 | Middle (nested-frameset)|
+	|                                                 | one FRAMESET, one FRAME |
+	|-------------------------------------------------|-------------------------|
+	|    Bottom left (empty)                          | Bottom right (empty)    |
+	|-------------------------------------------------|-------------------------|
+
+	The expected behaviour: first fire load events on the empty frames, in source order.
+	Then fire on each nested document and its FRAME element, in source order,
+	starting with innermost document in each frame.
+	Fire on FRAMESET after firing load on all FRAMEs in document
+	Only fire on one FRAMESET per file
+	*/
+		var expected = [
+			'load  on top right FRAME  in window [033.html]',
+			'load  on bottom left FRAME  in window [033.html]',
+			'load  on bottom right FRAME  in window [033.html]',
+			'load in window [support.html] (in FRAME#topleft [support.html])',
+			'load  on top left FRAME  in window [033.html]',
+			'load in window [support.html] (in FRAME#inner_frame [support.html])',
+			'load on inner <FRAME> in nested file in window [nested-frameset.html] (in FRAME#middleright [nested-frameset.html])',
+			'load  on inner <FRAMESET> in nested file in window [nested-frameset.html] (in FRAME#middleright [nested-frameset.html])',
+			'load  on middle right FRAME  in window [033.html]',
+			'load on inner FRAMESET in window [033.html]'
+		];
+	</script>
+</head>
+<!-- this load event 'on outer FRAMESET' will never fire?!
+Seems browsers only fire onload on one FRAMESET element per file, and last parsed wins.. -->
+<frameset rows="*,30%" cols="60%,*" onload="load(event, ' on outer FRAMESET ')">
+	<frame src="_files/support.html" onload="load(event, ' on top left FRAME ')" id="topleft"></frame>
+	<frameset onload="load(event, 'on inner FRAMESET')" rows="50%,50%" >
+		<frame src="about:blank" onload="load(event, ' on top right FRAME ')" id="topright"></frame>
+		<frame src="_files/nested-frameset.html" onload="load(event, ' on middle right FRAME ')" id="middleright"></frame>
+	</frameset>
+	<frame src="" onload="load(event, ' on bottom left FRAME ')" id="bottomleft"></frame>
+	<frame src="" onload="load(event, ' on bottom right FRAME ')" id="bottomleft"></frame>
+</frameset></html>

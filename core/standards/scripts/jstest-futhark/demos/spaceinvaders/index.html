@@ -1,0 +1,163 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- 
+   Created by torstein@opera.com
+   $Id: index.html 10655 2006-12-18 15:47:57Z hallvord $
+-->
+<html>
+   <head>
+      <title>DOM SpaceInvaders</title>
+      <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+      <link rel="stylesheet" type="text/css" href="styles/spaceinvaders.css" />
+   </head>
+   <body>
+      <h1 id="header">SpaceInvaders</h1>
+      <p>
+         <em>-SpaceInvaders made with DOM and JavaScript</em>
+      </p>
+      <h2>ASCII version</h2>
+      <p>
+         This version uses PRE elements with ascii inside. CSS in an external
+         stylesheet is used to describe how they are too look.
+         All figures move inside a big table element. 
+         <a href="ascii.html">Play!</a>
+      </p>
+      <ul>
+         <li>
+            Heavy manipulation of a document. The cells in the table are
+            constantly changed, many simultaneously. Evertything on screen
+            moves by altering the contents of this table.
+         </li>
+      </ul>
+      <h2>Image version</h2>
+      <p>
+         This version uses transparent PNG images inside DIV elements
+         for figures. These are moved around by setting their top and
+         left CSS properties in pixels. Thus, they can move around
+         all the screen that is given the game.
+         <a href="image.html">Play!</a>
+      </p>
+      <ul>
+         <li>
+            DOM/CSS. The figures are moved through DOM/CSS, changing the
+            top and left CSS properties of the different elements. Also,
+            setAttribute() is used numerous time to change both
+            normal element attributes like id, but also to set/change
+            external CSS information, like "class".
+         </li>
+         <li>
+            Heavy rendering. After a few levels, the
+            game/document gets extremly heavy to render.
+            Very much is going on at the same time, with
+            numerous images (20+) moving constantly.
+         </li>
+         <li>
+            Preloading of images, using the Image object, see
+            the <a href="scripts/spaceinvaders-image.js">init()</a> method.
+         </li>
+      </ul>
+      <h2>Both versions</h2>
+      <ul>
+         <li>
+            DOM/HTML. Almost everything is done through the DOM.
+            The only thing which are not DOM, is the starting documents, which
+            are pretty clean, and the external stylesheet, residing in
+            <a href="styles/spaceinvaders.css">styles/spaceinvaders.css</a>
+         </li>
+         <li>
+            Sound. Both version uses the DOM to create elements
+            for playing sound. If the browser used is either Mozilla
+            or Galeon, an EMBED element is created, whereas
+            BGSOUND is created if Opera is being used.
+            <a href="https://bugs.opera.com/show_bug.cgi?id=83554">bug #83554</a>
+         </li>
+         <li>
+            Mouse events. The ship is controlled with the mouse,
+            shooting is done by clicking.
+            Thus, the application tests onmousemove and onclick
+            mouse events.
+         </li>
+         <li>
+            Keyboard events. just game commands like "pause"
+            and "do you wish to continue y/n"
+         </li>
+         <li>
+            Concurrence. A <strong>lot</strong> of setTimeout()
+            and setInterval(). Everything that has a predictable motion,
+            has a setInterval(), such as bombs, missiles and alien movement.
+            A lot of setTimeout() is used, e.g. typewriting and explosions.
+         </li>
+         <li>
+            Currently, these demos works best in
+            <a href="http://www.mozilla.org">Mozilla 1.0/1.1</a> and
+            <a href="http://galeon.sourceforge.net/">Galeon 1.2.5</a>.
+            The ASCII version works *pretty good* in Opera 7 build 2131 and
+            <a href="http://www.microsoft.com/">IE 6</a>
+            now plays both versions (&nbsp;after some modifcations to the code&nbsp;),
+            but has huge problems whith transparent PNG images, so the figures on screen
+            look a little odd.
+         </li>
+         <li>
+            <a href="ie_issues.html">IE issues I encountered when making the game play in IE 5.5/6</a>
+            Unsupported JavaScript methods and properties, difference in DOM implementation and
+            how to work around them in Explorer.
+         </li>
+         <li>
+            <a href="../../events-regression/docs/event_properties_support.html">
+               Browser support for event object properties.
+            </a>This is an overview made when developing the SpaceInvaders. It handles the
+            browsers Opera 6, Opera 7, Mozilla 1.1 and Internet Explorer 6 and their support
+            for the different event object properties.
+         </li>
+      </ul>
+      <h2>Code</h2>
+      <ul>
+         <li>
+            <a href="scripts/spaceinvaders.js">spaceinvaders.js</a><br />
+            This file is used both for the ascii version
+            and the image version of SpaceInvaders. All game logic that is version
+            independent goes in here.
+         </li>
+         <li>
+            <a href="scripts/config.js">conifg.js</a><br />
+            All global variables used by both versions reside in this file.
+         </li>
+         <li>
+            <a href="scripts/objects.js">objects.js</a><br />
+            All object definitions goes in this file. These include
+            Missile, AlienBomb, Base and BaseUnit. Used by both versions
+            of SpaceInvaders.
+         </li>
+         <li>
+            <a href="scripts/lib.js">lib.js</a><br />
+            Code that is not directly connected to the SpaceInvaders
+            is put in here. E.g. browser sniffing.
+         </li>
+         <li>
+            <a href="scripts/spaceinvaders-ascii.js">spaceinvaders-ascii.js</a><br />
+            Game logic specific to the ASCII version of SpaceInvaders goes in here.
+         </li>
+         <li>
+            <a href="scripts/config-ascii.js">config-ascii.js</a><br />
+            Global variables used only by the ASCII version reside here. 
+         </li>
+         <li>
+            <a href="scripts/spaceinvaders-image.js">spaceinvaders-image.js</a>
+            Game logic specific to the Image version of SpaceInvaders goes in here.
+         </li>
+         <li>
+            <a href="scripts/config-image.js">config-image.js</a>
+            Global variables used only by the Image version reside here. 
+         </li>
+      </ul>
+      <hr />
+      <p>
+         <a href="http://validator.w3.org/check/referer">
+            <img src="http://www.w3.org/Icons/valid-xhtml10"
+                 alt="Valid XHTML 1.0 Strict!" height="31" width="88"
+                 style="border: 0em;"
+            />
+         </a><br />
+         <a href="mailto:torstein@opera.com">torstein@opera.com</a>
+      </p>
+   </body>
+</html>

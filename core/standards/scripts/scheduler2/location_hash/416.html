@@ -1,0 +1,47 @@
+<!doctype html>
+<title>Location hash - and set hash many times with different values go back in history in one code block after the page completely loaded - check after timeout 2</title>
+<script src="/resources/testharness.js"></script><script src="/resources/testharnessreport.js"></script>
+<script>
+var t = async_test();
+var histlength;
+t.step(function() {
+    if( location.hash && location.hash != '#' ) {
+        location.href = location.href.replace(/#.*$/,'');
+        return;
+    }
+    histlength = history.length;
+});
+
+var loops_number = 24;
+
+window.onload = function () {
+    setTimeout(step1, 100);  
+};
+function step1() {
+    
+    t.step(function() {
+        var i = loops_number;
+        do {
+            location.hash = '#foo' + i;
+            location.hash = '#bar' + i;
+        } while (--i);
+    });
+    t.step(function() {
+        history.go(-1 * (loops_number - 1) * 2 );
+    });
+    t.step(function() {
+        assert_equals( location.hash, '#bar' + 1);
+        assert_equals( history.length, histlength + loops_number*2 );
+    });
+    setTimeout(last_step, 1500);
+}
+
+function last_step() {
+    t.step(function() {
+        assert_equals( location.hash, '#bar' + loops_number );
+        assert_equals( history.length, histlength + loops_number*2 );
+    });
+    t.done();
+}
+</script>
+<div id="log"></div>

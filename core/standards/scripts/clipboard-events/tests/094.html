@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html><head>
+	<meta charset="UTF-8">
+	<title>  clearData() followed by setData() in same event handler  - copy event on document</title>
+	<script src="_lib.js"></script>
+	<script>
+	
+/** clearData() followed by setData() in same event handler */
+/* Events: copy cut */
+/* Targets: document */
+/* paste data: "clipboard text" */
+/* External pass condition - clipboard data: "modified text" */
+function test(e){
+	e.clipboardData.clearData( 'text/plain' );
+	e.clipboardData.setData( 'text/plain', 'modified text' );
+	e.preventDefault();
+}
+
+	</script>
+</head>
+<body>
+
+	<p>FAILED (This TC requires JavaScript enabled)</p>
+	<form><input autofocus id="input_text"></form>
+
+	<script>
+	var dataToPaste="clipboard text";
+	var externalPassCondition="modified text";
+	var eventTarget=document;
+	var eventType='copy';
+	window.onload=function(){
+		setupTest( document, 'copy', dataToPaste, externalPassCondition );
+	}
+	</script>
+</body></html>

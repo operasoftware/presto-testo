@@ -1,0 +1,42 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/REC-html401/strict.dtd">
+<!--
+   Created by torstein@opera.com
+-->
+<html>
+   <head>
+      <title>Image Object Test</title>
+      <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+      <script type="text/javascript" src="../regression-lib/testbase.js"></script>
+      <script type="text/javascript" src="scripts/js_image.js"></script>
+      <script type="text/javascript" src="../testconfig.js"></script>
+   </head>
+   <body>
+      <div>
+         <img src="../graphics/logo_z.gif"
+              lowsrc="../graphics/checker.gif"
+              alt="Opera logo"
+              width="20"
+              height="2"
+              hspace="2"
+              vspace="10"
+              border="1"
+              lowsrc=""
+              name="mypicture"
+              onabort="void(0)"
+              onerror="void(1)"
+              onkeydown="void(2)"
+              onkeypress="void(3)"
+              onkeyup="void(4)"
+              onload="void(5)"
+         >
+         <img src="../graphics/logo_z.gif"
+              alt="opera logo"
+              width="1"
+              height="1"
+         >
+      </div>
+      <script type="text/javascript">
+        main( document.images );
+      </script>
+   </body>
+</html>
