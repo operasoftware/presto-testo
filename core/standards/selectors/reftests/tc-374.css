@@ -1,0 +1,2 @@
+kappa[class="another attribute value"]:lang(en)#id1 nu[att$="green"]:lang(nb)#id2:nth-child(1) alpha[false*="100"]#id3 + mu:lang(no)#id4:nth-child(2) + tau[class|="this.nodeValue"]:lang(en)#id5:nth-child(3) ~ nu[desciption^="f"]:lang(no):nth-last-child(1) > alpha[content$="ue"]:lang(nb):nth-child(1):empty ~ tau:lang(no)#id6:nth-last-child(3) ~ eta[token]:lang(en)#id7:nth-child(3):empty + delta[class|="100%"]:nth-child(4):nth-last-child(1) > iota[true^="thi"]:lang(no)#id8:nth-last-child(2):empty + phi[attrib$="content"]:lang(no)#id9:nth-child(2):last-child
+	{color:green}

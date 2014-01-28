@@ -1,0 +1,2 @@
+omicron:lang(nb)#id1:root epsilon[class]#id2:nth-child(1) omicron:nth-last-child(1) beta[content^="this.no"]:lang(en):last-child mu:lang(en)#id3:nth-child(1) + mu:nth-last-child(1) > sigma#id4:nth-child(1):empty ~ upsilon[title^="at"]#id5:nth-child(2) > lambda[number^="attr"]:lang(en)#id6 + kappa[content|="this"]#id7:nth-child(2):last-child *:nth-last-child(1) epsilon#id8:nth-last-child(1) omicron[delete]:lang(no)#id9:nth-child(1):nth-last-child(1) > gamma[att]:lang(nb)#id10:nth-child(1):last-child
+	{color:green}

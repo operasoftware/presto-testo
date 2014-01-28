@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<title>sessionStorage storage event not fired for this window</title>
+<body>
+<div id="result">FAIL - Script did not execute.</div>
+<script>
+var result = document.getElementById("result");
+var timeout = setTimeout(function(){
+	result.innerHTML = "PASS";
+}, 200);
+
+function callback(evt) {
+	clearTimeout(timeout);
+	result.innerHTML = "FAIL - storage event was fired on this window";
+}
+
+sessionStorage.clear();
+window.addEventListener("storage", callback, false);
+result.innerHTML = "Running...";
+sessionStorage.setItem("test", "value");
+
+</script>

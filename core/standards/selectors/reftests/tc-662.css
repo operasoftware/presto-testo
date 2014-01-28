@@ -1,0 +1,2 @@
+rho rho:lang(no)#id1:nth-child(1):empty ~ sigma:lang(en)#id2 ~ nu[class]:nth-child(3):last-child nu:first-child:nth-last-child(1) > xi[abort^="attribu"]:lang(en)#id3 theta#id4:empty + nu[delete^="another attrib"]:lang(no)#id5:nth-child(2):last-child kappa[class]#id6 + iota[attrib]:lang(nb)#id7:nth-child(2):nth-last-child(1) > psi#id8 gamma[attrib$="lue"]#id9:nth-child(1):nth-last-child(1) theta:empty + *[or]#id10 + psi:lang(nb):nth-last-child(1) > gamma[content]:lang(no):last-child lambda#id11:empty + gamma#id12 > mu#id13
+	{color:green}

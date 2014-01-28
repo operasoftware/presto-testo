@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<title>sessionStorage</title>
+<div id="result">FAIL - Script did not execute.</div>
+
+<script>
+var result = document.getElementById("result");
+result.innerHTML = "";
+
+var ul = document.createElement("ul");
+var li = document.createElement("li");
+result.appendChild(ul);
+
+function testFeature(feature) {
+	var item = li.cloneNode(false);
+	var passed = (eval(feature) !== undefined);
+	item.innerHTML = passed ? "PASS - " + feature : "FAIL - " + feature + " is not defined."
+	ul.appendChild(item);
+}
+
+testFeature("sessionStorage.key");
+testFeature("sessionStorage.getItem");
+testFeature("sessionStorage.setItem");
+testFeature("sessionStorage.removeItem");
+testFeature("sessionStorage.clear");
+</script>

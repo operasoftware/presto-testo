@@ -1,0 +1,2 @@
+chi[insert$="ttribute"]:lang(nb)#id1:root delta#id2:nth-child(1) > beta[insert]:lang(no)#id3:last-child > chi:lang(nb)#id4 + delta:nth-last-child(4) ~ *[false]:lang(en)#id5:empty + theta:lang(no):empty + beta#id6:nth-child(5) rho#id7:first-child:only-child
+	{color:green}

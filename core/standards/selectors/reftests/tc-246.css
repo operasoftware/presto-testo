@@ -1,0 +1,2 @@
+psi[number]:lang(en):root > xi[name*="id "] > omega[insert|="123456789"]:nth-child(1):empty + psi#id1:nth-child(2):empty + delta[src]:nth-child(3):empty ~ gamma:lang(no):nth-child(4):nth-last-child(3) + mu:lang(en)#id2:nth-child(5):empty + sigma[attrib="_blank"]#id3
+	{color:green}

@@ -1,0 +1,2 @@
+omicron[content]:root xi#id1 > omicron:lang(no)#id2 + nu[false]:lang(no)#id3 ~ alpha:nth-child(3) > gamma#id4:nth-child(1) zeta[number="attribute-value"]:lang(no):empty + psi:lang(no):nth-child(2) ~ omicron[delete$="ue"]:lang(no):nth-child(3):nth-last-child(1) > upsilon[title^="another attribute value"]:lang(en) + iota[or^="fal"]#id5:nth-child(2) > beta[insert]:lang(no)#id6:nth-last-child(3) ~ beta:lang(no)#id7:empty + epsilon#id8:nth-child(3):nth-last-child(1) > theta[true^="this.nodeValu"]
+	{color:green}

@@ -1,0 +1,8 @@
+﻿<!DOCTYPE html>
+<title>Attribute Selector [$=] with Empty Value</title>
+<style>
+p { color: lime; }
+p[class$=""] { color: red; }
+</style>
+<p class="">This line should be green.</p>
+<p>This line should be green.</p>

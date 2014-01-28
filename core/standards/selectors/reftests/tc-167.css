@@ -1,0 +1,2 @@
+beta[data]:lang(no)#id1:root tau:first-child *:first-child:empty ~ eta[name^="solid 1px gr"] + pi[token^="attribute val"]:lang(en):last-child:nth-last-of-type(1) tau:lang(nb)#id2:nth-child(1) ~ psi[attribute]:lang(en) > *#id3:nth-child(1) + theta[string="this.nodeValue"]#id4:empty ~ upsilon[delete]#id5:nth-child(3) > lambda#id6:nth-child(1):nth-last-child(1)
+	{color:green}

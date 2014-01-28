@@ -1,0 +1,2 @@
+beta:lang(en)#id1 *:lang(nb):first-child ~ gamma[data|="this"]:lang(en)#id2:nth-child(2):empty + phi[src|="100%"]#id3:nth-child(3):nth-last-child(1) *:lang(en)#id4:first-child mu[src|="false"]:empty + delta[object^="_b"]#id5:nth-child(2):last-child > phi#id6
+	{color:green}

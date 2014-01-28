@@ -1,0 +1,2 @@
+kappa:lang(no)#id1:root omicron[name$="tt-value"]:lang(no):nth-child(1):nth-last-child(2):empty ~ epsilon:nth-child(2) upsilon:lang(en)#id2:first-child:nth-last-child(1) > phi + phi[token*="een"]:lang(no)#id3:nth-last-child(1) > eta:lang(en):nth-child(1) ~ omicron[name*="e"]:lang(en)#id4:nth-child(2):empty ~ rho#id5 > gamma[false]#id6:nth-child(1) + alpha[or$="value"]:lang(en)#id7 omicron[desciption]
+	{color:green}

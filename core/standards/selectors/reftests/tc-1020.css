@@ -1,0 +1,2 @@
+rho[content]:lang(no)#id1:root alpha[title="content"]#id2:first-child:nth-last-child(6):empty ~ zeta:lang(en):nth-child(2) ~ omega:lang(en):nth-child(3):empty + psi:lang(no):nth-child(4) ~ theta[abort]:lang(no):nth-child(5):nth-last-child(2):nth-last-of-type(1):empty ~ pi[attr="true"]:lang(nb) eta[attr$="false"]:lang(en) omega[insert="solid 1px green"]:lang(en)#id3:first-child:last-child gamma:lang(en)
+	{color:green}

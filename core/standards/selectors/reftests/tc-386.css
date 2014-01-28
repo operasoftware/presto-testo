@@ -1,0 +1,2 @@
+sigma zeta:lang(no):last-child > beta:lang(en)#id1:first-of-type:empty ~ pi[name|="false"]:lang(no)#id2:nth-child(2) > iota[att^="co"]:first-child:empty ~ pi[attribute|="another attribute value"]#id3 > alpha[title|="another attribute value"]:lang(nb):nth-child(1):last-child > sigma[true="content"]:lang(nb)#id4:nth-last-child(1) pi:nth-child(1):last-child > alpha:nth-child(1) + nu[attr|="another attribute value"]#id5:nth-child(2):empty + sigma:nth-child(3) + epsilon#id6 ~ lambda[att]:lang(en):nth-child(5) > *:lang(en)#id7:nth-child(1):nth-last-child(1)
+	{color:green}

@@ -1,0 +1,2 @@
+lambda[object*="u"] omicron:first-child + gamma[att|="another attribute value"]:lang(en)#id1:nth-child(2):last-child epsilon[or^="attribute-"]:lang(nb):empty + pi:lang(nb)#id2:nth-child(2) ~ iota#id3:nth-child(3) sigma#id4:nth-last-child(1) > theta[src^="another attri"]#id5 + kappa#id6:nth-child(2):empty + delta:lang(no)#id7:nth-child(3):empty + eta[true*="1"]:lang(en)#id8:empty + chi#id9
+	{color:green}

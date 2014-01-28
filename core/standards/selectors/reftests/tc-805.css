@@ -1,0 +1,2 @@
+chi[string]:lang(en) > mu[and^="th"]:lang(en) > alpha[src^="1234567"]#id1:nth-child(1) > nu:lang(en)#id2 ~ upsilon[content]#id3 + tau:nth-last-child(2) + delta[string]:lang(en)
+	{color:green}

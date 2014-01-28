@@ -1,0 +1,2 @@
+sigma:root > lambda:nth-child(1) delta[true]:empty ~ delta[desciption|="attribute"]:nth-last-child(3) + pi[delete="123456789"]:lang(no)#id1 ~ zeta[or$="6789"] gamma#id2 + pi:lang(nb)#id3:nth-child(2) lambda#id4 > zeta:lang(no)#id5:nth-child(1):nth-last-child(3) ~ kappa:empty + epsilon[abort]:lang(no)#id6:nth-child(3) > alpha[false]:lang(no)#id7:last-child zeta[desciption*="t"]#id8
+	{color:green}

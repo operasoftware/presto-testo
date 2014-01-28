@@ -1,0 +1,2 @@
+rho:lang(no) kappa[token*="1234567"]:lang(en):first-child > alpha:lang(en):last-child epsilon[data^="tr"]:lang(nb)#id1:nth-child(1):empty ~ nu[and|="false"]:lang(en) ~ upsilon:last-child
+	{color:green}

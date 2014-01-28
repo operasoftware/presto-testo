@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<head>
+	<title>Session Storage - Events - document.body.onstorage</title>
+	<script>
+		function run() {
+			var result = document.getElementById("result");
+			result.innerHTML = "";
+
+			function record(pass, msg) {
+				result.innerHTML += (pass ? "PASS" : "FAIL") + (msg ? " - " + msg : "") + "\n";
+				try{top.opener.rr(pass);}catch(e){}
+			}
+			window.record=record;
+			if (!window.sessionStorage) {
+				record(false, "No sessionStorage support");
+				return;
+			}
+
+			try {
+				sessionStorage['a'] = 'A';
+				var timeoutId = setTimeout(function () { record(false, "StorageEvent didn't fire"); }, 1000);
+				document.body.onstorage = function (e) {
+					clearTimeout(timeoutId);
+					record(true);
+				}
+				frames[0].testme();
+			} catch (e) {
+				record(false, e);
+			}
+		}
+	</script>
+</head>
+<html>
+<body onload="run()">
+	<pre id="result">FAIL - Script did not execute</pre>
+	<iframe src="009-1.html" width="0" height="0"></iframe>
+</body>
+</html>
+

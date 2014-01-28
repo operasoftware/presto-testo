@@ -1,0 +1,2 @@
+iota:lang(en)#id1 > iota#id2:nth-last-child(2):empty ~ omega#id3 > *:lang(en)#id4:nth-child(1):empty ~ xi:nth-last-child(2) + xi[number]:nth-child(3):last-child > mu[src]:lang(nb):empty ~ delta[abort$=" green"]:lang(no)#id5:nth-child(2):nth-last-child(2) + nu:nth-last-child(1) > xi[name^="th"]:lang(no):nth-last-child(1)
+	{color:green}

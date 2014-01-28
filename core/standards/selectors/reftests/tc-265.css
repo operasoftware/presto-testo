@@ -1,0 +1,2 @@
+phi:lang(en)#id1 omicron:first-child:last-child theta:lang(no) > delta#id2 > phi[or^="another attribute value"]:lang(en):first-child:empty ~ chi:lang(en)#id3:nth-child(2):empty + omega:lang(no)#id4:empty ~ rho#id5:nth-child(4):first-of-type + upsilon#id6:nth-last-child(2) ~ omicron[attr$="ttribute value"]:lang(en) phi#id7:nth-last-child(4):empty + gamma[name]:lang(en):nth-child(2):empty + gamma[data*="ank"]:lang(en):nth-child(3) ~ upsilon:nth-last-child(1) tau:lang(en):first-child > chi:nth-last-child(2):empty ~ pi[or*="blank"]:lang(nb)
+	{color:green}

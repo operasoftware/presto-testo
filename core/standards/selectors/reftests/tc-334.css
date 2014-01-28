@@ -1,0 +1,2 @@
+phi:lang(en)#id1:root > kappa[token]:lang(nb):nth-child(1) + upsilon:lang(en)#id2:last-child iota:nth-last-child(2) ~ pi[class]:lang(nb) > iota[attribute|="content"]:lang(en)#id3:nth-last-child(1) > zeta:lang(en):empty ~ epsilon[content]:nth-last-child(1) lambda#id4 > lambda[name]:nth-child(1) ~ theta:lang(nb) > xi#id5:nth-last-child(1) > iota[src^="100"]#id6:last-child > rho:lang(en)#id7:first-child:last-child > nu[insert]:lang(no)#id8:empty + omicron[name|="solid 1px green"]:lang(en)#id9:last-child
+	{color:green}

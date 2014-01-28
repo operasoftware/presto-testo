@@ -1,0 +1,2 @@
+psi:lang(en)#id1 *:nth-child(1):nth-last-child(4):empty ~ kappa#id2:nth-child(2):empty + upsilon:lang(no)#id3:nth-child(3):nth-last-child(2) + chi[desciption]:lang(no) > *:nth-last-child(3) + mu:empty + omicron[and]:lang(no)#id4:nth-child(3)
+	{color:green}

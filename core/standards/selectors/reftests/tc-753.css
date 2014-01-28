@@ -1,0 +1,2 @@
+psi *:first-child:nth-of-type(1) + omega:lang(nb)#id1 omega[and|="content"]:lang(nb)#id2 + tau:lang(en)#id3 ~ delta[true*="ue"]:lang(nb):nth-child(3):nth-last-child(1) gamma[object="attribute value"]:first-child:empty + mu#id4:nth-child(2) ~ eta:nth-child(3):empty ~ omega:lang(en)#id5:nth-child(4):empty + gamma:nth-child(5):nth-last-child(2) ~ kappa:nth-child(6):last-child > zeta:lang(en)#id6 + psi[att$="se"]:lang(no):nth-child(2):empty + delta:lang(en)#id7:nth-last-child(2) + pi:lang(en)#id8:nth-child(4)
+	{color:green}

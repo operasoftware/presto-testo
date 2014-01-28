@@ -1,0 +1,2 @@
+lambda[data|="another attribute value"]:lang(en) > xi:first-child:empty ~ upsilon:nth-child(2) ~ eta[att|="this.nodeValue"]#id1 mu[att]:lang(en)#id2:nth-last-child(1) mu:lang(no):last-child chi#id3 > lambda[content$="ttribute value"]:lang(no)#id4:nth-child(1) + iota[name*="en"]:nth-child(2) ~ kappa:lang(no):nth-child(3):nth-last-child(1)
+	{color:green}

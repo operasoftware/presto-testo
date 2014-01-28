@@ -1,0 +1,2 @@
+phi#id1:root kappa[att|="123456789"]:lang(no):nth-last-child(1) epsilon[number]:lang(no)#id2:first-child:nth-last-child(1) zeta:lang(no)#id3:nth-last-child(1) beta[desciption*="6789"]:lang(no)#id4:nth-last-of-type(1):empty + delta[name]:lang(en)#id5:nth-child(2) phi:lang(no):nth-child(1):empty + eta[false^="a"]:lang(no):nth-child(2) + psi[number$="%"]:lang(en):nth-child(3):nth-last-child(1)
+	{color:green}

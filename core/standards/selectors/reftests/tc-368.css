@@ -1,0 +1,2 @@
+mu:lang(en)#id1:root > eta[insert]:lang(en)#id2:nth-child(1) > delta:lang(no)#id3:empty ~ beta[attribute^="another attr"]:lang(en)#id4 > alpha:lang(en):nth-child(1) + zeta[delete*="78"]#id5:nth-child(2):nth-last-child(2):empty ~ xi[object]#id6
+	{color:green}

@@ -1,0 +1,2 @@
+epsilon[desciption|="false"]:lang(en) > iota:lang(nb):first-child:last-child iota:lang(nb)#id1:nth-child(1) ~ upsilon[attrib|="false"]:lang(en)#id2:nth-child(2):nth-of-type(1) zeta:lang(nb)#id3:empty + eta:lang(en) > iota:lang(no):first-child kappa[title$="k"]:nth-child(1) + gamma[object]#id4:nth-child(2) + mu#id5 ~ xi#id6:nth-last-child(1) > rho[false] ~ theta[attr^="attribut"]:lang(en):last-child > *:lang(en):last-child nu[delete$="nk"]:lang(en)#id7 ~ iota[att|="attribute"]:nth-child(2):nth-last-child(2):empty + iota[or="attribute-value"]:lang(no):last-child
+	{color:green}

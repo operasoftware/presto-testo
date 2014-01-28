@@ -1,0 +1,2 @@
+beta#id1 chi:lang(en)#id2:first-child:last-child > epsilon:lang(no):nth-last-child(2) ~ theta:lang(no)#id3:last-child theta[string^="100"]:lang(en):nth-child(1):empty ~ chi:empty + omicron:lang(en)#id4:nth-last-child(1) tau[attr]:lang(en)#id5:first-child:last-child omicron#id6:nth-child(1) > zeta[title="123456789"]#id7:first-child xi:lang(nb):first-child lambda[object|="false"]:first-child:empty + omicron:lang(en)#id8:nth-child(2) > omega[true]#id9:nth-child(1) + delta#id10:nth-child(2):empty ~ theta[true$="ue"]:last-child
+	{color:green}

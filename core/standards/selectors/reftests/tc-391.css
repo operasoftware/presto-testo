@@ -1,0 +1,2 @@
+*:lang(en) eta[attr*="23"]:nth-last-child(1) > lambda[true$="789"]:lang(en)#id1 > xi:lang(en)#id2 > beta[data*="%"]:lang(en):first-child + chi[or*="ibu"]#id3 ~ upsilon:lang(en):nth-child(3):nth-last-child(2):empty ~ phi[number]#id4:nth-child(4):nth-last-child(1) chi:nth-child(1):empty ~ lambda[att^="attri"]:nth-last-child(2):empty ~ eta[object|="another attribute value"]:lang(no) omicron:first-child:last-child
+	{color:green}

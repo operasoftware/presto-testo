@@ -1,0 +1,2 @@
+lambda:root > chi:lang(en)#id1:nth-last-child(1) delta:only-of-type:empty ~ omicron[data*="e"]:lang(en) > gamma > tau:lang(nb)#id2 eta[number="this-is-att-value"]:lang(nb)#id3:last-child > zeta:nth-last-child(3):empty + theta#id4:nth-child(2) ~ delta:lang(no):nth-child(3):last-child
+	{color:green}

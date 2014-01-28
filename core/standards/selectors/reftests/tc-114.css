@@ -1,0 +1,2 @@
+omicron[insert]:root > gamma#id1:empty ~ alpha[abort="content"]#id2:nth-child(2) epsilon[title$="his-is-att-value"]:empty ~ delta#id3:nth-child(2):empty + beta[src]:lang(en):empty ~ *[abort]:lang(en) > kappa[insert*="ont"]:lang(no) > xi[data^="at"]:lang(nb):nth-last-child(2):empty + nu:lang(en):nth-child(2):last-child pi:last-child
+	{color:green}

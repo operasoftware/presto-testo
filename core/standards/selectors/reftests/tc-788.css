@@ -1,0 +1,2 @@
+phi > *:lang(nb)#id1 ~ lambda:lang(no)#id2:nth-child(2):empty ~ psi:lang(nb)#id3 > phi#id4:nth-child(1) + beta[object="true"]#id5:nth-child(2):nth-last-child(1) xi:nth-last-child(2):nth-of-type(1) ~ lambda#id6:nth-child(2):last-child > xi[title]#id7:first-child sigma:lang(no)#id8:nth-last-child(1) theta#id9 ~ mu:lang(no)#id10 alpha#id11:first-child + epsilon#id12 + phi[class|="another attribute value"]
+	{color:green}

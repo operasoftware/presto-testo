@@ -1,0 +1,2 @@
+omicron[att^="attribute value"]:root mu:lang(en)#id1:empty ~ beta sigma:lang(en)#id2:empty ~ delta:lang(no)#id3:nth-child(2):empty ~ kappa[or^="tru"]:lang(en):nth-child(3) + mu[attrib|="attribute value"]:lang(no):nth-child(4):empty ~ zeta:nth-child(5) + rho[att]:lang(en) + iota[name]:last-child lambda[desciption]#id4:nth-child(1) > tau[false*="0%"]:lang(en):first-child:empty ~ epsilon:lang(en):empty ~ epsilon > chi[token]:lang(en)#id5:nth-child(1):nth-last-child(3) + kappa:lang(no)#id6:nth-child(2):nth-last-child(2):empty ~ theta:lang(no) > lambda[attrib]
+	{color:green}

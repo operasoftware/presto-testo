@@ -1,0 +1,2 @@
+alpha:root rho#id1:first-child xi#id2 zeta:lang(en)#id3 ~ alpha:lang(en)#id4:empty + pi#id5:nth-child(3):last-child > omega:nth-child(1) > pi#id6 omicron:lang(no) psi[abort="this-is-att-value"]:lang(nb)#id7:first-child:nth-last-child(3) + gamma[class$="%"]:lang(en)#id8:nth-child(2):nth-last-child(2):empty ~ iota[title$="123456789"]#id9 > gamma:lang(en)#id10:nth-child(1):empty + gamma:lang(en):nth-child(2):last-child
+	{color:green}

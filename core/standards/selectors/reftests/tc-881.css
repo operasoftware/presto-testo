@@ -1,0 +1,2 @@
+tau:lang(nb) > alpha[string*="8"]:lang(nb)#id1:nth-last-child(1) > rho[data*="6789"]:first-child:last-child sigma[and$="6789"]#id2:nth-child(1) + upsilon[src|="this"]:lang(en)#id3:empty + iota[string]:lang(no):nth-child(3):empty + kappa:lang(en):nth-child(4):nth-last-child(2):empty + iota[true="attribute"]:lang(no)#id4:nth-child(5) kappa:nth-last-child(2):empty + chi:lang(no)#id5:nth-child(2) kappa:lang(no)#id6 + beta[string^="100"]:lang(no):nth-child(2)
+	{color:green}

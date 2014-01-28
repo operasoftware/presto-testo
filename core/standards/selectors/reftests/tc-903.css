@@ -1,0 +1,2 @@
+phi:lang(en) chi#id1:empty ~ delta:lang(en):nth-child(2) ~ *:lang(en):nth-child(3):last-child > lambda[number^="123456"]:lang(en):last-child zeta#id2:first-child beta#id3:first-child:last-child > psi:lang(no)#id4:empty ~ alpha[false*="0%"]#id5:nth-child(2):empty + zeta ~ tau#id6:nth-child(4):nth-last-child(1) psi[string^="12345"]:lang(nb)#id7:first-child delta[delete]:lang(en):nth-child(1):last-child mu[delete]:first-child xi[abort|="123456789"]:lang(en):nth-child(1):first-of-type
+	{color:green}

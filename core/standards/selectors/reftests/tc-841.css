@@ -1,0 +1,2 @@
+sigma[false]:lang(no)#id1 > sigma[name*="V"]#id2 > omega[delete$="%"]#id3:first-child:nth-last-child(1) pi[insert="123456789"] > mu#id4:last-child > pi[data="false"]#id5:first-child:last-child
+	{color:green}

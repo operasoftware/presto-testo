@@ -1,0 +1,2 @@
+mu:root mu[insert]:lang(nb)#id1 phi#id2:empty ~ mu[content]#id3 + tau:nth-child(3) epsilon:lang(en):first-child:nth-last-child(3) ~ *:lang(en):nth-child(2) + rho[name]#id4:last-child:first-of-type > tau:lang(no):first-child ~ gamma[content]:lang(nb):nth-child(2):last-child
+	{color:green}

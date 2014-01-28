@@ -1,0 +1,2 @@
+mu:root alpha#id1:first-child ~ theta#id2:nth-child(2):empty + rho[title]:lang(no)#id3:nth-child(3):nth-last-child(5):nth-of-type(1) ~ gamma[att$="ute"]:lang(no):empty ~ tau[object*="b"]:lang(en):nth-child(5) + zeta[class]#id4:nth-child(6):empty + omicron:lang(en)#id5:nth-child(7):last-child lambda:lang(nb):first-child:nth-last-child(1)
+	{color:green}

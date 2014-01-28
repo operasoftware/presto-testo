@@ -1,0 +1,2 @@
+alpha[data^="attribute value"]:lang(en)#id1 omega#id2 + theta:first-of-type > gamma[class]#id3:nth-child(1) > beta[attr*="value"]:lang(en):nth-child(1) sigma[object$="ttribute value"]:lang(en)#id4:nth-last-child(5):empty + omega:lang(no)#id5:nth-child(2):nth-last-child(4) + omega[object*="ru"]:lang(no):nth-child(3):nth-last-child(3):empty ~ omega:lang(en)#id6 ~ upsilon:lang(en):nth-child(5)
+	{color:green}

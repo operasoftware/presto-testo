@@ -1,0 +1,2 @@
+delta[name|="content"]:lang(en):root > alpha[number*="a"]#id1:nth-last-child(2) ~ lambda[object]:nth-child(2) chi[and]#id2:first-child alpha#id3:first-child xi[true]#id4:empty ~ pi[false]:nth-child(2) > rho#id5:empty ~ psi[title^="12345678"]:nth-child(2):last-child
+	{color:green}

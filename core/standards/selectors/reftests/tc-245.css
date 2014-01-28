@@ -1,0 +1,2 @@
+omicron:root > zeta:lang(en):first-child > *:nth-child(1):nth-last-child(1) > mu[false|="false"]:lang(nb):nth-last-child(1) > beta[and$="100%"]:lang(en)#id1:nth-child(1):empty + pi[desciption]:lang(en)#id2:nth-child(2):nth-last-child(1) rho:lang(nb):first-child:nth-last-child(1) > kappa[token*="nten"]:lang(nb):nth-child(1) + pi[token*="olid 1px "]#id3 ~ alpha[name="this-is-att-value"]:nth-last-child(1) psi:lang(nb)#id4 epsilon:nth-child(1):empty + nu:lang(no) + epsilon:lang(en)#id5 ~ epsilon[object]:lang(no):empty ~ omicron:lang(en)#id6:last-child
+	{color:green}

@@ -1,0 +1,2 @@
+phi:lang(en):root delta[src="123456789"]:lang(no):first-child:last-child nu[string*="ue"]:lang(en)#id1:empty + chi#id2 ~ chi[token="attribute-value"]:lang(en):nth-child(3) alpha[or*="ute value"]:lang(no)#id3:first-child:nth-last-child(3):empty + tau#id4:nth-child(2) + omega:lang(en)#id5:nth-child(3):last-child:nth-last-of-type(1) > theta:lang(no):nth-child(1):nth-last-child(1) nu[delete]:lang(no):nth-child(1) + phi#id6
+	{color:green}

@@ -1,0 +1,2 @@
+tau:root > psi:lang(nb)#id1 + beta:last-child > kappa:lang(en)#id2:last-child > pi:lang(no)#id3:nth-child(1) ~ chi:lang(no)#id4:nth-last-child(1) > nu#id5:nth-last-child(2):empty ~ beta#id6:nth-child(2):last-child upsilon[attribute^="true"]:lang(no)#id7
+	{color:green}

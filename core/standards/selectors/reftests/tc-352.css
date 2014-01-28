@@ -1,0 +1,2 @@
+alpha[data="attribute"]:lang(en)#id1:root > iota[att^="this-is-att-v"]:lang(en)#id2:first-child:empty + xi:lang(en)#id3 > eta#id4:nth-last-child(1) > theta[insert|="attribute"]#id5:nth-last-child(5) ~ delta:lang(nb):empty ~ beta:nth-last-child(3) + upsilon[insert$="value"]:lang(en)#id6:nth-child(4):empty ~ delta[abort|="attribute"]:nth-child(5):last-child mu:lang(en)#id7:empty ~ alpha#id8:nth-child(2):nth-last-child(1) > pi:lang(nb):last-child > tau:lang(no)#id9:nth-child(1):last-child phi[title$="ue"] > phi[string]#id10:first-child:last-child
+	{color:green}

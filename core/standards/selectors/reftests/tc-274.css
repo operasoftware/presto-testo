@@ -1,0 +1,2 @@
+rho:lang(nb)#id1 omicron[token^="1"] + theta[content$=" value"]:lang(en) > beta:lang(en)#id2:first-child:empty + tau#id3:last-child mu:lang(en):first-child > delta:lang(en):nth-child(1) > beta[attribute|="this"]:lang(en)#id4:nth-child(1):empty + mu:empty ~ gamma:lang(en):nth-last-child(1) iota#id5:nth-child(1):nth-last-child(2) + beta[content="true"]:nth-child(2)
+	{color:green}

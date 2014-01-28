@@ -1,0 +1,2 @@
+sigma[att^="th"]:lang(no)#id1:root sigma:lang(no):nth-child(1) + rho[true|="content"]#id2:nth-child(2) ~ rho[insert|="solid 1px green"]:lang(no):nth-child(3):last-child > zeta[title]:lang(nb) > rho:lang(no):nth-child(1)
+	{color:green}

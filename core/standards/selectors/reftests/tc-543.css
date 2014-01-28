@@ -1,0 +1,2 @@
+lambda:lang(no):root omicron#id1:first-child + tau:lang(en):nth-child(2) + iota[data$="t-value"]:lang(no)#id2:nth-child(3):nth-last-child(2):empty + zeta[class]:lang(no):nth-child(4):nth-last-child(1) theta:lang(no):first-child ~ zeta[title]:lang(nb):nth-child(2):empty ~ nu:lang(no)#id3:nth-last-child(1) zeta[att]:lang(no)
+	{color:green}

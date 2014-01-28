@@ -1,0 +1,2 @@
+omicron#id1:root iota[attr^="this-is-att-"]#id2:nth-last-child(1) > beta[string]:lang(no):empty ~ omega[or]:lang(en)#id3:nth-child(2) pi:nth-last-child(1) > nu:lang(nb)#id4:first-child tau#id5:nth-last-child(1) theta[src]:lang(en) ~ xi:lang(en):nth-child(2):first-of-type:empty + xi:lang(en)#id6:nth-child(3):nth-last-child(1) > rho[false|="false"]:lang(en)#id7:first-child phi[attribute]:lang(en)#id8:last-child omega[abort|="attribute"]:lang(en):nth-last-child(3) ~ lambda[attrib="_blank"]:nth-child(2) ~ nu#id9:nth-child(3)
+	{color:green}

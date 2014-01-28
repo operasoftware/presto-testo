@@ -1,0 +1,2 @@
+mu[data^="attribut"]:root > epsilon:lang(nb)#id1:first-child + eta[attr*="ank"]:empty ~ gamma[string|="attribute"]:lang(en)#id2:nth-child(3):nth-last-child(1) > eta[delete]:lang(en)#id3 + *[content]:lang(nb):nth-child(2):nth-last-child(4) ~ beta[desciption]#id4:nth-child(3) + epsilon[token$="een"]:lang(en):nth-child(4) + alpha[att]:lang(no)#id5:nth-last-child(1)
+	{color:green}

@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<title>sessionStorage storage event for setItem()</title>
+<body>
+<script>
+function testme(){
+	if(sessionStorage['a'] == 'A'){
+		sessionStorage.setItem("a", "AA");
+	}else{
+		parent.record( false, 'sessionStorage does not contain the expected key' );
+	}
+}
+</script>

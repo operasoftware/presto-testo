@@ -1,0 +1,9 @@
+<!DOCTYPE html>
+<title>sessionStorage</title>
+<p id="result">FAIL - Script did not execute.</p>
+
+<script>
+var result = document.getElementById("result");
+var passed = (window.sessionStorage != undefined);
+result.innerHTML = passed ? "PASS" : "FAIL - window.localStorage is not defined."
+</script>

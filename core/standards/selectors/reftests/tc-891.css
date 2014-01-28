@@ -1,0 +1,2 @@
+delta:lang(en):root *:first-child:nth-last-child(2):empty ~ xi[and|="another attribute value"]#id1:nth-child(2):last-child delta[content="false"]#id2:nth-child(1) ~ delta[delete^="12"]:empty + nu:nth-child(3):last-child tau#id3:nth-last-child(1) > kappa[attrib$=" attribute value"]:nth-last-child(2):empty + gamma#id4:nth-last-child(1) > sigma:nth-child(1):last-child delta[insert*="ank"]:lang(en)#id5:first-child:nth-last-child(1) phi > delta[src^="attribut"]#id6:nth-child(1) > gamma:lang(en)#id7
+	{color:green}

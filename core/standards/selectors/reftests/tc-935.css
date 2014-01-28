@@ -1,0 +1,2 @@
+omicron:root beta[string|="123456789"]:lang(en):nth-child(1):empty ~ epsilon[or="this.nodeValue"]:last-child pi[att|="_blank"]:lang(no) > delta[delete] > rho[or*="lue"]:lang(en) > alpha:nth-child(1)
+	{color:green}

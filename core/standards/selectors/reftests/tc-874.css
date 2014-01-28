@@ -1,0 +1,2 @@
+lambda:lang(no):root *:lang(en)#id1:first-child ~ iota[name="123456789"]:lang(no):nth-child(2):nth-last-child(2) ~ omicron:nth-child(3) > tau[src|="this.nodeValue"]:lang(no):nth-child(1):nth-last-child(1) > beta[abort$="-att-value"] + nu[attrib|="123456789"]#id2:nth-child(2):nth-last-child(1) > alpha#id3:first-child:nth-last-child(2):empty ~ nu#id4:nth-child(2)
+	{color:green}

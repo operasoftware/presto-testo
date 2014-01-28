@@ -1,0 +1,2 @@
+sigma[token^="this.no"] * *:lang(no)#id1:empty + tau[attrib]#id2:nth-child(2) *[and]:nth-last-child(4):empty + omega#id3:nth-child(2):empty ~ lambda[class^="this-is-at"]:lang(en) + omicron[true$="attribute"]:lang(en)#id4 > alpha:lang(no)#id5:empty + beta#id6 ~ rho:empty ~ upsilon[attr="false"]:lang(en)#id7:nth-last-child(5) + rho:lang(en):nth-child(5) ~ zeta:empty ~ nu[desciption|="false"]:lang(en):nth-child(7) ~ sigma:lang(en)#id8 > zeta[string^="attribute valu"]:lang(nb):empty + epsilon[token]:lang(en)#id9:last-child mu[insert|="123456789"]:nth-last-child(1)
+	{color:green}

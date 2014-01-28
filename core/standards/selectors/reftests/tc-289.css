@@ -1,0 +1,2 @@
+beta[and^="this-is-at"]:lang(nb)#id1 > psi[token]:lang(en)#id2 > tau:lang(en):nth-last-child(1) > pi:lang(en) + alpha[content*="tr"]#id3:nth-child(2) pi:lang(en)#id4:first-child:nth-last-child(2) + *[true$="lue"]:lang(en):last-child > iota[number$="e"]:lang(en)#id5:nth-last-child(2) ~ delta:lang(nb)#id6 > beta:lang(no):first-child:nth-last-child(1) > sigma:lang(nb)#id7:empty ~ epsilon[content="123456789"]#id8:nth-last-child(1) > beta[and$="e"]:lang(no) > nu#id9:nth-last-child(1)
+	{color:green}

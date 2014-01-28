@@ -1,0 +1,2 @@
+epsilon[attribute*="als"]#id1:root > omicron#id2 > mu[title^="another att"]:lang(nb)#id3 + kappa:lang(no):nth-last-child(2) + psi[number^="this-is-at"]:lang(en):nth-child(3) *:lang(no)#id4:nth-child(1):last-child > sigma#id5:first-child > rho:nth-child(1):nth-last-child(2) ~ tau#id6 > lambda:lang(no)#id7:nth-child(1) > chi:lang(nb)#id8:nth-last-of-type(1):empty + theta[class$="ue"]:lang(en)#id9:nth-child(2):empty ~ zeta:nth-child(3) pi[data|="attribute"]:nth-child(1):nth-of-type(1):empty + nu[att]:nth-child(2)
+	{color:green}

@@ -1,0 +1,2 @@
+xi[attribute|="attribute"]:lang(en)#id1 > *:lang(no) > zeta[or^="attribute-va"]:lang(en)#id2:first-child:last-child > theta[data^="attribute"]:first-child:nth-last-child(1) rho[string]:lang(no):nth-child(1):last-child > chi:last-child epsilon[true|="this"]#id3:nth-last-child(1) > gamma[desciption]:first-child:empty + gamma:lang(no)#id4:nth-child(2):nth-last-child(1) > mu:lang(no):empty + theta#id5:nth-last-child(4):empty ~ xi#id6:nth-child(3) ~ pi:empty ~ lambda[class]:nth-child(5) > lambda#id7:nth-child(1) + sigma[object*="alse"]#id8 > delta:lang(nb)
+	{color:green}

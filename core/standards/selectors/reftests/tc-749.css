@@ -1,0 +1,2 @@
+beta:lang(no):root delta:nth-child(1):nth-last-child(2) + omicron#id1:nth-child(2) lambda[number="attribute-value"]:nth-last-child(4) ~ tau:lang(en)#id2:nth-child(2):empty + *[data]#id3:nth-child(3) ~ upsilon:lang(en)#id4:nth-child(4) > psi:lang(no):nth-last-child(2):empty + tau[class|="solid 1px green"]#id5:nth-child(2):last-child > mu[content|="attribute"]:lang(en):first-child:nth-last-child(3) + iota[attribute]#id6:empty + pi:lang(en)
+	{color:green}

@@ -1,0 +1,2 @@
+chi:lang(en) > epsilon[attrib$="ent"]:lang(en):nth-child(1):empty ~ iota:nth-child(2):nth-last-child(2) ~ rho:nth-last-child(1) > chi[true]:lang(no)#id1 zeta:lang(en)#id2 ~ theta#id3:empty ~ delta:lang(no):last-child alpha[or="true"]:lang(no)#id4:nth-child(1):empty + pi:lang(no):nth-child(2) nu[attrib$="ue"]:lang(no):nth-child(1):last-child > lambda[delete$="se"]:lang(en)#id5 ~ kappa:lang(en)#id6 + chi[attribute*="d 1px green"] > nu:lang(en)#id7:nth-last-child(1) phi:lang(no):first-child + nu#id8:nth-child(2):nth-last-child(1)
+	{color:green}

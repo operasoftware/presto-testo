@@ -1,0 +1,2 @@
+zeta[token]#id1 > omega:lang(no)#id2 > nu[insert*="gre"]:lang(no)#id3 > upsilon:nth-child(1) > iota[desciption]#id4 > alpha[content]:lang(en)#id5:nth-child(1) ~ *[attrib]#id6:empty + xi[attr^="content"]:lang(en)#id7 + iota:nth-child(4):last-child pi:lang(en)#id8:first-child + zeta[true]:lang(en)#id9:nth-last-child(3) + psi[content]:lang(no):empty ~ *#id10:last-child:nth-last-of-type(1) > alpha:lang(en)#id11:nth-child(1):last-child epsilon[content|="this.nodeValue"]#id12
+	{color:green}

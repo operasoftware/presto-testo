@@ -1,0 +1,2 @@
+lambda[att]:lang(en) > delta:lang(en)#id1:nth-child(1) > upsilon[token]:lang(en)#id2:nth-child(1) ~ delta[att|="_blank"]:lang(nb):nth-child(2) > beta[attrib|="attribute value"]#id3:first-child:nth-last-child(3):empty ~ tau#id4 ~ rho:last-child > eta[object*="d 1"] + sigma:nth-child(2):nth-last-child(1) > iota:first-child:nth-last-child(3):empty ~ nu:nth-child(2):empty + phi[att$="ank"]:lang(en)#id5:nth-child(3):last-child alpha:lang(en) nu[title]:lang(en):first-child > gamma[delete]:lang(en):nth-last-child(1)
+	{color:green}

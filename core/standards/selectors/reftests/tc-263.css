@@ -1,0 +1,2 @@
+*[number^="conten"]:lang(nb) > iota[attr="123456789"]:first-child:empty + tau[data="attribute-value"]:lang(no):empty + rho:lang(no):nth-child(3) > nu:lang(no):nth-child(1) > psi:lang(en)#id1
+	{color:green}

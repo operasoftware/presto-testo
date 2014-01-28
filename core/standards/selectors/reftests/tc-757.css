@@ -1,0 +1,2 @@
+lambda[string^="tr"]:lang(en)#id1:root > eta:nth-last-child(1) > alpha:lang(no):nth-child(1) ~ beta#id2:nth-last-child(1) lambda:lang(en):first-child:nth-last-child(1) > rho[true*="l"]:lang(nb)#id3:last-child
+	{color:green}

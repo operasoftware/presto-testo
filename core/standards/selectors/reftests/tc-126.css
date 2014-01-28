@@ -1,0 +1,2 @@
+tau:root > xi:lang(en):nth-child(1):empty + eta[insert]:nth-child(2):empty + theta[token]:nth-last-child(1) > tau#id1 zeta[insert*="100"]:lang(nb):first-child:empty ~ beta:empty ~ alpha:lang(en):nth-child(3)
+	{color:green}

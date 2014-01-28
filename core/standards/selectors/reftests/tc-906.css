@@ -1,0 +1,2 @@
+xi[object*="al"]:lang(nb)#id1 > omega[data^="12345678"]:lang(en)#id2:first-child:empty ~ *:lang(en)#id3:nth-child(2) ~ alpha[token]:lang(en) ~ lambda:lang(nb)#id4:nth-last-child(1) > omega[data|="true"]#id5:last-child
+	{color:green}

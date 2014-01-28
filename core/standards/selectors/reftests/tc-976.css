@@ -1,0 +1,2 @@
+tau[insert]#id1:root > delta:lang(no):nth-child(1):empty ~ tau[token^="_bla"]#id2:nth-last-child(1) kappa:lang(no):first-child gamma:nth-last-child(3):nth-of-type(1):empty ~ chi[delete]#id3:nth-child(2) + chi[delete]#id4:nth-child(3):nth-last-child(1) > pi:lang(en)#id5:nth-last-child(1) xi[data]:first-child > lambda[att]:lang(no)#id6:nth-last-child(1) > theta[object]:lang(en) sigma[string|="another attribute value"]:last-child > upsilon#id7:last-child
+	{color:green}

@@ -1,0 +1,2 @@
+xi:lang(no):root > alpha[insert]:lang(no)#id1:first-child psi[attrib]:lang(en)#id2:nth-child(1) + lambda[att^="another attribute"]:lang(no)#id3:empty ~ omega[src*="se"]:lang(no):nth-child(3):last-child psi:last-child:first-of-type epsilon#id4:first-child kappa[token*="ttribut"]:lang(en)#id5:first-child nu#id6:first-child + *[attrib="_blank"]#id7:nth-last-child(2):empty ~ nu:last-child
+	{color:green}

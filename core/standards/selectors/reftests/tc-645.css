@@ -1,0 +1,2 @@
+alpha[or|="true"]#id1 > xi:nth-child(1):nth-last-child(2):empty + delta[attribute^="1234567"] zeta[src="content"]:lang(nb)#id2:nth-child(1):nth-last-child(6):empty + epsilon:nth-child(2):empty ~ pi:lang(en)#id3:empty ~ pi[true]:nth-child(4):nth-last-child(3) + psi[class]:lang(no):nth-child(5):empty + psi[data$="23456789"] > alpha:lang(en):nth-last-child(3):empty ~ beta[att^="12345678"]#id4:nth-last-child(2) ~ pi:lang(no)#id5 > upsilon:lang(nb)#id6:nth-child(1):only-of-type
+	{color:green}

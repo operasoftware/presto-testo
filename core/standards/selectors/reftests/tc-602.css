@@ -1,0 +1,2 @@
+mu[insert]:lang(en):root > kappa:lang(en):nth-last-child(1) > beta[attr]:first-child:empty + epsilon[delete="this-is-att-value"]#id1:nth-child(2) > zeta[or*="th"]#id2:nth-last-child(1) gamma[token]#id3:nth-last-child(1) > beta[token]:lang(nb):nth-child(1) + gamma[name="attribute-value"]#id4:empty + delta[false]:lang(no):empty + phi[src*="tribute valu"]#id5:last-child > zeta#id6:first-child:nth-last-child(1) > kappa + upsilon[attr]:nth-child(2):empty ~ zeta:lang(en):nth-child(3):last-child mu[attr|="123456789"]:lang(en)#id7:first-child
+	{color:green}

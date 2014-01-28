@@ -1,0 +1,2 @@
+delta:lang(en):root alpha[string^="solid 1px green"]:lang(no):nth-last-child(1) > gamma#id1:empty ~ gamma:lang(no)#id2:nth-child(2):nth-last-child(1) > xi[object]#id3:first-child:empty + zeta[att$="alse"]:lang(en):empty ~ rho:lang(nb) tau:lang(no)#id4:nth-child(1):last-child *[class]#id5 mu[class]:first-child ~ epsilon[token$="%"]:lang(nb):nth-last-child(1)
+	{color:green}

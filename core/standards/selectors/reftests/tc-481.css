@@ -1,0 +1,2 @@
+pi[and]:lang(nb) mu[content]:lang(en)#id1:first-child + upsilon#id2:nth-child(2):last-child > *:lang(en)#id3:nth-last-child(1) > zeta[content^="_b"]:lang(en):nth-child(1) + eta[name|="content"]:nth-child(2) + *[abort="true"]:empty ~ eta:lang(en)#id4:nth-child(4)
+	{color:green}

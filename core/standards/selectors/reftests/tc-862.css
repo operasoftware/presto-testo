@@ -1,0 +1,2 @@
+*:root > eta[attr^="conten"]:lang(en)#id1:nth-of-type(1) + xi:lang(en)#id2 ~ xi:lang(no):nth-child(3) alpha[data|="attribute"]#id3:empty + chi:lang(en):nth-child(2):nth-last-child(3):empty + psi#id4 + kappa#id5:nth-child(4):nth-last-child(1)
+	{color:green}

@@ -1,0 +1,3 @@
+<?xml version='1.0' encoding='utf-8'?>
+<?xml-stylesheet type='text/css' href='tc-31.css'?>
+<chi insert="attribute" xml:lang="nb" xml:id="id1"><delta xml:id="id2"><beta insert="another attribute value" xml:lang="no-nb" xml:id="id3"><chi xml:lang="nb" xml:id="id4"/><delta/><any false="attribute" xml:lang="en-US" xml:id="id5"/><theta xml:lang="no"/><beta xml:id="id6"><rho xml:id="id7"><green>This text must be green</green></rho></beta></beta></delta></chi>

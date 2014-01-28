@@ -1,0 +1,2 @@
+eta:root > xi#id1:first-child:nth-last-child(1) beta[content]:nth-child(1) > phi:nth-child(1):last-child phi#id2 epsilon[attr$=" 1px green"]:last-child zeta[true$="23456789"]:lang(no)#id3:first-child:nth-last-child(2) ~ zeta:lang(no):nth-child(2):last-child > epsilon:lang(no)#id4 + zeta#id5:nth-last-child(5) + iota[delete]#id6:nth-child(3):empty + chi[title|="123456789"]#id7 ~ omicron[or^="attribute v"]:nth-child(5):empty + rho[name*="e"]:lang(no):nth-child(6):nth-last-child(1) > phi:lang(no):nth-child(1)
+	{color:green}

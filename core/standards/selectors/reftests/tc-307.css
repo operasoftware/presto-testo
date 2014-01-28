@@ -1,0 +1,2 @@
+upsilon#id1:root omicron[true]:lang(en):last-child alpha:lang(nb)#id2:first-child theta[string="solid 1px green"]:lang(nb)#id3:empty + beta[desciption]:lang(nb)#id4:nth-child(2):empty ~ phi[attr] + pi:lang(en):nth-child(4) > psi:lang(en)#id5:nth-child(1) + gamma#id6:nth-last-child(3) + psi#id7:nth-last-child(2) + lambda#id8:nth-child(4)
+	{color:green}

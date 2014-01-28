@@ -1,0 +1,2 @@
+kappa[attr$="e-value"]:lang(en)#id1 > mu:lang(no)#id2 ~ alpha:lang(no):nth-child(2):empty + nu:lang(nb):last-child > alpha[desciption^="_"]:lang(en):nth-last-child(4):empty + iota:lang(nb):empty + tau[attrib*="fal"]:lang(no):nth-last-child(2):empty + *:lang(en):nth-child(4):nth-last-child(1)
+	{color:green}

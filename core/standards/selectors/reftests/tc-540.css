@@ -1,0 +1,2 @@
+omicron[object^="12345"]:lang(nb):root > phi[object*="k"]:first-child:empty ~ omicron:lang(en)#id1 ~ gamma[attrib="attribute value"]:lang(nb)#id2:nth-last-child(1) > beta[desciption="100%"]#id3:nth-child(1) > alpha#id4:nth-child(1):last-child rho[src]
+	{color:green}

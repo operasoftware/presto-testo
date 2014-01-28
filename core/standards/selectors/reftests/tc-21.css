@@ -1,0 +1,2 @@
+tau:root > tau:lang(no):first-child:nth-last-child(1) > lambda:lang(no):nth-child(1):nth-last-child(5) + upsilon:lang(no):nth-child(2):empty + xi[number="attribute-value"]:lang(nb):nth-child(3):nth-last-child(3) ~ chi[attribute*="bu"]#id1:nth-child(4):nth-last-child(2) ~ epsilon:lang(no)#id2 > nu#id3:first-child:nth-last-child(4) ~ mu[token|="solid 1px green"]:nth-child(2) + tau:lang(no)#id4:empty + chi:lang(nb):nth-child(4):nth-last-child(1) > upsilon[string^="attribute-"]:lang(en)#id5:nth-child(1) > alpha[true="attribute-value"]:lang(en)#id6:first-child
+	{color:green}

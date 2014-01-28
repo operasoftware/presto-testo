@@ -1,0 +1,2 @@
+psi:lang(en)#id1:root > nu > pi[attribute]#id2:nth-child(1) + nu:lang(nb):nth-child(2) > beta#id3:first-child:nth-last-child(1) psi#id4:empty + lambda:lang(no) > rho:lang(no)#id5:nth-child(1):last-child mu:lang(no)#id6:empty ~ tau[or="content"]:lang(nb):nth-child(2):nth-last-child(2):empty ~ rho:nth-child(3) > kappa:lang(en):nth-child(1) > tau[delete|="false"]:lang(en)#id7:first-child:empty + omicron[and*="100"]:lang(en):nth-child(2) + omicron[title|="attribute"]#id8:last-child sigma[data*="fals"]:lang(en)#id9:nth-child(1) theta[and="true"]:lang(nb):last-child
+	{color:green}

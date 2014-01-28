@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<title>Session Storage - Events - iframe receives events</title>
+
+<pre id="result">FAIL - Script did not execute</pre>
+
+<script>
+sessionStorage.clear();
+
+var result = document.getElementById("result");
+result.innerHTML = "";
+
+function record(pass, msg) {
+	result.innerHTML += (pass ? "PASS" : "FAIL") + (msg ? " - " + msg : "") + "\n";
+	try{top.opener.rr(pass);}catch(e){}
+}
+
+timeoutId = null;
+window.passed = 0;
+
+function gotEvent() {
+	if (++window.passed == 3) {
+		record(true);
+		clearTimeout(timeoutId);
+	}
+}
+</script>
+
+<iframe src="012b.html"></iframe>
+<iframe src="012b.html"></iframe>
+<iframe src="012b.html"></iframe>
+
+<script>
+window.onload = function() {
+	try {
+		timeoutId = setTimeout(function() { record(false, ""); }, 1000);
+		sessionStorage.setItem("a", "A");
+	} catch (e) {
+		record(false, e);
+	}
+}
+</script>
+

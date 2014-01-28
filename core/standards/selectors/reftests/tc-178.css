@@ -1,0 +1,2 @@
+tau:lang(no)#id1:root nu omicron:nth-child(1) + beta:lang(no)#id2:nth-child(2):nth-last-child(1) chi[string]#id3:nth-child(1):nth-last-child(4):empty ~ tau[src*="s"]:lang(no) + nu:lang(no)#id4:nth-child(3) ~ gamma:lang(en)#id5 > omega[abort$="eValue"]#id6:first-child:nth-last-child(1) > psi:empty ~ alpha[name^="this.n"]#id7:nth-last-child(2) ~ tau#id8:last-child lambda#id9:first-child:nth-last-child(3):empty ~ omicron[true|="attribute value"]:lang(en):nth-child(2):nth-last-child(2):empty ~ phi:lang(no)#id10
+	{color:green}

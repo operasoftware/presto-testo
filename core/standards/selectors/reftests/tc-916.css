@@ -1,0 +1,2 @@
+nu#id1 > sigma[delete|="this"]:lang(no)#id2:empty ~ sigma#id3:last-child > sigma:lang(en)#id4:nth-child(1):nth-last-child(5) ~ chi[object*="i"]#id5:nth-last-child(4):empty ~ theta#id6:nth-last-child(3) ~ psi[and]:lang(en):nth-child(4) ~ theta[insert|="content"]#id7
+	{color:green}

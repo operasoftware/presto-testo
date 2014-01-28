@@ -1,0 +1,2 @@
+*[insert]#id1:root omicron:lang(en):nth-child(1):last-child zeta beta#id2:first-child > rho:lang(en):nth-last-child(2) ~ upsilon:lang(no)#id3:nth-child(2):nth-last-child(1) > upsilon[attribute$="px green"]:lang(no):nth-child(1):empty + sigma[and]:lang(en) eta:nth-child(1):empty ~ omicron:lang(no)#id4:empty + psi[content]:lang(en):nth-child(3) + psi[attr$="is-is-att-value"]:nth-child(4):nth-last-child(1)
+	{color:green}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<title>sessionStorage - null and undefined keys</title>
+<div id="result">FAIL - Script did not execute.</div>
+
+<script>
+sessionStorage.clear();
+var result = document.getElementById("result");
+result.innerHTML = "";
+var passed = true;
+var message = "";
+try {
+sessionStorage.setItem(null, "null key");
+sessionStorage.setItem(undefined, "undefined key");
+
+if (sessionStorage.getItem(null) != "null key") {
+	passed = false;
+	message += " - null key failed"
+}
+
+if (sessionStorage.getItem(undefined) != "undefined key") {
+	passed = false;
+	message += " - undefined key failed"
+}
+
+sessionStorage.removeItem(null);
+if (sessionStorage.getItem('null') == 'null key') {
+	passed = false;
+	message += ' - removing null failed';
+}
+
+sessionStorage.removeItem(undefined);
+if (sessionStorage.getItem('undefined') == 'undefined key') {
+	passed = false;
+	message += ' - removing undefined failed';
+}
+} catch(e) {
+	passed = false;
+	message += ' - ' + e;
+}
+result.innerHTML = (passed ? "PASS" : "FAIL") + message;
+try{top.opener.rr(passed)}catch(e){}
+</script>

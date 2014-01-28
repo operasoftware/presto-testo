@@ -1,0 +1,2 @@
+xi#id1:root zeta#id2:empty + *:lang(en):nth-last-child(1) upsilon:first-child:nth-last-child(1) > omicron:lang(en)#id3:first-child + zeta[true|="content"]:lang(nb)#id4:nth-last-child(1) > lambda[attr$="ue"]:lang(en):first-child:nth-last-child(3):empty + mu[attr]:lang(nb)#id5:empty ~ *[number]:lang(nb):last-child:nth-last-of-type(1) omega[insert="123456789"]:lang(no)#id6:nth-child(1):nth-last-child(2) ~ xi:lang(en):nth-child(2):last-child > beta[true] + alpha:lang(en)#id7:last-child > chi#id8
+	{color:green}

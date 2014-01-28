@@ -1,0 +1,8 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<title>:disabled with hidden input controls</title>
+<style>
+span { color: lime; }
+input:disabled+span { color: red; }
+</style>
+<p><input type="hidden" disabled><span>This line should be green</span>

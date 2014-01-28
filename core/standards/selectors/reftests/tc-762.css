@@ -1,0 +1,2 @@
+psi#id1 xi[object|="true"]:lang(en)#id2:empty ~ tau[content*="k"]:nth-child(2) ~ chi:nth-last-child(1) upsilon:lang(en)#id3:empty ~ epsilon:lang(no):nth-child(2):last-child sigma[string^="this-is-a"]#id4:empty + psi[object*="value"]:lang(nb):nth-last-child(1) > zeta:empty + omicron[insert$="tent"]:lang(no):nth-child(2)
+	{color:green}

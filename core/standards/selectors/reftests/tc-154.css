@@ -1,0 +1,2 @@
+omicron:lang(no)#id1 psi:lang(en):nth-child(1):empty ~ omicron:lang(en):nth-child(2) > omicron[data]:lang(en):first-child > *:lang(en):nth-child(1):nth-last-child(1) xi[abort]:lang(en)#id2:nth-child(1):nth-last-child(1) *:lang(en):last-child > *[and^="fals"]:lang(no)#id3:nth-child(1):last-child
+	{color:green}

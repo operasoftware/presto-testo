@@ -1,0 +1,2 @@
+alpha#id1:root > xi[content|="123456789"] + rho[insert]:lang(no):nth-last-child(1) *[content]:lang(no)#id2 > iota:first-child:nth-last-child(3) + pi#id3:empty ~ eta:lang(en):nth-last-child(1):first-of-type
+	{color:green}

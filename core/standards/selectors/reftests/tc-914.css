@@ -1,0 +1,2 @@
+alpha:lang(en)#id1 > rho:lang(en)#id2:nth-last-child(1) > delta#id3 + *:lang(en)#id4:nth-child(2):nth-last-child(2):empty ~ chi:lang(nb):nth-child(3):nth-last-child(1) > tau zeta:lang(en):nth-last-child(1)
+	{color:green}

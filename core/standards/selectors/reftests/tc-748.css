@@ -1,0 +1,2 @@
+lambda:lang(en) > alpha[number]#id1 + beta[att$="23456789"]:lang(nb)#id2:nth-last-child(1) *#id3:first-child:first-of-type:empty ~ *#id4:nth-child(2):nth-last-child(1) nu:first-child:first-of-type:empty ~ iota:empty + rho#id5 ~ gamma:lang(no)#id6:nth-child(4):last-child > kappa[class="attribute-value"]:lang(en)#id7:nth-child(1) > gamma#id8 ~ pi[name^="t"]#id9:nth-child(2):empty ~ rho[name]:lang(en)#id10:nth-child(3)
+	{color:green}

@@ -1,0 +1,2 @@
+rho:lang(en)#id1:root > *:lang(en)#id2:last-child > omega:lang(nb):first-child:last-child tau[data^="thi"]:nth-child(1):nth-last-child(1) epsilon:lang(en):first-child:empty + eta[false]:nth-last-child(2):first-of-type + theta:lang(no)#id3:nth-child(3) > iota:nth-child(1) epsilon#id4:nth-child(1):nth-last-child(1)
+	{color:green}

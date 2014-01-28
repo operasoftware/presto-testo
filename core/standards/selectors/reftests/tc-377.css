@@ -1,0 +1,2 @@
+*:lang(nb):root *#id1:nth-child(1) ~ lambda[attrib]:nth-child(2) ~ tau[desciption$="789"]:lang(en)#id2:nth-child(3):nth-last-child(1) rho:first-child > gamma:lang(no)#id3:nth-child(1):empty + beta#id4:empty ~ nu:lang(nb):nth-child(3) + *:lang(en):empty + pi#id5 ~ omicron[attrib$="alse"]:lang(en):empty + xi[name="content"]:lang(en):nth-child(7)
+	{color:green}

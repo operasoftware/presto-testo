@@ -1,0 +1,2 @@
+*:lang(no) > kappa[title|="100%"]:lang(en):empty + omicron[attribute^="solid "]:lang(no)#id1:nth-child(2) alpha:lang(en):nth-child(1):empty ~ gamma[attr="false"]:lang(no):nth-child(2):last-child upsilon:nth-child(1) + gamma[attribute*="ank"]:lang(en):nth-child(2):last-child
+	{color:green}

@@ -1,0 +1,2 @@
+psi#id1 psi:lang(no)#id2:first-child:only-of-type > omega[data] + pi#id3 ~ omega#id4:nth-child(3):nth-last-child(3):empty + delta[attrib]:nth-child(4):empty + gamma[class|="content"]:lang(no):nth-child(5):last-child omicron[attrib]:lang(nb):nth-child(1) ~ theta[insert$="ent"]:nth-child(2):empty + chi[attribute*="t-value"]#id5:nth-child(3) > iota#id6
+	{color:green}

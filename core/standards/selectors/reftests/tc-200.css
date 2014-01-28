@@ -1,0 +1,2 @@
+iota:lang(no)#id1 > chi[name*="0"]:lang(en):nth-last-child(3):empty + *[attr]#id2 + epsilon:lang(en)#id3:nth-last-of-type(1) > psi[title^="attrib"]:lang(no)#id4:nth-last-child(3):empty ~ iota:lang(nb)#id5:nth-last-child(2):first-of-type:empty + epsilon:lang(en)#id6:nth-last-child(1) omicron[src]:lang(en)#id7:nth-last-child(4) ~ upsilon[and*="fa"]#id8 ~ sigma:lang(no):nth-child(3):empty ~ zeta[and|="123456789"]:lang(en):nth-child(4)
+	{color:green}

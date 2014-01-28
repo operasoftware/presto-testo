@@ -1,0 +1,2 @@
+zeta[attribute]:lang(en)#id1 > lambda[token]:lang(no):nth-child(1):empty ~ *:lang(no):empty + delta[class$="56789"]:lang(en) zeta:lang(en)#id2 + eta:empty ~ lambda[data|="solid 1px green"]:lang(no):nth-child(3) ~ omicron[desciption|="123456789"] + omicron[false]#id3:empty ~ omega#id4:nth-child(6) + zeta:lang(en)#id5:empty ~ zeta:lang(no) > omega:lang(no):empty ~ chi:last-child
+	{color:green}

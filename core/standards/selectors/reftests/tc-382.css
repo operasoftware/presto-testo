@@ -1,0 +1,2 @@
+omicron > phi#id1:last-child > omicron[false^="attri"]#id2:empty + delta#id3:nth-child(2) > gamma + psi:lang(en)#id4:empty + tau:lang(en) ~ chi:nth-child(4):empty ~ *[data|="false"]#id5:nth-last-child(3) + omega:lang(en)#id6:nth-child(6) + epsilon:lang(no)#id7:nth-last-child(1) beta:lang(nb)#id8:nth-child(1):last-child > upsilon#id9 theta[number]:last-child psi:lang(nb)#id10 + sigma[string="solid 1px green"] epsilon:lang(en)#id11:nth-last-child(1) > kappa[class$="nk"]:lang(no):nth-child(1) sigma:lang(no)#id12:first-child
+	{color:green}

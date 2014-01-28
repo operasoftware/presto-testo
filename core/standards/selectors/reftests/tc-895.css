@@ -1,0 +1,2 @@
+rho[token]:lang(nb):root omicron#id1:nth-child(1) ~ upsilon:lang(en):nth-child(2):nth-last-child(2) + epsilon#id2:nth-child(3) epsilon:lang(no)#id3:empty ~ omicron:nth-child(2):empty + delta[abort$="0%"]:nth-of-type(1) + phi:lang(en):nth-child(4):nth-last-child(1)
+	{color:green}

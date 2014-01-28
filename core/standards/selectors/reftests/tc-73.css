@@ -1,0 +1,2 @@
+omega:lang(no):root iota:lang(en)#id1 nu:lang(nb) nu:lang(en):nth-last-child(3) + nu:lang(no)#id2 + epsilon:nth-child(3) lambda:empty + beta[true="attribute"]:lang(en)#id3:nth-child(2):last-child > phi:lang(en) > sigma[string|="attribute"]:lang(en) > psi#id4:first-child:empty + delta[attr$="ue"]#id5:nth-child(2):empty ~ theta#id6:nth-child(3):last-child > epsilon[data|="solid 1px green"]:nth-child(1):nth-last-child(1)
+	{color:green}

@@ -1,0 +1,2 @@
+theta[insert$="attribute"]:lang(nb)#id1 kappa:last-child theta:lang(en) chi#id2 > *[name]:lang(en):nth-child(1):last-child > pi:lang(en)#id3:empty + theta:lang(en)#id4:last-child mu:empty + iota[insert]#id5:nth-child(2) + kappa[insert*="al"]:nth-child(3):last-child > pi:lang(en):first-child:nth-last-child(3):empty ~ iota[true]#id6:nth-last-child(2) ~ alpha#id7 > chi:lang(no) xi[true]:lang(no):first-child:last-child
+	{color:green}

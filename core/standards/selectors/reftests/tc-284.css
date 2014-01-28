@@ -1,0 +1,2 @@
+pi[title]:root > xi[data]#id1:first-child:nth-last-child(1) kappa[content*="r"]:lang(nb):nth-child(1) > kappa:lang(en) ~ gamma[or="another attribute value"]#id2:nth-last-child(1) eta:nth-last-child(1) tau[desciption^="attribute"]#id3 + iota[content^="_"]:lang(no)#id4 + omicron[src="another attribute value"]:lang(en)#id5:nth-child(3):nth-last-child(1) phi:lang(en)#id6:nth-child(1) kappa[desciption^="this.n"]#id7 lambda:lang(en)#id8:nth-child(1):nth-last-child(1)
+	{color:green}

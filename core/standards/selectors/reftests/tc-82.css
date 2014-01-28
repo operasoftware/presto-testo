@@ -1,0 +1,2 @@
+omega:lang(no)#id1:root > chi[title*="b"]:lang(en)#id2 + alpha[token|="123456789"]#id3 eta[abort|="solid 1px green"]:lang(en)#id4:nth-child(1):empty ~ *:lang(nb)#id5 *:lang(nb):nth-child(1):nth-last-child(1) iota[object]:lang(no)#id6 nu:lang(en):nth-child(1):empty + kappa[false$="e value"]:nth-child(2) ~ mu:lang(nb)#id7:nth-last-child(1) psi[desciption^="1"] ~ pi[data]:lang(en)#id8 ~ beta:lang(en)#id9:nth-child(3) lambda[content]:lang(en):nth-child(1) > lambda:lang(no):nth-child(1)
+	{color:green}

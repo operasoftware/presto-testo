@@ -1,0 +1,2 @@
+pi[desciption*="%"]:lang(nb) > lambda#id1:nth-child(1):nth-last-child(1) > alpha[insert]:lang(en)#id2:last-child > beta[attribute$="tribute"]:lang(en) > mu[desciption]:lang(nb):first-child ~ zeta#id3:nth-child(2) ~ tau[number]#id4 > kappa:nth-child(1) + nu[data*="is.nodeValue"]:lang(en)#id5 > mu:first-child:empty ~ phi[attr="content"]#id6:nth-last-child(1) delta:last-child
+	{color:green}

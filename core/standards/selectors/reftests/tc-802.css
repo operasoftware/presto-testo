@@ -1,0 +1,2 @@
+omega[title*="ru"]#id1 psi[title]:lang(en):last-child alpha:empty ~ tau[string]:lang(en)#id2:nth-child(2):nth-last-child(1) > iota[title="content"]:lang(nb)#id3 > omicron:lang(nb):first-child:nth-last-child(1) > phi[attr]#id4:nth-child(1) + zeta[false]:lang(nb) eta#id5:nth-child(1) mu:lang(no)#id6:nth-child(1):empty + alpha#id7:nth-child(2) > delta:lang(no):last-child nu[title$="this.nodeValue"]#id8:first-child:nth-last-child(1) lambda nu[att]#id9:nth-child(1)
+	{color:green}

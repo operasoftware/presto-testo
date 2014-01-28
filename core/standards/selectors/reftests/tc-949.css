@@ -1,0 +1,2 @@
+psi[name]:lang(no):root > epsilon[abort="attribute-value"]#id1 pi[attr$="k"]:lang(en)#id2:nth-child(1):empty ~ eta[token$="content"]:lang(no):first-of-type + pi[string^="another attribute va"]#id3:nth-child(3):nth-last-child(4) + upsilon[attribute^="at"]#id4 + pi[string$=" attribute value"]:lang(no):nth-child(5) + alpha#id5:nth-last-child(1)
+	{color:green}

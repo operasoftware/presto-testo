@@ -1,0 +1,2 @@
+chi[object|="solid 1px green"]:lang(en) > xi[string*="onte"]:lang(nb):nth-child(1) + iota[insert="true"]:nth-child(2) > mu[number="another attribute value"]:lang(nb):empty + omicron[or="this-is-att-value"]:lang(no)#id1:nth-child(2) > eta[desciption*="deValue"]:first-child:empty + upsilon:nth-child(2) > upsilon:first-child:nth-last-child(2):empty + epsilon[data="solid 1px green"]:lang(en)#id2:nth-child(2) > *:lang(en)#id3:empty ~ lambda[attr^="1234"]:lang(no)#id4:nth-child(2) zeta[string|="content"]:nth-child(1):last-child
+	{color:green}

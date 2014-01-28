@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<head>
+	<title>Session Storage - Events - Event attributes (clear)</title>
+	<script>
+		function run() {
+			var result = document.getElementById("result");
+			result.innerHTML = "";
+
+			function record(pass, msg) {
+				result.innerHTML += (pass ? "PASS" : "FAIL") + (msg ? " - " + msg : "") + "\n";
+				try{top.opener.rr(pass);}catch(e){}
+			}
+
+			function verify(v, msg) {
+				if (!v) {
+					record(false, msg);
+					throw "";
+				}
+			}
+
+			if (!window.sessionStorage) {
+				record(false, "No sessionStorage support");
+				return;
+			}
+
+			try {
+				sessionStorage.setItem("a", "A");
+				sessionStorage.setItem("b", "B");
+
+				var timeoutId = setTimeout(function() { record(false, "StorageEvent didn't fire"); }, 1000);
+
+				window.onstorage = function (e) {
+					clearTimeout(timeoutId);
+					try {
+						verify(e, "Null event");
+						verify(e.key === null, "key != null");
+						verify(e.oldValue === null, "oldValue != null");
+						verify(e.newValue === null, "newValue != null");
+						verify(e.storageArea == sessionStorage, "storageArea != sessionStorage");
+						verify(e.url == frames[0].location.href, "url != location.href");
+						record(true);
+					} catch (ex) {}
+				}
+			} catch (e) {
+				record(false, e);
+			}
+		}
+	</script>
+</head>
+<html>
+<body onload="run()">
+	<pre id="result">FAIL - Script did not execute</pre>
+	<iframe src="011-1.html" width="0" height="0"></iframe>
+</body>
+</html>
+
+
+

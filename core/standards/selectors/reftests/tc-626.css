@@ -1,0 +1,2 @@
+alpha[and|="attribute value"]:lang(nb) > zeta[token$="this.nodeValue"]:lang(no)#id1 + iota#id2:nth-last-child(1) mu:lang(no)#id3:last-child tau:lang(en)#id4 upsilon#id5:last-child theta[attribute]:lang(en)#id6:empty ~ upsilon[abort="another attribute value"]:lang(en)#id7:nth-child(2):nth-last-of-type(1):empty ~ mu[att="attribute value"]:lang(no) tau[string|="another attribute value"]:lang(no)#id8:empty + rho#id9 > delta:lang(en):first-child gamma:empty ~ epsilon[att="this.nodeValue"]#id10:nth-child(2) > pi[class="true"]:lang(nb):first-child:last-child
+	{color:green}

@@ -1,0 +1,2 @@
+omicron#id1:root > beta:nth-child(1) ~ kappa[content^="this-is-att-v"]:lang(nb)#id2:nth-child(2) > alpha alpha:nth-last-child(1) > eta:lang(no)#id3:nth-child(1):nth-last-child(1) kappa[content] + epsilon:lang(nb)#id4:nth-child(2):empty + omega#id5:nth-child(3)
+	{color:green}

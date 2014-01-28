@@ -1,0 +1,2 @@
+kappa[string="another attribute value"]:root > alpha:lang(en):first-child + theta:lang(en)#id1:last-child > eta:lang(en) + *[content]:lang(no)#id2:nth-child(2):empty ~ beta:lang(en)#id3:nth-child(3) > gamma[insert^="attr"]#id4:first-child:last-child
+	{color:green}

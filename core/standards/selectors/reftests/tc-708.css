@@ -1,0 +1,2 @@
+sigma:lang(en) > zeta:lang(en):empty + theta[token]:lang(nb):only-of-type:empty ~ psi[token*="ribu"]:lang(nb):nth-child(3) ~ epsilon#id1:nth-child(4) + upsilon:lang(nb):nth-last-child(2) + chi[or$="blank"]:lang(en)#id2:nth-child(6):nth-last-child(1)
+	{color:green}

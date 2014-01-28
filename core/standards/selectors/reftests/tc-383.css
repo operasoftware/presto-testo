@@ -1,0 +1,2 @@
+phi:lang(en)#id1:root > psi:lang(nb):first-child:empty ~ phi:lang(nb)#id2:nth-child(2) ~ omicron[title="another attribute value"]:nth-child(3):last-child > lambda[token|="solid 1px green"]:lang(en)#id3:nth-child(1):nth-last-child(4):empty ~ mu[delete*="%"]:lang(no):nth-child(2) ~ eta:nth-child(3):nth-last-of-type(1) + delta[token]#id4:nth-child(4):nth-last-child(1)
+	{color:green}

@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>CSS3 selector tests</title>
+<script type="application/ecmascript">
+<![CDATA[
+var tc = 1, fail = 0, pass = 0, tt = document.getElementsByTagName('tt');
+function runTC()
+	{var doc = document.getElementsByTagName('object')[0].contentDocument;
+	if(doc && doc.getElementsByTagName('green')[0] && doc.defaultView.getComputedStyle(doc.getElementsByTagName('green')[0],null).getPropertyValue('color').match(/green|teal|lime|008000|008080|00ff00|rgb\(0, 128, 0\)/))
+		{pass++}
+	else
+		{fail++;
+		var p = document.createElementNS('http://www.w3.org/1999/xhtml', 'p'), 
+		a = document.createElementNS('http://www.w3.org/1999/xhtml', 'a'), 
+		s = document.getElementsByTagName('object')[0].getAttribute('data');
+		a.appendChild(document.createTextNode('Test ' + s + ' failed'));
+		a.setAttribute('href',s);
+		p.appendChild(a);
+		document.getElementsByTagName('body')[0].appendChild(p);}
+	tt[0].firstChild.nodeValue = fail;
+	tt[1].firstChild.nodeValue = pass;
+	tt[2].firstChild.nodeValue = fail + pass;
+	if(tc++ != 1024)
+		{document.getElementsByTagName('object')[0].setAttribute('data','tc-' + tc + '.xml');}
+	//alert(document.getElementsByTagName('object')[0].getAttribute('data'));
+	}
+]]>
+</script>
+<style type="text/css">
+object
+	{width:100%;
+	height:20em;}
+</style>
+</head>
+<body>
+<p>Failed:  <tt>0</tt> Passed: <tt>0</tt> Processed:  <tt>0</tt> out of  <tt>1024</tt></p>
+<p><object type="application/xml" data="tc-1.xml" onload="runTC()">FAIL (TC not loaded)</object></p>
+</body>
+</html>

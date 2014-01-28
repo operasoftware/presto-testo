@@ -1,0 +1,2 @@
+kappa[string]:lang(nb)#id1 lambda[attribute^="fal"]:lang(en)#id2:nth-last-child(1) > nu:lang(no)#id3:first-child + theta[attribute^="con"]:nth-child(2):nth-last-child(2) + xi:lang(en) > lambda#id4:last-child > omega[token^="tru"]#id5 tau:lang(no):nth-child(1):last-child > psi#id6 > mu:lang(nb):first-child:empty ~ delta:lang(nb)#id7:nth-child(2) gamma[data^="thi"]:nth-child(1) theta[desciption|="true"]:lang(en) + lambda:last-child phi:lang(nb)#id8:empty + *:nth-child(2):empty + tau[content|="this.nodeValue"]#id9 > epsilon
+	{color:green}

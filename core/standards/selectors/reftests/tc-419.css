@@ -1,0 +1,2 @@
+phi#id1 > delta:nth-child(1):last-child chi#id2:first-child:nth-last-child(2) + *[number]#id3:nth-child(2):nth-last-child(1) psi:lang(no):first-child:empty + *:lang(no):nth-child(2):empty + omicron:lang(no)#id4 > gamma:lang(no):nth-child(1) > rho:first-child:nth-last-child(2):empty + kappa eta:lang(en)#id5:nth-child(1) + chi[name|="this.nodeValue"]:nth-child(2):last-child > chi[insert$="false"]:nth-last-child(2) ~ alpha[title^="t"]:nth-child(2)
+	{color:green}

@@ -1,0 +1,2 @@
+omicron:root > chi#id1:first-child:empty ~ tau[src]#id2:nth-child(2) + beta[false|="this"]:nth-child(3) > phi[string]#id3 beta[name$="r attribute value"]:lang(no):first-child gamma[att] + beta:last-child *[number]:nth-last-child(2):empty ~ xi[class*="r"] > rho#id4:empty + sigma[insert]#id5:nth-child(2) > gamma:lang(nb)#id6:empty ~ iota:lang(en)#id7:nth-child(2):empty + psi[name^="100%"]:nth-last-child(1) epsilon:lang(no):first-child > theta:lang(nb):empty ~ zeta[false*="bu"]#id8:last-child > nu ~ epsilon[attribute^="tr"]
+	{color:green}

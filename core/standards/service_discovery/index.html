@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+
+<title>UPnP Service Discovery API testsuite</title>
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<script src="/resources/spartanHandler.js"></script>
+<script src="common.js"></script>
+<script src="upnp_tc_api.js"></script>
+<script src="upnp_tc_help_files.js"></script>
+<script src="qunit.js"></script>
+<link rel="stylesheet" href="qunit.css"/>
+<style>
+	#qunit{
+		width:65%;
+	}
+	.new_test{
+		color:rgb(220,220,120);
+		font-size:80%;
+		border-bottom:1px solid rgb(200,200,100);
+	}
+	#messages
+	{
+		padding:11px 15px;
+		background:rgb(50,50,50);
+		color:rgb(255,255,230);
+		position:fixed;
+		right:10px;
+		left:66%;
+		font-size:90%;
+		top:5px;
+		bottom:5px;
+		overflow-y:auto;
+		transition: all 500ms ease-in-out;
+		border-radius:5px;
+	}
+	#messages:before{
+		position:absolute;
+		top:22px;
+		left:-20px;
+		content:"console:";
+		color:black;
+		padding:1px 3px 3px 3px;
+		border-radius:3px;
+		font-size:70%;
+		background:rgb(255,255,230);
+		transform:rotate(90deg);
+
+	}
+	.dsc{
+		padding:3px;
+		margin:2px;
+		border-radius:2px;
+		background:rgba(100,0,50,0.2);
+		font-size:12px;
+		color:rgba(255,255,255,0.7);
+	}
+	.test_result{
+		font-size:90%;
+		border-left:3px solid rgb(120,180,160);
+		color:rgb(120,180,160);
+		padding:2px;
+	}
+	.msg_error{
+		color:rgb(255,120,120);
+	}
+	.msg_info{
+		color:rgb(120,120,255);
+	}
+	.msg_xml{
+		color:rgb(255,240,120);
+	}
+</style>
+<script>
+
+var SERVER_VERSION = '1.0.1';
+
+
+function basicTests(){	
+	asyncTest('general service discovery test', function(){
+		var id = getId();
+		addTest('service discovery','discovery' + id, DISCOVERY_TIME * 2);
+		controlDevice('alive',id);
+		addTest('service unavailable after "byebye"','byebye' + id, DISCOVERY_TIME * 3);
+		setTimeout(function(){ controlDevice('byebye',id); }, DISCOVERY_TIME * 2);
+		addTest('unavailable service available again after "alive"','alive_again' + id, DISCOVERY_TIME * 3);
+		discoverServices(id, function(service_list){
+			if(service_list.length == 1)
+				finishTest(true,'discovery' + id);
+			else
+				finishTest(false,'discovery' + id);
+		}, function(state,service){
+			//after byebye we expect FALSE - device OFFLINE
+			if(!state){
+				finishTest(true,'byebye' + id);
+				this.on_change = function(available){
+					finishTest(available,'alive_again' + id);
+				}
+				controlDevice('alive',id);
+			}else{
+				//if, after "byebye" we will get event about device going ONLINE, both tests should fail. 
+				finishTest(false,'byebye' + id);
+				finishTest(false,'alive_again' + id);
+			}
+		});
+	});
+
+
+	asyncTest('invalid description tests', function(){
+		var id = getId();
+		var id2 = getId();
+		addTest('empty description','invalid_description#' + id, DISCOVERY_TIME * 2, function(){return true; });
+		addTest('404 description','invalid_description2#' + id, DISCOVERY_TIME * 2, function(){return true; });
+		//empty
+		sendMockData('set_description',{'description' : '','id': id});
+		controlDevice('alive',id,true);
+		discoverServices(id);
+		//without setting description at all.
+		controlDevice('alive',id2,true);
+		discoverServices(id2);
+	});
+
+	asyncTest('invalid description tests for discovery description download', function(){
+		var id = getId();
+		var id2 = getId();
+		addTest('empty description after [1000 ms]','discovery_download_description#' + id,DISCOVERY_TIME * 2);
+		addTest('404 description after [1000 ms]','discovery_download_description2#' + id,DISCOVERY_TIME * 2);
+		setTimeout(function(){
+			sendMockData('set_description',{'description' : '','id': id});
+			sendMockData('delete_description',{'id': id2});
+			},DISCOVERY_TIME * 0.5);
+
+		controlDevice('alive',id);
+		controlDevice('alive',id2);
+		discoverServices(id,function(services){
+			if(services.length != 0)
+				msg('click to see current service.config','msg_xml',services[0].config);
+			else
+				msg('zero services');
+
+			finishTest(true,'discovery_download_description#' + id);
+		});
+		discoverServices(id2,function(services){
+			if(services.length != 0)
+				msg('click to see current service.config','msg_xml',services[0].config);
+			else
+				msg('zero services');
+
+			finishTest(true,'discovery_download_description2#' + id);
+		});
+	});
+
+	asyncTest('service onDiscovery tests - starting with startServices with 3 items', function(){
+		var id = getId();
+		var startServices = getServiceList(id);
+		startServices = services.concat(getServiceList(id,'1'),getServiceList(id,'2'));
+		addTest('service.length == startServices.length','service_discovery1_#' + id, DISCOVERY_TIME * 2);
+		discoverServices(id, function(service){
+			if((service.length)&&(service.length == startServices.length)){
+				for(var i = 0; i < service.length; i++){
+					compareServiceDiscovery(i,'id',service[i].id, getUuid(id) + '::' + startServices[i].serviceTypeWithDomain + startServices[i].serviceIdWithDomain);
+					compareServiceDiscovery(i,'name',service[i].name, startServices[i].serviceIdWithDomain);
+					compareServiceDiscovery(i,'type',service[i].type, UPNP_PREFIX+startServices[i].serviceTypeWithDomain);
+					compareServiceDiscovery(i,'url',service[i].url,startServices[i].controlURL);
+					compareServiceDiscovery(i,'config',service[i].config,createDescription(id,false,startServices));
+				}
+				finishTest(true,'service_discovery1_#' + id);
+			}
+			else{
+				msg('different service length. [start]: ' + startServices.length + ', [discovery]: ' + service.length,'msg_error');
+				finishTest(false,'service_discovery1_#' + id);
+
+			}
+		},null,null,startServices);
+		controlDevice('alive',id,0,startServices);
+	});
+	asyncTest('XML in config field is up to date after a change', function(){
+		var id = getId();
+		var startServices = getServiceList(id);
+		var startXML;
+
+		addTest('XML in service.config is different than the start value','xml_changed_diff#' + id, DISCOVERY_TIME * 2);
+		addTest('XML in service.config is equal to the expected value','xml_changed_eq#' + id, DISCOVERY_TIME * 2);
+		addTest('XML in service.config is equal to start value after going offline','xml_offline#' + id, DISCOVERY_TIME * 2);
+		discoverServices(id, function(service){
+			msg('click to see current service.config','msg_xml',service[0].config);
+			controlDevice('byebye',id);
+		},function(state,service){
+			msg('click to see current service.config','msg_xml',service.config);
+			if(!state){
+				startXML = service.config;
+				finishTest(service.config == startXML,'xml_offline#' + id);
+				controlDevice('alive',id,false,startServices.concat(getServiceList(id,'alt')));
+			}
+			else
+			{
+				finishTest(service.config != startXML,'xml_changed_diff#' + id);
+				finishTest(service.config == createDescription(id,false,startServices.concat(getServiceList(id,'alt'))),'xml_changed_eq#' + id);
+			}
+
+
+		});
+
+		controlDevice('alive',id);
+	});
+	asyncTest('description download requests count #1', function(){
+		var id = getId();
+		//the trick is about the second, not very logical download. First we download description after alive, then - after it's discovered (so it's 2s), and then after each 10s. That's the key knowledge to understand those tests.
+		addTest('[0ms] alive, [1000ms] byebye, [3000 ms] alive (expected:2)','alive_byebye_alive_#' + id, DISCOVERY_TIME * 2.5);
+
+		controlDevice('alive',id);
+		discoverServices(id);
+		setTimeout(function(){controlDevice('byebye',id,true);},DISCOVERY_TIME * 0.5);
+		setTimeout(function(){controlDevice('alive',id,true);},DISCOVERY_TIME * 1.5);
+		setTimeout(function(){
+			testXhr(DESCRIPTION_ADDRESS + 'get_counter?' + id, function(pass,value){
+				msg('[alive_byebye_alive] counter value : ' + value);
+				if(value.trim() == '2')
+					finishTest(true,'alive_byebye_alive_#' + id);
+				else
+					finishTest(false,'alive_byebye_alive_#' + id);
+			});
+			},DISCOVERY_TIME * 2);
+	});
+
+	asyncTest('description download requests count #2', function(){
+		var id = getId();
+		//the trick is about the second, not very logical download. First we download description after alive, then - after it's discovered (so it's 2s), and then after each 10s. That's the key knowledge to understand those tests.
+		addTest('[0ms] alive, [500ms] byebye, [1200 ms] alive (expected:3)','alive_byebye_alive_2#' + id,DISCOVERY_TIME * 2);
+		
+		controlDevice('alive',id);
+		discoverServices(id);
+		setTimeout(function(){controlDevice('byebye',id,true);}, DISCOVERY_TIME * 0.2);
+		setTimeout(function(){controlDevice('alive',id,true);}, DISCOVERY_TIME * 0.5);
+		setTimeout(function(){
+			testXhr(DESCRIPTION_ADDRESS + 'get_counter?' + id, function(pass,value){
+				msg('[alive_byebye_alive_2] counter value : ' + value);
+				if(value.trim() == '3')
+					finishTest(true,'alive_byebye_alive_2#' + id);
+				else
+					finishTest(false,'alive_byebye_alive_2#' + id);
+			});
+		},3000);
+	});
+
+	asyncTest('description download requests count #3', function(){
+		var id = getId();
+		//the trick is about the second, not very logical download. First we download description after alive, then - after it's discovered (so it's 2s), and then after each 10s. That's the key knowledge to understand those tests.
+		addTest('[0ms, 1000ms, 1500ms, 2000ms, 2500ms, 3000ms, 3500ms] multiple alive (expected:2)','10s_alive_#' + id, DESCRIPTION_REFETCH_DELAY + DISCOVERY_TIME);
+		controlDevice('alive',id);
+		discoverServices(id);
+		setTimeout(function(){controlDevice('alive',id,true);}, DESCRIPTION_REFETCH_DELAY * 0.1);
+		setTimeout(function(){controlDevice('alive',id,true);}, DESCRIPTION_REFETCH_DELAY * 0.15);
+		setTimeout(function(){controlDevice('alive',id,true);}, DESCRIPTION_REFETCH_DELAY * 0.2);
+		setTimeout(function(){controlDevice('alive',id,true);}, DESCRIPTION_REFETCH_DELAY * 0.25);
+		setTimeout(function(){controlDevice('alive',id,true);}, DESCRIPTION_REFETCH_DELAY * 0.3);
+		setTimeout(function(){controlDevice('alive',id,true);}, DESCRIPTION_REFETCH_DELAY * 0.35);
+		setTimeout(function(){
+			testXhr(DESCRIPTION_ADDRESS + 'get_counter?' + id, function(pass,value){
+				msg('[10s_alive] counter value : ' + value);
+				if(value.trim() == '2')
+					finishTest(true,'10s_alive_#' + id);
+				else
+					finishTest(false,'10s_alive_#' + id);
+			});
+		},DESCRIPTION_REFETCH_DELAY);
+	});
+
+	asyncTest('description download requests count #4', function(){
+		var id = getId();
+		var test_time = DESCRIPTION_REFETCH_DELAY + (DISCOVERY_TIME * 1.5);
+		//the trick is about the second, not very logical download. First we download description after alive, then - after it's discovered (so it's 2s), and then after each 10s. That's the key knowledge to understand those tests.
+		addTest('[0ms] alive, [12500ms] alive (expected:3)','12s_2alive_#' + id, test_time + 2000);
+
+		controlDevice('alive',id);
+		discoverServices(id);
+		setTimeout(function(){controlDevice('alive',id,true);},test_time);
+		setTimeout(function(){
+			testXhr(DESCRIPTION_ADDRESS + 'get_counter?' + id, function(pass,value){
+				msg('[12s_2alive] counter value : ' + value);
+				if(value.trim() == '3')
+					finishTest(true,'12s_2alive_#' + id);
+				else
+					finishTest(false,'12s_2alive_#' + id);
+			});
+		},test_time + 1000);
+
+	});
+
+	asyncTest('error callbacks check', function(){
+		var id = getId();
+		controlDevice('alive',id);
+		discoverServices(id);
+		addTest('UNKNOWN_TYPE_PREFIX_ERR check - array','UNKNOWN_TYPE_PREFIX_ERR_check' + id,DISCOVERY_TIME * 1.5);
+		navigator.getNetworkServices(['otherprefix:operaTestDeviceType'+id], function(services){}, function(error){
+			//after byebye we expect FALSE
+			if(error.code === error.UNKNOWN_TYPE_PREFIX_ERR){
+				finishTest(true,'UNKNOWN_TYPE_PREFIX_ERR_check' + id);
+				}
+			});
+
+		addTest('UNKNOWN_TYPE_PREFIX_ERR check - string','UNKNOWN_TYPE_PREFIX_ERR_check2' + id,DISCOVERY_TIME * 1.5);
+		navigator.getNetworkServices('otherprefix:operaTestDeviceType'+id, function(services){},  function(error){
+			//after byebye we expect FALSE
+			if(error.code === error.UNKNOWN_TYPE_PREFIX_ERR){
+				finishTest(true,'UNKNOWN_TYPE_PREFIX_ERR_check2' + id);
+				}
+			});
+	});
+}
+
+function generalApiTests(){
+	asyncTest('getServiceById test', function(){
+		var id = getId();
+		var service_list = getServiceList(id);
+		addTest('getServiceById returns valid object after correct id','getServiceById_correct'+id,DISCOVERY_TIME + 1000);
+		addTest('getServiceById returns null after incorrect id','getServiceById_incorrect'+id,DISCOVERY_TIME + 1000);
+
+		discoverServices(id, function(services){
+			var valid_service = services.getServiceById(getUuid(id) + '::' + service_list[0].serviceTypeWithDomain + service_list[0].serviceIdWithDomain);
+			var invalid_service = services.getServiceById(getUuid(id) + '::' + service_list[0].serviceTypeWithDomain + service_list[0].serviceIdWithDomain + 'invalid');
+			finishTest(valid_service ? true : false, 'getServiceById_correct'+id);
+			finishTest(invalid_service ? false : true, 'getServiceById_incorrect'+id);
+		});
+		controlDevice('alive',id);
+	});
+
+	asyncTest('getNetworkServices acceptable type values', function(){
+
+		addTest('string "upnp:value"  - (expected success)','different_types_string0',DISCOVERY_TIME + 1000);
+		navigator.getNetworkServices('upnp:value', function(services){ finishTest(true,'different_types_string0'); });
+
+		addTest('string "upnp:"  - (expected success)','different_types_string1',DISCOVERY_TIME + 1000);
+		navigator.getNetworkServices('upnp:', function(services){},function(error){ finishTest(true,'different_types_string1'); });
+
+		addTest('UNKNOWN_TYPE_PREFIX_ERR value check - (expected 2)','different_types_string2',DISCOVERY_TIME + 1000);
+		addTest('string "value"  - (expected error)','error.code_value',DISCOVERY_TIME + 1000);
+		navigator.getNetworkServices('type_name',function(services){}, function(error){
+			finishTest(error.UNKNOWN_TYPE_PREFIX_ERR == 2,'different_types_string2');
+			finishTest(error.code == 2,'error.code_value');
+		});
+
+		addTest('array ["upnp:value1"]  - (expected success)','different_types_array0#',DISCOVERY_TIME + 1000);
+		navigator.getNetworkServices(['upnp:value1'], function(services){ finishTest(true,'different_types_array0#'); });
+
+		addTest('array ["upnp:value1","upnp:value2"]  - (expected success)','different_types_array1#',DISCOVERY_TIME + 1000);
+		navigator.getNetworkServices(["upnp:value1","upnp:value2"], function(services){ finishTest(true,'different_types_array1#'); });
+
+		addTest('array ["upnp:value1","value2"]  - (expected success)','different_types_array2#',DISCOVERY_TIME + 1000);
+		navigator.getNetworkServices(["upnp:value1","value2"], function(services){ finishTest(true,'different_types_array2#'); });
+
+		addTest('array ["value1","upnp:value2"]  - (expected success)','different_types_array3#',DISCOVERY_TIME + 1000);
+		navigator.getNetworkServices(["value1","upnp:value2"], function(services){ finishTest(true,'different_types_array3#'); });
+
+		addTest('array ["value1"]  - (expected error)','different_types_array4#',DISCOVERY_TIME + 1000);
+		navigator.getNetworkServices(["value1"], function(services){},function(error){ finishTest(true,'different_types_array4#'); });
+
+		addTest('array ["value1","value2"]  - (expected error)','different_types_array5#',DISCOVERY_TIME + 1000);
+		navigator.getNetworkServices(["value1","value2"], function(services){},function(error){ finishTest(true,'different_types_array5#'); });
+
+		addTest('array []  - (expected error)','different_types_array6#',DISCOVERY_TIME + 1000);
+		navigator.getNetworkServices([], function(services){},function(error){ finishTest(true,'different_types_array6#'); });
+
+		addTest('array ["upnp:"]  - (expected error)','different_types_array7#',DISCOVERY_TIME + 1000);
+		navigator.getNetworkServices(["upnp:"], function(services){},function(error){ finishTest(true,'different_types_array7#'); });
+
+		addTest('array ["upnp"]  - (expected error)','different_types_array8#',DISCOVERY_TIME + 1000);
+		navigator.getNetworkServices(["upnp"], function(services){},function(error){ finishTest(true,'different_types_array8#'); });
+	});
+	asyncTest('.config value is not null before update', function(){
+		var id = getId();
+		var description = createDescription(id,false,getServiceList(id));
+		addTest('config value after discovery, with description with 1200ms delay','discovery_1200ms#'+id,DISCOVERY_TIME + 2500);
+			discoverServices(id,function(service_list){
+			msg('click to see current service.config','msg_xml',service_list[0].config);
+
+				if(service_list[0].config == description)
+					finishTest(true, 'discovery_1200ms#'+id);
+				else
+					finishTest(false,'discovery_1200ms#'+id);
+			});
+
+		sendMockData('set_description',{'description' : description,'id': id,'delay':1200});
+		controlDevice('alive',id,true);
+	});
+}
+
+function invalidDescriptionTests(){
+	testInvalidDescription({remove:['specVersion']},1);
+	testInvalidDescription({remove:['device']},1);
+	testInvalidDescription({remove:['friendlyName']},1);
+	testInvalidDescription({remove:['manufacturer']},1);
+	testInvalidDescription({remove:['manufacturerURL']},1);
+	testInvalidDescription({remove:['UDN']},1);
+	testInvalidDescription({remove:['serviceList']},0);
+	testInvalidDescription({remove:['SCPDURL']},1);
+	testInvalidDescription({remove:['controlURL']},0);
+	testInvalidDescription({remove:['eventSubURL']},1);
+	testInvalidDescription({remove:['serviceType']},0);
+	testInvalidDescription({remove:['serviceId']},0);
+	testInvalidDescription({spoil:['\/serviceType']},0);
+	testInvalidDescription({spoil:['specVersion']},0);
+	testInvalidDescription({spoil:['manufacturerURL']},0);
+	testInvalidDescription({spareFields:[{inside:'specVersion',field:'major',value:'2'}]},1);
+	testInvalidDescription({spareFields:[{inside:'manufacturerURL',field:'stuff',value:'random'}]},1);
+	testInvalidDescription({spareFields:[{inside:'service',field:'stuff',value:'random'}]},1);
+	testInvalidDescription({spareFields:[{inside:'UDN',field:'stuff',value:'random'}]},1);
+	testInvalidDescription({spareFields:[{inside:'device',field:'stuff',value:'random'}]},1);
+}
+
+function reconnectTests(){
+	asyncTest('alive with one service, rejoin with different one, but the same type', function(){
+		id = getId();
+		testAnotherServiceAfterDiscovery(id, 'after reconnecting the same type but different service joins', getServiceList(id), getServiceList(id,'alt'), 1, 1,[false]);
+	});
+	asyncTest( 'alive with one service, rejoin with both previous and new, with the same type', function(){
+		id = getId();
+		testAnotherServiceAfterDiscovery(id, 'after search, another service with the same type joins', getServiceList(id), getServiceList(id).concat(getServiceList(id,'alt')), 1, 2,[true]);
+	});
+	asyncTest( 'alive with one service, rejoin with different one, with different type', function(){
+		id = getId();
+		testAnotherServiceAfterDiscovery(id, 'after reconnecting different service joins, previous dissappear', getServiceList(id), getServiceList(id,'alt','alt'), 1, 0,[false]);
+	});
+	asyncTest( 'alive with one service, rejoin with both previous and new, with different type', function(){
+		id = getId();
+		testAnotherServiceAfterDiscovery(id, 'after reconnecting different service joins, previous still present', getServiceList(id), getServiceList(id).concat(getServiceList(id,'alt','alt')), 1, 1,[true]);
+	});
+}
+
+function byebyeAliveTests(){
+
+	var id;
+
+	asyncTest( '[0 ms]: alive, [200 ms]: byebye, description with 1100ms delay', function(){
+		id = getId();
+		addTest('quick "byebye" after "alive" notificiation','quick_alive_bye_#1'+id,DISCOVERY_TIME + 1100 + 1000);
+		discoverServices(id,function(service_list){
+			if(service_list.length == 0)
+				finishTest(true, 'quick_alive_bye_#1'+id);
+			else
+				finishTest(false,'quick_alive_bye_#1'+id);
+		});
+		sendMockData('set_description',{'description' : createDescription(id,false,getServiceList(id)),'id': id,'delay':1100});
+		controlDevice('alive',id,true);
+		setTimeout(function(){ controlDevice('byebye',id,true);},200);
+	});
+
+	asyncTest( '[0 ms]: alive, [100 ms]: byebye, [300 ms]: alive, description with 500ms delay (expected: FOUND)', function(){
+		id = getId();
+		addTest('"alive", then quick "byebye", then quick "alive" again','quick_alive_bye_1#1'+id,DISCOVERY_TIME + 500 + 1000);
+		discoverServices(id,function(service_list){
+			if(service_list.length == 1)
+				finishTest(true, 'quick_alive_bye_1#1'+id);
+			else
+				finishTest(false,'quick_alive_bye_1#1'+id);
+		});
+		sendMockData('set_description',{'description' : createDescription(id,false,getServiceList(id)),'id': id,'delay':500});
+		controlDevice('alive',id,true);
+		setTimeout(function(){ controlDevice('byebye',id,true);},100);
+		setTimeout(function(){ controlDevice('alive',id,true);},300);
+	});
+
+	asyncTest( '[0 ms]: alive, [300 ms]: byebye, [1400 ms]: alive, description with 1200ms delay', function(){
+		id = getId();
+		addTest('service not found after discovery','quick_alive_bye_2#1'+id,DISCOVERY_TIME + 1200 + 1000);
+		addTest('services available event received - with 1 device','quick_alive_bye_2#2'+id,DISCOVERY_TIME + 1200 + 1000);
+		discoverServices(id,function(service_list){
+			if(service_list.length == 0)
+				finishTest(true, 'quick_alive_bye_2#1'+id);
+			else
+				finishTest(false,'quick_alive_bye_2#1'+id);
+		},null,function(services){
+			if(services.servicesAvailable == 1)
+				finishTest(true, 'quick_alive_bye_2#2'+id);
+			else
+				finishTest(false,'quick_alive_bye_2#2'+id);
+		});
+		sendMockData('set_description',{'description' : createDescription(id,false,getServiceList(id)),'id': id,'delay':DISCOVERY_TIME * 0.6});
+		controlDevice('alive',id,true);
+		setTimeout(function(){ controlDevice('byebye',id,true);},DISCOVERY_TIME * 0.2);
+		setTimeout(function(){ controlDevice('alive',id,true);},DISCOVERY_TIME * 0.7);
+	});
+
+	asyncTest('[0 ms]: alive, [300 ms]: byebye, [1000 ms]: alive, description with 1200ms delay', function(){
+		id = getId();
+		addTest('service not found after discovery','quick_alive_bye_3#1'+id,DISCOVERY_TIME + 1200 + 1000);
+		addTest('services available event received - with 1 device','quick_alive_bye_3#2'+id,DISCOVERY_TIME + 1200 + 1000);
+		discoverServices(id,function(service_list){
+			if(service_list.length == 0)
+				finishTest(true, 'quick_alive_bye_3#1'+id);
+			else
+				finishTest(false,'quick_alive_bye_3#1'+id);
+		},null,function(services){
+			if(services.servicesAvailable == 1)
+				finishTest(true, 'quick_alive_bye_3#2'+id);
+			else
+				finishTest(false,'quick_alive_bye_3#2'+id);
+		});
+		sendMockData('set_description',{'description' : createDescription(id,false,getServiceList(id)),'id': id,'delay':DISCOVERY_TIME * 0.6});
+		controlDevice('alive',id,true);
+		setTimeout(function(){ controlDevice('byebye',id,true);},DISCOVERY_TIME * 0.2);
+		setTimeout(function(){ controlDevice('alive',id,true);},DISCOVERY_TIME * 0.5);
+	});
+
+	asyncTest( 'alive/byebye flood linking to description with 1100ms delay [expected: NOT CRASH]', function(){
+		id = getId();
+		addTest('quick "alive"/"byebye" flood','quick_alive_bye_flood#1'+id,DISCOVERY_TIME + 1000,function(){return true;});
+		discoverServices(id);
+			controlDevice('alive',id);
+			sendMockData('set_description',{'description' : createDescription(id,false,getServiceList(id)),'id': id,'delay':1100});
+			controlDevice('alive',id,true);
+			setTimeout(function(){ controlDevice('alive',id);}, DISCOVERY_TIME * 0.1);
+			setTimeout(function(){ controlDevice('byebye',id);},DISCOVERY_TIME * 0.15);
+			setTimeout(function(){ controlDevice('alive',id);}, DISCOVERY_TIME * 0.20);
+			setTimeout(function(){ controlDevice('byebye',id);},DISCOVERY_TIME * 0.25);
+			setTimeout(function(){ controlDevice('alive',id);}, DISCOVERY_TIME * 0.3);
+			setTimeout(function(){ controlDevice('byebye',id);},DISCOVERY_TIME * 0.35);
+			setTimeout(function(){ controlDevice('alive',id);}, DISCOVERY_TIME * 0.4);
+			setTimeout(function(){ controlDevice('byebye',id);},DISCOVERY_TIME * 0.45);
+			setTimeout(function(){ controlDevice('alive',id);}, DISCOVERY_TIME * 0.5);
+			setTimeout(function(){ controlDevice('alive',id);}, DISCOVERY_TIME * 0.55);
+			setTimeout(function(){ controlDevice('byebye',id);},DISCOVERY_TIME * 0.6);
+			setTimeout(function(){ controlDevice('alive',id);}, DISCOVERY_TIME * 0.65);
+			setTimeout(function(){ controlDevice('byebye',id);},DISCOVERY_TIME * 0.7);
+			setTimeout(function(){ controlDevice('alive',id);}, DISCOVERY_TIME * 0.75);
+
+	});
+
+	asyncTest( 'security XHR check - without discovery', function(){
+		id = getId();
+		addTest('can we send XHR to undiscovered device? (we shouldn`t)','security0_#1',1000);
+		testXhr(getServiceList(id)[0].controlURL, function(pass){
+			finishTest(!pass, 'security0_#1');
+		});
+	});
+
+	asyncTest( 'security XHR check - with discovery', function(){
+		id = getId();
+		addTest('security XHR check - before "byeBye"','security1_#1',DISCOVERY_TIME + 1000);
+		addTest('security XHR check - after "byeBye"','security1_#2',DISCOVERY_TIME + 2500);
+		discoverServices(id,function(service_list){
+				if(service_list.length == 1)
+				{
+					testXhr(service_list[0].url, function(pass){
+						finishTest(pass, 'security1_#1');
+						controlDevice('byebye',id);
+					});
+				}
+			},function(state,service){
+				if(!state)
+				{
+					testXhr(service.url, function(pass){
+						finishTest(!pass, 'security1_#2');
+					});
+				}
+			});
+		controlDevice('alive',id);
+	});
+	ssdpMessageTest('alive message, without USN field','no USN field at all in SSDP notify message  - we shouldn`t discover',0,'alive',{no_usn:true});
+	ssdpMessageTest('alive message, without server field','no SERVER field in SSDP notify message - we still should discover',1,'alive',{no_server:true});
+	ssdpMessageTest('alive message, without max age field','no CACHE-CONTROL: max_age: field in SSDP notify message - we still should discover',1,'alive',{no_maxage:true});
+	ssdpMessageTest('alive message, without location field','no LOCATION: field in SSDP notify message - we shouldn`t discover',0,'alive',{no_location:true});
+}
+
+function delayedMessagesTests(number,stop){
+	testDelayedMessage(DISCOVERY_TIME * 0.1, 1);
+	testDelayedMessage(DISCOVERY_TIME * 0.3, 1);
+	testDelayedMessage(DISCOVERY_TIME * 0.5, 1);
+	testDelayedMessage(DISCOVERY_TIME * 1.5, 0);
+	testDelayedMessage(DISCOVERY_TIME * 2, 0);
+}
+
+var spartan;
+
+window.addEventListener('load', function(){
+	spartan = new spartanHandler("UPnP discovery test suite");
+	if(getUrl() == 'http://127.0.0.1:8000/'){
+		document.body.innerHTML = '<p>Due to Opera Bug (CORE-48007) IP for mock server comunication cannot be 127.0.0.1. Plese use ?ip= GET param</p>';
+		spartan.addTest(SPARTAN_TEST_PREFIX + 'Prerequisites',false,'IP = 127.0.0.1! - change IP param, see: CORE-48007');
+		spartan.send();
+		return;
+	}
+	if(navigator.getNetworkServices){
+		testXhr(COMMAND_ADDRESS + 'version', function(pass,value){
+			if(!pass){
+				msg('server not found. Please start upnp_discovery_mock.py','msg_error');
+
+				spartan.addTest('Service Discovery API: Prerequisites',false,'server not found - '+COMMAND_ADDRESS);
+				spartan.send();
+			}else
+			{
+				if(value == SERVER_VERSION){
+					spartan.addTest(SPARTAN_TEST_PREFIX + 'Prerequisites',true);
+					if(module('basics'))
+						basicTests();
+					if(module('general API tests'))
+						generalApiTests();
+					if(module('description'))
+						invalidDescriptionTests();
+					if(module('reconnect with other service list'))
+						reconnectTests();
+					if(module('byebye/alive'))
+						byebyeAliveTests();
+					if(module('testing delayed messages'))
+						delayedMessagesTests();
+					QUnit.done(function( details ) {
+						msg("Total: " + details.total + " Failed: " + details.failed + " Passed: " + details.passed + " Runtime: " + details.runtime);
+						spartan.send();
+					});
+				}
+				else{
+					msg('wrong server version! Required: ' + SERVER_VERSION +  ', provided: ' + value,'msg_error');
+
+					spartan.addTest(SPARTAN_TEST_PREFIX + 'Prerequisites',false,'wrong server version! Required: ' + SERVER_VERSION +  ', provided: ' + value);
+					spartan.send();
+				}
+			}
+
+		},false);
+	}
+	else
+	{
+		document.body.innerHTML = '<p>This test-suite require support for UPnP Service Discovery and <a href="opera:config#UserPrefs|EnableServiceDiscoveryAPI">Service Discovery API</a> to be enabled.</p>';
+		spartan.addTest(SPARTAN_TEST_PREFIX + 'Prerequisites',false,'no navigator.getNetworkServices object- see prefs settings!');
+		spartan.send();
+	}
+});
+</script>
+<body>
+<div id="qunit"></div>
+<div id="qunit-fixture"></div>
+<div id="messages"></div>
+</body>

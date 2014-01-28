@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<title>sessionStorage - NUL Character in key</title>
+<div id="result">FAIL - Script did not execute.</div>
+
+<script>
+sessionStorage.clear();
+var result = document.getElementById("result");
+result.innerHTML = "";
+
+var keys = {
+"x\u0000y": "a",
+"x": "b",
+};
+
+for (key in keys) {
+	sessionStorage.setItem(key, keys[key]);
+}
+
+var passed = true;
+for (key in keys) {
+	var value = sessionStorage.getItem(key);
+	if (value != keys[key]) {
+		passed = false;
+	}
+}
+
+result.innerHTML = passed ? "PASS" : "FAIL";
+
+</script>

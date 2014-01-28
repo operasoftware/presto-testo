@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<title>sessionStorage - Storing structured data</title>
+<div id="result">FAIL - Script did not execute.</div>
+
+<script>
+sessionStorage.clear();
+var result = document.getElementById("result");
+result.innerHTML = "";
+
+var keys = {
+	"a": undefined,
+	"b": null,
+	"c": false,
+	"d": true,
+	"e": 42,   // number
+	"f": "test", // string
+	"g": new Date(), // Date
+	"h": /[A-Za-z0-9]/,
+	"i": [1, 2, 3], // Array
+	"j": {foo: "test", bar: "test"} // Object
+
+// We currently don't support the File object, so it's not currently tested.
+// But it will need testing when we start supporting structured data and support File.
+};
+
+for (key in keys) {
+	sessionStorage.setItem(key, keys[key]);
+}
+
+var passed = true;
+for (key in keys) {
+	var value = sessionStorage.getItem(key);
+	if (typeof value != typeof keys[key]) {
+		passed = false;
+	}
+}
+
+result.innerHTML = passed ? "PASS" : "FAIL";
+
+</script>

@@ -1,0 +1,2 @@
+nu[attribute]:lang(en) xi[object*="e"]:lang(no)#id1:nth-last-child(6):empty + psi:lang(nb)#id2:nth-child(2) ~ pi:lang(en)#id3:nth-child(3):empty ~ omega[name^="false"]:lang(en):nth-child(4) + upsilon:lang(nb)#id4 + sigma[true]:lang(en)#id5:last-child > xi[src]:lang(no)#id6:last-child *[attrib]#id7:empty ~ psi[attribute^="tr"]:lang(en)#id8:last-child > rho#id9 > omicron[desciption]:lang(en):first-of-type ~ xi:last-child
+	{color:green}

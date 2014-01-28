@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<head>
+	<title>Session Storage - Enumeration</title>
+	<script>
+		function run() {
+			var result = document.getElementById("result");
+			result.innerHTML = "";
+
+			function record(pass, msg) {
+				result.innerHTML += (pass ? "PASS" : "FAIL") + (msg ? " - " + msg : "") + "\n";
+				try{top.opener.rr(pass);}catch(e){}
+			}
+
+			if (!window.sessionStorage) {
+				record(false, "No sessionStorage support");
+				return;
+			}
+
+			try {
+				sessionStorage.clear();
+				var values = ['a', 'b', 'c', 'd', 'e'];
+
+				for(var i=0; i < values.length; i++) {
+					sessionStorage.setItem(values[i], values[i]);
+				}
+
+				for(var k in sessionStorage) {
+					i = values.indexOf(sessionStorage[k]);
+					if(i >= 0) {
+						if (values[i] != sessionStorage[k]) {
+							record(false, values[i] + " != " + sessionStorage[k]);
+							return;
+						}
+						values.splice(i, 1);
+					}
+				}
+
+				if (values.length != 0) {
+					record(false, "Not all values in sessionStorage enumerated");
+				} else {
+					record(true);
+				}
+			} catch (e) {
+				record(false, e);
+			}
+		}
+	</script>
+</head>
+<html>
+<body onload="run()">
+	<pre id="result">FAIL - Script did not execute</pre>
+</body>
+</html>

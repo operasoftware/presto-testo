@@ -1,0 +1,2 @@
+omicron[title*="lank"]#id1 > theta[data^="10"]:lang(en):empty + beta[number|="another attribute value"]#id2:nth-last-child(5) ~ gamma[token^="solid 1p"]:nth-child(3) + alpha[attribute]#id3:nth-child(4):empty + mu:lang(nb)#id4:empty ~ *:last-child sigma:lang(no) > iota + pi[object|="attribute"]:lang(en):nth-last-child(1)
+	{color:green}

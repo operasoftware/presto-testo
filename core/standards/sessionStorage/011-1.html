@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<title>sessionStorage storage event for setItem()</title>
+<body>
+<script>
+window.onload=function(){
+	setTimeout( function(){
+		if(sessionStorage['a'] == 'A'){
+			sessionStorage.clear();
+		}else{
+			parent.record( false, 'sessionStorage does not contain the expected key' );
+		}
+	}, 100);
+}
+</script>
