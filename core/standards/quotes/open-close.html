@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>quotes :: open-quote and close-quote</title>
+<style type="text/css">
+q {
+	quotes: '\201C' '\201D' '\2014' '\2014';
+}
+span::before {
+	content: open-quote;
+}
+span::after {
+	content: close-quote;
+}
+</style>
+
+</head>
+
+<body>
+<div><q><span>You are an artist, are you not, Mr Dedalus?</span> said the dean, glancing up and blinking his pale eyes. 
+		The object of the artist is the creation of the beautiful. What the beautiful is is another question.</q></div>
+
+<h4>the sentences above and below should be identical</h4>
+
+<div>&#8220;&#8212;You are an artist, are you not, Mr Dedalus?&#8212; said the dean, glancing up and blinking his pale eyes. 
+		The object of the artist is the creation of the beautiful. What the beautiful is is another question.&#8221;</div>
+</body>
+</html>

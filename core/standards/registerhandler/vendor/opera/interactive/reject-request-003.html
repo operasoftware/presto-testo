@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<meta charset='utf-8'>
+<title>When remembering a rejection to a registerProtocolHandler() request, the dialog should never reappear</title>
+<script>
+window.onload = function() {
+  navigator.registerProtocolHandler('sms',
+  window.location.href.replace(/\/([a-z0-9-]+)\.html/g,'') + '/res/fail.html#%s',
+  'foobar');
+}
+</script>
+
+<p><strong>Note:</strong> Before running this test, delete all registered
+custom handlers and restart your browser.
+
+<ol>
+ <li>After loading this page, there should be a dialog visible.
+ <li>Check the “Remember for this site” checkbox and reject the request in the dialog.
+ <li>Reload this page.
+ <li>No dialog should appear.
+</ol>

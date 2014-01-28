@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<meta charset='utf-8'>
+<title>Code injection on subscription page</title>
+<script>
+window.onload = function() {
+  navigator.registerContentHandler('application/rss+xml',
+  location.href + '#%s',
+  'foobar</option></select>FAIL');
+}
+</script>
+
+<p><strong>Note:</strong> Before running this test, delete all registered
+custom handlers and restart your browser.
+
+<ol>
+ <li>There should be a dialog on this page. Approve it.
+ <li><a href='../../interactive/res/rss.php?type=application/rss%2Bxml'>Click this link.</a>
+ <li>The word “FAIL” must <em>not</em> appear outside the dropdown list.
+</ol>
+

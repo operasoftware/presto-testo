@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<meta charset='utf-8'>
+<title>Double-clicking should not auto-approve the handler</title>
+<script>
+window.onload = function() {
+  document.getElementById('trigger').onclick = function() {
+    navigator.registerProtocolHandler('sms',
+    window.location.href.replace(/\/([a-z0-9-]+)\.html/g,'') + '/res/fail.html#%s',
+    'foobar');
+  }
+}
+</script>
+
+<style>
+body, html {
+  margin: 0;
+  padding: 0;
+}
+div {
+  background-color: blue;
+  height: 30px;
+}
+</style>
+
+<div id='trigger'>.</div>
+
+<p><strong>Note:</strong> Before running this test, delete all registered
+custom handlers and restart your browser.
+
+<ol>
+ <li>Click the blue area above. A dialog should appear.
+ <li>Take note of the <em>exact</em> position of the approval button.
+ <li>Close this page and reopen it.
+ <li>Double-click the blue area in the exact position the approval button will
+ appear after the first click.
+ <li>The dialog should <em>not</em> be approved and <em>not</em> disappear.
+ <li><a href='sms:foo'>Click this link</a>. A new dialog should <em>not</em>
+ appear, but you should see an error message.
+</ol>

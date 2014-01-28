@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Script origin and unregisterContentHandler</title>
+<script type="application/ecmascript">
+function start()
+	{var ctype = 'application/x-notRegisteredElsewhere-010', url = 'http://t/core/standards/registerhandler/interactive/unregister/content/%s';
+	if(location.href.match(/^http:\/\/t\/core/))
+		{var li = document.getElementsByTagName('li')[0].setAttribute('style','display:none')}
+	navigator.registerContentHandler(ctype, url, 'test');}
+</script>
+</head>
+<body onload="start()">
+<ol>
+	<li style="color:maroon">This test should be loaded from <strong>http://t/</strong></li>
+	<li>On first load there should be dialog asking to allow content handler</li>
+	<li>Allow it</li>
+	<li><a href="http://t.oslo.opera.com/core/standards/registerhandler/interactive/content/010-1.xhtml">Check test result</a></li>
+</ol>
+</body>
+</html>

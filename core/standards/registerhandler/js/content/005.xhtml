@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Invalid characters in content type in isContentHandlerRegistered</title>
+<script type="application/ecmascript">
+function start()
+	{var ctype = 'application/x-nótRegísteredInOthérTCs-004', url = 'http://t/core/standards/registerhandler/js/content/%s', result = false;
+	try
+		{navigator.registerContentHandler(ctype, url, 'test');}
+	catch(themAll)
+		{}
+	try
+		{result = (navigator.isContentHandlerRegistered(ctype, 'http://t/core/standards/registerhandler/%s') == 'new');}
+	catch(themALL)
+		{}
+	document.getElementsByTagName('tt')[0].firstChild.nodeValue = result?"PASS":"FAIL";
+	try{top.opener.rr(result);}catch(e){}}
+</script>
+</head>
+<body onload="start()">
+<p>Test result: <tt>Not Tested (script did not run)</tt></p>
+</body>
+</html>

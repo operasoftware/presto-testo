@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Protocol case insensitivity in isProtocolHandlerRegistered</title>
+<script type="application/ecmascript">
+function start()
+	{var scheme = 'web+CustomProtocolTree', url = 'http://t/core/standards/registerhandler/js/protocol/%s', result = false;
+	try
+		{navigator.registerProtocolHandler(scheme, url, 'Ignore dialog or decline it');
+		result = (navigator.isProtocolHandlerRegistered(scheme.toUpperCase(), url) == 'declined');}
+	catch(themAll)
+		{}
+	document.getElementsByTagName('tt')[0].firstChild.nodeValue = result?"PASS":"FAIL";
+	try{top.opener.rr(result);}catch(e){}}
+</script>
+</head>
+<body onload="start()">
+<p>Test result: <tt>Not Tested (script did not run)</tt></p>
+</body>
+</html>

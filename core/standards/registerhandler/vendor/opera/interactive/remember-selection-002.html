@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<meta charset='utf-8'>
+<title>When remembering a handler as the default action, the dialog should not reappear</title>
+<script>
+window.onload = function() {
+  navigator.registerContentHandler('text/x-hoobaflooba',
+  window.location.href.replace(/\/([a-z0-9-]+)\.html/g,'') + '/res/pass.html#%s',
+  'foobar');
+}
+</script>
+
+<p><strong>Note:</strong> Before running this test, delete all registered
+custom handlers and restart your browser.
+
+<ol>
+ <li>After loading this page, there should be a dialog visible.
+ <li>Approve the question in the dialog.
+ <li><a href='../../interactive/res/x-hoobaflooba.hooba'>Click this link.</a>
+ <li>A dialog should appear.
+ <li>Check the “Don't ask me again” checkbox and press “OK”.
+ <li>The word “PASS” should appear.
+ <li>Go back to this page.
+ <li><a href='../../interactive/res/x-hoobaflooba.hooba'>Click this link.</a>
+ <li>No dialog should appear, but the word “PASS” should appear again.
+</ol>

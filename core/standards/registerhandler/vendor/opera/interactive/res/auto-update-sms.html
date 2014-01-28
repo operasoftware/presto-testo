@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<meta charset='utf-8'>
+<title>registerProtocolHandler()</title>
+<script>
+window.onload = function() {
+	navigator.registerProtocolHandler('sms', window.location + '#%s', 'foobar');
+}
+</script>
+
+<p>This page attempts to set a handler for the <var>sms</var> protocol.

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<meta charset='utf-8'>
+<title>Very long content type in approval dialog</title>
+<script>
+window.onload = function() {
+  navigator.registerContentHandler('text/x-trolololololololololololololololololololololololololololololololololololololololololololololololololololololololololololololololololololololololololololololololololololololololololololololololololololololololololololololololololololololololololololololololololololololololololololololololol',
+  location.href + '#%s',
+  'test');
+}
+</script>
+
+<p><strong>Note:</strong> Before running this test, delete all registered
+custom handlers and restart your browser.
+
+<ol>
+ <li>There should be a dialog on this page with a very long content type.
+ <li>The very long content type must not mess up the dialog.
+</ol>
+

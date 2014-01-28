@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>isContentHandlerRegistered for new content type</title>
+<script type="application/ecmascript">
+function start()
+	{var result = false;
+	try
+		{result = (navigator.isContentHandlerRegistered('application/x-notRegisteredInOtherTCs-001', 'http://t/core/standards/registerhandler/js/content/%s') == 'new');}
+	catch(themALL)
+		{}
+	document.getElementsByTagName('tt')[0].firstChild.nodeValue = result?"PASS":"FAIL";
+	try{top.opener.rr(result);}catch(e){}}
+</script>
+</head>
+<body onload="start()">
+<p>Test result: <tt>Not Tested (script did not run)</tt></p>
+</body>
+</html>

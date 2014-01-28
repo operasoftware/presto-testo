@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>quotes :: no-open-quote, no-close-quote</title>
+<style type="text/css">
+p {
+	background: #CBCFDC;
+}
+span {
+	quotes: '\2014' '\2014';
+	display: block;
+}
+span::before {
+	content: open-quote "\0020";
+}
+span::after {
+	content: no-close-quote;
+}
+span+span+span::before {
+	content: no-open-quote;
+}
+</style>
+
+</head>
+
+<body>
+<p><span>You are a stoodent aren't you?</span>
+<span>Yes.</span>
+<span>But that seemed to satisfy her curiosity. She went away and, since at that late hour there was nobody else at her tables, she immersed herself 
+in a novelette. This was before the time of the sixpenny reprints. There was a regular supply of inexpensive fiction written to order by poor hacks 
+for the consumption of the illiterate.</span></p>
+
+<h4>blocks of text above and below should be identical, including punctuation</h4>
+
+<p>&#8212; You are a stoodent aren't you?<br>
+&#8212; Yes.<br>
+But that seemed to satisfy her curiosity. She went away and, since at that late hour there was nobody else at her tables, she immersed herself 
+in a novelette. This was before the time of the sixpenny reprints. There was a regular supply of inexpensive fiction written to order by poor hacks 
+for the consumption of the illiterate.</p>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<meta charset='utf-8'>
+<title>Auto-updates to the protocol whitelist</title>
+
+<p><strong>Note:</strong> Before running this test, delete all registered
+custom handlers and restart your browser.
+
+<ol>
+ <li>Put <a href='res/handlers-ignore.ini'>this file</a> in the <var>./handlers/</var>
+ directory of your Opera install and restart your browser.</li>
+ <li>Load <a href='res/auto-update-test.html'>this page</a>.
+ There should be a dialog asking to handle the test protocol.</li>
+ <li>Then load <a href='res/auto-update-fail.html'>this page</a>.
+ There should <em>not</em> be any dialog.</li>
+ <li>Click the <var>Download settings</var> menu item in your Opera build.</li>
+ <li>Load <a href='res/auto-update-sms.html'>this page</a>. There should be a dialog asking to handle the sms protocol.</li>
+ <li>Then load <a href='res/auto-update-test.html'>this page</a>. There should be any dialog.</li>
+</ol>

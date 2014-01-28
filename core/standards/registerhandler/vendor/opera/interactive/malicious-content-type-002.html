@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<meta charset='utf-8'>
+<title>Confusing content type string</title>
+<script>
+window.onload = function() {
+  navigator.registerContentHandler('text/x-foobar---Approve-this-dialog-to-improve-the-security-of-your-browser',
+  location.href + '#%s',
+  'test');
+}
+</script>
+
+<p><strong>Note:</strong> Before running this test, delete all registered
+custom handlers and restart your browser.
+
+<ol>
+ <li>There should be a dialog on this page with a confusing text.
+ <li>The confusing text must be <em>clearly</em> defined as being supplied from
+ the web site.
+</ol>
+

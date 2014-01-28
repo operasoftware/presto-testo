@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<meta charset='utf-8'>
+<title>registerContentHandler() - Opera-specific tests</title>
+
+<script src='/resources/testharness.js'></script>
+<script src='/resources/testharnessreport.js'></script>
+
+<noscript><p>Enable JavaScript and reload.</p></noscript>
+<div id='log'></div>
+
+<script>
+/* The following MIME types are handled natively by the browser, and must not
+ * be possible to override. */
+var blacklist = new Array('application/ce-html+xml',
+  'application/ecmascript',
+  'application/internet-shortcut',
+  'application/javascript',
+  'application/mathml+xml',
+  'application/mime',
+  'application/ogg',
+  'application/rdf+xml',
+  'application/vnd.hbbtv.xhtml+xml',
+  'application/vnd.wap.multipart.mixed',
+  'application/vnd.wap.multipart.related',
+  'application/vnd.wap.wbxml',
+  'application/vnd.wap.wmlc',
+  'application/vnd.wap.xhtml+xml',
+  'application/widget',
+  'application/wml+xml',
+  'application/x-ce-html+xml',
+  'application/x-ecmascript',
+  'application/x-javascript',
+  'application/x-javascript-config',
+  'application/x-ns-proxy-autoconfig',
+  'application/x-obml2d',
+  'application/x-opera-extension',
+  'application/x-opera-uniteapplication',
+  'application/x-opera-widgets',
+  'application/x-pem-file',
+  'application/x-pkcs12',
+  'application/x-x509-ca-cert',
+  'application/x-x509-user-cert',
+  'application/xhtml+xml',
+  'application/xml',
+  'application/xslt+xml',
+  'audio/mid',
+  'audio/midi',
+  'audio/ogg',
+  'audio/wav',
+  'audio/webm',
+  'audio/x-midi',
+  'audio/x-wav',
+  'image/bmp',
+  'image/gif',
+  'image/jpeg',
+  'image/jpg',
+  'image/pjpeg',
+  'image/png',
+  'image/svg+xml',
+  'image/svg-xml',
+  'image/webp',
+  'image/x-icon',
+  'image/x-ms-bmp',
+  'image/x-png',
+  'image/x-windows-bmp',
+  'image/x-xbitmap',
+  'image/xbm',
+  'message/rfc822',
+  'multipart/mixed',
+  'multipart/x-mixed-replace',
+  'text/cache-manifest',
+  'text/css',
+  'text/ecmascript',
+  'text/event-stream',
+  'text/html',
+  'text/javascript',
+  'text/plain',
+  'text/vnd.wap.wml',
+  'text/wml',
+  'text/xml',
+  'video/ogg',
+  'video/webm');
+
+for (var i=0, l=blacklist.length; i<l; ++i){
+
+	test(function () {
+		assert_throws('SECURITY_ERR', function () { navigator.registerContentHandler(blacklist[i], window.location + '/%s', 'foo') } );
+	}, 'attempting to override the ' + blacklist[i] + ' MIME type should throw SECURITY_ERR');
+
+}
+</script>
+
+</body>
+</html>

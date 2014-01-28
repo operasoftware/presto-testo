@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Script origin and unregisterProtocolHandler</title>
+<script type="application/ecmascript">
+var scheme = 'web+TestProtocolNine', url = 'http://t/core/standards/registerhandler/interactive/protocol/%s', result = true;
+function start()
+	{if(location.href.match(/^http:\/\/t\/core/))
+		{document.getElementsByTagName('li')[0].setAttribute('style','display:none')}
+	navigator.registerProtocolHandler(scheme, url, 'test');}
+function check()
+	{if(navigator.isProtocolHandlerRegistered(scheme, url) != 'registered' &amp;&amp; location.href.match(/^http:\/\/t\/core/))
+		{result = false}
+	navigator.unregisterProtocolHandler(scheme.toUpperCase(), url);
+	if(navigator.isProtocolHandlerRegistered(scheme, url) != 'new')
+		{result = false}
+	var li = document.getElementsByTagName('li')[4];
+	li.replaceChild(document.createTextNode(result?"PASS":"FAIL"), li.firstChild)}
+</script>
+</head>
+<body onload="start()">
+<ol>
+	<li style="color:maroon">This test should be loaded from <strong>http://t/</strong></li>
+	<li>There should be dialog asking to allow protocol handler</li>
+	<li>Allow it</li>
+	<li><a href="http://t.oslo.opera.com/core/standards/registerhandler/interactive/content/009-1.xhtml">Try to unregister handler</a></li>
+	<li><a href="javascript:check()">Check test result</a></li>
+</ol>
+</body>
+</html>
