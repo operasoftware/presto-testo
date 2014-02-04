@@ -3,10 +3,11 @@ discontinued, Opera decided to release it publicly in its raw form at the
 urging of test enthusiasts involved with the W3C.
 
 These are not production-ready, they need to be checked/fixed for all W3C
-requirements before submitting. Some of these may already be submitted. None of
-this has been recently checked in any way other than a quick skim for
-confidential material. Some of it may be irrelevant for standards (though some
-stress tests may be useful, if tangential).
+requirements before submitting. Many of these may already be submitted by James
+Graham, Geoffrey Sneddon, or other Opera employees. None of this has been
+recently checked in any way other than a quick skim for confidential material.
+Some of it may be irrelevant for standards (though some stress tests may be
+useful, if tangential).
 
 Test suites are gradually uploaded after they've been checked. Specification
 testsuites are done, look in core/standards for those.
