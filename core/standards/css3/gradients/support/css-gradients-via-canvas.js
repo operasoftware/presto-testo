@@ -54,6 +54,147 @@ function dbg(msg)
     console.info(msg);
 }
 
+var rad_grad_parser = PEG.buildParser(
+'{' +
+'  var zero = { "value":0, "unit":"px" };' +
+'' +
+'  var normalize_pos = function(a1, o1, a2, o2) {' +
+'    var tmp;' +
+'    if (o1 && !a1 && !a2 &!o2) {' +
+'      a1 = "left";' +
+'      a2 = "center";' +
+'    }' +
+'    if (!a1) {' +
+'      if (a2 == "left" || a2 == "right")' +
+'        a1 = "top";' +
+'      else' +
+'        a1 = "left";' +
+'    }' +
+'    if (o1 && !a2 && !o2) {' +
+'      o2 = o1;' +
+'      o1 = "";' +
+'      if (a1 == "top" || a1 == "bottom") {' +
+'        a2 = a1;' +
+'        a1 = "center";' +
+'      }' +
+'    }' +
+'    if (!a2) {' +
+'      if (!o2) {' +
+'        a2 = "center";' +
+'      } else if (a1 == "top" || a1 == "bottom") {' +
+'        a2 = "left";' +
+'      } else {' +
+'        a2 = "top";' +
+'      }' +
+'    }' +
+'    if (a1 == "top" || a1 == "bottom" || a2 == "left" || a2 == "right") {' +
+'      tmp =a1; a1 = a2; a2 = tmp;' +
+'      tmp =o1; o1 = o2; o2 = tmp;' +
+'    }' +
+'    if (a1 == "center") {' +
+'      a1 = "left";' +
+'      o1 = { "value":50, "unit":"%" };' +
+'    }' +
+'    if (a2 == "center") {' +
+'      a2 = "top";' +
+'      o2 = { "value":50, "unit":"%" };' +
+'    }' +
+'    if (!o1) { o1 = zero; }' +
+'    if (!o2) { o2 = zero; }' +
+'' +
+'    return [{ "anchor":a1, "offset":o1 }, { "anchor":a2, "offset":o2 }];' +
+'   };' +
+'' +
+'  var default_position = normalize_pos("center", "", "", "");' +
+'  var default_size = { "implicit" : "farthest-corner" };' +
+'  var default_shape_size = { "shape":"ellipse", "size":default_size };' +
+'' +
+'  var s;' +
+'  var p;' +
+'}' +
+'' +
+'start =' +
+'g:(s:sizeshape s+ p:position { return [s, p]; } /' +
+'   s:sizeshape { return [s]; } /' +
+'   p:position { return ["", p]; })' +
+'{' +
+'  s = g[0]; p = g[1];' +
+'  if (!s) { s = default_shape_size; }' +
+'  if (!p) { p = default_position; }' +
+'  s.position=p;' +
+'  return s;' +
+'}' +
+'' +
+'sizeshape =' +
+'s:(shapethensize / sizethenshape)' +
+'!{' +
+'  if (s.size.explicit) {' +
+'    if (s.size.explicit.length == 1 && s.shape != "circle") {' +
+'      return true;' +
+'    } else if (s.size.explicit.length == 2 && s.shape != "ellipse") {' +
+'      return true;' +
+'    }' +
+'  }' +
+'}' +
+'{ return s; }' +
+'' +
+'' +
+'position =' +
+'"at" a1:anchor? o1:offset? a2:anchor? o2:offset?' +
+'!{ return !a1 && !a2 && !o1 &&!o2; }' +
+'!{ return (a1 == "top" || a1 == "bottom") && (a2 == "top" || a2 == "bottom"); }' +
+'!{ return (!a1 || a1 == "left" || a1 == "right") && (a2 == "left" || a2 == "right"); }' +
+'!{ return a2 == "center" && o2; }' +
+'!{ return a1 == "center" && o1 && (a2 || o2); }' +
+'{ return normalize_pos(a1, o1, a2, o2); }' +
+'' +
+'anchor = s+ a:("center" / "left" / "right" / "top" / "bottom") { return a; }' +
+'' +
+'offset = s+ o:(percentage / length) { return o}' +
+'' +
+'shapethensize = ' +
+'sh:shape si:(s+ s:size { return s; })?' +
+'{ return { "shape":sh, "size":si?si:default_size }; }' +
+'' +
+'sizethenshape =' +
+'si:size sh:(s+ s:shape { return s; })?' +
+'{' +
+'  if (!sh) {' +
+'    if (si.explicit && si.explicit.length == 1) {' +
+'      sh = "circle";' +
+'    } else {' +
+'      sh = "ellipse";' +
+'    }' +
+'  }' +
+'  return { "shape":sh,"size":si };' +
+'}' +
+'' +
+'shape = "circle" / "ellipse"' +
+'' +
+'size =' +
+'i:implicit_size { return { "implicit":i }; } /' +
+'e:explicit_size { return { "explicit":e }; }' +
+'' +
+'implicit_size = "closest-side" / "closest-corner" / "farthest-side" / "farthest-corner"' +
+'' +
+'explicit_size =' +
+'(s1:(length / percentage) s+ s2:(length / percentage) { return [s1,s2]; }) /' +
+'l:length { return [l]; }' +
+'' +
+'length =' +
+'n:number "px" { return { "value":n, "unit":"px" }; } /' +
+'"0" { return zero; }' +
+'' +
+'percentage =' +
+'n:number "%" { return { "value":n, "unit":"%" }; }' +
+'' +
+'number = a:digit+ "."? b:digit* { return parseFloat(a.join("")+"."+b.join("")); }' +
+'' +
+'digit = [0-9]' +
+'' +
+'s = " "'
+); 
+
 function provideGradientsViaCanvas(evt)
 {
   // Detect support for canvas.
@@ -167,7 +308,7 @@ function provideGradientsViaCanvas(evt)
           ,angle: undefined
 /* radial gradient properties. */
           ,shape: 'ellipse'
-          ,size: 'cover'
+          ,size: 'farthest-corner'
           ,radialPositionX: 'center' // horizontal position of a radial gradient as a string (e.g. "right 10px")
           ,radialPositionY: 'center' // vertical position of a radial gradient as a string (e.g. "bottom 10%")
           ,explicitRadialWidth: undefined // explicitly set width of a radial gradient as a string (e.g. 40px)
@@ -224,26 +365,17 @@ function provideGradientsViaCanvas(evt)
  */
 function parseGradientTokens(gradient)
 {
-  var reBgPositionAndAngle = /^((?:to |)(?:\b(?:top|left|center|bottom|right)\s*)*)(-?(?:\d+\.?\d*(?:deg|rad|turn|grad)|0))?$/;
+  var reBgPositionAndAngle = /^(?:(to \s*(?:\b(?:top|left|bottom|right)\s*){1,2})|(-?(?:\d+\.?\d*(?:deg|rad|turn|grad)|0)))$/;
   // [1] bg-position
   // [2] angle
-  var reShapeAndSize = /^(?:\b(circle|ellipse)?\b\s*(closest-side|closest-corner|farthest-side|farthest-corner|contain|cover)?\b\s*\b(circle|ellipse)?\b|\b(circle|ellipse)?\b\s*(closest-side|closest-corner|farthest-side|farthest-corner|contain|cover)?\b\s*\b(circle|ellipse)?\b)$/;
-  // [1] shape
-  // [2] size
-  var reColorStop = /^(\S+)\s*(-?\d*\.?\d*(px|%|em|pt|ex)?)?$/;	// A bit loose but it's guaranteed to run only after processing other rules
+  var reColorStop = /^(\S+)\s*(-?\d*\.?\d*(px|%|em)?)?$/;	// A bit loose but it's guaranteed to run only after processing other rules
   // [1] color
   // [2] percentage/length
   // [3] set if percentage value
-  var reBgPosition = /^\b((?:center|left|right|top|bottom)?\b\s*\d*\s*(?:px|%|em|pt|ex)?\s*)(\b(?:center|left|right|top|bottom)?\b\s*\d*\s*(?:px|%|em|pt|ex)?)$/;
-  // [1] assumed to be horizontal origin and x unless proven otherwise
-  // [2] assumed vertical origin and y unless proven otherwise
-  var reExplicitSize = /^(\d*(?:px|%|em|pt|ex))\s*(\d*(?:px|%|em|pt|ex))/;
-  // [1] width
-  // [2] height
 
   var BEGIN = 0
   var POSANDANGLE_DONE = 1, GRADIENTLINE_DONE = 2;
-  var RADIAL_POSITION_DONE = 1, RADIAL_SIZE_DONE = 2;
+  var RADIALGRADIENT_DONE = 1;
   var state = BEGIN;
   var tokens = gradient.tokens;
   var unsupported_stop_position = false;
@@ -257,85 +389,31 @@ function parseGradientTokens(gradient)
 
     if (/radial/.test(gradient.type))
     {
-      if (state < RADIAL_POSITION_DONE)
-      {
-        if (reMatch = reBgPosition.exec(token))
-        {
-          var
-            horiz = normalizeWhitespace(reMatch[1]),
-            vert = normalizeWhitespace(reMatch[2]);
-
-          if (horiz && vert)
-          {
-            /* Switch matches if it turned out that vertical and horizontal are inverted. */
-            if (/top|bottom/.test(horiz) || /left|right/.test(vert))
-            {
-              var x = vert;
-              vert = horiz;
-              horiz = x;
-            }
-
-            if (/\d+/.test(horiz) && /\d+/.test(vert) && (/right|left/.test(horiz) || /top|bottom/.test(vert)))
-            {
-              /* If three or four values are given, then each <percentage> or <length>
-                 represents an offset and must be preceded by a keyword. */
-                if (!(/right|left/.test(horiz)) || !(/top|bottom/.test(vert)))
-                  throw {toString: function(){ return 'Expected two keywords in position token!'; }};
-            }
-          }
-          if (horiz)
-            gradient.radialPositionX = horiz;
-          if (vert)
-            gradient.radialPositionY = vert;
-
-          dbg('Radial position parsed, orig: ' + token + ' x,y: ' + gradient.radialPositionX + ',' + gradient.radialPositionY);
-          state = RADIAL_POSITION_DONE;
-          continue;
-        }
-
-        // No bgPosition token found.
-        state = RADIAL_POSITION_DONE;
-      }
-
-      if (state < RADIAL_SIZE_DONE)
-      {
-        // look for optional shape and/or size
-        if (reMatch = reShapeAndSize.exec(token))
-        {
-          var shape = reMatch[1] ? normalizeWhitespace(reMatch[1]) : null;
-          var size = reMatch[2] ? normalizeWhitespace(reMatch[2]) : null;
-
-          /* Invert matches if shape turned out to be the second keyword. */
-          if (shape && size && /(circle|ellipse)/.test(size))
-          {
-            var temp = shape;
-            shape = size;
-            size = temp;
-          }
-
-          if (shape)
-            gradient.shape = shape;
-          if (size)
-            gradient.size = size;
-
-          dbg('Radial size parsed, orig: ' + token + ' shape,size: ' + gradient.shape + ',' + gradient.size);
-          state = RADIAL_SIZE_DONE;
-          continue;
-        }
-        else if (reMatch = reExplicitSize.exec(token))
-        {
-          if (reMatch[1])
-            gradient.explicitRadialWidth = normalizeWhitespace(reMatch[1]);
-          if (reMatch[2])
-            gradient.explicitRadialHeight = normalizeWhitespace(reMatch[2]);
-
-          dbg('Radial explicit size parsed, orig: ' + token + ' width,height: ' + gradient.explicitRadialWidth + ',' + gradient.explicitRadialHeight);
-
-          gradient.hasExplicitSize = true;
-          state = RADIAL_SIZE_DONE;
-          continue;
-        }
-      }
+		if (state < RADIALGRADIENT_DONE)
+		{
+			state = RADIALGRADIENT_DONE;
+			try{
+				var parsed_grad = rad_grad_parser.parse(token);
+				gradient.shape = parsed_grad.shape;
+				if (parsed_grad.size.explicit) {
+					gradient.hasExplicitSize = true;
+					gradient.explicitRadialWidth = parsed_grad.size.explicit[0].value + parsed_grad.size.explicit[0].unit;
+					if (gradient.shape == "circle") {
+						gradient.explicitRadialHeight = gradient.explicitRadialWidth;
+					} else {
+						gradient.explicitRadialHeight =  parsed_grad.size.explicit[1].value + parsed_grad.size.explicit[1].unit;
+					}
+				}
+				else {
+					gradient.size = parsed_grad.size.implicit;
+				}
+				gradient.radialPositionX = parsed_grad.position[0].anchor + " " + parsed_grad.position[0].offset.value + parsed_grad.position[0].offset.unit;
+				gradient.radialPositionY = parsed_grad.position[1].anchor + " " + parsed_grad.position[1].offset.value + parsed_grad.position[1].offset.unit;
+				continue;
+			}
+			catch(e) {
+			}
+		}
     }
     else // linear gradient
     {
@@ -394,7 +472,7 @@ function parseGradientTokens(gradient)
                 break;
             }
 
-            gradient.angle = angle;
+            gradient.angle = 90 - angle;
           }
 
           state = POSANDANGLE_DONE;
@@ -994,7 +1072,6 @@ var Gradient = function(el, gradients)
    *
    * @return the resolved pixel offset from the left edge
    *
-   * FIXME implement 'em' etc units
    */
   var resolveHorizontalBackgroundPosition = function(value, width)
   {
@@ -1028,7 +1105,6 @@ var Gradient = function(el, gradients)
    *
    * @return the resolved pixel offset from the top edge
    *
-   * FIXME implement 'em' etc units
    */
   var resolveVerticalBackgroundPosition = function (value, height)
   {
@@ -1605,7 +1681,6 @@ var Gradient = function(el, gradients)
     {
       switch (gradient.size)
       {
-      case 'contain':
       case 'closest-side':
         {
           var closest_horizontal, closest_vertical;
@@ -1720,7 +1795,6 @@ var Gradient = function(el, gradients)
             gradient.radius = farthest_horizontal;
         }
         break;
-      case 'cover':
       case 'farthest-corner':
         {
           var corner_distances = calculateCornerDistances(gradient, width, height);
