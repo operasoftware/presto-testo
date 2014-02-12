@@ -4,7 +4,7 @@ A JS testsuite designed for JITing JS VMs, targetting ES5.
 
 ## Tests
 
-Tests reside in the `test` directory, in files beginning with
+Tests reside in the `tests` directory, in files beginning with
 `test` and ending in `.js`. To find tests within a test file, a
 snippet such as the following can be used:
 
@@ -17,14 +17,56 @@ for (var x in global) {
 }
 ```
 In theory, tests are split up into files based upon whether they are
-testing spec behaviour (`_spec.js`), de-facto required behaviour
-(`_required.js`), and Carakan-specific behaviours (`_specified.js`),
-though in practice this separation hasn't been entirely followed.
+testing spec behaviour (`_spec.js`), de-facto required behaviour for 
+web compat (`_required.js`), and Carakan-specific behaviours
+(`_specific.js`), though in practice this separation hasn't been
+entirely followed.
 
 The tests are designed so that they can be run multiple times in a
 loop so that JIT behaviour can be tested (of course, as engine
 optimizations improve an ever-increasing number of tests becoming
 little more than `assert_true(true)`!).
+
+## Adding tests
+
+Each file contains multiple tests, broadly arranged by the
+functionality they are testing. If it is obvious which file the
+new test should go in, pick that file. If it is not obvious, pick
+a likely looking file. If it is really not obvious, or you have
+special requirements like having a lot of global variables, make 
+a new file with a name like `testFoo_{spec, required, specific}.js`
+(see above for the distinction).
+
+Once you have a test file, add a test. One test === one function 
+with a name like `testFoo_x` where `x` is a zero-based integer. Note
+that if the function name does not start with the four characters 
+"`test`" the function will not be considered a test. This setup is
+generally good but makes it hard to test things that absolutely must
+be run in global code (global variables are fine, however).
+
+Inside each test function you can use any of the large number of 
+`assert*` functions defined in `harness/opjsunit.js` to enforce 
+the requirements of the test. For example a simple equality check
+should be written `assertEquals(expected, actual)`. Try to use 
+the most specific assertion you can find for what you want, since 
+this will help readability.
+
+Once you have written your test, you need to make sure it works (or, 
+typically, fails) in the way you expect. This means getting a copy 
+of jsshell and running the harness.
+
+> *[The below is probably out of date]*
+
+> Sadly it is not quite trivial 
+> to get jsshell at the moment. You need the source tree and to build
+> in modules/ecmascript/carakan/standalone Then assuming you are in 
+> this directory, you can run opjsunit like:
+
+> `python harness/opjsunit.py -s /path/to/jsshell -e carakan-nc path/to/test/file`
+
+> If you leave out path/to/test/file it will run all tests. If you happen 
+> to have other javascript shells around (e.g. spidermonkey, V8) you can
+> also run your test in those for comparison.
 
 ## Running tests
 
