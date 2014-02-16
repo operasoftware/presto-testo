@@ -45,10 +45,8 @@
 == repeating-radial/repeating-0-5-5-10.xht repeating-radial/repeating-0-5-5-10-ref.xht
 == repeating-radial/repeating-0-50.xht repeating-radial/repeating-0-50-ref.xht
 == border-radius/border_radius_form_element_wo_bg_color.xht border-radius/border_radius_form_element_wo_bg_color-ref.xht
-== border-radius/border_radius_transform.xht border-radius/border_radius_transform-ref.xht
 == border-radius/border_radius_border_background_repeat_round.xht border-radius/border_radius_border_background_repeat_round-ref.xht
 == border-radius/border_radius_border_background_origin_padding.xht border-radius/border_radius_border_background_origin_padding-ref.xht
-== border-radius/border_radius_form_element_w_bg_color.xht border-radius/border_radius_form_element_w_bg_color-ref.xht
 == border-radius/border_radius_border_background_repeat_space.xht border-radius/border_radius_border_background_repeat_space-ref.xht
 == border-radius/border_radius_border_background_origin_content.xht border-radius/border_radius_border_background_origin_content-ref.xht
 == border-radius/border_radius_border_background_repeat_repeat_1.xht border-radius/border_radius_border_background_repeat_repeat_1-ref.xht
@@ -100,27 +98,6 @@
 == various-tests/precision_test_vertical_infinitesimal_transition.xht various-tests/precision_test_vertical_infinitesimal_transition-ref.xht
 == various-tests/overridden_by_background_none_and_about_blank.xht various-tests/overridden_by_background_none_and_about_blank-ref.xht
 == transforms/transform_skew_45deg.xht transforms/transform_skew_45deg-ref.xht
-== form-elements/keygen.xht form-elements/keygen-ref.xht
-== form-elements/input_type_number.xht form-elements/input_type_number-ref.xht
-== form-elements/input_type_datetime.xht form-elements/input_type_datetime-ref.xht
-== form-elements/select_size_2.xht form-elements/select_size_2-ref.xht
-== form-elements/input_type_file.xht form-elements/input_type_file-ref.xht
-== form-elements/input_type_radio.xht form-elements/input_type_radio-ref.xht
-== form-elements/button.xht form-elements/button-ref.xht
-== form-elements/input_type_range.xht form-elements/input_type_range-ref.xht
-== form-elements/input_type_meter.xht form-elements/input_type_meter-ref.xht
-== form-elements/input_type_time.xht form-elements/input_type_time-ref.xht
-== form-elements/input_type_tel.xht form-elements/input_type_tel-ref.xht
-== form-elements/input_type_color.xht form-elements/input_type_color-ref.xht
-== form-elements/textarea.xht form-elements/textarea-ref.xht
-== form-elements/select.xht form-elements/select-ref.xht
-== form-elements/input_type_search.xht form-elements/input_type_search-ref.xht
-== form-elements/input_type_url.xht form-elements/input_type_url-ref.xht
-== form-elements/input_type_text.xht form-elements/input_type_text-ref.xht
-== form-elements/input_type_email.xht form-elements/input_type_email-ref.xht
-== form-elements/input_type_progress.xht form-elements/input_type_progress-ref.xht
-== form-elements/input_type_date.xht form-elements/input_type_date-ref.xht
-== form-elements/input_type_checkbox.xht form-elements/input_type_checkbox-ref.xht
 == repeating-near-zero/3s-blue0-lime-red0.xht repeating-near-zero/3s-blue0-lime-red0-ref.xht
 == repeating-near-zero/3s-blue0-lime-blue0.xht repeating-near-zero/3s-blue0-lime-blue0-ref.xht
 == repeating-near-zero/premul-lime0-blue-transparent0.xht repeating-near-zero/premul-lime0-blue-transparent0-ref.xht
@@ -137,7 +114,7 @@
 == repeating-near-zero/17s-red0-lime-blue-red-lime-blue-red-lime-blue-red-lime-blue-red-lime-blue-red-lime0.xht repeating-near-zero/17s-red0-lime-blue-red-lime-blue-red-lime-blue-red-lime-blue-red-lime-blue-red-lime0-ref.xht
 == repeating-near-zero/premul-semi-alpha-transparent-2.xht repeating-near-zero/premul-semi-alpha-transparent-2-ref.xht
 == repeating-near-zero/2s-blue0-red0.xht repeating-near-zero/2s-blue0-red0-ref.xht
-== repeating-near-zero/premul-blue0-rgba(255, repeating-near-zero/premul-blue0-rgba(255, 0, 0, 0)0-ref.xht
+== repeating-near-zero/premul-blue0-rgba_255_0_0_0_0.xht repeating-near-zero/premul-blue0-rgba_255_0_0_0_0-ref.xht
 == repeating-near-zero/3s-red0-lime-blue0.xht repeating-near-zero/3s-red0-lime-blue0-ref.xht
 == repeating-near-zero/3s-aquamarine0-beige-darkorange0.xht repeating-near-zero/3s-aquamarine0-beige-darkorange0-ref.xht
 == html-elements/table_row.xht html-elements/table_row-ref.xht
@@ -148,9 +125,7 @@
 == html-elements/table_cell.xht html-elements/table_cell-ref.xht
 == html-elements/inline_element_w_linebreaks.xht html-elements/inline_element_w_linebreaks-ref.xht
 == html-elements/inline-block_element.xht html-elements/inline-block_element-ref.xht
-== html-elements/html_element.xht html-elements/html_element-ref.xht
 == html-elements/inline_element.xht html-elements/inline_element-ref.xht
-== html-elements/body_element.xht html-elements/body_element-ref.xht
 == html-elements/image_element.xht html-elements/image_element-ref.xht
 == parsing-gradient/color_stop_using_em_values_for_position.xht parsing-gradient/color_stop_using_em_values_for_position-ref.xht
 == parsing-gradient/using_pixel_values_for_position_10_100_and_150px.xht parsing-gradient/using_pixel_values_for_position_10_100_and_150px-ref.xht
@@ -278,7 +253,6 @@
 == parsing-gradient-angle/300grad_angle.xht parsing-gradient-angle/300grad_angle-ref.xht
 == parsing-gradient-angle/-100deg_angle_percentage.xht parsing-gradient-angle/-100deg_angle_percentage-ref.xht
 == parsing-gradient-angle/-45deg_angle_px.xht parsing-gradient-angle/-45deg_angle_px-ref.xht
-== parsing-gradient-angle/-45deg_angle_percentage.xht parsing-gradient-angle/-45deg_angle_percentage-ref.xht
 == parsing-gradient-angle/1.3turn_angle.xht parsing-gradient-angle/1.3turn_angle-ref.xht
 == parsing-gradient-angle/0_angle_percentage.xht parsing-gradient-angle/0_angle_percentage-ref.xht
 == parsing-gradient-angle/-580grad_angle.xht parsing-gradient-angle/-580grad_angle-ref.xht
