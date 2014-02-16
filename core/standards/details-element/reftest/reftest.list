@@ -1,3 +1,0 @@
-!= test-summary-001.html ref-one-div.html        # <summary> should be different from <div>
-== test-summary-002.html ref-details-open.html   # Only one <summary> should have <summary> style
-== test-summary-003.html ref-details-closed.html # Only one <summary> should be visible
