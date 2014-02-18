@@ -1,9 +1,0 @@
-<!doctype html>
-<title>getting HTMLSourceElement.type</title>
-<p>FAIL (script didn't run)</p>
-<video><source type="."></video><audio><source type="."></audio>
-<script>
-var passed = document.getElementsByTagName("source")[0].type == '.' && document.getElementsByTagName("source")[1].type == '.';
-document.getElementsByTagName("p")[0].firstChild.data = passed ? "PASS" : "FAIL";
-try{top.opener.rr(passed);}catch(e){}
-</script>
