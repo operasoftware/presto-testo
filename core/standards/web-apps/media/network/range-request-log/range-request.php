@@ -116,23 +116,23 @@ function loadfile($filelocation, $rate)
   if (isset($_GET['if-range']) && isset($_SERVER['HTTP_IF_RANGE']))
     {
       switch ($_GET['if-range'])
-	{
-	case '200':
-	  // pretend that the If-Range check failed and return 200 OK
-	  $use_range = false;
-	  break;
-	case '400':
-	  header('HTTP/1.1 400 Bad Request');
-	  $msg = 'Sorry, requested range (bytes='.$range1.'-'.$range2.') is not satisfiable!';
-	  if ($log) {
-	    fwrite($lp, $msg);
-	    fwrite($lp, "\n");
-	    fclose($lp);
-	  }
-	  fclose($fp);
-	  die($msg);
-	  break;
-	}
+        {
+        case '200':
+          // pretend that the If-Range check failed and return 200 OK
+          $use_range = false;
+          break;
+        case '400':
+          header('HTTP/1.1 400 Bad Request');
+          $msg = 'Sorry, requested range (bytes='.$range1.'-'.$range2.') is not satisfiable!';
+          if ($log) {
+            fwrite($lp, $msg);
+            fwrite($lp, "\n");
+            fclose($lp);
+          }
+          fclose($fp);
+          die($msg);
+          break;
+        }
     }
 
   if ($use_range)
@@ -147,32 +147,32 @@ function loadfile($filelocation, $rate)
       $length = $range2 - $range1 + 1;
 
       if (isset($_GET['etag']))
-	{
-	  $content = floor(mktime()/30)*30;
-	  $etag = md5($content);
-	  header('ETag: '.$etag);
-	}
+        {
+          $content = floor(mktime()/30)*30;
+          $etag = md5($content);
+          header('ETag: '.$etag);
+        }
 
       if (isset($_GET['cachecontrol']))
         header('Cache-Control: '.$_GET['cachecontrol']);
 
       if (isset($_GET['expires']))
-	{
-	  header('Expires: '.gmdate('D, j M Y H:i:s T', time() + 200));
-	  header('Cache-Control: max-age=200, must-revalidate');
-	}
+        {
+          header('Expires: '.gmdate('D, j M Y H:i:s T', time() + 200));
+          header('Cache-Control: max-age=200, must-revalidate');
+        }
 
       if(isset($_GET['lastmodified']))
-	{
-	  $last_modified_time = filemtime($filelocation);
-	  header("Last-Modified: ".httpdate($last_modified_time)." GMT");
-	}
+        {
+          $last_modified_time = filemtime($filelocation);
+          header("Last-Modified: ".httpdate($last_modified_time)." GMT");
+        }
 
       if(isset($_GET['date']))
-	{
-	  // set the Date to 1 second ago emulate some network lag
-	  header("Date: ".httpdate(time()-1)." GMT");
-	}
+        {
+          // set the Date to 1 second ago emulate some network lag
+          header("Date: ".httpdate(time()-1)." GMT");
+        }
 
       if (isset($_GET['status']))
         header('HTTP/1.1 ' . $_GET['status']);
@@ -193,9 +193,9 @@ function loadfile($filelocation, $rate)
         header('Accept-Ranges: none');
 
       if ($log) {
-	fwrite($lp,"\n");
-	fwrite($lp, $_SERVER['HTTP_RANGE']);
-	fwrite($lp, "\t\t\t");
+        fwrite($lp,"\n");
+        fwrite($lp, $_SERVER['HTTP_RANGE']);
+        fwrite($lp, "\t\t\t");
       }
 
     }
@@ -208,11 +208,11 @@ function loadfile($filelocation, $rate)
         header('Content-Length: ' . $filesize);
 
       if (isset($_GET['etag']))
-	{
-	  $content = floor(mktime()/30)*30;
-	  $etag = md5($content);
-	  header('ETag: '.$etag);
-	}
+        {
+          $content = floor(mktime()/30)*30;
+          $etag = md5($content);
+          header('ETag: '.$etag);
+        }
     }
 
   if ($range1 > $range2 || $range2 >= $filesize) {

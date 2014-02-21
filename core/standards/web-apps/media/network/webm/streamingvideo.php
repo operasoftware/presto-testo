@@ -17,7 +17,7 @@ if (isset($_GET['status']))
 header('content-type: video/webm');
 
 if (isset($_GET['ranges']))
-	header("Accept-Ranges: bytes");
+  header("Accept-Ranges: bytes");
 while(!feof($fpOrigin)){
   $buffer=fread($fpOrigin, 4096);
   echo $buffer;
