@@ -12,36 +12,36 @@ var tests = init_tests("HTMLAudioElement.preload:metadata networkState order - o
 tests.forEach(function(vars) {
     var t = vars[0];
     t.step(function() {
-    var tag_name = vars[1];
-    var states_actual = '';
-    var node = document.getElementsByTagName(tag_name)[0];
-    startTest();
+        var tag_name = vars[1];
+        var states_actual = '';
+        var node = document.getElementsByTagName(tag_name)[0];
+        startTest();
 
-    function startTest() {
-        var events  = ['loadstart', 'progress', 'suspend', 'abort', 'error', 'loadedmetadata', 'loadeddata', 'canplay', 'canplaythrough'];
-        for (var e in events) {
-        node.addEventListener(events[e], handleEvent, false);
+        function startTest() {
+            var events  = ['loadstart', 'progress', 'suspend', 'abort', 'error', 'loadedmetadata', 'loadeddata', 'canplay', 'canplaythrough'];
+            for (var e in events) {
+                node.addEventListener(events[e], handleEvent, false);
+            }
+            node.src = '/core/standards/web-apps/media/network/range-request-log/range-request.php?rate=100000&fileloc=../../support/preload.ogv&nocache=' + Math.random();
         }
-        node.src = '/resources/media/misc/bbb_256kbps.ogg?nocache=' + Math.random();
-    }
 
-    function handleEvent(e) {
-        if (e.type == 'error' && !node.canPlayType(tag_name + '/ogg')) {
-        t.step(function() {
-            assert_unreached("Cannot play '" + tag_name + "/ogg'");
-            t.done();
-        });
+        function handleEvent(e) {
+            if (e.type == 'error' && !node.canPlayType(tag_name + '/ogg')) {
+                t.step(function() {
+                    assert_unreached("Cannot play '" + tag_name + "/ogg'");
+                    t.done();
+                });
+            }
+            states_actual += node.networkState + ' ';
+            if (e.type == 'suspend') endTest();
         }
-        states_actual += node.networkState + ' ';
-        if (e.type == 'suspend') endTest();
-    }
 
-    function endTest() {
-        t.step(function() {
-        assert_regexp_match(states_actual, eval('/^(' + HTMLMediaElement.NETWORK_LOADING + ' )+(' + HTMLMediaElement.NETWORK_IDLE + ' )+$/g'), 'Event order check');
-        t.done();
-        });
-    }
+        function endTest() {
+            t.step(function() {
+                assert_regexp_match(states_actual, eval('/^(' + HTMLMediaElement.NETWORK_LOADING + ' )+(' + HTMLMediaElement.NETWORK_IDLE + ' )+$/g'), 'Event order check');
+                t.done();
+            });
+        }
     });
 });
 </script>
