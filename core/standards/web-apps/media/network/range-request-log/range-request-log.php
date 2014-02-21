@@ -8,7 +8,7 @@
     $range2 = $length;
     $fh = fopen($logFile, 'a'); // pointer to write to the file
     $count = 0;
-         
+
      if(isset($_SERVER['HTTP_RANGE'])) {
 	        preg_match('/bytes=(\d+)-(\d+)?/', $_SERVER['HTTP_RANGE'], $matches);
 	        $range1 = intval($matches[1]);
@@ -41,12 +41,12 @@
 	       if(!isset($_GET['chunked']))
                 header('Content-Length: ' . $filesize);
         }
-     
+
     $fp=fopen("$fileLocation","rb");	// pointer to read from file
     fseek($fp,$range1);
     $tempfp = $range1;
     if ($length == 0 ) {
-        fwrite($fh, $length); 
+        fwrite($fh, $length);
         fwrite($fh, "\n");
         die('Zero byte file! Aborting download');
     }
@@ -63,8 +63,8 @@
         ob_flush();
     	sleep(0);
     }
-   
-    fwrite($fh, $count*$maxSpeed); 
+
+    fwrite($fh, $count*$maxSpeed);
     fwrite($fh, "\n");
     fclose($fh);
     fclose($fp);

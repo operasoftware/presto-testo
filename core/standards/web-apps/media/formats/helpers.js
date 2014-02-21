@@ -21,4 +21,3 @@ function processPixels(imageData, refImageData, diffImageData, pixelDataToleranc
   }
   return diffImageData;
 }
-

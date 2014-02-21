@@ -30,7 +30,6 @@ tests.forEach(function(vars) {
         node.addEventListener('timeupdate', endTest, false);
     }
 
-
     function endTest() {
         t.step(function() {
         assert_true(true, "Got timeupdate event.");

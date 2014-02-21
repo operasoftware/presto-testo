@@ -9,9 +9,9 @@ $strContext=stream_context_create(
       )
     )
   );
-$fpOrigin=fopen(SRC_URL, 'rb', false, $strContext); 
+$fpOrigin=fopen(SRC_URL, 'rb', false, $strContext);
 
-if (isset($_GET['status'])) 
+if (isset($_GET['status']))
     header('HTTP/1.1 206 Partial Content');
 
 header('content-type: video/ogg');
@@ -19,9 +19,9 @@ header('content-type: video/ogg');
 if (isset($_GET['ranges']))
 	header("Accept-Ranges: bytes");
 while(!feof($fpOrigin)){
-  $buffer=fread($fpOrigin, 4096); 
-  echo $buffer; 
-  flush();  
+  $buffer=fread($fpOrigin, 4096);
+  echo $buffer;
+  flush();
 }
 fclose($fpOrigin);
 ?>

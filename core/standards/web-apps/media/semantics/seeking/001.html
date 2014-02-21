@@ -20,7 +20,7 @@
    if (Math.abs(evaledA-b) > tolerance)
      log.push(a+' was '+evaledA+', expected '+b+'\u00B1'+tolerance);
  }
- 
+
  v.addEventListener('ended', function(e) {
    v.currentTime = 1;
    assertEquals('v.currentTime', 1);
@@ -33,7 +33,7 @@
    }, 300);
  }, false);
  document.body.appendChild(v);
- 
+
  function end() {
    if (arguments.callee.done) return;
    arguments.callee.done = true;
@@ -52,4 +52,3 @@
    end();
  }
 </script>
-

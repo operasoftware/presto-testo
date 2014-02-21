@@ -26,19 +26,16 @@ var GET;
 var playingDate;
 var worker;
 
-
 // tolerance variables, might have to be tweaked later
 var durationTolerance = 0.3;
 var durationChangeTolerance = 0;
 var pixelDataTolerance = 1;
 var currentTimeChangeTolerance = 0.2;
 
-
 // some style
 var style = document.createElement('style');
 style.textContent =  'body { line-height:1 } div { position:absolute; top:8px; right:8px } video, canvas { display:block; margin:0 0 8px auto } pre { position:relative; display:inline; background-color:rgba(255, 255, 255, 0.8) } pre:after { content:""; display:block; margin-top:1em }';
 document.documentElement.firstChild.appendChild(style);
-
 
 // log
 pre = document.createElement('pre');
@@ -56,7 +53,6 @@ function log(s, event) {
     pre.textContent += s;
   }
 }
-
 
 // do heavy work in a web worker if it's supported
 // this will not work in firefox doesn't support structured clones
@@ -84,7 +80,7 @@ onload = function() {
       expectedCorrectedHeight = Math.round(expectedHeight/expectedPixelAspectRatio);
     }
   }
-  
+
   var currentDimensionIndex = 0;
 
   GET = {};
@@ -107,7 +103,7 @@ onload = function() {
       }
     }
   })();
-  
+
   document.body.replaceChild(pre, document.querySelector('pre'));
 
   function end() {
@@ -139,11 +135,11 @@ onload = function() {
   }
   ctx = canvas.getContext('2d');
   div.appendChild(canvas);
-  
+
   refCanvas = canvas.cloneNode(true);
   refCtx = refCanvas.getContext('2d');
   div.appendChild(refCanvas);
-  
+
   diffCanvas = canvas.cloneNode(true);
   diffCtx = diffCanvas.getContext('2d');
   div.appendChild(diffCanvas);
@@ -151,7 +147,6 @@ onload = function() {
   canvas.title = 'Video painted on canvas';
   refCanvas.title = 'Reference image';
   diffCanvas.title = 'Difference between video and reference image';
-
 
   function shouldPaintCanvas(event) {
     if (arguments.callee.done)
@@ -182,14 +177,14 @@ onload = function() {
   var refImg = new Image();
   var refImgLoaded = false; // work around refImg.complete bug
   refImg.src = document.location.href.replace(/\.html(?:\?.*)?(?:\#.*)?$/, '.png');
-  
+
   refImg.onload = function() {
     refCtx.drawImage(refImg, 0, 0, expectedWidth, expectedHeight);
     eventLog.textContent += 'Reference image loaded ('+(new Date()-loadDate)+'ms)\n';
     refImgLoaded = true;
     comparePixels();
   }
-  
+
   function comparePixels() {
     if (arguments.callee.done || !loggedEvents.loadeddata || !refImgLoaded)
       return;
@@ -335,8 +330,6 @@ onload = function() {
     }
   }
 
-
-
   // ****************** expected events, in rough order ******************
 
   video.addEventListener('loadstart', function(e) {
@@ -403,7 +396,7 @@ onload = function() {
     expectEventIn('timeupdate', 250, e);
     logEvent(e, true);
   }, false);
-  
+
   video.addEventListener('seeked', function(e) {
     video.loop = false;
     expectEventIn('ended', expectedDuration*1000+50, e);
@@ -551,8 +544,6 @@ onload = function() {
     logEvent(e);
   }, false);
 
-
-
   // ****************** unexpected events ******************
 
   video.addEventListener('load', function(e) {
@@ -615,6 +606,5 @@ onload = function() {
   video.addEventListener('volumechange', function(e) {
     logEvent(e);
   }, false);
-
 
 }

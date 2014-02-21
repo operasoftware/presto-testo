@@ -23,7 +23,7 @@
                             func:   function()
                             {
                                 var replacementErrorCallback = this.test.getData('replacementErrorCallback');
-                                
+
                                 if (replacementErrorCallback) { replacementErrorCallback(this); }
                                 else
                                 {
@@ -52,10 +52,10 @@
                                                                                 function(video)
                                                                                 {
                                                                                     logger(codes.get('error', video.error.code)+" error when playing at pos: "+video.currentTime.toFixed(0));
-                                                                                    
+
                                                                                     if (video.error.code == 2)  { video.test.result(true);                                                                                              }
                                                                                     else                        { video.test.result(false, "Received error code "+codes.get('error', video.error.code)+" (expected: NETWORK_ERROR)");   }
-                                                                                    
+
                                                                                     video.pause();
                                                                                     video.test.finish();
                                                                                 }
@@ -65,7 +65,7 @@
                                                         },
                                                         false
                                                     );
-                                
+
                                 logger("force timeout...");
                                 iframe.src = "video.php?forcetimeout="+this.test.getData('ID');
                             }
@@ -82,9 +82,9 @@
                             {
                                 var lastBuf = this.test.getData('lastBuf');
                                 var tmpBuf  = this.test.getData('tmpBuf');
-                                
+
                                 if (!(tmpBuf)) { tmpBuf = lastBuf; }
-                                
+
                                 if (this.buffered.start(0) > lastBuf.end(0)) // play the full buffer
                                 {
                                     this.test.updateListeners();
@@ -103,7 +103,7 @@
                         }
                     ]
             }
-            
+
             try
             {
                 var video       = document.querySelector('video');
@@ -112,7 +112,7 @@
                     video.test.init('video.php?contenttype=video/webm&nocache=1&timeout=3&rate=0.5&norange=1&id='+video.test.getData('ID'), testlist, 60000);
             } catch (e) { alert("init error: "+e); }
         }
-        
+
         window.addEventListener('load', init, false);
     </script>
 </head>

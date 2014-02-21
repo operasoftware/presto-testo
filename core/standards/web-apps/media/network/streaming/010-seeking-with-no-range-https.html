@@ -23,7 +23,7 @@
                             func:   function()
                             {
                                 var replacementErrorCallback = this.test.getData('replacementErrorCallback');
-                                
+
                                 if (replacementErrorCallback) { replacementErrorCallback(this); }
                                 else
                                 {
@@ -37,14 +37,14 @@
                             func:   function()
                             {
                                 logger("current buffered range: "+timeRange2String(this.buffered));
-                                
+
                                 if (this.seekable.length != 0)
                                 {
                                     this.test.result(false, "video.seekable contains time ranges: "+timeRange2String(this.seekable));
                                     this.test.finish();
                                     return;
                                 }
-                                
+
                                 if (this.duration > this.buffered.end(0)) { var seekto = this.duration; }               // seek as far away from the current buffered range as possible
                                 else
                                 {
@@ -52,16 +52,16 @@
                                     this.test.finish();
                                     return;
                                 }
-                                
+
                                 this.test.setData('seekto', seekto);
                                 logger("seeking to: "+seekto.toFixed(2));
                                 this.currentTime = seekto;
-                                
+
                                 logger("video.seeking: "+this.seeking);
-                                
+
                                 if (this.seeking === false) { this.test.result(true); }
                                 else                        { this.test.result(false, "seek requests are ignored but video.seeking is not set to false"); }
-                                
+
                                 this.test.finish();
                             }
                         },
@@ -77,7 +77,7 @@
                         }
                     ]
             }
-            
+
             try
             {
                 var video       = document.querySelector('video');
@@ -85,7 +85,7 @@
                     video.test.init('video.php?contenttype=video/webm&secure=1&norange=1&rate=0.5', testlist, 30000);
             } catch (e) { alert("init error: "+e); }
         }
-        
+
         window.addEventListener('load', init, false);
     </script>
 </head>

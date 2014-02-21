@@ -6,7 +6,7 @@
         function test()
         {
             var video = document.querySelector('video');
-            
+
             video.addEventListener(
                                     'loadedmetadata',
                                     function()
@@ -32,10 +32,10 @@
                                     },
                                     false
                                   );
-            
+
             video.src = "../video.php?secure=1"
         }
-        
+
         window.addEventListener('load', test, false);
     </script>
 </head>

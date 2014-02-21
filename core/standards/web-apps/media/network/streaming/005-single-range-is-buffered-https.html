@@ -32,13 +32,13 @@
                             {
                                 if (this.buffered.length != 1) { this.test.result(false, 'found '+this.buffered.length+' buffered ranges (expected: 1)'); }
                                 else                           { this.test.result(true); }
-                                
+
                                 this.test.finish();
                             }
                         },
                     ]
             }
-            
+
             try
             {
                 var video       = document.querySelector('video');
@@ -46,7 +46,7 @@
                     video.test.init('video.php?contenttype=video/webm&secure=1&rate=0.5', testlist, 30000);
             } catch (e) { alert("init error: "+e); }
         }
-        
+
         window.addEventListener('load', init, false);
     </script>
 </head>

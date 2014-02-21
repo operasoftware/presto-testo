@@ -37,7 +37,7 @@
                         }
                     ]
             }
-            
+
             try
             {
                 var video       = document.querySelector('video');
@@ -45,7 +45,7 @@
                     video.test.init('video.php?contenttype=video/webm&nocache=1&rate=0.5', testlist, 30000);
             } catch (e) { alert("init error: "+e); }
         }
-        
+
         window.addEventListener('load', init, false);
     </script>
 </head>

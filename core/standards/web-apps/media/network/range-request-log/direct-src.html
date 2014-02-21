@@ -48,14 +48,12 @@ var videoloc = "../../../../../../resources/media/xiph/theora_testsuite/sign_ire
 // load video
 video.src = "../../../../../../resources/media/xiph/theora_testsuite/sign_irene_cif-3qi-b.ogg";
 
-
 video.addEventListener('loadedmetadata', function() {
   assertApproximate('video.duration', 21.56, 0.3);
   assertEquals('video.videoWidth', 385);
   assertEquals('video.videoHeight', 288);
- 
-}, false);
 
+}, false);
 
 setTimeout(function() {
     end();
