@@ -25,7 +25,7 @@
    if (evaledA === evaledA)
      log.push(a+' was '+evaledA+', expected NaN');
  }
- 
+
  //v.addEventListener('loadstart', function(e) {
    assertNaN('v.duration');
  //}, false);
@@ -34,7 +34,7 @@
    end();
  }, false);
  document.body.appendChild(v);
- 
+
  function end() {
    var passed = log.length == 0;
    p.textContent = passed ? 'PASS' : 'FAIL\n' + log.join('\n');

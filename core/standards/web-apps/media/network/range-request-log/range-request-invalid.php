@@ -80,7 +80,7 @@
       }
     }
 
-    $fp = fopen("$fileLocation","rb");	// pointer to read from file
+    $fp = fopen("$fileLocation","rb"); // pointer to read from file
     fseek($fp,$range1);
     $tempfp = $range1;
     if ($length == 0 )

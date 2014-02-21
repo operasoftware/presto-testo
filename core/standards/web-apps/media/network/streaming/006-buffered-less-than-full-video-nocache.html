@@ -36,13 +36,13 @@
                                     else                                                                                                    { this.test.result(false, 'buffered range ['+timeRange2String(this.buffered)+'] is equal to or greater than seekable range ['+timeRange2String(this.seekable)+']'); }
                                 }
                                 else { this.test.result(false, 'video is not seekable, cannot determine full size.'); }
-                                
+
                                 this.test.finish();
                             }
                         },
                     ]
             }
-            
+
             try
             {
                 var video       = document.querySelector('video');
@@ -50,7 +50,7 @@
                     video.test.init('video.php?contenttype=video/webm&nocache=1&rate=0.5', testlist, 30000);
             } catch (e) { alert("init error: "+e); }
         }
-        
+
         window.addEventListener('load', init, false);
     </script>
 </head>

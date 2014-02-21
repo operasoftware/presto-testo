@@ -13,29 +13,29 @@
             // properties
             msg:  [],
             list: {},
-            
+
             // methods
             register:   function(testID, object)
             {
                 //logger(testID+": registered test for multi-test");
                 this.list[testID] = {obj:object, result:null, wait:{}};                                         // register a test for multi-test
             },
-            
+
             wait:       function(testID, waitID, waitCallback)
             {
                 logger(testID+": register callback '"+waitID+"'");
                 this.list[testID].wait[waitID] = waitCallback;
-                
+
                 for (var tid in this.list)                                                                      // check all tests for callbacks
                 {
                     var completed = false;
                     for (var wid in this.list[tid].wait) { if (wid == waitID) { completed = true; break; } }    // check if callback was set
                     if (!(completed)) { return; }
                 }
-                
+
                 for (var tid in this.list) { this.list[tid].wait[waitID].apply(this.list[tid].obj, []); }       // run the callbacks
             },
-            
+
             result:     function(testID, result, message)
             {
                 //logger(testID+": report result '"+result+"'"+(message?(" ("+message+")"):""));
@@ -43,15 +43,15 @@
                 logger("<span class=\""+res+"\">"+res+"</span>: "+message);
                 this.list[testID].result = result;
                 this.list[testID].obj.test.finished = true;
-                
+
                 for (var tid in this.list) { if (this.list[tid].result === null) { return; } }
-                
+
                 this.list[testID].obj.test.finished = false;
                 this.list[testID].obj.test.result(result, this.msg[result]);
                 this.list[testID].obj.test.finish();
             }
         };
-        
+
         function init()
         {
             var testlist =
@@ -76,7 +76,7 @@
                             {
                                 logger(this.id+": suspend");
                                 this.test.updateListeners();
-                                
+
                                 multiTest.wait(
                                                 this.id,
                                                 "wait-for-all-videos-to-finish-loading",
@@ -104,7 +104,7 @@
                                                 {
                                                     var seekto = this.test.getData("seekto");
                                                     logger(this.id+": seeked\n"+this.id+": seekto: "+seekto+", buffered range: "+timeRange2String(this.buffered));
-                                                    
+
                                                     multiTest.wait(
                                                                     this.id,
                                                                     "wait-for-all-videos-to-check-for-overlapping",
@@ -112,13 +112,13 @@
                                                                     {
                                                                         var string  = "";
                                                                         var overlap = [];
-                                                                        
+
                                                                         for (var video in multiTest.list)
                                                                         {
                                                                             if (video === this.id) { continue; }
-                                                                            
+
                                                                             video = multiTest.list[video].obj;
-                                                                            
+
                                                                             if ((video.buffered.start(0) > this.buffered.start(0)) && (this.buffered.end(0) > video.buffered.start(0))) // range overlap
                                                                             {
                                                                                 string += ", <span class=\"FAIL\">"+video.id+": "+timeRange2String(video.buffered)+"</span>";
@@ -129,10 +129,10 @@
                                                                                 string += ", <span class=\"PASS\">"+video.id+" "+timeRange2String(video.buffered)+"</span>";
                                                                             }
                                                                         }
-                                                                        
+
                                                                         string = string.substring(2);   // remove initial ', '
                                                                         logger(this.id+": checking buffered range "+timeRange2String(this.buffered)+"overlapping: "+string);
-                                                                        
+
                                                                         if (overlap.length > 0) { multiTest.result(this.id, false, "overlaps with: "+overlap);      }
                                                                         else                    { multiTest.result(this.id, true,  "doesn't overlap other videos"); }
                                                                     }
@@ -143,14 +143,14 @@
                         }
                     ]
             }
-            
+
             try
             {
                 var video1       = document.querySelector('#video1');
                     video1.test  = new VideoTest(video1, 'HTML5 Video: http with no-cache headers');
                 var video2       = document.querySelector('#video2');
                     video2.test  = new VideoTest(video2, 'HTML5 Video: http with no-cache headers');
-                
+
                 multiTest.msg = {true:"videos did not interfere with each other",false:"videos interfered with eachother"};
                 multiTest.register(video1.id, video1);
                 multiTest.register(video2.id, video2);
@@ -159,7 +159,7 @@
             }
             catch (e) { alert("init error: "+e); }
         }
-        
+
         window.addEventListener('load', init, false);
     </script>
 </head>

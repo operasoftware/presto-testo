@@ -32,7 +32,7 @@
                                                 3:  "MEDIA_ERR_DECODE",
                                                 4:  "MEDIA_ERR_SRC_NOT_SUPPORTED"
                                             },
-                            
+
                             get: function(name, code)
                             {
                                 if (name in this)
@@ -43,7 +43,7 @@
                                 else                        { return 'bad name: '+name;             }
                             }
                         };
-        
+
         function test()
         {
             var video   = document.querySelector('video');
@@ -71,9 +71,9 @@
                             'durationchange',
                             'volumechange'
                           ];
-            
+
             document.querySelector('#log').lite = true;
-            
+
             try
             {
                 for (var event in events)
@@ -81,13 +81,13 @@
                     event = events[event];
                     video.addEventListener(event, eval(event), false);
                 }
-                
+
                 // load video
                 video.src = '../video.php?nocache=1';
             }
             catch(e){alert(e);}
         }
-        
+
         function loadstart      () { logger('loadstart'     ); updateStatus(this, [             'states'    ]  ); }
         function progress       () { logger('progress: ['+timeRange2String(this.buffered, ',')+']' ); updateStatus(this, ['status',    'ranges',   'states'    ]  ); }
         function suspend        () { logger('suspend'       ); updateStatus(this, ['status',    'states'    ]  ); }
@@ -111,18 +111,18 @@
         function ratechange     () { logger('ratechange'    ); updateStatus(this, ['rate'   ]  ); }
         function durationchange () { logger('durationchange'); updateStatus(this, ['time'   ]  ); }
         function volumechange   () { logger('volumechange'  ); updateStatus(this, ['volume' ]  ); }
-        
+
         function logger(msg)
         {
             var log             = document.querySelector('#log');
             var div             = document.createElement('div');
                 div.className   = log.lite?'lite':'dark';
                 div.innerHTML   = msg;
-            
+
             log.appendChild(div);
             log.lite = !(log.lite);
         }
-        
+
         function updateStatus       (video, setItems)
         {
             var sets = {
@@ -134,20 +134,20 @@
                             ranges:     ['seekable',            'buffered',     'played'    ],
                             states:     ['readyState',          'networkState'              ]
                        }
-            
+
             for (var set in setItems)
             {
                 set = setItems[set];
-                
+
                 for (var item in sets[set])
                 {
                     item    = sets[set][item];
                     value   = eval('video.'+item);
-                    
+
                     if (set == 'ranges')
                     {
                         string = 'ranges: '+value.length+'<br />'+timeRange2String(value, '<br />');
-                        
+
                         try { document.querySelector('#'+item).innerHTML = item+': <b>'+string+'</b>'; } catch(e) {alert(set+'['+item+']\n'+e);}
                     }
                     else if (set == 'time')
@@ -165,23 +165,23 @@
                 }
             }
         }
-        
+
         function timeRange2String(timeRange, separator)
         {
             ranges = new Array()
-            
+
             for (var i = 0; i < timeRange.length; i++)
             {
                 start   = (timeRange.start(i)).toFixed(2);
                 end     = (timeRange.end  (i)).toFixed(2);
                 diff    = (end - start       ).toFixed(2);
-                
+
                 ranges.push((start+':'+end+' ('+diff+') '));
             }
-            
+
             return ranges.join(separator);
         }
-        
+
         window.addEventListener('load', test, false);
     </script>
 </head>

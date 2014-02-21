@@ -9,19 +9,19 @@ $strContext=stream_context_create(
       )
     )
   );
-$fpOrigin=fopen(SRC_URL, 'rb', false, $strContext); 
+$fpOrigin=fopen(SRC_URL, 'rb', false, $strContext);
 
-if (isset($_GET['status'])) 
+if (isset($_GET['status']))
     header('HTTP/1.1 206 Partial Content');
 
 header('content-type: text/plain');
 
 if (isset($_GET['ranges']))
-	header("Accept-Ranges: bytes");
+    header("Accept-Ranges: bytes");
 while(!feof($fpOrigin)){
-   $buffer=fread($fpOrigin, 4); 
-  echo $buffer; 
-  flush();  
+   $buffer=fread($fpOrigin, 4);
+  echo $buffer;
+  flush();
 }
 fclose($fpOrigin);
 ?>

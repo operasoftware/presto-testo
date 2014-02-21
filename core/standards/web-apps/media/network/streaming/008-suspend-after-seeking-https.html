@@ -31,10 +31,10 @@
                             func:   function()
                             {
                                 this.test.updateListeners();
-                                
+
                                 if (this.seekable.length > 0)   { var seekto = this.seekable.end(0) / 2; } // this is preferable
                                 else                            { var seekto = this.buffered.end(0) * 2; } // this is a fallback
-                                
+
                                 this.test.setData('seekto', seekto);
                                 logger('seeking to: '+seekto.toFixed(2));
                                 this.currentTime = seekto;
@@ -59,7 +59,7 @@
                         }
                     ]
             }
-            
+
             try
             {
                 var video       = document.querySelector('video');
@@ -67,7 +67,7 @@
                     video.test.init('video.php?contenttype=video/webm&secure=1&rate=0.5', testlist, 30000);
             } catch (e) { alert("init error: "+e); }
         }
-        
+
         window.addEventListener('load', init, false);
     </script>
 </head>

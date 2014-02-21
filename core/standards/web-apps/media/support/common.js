@@ -6,17 +6,17 @@ function init_tests(a_title, v_title, properties) {
     var fragment = document.location.hash.substring(1);
     var tests = []
     if (fragment == 'audio') {
-	var t_a = async_test(a_title, properties);
-	tests.push([t_a, 'audio']);
+        var t_a = async_test(a_title, properties);
+        tests.push([t_a, 'audio']);
     } else if (fragment == 'video') {
-	var t_v = async_test(v_title, properties);
-	tests.push([t_v, 'video']);
+        var t_v = async_test(v_title, properties);
+        tests.push([t_v, 'video']);
     }
     else {
-	var t_a = async_test(a_title, properties);
-	var t_v = async_test(v_title, properties);
-	tests.push([t_a, 'audio']);
-	tests.push([t_v, 'video']);
+        var t_a = async_test(a_title, properties);
+        var t_v = async_test(v_title, properties);
+        tests.push([t_a, 'audio']);
+        tests.push([t_v, 'video']);
     }
     return tests;
 }

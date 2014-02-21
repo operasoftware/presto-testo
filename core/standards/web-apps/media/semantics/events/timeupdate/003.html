@@ -46,7 +46,7 @@ function assertGreaterThan(a, b) {
    }
  }, false);
  document.body.appendChild(v);
- 
+
  function end() {
    if(arguments.callee.done)return;
    arguments.callee.done=true;
@@ -64,4 +64,3 @@ var timeout=setTimeout(function(){
    end();
  }
 </script>
-

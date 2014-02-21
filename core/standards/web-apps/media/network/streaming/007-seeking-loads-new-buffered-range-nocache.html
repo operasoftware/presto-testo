@@ -33,10 +33,10 @@
                                 logger("current buffered range: "+timeRange2String(this.buffered));
                                 this.test.setData('lastBuf', this.buffered);
                                 this.test.updateListeners();
-                                
+
                                 if (this.seekable.length > 0)   { var seekto = this.seekable.end(0) / 2; } // this is preferable
                                 else                            { var seekto = this.buffered.end(0) * 2; } // this is a fallback
-                                
+
                                 this.test.setData('seekto', seekto);
                                 logger("seeking to: "+seekto.toFixed(2));
                                 this.currentTime = seekto;
@@ -49,18 +49,18 @@
                             func:   function()
                             {
                                 logger("seeked to: "+this.currentTime.toFixed(2)+((this.currentTime.toFixed(2) != this.test.getData('seekto').toFixed(2))?" (expected: "+this.test.getData('seekto').toFixed(2)+")":""));
-                                
+
                                 var lastBuf = this.test.getData('lastBuf')
-                                
+
                                 if ((this.buffered.start(0) < lastBuf.start(0)) && (this.buffered.end(0) < lastBuf.end(0))) { this.test.result(false, "new buffered range ("+timeRange2String(this.buffered)+") is the same as or contained within the old one ("+timeRange2String(lastBuf)+")"); }
                                 else                                                                                        { this.test.result(true); }
-                                
+
                                 this.test.finish();
                             }
                         }
                     ]
             }
-            
+
             try
             {
                 var video       = document.querySelector('video');
@@ -68,7 +68,7 @@
                     video.test.init('video.php?contenttype=video/webm&nocache=1&rate=0.5', testlist, 30000);
             } catch (e) { alert("init error: "+e); }
         }
-        
+
         window.addEventListener('load', init, false);
     </script>
 </head>
