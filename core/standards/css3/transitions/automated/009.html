@@ -3,14 +3,12 @@
 <title>transition-property: bottom, moving up</title>
 <style>
 div { transition-property: bottom; transition-duration: 2s;
-      -webkit-transition-property: bottom; -webkit-transition-duration: 2s;
       background: blue; position: absolute; bottom: 0; height: 200px; width: 200px; }
 </style>
 <script>
 onload = function() {
 	var test = document.getElementById("test");
 	test.addEventListener("transitionend", callback, false);
-	test.addEventListener("webkitTransitionEnd", callback, false);
 	test.style.bottom = "200px";
 	document.getElementById("result").innerHTML = "Running test (FAIL if this doesn't update again in 2 seconds)";
 }

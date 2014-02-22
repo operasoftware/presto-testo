@@ -8,8 +8,6 @@
       p {
          width: 200px;
          height: 60px;
-         -webkit-transform-origin: 20px 40%;
-         -moz-transform-origin: 20px 40%;
          transform-origin: 20px 40%;
       }
    </style>
@@ -18,12 +16,6 @@
          var p = document.getElementsByTagName('p')[0];
          var style = getComputedStyle(p, null);
          var value = style.getPropertyValue('transform-origin');
-         if (!value) {
-            value = style.getPropertyValue('-webkit-transform-origin'); 
-         }
-         if (!value) { 
-            value = style.getPropertyValue('-moz-transform-origin');
-         }
          var passed = (value == '20px 24px');
          p.firstChild.nodeValue = (passed ? 'PASS' : 'FAIL (got '+value+')');
          try{top.opener.rr(passed);}catch(e){}

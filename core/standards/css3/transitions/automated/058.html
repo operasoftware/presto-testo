@@ -3,7 +3,6 @@
 <title>Transitioning visibility</title>
 <style>
 div { transition: 1s 1s;
-      -webkit-transition: 1s 1s;
        visibility: visible; }
 div.test { visibility: hidden; }
 </style>
@@ -11,7 +10,6 @@ div.test { visibility: hidden; }
 onload = function() {
 	var test = document.getElementById("test");
 	test.addEventListener("transitionend", callback, false);
-	test.addEventListener("webkitTransitionEnd", callback, false);
 	test.className = "test";
 	document.getElementById("result").innerHTML = "Running test (FAIL if this doesn't update again in 2 seconds)";
 }

@@ -3,7 +3,6 @@
 <title>Transitioning border-left-color</title>
 <style>
 div { transition: border-left-color 2s;
-      -webkit-transition: border-left-color 2s;
       height: 100px; border: 10px solid silver; }
 div.test { border-left-color: #00F }
 </style>
@@ -11,7 +10,6 @@ div.test { border-left-color: #00F }
 onload = function() {
 	var test = document.getElementById("test");
 	test.addEventListener("transitionend", callback, false);
-	test.addEventListener("webkitTransitionEnd", callback, false);
 	test.className = "test";
 	document.getElementById("result").innerHTML = "Running test (FAIL if this doesn't update again in 2 seconds)";
 }

@@ -3,7 +3,6 @@
 <title>transition-delay, seconds</title>
 <style>
 div { transition-property: left; transition-duration: 2s; transition-delay: 1s;
-      -webkit-transition-property: left; -webkit-transition-duration: 2s; -webkit-transition-delay: 1s;
       background: blue; position: relative; left: 0; height: 200px; width: 200px; }
 div.test { left: 200px; }
 </style>
@@ -13,7 +12,6 @@ var timer = null;
 onload = function() {
 	var test = document.getElementById("test");
 	test.addEventListener("transitionend", callback, false);
-	test.addEventListener("webkitTransitionEnd", callback, false);
 	timer = new Date();
 	test.className = "test";
 	document.getElementById("result").innerHTML = "Running test (FAIL if this doesn't update again in 3 seconds)";

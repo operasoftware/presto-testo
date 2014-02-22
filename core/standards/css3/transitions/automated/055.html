@@ -3,7 +3,6 @@
 <title>Transitioning vertical-align</title>
 <style>
 div span { transition: 2s;
-      -webkit-transition: 2s;
        vertical-align: 0; }
 div.test span { vertical-align: 2em; }
 </style>
@@ -11,7 +10,6 @@ div.test span { vertical-align: 2em; }
 onload = function() {
 	var test = document.getElementById("test");
 	test.addEventListener("transitionend", callback, false);
-	test.addEventListener("webkitTransitionEnd", callback, false);
 	test.className = "test";
 	document.getElementById("result").innerHTML = "Running test (FAIL if this doesn't update again in 2 seconds)";
 }

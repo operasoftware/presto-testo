@@ -5,8 +5,6 @@
    <title>CSS 2D Transforms, transform in inline style interface</title>
    <style type="text/css">
       div {
-         -webkit-transform: rotate(20deg);
-         -moz-transform: rotate(20deg);
          transform: rotate(20deg);
       }
    </style>
@@ -20,16 +18,6 @@
                   && divs[1].style.transform == 'skew(1deg)'
             divs[1].style.transform = newValue;
             passed = passed && divs[1].style.transform == newValue;
-         } else if (divs[1].style.WebkitTransform) {
-            passed = divs[0].style.WebkitTransform == '' 
-                  && divs[1].style.WebkitTransform == 'skew(1deg)'
-            divs[1].style.WebkitTransform = newValue;
-            passed = passed && divs[1].style.WebkitTransform == newValue;
-         } else if (divs[1].style.MozTransform) {
-            passed = divs[0].style.MozTransform == '' 
-                  && divs[1].style.MozTransform == 'skew(1deg)'
-            divs[1].style.MozTransform = newValue;
-            passed = passed && divs[1].style.MozTransform == newValue;
          }
          var log = document.getElementsByTagName('p')[0].firstChild;
          log.data = (passed ? 'PASS' : 'FAIL');
@@ -40,7 +28,6 @@
 <body>
    <p>NOT TESTED (JavaScript required)</p>
    <div></div>
-   <div style="-moz-transform: skew(1deg); -webkit-transform: skew(1deg);
-      transform: skew(1deg)"></div>
+   <div style="transform: skew(1deg)"></div>
 </body>
 </html>

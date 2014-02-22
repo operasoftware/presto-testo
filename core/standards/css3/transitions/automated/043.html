@@ -3,7 +3,6 @@
 <title>Transitioning width to 0</title>
 <style>
 div { transition: 2s;
-      -webkit-transition: 2s;
       background: blue; height: 200px; width: 200px; }
 div.test { width: 0; }
 </style>
@@ -11,7 +10,6 @@ div.test { width: 0; }
 onload = function() {
 	var test = document.getElementById("test");
 	test.addEventListener("transitionend", callback, false);
-	test.addEventListener("webkitTransitionEnd", callback, false);
 	test.className = "test";
 	document.getElementById("result").innerHTML = "Running test (FAIL if this doesn't update again in 2 seconds)";
 }

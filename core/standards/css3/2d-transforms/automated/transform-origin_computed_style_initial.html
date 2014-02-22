@@ -14,12 +14,6 @@
          var p = document.getElementsByTagName('p')[0];
          var style = getComputedStyle(p, null);
          var value = style.getPropertyValue('transform-origin');
-         if (!value) {
-            value = style.getPropertyValue('-webkit-transform-origin'); 
-         }
-         if (!value) { 
-            value = style.getPropertyValue('-moz-transform-origin');
-         }
          var passed = (value == '100px 25px');
          p.firstChild.nodeValue = (passed ? 'PASS' : 'FAIL (got '+value+')');
          try{top.opener.rr(passed);}catch(e){}
