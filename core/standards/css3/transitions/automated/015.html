@@ -3,7 +3,6 @@
 <title>transition shorthand, all default</title>
 <style>
 div { transition: 2s;
-      -webkit-transition: 2s;
       background: silver; height: 200px; width: 200px; }
 div.test { background: blue; }
 </style>
@@ -11,7 +10,6 @@ div.test { background: blue; }
 onload = function() {
 	var test = document.getElementById("test");
 	test.addEventListener("transitionend", callback, false);
-	test.addEventListener("webkitTransitionEnd", callback, false);
 	test.className = "test";
 	document.getElementById("result").innerHTML = "Running test (FAIL if this doesn't update again in 2 seconds)";
 }

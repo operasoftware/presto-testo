@@ -3,7 +3,6 @@
 <title>Transitioning min-height and min-width</title>
 <style>
 div { transition: 2s;
-      -webkit-transition: 2s;
       background: blue; height: 100px; width: 100px; min-height: 0; min-width: 0; }
 div.test { min-height: 200px; min-width: 200px; }
 </style>
@@ -11,7 +10,6 @@ div.test { min-height: 200px; min-width: 200px; }
 onload = function() {
 	var test = document.getElementById("test");
 	test.addEventListener("transitionend", callback, false);
-	test.addEventListener("webkitTransitionEnd", callback, false);
 	test.className = "test";
 	document.getElementById("result").innerHTML = "Running test (FAIL if this doesn't update again in 2 seconds)";
 }

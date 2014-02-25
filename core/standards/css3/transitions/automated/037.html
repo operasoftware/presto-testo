@@ -3,7 +3,6 @@
 <title>Transitioning outline-width</title>
 <style>
 div { transition: 2s;
-      -webkit-transition: 2s;
       height: 200px; width: 200px; outline: 0 solid blue; position: absolute; top: 200px; left: 200px; }
 div.test { outline-width: 100px; }
 </style>
@@ -11,7 +10,6 @@ div.test { outline-width: 100px; }
 onload = function() {
 	var test = document.getElementById("test");
 	test.addEventListener("transitionend", callback, false);
-	test.addEventListener("webkitTransitionEnd", callback, false);
 	test.className = "test";
 	document.getElementById("result").innerHTML = "Running test (FAIL if this doesn't update again in 2 seconds)";
 }

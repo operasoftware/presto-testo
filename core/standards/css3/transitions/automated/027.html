@@ -3,14 +3,12 @@
 <title>Transition events</title>
 <style>
 div { transition: 2s; transition-property: border-top-color, border-right-color, border-bottom-color, border-left-color;
-      -webkit-transition: 2s; -webkit-transition-property: border-top-color, border-right-color, border-bottom-color, border-left-color;
       height: 100px; border: 10px solid silver; }
 </style>
 <script>
 onload = function() {
 	var test = document.getElementById("test");
 	test.addEventListener("transitionend", callback, false);
-	test.addEventListener("webkitTransitionEnd", callback, false);
 	document.getElementById("result").innerHTML = "Running test (FAIL if this doesn't update again in 2 seconds)";
 	test.style.borderRightColor = "blue";
 

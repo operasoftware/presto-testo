@@ -3,7 +3,6 @@
 <title>Transitioning border-spacing</title>
 <style>
 table { transition-property: border-spacing; transition-duration: 2s;
-        -webkit-transition-property: border-spacing; -webkit-transition-duration: 2s;
         border-spacing: 5px; }
 table.test { border-spacing: 20px; }
 td { border: 1px solid black; }
@@ -12,7 +11,6 @@ td { border: 1px solid black; }
 onload = function() {
 	var test = document.getElementById("test");
 	test.addEventListener("transitionend", callback, false);
-	test.addEventListener("webkitTransitionEnd", callback, false);
 	test.className = "test";
 	document.getElementById("result").innerHTML = "Running test (FAIL if this doesn't update again in 2 seconds)";
 }

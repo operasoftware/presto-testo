@@ -6,8 +6,6 @@
           length</title>
    <style type="text/css">
       p {
-         -webkit-transform-origin: left 0;
-         -moz-transform-origin: left 0;
          transform-origin: left 0;
       }
    </style>
@@ -16,12 +14,6 @@
          var p = document.getElementsByTagName('p')[0];
          var style = getComputedStyle(p, null);
          var value = style.getPropertyValue('transform-origin');
-         if (!value) {
-            value = style.getPropertyValue('-webkit-transform-origin'); 
-         }
-         if (!value) { 
-            value = style.getPropertyValue('-moz-transform-origin');
-         }
          var passed = (value == '0px 0px');
          p.firstChild.nodeValue = (passed ? 'PASS' : 'FAIL (got '+value+')');
          try{top.opener.rr(passed);}catch(e){}

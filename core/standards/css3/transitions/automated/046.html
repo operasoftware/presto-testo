@@ -3,7 +3,6 @@
 <title>Transitioning font-size</title>
 <style>
 div { transition: 2s;
-      -webkit-transition: 2s;
        font: 1em/1.2 sans-serif; }
 div.test { line-height: 2.4; }
 </style>
@@ -11,7 +10,6 @@ div.test { line-height: 2.4; }
 onload = function() {
 	var test = document.getElementById("test");
 	test.addEventListener("transitionend", callback, false);
-	test.addEventListener("webkitTransitionEnd", callback, false);
 	test.className = "test";
 	document.getElementById("result").innerHTML = "Running test (FAIL if this doesn't update again in 2 seconds)";
 }

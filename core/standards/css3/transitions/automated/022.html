@@ -3,7 +3,6 @@
 <title>Transitioning border-right-color</title>
 <style>
 div { transition: border-right-color 2s;
-      -webkit-transition: border-right-color 2s;
       height: 100px; border: 10px solid silver; }
 div.test { border-right-color: hsl(240, 100%, 50%); }
 </style>
@@ -11,7 +10,6 @@ div.test { border-right-color: hsl(240, 100%, 50%); }
 onload = function() {
 	var test = document.getElementById("test");
 	test.addEventListener("transitionend", callback, false);
-	test.addEventListener("webkitTransitionEnd", callback, false);
 	test.className = "test";
 	document.getElementById("result").innerHTML = "Running test (FAIL if this doesn't update again in 2 seconds)";
 }
