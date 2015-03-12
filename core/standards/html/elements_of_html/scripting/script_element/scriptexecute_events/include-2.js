@@ -1,1 +1,0 @@
-t.step(function() {assert_unreached()});
