@@ -32,7 +32,7 @@ are also welcome.
 
 If you find test suites that have **not yet** been submitted to the W3C,
 please send a pull request
-adding a file called "not-submitted"
+adding a file called `not-submitted`
 in the directory of the test suite.
 This file should contain the date
 when you checked if it had been submitted,
