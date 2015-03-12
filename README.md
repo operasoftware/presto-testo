@@ -37,5 +37,6 @@ in the directory of the test suite.
 This file should contain the date
 when you checked if it had been submitted,
 in YYYY-MM-DD format.
+Here is [an example](https://github.com/operasoftware/presto-testo/blob/b8c877781512628e6649ca2302f10a9bfcd4af78/core/standards/css3/cursor/uri/not-submitted).
 
 Special thanks to Florian Rivoal for the idea and enthusiasm.
