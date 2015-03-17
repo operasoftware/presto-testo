@@ -1,0 +1,8 @@
+.OK {background:green}
+.NG {background:red}
+th {height:70px;}
+td {white-space: nowrap}
+iframe {margin:0;padding:0;border:0;height:750px}
+table, td, th {border: 1px solid black}
+p {margin:0;padding:0}
+  #PHPValues {display:none}

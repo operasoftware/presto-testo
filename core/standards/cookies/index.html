@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<head>
+ <meta charset=utf-8">
+ <title>Cookie tests</title>
+ <style type="text/css">
+  li div {margin-left:10px}
+ </style>
+ </head>
+<body>
+ <h1>Cookie tests</h1>
+ <p>As tests use redirects which set cookies, they must be followed from the URLs listed here. Accessing the end URLs directly makes the results invalid.</p>
+
+ <h2>Positive functionality</h2>
+
+ <ol>
+  <li><a href="001.php">Standard Cookie</a> (sent)</li>
+  <li><a href="002.php">Standard Cookie 2</a> (sent)<div>Needs cookie 2</div></li>
+  <li><a href="003.php">Expires/Delete</a> (set, then old expiry set)</li>
+  <li><a href="004/004.php">Path</a> (sent to correct path, not to parent folder</li>
+  <li>Secure - unavailable, will be made available with the setup of a secure server</li>
+  <li><a href="006.php">Max Size</a> (at least 4096 bytes allowed)</li>
+  <li><a href="007.php">Max Number Per Server</a> (at least 20 allowed)</li>
+  <li><a href="008.php">Update</a> (set, then change value)</li>
+  <li><a href="009.php">Header/Javascript equivalence</a> (set, check header == JS, change through JS, check header == JS again, using cookie 2) <div>Needs JavaScript</div></li>
+  <li><a href="010.php">HttpOnly</a> (script cannot access)<div>Needs JavaScript</div></li>
+  <li><a href="011.php">Encoding</a> (UTF-8 in cookies)</li>
+  <li><a href="012.php">Domain</a> (only sent to proper domain)</li>
+  <li><a href="013.php">Persistent</a> (through restarts)<div>Needs restart</div></li>
+  <li><a href="014/014.php">Purge old</a> (set a bunch, reload the first, set a bunch more and verify that the first cookie was not the first to be purged - this is optional for implementors)</li>
+  <li><a href="015/015.php">Overwriting</a> (set the same cookies in a subdirectory and outside)</li>
+  <li><a href="016.php">Order</a> (cookies with more specific paths sent first)</li>
+  <li><a href="017.php">HttpOnly & XHR</a> (XHR cannot access)<div>Needs JavaScript</div></li>
+ </ol>
+
+ <h2>Cookie preferences</h2>
+
+ <ol>
+  <li><a href="501.php">Disable cookies</a><div>Needs UI</div></li>
+  <li><a href="502.php">Site Specific Preferences</a><div>Needs UI</div></li>
+ </ol>
+
+ <h2>Cookie 2 fields</h2>
+ <ol>
+  <li><a href="201.php">Path</a><div>Needs cookie 2</div></li>
+  <li><a href="202.php">Domain</a><div>Needs cookie 2</div></li>
+  <li><a href="203.php">Max-Age</a><div>Needs cookie 2</div></li>
+  <li><a href="204.php">Discard</a><div>Needs cookie 2 and restart</div></li>
+  <li><a href="205.php">Comment and CommentURL</a><div>Needs cokie 2 and UI</div></li>
+  <li><a href="206.php">Port</a><div>Needs cookie 2</div></li>
+ </ol>
+
+ <h2>Error handling and extended tests</h2>
+ <ol>
+  <li><a href="301.php">Expires</a><div>Needs restart</div></li>
+  <li><a href="302/302.php">Path</a></li>
+  <li><a href="303.php">Version</a><div>Needs cookie 2</div></li>
+  <li><a href="304.php">Domain</a></li>
+  <li><a href="305.php">Max-Age</a></li>
+  <li><a href="306.php">Cookie 2 Attribute Return</a><div>Needs cookie 2</div></li>
+  <li><a href="307.php">Port</a><div>Needs cookie 2</div></li>
+  <li><a href="308.php">Other</a></li>
+  <li><a href="308b.php">Other for cookie 2 attributes</a><div>Needs cookie 2</div></li>
+  <li><a href="309.php">Quoting</a></li>
+  <li><a href="309b.php">Quoting with multiple cookies</a><div>Needs cookie 2</div></li>
+ </ol>
+
+ <h2>Bug-compatibility</h2>
+ <ol>
+  <li><a href="313.php">$-Cookies</a> (Regular)<div>Might need deletion of all cookies first</div></li>
+  <li><a href="310.php">$-Cookies</a> (In presence of cookie 2 cookies)<div>Needs cookie 2 and deletion of all cookies first</div></li>
+  <li><a href="311.php">Cookies with spaces</a></div>
+  <li><a href="312.php">Multiple lines per header line</a></li>
+ </ol>
+</body>
+</html>
+
+
+

@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+ <head><title>Persistent Storage</title></head>
+ <body>
+ <p>
+   <script type="text/javascript">
+    var expected = "204=1";
+    result = 0;
+    var cookies = document.cookie.split('; ');
+    for (var i = 0; i < cookies.length; i++) {
+      if (cookies[i] == expected) result = 1;
+    }
+    document.write ("Cookie " + (result ? "":"NOT ") + "present.<br>");
+   </script>
+   <noscript>Scripting required</noscript>
+</p>
+   <ol>
+    <li>Ensure the cookie is present</li>
+    <li>Restart the browser, and reload <em>this page only</em> (without going through 204.php)</li>
+    <li>The cookie should not be present</li>
+   </ol>
+  </p>
+  <p>Cookie 2 must be enabled</p>
+ </body>
+</html>
