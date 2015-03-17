@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+ <head>
+  <title>Various Paths</title>
+  <link href="302.css" rel="stylesheet" type="text/css"/>
+  <script type="text/javascript">
+   loaded = 0;
+   function frame(index) {
+    loaded ++;
+    if (loaded == 4) calculate();
+   }
+   function calculate() {
+    iframes = document.getElementsByTagName("iframe");
+    var pass = true;
+    for (i = 1; i < iframes.length; i++) {
+     if (iframes[i].contentDocument.getElementsByTagName("p")[0].innerHTML != "PASS") pass = false;
+    }
+    document.getElementsByTagName("p")[0].innerHTML = pass?"PASS":"FAIL";
+    try{top.opener.rr(pass);}catch(e){}
+   }
+  </script>
+ </head>
+ <body>
+ <p></p>
+ <table><tr>
+  <td><iframe src="302-2.php"          width=400></iframe></td>
+  <td><iframe src="../302-5.php"       width=150 onload="frame(1)"></iframe></td>
+  <td><iframe src="302-3.php"          width=150 onload="frame(2)"></iframe></td>
+  <td><iframe src="sub/302-4.php"      width=150 onload="frame(3)"></iframe></td>
+  <td><iframe src="../302-2/302-6.php" width=150 onload="frame(4)"></iframe></td>
+ </tr></table>
+ </body>
+</html>

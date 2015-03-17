@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+ <head><title>Persistent Storage</title></head>
+ <body>
+ <p>
+   <script type="text/javascript">
+    var expected = "013-1=1";
+    result = 0;
+    var cookies = document.cookie.split('; ');
+    for (var i = 0; i < cookies.length; i++) {
+      if (cookies[i] == expected) result = 1;
+    }
+    document.write ("Persistent cookie " + (result ? "":"NOT ") + "present.<br>");
+    var expected = "013-2=1";
+    result = 0;
+    var cookies = document.cookie.split('; ');
+    for (var i = 0; i < cookies.length; i++) {
+      if (cookies[i] == expected) result = 1;
+    }
+    document.write ("Non-persistent cookie " + (result ? "":"NOT ") + "present.<br>");
+   </script>
+   <noscript>Scripting required</noscript>
+</p>
+   <ol>
+    <li>Ensure both cookies are present</li>
+    <li>Restart the browser, and reload <em>this page only</em> (without going through 013.php)</li>
+    <li>Only the persistent cookie should remain</li>
+   </ol>
+  </p>
+ </body>
+</html>
