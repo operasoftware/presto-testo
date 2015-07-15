@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+   <title>Reference rendering - pass if only two boxes below, black 24px*48px
+   </title>
+   <style type="text/css">
+      div {
+         width: 24px;
+         height: 48px;
+         background-color: black;
+      }
+      #last {
+         position: relative;
+         bottom: 48px;
+         left: 48px;
+      }
+   </style>
+</head>
+<body>
+   <p>Test passes if there are only two boxes below (with no jagged edges).</p>
+   <div></div>
+   <div id="last"></div>
+</body>
+</html>

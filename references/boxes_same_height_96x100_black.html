@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+   <title>Reference rendering - boxes same height, black 96px*100px</title>
+   <style type="text/css">
+      div {
+         width: 96px;
+         height: 100px;
+         background-color: black;
+      }
+      #last {
+         position: relative;
+         bottom: 100px;
+         left: 106px;
+      }
+   </style>
+</head>
+<body>
+   <p>Test passes if the two boxes below are the same height.</p>
+   <div></div>
+   <div id="last"></div>
+</body>
+</html>

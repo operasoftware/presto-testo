@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+   <title>Reference rendering - middle bar as wide as space, 120px</title>
+   <style type="text/css">
+      div {
+         background: black;
+         height: 20px;
+         width: 120px;
+         position: relative;
+      }
+      #left {
+         top: 140px;
+         left: 120px;
+      }
+      #middle {
+         top: 100px;
+         left: 240px;
+      }
+      #right {
+         top: 100px;
+         left: 360px;
+      }
+   </style>
+</head>
+<body>
+   <p>Test passes if the middle bar is as wide as the space between the first
+   and last bars.</p>
+   <div id="left"></div>
+   <div id="middle"></div>
+   <div id="right"></div>
+</body>
+</html>

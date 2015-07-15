@@ -1,0 +1,18 @@
+<!doctype html>
+<title>Reference rendering - vertical scrollbar</title>
+
+<style>
+body > div {
+	width: 100px;
+	height: 100px;
+	overflow: auto;
+}
+div > div {
+	width: 10px;
+	height: 200px;
+}
+</style>
+
+<p>There should be a vertical scrollbar below, and no red.</p>
+
+<div><div>

@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+<head>
+   <title>Reference rendering - passes if there is a blue box below,
+   border</title>
+   <style type="text/css">
+      div {
+         width: 96px;
+         height: 96px;
+         border: 10px solid blue;
+         position: relative;
+         bottom: 10px;
+         right: 10px;
+      }
+   </style>
+</head>
+<body>
+   <p>Test passes if there is a blue box below.</p>
+   <div></div>
+</body>

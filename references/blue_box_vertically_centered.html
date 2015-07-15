@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<head>
+   <title>Reference rendering - blue box in upper left of orange box</title>
+   <style type="text/css">
+      #outer {
+         width: 288px;
+         height: 288px;
+         border: solid black;
+      }
+      #inner {
+         width: 288px;
+         height: 96px;
+         background: blue;
+         margin-top: 96px;
+      }
+   </style>
+</head>
+<body>
+   <p>Test passes if the blue box is vertically centered in the black box.</p>
+   <div id="outer">
+      <div id="inner"></div>
+   </div>
+</body>
+</html>

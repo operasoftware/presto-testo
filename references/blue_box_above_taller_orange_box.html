@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<head>
+   <title>Reference rendering - blue box above taller orange box</title>
+   <style type="text/css">
+      body {
+         margin-top: 0;
+      }
+      p {
+         background: white;
+         margin: 0;
+         padding-top: 16px;
+         padding-bottom: 16px;
+      }
+      #short {
+         width: 96px;
+         height: 96px;
+         background: blue;
+         position: absolute;
+         top: 0;
+         z-index: -1;
+      }
+      #taller {
+         width: 96px;
+         height: 192px;
+         background: orange;
+         position: absolute;
+         z-index: -2;
+      }
+   </style>
+</head>
+<body>
+   <p>Test passes if there is a short blue box above a taller orange box below.
+   </p>
+   <div id="short"></div>
+   <div id="taller"></div>
+</body>
+</html>

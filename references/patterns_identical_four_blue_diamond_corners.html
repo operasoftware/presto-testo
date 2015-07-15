@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+<head>
+   <title>Reference rendering - identical patterns, four diamond corners</title>
+   <style type="text/css">
+      .outer {
+         width: 156px;
+         height: 156px;
+         background: #3366cc;
+         position: relative;
+      }
+      .tl, .tr, .bl, .br {
+         position: absolute;
+         width: 28px;
+         height: 28px;
+         background-color: white;
+         background-image: url(/core/bts/visual/CORE-30407/diamond.png);
+      }
+      .tl {
+         top: 0px;
+         left: 0px;
+      }
+      .tr {
+         top: 0px;
+         left: 128px;
+      }
+      .bl {
+         top: 128px;
+         left: 0px;
+      }
+      .br {
+         top: 128px;
+         left: 128px;
+      }
+   </style>
+</head>
+<body>
+   <div class="outer">
+      <div class="tl"></div>
+      <div class="tr"></div>
+      <div class="bl"></div>
+      <div class="br"></div>
+   </div>
+   <p>Patterns above and below this text should be identical</p>
+   <div class="outer">
+      <div class="tl"></div>
+      <div class="tr"></div>
+      <div class="bl"></div>
+      <div class="br"></div>
+   </div>
+</body>
+</html>

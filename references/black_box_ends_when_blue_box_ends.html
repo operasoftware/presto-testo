@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<head>
+   <title>Reference rendering - black box ends when blue box ends</title>
+   <style type="text/css">
+      #black {
+         height: 16px;
+         width: 176px;
+         border-left: 80px solid black;
+         border-right: 96px solid black;
+      }
+      #blue {
+         height: 16px;
+         width: 352px;
+         background: blue;
+      }
+   </style>
+</head>
+<body>
+   <p>Test passes if there are two black boxes below and the last black box
+   ends when the blue box ends.</p>
+   <div id="black"></div>
+   <div id="blue"></div>
+</body>
+</html>

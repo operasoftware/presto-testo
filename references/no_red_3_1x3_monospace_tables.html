@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+   <head>
+      <title>Reference rendering - no red, 3 1x3 monospace tables</title>
+      <style>
+         body {
+            font-family: monospace;
+         }
+         #wrapper {
+            position: relative;
+         }
+         #red, #green {
+            font-size: 2em;
+            position: absolute;
+            top: 1px;
+            left: 1px;
+         }
+         #red {
+            color: red;
+         }
+         #green {
+            color: green;
+         }
+      </style>
+   </head>
+   <body>
+      <p>There should be no red below, except for antialiasing issues.</p>
+      <div id="wrapper">
+         <div id="red">
+            <div>Row 1, Col 1Row 1, Col 2Row 1, Col 3</div>
+            <div>Row 22, Col 1Row 22, Col 2Row 22, Col 3</div>
+            <div>Row 333, Col 1Row 333, Col 2Row 333, Col 3</div>
+         </div>
+         <div id="green">
+            <div>Row 1, Col 1Row 1, Col 2Row 1, Col 3</div>
+            <div>Row 22, Col 1Row 22, Col 2Row 22, Col 3</div>
+            <div>Row 333, Col 1Row 333, Col 2Row 333, Col 3</div>
+         </div>
+      </div>
+   </body>
+</html>

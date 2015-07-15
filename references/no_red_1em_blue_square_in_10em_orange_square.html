@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<head>
+   <title>Reference rendering - There should be no red, 1em #3366CC square in
+   10em #FFCC00 square</title>
+   <style type="text/css">
+      #outer {
+         width: 10em;
+         height: 10em;
+         background: #FFCC00;
+         margin: 4em;
+         position: absolute;
+      }
+      #inner {
+         color: #3366CC;
+         display: inline-block;
+         font: 1em/1 "Ahem";
+         width: 1em;
+         height: 1em;
+         margin-left: 1em;
+      }
+   </style>
+</head>
+<body>
+   <h4>There should be no red</h4>
+   <div id="outer"><div id="inner">X</div></div>
+</body>
+</html>

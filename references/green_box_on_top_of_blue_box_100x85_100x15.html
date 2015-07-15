@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+<head>
+   <title>Reference rendering - 100px*85px green box on top of 100px*15px blue
+   box</title>
+   <style type="text/css">
+      #first {
+         width: 100px;
+         height: 85px;
+         background: green;
+      }
+      #last {
+         width: 100px;
+         height: 15px;
+         background: blue;
+      }
+   </style>
+</head>
+<body>
+   <p>Test passes if there is a green box on top of a short blue box below.</p>
+   <div id="first"></div>
+   <div id="last"></div>
+</body>
+</html>

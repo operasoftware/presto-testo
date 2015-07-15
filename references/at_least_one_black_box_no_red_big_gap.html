@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+   <title>Reference rendering - black box and no red, 20px squares, 120px
+   gap</title>
+   <style type="text/css">
+      div {
+         width: 20px;
+         height: 20px;
+         background-color: black;
+      }
+      #last {
+         position: relative;
+         top: 100px;
+         left: 20px;
+      }
+   </style>
+</head>
+<body>
+   <p>Test passes if there is at least one black box and there is no red
+   visible on the page.</p>
+   <div></div>
+   <div id="last"></div>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+<head>
+   <title>Reference rendering - green square, protruding black horizontal
+   stripe, no red</title>
+   <style type="text/css">
+      .green {
+         width: 128px;
+         height: 48px;
+         background: green;
+      }
+      #black {
+         width: 256px;
+         height: 32px;
+         background: black;
+      }
+   </style>
+</head>
+<body>
+   <p>Below there should be a green square. In the middle of such green square,
+   a black horizontal stripe should be traversing it and protruding out of it
+   toward the right. There should be no red in this page.</p>
+   <div class="green"></div>
+   <div id="black"></div>
+   <div class="green"></div>
+</body>
+</html>

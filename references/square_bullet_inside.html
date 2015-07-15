@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+   <title>Reference rendering - square bullet, second line flows below</title>
+   <style type="text/css">
+      body {
+         margin: 50px;
+      }
+      #bulleted {
+         display: list-item;
+         list-style-type: square;
+         list-style-position: inside;
+      }
+   </style>
+</head>
+<body>
+   <p>Test passes if the first line of text has a square bullet and the
+   second line of text flows below that square bullet.</p>
+   <div id="bulleted">This is the first line of text.</div>
+   <div>This is the second line of text.</div>
+</body>
+</html>

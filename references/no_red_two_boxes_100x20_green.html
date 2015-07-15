@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+   <title>Reference rendering - no red, two 100px*20px green boxes</title>
+   <style type="text/css">
+      div {
+         width: 100px;
+         height: 20px;
+         background-color: green;
+      }
+      #last {
+         position: relative;
+         top: 40px;
+      }
+   </style>
+</head>
+<body>
+   <p>Test passes if there is no red visible on the page.</p>
+   <div></div>
+   <div id="last"></div>
+</body>
+</html>

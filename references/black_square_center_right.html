@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+   <title>Reference rendering - black square aligned center right</title>
+   <style type="text/css">
+      #outer {
+         border: 3px solid orange;
+         width: 111px;
+         height: 96px;
+      }
+      #inner {
+         background: black;
+         width: 15px;
+         height: 15px;
+         position: relative;
+         left: 96px;
+         top: 40.5px;
+      }
+   </style>
+</head>
+<body>
+   <p>Test passes if the black square below is vertically centered and on the
+   right inner edge of the orange box.</p>
+   <div id="outer">
+      <div id="inner"></div>
+   </div>
+</body>
+</html>
