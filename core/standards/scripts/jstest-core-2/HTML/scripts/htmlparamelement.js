@@ -7,8 +7,8 @@ var cvs = "$Id: htmlparamelement.js 4838 2006-01-18 05:59:01Z hallvord $";
 function testParam()
 {
   testmodule( "HTMLParamElement", cvs );
-  
-  try 
+
+  try
   {
     var p1 = self.opener.document.getElementById("myParam");
 	var p2 = self.opener.document.getElementById("myParam2");
@@ -27,10 +27,10 @@ function testParam()
     tdef("type",p.type);
     tdef("value",p.value);
     tdef("name",p.valueType);
- 
+
     p = p1;
 	testcase( "param object property values from default" );
-  
+
     test("name",p.name,"");
     test("type",p.type,"");
     test("value",p.value,"");
@@ -38,7 +38,7 @@ function testParam()
 
     p = p2;
 	testcase( "param object property values from attributes" );
-  
+
     test("name",p.name,"image");
     test("type",p.type,"image/jpeg");
     test("value",p.value,"silmaril.jpg");

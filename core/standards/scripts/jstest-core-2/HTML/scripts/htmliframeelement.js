@@ -9,12 +9,12 @@ try {
 
   var p1 = document.getElementById("myIFrame");
   var p2 = document.getElementById("myIFrame2");
-  var p = p1; 
+  var p = p1;
 
   testcase( "object" );
 
   test("class",p,"[object HTMLIFrameElement]");
-  
+
   testcase( "properties exists" );
 
   tdef("align",p.align);
@@ -27,12 +27,12 @@ try {
   tdef("src",p.src);
   tdef("height",p.height);
   tdef("width",p.width);
-  
+
   tdef("contentDocument",p.contentDocument);
 
-  var p = p1; 
+  var p = p1;
   testcase( "default property values" );
-  
+
   test("align",p.align,"");
   test("frameBorder",p.frameBorder,"1");
   test("longDesc",p.longDesc,"");
@@ -47,7 +47,7 @@ try {
 
   p = p2;
   testcase( "property values from attributes" );
-  
+
   test("align",p.align,"right");
   test("frameBorder",p.frameBorder,"0");
   test("longDesc",p.longDesc,get_protocol_and_host() + get_modulepath("HTML","foo.html"));
@@ -60,17 +60,17 @@ try {
   test("height",p.height,"100");
   testnot("contentDocument",p.contentDocument,document);
   testnot("contentDocument",p.contentDocument,p1.contentDocument);
- 
+
   p = p1;
   testcase( "properties are writable" );
-  
+
   p.src = "HTMLIFrameElement3.html";
   test("src",p.src,get_protocol_and_host() + get_modulepath("HTML","HTMLIFrameElement3.html"));
 
   if(is_phase(2)) // All other attributes currently readonly
   {
   }
-  
+
   p = p2;
   testcase( "properties are not writeable" );
 

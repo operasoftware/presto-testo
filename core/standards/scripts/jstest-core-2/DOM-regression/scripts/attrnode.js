@@ -42,18 +42,18 @@ try {
    test("Testing id attribute name 0", linkfoo[0].name, "id");
    test("Testing id attribute name 1", linkfoo[1].name, "href");
    test("Testing id attribute value 0", linkfoo[0].value, "link-foo");
-   test("Testing id attribute value 1", linkfoo[1].value, "http://www.opera.com/");  
-  
+   test("Testing id attribute value 1", linkfoo[1].value, "http://www.opera.com/");
+
    var linkfoo1 = linkfoo[0];
    var linkfoo2 = linkfoo[0];
    test("Getting the same attribute value twice returns the same value", linkfoo1 == linkfoo2, true);
-    
+
    //End new tests
-  
+
    testcase( "Node identity" );
 
    test( 'getting node twice gets same node', x == x2, true );
-   
+
    testcase( "Reading properties" );
 
    test( 'name is correct', x.name, "id" );
@@ -63,7 +63,7 @@ try {
    test( 'specified#2', v.specified, false );
    test( 'default name is correct', v.name, "shape" );
    test( 'default value is correct', v.value, "rect" );
-   
+
    testcase( "Setting the attributes of the attribute node" );
 
    x.value = "flabbergasted";
@@ -76,11 +76,11 @@ try {
 
    testcase( "Failing to set the attributes of the attribute node" );
 
-   expect_DOM_exception( 'set ownerElement#1', DOMException.NO_MODIFICATION_ALLOWED_ERR, 
+   expect_DOM_exception( 'set ownerElement#1', DOMException.NO_MODIFICATION_ALLOWED_ERR,
                          function(){x.ownerElement=bodyelt;} );
-   expect_DOM_exception( 'set name#1', DOMException.NO_MODIFICATION_ALLOWED_ERR, 
+   expect_DOM_exception( 'set name#1', DOMException.NO_MODIFICATION_ALLOWED_ERR,
                          function(){x.name="foo";} );
-   expect_DOM_exception( 'set specified#1', DOMException.NO_MODIFICATION_ALLOWED_ERR, 
+   expect_DOM_exception( 'set specified#1', DOMException.NO_MODIFICATION_ALLOWED_ERR,
                          function(){x.specified=true;} );
 
 } catch (e) { exception( e ); }

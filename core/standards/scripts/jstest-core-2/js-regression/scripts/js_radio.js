@@ -10,7 +10,7 @@ var tprop;
 
 function main( radioObject )
 {
-   try 
+   try
    {
       var cvs = "$Id: js_radio.js 4838 2006-01-18 05:59:01Z hallvord $";
       testmodule( "The Radio object", cvs );
@@ -22,7 +22,7 @@ function main( radioObject )
 
       testcase( 'Radio object properties' );
       testRadioProperties( radioObject );
- 
+
       testcase( 'Radio object methods' );
       testRadioMethods( radioObject );
 
@@ -48,7 +48,7 @@ function testRadioProperties( radio )
    tprop( "name", "string" );
    tprop( "type", "string" );
    tprop( "value", "string" );
-   
+
    test( "defaultChecked", radio.defaultChecked, false );
    test( "checked", radio.checked, false );
    test( "form", radio.form, document.theform );
@@ -62,7 +62,7 @@ function testRadioProperties( radio )
 
    test( "modified defaultChecked", radio.defaultChecked, true );
    test_s( "modified checked", radio.checked, true );
-   test( "modified value", radio.value, "New Radio value" ); 
+   test( "modified value", radio.value, "New Radio value" );
 
    radio.defaultChecked = false;
    radio.form.reset();

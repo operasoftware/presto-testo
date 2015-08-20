@@ -14,8 +14,8 @@ function go()
       var o1 = document.getElementById("myApplet1");
       var o2 = document.getElementById("myApplet2");
       var o3 = document.getElementById("myApplet3");
-      var o = o1; 
-  
+      var o = o1;
+
       tdef("align",o.align);
       tdef("alt",o.alt);
       tdef("archive",o.archive);
@@ -27,10 +27,10 @@ function go()
       tdef("object",o.object);
       tdef("vspace",o.vspace);
       tdef("width",o.width);
-  
-      var o = o1; 
+
+      var o = o1;
       testcase( "default property values" );
-  
+
       test("align",o.align,"");
       test("alt",o.alt,"");
       test("archive",o.archive,"");
@@ -42,10 +42,10 @@ function go()
       test("object",o.object,"");
       test("vspace",o.vspace,"");
       test("width",o.width,"");
- 
+
       o = o2;
       testcase( "property values from attributes" );
-  
+
       test("align",o.align,"right");
       test("alt",o.alt,"alt");
       test("archive",o.archive,"http://www.opera.com/ http://www.opera.no/");
@@ -58,7 +58,7 @@ function go()
       test("vspace",o.vspace,"7");
       test("width",o.width,"100");
 
-  
+
       if(is_phase(2)) // All attributes currently readonly
       {
          testcase( "properties are writable" );
@@ -67,7 +67,7 @@ function go()
       if (navigator.javaEnabled())
       {
         o = o2;
-        testcase( "random attributes" ); 
+        testcase( "random attributes" );
         // Attributes defined by the applet itself. Accessible through liveconnect.
         // Note that if the applet has an attribute with a name that is identical
         // to an attribute of the HTMLAppletElement, ie. "code", the internal
@@ -76,7 +76,7 @@ function go()
         test("code",o.code,"Helleu");
         test("nummer",o.nummer,0);
       }
-  
+
    } catch (e) { exception(e); }
 
    testmodule_finished();

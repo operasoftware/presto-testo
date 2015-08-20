@@ -10,7 +10,7 @@ var tprop;
 
 function main( selectObject )
 {
-   try 
+   try
    {
       var cvs = "$Id: js_select.js 4838 2006-01-18 05:59:01Z hallvord $";
       testmodule( "The Select object", cvs );
@@ -22,7 +22,7 @@ function main( selectObject )
 
       testcase( 'Select object properties' );
       testSelectProperties( selectObject );
- 
+
       testcase( 'Select object methods' );
       testSelectMethods( selectObject );
 
@@ -46,12 +46,12 @@ function testSelectProperties( select )
    tprop( "length", "number" );
    tprop( "name", "string" );
    tprop( "type", "string" );
-   tprop( "options", "function" ); 
+   tprop( "options", "function" );
    tprop( "selectedIndex", "number" );
    tprop( "type", "string" );
-   
+
    test( "form", select.form, document.theform );
-   test( "length", select.length, 2 ); 
+   test( "length", select.length, 2 );
    test( "name", select.name, "theselect" );
 
    test( "type", document.theform.theselect.type, "select-one" );
@@ -76,7 +76,7 @@ function testSelectProperties( select )
    {
       exception( e );
    }
-   
+
    test( "selectedIndex", select.selectedIndex, 0 );
 
    select.selectedIndex = 1;
@@ -84,7 +84,7 @@ function testSelectProperties( select )
 
    select.selectedIndex = -1;
    test( "setting selectedIndex to -1", select.selectedIndex, -1, 86240 );
-   
+
 
    /* In ECMAScript, indices are always nonnegative, and negative indices are
       just names, so this is just select.options[ "-1" ], and there is nothing
@@ -105,7 +105,7 @@ function testSelectProperties( select )
 
    select.length = 0;
    select.name = "New Select name";
-   
+
    test( "Modified select.length", select.length, 0 );
    test( "Modified select.name", select.name, "New Select name" );
 }
@@ -114,7 +114,7 @@ function testSelectMethods( select )
 {
    tprop( "blur", "function" );
    tprop( "focus", "function" );
-   
+
    if( is_phase( 2 ) )
    {
       tprop( "handleEvent", "function" );

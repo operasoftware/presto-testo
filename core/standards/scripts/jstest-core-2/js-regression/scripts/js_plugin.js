@@ -10,7 +10,7 @@ var tprop;
 
 function main( pluginsArray )
 {
-   try 
+   try
    {
       var cvs = "$Id: js_plugin.js 4838 2006-01-18 05:59:01Z hallvord $";
       testmodule( "The Plugin object", cvs );
@@ -28,12 +28,12 @@ function main( pluginsArray )
       for( var i = 0; i < pluginsArray.length; i++ )
       {
          var pluginObject = pluginsArray[ i ];
-         
+
          for( var j = 0; j < pluginObject; j++ )
          {
             test( "pluginObject[ j ] toString", pluginObject[ j ], "[object MimeType]" );
          }
-         
+
          this.tprop = make_tprop( pluginObject );
 
          testcase( "toString" );
@@ -51,7 +51,7 @@ function main( pluginsArray )
    {
       exception( e );
    }
-      
+
    testmodule_finished();
 }
 
@@ -61,7 +61,7 @@ function testPluginProperties( plugin )
    tprop( "filename", "string" );
    tprop( "length", "number" );
    tprop( "name", "string" );
-   
+
    expect_exception( "Changing a readonly value, plugin.description", Error, function() { plugin.description = "something"; } );
    expect_exception( "Changing a readonly value, plugin.filename", Error, function() { plugin.filename = "something"; } );
    expect_exception( "Changing a readonly value, plugin.length", Error, function() { plugin.length = "something"; } );

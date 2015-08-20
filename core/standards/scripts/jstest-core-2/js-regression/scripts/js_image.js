@@ -11,7 +11,7 @@ var imageArray;
 
 function main( imageArray )
 {
-   try 
+   try
    {
       var cvs = "$Id: js_image.js 4838 2006-01-18 05:59:01Z hallvord $";
       testmodule( "The Image object", cvs );
@@ -48,7 +48,7 @@ function main( imageArray )
       {
          exception( e );
       }
-      
+
       testcase( "Image constructor with width" );
       var anothernewimage = Image( "20" );
       anothernewimage.height = 2;
@@ -82,7 +82,7 @@ function testImageConstructor( imageObject )
    {
       test( 'toString', imageObject, "[object HTMLImageElement]" );
    }
-   
+
    imageObject.hspace = 2;
    imageObject.vspace = 10;
    imageObject.border = 1;
@@ -104,9 +104,9 @@ function testImageProperties( image )
 
    if( is_phase( 2 ) )
       tprop( "lowsrc", "string" );
-   
+
    tprop( "name", "string" );
-   
+
    tprop( "src", "string" );
    tprop( "width", "number" );
 
@@ -118,7 +118,7 @@ function testImageProperties( image )
    {
       test( "lowsrc", image.lowsrc, "http://www.opera.com/graphics/company/gallery/ledergruppe.jpg" );
    }
-   
+
    test( "name", image.name, "mypicture" );
    test( "src", image.src, "http://www.opera.com/graphics/logo_z.gif" );
 
@@ -138,7 +138,7 @@ function testImageProperties( image )
    image.hspace = 1;
    image.vspace = 1;
    image.name ="new name";
-   
+
    test( "changing image.border", image.border, 2 );
    test( "changing image.width", image.width, 1 );
    test( "changing image.height", image.height, 1 );

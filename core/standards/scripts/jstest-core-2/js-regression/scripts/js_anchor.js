@@ -45,7 +45,7 @@ test( 'text #0', typeof(a1.text), "string" );
 test( 'text #1', typeof(a3.text), "string" );
 test( 'text #2', a1.text, "Anchor 1" );
 // the test failed in Opera without the removeWhiteSpace().
-test( 'text #3', removeWhiteSpace( a3.text ), "" ); 
+test( 'text #3', removeWhiteSpace( a3.text ), "" );
 
 // added by torstein
 testcase( "changing property values" );

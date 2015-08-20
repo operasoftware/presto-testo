@@ -11,7 +11,7 @@ try {
   var tab1  = document.getElementById("myTable");
   var row1  = document.getElementById("myRow");
   var row2  = document.getElementById("myRow2");
-  
+
   testcase( "object" );
 
   test("class",row1,"[object HTMLTableRowElement]");
@@ -19,10 +19,10 @@ try {
   testcase( "attribute object class" );
 
   test("cells",row1.cells,"[object HTMLCollection]");
-  
+
   testcase( "properties exists" );
   var row = row1;
-  
+
   tdef("rowIndex",row.rowIndex);
   tdef("sectionRowIndex",row.sectionRowIndex);
   tdef("cells",row.cells);
@@ -37,10 +37,10 @@ try {
   }
 
   tdef("vAlign",row.vAlign);
-  
+
   testcase( "read property values" );
   row = row1;
-  
+
   var defalign = "left";
   if(row.dir == "rtl")
     defalign = "right";
@@ -62,11 +62,11 @@ try {
   }
 
   test("vAlign",row.vAlign,"middle");
-  
+
 
   testcase( "properties exists, attributes in use" );
   var row = row2;
-  
+
   tdef("rowIndex",row.rowIndex);
   tdef("sectionRowIndex",row.sectionRowIndex);
   tdef("cells",row.cells);
@@ -81,7 +81,7 @@ try {
 
   testcase( "read property values from attributes" );
   row = row2;
-  
+
   test("rowIndex",row.rowIndex,3);
   test("sectionRowIndex",row.sectionRowIndex,1);
   test("cells",row.cells.length,1);
@@ -96,7 +96,7 @@ try {
 
   testcase( "properties are writeable" );
   row = row2;
-  
+
   row.align="center";
   test("align",row.align,"center");
   row.bgColor="blue";
@@ -112,7 +112,7 @@ try {
   }
   row.vAlign="bottom";
   test("vAlign",row.vAlign,"bottom");
- 
+
   testcase( "properties are not writeable" );
 
   var rowIndex = row.rowIndex;
@@ -132,7 +132,7 @@ try {
 
 
   testcase( "methods" );
-  
+
   if(row2.insertCell != undefined)
   {
     var cnew = row2.insertCell(0);
@@ -162,7 +162,7 @@ try {
   }
 
   testcase( "default attribute values" );
-  
+
   var td = document.getElementsByTagName('TD').item(0);
   tdef("TD colspan #1", td);
 

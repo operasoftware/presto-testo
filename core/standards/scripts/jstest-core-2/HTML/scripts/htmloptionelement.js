@@ -17,13 +17,13 @@ try {
   testcase( "object" );
 
   test("class",opt,"[object HTMLOptionElement]");
-  
+
   testcase( "attribute object class" );
 
   test("form",opt.form,"[object HTMLFormElement]");
 
   testcase( "properties exists" );
-  
+
   tdef("form",opt.form);
   tdef("defaultSelected",opt.defaultSelected);
   tdef("text",opt.text);
@@ -32,9 +32,9 @@ try {
   tdef("label",opt.label);
   tdef("selected",opt.selected);
   tdef("value",opt.value);
-  
+
   testcase( "read property values" );
-  
+
   test("form",opt.form,form);
   test("defaultSelected",opt.defaultSelected,false);
   test("text",opt.text,"");
@@ -43,10 +43,10 @@ try {
   test("label",opt.label,"");
   test("selected",opt.selected,false);
   test("value",opt.value,"");
-  
+
 
   testcase( "properties exists, attributes in use" );
-  
+
   tdef("form",opt2.form);
   tdef("defaultSelected",opt2.defaultSelected);
   tdef("text",opt2.text);
@@ -57,7 +57,7 @@ try {
   tdef("value",opt2.value);
 
   testcase( "read property values from attributes" );
-  
+
   test("form",opt2.form,form);
   test("defaultSelected",opt2.defaultSelected,true);
   test("text",opt2.text,"der");
@@ -68,7 +68,7 @@ try {
   test("value",opt2.value,"her");
 
   testcase( "properties are writeable" );
-  
+
   opt.defaultSelected = true;
   test("defaultSelected",opt.defaultSelected,true);
   opt.disabled = true;
@@ -84,19 +84,19 @@ testcase( "properties are not writeable" );
 
 expect_DOM_exception( "form", DOMException.NO_MODIFICATION_ALLOWED_ERR, function(){opt.form = null;} )
 test("form",opt.form,form);
-/* text: DOM2 says modification isn't allowed, but people probably assume it 
+/* text: DOM2 says modification isn't allowed, but people probably assume it
 is okay to change it. */
-//var t = opt2.text; 
+//var t = opt2.text;
 //expect_DOM_exception( "text", DOMException.NO_MODIFICATION_ALLOWED_ERR, function(){opt2.text = "avvik";} )
 //test("text",opt2.text,t);
-var i = opt.index; 
+var i = opt.index;
 expect_DOM_exception( "index", DOMException.NO_MODIFICATION_ALLOWED_ERR, function(){opt.index = 3;} )
 test("index",opt.index,i);
- 
-  
 
 
-    
+
+
+
 } catch (e) { exception(e); }
 
 

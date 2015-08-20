@@ -72,21 +72,21 @@ for ( i in myobj )
 for ( i=0 ; i < shouldfind.length ; i++ )
 	test( "found exactly once" + shouldfind[i][0], shouldfind[i][2], 1 );
 
-// Enumerations across 'undefined' supposedly works in Mozilla 1.0 RC1, NS 4.7, and IE 6, but 
+// Enumerations across 'undefined' supposedly works in Mozilla 1.0 RC1, NS 4.7, and IE 6, but
 // is clearly wrong according to the ECMAScript spec
 /* Opera is compatible with major browsers.
 expect_exception( "enumerate undefined", TypeError,
 				  function () { for(i in undefined) showfailure( "undefined has no fields" ); } );
 */
 
-// Enumerations across 'null' supposedly works in Mozilla 1.0 RC1, NS 4.7, and IE 6, but 
+// Enumerations across 'null' supposedly works in Mozilla 1.0 RC1, NS 4.7, and IE 6, but
 // is clearly wrong according to the ECMAScript spec
 /* Opera is compatible with major browsers.
 expect_exception( "enumerate null", TypeError,
 				  function () { for(i in null) showfailure( "null has no fields" ); } );
 */
 
-// Regression, picked up from syntax.js 
+// Regression, picked up from syntax.js
 // The problem is the for ( var ... in ... ), so don't change this to for ( ... in ... )
 
 var x = new Object();
@@ -116,8 +116,8 @@ for ( i in document.getElementById("yow") )
 var shows = new Array();
 shows['hej'] = 'hå';
 var x=0;
-for ( i in shows ) 
-  if (shows[i] == 'hå') 
+for ( i in shows )
+  if (shows[i] == 'hå')
     x++;
 test( "Regression from Martin #1", x, 1 );
 test( "Regression from Martin #2", shows.length, 0 );
@@ -135,7 +135,7 @@ for ( i in theMenu )
 testcase( "break turns into return" );
 
 // This catches a problem internally in the engine where break was
-// not handled properly.  
+// not handled properly.
 
 var break_is_broken_v = 10;
 function break_is_broken()
@@ -168,14 +168,14 @@ test( "regression 1", break_is_broken_v, 100 );
 testcase( "for-in regressions" );
 
 var s='';
-for(a in this) 
+for(a in this)
   s+='\n'+a;
 
 test( "for-in regression #156753", s.indexOf('.'), -1 ); // No .Txxxxxxx variables in the global scope
 
-var ar = new Object; 
-ar["aa"] = "aa"; 
-ar["4444555566662222"] = "xx"; 
+var ar = new Object;
+ar["aa"] = "aa";
+ar["4444555566662222"] = "xx";
 var s = "";
 for (var i in ar)
 	s = s + i;

@@ -12,7 +12,7 @@ try {
 	testcase( "object" );
 
 	test("class",b1,"[object HTMLButtonElement]");
-  
+
 	testcase( "attribute object class" );
 
 	test("form",b1.form,"[object HTMLFormElement]");

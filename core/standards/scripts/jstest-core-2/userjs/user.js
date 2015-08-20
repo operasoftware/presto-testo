@@ -47,7 +47,7 @@ opera.addEventListener( 'AfterScript', function(e){
 var beforeExternalScriptFunctionRan=false, beforeExternalScriptFunctionArgumentsOK=false,  beforeExternalScriptFunctionWasRemoved=true;
 opera.addEventListener( 'BeforeExternalScript', function(e){ 
 	beforeExternalScriptFunctionRan=true;
-	if(e && e.element){ 
+	if(e && e.element){
 		if(e.element==document.getElementsByTagName('script')[2] && e.element.text=='' ){
 			beforeExternalScriptFunctionArgumentsOK=true;
 		}else{

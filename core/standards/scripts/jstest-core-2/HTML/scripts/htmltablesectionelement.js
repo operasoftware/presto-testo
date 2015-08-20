@@ -12,7 +12,7 @@ try {
   var tab2  = document.getElementById("myTableSection2");
   var tab3  = document.getElementById("myTableSection3");
   var row   = document.getElementById("myRow");
-  
+
   testcase( "object" );
 
   test("class thead",tab1,"[object HTMLTableSectionElement]");
@@ -21,8 +21,8 @@ try {
 
   testcase( "attribute object class" );
 
-  test("rows",tab1.rows,"[object HTMLCollection]"); 
-  
+  test("rows",tab1.rows,"[object HTMLCollection]");
+
   testcase( "properties exists" );
   var tab = tab1;
  /*
@@ -33,26 +33,26 @@ try {
 
   testcase( "read default property values" );
   tab = tab1;
-  
+
   test("align",tab.align,"left");
   test("vAlign",tab.vAlign,"middle");
   if(tab.rows != undefined)
   {
     test("rows",tab.rows.length,0);
   }
- 
-  
+
+
 
   testcase( "properties exists, attributes in use" );
   var tab = tab2;
-  
+
   tdef("align",tab.align);
   tdef("vAlign",tab.vAlign);
   tdef("rows",tab.rows);
 
   testcase( "read property values from attributes" );
   tab = tab2;
-  
+
   test("align",tab.align,"right");
   test("vAlign",tab.vAlign,"top");
   if(tab.rows != undefined)
@@ -62,7 +62,7 @@ try {
   }
   testcase( "properties are writeable" );
   tab = tab2;
-  
+
   tab.align="center";
   test("align",tab.align,"center");
   tab.vAlign="top";
@@ -74,7 +74,7 @@ try {
   var rows = tab.rows;
   expect_DOM_exception( "rows", DOMException.NO_MODIFICATION_ALLOWED_ERR, function(){tab.rows = null;} )
   test("rows",tab.rows,rows);
- 
+
 	
   testcase( "methods exist" );
 
@@ -119,7 +119,7 @@ try {
   }
 
 
-    
+
 } catch (e) { exception(e); }
 
 

@@ -35,7 +35,7 @@ try {
       else
       {
         testcase("Import element node");
- 
+
         var remoteElement = d.getElementById( "span-pop-up" );
         tdef( "Element #2", remoteElement );
         var impElement = document.importNode( remoteElement, true );
@@ -64,7 +64,7 @@ try {
         localSpan.removeChild( localSpan.lastChild );
         test( "Element #18", localSpan.childNodes.length, 1 );
 
-        expect_DOM_exception( "Element #19", DOMException.WRONG_DOCUMENT_ERR, 
+        expect_DOM_exception( "Element #19", DOMException.WRONG_DOCUMENT_ERR,
                               function(){ localSpan.appendChild( remoteElement ); } );
 
         testcase("Import attribute node");
@@ -75,7 +75,7 @@ try {
         var localAttr = impElement.getAttributeNode("ID");
         tdef( "Attribute #4", localAttr );
         var remoteAttr = remoteElement.getAttributeNode("ID");
-        tdef( "Attribute #5", remoteAttr ); 
+        tdef( "Attribute #5", remoteAttr );
         var impAttr = document.importNode( remoteAttr, true );
         tdef( "Attribute #6", impAttr );
         test( "Attribute #7", impAttr.nodeType, Node.ATTRIBUTE_NODE );
@@ -100,7 +100,7 @@ try {
         test( "Attribute #22", localSpan.attributes.item(0).value, "span-pop-up" );
         test( "Attribute #23", localSpan.attributes.item(0).ownerElement, localSpan );
 
-        expect_DOM_exception( "Attribute #24", DOMException.INUSE_ATTRIBUTE_ERR, 
+        expect_DOM_exception( "Attribute #24", DOMException.INUSE_ATTRIBUTE_ERR,
                               function(){ localSpan.setAttributeNode( remoteAttr ); } );
 
         testcase("Import document fragment node");
@@ -113,10 +113,10 @@ try {
         test( "Document Fragment #3", remoteDocFrag.childNodes.length, 1 );
         test( "Document Fragment #4", remoteDocFrag.childNodes[0].firstChild.nodeValue, "A pop-up window!" );
         test( "Document Fragment #5", localSpan.childNodes.length, 1 );
-        test( "Document Fragment #6", localSpan.childNodes[0].nodeValue, "A base window!" );  
+        test( "Document Fragment #6", localSpan.childNodes[0].nodeValue, "A base window!" );
         var impDocFrag = document.importNode( remoteDocFrag, true );
         test( "Document Fragment #7", impDocFrag.nodeType, Node.DOCUMENT_FRAGMENT_NODE );
-        localSpan.appendChild( impDocFrag );  
+        localSpan.appendChild( impDocFrag );
         test( "Document Fragment #8", localSpan.childNodes.length, 2 );
         test( "Document Fragment #9", localSpan.childNodes[0].nodeValue, "A base window!" );
         test( "Document Fragment #10", localSpan.childNodes[1].firstChild.nodeValue, "A pop-up window!" );
@@ -132,7 +132,7 @@ try {
         test( "Document Fragment #16", localSpan.childNodes.length, 1 );
         test( "Document Fragment #17", localSpan.childNodes[0].nodeValue, "A base window!" );
 
-        expect_DOM_exception( "Document Fragment #18", DOMException.WRONG_DOCUMENT_ERR, 
+        expect_DOM_exception( "Document Fragment #18", DOMException.WRONG_DOCUMENT_ERR,
                               function(){ localSpan.appendChild( remoteDocFrag ); } );
 
         testcase("Import text node");
@@ -140,9 +140,9 @@ try {
         var remoteText = remoteElement.firstChild;
         tdef( "Text #1", remoteText );
         test( "Text #2", remoteText.nodeType, Node.TEXT_NODE );
-        test( "Text #3", remoteText.nodeValue, "A pop-up window!" );  
+        test( "Text #3", remoteText.nodeValue, "A pop-up window!" );
         test( "Text #4", localSpan.childNodes.length, 1 );
-        test( "Text #5", localSpan.firstChild.nodeValue, "A base window!" );  
+        test( "Text #5", localSpan.firstChild.nodeValue, "A base window!" );
         var impText = document.importNode( remoteText, true );
         test( "Text #6", impText.nodeType, Node.TEXT_NODE );
         test( "Text #7", impText.parentNode, null );
@@ -150,21 +150,21 @@ try {
         test( "Text #9", impText.data, "A pop-up window!" );
         test( "Text #10", impText.length, 16 );
         localSpan.appendChild( impText );
-        test( "Text #11", localSpan.childNodes[0].nodeValue, "A base window!" );  
-        test( "Text #12", localSpan.childNodes[1].nodeValue, "A pop-up window!" );  
+        test( "Text #11", localSpan.childNodes[0].nodeValue, "A base window!" );
+        test( "Text #12", localSpan.childNodes[1].nodeValue, "A pop-up window!" );
 
         impText = document.importNode( remoteText, false );
         test( "Text #13", impText.nodeType, Node.TEXT_NODE );
         localSpan.appendChild( impText );
-        test( "Text #14", localSpan.childNodes[0].nodeValue, "A base window!" );  
-        test( "Text #15", localSpan.childNodes[1].nodeValue, "A pop-up window!" );  
+        test( "Text #14", localSpan.childNodes[0].nodeValue, "A base window!" );
+        test( "Text #15", localSpan.childNodes[1].nodeValue, "A pop-up window!" );
 
-        expect_DOM_exception( "Text #16", DOMException.WRONG_DOCUMENT_ERR, 
+        expect_DOM_exception( "Text #16", DOMException.WRONG_DOCUMENT_ERR,
                               function(){ localSpan.appendChild( remoteText ); } );
 
         testcase("Import document node");
 
-        expect_DOM_exception( "Document #1", DOMException.NOT_SUPPORTED_ERR, 
+        expect_DOM_exception( "Document #1", DOMException.NOT_SUPPORTED_ERR,
                               function(){ document.importNode( d, true ); } );
 
         // wrong input parameters

@@ -18,9 +18,9 @@ try {
   tdef("name",p.name);
   tdef("noResize",p.noResize);
   tdef("scrolling",p.scrolling);
-  tdef("src",p.src);  
+  tdef("src",p.src);
   tdef("contentDocument",p.contentDocument);
-  
+
   testcase( "readable attribute values" );
 
   test("frameBorder",p.frameBorder,"0");
@@ -33,8 +33,8 @@ try {
   test("src",p.src,get_protocol_and_host() + get_modulepath("HTML","HTMLFrameElement2_int.html"));
 
   testcase( "properties are writable" );
-  
-  if(is_phase(2)) 
+
+  if(is_phase(2))
   {
 	p.frameBorder = "1";
 	test("reflow #1", p.frameBorder, "1");

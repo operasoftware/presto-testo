@@ -13,9 +13,9 @@ try {
   testcase( "object" );
 
   test("class",b,"[object HTMLBodyElement]");
-   
+
   testcase( "properties exists" );
-  
+
   tdef("aLink",b.aLink);
   tdef("background",b.background);
   tdef("bgColor",b.bgColor);
@@ -25,12 +25,12 @@ try {
 
 /*
   testcase( "property types" );
-  
+
   testinstance("aLink" ,b.aLink, HTMLBodyElement); // ???
 */
-  
+
   testcase( "property values" );
-  
+
   test("aLink",b.aLink,"");
   test("background",b.background,"");
   test("bgColor",b.bgColor,"");
@@ -40,7 +40,7 @@ try {
 
 
   testcase( "properties are writable" );
-  
+
   b.aLink = "pink";
   test("aLink",b.aLink,"pink");
   b.background = "image2";

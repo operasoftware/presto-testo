@@ -11,14 +11,14 @@ try {
   var tab1  = document.getElementById("myTable");
   var col1  = document.getElementById("myCol");
   var col2  = document.getElementById("myCol2");
-  
+
   testcase( "object" );
 
   test("class",col1,"[object HTMLTableColElement]");
-  
+
   testcase( "properties exists" );
   var col = col1;
-  
+
   tdef("align",col.align);
   if(is_phase(2))
   {
@@ -28,10 +28,10 @@ try {
   tdef("span",col.span);
   tdef("vAlign",col.vAlign);
   tdef("width",col.width);
-  
+
   testcase( "read property values" );
   col = col1;
-  
+
   var defalign = "left";
   if(col.dir == "rtl")
     defalign = "right";
@@ -48,11 +48,11 @@ try {
   test("span",col.span,1);
   test("vAlign",col.vAlign,"middle");
   test("width",col.width,"");
-  
+
 
   testcase( "read property values from attributes" );
   col = col2;
-  
+
   test("align",col.align,"right");
   if(is_phase(2))
   {
@@ -66,7 +66,7 @@ try {
   test("regression test for bug #76434 testcase 350", col.attributes.getNamedItem('char').value, "-");
   test("regression test for bug #76434 testcase 352", col.attributes.getNamedItem('charoff').value, "1%");
   test("regression test for bug #76434 testcase 355", col.attributes.getNamedItem('span').value, 2);
-  
+
   testcase( "properties are writeable" );
   col = col2;
 

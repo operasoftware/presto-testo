@@ -10,19 +10,19 @@ testmodule( "HTMLTableElement", cvs );
 try {
   var tab1  = document.getElementById("myTable");
   var tab2  = document.getElementById("myTable2");
-  
+
   testcase( "object" );
 
   test("class",tab1,"[object HTMLTableElement]");
-  
+
   testcase( "attribute object class" );
 
   test("rows",tab1.rows,"[object HTMLCollection]");
   test("tBodies",tab1.tBodies,"[object HTMLCollection]");
-  
+
   testcase( "properties exists" );
   var tab = tab1;
-  
+
   tdef("caption",tab.caption);
   tdef("tHead",tab.tHead);
   tdef("tFoot",tab.tFoot);
@@ -38,10 +38,10 @@ try {
   tdef("summary",tab.summary);
   tdef("width",tab.width);
   test("tBodies", tab.tBodies, "[object HTMLCollection]");
-  
+
   testcase( "read property values" );
   tab = tab1;
-  
+
   test("caption",tab.caption,null);
   test("tHead",tab.tHead,null);
   test("tFoot",tab.tFoot,null);
@@ -55,11 +55,11 @@ try {
   test("rules",tab.rules,"");
   test("summary",tab.summary,"");
   test("width",tab.width,"");
-  
+
 
   testcase( "properties exists, attributes in use" );
   var tab = tab2;
-  
+
   tdef("caption",tab.caption);
   tdef("tHead",tab.tHead);
   tdef("tFoot",tab.tFoot);
@@ -77,7 +77,7 @@ try {
 
   testcase( "read property values from attributes" );
   tab = tab2;
-  
+
   if(tab.caption != undefined)
     test("caption",tab.caption.align,"left");
   if(tab.tHead != undefined)
@@ -97,16 +97,16 @@ try {
   test("summary",tab.summary,"summary");
   test("width",tab.width,"100%");
 
-  
+
   testcase( "properties are writeable" );
   tab = tab2;
-  
+
   var newCaption = 	document.createElement ("caption");
   var cap = tab.caption; tab.caption = newCaption;
   test("caption",tab.caption,newCaption);
   tab.caption = cap;
   test("caption",tab.caption,cap);
-  
+
   var newHead = 	document.createElement ("thead");
   var temp = tab.tHead; tab.tHead = newHead;
   test("tHead",tab.tHead,newHead);
@@ -172,7 +172,7 @@ try {
 
 
   testcase( "methods" );
- 
+
   if(tab2.createTHead != undefined)
   {
     var thold = tab2.tHead;
@@ -254,7 +254,7 @@ try {
   }
 
 
-    
+
 } catch (e) { exception(e); }
 
 

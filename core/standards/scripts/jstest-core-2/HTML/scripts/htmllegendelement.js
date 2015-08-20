@@ -12,7 +12,7 @@ try {
 	testcase( "object" );
 
 	test("class",l1,"[object HTMLLegendElement]");
-  
+
 	testcase( "attribute object class" );
 
 	test("form",l1.form,"[object HTMLFormElement]");

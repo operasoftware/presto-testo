@@ -29,7 +29,7 @@ try {
    test( "Attr #5", x.length, y.length );
    testnot( "Attr #6", x.length, foo.length );
    test( "Attr #7", the_div.firstChild.firstChild.length, 3 );
- 
+
    x.data = "new text";
    test( "Attr #8", x.data, "new text" );
    test( "Attr #9", x.length, 8 );
@@ -51,7 +51,7 @@ try {
 
    /*
      showfailure( "Attr #18", "IMPLEMENTME: Test exceptions on setting data when the node is readonly" );
-     expect_DOM_exception( "Attr #19", DOMException.NO_MODIFICATION_ALLOWED_ERR, 
+     expect_DOM_exception( "Attr #19", DOMException.NO_MODIFICATION_ALLOWED_ERR,
      function(){ x.length=0; } );
    */
 
@@ -85,13 +85,13 @@ try {
    test( "substringData #4", z.data, "undefined" );
 
    /* index out of bounds */
-   expect_DOM_exception( "substringData #5", DOMException.INDEX_SIZE_ERR, 
+   expect_DOM_exception( "substringData #5", DOMException.INDEX_SIZE_ERR,
                          function(){x.substringData( "test", 0 );} );
-   expect_DOM_exception( "substringData #6", DOMException.INDEX_SIZE_ERR, 
+   expect_DOM_exception( "substringData #6", DOMException.INDEX_SIZE_ERR,
                          function(){x.substringData( -1, 0 );} );
-   expect_DOM_exception( "substringData #7", DOMException.INDEX_SIZE_ERR, 
+   expect_DOM_exception( "substringData #7", DOMException.INDEX_SIZE_ERR,
                          function(){x.substringData( 0, -1 );} );
-   expect_DOM_exception( "substringData #8", DOMException.INDEX_SIZE_ERR, 
+   expect_DOM_exception( "substringData #8", DOMException.INDEX_SIZE_ERR,
                          function(){x.substringData( 10, 10 );} );
 
    testcase( "insertData" );
@@ -114,11 +114,11 @@ try {
    /* insert into back end */
    x.insertData( 16, "end" );
    test( "insertData #5", x.data, "starttestfoobar1end" );
-  
+
    /* index out of bounds */
-   expect_DOM_exception( "insertData #6", DOMException.INDEX_SIZE_ERR, 
+   expect_DOM_exception( "insertData #6", DOMException.INDEX_SIZE_ERR,
                          function(){x.insertData(-1,"test");} );
-   expect_DOM_exception( "insertData #7", DOMException.INDEX_SIZE_ERR, 
+   expect_DOM_exception( "insertData #7", DOMException.INDEX_SIZE_ERR,
                          function(){x.insertData(100,"test");} );
 
    testcase( "deleteData" );
@@ -137,7 +137,7 @@ try {
    /* delete from end */
    x.deleteData( 5, 10);
    test( "deleteData #4", x.data, "test1" );
-  
+
    /* nothing deleted */
    x.deleteData( 2, 0);
    test( "deleteData #5", x.data, "test1" );
@@ -145,9 +145,9 @@ try {
    test( "deleteData #6", x.data, "test1" );
 
    /* index out of bounds */
-   expect_DOM_exception( "deleteData #2", DOMException.INDEX_SIZE_ERR, 
+   expect_DOM_exception( "deleteData #2", DOMException.INDEX_SIZE_ERR,
                          function(){x.deleteData(-1,0);} );
-   expect_DOM_exception( "deleteData #3", DOMException.INDEX_SIZE_ERR, 
+   expect_DOM_exception( "deleteData #3", DOMException.INDEX_SIZE_ERR,
                          function(){x.deleteData(0,-1);} );
 
    testcase( "replaceData" );
@@ -164,27 +164,27 @@ try {
    test( "replaceData #3", y.data, "startend" );
 
    /* replace middle */
-   y.replaceData( 1, 6, "dummy" ); 
+   y.replaceData( 1, 6, "dummy" );
    test( "replaceData #4", y.data, "sdummyd" );
 
    /* replace whole string */
-   y.replaceData( 0, 10, "test2" ); 
+   y.replaceData( 0, 10, "test2" );
    test( "replaceData #5", y.data, "test2" );
 
    /* empty string */
-   y.replaceData( 0, 7, "" ); 
+   y.replaceData( 0, 7, "" );
    test( "replaceData #6", y.data, "" );
 
    /* nothing is replaced with test2 (only appended) */
-   y.replaceData( 0, 0, "test2" ); 
+   y.replaceData( 0, 0, "test2" );
    test( "replaceData #7", y.data, "test2" );
 
    /* index out of bounds */
-   expect_DOM_exception( "replaceData #8", DOMException.INDEX_SIZE_ERR, 
+   expect_DOM_exception( "replaceData #8", DOMException.INDEX_SIZE_ERR,
                          function(){x.replaceData( -1, 0, "test" );} );
-   expect_DOM_exception( "replaceData #9", DOMException.INDEX_SIZE_ERR, 
+   expect_DOM_exception( "replaceData #9", DOMException.INDEX_SIZE_ERR,
                          function(){x.replaceData( 0, -1, "test" );} );
-   expect_DOM_exception( "replaceData #10", DOMException.INDEX_SIZE_ERR, 
+   expect_DOM_exception( "replaceData #10", DOMException.INDEX_SIZE_ERR,
                          function(){x.replaceData( 30, 4,"test");} );
 
    /* check that xml parser does not split text-nodes at linebreak. */

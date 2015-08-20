@@ -12,11 +12,11 @@ try {
   var form2 = document.getElementById("myForm2");
   var inp1  = document.getElementById("myAnchor");
   var inp2  = document.getElementById("myAnchor2");
-  
-  
+
+
   testcase( "properties exists" );
   var inp = inp1;
-  
+
   if(is_phase(1))
   {
     tdef("href",inp.href);
@@ -35,10 +35,10 @@ try {
     tdef("tabIndex",inp.tabIndex);
     tdef("type",inp.type);
   }
-  
+
   testcase( "read property values" );
   inp = inp1;
-  
+
   if(is_phase(1))
   {
     test("href",inp.href,"");
@@ -60,7 +60,7 @@ try {
 
   testcase( "properties exists, attributes in use" );
   var inp = inp2;
-  
+
   if(is_phase(1))
   {
     tdef("href",inp.href);
@@ -82,7 +82,7 @@ try {
 
   testcase( "read property values from attributes" );
   inp = inp2;
-  
+
   if(is_phase(1))
   {
     test("href",inp.href,get_protocol_and_host() + get_modulepath("HTML","link.html"));
@@ -104,7 +104,7 @@ try {
 
   testcase( "properties are writeable" );
   inp = inp2;
-  
+
   if(is_phase(1))
   {
     inp.href = "ref.html";
@@ -123,7 +123,7 @@ try {
     inp.accessKey = "R";
     test("accessKey",inp.accessKey,"R");
     inp.tabIndex = 13;
-    test("tabIndex",inp.tabIndex,13); 
+    test("tabIndex",inp.tabIndex,13);
     inp.type = "multipart/mixed";
     test("type",inp.type,"multipart/mixed");
 
@@ -139,7 +139,7 @@ try {
 
   testcase( "properties are not writeable" );
 
-  // No readonly properties    
+  // No readonly properties
 	
   testcase( "methods exist" );
 
@@ -150,7 +150,7 @@ try {
   }
 
   testcase( "methods" );
-  
+
   if(is_phase(1))
   {
     inp.focus();
@@ -158,7 +158,7 @@ try {
     inp.blur();
     test("blur",test_call(),"call_off");
   }
-    
+
 } catch (e) { exception(e); }
 
 
