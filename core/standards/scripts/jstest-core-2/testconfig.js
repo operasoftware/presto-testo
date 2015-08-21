@@ -42,7 +42,7 @@ function get_base()
 
 function get_host()
 {
-    var ph=get_protocol_and_host(); 
+    var ph=get_protocol_and_host();
     var x=ph.lastIndexOf(":");
     var y=ph.indexOf(":");
     return ph.substring( ph.indexOf("//")+2, x != y ? x : ph.length );
@@ -78,7 +78,7 @@ function get_pixel_depth()   { return $$pixel_depth; }
 
 // Returns screen height when ornaments removed
 
-function get_avail_height() 
+function get_avail_height()
 {
   if($$platform == "Win32")
   {
@@ -87,7 +87,7 @@ function get_avail_height()
   return $$screen_height;
 }
 
-function get_avail_width() 
+function get_avail_width()
 {
   return $$screen_width;
 }

@@ -13,7 +13,7 @@ function main( windowObject )
    var cvs = "$Id: js_window.js 4838 2006-01-18 05:59:01Z hallvord $";
    testmodule( "The Window object", cvs );
 
-   try 
+   try
    {
       this.tprop = make_tprop( windowObject );
 
@@ -67,7 +67,7 @@ function testWindowConstructor( win )
    var status = "yes";
    var toolbar = "yes";
 
-   this.newwin = win.open( "", win_name, 
+   this.newwin = win.open( "", win_name,
                            "width=" + inner_width + "," +
                            "height=" + inner_height + "," +
                            "left=" + screen_x + "," +
@@ -168,7 +168,7 @@ function testWindowProperties( win )
       tprop( "statusbar", "object" );
       tprop( "toolbar", "object" );
    }
-   
+
    tprop( "name", "string" );
    tprop( "opener", "object" );
    tprop( "pageXOffset", "number" );
@@ -204,12 +204,12 @@ function testWindowProperties( win )
    {
       exception( e, "Replacing the document object of a window object" );
    }
-   
+
    try
    {
       win.history = null;
       test( "setting win.history to null", win.history, null );
-   }   
+   }
    catch( e )
    {
       exception( e, "Replacing the history object of a window object" );
@@ -225,20 +225,20 @@ function testWindowProperties( win )
       win.offscreenBuffering = false;
       test( "setting offscreenBuffering to false", win.offscreenBuffering, false );
    }
-   
-   test_s( "win.parent", win.parent, self ); 
+
+   test_s( "win.parent", win.parent, self );
    test_s( "self", self, win );
 
    win.status = "";
    test( "win.status", win.status, "" );
    win.status = "new status";
    test( "change win.status", win.status, "new status" );
-   
+
    test_s( "win.top", win.top, self );
    test( "win.top toString", String (win.top), "[object Window]" );
    test( "typeof win.top", typeof win.top + "", "object" );
 
-   test( "window", window, self ); 
+   test( "window", window, self );
 
 }
 
@@ -257,11 +257,11 @@ function testWindowToolbars( win, initialState )
      ( the initial visible test would fail otherwise ).
     */
 
-   if( win.locationbar != undefined ) 
+   if( win.locationbar != undefined )
    {
       test( "win.locationbar toString", win.locationbar + "", "[object BarProp]" );
       test( "win.locationbar.visible", win.locationbar.visible, initialState );
-      
+
       win.locationbar.visible = !initialState;
       test( "changing win.locationbar.visible", win.locationbar.visible, !initialState );
       win.locationbar.visible = initialState;
@@ -331,7 +331,7 @@ function testWindowObjectSpecificProperties( win )
 
    var winlocation = win.location + "";
    winlocation = winlocation.substr( winlocation.lastIndexOf( "/" ) + 1 );
-   test( "win.location", winlocation, "js_window.html" ); 
+   test( "win.location", winlocation, "js_window.html" );
 
    if (win.opener)
 	test_expect_failure( "win.opener", 85168, win.opener, "[object Window]" );
@@ -366,7 +366,7 @@ function testWindowMethods( win )
    if( is_phase( 2 ) )
    {
       tprop( "atob", "function" ); // base-64 en/decoding, #81155
-      tprop( "btoa", "function" ); // base-64 en/decoding, #81155 
+      tprop( "btoa", "function" ); // base-64 en/decoding, #81155
       tprop( "find", "function" );
       tprop( "handleEvent", "function" );
       tprop( "routeEvent", "function" );
@@ -374,7 +374,7 @@ function testWindowMethods( win )
       tprop( "setResizable", "function" ); // #81143
       tprop( "setZOptions", "function" ); // #81144
    }
-   
+
    tprop( "home", "function" );
    tprop( "moveBy", "function" );
    tprop( "moveTo", "function" );
@@ -386,7 +386,7 @@ function testWindowMethods( win )
    tprop( "scroll", "function" );
    tprop( "scrollBy", "function" );
    tprop( "scrollTo", "function" );
-   tprop( "setInterval", "function" ); 
+   tprop( "setInterval", "function" );
    tprop( "setTimeout", "function" );
    tprop( "stop", "function" );
 
@@ -398,7 +398,7 @@ function testWindowMethods( win )
    win.moveBy( 10, 5 );
    test( "moveBy", win.screenX, ( oldx + 10 ) );
    test( "moveBy", win.screenY, ( oldy + 5 ) );
-   
+
    win.moveTo( 20, 30 );
    test( "moveTo, screenX", win.screenX, 20, "81169" );
    test( "moveTo, screenY", win.screenY, 30, "81169" );
@@ -406,14 +406,14 @@ function testWindowMethods( win )
    win.resizeBy( 10, 10 );
    test( "resizeBy, outerWidth", win.outerWidth, ( oldwidth + 10 ) );
    test( "resizeBy, outerHeight", win.outerHeight, ( oldheight + 10 ) );
-   
+
    win.resizeTo( 200, 300 );
    test( "resizeTo, outerWidth", win.outerWidth, 200 );
    test( "resizeTo, outerHeight", win.outerHeight, 300 );
-   
+
    win.resizeTo( oldwidth, oldheight );
    win.moveTo( oldx, oldy );
-}   
+}
 
 function getBoolean( s )
 {

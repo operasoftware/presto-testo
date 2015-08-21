@@ -14,18 +14,18 @@ try {
   var inp2  = document.getElementById("myInput2");
   var inp3  = document.getElementById("myInput3");
   var inp4  = document.getElementById("myInput4");
-  
+
   testcase( "object" );
 
   test("class",inp1,"[object HTMLInputElement]");
-  
+
   testcase( "attribute object class" );
 
   test("form",inp1.form,"[object HTMLFormElement]");
-    
+
   testcase( "properties exists" );
   var inp = inp1;
-  
+
   tdef("defaultValue",inp.defaultValue);
   tdef("defaultChecked",inp.defaultChecked);
   tdef("form",inp.form);
@@ -44,10 +44,10 @@ try {
   tdef("type",inp.type);
   tdef("useMap",inp.useMap);
   tdef("value",inp.value);
-  
+
   testcase( "read property values" );
   inp = inp1;
-  
+
   test("defaultValue",inp.defaultValue,"");
   test("defaultChecked",inp.defaultChecked,false);
   test("form",inp.form,form);
@@ -67,11 +67,11 @@ try {
   test("type",inp.type,"text");
   test("useMap",inp.useMap,"");
   test("value",inp.value,"");
-  
+
 
   testcase( "properties exists, attributes in use" );
   var inp = inp2;
-  
+
   tdef("defaultValue",inp.defaultValue);
   tdef("defaultChecked",inp.defaultChecked);
   tdef("form",inp.form);
@@ -93,7 +93,7 @@ try {
 
   testcase( "read property values from attributes" );
   inp = inp2;
-  
+
   test("defaultValue",inp.defaultValue,"verdi");
   test("defaultChecked",inp.defaultChecked,false);
   test("form",inp.form,form);
@@ -104,7 +104,7 @@ try {
   test("checked",inp.checked,false);
   ttrue("checked",inp3.checked);
   test("disabled",inp.disabled,true);
-  test("maxLength",inp.maxLength,10);  
+  test("maxLength",inp.maxLength,10);
   test("name",inp.name,"navn");
   test("readOnly",inp.readOnly,true);
   test("size",inp.size,5);
@@ -121,7 +121,7 @@ try {
 
   testcase( "properties are writeable" );
   inp = inp2;
-  
+
   inp.defaultValue = "endring";
   test("defaultValue",inp.defaultValue,"endring");
   inp3.defaultChecked = false;
@@ -141,7 +141,7 @@ try {
   inp.disabled = false;
   test("disabled",inp.disabled,false);
   inp.maxLength = 13;
-  test("maxLength",inp.maxLength,13); 
+  test("maxLength",inp.maxLength,13);
   inp.name = "felt";
   test("name",inp.name,"felt");
   inp.readOnly = false;
@@ -176,7 +176,7 @@ try {
 
   expect_DOM_exception( "form", DOMException.NO_MODIFICATION_ALLOWED_ERR, function(){inp.form = null;} )
   test("form",inp.form,form);
-    
+
 	
   testcase( "methods exist" );
 
@@ -187,7 +187,7 @@ try {
 
 
   testcase( "methods" );
-  
+
   inp3.focus();
   test("focus()",test_call(),"call_on");
   inp3.blur();
@@ -196,11 +196,11 @@ try {
   var stat = inp3.checked;
   inp3.click();
   test("click()",!inp3.checked,stat);
-  
+
   forget_call();
   inp2.select();
   test("select()",test_call(),"call_on");
-    
+
 } catch (e) { exception(e); }
 
 

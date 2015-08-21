@@ -10,11 +10,11 @@ var tprop;
 
 function main( formObject )
 {
-   try 
+   try
    {
       var cvs = "$Id";
       testmodule( "The Form object", cvs );
-      
+
       this.tprop = make_tprop( document.theform );
       tprop( "thetext", "object" );
 
@@ -49,7 +49,7 @@ function testFormProperties( form )
    tprop( "method", "string" );
    tprop( "name", "string" );
    tprop( "target", "string" );
-   
+
    test( "action", form.action, "http://davis.intern.opera.no/my_repository/js-regression/js_form.htm");
    test( "elements", form.elements, "[object HTMLCollection]");
    test( "length", form.length, 1 );

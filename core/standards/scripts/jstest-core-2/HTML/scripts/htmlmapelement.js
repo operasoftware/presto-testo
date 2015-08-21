@@ -15,12 +15,12 @@ try {
 
   var o1 = document.getElementById("myMap");
   var o2 = document.getElementById("myMap2");
-  var o = o1; 
+  var o = o1;
 
   testcase( "object" );
 
   test("class",o,"[object HTMLMapElement]");
-  
+
   testcase( "attribute object class" );
 
   test("areas",o.areas,"[object HTMLCollection]");
@@ -29,37 +29,37 @@ try {
 
   tdef("areas",o.areas);
   tdef("name",o.name);
-  
-  var o = o1; 
+
+  var o = o1;
   testcase( "default property values" );
-  
+
   testOut(isCollection(o.areas), "areas is a collection");
   if(isCollection(o.areas)) test("areas",o.areas.length,0);
   test("name",o.name,"");
-  
+
 
   o = o2;
   testcase( "property values from attributes" );
-  
+
   testOut(isCollection(o.areas), "areas is a collection");
-  if(isCollection(o.areas)) 
+  if(isCollection(o.areas))
   {
     test("areas",o.areas.length,2);
     test("areas",o.areas[0].href,"http://www.opera.com/");
     test("areas",o.areas[0].accessKey,"a");
   }
   test("name",o.name,"map");
- 
+
   o = o1;
   testcase( "properties are writable" );
-  
+
   if(is_phase(2)) // All attributes currently readonly
   {
     o.name = "firstMap";
     test("name property", o.name, "firstMap");
     test("name attribute", o.getAttribute("name"), "firstMap");
   }
-  
+
   testcase( "properties are not writeable" );
 
   var ar = o.areas;

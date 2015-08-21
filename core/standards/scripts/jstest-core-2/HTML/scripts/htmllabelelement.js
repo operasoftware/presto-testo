@@ -14,7 +14,7 @@ try {
 	testcase( "object" );
 
 	test("class",l1,"[object HTMLLabelElement]");
-  
+
 	testcase( "attribute object class" );
 
 	test("form",l1.form,"[object HTMLFormElement]");
@@ -139,7 +139,7 @@ testmodule_finished();
 function testPopup()
 {
 	testmodule( "HTMLLabelElement", cvs );
-	try 
+	try
 	{
 		testcase("Writable htmlFor");
 

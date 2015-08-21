@@ -8,7 +8,7 @@ var tprop;
 
 function main( windowObject )
 {
-   try 
+   try
    {
       var cvs = "$Id: js_mimetype.js 4838 2006-01-18 05:59:01Z hallvord $";
       testmodule( "The MimeType object", cvs );
@@ -59,21 +59,21 @@ function main( windowObject )
       }
 
       testcase( "MimeType object properties" );
-      test( "type different from description", 
-                           navigator.mimeTypes[ 10 ].type == navigator.mimeTypes[ 10 ].description, 
+      test( "type different from description",
+                           navigator.mimeTypes[ 10 ].type == navigator.mimeTypes[ 10 ].description,
 			   false );
-                           
+
       testcase( 'Standard way of accessing the mimetype properties' );
 
       try
       {
          test( "navigator.mimeTypes[\"image/jpeg\"].type", navigator.mimeTypes["image/jpeg"].type, "image/jpeg" );
-         test_expect_failure( "navigator.mimeTypes[\"image/jpeg\"].description", 
+         test_expect_failure( "navigator.mimeTypes[\"image/jpeg\"].description",
 	       86238,
-	       navigator.mimeTypes["image/jpeg"].description, 
+	       navigator.mimeTypes["image/jpeg"].description,
 	       "JPEG Image" );
 	 var suff = navigator.mimeTypes["image/jpeg"].suffixes;
-         test( "navigator.mimeTypes[\"image/jpeg\"].suffixes", 
+         test( "navigator.mimeTypes[\"image/jpeg\"].suffixes",
 	       suff.indexOf("jpeg") > -1 && suff.indexOf("jpg") > -1 && suff.indexOf("jpe") > -1,
                true );
 

@@ -10,11 +10,11 @@ var tprop;
 
 function main( fileuploadObject )
 {
-   try 
+   try
    {
       var cvs = "$Id: js_fileupload.js 4838 2006-01-18 05:59:01Z hallvord $";
       testmodule( "The FileUpload object", cvs );
-      
+
       this.tprop = make_tprop( document.theform );
       tprop( "thefile", "object" );
 
@@ -39,14 +39,14 @@ function main( fileuploadObject )
 
    testmodule_finished();
 }
-    
+
 function testFileUploadProperties( file )
 {
    tprop( "form", "object" );
    tprop( "name", "string" );
    tprop( "type", "string" );
    tprop( "value", "string" );
-   
+
    test( "form", file.form, document.theform );
    test( "name", file.name, "thefile" );
    test( "type", file.type, "file" );

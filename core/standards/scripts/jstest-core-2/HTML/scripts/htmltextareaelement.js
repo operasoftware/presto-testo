@@ -12,18 +12,18 @@ try {
   var form2 = document.getElementById("myForm2");
   var inp1  = document.getElementById("myTextArea");
   var inp2  = document.getElementById("myTextArea2");
-  
+
   testcase( "object" );
 
   test("class",inp1,"[object HTMLTextAreaElement]");
-  
+
   testcase( "attribute object class" );
 
   test("form",inp1.form,"[object HTMLFormElement]");
-    
+
   testcase( "properties exists" );
   var inp = inp1;
-  
+
   tdef("defaultValue",inp.defaultValue);
   tdef("form",inp.form);
   tdef("accessKey",inp.accessKey);
@@ -35,10 +35,10 @@ try {
   tdef("tabIndex",inp.tabIndex);
   tdef("type",inp.type);
   tdef("value",inp.value);
-  
+
   testcase( "read property values" );
   inp = inp1;
-  
+
   test("defaultValue",inp.defaultValue,"");
   test("form",inp.form,form);
   test("accessKey",inp.accessKey,"");
@@ -52,11 +52,11 @@ try {
   test("tabIndex",inp.tabIndex,0);
   test("type",inp.type,"textarea");
   test("value",inp.value,"");
-  
+
 
   testcase( "properties exists, attributes in use" );
   var inp = inp2;
-  
+
   tdef("defaultValue",inp.defaultValue);
   tdef("form",inp.form);
   tdef("accessKey",inp.accessKey);
@@ -71,7 +71,7 @@ try {
 
   testcase( "read property values from attributes" );
   inp = inp2;
-  
+
   test("defaultValue",inp.defaultValue,"verdi");
   test("form",inp.form,form);
   test("accessKey",inp.accessKey,"U");
@@ -86,7 +86,7 @@ try {
 
   testcase( "properties are writeable" );
   inp = inp2;
-  
+
   inp.defaultValue = "endring";
   test("defaultValue",inp.defaultValue,"endring");
   inp.accessKey = "R";
@@ -113,7 +113,7 @@ try {
   test("form",inp.form,form);
   var t = inp.type; expect_DOM_exception( "type", DOMException.NO_MODIFICATION_ALLOWED_ERR, function(){inp.type = "illegal";} )
   test("type",inp.type,t);
-    
+
 	
   testcase( "methods exist" );
 
@@ -123,7 +123,7 @@ try {
 
 
   testcase( "methods" );
-  
+
   inp.focus();
   test("focus",test_call(),"call_on");
   inp.blur();
@@ -132,7 +132,7 @@ try {
   forget_call();
   inp2.select();
   test("select",test_call(),"call_on");
-    
+
 } catch (e) { exception(e); }
 
 

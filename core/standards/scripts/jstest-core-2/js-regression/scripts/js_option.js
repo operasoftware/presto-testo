@@ -12,7 +12,7 @@ var fullconstructorused = false;
 
 function main( selectObject )
 {
-   try 
+   try
    {
       var cvs = "$Id: js_option.js 4838 2006-01-18 05:59:01Z hallvord $";
       testmodule( "The Option object", cvs );
@@ -23,7 +23,7 @@ function main( selectObject )
       this.tprop = make_tprop( optionObject );
 
       tdef( 'option defined', optionObject );
-   
+
       testcase( "toString" );
 
       if( isExplorer() )
@@ -84,7 +84,7 @@ function testOptionConstructor( optionObject )
    {
       test( 'toString',  optionObject, "[object HTMLOptionElement]" );
    }
-   
+
    if( optionObject.value != "" )
    {
       testOptionProperties( optionObject );
@@ -112,7 +112,7 @@ function testOptionProperties( option )
       tprop( "length", "number" ); // bug #82454
       expect_exception( "Changing read-only value, option.length", Error, function() { option.length = 0; } );
    }
-   
+
    test( "defaultSelected", option.defaultSelected, false );
    test( "selected", option.selected, false );
    test( "text", option.text, "My option text" );
@@ -121,11 +121,11 @@ function testOptionProperties( option )
    option.selected = true;
    option.defaultSelected = true;
    option.value = "New option value";
-   
+
    if( this.fullconstructorused )
    {
-      test_expect_failure( "modified selected", "80987", 
-                           option.selected, true, 
+      test_expect_failure( "modified selected", "80987",
+                           option.selected, true,
                            "Failure only occurs when creating an option object using the full constructor." );
 
       this.fullconstructorused = false;
@@ -134,7 +134,7 @@ function testOptionProperties( option )
    {
       test( "modified selected", option.selected, true );
    }
-   
+
    test( "modified defaultSelected", option.defaultSelected, true );
    test( "modified value", option.value, "New option value" );
 

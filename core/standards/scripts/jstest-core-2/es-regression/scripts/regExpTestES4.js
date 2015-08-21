@@ -1,4 +1,4 @@
-/* -*- mode: c++; tab-width: 4; c-file-style: "bsd" -*- 
+/* -*- mode: c++; tab-width: 4; c-file-style: "bsd" -*-
  *
  * Copyright (C) 2001-2002 Opera Software ASA.  All rights reserved.
  *
@@ -10,7 +10,7 @@ var cvs = "$Id: regExpTestES4.js,v 1.1.2.3 2006/08/24 10:26:52 lth Exp $";
 
 function main()
 {
-   try 
+   try
    {
       printHeader( "RegExp ECMAScript 4 testsuite", cvs );
 
@@ -50,7 +50,7 @@ function testECMAScript4()
 		re_test(/abc/y, "012345abc", 5, 0, null);
 		re_test(/a(?P<fisk>b)c/g, "01abc23", 0, 2, ["abc","b"], null, { fisk: "b" } );
 		re_test(/a(?P<fisk>b)c(?P=fisk)d/g, "01abcbd23", 0, 2, ["abcbd","b"], null, { fisk: "b" });
-		re_test(/a(?P<fisk>b)c(?P=fisk)d(?P<fnys>e)/g, "01abcbde23", 0, 2, 
+		re_test(/a(?P<fisk>b)c(?P=fisk)d(?P<fnys>e)/g, "01abcbde23", 0, 2,
 		        ["abcbde","b","e"], null, { fisk: "b", fnys: "e" });
 		test_deep("call regexp", /abc/("xyabcde"), ["abc"] );
 	}

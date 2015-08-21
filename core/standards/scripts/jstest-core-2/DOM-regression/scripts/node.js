@@ -14,8 +14,8 @@ testcase( "Node constructor exists" );
 
   try {
     tdef( "Node", window.Node );
-  } 
-  catch (e) { 
+  }
+  catch (e) {
     exception( e );
     window.Node = function () { throw( "Do not call me!" ); }
   }
@@ -53,25 +53,25 @@ testcase( "Read-only attributes" );
 
   test( "nodeType #1", the_link.nodeType, Node.ELEMENT_NODE );
   test( "nodeType #2", the_attr.nodeType, Node.ATTRIBUTE_NODE );
-  expect_DOM_exception( "nodeType #3", DOMException.NO_MODIFICATION_ALLOWED_ERR, 
+  expect_DOM_exception( "nodeType #3", DOMException.NO_MODIFICATION_ALLOWED_ERR,
 	                function(){ the_link.nodeType=Node.ATTRIBUTE_NODE; } );
   test( "nodeType #4", document.nodeType, Node.DOCUMENT_NODE );
   test( "nodeType #5", the_frag.nodeType, Node.DOCUMENT_FRAGMENT_NODE );
-  expect_DOM_exception( "nodeType #6", DOMException.NO_MODIFICATION_ALLOWED_ERR, 
+  expect_DOM_exception( "nodeType #6", DOMException.NO_MODIFICATION_ALLOWED_ERR,
 	                function(){ the_frag.nodeType=Node.ATTRIBUTE_NODE; } );
 
   test( "parentNode #1", the_link.parentNode, the_div );
   test( "parentNode #2", the_div.parentNode, the_body );
-  expect_DOM_exception( "parentNode #3", DOMException.NO_MODIFICATION_ALLOWED_ERR, 
+  expect_DOM_exception( "parentNode #3", DOMException.NO_MODIFICATION_ALLOWED_ERR,
 	                function(){ the_link.parentNode=the_body; } );
   test( "parentNode #4", the_frag.parentNode, null );
-  expect_DOM_exception( "parentNode #5", DOMException.NO_MODIFICATION_ALLOWED_ERR, 
+  expect_DOM_exception( "parentNode #5", DOMException.NO_MODIFICATION_ALLOWED_ERR,
 	                function(){ the_frag.parentNode=the_body; } );
   test( "parentNode #6", the_attr.parentNode, null ); // regression test for bug #83652.
 
   test( "parentElement #1", the_link.parentNode, the_link.parentElement );
   test( "parentElement #2", document.firstChild.parentElement, null );
-  expect_DOM_exception( "parentElement #3", DOMException.NO_MODIFICATION_ALLOWED_ERR, 
+  expect_DOM_exception( "parentElement #3", DOMException.NO_MODIFICATION_ALLOWED_ERR,
                         function(){ the_link.parentElement=the_body; } );
 
   w = the_div.childNodes;
@@ -81,7 +81,7 @@ testcase( "Read-only attributes" );
   test( "childNodes #4", w.item(1), the_span );
   test( "childNodes #5", w[1], the_span );
   test( "childNodes #6", the_link.childNodes.length, 0 );
-  expect_DOM_exception( "childNodes #7", DOMException.NO_MODIFICATION_ALLOWED_ERR, 
+  expect_DOM_exception( "childNodes #7", DOMException.NO_MODIFICATION_ALLOWED_ERR,
 	                function(){ the_div.childNodes=new Array(); } );
   if (spoofingExplorer())
   {
@@ -105,30 +105,30 @@ testcase( "Read-only attributes" );
   var the_text = w.item(0);
   tdef( "r/o attributes #6", the_text );
   test( "parentNode #6", the_text.parentNode, the_span );
-  expect_DOM_exception( "parentNode #6", DOMException.NO_MODIFICATION_ALLOWED_ERR, 
+  expect_DOM_exception( "parentNode #6", DOMException.NO_MODIFICATION_ALLOWED_ERR,
 	                function(){ the_text.parentNode=the_body; } );
 
   test( "firstChild #1", the_div.firstChild, the_link );
   test( "firstChild #2", the_link.firstChild, null );
-  expect_DOM_exception( "firstChild #3", DOMException.NO_MODIFICATION_ALLOWED_ERR, 
+  expect_DOM_exception( "firstChild #3", DOMException.NO_MODIFICATION_ALLOWED_ERR,
 	                function(){ the_link.firstChild=null; } );
   test( "firstChild #4", the_attr.firstChild, null );
 
   test( "lastChild #1", the_div.lastChild, the_span );
   test( "lastChild #2", the_link.lastChild, null );
-  expect_DOM_exception( "lastChild #3", DOMException.NO_MODIFICATION_ALLOWED_ERR, 
+  expect_DOM_exception( "lastChild #3", DOMException.NO_MODIFICATION_ALLOWED_ERR,
 	                function(){ the_link.lastChild=null; } );
   test( "lastChild #4", the_attr.lastChild, null );
 
   test( "previousSibling #1", the_span.previousSibling, the_link );
   test( "previousSibling #2", the_link.previousSibling, null );
-  expect_DOM_exception( "previousSibling #3", DOMException.NO_MODIFICATION_ALLOWED_ERR, 
+  expect_DOM_exception( "previousSibling #3", DOMException.NO_MODIFICATION_ALLOWED_ERR,
 	                function(){ the_link.previousSibling=null; } );
   test( "previousSibling #4", the_attr.previousSibling, null );
 
   test( "nextSibling #1", the_link.nextSibling, the_span );
   test( "nextSibling #2", the_span.nextSibling, null );
-  expect_DOM_exception( "nextSibling #3", DOMException.NO_MODIFICATION_ALLOWED_ERR, 
+  expect_DOM_exception( "nextSibling #3", DOMException.NO_MODIFICATION_ALLOWED_ERR,
 	                function(){ the_link.nextSibling=null; } );
   test( "nextSibling #4", the_attr.nextSibling, null );
 
@@ -145,7 +145,7 @@ testcase( "Read-only attributes" );
   test( "attributes #9", the_nodemap.item(2).nodeType, Node.ATTRIBUTE_NODE );
   test( "attributes #10", the_nodemap.item(2).name, "SHAPE" );
   test( "attributes #11", the_nodemap.item(2).value, "rect" );
-  expect_DOM_exception( "attributes #9", DOMException.NO_MODIFICATION_ALLOWED_ERR, 
+  expect_DOM_exception( "attributes #9", DOMException.NO_MODIFICATION_ALLOWED_ERR,
 	                function(){ the_link.attributes=null; } );
   test( "attributes #12", the_attr.attributes, null );
   test( "attributes #13", document.attributes, null );
@@ -153,13 +153,13 @@ testcase( "Read-only attributes" );
   test( "attributes #15", the_text.attributes, null );
 
   test( "ownerDocument #1", the_link.ownerDocument, document );
-  expect_DOM_exception( "ownerDocument #2", DOMException.NO_MODIFICATION_ALLOWED_ERR, 
+  expect_DOM_exception( "ownerDocument #2", DOMException.NO_MODIFICATION_ALLOWED_ERR,
 	                function(){ the_link.ownerDocument=null; } );
 
   // Opera currently returns "http://www.w3.org/TR/REC-html40"
   // Mozilla returns null. Opera should return null.
   test( "namespaceURI #1", the_link.namespaceURI, null );
-  expect_DOM_exception( "namespaceURI #2", DOMException.NO_MODIFICATION_ALLOWED_ERR, 
+  expect_DOM_exception( "namespaceURI #2", DOMException.NO_MODIFICATION_ALLOWED_ERR,
 	                function(){ the_link.namespaceURI=null; } );
 
   test( "localName #1", the_link.localName, "A" );
@@ -167,7 +167,7 @@ testcase( "Read-only attributes" );
   test( "localName #3", the_div.localName, "DIV" );
   test( "localName #4", the_body.localName, "BODY" );
   test( "localName #5", the_attr.localName, "href" );
-  expect_DOM_exception( "localName #6", DOMException.NO_MODIFICATION_ALLOWED_ERR, 
+  expect_DOM_exception( "localName #6", DOMException.NO_MODIFICATION_ALLOWED_ERR,
 	                function(){ the_link.localName=null; } );
   test( "localName #7", the_frag.localName, undefined );
   test( "localName #8", the_text.localName, undefined );
@@ -178,19 +178,19 @@ testcase( "nodeName" );
   // Tests are included for Element, Attr, Text, Document, DocumentFragment
 
   test( "nodeName #1 (element)", the_link.nodeName, "A" );
-  expect_DOM_exception( "nodeName #2 (element)", DOMException.NO_MODIFICATION_ALLOWED_ERR, 
+  expect_DOM_exception( "nodeName #2 (element)", DOMException.NO_MODIFICATION_ALLOWED_ERR,
 	                function(){ the_link.nodeName="foo"; } );
   test( "nodeName #3 (attribute)", the_attr.nodeName, "href" );
-  expect_DOM_exception( "nodeName #4 (attribute)", DOMException.NO_MODIFICATION_ALLOWED_ERR, 
+  expect_DOM_exception( "nodeName #4 (attribute)", DOMException.NO_MODIFICATION_ALLOWED_ERR,
 	                function(){ the_attr.nodeName="foo"; } );
   test( "nodeName #5 (text)", the_text.nodeName, "#text" );
-  expect_DOM_exception( "nodeName #6 (text)", DOMException.NO_MODIFICATION_ALLOWED_ERR, 
+  expect_DOM_exception( "nodeName #6 (text)", DOMException.NO_MODIFICATION_ALLOWED_ERR,
 	                function(){ the_text.nodeName="foo"; } );
   test( "nodeName #7 (document)", document.nodeName, "#document" );
-  expect_DOM_exception( "nodeName #8 (document)", DOMException.NO_MODIFICATION_ALLOWED_ERR, 
+  expect_DOM_exception( "nodeName #8 (document)", DOMException.NO_MODIFICATION_ALLOWED_ERR,
 	                function(){ document.nodeName="foo"; } );
   test( "nodeName #9 (document fragment)", the_frag.nodeName, "#document-fragment" );
-  expect_DOM_exception( "nodeName #10 (document fragment)", DOMException.NO_MODIFICATION_ALLOWED_ERR, 
+  expect_DOM_exception( "nodeName #10 (document fragment)", DOMException.NO_MODIFICATION_ALLOWED_ERR,
 	                function(){ the_frag.nodeName="foo"; } );
 
 testcase( "Read-write attributes" );
@@ -198,7 +198,7 @@ testcase( "Read-write attributes" );
   // Exceptions on write: NO_MODIFICATION_ALLOWED_ERR if read-only node
   // Exceptions on read: DOMSTRING_SIZE_ERR, but cannot be triggered in Opera, we
   //   support strings up to 2^31-1 chars long, longer than available memory
-  
+
   // Exceptions on write: INVALID_CHARACTER_ERR, NO_MODIFICATION_ALLOWED_ERR (if r/o node), NAMESPACE_ERR
   test( "prefix #1", the_link.prefix, null ); 		// FIXME, nees more tests
 
@@ -240,7 +240,7 @@ testcase( "appendChild" );
 
   the_span = the_div.appendChild( the_frag.firstChild );
   tdef( "appendChild #4", the_span );
-  test( "appendChild #5", the_span.childNodes.length, 1 );  
+  test( "appendChild #5", the_span.childNodes.length, 1 );
   test( "appendChild #6", the_span.childNodes.item(0).nodeValue, "A span!" );
   test( "appendChild #7", the_div.lastChild, the_span );
   test( "appendChild #8", the_div.lastChild.localName, "SPAN" );
@@ -303,13 +303,13 @@ testcase( "appendChild" );
   the_div.appendChild();
 
   // exception tests
-  expect_DOM_exception( "appendChild #44", DOMException.HIERARCHY_REQUEST_ERR, 
+  expect_DOM_exception( "appendChild #44", DOMException.HIERARCHY_REQUEST_ERR,
 	                function(){ the_link.appendChild( the_body ); } );
 
-  expect_DOM_exception( "appendChild #45", DOMException.HIERARCHY_REQUEST_ERR, 
+  expect_DOM_exception( "appendChild #45", DOMException.HIERARCHY_REQUEST_ERR,
 				function(){ the_div.appendChild( the_span.attributes.item(0) ); } );
 
-  expect_DOM_exception( "appendChild #46", DOMException.HIERARCHY_REQUEST_ERR, 
+  expect_DOM_exception( "appendChild #46", DOMException.HIERARCHY_REQUEST_ERR,
 				function(){ the_frag.appendChild( the_span.attributes.item(0) ); } );
 
   // regression test for bug #83666.
@@ -562,13 +562,13 @@ testcase( "insertBefore" );
   the_div.insertBefore( the_clone );
 
   // exception tests
-  expect_DOM_exception( "insertBefore #69", undefined, 
+  expect_DOM_exception( "insertBefore #69", undefined,
 	                  function(){ the_frag.firstChild.insertBefore( the_frag.lastChild, the_div.lastChild ); } );
 
-  expect_DOM_exception( "insertBefore #70", DOMException.HIERARCHY_REQUEST_ERR, 
+  expect_DOM_exception( "insertBefore #70", DOMException.HIERARCHY_REQUEST_ERR,
 	                  function(){ the_div.firstChild.insertBefore( the_div, the_div.lastChild ); } );
 
-  expect_DOM_exception( "insertBefore #71", DOMException.NOT_FOUND_ERR, 
+  expect_DOM_exception( "insertBefore #71", DOMException.NOT_FOUND_ERR,
 	                  function(){ the_div.childNodes.item(2).insertBefore( the_div.childNodes.item(2).firstChild, the_div.childNodes.item(5).firstChild ); } );
 
   // now insert two clone elements (with child elements) into the_frag and check exceptions
@@ -585,28 +585,28 @@ testcase( "insertBefore" );
   tdef( "insertBefore #79", the_frag.childNodes );
   test( "insertBefore #80", the_frag.childNodes.length, 2 );
 
-  expect_DOM_exception( "insertBefore #81", DOMException.HIERARCHY_REQUEST_ERR, 
+  expect_DOM_exception( "insertBefore #81", DOMException.HIERARCHY_REQUEST_ERR,
 	                  function(){ the_frag.firstChild.insertBefore( the_frag, the_frag.lastChild ); } );
 
-  expect_DOM_exception( "insertBefore #82", DOMException.NOT_FOUND_ERR, 
+  expect_DOM_exception( "insertBefore #82", DOMException.NOT_FOUND_ERR,
 	                  function(){ the_frag.childNodes.item(0).insertBefore( the_frag.childNodes.item(0).firstChild, the_frag.childNodes.item(1).firstChild ); } );
 
-  expect_DOM_exception( "insertBefore #83", DOMException.NOT_FOUND_ERR, 
+  expect_DOM_exception( "insertBefore #83", DOMException.NOT_FOUND_ERR,
 	                  function(){ the_div.insertBefore( the_frag.firstChild, the_frag.lastChild ); } );
 
-  expect_DOM_exception( "insertBefore #84", DOMException.NOT_FOUND_ERR, 
+  expect_DOM_exception( "insertBefore #84", DOMException.NOT_FOUND_ERR,
 	                  function(){ the_div.insertBefore( the_frag.firstChild, the_frag ); } );
 
   expect_DOM_exception( "insertBefore #85", DOMException.HIERARCHY_REQUEST_ERR,
 				function(){ the_div.insertBefore( the_span.attributes.item(0), the_div.attributes.item(0) ); } );
 
-  expect_DOM_exception( "insertBefore #86", DOMException.HIERARCHY_REQUEST_ERR, 
+  expect_DOM_exception( "insertBefore #86", DOMException.HIERARCHY_REQUEST_ERR,
 				function(){ the_div.insertBefore( the_span.attributes.item(0), null ); } );
 
-  expect_DOM_exception( "insertBefore #87", DOMException.NOT_FOUND_ERR, 
+  expect_DOM_exception( "insertBefore #87", DOMException.NOT_FOUND_ERR,
 				function(){ the_div.insertBefore( the_span, the_div.attributes.item(0) ); } );
 
-  expect_DOM_exception( "insertBefore #88", DOMException.HIERARCHY_REQUEST_ERR, 
+  expect_DOM_exception( "insertBefore #88", DOMException.HIERARCHY_REQUEST_ERR,
 				function(){ the_frag.insertBefore( the_span.attributes.item(0), null ); } );
 
 testcase( "removeChild" );
@@ -641,16 +641,16 @@ testcase( "removeChild" );
   the_div.removeChild();
 
   // exception tests
-  expect_DOM_exception( "removeChild #14", DOMException.NOT_FOUND_ERR, 
+  expect_DOM_exception( "removeChild #14", DOMException.NOT_FOUND_ERR,
 				function(){ the_div.removeChild( the_div.firstChild.attributes.item(0) ); } );
 
-  expect_DOM_exception( "removeChild #15", DOMException.NOT_FOUND_ERR, 
+  expect_DOM_exception( "removeChild #15", DOMException.NOT_FOUND_ERR,
 				function(){ the_frag.removeChild( the_frag.firstChild.attributes.item(0) ); } );
 
-  expect_DOM_exception( "removeChild #16", DOMException.NOT_FOUND_ERR, 
+  expect_DOM_exception( "removeChild #16", DOMException.NOT_FOUND_ERR,
 				function(){ the_div.removeChild( the_frag ); } );
 
-  expect_DOM_exception( "removeChild #17", DOMException.NOT_FOUND_ERR, 
+  expect_DOM_exception( "removeChild #17", DOMException.NOT_FOUND_ERR,
 				function(){ the_span.removeChild( the_div ); } );
 
 testcase( "isSupported" );
@@ -726,7 +726,7 @@ testcase( "replaceChild" );
   tmp = the_frag.replaceChild( null, null );
 
   test( "replaceChild #28", the_link.hasChildNodes(), false );
-  tmp = the_link.replaceChild( the_span.childNodes.firstChild, the_span ); 
+  tmp = the_link.replaceChild( the_span.childNodes.firstChild, the_span );
   test( "replaceChild #29", the_link.hasChildNodes(), false );
 
   tdef( "replaceChild #30", the_frag );
@@ -747,13 +747,13 @@ testcase( "replaceChild" );
   test( "replaceChild #34", divelm.firstChild.nodeValue, "Replaced" );
 
   // exception tests
-  expect_DOM_exception( "replaceChild #35", undefined, 
+  expect_DOM_exception( "replaceChild #35", undefined,
 	                  function(){ the_frag.firstChild.replaceChild( the_div.firstChild, the_frag.firstChild ); } );
 
-  expect_DOM_exception( "replaceChild #36", DOMException.HIERARCHY_REQUEST_ERR, 
+  expect_DOM_exception( "replaceChild #36", DOMException.HIERARCHY_REQUEST_ERR,
 	                  function(){ the_div.firstChild.replaceChild( the_div, the_div.lastChild ); } );
 
-  expect_DOM_exception( "replaceChild #37", DOMException.NOT_FOUND_ERR, 
+  expect_DOM_exception( "replaceChild #37", DOMException.NOT_FOUND_ERR,
 	                  function(){ the_clone.childNodes.item(1).insertBefore( the_clone.childNodes.item(1).childNodes.item(0), the_clone.childNodes.item(1) ); } );
 
 testcase( "normalize" );
@@ -831,7 +831,7 @@ testcase( "MSIE compatibility" );
     test( "all #8", the_div.all(1), the_span );
     // MSIE online docs imply that 'all' is read-only
     // See comments in DOM_Node::PutName for an explanation of why this test fails
-    expect_DOM_exception( "all #9", DOMException.NO_MODIFICATION_ALLOWED_ERR, 
+    expect_DOM_exception( "all #9", DOMException.NO_MODIFICATION_ALLOWED_ERR,
 	                  function(){ the_div.all=new Array(); }, 'Expected to fail - see comments in test script.' );
 
     tdef( "children #1", the_div.children );
@@ -844,12 +844,12 @@ testcase( "MSIE compatibility" );
     test( "children #8", the_div.children(1), the_span );
     // MSIE online docs imply that 'children' is read-only
     // See comments in DOM_Node::PutName for an explanation of why this test fails
-    expect_DOM_exception( "children #9", DOMException.NO_MODIFICATION_ALLOWED_ERR, 
+    expect_DOM_exception( "children #9", DOMException.NO_MODIFICATION_ALLOWED_ERR,
 	                  function(){ the_div.children=new Array(); }, 'Expected to fail - see comments in test script.' );
 
     tdef( "document #1", the_div.document );
     test( "document #2", the_div.document, the_div.ownerDocument );
-    expect_DOM_exception( "document #3", DOMException.NO_MODIFICATION_ALLOWED_ERR, 
+    expect_DOM_exception( "document #3", DOMException.NO_MODIFICATION_ALLOWED_ERR,
 	                  function(){ the_link.document=null; } );
   }
 

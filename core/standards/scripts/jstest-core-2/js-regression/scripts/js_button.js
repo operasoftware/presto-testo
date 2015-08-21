@@ -8,11 +8,11 @@ var tprop;
 
 function main( buttonObject )
 {
-   try 
+   try
    {
       var cvs = "$Id: js_button.js 4838 2006-01-18 05:59:01Z hallvord $";
       testmodule( "The Button object", cvs );
-      
+
       this.tprop = make_tprop( document.theform );
       tprop( "thebutton", "object" );
 
@@ -38,7 +38,7 @@ function main( buttonObject )
    testmodule_finished();
 
 }
-      
+
 
 function testButtonProperties( button )
 {
@@ -46,7 +46,7 @@ function testButtonProperties( button )
    tprop( "name", "string" );
    tprop( "type", "string" );
    tprop( "value", "string" );
-   
+
    test( "form", button.form, document.theform );
    test( "name", button.name, "thebutton" );
    test( "type", button.type, "button" );
@@ -61,7 +61,7 @@ function testButtonProperties( button )
    test( "modified value", button.value, "beta");
 
    button.type = "button";
-   
+
    expect_DOM_exception( "Changing a readonly value, button.form",
                          dom_no_modification_allowed_err,
                          function() { button.form = "something"; } );

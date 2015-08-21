@@ -12,14 +12,14 @@ try {
   var row   = document.getElementById("myRow");
   var cell1 = document.getElementById("myCell");
   var cell2 = document.getElementById("myCell2");
-  
+
   testcase( "object" );
 
   test("class",cell1,"[object HTMLTableCellElement]");
 
   testcase( "properties exists" );
   var cell = cell1;
-  
+
   tdef("cellIndex",cell.cellIndex);
   tdef("align",cell.align);
   tdef("axis",cell.axis);
@@ -35,10 +35,10 @@ try {
   tdef("abbr",cell.abbr);
   tdef("ch",cell.ch);
   tdef("chOff",cell.chOff);
-  
+
   testcase( "read property values" );
   cell = cell1;
-  
+
   test("cellIndex",cell.cellIndex,0);
   test("align",cell.align,"left");
   test("axis",cell.axis,"");
@@ -55,11 +55,11 @@ try {
   var ch = ".";
   if(row.lang == "fr") ch = ",";
   test("ch",row.ch,ch);
-  test("chOff",cell.chOff,""); 
+  test("chOff",cell.chOff,"");
 
   testcase( "properties exists, attributes in use" );
   var cell = cell2;
-  
+
   tdef("cellIndex",cell.cellIndex);
   tdef("align",cell.align);
   tdef("axis",cell.axis);
@@ -78,7 +78,7 @@ try {
 
   testcase( "read property values from attributes" );
   cell = cell2;
- 
+
   test("cellIndex",cell.cellIndex,1);
   test("align",cell.align,"right");
   test("axis",cell.axis,"myCell");
@@ -95,10 +95,10 @@ try {
   test("abbr",cell.abbr,"kort");
   test("ch",cell.ch,"-");
   test("chOff",cell.chOff,"1");
-  
+
   testcase( "properties are writeable" );
   cell = cell2;
-  
+
   cell.align="center";
   test("align",cell.align,"center");
   cell.bgColor="Blue";
@@ -138,7 +138,7 @@ try {
   expect_DOM_exception( "cellIndex", DOMException.NO_MODIFICATION_ALLOWED_ERR, function(){cell.cellIndex = 7;} )
   test("cellIndex",cell.cellIndex,cellIndex);
 	
-    
+
 } catch (e) { exception(e); }
 
 

@@ -13,7 +13,7 @@ try {
 	testcase( "object" );
 
 	test("class",f1,"[object HTMLFieldSetElement]");
-  
+
 	testcase( "attribute object class" );
 
 	test("form",f1.form,"[object HTMLFormElement]");

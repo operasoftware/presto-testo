@@ -1,6 +1,6 @@
 /* -*- mode: C++; tab-width: 4 -*-
  *
- * Functionality and regression tests -- Function objects 
+ * Functionality and regression tests -- Function objects
  *
  * Copyright (C) 2002 Opera Software AS.  All rights reserved.
  *
@@ -20,19 +20,19 @@ x = Function('x','y','return x+y;'),
 	testinstance( "Function('x','y','return x+y;')", x, Function );
 test( "#1 x(1,2)", x(1,2), 3 );
 test( "#1 x.length", x.length, 2 );
- 
+
 x = Function('x,y','return x+y;'),
 	testinstance( "Function('x,y','return x+y;')", x, Function );
 test( "#2 x(1,2)", x(1,2), 3 );
 test( "#2 x.length", x.length, 2 );
- 
+
 x = new Function('x','y','return x+y;'),
 	testinstance( "new Function('x','y','return x+y;')", x, Function );
 test( "#3 x(1,2)", x(1,2), 3 );
 test( "#3 x.length", x.length, 2 );
- 
+
 var testvar = 37;
-function f_returning_Function() 
+function f_returning_Function()
 {
 	var testvar = 42;
 	return new Function( 'return testvar;' );
@@ -140,11 +140,11 @@ testcase( "Decompiler" );
 if (! (isBytecoded() || decompilerRemoved()) )
 {
 test_spaceagnostic( 'fn.toString #1', (function (x) { return 1; }).toString(), "function (x) { return 1; }" );
-test_spaceagnostic( 'fn.toString #2', 
-					(function (x,y) { function foo() { return 2; } return 1; }).toString(), 
-					"function (x,y) { function foo() { return 2; } return 1; }", 
+test_spaceagnostic( 'fn.toString #2',
+					(function (x,y) { function foo() { return 2; } return 1; }).toString(),
+					"function (x,y) { function foo() { return 2; } return 1; }",
 					82063 );
-test_spaceagnostic( 'fn.toString #3', (function () { try {} catch (e) { j=e; } }).toString(), 
+test_spaceagnostic( 'fn.toString #3', (function () { try {} catch (e) { j=e; } }).toString(),
 					"function () { try {} catch (e) { j = e; } }",
 					"#128890" );
 // The following test the parenthesizing logic -- parentheses should be inserted when
@@ -291,12 +291,12 @@ test( "function.arguments content live on #7", x[1].valueOf(), "hei" )
 // Bug in an early implementation, seen on excite.com: only the first call
 // to makeArray had access to makeArray.arguments, the second would fail.
 
-function makeArray() 
+function makeArray()
 {
   this[0] = makeArray.arguments.length;
-  for (i = 0; i<makeArray.arguments.length; i++) 
+  for (i = 0; i<makeArray.arguments.length; i++)
   {
-    this[i+1] = makeArray.arguments[i]; 
+    this[i+1] = makeArray.arguments[i];
   }
 }
 try {
@@ -305,7 +305,7 @@ try {
 }
 catch(e) { exception(e); }
 
-// Bug seen on www.apple.com/switch: with a local variable and more 
+// Bug seen on www.apple.com/switch: with a local variable and more
 // actuals than formals, and both the arguments and activation
 // optimizations in effect, some of the elements of the arguments
 // array were set to undefined.
@@ -335,7 +335,7 @@ test( "#122536: parameters in optimized constructed function", f("hei"), "hei" )
 // property and *then* used for variable instantiation, which I take
 // to mean even instantiating the formals).
 //
-// Test moved to bugs section because it caused an unhandleable stack 
+// Test moved to bugs section because it caused an unhandleable stack
 // overflow.
 
 // Bug #79933: a crash bug, and improper handling of the arguments property
@@ -351,7 +351,7 @@ var expected = [99,1,2,3,3,2,1,99,null];
 var expno = 0;
 
 var x = 0;
-function mf(a,b) 
+function mf(a,b)
 {
   shouldBe("mf.arguments[0]",expected[expno++]);
   x++;
@@ -378,7 +378,7 @@ function argarray_reverse(a,b,c,d)
 }
 argarray_reverse(4,3,2,1);
 
-// Bug #186815: a local declaration of 'arguments' without an initializer 
+// Bug #186815: a local declaration of 'arguments' without an initializer
 // should not override the existing value.
 
 function arguments_declared()
@@ -412,8 +412,8 @@ function hideallmenus_156720() {
 }
 
 var exn = false;
-try { 
-	hideallmenus_156720(10); 
+try {
+	hideallmenus_156720(10);
 }
 catch (e)
 {
@@ -457,7 +457,7 @@ function test_enumerable_arguments_property()
 }
 test( "function.arguments is not enumerable", test_enumerable_arguments_property(), true, 21957 );
 
-/* RTS bug (#213623): scope objects in reified scopes should not 
+/* RTS bug (#213623): scope objects in reified scopes should not
    have prototypes */
 function test_prototypes_in_reified_scopes()
 {

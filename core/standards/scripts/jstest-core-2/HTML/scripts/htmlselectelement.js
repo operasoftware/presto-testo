@@ -20,7 +20,7 @@ try {
   testcase( "object" );
 
   test("class",sel,"[object HTMLSelectElement]");
-  
+
   testcase( "attribute object class" );
 
   test("form",sel.form,"[object HTMLFormElement]");
@@ -42,9 +42,9 @@ try {
     tdef("size",sel.size);
     tdef("tabIndex",sel.tabIndex);
   }
- 
+
   testcase( "read property values" );
-  
+
   test("type",sel.type,"select-one");
   test("selectedIndex",sel.selectedIndex,-1);
   test("value",sel.value,"");
@@ -58,11 +58,11 @@ try {
     test("multiple",sel.multiple,false);
     test("size",sel.size,0);
     test("tabIndex",sel.tabIndex,0);
-  }  
+  }
 
   sel = document.getElementById("mySelect2");
   testcase( "properties exists, attributes in use" );
-  
+
   tdef("type",sel.type);
   tdef("selectedIndex",sel.selectedIndex);
   tdef("value",sel.value);
@@ -76,11 +76,11 @@ try {
   tdef("tabIndex",sel.tabIndex);
   if(is_phase(2))
   {
-  }  
- 
+  }
+
 
   testcase( "read property values from attributes" );
-  
+
   test("type",sel.type,"select-one");
   test("selectedIndex",sel.selectedIndex,1);
   test("value",sel.value,"her");
@@ -92,12 +92,12 @@ try {
   test("name",sel.name,"sel");
   test("size",sel.size,3);
   test("tabIndex",sel.tabIndex,2);
-  
+
 
   testcase( "properties are writeable" );
-  
+
   sel.value = "der";
-  
+
   test("value",sel.value,"der");
   test("selectedIndex",sel.selectedIndex,2);
   sel.selectedIndex = 0;
@@ -118,9 +118,9 @@ try {
   test("tabIndex",sel.tabIndex,1);
   sel.name = "sel2";
   test("name",sel.name,"sel2");
-  
 
- 
+
+
   testcase( "properties are not writeable" );
 
   var sel_type = sel.type;
@@ -130,7 +130,7 @@ try {
 //  test("length",sel.length,2);
   expect_DOM_exception( "form", DOMException.NO_MODIFICATION_ALLOWED_ERR, function(){sel.form = form2;});
   test("form",sel.form,form);
-  var options = sel.options; 
+  var options = sel.options;
   expect_DOM_exception( "options", DOMException.NO_MODIFICATION_ALLOWED_ERR, function(){sel.options = null;});
   test("options",sel.options,options);
   expect_DOM_exception( "options", DOMException.NO_MODIFICATION_ALLOWED_ERR, function(){sel.options = "feil";});
@@ -143,8 +143,8 @@ try {
   opt  = document.createElement ("option");
   cnt  = document.createTextNode("text");
   opt.insertBefore(cnt,null);
-  
-  
+
+
   tdef("add",sel.add);
   tdef("remove",sel.remove);
   tdef("blur",sel.blur);
@@ -159,11 +159,11 @@ try {
 
   var l2 = sel2.length;
   var l  = sel.length;
-  
+
   sel2.add(opt,null);
 //  test("add",sel.length,l+1);
   test("add ..",sel2.length,l2+1);
-  
+
   l2 = sel2.length;
   l  = sel.length;
   sel2.remove(0);
@@ -172,7 +172,7 @@ try {
 
   testcase( "regression test for bug# 43154");
   var sel3 = document.getElementById("sel3");
-  test("value", sel3.value, "elephant"); 
+  test("value", sel3.value, "elephant");
 
 } catch (e) { exception(e); }
 

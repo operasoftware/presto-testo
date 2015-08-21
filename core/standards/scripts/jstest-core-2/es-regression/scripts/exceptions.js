@@ -17,7 +17,7 @@ testcase("Basic catch/throw");
  try {
    zappa=2;
    throw 'Cookies!';
- } 
+ }
  catch (e) {}
  finally {
    zappa=1;
@@ -89,15 +89,15 @@ testcase("Basic catch/throw");
  var tmp = 'failure';
  zappa=10
  try {
-   function f() 
+   function f()
    {
-     try { 
-       if (!--zappa) 
-         throw 'zapata'; 
+     try {
+       if (!--zappa)
+         throw 'zapata';
        else
          f();
-     } 
-     finally { ++zappa; } 
+     }
+     finally { ++zappa; }
    }
    f();
  }
@@ -146,7 +146,7 @@ function return_from_finally()
     return false;
 }
 
-test( "Return from within finally", return_from_finally(), "RIGHT", 167420 );  
+test( "Return from within finally", return_from_finally(), "RIGHT", 167420 );
 
 //////////////////////////////
 //////////////////////////////
@@ -158,7 +158,7 @@ var x = 1;
 // ReferenceError (§8.7.1, §8.7.2)
 
 expect_exception( "ReferenceError #1 (bogus rvalue)", ReferenceError, function(){show(unlikelyvariablename);} );
-  
+
 // Does new of a non-object throw a TypeError (§11.2.2)
 
 expect_exception( "TypeError #1", TypeError, function(){ new x(); } );
@@ -207,12 +207,12 @@ expect_exception( "TypeError #10", TypeError, function(){ show( String( o ) ); }
 // Function.toString on something that isn't a function should
 // throw a type error §15.3.4.2
 
-expect_exception( "TypeError #12", TypeError, 
+expect_exception( "TypeError #12", TypeError,
 		  function()
                   {
-                    var x=new Object(); 
-		    x.toString = Function.prototype.toString; 
-		    x.toString(); 
+                    var x=new Object();
+		    x.toString = Function.prototype.toString;
+		    x.toString();
                   } );
 
 // Function::apply should barf if _this_ is not a function; that
@@ -315,10 +315,10 @@ var third_this = null;
 function A() { this.a = a; }
 function B() { this.b = b; }
 
-function a() 
-{ 
+function a()
+{
   second_this = this;
-  throw new Error(); 
+  throw new Error();
 }
 
 function b(x)
@@ -367,7 +367,7 @@ scopetest();
 // Bug 227582: compiler would crash when compiling this function.
 // A WITH pushed by a catch would be conflated with a WITH pushed
 // by the program, leading to incorrect behavior in the latter case.
-// The bug only appears if there's a TRY..FINALLY without a CATCH, 
+// The bug only appears if there's a TRY..FINALLY without a CATCH,
 // with a surrounding WITH.
 
 var frotz = 42;
@@ -382,7 +382,7 @@ function test227582() {
 	}
     }
 }
-test( "exception handling inside with", test227582() + frotz, "done37", 
+test( "exception handling inside with", test227582() + frotz, "done37",
       "#227582" );
 
 testmodule_finished();

@@ -11,11 +11,11 @@ var tprop;
 
 function main( checkboxObject )
 {
-   try 
+   try
    {
       var cvs = "$Id: js_checkbox.js 4838 2006-01-18 05:59:01Z hallvord $";
       testmodule( "The Checkbox object", cvs );
-      
+
       this.tprop = make_tprop( document.theform );
       tprop( "thecheckbox", "object" );
 
@@ -40,7 +40,7 @@ function main( checkboxObject )
 
    testmodule_finished();
 }
-    
+
 function testCheckboxProperties( checkbox )
 {
    tprop( "defaultChecked", "boolean" );
@@ -49,7 +49,7 @@ function testCheckboxProperties( checkbox )
    tprop( "name", "string" );
    tprop( "type", "string" );
    tprop( "value", "string" );
-   
+
    test( "defaultChecked", checkbox.defaultChecked, true);
    test_s( "checked", checkbox.checked, true);
    test( "form", checkbox.form, document.theform );
