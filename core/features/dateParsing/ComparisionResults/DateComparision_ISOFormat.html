@@ -1,0 +1,230 @@
+<html>
+<head><title>ISO Format</title>
+<link rel="stylesheet" type="text/css" href="../Files/basic.css" />
+</head>
+<body>
+
+<table border="0">
+<tr>
+		<th>Internet Date/Time Format</th>
+		<th>Valid range</th>
+		<th>Invalid range</th>
+</tr>
+   <tr><td>date-fullyear</td><td>4DIGIT ; 0000-9999</td><td>1DIGIT, 2DIGIT, 3DIGIT ; 0-9, 00-99,000-999</td></tr>
+   <tr><td>date-month</td><td>2DIGIT  ; 01-12 </td><td>2DIGIT, 1DIGIT ; 13-99 and 00, 0-9 </td></tr>
+   <tr><td>date-mday</td><td>2DIGIT  ; 01-28, 01-29, 01-30, 01-31 based on month/year </td><td>2DIGIT,1DIGIT ; 32-99 and 00, 0-9  </td></tr>
+   <tr><td>time-hour</td><td>2DIGIT  ; 00-23 </td><td>2DIGIT, 1DIGIT  ; 24-99, 0-9 </td></tr>
+   <tr><td>time-minute</td><td>2DIGIT  ; 00-59 </td><td>2DIGIT,1DIGIT  ; 60-99, 0-9 </td></tr>
+   <tr><td>time-second</td><td>2DIGIT  ; 00-58, 00-59, 00-60 based on leap second rules </td><td>2DIGIT,1DIGIT  ; 60-99, 0-9</td></tr>
+   <tr><td>time-secfrac</td><td>"." 1*DIGIT </td></tr>
+   <tr><td>time-numoffset</td><td>("+" / "-") time-hour ":" time-minute </td></tr>
+   <tr><td>time-offset</td><td>"Z" / time-numoffset </td></tr>
+</table>
+<BR/><BR/><BR/>
+<table>
+<caption>Date parsing ISO Format VALID range</caption>
+
+<tr>
+		<th>date</th>
+		<th>More examples</th>
+		<th>Opera(new Date("date"),getYear)</th>
+		<th>Firefox(new Date("date"), getYear)</th>
+		<th>IE(new Date("date"), getYear)</th>
+		<th>Safari(new Date("date"),getYear)</th> 
+</tr>
+<tr class="pass"><td>YYYY-MM-DD <BR/><i>0001-02-02<BR/>0069-04-17<BR/>0070-08-23<BR/></i></td>
+<td><a href="TCsISOFormat/TC_1.html">TC</a></td>
+	<td>Returns Date. But if MM={1,2,3,10,11,12} <BR/>or (MM=3 and DD=31)<BR/>returns Date GMT+1 <BR/>else returns Date GMT+2 <BR/><i>
+			Fri Feb 02 0001 00:00:00 GMT+0100,1<BR/>
+			Wed Apr 17 0069 00:00:00 GMT+0200,69<BR/>
+			Sat Aug 23 0070 00:00:00 GMT+0200,70<BR/></i>
+	</td>
+	<td>Returns ("Invalid date","NaN")" </td> 
+	<td>Returns different Date from Opera <BR/>only if 0000<=YYYY<=0069 <BR/><i>
+			Thu Jan 2 00:00:00 UTC+0100 1902,2<BR/>
+			Mon Sep 4 00:00:00 UTC+0200 1922,22<BR/>
+			NaN,NaN<BR/></i>
+	</td>
+	<td>Returns ("Invalid date","NaN")" </td> 
+</tr>
+<tr class="fail"><td>YYYY-MM-DDTHH:MMZ<BR/></td>
+<td><a href="TCsISOFormat/TC_2.html">TC</a></td>
+	<td>Returns Date without Time!</td>
+	<td>Returns ("Invalid date","NaN")" </td>
+	<td>Returns ("NaN","NaN") </td>
+	<td>Returns ("Invalid date","NaN")" </td>
+</tr>
+<tr class="fail"><td>YYYY-MM-DDTHH:MM+hh:mm</td>
+<td><a href="TCsISOFormat/TC_3.html">TC</a></td>
+	<td>Returns Date without Time!</td>
+	<td>Returns ("Invalid date","NaN")" </td>
+	<td>Returns ("NaN","NaN") </td>
+	<td>Returns ("Invalid date","NaN")" </td>
+</tr>
+<tr class="fail"><td>YYYY-MM-DDTHH:MM-hh:mm</td>
+<td><a href="TCsISOFormat/TC_4.html">TC</a></td>
+	<td>Returns Date without Time!</td>
+	<td>Returns ("Invalid date","NaN")" </td>
+	<td>Returns ("NaN","NaN") </td>
+	<td>Returns ("Invalid date","NaN")" </td>
+</tr>
+<tr class="fail"><td>YYYY-MM-DDTHH:MM:SSZ</td>
+<td><a href="TCsISOFormat/TC_5.html">TC</a></td>
+<td>Returns Date without Time!</td>
+	<td>Returns ("Invalid date","NaN")" </td>
+	<td>Returns ("NaN","NaN") </td>
+	<td>Returns ("Invalid date","NaN")" </td>
+</tr>
+<tr class="fail"><td>YYYY-MM-DDTHH:MM:SS+hh:mm</td>
+	<td><a href="TCsISOFormat/TC_6.html">TC</a></td>
+	<td>Returns Date without Time!</td>
+	<td>Returns ("Invalid date","NaN")" </td>
+	<td>Returns ("NaN","NaN") </td>
+	<td>Returns ("Invalid date","NaN")" </td>
+</tr>
+<tr class="fail"><td>YYYY-MM-DDTHH:MM:SS-hh:mm</td>
+	<td><a href="TCsISOFormat/TC_7.html">TC</a></td>
+	<td>Returns Date without Time!</td>
+	<td>Returns ("Invalid date","NaN")" </td>
+	<td>Returns ("NaN","NaN") </td>
+	<td>Returns ("Invalid date","NaN")" </td>
+</tr>
+<tr class="fail"><td>YYYY-MM-DDTHH:MM:SS.sZ</td>
+<td><a href="TCsISOFormat/TC_8.html">TC</a></td>
+	<td>Returns Date without Time!</td>
+	<td>Returns ("Invalid date","NaN")" </td>
+	<td>Returns ("NaN","NaN") </td>
+	<td>Returns ("Invalid date","NaN")" </td>
+</tr>
+<tr class="fail"><td>YYYY-MM-DDTHH:MM:SS.s+hh:mm</td>
+<td><a href="TCsISOFormat/TC_9.html">TC</a></td>
+	<td>Returns Date without Time!</td>
+	<td>Returns ("Invalid date","NaN")" </td>
+	<td>Returns ("NaN","NaN") </td>
+	<td>Returns ("Invalid date","NaN")" </td>
+</tr>
+<tr class="fail"><td>YYYY-MM-DDTHH:MM:SS.s-hh:mm</td>
+<td><a href="TCsISOFormat/TC_10.html">TC</a></td>
+<td>Returns Date without Time!</td>
+	<td>Returns ("Invalid date","NaN")" </td>
+	<td>Returns ("NaN","NaN") </td>
+	<td>Returns ("Invalid date","NaN")" </td>
+</tr>
+</table>
+
+<BR/><BR/><BR/>
+<table>
+<caption>Date parsing ISO Format INVALID range. Opera should return Invalid Date(NaN) in all cases</caption>
+
+<tr>
+		<th>invalid date extended format</th>
+		<th>More examples</th>
+		<th>Opera(new Date("date"),getYear)</th>
+		<th>Firefox(new Date("date"), getYear)</th>
+		<th>IE(new Date("date"), getYear)</th>
+		<th>Safari(new Date("date"),getYear)</th> 
+</tr>
+<tr class="fail"><td>Y-MM-DD <BR/> 0<=Y<=9</td>
+<td><a href="TCsISOFormat/TC_11.html">TC</a></td>
+	<td>Returns Date where returned year=1900+DD,returned month=MM and returned day =Y</td>
+	<td>Returns ("Invalid date","NaN")" </td> 
+	<td>Returns Date where returned year=1900+DD, returned month=Y and returned day =MM</i></td>
+	<td>Returns ("Invalid date","NaN")" </td> 
+</tr>
+<tr class="fail"><td>YY-MM-DD<BR/> 00<=YY<=99</td>
+<td><a href="TCsISOFormat/TC_12.html">TC</a></td>
+	<td>Returns Date where returned year=1900 + DD + (if YY>32 then +(YY-31/30) else + 0),returned month=MM and returned day=YY</td>
+	<td>Returns ("Invalid date","NaN")" </td> 
+	<td>Returns Date only if 00<=YY<=69 else returns NaN. <BR/>Retruned date is year=1900+DD+((YY-12)-12 ... until YY<12), month=(YY<12), day=MM</td>
+	<td>Returns ("Invalid date","NaN")" </td> 
+</tr>
+<tr class="fail"><td>YYY-MM-DD<BR/> 000<=YYY<=999</td>
+<td><a href="TCsISOFormat/TC_13.html">TC</a></td>
+	<td>Returns ("NaN","NaN")</td>
+	<td>Returns ("Invalid date","NaN")" </td> 
+	<td>Returns Date only if 000<=YYY<=069 else returns NaN. Retruned date is year=1900+DD+((YY-12)-12 ... until YY<12), month=(YY<12), day=MM</td>
+	<td>Returns ("Invalid date","NaN")" </td> 
+</tr>
+<tr class="fail"><td>YYYY-M-DD<BR/> 0<=M<=9</td>
+<td><a href="TCsISOFormat/TC_14.html">TC</a></td>
+	<td>Returns Date. But if the M=0, the returned date is year=year-1, month=Dec, day=DD</td>
+	<td>Returns ("Invalid date","NaN")" </td> 
+	<td>Returns Date only if 0000<=YY<=0069 else returns NaN. <BR/>Retruned date is year=1900+DD+((YY-12)-12 ... until YY<12), month=(YY<12), day=M</td>
+	<td>Returns ("Invalid date","NaN")" </td> 
+</tr>
+<tr class="fail"><td>YYYY-MM-DD<BR/> 13<=MM<=99 and MM=00</td>
+<td><a href="TCsISOFormat/TC_15.html">TC</a></td>
+	<td>Returns Date where returned year=YYYY+((MM-12)-12 ... until M<12), returned month=MM<12 and returned day=DD</td>
+	<td>Returns ("Invalid date","NaN")" </td> 
+	<td>Returns Date only if 00<=YY<=69 else returns NaN. <BR/>Retruned date is year=1900+DD+((YY-12)-12 ... until YY<12)+MM-30, month=(YY<12), day=MM<32</td>
+	<td>Returns ("Invalid date","NaN")" </td> 
+</tr>
+<tr class="fail"><td>YYYY-MM-D <BR/> 0<=D<=9</td>
+<td><a href="TCsISOFormat/TC_16.html">TC</a></td>
+	<td>Returns Date. But if the D=0, the returned date is year=YYYY, month=MM, day=the last day of the given month</td>
+	<td>Returns ("Invalid date","NaN")" </td> 
+	<td>Returns Date only if 00<=YY<=69 else returns NaN. <BR/>Retruned date is year=1900+DD+((YY-12)-12 ... until YY<12), month=(YY<12), day=MM</td>
+	<td>Returns ("Invalid date","NaN")" </td> 
+</tr>
+<tr class="fail"><td>YYYY-MM-DD<BR/> 32<=DD<=99 and DD=00</td>
+<td><a href="TCsISOFormat/TC_17.html">TC</a></td>
+	<td>Returns Date where year=YYYY, month=MM+(DD-30),day=(DD-30)</td>
+	<td>Returns ("Invalid date","NaN")" </td> 
+	<td>Returns Date only if 00<=YY<=69 else returns NaN. <BR/>Retruned date is year=1900+DD+((YY-12)-12 ... until YY<12), month=(YY<12), day=MM</td>
+	<td>Returns ("Invalid date","NaN")" </td> 
+</tr>
+
+<tr class="fail"><td>YYYY-MM-DDTH:MMZ<BR/> 0<=H<=9</td>
+<td><a href="TCsISOFormat/TC_18.html">TC</a></td>
+	<td>Returns Date without Time</td>
+	<td>Returns ("Invalid date","NaN")" </td> 
+	<td>Returns ("NaN","NaN") <BR/><i> NaN, NaN</i><BR/><i> NaN, NaN</i></td>
+	<td>Returns ("Invalid date","NaN")" </td> 
+</tr>
+<tr class="fail"><td>YYYY-MM-DDTHH:MMZ<BR/> 24<=HH<=99</td>
+<td><a href="TCsISOFormat/TC_19.html">TC</a></td>
+	<td>Returns Date without Time</i></td>
+	<td>Returns ("Invalid date","NaN")" </td> 
+	<td>Returns ("NaN","NaN") <BR/><i> NaN, NaN</i><BR/><i> NaN, NaN</i></td>
+	<td>Returns ("Invalid date","NaN")" </td> 
+</tr>
+<tr class="fail"><td>YYYY-MM-DDTHH:MZ<BR/> 0<=M<=9</td>
+<td><a href="TCsISOFormat/TC_20.html">TC</a></td>
+	<td>Returns Date without Time</td>
+	<td>Returns ("Invalid date","NaN")" </td> 
+	<td>Returns ("NaN","NaN") <BR/><i> NaN, NaN</i><BR/><i> NaN, NaN</i></td>
+	<td>Returns ("Invalid date","NaN")" </td> 
+</tr>
+<tr class="fail"><td>YYYY-MM-DDTHH:MMZ<BR/> 60<=MM<=99</td>
+<td><a href="TCsISOFormat/TC_21.html">TC</a></td>
+	<td>Returns Date without Time</td>
+	<td>Returns ("Invalid date","NaN")" </td> 
+	<td>Returns ("NaN","NaN") <BR/><i> NaN, NaN</i><BR/><i> NaN, NaN</i></td>
+	<td>Returns ("Invalid date","NaN")" </td> 
+</tr>
+<tr class="fail"><td>YYYY-MM-DDTHH:MM:SZ <BR/> 0<=S<=9</td>
+<td><a href="TCsISOFormat/TC_22.html">TC</a></td>
+	<td>Returns Date without Time</td>
+	<td>Returns ("Invalid date","NaN")" </td> 
+	<td>Returns ("NaN","NaN") <BR/><i> NaN, NaN</i><BR/><i> NaN, NaN</i></td>
+	<td>Returns ("Invalid date","NaN")" </td> 
+</tr>
+<tr class="fail"><td>YYYY-MM-DDTHH:MM:SSZ<BR/> 60<=SS<=99</td>
+<td><a href="TCsISOFormat/TC_23.html">TC</a></td>
+	<td>Returns Date without Time</td>
+	<td>Returns ("Invalid date","NaN")" </td> 
+	<td>Returns ("NaN","NaN") <BR/><i> NaN, NaN</i><BR/><i> NaN, NaN</i></td>
+	<td>Returns ("Invalid date","NaN")" </td> 
+</tr>
+<tr class="fail"><td>YYYY-MM-DDTHH:MM+/-hh:mm <BR/> with invalid time zone</td>
+<td><a href="TCsISOFormat/TC_24.html">TC</a></td>
+	<td>Returns Date without Time</td>
+	<td>Returns ("Invalid date","NaN")" </td> 
+	<td>Returns ("NaN","NaN") <BR/><i> NaN, NaN</i><BR/><i> NaN, NaN</i></td>
+	<td>Returns ("Invalid date","NaN")" </td> 
+</tr>
+
+</table>
+</body>
+</html>
+

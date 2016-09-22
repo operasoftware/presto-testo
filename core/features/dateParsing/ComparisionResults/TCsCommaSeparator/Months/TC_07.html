@@ -1,0 +1,94 @@
+<!DOCTYPE HTML PUBLIC "  -//W3C//DTD HTML 4.01//EN">
+<html><head>
+	<title> Date parsing </title>
+</head>
+<body>
+
+	<script type="text/javascript">
+	
+	function test(){
+	var date;
+	var year;
+	var i;
+	var dateStrings = [ 
+	"january,00,00",
+	"january,0,0",
+	"january,01,01",
+	"january,1,1",
+	"february,25,29",
+	"february,31,20",
+	"march,11,19",
+	"april,29,18",
+	"may,48,16",
+	"january,70,99",
+	"january,69,00",
+	"january,69,10",
+	"january,69,20",
+	"january,69,30",
+	"january,69,40",
+	"january,69,50",
+	"january,69,60",
+	"july,67,10",
+	"september,69,45",
+	"october,70,85",
+	"december,10,10",
+	"december,38,10",
+	"december,75,99",
+	"december,99,99",
+	"january,69,70",
+	"january,69,80",
+	"january,69,90",
+	"january,69,99",
+	"january,68,99",
+	"july,69,99",
+	"june,63,99",
+	"june,50,99",
+	"june,40,99",
+	"june,01,99",
+	"january,01,99",
+	"october,70,0",
+	"october,70,00",
+	"october,70,01",
+	"october,70,69",
+	"december,79,10",
+	"december,90,10",
+	"december,69,70",
+	"december,70,69",
+	"december,99,69",
+	];
+	
+	document.write("<TABLE border=1>");
+	document.write("<TR>");
+	document.write("<TD>");
+	document.write("Date example");
+	document.write("</TD>");
+	document.write("<TD>");
+	document.write("new Date(\"Date example\")");
+	document.write("</TD>");
+	document.write("<TD>");
+	document.write("new Date(\"Date example\").getYear()");
+	document.write("</TD>");
+	document.write("</TR>");
+  for (i = 0; i < dateStrings.length; i++)
+  {
+    date = new Date(dateStrings[i]);
+    year = date.getYear();
+	document.write("<TR>");
+	document.write("<TD>");
+	document.write(dateStrings[i]);
+	document.write("</TD>");
+	document.write("<TD>");
+	document.write(date);
+	document.write("</TD>");
+	document.write("<TD>");
+	document.write(year);
+	document.write("</TD>");
+	document.write("</TR>");
+  }
+  document.write("</TABLE>");
+ }
+	window.onload=test;
+	</script>
+
+</body></html>
+

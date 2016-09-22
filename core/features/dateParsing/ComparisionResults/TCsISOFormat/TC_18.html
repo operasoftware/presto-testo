@@ -1,0 +1,86 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html><head>
+	<title> Date parsing </title>
+</head>
+<body>
+
+	<script type="text/javascript">
+	
+	function test(){
+	var date;
+	var year;
+	var i;
+	var dateStrings = [ 
+	"0000-01-01T0:00Z",
+	"0000-01-01T3:59Z",
+	"0001-02-02T1:01Z",
+	"0009-03-03T2:02Z",
+	"0010-04-04T3:15Z",
+	"0020-12-13T4:09Z",
+	"0030-04-18T5:19Z",
+	"0069-04-17T6:28Z",
+	"0070-08-23T7:29Z",
+	"0099-05-05T8:45Z",
+	"0100-06-09T9:08Z",
+	"0999-07-10T1:09Z",
+	"1000-08-13T2:11Z",
+	"1000-01-13T3:00Z",
+	"2008-09-14T4:01Z",
+	"2008-09-31T5:22Z",
+	"2008-02-28T6:41Z",
+	"2008-02-29T7:38Z",
+	"2008-02-30T8:50Z",
+	"2008-02-31T9:43Z",
+	"2008-03-15T0:42Z",
+	"2008-03-30T1:15Z",
+	"2008-03-31T2:16Z",
+	"2008-01-31T3:17Z",
+	"2008-04-11T4:30Z",
+	"2008-04-11T5:00Z",
+	"2009-02-28T6:19Z",
+	"2009-02-29T7:54Z",
+	"2009-02-30T8:34Z",
+	"2009-02-31T9:17Z",
+	"2009-10-30T0:32Z",
+	"2009-10-31T3:58Z",
+	"2009-03-31T2:00Z",
+	"5000-11-30T1:57Z",
+	"5000-11-31T4:46Z",
+	"9999-12-31T5:59Z",
+	"9999-12-31T6:00Z",
+    ];
+	document.write("<TABLE border=1>");
+	document.write("<TR>");
+	document.write("<TD>");
+	document.write("Date example");
+	document.write("</TD>");
+	document.write("<TD>");
+	document.write("new Date(\"Date example\")");
+	document.write("</TD>");
+	document.write("<TD>");
+	document.write("new Date(\"Date example\").getYear()");
+	document.write("</TD>");
+	document.write("</TR>");
+  for (i = 0; i < dateStrings.length; i++)
+  {
+    date = new Date(dateStrings[i]);
+    year = date.getYear();
+	document.write("<TR>");
+		document.write("<TD>");
+			document.write(dateStrings[i]);
+		document.write("</TD>");
+		document.write("<TD>");
+			document.write(date);
+		document.write("</TD>");
+		document.write("<TD>");
+			document.write(year);
+		document.write("</TD>");
+	document.write("</TR>");
+  }
+  document.write("</TABLE>");
+ }
+	window.onload=test;
+	</script>
+
+</body></html>
+

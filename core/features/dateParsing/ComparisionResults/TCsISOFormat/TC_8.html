@@ -1,0 +1,86 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html><head>
+	<title> Date parsing </title>
+</head>
+<body>
+
+	<script type="text/javascript">
+	
+	function test(){
+	var date;
+	var year;
+	var i;
+	var dateStrings = [ 
+	"0000-01-01T00:00:00.0Z",
+	"0000-01-01T23:59:59.9999Z",
+	"0001-02-02T01:00:58.0000Z",
+	"0009-03-03T02:02:02.15Z",
+	"0010-04-04T03:15:03.16Z",
+	"0020-12-13T04:09:04.17Z",
+	"0030-04-18T05:19:58.18Z",
+	"0069-04-17T06:28:06.19Z",
+	"0070-08-23T07:29:07.20Z",
+	"0099-05-05T08:45:08.21Z",
+	"0100-06-09T09:08:09.23Z",
+	"0999-07-10T10:09:10.24Z",
+	"1000-08-13T11:11:11.50Z",
+	"1000-01-13T12:00:12.100Z",
+	"2008-09-14T12:01:13.999Z",
+	"2008-09-31T13:22:14.6666Z",
+	"2008-02-28T14:41:15.4567Z",
+	"2008-02-29T15:38:16.000Z",
+	"2008-02-30T16:50:17.3456Z",
+	"2008-02-31T17:43:18.6789Z",
+	"2008-03-15T18:42:19.01Z",
+	"2008-03-30T19:15:20.0001Z",
+	"2008-03-31T20:16:21.001Z",
+	"2008-01-31T21:17:22.09Z",
+	"2008-04-11T22:30:29.0009Z",
+	"2008-04-11T00:00:30.0099Z",
+	"2009-02-28T23:19:45.0999Z",
+	"2009-02-29T12:54:46.1234Z",
+	"2009-02-30T15:34:50.8790Z",
+	"2009-02-31T18:17:51.333Z",
+	"2009-10-30T19:32:38.2345Z",
+	"2009-10-31T23:58:40.3423Z",
+	"2009-03-31T23:00:49.5678Z",
+	"5000-11-30T13:57:21.9999Z",
+	"5000-11-31T22:46:41.1234Z",
+	"9999-12-31T23:59:59.5678Z",
+	"9999-12-31T00:00:00.0000Z",
+    ];
+	document.write("<TABLE border=1>");
+	document.write("<TR>");
+	document.write("<TD>");
+	document.write("Date example");
+	document.write("</TD>");
+	document.write("<TD>");
+	document.write("new Date(\"Date example\")");
+	document.write("</TD>");
+	document.write("<TD>");
+	document.write("new Date(\"Date example\").getYear()");
+	document.write("</TD>");
+	document.write("</TR>");
+  for (i = 0; i < dateStrings.length; i++)
+  {
+    date = new Date(dateStrings[i]);
+    year = date.getYear();
+	document.write("<TR>");
+		document.write("<TD>");
+			document.write(dateStrings[i]);
+		document.write("</TD>");
+		document.write("<TD>");
+			document.write(date);
+		document.write("</TD>");
+		document.write("<TD>");
+			document.write(year);
+		document.write("</TD>");
+	document.write("</TR>");
+  }
+  document.write("</TABLE>");
+ }
+	window.onload=test;
+	</script>
+
+</body></html>
+

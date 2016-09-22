@@ -1,0 +1,210 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+  <head>
+    <title>Date parsing: AM/PM</title>
+  </head>
+<body>
+<script type="text/javascript" src="helpFiles/verify.js"></script>
+
+<pre>
+<script>
+
+start_group("AM/PM without space");
+test_date("1/1/70 12:00AM", "Thu Jan 01", "1970", "00:00:00 GMT+0100", "1970");
+test_date("1/1/70 12:00PM", "Thu Jan 01", "1970", "12:00:00 GMT+0100", "1970");
+test_date("12:00AM 1/1/70", "Thu Jan 01", "1970", "00:00:00 GMT+0100", "1970");
+test_date("12:00PM 1/1/70", "Thu Jan 01", "1970", "12:00:00 GMT+0100", "1970");
+
+start_group("AM/PM with space");
+test_date("1/1/70 12:00 AM", "Thu Jan 01", "1970", "00:00:00 GMT+0100", "1970");
+test_date("1/1/70 12:00 PM", "Thu Jan 01", "1970", "12:00:00 GMT+0100", "1970");
+test_date("12:00 AM 1/1/70", "Thu Jan 01", "1970", "00:00:00 GMT+0100", "1970");
+test_date("12:00 PM 1/1/70", "Thu Jan 01", "1970", "12:00:00 GMT+0100", "1970");
+
+start_group("Different PM/AM position");
+test_date("1/1/70 AM 06:00", "Thu Jan 01", "1970", "06:00:00 GMT+0100", "1970");
+test_date("Thu Jan 01 1970 10:00 PM GMT+0100 ", "Thu Jan 01", "1970", "22:00:00 GMT+0100", "1970");
+test_date("Thu Jan 01 1970 10:00 GMT+0100 PM ", "Thu Jan 01", "1970", "22:00:00 GMT+0100", "1970");
+test_date("Thu Jan 01 1970 10:PM07 GMT+0100 ", "NaN", "", "", "NaN");
+test_date("Thu Jan 01 1970 PM 10:00 GMT+0100 ", "Thu Jan 01", "1970", "22:00:00 GMT+0100", "1970");
+test_date("Thu Jan 01 1970PM 10:00 GMT+0100 ", "Thu Jan 01", "1970", "22:00:00 GMT+0100", "1970");
+test_date("Thu Jan 01 1970 PM 10:00 GMT+0100 ", "Thu Jan 01", "1970", "22:00:00 GMT+0100", "1970");
+test_date("Thu Jan 01 PM 1970 10:00 GMT+0100 ", "Thu Jan 01", "1970", "22:00:00 GMT+0100", "1970");
+test_date("Thu Jan PM 01 1970 10:00 GMT+0100 ", "Thu Jan 01", "1970", "22:00:00 GMT+0100", "1970");
+test_date("Thu PM Jan 01 1970 10:00 GMT+0100 ", "Thu Jan 01", "1970", "22:00:00 GMT+0100", "1970");
+test_date("PM Thu Jan 01 1970 10:00 GMT+0100 ", "Thu Jan 01", "1970", "22:00:00 GMT+0100", "1970");
+test_date("1/1/70 01: PM", "Thu Jan 01", "1970", "13:00:00 GMT+0100", "1970");
+test_date("1/1/70 PM 06:00", "Thu Jan 01", "1970", "18:00:00 GMT+0100", "1970");
+test_date("PM 1/1/70 06:00", "Thu Jan 01", "1970", "18:00:00 GMT+0100", "1970");
+test_date("PM 06:00 1/1/70 ", "Thu Jan 01", "1970", "18:00:00 GMT+0100", "1970");
+test_date("01/12/2009 23:00:00 GMTPM-0100", "Tue Jan 13", "2009", "01:00:00 GMT+0100", "2009");
+
+start_group("Boundary Time with PM/AM");
+test_date("1/1/70 00:00 PM", "Thu Jan 01", "1970", "12:00:00 GMT+0100", "1970");
+test_date("1/1/70 01:00 PM", "Thu Jan 01", "1970", "13:00:00 GMT+0100", "1970");
+test_date("1/1/70 02:00 PM", "Thu Jan 01", "1970", "14:00:00 GMT+0100", "1970");
+test_date("1/1/70 03:00 PM", "Thu Jan 01", "1970", "15:00:00 GMT+0100", "1970");
+test_date("1/1/70 04:00 PM", "Thu Jan 01", "1970", "16:00:00 GMT+0100", "1970");
+test_date("1/1/70 05:00 PM", "Thu Jan 01", "1970", "17:00:00 GMT+0100", "1970");
+test_date("1/1/70 06:00 PM", "Thu Jan 01", "1970", "18:00:00 GMT+0100", "1970");
+test_date("1/1/70 07:00 PM", "Thu Jan 01", "1970", "19:00:00 GMT+0100", "1970");
+test_date("1/1/70 08:00 PM", "Thu Jan 01", "1970", "20:00:00 GMT+0100", "1970");
+test_date("1/1/70 09:00 PM", "Thu Jan 01", "1970", "21:00:00 GMT+0100", "1970");
+test_date("1/1/70 10:00 PM", "Thu Jan 01", "1970", "22:00:00 GMT+0100", "1970");
+test_date("1/1/70 11:00 PM", "Thu Jan 01", "1970", "23:00:00 GMT+0100", "1970");
+test_date("1/1/70 12:00 PM", "Thu Jan 01", "1970", "12:00:00 GMT+0100", "1970");
+test_date("1/1/70 00:00 AM", "Thu Jan 01", "1970", "00:00:00 GMT+0100", "1970");
+test_date("1/1/70 01:00 AM", "Thu Jan 01", "1970", "01:00:00 GMT+0100", "1970");
+test_date("1/1/70 02:00 AM", "Thu Jan 01", "1970", "02:00:00 GMT+0100", "1970");
+test_date("1/1/70 03:00 AM", "Thu Jan 01", "1970", "03:00:00 GMT+0100", "1970");
+test_date("1/1/70 04:00 AM", "Thu Jan 01", "1970", "04:00:00 GMT+0100", "1970");
+test_date("1/1/70 05:00 AM", "Thu Jan 01", "1970", "05:00:00 GMT+0100", "1970");
+test_date("1/1/70 06:00 AM", "Thu Jan 01", "1970", "06:00:00 GMT+0100", "1970");
+test_date("1/1/70 07:00 AM", "Thu Jan 01", "1970", "07:00:00 GMT+0100", "1970");
+test_date("1/1/70 08:00 AM", "Thu Jan 01", "1970", "08:00:00 GMT+0100", "1970");
+test_date("1/1/70 09:00 AM", "Thu Jan 01", "1970", "09:00:00 GMT+0100", "1970");
+test_date("1/1/70 10:00 AM", "Thu Jan 01", "1970", "10:00:00 GMT+0100", "1970");
+test_date("1/1/70 11:00 AM", "Thu Jan 01", "1970", "11:00:00 GMT+0100", "1970");
+test_date("1/1/70 12:00 AM", "Thu Jan 01", "1970", "00:00:00 GMT+0100", "1970");
+
+
+start_group("Out of boundary Time with PM");
+test_date("1/1/70 13:00 PM", "NaN", "", "", "NaN");
+test_date("1/1/1999 13:30 PM", "NaN", "", "", "NaN");
+test_date("1/1/70 14:00 PM", "NaN", "", "", "NaN");
+test_date("1/1/70 15:00 PM", "NaN", "", "", "NaN");
+test_date("1/1/70 16:00 PM", "NaN", "", "", "NaN");
+test_date("1/1/70 17:00 PM", "NaN", "", "", "NaN");
+test_date("1/1/70 18:00 PM", "NaN", "", "", "NaN");
+test_date("1/1/70 19:00 PM", "NaN", "", "", "NaN");
+test_date("1/1/70 20:00 PM", "NaN", "", "", "NaN");
+test_date("1/1/70 21:00 PM", "NaN", "", "", "NaN");
+test_date("1/1/70 22:00 PM", "NaN", "", "", "NaN");
+test_date("1/1/70 23:00 PM", "NaN", "", "", "NaN");
+test_date("1/1/70 24:00 PM", "NaN", "", "", "NaN");
+test_date("1/1/70 25:00 PM", "NaN", "", "", "NaN");
+test_date("1/1/70 24:00 AM", "NaN", "", "", "NaN");
+test_date("1/1/70 25:00 AM", "NaN", "", "", "NaN");
+
+start_group("Out of boundary Time with AM");
+test_date("1/1/70 13:00 AM", "Thu Jan 01", "1970", "13:00:00 GMT+0100", "1970");
+test_date("1/1/70 14:00 AM", "Thu Jan 01", "1970", "14:00:00 GMT+0100", "1970");
+test_date("1/1/70 15:00 AM", "Thu Jan 01", "1970", "15:00:00 GMT+0100", "1970");
+test_date("1/1/70 16:00 AM", "Thu Jan 01", "1970", "16:00:00 GMT+0100", "1970");
+test_date("1/1/70 17:00 AM", "Thu Jan 01", "1970", "17:00:00 GMT+0100", "1970");
+test_date("1/1/70 18:00 AM", "Thu Jan 01", "1970", "18:00:00 GMT+0100", "1970");
+test_date("1/1/70 19:00 AM", "Thu Jan 01", "1970", "19:00:00 GMT+0100", "1970");
+test_date("1/1/70 20:00 AM", "Thu Jan 01", "1970", "20:00:00 GMT+0100", "1970");
+test_date("1/1/70 21:00 AM", "Thu Jan 01", "1970", "21:00:00 GMT+0100", "1970");
+test_date("1/1/70 22:00 AM", "Thu Jan 01", "1970", "22:00:00 GMT+0100", "1970");
+test_date("1/1/70 23:00 AM", "Thu Jan 01", "1970", "23:00:00 GMT+0100", "1970");
+
+start_group("Differen hours");
+test_date("Thu Jan 01 1970 11:59 PM GMT+0100 ", "Thu Jan 01", "1970", "23:59:00 GMT+0100", "1970");
+test_date("Thu Jan 01 1970 11:59 AM GMT+0100 ", "Thu Jan 01", "1970", "11:59:00 GMT+0100", "1970");
+test_date("Thu Jan 01 1970 11:59 PM GMT+1200 ", "Thu Jan 01", "1970", "12:59:00 GMT+0100", "1970");
+test_date("Thu Jan 01 1970 11:59 PM GMT+1300 ", "Thu Jan 01", "1970", "11:59:00 GMT+0100", "1970");
+test_date("Thu Jan 01 1970 01:59 PM GMT+1300 ", "Thu Jan 01", "1970", "01:59:00 GMT+0100", "1970");
+test_date("Thu Jan 01 1970 02:59 PM GMT+1300 ", "Thu Jan 01", "1970", "02:59:00 GMT+0100", "1970");
+test_date("Thu Jan 01 1970 03:59 PM GMT+0600 ", "Thu Jan 01", "1970", "10:59:00 GMT+0100", "1970");
+test_date("Thu Jan 01 1970 04:59 PM GMT+0530 ", "Thu Jan 01", "1970", "12:29:00 GMT+0100", "1970");
+test_date("Thu Jan 01 1970 05:59 PM GMT-0630 ", "Fri Jan 02", "1970", "01:29:00 GMT+0100", "1970");
+test_date("Thu Jan 01 1970 01:59 AM GMT+1300 ", "Wed Dec 31", "1969", "13:59:00 GMT+0100", "1969");
+test_date("Thu Jan 01 1970 02:59 AM GMT+1300 ", "Wed Dec 31", "1969", "14:59:00 GMT+0100", "1969");
+test_date("Thu Jan 01 1970 03:59 AM GMT+0600 ", "Wed Dec 31", "1969", "22:59:00 GMT+0100", "1969");
+test_date("Thu Jan 01 1970 04:59 AM GMT+0530 ", "Thu Jan 01", "1970", "00:29:00 GMT+0100", "1970");
+test_date("Thu Jan 01 1970 05:59 AM GMT-0630 ", "Thu Jan 01", "1970", "13:29:00 GMT+0100", "1970");
+test_date("1979 Mar 24 +0100 14:00:00AM", "Sat Mar 24", "1979", "14:00:00 GMT+0100", "1979");
+test_date("1979 Mar 24 +0100 10:00:00AM", "Sat Mar 24", "1979", "10:00:00 GMT+0100", "1979");
+test_date("1979 Mar 24 +0100 14:00:00 AM", "Sat Mar 24", "1979", "14:00:00 GMT+0100", "1979");
+test_date("1/1/70 12: PM", "Thu Jan 01", "1970", "12:00:00 GMT+0100", "1970");
+test_date("1/1/70 1: PM", "Thu Jan 01", "1970", "13:00:00 GMT+0100", "1970");
+test_date("1/1/70 10: PM", "Thu Jan 01", "1970", "22:00:00 GMT+0100", "1970");
+test_date("Sunday, March 29, 2009 12:59:57 AM","Sun Mar 29","2009","00:59:57 GMT+0100","2009");
+test_date("Sunday, March 29, 2009 12:59:57 PM","Sun Mar 29","2009","12:59:57 GMT+0200","2009");
+test_date("Sunday, March 29, 2009 23:59","Sun Mar 29","2009","23:59:00 GMT+0200","2009");
+test_date("Sunday, March 29, 2009 12:59PM","Sun Mar 29","2009","12:59:00 GMT+0200","2009");
+test_date("Sunday, March 29, 2009 12:59 PM","Sun Mar 29","2009","12:59:00 GMT+0200","2009");
+test_date("Sunday, March 29, 2009 12:59 pm","Sun Mar 29","2009","12:59:00 GMT+0200","2009");
+
+start_group("A.M./P.M.");
+test_date("4 April 2009 10:00:00 a.m","Sat Apr 04","2009","10:00:00 GMT+0200","2009");
+test_date("4 April 2009 10:00:00a.m.","Sat Apr 04","2009","10:00:00 GMT+0200","2009");
+test_date("4 April 2009 10:00:00p.m.","Sat Apr 04","2009","22:00:00 GMT+0200","2009");
+test_date("4 April 2009 13:00:00 a.m","Sat Apr 04","2009","13:00:00 GMT+0200","2009");
+test_date("4 April 2009 10:00:00A.M.","Sat Apr 04","2009","10:00:00 GMT+0200","2009");
+test_date("4 April 2009 10:00:00 A.M.","Sat Apr 04","2009","10:00:00 GMT+0200","2009");
+test_date("4 April 2009 10:00:00 A.M","Sat Apr 04","2009","10:00:00 GMT+0200","2009");
+test_date("4 April 2009 10:00:00 AM.","Sat Apr 04","2009","10:00:00 GMT+0200","2009");
+test_date("4 April 2009 10:00:00 aM.","Sat Apr 04","2009","10:00:00 GMT+0200","2009");
+test_date("4 April 2009 10:00:00 Am.","Sat Apr 04","2009","10:00:00 GMT+0200","2009");
+test_date("4 April 2009 10:00:00 A.m","Sat Apr 04","2009","10:00:00 GMT+0200","2009");
+test_date("4 April 2009 01:00:00 p.m.","Sat Apr 04","2009","13:00:00 GMT+0200","2009");
+test_date("4 April 2009 01:00:00 P.m.","Sat Apr 04","2009","13:00:00 GMT+0200","2009");
+test_date("4 April 2009 01:00:00 p.M.","Sat Apr 04","2009","13:00:00 GMT+0200","2009");
+test_date("4 April 2009 01:00:00 p.m","Sat Apr 04","2009","13:00:00 GMT+0200","2009");
+test_date("4 April 2009 01:00:00 pm.","Sat Apr 04","2009","13:00:00 GMT+0200","2009");
+test_date("4 April 2009 01:00:00 Pm.","Sat Apr 04","2009","13:00:00 GMT+0200","2009");
+test_date("4 April 2009 01:00:00 pM.","Sat Apr 04","2009","13:00:00 GMT+0200","2009");
+test_date("4 April 2009 01:00:00 p.M","Sat Apr 04","2009","13:00:00 GMT+0200","2009");
+test_date("4 April 2009 01:00:00 P.m","Sat Apr 04","2009","13:00:00 GMT+0200","2009");
+test_date("4 April 2009 01:00:00 P.M.","Sat Apr 04","2009","13:00:00 GMT+0200","2009");
+test_date("P.M. 4 April 2009 01:00:00","Sat Apr 04","2009","13:00:00 GMT+0200","2009");
+test_date("p.m. 4 April 2009 01:00:00","Sat Apr 04","2009","13:00:00 GMT+0200","2009");
+test_date("4 p.m. April 2009 01:00:00","Sat Apr 04","2009","13:00:00 GMT+0200","2009");
+test_date("p.m. April 4 2009 01:00:00","Sat Apr 04","2009","13:00:00 GMT+0200","2009");
+test_date("April 4 p.m.  2009 01:00:00","Sat Apr 04","2009","13:00:00 GMT+0200","2009");
+test_date("April 4 2009 p.m. 01:00:00","Sat Apr 04","2009","13:00:00 GMT+0200","2009");
+test_date("April 4 2009 a.m. 01:00:00","Sat Apr 04","2009","01:00:00 GMT+0200","2009");
+test_date("04/04/2009 a.m. 01:00:00","Sat Apr 04","2009","01:00:00 GMT+0200","2009");
+test_date("04/04/2009am 01:00:00 +0100","Sat Apr 04","2009","02:00:00 GMT+0200","2009");
+test_date("04pm/04/2009 01:00:00 +0100","Sat Apr 04","2009","14:00:00 GMT+0200","2009");
+test_date("04/04/2009 01:00:00 +0100pm","Sat Apr 04","2009","14:00:00 GMT+0200","2009");
+test_date("04/04/2009 01:00:00 P.M. +0100","Sat Apr 04","2009","14:00:00 GMT+0200","2009");
+test_date("04,04,2009 01:00:00 P.M. +0100","Sat Apr 04","2009","14:00:00 GMT+0200","2009");
+test_date("2009-04-04 01:00:00 P.M. +0100","Sat Apr 04","2009","14:00:00 GMT+0200","2009");
+test_date("2009-04-04 01:00:00 A.M. +0100","Sat Apr 04","2009","02:00:00 GMT+0200","2009");
+test_date("2009-04-04 01:00:00 A.M. +0100","Sat Apr 04","2009","02:00:00 GMT+0200","2009");
+test_date("Sunday, March 29, 2009 12:59 p.m.","Sun Mar 29","2009","12:59:00 GMT+0200","2009");
+test_date("Sunday, March 29, 2009 12:59a.m","Sun Mar 29","2009","00:59:00 GMT+0100","2009");
+
+start_group("Invalid date");
+test_date("1/1/70 PM 12:00PM", "NaN", "", "", "NaN");
+test_date("1/1/70 12:00 12:00PM", "NaN", "", "", "NaN");
+test_date("1/1/70 1/1/70 12:00PM", "NaN", "", "", "NaN");
+test_date("1/1/70 PM PM", "NaN", "", "", "NaN");
+test_date("1/1/70 PM", "NaN", "", "", "NaN");
+test_date("Thu Jan 01 1970 1PM0:00 GMT+0100 ", "NaN", "", "", "NaN");
+test_date("Thu Jan 01 1970 10:00 GMT+01PM00", "NaN", "", "", "NaN");
+test_date("00 PM", "NaN", "", "", "NaN");
+test_date("Sunday, March 29, 2009 2359","NaN","","","NaN");
+test_date("Sunday, March 29, 2009 23.59","NaN","","","NaN");
+test_date("4 m April 2009 10:00:00 A.","NaN","","","NaN");
+test_date("4 M April 2009 10:00:00 A.","NaN","","","NaN");
+test_date("4 M April 2009 10:00:00 A","NaN","","","NaN");
+test_date("4 A. April 2009 10:00:00 M","NaN","","","NaN");
+test_date("4 A. April 2009 10:00:00 M+0100","NaN","","","NaN");
+test_date("4 A April 2009 10:00:00 M+0100","NaN","","","NaN");
+test_date("04pm/04/2009am 01:00:00 +0100","NaN","","","NaN");
+test_date("2009-04-04 24:00:00 A.M. +0100","NaN","","","NaN");
+test_date(":00:00 PM", "NaN", "", "", "NaN");
+test_date("::00 PM", "NaN", "", "", "NaN");
+test_date("00 PM", "NaN", "", "", "NaN");
+test_date("00: PM", "NaN", "", "", "NaN");
+test_date("0: PM", "NaN", "", "", "NaN");
+test_date(": PM", "NaN", "", "", "NaN");
+test_date("PM", "NaN", "", "", "NaN");
+test_date("Mar 24 AM", "NaN", "", "", "NaN");
+test_date("Mar 24 1979 AM", "NaN", "", "", "NaN");
+test_date("AM Mar 24 1979", "NaN", "", "", "NaN");
+test_date("1979 Mar 24 +0100 PM 14:00:00 AM", "NaN", "", "", "NaN");
+test_date("1979 Mar 24 +0100 AM 14:00:00 PM", "NaN", "", "", "NaN");
+test_date("01/12/2009 GMT 23:00:00 +0100", "NaN", "", "", "NaN");
+test_date("01/12/2009 GMT 11:+0100PM00:00", "NaN", "", "", "NaN");
+
+test_summary();
+
+</script>
+</pre>
+</body>
+</html>

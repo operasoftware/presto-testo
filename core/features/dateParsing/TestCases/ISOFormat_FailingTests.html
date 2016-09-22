@@ -1,0 +1,24 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+  <head>
+    <title>ISO Format</title>
+  </head>
+<body>
+<script type="text/javascript" src="helpFiles/verify.js"></script>
+
+<pre>
+<script>
+start_group("ISO format - Complete date plus hours, minutes, seconds and a decimal fraction of a secod - YYYY-MM-DDThh:mm:ss.sTZD");
+test_date("2009-03-09T00:00:00.1Z","Mon Mar 09","2009","01:00:00 GMT+0100","2009");
+test_date("2009-03-09T00:00:00.10Z","Mon Mar 09","2009","01:00:00 GMT+0100","2009");
+test_date("2009-03-09T00:00:00.999Z","Mon Mar 09","2009","01:00:00 GMT+0100","2009");
+test_date("2009-03-09T00:00:00.1000Z","Mon Mar 09","2009","01:00:00 GMT+0100","2009");
+
+test_summary();
+	
+
+
+</script>
+</pre>
+</body>
+</html>

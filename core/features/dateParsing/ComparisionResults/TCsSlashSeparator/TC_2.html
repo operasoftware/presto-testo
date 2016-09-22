@@ -1,0 +1,60 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html><head>
+	<title> Date parsing </title>
+</head>
+<body>
+
+	<script type="text/javascript">
+	
+	function test(){
+	var date;
+	var year;
+	var i;
+	var dateStrings = [ 
+	"0/1000/100",
+	"1/1987/101",
+	"8/2008/124",
+	"9/1886/224",
+	"11/5000/389",
+	"31/8000/550",
+	"15/1900/693",
+	"28/3961/761",
+	"68/9998/998",
+	"69/9999/999",
+    ];
+	
+	document.write("<TABLE border=1>");
+	document.write("<TR>");
+	document.write("<TD>");
+	document.write("Date example");
+	document.write("</TD>");
+	document.write("<TD>");
+	document.write("new Date(\"Date example\")");
+	document.write("</TD>");
+	document.write("<TD>");
+	document.write("new Date(\"Date example\").getYear()");
+	document.write("</TD>");
+	document.write("</TR>");
+  for (i = 0; i < dateStrings.length; i++)
+  {
+    date = new Date(dateStrings[i]);
+    year = date.getYear();
+	document.write("<TR>");
+		document.write("<TD>");
+			document.write(dateStrings[i]);
+		document.write("</TD>");
+		document.write("<TD>");
+			document.write(date);
+		document.write("</TD>");
+		document.write("<TD>");
+			document.write(year);
+		document.write("</TD>");
+	document.write("</TR>");
+  }
+  document.write("</TABLE>");
+ }
+	window.onload=test;
+	</script>
+
+</body></html>
+

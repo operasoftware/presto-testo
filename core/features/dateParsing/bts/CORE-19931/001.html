@@ -1,0 +1,239 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+  <head>
+    <title>Date parsing test</title>
+  </head>
+<body>
+<pre>
+<script type="text/javascript">
+
+var passed_count = 0;
+var failed_count = 0;
+var ie_ok_count = 0;
+var wrong_get_year_cout=0;
+var group_desc = "";
+
+// Arguments to the 'test_date' function:
+//
+// datestr     - Date string to be parsed
+// exp_date    - The resulting date, e.g. "Thu Dec 24" or "NaN"
+// exp_year    - The four digit year of the resulting date, e.g. "1970"
+// exp_time    - The time of the resulting date, e.g. "00:00:00 GMT+0100"
+// exp_getyear - The expected result of getYear(), e.g. "70" or "NaN"
+//
+// All of the above arguments must be strings
+
+function print_group_desc()
+{
+	if ( group_desc != "" )
+	{
+		document.write("<h2>In group '" + group_desc + "':\r\n</h2>");
+		group_desc = "";
+	}
+}
+
+function test_date(datestr, exp_date, exp_year, exp_time, exp_getyear)
+{
+	var date = new Date(datestr);
+	var got_date = "" + date;
+	var got_year = "" + date.getYear();
+
+	// IE returns UTC, we expect GMT so change it so IE passes this test:
+	var ie_date = got_date.replace("UTC", "GMT");
+
+	// IE returns single digit day of month, we expect two digits
+	if ( ie_date.substr(9,1) == " " )
+		ie_date = ie_date.substr(0,8) + "0" + ie_date.substr(8);
+
+	// IE will return three digit year for y >= 100 && y <= 999, so make
+	// it four digits to make it pass
+	var len = ie_date.length;
+	if ( ie_date.substr(len - 4, 1) == " " )
+		ie_date = ie_date.substr(0, len - 3) + "0" + ie_date.substr(len - 3);
+
+	// Safari will return verbose timezone info, remove that
+	got_date = got_date.replace(" (W. Europe Standard Time)", "");
+	got_date = got_date.replace(" (W. Europe Daylight Time)", "");
+
+	var passed = false;
+	var ie_expect;
+	var op_expect;
+	var ff_expect;
+
+	if ( exp_date == "NaN" || exp_date == "Invalid Date" )
+	{
+		ie_expect = "NaN";
+		op_expect = "NaN";
+		ff_expect = "Invalid Date";
+	} else {
+		ie_expect = exp_date + " " + exp_time + " " + exp_year;
+		op_expect = exp_date + " " + exp_year + " " + exp_time;
+		ff_expect = exp_date + " " + exp_year + " " + exp_time;
+	}
+
+	if ( got_date == op_expect )
+	{
+		passed = true;
+	}
+	if ( got_date == ff_expect )
+	{
+		passed = true;
+	}
+	else if ( ie_date == ie_expect )
+	{
+		passed = true;
+		ie_ok_count++;
+	}
+
+	if ( !passed )
+	{
+		print_group_desc();
+		document.write("<font color=red>Failed: '" + datestr + "' (Got '" + got_date + "', expected '");
+		document.write(op_expect + "' / '" + ie_expect + "')\r\n</font>");
+	}
+	if ( passed )
+	{
+		passed_count++;
+		print_group_desc();
+		document.write("<font color=green>Pass: '" + datestr + "' (Got '" + got_date + "', expected '");
+		document.write(op_expect + "' / '" + ie_expect + "')\r\n</font>");
+	}	
+	else
+		failed_count++;
+
+}
+
+function start_group(desc)
+{
+	group_desc = desc;
+}							
+
+start_group("new Date('x')");
+test_date("0", "NaN", "", "", "NaN");
+test_date("1", "NaN", "", "", "NaN");
+test_date("2", "NaN", "", "", "NaN");
+test_date("3", "NaN", "", "", "NaN");
+test_date("4", "NaN", "", "", "NaN");
+test_date("5", "NaN", "", "", "NaN");
+test_date("6", "NaN", "", "", "NaN");
+test_date("7", "NaN", "", "", "NaN");
+test_date("8", "NaN", "", "", "NaN");
+test_date("9", "NaN", "", "", "NaN");
+test_date("10", "NaN", "", "", "NaN");
+test_date("11", "NaN", "", "", "NaN");
+test_date("12", "NaN", "", "", "NaN");
+test_date("13", "NaN", "", "", "NaN");
+test_date("14", "NaN", "", "", "NaN");
+test_date("15", "NaN", "", "", "NaN");
+test_date("16", "NaN", "", "", "NaN");
+test_date("17", "NaN", "", "", "NaN");
+test_date("18", "NaN", "", "", "NaN");
+test_date("19", "NaN", "", "", "NaN");
+test_date("20", "NaN", "", "", "NaN");
+test_date("21", "NaN", "", "", "NaN");
+test_date("22", "NaN", "", "", "NaN");
+test_date("23", "NaN", "", "", "NaN");
+test_date("24", "NaN", "", "", "NaN");
+test_date("25", "NaN", "", "", "NaN");
+test_date("26", "NaN", "", "", "NaN");
+test_date("27", "NaN", "", "", "NaN");
+test_date("28", "NaN", "", "", "NaN");
+test_date("29", "NaN", "", "", "NaN");
+test_date("30", "NaN", "", "", "NaN");
+test_date("31", "NaN", "", "", "NaN");
+test_date("32", "NaN", "", "", "NaN");
+test_date("33", "NaN", "", "", "NaN");
+test_date("34", "NaN", "", "", "NaN");
+test_date("35", "NaN", "", "", "NaN");
+test_date("40", "NaN", "", "", "NaN");
+test_date("41", "NaN", "", "", "NaN");
+test_date("69", "NaN", "", "", "NaN");
+test_date("70", "NaN", "", "", "NaN");
+test_date("90", "NaN", "", "", "NaN");
+test_date("100", "NaN", "", "", "NaN");
+test_date("500", "NaN", "", "", "NaN");
+test_date("1000", "NaN", "", "", "NaN");
+test_date("1001", "NaN", "", "", "NaN");
+test_date("1250", "NaN", "", "", "NaN");
+test_date("1500", "NaN", "", "", "NaN");
+test_date("1750", "NaN", "", "", "NaN");
+test_date("3000", "NaN", "", "", "NaN");
+test_date("4500", "NaN", "", "", "NaN");
+test_date("5500", "NaN", "", "", "NaN");
+test_date("9999", "NaN", "", "", "NaN");
+test_date("10000", "NaN", "", "", "NaN");
+
+start_group("new Date(x)");
+test_date(0, "Thu Jan 01", "1970", "01:00:00 GMT+0100", "70");
+test_date(1, "Thu Jan 01", "1970", "01:00:00 GMT+0100", "70");
+test_date(2, "Thu Jan 01", "1970", "01:00:00 GMT+0100", "70");
+test_date(3, "Thu Jan 01", "1970", "01:00:00 GMT+0100", "70");
+test_date(4, "Thu Jan 01", "1970", "01:00:00 GMT+0100", "70");
+test_date(5, "Thu Jan 01", "1970", "01:00:00 GMT+0100", "70");
+test_date(6, "Thu Jan 01", "1970", "01:00:00 GMT+0100", "70");
+test_date(7, "Thu Jan 01", "1970", "01:00:00 GMT+0100", "70");
+test_date(8, "Thu Jan 01", "1970", "01:00:00 GMT+0100", "70");
+test_date(9, "Thu Jan 01", "1970", "01:00:00 GMT+0100", "70");
+test_date(10, "Thu Jan 01", "1970", "01:00:00 GMT+0100", "70");
+test_date(11, "Thu Jan 01", "1970", "01:00:00 GMT+0100", "70");
+test_date(12, "Thu Jan 01", "1970", "01:00:00 GMT+0100", "70");
+test_date(13, "Thu Jan 01", "1970", "01:00:00 GMT+0100", "70");
+test_date(14, "Thu Jan 01", "1970", "01:00:00 GMT+0100", "70");
+test_date(15, "Thu Jan 01", "1970", "01:00:00 GMT+0100", "70");
+test_date(16, "Thu Jan 01", "1970", "01:00:00 GMT+0100", "70");
+test_date(17, "Thu Jan 01", "1970", "01:00:00 GMT+0100", "70");
+test_date(18, "Thu Jan 01", "1970", "01:00:00 GMT+0100", "70");
+test_date(19, "Thu Jan 01", "1970", "01:00:00 GMT+0100", "70");
+test_date(20, "Thu Jan 01", "1970", "01:00:00 GMT+0100", "70");
+test_date(21, "Thu Jan 01", "1970", "01:00:00 GMT+0100", "70");
+test_date(22, "Thu Jan 01", "1970", "01:00:00 GMT+0100", "70");
+test_date(23, "Thu Jan 01", "1970", "01:00:00 GMT+0100", "70");
+test_date(24, "Thu Jan 01", "1970", "01:00:00 GMT+0100", "70");
+test_date(25, "Thu Jan 01", "1970", "01:00:00 GMT+0100", "70");
+test_date(26, "Thu Jan 01", "1970", "01:00:00 GMT+0100", "70");
+test_date(27, "Thu Jan 01", "1970", "01:00:00 GMT+0100", "70");
+test_date(28, "Thu Jan 01", "1970", "01:00:00 GMT+0100", "70");
+test_date(29, "Thu Jan 01", "1970", "01:00:00 GMT+0100", "70");
+test_date(30, "Thu Jan 01", "1970", "01:00:00 GMT+0100", "70");
+test_date(31, "Thu Jan 01", "1970", "01:00:00 GMT+0100", "70");
+test_date(32, "Thu Jan 01", "1970", "01:00:00 GMT+0100", "70");
+test_date(33, "Thu Jan 01", "1970", "01:00:00 GMT+0100", "70");
+test_date(34, "Thu Jan 01", "1970", "01:00:00 GMT+0100", "70");
+test_date(35, "Thu Jan 01", "1970", "01:00:00 GMT+0100", "70");
+test_date(40, "Thu Jan 01", "1970", "01:00:00 GMT+0100", "70");
+test_date(41, "Thu Jan 01", "1970", "01:00:00 GMT+0100", "70");
+test_date(69, "Thu Jan 01", "1970", "01:00:00 GMT+0100", "70");
+test_date(70, "Thu Jan 01", "1970", "01:00:00 GMT+0100", "70");
+test_date(90, "Thu Jan 01", "1970", "01:00:00 GMT+0100", "70");
+test_date(100, "Thu Jan 01", "1970", "01:00:00 GMT+0100", "70");
+test_date(500, "Thu Jan 01", "1970", "01:00:00 GMT+0100", "70");
+test_date(1000, "Thu Jan 01", "1970", "01:00:01 GMT+0100", "70");
+test_date(1500, "Thu Jan 01", "1970", "01:00:01 GMT+0100", "70");
+test_date(5500, "Thu Jan 01", "1970", "01:00:05 GMT+0100", "70");
+test_date(9999, "Thu Jan 01", "1970", "01:00:09 GMT+0100", "70");
+test_date(10000, "Thu Jan 01", "1970", "01:00:10 GMT+0100", "70");
+test_date(999999999999999, "Fri Sep 27", "33658", "03:46:39 GMT+0200", "33658");
+
+document.write("\r\n");
+
+if ( failed_count > 0 )
+	document.write("<font color=red>Failed tests: " + failed_count + "\r\n</font>");
+
+document.write("<font color=green>Passed tests: " + passed_count + "\r\n</font>");
+
+if(wrong_get_year_cout>0)
+
+	document.write("<font color='#B94600'>Wrong get year: " + wrong_get_year_cout + "\r\n</font>");
+
+if ( failed_count == 0 )
+	document.write("\r\nPASS\r\n\r\n");
+
+if ( ie_ok_count > 0 )
+	document.write("IE matches: " + ie_ok_count + "\r\n");
+	
+
+
+</script>
+</pre>
+</body>
+</html>

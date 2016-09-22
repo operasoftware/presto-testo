@@ -1,0 +1,206 @@
+<html>
+<head><title>new Date("x-y-z")</title>
+<link rel="stylesheet" type="text/css" href="../Files/basic.css" />
+</head>
+<body>
+<table>
+<caption>Date parsing with separator dash - new Date("x-y-z")</caption>
+<tr >
+	<th>x-y-z</th>
+	<th>More examples</th>
+	<th>Opera (new Date("x-y-z"),getYear)</th>
+	<th>Firefox (new Date("x-y-z"),getYear)</th>
+	<th>IE (new Date("x-y-z"),getYear)</th>
+	<th>Safari (new Date("x-y-z"),getYear)</th>
+</tr>
+<tr class="fail" ><td>if(January<=x<=December and 0<=y<=99 and 100<=z<=999) <BR/><i>"January-0-100"</i><BR/><i>"December-31-999"</i><BR/><i>"December-32-999"</i></td>
+<td><a href="TCsDashSeparator/Months/TC_01.html">TC</a></td>
+	<td>Returns today's year and day and the given month <BR/><i>Sun Jan 13 2008 00:00:00 GMT+0100, 2008</i><BR/><i>Sat Dec 13 2008 00:00:00 GMT+0100, 2008</i> <BR/><i>Sat Dec 13 2008 00:00:00 GMT+0100, 2008</i> </td>
+	<td>Returns ("Invalid date","NaN") <BR/><i> Invalid date, NaN</i><BR/><i> Invalid date, NaN</i><BR/><i> Invalid date, NaN</i></td>
+	<td>Returns ("NaN","NaN")" <BR/><i> NaN, NaN</i><BR/><i>NaN, NaN</i> <BR/><i> NaN, NaN</i></td>
+	<td>Returns Date only when 0<=y<=31 <BR/><i>Thu Dec 31 0099 00:00:00 GMT+0100 (W. Europe Standard Time),-1801</i><BR/><i>Tue Dec 31 0999 00:00:00 GMT+0100 (W. Europe Standard Time), -901</i><BR/><i> Invalid date, NaN</i></td>
+</tr>
+<tr class="fail"><td >if(January<=x<=December and 0<=y<=99 and 1000<=z<=9999) <BR/><i>"January-0-1000"</i><BR/><i>"December-31-9999"</i><BR/><i>"December-69-9999"</i><BR/><i>"December-99-9999"</i></td>
+<td><a href="TCsDashSeparator/Months/TC_02.html">TC</a></td>
+	<td>Returns today's year and day and the given month <BR/><i>Sun Jan 13 2008 00:00:00 GMT+0100, 2008</i><BR/><i>Sat Dec 13 2008 00:00:00 GMT+0100, 2008</i><BR/><i>Sat Dec 13 2008 00:00:00 GMT+0100, 2008</i> </td>
+	<td>Returns ("Invalid date","NaN") <BR/><i> Invalid date, NaN</i><BR/><i> Invalid date, NaN</i><BR/><i> Invalid date, NaN</i></td>
+	<td>Returns ("NaN","NaN")"<BR/><i> NaN, NaN</i><BR/><i>NaN, NaN</i><BR/><i>NaN, NaN</i></td>
+	<td>Returns Date only when 0<=y<=31 <BR/><i>Tue Dec 31 0999 00:00:00 GMT+0100 (W. Europe Standard Time), -901</i><BR/><i>Fri Dec 31 9999 00:00:00 GMT+0100 (W. Europe Standard Time), 8099</i><BR/><i>Invalid date, NaN</i><BR/><i>Invalid date, NaN</i></td>
+</tr>
+<tr class="fail"><td>if(January<=x<=December and 100<=y<=999 and 1000<=z<=9999) <BR/><i>"January-100-1000"</i><BR/><i>"December-999-9999"</i></td>
+<td><a href="TCsDashSeparator/Months/TC_03.html">TC</a></td>
+	<td>Returns today's year and day and the given month <BR/><i>Sun Jan 13 2008 00:00:00 GMT+0100, 2008</i><BR/><i>Sat Dec 13 2008 00:00:00 GMT+0100, 2008</i></td>
+	<td>Returns ("Invalid date","NaN")<BR/><i>Invalid date, NaN</i><BR/><i>Invalid date, NaN</i></td>
+	<td>Returns ("NaN","NaN")"<BR/><i> NaN, NaN</i><BR/><i>NaN, NaN</i><BR/></td>
+	<td>Returns ("Invalid date","NaN")<BR/><i>Invalid date, NaN</i><BR/><i>Invalid date, NaN</i><BR/></td>
+</tr>
+<tr class="fail"><td>if(January<=x<=December and 100<=y<=999 and 0<=z<=99)<BR/><i>"January-100-0"</i><BR/><i>"December-999-69"</i><BR/><i>"December-999-99"</i></td>
+<td><a href="TCsDashSeparator/Months/TC_04.html">TC</a></td>
+	<td>Returns today's year and day and the given month <BR/><i>Sun Jan 13 2008 00:00:00 GMT+0100, 2008</i><BR/><i>Sat Dec 13 2008 00:00:00 GMT+0100, 2008</i><BR/><i>Sat Dec 13 2008 00:00:00 GMT+0100, 2008</i> </td>
+	<td>Returns ("Invalid date","NaN") <BR/><i> Invalid date, NaN</i><BR/><i> Invalid date, NaN</i><BR/><i> Invalid date, NaN</i></td>
+	<td>Returns ("NaN","NaN") <BR/><i> NaN, NaN</i><BR/><i> NaN, NaN</i><BR/><i> NaN, NaN</i></td>
+	<td>Returns ("Invalid date","NaN") <BR/><i> Invalid date, NaN</i><BR/><i> Invalid date, NaN</i><BR/><i> Invalid date, NaN</i></td>
+</tr>
+<tr class="fail"><td>if(January<=x<=December and 1000<=y<=9999 and 0<=z<=99)<BR/><i>"January-1000-0"</i><BR/><i>"December-9999-69"</i><BR/><i>"December-9999-99"</i></td>
+<td><a href="TCsDashSeparator/Months/TC_05.html">TC</a></td>
+	<td>Returns today's year and day and the given month <BR/><i>Sun Jan 13 2008 00:00:00 GMT+0100, 2008</i><BR/><i>Sat Dec 13 2008 00:00:00 GMT+0100, 2008</i><BR/><i>Sat Dec 13 2008 00:00:00 GMT+0100, 2008</i> </td>
+	<td>Returns ("Invalid date","NaN") <BR/><i> Invalid date, NaN</i><BR/><i> Invalid date, NaN</i><BR/><i> Invalid date, NaN</i></td>
+	<td>Returns ("NaN","NaN") <BR/><i> NaN, NaN</i><BR/><i> NaN, NaN</i><BR/><i> NaN, NaN</i></td>
+	<td>Returns ("Invalid date","NaN") <BR/><i> Invalid date, NaN</i><BR/><i> Invalid date, NaN</i></td>
+</tr>
+<tr class="fail"><td>if(January<=x<=December and 1000<=y<=9999 and 100<=z<=999)<BR/><i>"January-1000-100"</i><BR/><i>"December-9999-999"</i></td>
+<td><a href="TCsDashSeparator/Months/TC_06.html">TC</a></td>
+	<td>Returns today's year and day and the given month <BR/><i>Sun Jan 13 2008 00:00:00 GMT+0100, 2008</i><BR/><i>Sat Dec 13 2008 00:00:00 GMT+0100, 2008</i></td>
+	<td>Returns ("Invalid date","NaN") <BR/><i> Invalid date, NaN</i><BR/><i> Invalid date, NaN</i><BR/><i> Invalid date, NaN</i></td>
+	<td>Returns ("NaN","NaN") <BR/><i> NaN, NaN</i><BR/><i> NaN, NaN</i></td>
+	<td>Returns ("Invalid date","NaN") <BR/><i> Invalid date, NaN</i><BR/><i> Invalid date, NaN</i></td>
+</tr>
+<tr class="fail"><td>if(January<=x<=December and 0<=y<=99 and 0<=z<=99)<BR/><i>"January-0-0"</i><BR/><i>"December-31-99"</i><BR/><i>"December-99-99"</i></td>
+<td><a href="TCsDashSeparator/Months/TC_07.html">TC</a></td>
+	<td>Returns today's year and day and the given month <BR/><i>Sun Jan 13 2008 00:00:00 GMT+0100, 2008</i><BR/><i>Sat Dec 13 2008 00:00:00 GMT+0100, 2008</i><BR/><i>Sat Dec 13 2008 00:00:00 GMT+0100, 2008</i></td>
+	<td>Returns ("Invalid date","NaN") <BR/><i> Invalid date, NaN</i><BR/><i> Invalid date, NaN</i></td>
+	<td>Returns ("NaN","NaN") <BR/><i> NaN, NaN</i><BR/><i> NaN, NaN</i><BR/><i> NaN, NaN</i></td>
+	<td>Returns Date only when 0<=y<=31 <BR/><i>Fri Dec 31 1999 00:00:00 GMT+0100 (W. Europe Standard Time), 99</i><BR/><i>Fri Dec 31 1999 00:00:00 GMT+0100 (W. Europe Standard Time), 99</i><BR/><i> Invalid date, NaN</i></td>
+</tr>
+<tr class="fail"><td>if(January<=x<=December and 100<=y<=999 and 100<=z<=999)<BR/><i>"January-100-100"</i><BR/><i>"December-999-999"</i></td>
+<td><a href="TCsDashSeparator/Months/TC_08.html">TC</a></td>
+	<td>Returns today's year and day and the given month <BR/><i>Sun Jan 13 2008 00:00:00 GMT+0100, 2008</i><BR/><i>Sat Dec 13 2008 00:00:00 GMT+0100, 2008</i></td>
+	<td>Returns ("Invalid date","NaN") <BR/><i> Invalid date, NaN</i><BR/><i> Invalid date, NaN</i></td>
+	<td>Returns ("NaN","NaN") <BR/><i> NaN, NaN</i><BR/><i> NaN, NaN</i></td>
+	<td>Returns ("Invalid date","NaN") <BR/><i> Invalid date, NaN</i><BR/><i> Invalid date, NaN</i></td>
+</tr>
+<tr class="fail"><td>if(January<=x<=December and 1000<=y<=9999 and 1000<=z<=9999)<BR/><i>"January-1000-1000"</i><BR/><i>"December-9999-9999"</i></td>
+<td><a href="TCsDashSeparator/Months/TC_09.html">TC</a></td>
+	<td>Returns today's year and day and the given month <BR/><i>Sun Jan 13 2008 00:00:00 GMT+0100, 2008</i><BR/><i>Sat Dec 13 2008 00:00:00 GMT+0100, 2008</i></td>
+	<td>Returns ("Invalid date","NaN") <BR/><i> Invalid date, NaN</i><BR/><i> Invalid date, NaN</i></td>
+	<td>Returns ("NaN","NaN") <BR/><i> NaN, NaN</i><BR/><i> NaN, NaN</i></td>
+	<td>Returns ("Invalid date","NaN") <BR/><i> Invalid date, NaN</i><BR/><i> Invalid date, NaN</i></td>
+</tr>
+<tr class="fail"><td>if(0<=x<=99 and January<=y<=December  and 100<=z<=999)<BR/><i>"0-January-100"</i><BR/><i>"00-January-100"</i><BR/><i>"31-December-999"</i><BR/><i>"90-December-999"</i></td>
+<td><a href="TCsDashSeparator/Months/TC_10.html">TC</a></td>
+	<td>Returns today's year and day and the given month only when 00<=x<59 <BR/><i> NaN, NaN</i><BR/><i>Mon Jan 14 2008 00:59:00 GMT+0100, 2008</i><BR/><i>Sun Dec 14 2008 00:29:00 GMT+0100, 2008</i><BR/><i> NaN, NaN</i></td>
+	<td>Returns ("Invalid date","NaN") <BR/><i> Invalid date, NaN</i><BR/><i> Invalid date, NaN</i><BR/><i> Invalid date, NaN</i></td>
+	<td>Returns ("NaN","NaN") <BR/><i> NaN, NaN</i><BR/><i> NaN, NaN</i><BR/><i> NaN, NaN</i></td>
+	<td>Returns Date only when 0<=x<=31 <BR/><i>Thu Dec 31 0099 00:00:00 GMT+0100 (W. Europe Standard Time), -1801</i><BR/><i>Thu Dec 31 0099 00:00:00 GMT+0100 (W. Europe Standard Time), -1801</i><BR/><i>Tue Dec 31 0999 00:00:00 GMT+0100 (W. Europe Standard Time), -901</i><BR/><i> Invalid date, NaN</i></td>
+</tr>
+<tr class="fail"><td>if(0<=x<=99 and January<=y<=December  and 1000<=z<=9999)<BR/><i>"0-January-1000"</i><BR/><i>"31-December-9999"</i><BR/><i>"99-December-9999"</i></td>
+<td><a href="TCsDashSeparator/Months/TC_11.html">TC</a></td>
+	<td>Returns today's year and day and the given month only when 00<=x<59 <BR/><i>NaN, NaN</i><BR/><i>Sun Dec 14 2008 00:29:00 GMT+0100, 2008</i><BR/><i>NaN, NaN</i></td>
+	<td>Returns ("Invalid date","NaN") <BR/><i> Invalid date, NaN</i><BR/><i> Invalid date, NaN</i><BR/><i> Invalid date, NaN</i></td>
+	<td>Returns ("NaN","NaN") <BR/><i> NaN, NaN</i><BR/><i> NaN, NaN</i><BR/><i> NaN, NaN</i></td>
+	<td>Returns Date only when 0<=x<=31 <BR/><i>Tue Dec 31 0999 00:00:00 GMT+0100 (W. Europe Standard Time),-901</i><BR/><i>Fri Dec 31 9999 00:00:00 GMT+0100 (W. Europe Standard Time), 8099</i><BR/><i> Invalid date, NaN</i></td>
+</tr>
+<tr class="fail"><td>if(100<=x<=999 and January<=y<=December  and 0<=z<=99)<BR/><i>"100-January-0"</i><BR/><i>"159-January-99"</i><BR/><i>"160-January-99"</i><BR/><i>"999-December-99"</i></td>
+<td><a href="TCsDashSeparator/Months/TC_12.html">TC</a></td>
+	<td>Returns strange Date only when 100<=x<=159 OR 200<=x<=259 OR 300<=x<=359 ... OR OR 900<=x<=959 <BR/><i> Mon Jan 14 2008 00:00:00 GMT+0100, 2008</i><BR/><i>Sun Jan 13 2008 23:01:00 GMT+0100, 2008</i><BR/><i> NaN, NaN</i><BR/><i> NaN, NaN</i></td>
+	<td>Returns ("Invalid date","NaN") <BR/><i> Invalid date, NaN</i><BR/><i> Invalid date, NaN</i><BR/><i> Invalid date, NaN</i><i> Invalid date, NaN</i></td>
+	<td>Returns ("NaN","NaN") <BR/><i> NaN, NaN</i><BR/><i> NaN, NaN</i><BR/><i> NaN, NaN</i><BR/><i> NaN, NaN</i></td>
+	<td>Returns ("Invalid date","NaN") <BR/><i> Invalid date, NaN</i><BR/><i> Invalid date, NaN</i><i> Invalid date, NaN</i></td>
+</tr>
+<tr class="fail"><td>if(100<=x<=999 and January<=y<=December  and 1000<=z<=9999)<BR/><i>"100-January-1000"</i><BR/><i>"159-December-9999"</i><BR/><i>"999-December-9999"</i></td>
+<td><a href="TCsDashSeparator/Months/TC_13.html">TC</a></td>
+	<td>Returns strange Date only when 100<=x<=159 OR 200<=x<=259 OR 300<=x<=359 ... OR OR 900<=x<=959 <BR/><i>Mon Jan 14 2008 00:00:00 GMT+0100,2008</i><BR/><i>Sat Dec 13 2008 23:01:00 GMT+0100, 2008</i><BR/><i> NaN, NaN</i></td>
+	<td>Returns ("Invalid date","NaN") <BR/><i> Invalid date, NaN</i><BR/><i> Invalid date, NaN</i><BR/><i> Invalid date, NaN</i></td>
+	<td>Returns ("NaN","NaN") <BR/><i> NaN, NaN</i><BR/><i> NaN, NaN</i><BR/><i> NaN, NaN</i></td>
+	<td>Returns ("Invalid date","NaN") <BR/><i> Invalid date, NaN</i><BR/><i> Invalid date, NaN</i><BR/><i> Invalid date, NaN</i></td>
+</tr>
+<tr class="fail"><td>if(1000<=x<=9999 and January<=y<=December  and 0<=z<=99)<BR/><i>"1000-January-0"</i><BR/><i>"1059-December-99"</i><BR/><i>"9999-December-99"</i></td>
+<td><a href="TCsDashSeparator/Months/TC_14.html">TC</a></td>
+	<td>Returns strange Date only when 1000<=x<=1059<BR/><i>Sun Jan 13 2008 15:00:00 GMT+0100, 2008</i><BR/><i>Sat Dec 13 2008 14:01:00 GMT+0100, 2008</i><i>NaN, NaN</i></td>
+	<td>Returns ("Invalid date","NaN") <BR/><i> Invalid date, NaN</i><BR/><i> Invalid date, NaN</i><BR/><i> Invalid date, NaN</i></td>
+	<td>Returns ("NaN","NaN") <BR/><i> NaN, NaN</i><BR/><i> NaN, NaN</i><BR/><i> NaN, NaN</i><i> NaN, NaN</i></td>
+	<td>Returns ("Invalid date","NaN") <BR/><i>Invalid date, NaN</i><BR/><i>Invalid date, NaN</i><BR/><i>Invalid date, NaN</i></td>
+</tr>
+<tr class="fail"><td>if(1000<=x<=9999 and January<=y<=December  and 100<=z<=999)<BR/><i>"1000-January-100"</i><BR/><i>"1059-December-999"</i><BR/><i>"9999-December-999"</i></td>
+<td><a href="TCsDashSeparator/Months/TC_15.html">TC</a></td>
+	<td>Returns strange Date only when 1000<=x<=1059<BR/><i> Sun Jan 13 2008 15:00:00 GMT+0100, 2008</i><BR/><i>Sat Dec 13 2008 14:01:00 GMT+0100, 2008</i><BR/><i> Invalid date, NaN</i></td>
+	<td>Returns ("Invalid date","NaN") <BR/><i> Invalid date, NaN</i><BR/><i> Invalid date, NaN</i><BR/><i> Invalid date, NaN</i></td>
+	<td>Returns ("NaN","NaN") <BR/><i> NaN, NaN</i><BR/><i> NaN, NaN</i><BR/><i> NaN, NaN</i></td>
+	<td>Returns ("Invalid date","NaN") <BR/><i> Invalid date, NaN</i><BR/><i> Invalid date, NaN</i><BR/><i> Invalid date, NaN</i></td>
+</tr>
+<tr class="fail"><td>if(0<=x<=99 and January<=y<=December  and 0<=z<=99)<BR/><i>"0-January-0"</i><BR/><i>"31-December-99"</i><BR/><i>"99-December-31"</i><BR/><i>"00-January-00"</i></td>
+<td><a href="TCsDashSeparator/Months/TC_16.html">TC</a></td>
+	<td>Returns strange Date only when 00<=x<=59<BR/><i> NaN, NaN</i><BR/><i>Sun Dec 14 2008 00:29:00 GMT+0100, 2008</i><BR/><i> NaN, NaN</i><BR/><i>Mon Jan 14 2008 01:00:00 GMT+0100, 2008</i></td>
+	<td>Returns ("Invalid date","NaN") <BR/><i> Invalid date, NaN</i><BR/><i> Invalid date, NaN</i><BR/><i> Invalid date, NaN</i></td>
+	<td>Returns ("NaN","NaN") <BR/><i> NaN, NaN</i><BR/><i> NaN, NaN</i><BR/><i> NaN, NaN</i><BR/><i> NaN, NaN</i></td>
+	<td>Returns Date only when 0<=x<=31<BR/><i>Fri Dec 31 1999 00:00:00 GMT+0100 (W. Europe Standard Time),99</i><BR/><i>Fri Dec 31 1999 00:00:00 GMT+0100 (W. Europe Standard Time), 99</i><BR/><i> Invalid date, NaN</i><BR/><i>Fri Dec 31 1999 00:00:00 GMT+0100 (W. Europe Standard Time), 99</i></td>
+</tr>
+<tr class="fail"><td>if(100<=x<=999 and January<=y<=December  and 100<=z<=999)<BR/><i>"100-January-100"</i><BR/><i>"959-December-999"</i><BR/><i>"999-December-999"</i></td>
+<td><a href="TCsDashSeparator/Months/TC_17.html">TC</a></td>
+	<td>Returns strange Date only when 100<=x<=159 OR 200<=x<=259 OR 300<=x<=359 ... OR OR 900<=x<=959 <BR/><i>Mon Jan 14 2008 00:00:00 GMT+0100, 2008</i><BR/><i>Mon Jan 14 2008 00:00:00 GMT+0100,2008</i><BR/><i> NaN, NaN</i></td>
+	<td>Returns ("Invalid date","NaN") <BR/><i> Invalid date, NaN</i><BR/><i> Invalid date, NaN</i><BR/><i> Invalid date, NaN</i></td>
+	<td>Returns ("NaN","NaN") <BR/><i> NaN, NaN</i><BR/><i> NaN, NaN</i><BR/><i> NaN, NaN</i></td>
+	<td>Returns ("Invalid date","NaN") <BR/><i> Invalid date, NaN</i><BR/><i> Invalid date, NaN</i><BR/><i> Invalid date, NaN</i></td>
+</tr>
+<tr class="fail"><td>if(1000<=x<=9999 and January<=y<=December  and 1000<=z<=9999)<BR/><i>"1000-January-1000"</i><BR/><i>"1059-December-9999"</i><BR/><i>"9999-December-9999"</i></td>
+<td><a href="TCsDashSeparator/Months/TC_18.html">TC</a></td>
+	<td>Returns strange Date only when 1000<=x<=1059<BR/><i>Sun Jan 13 2008 15:00:00 GMT+0100, 2008</i><BR/><i>Sat Dec 13 2008 14:01:00 GMT+0100,2008</i><BR/><i> NaN, NaN</i></td>
+	<td>Returns ("Invalid date","NaN") <BR/><i> Invalid date, NaN</i><BR/><i> Invalid date, NaN</i></td>
+	<td>Returns ("NaN","NaN") <BR/><i> NaN, NaN</i><BR/><i> NaN, NaN</i></td>
+	<td>Returns ("Invalid date","NaN") <BR/><i> Invalid date, NaN</i><BR/><i> Invalid date, NaN</i></td>
+</tr>
+<tr class="fail"><td>if(0<=x<=99 and 100<=y<=999 and January<=z<=December)<BR/><i>"0-100-January"</i><BR/><i>"31-999-December"</i><BR/><i>"99-999-December"</i></td>
+<td><a href="TCsDashSeparator/Months/TC_19.html">TC</a></td>
+	<td>Returns today's year and day and the given month only when 0<=x<31 <BR/><i>Mon Jan 14 2008 01:00:00 GMT+0100, 2008</i><BR/><i>Sun Dec 14 2008 00:29:00 GMT+0100, 2008</i><BR/><i> NaN, NaN</i></td>
+	<td>Returns ("Invalid date","NaN") <BR/><i> Invalid date, NaN</i><BR/><i> Invalid date, NaN</i><BR/><i> Invalid date, NaN</i></td>
+	<td>Returns ("NaN","NaN") <BR/><i>NaN, NaN</i><BR/><i>NaN, NaN</i><BR/><i>NaN, NaN</i></td>
+	<td>Returns ("Invalid date","NaN") <BR/><i>Invalid date, NaN</i><BR/><i>Invalid date, NaN</i><BR/><i>Invalid date, NaN</i></td>
+</tr>
+<tr class="fail"><td>if(0<=x<=99 and 1000<=y<=9999 and January<=z<=December)<BR/><i>"0-1000-January"</i><BR/><i>"31-9999-December"</i><BR/><i>"99-9999-December"</i></td>
+<td><a href="TCsDashSeparator/Months/TC_20.html">TC</a></td>
+	<td>Returns today's year and day and the given month only when 0<=x<31 <BR/><i>Mon Jan 14 2008 00:59:00 GMT+0100, 2008</i><BR/><i>Sun Dec 14 2008 00:29:00 GMT+0100, 2008</i><BR/><i>NaN, NaN</i></td>
+	<td>Returns ("Invalid date","NaN") <BR/><i> Invalid date, NaN</i><BR/><i> Invalid date, NaN</i><BR/><i> Invalid date, NaN</i></td>
+	<td>Returns ("NaN","NaN") <BR/><i>NaN, NaN</i><BR/><i>NaN, NaN</i><BR/><i>NaN, NaN</i></td>
+	<td>Returns ("Invalid date","NaN")<BR/><i>Invalid date, NaN</i><BR/><i>Invalid date, NaN</i><BR/><i>Invalid date, NaN</i></td>
+</tr>
+<tr class="fail"><td>if(100<=x<=999 and 0<=y<=99 and January<=z<=December)<BR/><i>"100-0-January"</i><BR/><i>"959-99-December"</i><BR/><i>"999-99-December"</i></td>
+<td><a href="TCsDashSeparator/Months/TC_21.html">TC</a></td>
+	<td>Returns strange Date only when 100<=x<=159 OR 200<=x<=259 OR 300<=x<=359 ... OR OR 900<=x<=959 <BR/><i>Mon Jan 14 2008 00:00:00 GMT+0100, 2008</i><BR/><i>Sat Dec 13 2008 15:01:00 GMT+0100, 2008</i><BR/><i> NaN, NaN</i></td>
+	<td>Returns ("Invalid date","NaN") <BR/><i> Invalid date, NaN</i><BR/><i> Invalid date, NaN</i><BR/><i> Invalid date, NaN</i></td>
+	<td>Returns ("NaN","NaN") <BR/><i> NaN, NaN</i><BR/><i> NaN, NaN</i><BR/><i> NaN, NaN</i></td>
+	<td>Returns ("Invalid date","NaN") <BR/><i> Invalid date, NaN</i><BR/><i> Invalid date, NaN</i><BR/><i> Invalid date, NaN</i></td>
+</tr>
+<tr class="fail"><td>if(100<=x<=999 and 1000<=y<=9999 and January<=z<=December)<BR/><i>"100-1000-January"</i><BR/><i>"959-9999-December"</i><BR/><i>"999-9999-December"</i></td>
+<td><a href="TCsDashSeparator/Months/TC_22.html">TC</a></td>
+	<td>Returns strange Date only when 100<=x<=159 OR 200<=x<=259 OR 300<=x<=359 ... OR OR 900<=x<=959 <BR/><i>Mon Jan 14 2008 00:00:00 GMT+0100, 2008</i><BR/><i>Sat Dec 13 2008 15:01:00 GMT+0100, 2008</i><BR/><i> NaN, NaN</i></td>
+	<td>Returns ("Invalid date","NaN") <BR/><i> Invalid date, NaN</i><BR/><i> Invalid date, NaN</i></td>
+	<td>Returns ("NaN","NaN") <BR/><i> NaN, NaN</i><BR/><i> NaN, NaN</i></td>
+	<td>Returns ("Invalid date","NaN") <BR/><i> Invalid date, NaN</i><BR/><i> Invalid date, NaN</i></td>
+</tr>
+<tr class="fail"><td>if(1000<=x<=9999 and 0<=y<=99 and January<=z<=December)<BR/><i>"1000-0-January"</i><BR/><i>"1059-99-December"</i><BR/><i>"9999-99-December"</i></td>
+<td><a href="TCsDashSeparator/Months/TC_23.html">TC</a></td>
+	<td>Returns strange Date only when 1000<=x<=1059<BR/><i> Sun Jan 13 2008 15:00:00 GMT+0100, 2008</i><BR/><i>Sat Dec 13 2008 14:01:00 GMT+0100,2008</i><BR/><i> NaN, NaN</i></td>
+	<td>Returns ("Invalid date","NaN") <BR/><i> Invalid date, NaN</i><BR/><i> Invalid date, NaN</i><BR/><i> Invalid date, NaN</i></td>
+	<td>Returns ("NaN","NaN") <BR/><i> NaN, NaN</i><BR/><i> NaN, NaN</i><BR/><i> NaN, NaN</i></td>
+	<td>Returns ("Invalid date","NaN") <BR/><i> Invalid date, NaN</i><BR/><i> Invalid date, NaN</i><BR/><i> Invalid date, NaN</i></td>
+</tr>
+<tr class="fail"><td>if(1000<=x<=9999 and 100<=y<=999 and January<=z<=December)<BR/><i>"1000-100-January"</i><BR/><i>"1059-999-December"</i></td>
+<td><a href="TCsDashSeparator/Months/TC_24.html">TC</a></td>
+	<td>Returns strange Date only when 1000<=x<=1059<BR/><i>Sun Jan 13 2008 15:00:00 GMT+0100,2008</i><BR/><i>Sat Dec 13 2008 14:01:00 GMT+0100, 2008</i></td>
+	<td>Returns ("Invalid date","NaN") <BR/><i> Invalid date, NaN</i><BR/><i> Invalid date, NaN</i></td>
+	<td>Returns ("NaN","NaN") <BR/><i> NaN, NaN</i><BR/><i> NaN, NaN</i></td>
+	<td>Returns ("Invalid date","NaN") <BR/><i> Invalid date, NaN</i><BR/><i> Invalid date, NaN</i></td>
+</tr>
+<tr class="fail"><td>if(0<=x<=99 and 0<=y<=99 and January<=z<=December)<BR/><i>"0-0-January"</i><BR/><i>"59-99-December"</i><BR/><i>"99-99-December"</i></td>
+<td><a href="TCsDashSeparator/Months/TC_25.html">TC</a></td>
+	<td>Returns today's year and day and the given month only when 00<=x<59 <BR/><i>Mon Jan 14 2008 01:00:00 GMT+0100, 2008</i><BR/><i>Sun Dec 14 2008 00:01:00 GMT+0100, 2008</i><BR/><i> NaN, NaN</i><BR/><i> NaN, NaN</i></td>
+	<td>Returns ("Invalid date","NaN") <BR/><i> Invalid date, NaN</i><BR/><i> Invalid date, NaN</i><BR/><i> Invalid date, NaN</i></td>
+	<td>Returns ("NaN","NaN") <BR/><i> NaN, NaN</i><BR/><i> NaN, NaN</i><BR/><i> NaN, NaN</i></td>
+	<td>Returns ("Invalid date","NaN") <BR/><i> Invalid date, NaN</i><BR/><i> Invalid date, NaN</i><BR/><i> Invalid date, NaN</i></td>
+</tr>
+<tr class="fail"><td>if(100<=x<=999 and 100<=y<=999 and January<=z<=December)<BR/><i>"100-100-January"</i><BR/><i>"160-999-December"</i></td>
+<td><a href="TCsDashSeparator/Months/TC_26.html">TC</a></td>
+	<td>Returns strange Date only when 100<=x<=159 OR 200<=x<=259 OR 300<=x<=359 ... OR OR 900<=x<=959 <BR/><i>Mon Jan 14 2008 00:00:00 GMT+0100, 2008</i><BR/><i> NaN, NaN</i></td>
+	<td>Returns ("Invalid date","NaN") <BR/><i> Invalid date, NaN</i><BR/><i> Invalid date, NaN</i></td>
+	<td>Returns ("NaN","NaN") <BR/><i> NaN, NaN</i><BR/><i> NaN, NaN</i></td>
+	<td>Returns ("Invalid date","NaN") <BR/><i> Invalid date, NaN</i><BR/><i> Invalid date, NaN</i></td>
+</tr>
+<tr class="fail"><td>if(1000<=x<=9999 and 1000<=y<=9999 and January<=z<=December)<BR/><i>"1000-1000-January"</i><BR/><i>"1600-9999-December"</i></td>
+<td><a href="TCsDashSeparator/Months/TC_27.html">TC</a></td>
+	<td>Returns strange Date only when 1000<=x<=1059<BR/><i>Sun Jan 13 2008 15:00:00 GMT+0100,2008</i><BR/><i> NaN, NaN</i></td>
+	<td>Returns ("Invalid date","NaN") <BR/><i> Invalid date, NaN</i><BR/><i> Invalid date, NaN</i></td>
+	<td>Returns ("NaN","NaN") <BR/><i> NaN, NaN</i><BR/><i> NaN, NaN</i></td>
+	<td>Returns ("Invalid date","NaN") <BR/><i> Invalid date, NaN</i><BR/><i> Invalid date, NaN</i></td>
+</tr>
+</table>
+
