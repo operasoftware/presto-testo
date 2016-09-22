@@ -1,0 +1,76 @@
+<!DOCTYPE HTML PUBLIC "  -//W3C//DTD HTML 4.01//EN">
+<html><head>
+	<title> Date parsing </title>
+</head>
+<body>
+
+	<script type="text/javascript">
+	
+	function test(){
+	var date;
+	var year;
+	var i;
+	var dateStrings = [ 
+	"1000-january-1",
+	"1000-january-01",
+	"1000-january-00",
+	"1000-january-0",
+	"1000-january-70",
+	"1059-December-99",
+	"2059-january-70",
+	"1060-january-70",
+	"1559-january-70",
+	"2009-february-09",
+	"3560-march-19",
+	"1180-april-13",
+	"1270-may-18",
+	"2980-june-19",
+	"3160-july-35",
+	"5314-september-69",
+	"6158-october-23",
+	"4199-august-58",
+	"7307-november-27",
+	"9999-december-69",
+	"5118-december-99",
+	"3197-july-98",
+	"7696-january-99",
+	"8707-december-87",
+	"9807-november-80",
+	"9999-december-99",
+	];
+	
+	document.write("<TABLE border=1>");
+	document.write("<TR>");
+	document.write("<TD>");
+	document.write("Date example");
+	document.write("</TD>");
+	document.write("<TD>");
+	document.write("new Date(\"Date example\")");
+	document.write("</TD>");
+	document.write("<TD>");
+	document.write("new Date(\"Date example\").getYear()");
+	document.write("</TD>");
+	document.write("</TR>");
+  for (i = 0; i < dateStrings.length; i++)
+  {
+    date = new Date(dateStrings[i]);
+    year = date.getYear();
+	document.write("<TR>");
+	document.write("<TD>");
+	document.write(dateStrings[i]);
+	document.write("</TD>");
+	document.write("<TD>");
+	document.write(date);
+	document.write("</TD>");
+	document.write("<TD>");
+	document.write(year);
+	document.write("</TD>");
+	document.write("</TR>");
+  }
+  document.write("</TABLE>");
+ }
+	window.onload=test;
+	</script>
+
+</body></html>
+

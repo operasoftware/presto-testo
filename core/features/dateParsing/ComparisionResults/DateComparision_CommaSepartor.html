@@ -1,0 +1,338 @@
+<html>
+<head><title>new Date("x,y,z")</title>
+<link rel="stylesheet" type="text/css" href="../Files/basic.css" />
+</head>
+<body>
+
+<table>
+<caption>Date parsing with separator slash - new Date("x,y,z")</caption>
+
+<tr>
+		<th>x,y,z</th>
+		<th>More examples</th>
+		<th>Opera(new Date("x,y,z"),getYear)</th>
+		<th>Firefox(new Date("x,y,z"),getYear)</th>
+		<th>IE(new Date("x,y,z"),getYear)</th>
+		<th>Safari(new Date("x,y,z"),getYear)</th> 
+</tr>
+<tr class="fail" ><td>if(0<=x<=69 and 100<=y<=999 and 1000<=z<=9999) <BR/><i>"0,100,1000"</i><BR/><i>"69,999,9999"</i></td>
+<td><a href="TCsCommaSeparator/TC_1.html">TC</a></td>
+	<td>if 0<=x<=31 returns given day x,today's month* and given year z<BR/>else returns NaN<BR/><i>Fri Oct 31 1000 00:00:00 GMT+0100, 1000</i><BR/><i> NaN, NaN</i></td>
+	<td>Date <BR/><i>Mon Mar 10 1000 00:00:00 GMT+0100, -900</i><BR/><i>Sun May 27 10007 00:00:00 GMT+0200, 8107</i></td>
+	<td>Returns ("NaN","NaN") <BR/><i> NaN, NaN</i><BR/><i> NaN, NaN</i></td>
+	<td>Returns ("Invalid date","NaN")" <BR/><i>Invalid date, NaN</i><BR/><i>Invalid date, NaN</i></td> 
+</tr>
+<tr class="fail" ><td>if(0<=x<=69 and 1000<=y<=9999 and 100<=z<=999) <BR/><i>"0,1000,100"</i><BR/><i>"69,9999,999"</i></td>
+<td><a href="TCsCommaSeparator/TC_2.html">TC</a></td>
+	<td>if 0<=x<=31 returns given day x,today's month* and given year y<BR/>else returns NaN<BR/><i>Fri Oct 31 1000 00:00:00 GMT+0100, 1000</i><BR/><i> NaN, NaN</i></td>
+	<td>Date <BR/><i>Sun Aug 27 0102 00:00:00 GMT+0200, -1798</i><BR/><i>Mon Jan 16 1032 00:00:00 GMT+0100, -868</i></td>
+	<td>Returns ("NaN","NaN") <BR/><i> NaN, NaN</i><BR/><i> NaN, NaN</i></td>
+	<td>Returns ("Invalid date","NaN")" <BR/><i>Invalid date, NaN</i><BR/><i>Invalid date, NaN</i></td>  
+</tr>
+<tr class="fail" ><td>if(100<=x<=999 and 0<=y<=69 and 1000<=z<=9999) <BR/><i>"100,0,1000"</i><BR/><i>"999,69,9999"</i><BR/><i>"100,1,1000"</i> </td>
+<td><a href="TCsCommaSeparator/TC_3.html">TC</a></td>
+	<td>if (100<=x<=159 OR 200<=x<=259 OR 300<=x<=359 ... OR 900<=x<=959) and 0<=y<=31<BR/> 
+			Returns given day y (or y-1), today's month* and given year z <BR/>
+			else Returns NaN<BR/>
+			<i> Fri Oct 31 1000 00:00:00 GMT+0100, 1000</i><BR/>
+			<i> NaN,NaN</i><BR/>
+			<i>Sat Nov 01 1000 00:00:00 GMT+0100,1000</i><BR/>
+	</td>
+	<td>Date <BR/><i>Sun Aug 27 0102 00:00:00 GMT+0200, -1798</i><BR/><i>Mon Jan 16 1032 00:00:00 GMT+0100, -868</i> <BR/><i>Wed Sep 27 0102 00:00:00 GMT+0200, -1798</i> </td>
+	<td>Returns ("NaN","NaN") <BR/><i> NaN, NaN</i><BR/><i> NaN, NaN</i></td>
+	<td>Returns ("Invalid date","NaN")" <BR/><i>Invalid date, NaN</i><BR/><i>Invalid date, NaN</i></td>
+</tr>
+<tr class="fail" ><td>if(1000<=x<=9999 and 0<=y<=69 and 100<=z<=999) <BR/><i>"1000,0,100"</i><BR/><i>"9999,69,999"</i> <BR/><i>"1000,1,100"</i> </td>
+<td><a href="TCsCommaSeparator/TC_4.html">TC</a></td>
+	<td>if 0<=y<=31 returns given day y,today's month* and the given year x <BR/>else returns today's day and month and the given year x<BR/><i>Fri Oct 31 1000 00:00:00 GMT+0100, 1000</i><BR/><i>Wed Nov 17 9999 00:00:00 GMT+0100, 9999</i> <BR/><i>Sat Nov 01 1000 00:00:00 GMT+0100, 1000</i></td>
+	<td>Date <BR/><i>Mon Mar 10 1000 00:00:00 GMT+0100, -900</i><BR/><i>Sun May 27 10007 00:00:00 GMT+0200, 8107</i> <BR/><i>Thu Apr 10 1000 00:00:00 GMT+0200, -900</i></td>
+	<td>Returns ("NaN","NaN") <BR/><i> NaN, NaN</i><BR/><i> NaN, NaN</i></td>
+	<td>Returns ("Invalid date","NaN")" <BR/><i>Invalid date, NaN</i><BR/><i>Invalid date, NaN</i></td>
+</tr>
+<tr class="pass" ><td>if(70<=x<=99 and 70<=y<=99 and 70<=z<=99) <BR/><i>"70,70,70"</i><BR/><i>"99,99,99"</i></td>
+	<td><a href="TCsCommaSeparator/TC_5.html">TC</a></td>
+	<td>Returns ("NaN","NaN") <BR/><i> NaN, NaN</i><BR/><i> NaN, NaN</i></td>
+	<td>Returns ("Invalid Date","NaN") <BR/><i> Invalid Date, NaN</i><BR/><i> Invalid Date, NaN</i></td>
+	<td>Returns ("NaN","NaN") <BR/><i> NaN, NaN</i><BR/><i> NaN, NaN</i></td>
+	<td>Returns ("Invalid date","NaN") <BR/><i> Invalid date, NaN</i><BR/><i> Invalid date, NaN</i></td>
+</tr>
+<tr class="fail" ><td>if(0<=x<=69 and 0<=y<=69 and 100<=z<=999) <BR/><i>"0,0,100"</i><BR/><i>"69,69,999"</i> <BR/><i>"1,1,100"</i> </td>
+<td><a href="TCsCommaSeparator/TC_6.html">TC</a></td>
+	<td>if 0<=x<=31 returns given day x,today's month* and today's year<BR/>else returns NaN<BR/><i>Fri Oct 31 2008 00:00:00 GMT+0100,2008</i><BR/><i> NaN, NaN</i><BR/><i>Sat Nov 01 2008 00:00:00 GMT+0100,2008</i></td>
+	<td>Date <BR/><i>Mon Nov 30 0099 00:00:00 GMT+0100, -1801</i><BR/><i>Thu Nov 08 1004 00:00:00 GMT+0100, -896</i> <BR/><i>Fri Jan 01 0100 00:00:00 GMT+0100, -1800</i> </td>
+	<td>Returns ("NaN","NaN") <BR/><i> NaN, NaN</i><BR/><i> NaN, NaN</i></td>
+	<td>Returns ("Invalid date","NaN")" <BR/><i>Invalid date, NaN</i><BR/><i>Invalid date, NaN</i></td> 
+</tr>
+<tr class="fail" ><td>if(0<=x<=69 and 100<=y<=999 and 0<=z<=69) <BR/><i>"0,100,0"</i><BR/><i>"69,999,69"</i></td>
+<td><a href="TCsCommaSeparator/TC_7.html">TC</a></td>
+	<td>if 0<=x<=31 returns given day x,today's month* and today's year<BR/>else returns NaN<BR/><i>Fri Oct 31 2008 00:00:00 GMT+0100,2008</i><BR/><i> NaN, NaN</i></td>
+	<td>Date <BR/><i>Sat Mar 10 1900 00:00:00 GMT+0100, 0</i><BR/><i>Thu May 26 1977 00:00:00 GMT+0200, 77</i> </td>
+	<td>Returns ("NaN","NaN") <BR/><i> NaN, NaN</i><BR/><i> NaN, NaN</i></td>
+	<td>Returns ("Invalid date","NaN") <BR/><i> Invalid date, NaN</i><BR/><i> Invalid date, NaN</i></td>
+</tr>
+<tr class="pass" ><td>if(70<=x<=99 and 70<=y<=99 and 1000<=z<=9999) <BR/><i>"70,70,1000"</i><BR/><i>"99,99,9999"</i></td>
+<td><a href="TCsCommaSeparator/TC_8.html">TC</a></td>
+	<td>Returns ("NaN","NaN") <BR/><i> NaN, NaN</i><BR/><i> NaN, NaN</i></td>
+	<td>Returns ("NaN","NaN") <BR/><i> NaN, NaN</i><BR/><i> NaN, NaN</i></td>
+	<td>Returns ("Invalid date","NaN") <BR/><i> Invalid date, NaN</i><BR/><i> Invalid date, NaN</i></td>
+	<td>Returns ("Invalid date","NaN") <BR/><i> Invalid date, NaN</i><BR/><i> Invalid date, NaN</i></td>
+</tr>
+<tr class="fail" ><td>if(0<=x<=69 and 100<=y<=999 and 100<=z<=999) <BR/><i>"0,100,100"</i><BR/><i>"69,999,999"</i></td>
+<td><a href="TCsCommaSeparator/TC_9.html">TC</a></td>
+	<td>if 0<=x<=31 returns given day x,today's month* and today's year<BR/>else returns NaN<BR/><i>Fri Oct 31 2008 00:00:00 GMT+0100,2008</i><BR/><i> NaN, NaN</i></td>
+	<td>Date <BR/><i>Wed Mar 10 0100 00:00:00 GMT+0100, -1800</i><BR/><i>Wed May 27 1007 00:00:00 GMT+0200, -893</i></td>
+	<td>Returns ("NaN","NaN") <BR/><i> NaN, NaN</i><BR/><i> NaN, NaN</i></td>
+	<td>Returns ("Invalid date","NaN") <BR/><i> Invalid date, NaN</i><BR/><i> Invalid date, NaN</i></td>
+</tr>
+<tr class="fail" ><td>if(0<=x<=69 and 1000<=y<=9999 and 1000<=z<=9999) <BR/><i>"0,1000,1000"</i><BR/><i>"69,9999,9999"</i></td>
+<td><a href="TCsCommaSeparator/TC_10.html">TC</a></td>
+	<td>if 0<=x<=31 returns given day, today's month* and given year y<BR/>else returns NaN<BR/><i>Thu Oct 30 1000 15:00:00 GMT+0100,1000</i><BR/><i> NaN, NaN</i></td>
+	<td>Date <BR/><i>Fri Aug 27 1002 00:00:00 GMT+0200, -898</i><BR/><i>Fri Jan 16 10032 00:00:00 GMT+0100, 8132</i> </td>
+	<td>Returns ("NaN","NaN") <BR/><i> NaN, NaN</i><BR/><i> NaN, NaN</i></td>
+	<td>Returns ("Invalid date","NaN") <BR/><i> Invalid date, NaN</i><BR/><i> Invalid date, NaN</i></td>
+</tr>
+<tr class="fail" ><td>if(100<=x<=999 and 0<=y<=69 and 0<=z<=69) <BR/><i>"100,0,0"</i><BR/><i>"999,69,69"</i> </td>
+<td><a href="TCsCommaSeparator/TC_11.html">TC</a></td>
+	<td>if (100<=x<=159 OR 200<=x<=259 OR 300<=x<=359 ... OR 900<=x<=959) and 0<=y<=31<BR/> 
+			Returns given day y (or y-1), today's month* and today's year <BR/>
+			else Returns NaN<BR/>
+			<i> Fri Oct 31 2008 00:00:00 GMT+0100, 2008</i><BR/>
+			<i> NaN,NaN</i><BR/>
+	</td>
+	<td>Date <BR/><i>Mon Nov 30 0099 00:00:00 GMT+0100, -1801</i><BR/><i>Thu Nov 08 1004 00:00:00 GMT+0100, -896</i></td>
+	<td>Returns ("NaN","NaN") <BR/><i> NaN, NaN</i><BR/><i> NaN, NaN</i></td>
+	<td>Returns ("Invalid date","NaN") <BR/><i> Invalid date, NaN</i><BR/><i> Invalid date, NaN</i></td>
+</tr>
+<tr class="fail"><td>if(1000<=x<=9999 and 70<=y<=99 and 70<=z<=99) <BR/><i>"1000,70,70"</i><BR/><i>"9999,99,99"</i></td>
+<td><a href="TCsCommaSeparator/TC_12.html">TC</a></td>
+	<td>Returns today's month and day and the given year x<BR/><i>Mon Nov 17 1000 00:00:00 GMT+0100, 1000</i><BR/><i>Wed Nov 17 9999 00:00:00 GMT+0100, 9999</i></td>
+	<td>Returns ("Invalid Date","NaN") <BR/><i> Invalid Date, NaN</i><BR/><i> Invalid Date, NaN</i></td>
+	<td>Returns ("NaN","NaN") <BR/><i> NaN, NaN</i><BR/><i> NaN, NaN</i></td> 
+	<td>Returns ("Invalid date","NaN") <BR/><i> Invalid date, NaN</i><BR/><i> Invalid date, NaN</i></td>
+</tr>
+<tr class="fail" ><td>if(0<=x<=69 and 1000<=y<=9999 and 0<=z<=69) <BR/><i>"0,1000,0"</i><BR/><i>"69,9999,69"</i></td>
+<td><a href="TCsCommaSeparator/TC_13.html">TC</a></td>
+	<td>if 0<=x<31 returns given day x, given year y and today's month*<br/>else Returns NaN <BR/><i>Thu Oct 30 1000 23:00:00 GMT+0100, 1000</i><BR/><i> NaN, NaN</i></td>
+	<td>Date <BR/><i> Wed Aug 27 1902 00:00:00 GMT+0200, 2</i><BR/><i>Tue Jan 15 2002 00:00:00 GMT+0100, 102 </i></td>
+	<td>Returns ("NaN","NaN") <BR/><i> NaN, NaN</i><BR/><i> NaN, NaN</i></td>
+	<td>Returns ("Invalid date","NaN") <BR/><i> Invalid date, NaN</i><BR/><i> Invalid date, NaN</i></td>
+</tr>
+<tr class="fail" ><td>if(1000<=x<=9999 and 0<=y<=69 and 1000<=z<=9999) <BR/><i>"1000,0,1000"</i><BR/><i>"9999,69,9999"</i> <BR/><i>1001,1,2001</i></td>
+<td><a href="TCsCommaSeparator/TC_14.html">TC</a></td>
+	<td>if 0<=y<=31 Returns today's month,given year x and the given day y<BR/>else returns today's month and day and the given year x<BR/><i>Thu Oct 30 1000 15:00:00 GMT+0100, 1000</i><BR/><i>	Wed Nov 17 9999 00:00:00 GMT+0100, 9999</i> <BR/><i>Sun Nov 01 1001 00:00:00 GMT+0100, 1001</i></td>
+	<td>Date <BR/><i> Fri Aug 27 1002 00:00:00 GMT+0200, -898</i><BR/><i> Fri Jan 16 10032 00:00:00 GMT+0100, 8132</i><BR/><i>Tue Jun 24 1006 00:00:00 GMT+0200, -894</i></td>
+	<td>Returns ("NaN","NaN") <BR/><i> NaN, NaN</i><BR/><i> NaN, NaN</i></td>
+	<td>Returns ("Invalid date","NaN")" <BR/><i>Invalid date, NaN</i><BR/><i>Invalid date, NaN</i></td>
+</tr>
+<tr class="fail" ><td>if(100<=x<=999 and 0<=y<=69 and 100<=z<=999) <BR/><i>"100,0,100"</i><BR/><i>"999,69,999"</i><BR/><i>101,1,100</i></td>
+<td><a href="TCsCommaSeparator/TC_15.html">TC</a></td>
+	<td>if (100<=x<=159 OR 200<=x<=259 OR 300<=x<=359 ... OR 900<=x<=959) and 0<=y<=31<BR/> 
+			Returns given day y (or y-1), today's month* and today's year<BR/>
+			else Returns NaN<BR/>
+			<i> Fri Oct 31 2008 00:00:00 GMT+0100, 2008</i><BR/>
+			<i> NaN,NaN</i><BR/>
+			<i> Fri Oct 31 2008 23:59:00 GMT+0100, 2008</i>
+	</td>
+	<td>Date <BR/><i> Wed Mar 10 0100 00:00:00 GMT+0100, -1800</i><BR/><i> Wed May 27 1007 00:00:00 GMT+0200, -893</i><BR/><i>Sun Apr 10 0101 00:00:00 GMT+0200,-1799</i></td>
+	<td>Returns ("NaN","NaN") <BR/><i> NaN, NaN</i><BR/><i> NaN, NaN</i></td>
+	<td>Returns ("Invalid date","NaN")" <BR/><i>Invalid date, NaN</i><BR/><i>Invalid date, NaN</i></td>
+</tr>
+
+<tr class="pass" ><td>if(70<=x<=99 and 100<=y<=999 and 1000<=z<=9999)</td>
+<td><a href="TCsCommaSeparator/TC_16.html">TC</a></td>
+	<td>Returns ("NaN","NaN")</td>
+	<td>Returns ("Invalid date","NaN")</td>
+	<td>Returns ("NaN","NaN")</td>
+	<td>Returns ("Invalid date","NaN")</td>
+</tr>
+<tr class="pass" ><td>if(70<=x<=99 and 1000<=y<=9999 and 100<=z<=999)</td>
+<td><a href="TCsCommaSeparator/TC_17.html">TC</a></td>
+	<td>Returns ("NaN","NaN")</td>
+	<td>Returns ("Invalid date","NaN")</td>
+	<td>Returns ("NaN","NaN")</td>
+	<td>Returns ("Invalid date","NaN")</td>
+	</tr>
+<tr class="pass" ><td>if(100<=x<=999 and 70<=y<=99 and 1000<=z<=9999)</td>
+<td><a href="TCsCommaSeparator/TC_18.html">TC</a></td>
+	<td>Returns ("NaN","NaN")</td>
+	<td>Returns ("Invalid date","NaN")</td>
+	<td>Returns ("NaN","NaN")</td>
+	<td>Returns ("Invalid date","NaN")</td>
+</tr>
+<tr class="fail" ><td>if(100<=x<=999 and 1000<=y<=9999 and 0<=z<=99)</td>
+<td><a href="TCsCommaSeparator/TC_19.html">TC</a></td>
+	<td>if (100<=x<=159 OR 200<=x<=259 OR 300<=x<=359 ... OR 900<=x<=959) and 0<=z<=31 <BR/> 
+		Returns given day z, today's month and the given year y <BR/>
+		if (100<=x<=159 OR 200<=x<=259 OR 300<=x<=359 ... OR 900<=x<=959) and 32<=z<=99 <BR/>
+		Returns today's day z and month and the given year y <BR/>
+		else Returns NaN</td>
+	<td>Returns ("Invalid date","NaN")</td>
+	<td>Returns ("NaN","NaN")</td>
+	<td>Returns ("Invalid date","NaN")</td>
+</tr>
+<tr class="fail" ><td>if(1000<=x<=9999 and 100<=y<=999 and 0<=z<=99)</td>
+<td><a href="TCsCommaSeparator/TC_20.html">TC</a></td>
+	<td>if 0<=z<=31 returns given day z, today's month and the given year x <BR/>else returns today's day and month and the given year x</td>
+	<td>Returns ("Invalid date","NaN")</td>
+	<td>Returns ("NaN","NaN")</td>
+	<td>Returns ("Invalid date","NaN")</td>
+</tr>
+<tr class="fail"><td>if(1000<=x<=9999 and 70<=y<=99 and 100<=z<=999)</td>
+<td><a href="TCsCommaSeparator/TC_21.html">TC</a></td>
+	<td>Returns today's month and day and the given year x</td>
+	<td>Returns ("Invalid date","NaN")</td>
+	<td>Returns ("NaN","NaN")</td>
+	<td>Returns ("Invalid date","NaN")</td>
+</tr>
+<tr class="pass"><td>if(100<=x<=999 and 100<=y<=999 and 100<=z<=999)</td>
+<td><a href="TCsCommaSeparator/TC_22.html">TC</a></td>
+	<td>Returns ("NaN","NaN")</td>
+	<td>Returns ("Invalid date","NaN")</td>
+	<td>Returns ("NaN","NaN")</td>
+	<td>Returns ("Invalid date","NaN")</td>
+</tr>
+<tr class="fail"><td>if(1000<=x<=9999 and 1000<=y<=9999 and 1000<=z<=9999)</td>
+<td><a href="TCsCommaSeparator/TC_23.html">TC</a></td>
+	<td>Returns today's month and day (or previous day) and the given year x</td>
+	<td>Returns ("Invalid date","NaN")</td>
+	<td>Returns ("NaN","NaN")</td>
+	<td>Returns ("Invalid date","NaN")</td>
+</tr>
+<tr class="pass"><td>if(100<=x<=999 and 100<=y<=999 and 0<=z<=99)</td>
+<td><a href="TCsCommaSeparator/TC_24.html">TC</a></td>
+	<td>Returns ("NaN","NaN")</td>
+	<td>Returns ("Invalid date","NaN")</td>
+	<td>Returns ("NaN","NaN")</td>
+	<td>Returns ("Invalid date","NaN")</td>
+</tr>
+<tr class="pass"><td>if(100<=x<=999 and 70<=y<=99 and 100<=z<=999)</td>
+<td><a href="TCsCommaSeparator/TC_25.html">TC</a></td>
+	<td>Returns ("NaN","NaN")</td>
+	<td>Returns ("Invalid date","NaN")</td>
+	<td>Returns ("NaN","NaN")</td>
+	<td>Returns ("Invalid date","NaN")</td>
+</tr>
+<tr class="pass"><td>if(100<=x<=999 and 100<=y<=999 and 1000<=z<=9999)</td>
+<td><a href="TCsCommaSeparator/TC_26.html">TC</a></td>
+	<td>Returns ("NaN","NaN")</td>
+	<td>Returns ("Invalid date","NaN")</td>
+	<td>Returns ("NaN","NaN")</td>
+	<td>Returns ("Invalid date","NaN")</td>
+</tr>
+<tr class="fail"><td>if(100<=x<=999 and 1000<=y<=9999 and 100<=z<=999)</td>
+<td><a href="TCsCommaSeparator/TC_27.html">TC</a></td>
+	<td>if 100<=x<=159 OR 200<=x<=259 OR 300<=x<=359 ... OR 900<=x<=959 <BR/> Returns today's day (or previous), today's month and the given year y <BR/> else Returns NaN</td>
+	<td>Returns ("Invalid date","NaN")</td>
+	<td>Returns ("NaN","NaN")</td>
+	<td>Returns ("Invalid date","NaN")</td>
+</tr>
+<tr class="fail"><td>if(1000<=x<=9999 and 1000<=y<=9999 and 0<=z<=99)</td>
+<td><a href="TCsCommaSeparator/TC_28.html">TC</a></td>
+	<td>if 0<=z<=31 returns given day z, today's month and the given year x <BR/>else returns today's month and day (or previous day) and the given year x</td>
+	<td>Returns ("Invalid date","NaN")</td>
+	<td>Returns ("NaN","NaN")</td>
+	<td>Returns ("Invalid date","NaN")</td>
+</tr>
+<tr class="fail"><td>if(1000<=x<=9999 and 70<=y<=99 and 1000<=z<=9999)<BR/><i>"1000,70,1000"</i><BR/><i>"9999,99,9999"</i></td>
+<td><a href="TCsCommaSeparator/TC_29.html">TC</a></td>
+	<td>Returns today's month and day and the given year x<BR/><i>Mon Nov 17 1000 00:00:00 GMT+0100, 1000</i><BR/><i>Wed Nov 17 9999 00:00:00 GMT+0100, 9999</i></td>
+	<td>Returns ("Invalid date","NaN")</td>
+	<td>Returns ("NaN","NaN")</td>
+	<td>Returns ("Invalid date","NaN")</td>
+</tr>
+<tr class="fail"><td>if(1000<=x<=9999 and 1000<=y<=9999 and 100<=z<=999)</td>
+<td><a href="TCsCommaSeparator/TC_30.html">TC</a></td>
+	<td>Returns today's month and day (or previous day) and the given year x</td>
+	<td>Returns ("Invalid date","NaN")</td>
+	<td>Returns ("NaN","NaN")</td>
+	<td>Returns ("Invalid date","NaN")</td>
+</tr>
+<tr class="fail"><td>if(1000<=x<=9999 and 100<=y<=999 and 1000<=z<=9999)</td>
+<td><a href="TCsCommaSeparator/TC_31.html">TC</a></td>
+	<td>Returns today's month and day (or previous day) and the given year x</td>
+	<td>Returns ("Invalid date","NaN")</td>
+	<td>Returns ("NaN","NaN")</td>
+	<td>Returns ("Invalid date","NaN")</td>
+</tr>
+<tr class="pass"><td>if(70<=x<=99 and 70<=y<=99 and 100<=z<=999)</td>
+<td><a href="TCsCommaSeparator/TC_32.html">TC</a></td>
+	<td>Returns ("NaN","NaN")</td>
+	<td>Returns ("Invalid date","NaN")</td>
+	<td>Returns ("NaN","NaN")</td>
+	<td>Returns ("Invalid date","NaN")</td>
+</tr>
+<tr class="pass"><td>if(70<=x<=99 and 100<=y<=999 and 100<=z<=999)</td>
+<td><a href="TCsCommaSeparator/TC_33.html">TC</a></td>
+	<td>Returns ("NaN","NaN")</td>
+	<td>Returns ("Invalid date","NaN")</td>
+	<td>Returns ("NaN","NaN")</td>
+	<td>Returns ("Invalid date","NaN")</td>
+</tr>
+<tr class="pass"><td>if(70<=x<=99 and 100<=y<=999 and 70<=z<=99)</td>
+<td><a href="TCsCommaSeparator/TC_34.html">TC</a></td>
+	<td>Returns ("NaN","NaN")</td>
+	<td>Returns ("Invalid date","NaN")</td>
+	<td>Returns ("NaN","NaN")</td>
+	<td>Returns ("Invalid date","NaN")</td>
+</tr>
+<tr class="pass"><td>if(70<=x<=99 and 1000<=y<=9999 and 1000<=z<=9999)</td>
+<td><a href="TCsCommaSeparator/TC_35.html">TC</a></td>
+	<td>Returns ("NaN","NaN")</td>
+	<td>Returns ("Invalid date","NaN")</td>
+	<td>Returns ("NaN","NaN")</td>
+	<td>Returns ("Invalid date","NaN")</td>
+</tr>
+<tr class="pass"><td>if(70<=x<=99 and 1000<=y<=9999 and 70<=z<=99)</td>
+<td><a href="TCsCommaSeparator/TC_36.html">TC</a></td>
+	<td>Returns ("NaN","NaN")</td>
+	<td>Returns ("Invalid date","NaN")</td>
+	<td>Returns ("NaN","NaN")</td>
+	<td>Returns ("Invalid date","NaN")</td>
+</tr>
+<tr class="pass"><td>if(100<=x<=999 and 70<=y<=99 and 70<=z<=99)</td>
+<td><a href="TCsCommaSeparator/TC_37.html">TC</a></td>
+	<td>Returns ("NaN","NaN")</td>
+	<td>Returns ("Invalid date","NaN")</td>
+	<td>Returns ("NaN","NaN")</td>
+	<td>Returns ("Invalid date","NaN")</td>
+</tr>
+<tr class="fail"><td>if(100<=x<=999 and 1000<=y<=9999 and 1000<=z<=9999)</td>
+<td><a href="TCsCommaSeparator/TC_38.html">TC</a></td>
+	<td>Returns today's month and day (or previous day) and the given year y</td>
+	<td>Returns ("Invalid date","NaN")</td>
+	<td>Returns ("NaN","NaN")</td>
+	<td>Returns ("Invalid date","NaN")</td>
+</tr>
+<tr class="fail"><td>if(1000<=x<=9999 and 100<=y<=999 and 100<=z<=999)</td>
+<td><a href="TCsCommaSeparator/TC_39.html">TC</a></td>
+	<td>Returns today's month and day (or previous day) and the given year x</td>
+	<td>Returns ("Invalid date","NaN")</td>
+	<td>Returns ("NaN","NaN")</td>
+	<td>Returns ("Invalid date","NaN")</td>
+</tr>
+<tr class="fail"><td>if(1000<=x<=9999 and 0<=y<=69 and 0<=z<=69)</td>
+<td><a href="TCsCommaSeparator/TC_40.html">TC</a></td>
+	<td>if 0<=y<=31 returns given day y, given year x and today's month* <br/> else returns today's day,given year x and today's month </td>
+	<td>Date</td>
+	<td>Returns ("NaN","NaN")</td>
+	<td>Returns ("Invalid date","NaN")</td>
+</tr>
+<tr class="fail"><td>if(0<=x<=69 and 0<=y<=69 and 0<=z<=69)</td>
+<td><a href="TCsCommaSeparator/TC_41.html">TC</a></td>
+	<td>if 0<=x<=31 Returns today's month* and year and the given day x<br/>else return NaN</td>
+	<td>Date</td>
+	<td>Returns ("NaN","NaN")</td>
+	<td>Returns ("Invalid date","NaN")</td>
+</tr>
+<tr class="fail"><td>if(0<=x<=69 and 0<=y<=69 and 1000<=z<=9999)</td>
+<td><a href="TCsCommaSeparator/TC_42.html">TC</a></td>
+	<td>if 0<=x<=31 Returns today's month* and year and the given day x<br/>else return NaN</td>
+	<td>Date</td>
+	<td>Returns ("NaN","NaN")</td>
+	<td>Returns ("Invalid date","NaN")</td>
+</tr>
+</table>
+<p>[*] - returns month-1 when y=0 or month +1 when y=31 and month has 30 days </p>
+</body>
+</html>
+

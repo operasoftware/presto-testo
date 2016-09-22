@@ -1,0 +1,121 @@
+<!doctype html>
+<title>Date parsing</title>
+<script src=/resources/spartanHandler.js></script>
+<style>
+.pass {
+  color: green;
+}
+.fail {
+  color: red;
+}
+</style>
+
+<p>Show: <label><input type=checkbox checked> PASS</label>
+         <label><input type=checkbox checked> FAIL</label></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Result</th>
+      <th>Input</th>
+      <th>Got</th>
+      <th>Expected</th>
+    </tr>
+  </thead>
+  <tbody>
+  </tbody>
+</table>
+
+<script>
+var resultTable = document.getElementsByTagName("table")[0];
+
+function toggle() {
+  var filter = this.parentNode.textContent.trim();
+  var declaration;
+
+  if (filter === "PASS") {
+    declaration = document.styleSheets[0].cssRules[0].style;
+  } else if (filter === "FAIL") {
+    declaration = document.styleSheets[0].cssRules[1].style;
+  }
+
+  if (declaration) {
+    if (this.checked) {
+      declaration.removeProperty("display");
+    } else {
+      declaration.display = "none";
+    }
+  }
+}
+
+function equal(a, b) {
+  if (a === 0 && b === 0)
+    return 1/a === 1/b;
+  else if (a === b)
+    return true;
+  else if (a !== a && b !== b)
+    return true;
+  else
+    return false;
+}
+
+var inputs = document.getElementsByTagName("input");
+for (var i = 0; i < inputs.length; i++) {
+  inputs[i].addEventListener("change", toggle, false);
+}
+
+var xhr = new XMLHttpRequest();
+xhr.open("GET", "tests.js", false);
+xhr.send();
+
+var tests = JSON.parse(xhr.responseText);
+
+var spartan;
+try {
+  spartan = new spartanHandler();
+} catch(e) {
+  spartan = {
+    addTest: function(){},
+    send: function(){}
+  };
+}
+
+var delta = (new Date()).getTimezoneOffset() * 60 * 1000;
+
+for (var file in tests) {
+  if (!tests.hasOwnProperty(file)) continue;
+  for (var group in tests[file]) {
+    if (!tests[file].hasOwnProperty(group)) continue;
+    for (var test in tests[file][group]) {
+      if (!tests[file][group].hasOwnProperty(test)) continue;
+      var expected = tests[file][group][test];
+      if (expected === null) expected = NaN;
+      var passed, result;
+      try {
+        result = new Date(test);
+	var got = result.valueOf() + result.getTimezoneOffset() * 60 * 1000;
+        passed = equal(got, expected);
+//	tests[file][group][test] = got;
+      } catch(e) {
+        result = e;
+        passed = false;
+//	tests[file][group][test] = test;
+      }
+      spartan.addTest(test, passed);
+      var row = resultTable.tBodies[0].insertRow(-1);
+      row.className = passed ? "pass" : "fail";
+      for (var i = 0; i < 4; i++)
+        row.insertCell(-1);
+      row.childNodes[0].textContent = passed ? "PASS" : "FAIL";
+      row.childNodes[1].textContent = test;
+      row.childNodes[2].textContent = String(result);
+      row.childNodes[3].textContent = String(new Date(expected));
+    }
+  }
+}
+
+//document.body.appendChild(document.createElement("pre"));
+//document.body.lastChild.textContent = JSON.stringify(tests, null, 4);
+
+spartan.send();
+</script>

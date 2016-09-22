@@ -1,0 +1,312 @@
+<html>
+<head><title>new Date("x.y.z")</title>
+<link rel="stylesheet" type="text/css" href="../Files/basic.css" />
+</head>
+<body>
+<table>
+<caption>Date parsing with separator dash . new Date("x.y.z")</caption>
+<tr >
+	<th>x.y.z</th>
+	<th>More examples</th>
+	<th>Opera (new Date("x.y.z"),getYear)</th>
+	<th>Firefox (new Date("x.y.z"),getYear)</th>
+	<th>IE (new Date("x.y.z"),getYear)</th>
+	<th>Safari (new Date("x.y.z"),getYear)</th>
+</tr>
+<tr class="pass"><td>if(0<=x<=69 and 100<=y<=999 and 1000<=z<=9999) <BR/><i>"0.100.1000"</i><BR/><i>"69.999.9999"</i></td>
+<td><a href="TCsPointSeparator/TC_1.html">TC</a></td>
+	<td>Returns ("NaN","NaN") <BR/><i> NaN, NaN</i><BR/><i> NaN, NaN</i></td>
+	<td>Returns ("Invalid Date","NaN") <BR/><i> Invalid Date, NaN</i><BR/><i> Invalid Date, NaN</i></td>
+	<td>Returns ("NaN","NaN") <BR/><i> NaN, NaN</i><BR/><i> NaN, NaN</i></td>
+	<td>Returns ("Invalid date","NaN")<BR/><i>Invalid date, NaN</i><BR/><i>Invalid date, NaN</i></td>
+</tr>
+<tr class="pass"><td>if(0<=x<=69 and 1000<=y<=9999 and 100<=z<=999) <BR/><i>"0.1000.100"</i><BR/><i>"69.9999.999"</i></td>
+<td><a href="TCsPointSeparator/TC_2.html">TC</a></td>
+	<td>Returns ("NaN","NaN") <BR/><i> NaN, NaN</i><BR/><i> NaN, NaN</i></td>
+	<td>Returns ("Invalid Date","NaN") <BR/><i> Invalid Date, NaN</i><BR/><i> Invalid Date, NaN</i></td>
+	<td>Returns ("NaN","NaN") <BR/><i> NaN, NaN</i><BR/><i> NaN, NaN</i></td>
+	<td>Returns ("Invalid date","NaN")<BR/><i>Invalid date, NaN</i><BR/><i>Invalid date, NaN</i></td>
+</tr>
+<tr class="pass"><td>if(100<=x<=999 and 0<=y<=69 and 1000<=z<=9999)</td>
+<td><a href="TCsPointSeparator/TC_3.html">TC</a></td>
+	<td>Returns ("NaN","NaN") </td>
+	<td>Returns ("Invalid Date","NaN")</td>
+	<td>Returns ("NaN","NaN") </td>
+	<td>Returns ("Invalid Date","NaN")</td>
+</tr>
+<tr class="pass"><td>if(1000<=x<=9999 and 0<=y<=69 and 100<=z<=999)</td>
+<td><a href="TCsPointSeparator/TC_4.html">TC</a></td>
+	<td>Returns ("NaN","NaN") </td>
+	<td>Returns ("Invalid Date","NaN")</td>
+	<td>Returns ("NaN","NaN") </td>
+	<td>Returns ("Invalid Date","NaN")</td>
+</tr>
+<tr class="pass"><td>if(70<=x<=99 and 70<=y<=99 and 70<=z<=99) <BR/><i>"70.70.70"</i><BR/><i>"99.99.99"</i></td>
+<td><a href="TCsPointSeparator/TC_5.html">TC</a></td>
+	<td>Returns ("NaN","NaN") <BR/><i> NaN, NaN</i><BR/><i> NaN, NaN</i></td> 
+	<td>Returns ("Invalid Date","NaN") <BR/><i> Invalid Date, NaN</i><BR/><i> Invalid Date, NaN</i></td>
+	<td>Returns ("NaN","NaN") <BR/><i> NaN, NaN</i><BR/><i> NaN, NaN</i></td> 
+	<td>Returns ("Invalid date","NaN")<BR/><i> Invalid date, NaN</i><BR/><i> Invalid date, NaN</i></td>
+</tr>
+<tr class="pass"><td>if(0<=x<=69 and 0<=y<=69 and 100<=z<=999) <BR/><i>"0.0.100"</i><BR/><i>"69.69.999"</i> <BR/><i>"1.1.100"</i> </td>
+<td><a href="TCsPointSeparator/TC_6.html">TC</a></td>
+	<td>Returns ("NaN","NaN") <BR/><i> NaN, NaN</i><BR/><i> NaN, NaN</i> <BR/><i> NaN, NaN</i></td> 
+	<td>Returns ("Invalid date","NaN")" <BR/><i>Invalid date, NaN</i><BR/><i>Invalid date, NaN</i> </td>
+	<td>Returns ("NaN","NaN") <BR/><i> NaN, NaN</i><BR/><i> NaN, NaN</i></td>
+	<td>Returns ("Invalid date","NaN")<BR/><i>Invalid date, NaN</i><BR/><i>Invalid date, NaN</i> <BR/><i>Invalid date, NaN</i></td> 
+</tr>
+<tr class="pass"><td>if(0<=x<=69 and 100<=y<=999 and 0<=z<=69) <BR/><i>"0.100.0"</i><BR/><i>"69.999.69"</i></td>
+<td><a href="TCsPointSeparator/TC_7.html">TC</a></td>
+	<td>Returns ("NaN","NaN") <BR/><i> NaN, NaN</i><BR/><i> NaN, NaN</i></td>
+	<td>Returns ("Invalid date","NaN") <BR/><i> Invalid date, NaN</i><BR/><i> Invalid date, NaN</i></td>
+	<td>Returns ("NaN","NaN") <BR/><i> NaN, NaN</i><BR/><i> NaN, NaN</i></td>
+	<td>Returns ("Invalid date","NaN") <BR/><i> Invalid date, NaN</i><BR/><i> Invalid date, NaN</i></td>
+</tr>
+<tr class="pass"><td>if(70<=x<=99 and 70<=y<=99 and 1000<=z<=9999) <BR/><i>"70.70.1000"</i><BR/><i>"99.99.9999"</i></td>
+<td><a href="TCsPointSeparator/TC_8.html">TC</a></td>
+	<td>Returns ("NaN","NaN") <BR/><i> NaN, NaN</i><BR/><i> NaN, NaN</i></td> 
+	<td>Returns ("Invalid Date","NaN") <BR/><i> Invalid Date, NaN</i><BR/><i> Invalid Date, NaN</i></td>
+	<td>Returns ("NaN","NaN") <BR/><i> NaN, NaN</i><BR/><i> NaN, NaN</i></td> 
+	<td>Returns ("Invalid date","NaN") <BR/><i> Invalid date, NaN</i><BR/><i> Invalid date, NaN</i></td> 
+</tr>
+<tr class="pass"><td>if(0<=x<=69 and 100<=y<=999 and 100<=z<=999) <BR/><i>"0.100.100"</i><BR/><i>"69.999.999"</i></td>
+<td><a href="TCsPointSeparator/TC_9.html">TC</a></td>
+	<td>Returns ("NaN","NaN") <BR/><i> NaN, NaN</i><BR/><i> NaN, NaN</i></td>
+	<td>Returns ("Invalid date","NaN") <BR/><i> Invalid date, NaN</i><BR/><i> Invalid date, NaN</i></td>
+	<td>Returns ("NaN","NaN") <BR/><i> NaN, NaN</i><BR/><i> NaN, NaN</i></td>
+	<td>Returns ("Invalid date","NaN") <BR/><i> Invalid date, NaN</i><BR/><i> Invalid date, NaN</i></td>
+</tr>
+<tr class="pass"><td>if(0<=x<=69 and 1000<=y<=9999 and 1000<=z<=9999) <BR/><i>"0.1000.1000"</i><BR/><i>"69.9999.9999"</i></td>
+<td><a href="TCsPointSeparator/TC_10.html">TC</a></td>
+	<td>Returns ("NaN","NaN") <BR/><i> NaN, NaN</i><BR/><i> NaN, NaN</i></td>
+	<td>Returns ("Invalid date","NaN") <BR/><i> Invalid date, NaN</i><BR/><i> Invalid date, NaN</i></td> 
+	<td>Returns ("NaN","NaN") <BR/><i> NaN, NaN</i><BR/><i> NaN, NaN</i></td>
+	<td>Returns ("Invalid date","NaN") <BR/><i> Invalid date, NaN</i><BR/><i> Invalid date, NaN</i></td> 
+</tr>
+<tr class="pass"><td>if(100<=x<=999 and 0<=y<=69 and 0<=z<=69)</td>
+<td><a href="TCsPointSeparator/TC_11.html">TC</a></td>
+	<td>Returns ("NaN","NaN") </td>
+	<td>Returns ("Invalid Date","NaN")</td>
+	<td>Returns ("NaN","NaN") </td>
+	<td>Returns ("Invalid Date","NaN")</td>
+</tr>
+<tr class="pass"><td>if(1000<=x<=9999 and 70<=y<=99 and 70<=z<=99) <BR/><i>"1000.70.70"</i><BR/><i>"9999.99.99"</i></td>
+<td><a href="TCsPointSeparator/TC_12.html">TC</a></td>
+	<td>Returns ("NaN","NaN") <BR/><i> NaN, NaN</i><BR/><i> NaN, NaN</i></td> 
+	<td>Returns ("Invalid Date","NaN") <BR/><i> Invalid Date, NaN</i><BR/><i> Invalid Date, NaN</i></td>
+	<td>Returns ("NaN","NaN") <BR/><i> NaN, NaN</i><BR/><i> NaN, NaN</i></td> 
+	<td>Returns ("Invalid date","NaN") <BR/><i> Invalid date, NaN</i><BR/><i> Invalid date, NaN</i></td> 
+</tr>
+<tr class="pass"><td>if(0<=x<=69 and 1000<=y<=9999 and 0<=z<=69) <BR/><i>"0.1000.0"</i><BR/><i>"69.9999.69"</i></td>
+<td><a href="TCsPointSeparator/TC_13.html">TC</a></td>
+	<td>Returns ("NaN","NaN") <BR/><i> NaN, NaN</i><BR/><i> NaN, NaN</i></td> 
+	<td>Returns ("Invalid date","NaN") <BR/><i> Invalid date, NaN</i><BR/><i> Invalid date, NaN</i></td>
+	<td>Returns ("NaN","NaN") <BR/><i> NaN, NaN</i><BR/><i> NaN, NaN</i></td> 
+	<td>Returns ("Invalid date","NaN") <BR/><i> Invalid date, NaN</i><BR/><i> Invalid date, NaN</i></td>
+</tr>
+<tr class="pass"><td>if(1000<=x<=9999 and 0<=y<=69 and 1000<=z<=9999)</td>
+<td><a href="TCsPointSeparator/TC_14.html">TC</a></td>
+	<td>Returns ("NaN","NaN") </td>
+	<td>Returns ("Invalid Date","NaN")</td>
+	<td>Returns ("NaN","NaN") </td>
+	<td>Returns ("Invalid Date","NaN")</td>
+</tr>
+<tr class="pass"><td>if(100<=x<=999 and 0<=y<=69 and 100<=z<=999)</td>
+<td><a href="TCsPointSeparator/TC_15.html">TC</a></td>
+	<td>Returns ("NaN","NaN") </td>
+	<td>Returns ("Invalid Date","NaN")</td>
+	<td>Returns ("NaN","NaN") </td>
+	<td>Returns ("Invalid Date","NaN")</td>
+</tr>
+<tr class="pass"><td>if(70<=x<=99 and 100<=y<=999 and 1000<=z<=9999)</td>
+<td><a href="TCsPointSeparator/TC_16.html">TC</a></td>
+	<td>Returns ("NaN","NaN") </td>
+	<td>Returns ("Invalid Date","NaN")</td>
+	<td>Returns ("NaN","NaN") </td>
+	<td>Returns ("Invalid Date","NaN")</td>
+</tr>
+<tr class="pass"><td>if(70<=x<=99 and 1000<=y<=9999 and 100<=z<=999)</td>
+<td><a href="TCsPointSeparator/TC_17.html">TC</a></td>
+	<td>Returns ("NaN","NaN") </td>
+	<td>Returns ("Invalid Date","NaN")</td>
+	<td>Returns ("NaN","NaN") </td>
+	<td>Returns ("Invalid Date","NaN")</td>
+</tr>
+<tr class="pass"><td>if(100<=x<=999 and 70<=y<=99 and 1000<=z<=9999)</td>
+<td><a href="TCsPointSeparator/TC_18.html">TC</a></td>
+	<td>Returns ("NaN","NaN") </td>
+	<td>Returns ("Invalid Date","NaN")</td>
+	<td>Returns ("NaN","NaN") </td>
+	<td>Returns ("Invalid Date","NaN")</td>
+</tr>
+<tr class="pass"><td>if(100<=x<=999 and 1000<=y<=9999 and 0<=z<=99)</td>
+<td><a href="TCsPointSeparator/TC_19.html">TC</a></td>
+	<td>Returns ("NaN","NaN") </td>
+	<td>Returns ("Invalid Date","NaN")</td>
+	<td>Returns ("NaN","NaN") </td>
+	<td>Returns ("Invalid Date","NaN")</td>
+</tr>
+<tr class="pass"><td>if(1000<=x<=9999 and 100<=y<=999 and 0<=z<=99)</td>
+<td><a href="TCsPointSeparator/TC_20.html">TC</a></td>
+	<td>Returns ("NaN","NaN") </td>
+	<td>Returns ("Invalid Date","NaN")</td>
+	<td>Returns ("NaN","NaN") </td>
+	<td>Returns ("Invalid Date","NaN")</td>
+</tr>
+<tr class="pass"><td>if(1000<=x<=9999 and 70<=y<=99 and 100<=z<=999)</td>
+<td><a href="TCsPointSeparator/TC_21.html">TC</a></td>
+	<td>Returns ("NaN","NaN") </td>
+	<td>Returns ("Invalid Date","NaN")</td>
+	<td>Returns ("NaN","NaN") </td>
+	<td>Returns ("Invalid Date","NaN")</td>
+</tr>
+<tr class="pass"><td>if(100<=x<=999 and 100<=y<=999 and 100<=z<=999)</td>
+<td><a href="TCsPointSeparator/TC_22.html">TC</a></td>
+	<td>Returns ("NaN","NaN") </td>
+	<td>Returns ("Invalid Date","NaN")</td>
+	<td>Returns ("NaN","NaN") </td>
+	<td>Returns ("Invalid Date","NaN")</td>
+</tr>
+<tr class="pass"><td>if(1000<=x<=9999 and 1000<=y<=9999 and 1000<=z<=9999)</td>
+<td><a href="TCsPointSeparator/TC_23.html">TC</a></td>
+	<td>Returns ("NaN","NaN") </td>
+	<td>Returns ("Invalid Date","NaN")</td>
+	<td>Returns ("NaN","NaN") </td>
+	<td>Returns ("Invalid Date","NaN")</td>
+</tr>
+<tr class="pass"><td>if(100<=x<=999 and 100<=y<=999 and 0<=z<=99)</td>
+<td><a href="TCsPointSeparator/TC_24.html">TC</a></td>
+	<td>Returns ("NaN","NaN") </td>
+	<td>Returns ("Invalid Date","NaN")</td>
+	<td>Returns ("NaN","NaN") </td>
+	<td>Returns ("Invalid Date","NaN")</td>
+</tr>
+<tr class="pass"><td>if(100<=x<=999 and 70<=y<=99 and 100<=z<=999)</td>
+<td><a href="TCsPointSeparator/TC_25.html">TC</a></td>
+	<td>Returns ("NaN","NaN") </td>
+	<td>Returns ("Invalid Date","NaN")</td>
+	<td>Returns ("NaN","NaN") </td>
+	<td>Returns ("Invalid Date","NaN")</td>
+</tr>
+<tr class="pass"><td>if(100<=x<=999 and 100<=y<=999 and 1000<=z<=9999)</td>
+<td><a href="TCsPointSeparator/TC_26.html">TC</a></td>
+	<td>Returns ("NaN","NaN") </td>
+	<td>Returns ("Invalid Date","NaN")</td>
+	<td>Returns ("NaN","NaN") </td>
+	<td>Returns ("Invalid Date","NaN")</td>
+</tr>
+<tr class="pass"><td>if(100<=x<=999 and 1000<=y<=9999 and 100<=z<=999)</td>
+<td><a href="TCsPointSeparator/TC_27.html">TC</a></td>
+	<td>Returns ("NaN","NaN") </td>
+	<td>Returns ("Invalid Date","NaN")</td>
+	<td>Returns ("NaN","NaN") </td>
+	<td>Returns ("Invalid Date","NaN")</td>
+</tr>
+<tr class="pass"><td>if(1000<=x<=9999 and 1000<=y<=9999 and 0<=z<=99)</td>
+<td><a href="TCsPointSeparator/TC_28.html">TC</a></td>
+	<td>Returns ("NaN","NaN") </td>
+	<td>Returns ("Invalid Date","NaN")</td>
+	<td>Returns ("NaN","NaN") </td>
+	<td>Returns ("Invalid Date","NaN")</td>
+ </tr>
+<tr class="pass"><td>if(1000<=x<=9999 and 70<=y<=99 and 1000<=z<=9999)</td>
+<td><a href="TCsPointSeparator/TC_29.html">TC</a></td>
+	<td>Returns ("NaN","NaN") </td>
+	<td>Returns ("Invalid Date","NaN")</td>
+	<td>Returns ("NaN","NaN") </td>
+	<td>Returns ("Invalid Date","NaN")</td>
+</tr>
+<tr class="pass"><td>if(1000<=x<=9999 and 1000<=y<=9999 and 100<=z<=999)</td>
+<td><a href="TCsPointSeparator/TC_30.html">TC</a></td>
+	<td>Returns ("NaN","NaN") </td>
+	<td>Returns ("Invalid Date","NaN")</td>
+	<td>Returns ("NaN","NaN") </td>
+	<td>Returns ("Invalid Date","NaN")</td>
+</tr>
+<tr class="pass"><td>if(1000<=x<=9999 and 100<=y<=999 and 1000<=z<=9999)</td>
+<td><a href="TCsPointSeparator/TC_31.html">TC</a></td>
+	<td>Returns ("NaN","NaN") </td>
+	<td>Returns ("Invalid Date","NaN")</td>
+	<td>Returns ("NaN","NaN") </td>
+	<td>Returns ("Invalid Date","NaN")</td>
+</tr>
+<tr class="pass"><td>if(70<=x<=99 and 70<=y<=99 and 100<=z<=999)</td>
+<td><a href="TCsPointSeparator/TC_32.html">TC</a></td>
+	<td>Returns ("NaN","NaN") </td>
+	<td>Returns ("Invalid Date","NaN")</td>
+	<td>Returns ("NaN","NaN") </td>
+	<td>Returns ("Invalid Date","NaN")</td>
+</tr>
+<tr class="pass"><td>if(70<=x<=99 and 100<=y<=999 and 100<=z<=999)</td>
+<td><a href="TCsPointSeparator/TC_33.html">TC</a></td>
+	<td>Returns ("NaN","NaN") </td>
+	<td>Returns ("Invalid Date","NaN")</td>
+	<td>Returns ("NaN","NaN") </td>
+	<td>Returns ("Invalid Date","NaN")</td>
+</tr>
+<tr class="pass"><td>if(70<=x<=99 and 100<=y<=999 and 70<=z<=99)</td>
+<td><a href="TCsPointSeparator/TC_34.html">TC</a></td>
+	<td>Returns ("NaN","NaN") </td>
+	<td>Returns ("Invalid Date","NaN")</td>
+	<td>Returns ("NaN","NaN") </td>
+	<td>Returns ("Invalid Date","NaN")</td>
+</tr>
+<tr class="pass"><td>if(70<=x<=99 and 1000<=y<=9999 and 1000<=z<=9999)</td>
+<td><a href="TCsPointSeparator/TC_35.html">TC</a></td>
+	<td>Returns ("NaN","NaN") </td>
+	<td>Returns ("Invalid Date","NaN")</td>
+	<td>Returns ("NaN","NaN") </td>
+	<td>Returns ("Invalid Date","NaN")</td>
+</tr>
+<tr class="pass"><td>if(70<=x<=99 and 1000<=y<=9999 and 70<=z<=99)</td>
+<td><a href="TCsPointSeparator/TC_36.html">TC</a></td>
+	<td>Returns ("NaN","NaN") </td>
+	<td>Returns ("Invalid Date","NaN")</td>
+	<td>Returns ("NaN","NaN") </td>
+	<td>Returns ("Invalid Date","NaN")</td>
+</tr>
+<tr class="pass"><td>if(100<=x<=999 and 70<=y<=99 and 70<=z<=99)</td>
+<td><a href="TCsPointSeparator/TC_37.html">TC</a></td>
+	<td>Returns ("NaN","NaN") </td>
+	<td>Returns ("Invalid Date","NaN")</td>
+	<td>Returns ("NaN","NaN") </td>
+	<td>Returns ("Invalid Date","NaN")</td>
+</tr>
+<tr class="pass"><td>if(100<=x<=999 and 1000<=y<=9999 and 1000<=z<=9999)</td>
+<td><a href="TCsPointSeparator/TC_38.html">TC</a></td>
+	<td>Returns ("NaN","NaN") </td>
+	<td>Returns ("Invalid Date","NaN")</td>
+	<td>Returns ("NaN","NaN") </td>
+	<td>Returns ("Invalid Date","NaN")</td>
+</tr>
+<tr class="pass"><td>if(1000<=x<=9999 and 100<=y<=999 and 100<=z<=999)</td>
+<td><a href="TCsPointSeparator/TC_39.html">TC</a></td>
+	<td>Returns ("NaN","NaN") </td>
+	<td>Returns ("Invalid Date","NaN")</td>
+	<td>Returns ("NaN","NaN") </td>
+	<td>Returns ("Invalid Date","NaN")</td>
+</tr>
+<tr class="pass"><td>if(1000<=x<=9999 and 0<=y<=69 and 0<=z<=69)<BR/><i>"1000.0.0"</i><BR/><i>"9999.69.69"</i></td>
+<td><a href="TCsPointSeparator/TC_40.html">TC</a></td>
+	<td>Returns ("NaN","NaN") <BR/><i> NaN, NaN</i><BR/><i> NaN, NaN</i></td> 
+	<td>Returns ("Invalid Date","NaN") <BR/><i> Invalid Date, NaN</i><BR/><i> Invalid Date, NaN</i></td>
+	<td>Returns ("NaN","NaN") <BR/><i> NaN, NaN</i><BR/><i> NaN, NaN</i></td> 
+	<td>Returns ("Invalid date","NaN") <BR/><i> Invalid date, NaN</i><BR/><i> Invalid date, NaN</i></td> 
+</tr>
+<tr class="fail"><td>if(0<=x<=69 and 0<=y<=69 and 0<=z<=69)</td>
+<td><a href="TCsPointSeparator/TC_41.html">TC</a></td>
+	<td>Retruns Date only when 1<=x<=31 and 1<=y<=12 and 0<=z<=69</td>
+	<td>Returns ("Invalid Date","NaN")</td>
+	<td>Returns ("NaN","NaN") </td>
+	<td>Returns ("Invalid Date","NaN")</td>
+</tr>
+<tr class="fail"><td>if(0<=x<=69 and 0<=y<=69 and 1000<=z<=9999)</td>
+<td><a href="TCsPointSeparator/TC_42.html">TC</a></td>
+	<td>Retruns Date only when 1<=x<=31 and 1<=y<=12 and 0<=z<=69</td>
+	<td>Returns ("Invalid Date","NaN")</td>
+	<td>Returns ("NaN","NaN") </td>
+	<td>Returns ("Invalid Date","NaN")</td>
+</tr>
+</table>
+</body>
+</html>

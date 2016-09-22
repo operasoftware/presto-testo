@@ -1,0 +1,145 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+  <head>
+    <title>Date parsing: Daylight Saving Time</title>
+  </head>
+<body>
+<script type="text/javascript" src="helpFiles/verify.js"></script>
+
+<pre>
+<script>
+start_group("Standart Time");
+test_date("Wednesday, December 31, 1879 11:59:59 PM +0133", "Wed Dec 31", "1879", "23:26:59 GMT+0100", "1879");
+test_date("12/31/1879 +0133", "Tue Dec 30", "1879", "23:27:00 GMT+0100", "1879");
+test_date("Sunday, March 26, 2000","Sun Mar 26","2000","00:00:00 GMT+0100","2000");
+test_date("Mar 29 1000","Sat Mar 29","1000","00:00:00 GMT+0100","1000");
+test_date("Mar 29 1000 00:00:00 GMT+0100","Sat Mar 29","1000","00:00:00 GMT+0100","1000");
+test_date("Mar 29 1001 00:00:00 GMT+0100","Sun Mar 29","1001","00:00:00 GMT+0100","1001");
+test_date("Mar 29 1005 00:00:00 GMT+0100","Fri Mar 29","1005","00:00:00 GMT+0100","1005");
+test_date("Mar 29 1006 00:00:00 GMT+0100","Sat Mar 29","1006","00:00:00 GMT+0100","1006");
+test_date("Mar 29 1007 00:00:00 GMT+0100","Sun Mar 29","1007","00:00:00 GMT+0100","1007");
+test_date("Mar 29 1011 00:00:00 GMT+0100","Fri Mar 29","1011","00:00:00 GMT+0100","1011");
+test_date("Mar 29 1012 00:00:00 GMT+0100","Sun Mar 29","1012","00:00:00 GMT+0100","1012");
+test_date("Mar 29 1016 00:00:00 GMT+0100","Fri Mar 29","1016","00:00:00 GMT+0100","1016");
+test_date("Mar 29 1017 00:00:00 GMT+0100","Sat Mar 29","1017","00:00:00 GMT+0100","1017");
+test_date("Mar 29 1018 00:00:00 GMT+0100","Sun Mar 29","1018","00:00:00 GMT+0100","1018");
+test_date("Mar 29 1400 00:00:00 GMT+0100","Sat Mar 29","1400","00:00:00 GMT+0100","1400");
+test_date("Mar 29 1800 00:00:00 GMT+0100","Sat Mar 29","1800","00:00:00 GMT+0100","1800");
+test_date("Mar 29 1964 00:00:00 GMT+0100","Sun Mar 29","1964","00:00:00 GMT+0100","1964");
+test_date("Mar 29 1968 00:00:00 GMT+0100","Fri Mar 29","1968","00:00:00 GMT+0100","1968");
+test_date("Mar 29 1969 00:00:00 GMT+0100","Sat Mar 29","1969","00:00:00 GMT+0100","1969");
+test_date("Mar 29 1970 00:00:00 GMT+0100","Sun Mar 29","1970","00:00:00 GMT+0100","1970");
+test_date("October 28, 1962 3:00:00 AM GMT+0200","Sun Oct 28","1962","02:00:00 GMT+0100","1962");
+test_date("October 28, 1963 3:00:00 AM GMT+0200","Mon Oct 28","1963","02:00:00 GMT+0100","1963");
+test_date("October 28, 1964 3:00:00 AM GMT+0200","Wed Oct 28","1964","02:00:00 GMT+0100","1964");
+test_date("October 28, 1968 3:00:00 AM GMT+0200","Mon Oct 28","1968","02:00:00 GMT+0100","1968");
+test_date("October 28, 1969 3:00:00 AM GMT+0200","Tue Oct 28","1969","02:00:00 GMT+0100","1969");
+test_date("Mar 29 1800 00:00:00 GMT+0043","Sat Mar 29","1800","00:17:00 GMT+0100","1800");
+test_date("Mar 29 1801 00:00:00 GMT+0043","Sun Mar 29","1801","00:17:00 GMT+0100","1801");
+
+
+start_group("DST");
+test_date("October 28, 1966 3:00:00 AM GMT+0200","Fri Oct 28","1966","03:00:00 GMT+0200","1966");
+test_date("October 28, 1967 3:00:00 AM GMT+0200","Sat Oct 28","1967","03:00:00 GMT+0200","1967");
+test_date("Sunday, October 28, 2001 3:00:00 AM +0200","Sun Oct 28","2001","02:00:00 GMT+0100","2001");
+test_date("Mar 29 1002 00:00:00 GMT+0100","Mon Mar 29","1002","01:00:00 GMT+0200","1002");
+test_date("Mar 29 1003 00:00:00 GMT+0100","Tue Mar 29","1003","01:00:00 GMT+0200","1003");
+test_date("Mar 29 1004 00:00:00 GMT+0100","Thu Mar 29","1004","01:00:00 GMT+0200","1004");
+test_date("Mar 29 1008 00:00:00 GMT+0100","Tue Mar 29","1008","01:00:00 GMT+0200","1008");
+test_date("Mar 29 1009 00:00:00 GMT+0100","Wed Mar 29","1009","01:00:00 GMT+0200","1009");
+test_date("Mar 29 1010 00:00:00 GMT+0100","Thu Mar 29","1010","01:00:00 GMT+0200","1010");
+test_date("Mar 29 1013 00:00:00 GMT+0100","Mon Mar 29","1013","01:00:00 GMT+0200","1013");
+test_date("Mar 29 1014 00:00:00 GMT+0100","Tue Mar 29","1014","01:00:00 GMT+0200","1014");
+test_date("Mar 29 1015 00:00:00 GMT+0100","Wed Mar 29","1015","01:00:00 GMT+0200","1015");
+test_date("Mar 29 1019 00:00:00 GMT+0100","Mon Mar 29","1019","01:00:00 GMT+0200","1019");
+test_date("Mar 29 1020 00:00:00 GMT+0100","Wed Mar 29","1020","01:00:00 GMT+0200","1020");
+test_date("Mar 29 1025 00:00:00 GMT+0100","Tue Mar 29","1025","01:00:00 GMT+0200","1025");
+test_date("Mar 29 1030 00:00:00 GMT+0100","Mon Mar 29","1030","01:00:00 GMT+0200","1030");
+test_date("Mar 29 1100 00:00:00 GMT+0100","Thu Mar 29","1100","01:00:00 GMT+0200","1100");
+test_date("Mar 29 1200 00:00:00 GMT+0100","Wed Mar 29","1200","01:00:00 GMT+0200","1200");
+test_date("Mar 29 1300 00:00:00 GMT+0100","Mon Mar 29","1300","01:00:00 GMT+0200","1300");
+test_date("Mar 29 1500 00:00:00 GMT+0100","Thu Mar 29","1500","01:00:00 GMT+0200","1500");
+test_date("Mar 29 1600 00:00:00 GMT+0100","Wed Mar 29","1600","01:00:00 GMT+0200","1600");
+test_date("Mar 29 1700 00:00:00 GMT+0100","Mon Mar 29","1700","01:00:00 GMT+0200","1700");
+test_date("Mar 29 1900 00:00:00 GMT+0100","Thu Mar 29","1900","01:00:00 GMT+0200","1900");
+test_date("Mar 29 1965 00:00:00 GMT+0100","Mon Mar 29","1965","01:00:00 GMT+0200","1965");
+test_date("Mar 29 1966 00:00:00 GMT+0100","Tue Mar 29","1966","01:00:00 GMT+0200","1966");
+test_date("Mar 29 1967 00:00:00 GMT+0100","Wed Mar 29","1967","01:00:00 GMT+0200","1967");
+test_date("Mar 29 1802 00:00:00 GMT+0043","Mon Mar 29","1802","01:17:00 GMT+0200","1802");
+test_date("Mar 29 1803 00:00:00 GMT+0043","Tue Mar 29","1803","01:17:00 GMT+0200","1803");
+test_date("Mar 29 1810 00:00:00 GMT+0043","Thu Mar 29","1810","01:17:00 GMT+0200","1810");
+test_date("Mar 29 1815 00:00:00 GMT+0043","Wed Mar 29","1815","01:17:00 GMT+0200","1815");
+test_date("Mar 29 1820 00:00:00 GMT+0043","Wed Mar 29","1820","01:17:00 GMT+0200","1820");
+test_date("Mar 29 1830 00:00:00 GMT+0043","Mon Mar 29","1830","01:17:00 GMT+0200","1830");
+test_date("Mar 29 1838 00:00:00 GMT+0043","Thu Mar 29","1838","01:17:00 GMT+0200","1838");
+test_date("Mar 29 1849 00:00:00 GMT+0043","Thu Mar 29","1849","01:17:00 GMT+0200","1849");
+test_date("Mar 29 2000 00:00:00 GMT+0100","Wed Mar 29","2000","01:00:00 GMT+0200","2000");
+test_date("Mar 29 2001 00:00:00 GMT+0100","Thu Mar 29","2001","01:00:00 GMT+0200","2001");
+test_date("Mar 29 2004 00:00:00 GMT+0100","Mon Mar 29","2004","01:00:00 GMT+0200","2004");
+test_date("Mar 29 2006 00:00:00 GMT+0100","Wed Mar 29","2006","01:00:00 GMT+0200","2006");
+test_date("Monday, October 1, 1979 12:59:59 AM +0300","Sun Sep 30","1979","23:59:59 GMT+0200","1979");
+test_date("Sunday, October 28, 2001 3:59:59 AM +0300","Sun Oct 28","2001","02:59:59 GMT+0200","2001");
+test_date("October 28, 1960 3:00:00 AM GMT+0200","Fri Oct 28","1960","03:00:00 GMT+0200","1960");
+test_date("October 28, 1961 3:00:00 AM GMT+0200","Sat Oct 28","1961","03:00:00 GMT+0200","1961");
+test_date("October 28, 1965 3:00:00 AM GMT+0200","Thu Oct 28","1965","03:00:00 GMT+0200","1965");
+test_date("October 28, 2000 01:00:00 GMT+0430","Fri Oct 27","2000","22:30:00 GMT+0200","2000");
+test_date("May 02, 2000 01:00:00 GMT+0430","Mon May 01","2000","22:30:00 GMT+0200","2000");
+test_date("May 02, 2000 01:00:00 GMT+0100","Tue May 02","2000","02:00:00 GMT+0200","2000");
+test_date("April 30, 2000 01:00:00 GMT-0400","Sun Apr 30","2000","07:00:00 GMT+0200","2000");
+test_date("April 30, 2001 01:00:00 GMT-0400","Mon Apr 30","2001","07:00:00 GMT+0200","2001");
+test_date("April 30, 2002 01:00:00 GMT-0400","Tue Apr 30","2002","07:00:00 GMT+0200","2002");
+test_date("April 30, 2003 01:00:00 GMT-0400","Wed Apr 30","2003","07:00:00 GMT+0200","2003");
+test_date("April 30, 2004 01:00:00 GMT-0400","Fri Apr 30","2004","07:00:00 GMT+0200","2004");
+test_date("April 30, 2005 01:00:00 GMT-0400","Sat Apr 30","2005","07:00:00 GMT+0200","2005");
+test_date("April 30, 2006 01:00:00 GMT-0400","Sun Apr 30","2006","07:00:00 GMT+0200","2006");
+test_date("June 15, 2001 02:00:00 GMT+0600","Thu Jun 14","2001","22:00:00 GMT+0200","2001");
+test_date("July 15, 2009 02:00:00 GMT+0600","Tue Jul 14","2009","22:00:00 GMT+0200","2009");
+test_date("Sunday, April 5, 2009 2:59:57 GMT+1000","Sat Apr 04","2009","18:59:57 GMT+0200","2009");
+test_date("Sunday, April 5, 2009 2:59:57 +11","Sat Apr 04","2009","17:59:57 GMT+0200","2009");
+test_date("Sunday, April 5, 1896 2:59:57","Sun Apr 05","1896","02:59:57 GMT+0200","1896");
+
+start_group("Transition from Standard time to DST in +0100 (Norway) that passes in IE");
+test_date("03/29/2009 00:00:00", "Sun Mar 29", "2009", "00:00:00 GMT+0100", "2009");
+test_date("03/29/2009 00:30:00", "Sun Mar 29", "2009", "00:30:00 GMT+0100", "2009");
+test_date("03/29/2009 00:59:59", "Sun Mar 29", "2009", "00:59:59 GMT+0100", "2009");
+test_date("03/29/2009 01:00:00", "Sun Mar 29", "2009", "01:00:00 GMT+0100", "2009");
+test_date("03/29/2009 01:30:00", "Sun Mar 29", "2009", "01:30:00 GMT+0100", "2009");
+test_date("03/29/2009 01:59:59", "Sun Mar 29", "2009", "01:59:59 GMT+0100", "2009");
+test_date("03/29/2009 03:00:00", "Sun Mar 29", "2009", "03:00:00 GMT+0200", "2009");
+test_date("03/29/2009 03:30:00", "Sun Mar 29", "2009", "03:30:00 GMT+0200", "2009");
+test_date("03/29/2009 03:59:59", "Sun Mar 29", "2009", "03:59:59 GMT+0200", "2009");
+test_date("03/29/2009 04:00:00", "Sun Mar 29", "2009", "04:00:00 GMT+0200", "2009");
+
+start_group("Non-existing dates during transition from Standard time to DST in +0100 (Norway)");
+test_date("03/29/2009 02:00:00", "Sun Mar 29", "2009", "01:00:00 GMT+0100", "2009");
+test_date("03/29/2009 02:59:59", "Sun Mar 29", "2009", "01:59:59 GMT+0100", "2009");
+
+start_group("Transition from DST to Standard time in +0100 (Norway) that passes in IE");
+test_date("10/25/2009 00:00:00", "Sun Oct 25", "2009", "00:00:00 GMT+0200", "2009");
+test_date("10/25/2009 00:30:00", "Sun Oct 25", "2009", "00:30:00 GMT+0200", "2009");
+test_date("10/25/2009 00:59:59", "Sun Oct 25", "2009", "00:59:59 GMT+0200", "2009");
+test_date("10/25/2009 01:00:00", "Sun Oct 25", "2009", "01:00:00 GMT+0200", "2009");
+test_date("10/25/2009 01:30:00", "Sun Oct 25", "2009", "01:30:00 GMT+0200", "2009");
+test_date("10/25/2009 01:59:59", "Sun Oct 25", "2009", "01:59:59 GMT+0200", "2009");
+test_date("10/25/2009 02:00:00", "Sun Oct 25", "2009", "02:00:00 GMT+0100", "2009");
+test_date("10/25/2009 02:30:00", "Sun Oct 25", "2009", "02:30:00 GMT+0100", "2009");
+test_date("10/25/2009 02:59:59", "Sun Oct 25", "2009", "02:59:59 GMT+0100", "2009");
+
+// The second time 02:00:00-02:59:59 happens:
+test_date("10/25/2009 03:00:00", "Sun Oct 25", "2009", "03:00:00 GMT+0100", "2009");
+test_date("10/25/2009 03:30:00", "Sun Oct 25", "2009", "03:30:00 GMT+0100", "2009");
+test_date("10/25/2009 03:59:59", "Sun Oct 25", "2009", "03:59:59 GMT+0100", "2009");
+
+// The first time 02:00:00-02:59:59 happens must be specified with TZ specified:
+test_date("10/25/2009 02:00:00 GMT+0200", "Sun Oct 25", "2009", "02:00:00 GMT+0200", "2009");
+test_date("10/25/2009 02:30:00 GMT+0200", "Sun Oct 25", "2009", "02:30:00 GMT+0200", "2009");
+test_date("10/25/2009 02:59:59 GMT+0200", "Sun Oct 25", "2009", "02:59:59 GMT+0200", "2009");
+test_date("10/25/2009 02:59:59 GMT+0100", "Sun Oct 25", "2009", "02:59:59 GMT+0100", "2009");
+
+
+test_summary();
+
+</script>
+</pre>
+</body>
+</html>

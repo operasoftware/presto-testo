@@ -1,0 +1,151 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+  <head>
+    <title>Date parsing: Comments</title>
+  </head>
+<body>
+<script type="text/javascript" src="helpFiles/verify.js"></script>
+
+<pre>
+<script>
+start_group("1. Without brackets and with space before and after the string ");
+test_date("comments Thu Sep 24 0105 11:58:00  GMT+0200","NaN","","","NaN");
+test_date("Thu comments Sep 24 0105 11:58:00  GMT+0200","NaN","","","NaN");
+test_date("Thu comments Sep 24 0105 11:58:00  GMT+0200","NaN","","","NaN");
+test_date("Thu Sep comments 24 0105 11:58:00  GMT+0200","NaN","","","NaN");
+test_date("Thu Sep 24 comments 0105 11:58:00  GMT+0200","NaN","","","NaN");
+test_date("Thu Sep 24 0105 comments  11:58:00  GMT+0200","NaN","","","NaN");
+test_date("Thu Sep 24 0105 11:58:00 comments  GMT+0200","NaN","","","NaN");
+test_date("Thu Sep 24 0105 11:58:00  GMT+0200 comments ","NaN","","","NaN");
+
+start_group("2. Without brackets and without space before/after the string");
+test_date("Thu Sepcomments 24 0105 11:58:00 GMT+0200","NaN","","","NaN");
+test_date("Thu Sep 24comments 0105 11:58:00 GMT+0200","NaN","","","NaN");
+test_date("Thu Sep 24 0105comments 11:58:00 GMT+0200","NaN","","","NaN");
+test_date("Thu Sep 24 0105 11:58:00comments GMT+0200","NaN","","","NaN");
+test_date("Thu Sep 24 0105 11:58:00 GMT+0200comments","NaN","","","NaN");
+test_date("Thu Sep 24 0105 11comments:58:00 GMT+0200","NaN","","","NaN");
+test_date("comments04/01/2009 3:00:00 AM +0300","NaN","","","NaN");
+test_date("04comments/01/2009 3:00:00 AM +0300","NaN","","","NaN");
+test_date("04 comments/01/2009 3:00:00 AM +0300","NaN","","","NaN");
+test_date("04comments /01/2009 3:00:00 AM +0300","NaN","","","NaN");
+test_date("04/comments01/2009 3:00:00 AM +0300","NaN","","","NaN");
+test_date("04/comments 01/2009 3:00:00 AM +0300","NaN","","","NaN");
+test_date("04/ comments01/2009 3:00:00 AM +0300","NaN","","","NaN");
+test_date("04/01comments/2009 3:00:00 AM +0300","NaN","","","NaN");
+test_date("04/01 comments/2009 3:00:00 AM +0300","NaN","","","NaN");
+test_date("04/01comments /2009 3:00:00 AM +0300","NaN","","","NaN");
+test_date("04/01/comments2009 3:00:00 AM +0300","NaN","","","NaN");
+test_date("04/01/ comments2009 3:00:00 AM +0300","NaN","","","NaN");
+test_date("04/01/comments 2009 3:00:00 AM +0300","NaN","","","NaN");
+test_date("04/01/2009comments 3:00:00 AM +0300","NaN","","","NaN");
+test_date("04/01/2009 comments3:00:00 AM +0300","NaN","","","NaN");
+test_date("04/01/2009 3comments:00:00 AM +0300","NaN","","","NaN");
+test_date("04/01/2009 3:00comments:00 AM +0300","NaN","","","NaN");
+test_date("04/01/2009 3:00:00comments AM +0300","NaN","","","NaN");
+test_date("04/01/2009 3:00:00 AM GMT+0300comments","NaN","","","NaN");
+test_date("04/01/2009 3:00:00 commentsAM +0300","NaN","","","NaN");
+test_date("04/01/2009 3:00:00commentsAM +0300","NaN","","","NaN");
+test_date("Thucomments Sep 24 0105 11:58:00 GMT+0200","NaN","","","NaN");
+test_date("ThucommentsSep 24 0105 11:58:00 GMT+0200","NaN","","","NaN");
+test_date("04/01/2009 3:00:00 +0530","Tue Mar 31","2009","23:30:00 GMT+0200","2009");
+test_date("Thucomments Sep 24 0105 11:58:00 GMT+0200","NaN","","","NaN");
+
+start_group("3.With brackets and with space before and after the string");
+test_date("(comments) September 24 , 1978 3:00:00 AM +0200","Sun Sep 24","1978","03:00:00 GMT+0200","1978");
+test_date("September (comments) 24 , 1978 3:00:00 AM +0200","Sun Sep 24","1978","03:00:00 GMT+0200","1978");
+test_date("September 24 (comments), 1978 3:00:00 AM +0200","Sun Sep 24","1978","03:00:00 GMT+0200","1978");
+test_date("September 24,  (comments) 1978 3:00:00 AM +0200","Sun Sep 24","1978","03:00:00 GMT+0200","1978");
+test_date("September 24 , 1978 (comments) 3:00:00 AM +0200","Sun Sep 24","1978","03:00:00 GMT+0200","1978");
+test_date("September 24 , 1978 3:00:00 (comments) AM +0200","Sun Sep 24","1978","03:00:00 GMT+0200","1978");
+test_date("September 24 , 1978 3:00:00 AM (comments) +0200","Sun Sep 24","1978","03:00:00 GMT+0200","1978");
+test_date("September 24 , 1978 3:00:00 AM +0200 (comments)","Sun Sep 24","1978","03:00:00 GMT+0200","1978");
+test_date("(comments) 04/01/2009 3:00:00 AM +0300","Wed Apr 01","2009","02:00:00 GMT+0200","2009");
+test_date("04/01/2009 (comments) 3:00:00 AM +0300","Wed Apr 01","2009","02:00:00 GMT+0200","2009");
+test_date("04/01/2009 3:00:00 (comments) AM +0300","Wed Apr 01","2009","02:00:00 GMT+0200","2009");
+test_date("04/01/2009 3:00:00 AM (comments) +0300","Wed Apr 01","2009","02:00:00 GMT+0200","2009");
+test_date("04/01/2009 3:00:00 AM +0300 (comments)","Wed Apr 01","2009","02:00:00 GMT+0200","2009");
+test_date("04/ (comments) 01/2009 3:00:00 AM +0300","Wed Apr 01","2009","02:00:00 GMT+0200","2009");
+test_date(" 04/01 (comments) /2009 3:00:00 AM +0300","Wed Apr 01","2009","02:00:00 GMT+0200","2009");
+test_date(" 04/01/ (comments) 2009 3:00:00 AM +0300","Wed Apr 01","2009","02:00:00 GMT+0200","2009");
+test_date("() Thu Sep 24 0105 11:58:00  GMT+0200","Thu Sep 24","0105","11:58:00 GMT+0200","105");
+test_date("(comments) Thu Sep 24 0105 11:58:00  GMT+0200","Thu Sep 24","0105","11:58:00 GMT+0200","105");
+test_date("Thu (comments) Sep 24 0105 11:58:00 GMT+0200","Thu Sep 24","0105","11:58:00 GMT+0200","105");
+test_date("Thu Sep (comments) 24 0105 11:58:00 GMT+0200","Thu Sep 24","0105","11:58:00 GMT+0200","105");
+test_date("Thu Sep 24 (comments) 0105 11:58:00 GMT+0200","Thu Sep 24","0105","11:58:00 GMT+0200","105");
+test_date("Thu Sep 24 0105 (comments) 11:58:00 GMT+0200","Thu Sep 24","0105","11:58:00 GMT+0200","105");
+test_date("Thu Sep 24 0105 11:58:00 (comments) GMT+0200","Thu Sep 24","0105","11:58:00 GMT+0200","105");
+test_date("Thu Sep 24 0105 11:58:00 GMT+0200 (comments)","Thu Sep 24","0105","11:58:00 GMT+0200","105");
+test_date("04 (comments) /01/2009 3:00:00 AM +0300","Wed Apr 01","2009","02:00:00 GMT+0200","2009");
+test_date("04/(comments) 01/2009 3:00:00 AM +0300","Wed Apr 01","2009","02:00:00 GMT+0200","2009");
+
+start_group("4. With brackets and without space before/after the string");
+test_date("September 24(comments), 1978 3:59:59 AM +0200","Sun Sep 24","1978","03:59:59 GMT+0200","1978");
+test_date("Thu Sep 24 0105 11:58:00 GMT+0200(comments)","Thu Sep 24","0105","11:58:00 GMT+0200","105");
+test_date("Thu Sep 24 0105 11:58:00(comments) GMT+0200","Thu Sep 24","0105","11:58:00 GMT+0200","105");
+test_date("Thu Sep 24 0105(comments) 11:58:00 GMT+0200","Thu Sep 24","0105","11:58:00 GMT+0200","105");
+test_date("Thu Sep 24(comments) 0105 11:58:00 GMT+0200","Thu Sep 24","0105","11:58:00 GMT+0200","105");
+test_date("Thu Sep(comments) 24 0105 11:58:00 GMT+0200","Thu Sep 24","0105","11:58:00 GMT+0200","105");
+test_date("Thu(comments) Sep 24 0105 11:58:00 GMT+0200","Thu Sep 24","0105","11:58:00 GMT+0200","105");
+test_date("(comments)September 24 , 1978 3:00:00 AM +0200","Sun Sep 24","1978","03:00:00 GMT+0200","1978");
+test_date("September(comments) 24 , 1978 3:00:00 AM +0200","Sun Sep 24","1978","03:00:00 GMT+0200","1978");
+test_date("September 24(comments), 1978 3:00:00 AM +0200","Sun Sep 24","1978","03:00:00 GMT+0200","1978");
+test_date("September 24, (comments)1978 3:00:00 AM +0200","Sun Sep 24","1978","03:00:00 GMT+0200","1978");
+test_date("September 24 , 1978(comments) 3:00:00 AM +0200","Sun Sep 24","1978","03:00:00 GMT+0200","1978");
+test_date("September 24 , 1978 3:00:00 (comments)AM +0200","Sun Sep 24","1978","03:00:00 GMT+0200","1978");
+test_date("September 24 , 1978 3:00:00 AM(comments) +0200","Sun Sep 24","1978","03:00:00 GMT+0200","1978");
+test_date("September 24 , 1978 3:00:00 AM +0200(comments)","Sun Sep 24","1978","03:00:00 GMT+0200","1978");
+test_date("(comments)04/01/2009 3:00:00 AM +0300","Wed Apr 01","2009","02:00:00 GMT+0200","2009");
+test_date("04/01/2009 3:00:00(comments) AM +0300","Wed Apr 01","2009","02:00:00 GMT+0200","2009");
+test_date("04/01/2009 3:00:00 AM(comments) +0300","Wed Apr 01","2009","02:00:00 GMT+0200","2009");
+test_date("04/01/2009 3:00:00 AM +0300(comments)","Wed Apr 01","2009","02:00:00 GMT+0200","2009");
+test_date("04(comments) /01/2009 3:00:00 AM +0300","Wed Apr 01","2009","02:00:00 GMT+0200","2009");
+test_date("04/ (comments)01/2009 3:00:00 AM +0300","Wed Apr 01","2009","02:00:00 GMT+0200","2009");
+test_date("04/(comments)01/2009 3:00:00 AM +0300","Wed Apr 01","2009","02:00:00 GMT+0200","2009");
+test_date("04/01(comments) /2009 3:00:00 AM +0300","Wed Apr 01","2009","02:00:00 GMT+0200","2009");
+test_date("04/01/(comments) 2009 3:00:00 AM +0300","Wed Apr 01","2009","02:00:00 GMT+0200","2009");
+test_date("04/01/2009(comments) 3:00:00 AM +0300","Wed Apr 01","2009","02:00:00 GMT+0200","2009");
+test_date("() Thu Sep 24 0105 11:58:00  GMT+0200","Thu Sep 24","0105","11:58:00 GMT+0200","105");
+test_date("(comments)Thu Sep 24 0105 11:58:00  GMT+0200","Thu Sep 24","0105","11:58:00 GMT+0200","105");
+test_date("Thu(comments) Sep 24 0105 11:58:00 GMT+0200","Thu Sep 24","0105","11:58:00 GMT+0200","105");
+test_date("Thu Sep(comments) 24 0105 11:58:00 GMT+0200","Thu Sep 24","0105","11:58:00 GMT+0200","105");
+test_date("Thu Sep 24(comments) 0105 11:58:00 GMT+0200","Thu Sep 24","0105","11:58:00 GMT+0200","105");
+test_date("Thu Sep 24 0105(comments) 11:58:00 GMT+0200","Thu Sep 24","0105","11:58:00 GMT+0200","105");
+test_date("Thu Sep 24 0105 11:58:00(comments)GMT+0200","Thu Sep 24","0105","11:58:00 GMT+0200","105");
+test_date("Thu Sep 24 0105 11:58:00 GMT+0200(comments)","Thu Sep 24","0105","11:58:00 GMT+0200","105");
+
+start_group("6. Opera returns NaN");
+test_date("September 24 , 1978 3: (comments) 00:00 AM +0200","NaN","","","NaN");
+test_date("September 24 , 1978 3:(comments) 00:00 AM +0200","NaN","","","NaN");
+test_date("September 24 , 1978 3:00:(comments) 00 AM +0200","NaN","","","NaN");
+test_date("September 24 , 1978 3:00:(comments)00 AM +0300","NaN","","","NaN");
+test_date("September 24 , 1978 3:00: (comments) 00 AM +0200","NaN","","","NaN");
+test_date("September 24 , 1978 3:00: (comments)00 AM +0300","NaN","","","NaN");
+test_date("04/01/2009 3:00:00 AM 0300 +(comments)","NaN","","","NaN");
+test_date("04/01/2009 3:00:00 AM + (comments) 0300","NaN","","","NaN");
+test_date("04/01/2009 3:00:00 AM+ (comments) 0300","NaN","","","NaN");
+test_date("Thu Sep 24 0105 11(comments):58:00 GMT+0200","NaN","","","NaN");
+test_date("September 24 , 1978 3(comments):00:00 AM +0200","NaN","","","NaN");
+test_date("04/01/2009 3(comments) :00:00 AM +0300","NaN","","","NaN");
+test_date("04/01/2009 3:0(comments) 0:00 AM +0300","NaN","","","NaN");
+test_date("04/01/2009 3:00 (comments):00 AM +0300","NaN","","","NaN");
+test_date("04/01/2009 3:00:00 AM +03(comments) 00","NaN","","","NaN");
+test_date("Thu Sep 24 0105 11:58(comments)  :00 GMT+0200","NaN","","","NaN");
+test_date("September 24 , 1978 3 (comments):00:00 AM +0200","NaN","","","NaN");
+test_date("04/01/2009 3 (comments) :00:00 AM +0300","NaN","","","NaN");
+test_date("04/01/2009 3(comments) :00:00 AM +0300","NaN","","","NaN");
+test_date("04/01/2009 3 (comments):00:00 AM +0300","NaN","","","NaN");
+test_date("04/01/2009 3:0(comments)0:00 AM +0300","NaN","","","NaN");
+test_date("04/01/2009 3:0(comments) 0:00 AM +0300","NaN","","","NaN");
+test_date("04/01/2009 3:0 (comments)0:00 AM +0300","NaN","","","NaN");
+test_date("04/01/2009 3:0 (comments) 0:00 AM +0300","NaN","","","NaN");
+test_date("04/01/2009 3:00 (comments)  :00 AM +0300","NaN","","","NaN");
+test_date("04/01/2009 3:00:00 AM +03 (comments) 00","NaN","","","NaN");
+test_date("04/01/2009 3:00:00 AM +(comments) 0300","NaN","","","NaN");
+
+test_summary();
+
+</script>
+</pre>
+</body>
+</html>

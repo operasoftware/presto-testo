@@ -1,0 +1,158 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+  <head>
+    <title>Date parsing: Timezone names</title>
+  </head>
+<body>
+<script type="text/javascript" src="helpFiles/verify.js"></script>
+
+<pre>
+<script>
+
+start_group("Naval single letter timezones (Nathaniel Bowditch)");
+test_date("1/1/1980 10:00:00 A", "Tue Jan 01", "1980", "12:00:00 GMT+0100", "1980");
+test_date("A 1/1/1980 10:00:00", "Tue Jan 01", "1980", "12:00:00 GMT+0100", "1980");
+test_date("1A/1/1980 10:00:00", "Tue Jan 01", "1980", "12:00:00 GMT+0100", "1980");
+test_date("1/1A/1980 10:00:00", "Tue Jan 01", "1980", "12:00:00 GMT+0100", "1980");
+test_date("1/1/1980A 10:00:00", "Tue Jan 01", "1980", "12:00:00 GMT+0100", "1980");
+test_date("1/1/1980 A  10:00:00", "Tue Jan 01", "1980", "12:00:00 GMT+0100", "1980");
+test_date("1/1/1980 10:00:00 B", "Tue Jan 01", "1980", "13:00:00 GMT+0100", "1980");
+test_date("1/1/1980 10:00:00 C", "Tue Jan 01", "1980", "14:00:00 GMT+0100", "1980");
+test_date("1/1/1980 10:00:00 D", "Tue Jan 01", "1980", "15:00:00 GMT+0100", "1980");
+test_date("1/1/1980 10:00:00 E", "Tue Jan 01", "1980", "16:00:00 GMT+0100", "1980");
+test_date("1/1/1980 10:00:00 F", "Tue Jan 01", "1980", "17:00:00 GMT+0100", "1980");
+test_date("1/1/1980 10:00:00 G", "Tue Jan 01", "1980", "18:00:00 GMT+0100", "1980");
+test_date("1/1/1980 10:00:00 H", "Tue Jan 01", "1980", "19:00:00 GMT+0100", "1980");
+test_date("1/1/1980 10:00:00 I", "Tue Jan 01", "1980", "20:00:00 GMT+0100", "1980");
+// There is no 'J' among the naval timezone letters
+test_date("1/1/1980 10:00:00 K", "Tue Jan 01", "1980", "21:00:00 GMT+0100", "1980");
+test_date("1/1/1980 10:00:00 L", "Tue Jan 01", "1980", "22:00:00 GMT+0100", "1980");
+test_date("1/1/1980 10:00:00 M", "Tue Jan 01", "1980", "23:00:00 GMT+0100", "1980");
+test_date("1/1/1980 12:00:00 N", "Tue Jan 01", "1980", "12:00:00 GMT+0100", "1980");
+test_date("1/1/1980 12:00:00 O", "Tue Jan 01", "1980", "11:00:00 GMT+0100", "1980");
+test_date("1/1/1980 12:00:00 P", "Tue Jan 01", "1980", "10:00:00 GMT+0100", "1980");
+test_date("1/1/1980 12:00:00 Q", "Tue Jan 01", "1980", "09:00:00 GMT+0100", "1980");
+test_date("Saturday, March 21, 2009 12:04:22 AM Q","Fri Mar 20","2009","21:04:22 GMT+0100","2009");
+test_date("1/1/1980 12:00:00 R", "Tue Jan 01", "1980", "08:00:00 GMT+0100", "1980");
+test_date("1/1/1980 12:00:00 S", "Tue Jan 01", "1980", "07:00:00 GMT+0100", "1980");
+test_date("1/1/1980 12:00:00 T", "Tue Jan 01", "1980", "06:00:00 GMT+0100", "1980");
+test_date("1/1/1980 12:00:00 U", "Tue Jan 01", "1980", "05:00:00 GMT+0100", "1980");
+test_date("1/1/1980 12:00:00 V", "Tue Jan 01", "1980", "04:00:00 GMT+0100", "1980");
+test_date("1/1/1980 12:00:00 W", "Tue Jan 01", "1980", "03:00:00 GMT+0100", "1980");
+test_date("1/1/1980 12:00:00 X", "Tue Jan 01", "1980", "02:00:00 GMT+0100", "1980");
+test_date("1/1/1980 12:00:00 Y", "Tue Jan 01", "1980", "01:00:00 GMT+0100", "1980");
+test_date("1/1/1980 12:00:00 Z", "Tue Jan 01", "1980", "13:00:00 GMT+0100", "1980");
+
+start_group("Common North-American timezones supported by IE/FF");
+test_date("1/1/1980 12:00:00 CDT", "Tue Jan 01", "1980", "18:00:00 GMT+0100", "1980");
+test_date("1/1/1980 12:00:00 CST", "Tue Jan 01", "1980", "19:00:00 GMT+0100", "1980");
+test_date("1/1/1980 12:00:00 EDT", "Tue Jan 01", "1980", "17:00:00 GMT+0100", "1980");
+test_date("1/1/1980 12:00:00 EST", "Tue Jan 01", "1980", "18:00:00 GMT+0100", "1980");
+test_date("1/1/1980 12:00:00 MDT", "Tue Jan 01", "1980", "19:00:00 GMT+0100", "1980");
+test_date("1/1/1980 12:00:00 MST", "Tue Jan 01", "1980", "20:00:00 GMT+0100", "1980");
+test_date("1/1/1980 12:00:00 PDT", "Tue Jan 01", "1980", "20:00:00 GMT+0100", "1980");
+test_date("1/1/1980 12:00:00 PST", "Tue Jan 01", "1980", "21:00:00 GMT+0100", "1980");
+test_date("Friday, March 20, 2009 8:07:37 AM CDT","Fri Mar 20","2009","14:07:37 GMT+0100", "2009");
+test_date("Friday, March 20, 2009 14:30:59 CDT","Fri Mar 20","2009","20:30:59 GMT+0100","2009");
+test_date("Friday, March 20, 2009 14:30:59 CST","Fri Mar 20","2009","21:30:59 GMT+0100","2009");
+test_date("Friday, March 20, 2009 14:30:59 EDT","Fri Mar 20","2009","19:30:59 GMT+0100","2009");
+test_date("Friday, March 20, 2009 14:30:59 EST","Fri Mar 20","2009","20:30:59 GMT+0100","2009");
+test_date("Friday, March 20, 2009 14:30:59 GMT","Fri Mar 20","2009","15:30:59 GMT+0100","2009");
+test_date("Friday, March 20, 2009 14:30:59 MDT","Fri Mar 20","2009","21:30:59 GMT+0100","2009");
+test_date("Friday, March 20, 2009 14:30:59 MST","Fri Mar 20","2009","22:30:59 GMT+0100","2009");
+test_date("Friday, March 20, 2009 14:30:59 PDT","Fri Mar 20","2009","22:30:59 GMT+0100","2009");
+test_date("Friday, March 20, 2009 14:30:59 PST","Fri Mar 20","2009","23:30:59 GMT+0100","2009");
+test_date("Friday, March 20, 2009 14:30:59 UTC","Fri Mar 20","2009","15:30:59 GMT+0100","2009");
+test_date("January 09, 1999 09:12:14 UTC","Sat Jan 09", "1999", "10:12:14 GMT+0100", "1999");
+test_date("Wed, 09 January 1999 09:12:14 UTC","Sat Jan 09", "1999", "10:12:14 GMT+0100", "1999");
+test_date("1999-01-09 09:12:14 UTC","Sat Jan 09", "1999", "10:12:14 GMT+0100", "1999");
+test_date("1999/01/09 9:12:14 UTC","Sat Jan 09", "1999", "10:12:14 GMT+0100", "1999");
+test_date("1999/01/09 9:12 UTC","Sat Jan 09", "1999", "10:12:00 GMT+0100", "1999");
+test_date("1999/01/09 09: UTC","Sat Jan 09", "1999", "10:00:00 GMT+0100", "1999");
+test_date("Jan 09 09:12:14 1999 UTC","Sat Jan 09", "1999", "10:12:14 GMT+0100", "1999");
+test_date("09:12:14 UTC 1999 January 09","Sat Jan 09", "1999", "10:12:14 GMT+0100", "1999");
+
+start_group("Shorthand of common North-American timezones supported by IE/FF");
+test_date("1/1/1980 12:00:00 CD", "Tue Jan 01", "1980", "18:00:00 GMT+0100", "1980");
+test_date("1/1/1980 12:00:00 CS", "Tue Jan 01", "1980", "19:00:00 GMT+0100", "1980");
+test_date("1/1/1980 12:00:00 ED", "Tue Jan 01", "1980", "17:00:00 GMT+0100", "1980");
+test_date("1/1/1980 12:00:00 ES", "Tue Jan 01", "1980", "18:00:00 GMT+0100", "1980");
+test_date("1/1/1980 12:00:00 MD", "Tue Jan 01", "1980", "19:00:00 GMT+0100", "1980");
+test_date("1/1/1980 12:00:00 MS", "Tue Jan 01", "1980", "20:00:00 GMT+0100", "1980");
+test_date("1/1/1980 12:00:00 PD", "Tue Jan 01", "1980", "20:00:00 GMT+0100", "1980");
+test_date("1/1/1980 12:00:00 PS", "Tue Jan 01", "1980", "21:00:00 GMT+0100", "1980");
+
+start_group("Day of week that may look like a timezone");
+test_date("1/1/1980 12:00:00 MO", "Tue Jan 01", "1980", "12:00:00 GMT+0100", "1980");
+test_date("1/1/1980 12:00:00 TU", "Tue Jan 01", "1980", "12:00:00 GMT+0100", "1980");
+test_date("1/1/1980 12:00:00 WE", "Tue Jan 01", "1980", "12:00:00 GMT+0100", "1980");
+test_date("1/1/1980 12:00:00 TH", "Tue Jan 01", "1980", "12:00:00 GMT+0100", "1980");
+test_date("1/1/1980 12:00:00 FR", "Tue Jan 01", "1980", "12:00:00 GMT+0100", "1980");
+test_date("1/1/1980 12:00:00 SA", "Tue Jan 01", "1980", "12:00:00 GMT+0100", "1980");
+test_date("1/1/1980 12:00:00 SU", "Tue Jan 01", "1980", "12:00:00 GMT+0100", "1980");
+
+start_group("AM/PM may look like a timezone")
+test_date("1/1/1980 12:00:00 AM", "Tue Jan 01", "1980", "00:00:00 GMT+0100", "1980");
+test_date("1/1/1980 12:00:00 PM", "Tue Jan 01", "1980", "12:00:00 GMT+0100", "1980");
+
+start_group("Shorthand for GMT/UTC");
+test_date("1/1/1980 12:00:00 GM", "Tue Jan 01", "1980", "13:00:00 GMT+0100", "1980");
+test_date("1/1/1980 12:00:00 UT", "Tue Jan 01", "1980", "13:00:00 GMT+0100", "1980");
+
+start_group("Not supported time zones");
+test_date("Friday, March 20, 2009 14:30:59 ACDT","NaN","","","NaN");
+test_date("ACDT Friday, March 20, 2009 14:30:59","NaN","","","NaN");
+test_date("Friday, March 20, 2009 14:30:59 ACST","NaN","","","NaN");
+test_date("Friday, March 20, 2009 14:30:59 ADT","NaN","","","NaN");
+test_date("Friday, March 20, 2009 14:30:59 AEDT","NaN","","","NaN");
+test_date("Friday, March 20, 2009 14:30:59 AEST","NaN","","","NaN");
+test_date("Friday, March 20, 2009 14:30:59 AKDT","NaN","","","NaN");
+test_date("Friday, March 20, 2009 14:30:59 AKST","NaN","","","NaN");
+test_date("Friday, March 20, 2009 14:30:59 AST","NaN","","","NaN");
+test_date("Friday, March 20, 2009 14:30:59 AWDT","NaN","","","NaN");
+test_date("Friday, March 20, 2009 14:30:59 AWST","NaN","","","NaN");
+test_date("Friday, March 20, 2009 14:30:59 BST","NaN","","","NaN");
+test_date("Friday, March 20, 2009 14:30:59 CEDT","NaN","","","NaN");
+test_date("Friday, March 20, 2009 14:30:59 CEST","NaN","","","NaN");
+test_date("Friday, March 20, 2009 14:30:59 CET","NaN","","","NaN");
+test_date("Friday, March 20, 2009 14:30:59 CXT","NaN","","","NaN");
+test_date("Friday, March 20, 2009 14:30:59 EEDT","NaN","","","NaN");
+test_date("Friday, March 20, 2009 14:30:59 EEST","NaN","","","NaN");
+test_date("Friday, March 20, 2009 14:30:59 EET","NaN","","","NaN");
+test_date("Friday, March 20, 2009 14:30:59 HAA","NaN","","","NaN");
+test_date("Friday, March 20, 2009 14:30:59 HAC","NaN","","","NaN");
+test_date("Friday, March 20, 2009 14:30:59 HADT","NaN","","","NaN");
+test_date("Friday, March 20, 2009 14:30:59 HAE","NaN","","","NaN");
+test_date("Friday, March 20, 2009 14:30:59 HAP","NaN","","","NaN");
+test_date("Friday, March 20, 2009 14:30:59 HAR","NaN","","","NaN");
+test_date("Friday, March 20, 2009 14:30:59 HAST","NaN","","","NaN");
+test_date("Friday, March 20, 2009 14:30:59 HAT","NaN","","","NaN");
+test_date("Friday, March 20, 2009 14:30:59 HAY","NaN","","","NaN");
+test_date("Friday, March 20, 2009 14:30:59 HNA","NaN","","","NaN");
+test_date("Friday, March 20, 2009 14:30:59 HNC","NaN","","","NaN");
+test_date("Friday, March 20, 2009 14:30:59 HNE","NaN","","","NaN");
+test_date("Friday, March 20, 2009 14:30:59 HNP","NaN","","","NaN");
+test_date("Friday, March 20, 2009 14:30:59 HNR","NaN","","","NaN");
+test_date("Friday, March 20, 2009 14:30:59 HNT","NaN","","","NaN");
+test_date("Friday, March 20, 2009 14:30:59 HNY","NaN","","","NaN");
+test_date("Friday, March 20, 2009 14:30:59 IST","NaN","","","NaN");
+test_date("Friday, March 20, 2009 14:30:59 MESZ","NaN","","","NaN");
+test_date("Friday, March 20, 2009 14:30:59 MEZ","NaN","","","NaN");
+test_date("Friday, March 20, 2009 14:30:59 MSD","NaN","","","NaN");
+test_date("Friday, March 20, 2009 14:30:59 MSK","NaN","","","NaN");
+test_date("Friday, March 20, 2009 14:30:59 NDT","NaN","","","NaN");
+test_date("Friday, March 20, 2009 14:30:59 NFT","NaN","","","NaN");
+test_date("Friday, March 20, 2009 14:30:59 NST","NaN","","","NaN");
+test_date("Friday, March 20, 2009 14:30:59 WDT","NaN","","","NaN");
+test_date("Friday, March 20, 2009 14:30:59 WEDT","NaN","","","NaN");
+test_date("Friday, March 20, 2009 14:30:59 WEST","NaN","","","NaN");
+test_date("Friday, March 20, 2009 14:30:59 WET","NaN","","","NaN");
+test_date("Friday, March 20, 2009 14:30:59 WST","NaN","","","NaN");
+test_date("Friday, March 20, 2009 14:30:59 WST","NaN","","","NaN");
+
+test_summary();
+
+</script>
+</pre>
+</body>
+</html>

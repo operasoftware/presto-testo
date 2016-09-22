@@ -1,0 +1,56 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+  <head>
+    <title>Date parsing test</title>
+  </head>
+<body>
+<pre>
+<script type="text/javascript">
+
+	var today = new Date();
+	today.getFullYear();
+	today.setFullYear( 2001 );
+	document.write("<p>Test: getFullYear() <BR/>");
+	document.write("Pass if you see 2001 below: <BR/>"+today.getFullYear() +"</p>");
+
+	var today1 = new Date();
+	today1.getDate();
+	today1.setDate( 1 );
+	document.write("<p>Test: getDate() <BR/>");
+	document.write("Pass if you see 1 below: <BR/>" + today1.getDate() + "</p>");
+
+	var today2 = new Date();
+	today2.getMonth();
+	today2.setMonth( 1 );
+	document.write("<p>Test: getMonth() <BR/>");
+	document.write("Pass if you see 1 below: <BR/>" + today2.getMonth() + "</p>");
+
+	var today3 = new Date();
+	today3.getHours();
+	today3.setHours( 1 );
+	document.write("<p>Test: getHours() <BR/>");
+	document.write("Pass if you see 1 below: <BR/>" + today3.getHours() + "</p>");
+	
+	var today4 = new Date();
+	today4.getSeconds();
+	today4.setSeconds( 30 );
+	document.write("<p>Test: getSeconds() <BR/>");
+	document.write("Pass if you see 30 below: <BR/>" + today4.getSeconds() + "</p>");
+	
+	var today5 = new Date();
+	today5.getMilliseconds();
+	today5.setMilliseconds( 300 );
+	document.write("<p>Test: getMilliseconds() <BR/>");
+	document.write("Pass if you see 300 below: <BR/>" + today5.getMilliseconds() + "</p>");
+	
+	var today6 = new Date();
+	today6.getMinutes();
+	today6.setMinutes( 30 );
+	document.write("<p>Test: getMinutes() <BR/>");
+	document.write("Pass if you see 30 below: <BR/>" + today6.getMinutes() + "</p>");
+
+	
+</script>
+</pre>
+</body>
+</html>
